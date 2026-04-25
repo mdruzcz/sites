@@ -2,10 +2,23 @@
   "extends": "./packages/tsconfig/base.json",
   "include": [],
   "references": [
-    { "path": "apps/matt-druzcz-real-estate" },
-    { "path": "apps/london-concrete-forming" },
-    { "path": "packages/ui" },
-    { "path": "packages/db" },
-    { "path": "packages/cms" }
+    {
+      "path": "apps/matt-druzcz-real-estate"
+    },
+    {
+      "path": "apps/london-concrete-forming"
+    },
+    {
+      "path": "packages/ui"
+    },
+    {
+      "path": "packages/db"
+    },
+    {
+      "path": "packages/cms"
+    },
+    {
+      "path": "apps/london-deck-builder"
+    }
   ]
 }

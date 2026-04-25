@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+:root {
+  --cream:        #F5EFE6;
+  --cream-dark:   #E8DCCF;
+  --wood-dark:    #2C1810;
+  --wood:         #5C3D2E;
+  --wood-light:   #8B6347;
+  --terracotta:   #C4623A;
+  --terra-dark:   #A34E2C;
+  --sand:         #D4A574;
+  --sand-light:   #EDD5AA;
+}
+
+@theme inline {
+  --color-cream:        var(--cream);
+  --color-cream-dark:   var(--cream-dark);
+  --color-wood-dark:    var(--wood-dark);
+  --color-wood:         var(--wood);
+  --color-wood-light:   var(--wood-light);
+  --color-terracotta:   var(--terracotta);
+  --color-terra-dark:   var(--terra-dark);
+  --color-sand:         var(--sand);
+  --color-sand-light:   var(--sand-light);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--wood-dark);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair, Georgia, serif);
+}
