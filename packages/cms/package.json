@@ -12,7 +12,7 @@
     "next-sanity": "^9.8.16"
   },
   "devDependencies": {
-    "@sites/tsconfig": "workspace:*",
+    "@sites/tsconfig": "*",
     "typescript": "^5.6.3"
   }
 }

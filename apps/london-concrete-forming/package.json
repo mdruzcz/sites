@@ -10,15 +10,15 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@sites/cms": "workspace:*",
-    "@sites/db": "workspace:*",
-    "@sites/ui": "workspace:*",
+    "@sites/cms": "*",
+    "@sites/db": "*",
+    "@sites/ui": "*",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@sites/tsconfig": "workspace:*",
+    "@sites/tsconfig": "*",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
