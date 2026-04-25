@@ -5,13 +5,12 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { first_name, last_name, email, phone, address, city, service, message } = body;
 
-    // Validate required fields
     if (!first_name || !last_name || !email || !phone || !service) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
     if (!supabaseUrl || !supabaseKey) {
       console.error("Supabase env vars not set");
