@@ -758,8 +758,10 @@ function Contact() {
   const [form, setForm] = useState({
     first_name: "", last_name: "", email: "", phone: "",
     address: "", city: "", service: "", message: "",
+    website: "", // honeypot — hidden from real users
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const loadedAt = useRef(Date.now());
 
   const services = [
     "PT Deck Building",
@@ -780,14 +782,30 @@ function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
+      // Get reCAPTCHA v3 token if available
+      let recaptchaToken: string | undefined;
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      if (siteKey && typeof window !== "undefined" && (window as any).grecaptcha) {
+        try {
+          recaptchaToken = await (window as any).grecaptcha.execute(siteKey, { action: "contact" });
+        } catch (err) {
+          console.warn("reCAPTCHA token error:", err);
+        }
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          _loaded: loadedAt.current,
+          recaptchaToken,
+        }),
       });
       if (!res.ok) throw new Error("Server error");
       setStatus("success");
-      setForm({ first_name: "", last_name: "", email: "", phone: "", address: "", city: "", service: "", message: "" });
+      setForm({ first_name: "", last_name: "", email: "", phone: "", address: "", city: "", service: "", message: "", website: "" });
+      loadedAt.current = Date.now(); // reset for "Submit Another"
     } catch {
       setStatus("error");
     }
@@ -962,6 +980,20 @@ function Contact() {
                   />
                 </div>
 
+                {/* Honeypot — invisible to humans, irresistible to bots */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", height: 0, overflow: "hidden", tabIndex: -1 } as React.CSSProperties}>
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    value={form.website}
+                    onChange={handleChange}
+                  />
+                </div>
+
                 {status === "error" && (
                   <p className="text-sm text-red-600">Something went wrong. Please try again or call us directly.</p>
                 )}
@@ -977,6 +1009,11 @@ function Contact() {
 
                 <p className="text-xs text-center" style={{ color: "var(--wood-light)" }}>
                   No obligation. We respond within 24 hours.
+                </p>
+                <p className="text-xs text-center mt-1" style={{ color: "var(--wood-light)", opacity: 0.6 }}>
+                  Protected by reCAPTCHA.{" "}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">Privacy</a>{" · "}
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline">Terms</a>
                 </p>
               </form>
             )}
