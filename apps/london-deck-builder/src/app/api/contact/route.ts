@@ -190,10 +190,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Failed to save lead" }, { status: 500 });
   }
 
-  // ── Create ERPNext CRM Lead (non-blocking — don't fail the form if ERPNext is down) ──
-  createERPNextLead(body).catch((e) => {
-    console.error("[contact] ERPNext lead creation failed (non-blocking):", e);
-  });
+  // ── Create ERPNext Lead (awaited, but error-tolerant — won't fail the form) ──
+  try {
+    await createERPNextLead(body);
+  } catch (e) {
+    console.error("[contact] ERPNext lead creation failed:", e);
+  }
 
   return NextResponse.json({ success: true }, { status: 200 });
 }
