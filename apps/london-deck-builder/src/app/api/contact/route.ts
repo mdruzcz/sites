@@ -10,7 +10,7 @@ import { NextRequest, NextResponse } from "next/server";
  * 1. Honeypot — hidden "website" field; if filled, silently 200 to waste bot time.
  * 2. Time-gate — "_loaded" is a timestamp (ms) set when the page renders.
  *    Submissions < 3 s after load are almost certainly bots.
- * 3. reCAPTCHA v3 — token verified server-side; score < 0.5 is rejected.
+ * 3. reCAPTCHA v3 — token verified server-side; score < 0.3 is rejected.
  *
  * On success: saves to Supabase AND creates a CRM Lead in ERPNext.
  */
@@ -158,7 +158,7 @@ export async function POST(req: NextRequest) {
   // ── Layer 3: reCAPTCHA v3 ──────────────────────────────────────────
   if (body.recaptchaToken) {
     const { success, score } = await verifyRecaptcha(body.recaptchaToken);
-    if (!success || score < 0.5) {
+    if (!success || score < 0.3) {
       console.warn(`[contact] reCAPTCHA failed — success=${success}, score=${score}`);
       return NextResponse.json(
         { error: "Spam check failed. Please try again or call us directly." },
