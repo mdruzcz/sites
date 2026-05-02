@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  compress: true,
   transpilePackages: ["@sites/ui", "@sites/db", "@sites/cms"],
   images: {
     remotePatterns: [
@@ -10,6 +11,19 @@ const nextConfig: NextConfig = {
         pathname: "/wp-content/uploads/**",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Vary",
+            value: "Accept-Encoding",
+          },
+        ],
+      },
+    ];
   },
 };
 
