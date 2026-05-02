@@ -64,40 +64,70 @@ async function createERPNextLead(body: ContactBody): Promise<void> {
     return;
   }
 
-  // Build combined notes from service, address, and message
-  const notesParts: string[] = [];
-  if (body.service) notesParts.push(`Service: ${body.service}`);
-  if (body.address) notesParts.push(`Address: ${body.address}`);
-  if (body.message) notesParts.push(`Message: ${body.message}`);
-  const noteText = notesParts.join(" | ");
+  const authHeader = `token ${ERPNEXT_API_KEY}:${ERPNEXT_API_SECRET}`;
 
+  // Step 1: Create the CRM Lead
   const leadData = {
-    doctype: "Lead",
     first_name: body.first_name,
     last_name: body.last_name,
-    email_id: body.email,
+    email: body.email,
     mobile_no: body.phone,
-    city: body.city || "",
-    notes: noteText ? [{ note: noteText }] : [],
-    source: "Website",
-    status: "Lead",
+    status: "New",
   };
 
   try {
-    const res = await fetch(`${ERPNEXT_URL}/api/resource/Lead`, {
+    const res = await fetch(`${ERPNEXT_URL}/api/resource/CRM%20Lead`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `token ${ERPNEXT_API_KEY}:${ERPNEXT_API_SECRET}`,
+        "Authorization": authHeader,
       },
       body: JSON.stringify(leadData),
     });
 
     if (!res.ok) {
       const errText = await res.text();
-      console.error("[contact] ERPNext create lead error:", res.status, errText);
-    } else {
-      console.log("[contact] ERPNext Lead created successfully");
+      console.error("[contact] ERPNext CRM Lead error:", res.status, errText);
+      return;
+    }
+
+    const result = await res.json();
+    const leadName = result.data?.name;
+    console.log("[contact] ERPNext CRM Lead created:", leadName);
+
+    // Step 2: Add an FCRM Note with extra details (shows in activity tab)
+    const noteParts: string[] = [];
+    if (body.service) noteParts.push(`<b>Service:</b> ${body.service}`);
+    if (body.address) noteParts.push(`<b>Address:</b> ${body.address}`);
+    if (body.city) noteParts.push(`<b>City:</b> ${body.city}`);
+    if (body.message) noteParts.push(`<b>Message:</b> ${body.message}`);
+    const noteContent = noteParts.join("<br>");
+
+    if (leadName && noteContent) {
+      try {
+        const noteRes = await fetch(`${ERPNEXT_URL}/api/resource/FCRM%20Note`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": authHeader,
+          },
+          body: JSON.stringify({
+            title: "Website Contact Form",
+            content: noteContent,
+            reference_doctype: "CRM Lead",
+            reference_docname: leadName,
+          }),
+        });
+
+        if (!noteRes.ok) {
+          const errText = await noteRes.text();
+          console.error("[contact] ERPNext FCRM Note error:", noteRes.status, errText);
+        } else {
+          console.log("[contact] ERPNext FCRM Note added to", leadName);
+        }
+      } catch (e) {
+        console.error("[contact] ERPNext FCRM Note request failed:", e);
+      }
     }
   } catch (e) {
     console.error("[contact] ERPNext request failed:", e);
