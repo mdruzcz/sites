@@ -64,27 +64,27 @@ async function createERPNextLead(body: ContactBody): Promise<void> {
     return;
   }
 
-  // Build combined notes field from service, address, and message
+  // Build combined notes from service, address, and message
   const notesParts: string[] = [];
   if (body.service) notesParts.push(`Service: ${body.service}`);
   if (body.address) notesParts.push(`Address: ${body.address}`);
   if (body.message) notesParts.push(`Message: ${body.message}`);
-  const notes = notesParts.join("\n");
+  const noteText = notesParts.join(" | ");
 
   const leadData = {
-    doctype: "CRM Lead",
+    doctype: "Lead",
     first_name: body.first_name,
     last_name: body.last_name,
     email_id: body.email,
     mobile_no: body.phone,
     city: body.city || "",
-    notes,
+    notes: noteText ? [{ note: noteText }] : [],
     source: "Website",
     status: "Lead",
   };
 
   try {
-    const res = await fetch(`${ERPNEXT_URL}/api/resource/CRM Lead`, {
+    const res = await fetch(`${ERPNEXT_URL}/api/resource/Lead`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +97,7 @@ async function createERPNextLead(body: ContactBody): Promise<void> {
       const errText = await res.text();
       console.error("[contact] ERPNext create lead error:", res.status, errText);
     } else {
-      console.log("[contact] ERPNext CRM Lead created successfully");
+      console.log("[contact] ERPNext Lead created successfully");
     }
   } catch (e) {
     console.error("[contact] ERPNext request failed:", e);
