@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1c1917;        /* stone-900, charcoal */
+  --muted: #57534e;             /* stone-600 */
+  --line: #e7e5e4;              /* stone-200 */
+  --gold: #b8860b;              /* dark goldenrod, restrained */
+  --gold-soft: #f5efe1;         /* warm off-white for badge backgrounds */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --font-sans: var(--font-sans-stack);
+  --font-serif: var(--font-serif-stack);
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans-stack), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-serif {
+  font-family: var(--font-serif-stack), ui-serif, Georgia, "Times New Roman", serif;
+  font-feature-settings: "ss01", "liga";
+}
+
+.hairline {
+  border-color: var(--line);
+}

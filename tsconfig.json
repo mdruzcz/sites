@@ -19,6 +19,9 @@
     },
     {
       "path": "apps/london-deck-builder"
+    },
+    {
+      "path": "apps/service-excellence-awards"
     }
   ]
 }
