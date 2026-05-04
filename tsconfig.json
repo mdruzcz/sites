@@ -22,6 +22,9 @@
     },
     {
       "path": "apps/service-excellence-awards"
+    },
+    {
+      "path": "apps/deck-heroes"
     }
   ]
 }
