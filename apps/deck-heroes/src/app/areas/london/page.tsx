@@ -268,7 +268,7 @@ export default function LondonPage() {
             Frequently Asked Questions &mdash; London
           </h2>
           <div className="mt-8">
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion items={faqs} />
           </div>
         </div>
       </section>

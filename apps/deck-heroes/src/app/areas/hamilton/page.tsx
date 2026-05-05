@@ -272,7 +272,7 @@ export default function HamiltonPage() {
             Frequently Asked Questions &mdash; Hamilton
           </h2>
           <div className="mt-8">
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion items={faqs} />
           </div>
         </div>
       </section>

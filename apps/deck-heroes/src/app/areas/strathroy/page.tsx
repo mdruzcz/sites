@@ -265,7 +265,7 @@ export default function StrathroyPage() {
             Frequently Asked Questions &mdash; Strathroy
           </h2>
           <div className="mt-8">
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion items={faqs} />
           </div>
         </div>
       </section>

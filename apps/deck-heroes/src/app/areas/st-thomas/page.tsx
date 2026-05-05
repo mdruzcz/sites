@@ -264,7 +264,7 @@ export default function StThomasPage() {
             Frequently Asked Questions &mdash; St. Thomas
           </h2>
           <div className="mt-8">
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion items={faqs} />
           </div>
         </div>
       </section>

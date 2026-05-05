@@ -262,7 +262,7 @@ export default function WoodstockPage() {
             Frequently Asked Questions &mdash; Woodstock
           </h2>
           <div className="mt-8">
-            <FAQAccordion faqs={faqs} />
+            <FAQAccordion items={faqs} />
           </div>
         </div>
       </section>

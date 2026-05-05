@@ -294,7 +294,7 @@ export default function DeckStainingPage() {
             Common questions about our deck staining services.
           </p>
           <div className="mt-10">
-            <FAQAccordion faqs={FAQS} />
+            <FAQAccordion items={FAQS} />
           </div>
         </div>
       </section>

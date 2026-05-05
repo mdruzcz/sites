@@ -274,7 +274,7 @@ export default function DeckRefinishingPage() {
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">Deck Refinishing FAQ</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-wood-light">Common questions about our refinishing and restoration services.</p>
           <div className="mt-10">
-            <FAQAccordion faqs={FAQS} />
+            <FAQAccordion items={FAQS} />
           </div>
         </div>
       </section>
