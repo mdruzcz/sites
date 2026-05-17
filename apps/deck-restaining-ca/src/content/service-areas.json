@@ -1,0 +1,31 @@
+{
+  "primaryCity": "Oakville",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "oakville",
+      "name": "Oakville",
+      "description": "Serving all Oakville neighbourhoods — from Bronte and the Lakeshore to Glen Abbey, River Oaks, and Uptown Core. Oakville homeowners invest in quality outdoor living spaces, and our professional deck staining services keep those spaces looking their best through every season."
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "description": "Professional deck and fence staining throughout Burlington, from Aldershot and the Lakeshore to Tyandaga, Palmer, and Mountainside. Burlington's lakefront properties and wooded lots demand premium wood protection — we deliver results that last."
+    },
+    {
+      "slug": "milton",
+      "name": "Milton",
+      "description": "Expert deck restaining services in Milton and the surrounding Halton Hills. From newer developments in Boyne and Bristol to established areas near Main Street, we help Milton homeowners protect their outdoor wood surfaces with premium oil-based stains."
+    },
+    {
+      "slug": "mississauga",
+      "name": "Mississauga",
+      "description": "Deck and fence staining across Mississauga — Port Credit, Lorne Park, Streetsville, Erin Mills, and beyond. Mississauga's diverse neighbourhoods feature decks of every size and style, and we have the experience to restore them all to their original beauty."
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "description": "Professional deck restoration services throughout Hamilton, from Ancaster and Dundas to Stoney Creek and the Mountain. Hamilton's climate is tough on wood — our oil-based stains provide the deep protection that lasts through harsh winters and hot summers."
+    }
+  ]
+}

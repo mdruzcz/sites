@@ -1,0 +1,38 @@
+export const site = {
+  name: "Deck Restaining",
+  phone: "519-000-0000",
+  phoneHref: "tel:+15190000000",
+  email: "info@deckrestaining.ca",
+  address: {
+    city: "Oakville",
+    region: "ON",
+    country: "CA",
+  },
+  hours: "Mon – Sat · 8 AM – 6 PM",
+  yearsExperience: 5,
+  url: "https://deckrestaining.ca",
+  tagline: "Premium Oil-Based Deck & Fence Staining",
+  description:
+    "Professional deck restaining and fence staining services in Oakville, Burlington, and the Halton Region. We use exclusively oil-based stains for superior durability and lasting beauty.",
+  serviceAreas: [
+    "Oakville",
+    "Burlington",
+    "Milton",
+    "Mississauga",
+    "Hamilton",
+  ],
+  stats: {
+    projectsCompleted: 200,
+    yearsExperience: 5,
+    satisfactionRate: 98,
+  },
+  stainOptions: ["Natural Cedar", "Dark Walnut", "Honey Gold", "Mahogany", "Driftwood Grey"],
+  features: [
+    "Oil-based stains only — no peeling",
+    "Proper chemical stripping & sanding prep",
+    "Eco-friendly, low-VOC products",
+    "3–5 year stain durability",
+    "Free on-site quotes",
+    "100% satisfaction guarantee",
+  ],
+} as const;

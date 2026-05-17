@@ -1,0 +1,50 @@
+[
+  {
+    "author": "Sarah M.",
+    "city": "Oakville",
+    "quote": "Absolutely thrilled with the results! Our old deck looks brand new. The team was professional, punctual, and the attention to detail was outstanding.",
+    "rating": 5,
+    "service": "deck-restaining",
+    "featured": true
+  },
+  {
+    "author": "Michael C.",
+    "city": "Burlington",
+    "quote": "Best decision we made for our home. The fence staining transformed our backyard completely. Highly recommend for quality work.",
+    "rating": 5,
+    "service": "fence-staining",
+    "featured": true
+  },
+  {
+    "author": "Jennifer T.",
+    "city": "Oakville",
+    "quote": "Professional service from start to finish. They explained every step, used eco-friendly products, and delivered exceptional results on time and on budget.",
+    "rating": 5,
+    "service": "deck-restoration",
+    "featured": true
+  },
+  {
+    "author": "David & Linda P.",
+    "city": "Milton",
+    "quote": "We had two quotes from other companies that wanted to use water-based stain. These guys explained why oil-based is better and proved it. Two years later — zero peeling.",
+    "rating": 5,
+    "service": "deck-restaining",
+    "featured": true
+  },
+  {
+    "author": "Robert K.",
+    "city": "Mississauga",
+    "quote": "Our cedar deck was completely grey and rough. After their full restoration it looks better than the day it was installed. The kids can run on it barefoot again.",
+    "rating": 5,
+    "service": "deck-restoration",
+    "featured": true
+  },
+  {
+    "author": "Amanda H.",
+    "city": "Hamilton",
+    "quote": "Called on a Monday, got a quote Tuesday, work done by Friday. Fair price, incredible results, and they cleaned up everything when they were done.",
+    "rating": 5,
+    "service": "deck-stripping",
+    "featured": true
+  }
+]

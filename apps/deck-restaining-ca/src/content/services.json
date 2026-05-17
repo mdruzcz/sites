@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "deck-restaining",
+    "title": "Deck Restaining",
+    "shortDescription": "Revive your weathered deck with premium oil-based stains that penetrate deep into the wood grain for lasting protection and beauty.",
+    "fullDescription": "Your deck is an extension of your living space — it deserves to look its best. Our professional deck restaining service begins with a thorough assessment of your existing finish, followed by chemical stripping to remove failed coatings. We sand the surface smooth, opening wood pores for maximum stain penetration. We apply exclusively oil-based stains that soak into the wood fibre rather than sitting on top like water-based products. The result is a rich, natural finish that won't peel, crack, or flake — even through Ontario's harshest winters.",
+    "features": ["Deep-penetrating oil-based stains", "Won't peel or flake", "3–5 year protection", "Multiple colour options", "UV and moisture resistant"],
+    "icon": "brush",
+    "order": 1
+  },
+  {
+    "slug": "deck-stripping",
+    "title": "Deck Stripping",
+    "shortDescription": "Remove old, peeling, or failed stains and coatings to reveal clean, healthy wood ready for a fresh finish.",
+    "fullDescription": "Failed stains and old coatings don't just look bad — they trap moisture and accelerate rot. Our deck stripping service uses professional-grade chemical strippers that dissolve old finishes without damaging the underlying wood. We neutralize the chemicals, rinse thoroughly, and leave your deck with clean, bare wood that's perfectly prepared for sanding and restaining. This step is critical for long-lasting results — skipping it is why most DIY stain jobs fail within a year.",
+    "features": ["Chemical stripping — not just pressure washing", "Safe for all wood types", "Removes failed water-based coatings", "Reveals healthy wood underneath", "Essential prep for lasting results"],
+    "icon": "layers",
+    "order": 2
+  },
+  {
+    "slug": "deck-sanding",
+    "title": "Deck Sanding",
+    "shortDescription": "Smooth rough, splintered surfaces and open wood pores for maximum stain absorption and a splinter-free finish.",
+    "fullDescription": "Sanding is the difference between a good stain job and a great one. After stripping, wood fibres are raised and the surface can feel rough. Our professional sanding service uses progressively finer grits to create a smooth, even surface that feels comfortable underfoot. More importantly, sanding opens the wood pores so stain penetrates deeper and bonds better — meaning your finish lasts longer and looks richer. We sand by hand in tight areas and use professional drum sanders on flat sections for consistent results.",
+    "features": ["Progressive multi-grit sanding", "Opens wood pores for absorption", "Removes splinters completely", "Smooth, comfortable underfoot", "Consistent finish across entire deck"],
+    "icon": "sandpaper",
+    "order": 3
+  },
+  {
+    "slug": "deck-restoration",
+    "title": "Full Deck Restoration",
+    "shortDescription": "Complete multi-step restoration for severely weathered, greyed, or damaged decks — stripping, sanding, and premium restaining in one package.",
+    "fullDescription": "Some decks need more than a fresh coat of stain. Our full restoration service is a comprehensive, multi-step process designed for decks that have been neglected or are showing serious signs of weathering. We start with chemical stripping to remove all existing coatings. Next, we deep-clean the wood to remove greying and mildew. Then we sand the entire surface smooth. Finally, we apply premium oil-based stain in your choice of colour. The result is a deck that looks and feels like new — often better than when it was first built.",
+    "features": ["Complete strip, clean, sand, and stain", "Reverses years of greying", "Treats mildew and algae damage", "Board-level inspection included", "Transforms neglected decks completely"],
+    "icon": "refresh",
+    "order": 4
+  },
+  {
+    "slug": "fence-staining",
+    "title": "Fence Staining",
+    "shortDescription": "Protect and beautify your fence with professional-grade oil stains that resist rot, UV damage, and Ontario weather.",
+    "fullDescription": "Your fence defines your property line and frames your outdoor space. A properly stained fence resists rot, repels moisture, and maintains its colour for years. We clean your fence thoroughly, make any minor repairs, and apply premium oil-based stain that penetrates the wood for all-round protection. Whether you have cedar, pressure-treated, or pine fencing, we match the right product and colour to your wood type and aesthetic preferences. Our fence staining protects your investment while making your backyard look polished and cared-for.",
+    "features": ["Oil-based for deep penetration", "Protects against rot and insects", "UV-resistant colour retention", "All fence types and styles", "Enhances property curb appeal"],
+    "icon": "fence",
+    "order": 5
+  }
+]

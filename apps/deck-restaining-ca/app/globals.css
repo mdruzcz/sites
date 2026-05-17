@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@source "../src/**/*.{ts,tsx}";
+
+:root {
+  --accent: #92400E;
+  --accent-light: #B45309;
+  --accent-dark: #78350F;
+  --wood-dark: #1C1917;
+  --wood: #44403C;
+  --wood-light: #78716C;
+  --stone: #F5F5F4;
+  --stone-dark: #E7E5E4;
+  --cream: #FAFAF9;
+  --border: #D6D3D1;
+  --foreground: #1C1917;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--foreground);
+  background: var(--cream);
+}
+
+.bg-navy {
+  background: var(--wood-dark);
+}
+
+.card {
+  @apply rounded-xl border border-[var(--border)] bg-white shadow-sm;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold text-sm transition-all cursor-pointer;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-dark)] shadow-md hover:shadow-lg font-bold;
+}
+
+.btn-outline {
+  @apply border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white;
+}
+
+.btn-ghost {
+  @apply border border-white/20 text-white hover:bg-white/10;
+}
+
+.btn-phone {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-dark)] shadow-md font-bold;
+}
+
+.h-display {
+  @apply font-extrabold tracking-tight leading-tight;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
