@@ -1,0 +1,50 @@
+[
+  {
+    "author": "Sarah M.",
+    "city": "Woodstock",
+    "quote": "They transformed my patio — it looks brand new! The team was professional, clean, and explained every step of the process.",
+    "rating": 5,
+    "service": "patio-sealing",
+    "featured": true
+  },
+  {
+    "author": "Dave R.",
+    "city": "Hamilton",
+    "quote": "Exceeded expectations on our stamped driveway. The colour came back like it was freshly poured. Highly recommend their high-gloss finish.",
+    "rating": 5,
+    "service": "stamped-concrete-sealing",
+    "featured": true
+  },
+  {
+    "author": "Jennifer L.",
+    "city": "Brantford",
+    "quote": "Our pool deck finally feels safe for the kids. The anti-slip finish is exactly what we needed and it looks fantastic.",
+    "rating": 5,
+    "service": "pool-deck-sealing",
+    "featured": true
+  },
+  {
+    "author": "Mike T.",
+    "city": "Cambridge",
+    "quote": "Best investment we made in our home. The garage floor went from embarrassing to impressive. Oil stains wipe right up now.",
+    "rating": 5,
+    "service": "garage-floor-sealing",
+    "featured": true
+  },
+  {
+    "author": "Karen & Paul",
+    "city": "Kitchener",
+    "quote": "Professional from start to finish. They showed up on time, prepped everything properly, and the driveway looks incredible. Great value.",
+    "rating": 5,
+    "service": "driveway-sealing",
+    "featured": true
+  },
+  {
+    "author": "Tom B.",
+    "city": "St. Thomas",
+    "quote": "Had my walkways sealed last fall and they survived the winter perfectly. No cracking, no flaking. Will be calling back for the patio this spring.",
+    "rating": 5,
+    "service": "walkway-sealing",
+    "featured": true
+  }
+]

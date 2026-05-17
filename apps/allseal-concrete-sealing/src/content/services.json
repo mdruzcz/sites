@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "driveway-sealing",
+    "title": "Driveway Sealing",
+    "shortDescription": "Protect and rejuvenate your driveway with professional-grade sealers that prevent cracking from freeze-thaw cycles and harsh Ontario weather.",
+    "fullDescription": "Your driveway is the first thing visitors see. Our professional driveway sealing service uses premium acrylic and polyurethane sealers to create a protective barrier against water infiltration, road salt, oil stains, and UV damage. We prep every surface with thorough cleaning and crack repair before applying your choice of high-gloss, semi-gloss, or matte finish. The result is a driveway that looks freshly poured and is protected for years to come.",
+    "features": ["Prevents freeze-thaw cracking", "Blocks salt and chemical damage", "UV-resistant formula", "Choice of sheen levels", "2–5 year protection"],
+    "icon": "shield",
+    "order": 1
+  },
+  {
+    "slug": "patio-sealing",
+    "title": "Patio & Deck Sealing",
+    "shortDescription": "Preserve the beauty of your outdoor living space with moisture-resistant, stain-proof sealing that stands up to heavy foot traffic.",
+    "fullDescription": "Your patio is where memories are made. Protect your investment with our professional patio sealing service. We apply advanced sealers that resist moisture penetration, prevent staining from food and beverages, and maintain the original colour of your concrete. Whether you have a smooth-finished patio or a textured surface, we have the right product and technique to keep it looking beautiful season after season.",
+    "features": ["Moisture and stain resistance", "Preserves original colour", "Safe for bare feet", "Anti-slip options available", "Weather-proof protection"],
+    "icon": "home",
+    "order": 2
+  },
+  {
+    "slug": "garage-floor-sealing",
+    "title": "Garage Floor Sealing",
+    "shortDescription": "Transform your garage floor into a stain-resistant, easy-to-clean surface that stands up to oil, chemicals, and heavy use.",
+    "fullDescription": "A sealed garage floor is easier to maintain, resists oil and chemical stains, and looks professional. Our garage floor sealing service includes thorough cleaning, crack and joint repair, and application of industrial-grade sealers designed for high-traffic areas. Choose from clear sealers that enhance the natural concrete look, or tinted options for a showroom-quality finish.",
+    "features": ["Oil and chemical resistant", "Easy to sweep and mop", "Prevents dusting", "Industrial-grade products", "Optional tinted finishes"],
+    "icon": "warehouse",
+    "order": 3
+  },
+  {
+    "slug": "pool-deck-sealing",
+    "title": "Poolside Sealing",
+    "shortDescription": "Enhance safety and beauty around your pool with non-slip sealed surfaces that resist water damage, chlorine, and algae growth.",
+    "fullDescription": "Pool decks face constant exposure to water, chlorine, and sun. Our poolside sealing service uses specialized sealers with anti-slip additives to keep your family safe while protecting the concrete from water damage, chemical staining, and algae growth. We seal the entire pool surround to create a uniform, attractive finish that stays cool underfoot and is easy to maintain.",
+    "features": ["Anti-slip additives included", "Chlorine and chemical resistant", "Prevents algae growth", "Stays cooler in sun", "Uniform attractive finish"],
+    "icon": "waves",
+    "order": 4
+  },
+  {
+    "slug": "walkway-sealing",
+    "title": "Walkway & Path Sealing",
+    "shortDescription": "Keep your walkways and garden paths looking fresh and free from damage caused by weather, foot traffic, and organic growth.",
+    "fullDescription": "Walkways and paths take a beating from daily foot traffic, rain, snow, and organic growth. Our walkway sealing service creates a protective barrier that prevents water from seeping into the concrete and causing cracks during freeze-thaw cycles. The sealed surface resists moss and algae growth, stays cleaner longer, and maintains its colour even under constant sun exposure.",
+    "features": ["Prevents cracking and spalling", "Resists moss and algae", "Maintains colour vibrancy", "Easy to clean", "All-season protection"],
+    "icon": "path",
+    "order": 5
+  },
+  {
+    "slug": "decorative-concrete-sealing",
+    "title": "Decorative Concrete Sealing",
+    "shortDescription": "Protect your coloured, stained, or exposed aggregate concrete with sealers that enhance the decorative finish without altering its character.",
+    "fullDescription": "Decorative concrete represents a significant investment in your property's appearance. Whether you have acid-stained, integrally coloured, or exposed aggregate concrete, our specialized sealing service enhances the depth and richness of colours while providing lasting protection. We use breathable sealers that won't trap moisture or cause whitening, preserving the artistic intent of your decorative concrete for years.",
+    "features": ["Enhances colour depth", "Breathable formula", "Won't trap moisture", "UV protection prevents fading", "Preserves artistic finish"],
+    "icon": "sparkles",
+    "order": 6
+  },
+  {
+    "slug": "stamped-concrete-sealing",
+    "title": "Stamped Concrete Sealing",
+    "shortDescription": "Restore and maintain the texture, colour, and pattern of your stamped concrete with professional re-sealing services.",
+    "fullDescription": "Stamped concrete loses its lustre over time as the original sealer wears away. Our stamped concrete sealing service restores the rich colour and defined patterns that made you fall in love with your stamped surfaces. We carefully clean the existing surface, repair any damaged areas, and apply premium sealers that bring back the wet-look depth and protect the stamped pattern from wear, fading, and weather damage.",
+    "features": ["Restores colour vibrancy", "Defines stamped patterns", "Wet-look or matte options", "Protects from UV fading", "Extends surface life 2–5 years"],
+    "icon": "stamp",
+    "order": 7
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "hamilton-stamped-driveway",
+    "title": "Stamped Driveway Restoration",
+    "service": "stamped-concrete-sealing",
+    "city": "Hamilton",
+    "image": "/images/projects/stamped-driveway.jpg",
+    "description": "Restored a faded stamped concrete driveway to its original vibrancy with a high-gloss acrylic sealer.",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "woodstock-patio-seal",
+    "title": "Backyard Patio Sealing",
+    "service": "patio-sealing",
+    "city": "Woodstock",
+    "image": "/images/projects/patio-seal.jpg",
+    "description": "Protected a large backyard entertaining patio with anti-slip semi-gloss sealer.",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "cambridge-garage-floor",
+    "title": "Two-Car Garage Floor",
+    "service": "garage-floor-sealing",
+    "city": "Cambridge",
+    "image": "/images/projects/garage-floor.jpg",
+    "description": "Transformed a stained garage floor into a clean, professional surface with industrial-grade coating.",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "brantford-pool-deck",
+    "title": "Pool Deck Safety Seal",
+    "service": "pool-deck-sealing",
+    "city": "Brantford",
+    "image": "/images/projects/pool-deck.jpg",
+    "description": "Applied non-slip sealer to a full pool surround, enhancing safety and appearance.",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "slug": "kitchener-decorative-walkway",
+    "title": "Decorative Walkway Enhancement",
+    "service": "decorative-concrete-sealing",
+    "city": "Kitchener-Waterloo",
+    "image": "/images/projects/decorative-walkway.jpg",
+    "description": "Enhanced the colour depth of an acid-stained front walkway with breathable sealer.",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "slug": "st-thomas-driveway",
+    "title": "Full Driveway Protection",
+    "service": "driveway-sealing",
+    "city": "St. Thomas",
+    "image": "/images/projects/driveway-seal.jpg",
+    "description": "Sealed a large concrete driveway with UV-resistant polyurethane for long-term protection.",
+    "featured": true,
+    "order": 6
+  }
+]
