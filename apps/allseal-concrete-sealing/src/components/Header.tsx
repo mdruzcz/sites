@@ -23,8 +23,8 @@ export function Header() {
             <Image
               src="/images/logo.svg"
               alt={site.name}
-              width={200}
-              height={44}
+              width={260}
+              height={56}
               priority
             />
           </Link>
@@ -34,7 +34,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-[var(--accent)] transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
               >
                 {link.label}
               </Link>
@@ -67,7 +67,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg"
+                  className="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg uppercase tracking-wide"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

@@ -1,11 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices, getFeaturedTestimonials } from "@/lib/content";
 import { SectionHeader } from "@/components/SectionHeader";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
 export const revalidate = 3600;
+
+const beforeAfterProjects = [
+  { before: "/images/woodstock-before.jpg", after: "/images/woodstock-after.jpg", label: "Concrete Sealing — Woodstock, ON" },
+  { before: "/images/brantford-before.jpg", after: "/images/brantford-after.jpg", label: "Concrete Sealing — Brantford, ON" },
+  { before: "/images/st-thomas-before.jpg", after: "/images/st-thomas-after.jpg", label: "Concrete Sealing — St. Thomas, ON" },
+  { before: "/images/north-london-before.jpg", after: "/images/north-london-after.jpg", label: "Concrete Sealing — North London, ON" },
+  { before: "/images/project1-before.jpg", after: "/images/project1-after.jpg", label: "Driveway Sealing — Southwestern Ontario" },
+  { before: "/images/project2-before.jpg", after: "/images/project2-after.jpg", label: "Concrete Restoration — Southwestern Ontario" },
+];
 
 export default function HomePage() {
   const services = getServices();
@@ -14,16 +25,24 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-          <div className="max-w-3xl relative z-10">
-            <p className="text-blue-300 font-semibold text-sm uppercase tracking-wider mb-4">
+      <section className="relative overflow-hidden min-h-[500px] sm:min-h-[600px]">
+        <Image
+          src="/images/hero.jpg"
+          alt="Professional concrete sealing in Southwestern Ontario"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--charcoal)]/75" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+          <div className="max-w-3xl">
+            <p className="text-orange-300 font-semibold text-sm uppercase tracking-wider mb-4">
               {site.yearsExperience}+ Years of Experience
             </p>
             <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
               Professional Concrete Sealing in Southwestern Ontario
             </h1>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            <p className="text-xl text-slate-200 mb-8 leading-relaxed">
               {site.tagline} We protect driveways, patios, pool decks, and more with premium sealers
               and advanced techniques. Serving {site.serviceAreas.join(", ")}.
             </p>
@@ -39,28 +58,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-8 border-b border-[var(--border)]">
+      {/* Driveway Sealing Content Section */}
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <p className="text-3xl font-bold text-[var(--accent)]">{site.stats.driveways}+</p>
-              <p className="text-sm text-slate-600">Driveways Sealed</p>
+          <div className="max-w-4xl">
+            <h2 className="h-display text-3xl sm:text-4xl text-[var(--charcoal)] mb-6">
+              Concrete Driveway Sealing Built for Southwestern Ontario Weather
+            </h2>
+            <div className="space-y-4 text-lg text-[var(--concrete)] leading-relaxed">
+              <p>
+                Concrete driveways in Southwestern Ontario face year-round exposure to harsh conditions —
+                vehicle traffic, road salt, heavy rainfall, snow, and constant freeze-thaw cycles. Over time,
+                moisture intrusion and de-icing chemicals can lead to cracking, surface deterioration, scaling,
+                staining, and premature wear.
+              </p>
+              <p>
+                Our professional concrete driveway sealing service is designed to protect your investment from
+                the ground up. Using high-performance penetrating sealers, we help reduce water absorption at
+                the source, creating a durable protective barrier that extends the life of your concrete by
+                2–5 years.
+              </p>
+              <p>
+                Whether your driveway is freshly poured or showing signs of age, our team applies the right
+                sealer for your surface type and exposure level. We offer multiple sheen options — high gloss,
+                semi-gloss, and matte — so your sealed driveway looks exactly how you want it while staying
+                fully protected against Ontario&apos;s toughest seasons.
+              </p>
+              <p>
+                Every project starts with a free inspection and honest assessment. We&apos;ll identify any
+                existing damage, recommend necessary prep work, and provide a transparent quote with no hidden
+                fees. From Woodstock to Hamilton, Brantford to Cambridge — we&apos;re the concrete sealing
+                team that Southwestern Ontario trusts.
+              </p>
             </div>
-            <div>
-              <p className="text-3xl font-bold text-[var(--accent)]">{site.stats.patios}+</p>
-              <p className="text-sm text-slate-600">Patios Sealed</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-[var(--accent)]">{site.stats.happyCustomers}+</p>
-              <p className="text-sm text-slate-600">Happy Customers</p>
+            <div className="mt-8">
+              <Link href="/services/driveway-sealing" className="btn btn-primary">
+                Learn More About Driveway Sealing
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Before & After */}
       <section className="py-16 sm:py-20 bg-[var(--surface)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Our Work"
+            title="Before & After Results"
+            description="Drag the slider to see the transformation. Real projects from across Southwestern Ontario."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {beforeAfterProjects.map((project) => (
+              <BeforeAfterSlider
+                key={project.label}
+                beforeSrc={project.before}
+                afterSrc={project.after}
+                label={project.label}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Services"
@@ -74,13 +136,13 @@ export default function HomePage() {
                 href={`/services/${service.slug}`}
                 className="card p-6 hover:shadow-md transition-shadow group"
               >
-                <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-4 group-hover:bg-orange-100 transition-colors">
                   <ShieldIcon />
                 </div>
                 <h3 className="font-bold text-lg mb-2 group-hover:text-[var(--accent)] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-[var(--concrete)] text-sm leading-relaxed">
                   {service.shortDescription}
                 </p>
               </Link>
@@ -90,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-[var(--surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why All-Seal"
@@ -113,7 +175,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-20 bg-[var(--surface)]">
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Reviews"
@@ -129,9 +191,9 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-[var(--concrete)] text-sm leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
                 <p className="font-semibold text-sm text-slate-900">
-                  {t.author} <span className="font-normal text-slate-500">— {t.city}</span>
+                  {t.author} <span className="font-normal text-[var(--concrete)]">— {t.city}</span>
                 </p>
               </div>
             ))}
@@ -140,7 +202,7 @@ export default function HomePage() {
       </section>
 
       {/* Quote Form */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-[var(--surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -151,10 +213,10 @@ export default function HomePage() {
                 center={false}
               />
               <div className="space-y-4 mt-6">
-                <p className="text-slate-600">
+                <p className="text-[var(--concrete)]">
                   <strong>Sealer Options:</strong> {site.sealerOptions.join(" • ")}
                 </p>
-                <p className="text-slate-600">
+                <p className="text-[var(--concrete)]">
                   <strong>Service Areas:</strong> {site.serviceAreas.join(", ")}
                 </p>
               </div>

@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #2563eb;
-  --accent-600: #1d4ed8;
-  --accent-700: #1e3a5f;
-  --surface: #f8fafc;
-  --border: #e2e8f0;
-  --foreground: #0f172a;
+  --accent: #F97316;
+  --accent-600: #ea580c;
+  --accent-700: #c2410c;
+  --charcoal: #1F2933;
+  --concrete: #6B7280;
+  --surface: #E5E7EB;
+  --border: #d1d5db;
+  --foreground: #1F2933;
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 }
 
 .bg-navy {
-  background: #1e3a5f;
+  background: #1F2933;
 }
 
 .card {
@@ -27,7 +29,7 @@ body {
 }
 
 .btn-primary {
-  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md hover:shadow-lg;
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md hover:shadow-lg font-bold;
 }
 
 .btn-outline {
@@ -39,7 +41,7 @@ body {
 }
 
 .btn-phone {
-  @apply bg-green-600 text-white hover:bg-green-700 shadow-md;
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md font-bold;
 }
 
 .h-display {
