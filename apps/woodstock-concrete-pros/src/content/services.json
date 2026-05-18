@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "concrete-driveways",
+    "title": "Concrete Driveways",
+    "shortDescription": "Durable pours, repairs, and resurfacing engineered for heavy use and harsh Ontario winters. Built to resist salt damage and freeze-thaw cycles.",
+    "fullDescription": "Your driveway is the first thing visitors see and the surface that takes the most punishment. At Woodstock Concrete Pros, we build concrete driveways that handle everything Southwestern Ontario throws at them — from heavy vehicles to road salt and brutal freeze-thaw cycles. We use high-strength, air-entrained concrete with proper reinforcement and a compacted base to prevent settling and cracking. Choose from broom-finished (slip-resistant), exposed aggregate (textured and low-maintenance), or decorative borders. Whether you need a brand-new pour, a widening, or a full replacement, we deliver driveways that last 30–50+ years and boost your property value.",
+    "features": [
+      "High-PSI air-entrained concrete",
+      "Resists salt damage and freeze-thaw",
+      "Broom, exposed aggregate, or decorative finishes",
+      "Proper reinforcement and compacted base",
+      "30–50+ year lifespan"
+    ],
+    "icon": "truck",
+    "order": 1
+  },
+  {
+    "slug": "stamped-concrete-patios",
+    "title": "Stamped Concrete Patios",
+    "shortDescription": "Elegant stone-look patterns perfect for outdoor entertaining. Custom colours and textures that look like natural stone at a fraction of the cost.",
+    "fullDescription": "Create a stunning outdoor living space that looks like natural stone, brick, or slate — without the high cost or constant maintenance. Our stamped concrete patios feature custom patterns, colours, and textures tailored to your home’s style. We build on reinforced bases with premium sealers to protect against UV fading, moisture, and winter cracking. The result is a beautiful, slip-resistant surface that’s perfect for entertaining and extends your outdoor season. Ideal for backyards, pool surrounds, and front porches across Woodstock and Oxford County.",
+    "features": [
+      "Custom patterns and colours",
+      "Looks like stone, brick, or slate",
+      "UV-resistant premium sealers",
+      "Slip-resistant when sealed",
+      "Perfect for entertaining"
+    ],
+    "icon": "sparkles",
+    "order": 2
+  },
+  {
+    "slug": "concrete-walkways-steps",
+    "title": "Concrete Walkways & Steps",
+    "shortDescription": "Safe, slip-resistant paths built to handle ice, snow, and daily traffic. No more hazards or trip risks.",
+    "fullDescription": "Safety starts at your front door. Our concrete walkways and steps are designed for excellent traction in icy conditions, with proper grading and drainage to avoid pooling and erosion. We use broom or exposed aggregate finishes for maximum grip, and every installation includes a properly compacted base and reinforcement for long-term stability through freeze-thaw cycles. Whether you need a simple front walkway, garden paths, or a full set of entry steps, we build paths that enhance accessibility, safety, and curb appeal for your Woodstock home.",
+    "features": [
+      "Slip-resistant broom or aggregate finish",
+      "Proper grading and drainage",
+      "Freeze-thaw resistant",
+      "Enhances accessibility and safety",
+      "Long-term structural stability"
+    ],
+    "icon": "path",
+    "order": 3
+  },
+  {
+    "slug": "concrete-repair",
+    "title": "Concrete Repair & Resurfacing",
+    "shortDescription": "Crack filling, slab jacking, and spall repairs — restore your concrete without full replacement. Fast and cost-effective.",
+    "fullDescription": "Don’t tear out your entire slab when a repair will do. Our concrete repair services restore damaged surfaces quickly and affordably. We handle crack filling and sealing, spall and pit repairs, slab leveling (mudjacking or polyjacking), and polymer-modified overlays for a fresh, smooth surface on pitted or flaking areas. Every repair stops further damage from salt and moisture, revives the appearance, and extends the life of your existing concrete. Common fixes include sunken slabs, salt-damaged surfaces, and freeze-thaw cracks throughout Woodstock and surrounding communities.",
+    "features": [
+      "Crack filling and sealing",
+      "Slab leveling (mudjacking/polyjacking)",
+      "Polymer-modified overlays",
+      "Stops further salt and moisture damage",
+      "Cost-effective alternative to replacement"
+    ],
+    "icon": "wrench",
+    "order": 4
+  },
+  {
+    "slug": "exposed-aggregate",
+    "title": "Exposed Aggregate & Decorative Concrete",
+    "shortDescription": "Add timeless texture and low-maintenance beauty to any surface. Natural stone finish that hides wear and resists weathering.",
+    "fullDescription": "Exposed aggregate concrete reveals the natural beauty of the stones within the mix, creating a textured, non-slip surface that hides wear and looks better with age. We offer coloured and stained options for custom looks, and every installation is sealed for superior durability against weathering. Perfect for patios, walkways, driveways, and pool decks throughout Woodstock and Oxford County. The natural stone look elevates your property’s aesthetics while providing a surface that’s easy to clean and virtually maintenance-free.",
+    "features": [
+      "Natural stone texture and appearance",
+      "Non-slip surface",
+      "Coloured and stained options",
+      "Superior weathering resistance",
+      "Easy cleaning and low maintenance"
+    ],
+    "icon": "gem",
+    "order": 5
+  },
+  {
+    "slug": "garage-floors-basement-slabs",
+    "title": "Garage Floors & Basement Slabs",
+    "shortDescription": "Strong, sealed floors built for vehicles, storage, and heavy use. Resists oil stains, cracking, and moisture.",
+    "fullDescription": "A properly built garage floor or basement slab needs to handle heavy loads, moisture, and daily wear without cracking or staining. We use high-PSI concrete with optional epoxy coatings or penetrating sealers to create floors that resist oil stains, cracking, and moisture intrusion. The result is a clean, professional surface that improves usability and adds real value to your home. Whether you’re building new or replacing a damaged slab, we deliver garage floors and basement slabs that perform for decades.",
+    "features": [
+      "High-PSI concrete",
+      "Optional epoxy coatings",
+      "Oil and chemical resistant",
+      "Moisture barrier protection",
+      "Improves home value"
+    ],
+    "icon": "warehouse",
+    "order": 6
+  }
+]

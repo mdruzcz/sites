@@ -1,0 +1,26 @@
+[
+  {
+    "author": "James & Sarah L.",
+    "city": "Innerkip",
+    "quote": "The stamped concrete patio exceeded our expectations. Beautiful work, clean crew, and fair price. Best concrete contractors in Woodstock!",
+    "rating": 5,
+    "service": "stamped-concrete-patios",
+    "featured": true
+  },
+  {
+    "author": "Mike T.",
+    "city": "Tillsonburg",
+    "quote": "Quick, professional repair on our sunken walkway. No more puddles or hazards. Highly recommend these guys for concrete repair.",
+    "rating": 5,
+    "service": "concrete-repair",
+    "featured": true
+  },
+  {
+    "author": "Emily R.",
+    "city": "Woodstock",
+    "quote": "Our old cracked driveway was dangerous in winter. Woodstock Concrete Pros resurfaced it perfectly. Handles salt and snow like nothing happened!",
+    "rating": 5,
+    "service": "concrete-driveways",
+    "featured": true
+  }
+]

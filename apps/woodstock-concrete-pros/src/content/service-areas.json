@@ -1,0 +1,36 @@
+{
+  "primaryCity": "Woodstock",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "As Woodstock's trusted concrete contractors, we serve the Friendly City and surrounding Oxford County with expert concrete driveways, stamped patios, walkways, and repairs. We know the local soil conditions and harsh winters — every pour is engineered to last."
+    },
+    {
+      "slug": "ingersoll",
+      "name": "Ingersoll",
+      "description": "Professional concrete services throughout Ingersoll and the surrounding area. From residential driveways to commercial projects, we bring the same quality craftsmanship and winter-resistant techniques that Woodstock homeowners rely on."
+    },
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Serving Tillsonburg with durable concrete installations and expert repairs. Whether you need a new stamped patio, a driveway replacement, or crack repair, our team delivers results built for Southwestern Ontario's demanding climate."
+    },
+    {
+      "slug": "norwich",
+      "name": "Norwich",
+      "description": "Expert concrete contractors serving Norwich and Oxford County. We specialize in rural and residential projects, from farm-ready slabs to decorative patios, all built with premium materials and proper reinforcement."
+    },
+    {
+      "slug": "innerkip",
+      "name": "Innerkip",
+      "description": "Quality concrete work for Innerkip homeowners. Our team provides stamped patios, exposed aggregate driveways, walkway installations, and concrete repairs — all designed to withstand the freeze-thaw cycles of Southwestern Ontario."
+    },
+    {
+      "slug": "oxford-county",
+      "name": "Oxford County",
+      "description": "Proudly serving communities across Oxford County with professional concrete services. From Woodstock to Ingersoll, Tillsonburg to Norwich, we're the local concrete pros that Southwestern Ontario trusts for lasting results."
+    }
+  ]
+}
