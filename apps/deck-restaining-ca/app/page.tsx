@@ -18,6 +18,34 @@ const beforeAfterProjects = [
   { before: "/images/deck8.jpg", after: "/images/deck9.jpg", label: "Fence Restoration — Burlington, ON" },
 ];
 
+const serviceIcons: Record<string, React.ReactNode> = {
+  "deck-restaining": (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+    </svg>
+  ),
+  "deck-stripping": (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  ),
+  "deck-sanding": (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a2.25 2.25 0 01-1.591.659H9.061a2.25 2.25 0 01-1.591-.659L5 14.5m14 0V6a2.25 2.25 0 00-2.25-2.25H7.25A2.25 2.25 0 005 6v8.5" />
+    </svg>
+  ),
+  "deck-restoration": (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+    </svg>
+  ),
+  "fence-staining": (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+    </svg>
+  ),
+};
+
 export default function HomePage() {
   const services = getServices();
   const testimonials = getFeaturedTestimonials();
@@ -114,82 +142,206 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 sm:py-20">
+      {/* ─── SERVICES (improved) ─── */}
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Services"
             title="Professional Deck & Fence Staining"
             description="From simple restaining to complete restoration — we bring weathered wood back to life."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="card p-6 hover:shadow-md transition-shadow group"
+                className="group relative bg-white rounded-2xl border border-stone-200 p-8 hover:border-[var(--accent)]/40 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
-                  <BrushIcon />
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center mb-5 text-[var(--accent)] group-hover:scale-110 transition-transform duration-300">
+                  {serviceIcons[service.slug] || <DefaultBrushIcon />}
                 </div>
-                <h3 className="font-bold text-lg mb-2 group-hover:text-[var(--accent)] transition-colors">
+
+                {/* Content */}
+                <h3 className="font-bold text-xl mb-3 text-stone-900 group-hover:text-[var(--accent)] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-stone-600 text-sm leading-relaxed">
+                <p className="text-stone-600 text-sm leading-relaxed mb-5">
                   {service.shortDescription}
                 </p>
+
+                {/* Arrow link */}
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent)] group-hover:gap-2.5 transition-all">
+                  Learn more
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-16 sm:py-20 bg-[var(--stone)]">
+      {/* ─── HOW IT WORKS (improved) ─── */}
+      <section className="py-16 sm:py-24 bg-[var(--wood-dark)] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="How It Works"
-            title="Our 4-Step Process"
-            description="Every project follows a proven process that delivers consistent, long-lasting results."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: "1", title: "Free On-Site Quote", desc: "We assess your deck in person, discuss your goals, and provide a transparent quote." },
-              { step: "2", title: "Strip & Clean", desc: "Chemical stripping removes old finishes. Power washing cleans dirt, mildew, and greying." },
-              { step: "3", title: "Sand & Stain", desc: "Professional sanding opens wood pores. Premium oil-based stain is applied for deep penetration." },
-              { step: "4", title: "Walkthrough & Care", desc: "Final quality check with you. We provide maintenance tips to maximize your stain's lifespan." },
-            ].map((p) => (
-              <div key={p.step} className="card p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  {p.step}
+          <div className="text-center mb-14">
+            <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-3">
+              How It Works
+            </p>
+            <h2 className="h-display text-3xl sm:text-4xl text-white mb-4">
+              Our Proven 4-Step Process
+            </h2>
+            <p className="text-stone-300 max-w-2xl mx-auto text-lg">
+              Every project follows a proven process that delivers consistent, long-lasting results.
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Connector line (desktop) */}
+            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 opacity-40" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+              {[
+                {
+                  step: "01",
+                  title: "Free On-Site Quote",
+                  desc: "We assess your deck in person, discuss your goals, and provide a transparent, no-obligation quote.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007v-.008zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "02",
+                  title: "Strip & Clean",
+                  desc: "Chemical stripping removes old finishes. Power washing cleans dirt, mildew, and surface greying.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a2.25 2.25 0 01-1.591.659H9.061a2.25 2.25 0 01-1.591-.659L5 14.5m14 0V6a2.25 2.25 0 00-2.25-2.25H7.25A2.25 2.25 0 005 6v8.5" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "03",
+                  title: "Sand & Stain",
+                  desc: "Professional sanding opens wood pores. Premium oil-based stain is applied for deep penetration.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "04",
+                  title: "Walkthrough & Care",
+                  desc: "Final quality check with you. We provide maintenance tips to maximize your stain's lifespan.",
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                  ),
+                },
+              ].map((p) => (
+                <div key={p.step} className="relative text-center group">
+                  {/* Step number badge */}
+                  <div className="relative inline-flex flex-col items-center mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-lg shadow-amber-900/30 group-hover:scale-110 transition-transform duration-300">
+                      {p.icon}
+                    </div>
+                    <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white text-[var(--wood-dark)] text-xs font-bold flex items-center justify-center shadow">
+                      {p.step}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-lg mb-3 text-white">{p.title}</h3>
+                  <p className="text-stone-400 text-sm leading-relaxed">{p.desc}</p>
                 </div>
-                <h3 className="font-bold text-lg mb-2">{p.title}</h3>
-                <p className="text-stone-600 text-sm">{p.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
+              Start With a Free Quote
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 sm:py-20">
+      {/* ─── WHY CHOOSE US (improved) ─── */}
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Why Us"
-            title="The Deck Restaining Difference"
-            description="We combine proper prep work, premium products, and professional application for results that last."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {site.features.map((feature) => (
-              <div key={feature} className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg className="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p className="text-stone-700 font-medium">{feature}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — image + stats overlay */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src="/images/deck5.jpg"
+                  alt="Beautifully stained cedar deck by Deck Restaining in Oakville, Ontario"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
+              {/* Floating stats card */}
+              <div className="absolute -bottom-6 -right-4 sm:right-4 bg-white rounded-xl shadow-xl p-5 border border-stone-100">
+                <div className="grid grid-cols-3 gap-6 text-center">
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-[var(--accent)]">
+                      {site.stats.projectsCompleted}+
+                    </p>
+                    <p className="text-xs text-stone-500 mt-1">Projects</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-[var(--accent)]">
+                      {site.stats.yearsExperience}+
+                    </p>
+                    <p className="text-xs text-stone-500 mt-1">Years</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-[var(--accent)]">
+                      {site.stats.satisfactionRate}%
+                    </p>
+                    <p className="text-xs text-stone-500 mt-1">Satisfaction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — features */}
+            <div>
+              <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-wider mb-3">
+                Why Choose Us
+              </p>
+              <h2 className="h-display text-3xl sm:text-4xl text-stone-900 mb-4">
+                The Deck Restaining Difference
+              </h2>
+              <p className="text-stone-600 text-lg mb-8 leading-relaxed">
+                We combine proper prep work, premium products, and professional application for results that last years — not months.
+              </p>
+
+              <div className="space-y-5">
+                {site.features.map((feature, i) => (
+                  <div key={feature} className="flex items-start gap-4 group">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center shrink-0 group-hover:from-amber-100 group-hover:to-amber-200 transition-colors">
+                      <svg className="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-stone-900">{feature}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10">
+                <Link href="/about" className="btn btn-primary">
+                  Learn More About Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -251,10 +403,10 @@ export default function HomePage() {
   );
 }
 
-function BrushIcon() {
+function DefaultBrushIcon() {
   return (
-    <svg className="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
     </svg>
   );
 }
