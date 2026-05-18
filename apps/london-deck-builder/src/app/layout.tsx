@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { Analytics } from "@sites/ui/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
             strategy="lazyOnload"
           />
         )}
+        <Analytics websiteId="9fd88687-4fc3-4591-9fbf-a31887fce3fc" />
       </body>
     </html>
   );

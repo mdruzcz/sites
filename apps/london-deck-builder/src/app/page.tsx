@@ -805,6 +805,7 @@ function Contact() {
       if (!res.ok) throw new Error("Server error");
       setStatus("success");
       setForm({ first_name: "", last_name: "", email: "", phone: "", address: "", city: "", service: "", message: "", website: "" });
+      (window as any).umami?.track("form-submission", { type: "contact" });
       loadedAt.current = Date.now();
     } catch {
       setStatus("error");

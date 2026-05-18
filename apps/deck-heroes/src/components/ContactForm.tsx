@@ -46,6 +46,7 @@ export default function ContactForm() {
 
       setStatus("success");
       form.reset();
+      (window as any).umami?.track("form-submission", { type: "contact" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "An unexpected error occurred.");

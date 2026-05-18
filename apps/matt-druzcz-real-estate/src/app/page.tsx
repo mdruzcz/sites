@@ -912,6 +912,7 @@ function ContactSection() {
       } else {
         setStatus("success");
         setForm({ first_name: "", last_name: "", email: "", phone: "", intent: "", city: "", message: "", website: "" });
+        (window as any).umami?.track("form-submission", { type: "contact" });
       }
     } catch {
       setErrorMsg("Network error. Please check your connection and try again.");

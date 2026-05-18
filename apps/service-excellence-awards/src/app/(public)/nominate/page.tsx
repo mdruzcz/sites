@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getServerSupabase } from "@/lib/supabase/server";
 import { submitNomination } from "./actions";
 import type { City, Category } from "@/lib/types";
+import { TrackFormSubmission } from "@/components/TrackFormSubmission";
 
 export const metadata: Metadata = {
   title: "Request Consideration",
@@ -37,6 +38,7 @@ export default async function NominatePage({ searchParams }: { searchParams: Sea
         <div className="mt-8 rounded-md border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
           Thanks — your submission was received. Our editorial team reviews every nomination; we'll
           be in touch if we have follow-up questions.
+          <TrackFormSubmission event="form-submission" data={{ type: "nomination" }} />
         </div>
       )}
       {sp.error && (

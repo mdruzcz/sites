@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 import { localBusinessSchema } from "@/lib/jsonld";
+import { Analytics } from "@sites/ui/analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics websiteId="2c50f402-fe1d-4fe1-bbd9-6d45bed939be" />
       </body>
     </html>
   );

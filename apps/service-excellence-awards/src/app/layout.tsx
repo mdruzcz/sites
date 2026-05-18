@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@sites/ui/analytics";
 
 const sans = Inter({
   variable: "--font-sans-stack",
@@ -67,6 +68,7 @@ export default function RootLayout({
     <html lang="en-CA" className={`${sans.variable} ${serif.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-stone-900">
         {children}
+        <Analytics websiteId="f7ee4439-5c84-4617-bf5b-b78376e472dc" />
       </body>
     </html>
   );

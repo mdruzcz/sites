@@ -24,6 +24,7 @@ export function QuoteForm() {
       if (res.ok) {
         setStatus("sent");
         form.reset();
+        (window as any).umami?.track("form-submission", { type: "quote" });
       } else {
         setStatus("error");
       }
