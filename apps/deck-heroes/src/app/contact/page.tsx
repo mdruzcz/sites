@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import ContactCTA from "@/components/ContactCTA";
 import { PHONE, PHONE_HREF, EMAIL, CITIES, COMPANY_NAME } from "@/lib/constants";

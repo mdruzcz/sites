@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
@@ -91,6 +92,20 @@ export default function DeckRefinishingPage() {
       </section>
 
       {/* What is Refinishing */}
+      {/* Featured Image */}
+      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image
+            src="/images/stripping-sanding.png"
+            alt="Professional deck stripping and sanding during refinishing service"
+            width={1024}
+            height={683}
+            className="h-auto w-full object-cover"
+            priority
+          />
+        </div>
+      </section>
+
       <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">

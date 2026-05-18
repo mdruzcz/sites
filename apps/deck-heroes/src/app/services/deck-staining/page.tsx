@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
 import { COMPANY_NAME, PHONE, PHONE_HREF } from "@/lib/constants";
@@ -96,6 +97,20 @@ export default function DeckStainingPage() {
               Call {PHONE}
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Image */}
+      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image
+            src="/images/staining-sealing.png"
+            alt="Professional deck staining and sealing service by Deck Heroes"
+            width={1024}
+            height={683}
+            className="h-auto w-full object-cover"
+            priority
+          />
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import {
   SERVICES,
@@ -130,8 +131,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-wood-dark via-wood to-wood-light py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
-        {/* decorative grain overlay */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-wood-dark via-wood to-wood-light py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-10"
           style={{
@@ -139,31 +139,45 @@ export default function HomePage() {
               "repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,0.04) 40px,rgba(255,255,255,0.04) 42px)",
           }}
         />
-        <div className="relative mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
-            Professional Deck Building &amp; Restoration in Ontario
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-sand-light sm:text-xl">
-            Transform your outdoor living space with expert deck staining,
-            refinishing, resurfacing, building, and cleaning. Trusted by hundreds
-            of homeowners across Southwestern Ontario.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark focus:outline-none focus:ring-2 focus:ring-sand"
-            >
-              Get Free Quote
-            </Link>
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center rounded-lg border-2 border-sand bg-transparent px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-sand"
-            >
-              <svg className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call {PHONE}
-            </a>
+        <div className="relative mx-auto max-w-7xl grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="text-center lg:text-left">
+            <h1 className="font-serif text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
+              Professional Deck Building &amp; Restoration in Ontario
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-sand-light sm:text-xl lg:mx-0">
+              Transform your outdoor living space with expert deck staining,
+              refinishing, resurfacing, building, and cleaning. Trusted by hundreds
+              of homeowners across Southwestern Ontario.
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark focus:outline-none focus:ring-2 focus:ring-sand"
+              >
+                Get Free Quote
+              </Link>
+              <a
+                href={PHONE_HREF}
+                className="inline-flex items-center rounded-lg border-2 border-sand bg-transparent px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-sand"
+              >
+                <svg className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call {PHONE}
+              </a>
+            </div>
+          </div>
+          <div className="relative hidden lg:block">
+            <div className="overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/images/hero-deck.png"
+                alt="Professional deck staining and restoration by Deck Heroes in Ontario"
+                width={683}
+                height={1024}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

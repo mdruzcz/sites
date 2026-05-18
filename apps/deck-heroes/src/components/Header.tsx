@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY_NAME, PHONE, PHONE_HREF, SERVICES, CITIES } from "@/lib/constants";
 
 function DeckIcon({ className }: { className?: string }) {
@@ -115,10 +116,14 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <DeckIcon className="h-8 w-8 text-terracotta group-hover:text-terra-dark transition-colors" />
-            <span className="font-serif text-xl font-bold text-wood-dark lg:text-2xl">
-              {COMPANY_NAME}
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Deck Heroes logo"
+              width={160}
+              height={48}
+              className="h-10 w-auto lg:h-12"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
