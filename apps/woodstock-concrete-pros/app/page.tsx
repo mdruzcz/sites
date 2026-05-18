@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices, getFeaturedTestimonials } from "@/lib/content";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -14,8 +15,16 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[var(--charcoal)]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--charcoal)] via-[var(--charcoal)]/95 to-[var(--charcoal)]/80" />
+      <section className="relative overflow-hidden">
+        <Image
+          src="/images/hero-stamped-concrete-driveway.jpg"
+          alt="Stamped concrete driveway with decorative stone pattern by Woodstock Concrete Pros in Woodstock, Ontario"
+          fill
+          className="object-cover"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--charcoal)]/90 via-[var(--charcoal)]/80 to-[var(--charcoal)]/70" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-wider mb-4">
@@ -71,19 +80,30 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: "Freeze-Thaw Cracking", icon: "❄️" },
-                { label: "Salt & Chemical Damage", icon: "🧂" },
-                { label: "Sinking & Settling", icon: "⬇️" },
-                { label: "Surface Spalling", icon: "💥" },
-              ].map((problem) => (
-                <div key={problem.label} className="card p-5 text-center">
-                  <div className="text-3xl mb-2">{problem.icon}</div>
-                  <p className="font-semibold text-sm text-slate-700">{problem.label}</p>
-                  <p className="text-xs text-green-600 mt-1 font-medium">We solve this ✓</p>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/concrete-driveway-front-view.jpg"
+                  alt="Completed concrete driveway with stamped borders by Woodstock Concrete Pros"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Freeze-Thaw Cracking", icon: "❄️" },
+                  { label: "Salt & Chemical Damage", icon: "🧂" },
+                  { label: "Sinking & Settling", icon: "⬇️" },
+                  { label: "Surface Spalling", icon: "💥" },
+                ].map((problem) => (
+                  <div key={problem.label} className="card p-5 text-center">
+                    <div className="text-3xl mb-2">{problem.icon}</div>
+                    <p className="font-semibold text-sm text-slate-700">{problem.label}</p>
+                    <p className="text-xs text-green-600 mt-1 font-medium">We solve this ✓</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

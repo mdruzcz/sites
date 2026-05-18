@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
 import { getServices, getServiceBySlug, getServiceAreas, getCityBySlug } from "@/lib/content";
@@ -72,8 +73,17 @@ export default async function ServiceCityPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <section className="bg-[var(--charcoal)] py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden">
+        <Image
+          src="/images/concrete-driveway-stamped-border.jpg"
+          alt={`Professional ${service.title.toLowerCase()} services in ${city.name}, ${areas.region} by Woodstock Concrete Pros`}
+          fill
+          className="object-cover"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-[var(--charcoal)]/80" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <nav className="text-sm text-slate-400 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
             <span className="mx-2">/</span>

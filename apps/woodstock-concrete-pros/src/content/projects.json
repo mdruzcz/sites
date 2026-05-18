@@ -4,7 +4,7 @@
     "title": "Stamped Patio — Woodstock",
     "service": "stamped-concrete-patios",
     "city": "Woodstock",
-    "image": "/images/projects/stamped-patio.jpg",
+    "image": "/images/hero-stamped-concrete-driveway.jpg",
     "description": "Custom stamped concrete patio with natural stone pattern, built for outdoor entertaining.",
     "featured": true,
     "order": 1
@@ -14,7 +14,7 @@
     "title": "Driveway Replacement — Ingersoll",
     "service": "concrete-driveways",
     "city": "Ingersoll",
-    "image": "/images/projects/driveway-replacement.jpg",
+    "image": "/images/concrete-driveway-exposed-aggregate.jpg",
     "description": "Full driveway replacement with high-PSI concrete and broom finish for maximum winter traction.",
     "featured": true,
     "order": 2
@@ -24,7 +24,7 @@
     "title": "Front Walkway & Steps — Tillsonburg",
     "service": "concrete-walkways-steps",
     "city": "Tillsonburg",
-    "image": "/images/projects/walkway-steps.jpg",
+    "image": "/images/concrete-driveway-walkway.jpg",
     "description": "New front walkway and entry steps with slip-resistant finish and proper drainage.",
     "featured": true,
     "order": 3
@@ -34,7 +34,7 @@
     "title": "Slab Repair — Woodstock",
     "service": "concrete-repair",
     "city": "Woodstock",
-    "image": "/images/projects/slab-repair.jpg",
+    "image": "/images/concrete-driveway-front-view.jpg",
     "description": "Leveled and sealed a sunken concrete slab, eliminating puddles and trip hazards.",
     "featured": true,
     "order": 4
@@ -44,7 +44,7 @@
     "title": "Exposed Aggregate Patio — Innerkip",
     "service": "exposed-aggregate",
     "city": "Innerkip",
-    "image": "/images/projects/exposed-aggregate.jpg",
+    "image": "/images/concrete-driveway-stamped-border.jpg",
     "description": "Beautiful exposed aggregate patio with natural stone texture and sealed finish.",
     "featured": true,
     "order": 5
@@ -54,7 +54,7 @@
     "title": "Garage Floor — Norwich",
     "service": "garage-floors-basement-slabs",
     "city": "Norwich",
-    "image": "/images/projects/garage-floor.jpg",
+    "image": "/images/concrete-driveway-exposed-aggregate.jpg",
     "description": "Heavy-duty garage floor with epoxy coating for oil resistance and easy cleaning.",
     "featured": true,
     "order": 6
