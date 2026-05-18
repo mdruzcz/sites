@@ -1,0 +1,82 @@
+[
+  {
+    "category": "Legal Basement Apartments",
+    "questions": [
+      {
+        "question": "What makes a basement apartment \"legal\" in Ontario?",
+        "answer": "A legal basement apartment (second suite) must meet Ontario Building Code requirements including minimum ceiling height (6'5\" for existing, 6'9\" for new construction), separate entrance, fire separations between units, smoke and carbon monoxide alarms, egress windows in bedrooms, independent heating and ventilation, and proper plumbing and electrical. It must also have a building permit and pass all municipal inspections."
+      },
+      {
+        "question": "How much does it cost to build a legal basement apartment in London?",
+        "answer": "A legal basement apartment in London typically costs between $60,000 and $120,000+ depending on the scope of work. Factors that affect cost include whether underpinning is needed, the size of the suite, kitchen and bathroom specifications, whether a separate entrance needs to be constructed, and the condition of the existing basement. We provide detailed, fixed-price quotes after a free site assessment."
+      },
+      {
+        "question": "How long does it take to build a legal basement apartment?",
+        "answer": "Most legal basement apartment projects take 8 to 16 weeks from permit approval to completion. The timeline depends on the scope — a simple conversion of an already-finished basement is faster, while projects requiring underpinning, a new separate entrance, or extensive structural work take longer. Permit approval from the City of London typically takes 4–8 weeks."
+      },
+      {
+        "question": "Do I need a building permit for a basement apartment in London?",
+        "answer": "Yes, absolutely. A building permit is required for any basement apartment or second suite in London, Ontario. Operating an unpermitted basement apartment puts you at legal and financial risk, voids your insurance coverage, and can result in fines. We handle the entire permit application process including architectural drawings, engineering reports, and municipal submissions."
+      },
+      {
+        "question": "How much rental income can I expect from a legal basement apartment?",
+        "answer": "Legal basement apartments in London typically rent for $1,200 to $2,000+ per month depending on size, location, finishes, and whether it's a one or two bedroom unit. Areas near Western University and Fanshawe College tend to command higher rents. Most homeowners see a full return on their investment within 3–5 years through rental income alone."
+      }
+    ]
+  },
+  {
+    "category": "Basement Underpinning",
+    "questions": [
+      {
+        "question": "What is basement underpinning?",
+        "answer": "Basement underpinning is the process of increasing the depth of an existing foundation to create more ceiling height in the basement. It involves excavating beneath the existing footings in carefully sequenced sections, pouring new concrete to extend the foundation walls deeper, and then pouring a new, lower floor slab. This is the most reliable way to achieve code-compliant ceiling heights in older homes."
+      },
+      {
+        "question": "How much does basement underpinning cost?",
+        "answer": "Basement underpinning in London typically costs $150 to $250 per square foot, depending on the depth increase needed, foundation type, soil conditions, and accessibility. A typical 800 sq ft basement might cost $120,000–$200,000 for underpinning. While it's a significant investment, it can more than double your usable basement space and dramatically increase property value."
+      },
+      {
+        "question": "Is underpinning safe for my house?",
+        "answer": "Yes, when done by experienced professionals with proper engineering. Every underpinning project we complete is designed by a licensed structural engineer and follows a specific sequence to ensure the home remains fully supported at all times. Only small sections are excavated and poured at once, and each section must cure before the next begins. We follow all Ontario Building Code requirements and undergo municipal inspections at every stage."
+      }
+    ]
+  },
+  {
+    "category": "Waterproofing & Foundation",
+    "questions": [
+      {
+        "question": "How do I know if my basement needs waterproofing?",
+        "answer": "Common signs include visible water stains on walls or floor, musty or damp odours, efflorescence (white mineral deposits on concrete), peeling paint, mould growth, puddles after rain, and cracks in the foundation walls or floor. If you notice any of these signs, we offer free moisture assessments to identify the source and recommend the most effective solution."
+      },
+      {
+        "question": "What's the difference between interior and exterior waterproofing?",
+        "answer": "Interior waterproofing manages water that has already entered the basement — typically through a weeping tile system that collects water at the footing level and directs it to a sump pump for removal. Exterior waterproofing prevents water from reaching the foundation in the first place by applying a waterproof membrane to the outside of the foundation wall. We recommend the best approach based on your specific situation — sometimes a combination of both is the most effective solution."
+      },
+      {
+        "question": "How much does foundation crack repair cost?",
+        "answer": "Simple crack injection repairs typically cost $300–$800 per crack depending on length and severity. More extensive foundation repairs involving carbon fibre reinforcement, steel beams, or helical piers range from $5,000 to $30,000+ depending on the scope. We always provide a free assessment and honest recommendation — we won't upsell repairs you don't need."
+      }
+    ]
+  },
+  {
+    "category": "General",
+    "questions": [
+      {
+        "question": "Do you offer free estimates?",
+        "answer": "Yes. We provide free on-site consultations and detailed written quotes for all projects. There's no obligation and no pressure. We'll assess your basement, discuss your goals, explain your options, and provide a transparent, fixed-price quote so you know exactly what to expect."
+      },
+      {
+        "question": "Are you licensed and insured?",
+        "answer": "Yes. We are a fully licensed general contractor with comprehensive liability insurance and WSIB coverage for all workers on your project. We carry $5 million in commercial general liability insurance. We're happy to provide proof of insurance and licensing for any project."
+      },
+      {
+        "question": "Do you handle permits and inspections?",
+        "answer": "Yes. We manage the entire permit process from start to finish, including preparing architectural drawings, structural engineering reports, and all municipal submissions. We coordinate all required inspections throughout the project and ensure your final inspection results in a clean pass. You don't have to deal with City Hall — we handle it all."
+      },
+      {
+        "question": "What warranty do you offer?",
+        "answer": "All our work comes with a 2-year workmanship warranty covering labour and installation. Waterproofing systems carry an extended warranty. All materials and products are backed by their manufacturer warranties. Our warranty is transferable if you sell your home, adding value for future buyers."
+      }
+    ]
+  }
+]

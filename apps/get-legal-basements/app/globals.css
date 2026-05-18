@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@source "../src/**/*.{ts,tsx}";
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+:root {
+  --accent: #2563EB;
+  --accent-600: #1d4ed8;
+  --accent-700: #1e40af;
+  --charcoal: #1F2933;
+  --concrete: #6B7280;
+  --surface: #F3F4F6;
+  --border: #d1d5db;
+  --foreground: #1F2933;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--foreground);
+}
+
+.bg-navy {
+  background: #1F2933;
+}
+
+.card {
+  @apply rounded-xl border border-[var(--border)] bg-white shadow-sm;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold text-sm transition-all cursor-pointer;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md hover:shadow-lg font-bold;
+}
+
+.btn-outline {
+  @apply border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white;
+}
+
+.btn-ghost {
+  @apply border border-white/20 text-white hover:bg-white/10;
+}
+
+.btn-phone {
+  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md font-bold;
+}
+
+.h-display {
+  @apply font-extrabold tracking-tight leading-tight;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}

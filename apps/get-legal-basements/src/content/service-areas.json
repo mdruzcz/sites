@@ -1,0 +1,56 @@
+{
+  "primaryCity": "London",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "London is the heart of our service area and where the majority of our legal basement apartment projects are located. With a growing population, strong rental demand from Western University and Fanshawe College students, and supportive municipal policies for secondary suites, London is one of the best cities in Ontario to invest in a legal basement apartment. We serve every neighbourhood from Old North and Wortley Village to Byron, Westmount, and the growing communities in south London."
+    },
+    {
+      "slug": "st-thomas",
+      "name": "St. Thomas",
+      "description": "St. Thomas homeowners are increasingly turning to legal basement apartments as a way to offset mortgage costs and provide affordable housing in the community. As the Railway City continues to grow with new industrial development, rental demand is rising steadily. Our team brings the same quality and attention to detail to every St. Thomas project, handling permits, design, and construction from start to finish."
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Woodstock’s Friendly City charm extends below grade too. With its mix of older character homes and newer subdivisions, Woodstock presents great opportunities for basement renovations and legal second suites. Many older homes in the downtown core have deep foundations perfect for finishing, while newer builds often have walkout basements ideal for separate entrances. We handle underpinning, waterproofing, and full suite conversions throughout Oxford County."
+    },
+    {
+      "slug": "strathroy",
+      "name": "Strathroy",
+      "description": "Strathroy-Caradoc homeowners looking to maximize their property’s potential are discovering the value of legal basement apartments. With its proximity to London and growing community amenities, Strathroy is an ideal market for secondary suites. Our team serves the entire Strathroy-Caradoc area with basement renovations, underpinning, waterproofing, and complete legal suite conversions."
+    },
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Tillsonburg is experiencing steady growth and increasing property values, making it a smart location for basement apartment investments. Whether you own an older home on Broadway or a newer build in one of the expanding subdivisions, we can design and build a legal basement suite that meets all building code requirements while maximizing your return on investment."
+    },
+    {
+      "slug": "ingersoll",
+      "name": "Ingersoll",
+      "description": "Ingersoll’s heritage homes and established neighbourhoods offer excellent potential for basement finishing and legal apartment conversions. With CAMI and other major employers nearby driving rental demand, a legal basement suite in Ingersoll is a sound investment. We bring our full range of basement services to the Ingersoll area, from waterproofing and underpinning to complete suite builds."
+    },
+    {
+      "slug": "aylmer",
+      "name": "Aylmer",
+      "description": "Aylmer homeowners in East Elgin are adding legal basement apartments to generate income and increase property value. Our team serves the Aylmer area with comprehensive basement renovation services including underpinning older foundations, waterproofing, egress window installation, and full legal suite construction with all necessary permits and inspections."
+    },
+    {
+      "slug": "dorchester",
+      "name": "Dorchester",
+      "description": "Dorchester’s growing community just east of London is home to many properties with untapped basement potential. Whether you’re looking to finish an unfinished basement, add a legal apartment for rental income, or address foundation moisture issues, our team provides professional basement services throughout the Dorchester and Thames Centre area."
+    },
+    {
+      "slug": "komoka",
+      "name": "Komoka",
+      "description": "Komoka and the Middlesex Centre area feature many newer homes with full-depth basements ready for finishing. Whether you want a family recreation space, a home office, or a legal basement apartment, we design and build basement spaces that add real value to your home. Our team handles every step from design and permits through to final inspection."
+    },
+    {
+      "slug": "lucan",
+      "name": "Lucan",
+      "description": "Lucan Biddulph’s mix of heritage properties and new builds presents diverse opportunities for basement renovation. Older homes may need underpinning to achieve legal ceiling heights, while newer homes often have unfinished basements waiting to be transformed. We provide complete basement services to Lucan and surrounding areas, including waterproofing, finishing, and legal suite conversions."
+    }
+  ]
+}

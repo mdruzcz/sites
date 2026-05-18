@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Legal Second Suite",
+    "city": "London",
+    "description": "Full basement apartment conversion with separate entrance, kitchen, bathroom, and bedroom with egress window.",
+    "featured": true
+  },
+  {
+    "title": "Basement Underpinning",
+    "city": "London",
+    "description": "Lowered basement floor by 24 inches to achieve 8-foot ceiling height in a 1960s bungalow.",
+    "featured": true
+  },
+  {
+    "title": "Waterproofing & Finishing",
+    "city": "St. Thomas",
+    "description": "Interior waterproofing system followed by complete basement finishing with family room and home office.",
+    "featured": true
+  }
+]

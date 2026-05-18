@@ -25,6 +25,9 @@
     },
     {
       "path": "apps/deck-heroes"
+    },
+    {
+      "path": "apps/get-legal-basements"
     }
   ]
 }
