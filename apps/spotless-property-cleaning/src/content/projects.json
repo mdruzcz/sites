@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "london-house-wash",
+    "title": "House Washing — London",
+    "service": "house-siding-washing",
+    "city": "London",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Complete vinyl siding soft wash restoring a two-storey home in Byron to like-new condition.",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "st-thomas-driveway",
+    "title": "Driveway Cleaning — St. Thomas",
+    "service": "driveway-walkway-cleaning",
+    "city": "St. Thomas",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Concrete driveway deep clean removing oil stains, tyre marks, and years of ground-in grime.",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "woodstock-deck-restoration",
+    "title": "Deck Restoration — Woodstock",
+    "service": "deck-fence-restoration",
+    "city": "Woodstock",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Pressure-treated wood deck restored from grey and weathered to its original honey colour.",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "brantford-commercial",
+    "title": "Storefront Cleaning — Brantford",
+    "service": "building-storefront-washing",
+    "city": "Brantford",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Full exterior wash for a downtown Brantford retail strip including brick, signage, and sidewalk.",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "slug": "cambridge-graffiti",
+    "title": "Graffiti Removal — Cambridge",
+    "service": "graffiti-removal",
+    "city": "Cambridge",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Spray paint removal from a concrete block commercial wall with anti-graffiti coating applied.",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "slug": "london-parking-lot",
+    "title": "Parking Lot Cleaning — London",
+    "service": "parking-lot-garage-cleaning",
+    "city": "London",
+    "image": "/images/hero-pressure-washing.jpg",
+    "description": "Post-winter deep clean of a retail parking lot removing salt, oil, and gum buildup.",
+    "featured": true,
+    "order": 6
+  }
+]

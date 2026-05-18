@@ -1,0 +1,26 @@
+[
+  {
+    "author": "TODO: replace with real testimonial",
+    "city": "London",
+    "quote": "They transformed our vinyl siding — it looked brand new after years of green algae buildup. Professional crew, fast work, and a fair price. Highly recommend Spotless Property Cleaning!",
+    "rating": 5,
+    "service": "house-siding-washing",
+    "featured": true
+  },
+  {
+    "author": "TODO: replace with real testimonial",
+    "city": "St. Thomas",
+    "quote": "Our concrete driveway had oil stains we thought were permanent. Their hot water system took everything off. The whole front of our house looks incredible now.",
+    "rating": 5,
+    "service": "driveway-walkway-cleaning",
+    "featured": true
+  },
+  {
+    "author": "TODO: replace with real testimonial",
+    "city": "Cambridge",
+    "quote": "Had graffiti on our commercial building wall — they were out the next day and removed it completely. Even applied a protective coating so it won't happen again. Excellent service.",
+    "rating": 5,
+    "service": "graffiti-removal",
+    "featured": true
+  }
+]
