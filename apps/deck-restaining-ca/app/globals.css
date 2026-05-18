@@ -2,17 +2,17 @@
 @source "../src/**/*.{ts,tsx}";
 
 :root {
-  --accent: #92400E;
-  --accent-light: #B45309;
-  --accent-dark: #78350F;
-  --wood-dark: #1C1917;
-  --wood: #44403C;
-  --wood-light: #78716C;
-  --stone: #F5F5F4;
-  --stone-dark: #E7E5E4;
-  --cream: #FAFAF9;
-  --border: #D6D3D1;
-  --foreground: #1C1917;
+  --accent: #6B4226;
+  --accent-light: #8B5E3C;
+  --accent-dark: #4E2E16;
+  --wood-dark: #2C2420;
+  --wood: #3D3B39;
+  --wood-light: #6B6460;
+  --stone: #F7F4F0;
+  --stone-dark: #EAE4DD;
+  --cream: #FDFBF8;
+  --border: #D9CFC4;
+  --foreground: #2C2420;
 }
 
 body {

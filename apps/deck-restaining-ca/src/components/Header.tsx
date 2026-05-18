@@ -38,25 +38,19 @@ export function Header() {
           <Link href="/" className="relative flex items-center -my-4 sm:-my-6">
             <div
               className={`relative transition-all duration-300 ${
-                scrolled ? "w-[72px] h-[72px] sm:w-[88px] sm:h-[88px]" : "w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]"
+                scrolled
+                  ? "w-[100px] h-[56px] sm:w-[140px] sm:h-[78px]"
+                  : "w-[120px] h-[67px] sm:w-[170px] sm:h-[95px]"
               }`}
             >
               <Image
-                src="/images/drlogo1.png"
+                src="/images/deck-restaining-logo.jpg"
                 alt={`${site.name} — professional deck and fence staining in Oakville and Burlington, Ontario`}
                 fill
-                className="object-contain drop-shadow-lg"
+                className="object-contain drop-shadow-md"
                 priority
               />
             </div>
-            <span className="ml-2 sm:ml-3 flex flex-col leading-tight">
-              <span className="text-lg sm:text-xl font-extrabold text-[var(--wood-dark)] tracking-tight">
-                DECK
-              </span>
-              <span className="text-[11px] sm:text-xs font-semibold text-[var(--accent)] uppercase tracking-[0.15em]">
-                Restaining
-              </span>
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -64,7 +58,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-stone-600 hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
+                className="text-sm font-medium text-[var(--wood)] hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
               >
                 {link.label}
               </Link>
@@ -79,7 +73,7 @@ export function Header() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[var(--wood)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -96,7 +90,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2.5 text-sm font-medium text-stone-600 hover:bg-stone-50 hover:text-[var(--accent)] rounded-lg uppercase tracking-wide transition-colors"
+                  className="px-3 py-2.5 text-sm font-medium text-[var(--wood)] hover:bg-[var(--stone)] hover:text-[var(--accent)] rounded-lg uppercase tracking-wide transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

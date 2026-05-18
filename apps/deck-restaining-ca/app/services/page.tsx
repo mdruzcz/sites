@@ -49,7 +49,7 @@ export default function ServicesPage() {
                 className="card p-6 sm:p-8 block hover:shadow-md transition-shadow group"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-[#F5EDE4] flex items-center justify-center shrink-0 group-hover:bg-[#ECDBC8] transition-colors">
                     <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
@@ -61,7 +61,7 @@ export default function ServicesPage() {
                     <p className="text-stone-600 mb-4">{service.shortDescription}</p>
                     <div className="flex flex-wrap gap-2">
                       {service.features.map((f) => (
-                        <span key={f} className="text-xs bg-amber-50 text-amber-800 px-2 py-1 rounded-full">
+                        <span key={f} className="text-xs bg-[#F5EDE4] text-[#6B4226] px-2 py-1 rounded-full">
                           {f}
                         </span>
                       ))}

@@ -133,7 +133,7 @@ export default async function ServiceCityPage({
                     <Link
                       key={c.slug}
                       href={`/services/${service.slug}/${c.slug}`}
-                      className="text-sm bg-amber-50 text-amber-800 px-3 py-1.5 rounded-full hover:bg-amber-100 transition-colors"
+                      className="text-sm bg-[#F5EDE4] text-[#6B4226] px-3 py-1.5 rounded-full hover:bg-[#ECDBC8] transition-colors"
                     >
                       {service.title} in {c.name}
                     </Link>

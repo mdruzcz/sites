@@ -64,7 +64,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[var(--wood-dark)]/75" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
-            <p className="text-amber-300 font-semibold text-sm uppercase tracking-wider mb-4">
+            <p className="text-[#C4A265] font-semibold text-sm uppercase tracking-wider mb-4">
               {site.yearsExperience}+ Years · Oil-Based Stains Only
             </p>
             <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
@@ -158,7 +158,7 @@ export default function HomePage() {
                 className="group relative bg-white rounded-2xl border border-stone-200 p-8 hover:border-[var(--accent)]/40 hover:shadow-lg transition-all duration-300"
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center mb-5 text-[var(--accent)] group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F5EDE4] to-[#ECDBC8] flex items-center justify-center mb-5 text-[var(--accent)] group-hover:scale-110 transition-transform duration-300">
                   {serviceIcons[service.slug] || <DefaultBrushIcon />}
                 </div>
 
@@ -187,7 +187,7 @@ export default function HomePage() {
       <section className="py-16 sm:py-24 bg-[var(--wood-dark)] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-3">
+            <p className="text-[#C4A265] font-semibold text-sm uppercase tracking-wider mb-3">
               How It Works
             </p>
             <h2 className="h-display text-3xl sm:text-4xl text-white mb-4">
@@ -200,7 +200,7 @@ export default function HomePage() {
 
           <div className="relative">
             {/* Connector line (desktop) */}
-            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 opacity-40" />
+            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#6B4226] via-[#8B5E3C] to-[#6B4226] opacity-40" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
               {[
@@ -248,7 +248,7 @@ export default function HomePage() {
                 <div key={p.step} className="relative text-center group">
                   {/* Step number badge */}
                   <div className="relative inline-flex flex-col items-center mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-white shadow-lg shadow-amber-900/30 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8B5E3C] to-[#4E2E16] flex items-center justify-center text-white shadow-lg shadow-[#4E2E16]/30 group-hover:scale-110 transition-transform duration-300">
                       {p.icon}
                     </div>
                     <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white text-[var(--wood-dark)] text-xs font-bold flex items-center justify-center shadow">
@@ -324,7 +324,7 @@ export default function HomePage() {
               <div className="space-y-5">
                 {site.features.map((feature, i) => (
                   <div key={feature} className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center shrink-0 group-hover:from-amber-100 group-hover:to-amber-200 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F5EDE4] to-[#ECDBC8] flex items-center justify-center shrink-0 group-hover:from-[#ECDBC8] group-hover:to-[#E0CBB0] transition-colors">
                       <svg className="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
