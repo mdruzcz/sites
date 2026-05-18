@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   };
 
   await fetch(
-    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/spc_quote_requests`,
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/spotless_quote_requests`,
     {
       method: "POST",
       headers: {
@@ -41,15 +41,15 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: process.env.CONTACT_FROM_EMAIL || "noreply@spotlesspropertycleaning.ca",
         to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-        subject: `Quote Request from ${body.name} - Spotless Property Cleaning`,
+        subject: `New Estimate Request: ${body.service} — ${body.name}`,
         html: `
-          <h2>New Quote Request — Spotless Property Cleaning</h2>
+          <h2>New Estimate Request — Spotless Property Cleaning</h2>
           <p><strong>Name:</strong> ${body.name}</p>
           <p><strong>Phone:</strong> ${body.phone}</p>
           <p><strong>Email:</strong> ${body.email}</p>
           <p><strong>Address:</strong> ${body.address || "Not provided"}</p>
           <p><strong>Service:</strong> ${body.service}</p>
-          <p><strong>Message:</strong> ${body.message || "None"}</p>
+          <p><strong>Details:</strong> ${body.message || "None"}</p>
         `,
       }),
     });

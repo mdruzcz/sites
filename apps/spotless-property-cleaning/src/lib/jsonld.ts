@@ -8,7 +8,6 @@ export function localBusinessSchema() {
     name: site.name,
     telephone: site.phone,
     url: site.url,
-    email: site.email,
     address: {
       "@type": "PostalAddress",
       addressLocality: site.address.city,
@@ -21,7 +20,6 @@ export function localBusinessSchema() {
     })),
     description: site.description,
     openingHours: "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
-    priceRange: "$$",
   };
 }
 
@@ -49,23 +47,6 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       position: i + 1,
       name: item.name,
       item: item.url,
-    })),
-  };
-}
-
-export function faqSchema(
-  faqs: { question: string; answer: string }[]
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
     })),
   };
 }

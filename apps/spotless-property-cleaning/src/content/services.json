@@ -1,121 +1,73 @@
 [
   {
-    "slug": "house-siding-washing",
+    "slug": "house-washing",
     "title": "House & Siding Washing",
-    "shortDescription": "Restore your home's curb appeal with professional soft washing for vinyl, brick, stucco, and aluminum siding. Removes years of dirt, mould, and algae safely.",
-    "fullDescription": "Your home's exterior takes a beating from Southwestern Ontario's weather — rain, snow, humidity, and UV exposure create layers of dirt, mould, mildew, and algae that dull your siding and can cause permanent damage if left untreated. At Spotless Property Cleaning, we use a low-pressure soft wash technique combined with eco-friendly, biodegradable detergents to safely clean vinyl, brick, stucco, aluminum, and wood siding without risking damage from high-pressure spray. Our process kills mould and algae at the root, so your home stays cleaner longer. A professional house wash not only transforms your home's appearance instantly — it also protects your investment by preventing premature paint failure, wood rot, and siding degradation. Whether you're prepping for a sale, hosting guests, or simply want your home looking its best, our house washing service delivers dramatic results every time.",
-    "features": [
-      "Safe low-pressure soft wash technique",
-      "Eco-friendly biodegradable detergents",
-      "Kills mould and algae at the root",
-      "Safe for all siding types",
-      "Prevents premature paint failure and rot"
-    ],
+    "shortDescription": "Restore your home's curb appeal with professional soft washing for vinyl, brick, stucco, and aluminum siding. Safe, thorough, and streak-free.",
+    "fullDescription": "Your home's exterior takes a beating from Ontario's weather. Algae, mould, dirt, and pollution gradually dull your siding and make your property look neglected. Our professional house washing service uses low-pressure soft wash techniques combined with eco-friendly cleaning solutions to safely remove years of buildup without damaging your surfaces. Whether you have vinyl, brick, stucco, or aluminum siding, we restore the original brightness and protect your investment.",
+    "features": ["Safe soft wash technique", "Works on all siding types", "Removes mould & algae", "Eco-friendly solutions", "Improves curb appeal instantly"],
     "icon": "home",
     "order": 1
   },
   {
-    "slug": "driveway-walkway-cleaning",
+    "slug": "driveway-cleaning",
     "title": "Driveway & Walkway Cleaning",
-    "shortDescription": "Blast away oil stains, tyre marks, mould, and ground-in grime from concrete, interlock, and asphalt driveways and walkways.",
-    "fullDescription": "Driveways and walkways are the hardest-working surfaces on your property — they absorb oil drips, tyre marks, de-icing salt residue, mould, and years of ground-in dirt that regular hosing can't touch. Our commercial-grade hot water pressure washing system cuts through the toughest stains on concrete, interlocking brick, natural stone, and asphalt without damaging the surface. We use surface cleaners (not just wands) for an even, streak-free finish across the entire area. For interlock, we can also remove weeds growing between joints and apply polymeric sand to restore the clean, locked look. Oil-stained garage aprons, black algae on shaded walkways, salt-bleached front paths — we've seen it all and we know exactly how to make each surface look like new again. A clean driveway and walkway dramatically improves your property's curb appeal and eliminates slippery mould that creates a safety hazard.",
-    "features": [
-      "Hot water removes oil and grease stains",
-      "Surface cleaners for even, streak-free results",
-      "Safe for concrete, interlock, stone, and asphalt",
-      "Removes mould, algae, and salt residue",
-      "Optional polymeric sand for interlock joints"
-    ],
+    "shortDescription": "Blast away oil stains, tyre marks, mould, and ground-in grime from concrete, interlock, and asphalt surfaces.",
+    "fullDescription": "Driveways and walkways are the first thing visitors notice. Over time, oil drips, tyre marks, road salt residue, and organic growth turn them into eyesores. Our commercial-grade surface cleaners deliver uniform cleaning results on concrete, interlock, flagstone, and asphalt. We pre-treat stains, apply the right pressure for your surface type, and leave your driveway looking freshly laid. Hot water units cut through oil and grease that cold water alone can't touch.",
+    "features": ["Hot water oil removal", "Surface cleaner for even results", "Works on concrete & interlock", "Removes salt stains", "Pre-treatment for tough stains"],
     "icon": "road",
     "order": 2
   },
   {
     "slug": "deck-fence-restoration",
     "title": "Deck & Fence Restoration",
-    "shortDescription": "Bring weathered wood, composite, and vinyl decks and fences back to life. Removes grey oxidation, mildew, and stains for a like-new finish.",
-    "fullDescription": "Ontario's freeze-thaw cycles, summer humidity, and UV exposure take a heavy toll on decks and fences — wood turns grey, composite grows mildew, and vinyl yellows or greens with algae. Our deck and fence restoration service uses carefully calibrated pressure and specialized wood-brightening agents to strip away grey oxidation, mildew stains, and embedded dirt without splintering wood fibres or damaging composite surfaces. For wood decks and fences, we can also apply a protective stain or sealant after cleaning to extend the life of the surface and keep it looking great for years. We handle all deck and fence materials: pressure-treated lumber, cedar, redwood, composite (Trex, TimberTech), and vinyl. The result is a surface that looks freshly installed — perfect for backyard entertaining, increasing property value, or simply enjoying your outdoor space without embarrassment.",
-    "features": [
-      "Calibrated pressure for each material type",
-      "Wood-brightening agents restore natural colour",
-      "Handles wood, composite, and vinyl",
-      "Optional stain or sealant application",
-      "Extends deck and fence lifespan"
-    ],
+    "shortDescription": "Bring weathered wood, composite, and vinyl decks and fences back to life. Removes grey oxidation, mildew, and dirt.",
+    "fullDescription": "Ontario's freeze-thaw cycles, UV exposure, and humidity take a toll on decks and fences. Wood turns grey, composite develops mould streaks, and vinyl collects green algae. Our deck and fence restoration service uses calibrated pressure and specialized cleaners to strip away weathering without damaging wood fibres or composite surfaces. We brighten and restore the natural beauty of your outdoor living spaces, preparing them for staining or sealing if desired.",
+    "features": ["Safe for wood & composite", "Removes grey oxidation", "Mould & mildew treatment", "Prep for staining/sealing", "Extends surface lifespan"],
     "icon": "fence",
     "order": 3
   },
   {
     "slug": "roof-gutter-cleaning",
     "title": "Roof & Gutter Cleaning",
-    "shortDescription": "Soft wash roof cleaning removes black streaks, moss, and lichen without damaging shingles. Plus gutter brightening and debris removal.",
-    "fullDescription": "Those dark streaks running down your roof aren't just unsightly — they're a living organism called Gloeocapsa magma, an algae that feeds on the limestone filler in asphalt shingles. Left untreated, it shortens your roof's lifespan by years and can void your shingle warranty. Our soft wash roof cleaning system applies a low-pressure treatment that kills the algae, moss, and lichen at the source without the damaging force of high-pressure washing that can lift shingles and strip granules. We also provide gutter cleaning (removing leaves, debris, and clogs) and gutter brightening — removing the black tiger-stripe staining that forms on the outside of aluminum gutters. Clean gutters protect your foundation from water damage while a clean roof restores your home's appearance and protects your roofing investment. We follow manufacturer recommendations to ensure your warranty stays intact.",
-    "features": [
-      "Low-pressure soft wash protects shingles",
-      "Kills algae, moss, and lichen at the root",
-      "Gutter debris removal and downspout clearing",
-      "Gutter exterior brightening",
-      "Follows manufacturer warranty guidelines"
-    ],
+    "shortDescription": "Soft wash roof cleaning removes black streaks, moss, and lichen without damaging shingles. Plus gutter brightening and flush-outs.",
+    "fullDescription": "Those dark streaks on your roof aren't just cosmetic — they're caused by algae that slowly degrades your shingles. Our soft wash roof cleaning uses low-pressure application of specialized cleaning solutions that kill algae, moss, and lichen at the root without the damaging effects of high-pressure water on shingle granules. We also clean and brighten gutter exteriors and flush out debris to ensure proper water drainage and protect your home's foundation.",
+    "features": ["Low-pressure soft wash", "Kills algae at the root", "Won't damage shingles", "Gutter flush & brightening", "Extends roof lifespan"],
     "icon": "roof",
     "order": 4
   },
   {
-    "slug": "building-storefront-washing",
+    "slug": "commercial-washing",
     "title": "Building & Storefront Washing",
-    "shortDescription": "Keep your commercial property looking professional. We clean retail storefronts, office buildings, warehouses, and industrial exteriors.",
-    "fullDescription": "First impressions matter in business, and a dirty exterior sends the wrong message to customers, tenants, and visitors. Spotless Property Cleaning provides comprehensive commercial exterior cleaning for retail storefronts, office buildings, strip malls, warehouses, restaurants, and industrial facilities throughout Southwestern Ontario. We use both high-pressure and soft wash techniques depending on the surface — concrete block, brick, EIFS/stucco, metal cladding, glass curtainwall, and vinyl siding all require different approaches, and we know which to use. Our team works around your business hours to minimize disruption, and we carry full commercial liability insurance and WSIB coverage. Regular commercial exterior cleaning doesn't just improve appearance — it demonstrates professionalism, maintains property value, and prevents costly damage from biological growth that can penetrate building envelopes. We offer one-time deep cleans and ongoing maintenance contracts for property managers.",
-    "features": [
-      "Tailored approach for each building material",
-      "Work scheduled around business hours",
-      "Full commercial liability insurance and WSIB",
-      "One-time or maintenance contract options",
-      "Maintains property value and tenant satisfaction"
-    ],
+    "shortDescription": "Keep your commercial property looking professional with scheduled exterior cleaning for storefronts, office buildings, and retail spaces.",
+    "fullDescription": "First impressions matter in business. A dirty storefront, stained sidewalk, or grimy building exterior sends the wrong message to customers. Our commercial pressure washing services keep your business looking its best year-round. We work around your hours to minimize disruption, handle everything from concrete sidewalks to multi-storey building facades, and offer scheduled maintenance programs so your property always makes the right impression.",
+    "features": ["Flexible scheduling", "Minimal business disruption", "Multi-storey capability", "Maintenance programs available", "Sidewalk & entrance cleaning"],
     "icon": "building",
     "order": 5
   },
   {
-    "slug": "parking-lot-garage-cleaning",
+    "slug": "parking-lot-cleaning",
     "title": "Parking Lot & Garage Cleaning",
-    "shortDescription": "Heavy-duty cleaning for parking lots, parkades, and garage floors. Removes oil stains, gum, tyre marks, and winter salt buildup.",
-    "fullDescription": "Parking lots and garages accumulate oil, grease, antifreeze, chewing gum, tyre marks, and months of de-icing salt that regular sweeping can't remove. These contaminants don't just look bad — oil-soaked concrete becomes a slip hazard, salt residue accelerates surface deterioration, and a neglected parking area deters customers and tenants. Our commercial hot water pressure washing system combined with industrial degreasers cuts through the toughest parking lot stains, restoring concrete and asphalt surfaces to a clean, professional appearance. We use surface cleaners for uniform results across large areas and can handle everything from a small retail lot to multi-level parkades. For property managers, we offer seasonal deep cleaning packages — especially valuable after winter when salt and sand buildup is at its worst. We also provide line-painting prep cleaning to ensure fresh paint adheres properly and lasts.",
-    "features": [
-      "Hot water and industrial degreasers",
-      "Removes oil, gum, tyre marks, and salt",
-      "Surface cleaners for uniform results",
-      "Seasonal maintenance packages available",
-      "Line-painting prep cleaning"
-    ],
+    "shortDescription": "Remove oil stains, tyre marks, chewing gum, and accumulated grime from parking areas with hot water commercial cleaning.",
+    "fullDescription": "Parking lots and garages endure constant abuse — oil leaks, tyre marks, food spills, chewing gum, and seasonal dirt buildup. Our hot water commercial cleaning service cuts through even the toughest petroleum-based stains and restores your parking surfaces to a clean, professional appearance. Regular cleaning also improves safety by removing slippery organic growth and makes line markings more visible.",
+    "features": ["Hot water degreasing", "Gum & stain removal", "Improves line visibility", "Reduces slip hazards", "Scheduled maintenance plans"],
     "icon": "parking",
     "order": 6
   },
   {
-    "slug": "fleet-equipment-washing",
+    "slug": "fleet-washing",
     "title": "Fleet & Equipment Washing",
-    "shortDescription": "On-site washing for trucks, trailers, heavy equipment, and commercial vehicles. Maintain a professional fleet image and prevent corrosion.",
-    "fullDescription": "A clean fleet is a professional fleet. Dirt, road salt, grease, and grime don't just make your vehicles look bad — they accelerate rust, corrode undercarriages, and can even cause mechanical problems by clogging radiators and air filters. Spotless Property Cleaning provides on-site fleet and equipment washing for contractors, trucking companies, landscapers, and any business that relies on vehicles and heavy machinery. We bring our commercial hot water pressure washing rigs to your yard or depot, so your vehicles don't have to go anywhere. We handle box trucks, flatbeds, dump trucks, excavators, skid steers, trailers, service vans, and more. Our process removes road film, mud, hydraulic fluid, concrete splatter, and winter salt without damaging paint, decals, or electrical components. Regular fleet washing extends vehicle life, prevents warranty-voiding corrosion, and ensures your brand looks its best on every job site and road.",
-    "features": [
-      "On-site service at your yard or depot",
-      "Hot water removes grease and road salt",
-      "Safe for paint, decals, and electrical",
-      "Handles trucks, heavy equipment, and trailers",
-      "Prevents corrosion and extends vehicle life"
-    ],
+    "shortDescription": "Professional fleet washing for trucks, trailers, heavy equipment, and construction vehicles. On-site service available.",
+    "fullDescription": "Your vehicles and equipment represent your brand on the road. Dirt, road salt, diesel soot, and grime not only look unprofessional — they accelerate corrosion and shorten the life of your fleet. Our mobile fleet washing service comes to your yard or depot and cleans everything from delivery vans to heavy construction equipment. Hot water units and commercial degreasers handle the toughest industrial grime, keeping your fleet looking sharp and lasting longer.",
+    "features": ["Mobile on-site service", "Hot water degreasing", "Trucks, trailers & heavy equipment", "Corrosion prevention", "Branded fleet appearance"],
     "icon": "truck",
     "order": 7
   },
   {
     "slug": "graffiti-removal",
     "title": "Graffiti Removal",
-    "shortDescription": "Fast, effective graffiti removal from brick, concrete, metal, stone, and painted surfaces. We also apply anti-graffiti coatings to prevent repeat vandalism.",
-    "fullDescription": "Graffiti vandalism is more than an eyesore — it signals neglect, can attract more vandalism, and may violate municipal bylaws if not removed promptly. Spotless Property Cleaning provides fast-response graffiti removal for commercial and residential properties throughout London and Southwestern Ontario. We use a combination of hot water pressure washing, specialized chemical strippers, and surface-appropriate techniques to remove spray paint, marker, sticker residue, and etching from brick, concrete, stone, stucco, metal, wood, and painted surfaces. Different surfaces require different approaches — aggressive chemicals that work on bare concrete would damage painted stucco, so we match our method to your surface every time. After removal, we can apply a sacrificial or permanent anti-graffiti coating that makes future vandalism wipe off with minimal effort — saving you time, money, and frustration if the same spot gets hit again. For property managers and municipalities, we offer rapid-response agreements for removal within 24-48 hours of notification.",
-    "features": [
-      "Removes spray paint, marker, and stickers",
-      "Surface-matched techniques prevent damage",
-      "Anti-graffiti protective coatings available",
-      "Rapid-response agreements for property managers",
-      "Works on brick, concrete, metal, stone, and wood"
-    ],
+    "shortDescription": "Fast, effective graffiti removal from brick, concrete, metal, and painted surfaces using specialized solvents and techniques.",
+    "fullDescription": "Graffiti left untreated invites more vandalism and degrades your property's value. Our graffiti removal service uses surface-appropriate solvents and pressure washing techniques to remove spray paint, marker, and other vandalism from brick, concrete, stucco, metal, and painted surfaces. We work carefully to remove the graffiti without damaging the underlying surface, and can apply anti-graffiti coatings to make future removal quick and easy.",
+    "features": ["Surface-safe solvents", "Works on all materials", "Anti-graffiti coatings available", "Fast response time", "Prevents repeat vandalism"],
     "icon": "spray",
     "order": 8
   }

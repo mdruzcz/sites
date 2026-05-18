@@ -5,60 +5,67 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { CtaBand } from "@/components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "About Us | Trusted Pressure Washing in London, ON",
-  description: `Learn about ${site.name} — a professional exterior cleaning company with ${site.yearsExperience}+ years serving London, St. Thomas, Woodstock, Brantford, and Cambridge.`,
+  title: "About Us | Pressure Washing Experts in London, ON",
+  description: `Learn about ${site.name} — ${site.yearsExperience}+ years of professional pressure washing experience serving London and Southwestern Ontario.`,
 };
 
 export default function AboutPage() {
+  const steps = [
+    { step: "1", title: "Assessment", description: "We inspect your surfaces, identify problem areas, and recommend the right cleaning approach for each material." },
+    { step: "2", title: "Preparation", description: "We protect landscaping, mask sensitive areas, and pre-treat heavy stains or organic growth before cleaning." },
+    { step: "3", title: "Cleaning", description: "Using the right pressure, temperature, and solution for each surface — from gentle soft wash to hot water degreasing." },
+    { step: "4", title: "Inspection", description: "We walk the property with you to ensure every surface meets our standards and your expectations." },
+    { step: "5", title: "Protection", description: "Optional post-clean treatments like anti-graffiti coatings, surface sealers, or scheduled maintenance plans." },
+  ];
+
   return (
     <>
-      <section className="relative overflow-hidden">
-        <Image
-          src="/images/hero-pressure-washing.jpg"
-          alt="Spotless Property Cleaning team performing professional pressure washing in London, Ontario"
-          fill
-          className="object-cover"
-          priority
-          quality={80}
-        />
-        <div className="absolute inset-0 bg-slate-900/80" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="bg-navy py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
             About {site.name}
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl">
-            Your local exterior cleaning experts — {site.yearsExperience}+ years restoring
-            homes and businesses to spotless condition across Southwestern Ontario.
+            {site.yearsExperience}+ years restoring homes and businesses across Southwestern Ontario
+            with commercial-grade equipment and eco-friendly solutions.
           </p>
         </div>
       </section>
 
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="h-display text-2xl sm:text-3xl mb-6">Who We Are</h2>
-            <div className="prose prose-lg text-slate-600 space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="h-display text-2xl sm:text-3xl mb-6">Our Story</h2>
+            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Welcome to Spotless Property Cleaning, your trusted pressure washing and
-                exterior cleaning professionals in London, Ontario. We specialize in restoring
-                residential and commercial properties to their original condition using
-                commercial-grade equipment and eco-friendly cleaning solutions.
+                Spotless Property Cleaning started with a simple idea: every property deserves to
+                look its best. With over {site.yearsExperience} years of hands-on experience in
+                exterior cleaning, we&apos;ve built a reputation across Southwestern Ontario for
+                honest work, fair pricing, and results that speak for themselves.
               </p>
               <p>
-                Founded with a commitment to quality and customer satisfaction, we&apos;ve built
-                our reputation one property at a time — earning the trust of homeowners, property
-                managers, and business owners across London, St. Thomas, Woodstock, Brantford,
-                and Cambridge. Our team brings {site.yearsExperience}+ years of hands-on
-                experience in pressure washing, soft washing, and specialized cleaning services.
+                We invested in commercial-grade hot and cold water pressure washing equipment,
+                soft wash systems, and eco-friendly cleaning solutions because we believe the right
+                tools make all the difference. Whether it&apos;s a homeowner&apos;s vinyl siding or a
+                commercial fleet of trucks, we bring the same professional standards to every job.
               </p>
               <p>
-                We understand that every surface is different. That&apos;s why we don&apos;t take
-                a one-size-fits-all approach. Vinyl siding needs gentle soft washing, while a
-                grease-stained parking lot requires hot water and industrial degreasers. We match
-                our equipment, pressure, and cleaning agents to each surface for safe, effective
-                results every time.
+                Our team serves {site.serviceAreas.join(", ")} and surrounding communities. We&apos;re
+                fully insured, WSIB compliant, and committed to protecting both your property and the
+                environment. That means biodegradable cleaning agents, proper water management, and
+                techniques that clean thoroughly without causing damage.
               </p>
             </div>
+          </div>
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/commercial-washing.jpg"
+              alt="Commercial pressure washing services by Spotless Property Cleaning"
+              fill
+              className="object-cover"
+            />
+          </div>
           </div>
         </div>
       </section>
@@ -66,54 +73,13 @@ export default function AboutPage() {
       <section className="py-16 sm:py-20 bg-[var(--surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Our Values"
-            title="What Drives Us"
+            eyebrow="Our Proven 5-Step Process"
+            title="How we deliver spotless results — every time."
+            accentWord="spotless"
+            description="A structured, transparent process designed to protect your property and deliver consistent, professional results."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Surface-Safe Cleaning",
-                description: "We match our pressure, temperature, and detergents to each surface type — no damage, no shortcuts.",
-              },
-              {
-                title: "Eco-Friendly Solutions",
-                description: "All our cleaning agents are biodegradable and safe for your landscaping, pets, and the environment.",
-              },
-              {
-                title: "Transparent Pricing",
-                description: "Free on-site estimates with no hidden fees. You know exactly what you're paying before we start.",
-              },
-              {
-                title: "Satisfaction Guaranteed",
-                description: "We don't consider a job done until you're 100% happy with the results. We stand behind every clean.",
-              },
-              {
-                title: "Fully Insured",
-                description: "Full commercial liability insurance and WSIB compliance protect you and your property on every job.",
-              },
-              {
-                title: "Local Knowledge",
-                description: "We know Southwestern Ontario's climate challenges — mould season, salt damage, and UV exposure — and how to address them.",
-              },
-            ].map((value) => (
-              <div key={value.title} className="card p-6">
-                <h3 className="font-bold text-lg mb-2">{value.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="How It Works"
-            title="Our Proven 5-Step Process"
-            description="Designed for consistent, professional results on every job — residential or commercial."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {site.process.map((p) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {steps.map((p) => (
               <div key={p.step} className="card p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">
                   {p.step}
@@ -126,7 +92,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-[var(--surface)]">
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Coverage"

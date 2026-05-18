@@ -6,21 +6,20 @@ export function Footer() {
   const services = getServices();
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-navy-deep text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">{site.name}</h3>
+            <h3 className="font-display font-bold text-lg mb-4">{site.name}</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Professional pressure washing and exterior cleaning services
-              serving London and Southwestern Ontario.
-              {" "}{site.yearsExperience}+ years of experience restoring homes
-              and businesses to spotless condition.
+              Professional pressure washing and exterior cleaning services serving {site.address.city} and
+              Southwestern Ontario. {site.yearsExperience}+ years of experience restoring homes and businesses
+              to spotless condition.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-[var(--accent)]">Services</h4>
+            <h4 className="font-semibold text-[var(--accent-light)] mb-4">Services</h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.slug}>
@@ -36,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-[var(--accent)]">Service Areas</h4>
+            <h4 className="font-semibold text-[var(--accent-light)] mb-4">Service Areas</h4>
             <ul className="space-y-2">
               {site.serviceAreas.map((area) => (
                 <li key={area} className="text-slate-400 text-sm">
@@ -47,7 +46,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-[var(--accent)]">Contact</h4>
+            <h4 className="font-semibold text-[var(--accent-light)] mb-4">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -80,7 +79,7 @@ export function Footer() {
             </ul>
             <div className="mt-6">
               <Link href="/contact" className="btn btn-primary text-sm">
-                Get a Free Quote
+                Get a Free Estimate
               </Link>
             </div>
           </div>
@@ -88,7 +87,8 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10">
           <p className="text-center text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} {site.name}. All rights reserved. Serving London, Ontario and surrounding areas.
+            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+            Serving {site.address.city}, Ontario and surrounding areas.
           </p>
         </div>
       </div>

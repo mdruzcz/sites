@@ -31,13 +31,9 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const title = `${service.title} in ${city.name}, ${getServiceAreas().region}`;
-  const description = `Professional ${service.title.toLowerCase()} in ${city.name}. ${service.shortDescription} Call ${site.phone} for a free quote.`;
+  const description = `Professional ${service.title.toLowerCase()} in ${city.name}. ${service.shortDescription} Call ${site.phone} for a free estimate.`;
 
-  return {
-    title,
-    description,
-    openGraph: { title, description },
-  };
+  return { title, description, openGraph: { title, description } };
 }
 
 export default async function ServiceCityPage({
@@ -63,16 +59,10 @@ export default async function ServiceCityPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
-      <section className="bg-slate-900 py-16 sm:py-20">
+      <section className="bg-navy py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-slate-400 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -88,7 +78,6 @@ export default async function ServiceCityPage({
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl">
             Professional {service.title.toLowerCase()} services in {city.name} and surrounding areas.
-            Eco-friendly cleaning solutions with commercial-grade results.
           </p>
         </div>
       </section>
@@ -101,11 +90,8 @@ export default async function ServiceCityPage({
                 <p>{city.description}</p>
                 <p>{service.fullDescription}</p>
               </div>
-
               <div className="mt-8">
-                <h2 className="font-bold text-xl mb-4">
-                  Why Choose {site.name} in {city.name}?
-                </h2>
+                <h2 className="font-display font-bold text-xl mb-4">Why Choose {site.name} in {city.name}?</h2>
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
@@ -123,35 +109,28 @@ export default async function ServiceCityPage({
                   </li>
                 </ul>
               </div>
-
               <div className="mt-12">
-                <h2 className="font-bold text-xl mb-4">
-                  Also Serving Nearby Communities
-                </h2>
+                <h2 className="font-display font-bold text-xl mb-4">Also Serving Nearby Communities</h2>
                 <div className="flex flex-wrap gap-2">
                   {otherCities.map((c) => (
                     <Link
                       key={c.slug}
                       href={`/services/${service.slug}/${c.slug}`}
-                      className="text-sm bg-blue-50 text-blue-800 px-3 py-1.5 rounded-full hover:bg-blue-100 transition-colors"
+                      className="text-sm bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full hover:bg-amber-100 transition-colors"
                     >
                       {service.title} in {c.name}
                     </Link>
                   ))}
                 </div>
               </div>
-
               <div className="mt-8 p-6 bg-[var(--surface)] rounded-xl">
                 <h3 className="font-bold text-lg mb-2">Ready to get started?</h3>
                 <p className="text-slate-600 mb-4">
                   Call us today for a free estimate on {service.title.toLowerCase()} in {city.name}.
                 </p>
-                <a href={site.phoneHref} className="btn btn-phone">
-                  Call {site.phone}
-                </a>
+                <a href={site.phoneHref} className="btn btn-phone">Call {site.phone}</a>
               </div>
             </div>
-
             <div>
               <QuoteForm />
             </div>

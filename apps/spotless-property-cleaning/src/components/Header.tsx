@@ -16,39 +16,39 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-900 border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[var(--accent)] rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-9 h-9 rounded-lg bg-[var(--accent)] flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
             </div>
-            <div>
-              <span className="font-extrabold text-white text-lg leading-tight">SPOTLESS</span>
-              <span className="block text-[var(--accent)] text-xs font-bold tracking-widest -mt-0.5">PROPERTY CLEANING</span>
+            <div className="leading-tight">
+              <span className="font-bold text-[var(--navy)] text-base tracking-tight">SPOTLESS</span>
+              <span className="block text-[10px] font-semibold text-[var(--accent)] uppercase tracking-widest">Property Cleaning</span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
+                className="text-sm font-medium text-slate-600 hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
               >
                 {link.label}
               </Link>
             ))}
-            <a href={site.phoneHref} className="btn btn-primary text-sm">
+            <a href={site.phoneHref} className="btn btn-phone text-sm">
               <PhoneIcon />
               {site.phone}
             </a>
           </nav>
 
           <button
-            className="lg:hidden p-2 text-white"
+            className="md:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -63,19 +63,19 @@ export function Header() {
         </div>
 
         {mobileOpen && (
-          <div className="lg:hidden pb-4 border-t border-white/10">
-            <nav className="flex flex-col gap-1 pt-4">
+          <div className="md:hidden pb-4 border-t border-[var(--border)]">
+            <nav className="flex flex-col gap-2 pt-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5 rounded-lg uppercase tracking-wide"
+                  className="px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-lg uppercase tracking-wide"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <a href={site.phoneHref} className="btn btn-primary mt-2 text-sm">
+              <a href={site.phoneHref} className="btn btn-phone mt-2 text-sm">
                 <PhoneIcon />
                 Call {site.phone}
               </a>

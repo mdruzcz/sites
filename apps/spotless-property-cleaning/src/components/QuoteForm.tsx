@@ -24,6 +24,7 @@ export function QuoteForm() {
       if (res.ok) {
         setStatus("sent");
         form.reset();
+        (window as any).umami?.track("form-submission", { type: "quote" });
       } else {
         setStatus("error");
       }
@@ -40,7 +41,7 @@ export function QuoteForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-green-700 mb-2">Quote Request Sent!</h3>
+        <h3 className="text-xl font-bold text-green-700 mb-2">Request Sent!</h3>
         <p className="text-slate-600">
           We&apos;ll get back to you within 24 hours. For immediate assistance, call{" "}
           <a href={site.phoneHref} className="text-[var(--accent)] font-semibold">
@@ -53,9 +54,8 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="card p-6 sm:p-8 space-y-4">
-      <h3 className="text-xl font-bold mb-2">Get a Free Quote</h3>
+      <h3 className="font-display text-xl font-bold mb-2">Get a Free Estimate</h3>
 
-      {/* Honeypot */}
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -102,7 +102,6 @@ export function QuoteForm() {
           id="address"
           name="address"
           type="text"
-          autoComplete="street-address"
           className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
         />
       </div>
@@ -136,9 +135,9 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="btn btn-primary w-full disabled:opacity-50 min-h-[44px]"
+        className="btn btn-primary w-full py-3.5 disabled:opacity-50"
       >
-        {status === "sending" ? "Sending..." : "Request Free Quote"}
+        {status === "sending" ? "Sending..." : "Request Free Estimate"}
       </button>
 
       {status === "error" && (

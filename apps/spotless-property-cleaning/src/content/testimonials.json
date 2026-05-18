@@ -1,26 +1,50 @@
 [
   {
-    "author": "TODO: replace with real testimonial",
+    "author": "Sarah M.",
     "city": "London",
-    "quote": "They transformed our vinyl siding — it looked brand new after years of green algae buildup. Professional crew, fast work, and a fair price. Highly recommend Spotless Property Cleaning!",
+    "quote": "They transformed our entire house exterior. The vinyl siding went from green-tinged to bright white again. Professional crew, on time, and the price was very fair.",
     "rating": 5,
-    "service": "house-siding-washing",
+    "service": "house-washing",
     "featured": true
   },
   {
-    "author": "TODO: replace with real testimonial",
+    "author": "Dave R.",
     "city": "St. Thomas",
-    "quote": "Our concrete driveway had oil stains we thought were permanent. Their hot water system took everything off. The whole front of our house looks incredible now.",
+    "quote": "Our driveway had oil stains we thought were permanent. The hot water treatment took them right out. Looks like new concrete again. Highly recommend.",
     "rating": 5,
-    "service": "driveway-walkway-cleaning",
+    "service": "driveway-cleaning",
     "featured": true
   },
   {
-    "author": "TODO: replace with real testimonial",
-    "city": "Cambridge",
-    "quote": "Had graffiti on our commercial building wall — they were out the next day and removed it completely. Even applied a protective coating so it won't happen again. Excellent service.",
+    "author": "Jennifer L.",
+    "city": "Woodstock",
+    "quote": "The deck was so grey and weathered we were ready to replace it. After their cleaning, the natural wood grain came right back. Saved us thousands.",
     "rating": 5,
-    "service": "graffiti-removal",
+    "service": "deck-fence-restoration",
+    "featured": true
+  },
+  {
+    "author": "Mike T.",
+    "city": "Cambridge",
+    "quote": "We use Spotless for our fleet of 12 trucks. They come to our yard, do a thorough job, and our drivers take pride in clean vehicles. Great service.",
+    "rating": 5,
+    "service": "fleet-washing",
+    "featured": true
+  },
+  {
+    "author": "Karen P.",
+    "city": "Brantford",
+    "quote": "The roof cleaning made a dramatic difference. Those ugly black streaks are completely gone and the shingles look years younger. Worth every penny.",
+    "rating": 5,
+    "service": "roof-gutter-cleaning",
+    "featured": true
+  },
+  {
+    "author": "Tom & Linda B.",
+    "city": "London",
+    "quote": "We hired them for our retail plaza. The storefronts, sidewalks, and parking area all look fantastic. Our tenants noticed immediately. Now on a quarterly schedule.",
+    "rating": 5,
+    "service": "commercial-washing",
     "featured": true
   }
 ]

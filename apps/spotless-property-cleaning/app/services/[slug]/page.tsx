@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
 import { getServices, getServiceBySlug, getServiceAreas } from "@/lib/content";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
+
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  "house-washing": { src: "/images/concrete-washing.jpg", alt: "Professional house washing service in London, Ontario" },
+  "driveway-cleaning": { src: "/images/driveway-washing.jpg", alt: "Driveway pressure washing and cleaning in Southwestern Ontario" },
+  "deck-fence-restoration": { src: "/images/deck-cleaning.jpg", alt: "Deck and fence restoration pressure washing service" },
+  "roof-gutter-cleaning": { src: "/images/patio-cleaning.jpg", alt: "Roof and gutter soft wash cleaning service" },
+  "commercial-washing": { src: "/images/commercial-washing.jpg", alt: "Commercial building pressure washing service" },
+  "parking-lot-cleaning": { src: "/images/driveway-washing.jpg", alt: "Parking lot and garage pressure washing" },
+  "fleet-washing": { src: "/images/commercial-washing.jpg", alt: "Fleet and equipment washing service" },
+  "graffiti-removal": { src: "/images/before-after.jpg", alt: "Professional graffiti removal and surface restoration" },
+};
 
 export const revalidate = 3600;
 
@@ -22,15 +34,12 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
-  const title = `${service.title} in London, ON`;
-  const description = `Professional ${service.title.toLowerCase()} in London, Ontario. ${service.shortDescription} Call ${site.phone} for a free quote.`;
-
   return {
-    title,
-    description,
+    title: `${service.title} in ${site.address.city}, ON`,
+    description: `${service.shortDescription} Call ${site.phone} for a free estimate.`,
     openGraph: {
-      title: `${title} | ${site.name}`,
-      description,
+      title: `${service.title} | ${site.name}`,
+      description: service.shortDescription,
     },
   };
 }
@@ -54,16 +63,10 @@ export default async function ServicePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
-      <section className="bg-slate-900 py-16 sm:py-20">
+      <section className="bg-navy py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-slate-400 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
@@ -73,11 +76,9 @@ export default async function ServicePage({
             <span className="text-white">{service.title}</span>
           </nav>
           <h1 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-            {service.title} in London, ON
+            {service.title}
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl">
-            {service.shortDescription}
-          </p>
+          <p className="text-xl text-slate-300 max-w-3xl">{service.shortDescription}</p>
         </div>
       </section>
 
@@ -85,12 +86,21 @@ export default async function ServicePage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
+              {serviceImages[service.slug] && (
+                <div className="relative aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-8">
+                  <Image
+                    src={serviceImages[service.slug].src}
+                    alt={serviceImages[service.slug].alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <div className="prose prose-lg text-slate-600">
                 <p>{service.fullDescription}</p>
               </div>
-
               <div className="mt-8">
-                <h2 className="font-bold text-xl mb-4">Key Benefits</h2>
+                <h2 className="font-display font-bold text-xl mb-4">Key Benefits</h2>
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
@@ -102,38 +112,21 @@ export default async function ServicePage({
                   ))}
                 </ul>
               </div>
-
               <div className="mt-12">
-                <h2 className="font-bold text-xl mb-4">
-                  {service.title} in Your Area
-                </h2>
-                <p className="text-slate-600 mb-4">
-                  We provide {service.title.toLowerCase()} services across Southwestern Ontario:
-                </p>
+                <h2 className="font-display font-bold text-xl mb-4">{service.title} in Your Area</h2>
                 <div className="flex flex-wrap gap-2">
                   {areas.cities.map((city) => (
                     <Link
                       key={city.slug}
                       href={`/services/${service.slug}/${city.slug}`}
-                      className="text-sm bg-blue-50 text-blue-800 px-3 py-1.5 rounded-full hover:bg-blue-100 transition-colors"
+                      className="text-sm bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full hover:bg-amber-100 transition-colors"
                     >
                       {service.title} in {city.name}
                     </Link>
                   ))}
                 </div>
               </div>
-
-              <div className="mt-8 p-6 bg-[var(--surface)] rounded-xl">
-                <h3 className="font-bold text-lg mb-2">Ready to get started?</h3>
-                <p className="text-slate-600 mb-4">
-                  Call us today for a free on-site estimate for {service.title.toLowerCase()} in London and surrounding areas.
-                </p>
-                <a href={site.phoneHref} className="btn btn-phone">
-                  Call {site.phone}
-                </a>
-              </div>
             </div>
-
             <div>
               <QuoteForm />
             </div>
