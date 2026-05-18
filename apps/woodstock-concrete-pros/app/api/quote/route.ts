@@ -1,21 +1,50 @@
 export const runtime = "edge";
 
+const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10 MB
+const MAX_IMAGES = 5;
+
 export async function POST(req: Request) {
-  const body = await req.json();
+  const formData = await req.formData();
 
   // Honeypot check
-  if (body.website?.trim()) return Response.json({ ok: true });
+  const honeypot = formData.get("website") as string;
+  if (honeypot?.trim()) return Response.json({ ok: true });
 
-  if (!body.name || !body.phone || !body.email || !body.service)
+  const name = formData.get("name") as string;
+  const phone = formData.get("phone") as string;
+  const email = formData.get("email") as string;
+  const service = formData.get("service") as string;
+  const address = (formData.get("address") as string) || null;
+  const city = (formData.get("city") as string) || null;
+  const message = (formData.get("message") as string) || null;
+  const referralSource = (formData.get("referral_source") as string) || null;
+
+  if (!name || !phone || !email || !service)
     return Response.json({ error: "All fields required." }, { status: 400 });
 
+  // Process uploaded images — store as base64 data URIs
+  const imageFiles = formData.getAll("images") as File[];
+  const imageUrls: string[] = [];
+
+  for (const file of imageFiles.slice(0, MAX_IMAGES)) {
+    if (file.size > MAX_IMAGE_SIZE || !file.type.startsWith("image/")) continue;
+    const buffer = await file.arrayBuffer();
+    const base64 = btoa(
+      new Uint8Array(buffer).reduce((data, byte) => data + String.fromCharCode(byte), "")
+    );
+    imageUrls.push(`data:${file.type};base64,${base64}`);
+  }
+
   const payload = {
-    name: body.name,
-    phone: body.phone,
-    email: body.email,
-    address: body.address || null,
-    service: body.service,
-    message: body.message || null,
+    name,
+    phone,
+    email,
+    address,
+    city,
+    service,
+    message,
+    referral_source: referralSource,
+    image_urls: imageUrls.length > 0 ? imageUrls : null,
   };
 
   // Store in Supabase
@@ -33,6 +62,11 @@ export async function POST(req: Request) {
     }
   );
 
+  // Build image attachment list for email
+  const imageHtml = imageUrls.length > 0
+    ? `<p><strong>Photos:</strong> ${imageUrls.length} image(s) attached to this quote request (view in Supabase dashboard)</p>`
+    : "";
+
   // Send email notification via Resend
   if (process.env.RESEND_API_KEY) {
     await fetch("https://api.resend.com/emails", {
@@ -44,15 +78,18 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: process.env.CONTACT_FROM_EMAIL || "noreply@woodstockconcretepros.ca",
         to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-        subject: `Quote Request from ${body.name} - Woodstock Concrete Pros`,
+        subject: `Quote Request from ${name} - Woodstock Concrete Pros`,
         html: `
           <h2>New Quote Request — Woodstock Concrete Pros</h2>
-          <p><strong>Name:</strong> ${body.name}</p>
-          <p><strong>Phone:</strong> ${body.phone}</p>
-          <p><strong>Email:</strong> ${body.email}</p>
-          <p><strong>Address:</strong> ${body.address || "Not provided"}</p>
-          <p><strong>Service:</strong> ${body.service}</p>
-          <p><strong>Message:</strong> ${body.message || "None"}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>City:</strong> ${city || "Not provided"}</p>
+          <p><strong>Address:</strong> ${address || "Not provided"}</p>
+          <p><strong>Service:</strong> ${service}</p>
+          <p><strong>Message:</strong> ${message || "None"}</p>
+          <p><strong>How they heard about us:</strong> ${referralSource || "Not provided"}</p>
+          ${imageHtml}
         `,
       }),
     });

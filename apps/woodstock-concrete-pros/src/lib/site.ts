@@ -1,7 +1,7 @@
 export const site = {
   name: "Woodstock Concrete Pros",
-  phone: "519-999-9999",
-  phoneHref: "tel:+15199999999",
+  phone: "519-266-6796",
+  phoneHref: "tel:+15192666796",
   email: "service@woodstockconcretepros.ca",
   address: {
     city: "Woodstock",
