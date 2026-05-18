@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining London, Ontario | Deck Heroes",
   description:
-    "Professional deck staining, sealing, refinishing & fence staining in London, Ontario. Serving Byron, Westmount, Old North, Wortley Village & more. Free quotes from Deck Heroes.",
+    "Professional deck staining, refinishing, resurfacing, building & cleaning in London, Ontario. Serving Byron, Westmount, Old North, Wortley Village & more. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -57,7 +57,7 @@ export default function LondonPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in London, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in London, Ontario.",
     url: `https://${DOMAIN}/areas/london`,
     telephone: PHONE,
     email: EMAIL,

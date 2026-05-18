@@ -24,7 +24,7 @@ const jsonLd = {
     "@type": "LocalBusiness",
     name: "Deck Heroes",
     url: "https://deckheroes.ca",
-    telephone: "+15192666796",
+    telephone: "+15198786735",
   },
   areaServed: {
     "@type": "State",
@@ -268,14 +268,17 @@ export default function DeckStainingPage() {
             Explore Our Other Services
           </h2>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/services/deck-sealing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Deck Sealing
-            </Link>
             <Link href="/services/deck-refinishing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Deck Refinishing
             </Link>
-            <Link href="/services/fence-staining" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Fence Staining
+            <Link href="/services/deck-resurfacing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+              Deck Resurfacing
+            </Link>
+            <Link href="/services/deck-building" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+              Deck Building
+            </Link>
+            <Link href="/services/deck-cleaning" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+              Deck Cleaning
             </Link>
             <Link href="/contact" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Contact Us

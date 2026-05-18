@@ -58,5 +58,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages];
+  const serviceCityPages: MetadataRoute.Sitemap = SERVICES.flatMap((service) =>
+    CITIES.map((city) => ({
+      url: `${baseUrl}/services/${service.slug}/${city.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
+
+  return [...staticPages, ...servicePages, ...cityPages, ...serviceCityPages];
 }

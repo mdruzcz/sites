@@ -6,11 +6,11 @@ import { PHONE, PHONE_HREF } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions About Deck Staining & Maintenance",
   description:
-    "Get answers to common questions about deck staining, sealing, refinishing, and maintenance in Ontario. Costs, timing, process, and more from Deck Heroes.",
+    "Get answers to common questions about deck staining, refinishing, resurfacing, building, cleaning, and maintenance in Ontario. Costs, timing, process, and more from Deck Heroes.",
   openGraph: {
     title: "Deck Staining FAQ | Deck Heroes",
     description:
-      "Answers to your most common deck staining, sealing, and maintenance questions from Deck Heroes.",
+      "Answers to your most common deck staining, building, and maintenance questions from Deck Heroes.",
     url: "https://deckheroes.ca/faq",
   },
 };
@@ -19,7 +19,7 @@ const GENERAL_FAQ = [
   {
     question: "What services does Deck Heroes offer?",
     answer:
-      "We specialize in four core services: deck staining, deck sealing, deck refinishing, and fence staining. Each service includes thorough preparation, premium products, and professional application to ensure a lasting, beautiful finish.",
+      "We specialize in five core services: deck staining, deck refinishing, deck resurfacing, deck building, and deck cleaning. Each service includes thorough preparation, premium products, and professional workmanship to ensure lasting, beautiful results.",
   },
   {
     question: "What areas do you serve?",
@@ -66,16 +66,16 @@ const STAINING_FAQ = [
   },
 ];
 
-const SEALING_FAQ = [
+const BUILDING_FAQ = [
   {
-    question: "What is the difference between staining and sealing?",
+    question: "Do I need a permit to build a new deck in Ontario?",
     answer:
-      "Sealing applies a clear protective barrier against moisture without adding colour. Staining adds pigment for colour and UV protection in addition to moisture resistance. Many modern deck stains include sealant properties, providing both colour and protection in one product.",
+      "In most municipalities, yes. Decks higher than twenty-four inches above grade, attached to the house, or over a certain size require a building permit. Requirements vary by city. We handle the full permit process for you, including site plans and construction drawings.",
   },
   {
-    question: "When does my deck need sealing vs staining?",
+    question: "How long does it take to build a new deck?",
     answer:
-      "If you want to preserve the natural look of your wood with minimal colour change, sealing is a good choice. If you want to add colour, enhance the grain, or protect against UV greying, staining is the better option. We can help you decide during your consultation.",
+      "A standard single-level deck takes one to two weeks. Multi-level or complex builds may take two to four weeks. Permit approval can add one to three weeks before construction begins. We provide a clear timeline in your quote.",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function FAQPage() {
           </h1>
           <p className="mt-4 text-lg text-cream-dark max-w-2xl mx-auto">
             Find answers to the most common questions we hear from homeowners
-            about deck care, staining, sealing, and our process.
+            about deck care, staining, building, and our process.
           </p>
         </div>
       </section>
@@ -149,12 +149,12 @@ export default function FAQPage() {
             <FAQAccordion items={STAINING_FAQ} />
           </div>
 
-          {/* Sealing */}
+          {/* Building */}
           <div>
             <h2 className="font-serif text-xl font-bold text-wood-dark sm:text-2xl mb-6">
-              Deck Sealing
+              Deck Building
             </h2>
-            <FAQAccordion items={SEALING_FAQ} />
+            <FAQAccordion items={BUILDING_FAQ} />
           </div>
 
           {/* Maintenance */}

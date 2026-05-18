@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining Strathroy, Ontario | Deck Heroes",
   description:
-    "Professional deck staining, sealing, refinishing & fence staining in Strathroy, Ontario. Serving Strathroy-Caradoc, Mount Brydges, Adelaide-Metcalfe & more. Free quotes from Deck Heroes.",
+    "Professional deck staining, refinishing, resurfacing, building & cleaning in Strathroy, Ontario. Serving Strathroy-Caradoc, Mount Brydges, Adelaide-Metcalfe & more. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -30,9 +30,9 @@ const faqs = [
       "Simply clear your deck of furniture, planters, and personal items before our scheduled arrival. We handle all the cleaning, sanding, and preparation as part of our service. If you have items that are difficult to move, let us know and we can help.",
   },
   {
-    question: "What is the difference between deck staining and deck sealing?",
+    question: "What is the difference between deck staining and deck cleaning?",
     answer:
-      "Deck staining adds colour and UV protection while also sealing the wood against moisture. Deck sealing provides a clear or lightly tinted protective barrier without significantly changing the wood's appearance. Both protect against Strathroy's weather, but staining offers more comprehensive coverage. We can recommend the best option for your deck.",
+      "Deck cleaning removes dirt, mould, mildew, and grey weathering from the wood surface using professional-grade cleaners and controlled pressure washing. Deck staining adds colour and UV protection while also protecting the wood against moisture. Cleaning is the essential first step before staining, and many homeowners benefit from annual cleaning even between staining cycles.",
   },
   {
     question: "Can you match my existing fence stain colour?",
@@ -52,7 +52,7 @@ export default function StrathroyPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in Strathroy, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in Strathroy, Ontario.",
     url: `https://${DOMAIN}/areas/strathroy`,
     telephone: PHONE,
     email: EMAIL,
@@ -129,7 +129,7 @@ export default function StrathroyPage() {
             </p>
             <p>
               Deck Heroes helps Strathroy homeowners stay ahead of this cycle.
-              Our professional staining and sealing services create a durable
+              Our professional staining and restoration services create a durable
               barrier against moisture and sun, keeping your wood looking fresh
               and structurally sound for years. We also serve the neighbouring
               communities of Mount Brydges and Adelaide-Metcalfe, bringing the

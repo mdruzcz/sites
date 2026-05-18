@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining St. Thomas, Ontario | Deck Heroes",
   description:
-    "Professional deck staining, sealing, refinishing & fence staining in St. Thomas, Ontario. Serving Elgin Centre, Railway City area, Port Stanley & more. Free quotes from Deck Heroes.",
+    "Professional deck staining, refinishing, resurfacing, building & cleaning in St. Thomas, Ontario. Serving Elgin Centre, Railway City area, Port Stanley & more. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -53,7 +53,7 @@ export default function StThomasPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in St. Thomas, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in St. Thomas, Ontario.",
     url: `https://${DOMAIN}/areas/st-thomas`,
     telephone: PHONE,
     email: EMAIL,

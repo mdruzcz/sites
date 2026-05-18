@@ -1,6 +1,6 @@
 export const COMPANY_NAME = "Deck Heroes";
-export const PHONE = "519 266 6796";
-export const PHONE_HREF = "tel:+15192666796";
+export const PHONE = "519 878 6735";
+export const PHONE_HREF = "tel:+15198786735";
 export const EMAIL = "service@deckheroes.ca";
 export const DOMAIN = "deckheroes.ca";
 
@@ -18,22 +18,28 @@ export const SERVICES: Service[] = [
       "Enhance and protect your deck with premium wood stains that bring out the natural beauty of the grain.",
   },
   {
-    slug: "deck-sealing",
-    title: "Deck Sealing",
-    shortDescription:
-      "Shield your deck from moisture, UV rays, and harsh Ontario winters with professional-grade sealants.",
-  },
-  {
     slug: "deck-refinishing",
     title: "Deck Refinishing",
     shortDescription:
       "Restore weathered, grey decks to their original glory with our complete sanding and refinishing process.",
   },
   {
-    slug: "fence-staining",
-    title: "Fence Staining",
+    slug: "deck-resurfacing",
+    title: "Deck Resurfacing",
     shortDescription:
-      "Give your fence a rich, lasting finish that complements your deck and boosts curb appeal.",
+      "Replace worn deck boards and give your entire surface a fresh start without rebuilding the frame.",
+  },
+  {
+    slug: "deck-building",
+    title: "Deck Building",
+    shortDescription:
+      "Custom-designed and expertly built decks that transform your backyard into the perfect outdoor living space.",
+  },
+  {
+    slug: "deck-cleaning",
+    title: "Deck Cleaning",
+    shortDescription:
+      "Professional power washing and deep cleaning to remove dirt, mould, and grey weathering from your deck.",
   },
 ];
 
@@ -82,16 +88,16 @@ export const TESTIMONIALS: Testimonial[] = [
     city: "Woodstock",
     rating: 5,
     quote:
-      "They sealed our deck just before the fall rains hit. Two seasons later and it still looks fantastic. Great value for the protection it provides.",
-    service: "Deck Sealing",
+      "They cleaned and resurfaced our deck just before the fall rains hit. Two seasons later and it still looks fantastic. Great value for the transformation.",
+    service: "Deck Resurfacing",
   },
   {
     name: "Marcus R.",
     city: "Brantford",
     rating: 5,
     quote:
-      "Had both our deck and fence stained at the same time. The crew was efficient, clean, and the finished product is stunning. Our backyard feels like a retreat now.",
-    service: "Fence Staining",
+      "Had our entire deck built from scratch. The crew was efficient, clean, and the finished product is stunning. Our backyard feels like a retreat now.",
+    service: "Deck Building",
   },
   {
     name: "Patricia W.",
@@ -106,8 +112,8 @@ export const TESTIMONIALS: Testimonial[] = [
     city: "Strathroy",
     rating: 4,
     quote:
-      "Solid work on our fence staining project. The team was friendly and worked around our schedule. The fence looks better than the day it was installed.",
-    service: "Fence Staining",
+      "Solid work on our deck cleaning project. The team was friendly and worked around our schedule. The deck looks better than the day it was installed.",
+    service: "Deck Cleaning",
   },
   {
     name: "Rachel S.",
@@ -122,8 +128,8 @@ export const TESTIMONIALS: Testimonial[] = [
     city: "Hamilton",
     rating: 5,
     quote:
-      "Professional from start to finish. They helped us choose the right sealer for our composite-and-wood deck. The sealing has held up perfectly through a harsh winter.",
-    service: "Deck Sealing",
+      "Professional from start to finish. They helped us choose the right material for our deck resurfacing. The new boards have held up perfectly through a harsh winter.",
+    service: "Deck Resurfacing",
   },
   {
     name: "Karen & Bill J.",

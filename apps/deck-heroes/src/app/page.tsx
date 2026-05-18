@@ -11,13 +11,13 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Deck Heroes | Professional Deck Staining & Restoration in Ontario",
+  title: "Deck Heroes | Deck Staining, Building & Restoration in Ontario",
   description:
-    "Transform your outdoor living space with Deck Heroes. Professional deck staining, sealing, refinishing, and fence staining across Southwestern Ontario. Free estimates, 5-star rated, fully insured.",
+    "Transform your outdoor living space with Deck Heroes. Professional deck staining, refinishing, resurfacing, building, and cleaning across Southwestern Ontario. Free estimates, 5-star rated, fully insured.",
   openGraph: {
-    title: "Deck Heroes | Professional Deck Staining & Restoration in Ontario",
+    title: "Deck Heroes | Deck Staining, Building & Restoration in Ontario",
     description:
-      "Transform your outdoor living space with professional deck staining, sealing, refinishing, and fence staining across Southwestern Ontario.",
+      "Transform your outdoor living space with professional deck staining, building, refinishing, resurfacing, and cleaning across Southwestern Ontario.",
     url: "https://deckheroes.ca",
     siteName: "Deck Heroes",
     locale: "en_CA",
@@ -38,17 +38,6 @@ function StainIcon({ className }: { className?: string }) {
   );
 }
 
-function SealIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={2}>
-      <path d="M12 36c4-6 8-2 12-8s8-2 12-8" strokeLinecap="round" />
-      <path d="M10 40c4-6 8-2 12-8s8-2 12-8" strokeLinecap="round" />
-      <rect x="6" y="10" width="36" height="4" rx="1" />
-      <rect x="6" y="16" width="36" height="4" rx="1" />
-    </svg>
-  );
-}
-
 function RefinishIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -60,21 +49,48 @@ function RefinishIcon({ className }: { className?: string }) {
   );
 }
 
-function FenceIcon({ className }: { className?: string }) {
+function ResurfaceIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={2}>
-      <line x1="8" y1="12" x2="8" y2="40" />
-      <line x1="20" y1="12" x2="20" y2="40" />
-      <line x1="32" y1="12" x2="32" y2="40" />
-      <line x1="44" y1="12" x2="44" y2="40" />
-      <rect x="4" y="18" width="44" height="3" rx="1" />
-      <rect x="4" y="30" width="44" height="3" rx="1" />
-      <path d="M6 12l2-4 2 4M18 12l2-4 2 4M30 12l2-4 2 4M42 12l2-4 2 4" strokeLinejoin="round" />
+      <rect x="6" y="30" width="36" height="4" rx="1" />
+      <rect x="6" y="36" width="36" height="4" rx="1" />
+      <path d="M10 26h28" strokeDasharray="4 3" />
+      <path d="M16 18l8-8 8 8" strokeLinecap="round" strokeLinejoin="round" />
+      <line x1="24" y1="10" x2="24" y2="26" />
     </svg>
   );
 }
 
-const SERVICE_ICONS = [StainIcon, SealIcon, RefinishIcon, FenceIcon];
+function BuildIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={2}>
+      <rect x="4" y="32" width="40" height="4" rx="1" />
+      <rect x="4" y="38" width="40" height="4" rx="1" />
+      <line x1="10" y1="32" x2="10" y2="20" />
+      <line x1="24" y1="32" x2="24" y2="20" />
+      <line x1="38" y1="32" x2="38" y2="20" />
+      <rect x="8" y="18" width="32" height="4" rx="1" />
+      <path d="M20 14l4-6 4 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CleanIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={2}>
+      <rect x="6" y="34" width="36" height="4" rx="1" />
+      <rect x="6" y="40" width="36" height="4" rx="1" />
+      <path d="M18 30v-8l-4-6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M24 30v-14" strokeLinecap="round" />
+      <path d="M30 30v-8l4-6" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="14" cy="14" r="2" fill="currentColor" />
+      <circle cx="24" cy="10" r="2" fill="currentColor" />
+      <circle cx="34" cy="14" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
+const SERVICE_ICONS = [StainIcon, RefinishIcon, ResurfaceIcon, BuildIcon, CleanIcon];
 
 /* ---------- neighbourhood labels for cities ---------- */
 const CITY_NEIGHBOURHOODS: Record<string, string> = {
@@ -125,12 +141,12 @@ export default function HomePage() {
         />
         <div className="relative mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
-            Professional Deck Staining &amp; Restoration in Ontario
+            Professional Deck Building &amp; Restoration in Ontario
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-sand-light sm:text-xl">
-            Transform your outdoor living space with expert deck staining, sealing,
-            refinishing, and fence staining. Trusted by hundreds of homeowners across
-            Southwestern Ontario.
+            Transform your outdoor living space with expert deck staining,
+            refinishing, resurfacing, building, and cleaning. Trusted by hundreds
+            of homeowners across Southwestern Ontario.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -179,11 +195,11 @@ export default function HomePage() {
               Our Services
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-wood-light">
-              From fresh staining to full restoration, we offer comprehensive deck and
-              fence care for every outdoor wood surface.
+              From fresh staining to custom builds, we offer comprehensive deck
+              services for every outdoor wood surface.
             </p>
           </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service, i) => {
               const Icon = SERVICE_ICONS[i];
               return (

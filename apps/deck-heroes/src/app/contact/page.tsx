@@ -20,7 +20,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Deck Heroes",
   url: "https://deckheroes.ca",
-  telephone: "+15192666796",
+  telephone: "+15198786735",
   email: "service@deckheroes.ca",
   areaServed: {
     "@type": "State",

@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining Woodstock, Ontario | Deck Heroes",
   description:
-    "Expert deck staining, sealing, refinishing & fence staining in Woodstock, Ontario. Serving Southside, Northend, Roth Park & surrounding areas. Free quotes from Deck Heroes.",
+    "Expert deck staining, refinishing, resurfacing, building & cleaning in Woodstock, Ontario. Serving Southside, Northend, Roth Park & surrounding areas. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -31,9 +31,9 @@ const faqs = [
       "Woodstock homes often feature classic Ontario architecture that pairs beautifully with warm, natural wood tones. Semi-transparent stains in cedar, honey, and walnut shades are popular choices that complement brick and stone exteriors common throughout the Southside and Northend neighbourhoods.",
   },
   {
-    question: "Do you offer deck sealing as a standalone service in Woodstock?",
+    question: "Do you offer deck cleaning as a standalone service in Woodstock?",
     answer:
-      "Absolutely. Deck sealing is one of our most requested services in Woodstock. A quality sealant protects your deck from Oxford County's heavy spring rains and winter moisture without changing the wood's natural appearance. It's an excellent option for newer decks that don't yet need staining.",
+      "Absolutely. Deck cleaning is one of our most requested services in Woodstock. Professional power washing and treatment removes dirt, mould, and grey weathering caused by Oxford County's heavy spring rains and winter moisture. It is an excellent way to refresh your deck's appearance and prepare it for staining.",
   },
   {
     question: "Can you refinish a deck that has been neglected for years?",
@@ -53,7 +53,7 @@ export default function WoodstockPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in Woodstock, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in Woodstock, Ontario.",
     url: `https://${DOMAIN}/areas/woodstock`,
     telephone: PHONE,
     email: EMAIL,
@@ -170,7 +170,7 @@ export default function WoodstockPage() {
           </h2>
           <p className="mt-4 text-wood-light leading-relaxed">
             We provide comprehensive wood care services for Woodstock homes,
-            from targeted sealing to full refinishing of aged decks.
+            from thorough cleaning to full refinishing of aged decks.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {SERVICES.map((s) => (

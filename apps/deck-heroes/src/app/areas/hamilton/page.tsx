@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining Hamilton, Ontario | Deck Heroes",
   description:
-    "Professional deck staining, sealing, refinishing & fence staining in Hamilton, Ontario. Serving Dundas, Ancaster, Waterdown, Stoney Creek & more. Free quotes from Deck Heroes.",
+    "Professional deck staining, refinishing, resurfacing, building & cleaning in Hamilton, Ontario. Serving Dundas, Ancaster, Waterdown, Stoney Creek & more. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -55,7 +55,7 @@ export default function HamiltonPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in Hamilton, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in Hamilton, Ontario.",
     url: `https://${DOMAIN}/areas/hamilton`,
     telephone: PHONE,
     email: EMAIL,

@@ -20,21 +20,21 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://deckheroes.ca"),
   title: {
-    default: "Deck Heroes | Professional Deck Staining & Restoration in Ontario",
+    default: "Deck Heroes | Deck Staining, Building & Restoration in Ontario",
     template: "%s | Deck Heroes",
   },
   description:
-    "Professional deck staining, sealing, refinishing, and fence staining services in London, Woodstock, St. Thomas, Strathroy, Brantford & Hamilton, Ontario. Free estimates. 5-star rated.",
+    "Professional deck staining, refinishing, resurfacing, building, and cleaning services in London, Woodstock, St. Thomas, Strathroy, Brantford & Hamilton, Ontario. Free estimates. 5-star rated.",
   keywords:
-    "deck staining Ontario, deck sealing, deck refinishing, fence staining, London Ontario, deck restoration, deck maintenance",
+    "deck staining Ontario, deck building, deck refinishing, deck resurfacing, deck cleaning, London Ontario, deck restoration, deck maintenance",
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://deckheroes.ca",
     siteName: "Deck Heroes",
-    title: "Deck Heroes | Professional Deck Staining & Restoration in Ontario",
+    title: "Deck Heroes | Deck Staining, Building & Restoration in Ontario",
     description:
-      "Transform your outdoor living space with professional deck staining and restoration services across Southwestern Ontario.",
+      "Transform your outdoor living space with professional deck staining, building, and restoration services across Southwestern Ontario.",
   },
 };
 

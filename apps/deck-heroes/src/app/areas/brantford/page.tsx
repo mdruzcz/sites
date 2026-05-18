@@ -7,7 +7,7 @@ import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Deck Staining Brantford, Ontario | Deck Heroes",
   description:
-    "Professional deck staining, sealing, refinishing & fence staining in Brantford, Ontario. Serving Eagle Place, Holmedale, West Brant, Paris & Brant County. Free quotes from Deck Heroes.",
+    "Professional deck staining, refinishing, resurfacing, building & cleaning in Brantford, Ontario. Serving Eagle Place, Holmedale, West Brant, Paris & Brant County. Free quotes from Deck Heroes.",
 };
 
 const neighborhoods = [
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "How quickly can you schedule a project in Brantford?",
     answer:
-      "During our peak season from May to September, we typically book projects one to three weeks out. Smaller projects like fence staining may be available sooner. We recommend reaching out early in the spring to secure your preferred timing, especially for larger refinishing projects.",
+      "During our peak season from May to September, we typically book projects one to three weeks out. Smaller projects like deck cleaning may be available sooner. We recommend reaching out early in the spring to secure your preferred timing, especially for larger refinishing projects.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function BrantfordPage() {
     "@type": "LocalBusiness",
     name: COMPANY_NAME,
     description:
-      "Professional deck staining, sealing, refinishing, and fence staining services in Brantford, Ontario.",
+      "Professional deck staining, refinishing, resurfacing, building, and cleaning services in Brantford, Ontario.",
     url: `https://${DOMAIN}/areas/brantford`,
     telephone: PHONE,
     email: EMAIL,
@@ -249,7 +249,7 @@ export default function BrantfordPage() {
               &ldquo;Our deck and fence both needed serious help after a couple
               of rough winters. Deck Heroes came out, gave us a detailed quote
               same day, and scheduled the work within two weeks. The crew did
-              both the deck refinishing and fence staining over three days, and
+              both the deck refinishing and deck cleaning over three days, and
               the transformation is remarkable. Our backyard in Eagle Place has
               never looked this good.&rdquo;
             </p>

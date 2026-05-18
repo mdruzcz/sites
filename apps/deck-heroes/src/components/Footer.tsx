@@ -21,8 +21,8 @@ export default function Footer() {
               {COMPANY_NAME}
             </h3>
             <p className="text-sm text-cream-dark leading-relaxed">
-              Professional deck staining, sealing, and refinishing services
-              proudly serving Southwestern Ontario.
+              Professional deck staining, refinishing, resurfacing, building,
+              and cleaning services proudly serving Southwestern Ontario.
             </p>
             <div className="space-y-2 text-sm">
               <a
