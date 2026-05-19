@@ -2,27 +2,42 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { site } from "@/lib/site";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
+    { href: "/service-areas", label: "Areas" },
     { href: "/about", label: "About" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--border)]">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[var(--border)]"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.svg"
+              src={scrolled ? "/images/logo.svg" : "/images/logo-white.svg"}
               alt={`${site.name} — Legal Basement Apartments & Renovations in London, Ontario`}
               width={240}
               height={60}
@@ -31,28 +46,40 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
+                className={`text-sm font-medium transition-colors uppercase tracking-wide ${
+                  scrolled
+                    ? "text-slate-600 hover:text-[var(--accent)]"
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
-            <a href={site.phoneHref} className="btn btn-phone text-sm">
+            <a
+              href={site.phoneHref}
+              className={`btn text-sm ${scrolled ? "btn-primary" : "btn-ghost"}`}
+            >
               <PhoneIcon />
               {site.phone}
             </a>
           </nav>
 
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className={`w-6 h-6 ${scrolled ? "text-slate-800" : "text-white"}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -63,7 +90,7 @@ export function Header() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden pb-4 border-t border-[var(--border)]">
+          <div className="lg:hidden pb-4 border-t border-[var(--border)] bg-white rounded-b-xl shadow-lg -mx-4 px-4">
             <nav className="flex flex-col gap-2 pt-4">
               {links.map((link) => (
                 <Link
@@ -75,7 +102,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <a href={site.phoneHref} className="btn btn-phone mt-2 text-sm">
+              <a href={site.phoneHref} className="btn btn-primary mt-2 text-sm">
                 <PhoneIcon />
                 Call {site.phone}
               </a>

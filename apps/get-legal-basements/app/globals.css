@@ -3,14 +3,17 @@
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
 
 :root {
-  --accent: #2563EB;
-  --accent-600: #1d4ed8;
-  --accent-700: #1e40af;
-  --charcoal: #1F2933;
+  --navy: #0B1D3A;
+  --navy-light: #122B54;
+  --accent: #3B82F6;
+  --accent-600: #2563EB;
+  --accent-700: #1D4ED8;
+  --gold: #F59E0B;
+  --charcoal: #0B1D3A;
   --concrete: #6B7280;
-  --surface: #F3F4F6;
-  --border: #d1d5db;
-  --foreground: #1F2933;
+  --surface: #F8FAFC;
+  --border: #E2E8F0;
+  --foreground: #0F172A;
 }
 
 body {
@@ -18,20 +21,53 @@ body {
   color: var(--foreground);
 }
 
+/* ─── Backgrounds ─── */
 .bg-navy {
-  background: #1F2933;
+  background: var(--navy);
 }
 
+.bg-navy-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
+}
+
+/* ─── Cards ─── */
 .card {
-  @apply rounded-xl border border-[var(--border)] bg-white shadow-sm;
+  @apply rounded-xl border border-[var(--border)] bg-white shadow-sm transition-all duration-300;
 }
 
+.card:hover {
+  @apply shadow-lg;
+}
+
+.card-accent {
+  @apply rounded-xl bg-white shadow-sm border-l-4 border-l-[var(--accent)] transition-all duration-300;
+}
+
+.card-accent:hover {
+  @apply shadow-lg -translate-y-0.5;
+}
+
+/* ─── Buttons ─── */
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold text-sm transition-all cursor-pointer;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold text-sm transition-all duration-200 cursor-pointer;
 }
 
 .btn-primary {
-  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md hover:shadow-lg font-bold;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.35);
+  @apply text-white font-bold hover:-translate-y-0.5 hover:shadow-xl;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.5);
+}
+
+.btn-white {
+  @apply bg-white text-[var(--navy)] font-bold hover:bg-gray-50 shadow-md hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-outline {
@@ -39,17 +75,49 @@ body {
 }
 
 .btn-ghost {
-  @apply border border-white/20 text-white hover:bg-white/10;
+  @apply border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50;
 }
 
 .btn-phone {
-  @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-600)] shadow-md font-bold;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
+  @apply text-white shadow-md font-bold;
 }
 
+/* ─── Typography ─── */
 .h-display {
   @apply font-extrabold tracking-tight leading-tight;
 }
 
+/* ─── Components ─── */
+.stat-badge {
+  @apply flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-center;
+}
+
+.service-icon-circle {
+  @apply w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center shrink-0 transition-colors duration-200;
+}
+
+.service-icon-circle:hover {
+  @apply bg-blue-100;
+}
+
+.step-number {
+  @apply w-14 h-14 rounded-full bg-[var(--navy)] text-white flex items-center justify-center font-bold text-xl shrink-0 border-4 border-white shadow-lg;
+}
+
+.testimonial-card {
+  @apply rounded-xl bg-white border-l-4 border-l-[var(--accent)] shadow-sm p-6 transition-all duration-300;
+}
+
+.testimonial-card:hover {
+  @apply shadow-lg -translate-y-0.5;
+}
+
+.trust-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold;
+}
+
+/* ─── Animations ─── */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }

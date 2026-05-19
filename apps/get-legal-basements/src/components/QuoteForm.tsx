@@ -52,8 +52,8 @@ export function QuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card p-6 sm:p-8 space-y-4">
-      <h3 className="text-xl font-bold mb-2">Get a Free Consultation</h3>
+    <form onSubmit={handleSubmit} className="card border-t-4 border-t-[var(--accent)] p-6 sm:p-8 space-y-4">
+      <h3 className="text-2xl font-bold text-[var(--navy)] mb-2">Get a Free Consultation</h3>
 
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
 
@@ -66,7 +66,7 @@ export function QuoteForm() {
             type="text"
             required
             autoComplete="name"
-            className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white"
           />
         </div>
         <div>
@@ -78,7 +78,7 @@ export function QuoteForm() {
             required
             inputMode="tel"
             autoComplete="tel"
-            className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white"
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ export function QuoteForm() {
           type="email"
           required
           autoComplete="email"
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white"
         />
       </div>
 
@@ -102,7 +102,7 @@ export function QuoteForm() {
           name="address"
           type="text"
           autoComplete="street-address"
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white"
         />
       </div>
 
@@ -112,7 +112,7 @@ export function QuoteForm() {
           id="service"
           name="service"
           required
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+          className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white"
         >
           <option value="">Select a service...</option>
           {services.map((s) => (
@@ -127,7 +127,7 @@ export function QuoteForm() {
           id="message"
           name="message"
           rows={3}
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-y"
+          className="w-full rounded-lg border border-[var(--border)] bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:bg-white resize-y"
           placeholder="Describe your basement project, goals, and any specific requirements..."
         />
       </div>
