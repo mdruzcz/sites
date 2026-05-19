@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- House/Foundation icon -->
+  <g transform="translate(0, 8)">
+    <!-- Foundation base blocks -->
+    <rect x="8" y="44" width="56" height="20" rx="2" fill="#1e3a5f"/>
+    <line x1="22" y1="44" x2="22" y2="64" stroke="#2563EB" stroke-width="1.5"/>
+    <line x1="36" y1="44" x2="36" y2="64" stroke="#2563EB" stroke-width="1.5"/>
+    <line x1="50" y1="44" x2="50" y2="64" stroke="#2563EB" stroke-width="1.5"/>
+    <!-- House structure -->
+    <rect x="12" y="26" width="48" height="18" rx="1" fill="#2563EB"/>
+    <!-- Roof -->
+    <polygon points="6,28 36,6 66,28" fill="#1e3a5f"/>
+    <!-- Window -->
+    <rect x="24" y="32" width="10" height="8" rx="1" fill="white" opacity="0.9"/>
+    <line x1="29" y1="32" x2="29" y2="40" stroke="#2563EB" stroke-width="0.8"/>
+    <line x1="24" y1="36" x2="34" y2="36" stroke="#2563EB" stroke-width="0.8"/>
+    <!-- Door -->
+    <rect x="40" y="30" width="8" height="14" rx="1" fill="white" opacity="0.9"/>
+    <!-- Checkmark badge -->
+    <circle cx="58" cy="14" r="10" fill="#16a34a"/>
+    <polyline points="53,14 56,17 63,10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Text -->
+  <g transform="translate(80, 0)">
+    <!-- "LEGAL BASEMENTS" -->
+    <text x="0" y="36" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" font-weight="800" fill="#1e3a5f" letter-spacing="-0.5">LEGAL BASEMENTS</text>
+    <!-- "LONDON" -->
+    <text x="0" y="60" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#2563EB" letter-spacing="6">LONDON</text>
+    <!-- Tagline line -->
+    <line x1="0" y1="66" x2="230" y2="66" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+    <text x="0" y="78" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="500" fill="#64748b" letter-spacing="1.5">PERMITTED • LEGAL • BUILT RIGHT</text>
+  </g>
+</svg>

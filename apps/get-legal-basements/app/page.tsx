@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices, getFeaturedTestimonials } from "@/lib/content";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -15,7 +16,15 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-[var(--charcoal)]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--charcoal)] via-slate-800 to-slate-900" />
+        <Image
+          src="/images/hero-basement-living.jpg"
+          alt="Modern finished basement living room — Legal Basements London"
+          fill
+          priority
+          className="object-cover opacity-25"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--charcoal)] via-[var(--charcoal)]/80 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <p className="text-blue-300 font-semibold text-sm uppercase tracking-wider mb-4">
@@ -63,37 +72,45 @@ export default function HomePage() {
       {/* Main Content — Legal Basements */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="h-display text-3xl sm:text-4xl text-[var(--charcoal)] mb-6">
-              Turn Your Basement Into a Legal, Income-Generating Apartment
-            </h2>
-            <div className="space-y-4 text-lg text-[var(--concrete)] leading-relaxed">
-              <p>
-                A legal basement apartment is one of the smartest investments a London, Ontario
-                homeowner can make. With rental demand at an all-time high — driven by Western
-                University, Fanshawe College, and a growing population — a properly permitted
-                second suite can generate $1,200 to $2,000+ per month in rental income while
-                significantly increasing your property value.
-              </p>
-              <p>
-                But building a legal basement apartment isn&apos;t a DIY project. Ontario Building Code
-                requirements cover everything from minimum ceiling heights and fire separations to
-                egress windows, separate entrances, and independent HVAC systems. Getting it wrong
-                means failed inspections, costly rework, and potential legal liability.
-              </p>
-              <p>
-                That&apos;s where we come in. As London&apos;s dedicated basement renovation specialists,
-                we handle every aspect of your project — from initial feasibility assessment and
-                architectural drawings to permit applications, construction, and final inspection.
-                Whether you need underpinning to increase ceiling height, waterproofing to ensure
-                a dry living space, or a complete suite build from scratch, we deliver turnkey
-                results with fixed pricing and no surprises.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="h-display text-3xl sm:text-4xl text-[var(--charcoal)] mb-6">
+                Turn Your Basement Into a Legal, Income-Generating Apartment
+              </h2>
+              <div className="space-y-4 text-lg text-[var(--concrete)] leading-relaxed">
+                <p>
+                  A legal basement apartment is one of the smartest investments a London, Ontario
+                  homeowner can make. With rental demand at an all-time high — driven by Western
+                  University, Fanshawe College, and a growing population — a properly permitted
+                  second suite can generate $1,200 to $2,000+ per month in rental income while
+                  significantly increasing your property value.
+                </p>
+                <p>
+                  But building a legal basement apartment isn&apos;t a DIY project. Ontario Building Code
+                  requirements cover everything from minimum ceiling heights and fire separations to
+                  egress windows, separate entrances, and independent HVAC systems. Getting it wrong
+                  means failed inspections, costly rework, and potential legal liability.
+                </p>
+                <p>
+                  That&apos;s where we come in. As London&apos;s dedicated basement renovation specialists,
+                  we handle every aspect of your project — from initial feasibility assessment and
+                  architectural drawings to permit applications, construction, and final inspection.
+                </p>
+              </div>
+              <div className="mt-8">
+                <Link href="/services/legal-basement-apartments" className="btn btn-primary">
+                  Learn About Legal Basement Apartments
+                </Link>
+              </div>
             </div>
-            <div className="mt-8">
-              <Link href="/services/legal-basement-apartments" className="btn btn-primary">
-                Learn About Legal Basement Apartments
-              </Link>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/basement-modern.jpg"
+                alt="Modern finished basement apartment in London, Ontario"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

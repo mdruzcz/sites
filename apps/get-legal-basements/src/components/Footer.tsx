@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices } from "@/lib/content";
 
@@ -10,7 +11,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">{site.name}</h3>
+            <Image
+              src="/images/logo-white.svg"
+              alt={`${site.name} — basement renovations in London, Ontario`}
+              width={200}
+              height={50}
+              className="h-10 w-auto mb-4"
+            />
             <p className="text-slate-300 text-sm leading-relaxed">
               London Ontario&apos;s trusted experts in legal basement apartments,
               second suites, underpinning, waterproofing, and full basement
