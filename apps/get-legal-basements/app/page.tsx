@@ -24,209 +24,183 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative min-h-[85vh] flex items-center bg-[var(--navy)]">
-        <Image
-          src="/images/hero-basement-living.jpg"
-          alt="Modern finished basement living room — Legal Basements London"
-          fill
-          priority
-          className="object-cover opacity-20"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy)]/80 via-[var(--navy)]/60 to-[var(--navy)]/90" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <p className="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-6">
-            London Ontario&apos;s Trusted Basement Experts
-          </p>
-          <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white mb-6 max-w-4xl mx-auto">
-            Legal Basement Apartments &amp; Renovations
-          </h1>
-          <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-            We handle permits, design, and construction for legal second suites,
-            underpinning, waterproofing, and complete basement renovations.
-          </p>
-
-          {/* Stat Badges */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
-            {[
-              { num: "15+", label: "Years Experience" },
-              { num: "✓", label: "Licensed & Insured" },
-              { num: "100%", label: "Permit Handling" },
-              { num: "2yr", label: "Warranty" },
-            ].map((s) => (
-              <div key={s.label} className="stat-badge">
-                <span className="text-xl sm:text-2xl font-bold text-white">{s.num}</span>
-                <span className="text-xs text-white/70 font-medium">{s.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
-              Get a Free Consultation
-            </Link>
-            <a href={site.phoneHref} className="btn btn-ghost text-base px-8 py-4">
-              Call {site.phone}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ FLOATING SERVICE ICONS ═══ */}
-      <section className="relative z-10 -mt-12 px-4">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-[var(--border)] p-6 sm:p-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: "🏠", title: "Legal Apartments", desc: "Code-compliant second suites" },
-              { icon: "📐", title: "Underpinning", desc: "Increase your ceiling height" },
-              { icon: "🛡️", title: "Waterproofing", desc: "Permanent dry basement solutions" },
-              { icon: "🔨", title: "Full Renovations", desc: "Design, build, and finish" },
-            ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center text-center gap-3">
-                <div className="service-icon-circle text-2xl">{item.icon}</div>
-                <div>
-                  <h3 className="font-bold text-sm text-[var(--navy)]">{item.title}</h3>
-                  <p className="text-xs text-[var(--concrete)] mt-0.5">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ ABOUT / MAIN CONTENT ═══ */}
-      <section className="py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-wider mb-3">
-                London&apos;s Basement Experts
+      {/* ═══ HERO — Split layout: text left, image right ═══ */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
+            {/* Left — Text */}
+            <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-20 lg:py-28">
+              <h1 className="h-display text-5xl sm:text-6xl lg:text-7xl text-[var(--navy)] mb-6">
+                REDEFINE{" "}
+                <span className="text-cyan">YOUR</span>
+                <br />
+                BASEMENT
+              </h1>
+              <p className="text-xl sm:text-2xl font-bold text-[var(--navy)] mb-8 leading-snug">
+                Transform Your Basement with London&apos;s Trusted Renovation &amp; Legal Apartment Experts
               </p>
-              <h2 className="h-display text-3xl sm:text-4xl text-[var(--navy)] mb-8">
-                Turn Your Basement Into a Legal, Income-Generating Apartment
-              </h2>
 
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              {/* Stat badges — 2×2 grid with icons */}
+              <div className="grid grid-cols-2 gap-x-8 gap-y-5 mb-8">
+                <div className="stat-badge">
+                  <div className="stat-badge-icon">
+                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
                   </div>
                   <div>
-                    <h3 className="font-bold text-[var(--navy)] mb-1">Smart Investment</h3>
-                    <p className="text-[var(--concrete)] leading-relaxed">
-                      A properly permitted second suite can generate $1,200 to $2,000+ per month
-                      in rental income while significantly increasing your property value. Rental
-                      demand in London is driven by Western University, Fanshawe College, and a
-                      growing population.
-                    </p>
+                    <p className="font-bold text-[var(--navy)] text-sm">15+ Years</p>
+                    <p className="text-[var(--concrete)] text-xs">of helping London homeowners</p>
                   </div>
                 </div>
-
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                <div className="stat-badge">
+                  <div className="stat-badge-icon">
+                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                   </div>
                   <div>
-                    <h3 className="font-bold text-[var(--navy)] mb-1">Full-Service Experts</h3>
-                    <p className="text-[var(--concrete)] leading-relaxed">
-                      We handle every aspect — from initial feasibility assessment and architectural
-                      drawings to permit applications, construction, and final inspection. Whether
-                      you need underpinning, waterproofing, or a complete suite build, we deliver
-                      turnkey results with fixed pricing.
-                    </p>
+                    <p className="font-bold text-[var(--navy)] text-sm">Licensed &amp; Insured</p>
+                    <p className="text-[var(--concrete)] text-xs">General contractor</p>
+                  </div>
+                </div>
+                <div className="stat-badge">
+                  <div className="stat-badge-icon">
+                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[var(--navy)] text-sm">Full Permit Handling</p>
+                    <p className="text-[var(--concrete)] text-xs">We deal with City Hall</p>
+                  </div>
+                </div>
+                <div className="stat-badge">
+                  <div className="stat-badge-icon">
+                    <svg className="w-5 h-5 text-[var(--gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[var(--navy)] text-sm">2-Year Warranty</p>
+                    <p className="text-[var(--concrete)] text-xs">On all workmanship</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 mt-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
+                  Free Consultation
+                </Link>
+                <a href={site.phoneHref} className="btn btn-phone text-base px-4 py-4 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                  {site.phone}
+                </a>
+              </div>
+            </div>
+
+            {/* Right — Image */}
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/basement-modern.jpg"
+                alt="Beautiful finished basement renovation in London, Ontario"
+                fill
+                priority
+                className="object-cover"
+                sizes="50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ ABOUT — "You Found London's Basement Experts" ═══ */}
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <div>
+              <p className="text-cyan font-extrabold italic text-lg sm:text-xl mb-4">
+                You Found London&apos;s Basement Experts
+              </p>
+              <h2 className="h-display text-3xl sm:text-4xl lg:text-[2.75rem] text-[var(--navy)] mb-6 leading-tight">
+                London&apos;s Premier Authority in Legal Basements, Waterproofing, and Renovation
+              </h2>
+              <p className="text-[var(--concrete)] text-lg leading-relaxed">
+                At Legal Basements London, we don&apos;t just finish basements — we transform them.
+                We don&apos;t just handle permits — we make the entire process effortless.
+              </p>
+            </div>
+            <div className="space-y-5 text-[var(--concrete)] text-base leading-relaxed">
+              <p>
+                As a trusted basement renovation company in London, Ontario, we&apos;ve spent over
+                15 years helping homeowners reclaim and protect their lower levels. From foundation
+                repair and waterproofing to stunning legal apartment conversions, we deliver expert
+                solutions that keep your home dry, safe, and livable.
+              </p>
+              <p>
+                Whether you&apos;re dealing with water intrusions, low ceiling height, or just tired
+                of wasting valuable square footage, you&apos;re in the right place. We&apos;re here
+                to fix it — once and for all.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2">
                 <span className="trust-badge">✓ Licensed General Contractor</span>
-                <span className="trust-badge">✓ Fully Insured &amp; Bonded</span>
+                <span className="trust-badge">✓ Fully Insured</span>
                 <span className="trust-badge">✓ Ontario Building Code Experts</span>
               </div>
-
-              <div className="mt-8">
-                <Link href="/services/legal-basement-apartments" className="btn btn-primary">
-                  Learn About Legal Basement Apartments →
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-[var(--accent)]/10 rounded-2xl -z-10 hidden lg:block" />
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/basement-modern.jpg"
-                  alt="Modern finished basement apartment in London, Ontario"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ WHY CHOOSE US — 4 PILLARS ═══ */}
-      <section className="py-20 sm:py-24 bg-navy-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Why Choose Us"
-            title="The Legal Basements London Advantage"
-            description="We combine deep expertise in Ontario Building Code with hands-on construction experience to deliver basements that pass inspection the first time."
-            dark
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* ═══ WHY CHOOSE US — 4 Pillars with large outlined circles ═══ */}
+      <section className="py-20 sm:py-28 bg-[var(--surface)]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+          <h2 className="h-display text-3xl sm:text-4xl text-[var(--navy)] text-center mb-16">
+            Why Legal Basements London is the Choice for You:
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             {[
               {
                 icon: (
-                  <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                  <svg className="w-10 h-10 text-[var(--navy)]" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 ),
-                title: "Expert Team",
-                desc: "Skilled designers, project managers, and tradespeople committed to delivering exceptional results on every project.",
+                title: "People",
+                desc: "The strength of Legal Basements London lies in our remarkable team. From experienced designers to meticulous tradespeople, our professionals are committed to exceeding your expectations.",
               },
               {
                 icon: (
-                  <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                  <svg className="w-10 h-10 text-[var(--navy)]" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 ),
-                title: "Proven Process",
-                desc: "Our 4-step method ensures clarity and ease from consultation through final inspection — no surprises, no stress.",
+                title: "Process",
+                desc: "We prioritize clarity and ease throughout the entire project. Our 4-step method ensures a transparent and satisfying journey, leading to a seamless renovation without any stress.",
               },
               {
                 icon: (
-                  <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                  <svg className="w-10 h-10 text-[var(--navy)]" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
                 ),
-                title: "15+ Years Experience",
-                desc: "Over a decade and a half of basement renovations across Southwestern Ontario — we've seen and solved it all.",
+                title: "Experience",
+                desc: "With over 15 years of leadership in basement renovations and legal apartment conversions, we deliver custom solutions that exceed expectations every time.",
               },
               {
                 icon: (
-                  <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                  <svg className="w-10 h-10 text-[var(--navy)]" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 ),
-                title: "Premium Materials",
-                desc: "We use only top-grade, moisture-resistant products designed to ensure your basement stands the test of time.",
+                title: "Products",
+                desc: "We use only top-grade, moisture-resistant materials and proven waterproofing systems that guarantee lasting performance and beauty for your basement.",
               },
             ].map((pillar) => (
-              <div
-                key={pillar.title}
-                className="rounded-xl bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+              <div key={pillar.title}>
+                <div className="pillar-icon">
                   {pillar.icon}
                 </div>
-                <h3 className="font-bold text-white text-lg mb-2">{pillar.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{pillar.desc}</p>
+                <h3 className="font-extrabold text-[var(--navy)] text-xl mb-3">{pillar.title}</h3>
+                <p className="text-[var(--concrete)] text-sm leading-relaxed">{pillar.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
+              Get A Free Consultation
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ═══ SERVICES GRID ═══ */}
-      <section className="py-20 sm:py-24 bg-[var(--surface)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <SectionHeader
             eyebrow="Our Services"
             title="Comprehensive Basement Solutions"
@@ -258,27 +232,24 @@ export default function HomePage() {
       </section>
 
       {/* ═══ PROCESS STEPS ═══ */}
-      <section className="py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-[var(--surface)]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <SectionHeader
             eyebrow="How It Works"
             title="Our 4-Step Process"
             description="A proven approach that delivers code-compliant results on time and on budget."
           />
           <div className="relative">
-            {/* Connecting line (desktop) */}
-            <div className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[var(--accent)]/20 via-[var(--accent)] to-[var(--accent)]/20" />
+            <div className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--cyan)]/30" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { step: "1", title: "Consultation", desc: "Free on-site assessment. We evaluate your basement's potential, discuss your goals, and outline the path forward." },
-                { step: "2", title: "Design & Permits", desc: "3D design renderings, architectural drawings, engineering reports, and full permit submission to the City of London." },
-                { step: "3", title: "Construction", desc: "Professional, project-managed construction with regular updates, clean jobsite, and adherence to timeline and budget." },
+                { step: "2", title: "Design & Permits", desc: "Architectural drawings, engineering reports, and full permit submission to the City of London." },
+                { step: "3", title: "Construction", desc: "Professional, project-managed construction with regular updates, clean jobsite, and adherence to your timeline." },
                 { step: "4", title: "Inspection & Handover", desc: "Final municipal inspection, occupancy approval, and complete walkthrough. Your legal basement is ready." },
               ].map((p) => (
                 <div key={p.step} className="relative text-center">
-                  <div className="step-number mx-auto mb-5 relative z-10">
-                    {p.step}
-                  </div>
+                  <div className="step-number mx-auto mb-5 relative z-10">{p.step}</div>
                   <h3 className="font-bold text-lg text-[var(--navy)] mb-2">{p.title}</h3>
                   <p className="text-[var(--concrete)] text-sm leading-relaxed">{p.desc}</p>
                 </div>
@@ -289,15 +260,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══ TESTIMONIALS ═══ */}
-      <section className="py-20 sm:py-24 bg-[var(--surface)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Reviews"
-            title="What Our Clients Say"
-          />
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+          <SectionHeader eyebrow="Reviews" title="What Our Clients Say" />
 
-          {/* Rating Summary */}
-          <div className="flex items-center justify-center gap-3 mb-10">
+          <div className="flex items-center justify-center gap-3 mb-12">
             <span className="text-4xl font-bold text-[var(--navy)]">5.0</span>
             <div>
               <div className="flex gap-0.5">
@@ -332,14 +299,14 @@ export default function HomePage() {
       </section>
 
       {/* ═══ QUOTE FORM ═══ */}
-      <section className="py-20 sm:py-24 bg-navy-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-navy-gradient">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <SectionHeader
                 eyebrow="Contact Us"
-                title="Get Your Free Consultation"
-                description="Tell us about your basement project and we'll provide a detailed, no-obligation quote. Most consultations booked within 48 hours."
+                title="Redefine Your Basement"
+                description="Schedule your consultation today and see how we can make your basement the space you've always imagined."
                 center={false}
                 dark
               />
@@ -355,7 +322,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3 mt-6">
                 {["Full Permit Handling", "Fixed Pricing", "2-Year Warranty", "Free Consultations"].map((badge) => (
                   <span key={badge} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium">
-                    <svg className="w-3.5 h-3.5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    <svg className="w-3.5 h-3.5 text-[var(--cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                     {badge}
                   </span>
                 ))}

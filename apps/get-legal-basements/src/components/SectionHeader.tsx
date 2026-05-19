@@ -14,7 +14,7 @@ export function SectionHeader({
   return (
     <div className={`mb-10 sm:mb-12 ${center ? "text-center" : ""}`}>
       {eyebrow && (
-        <p className={`font-semibold text-sm uppercase tracking-wider mb-2 ${dark ? "text-blue-300" : "text-[var(--accent)]"}`}>
+        <p className={`font-semibold text-sm uppercase tracking-wider mb-2 ${dark ? "text-cyan-300" : "text-[var(--accent)]"}`}>
           {eyebrow}
         </p>
       )}

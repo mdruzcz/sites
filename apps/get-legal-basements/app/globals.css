@@ -5,13 +5,15 @@
 :root {
   --navy: #0B1D3A;
   --navy-light: #122B54;
-  --accent: #3B82F6;
-  --accent-600: #2563EB;
-  --accent-700: #1D4ED8;
+  --cyan: #00B8D4;
+  --cyan-dark: #0097A7;
+  --accent: #00B8D4;
+  --accent-600: #0097A7;
+  --accent-700: #00838F;
   --gold: #F59E0B;
   --charcoal: #0B1D3A;
   --concrete: #6B7280;
-  --surface: #F8FAFC;
+  --surface: #F5F7FA;
   --border: #E2E8F0;
   --foreground: #0F172A;
 }
@@ -31,7 +33,7 @@ body {
 }
 
 .bg-accent-gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
 }
 
 /* ─── Cards ─── */
@@ -43,35 +45,26 @@ body {
   @apply shadow-lg;
 }
 
-.card-accent {
-  @apply rounded-xl bg-white shadow-sm border-l-4 border-l-[var(--accent)] transition-all duration-300;
-}
-
-.card-accent:hover {
-  @apply shadow-lg -translate-y-0.5;
-}
-
 /* ─── Buttons ─── */
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-semibold text-sm transition-all duration-200 cursor-pointer;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-sm transition-all duration-200 cursor-pointer;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
-  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.35);
-  @apply text-white font-bold hover:-translate-y-0.5 hover:shadow-xl;
+  background: var(--cyan);
+  @apply text-white hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.5);
+  background: var(--cyan-dark);
 }
 
 .btn-white {
-  @apply bg-white text-[var(--navy)] font-bold hover:bg-gray-50 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  @apply bg-white text-[var(--navy)] hover:bg-gray-50 shadow-md hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-outline {
-  @apply border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white;
+  @apply border-2 border-[var(--cyan)] text-[var(--cyan)] hover:bg-[var(--cyan)] hover:text-white;
 }
 
 .btn-ghost {
@@ -79,8 +72,7 @@ body {
 }
 
 .btn-phone {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-700) 100%);
-  @apply text-white shadow-md font-bold;
+  @apply text-[var(--cyan)] font-bold text-lg;
 }
 
 /* ─── Typography ─── */
@@ -88,17 +80,34 @@ body {
   @apply font-extrabold tracking-tight leading-tight;
 }
 
+.text-cyan {
+  color: var(--cyan);
+}
+
+/* ─── Pillar Icons — large outlined circles like the reference site ─── */
+.pillar-icon {
+  @apply w-24 h-24 rounded-full border-[3px] border-[var(--cyan)] flex items-center justify-center mx-auto mb-4 transition-all duration-300;
+}
+
+.pillar-icon:hover {
+  @apply bg-[var(--cyan)]/5;
+}
+
 /* ─── Components ─── */
 .stat-badge {
-  @apply flex flex-col items-center gap-1 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 text-center;
+  @apply flex items-center gap-3 text-left;
+}
+
+.stat-badge-icon {
+  @apply w-12 h-12 rounded-full border-2 border-[var(--gold)]/40 flex items-center justify-center shrink-0;
 }
 
 .service-icon-circle {
-  @apply w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center shrink-0 transition-colors duration-200;
+  @apply w-16 h-16 rounded-full border-2 border-[var(--cyan)] flex items-center justify-center shrink-0 transition-colors duration-200;
 }
 
 .service-icon-circle:hover {
-  @apply bg-blue-100;
+  @apply bg-[var(--cyan)]/5;
 }
 
 .step-number {
@@ -106,7 +115,7 @@ body {
 }
 
 .testimonial-card {
-  @apply rounded-xl bg-white border-l-4 border-l-[var(--accent)] shadow-sm p-6 transition-all duration-300;
+  @apply rounded-xl bg-white border-l-4 border-l-[var(--cyan)] shadow-sm p-6 transition-all duration-300;
 }
 
 .testimonial-card:hover {
@@ -114,7 +123,7 @@ body {
 }
 
 .trust-badge {
-  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold;
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 text-cyan-700 text-xs font-semibold;
 }
 
 /* ─── Animations ─── */
