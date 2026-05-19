@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
+import Image from "next/image";
 import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -95,12 +96,12 @@ export default function LondonPage() {
       />
 
       {/* Hero */}
-      <section className="bg-wood-dark py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             Professional Deck Staining &amp; Restoration in London, Ontario
           </h1>
-          <p className="mt-6 text-lg text-sand leading-relaxed">
+          <p className="mt-6 text-lg text-cream leading-relaxed">
             Serving London homeowners with expert deck care since day one. From
             the tree-lined streets of Old North to the growing communities of
             Hyde Park, Deck Heroes keeps your outdoor living space looking its
@@ -109,8 +110,15 @@ export default function LondonPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image src="/images/backyard-deck-furniture.jpg" alt="Professional deck services in London, Ontario" width={1200} height={800} className="h-auto w-full object-cover" priority />
+        </div>
+      </section>
+
       {/* Intro */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             London&apos;s Trusted Deck Care Professionals
@@ -143,7 +151,7 @@ export default function LondonPage() {
       </section>
 
       {/* Neighborhoods */}
-      <section className="bg-sand py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Neighbourhoods We Serve in London
@@ -157,7 +165,7 @@ export default function LondonPage() {
             {neighborhoods.map((n) => (
               <div
                 key={n}
-                className="rounded-lg bg-cream px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
+                className="rounded-lg bg-white px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
               >
                 {n}
               </div>
@@ -167,7 +175,7 @@ export default function LondonPage() {
       </section>
 
       {/* Services */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Our Deck &amp; Fence Services in London
@@ -182,7 +190,7 @@ export default function LondonPage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="group rounded-xl border border-sand/50 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
               >
                 <h3 className="font-serif text-xl font-bold text-wood-dark group-hover:text-terracotta transition-colors">
                   {s.title}
@@ -197,7 +205,7 @@ export default function LondonPage() {
       </section>
 
       {/* Why Trust Us */}
-      <section className="bg-wood-dark py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-cream">
             Why London Homeowners Trust Deck Heroes
@@ -221,11 +229,11 @@ export default function LondonPage() {
                 desc: "We provide transparent pricing with no hidden fees. Every London homeowner receives a detailed written quote before any work begins.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-xl bg-wood-light/10 p-6">
+              <div key={item.title} className="rounded-xl bg-forest-light/10 p-6">
                 <h3 className="font-serif text-lg font-bold text-cream">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sand leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-cream leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -233,7 +241,7 @@ export default function LondonPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             What London Homeowners Are Saying
@@ -262,7 +270,7 @@ export default function LondonPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-sand py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark text-center">
             Frequently Asked Questions &mdash; London
@@ -274,7 +282,7 @@ export default function LondonPage() {
       </section>
 
       {/* Nearby Cities */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             Also Serving Nearby Communities
@@ -294,7 +302,7 @@ export default function LondonPage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="rounded-lg bg-sand px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
+                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
               >
                 {city.name}
               </Link>

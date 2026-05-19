@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
 import { PHONE, PHONE_HREF } from "@/lib/constants";
@@ -119,7 +120,7 @@ export default function FAQPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-wood-dark py-16 lg:py-20">
+      <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
             Frequently Asked Questions About Deck Staining &amp; Maintenance
@@ -131,7 +132,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-12">
           {/* General */}
           <div>
@@ -174,7 +175,7 @@ export default function FAQPage() {
           </div>
 
           {/* Still have questions */}
-          <div className="rounded-2xl bg-white p-8 text-center shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+          <div className="rounded-2xl bg-white p-8 text-center shadow-md shadow-forest-dark/5 border border-cream-dark/50">
             <h3 className="font-serif text-xl font-bold text-wood-dark">
               Still Have Questions?
             </h3>

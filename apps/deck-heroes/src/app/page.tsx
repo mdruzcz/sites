@@ -131,7 +131,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-wood-dark via-wood to-wood-light py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-forest-dark via-forest to-forest-light py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-10"
           style={{
@@ -144,7 +144,7 @@ export default function HomePage() {
             <h1 className="font-serif text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
               Professional Deck Building &amp; Restoration in Ontario
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-sand-light sm:text-xl lg:mx-0">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream sm:text-xl lg:mx-0">
               Transform your outdoor living space with expert deck staining,
               refinishing, resurfacing, building, and cleaning. Trusted by hundreds
               of homeowners across Southwestern Ontario.
@@ -183,7 +183,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== TRUST BAR ===== */}
-      <section className="bg-sand py-6 px-4">
+      <section className="bg-bg-alt py-6 px-4">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-semibold text-wood-dark sm:text-base">
           {[
             { icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z", label: "Trusted by 500+ Homeowners" },
@@ -202,7 +202,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== SERVICES OVERVIEW ===== */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="font-serif text-3xl font-bold text-wood-dark sm:text-4xl">
@@ -219,9 +219,9 @@ export default function HomePage() {
               return (
                 <article
                   key={service.slug}
-                  className="group rounded-xl border border-sand/40 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                  className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-sand-light/50 text-terracotta transition group-hover:bg-terracotta group-hover:text-cream">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-forest-light/20 text-terracotta transition group-hover:bg-terracotta group-hover:text-cream">
                     <Icon className="h-8 w-8" />
                   </div>
                   <h3 className="mt-4 font-serif text-xl font-semibold text-wood-dark">
@@ -247,12 +247,23 @@ export default function HomePage() {
       </section>
 
       {/* ===== WHY CHOOSE US ===== */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center font-serif text-3xl font-bold text-wood-dark sm:text-4xl">
-            Why Choose Deck Heroes?
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/images/choose-deck-heroes.png"
+                alt="Why homeowners choose Deck Heroes for professional deck care in Ontario"
+                width={683}
+                height={1024}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="font-serif text-3xl font-bold text-wood-dark sm:text-4xl">
+                Why Choose Deck Heroes?
+              </h2>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
                 title: "Years of Experience",
@@ -293,12 +304,14 @@ export default function HomePage() {
                 </p>
               </div>
             ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ===== SERVICE AREAS ===== */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="font-serif text-3xl font-bold text-wood-dark sm:text-4xl">
@@ -314,7 +327,7 @@ export default function HomePage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="group rounded-xl border border-sand/40 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
               >
                 <div className="flex items-center gap-3">
                   <svg className="h-6 w-6 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -336,13 +349,13 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="bg-wood-dark py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="font-serif text-3xl font-bold text-cream sm:text-4xl">
               What Our Customers Say
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sand-light">
+            <p className="mx-auto mt-4 max-w-2xl text-cream">
               Real reviews from real homeowners across Ontario.
             </p>
           </div>
@@ -350,11 +363,11 @@ export default function HomePage() {
             {featuredTestimonials.map((t, i) => (
               <blockquote
                 key={i}
-                className="rounded-xl bg-wood/60 p-6 backdrop-blur-sm"
+                className="rounded-xl bg-forest/60 p-6 backdrop-blur-sm"
               >
                 <div className="flex gap-1">
                   {Array.from({ length: t.rating }).map((_, s) => (
-                    <svg key={s} className="h-5 w-5 text-sand" viewBox="0 0 20 20" fill="currentColor">
+                    <svg key={s} className="h-5 w-5text-cream" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
@@ -362,7 +375,7 @@ export default function HomePage() {
                 <p className="mt-4 text-sm leading-relaxed text-cream-dark">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <footer className="mt-4 text-sm font-semibold text-sand">
+                <footer className="mt-4 text-sm font-semiboldtext-cream">
                   {t.name} &mdash; {t.city}
                 </footer>
               </blockquote>
@@ -371,7 +384,7 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/testimonials"
-              className="inline-flex items-center text-sand font-semibold hover:text-cream transition-colors"
+              className="inline-flex items-center text-cream font-semibold hover:text-cream transition-colors"
             >
               Read All Reviews
               <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -383,7 +396,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== ARTICLES PREVIEW ===== */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="font-serif text-3xl font-bold text-wood-dark sm:text-4xl">
@@ -398,7 +411,7 @@ export default function HomePage() {
             {ARTICLE_TEASERS.map((a) => (
               <article
                 key={a.slug}
-                className="group rounded-xl border border-sand/40 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
               >
                 <h3 className="font-serif text-lg font-semibold text-wood-dark group-hover:text-terracotta transition-colors">
                   {a.title}

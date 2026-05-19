@@ -70,12 +70,12 @@ export default function DeckRefinishingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-wood-dark via-wood to-wood-light py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             Deck Refinishing &amp; Restoration in Ontario
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-sand-light">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
             Has your deck lost its lustre? Our complete refinishing service strips
             away years of wear and weather, restoring your outdoor space to like-new
             condition. Sanding, repairs, and a beautiful new finish, all in one project.
@@ -84,7 +84,7 @@ export default function DeckRefinishingPage() {
             <Link href="/contact" className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark">
               Get a Free Quote
             </Link>
-            <a href={PHONE_HREF} className="rounded-lg border-2 border-sand px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10">
+            <a href={PHONE_HREF} className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10">
               Call {PHONE}
             </a>
           </div>
@@ -93,7 +93,7 @@ export default function DeckRefinishingPage() {
 
       {/* What is Refinishing */}
       {/* Featured Image */}
-      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
           <Image
             src="/images/stripping-sanding.png"
@@ -106,7 +106,7 @@ export default function DeckRefinishingPage() {
         </div>
       </section>
 
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Bringing Weathered Decks Back to Life
@@ -137,7 +137,7 @@ export default function DeckRefinishingPage() {
       </section>
 
       {/* When to Refinish vs Replace */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark text-center">
             Refinish or Replace? How to Decide
@@ -199,7 +199,7 @@ export default function DeckRefinishingPage() {
       </section>
 
       {/* Our Process */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Our Refinishing Process
@@ -247,7 +247,7 @@ export default function DeckRefinishingPage() {
       </section>
 
       {/* Transformation Benefits */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             The Refinishing Transformation
@@ -271,21 +271,28 @@ export default function DeckRefinishingPage() {
       </section>
 
       {/* Internal Links */}
-      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">Explore Our Other Services</h2>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/services/deck-staining" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Staining</Link>
-            <Link href="/services/deck-resurfacing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Resurfacing</Link>
-            <Link href="/services/deck-building" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Building</Link>
-            <Link href="/services/deck-cleaning" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Cleaning</Link>
-            <Link href="/contact" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Contact Us</Link>
+            <Link href="/services/deck-staining" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Staining</Link>
+            <Link href="/services/deck-resurfacing" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Resurfacing</Link>
+            <Link href="/services/deck-building" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Building</Link>
+            <Link href="/services/deck-cleaning" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Cleaning</Link>
+            <Link href="/contact" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Contact Us</Link>
           </div>
         </div>
       </section>
 
+      {/* Additional Photo */}
+      <section className="bg-bg py-8 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+          <Image src="/images/deck-painting.jpeg" alt="Deck refinishing in progress showing professional stain application" width={1200} height={800} className="h-auto w-full object-cover" />
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">Deck Refinishing FAQ</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-wood-light">Common questions about our refinishing and restoration services.</p>

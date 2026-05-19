@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
+import Image from "next/image";
 import { SERVICES, COMPANY_NAME, PHONE, EMAIL, DOMAIN } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -93,12 +94,12 @@ export default function HamiltonPage() {
       />
 
       {/* Hero */}
-      <section className="bg-wood-dark py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             Professional Deck Staining &amp; Restoration in Hamilton, Ontario
           </h1>
-          <p className="mt-6 text-lg text-sand leading-relaxed">
+          <p className="mt-6 text-lg text-cream leading-relaxed">
             From the escarpment communities of Ancaster and Dundas to the
             lakeside neighbourhoods of Stoney Creek, Deck Heroes brings
             professional deck care to homeowners across the greater Hamilton
@@ -107,8 +108,15 @@ export default function HamiltonPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image src="/images/modern-house-deck.jpg" alt="Deck building and staining in Hamilton, Ontario" width={1200} height={800} className="h-auto w-full object-cover" priority />
+        </div>
+      </section>
+
       {/* Intro */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Hamilton&apos;s Premier Deck Care Team
@@ -146,7 +154,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* Neighborhoods */}
-      <section className="bg-sand py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Neighbourhoods We Serve in Hamilton
@@ -160,7 +168,7 @@ export default function HamiltonPage() {
             {neighborhoods.map((n) => (
               <div
                 key={n}
-                className="rounded-lg bg-cream px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
+                className="rounded-lg bg-white px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
               >
                 {n}
               </div>
@@ -170,7 +178,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* Services */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Our Deck &amp; Fence Services in Hamilton
@@ -185,7 +193,7 @@ export default function HamiltonPage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="group rounded-xl border border-sand/50 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
               >
                 <h3 className="font-serif text-xl font-bold text-wood-dark group-hover:text-terracotta transition-colors">
                   {s.title}
@@ -200,7 +208,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* Why Trust Us */}
-      <section className="bg-wood-dark py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-cream">
             Why Hamilton Homeowners Trust Deck Heroes
@@ -224,11 +232,11 @@ export default function HamiltonPage() {
                 desc: "Dundas, Ancaster, Waterdown, Stoney Creek, Binbrook, Flamborough — we serve every corner of greater Hamilton with prompt, professional service.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-xl bg-wood-light/10 p-6">
+              <div key={item.title} className="rounded-xl bg-forest-light/10 p-6">
                 <h3 className="font-serif text-lg font-bold text-cream">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sand leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-cream leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -236,7 +244,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             What Hamilton Homeowners Are Saying
@@ -266,7 +274,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-sand py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark text-center">
             Frequently Asked Questions &mdash; Hamilton
@@ -278,7 +286,7 @@ export default function HamiltonPage() {
       </section>
 
       {/* Nearby Cities */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             Also Serving Nearby Communities
@@ -298,7 +306,7 @@ export default function HamiltonPage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="rounded-lg bg-sand px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
+                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
               >
                 {city.name}
               </Link>

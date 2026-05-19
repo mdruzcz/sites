@@ -3,7 +3,7 @@ import { PHONE, PHONE_HREF } from "@/lib/constants";
 
 export default function ContactCTA() {
   return (
-    <section className="bg-wood py-16 lg:py-20">
+    <section className="bg-forest py-16 lg:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-serif text-3xl font-bold text-cream sm:text-4xl">
           Ready to Transform Your Deck?

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -197,7 +198,7 @@ export default function StainChoicesPage() {
       />
 
       {/* Hero */}
-      <section className="bg-wood-dark py-16 lg:py-20">
+      <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
             Deck Stain Choices &amp; Color Guide
@@ -210,8 +211,15 @@ export default function StainChoicesPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="bg-bg py-10 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image src="/images/staining-sealing.png" alt="Premium deck stain colour options and finishes" width={1024} height={683} className="h-auto w-full object-cover" priority />
+        </div>
+      </section>
+
       {/* Stain Types */}
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-wood-dark text-center sm:text-3xl">
             Three Types of Deck Stain
@@ -225,7 +233,7 @@ export default function StainChoicesPage() {
             {STAIN_TYPES.map((stain) => (
               <div
                 key={stain.name}
-                className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50 sm:p-8"
+                className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50 sm:p-8"
               >
                 <div className="mb-4">{stain.icon}</div>
                 <h3 className="font-serif text-xl font-bold text-wood-dark">
@@ -328,7 +336,7 @@ export default function StainChoicesPage() {
       </section>
 
       {/* How to Choose */}
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-wood-dark text-center sm:text-3xl">
             How to Choose the Right Stain
@@ -375,7 +383,7 @@ export default function StainChoicesPage() {
             {BRANDS.map((brand) => (
               <div
                 key={brand.name}
-                className="rounded-xl bg-cream p-6 border border-cream-dark/50"
+                className="rounded-xl bg-bg p-6 border border-cream-dark/50"
               >
                 <h3 className="font-semibold text-wood-dark">{brand.name}</h3>
                 <p className="mt-2 text-sm text-wood leading-relaxed">
@@ -388,7 +396,7 @@ export default function StainChoicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-wood-dark text-center sm:text-3xl mb-8">
             Stain Choices FAQ

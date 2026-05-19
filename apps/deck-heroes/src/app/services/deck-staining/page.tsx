@@ -73,12 +73,12 @@ export default function DeckStainingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-wood-dark via-wood to-wood-light py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             Professional Deck Staining in Ontario
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-sand-light">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
             Bring out the natural beauty of your wood deck while adding lasting
             protection against the elements. Our expert staining service combines
             thorough preparation with premium products for results that endure.
@@ -92,7 +92,7 @@ export default function DeckStainingPage() {
             </Link>
             <a
               href={PHONE_HREF}
-              className="rounded-lg border-2 border-sand px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
+              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
             >
               Call {PHONE}
             </a>
@@ -101,7 +101,7 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Featured Image */}
-      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
           <Image
             src="/images/staining-sealing.png"
@@ -115,7 +115,7 @@ export default function DeckStainingPage() {
       </section>
 
       {/* What is Deck Staining */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             What Is Deck Staining and Why Does It Matter?
@@ -148,7 +148,7 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Our Process */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Our Deck Staining Process
@@ -202,7 +202,7 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Benefits of Professional Deck Staining
@@ -245,7 +245,7 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Stain Types */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Stain Types We Use
@@ -277,33 +277,40 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Internal Links */}
-      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             Explore Our Other Services
           </h2>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/services/deck-refinishing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+            <Link href="/services/deck-refinishing" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Deck Refinishing
             </Link>
-            <Link href="/services/deck-resurfacing" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+            <Link href="/services/deck-resurfacing" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Deck Resurfacing
             </Link>
-            <Link href="/services/deck-building" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+            <Link href="/services/deck-building" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Deck Building
             </Link>
-            <Link href="/services/deck-cleaning" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+            <Link href="/services/deck-cleaning" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Deck Cleaning
             </Link>
-            <Link href="/contact" className="rounded-lg bg-sand-light/60 px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
+            <Link href="/contact" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
               Contact Us
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Additional Photo */}
+      <section className="bg-bg py-8 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+          <Image src="/images/wooden-dock.jpeg" alt="Freshly stained wooden deck surface showing rich wood tones" width={1200} height={800} className="h-auto w-full object-cover" />
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Deck Staining FAQ

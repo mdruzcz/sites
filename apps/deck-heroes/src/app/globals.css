@@ -2,16 +2,30 @@
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
 
 @theme inline {
-  --color-cream: #F5EFE6;
-  --color-cream-dark: #E8DCCF;
-  --color-wood-dark: #2C1810;
-  --color-wood: #5C3D2E;
-  --color-wood-light: #8B6347;
-  --color-terracotta: #C4623A;
-  --color-terra-dark: #A34E2C;
+  /* Primary — Forest Green */
+  --color-forest: #2D6A4F;
+  --color-forest-dark: #1B4332;
+  --color-forest-light: #40916C;
+
+  /* Secondary — Terracotta / Cedar */
+  --color-terracotta: #BC6C25;
+  --color-terra-dark: #9A5518;
+  --color-terra-light: #DDA15E;
+
+  /* Accent — Warm Cream */
+  --color-cream: #FEFAE0;
+  --color-cream-dark: #E9E5C8;
+
+  /* Backgrounds */
+  --color-bg: #F8F9FA;
+  --color-bg-alt: #EDF2F4;
+
+  /* Neutrals */
+  --color-wood-dark: #2B2D42;
+  --color-wood: #495057;
+  --color-wood-light: #6C757D;
   --color-sand: #D4A574;
   --color-sand-light: #EDD5AA;
-  --color-forest: #2D5016;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
@@ -24,7 +38,7 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-wood-dark);
-  background-color: var(--color-cream);
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

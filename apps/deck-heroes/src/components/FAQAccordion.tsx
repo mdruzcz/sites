@@ -75,7 +75,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="divide-y divide-cream-dark rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50 sm:p-8">
+      <div className="divide-y divide-cream-dark rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50 sm:p-8">
         {items.map((item, i) => (
           <AccordionItem
             key={i}

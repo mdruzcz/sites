@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactCTA from "@/components/ContactCTA";
 import TestimonialCard from "@/components/TestimonialCard";
 import { TESTIMONIALS, COMPANY_NAME } from "@/lib/constants";
@@ -41,7 +42,7 @@ function StarDisplay({ rating }: { rating: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <svg
           key={i}
-          className={`h-7 w-7 ${i < Math.floor(rating) ? "text-sand" : "text-cream-dark"}`}
+          className={`h-7 w-7 ${i < Math.floor(rating) ? "text-cream" : "text-cream-dark"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -61,7 +62,7 @@ export default function TestimonialsPage() {
       />
 
       {/* Hero */}
-      <section className="bg-wood-dark py-16 lg:py-20">
+      <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
             What Our Customers Say
@@ -73,10 +74,17 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="bg-bg py-10 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image src="/images/deck-furniture.jpeg" alt="Happy homeowners enjoying their professionally restored deck" width={1200} height={800} className="h-auto w-full object-cover" priority />
+        </div>
+      </section>
+
       {/* Aggregate Rating */}
-      <section className="bg-cream py-12">
+      <section className="bg-bg py-12">
         <div className="mx-auto max-w-md px-4 text-center">
-          <div className="rounded-2xl bg-white p-8 shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+          <div className="rounded-2xl bg-white p-8 shadow-md shadow-forest-dark/5 border border-cream-dark/50">
             <p className="font-serif text-5xl font-bold text-wood-dark">
               {averageRating}
             </p>
@@ -91,7 +99,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="bg-cream pb-16 lg:pb-20">
+      <section className="bg-bg pb-16 lg:pb-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((testimonial, i) => (

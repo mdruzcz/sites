@@ -229,12 +229,12 @@ export function ServiceCityPage({
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-wood-dark via-wood to-wood-light py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             {service.title} in {city.name}, Ontario
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-sand-light">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
             Professional {service.title.toLowerCase()} services for homeowners in{" "}
             {city.name} and surrounding {city.province} communities.{" "}
             {COMPANY_NAME} brings expert craftsmanship and premium products to
@@ -249,7 +249,7 @@ export function ServiceCityPage({
             </Link>
             <a
               href={PHONE_HREF}
-              className="rounded-lg border-2 border-sand px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
+              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
             >
               Call {PHONE}
             </a>
@@ -258,7 +258,7 @@ export function ServiceCityPage({
       </section>
 
       {/* Why this service in this city */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             {service.title} for {city.name} Homeowners
@@ -286,7 +286,7 @@ export function ServiceCityPage({
       </section>
 
       {/* Process */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Our {service.title} Process in {city.name}
@@ -312,7 +312,7 @@ export function ServiceCityPage({
       </section>
 
       {/* Neighbourhoods */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             {city.name} Neighbourhoods We Serve
@@ -325,7 +325,7 @@ export function ServiceCityPage({
             {cityInfo.neighbourhoods.map((n) => (
               <div
                 key={n}
-                className="rounded-lg bg-sand-light/60 px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
+                className="rounded-lg bg-bg-alt px-4 py-3 text-center font-medium text-wood-dark shadow-sm"
               >
                 {n}
               </div>
@@ -335,7 +335,7 @@ export function ServiceCityPage({
       </section>
 
       {/* Other Services */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Other Deck Services in {city.name}
@@ -345,7 +345,7 @@ export function ServiceCityPage({
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}/${citySlug}`}
-                className="group rounded-xl border border-sand/50 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
+                className="group rounded-xl border border-forest-light/20 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-terracotta/40"
               >
                 <h3 className="font-serif text-xl font-bold text-wood-dark group-hover:text-terracotta transition-colors">
                   {s.title} in {city.name}
@@ -360,7 +360,7 @@ export function ServiceCityPage({
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             {service.title} FAQ — {city.name}
@@ -377,7 +377,7 @@ export function ServiceCityPage({
       </section>
 
       {/* Nearby Cities */}
-      <section className="bg-sand-light/40 py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             {service.title} in Other Areas

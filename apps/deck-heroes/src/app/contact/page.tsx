@@ -59,7 +59,7 @@ export default function ContactPage() {
       />
 
       {/* Hero */}
-      <section className="bg-wood-dark py-16 lg:py-20">
+      <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
             Get Your Free Deck Staining Quote
@@ -72,12 +72,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Form Column */}
             <div className="lg:col-span-3">
-              <div className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50 sm:p-8">
+              <div className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50 sm:p-8">
                 <h2 className="font-serif text-xl font-bold text-wood-dark mb-6">
                   Request a Quote
                 </h2>
@@ -88,7 +88,7 @@ export default function ContactPage() {
             {/* Info Column */}
             <div className="lg:col-span-2 space-y-8">
               {/* Phone & Email */}
-              <div className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+              <div className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50">
                 <h3 className="font-serif text-lg font-bold text-wood-dark mb-4">
                   Contact Info
                 </h3>
@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
 
               {/* Business Hours */}
-              <div className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+              <div className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50">
                 <h3 className="font-serif text-lg font-bold text-wood-dark mb-4">
                   Business Hours
                 </h3>
@@ -163,7 +163,7 @@ export default function ContactPage() {
               </div>
 
               {/* Service Areas */}
-              <div className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+              <div className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50">
                 <h3 className="font-serif text-lg font-bold text-wood-dark mb-4">
                   Service Areas
                 </h3>
@@ -171,15 +171,26 @@ export default function ContactPage() {
                   {CITIES.map((city) => (
                     <span
                       key={city.slug}
-                      className="inline-block rounded-full bg-cream px-3 py-1 text-xs font-semibold text-wood-dark"
+                      className="inline-block rounded-full bg-bg px-3 py-1 text-xs font-semibold text-wood-dark"
                     >
                       {city.name}
                     </span>
                   ))}
-                  <span className="inline-block rounded-full bg-cream px-3 py-1 text-xs font-semibold text-wood-dark">
+                  <span className="inline-block rounded-full bg-bg px-3 py-1 text-xs font-semibold text-wood-dark">
                     &amp; surrounding areas
                   </span>
                 </div>
+              </div>
+
+              {/* Deck Photo */}
+              <div className="overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/deck-outdoor-living.jpg"
+                  alt="Beautiful outdoor deck space in Ontario"
+                  width={600}
+                  height={400}
+                  className="h-auto w-full object-cover"
+                />
               </div>
 
               {/* Response time promise */}

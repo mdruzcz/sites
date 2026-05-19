@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ContactCTA from "@/components/ContactCTA";
 
@@ -92,8 +93,8 @@ const ARTICLES: Article[] = [
 const categoryColors: Record<string, string> = {
   Maintenance: "bg-terracotta/10 text-terracotta",
   Seasonal: "bg-forest/10 text-forest",
-  "Stain Guide": "bg-sand text-wood-dark",
-  "Wood Care": "bg-wood/10 text-wood",
+  "Stain Guide": "bg-bg-alt text-wood-dark",
+  "Wood Care": "bg-forest/10 text-forest",
   Planning: "bg-cream-dark text-wood-dark",
 };
 
@@ -101,7 +102,7 @@ export default function ArticlesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-wood-dark py-16 lg:py-20">
+      <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
             Deck Care Articles, Tips &amp; Expert Advice
@@ -114,15 +115,22 @@ export default function ArticlesPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <section className="bg-bg py-10 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
+          <Image src="/images/wooden-fence.jpeg" alt="Professional deck and fence care tips and articles" width={1200} height={800} className="h-auto w-full object-cover" priority />
+        </div>
+      </section>
+
       {/* Article Grid */}
-      <section className="bg-cream py-16 lg:py-20">
+      <section className="bg-bg py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {ARTICLES.map((article) => (
               <Link
                 key={article.slug}
                 href="#"
-                className="group rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50 hover:shadow-lg hover:border-terracotta/30 transition-all"
+                className="group rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50 hover:shadow-lg hover:border-terracotta/30 transition-all"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span

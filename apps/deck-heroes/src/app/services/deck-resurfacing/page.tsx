@@ -70,12 +70,12 @@ export default function DeckResurfacingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-wood-dark via-wood to-wood-light py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
             Deck Resurfacing in Ontario
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-sand-light">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
             Your deck frame is still solid, but the surface has seen better days.
             Our resurfacing service replaces worn, warped, or splintered boards
             with fresh material — giving you a like-new deck at a fraction of the
@@ -90,7 +90,7 @@ export default function DeckResurfacingPage() {
             </Link>
             <a
               href={PHONE_HREF}
-              className="rounded-lg border-2 border-sand px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
+              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
             >
               Call {PHONE}
             </a>
@@ -99,7 +99,7 @@ export default function DeckResurfacingPage() {
       </section>
 
       {/* Featured Image */}
-      <section className="bg-cream py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
           <Image
             src="/images/structural-repairs.png"
@@ -113,7 +113,7 @@ export default function DeckResurfacingPage() {
       </section>
 
       {/* What is Resurfacing */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl font-bold text-wood-dark">
             Why Resurface Instead of Rebuild?
@@ -147,7 +147,7 @@ export default function DeckResurfacingPage() {
       </section>
 
       {/* Our Process */}
-      <section className="bg-sand-light/40 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Our Resurfacing Process
@@ -201,7 +201,7 @@ export default function DeckResurfacingPage() {
       </section>
 
       {/* Material Options */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Resurfacing Material Options
@@ -242,7 +242,7 @@ export default function DeckResurfacingPage() {
       </section>
 
       {/* Internal Links */}
-      <section className="bg-sand-light/40 py-12 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-12 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             Explore Our Other Services
@@ -257,8 +257,13 @@ export default function DeckResurfacingPage() {
         </div>
       </section>
 
+      {/* Additional Image */}
+      <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg my-12">
+        <Image src="/images/modern-house-deck.jpg" alt="Modern resurfaced deck on a beautiful Ontario home" width={1200} height={800} className="h-auto w-full object-cover" />
+      </div>
+
       {/* FAQ */}
-      <section className="bg-cream py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
             Deck Resurfacing FAQ

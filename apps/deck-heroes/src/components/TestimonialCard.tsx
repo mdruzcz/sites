@@ -6,7 +6,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <svg
           key={i}
-          className={`h-5 w-5 ${i < rating ? "text-sand" : "text-cream-dark"}`}
+          className={`h-5 w-5 ${i < rating ? "text-cream" : "text-cream-dark"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -23,13 +23,13 @@ export default function TestimonialCard({
   testimonial: Testimonial;
 }) {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-md shadow-wood-dark/5 border border-cream-dark/50">
+    <div className="rounded-2xl bg-white p-6 shadow-md shadow-forest-dark/5 border border-cream-dark/50">
       <StarRating rating={testimonial.rating} />
       <blockquote className="mt-4 text-wood leading-relaxed">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
       <div className="mt-5 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sand/30 text-sm font-bold text-wood">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-forest-light/10 text-sm font-bold text-wood">
           {testimonial.name.charAt(0)}
         </div>
         <div>
