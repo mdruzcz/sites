@@ -1,0 +1,32 @@
+export const site = {
+  name: "Halton Glow Lighting",
+  shortName: "Halton Glow",
+  tagline: "Permanent Outdoor LED Lighting",
+  phone: "+1 (289) 427-5295",
+  phoneHref: "tel:+12894275295",
+  email: "info@haltonglowlighting.ca",
+  emailHref: "mailto:info@haltonglowlighting.ca",
+  address: {
+    street: "Burlington & Oakville",
+    city: "Burlington",
+    region: "ON",
+    postal: "L7L",
+    country: "CA",
+  },
+  addressLine: "Serving Burlington & Oakville, Ontario",
+  hours: "Mon – Fri · 8 AM – 8 PM · Sat 9 – 6 · Sun 10 – 4",
+  yearsExperience: 5,
+  serviceAreas: ["Burlington", "Oakville", "Milton", "Hamilton", "Mississauga"],
+  url: "https://haltonglowlighting.ca",
+  googleRating: "5.0",
+  trustBadges: [
+    { label: "Lifetime Warranty", value: "On all installations" },
+    { label: "Licensed & Insured", value: "Local Halton experts" },
+    { label: "50,000+ Hour LEDs", value: "Rated for Canadian winters" },
+  ],
+  responseTime: "24 hours",
+  social: {
+    instagram: "https://instagram.com/haltonglowlighting",
+    facebook: "https://facebook.com/haltonglowlighting",
+  },
+} as const;
