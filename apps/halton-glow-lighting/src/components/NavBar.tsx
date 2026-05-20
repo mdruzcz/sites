@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { site } from "@/lib/site";
+import { Logo } from "./Logo";
 import { PhoneIcon, MenuIcon, CloseIcon } from "./icons";
 
 const links = [
-  { href: "#why", label: "Why Halton Glow" },
-  { href: "#how", label: "How It Works" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#service-areas", label: "Service Areas" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#why", label: "Why Halton Glow" },
+  { href: "/#how", label: "How It Works" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#service-areas", label: "Service Areas" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export function NavBar() {
@@ -33,15 +34,10 @@ export function NavBar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2.5 group min-h-11">
-            <Image
-              src="/images/halton-glow-logo.png"
-              alt="Halton Glow Lighting logo - permanent LED lighting installer in Burlington and Oakville"
-              width={180}
-              height={48}
+          <a href="/" className="flex items-center gap-2.5 group min-h-11">
+            <Logo
               className="h-10 lg:h-12 w-auto"
-              style={{ width: "auto", height: "auto", maxHeight: "3rem" }}
-              priority
+              ariaLabel="Halton Glow Lighting — permanent LED lighting installer in Burlington and Oakville"
             />
           </a>
 
@@ -66,7 +62,7 @@ export function NavBar() {
               {site.phone}
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="px-5 py-2.5 rounded-full text-sm font-semibold text-[#0A0E1F] bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] hover:from-[var(--gold)] hover:to-[var(--amber)] transition-all hover:scale-105 hover:shadow-[0_8px_30px_rgba(245,194,107,0.4)]"
             >
               Free Estimate
@@ -105,7 +101,7 @@ export function NavBar() {
               {site.phone}
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="block w-full text-center px-5 py-3.5 rounded-full text-sm font-semibold text-[#0A0E1F] bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] mt-3"
             >

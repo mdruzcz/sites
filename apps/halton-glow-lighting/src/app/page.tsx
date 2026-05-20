@@ -35,9 +35,7 @@ const localBusinessSchema = {
     "Permanent outdoor LED lighting installation for homes and businesses in Burlington and Oakville, Ontario.",
   url: site.url,
   telephone: site.phone,
-  email: site.email,
-  image: `${site.url}/images/halton-glow-installation.webp`,
-  logo: `${site.url}/images/halton-glow-logo.png`,
+  image: `${site.url}/images/uploads/blue-led-house-app.jpg`,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

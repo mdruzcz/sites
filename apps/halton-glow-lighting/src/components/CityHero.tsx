@@ -1,14 +1,15 @@
 import Image from "next/image";
+import type { City } from "@/lib/site";
 import { site } from "@/lib/site";
 import { PhoneIcon, SparkleIcon, CheckIcon } from "./icons";
 
-export function Hero() {
+export function CityHero({ city }: { city: City }) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-24">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20 lg:pt-24">
       <div className="absolute inset-0">
         <Image
           src="/images/uploads/blue-led-house-app.jpg"
-          alt="Two-story Burlington home with permanent blue LED outdoor lighting along every roofline, with the Halton Glow control app shown on a phone in the driveway"
+          alt={`Permanent outdoor LED lighting installed on a ${city.name} home by Halton Glow Lighting at night`}
           fill
           priority
           className="object-cover"
@@ -35,20 +36,19 @@ export function Hero() {
             }}
           >
             <SparkleIcon className="w-3.5 h-3.5" />
-            Burlington & Oakville's Permanent Lighting Experts
+            {city.name} · {city.region}
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-white">
-            Transform Your Home
+            Permanent Outdoor
             <br />
-            <span className="text-gradient-gold">For Every Season</span>
+            <span className="text-gradient-gold">LED Lighting</span>
             <br />
-            With Just One Tap
+            in {city.name}
           </h1>
 
           <p className="text-lg lg:text-xl text-white/75 mb-9 leading-relaxed max-w-xl">
-            Custom-designed permanent LED lighting that dazzles year-round.
-            Control colors, patterns and schedules right from your phone.
+            {city.heroIntro}
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
@@ -56,7 +56,7 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-semibold text-[#0A0E1F] bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] hover:from-[var(--gold)] hover:to-[var(--amber)] transition-all hover:scale-105 hover:shadow-[0_12px_40px_rgba(245,194,107,0.5)] min-h-11"
             >
-              Get Your Free Estimate
+              Free Estimate in {city.name}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -91,11 +91,6 @@ export function Hero() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 text-white/30">
-        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-        <div className="w-px h-8 bg-white/15" />
       </div>
     </section>
   );

@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     url: "https://haltonglowlighting.ca",
     images: [
       {
-        url: "/images/hero-led-house.png",
-        width: 1024,
-        height: 535,
-        alt: "Permanent LED outdoor lighting installed on a modern Halton Region home at twilight",
+        url: "/images/uploads/blue-led-house-app.jpg",
+        width: 1600,
+        height: 1200,
+        alt: "Two-story Burlington home with permanent blue LED outdoor lighting and the Halton Glow control app on a phone",
       },
     ],
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Halton Glow Lighting | Permanent Outdoor LED Lighting",
     description:
       "App-controlled permanent LED lighting for Burlington and Oakville homes. Weatherproof, year-round, lifetime warranty.",
-    images: ["/images/hero-led-house.png"],
+    images: ["/images/uploads/blue-led-house-app.jpg"],
   },
   icons: {
     icon: [

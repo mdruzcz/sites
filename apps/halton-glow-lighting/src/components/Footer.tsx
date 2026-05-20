@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { site } from "@/lib/site";
+import { Logo } from "./Logo";
 import {
   PhoneIcon,
-  MailIcon,
   MapPinIcon,
   InstagramIcon,
   FacebookIcon,
@@ -20,14 +19,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="lg:col-span-2">
-            <Image
-              src="/images/halton-glow-logo.png"
-              alt="Halton Glow Lighting logo"
-              width={200}
-              height={56}
-              className="h-12 w-auto mb-5"
-              style={{ width: "auto", height: "auto", maxHeight: "3rem" }}
-            />
+            <Logo className="h-12 w-auto mb-5" />
             <p className="text-sm text-white/55 leading-relaxed max-w-md mb-5">
               Halton Region's permanent outdoor LED lighting experts. We design,
               install and warranty smart, weatherproof lighting that makes your
@@ -66,12 +58,13 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                { label: "Why Halton Glow", href: "#why" },
-                { label: "How It Works", href: "#how" },
-                { label: "Gallery", href: "#gallery" },
-                { label: "Service Areas", href: "#service-areas" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Contact", href: "#contact" },
+                { label: "Why Halton Glow", href: "/#why" },
+                { label: "How It Works", href: "/#how" },
+                { label: "Gallery", href: "/#gallery" },
+                { label: "Service Areas", href: "/#service-areas" },
+                { label: "Blog", href: "/blog" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Contact", href: "/#contact" },
               ].map((l) => (
                 <li key={l.href}>
                   <a
@@ -100,15 +93,6 @@ export function Footer() {
                   className="hover:text-white transition"
                 >
                   {site.phone}
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-sm text-white/55">
-                <MailIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a
-                  href={site.emailHref}
-                  className="hover:text-white transition break-all"
-                >
-                  {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-white/55">

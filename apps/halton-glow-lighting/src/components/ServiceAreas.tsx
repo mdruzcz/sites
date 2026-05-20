@@ -1,22 +1,6 @@
+import Link from "next/link";
+import { cities } from "@/lib/site";
 import { MapPinIcon } from "./icons";
-
-const areas = [
-  {
-    city: "Burlington",
-    desc: "From historic downtown neighbourhoods to the lakeshore estates of Roseland and Tyandaga, we install permanent outdoor lighting that complements every Burlington home's character.",
-    highlights: ["Aldershot", "Roseland", "Tyandaga", "Millcroft", "Alton Village"],
-  },
-  {
-    city: "Oakville",
-    desc: "Whether you're in classic Old Oakville or a newer Glen Abbey or Joshua Creek home, our team delivers premium LED installations that elevate curb appeal year-round.",
-    highlights: ["Old Oakville", "Glen Abbey", "Bronte", "Joshua Creek", "West Oak Trails"],
-  },
-  {
-    city: "Surrounding Halton",
-    desc: "We also serve homeowners across Milton, Hamilton, Mississauga and the rest of the Halton Region with the same lifetime warranty and professional install standards.",
-    highlights: ["Milton", "Hamilton", "Mississauga", "Waterdown", "Carlisle"],
-  },
-];
 
 export function ServiceAreas() {
   return (
@@ -43,49 +27,59 @@ export function ServiceAreas() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {areas.map((a) => (
-            <div
-              key={a.city}
-              className="p-7 rounded-2xl border"
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cities.map((c) => (
+            <Link
+              key={c.slug}
+              href={`/permanent-lights/${c.slug}`}
+              className="group p-7 rounded-2xl border transition-all hover:translate-y-[-2px] hover:border-[var(--gold)]/40"
               style={{
                 backgroundColor: "rgba(255,255,255,0.03)",
                 borderColor: "rgba(255,255,255,0.08)",
               }}
             >
               <div
-                className="flex items-center gap-2 mb-3"
+                className="flex items-center gap-2 mb-3 group-hover:text-[var(--gold-bright)] transition"
                 style={{ color: "var(--gold-bright)" }}
               >
                 <MapPinIcon />
-                <h3 className="font-display text-2xl font-bold">{a.city}</h3>
+                <h3 className="font-display text-2xl font-bold">{c.name}</h3>
               </div>
               <p className="text-sm text-white/60 leading-relaxed mb-5">
-                {a.desc}
+                {c.description}
               </p>
-              <div className="flex flex-wrap gap-2">
-                {a.highlights.map((h) => (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {c.neighbourhoods.slice(0, 4).map((n) => (
                   <span
-                    key={h}
+                    key={n}
                     className="text-xs px-3 py-1 rounded-full"
                     style={{
-                      backgroundColor: "rgba(245,194,107,0.1)",
+                      backgroundColor: "rgba(245,194,107,0.08)",
                       color: "var(--gold-bright)",
-                      border: "1px solid rgba(245,194,107,0.2)",
+                      border: "1px solid rgba(245,194,107,0.18)",
                     }}
                   >
-                    {h}
+                    {n}
                   </span>
                 ))}
               </div>
-            </div>
+              <p
+                className="text-sm font-semibold inline-flex items-center gap-1.5"
+                style={{ color: "var(--gold-bright)" }}
+              >
+                Permanent lights in {c.name}
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </p>
+            </Link>
           ))}
         </div>
 
         <p className="text-center text-white/50 text-sm mt-10">
           Don't see your area listed?{" "}
           <a
-            href="#contact"
+            href="/#contact"
             className="underline hover:text-white transition"
             style={{ color: "var(--gold-bright)" }}
           >

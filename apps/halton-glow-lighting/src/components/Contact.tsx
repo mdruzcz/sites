@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { site } from "@/lib/site";
-import { PhoneIcon, MailIcon, MapPinIcon, CheckIcon } from "./icons";
+import { PhoneIcon, MapPinIcon, CheckIcon } from "./icons";
 
 const services = [
   "New Installation",
@@ -13,6 +13,17 @@ const services = [
   "Other",
 ];
 
+const heardOptions = [
+  "Google Search",
+  "Facebook / Instagram",
+  "Saw a Halton Glow install on a home",
+  "Word of mouth / Referral",
+  "Drove past our truck or yard sign",
+  "Other",
+];
+
+const MAX_FILE_SIZE_MB = 10;
+
 export function Contact() {
   const [form, setForm] = useState({
     first_name: "",
@@ -22,11 +33,14 @@ export function Contact() {
     address: "",
     city: "",
     service: "",
+    heard_about: "",
     message: "",
     website: "",
   });
+  const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
   const handleChange = (
@@ -35,17 +49,40 @@ export function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = Array.from(e.target.files ?? []);
+    const valid: File[] = [];
+    for (const f of selected) {
+      if (f.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+        setErrorMsg(`"${f.name}" is larger than ${MAX_FILE_SIZE_MB} MB. Please upload smaller photos.`);
+        continue;
+      }
+      if (!f.type.startsWith("image/")) {
+        setErrorMsg(`"${f.name}" isn't an image file.`);
+        continue;
+      }
+      valid.push(f);
+    }
+    setFiles((prev) => [...prev, ...valid].slice(0, 5));
+    if (valid.length) setErrorMsg("");
+  };
+
+  const removeFile = (i: number) => {
+    setFiles((prev) => prev.filter((_, idx) => idx !== i));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
     setErrorMsg("");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, _loaded: loadedAt.current }),
-      });
-      const data = await res.json();
+      const fd = new FormData();
+      Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+      fd.append("_loaded", String(loadedAt.current));
+      files.forEach((f) => fd.append("photos", f));
+
+      const res = await fetch("/api/contact", { method: "POST", body: fd });
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setErrorMsg(data.error || "Something went wrong. Please call us directly.");
         setStatus("error");
@@ -53,18 +90,12 @@ export function Contact() {
       }
       setStatus("success");
       setForm({
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        service: "",
-        message: "",
-        website: "",
+        first_name: "", last_name: "", email: "", phone: "",
+        address: "", city: "", service: "", heard_about: "",
+        message: "", website: "",
       });
+      setFiles([]);
       loadedAt.current = Date.now();
-      window.location.hash = "contact";
     } catch {
       setErrorMsg("Network error. Please try again or call us directly.");
       setStatus("error");
@@ -98,7 +129,8 @@ export function Contact() {
             <p className="text-lg text-white/65 leading-relaxed mb-10">
               Ready to light up your home year-round? Fill out the form and
               we'll be in touch within 24 hours with your free, no-obligation
-              quote.
+              quote. Optional: attach a photo of your home and we can rough in
+              a quote before we visit.
             </p>
 
             <div className="space-y-5">
@@ -122,30 +154,6 @@ export function Contact() {
                   </p>
                   <p className="font-semibold text-white group-hover:text-[var(--gold-bright)] transition">
                     {site.phone}
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href={site.emailHref}
-                className="flex items-center gap-4 group min-h-11"
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, var(--gold-bright), var(--amber))",
-                    color: "var(--night-deep)",
-                  }}
-                >
-                  <MailIcon />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider mb-0.5 text-white/45">
-                    Email
-                  </p>
-                  <p className="font-semibold text-white group-hover:text-[var(--gold-bright)] transition break-all">
-                    {site.email}
                   </p>
                 </div>
               </a>
@@ -232,27 +240,19 @@ export function Contact() {
                   <div>
                     <label className={labelClass}>First Name *</label>
                     <input
-                      type="text"
-                      name="first_name"
-                      required
+                      type="text" name="first_name" required
                       autoComplete="given-name"
-                      value={form.first_name}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="Jane"
+                      value={form.first_name} onChange={handleChange}
+                      className={inputClass} placeholder="Jane"
                     />
                   </div>
                   <div>
                     <label className={labelClass}>Last Name *</label>
                     <input
-                      type="text"
-                      name="last_name"
-                      required
+                      type="text" name="last_name" required
                       autoComplete="family-name"
-                      value={form.last_name}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="Smith"
+                      value={form.last_name} onChange={handleChange}
+                      className={inputClass} placeholder="Smith"
                     />
                   </div>
                 </div>
@@ -261,28 +261,19 @@ export function Contact() {
                   <div>
                     <label className={labelClass}>Email *</label>
                     <input
-                      type="email"
-                      name="email"
-                      required
+                      type="email" name="email" required
                       autoComplete="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="jane@email.com"
+                      value={form.email} onChange={handleChange}
+                      className={inputClass} placeholder="jane@email.com"
                     />
                   </div>
                   <div>
                     <label className={labelClass}>Phone *</label>
                     <input
-                      type="tel"
-                      name="phone"
-                      required
-                      inputMode="tel"
-                      autoComplete="tel"
-                      value={form.phone}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="(289) 000-0000"
+                      type="tel" name="phone" required
+                      inputMode="tel" autoComplete="tel"
+                      value={form.phone} onChange={handleChange}
+                      className={inputClass} placeholder="(289) 000-0000"
                     />
                   </div>
                 </div>
@@ -291,25 +282,19 @@ export function Contact() {
                   <div>
                     <label className={labelClass}>Home Address</label>
                     <input
-                      type="text"
-                      name="address"
+                      type="text" name="address"
                       autoComplete="street-address"
-                      value={form.address}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="123 Main St"
+                      value={form.address} onChange={handleChange}
+                      className={inputClass} placeholder="123 Main St"
                     />
                   </div>
                   <div>
                     <label className={labelClass}>City</label>
                     <input
-                      type="text"
-                      name="city"
+                      type="text" name="city"
                       autoComplete="address-level2"
-                      value={form.city}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="Burlington"
+                      value={form.city} onChange={handleChange}
+                      className={inputClass} placeholder="Burlington"
                     />
                   </div>
                 </div>
@@ -317,10 +302,8 @@ export function Contact() {
                 <div>
                   <label className={labelClass}>Service Type *</label>
                   <select
-                    name="service"
-                    required
-                    value={form.service}
-                    onChange={handleChange}
+                    name="service" required
+                    value={form.service} onChange={handleChange}
                     className={inputClass}
                   >
                     <option value="" className="bg-[var(--midnight)] text-white">
@@ -335,12 +318,93 @@ export function Contact() {
                 </div>
 
                 <div>
+                  <label className={labelClass}>How did you hear about us? <span className="opacity-50 normal-case font-normal">(optional)</span></label>
+                  <select
+                    name="heard_about"
+                    value={form.heard_about} onChange={handleChange}
+                    className={inputClass}
+                  >
+                    <option value="" className="bg-[var(--midnight)] text-white">
+                      Select an option…
+                    </option>
+                    {heardOptions.map((h) => (
+                      <option key={h} value={h} className="bg-[var(--midnight)] text-white">
+                        {h}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className={labelClass}>
+                    Photos of your home <span className="opacity-50 normal-case font-normal">(optional · up to 5)</span>
+                  </label>
+                  <div
+                    className="rounded-lg border border-dashed p-4 transition cursor-pointer hover:border-[var(--gold)]/60 hover:bg-white/[0.03]"
+                    style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      name="photos"
+                      accept="image/jpeg,image/png,image/webp,image/heic"
+                      multiple
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
+                    {files.length === 0 ? (
+                      <div className="text-center py-3">
+                        <svg className="w-7 h-7 mx-auto mb-2 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p className="text-sm text-white/70">
+                          <span className="font-semibold text-[var(--gold-bright)]">Click to attach photos</span>
+                          {" "}or drop them here
+                        </p>
+                        <p className="text-xs text-white/40 mt-1">
+                          JPG, PNG, WebP — max {MAX_FILE_SIZE_MB} MB each
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="space-y-2">
+                        {files.map((f, i) => (
+                          <div
+                            key={`${f.name}-${i}`}
+                            className="flex items-center justify-between gap-3 rounded-md bg-white/5 px-3 py-2 text-sm"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="truncate text-white/80">{f.name}</span>
+                            <span className="text-xs text-white/40 flex-shrink-0">
+                              {(f.size / 1024 / 1024).toFixed(1)} MB
+                            </span>
+                            <button
+                              type="button"
+                              onClick={(e) => { e.stopPropagation(); removeFile(i); }}
+                              className="text-white/50 hover:text-red-400 transition flex-shrink-0"
+                              aria-label={`Remove ${f.name}`}
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        ))}
+                        {files.length < 5 && (
+                          <p className="text-xs text-white/50 text-center pt-1">
+                            Click to add more
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div>
                   <label className={labelClass}>Project Details</label>
                   <textarea
-                    name="message"
-                    rows={4}
-                    value={form.message}
-                    onChange={handleChange}
+                    name="message" rows={4}
+                    value={form.message} onChange={handleChange}
                     className={`${inputClass} resize-none`}
                     placeholder="Tell us about your home, what areas you want lit, or any questions…"
                   />
@@ -349,22 +413,15 @@ export function Contact() {
                 <div
                   aria-hidden="true"
                   style={{
-                    position: "absolute",
-                    left: "-9999px",
-                    top: "-9999px",
-                    height: 0,
-                    overflow: "hidden",
+                    position: "absolute", left: "-9999px", top: "-9999px",
+                    height: 0, overflow: "hidden",
                   }}
                 >
                   <label htmlFor="website">Website</label>
                   <input
-                    type="text"
-                    id="website"
-                    name="website"
-                    autoComplete="off"
-                    tabIndex={-1}
-                    value={form.website}
-                    onChange={handleChange}
+                    type="text" id="website" name="website"
+                    autoComplete="off" tabIndex={-1}
+                    value={form.website} onChange={handleChange}
                   />
                 </div>
 
@@ -381,25 +438,9 @@ export function Contact() {
                 >
                   {status === "sending" ? (
                     <>
-                      <svg
-                        className="w-4 h-4 animate-spin"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          opacity="0.25"
-                        />
-                        <path
-                          d="M12 2a10 10 0 0110 10"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          strokeLinecap="round"
-                        />
+                      <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" opacity="0.25" />
+                        <path d="M12 2a10 10 0 0110 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                       </svg>
                       Sending…
                     </>

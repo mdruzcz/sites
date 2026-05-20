@@ -3,30 +3,71 @@ import { NextRequest, NextResponse } from "next/server";
 /**
  * POST /api/contact
  *
- * Spam protection layers:
- * 1. Honeypot "website" field — silent 200 if filled.
- * 2. Time-gate — submissions under 3s after page load are silently dropped.
+ * Accepts multipart/form-data with fields:
+ *   first_name, last_name, email, phone, address, city, service,
+ *   heard_about, message, website (honeypot), _loaded (page-load ms),
+ *   photos[] (0–5 image files, ≤10MB each)
  *
- * On success: saves to shared LCF Supabase (halton_glow_quote_requests) AND
- * emails service@masterdecker.com via Resend.
+ * Spam protection:
+ * 1. Honeypot "website" field — silent 200 if filled.
+ * 2. Time-gate — submissions under 3 s after page load are silently dropped.
+ *
+ * On success: uploads photos to Supabase Storage bucket `halton-glow-photos`,
+ * inserts a row into `halton_glow_quote_requests`, then emails the lead
+ * (with photo links) to service@masterdecker.com via Resend.
  */
 
 const MIN_FILL_TIME_MS = 3_000;
+const MAX_FILES = 5;
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+const ALLOWED_MIME = new Set(["image/jpeg", "image/png", "image/webp", "image/heic"]);
 
-type ContactBody = {
-  first_name?: string;
-  last_name?: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  city?: string;
-  service?: string;
-  message?: string;
-  website?: string;
-  _loaded?: number;
+type Lead = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  service: string;
+  heard_about: string;
+  message: string;
 };
 
-async function sendEmailViaResend(body: ContactBody): Promise<void> {
+function pickString(form: FormData, key: string): string {
+  const v = form.get(key);
+  return typeof v === "string" ? v.trim() : "";
+}
+
+async function uploadPhotoToSupabase(
+  file: File,
+  supabaseUrl: string,
+  supabaseKey: string
+): Promise<string | null> {
+  const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+  const path = `leads/${Date.now()}-${Math.random().toString(36).slice(2, 10)}.${ext}`;
+  const url = `${supabaseUrl}/storage/v1/object/halton-glow-photos/${path}`;
+
+  const buf = await file.arrayBuffer();
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": file.type || "application/octet-stream",
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+      "x-upsert": "false",
+    },
+    body: buf,
+  });
+
+  if (!res.ok) {
+    console.error("[contact] Supabase storage upload failed:", res.status, await res.text());
+    return null;
+  }
+  return `${supabaseUrl}/storage/v1/object/public/halton-glow-photos/${path}`;
+}
+
+async function sendEmailViaResend(lead: Lead, photoUrls: string[]): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL || "service@masterdecker.com";
   const fromEmail = process.env.CONTACT_FROM_EMAIL || "noreply@haltonglowlighting.ca";
@@ -35,19 +76,39 @@ async function sendEmailViaResend(body: ContactBody): Promise<void> {
     return;
   }
 
-  const fullName = `${body.first_name ?? ""} ${body.last_name ?? ""}`.trim();
-  const subject = `Halton Glow Lead: ${body.service || "Estimate Request"} — ${fullName}`;
+  const fullName = `${lead.first_name} ${lead.last_name}`.trim();
+  const subject = `Halton Glow Lead: ${lead.service || "Estimate"} — ${fullName}`;
+
+  const photoHtml = photoUrls.length
+    ? `<p style="margin-top:16px;"><strong>Customer-provided photos (${photoUrls.length}):</strong></p>
+       <ul style="margin:8px 0 0 18px;padding:0;">
+         ${photoUrls.map((u, i) => `<li><a href="${u}" style="color:#E8A33D;">Photo ${i + 1}</a></li>`).join("")}
+       </ul>
+       <div style="margin-top:12px;">
+         ${photoUrls
+           .slice(0, 3)
+           .map(
+             (u) => `<img src="${u}" alt="Customer photo" style="max-width:240px;border-radius:8px;margin:4px;border:1px solid #ddd;"/>`
+           )
+           .join("")}
+       </div>`
+    : "";
+
   const html = `
     <h2 style="font-family:sans-serif;color:#0A0E1F;">New Halton Glow Quote Request</h2>
-    <p style="font-family:sans-serif;font-size:14px;line-height:1.6;color:#333;">
-      <strong>Name:</strong> ${fullName}<br/>
-      <strong>Phone:</strong> ${body.phone || ""}<br/>
-      <strong>Email:</strong> ${body.email || ""}<br/>
-      <strong>Address:</strong> ${body.address || "Not provided"}<br/>
-      <strong>City:</strong> ${body.city || "Not provided"}<br/>
-      <strong>Service:</strong> ${body.service || ""}<br/>
-      <strong>Message:</strong><br/>${(body.message || "None").replace(/\n/g, "<br/>")}
+    <table style="font-family:sans-serif;font-size:14px;line-height:1.6;color:#333;border-collapse:collapse;">
+      <tr><td style="padding-right:10px;"><strong>Name:</strong></td><td>${fullName}</td></tr>
+      <tr><td style="padding-right:10px;"><strong>Phone:</strong></td><td><a href="tel:${lead.phone}">${lead.phone}</a></td></tr>
+      <tr><td style="padding-right:10px;"><strong>Email:</strong></td><td><a href="mailto:${lead.email}">${lead.email}</a></td></tr>
+      <tr><td style="padding-right:10px;"><strong>Address:</strong></td><td>${lead.address || "—"}</td></tr>
+      <tr><td style="padding-right:10px;"><strong>City:</strong></td><td>${lead.city || "—"}</td></tr>
+      <tr><td style="padding-right:10px;"><strong>Service:</strong></td><td>${lead.service}</td></tr>
+      <tr><td style="padding-right:10px;"><strong>Heard via:</strong></td><td>${lead.heard_about || "—"}</td></tr>
+    </table>
+    <p style="font-family:sans-serif;font-size:14px;line-height:1.6;color:#333;margin-top:14px;">
+      <strong>Message:</strong><br/>${(lead.message || "None").replace(/\n/g, "<br/>")}
     </p>
+    ${photoHtml}
   `;
 
   try {
@@ -68,37 +129,67 @@ async function sendEmailViaResend(body: ContactBody): Promise<void> {
 }
 
 export async function POST(req: NextRequest) {
-  let body: ContactBody;
+  let form: FormData;
   try {
-    body = (await req.json()) as ContactBody;
+    form = await req.formData();
   } catch {
-    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
+    return NextResponse.json({ error: "Invalid form data." }, { status: 400 });
   }
 
-  if (body.website && body.website.trim() !== "") {
-    return NextResponse.json({ success: true });
-  }
+  // Honeypot
+  const website = pickString(form, "website");
+  if (website) return NextResponse.json({ success: true });
 
-  if (body._loaded) {
-    const elapsed = Date.now() - body._loaded;
-    if (elapsed < MIN_FILL_TIME_MS) {
+  // Time-gate
+  const loadedStr = pickString(form, "_loaded");
+  if (loadedStr) {
+    const loaded = Number(loadedStr);
+    if (Number.isFinite(loaded) && Date.now() - loaded < MIN_FILL_TIME_MS) {
       return NextResponse.json({ success: true });
     }
   }
 
+  const lead: Lead = {
+    first_name: pickString(form, "first_name"),
+    last_name: pickString(form, "last_name"),
+    email: pickString(form, "email"),
+    phone: pickString(form, "phone"),
+    address: pickString(form, "address"),
+    city: pickString(form, "city"),
+    service: pickString(form, "service"),
+    heard_about: pickString(form, "heard_about"),
+    message: pickString(form, "message"),
+  };
+
   const errors: string[] = [];
-  if (!body.first_name || body.first_name.trim().length < 2) errors.push("First name is required.");
-  if (!body.last_name || body.last_name.trim().length < 2) errors.push("Last name is required.");
-  if (!body.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email)) errors.push("Valid email is required.");
-  if (!body.phone || body.phone.trim().length < 7) errors.push("Phone is required.");
-  if (!body.service) errors.push("Select a service.");
+  if (lead.first_name.length < 2) errors.push("First name is required.");
+  if (lead.last_name.length < 2) errors.push("Last name is required.");
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(lead.email)) errors.push("Valid email is required.");
+  if (lead.phone.length < 7) errors.push("Phone is required.");
+  if (!lead.service) errors.push("Select a service.");
   if (errors.length) {
     return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
   }
 
+  // Photo uploads
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const rawFiles = form.getAll("photos").filter((v): v is File => v instanceof File && v.size > 0);
+  const files = rawFiles.slice(0, MAX_FILES).filter((f) => {
+    if (f.size > MAX_FILE_SIZE) return false;
+    if (!ALLOWED_MIME.has(f.type)) return false;
+    return true;
+  });
 
+  const photoUrls: string[] = [];
+  if (supabaseUrl && supabaseKey && files.length) {
+    for (const f of files) {
+      const url = await uploadPhotoToSupabase(f, supabaseUrl, supabaseKey);
+      if (url) photoUrls.push(url);
+    }
+  }
+
+  // Save lead
   if (supabaseUrl && supabaseKey) {
     const response = await fetch(
       `${supabaseUrl}/rest/v1/halton_glow_quote_requests`,
@@ -111,14 +202,16 @@ export async function POST(req: NextRequest) {
           Prefer: "return=minimal",
         },
         body: JSON.stringify({
-          first_name: body.first_name,
-          last_name: body.last_name,
-          email: body.email,
-          phone: body.phone,
-          address: body.address || null,
-          city: body.city || null,
-          service: body.service,
-          message: body.message || null,
+          first_name: lead.first_name,
+          last_name: lead.last_name,
+          email: lead.email,
+          phone: lead.phone,
+          address: lead.address || null,
+          city: lead.city || null,
+          service: lead.service,
+          heard_about: lead.heard_about || null,
+          message: lead.message || null,
+          photo_urls: photoUrls.length ? photoUrls : null,
           status: "new",
         }),
       }
@@ -131,7 +224,7 @@ export async function POST(req: NextRequest) {
     console.warn("[contact] Supabase env vars not set — skipping DB insert");
   }
 
-  await sendEmailViaResend(body);
+  await sendEmailViaResend(lead, photoUrls);
 
   return NextResponse.json({ success: true }, { status: 200 });
 }
