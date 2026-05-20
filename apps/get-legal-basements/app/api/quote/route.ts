@@ -17,42 +17,55 @@ export async function POST(req: Request) {
     message: body.message || null,
   };
 
-  await fetch(
-    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/glb_quote_requests`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify(payload),
-    }
-  );
+  // Store lead in Supabase
+  try {
+    await fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/glb_quote_requests`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(payload),
+      }
+    );
+  } catch {
+    // Supabase insert failed — continue to send email anyway
+  }
 
+  // Send email notification via Resend
+  // Uses CONTACT_FROM_EMAIL env var — must be a verified Resend sender domain
   if (process.env.RESEND_API_KEY) {
-    await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL || "noreply@getlegalbasements.ca",
-        to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-        subject: `New Quote Request: ${body.service} — ${body.name}`,
-        html: `
-          <h2>New Consultation Request — Legal Basements London</h2>
-          <p><strong>Name:</strong> ${body.name}</p>
-          <p><strong>Phone:</strong> ${body.phone}</p>
-          <p><strong>Email:</strong> ${body.email}</p>
-          <p><strong>Property Address:</strong> ${body.address || "Not provided"}</p>
-          <p><strong>Service:</strong> ${body.service}</p>
-          <p><strong>Message:</strong> ${body.message || "None"}</p>
-        `,
-      }),
-    });
+    try {
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from: process.env.CONTACT_FROM_EMAIL || "Legal Basements London <onboarding@resend.dev>",
+          to: process.env.CONTACT_TO_EMAIL || "matt@masterdecker.com",
+          subject: `New Quote Request: ${body.service} — ${body.name}`,
+          html: `
+            <h2>New Consultation Request — Legal Basements London</h2>
+            <p><strong>Name:</strong> ${body.name}</p>
+            <p><strong>Phone:</strong> ${body.phone}</p>
+            <p><strong>Email:</strong> ${body.email}</p>
+            <p><strong>Property Address:</strong> ${body.address || "Not provided"}</p>
+            <p><strong>Service:</strong> ${body.service}</p>
+            <p><strong>Message:</strong> ${body.message || "None"}</p>
+            <hr />
+            <p style="color:#999;font-size:12px;">Submitted via getlegalbasements.ca</p>
+          `,
+        }),
+      });
+    } catch {
+      // Email send failed — lead is still saved in Supabase
+    }
   }
 
   return Response.json({ ok: true });

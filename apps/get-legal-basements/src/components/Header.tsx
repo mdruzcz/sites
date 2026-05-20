@@ -30,14 +30,14 @@ export function Header() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[var(--border)]"
-          : "bg-transparent"
+          : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src={scrolled ? "/images/logo.svg" : "/images/logo-white.svg"}
+              src="/images/logo.svg"
               alt={`${site.name} — Legal Basement Apartments & Renovations in London, Ontario`}
               width={240}
               height={60}
@@ -51,18 +51,14 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors uppercase tracking-wide ${
-                  scrolled
-                    ? "text-slate-600 hover:text-[var(--accent)]"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className="text-sm font-medium transition-colors uppercase tracking-wide text-slate-600 hover:text-[var(--accent)]"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={site.phoneHref}
-              className={`btn text-sm ${scrolled ? "btn-primary" : "btn-ghost"}`}
+              className="btn btn-primary text-sm"
             >
               <PhoneIcon />
               {site.phone}
@@ -75,7 +71,7 @@ export function Header() {
             aria-label="Toggle menu"
           >
             <svg
-              className={`w-6 h-6 ${scrolled ? "text-slate-800" : "text-white"}`}
+              className="w-6 h-6 text-slate-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
