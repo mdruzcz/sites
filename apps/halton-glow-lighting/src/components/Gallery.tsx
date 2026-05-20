@@ -5,37 +5,32 @@ type Shot = {
   alt: string;
   caption: string;
   location: string;
-  aspect?: string;
 };
 
 const shots: Shot[] = [
   {
-    src: "/images/uploads/blue-led-house-app.jpg",
-    alt: "Permanent blue LED outdoor lighting installation on a two-story Burlington home with the Halton Glow color-picker app on a phone in the driveway",
-    caption: "App-Controlled Smart LEDs",
+    src: "/images/uploads/green-led-home.jpg",
+    alt: "Large two-story Halton home with permanent green LED outdoor lighting along every roofline at night",
+    caption: "Premium Two-Story Install",
     location: "Burlington, ON",
-    aspect: "aspect-[4/3]",
   },
   {
     src: "/images/uploads/warm-white-christmas-house.jpg",
-    alt: "Permanent warm-white roofline LED lighting on an Oakville home at night during the holidays, with snow on the ground and lit Christmas trees in front",
-    caption: "Warm-White Holiday Mode",
+    alt: "Winter night view of a home with red permanent LED roofline lighting and lit Christmas trees, snow on the ground",
+    caption: "Winter & Holiday Mode",
     location: "Oakville, ON",
-    aspect: "aspect-[4/3]",
   },
   {
     src: "/images/uploads/hot-tub-teal-leds.jpg",
-    alt: "Teal permanent LED string lighting under the soffit of a Halton home backyard, lighting up a hot tub with two people enjoying it at night",
+    alt: "Teal permanent LED soffit lighting in a backyard hot tub area at night",
     caption: "Backyard Ambiance",
     location: "Milton, ON",
-    aspect: "aspect-[4/3]",
   },
   {
     src: "/images/uploads/led-pucks-closeup.jpg",
-    alt: "Close-up of the commercial-grade RGB LED light pucks Halton Glow uses for permanent outdoor lighting installations, showing pink, magenta, gold, green and teal nodes",
-    caption: "Commercial-Grade RGB LEDs",
+    alt: "Close-up of permanent LED nodes installed under the soffit of a white board-and-batten home in winter",
+    caption: "Commercial-Grade LEDs · Up Close",
     location: "The Halton Glow System",
-    aspect: "aspect-[4/3]",
   },
 ];
 
@@ -52,7 +47,7 @@ export function Gallery() {
             className="text-xs font-bold uppercase tracking-[0.25em] mb-3"
             style={{ color: "var(--gold-bright)" }}
           >
-            Real Halton Region Installs
+            Real Installs · Real Homes
           </p>
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
             Lighting That{" "}
@@ -70,7 +65,7 @@ export function Gallery() {
           {shots.map((s) => (
             <div
               key={s.src}
-              className={`relative ${s.aspect ?? "aspect-[4/3]"} rounded-2xl overflow-hidden shadow-2xl group`}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group"
             >
               <Image
                 src={s.src}

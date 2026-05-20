@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { WhyChoose } from "@/components/WhyChoose";
 import { SmartControl } from "@/components/SmartControl";
+import { ColorShowcase } from "@/components/ColorShowcase";
 import { Process } from "@/components/Process";
 import { Gallery } from "@/components/Gallery";
 import { UseCases } from "@/components/UseCases";
@@ -131,6 +132,7 @@ export default function Home() {
         <TrustBar />
         <WhyChoose />
         <SmartControl />
+        <ColorShowcase />
         <Process />
         <Gallery />
         <UseCases />

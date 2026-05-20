@@ -8,6 +8,8 @@ export type BlogPost = {
   updatedAt?: string;
   category: string;
   readMinutes: number;
+  /** Optional hero image shown on the article page + listing card */
+  hero?: { src: string; alt: string };
   /** Sections rendered as <h2> + paragraphs/lists */
   sections: Array<
     | { type: "p"; text: string }
@@ -30,6 +32,10 @@ export const posts: BlogPost[] = [
     publishedAt: "2026-05-20",
     category: "Buying Guide",
     readMinutes: 6,
+    hero: {
+      src: "/images/uploads/rainbow-house.jpg",
+      alt: "Permanent LED roofline lighting set to a full rainbow on a Halton home — a level of control retail strips can't match",
+    },
     sections: [
       {
         type: "p",
@@ -98,6 +104,10 @@ export const posts: BlogPost[] = [
     publishedAt: "2026-05-20",
     category: "Buying Guide",
     readMinutes: 7,
+    hero: {
+      src: "/images/uploads/warm-white-christmas-house.jpg",
+      alt: "Home at night during Christmas season with red and white permanent LED roofline lighting — no ladder required",
+    },
     sections: [
       {
         type: "p",

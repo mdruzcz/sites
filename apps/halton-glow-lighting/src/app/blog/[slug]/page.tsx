@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Script from "next/script";
@@ -36,11 +37,13 @@ export async function generateMetadata({
       url: `${site.url}/blog/${post.slug}`,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt || post.publishedAt,
+      images: post.hero ? [{ url: post.hero.src, alt: post.hero.alt }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: post.metaTitle,
       description: post.metaDescription,
+      images: post.hero ? [post.hero.src] : undefined,
     },
   };
 }
@@ -149,6 +152,19 @@ export default async function BlogPost({
             <p className="mt-5 text-lg text-white/70 leading-relaxed">
               {post.excerpt}
             </p>
+
+            {post.hero && (
+              <div className="relative mt-10 aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src={post.hero.src}
+                  alt={post.hero.alt}
+                  fill
+                  sizes="(min-width: 1024px) 768px, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
           </div>
         </article>
 

@@ -23,8 +23,8 @@ export function SmartControl() {
           <div className="order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden aspect-[3/2] shadow-2xl gold-glow">
               <Image
-                src="/images/halton-glow-installation.webp"
-                alt="Permanent LED lighting installation by Halton Glow on a luxury home soffit in Oakville, Ontario"
+                src="/images/uploads/red-canada-day-barn.jpg"
+                alt="Permanent LED roofline lighting set to red on a luxury Halton property at night"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

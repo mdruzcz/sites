@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
@@ -51,39 +52,54 @@ export default function BlogIndex() {
             <Link
               key={p.slug}
               href={`/blog/${p.slug}`}
-              className="group block p-7 rounded-2xl border transition-all hover:translate-y-[-2px] hover:border-[var(--gold)]/40"
+              className="group block rounded-2xl border overflow-hidden transition-all hover:translate-y-[-2px] hover:border-[var(--gold)]/40"
               style={{
                 backgroundColor: "rgba(255,255,255,0.025)",
                 borderColor: "rgba(255,255,255,0.08)",
               }}
             >
-              <div className="flex items-center gap-3 text-xs mb-3">
-                <span
-                  className="px-2.5 py-1 rounded-full font-semibold"
-                  style={{
-                    backgroundColor: "rgba(245,194,107,0.12)",
-                    color: "var(--gold-bright)",
-                  }}
-                >
-                  {p.category}
-                </span>
-                <span className="text-white/40">{p.readMinutes} min read</span>
-                <span className="text-white/40">·</span>
-                <time className="text-white/40">
-                  {new Date(p.publishedAt).toLocaleDateString("en-CA", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
+              <div className="grid md:grid-cols-[280px_1fr]">
+                {p.hero ? (
+                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <Image
+                      src={p.hero.src}
+                      alt={p.hero.alt}
+                      fill
+                      sizes="(min-width: 768px) 280px, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                ) : null}
+                <div className="p-6 md:p-7">
+                  <div className="flex items-center gap-3 text-xs mb-3 flex-wrap">
+                    <span
+                      className="px-2.5 py-1 rounded-full font-semibold"
+                      style={{
+                        backgroundColor: "rgba(245,194,107,0.12)",
+                        color: "var(--gold-bright)",
+                      }}
+                    >
+                      {p.category}
+                    </span>
+                    <span className="text-white/40">{p.readMinutes} min read</span>
+                    <span className="text-white/40">·</span>
+                    <time className="text-white/40">
+                      {new Date(p.publishedAt).toLocaleDateString("en-CA", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </div>
+                  <h2 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-[var(--gold-bright)] transition leading-snug">
+                    {p.title}
+                  </h2>
+                  <p className="text-white/65 leading-relaxed">{p.excerpt}</p>
+                  <p className="mt-4 text-sm font-semibold" style={{ color: "var(--gold-bright)" }}>
+                    Read article →
+                  </p>
+                </div>
               </div>
-              <h2 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-[var(--gold-bright)] transition">
-                {p.title}
-              </h2>
-              <p className="text-white/65 leading-relaxed">{p.excerpt}</p>
-              <p className="mt-4 text-sm font-semibold" style={{ color: "var(--gold-bright)" }}>
-                Read article →
-              </p>
             </Link>
           ))}
         </div>
