@@ -56,7 +56,7 @@ export function NavBar({ homeHref = "" }: { homeHref?: string }) {
   const links = [
     { href: `${homeHref}#services`, label: "Services" },
     { href: `${homeHref}#materials`, label: "Materials" },
-    { href: `${homeHref}#testimonials`, label: "Reviews" },
+    { href: `${homeHref}#service-areas`, label: "Service Areas" },
     { href: "/blog", label: "Blog" },
     { href: `${homeHref}#faq`, label: "FAQ" },
     { href: `${homeHref}#contact`, label: "Contact" },
@@ -728,7 +728,7 @@ export function ServiceAreas({ activeCity }: { activeCity?: string } = {}) {
     !!activeCity && (a.city.toLowerCase() === activeCity.toLowerCase() || a.slug === activeCity.toLowerCase());
 
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--wood-dark)" }}>
+    <section id="service-areas" className="py-20 lg:py-28 scroll-mt-20" style={{ backgroundColor: "var(--wood-dark)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--terracotta)" }}>
