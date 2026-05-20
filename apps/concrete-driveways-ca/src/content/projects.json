@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "modern-london-driveway",
+    "title": "Modern Broom-Finish Driveway",
+    "service": "concrete-driveway-installation",
+    "city": "London",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-1.jpg",
+    "alt": "Modern broom-finish concrete driveway installation in London, ON",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "stamped-st-thomas-driveway",
+    "title": "Slate-Pattern Stamped Driveway",
+    "service": "stamped-concrete-driveways",
+    "city": "St. Thomas",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-3.jpg",
+    "alt": "Slate-pattern stamped concrete driveway in St. Thomas, ON",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "exposed-aggregate-woodstock",
+    "title": "Exposed Aggregate Driveway",
+    "service": "exposed-aggregate-driveways",
+    "city": "Woodstock",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-5.jpg",
+    "alt": "Exposed aggregate concrete driveway by Concrete Driveways in Woodstock, ON",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "patio-london",
+    "title": "Backyard Patio Installation",
+    "service": "concrete-patios",
+    "city": "London",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-9.jpg",
+    "alt": "Custom backyard concrete patio in London, ON",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "slug": "walkway-strathroy",
+    "title": "Stamped Front Walkway",
+    "service": "concrete-walkways",
+    "city": "Strathroy",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-14.jpg",
+    "alt": "Stamped concrete front walkway in Strathroy, ON",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "slug": "pool-deck-london",
+    "title": "Concrete Pool Deck",
+    "service": "pool-decks",
+    "city": "London",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-20.jpg",
+    "alt": "Concrete pool deck with broom finish by Concrete Driveways in London, ON",
+    "featured": true,
+    "order": 6
+  },
+  {
+    "slug": "wide-driveway-ingersoll",
+    "title": "Double-Wide Reinforced Driveway",
+    "service": "concrete-driveway-installation",
+    "city": "Ingersoll",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-4.jpg",
+    "alt": "Wide reinforced concrete driveway in Ingersoll, ON",
+    "featured": true,
+    "order": 7
+  },
+  {
+    "slug": "garage-floor-london",
+    "title": "Reinforced Garage Floor Pour",
+    "service": "garage-floors",
+    "city": "London",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-16.jpg",
+    "alt": "Reinforced concrete garage floor in London, ON",
+    "featured": true,
+    "order": 8
+  },
+  {
+    "slug": "decorative-driveway-dorchester",
+    "title": "Decorative Border Driveway",
+    "service": "stamped-concrete-driveways",
+    "city": "Dorchester",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-11.jpg",
+    "alt": "Concrete driveway with decorative stamped border in Dorchester, ON",
+    "featured": false,
+    "order": 9
+  },
+  {
+    "slug": "walkway-aylmer",
+    "title": "Front Entry Walkway",
+    "service": "concrete-walkways",
+    "city": "Aylmer",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-project-17.jpg",
+    "alt": "Front entry concrete walkway in Aylmer, ON",
+    "featured": false,
+    "order": 10
+  },
+  {
+    "slug": "client-project-london-1",
+    "title": "Premium Residential Driveway",
+    "service": "concrete-driveway-installation",
+    "city": "London",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-client-project-1.jpg",
+    "alt": "Premium residential concrete driveway in London, ON",
+    "featured": false,
+    "order": 11
+  },
+  {
+    "slug": "stamped-tillsonburg",
+    "title": "Custom Stamped Pattern Driveway",
+    "service": "stamped-concrete-driveways",
+    "city": "Tillsonburg",
+    "image": "/images/migrated/5kconcrete-5k-concrete-featured-client-project-3.jpg",
+    "alt": "Custom stamped pattern concrete driveway in Tillsonburg, ON",
+    "featured": false,
+    "order": 12
+  }
+]

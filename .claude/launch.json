@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "halton-glow",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=halton-glow-lighting"],
+      "port": 3004
+    },
+    {
+      "name": "concrete-driveways",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=concrete-driveways-ca"],
+      "port": 3005
+    }
+  ]
+}

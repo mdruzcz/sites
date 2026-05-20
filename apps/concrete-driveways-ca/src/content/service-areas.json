@@ -1,0 +1,46 @@
+{
+  "primaryCity": "London",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "Serving London, Ontario and surrounding neighbourhoods — from Hyde Park and Byron to Old North and Lambeth. We're London's go-to concrete driveway contractor, with hundreds of completed pours across the city and an honest, written quote on every project."
+    },
+    {
+      "slug": "st-thomas",
+      "name": "St. Thomas",
+      "description": "Professional concrete driveway installation and stamped concrete throughout St. Thomas and Elgin County. We pour driveways, patios, and walkways for homeowners in the Railway City — engineered for the freeze-thaw cycles that destroy lesser concrete work."
+    },
+    {
+      "slug": "strathroy",
+      "name": "Strathroy",
+      "description": "Custom concrete driveways and decorative concrete across Strathroy-Caradoc and Middlesex County. We handle everything from rural farmhouse driveways to modern suburban pours, all with the same reinforced base and written warranty."
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Concrete driveway specialists serving Woodstock and Oxford County. From the Friendly City's historic neighbourhoods to new builds on the outskirts, we pour driveways, patios, and walkways built to outlast Ontario winters."
+    },
+    {
+      "slug": "ingersoll",
+      "name": "Ingersoll",
+      "description": "Trusted concrete contractor for Ingersoll homeowners. We pour custom driveways, decorative patios, and walkways with the same engineered base and reinforced steel we use on every London project — backed by a written workmanship warranty."
+    },
+    {
+      "slug": "dorchester",
+      "name": "Dorchester",
+      "description": "Concrete driveway and patio installation throughout Dorchester and Thames Centre. Whether you need a wide rural driveway, a stamped front entry, or a backyard patio, we deliver concrete work that's built to handle Ontario weather for decades."
+    },
+    {
+      "slug": "aylmer",
+      "name": "Aylmer",
+      "description": "Local concrete driveway contractor for Aylmer and east Elgin County. We pour reinforced concrete driveways, walkways, and patios with proper drainage and a written warranty — no shortcuts, no surprises, just concrete done right."
+    },
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Custom concrete driveways and decorative concrete for Tillsonburg homeowners. From standard residential pours to stamped pattern driveways with custom borders, we deliver the same quality across every project in Oxford County."
+    }
+  ]
+}

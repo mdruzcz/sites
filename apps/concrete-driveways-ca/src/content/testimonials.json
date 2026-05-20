@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Mark D.",
+    "city": "London",
+    "quote": "Best concrete crew we could have hired. The driveway is dead level, the broom finish is perfectly even, and the team cleaned up like they were never here. Three winters in and not a single crack.",
+    "rating": 5,
+    "service": "concrete-driveway-installation",
+    "featured": true
+  },
+  {
+    "author": "Sarah & Kevin P.",
+    "city": "St. Thomas",
+    "quote": "We chose stamped concrete to match our front entrance and we couldn't be happier. The slate pattern looks like a custom flagstone install but with no weeds to pull. Highly recommend.",
+    "rating": 5,
+    "service": "stamped-concrete-driveways",
+    "featured": true
+  },
+  {
+    "author": "Jennifer T.",
+    "city": "Strathroy",
+    "quote": "Our old driveway was cracking apart but the slab was still solid underneath. They did a bonded overlay instead of a tear-out and saved us thousands. Looks brand new.",
+    "rating": 5,
+    "service": "concrete-driveway-repair",
+    "featured": true
+  },
+  {
+    "author": "Dave R.",
+    "city": "Woodstock",
+    "quote": "The exposed aggregate driveway is gorgeous and so practical on our sloped property. Grip is excellent even in the rain, and the colour blend matches our stone retaining wall perfectly.",
+    "rating": 5,
+    "service": "exposed-aggregate-driveways",
+    "featured": true
+  },
+  {
+    "author": "Karen L.",
+    "city": "London",
+    "quote": "Patio installation was flawless. They built in a seating wall along one edge and we use it every night. Two summers in, the colour is still rich and the surface is smooth as glass.",
+    "rating": 5,
+    "service": "concrete-patios",
+    "featured": true
+  },
+  {
+    "author": "Tom B.",
+    "city": "Ingersoll",
+    "quote": "Garage floor was poured last fall and survived a tough winter beautifully. No salt damage, no scaling, no cracks. The team knew exactly what mix and reinforcement we needed.",
+    "rating": 5,
+    "service": "garage-floors",
+    "featured": true
+  },
+  {
+    "author": "Mike & Tracy S.",
+    "city": "Dorchester",
+    "quote": "We had three other contractors quote and these guys were the only ones who explained why the base prep mattered. Showed up on time, finished a day early, and the price didn't change.",
+    "rating": 5,
+    "service": "concrete-driveway-installation",
+    "featured": true
+  },
+  {
+    "author": "Lisa N.",
+    "city": "Aylmer",
+    "quote": "Pool deck looks fantastic and stays cool even on the hottest days. The anti-slip texture is grippy without being rough on bare feet. Kids run on it all summer with no issues.",
+    "rating": 5,
+    "service": "pool-decks",
+    "featured": true
+  },
+  {
+    "author": "Greg H.",
+    "city": "London",
+    "quote": "Front walkway and stamped border on the driveway tied the whole front of the house together. Quality of work is top notch and the warranty paperwork was simple and clear.",
+    "rating": 5,
+    "service": "concrete-walkways",
+    "featured": false
+  }
+]
