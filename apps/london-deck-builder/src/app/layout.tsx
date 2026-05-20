@@ -17,10 +17,42 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "London Deck Builder | Expert Deck Building Services in London, Ontario",
+  metadataBase: new URL("https://londondeckbuilder.ca"),
+  title: {
+    default: "London Deck Builder | Expert Deck Building Services in London, Ontario",
+    template: "%s | London Deck Builder",
+  },
   description:
-    "London's trusted deck builders. PT, Cedar, Composite & PVC decking with a 5-year workmanship warranty. Free quotes. Serving London, St. Thomas & Woodstock.",
-  keywords: "deck builders London Ontario, composite deck builders, cedar deck, deck contractor, London deck builder",
+    "London's trusted deck builders. PT, Cedar, Composite & PVC decking with a 5-year workmanship warranty. Free quotes. Serving London, St. Thomas, Woodstock & surrounding areas.",
+  keywords:
+    "deck builders London Ontario, composite deck builders, cedar deck, deck contractor, London deck builder, deck builder Woodstock, deck builder St Thomas",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    siteName: "London Deck Builder",
+    title: "London Deck Builder | Decks Built to Last",
+    description:
+      "Premium PT, Cedar, Composite & PVC decks across London, St. Thomas & Woodstock. 5-year workmanship warranty.",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "London Deck Builder — premium deck contractor in London, Ontario",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "London Deck Builder | Decks Built to Last",
+    description:
+      "Premium PT, Cedar, Composite & PVC decks across London, St. Thomas & Woodstock.",
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
