@@ -18,6 +18,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--workspace=spotless-deck-staining"],
       "port": 3007
+    },
+    {
+      "name": "total-brantford-concrete",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=total-brantford-concrete"],
+      "port": 3008
     }
   ]
 }

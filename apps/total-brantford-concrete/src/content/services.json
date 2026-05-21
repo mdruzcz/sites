@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "concrete-driveways",
+    "title": "Concrete Driveways",
+    "shortDescription": "Durable driveways built for Brantford winters — reinforced with rebar or wire mesh, properly graded, and finished in broom, exposed aggregate, or stamped patterns.",
+    "fullDescription": "Your driveway is the first thing people see and the surface that takes the most abuse. We design and pour high-strength concrete driveways that resist cracking, shifting, and salt damage. Every pour includes a compacted granular base, reinforced construction, and engineered control joints. Choose from a classic broom finish, premium exposed aggregate, or decorative stamped borders — all designed to outlast Ontario's freeze-thaw cycles.",
+    "features": [
+      "Standard Broom Finish for non-slip safety and longevity",
+      "Exposed Aggregate for premium pebbled look and traction",
+      "Stamped Borders for a decorative touch around standard driveways",
+      "Widenings & Extensions for extra parking",
+      "Reinforced bases for heavy load support",
+      "Proper drainage planning to prevent water pooling"
+    ],
+    "icon": "truck",
+    "image": "/images/Concrete-Driveways-scaled.png",
+    "order": 1
+  },
+  {
+    "slug": "patios-walkways",
+    "title": "Patios & Walkways",
+    "shortDescription": "Custom outdoor living spaces and walkways — stamped concrete, slip-resistant finishes, and designs that flow naturally with your landscape.",
+    "fullDescription": "Extend your living space outdoors with a custom concrete patio or walkway. We design functional, beautiful hardscapes to fit your landscape exactly. Stamped concrete can mimic stone, brick, or wood at a fraction of the cost. Pool decks get slip-resistant finishes for safety, and fire pit pads are poured to handle heavy loads and high heat.",
+    "features": [
+      "Custom shapes including curves, kidneys, and geometric designs",
+      "Stamped concrete mimicking slate, flagstone, or timber",
+      "Slip-resistant finishes for pool decks and paths",
+      "Custom curves and layout designs",
+      "Fire pit pads and dedicated heavy-duty areas",
+      "Properly graded away from the house foundation"
+    ],
+    "icon": "sun",
+    "image": "/images/Patios-Walkways-scaled.png",
+    "order": 2
+  },
+  {
+    "slug": "walkways-steps-porches",
+    "title": "Walkways, Steps & Porches",
+    "shortDescription": "Safe, welcoming entrances — level, code-compliant concrete steps and walkways that eliminate trip hazards and boost curb appeal.",
+    "fullDescription": "Crumbling steps and uneven walkways are a major trip hazard. We replace old, dangerous paths with smooth, level, and code-compliant concrete. From grand front entryways to side paths connecting your front and back yards, every project is reinforced to prevent shifting and finished to match your home's style.",
+    "features": [
+      "Front entryways for curb appeal boost",
+      "Side walkways for a clean, mud-free path",
+      "Reinforced concrete steps that won't rot or shift",
+      "Porch slabs and landings",
+      "Custom decorative finishes available",
+      "Code-compliant construction throughout"
+    ],
+    "icon": "home",
+    "image": "/images/Safe-Welcoming-Entrances-scaled.png",
+    "order": 3
+  },
+  {
+    "slug": "stamped-decorative-concrete",
+    "title": "Stamped & Decorative Concrete",
+    "shortDescription": "High-end aesthetics with concrete durability — Ashlar Slate, Cobblestone, Roman Brick, and Wood Plank patterns with integral color and sealers.",
+    "fullDescription": "Stamped concrete is an art form. We use specialized mats and coloring hardeners to texture the wet concrete, mimicking natural materials like stone, brick, and wood — at a fraction of the cost. Integral colors are mixed in, and release agents create antique, two-tone effects. Finished with high-gloss or matte sealers to pop the color and protect the surface for decades.",
+    "features": [
+      "Ashlar Slate, Cobblestone, Roman Brick, Wood Plank patterns",
+      "Integral colors mixed directly into the concrete",
+      "Release agents for antique and two-tone effects",
+      "High-gloss or matte sealers for UV protection",
+      "Color restoration on existing stamped concrete",
+      "Custom pattern combinations available"
+    ],
+    "icon": "sparkles",
+    "image": "/images/Stamped-Decorative-Concrete-1-scaled.png",
+    "order": 4
+  },
+  {
+    "slug": "concrete-sealing-maintenance",
+    "title": "Concrete Sealing & Maintenance",
+    "shortDescription": "Professional sealing against freeze-thaw cycles, road salt, and UV rays — high-grade penetrating and acrylic sealers that restore color and prevent damage.",
+    "fullDescription": "Protect your investment from Brantford's harsh freeze-thaw cycles, salt, and UV rays. Our professional sealing services lock in color and prevent moisture penetration. We use high-grade penetrating and acrylic sealers that restore the color vibrancy of old stamped concrete, prevent oil stains, and stop salt damage before it starts.",
+    "features": [
+      "High-grade penetrating and acrylic sealers",
+      "Restores color vibrancy to old stamped concrete",
+      "Prevents oil stains and salt damage",
+      "Annual and multi-year maintenance plans",
+      "Safe for children, pets, and the environment",
+      "Extends concrete lifespan by 10+ years"
+    ],
+    "icon": "shield",
+    "image": "/images/Concrete-Sealing-Maintenance-scaled.png",
+    "order": 5
+  },
+  {
+    "slug": "concrete-repair-resurfacing",
+    "title": "Concrete Repair & Resurfacing",
+    "shortDescription": "Restore structurally sound concrete without a full tear-out — crack filling, polymer overlay resurfacing, and leveling of uneven slabs.",
+    "fullDescription": "Don't let cracks or spalling ruin your concrete. If your slab is structurally sound, you might not need a full replacement. Our repair services restore structural strength and appearance at a fraction of the cost. We route and seal cracks to prevent water infiltration, apply polymer-modified overlays to worn surfaces, and level uneven slabs to eliminate trip hazards.",
+    "features": [
+      "Expert crack routing and filling",
+      "Polymer-modified overlay resurfacing",
+      "Leveling uneven slabs (trip hazard removal)",
+      "Parging for crumbling foundation walls",
+      "Structural assessment before any work begins",
+      "Color-matched repairs for seamless results"
+    ],
+    "icon": "wrench",
+    "image": "/images/Concrete-Repair-Resurfacing-scaled.png",
+    "order": 6
+  }
+]

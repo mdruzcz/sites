@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Mark & Linda T.",
+    "location": "Terrace Hill, Brantford",
+    "text": "Professional from start to finish. We wanted an exposed aggregate driveway for our new build in Terrace Hill. They walked us through the maintenance and sealing process so we know how to keep it looking good for years. Best concrete contractors in Brantford hands down.",
+    "service": "concrete-driveways",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "Jason B.",
+    "location": "Eagle Place, Brantford",
+    "text": "I had a hard time finding someone reliable for a smaller walkway project in Eagle Place. These guys treated my small job with as much care as a big one. The broom finish provides great traction in the winter, just like they promised.",
+    "service": "walkways-steps-porches",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "3",
+    "name": "Sarah M.",
+    "location": "West Brant, Brantford",
+    "text": "We hired Total Brantford Concrete to redo our driveway in West Brant, and the difference is night and day. They removed the old cracked asphalt and poured a beautiful stamped concrete border that matches our walkway. The crew was polite, cleaned up every day, and finished ahead of schedule. Highly recommend!",
+    "service": "concrete-driveways",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "4",
+    "name": "David K.",
+    "location": "Holmedale, Brantford",
+    "text": "I needed a new patio for our backyard in Holmedale before the summer started. The team was fantastic — gave me a clear quote and stuck to it. The stamped concrete looks exactly like natural stone but was way more affordable. It's now our favourite spot to host BBQs.",
+    "service": "patios-walkways",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": "5",
+    "name": "Priya R.",
+    "location": "Henderson Survey, Brantford",
+    "text": "Our front steps were crumbling and becoming a safety hazard. Total Brantford Concrete came out and did a repair and resurfacing job that made them look brand new. Honest pricing and solid workmanship. Thanks, guys!",
+    "service": "concrete-repair-resurfacing",
+    "rating": 5,
+    "featured": true
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "region": "Brantford & Brant County",
+  "cities": [
+    {
+      "slug": "brantford",
+      "name": "Brantford",
+      "province": "ON",
+      "description": "Our home base. We serve all Brantford neighbourhoods including West Brant, Eagle Place, Terrace Hill, Holmedale, and Henderson Survey."
+    },
+    {
+      "slug": "paris",
+      "name": "Paris",
+      "province": "ON",
+      "description": "Serving Paris, ON — the 'Cobblestone Capital of Canada' — with driveways, patios, and concrete repairs throughout Brant County."
+    },
+    {
+      "slug": "cambridge",
+      "name": "Cambridge",
+      "province": "ON",
+      "description": "Concrete driveways, patios, and repairs across Cambridge, Galt, Preston, and Hespeler neighbourhoods."
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "province": "ON",
+      "description": "Serving Hamilton and the surrounding communities with premium concrete services backed by a written warranty."
+    },
+    {
+      "slug": "caledonia",
+      "name": "Caledonia",
+      "province": "ON",
+      "description": "Concrete driveways, stamped patios, and repair services throughout Caledonia and Haldimand County."
+    }
+  ]
+}

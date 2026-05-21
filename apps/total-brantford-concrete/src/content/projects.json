@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "title": "Stamped Concrete Driveway & Border",
+    "description": "Complete driveway replacement with stamped concrete borders in West Brant.",
+    "service": "concrete-driveways",
+    "image": "/images/Stamped-Decorative-Concrete-1-scaled.png",
+    "alt": "Stamped concrete driveway with decorative borders by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Concrete Driveway Installation",
+    "description": "New high-PSI concrete driveway pour with engineered control joints.",
+    "service": "concrete-driveways",
+    "image": "/images/Concrete-Driveways-scaled.png",
+    "alt": "New concrete driveway installation by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Backyard Stamped Patio",
+    "description": "Custom stamped concrete patio mimicking natural stone in Holmedale.",
+    "service": "patios-walkways",
+    "image": "/images/stamped_patio_concrete.png",
+    "alt": "Stamped concrete patio resembling natural stone by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "4",
+    "title": "Patios & Walkway Project",
+    "description": "Integrated patio and walkway system with decorative concrete finishes.",
+    "service": "patios-walkways",
+    "image": "/images/Patios-Walkways-scaled.png",
+    "alt": "Concrete patio and walkway project by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "5",
+    "title": "Concrete Steps & Front Entrance",
+    "description": "New concrete steps and porch landing replacing crumbling original steps.",
+    "service": "walkways-steps-porches",
+    "image": "/images/Safe-Welcoming-Entrances-scaled.png",
+    "alt": "Concrete steps and front entrance by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "6",
+    "title": "Concrete Repair & Resurfacing",
+    "description": "Complete resurfacing of cracked and spalled concrete driveway.",
+    "service": "concrete-repair-resurfacing",
+    "image": "/images/Concrete-Repair-Resurfacing-scaled.png",
+    "alt": "Concrete repair and resurfacing project by Total Brantford Concrete in Brantford, ON",
+    "featured": true
+  },
+  {
+    "id": "7",
+    "title": "Concrete Sealing & Maintenance",
+    "description": "Professional sealing of stamped concrete patio to restore color and protect against the elements.",
+    "service": "concrete-sealing-maintenance",
+    "image": "/images/Concrete-Sealing-Maintenance-scaled.png",
+    "alt": "Concrete sealing and maintenance service by Total Brantford Concrete in Brantford, ON",
+    "featured": false
+  },
+  {
+    "id": "8",
+    "title": "Coloured Decorative Concrete",
+    "description": "Integrally coloured concrete pour with vibrant finish for a modern residential property.",
+    "service": "stamped-decorative-concrete",
+    "image": "/images/Colored-Concrete.jpg",
+    "alt": "Coloured decorative concrete project by Total Brantford Concrete in Brantford, ON",
+    "featured": false
+  },
+  {
+    "id": "9",
+    "title": "Driveway Before & After",
+    "description": "Complete driveway transformation — old cracked surface replaced with fresh concrete.",
+    "service": "concrete-driveways",
+    "image": "/images/before-and-after-3-scaled.png",
+    "alt": "Concrete driveway before and after transformation by Total Brantford Concrete in Brantford, ON",
+    "featured": false
+  }
+]

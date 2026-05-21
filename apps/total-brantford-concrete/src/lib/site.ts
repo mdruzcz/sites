@@ -1,0 +1,43 @@
+export const site = {
+  name: "Total Brantford Concrete",
+  shortName: "TBC",
+  phone: "(833) 244-3124",
+  phoneHref: "tel:+18332443124",
+  email: "service@totalbrantfordconcrete.ca",
+  emailHref: "mailto:service@totalbrantfordconcrete.ca",
+  address: {
+    city: "Brantford",
+    region: "ON",
+    country: "CA",
+  },
+  addressLine: "Brantford, ON",
+  hours: "Mon – Fri · 8 AM – 5 PM",
+  yearsExperience: 10,
+  url: "https://totalbrantfordconcrete.ca",
+  tagline: "Solid Foundations, Superior Finish.",
+  description:
+    "Premier concrete contractor in Brantford. We specialize in concrete driveways, stamped patios, walkways, and repairs across Brantford and Brant County. Get a free estimate today.",
+  serviceAreas: ["Brantford", "Paris", "Cambridge", "Hamilton", "Caledonia", "Brant County"],
+  stats: {
+    projectsCompleted: 51,
+    yearsExperience: 10,
+    satisfaction: 100,
+    googleRating: 5,
+  },
+  finishOptions: ["Broom Finish", "Stamped Concrete", "Exposed Aggregate", "Decorative Resurfacing"],
+  features: [
+    "Free on-site estimate",
+    "Permit handling included",
+    "Engineered for Ontario winters",
+    "High-PSI concrete mixes",
+    "Written warranty on every project",
+    "Fully insured + WSIB compliant",
+  ],
+  trustBadges: [
+    { label: "Projects Completed", value: "51+" },
+    { label: "Years Experience", value: "10+" },
+    { label: "Satisfaction", value: "100%" },
+    { label: "Google Rated", value: "5 Stars" },
+  ],
+  responseTime: "1 business day",
+} as const;
