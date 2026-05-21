@@ -105,17 +105,6 @@ export function Contact() {
                 </div>
               </a>
 
-              <a href={`mailto:${site.email}`} className="flex items-center gap-4 group min-h-11">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--blue)", color: "white" }}>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider mb-0.5" style={{ color: "var(--slate-muted)" }}>Email</p>
-                  <p className="font-semibold group-hover:text-[var(--blue-dark)] transition" style={{ color: "var(--blue)" }}>{site.email}</p>
-                </div>
-              </a>
             </div>
 
             <div className="p-5 rounded-xl border" style={{ borderColor: "var(--light-grey)", background: "var(--white)" }}>

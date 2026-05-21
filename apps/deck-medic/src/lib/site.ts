@@ -2,8 +2,8 @@ export const site = {
   name: "Deck Medic",
   shortName: "Deck Medic",
   tagline: "Professional Deck Restoration & Staining Experts",
-  phone: "(833) 243-3123",
-  phoneHref: "tel:+18332433123",
+  phone: "(519) 266-6796",
+  phoneHref: "tel:+15192666796",
   email: "service@deckmedic.ca",
   address: {
     street: "Serving Toronto & Southern Ontario",
