@@ -40,6 +40,7 @@ export function NavBar() {
               width={44}
               height={44}
               className="rounded-lg"
+              style={{ width: 44, height: "auto" }}
             />
             <span
               className="font-display font-bold text-xl leading-none"
