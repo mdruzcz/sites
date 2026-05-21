@@ -1,0 +1,56 @@
+[
+  {
+    "author": "Blenheim Rotary Club",
+    "role": "Parade Committee",
+    "city": "Blenheim",
+    "quote": "Ontario Light Shows didn't just hang lights — they choreographed our whole parade. The crowd reaction was unbelievable. It changed what a small-town Christmas parade can be.",
+    "rating": 5,
+    "service": "Immersive Light Displays",
+    "featured": true
+  },
+  {
+    "author": "Daniel R.",
+    "role": "Homeowner",
+    "city": "Toronto",
+    "quote": "The roofline install is genuinely invisible from the curb during the day. At night I run warm white most of the year, then unlock the full RGB on holidays. Worth every dollar.",
+    "rating": 5,
+    "service": "Permanent Holiday Lighting",
+    "featured": true
+  },
+  {
+    "author": "Marketing Director, Tech HQ",
+    "role": "Corporate Client",
+    "city": "Kitchener-Waterloo",
+    "quote": "We've used Ontario Light Shows for two product launches now. Their team takes a brand colour story and turns it into a building-wide moment. Our photo and social capture went up 4x at the second event.",
+    "rating": 5,
+    "service": "RGB Architectural Lighting",
+    "featured": true
+  },
+  {
+    "author": "Mark S.",
+    "role": "Homeowner",
+    "city": "Hamilton",
+    "quote": "I climbed off ladders forever. App control, scenes for every holiday, and I haven't touched a light bulb in two years. The hardware actually holds up to our winters.",
+    "rating": 5,
+    "service": "Permanent Holiday Lighting",
+    "featured": true
+  },
+  {
+    "author": "Event Producer",
+    "role": "Wedding Planner",
+    "city": "Ottawa",
+    "quote": "They ran the entire light show off the live band's set list. The crowd thought it was magic. We've already booked them for next season.",
+    "rating": 5,
+    "service": "Experiential Lighting",
+    "featured": true
+  },
+  {
+    "author": "Priya K.",
+    "role": "Homeowner",
+    "city": "Mississauga",
+    "quote": "We bought this for Diwali and ended up using it for every holiday in the calendar. The pre-built scenes are gorgeous and the custom sequencing is dead simple.",
+    "rating": 5,
+    "service": "Permanent Holiday Lighting",
+    "featured": true
+  }
+]

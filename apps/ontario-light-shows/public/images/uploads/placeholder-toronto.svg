@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="1200" fill="#05070F"/>
+  <defs><radialGradient id="g" cx="50%" cy="80%" r="70%"><stop offset="0%" stop-color="#00E5FF" stop-opacity="0.4"/><stop offset="100%" stop-color="#05070F"/></radialGradient></defs>
+  <rect width="1200" height="1200" fill="url(#g)"/>
+  <g stroke="#00E5FF" stroke-width="5" fill="none" opacity="0.8"><path d="M 300 700 L 300 500 L 600 350 L 900 500 L 900 700 Z"/></g>
+  <g fill="#FFB94B"><circle cx="300" cy="500" r="7"/><circle cx="600" cy="350" r="7"/><circle cx="900" cy="500" r="7"/></g>
+  <text x="600" y="900" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#F5F7FA" text-anchor="middle">Toronto</text>
+  <text x="600" y="960" font-family="system-ui, sans-serif" font-size="22" fill="#00E5FF" text-anchor="middle" letter-spacing="3">PLACEHOLDER</text>
+</svg>

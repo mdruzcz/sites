@@ -12,6 +12,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--workspace=concrete-driveways-ca"],
       "port": 3005
+    },
+    {
+      "name": "spotless-deck-staining",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=spotless-deck-staining"],
+      "port": 3007
     }
   ]
 }

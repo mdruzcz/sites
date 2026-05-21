@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What's the difference between regular Christmas lights and what you install?",
+    "answer": "Most retail holiday lighting is single-colour, low-IP rated, and meant to be put up and taken down each season. We install IP67/IP68 outdoor-rated, individually addressable RGB pixels into hidden aluminum channels that stay mounted year-round. The same hardware runs warm white in everyday mode and switches to full-colour holiday animations on command from your phone. No more ladders, no more storage, no more buying new strings every other year."
+  },
+  {
+    "question": "What does IP67/IP68 actually mean?",
+    "answer": "IP67 means the hardware is fully protected against dust and can be submerged in up to 1 meter of water for 30 minutes. IP68 takes that further — sealed against continuous submersion at greater depths. For Ontario, this rating is what separates a system that survives ice, freeze-thaw, snow load, and lake-effect humidity from a system that browns out after one winter."
+  },
+  {
+    "question": "Can the lights actually sync to music?",
+    "answer": "Yes — that's the core of what we do. Every pixel is addressable, which means we can sequence individual fixtures to a soundtrack frame-by-frame. We build the show against your audio file in studio, then load the sequence onto outdoor-rated controllers that play it back the same way every time. For live events, an operator can cue transitions in real time alongside a band or announcer."
+  },
+  {
+    "question": "Are the installations visible during the day?",
+    "answer": "Architectural accenting and permanent holiday lighting are hand-mounted into a low-profile aluminum channel tucked along your roofline, soffit, or feature edges. From the curb in daylight, the install is essentially invisible — you see a clean architectural line, not a string of lights. Event and immersive installations are different — those are designed to be the focal point of a venue."
+  },
+  {
+    "question": "Where in Ontario do you install?",
+    "answer": "We serve all of Ontario for residential, commercial, and event work. Our crews are based in Chatham-Kent and we have core service zones in Toronto, Ottawa, Hamilton, London, Windsor, Mississauga, Kitchener-Waterloo, and across Southwestern Ontario. For larger installations or event work, we travel anywhere in the province."
+  },
+  {
+    "question": "How long does an install take?",
+    "answer": "A typical residential permanent holiday lighting install is one day on-site. Architectural accenting and RGB systems for residential properties run one to two days depending on linear footage. Commercial and event installations are quoted per project — a parade-stage rig or building-wide pixel install is normally a 2-5 day production."
+  },
+  {
+    "question": "What's the warranty?",
+    "answer": "Hardware carries a multi-year manufacturer warranty (typically 3-5 years depending on the line). Workmanship is covered by our written installation warranty. The LEDs themselves have a 50,000+ hour lifespan, which works out to over 11 years if you ran them every single night."
+  },
+  {
+    "question": "Can I control the lights from my phone?",
+    "answer": "Yes. Every install includes app control over WiFi for scene selection, dimming, scheduling, and zone control. Voice control via Amazon Alexa and Google Home is supported. For RGB systems, you also get access to a library of pre-built holiday and event scenes that update over the air."
+  },
+  {
+    "question": "Will this work with my existing smart home?",
+    "answer": "Almost always. Our systems use standard protocols (WiFi, Matter where supported, Alexa, Google) and can integrate with Home Assistant, Hubitat, and most major smart home platforms. We'll confirm compatibility during the on-site consultation."
+  },
+  {
+    "question": "Do you do permanent lighting for businesses?",
+    "answer": "Yes — commercial RGB architectural lighting is one of our biggest categories. Restaurants, retail centres, corporate HQs, sports venues, and event spaces use our systems for brand colour activations, holiday displays, game-day patterns, and seasonal campaigns. Most commercial clients use scheduled scenes so the lighting changes automatically through the year."
+  },
+  {
+    "question": "Will it raise my electricity bill?",
+    "answer": "Barely. Modern addressable LED pixels draw a fraction of the power of incandescent holiday lighting — a typical residential roofline install pulls less wattage than running your television. Most clients see no measurable change on their monthly bill."
+  },
+  {
+    "question": "Do you do drone light shows too?",
+    "answer": "We focus on addressable LED installations rather than drone swarms. If a project genuinely needs drones, we'll be honest about that and recommend a specialist partner — but for most use cases, a pixel-based ground install delivers a more reliable, more controllable, and significantly more cost-effective show."
+  }
+]

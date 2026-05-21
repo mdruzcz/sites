@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="1200" fill="#05070F"/>
+  <defs><radialGradient id="g" cx="50%" cy="80%" r="70%"><stop offset="0%" stop-color="#34D399" stop-opacity="0.35"/><stop offset="100%" stop-color="#05070F"/></radialGradient></defs>
+  <rect width="1200" height="1200" fill="url(#g)"/>
+  <g><rect x="220" y="340" width="80" height="320" fill="#00E5FF" opacity="0.9"/><rect x="340" y="280" width="80" height="380" fill="#7C3AED" opacity="0.9"/><rect x="460" y="380" width="80" height="280" fill="#FF2DAA" opacity="0.9"/><rect x="580" y="320" width="80" height="340" fill="#FFB94B" opacity="0.9"/><rect x="700" y="380" width="80" height="280" fill="#34D399" opacity="0.9"/><rect x="820" y="280" width="80" height="380" fill="#00E5FF" opacity="0.9"/></g>
+  <text x="600" y="900" font-family="system-ui, sans-serif" font-size="40" font-weight="800" fill="#F5F7FA" text-anchor="middle">Kitchener-Waterloo</text>
+  <text x="600" y="960" font-family="system-ui, sans-serif" font-size="22" fill="#00E5FF" text-anchor="middle" letter-spacing="3">PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,46 @@
+{
+  "primaryCity": "Chatham-Kent",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "toronto",
+      "name": "Toronto",
+      "description": "Music-synchronized light shows, RGB architectural lighting, and permanent holiday lighting installations across the Greater Toronto Area. From private residences in Forest Hill to corporate brand activations on King West, our crews design, install, and operate addressable LED systems for Toronto homes, businesses, venues, and live events."
+    },
+    {
+      "slug": "ottawa",
+      "name": "Ottawa",
+      "description": "Architectural lighting and immersive light displays for Ottawa's residential and commercial properties. We handle full-colour pixel installations for downtown Ottawa businesses, Glebe and Westboro homeowners, and produce experiential lighting for Canada Day events, gala fundraisers, and city festivals across the National Capital Region."
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "description": "Permanent holiday lighting, RGB architectural accenting, and live event light shows across Hamilton and the surrounding Niagara region. Our IP67-rated systems are engineered for Hamilton's lake-effect winters and back-mounted with marine-grade fasteners — designed to look invisible by day and unforgettable after dark."
+    },
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "Professional addressable LED installations for London, Ontario homeowners, businesses, and event producers. We design and install music-synchronized light shows, hand-mount permanent holiday lighting along rooflines, and produce experiential lighting for festivals, weddings, and corporate launches across Middlesex County."
+    },
+    {
+      "slug": "windsor",
+      "name": "Windsor",
+      "description": "Custom light show design and permanent outdoor lighting across Windsor-Essex. From architectural accenting on Walkerville heritage homes to large-scale pixel installations for casino and event clients, we deliver music-synced, professionally programmed lighting that performs through Windsor winters and lakeside humidity."
+    },
+    {
+      "slug": "chatham-kent",
+      "name": "Chatham-Kent",
+      "description": "Our home turf. Ontario Light Shows is based in Chatham-Kent and produced the celebrated Blenheim Rotary Club Christmas Parade light installation. We design and install RGB architectural lighting, permanent holiday displays, and immersive event lighting across Chatham-Kent — including Chatham, Blenheim, Wallaceburg, Tilbury, and Ridgetown."
+    },
+    {
+      "slug": "mississauga",
+      "name": "Mississauga",
+      "description": "Music-synchronized light shows and permanent RGB lighting for Mississauga homes and businesses. Our addressable LED systems run from a single app, support every major holiday animation library, and use IP67-rated hardware engineered for Ontario freeze-thaw cycles."
+    },
+    {
+      "slug": "kitchener-waterloo",
+      "name": "Kitchener-Waterloo",
+      "description": "Experiential lighting and architectural accent installations across Kitchener-Waterloo, Cambridge, and Guelph. From tech-campus brand activations to residential permanent holiday lighting, we design, install, and program addressable LED systems for the Tri-Cities region."
+    }
+  ]
+}

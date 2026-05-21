@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "blenheim-rotary-christmas-parade",
+    "title": "Blenheim Rotary Club Christmas Parade",
+    "headline": "A community parade, scored and synchronized.",
+    "summary": "Ontario Light Shows designed and operated a music-synchronized, addressable LED installation for the Blenheim Rotary Club's annual Christmas Parade — turning a small-town parade into a regional draw with thousands of programmed pixels sequenced to the holiday soundtrack.",
+    "client": "Blenheim Rotary Club",
+    "location": "Blenheim, Chatham-Kent, Ontario",
+    "year": "2024",
+    "scope": [
+      "Show design + storyboarding",
+      "Pixel mapping for parade staging",
+      "Custom audio-synced sequencing",
+      "On-site rigging and operation",
+      "FM transmitter for vehicle-side audio"
+    ],
+    "stats": [
+      { "label": "Addressable Pixels", "value": "12,000+" },
+      { "label": "Sequenced Songs", "value": "8 holiday tracks" },
+      { "label": "Show Length", "value": "45 minutes" },
+      { "label": "Audience", "value": "5,000+ attendees" }
+    ],
+    "challenge": "The Rotary Club wanted to transform their long-running community parade into a regional headline event — without sacrificing the small-town, family character that had made it a tradition. We had to deliver a production-quality music-synced light show on a parade route, in winter, on a community budget, and with zero downtime tolerance on show night.",
+    "approach": "We built the entire show in-studio against the final audio mix the parade committee approved, pre-loaded sequences onto outdoor-rated controllers, and weather-sealed every connector to IP67. A wireless cue rig let our operator trigger transitions in time with the parade announcer. Pixels were mounted to a parade-stage rig that broke down into modular sections so the same install could be reused across multiple parade nights and stored compactly off-season.",
+    "outcome": "The 2024 parade drew the largest crowd in the Rotary Club's recorded history, picked up local press coverage, and converted into year-over-year donations for the club. The pixel rig and show file are now an annual asset — we run software updates and add new sequences each year instead of starting from scratch. The Rotary's lead organizer has called the show \"the single biggest reason new families are showing up,\" and the project has become a calling card for our experiential work across Southwestern Ontario.",
+    "testimonialQuote": "Ontario Light Shows didn't just hang lights — they choreographed our whole parade. The crowd reaction was unbelievable. It changed what a small-town Christmas parade can be.",
+    "testimonialAttribution": "Blenheim Rotary Club, Parade Committee",
+    "heroImage": "/images/uploads/placeholder-blenheim-hero.svg",
+    "gallery": [
+      "/images/uploads/placeholder-blenheim-1.svg",
+      "/images/uploads/placeholder-blenheim-2.svg",
+      "/images/uploads/placeholder-blenheim-3.svg",
+      "/images/uploads/placeholder-blenheim-4.svg"
+    ],
+    "videoEmbed": null,
+    "featured": true,
+    "order": 1
+  }
+]

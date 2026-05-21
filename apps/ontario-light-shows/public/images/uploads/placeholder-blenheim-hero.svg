@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#FF2DAA" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#05070F" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="strip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="33%" stop-color="#7C3AED"/>
+      <stop offset="66%" stop-color="#FF2DAA"/>
+      <stop offset="100%" stop-color="#FFB94B"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="2400" height="1350" fill="#05070F"/>
+  <rect width="2400" height="1350" fill="url(#bgGlow)"/>
+
+  <!-- horizon glow line -->
+  <rect x="0" y="900" width="2400" height="3" fill="url(#strip)" opacity="0.7"/>
+  <rect x="0" y="900" width="2400" height="60" fill="url(#strip)" opacity="0.15"/>
+
+  <!-- pixel grid -->
+  <g opacity="0.85">
+    <circle cx="200" cy="950" r="8" fill="#00E5FF"/>
+    <circle cx="300" cy="950" r="8" fill="#7C3AED"/>
+    <circle cx="400" cy="950" r="8" fill="#FF2DAA"/>
+    <circle cx="500" cy="950" r="8" fill="#FFB94B"/>
+    <circle cx="600" cy="950" r="8" fill="#34D399"/>
+    <circle cx="700" cy="950" r="8" fill="#00E5FF"/>
+    <circle cx="800" cy="950" r="8" fill="#7C3AED"/>
+    <circle cx="900" cy="950" r="8" fill="#FF2DAA"/>
+    <circle cx="1000" cy="950" r="8" fill="#FFB94B"/>
+    <circle cx="1100" cy="950" r="8" fill="#00E5FF"/>
+    <circle cx="1200" cy="950" r="8" fill="#7C3AED"/>
+    <circle cx="1300" cy="950" r="8" fill="#FF2DAA"/>
+    <circle cx="1400" cy="950" r="8" fill="#34D399"/>
+    <circle cx="1500" cy="950" r="8" fill="#00E5FF"/>
+    <circle cx="1600" cy="950" r="8" fill="#7C3AED"/>
+    <circle cx="1700" cy="950" r="8" fill="#FF2DAA"/>
+    <circle cx="1800" cy="950" r="8" fill="#FFB94B"/>
+    <circle cx="1900" cy="950" r="8" fill="#00E5FF"/>
+    <circle cx="2000" cy="950" r="8" fill="#7C3AED"/>
+    <circle cx="2100" cy="950" r="8" fill="#FF2DAA"/>
+    <circle cx="2200" cy="950" r="8" fill="#34D399"/>
+  </g>
+
+  <!-- spotlights -->
+  <ellipse cx="800" cy="400" rx="350" ry="500" fill="url(#spot)" opacity="0.15"/>
+  <ellipse cx="1600" cy="450" rx="350" ry="500" fill="url(#spot)" opacity="0.12"/>
+
+  <!-- text watermark -->
+  <text x="1200" y="640" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" fill="#F5F7FA" text-anchor="middle" opacity="0.95" letter-spacing="-1">
+    Blenheim Rotary Christmas Parade
+  </text>
+  <text x="1200" y="710" font-family="system-ui, sans-serif" font-size="28" fill="#00E5FF" text-anchor="middle" opacity="0.85" letter-spacing="2">
+    PLACEHOLDER · DROP REAL PHOTO HERE
+  </text>
+</svg>

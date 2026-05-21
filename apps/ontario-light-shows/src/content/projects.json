@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "blenheim-rotary-christmas-parade-2024",
+    "title": "Blenheim Rotary Christmas Parade",
+    "city": "Blenheim",
+    "service": "immersive-light-displays",
+    "alt": "Music-synchronized addressable LED light show at the Blenheim Rotary Club Christmas Parade in Chatham-Kent, Ontario",
+    "image": "/images/uploads/placeholder-blenheim-hero.svg",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "toronto-roofline-permanent",
+    "title": "Forest Hill Permanent Holiday Lighting",
+    "city": "Toronto",
+    "service": "permanent-holiday-lighting",
+    "alt": "IP67-rated permanent holiday lighting installed along a Forest Hill rooflne in Toronto, Ontario",
+    "image": "/images/uploads/placeholder-toronto.svg",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "kitchener-corporate-launch",
+    "title": "Tech HQ Brand Launch",
+    "city": "Kitchener-Waterloo",
+    "service": "rgb-architectural-lighting",
+    "alt": "RGB architectural lighting on a corporate headquarters during a product launch event in Kitchener-Waterloo",
+    "image": "/images/uploads/placeholder-kw.svg",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "ottawa-gala-experiential",
+    "title": "National Capital Gala",
+    "city": "Ottawa",
+    "service": "experiential-lighting",
+    "alt": "Experiential lighting installation with synchronized RGB pixels at a gala fundraiser in Ottawa, Ontario",
+    "image": "/images/uploads/placeholder-ottawa.svg",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "slug": "windsor-walkerville-accent",
+    "title": "Walkerville Heritage Accenting",
+    "city": "Windsor",
+    "service": "architectural-accenting",
+    "alt": "Architectural accent lighting on a Walkerville heritage home in Windsor, Ontario",
+    "image": "/images/uploads/placeholder-windsor.svg",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "slug": "hamilton-immersive-walkthrough",
+    "title": "Niagara-Region Walk-Through",
+    "city": "Hamilton",
+    "service": "immersive-light-displays",
+    "alt": "Walk-through immersive light display with thousands of addressable pixels in Hamilton, Ontario",
+    "image": "/images/uploads/placeholder-hamilton.svg",
+    "featured": true,
+    "order": 6
+  }
+]

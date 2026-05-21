@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "experiential-lighting",
+    "title": "Experiential Lighting",
+    "shortDescription": "Music-synchronized, addressable LED installations designed for live audiences — parades, galas, weddings, festivals, and brand activations across Ontario.",
+    "fullDescription": "Experiential lighting turns a venue into a moment. We design synchronized RGB shows that pulse to a custom soundtrack, sweep across a crowd, or punctuate a key beat of an event — using thousands of individually addressable LEDs running on professional-grade controllers. Every pixel is mapped, sequenced, and tested in our studio before the rig ever leaves the truck. We handle everything end-to-end: pre-show animation programming, on-site rigging, audio-sync with FOH, live operation, and tear-down.",
+    "features": [
+      "Custom-sequenced shows synced to your music",
+      "Thousands of individually addressable pixels",
+      "Professional-grade DMX / E1.31 / Art-Net controllers",
+      "Wireless cue-able for live show operation",
+      "Crew handles rigging, programming, and operation",
+      "Works indoors or outdoors (IP67/IP68 outdoor hardware)"
+    ],
+    "icon": "sparkles",
+    "image": "/images/uploads/placeholder-experiential.svg",
+    "order": 1
+  },
+  {
+    "slug": "architectural-accenting",
+    "title": "Architectural Accenting",
+    "shortDescription": "Subtle, designer-grade outline lighting that traces rooflines, cornices, columns, and signature features — invisible by day, breathtaking after dark.",
+    "fullDescription": "Architectural accenting is the art of letting a building tell its own story after dark. We hand-mount low-profile LED tracks along rooflines, soffit edges, corbels, columns, and feature elements — tucked so cleanly into the architecture that you never see the hardware in daylight. The system is fully colour-tunable, dimmable, and zone-controlled, so you can run warm white year-round, switch to your brand colours for a launch, or coordinate with the holidays. Every install is engineered for Ontario weather: aluminum channels, marine-grade fasteners, and IP67-rated drivers.",
+    "features": [
+      "Hand-mounted aluminum channels (no visible wire)",
+      "Tunable white + full RGB available",
+      "Smartphone app + voice control compatible",
+      "Zone-by-zone dimming and scene presets",
+      "Marine-grade fasteners and weather-sealed connections",
+      "Engineered for Ontario freeze-thaw"
+    ],
+    "icon": "frame",
+    "image": "/images/uploads/placeholder-architectural.svg",
+    "order": 2
+  },
+  {
+    "slug": "rgb-architectural-lighting",
+    "title": "RGB Architectural Lighting",
+    "shortDescription": "Full-colour, individually addressable pixel lighting that turns your building into a year-round canvas — animate, sequence, and re-skin on demand.",
+    "fullDescription": "RGB architectural lighting takes accenting one step further: every fixture is a multi-colour pixel that can be sequenced independently. The result is a building skin that you can paint with light — animate a wave across the roofline, fade between brand colours during a launch, run patriotic patterns on Canada Day, or hand the keys to a sequencer for a music-synchronized show. We design the pixel map to suit your architecture, supply outdoor-rated controllers, and train your team on the app — or we run scheduled shows for you.",
+    "features": [
+      "16.7M colours per pixel, fully addressable",
+      "Sequence to music, sport events, or branded campaigns",
+      "App-based scheduling and scene library",
+      "IP67/IP68 weather-sealed pixels and connectors",
+      "Compatible with xLights, FPP, Madrix, Resolume",
+      "Optional managed service (we sequence, you press play)"
+    ],
+    "icon": "rgb",
+    "image": "/images/uploads/placeholder-rgb.svg",
+    "order": 3
+  },
+  {
+    "slug": "immersive-light-displays",
+    "title": "Immersive Light Displays",
+    "shortDescription": "Walk-through, drive-through, and event-scale light displays — sequenced installations that surround the audience and play to a custom soundtrack.",
+    "fullDescription": "Immersive light displays are productions, not products. We design the experience around the space: where the audience enters, how the show builds, where the climax lands, and how the soundtrack ties the whole thing together. Past work includes parade-stage installations, holiday drive-throughs, walk-through tunnel experiences, and rooftop pixel grids. We provide the design, the hardware, the sequencing, and (when needed) on-site crew. Audiences leave with footage in their hands and a story they want to tell — which is the whole point.",
+    "features": [
+      "Custom show design and storyboarding",
+      "Walk-through, drive-through, or stage configurations",
+      "Audio-sync with FM transmitter for vehicle displays",
+      "Tens of thousands of pixels per production",
+      "Weather-proof outdoor-rated hardware",
+      "Optional on-site operator during show nights"
+    ],
+    "icon": "stage",
+    "image": "/images/uploads/placeholder-immersive.svg",
+    "order": 4
+  },
+  {
+    "slug": "permanent-holiday-lighting",
+    "title": "Permanent Holiday Lighting",
+    "shortDescription": "Professionally installed permanent outdoor lighting — Christmas, Halloween, Diwali, birthdays, game nights — all from one IP67-rated system you control from your phone.",
+    "fullDescription": "Permanent holiday lighting puts the magic of a professionally installed holiday display on your home or business — and keeps it there year-round. We hand-mount IP67/IP68 rated RGB pixels into a low-profile aluminum channel along your roofline, soffit, and accent points. From the app you switch between warm white for everyday use, festive sequences for the holidays, your team's colours for game day, or birthday animations on command. No more ladders, no more tangled strings, no more storing lights in the garage. Hardware is engineered for a 50,000+ hour lifespan and backed by a multi-year warranty.",
+    "features": [
+      "IP67 / IP68 outdoor-rated pixels and connectors",
+      "Hidden aluminum channel — invisible by day",
+      "App control: scenes for every holiday + custom",
+      "Voice control via Alexa / Google",
+      "50,000+ hour LED lifespan, multi-year warranty",
+      "Once installed, no more ladders or seasonal hires"
+    ],
+    "icon": "tree",
+    "image": "/images/uploads/placeholder-holiday.svg",
+    "order": 5
+  }
+]

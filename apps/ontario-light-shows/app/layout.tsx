@@ -1,0 +1,79 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { CallNowFab } from "@/components/CallNowFab";
+import { site } from "@/lib/site";
+import { localBusinessSchema } from "@/lib/jsonld";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | Music-Synced LED Light Shows Across Ontario`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  keywords: [
+    "Ontario light shows",
+    "music-synchronized light show",
+    "addressable LED lighting Ontario",
+    "RGB architectural lighting",
+    "permanent holiday lighting Ontario",
+    "experiential lighting",
+    "IP67 outdoor LED",
+    "IP68 LED installation",
+    "immersive light displays",
+    "Blenheim Rotary Christmas Parade",
+    "architectural accenting",
+    ...site.serviceAreas.map((c) => `LED light show ${c}`),
+    ...site.serviceAreas.map((c) => `permanent holiday lighting ${c}`),
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    siteName: site.name,
+    title: `${site.name} | Music-Synced LED Light Shows Across Ontario`,
+    description: site.description,
+    url: site.url,
+    images: [
+      {
+        url: "/images/uploads/placeholder-blenheim-hero.svg",
+        width: 2400,
+        height: 1350,
+        alt: "Ontario Light Shows — Music-synchronized addressable LED light shows across Ontario",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: site.url },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema()),
+          }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-midnight text-white">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <CallNowFab />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="1000" fill="#05070F"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#FFB94B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#05070F"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+  <!-- roofline string of lights -->
+  <g>
+    <path d="M 100 500 Q 800 380 1500 500" stroke="#FFB94B" stroke-width="3" fill="none" opacity="0.7"/>
+    <circle cx="100" cy="500" r="10" fill="#FF2DAA"/>
+    <circle cx="240" cy="470" r="10" fill="#00E5FF"/>
+    <circle cx="380" cy="445" r="10" fill="#34D399"/>
+    <circle cx="520" cy="425" r="10" fill="#FFB94B"/>
+    <circle cx="660" cy="408" r="10" fill="#FF2DAA"/>
+    <circle cx="800" cy="395" r="10" fill="#00E5FF"/>
+    <circle cx="940" cy="408" r="10" fill="#34D399"/>
+    <circle cx="1080" cy="425" r="10" fill="#FFB94B"/>
+    <circle cx="1220" cy="445" r="10" fill="#FF2DAA"/>
+    <circle cx="1360" cy="470" r="10" fill="#00E5FF"/>
+    <circle cx="1500" cy="500" r="10" fill="#34D399"/>
+  </g>
+  <text x="800" y="820" font-family="system-ui, sans-serif" font-size="42" font-weight="800" fill="#F5F7FA" text-anchor="middle" letter-spacing="-1">Permanent Holiday Lighting</text>
+  <text x="800" y="870" font-family="system-ui, sans-serif" font-size="20" fill="#FFB94B" text-anchor="middle" letter-spacing="3">PLACEHOLDER</text>
+</svg>
