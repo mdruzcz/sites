@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "driveways-project",
+    "title": "Broom-Finish Concrete Driveway",
+    "service": "custom-concrete-driveways",
+    "city": "Tillsonburg",
+    "image": "/images/custom-concrete-driveways.png",
+    "alt": "Broom-finish concrete driveway installation in Tillsonburg, ON by Concrete Tilsonburg",
+    "featured": true
+  },
+  {
+    "slug": "stamped-patio",
+    "title": "Decorative Stamped Patio & Walkway",
+    "service": "stamped-patios-walkways",
+    "city": "Woodstock",
+    "image": "/images/stamped-patios-walkways.png",
+    "alt": "Decorative stamped concrete patio and walkway in Woodstock, ON by Concrete Tilsonburg",
+    "featured": true
+  },
+  {
+    "slug": "repair-resurfacing",
+    "title": "Crack Repair & Full Resurfacing",
+    "service": "concrete-repair-resurfacing",
+    "city": "Tillsonburg",
+    "image": "/images/concrete-repair-resurfacing.png",
+    "alt": "Concrete crack repair and full resurfacing in Tillsonburg, ON by Concrete Tilsonburg",
+    "featured": true
+  },
+  {
+    "slug": "garage-floor",
+    "title": "Smooth Garage Floor with Epoxy Prep",
+    "service": "garage-basement-floors",
+    "city": "Delhi",
+    "image": "/images/garage-basement-floors.png",
+    "alt": "Smooth trowel-finished garage floor with epoxy prep in Delhi, ON by Concrete Tilsonburg",
+    "featured": true
+  }
+]

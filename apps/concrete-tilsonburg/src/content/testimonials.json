@@ -1,0 +1,34 @@
+[
+  {
+    "author": "Jason M.",
+    "city": "Tillsonburg",
+    "quote": "I was dreading the cost of replacing my entire walkway, but the resurfacing option saved me thousands. Looks completely brand new — you'd never know it was the same concrete underneath. Professional crew, clean job site, done in a day.",
+    "rating": 5,
+    "service": "concrete-repair-resurfacing",
+    "featured": true
+  },
+  {
+    "author": "Emily R.",
+    "city": "Tillsonburg",
+    "quote": "We had a stamped walkway with a decorative border installed this past spring and couldn't be happier. The pattern looks exactly like natural stone and the communication throughout the project was excellent — always knew what was happening and when.",
+    "rating": 5,
+    "service": "stamped-patios-walkways",
+    "featured": true
+  },
+  {
+    "author": "Mark D.",
+    "city": "Tillsonburg",
+    "quote": "Switched from asphalt to concrete after my old driveway kept cracking every spring. Went with the broom finish and it drains perfectly — no more puddles at the garage door. Solid crew, fair price, written warranty. Exactly what I wanted.",
+    "rating": 5,
+    "service": "custom-concrete-driveways",
+    "featured": true
+  },
+  {
+    "author": "Sarah & Tom L.",
+    "city": "Courtland",
+    "quote": "Our stamped patio looks like real natural flagstone — the neighbours keep asking who did it. They matched the colour perfectly to our brick and the finish is still holding up beautifully two seasons later. Highly recommend.",
+    "rating": 5,
+    "service": "stamped-patios-walkways",
+    "featured": true
+  }
+]

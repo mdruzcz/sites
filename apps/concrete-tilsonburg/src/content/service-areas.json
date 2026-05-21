@@ -1,0 +1,31 @@
+{
+  "primaryCity": "Tillsonburg",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Our home base. We serve Tillsonburg homeowners and businesses with custom driveways, stamped patios, and concrete repairs built for Oxford County winters."
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Serving Woodstock with high-strength concrete work — driveways, patios, and structural repairs engineered for southwestern Ontario's freeze-thaw climate."
+    },
+    {
+      "slug": "delhi",
+      "name": "Delhi",
+      "description": "Providing Delhi and surrounding Norfolk County with premium concrete driveways, walkways, and garage floors backed by our Oxford County expertise."
+    },
+    {
+      "slug": "ingersoll",
+      "name": "Ingersoll",
+      "description": "Trusted concrete services throughout Ingersoll — from broom-finish driveways to decorative stamped patios and professional-grade floor pours."
+    },
+    {
+      "slug": "simcoe",
+      "name": "Simcoe",
+      "description": "Delivering durable, weather-resistant concrete solutions to Simcoe homeowners, including custom driveways, patios, and full repair and resurfacing services."
+    }
+  ]
+}

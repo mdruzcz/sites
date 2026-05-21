@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "custom-concrete-driveways",
+    "title": "Custom Concrete Driveways",
+    "shortDescription": "Broom-finish, stamped, and exposed aggregate driveways engineered for Oxford County's freeze-thaw climate — reinforced from base to surface.",
+    "fullDescription": "A properly poured concrete driveway is one of the best investments a Tillsonburg homeowner can make. We start with deep excavation and a compacted granular gravel base, then lay steel wire mesh or rebar grids before every pour. Our high-strength locally batched concrete mix is air-entrained to resist freeze-thaw scaling — the number-one cause of premature driveway failure in Ontario. Finish options include classic broom finish for maximum grip, stamped patterns that mimic natural stone, brick, or slate, and exposed aggregate for a modern look that hides wear. Every driveway includes engineered control joints cut at the correct spacing and depth so any cracking happens invisibly — not across the surface.",
+    "icon": "road",
+    "features": [
+      "Standard broom finish — clean, classic, slip-resistant",
+      "Stamped & decorative options — stone, brick, or slate look",
+      "Heavy-duty reinforcement — rebar or wire mesh on every pour",
+      "Compacted granular sub-base prevents sinking and heaving",
+      "Air-entrained mix engineered for Ontario freeze-thaw",
+      "Engineered control joints cut at correct spacing"
+    ],
+    "image": "/images/custom-concrete-driveways.png",
+    "order": 1
+  },
+  {
+    "slug": "stamped-patios-walkways",
+    "title": "Stamped Patios & Walkways",
+    "shortDescription": "Custom stamped and decorative concrete patios and walkways with UV-resistant sealants — built to complement your home and survive southwestern Ontario winters.",
+    "fullDescription": "Stamped concrete transforms a plain patio or walkway into a stunning outdoor living space that looks like natural stone, flagstone, cobblestone, or brick — at a fraction of the cost of real materials. Our team brings a wide selection of stamps, textures, and integral colours to every project, tailoring the design to match your home's architecture and landscaping. All stamped surfaces receive a premium UV- and weather-resistant sealer that protects colour and surface integrity through Ontario's harsh freeze-thaw cycles. We specialize in seamless integration — your patio flows naturally into your driveway, pool deck, steps, or garden areas. A non-slip grip additive is mixed into every batch of sealer for safety on wet surfaces.",
+    "icon": "layers",
+    "features": [
+      "Wide selection of stamps, textures, and patterns",
+      "Custom integral colour and accent colour options",
+      "UV- and weather-resistant sealant on every surface",
+      "Anti-slip grip additive included in all sealers",
+      "Seamless integration with driveway and pool deck",
+      "Reinforced base prevents frost heave and settling"
+    ],
+    "image": "/images/stamped-patios-walkways.png",
+    "order": 2
+  },
+  {
+    "slug": "concrete-repair-resurfacing",
+    "title": "Concrete Repair & Resurfacing",
+    "shortDescription": "Crack routing, slab leveling, and decorative resurfacing — restore your existing concrete without the cost of full replacement.",
+    "fullDescription": "Not every cracked or spalling driveway or patio needs to be torn out. Our concrete repair and resurfacing services can extend the life of your existing concrete by decades while dramatically improving its appearance. We start with a thorough inspection to assess structural integrity. For cracks, we use crack routing and high-strength polyurethane or epoxy sealants to prevent winter moisture intrusion and the freeze-thaw expansion that widens cracks over time. Sunken or unsettled slabs are lifted and leveled using proven techniques to restore proper drainage and eliminate trip hazards. For surfaces that are structurally sound but cosmetically worn, decorative micro-topping overlays can completely transform the look at a much lower cost than replacement. All repairs include a written assessment so you know exactly what was done and why.",
+    "icon": "tool",
+    "features": [
+      "Crack routing and high-strength polyurethane sealing",
+      "Slab lifting and leveling — eliminates trip hazards",
+      "Decorative micro-topping overlay over existing concrete",
+      "Spalling and salt damage restoration",
+      "Proper drainage regrading included where needed",
+      "Written assessment and repair report on every job"
+    ],
+    "image": "/images/concrete-repair-resurfacing.png",
+    "order": 3
+  },
+  {
+    "slug": "garage-basement-floors",
+    "title": "Garage & Basement Floors",
+    "shortDescription": "Smooth trowel-finished garage and basement floors with vapor barriers, proper drainage, and epoxy-ready surfaces — poured to professional tolerances.",
+    "fullDescription": "Garage and basement floor pours require precision flatwork and the right mix design. Our crews deliver smooth trowel-finished slabs that are flat, non-porous, and easy to clean — and ready to accept epoxy or polyaspartic coatings when you're ready. Every pour includes a properly installed vapor barrier to control moisture intrusion from below, which is critical for Ontario basements where groundwater and humidity can cause adhesion failures in coatings. Garage floors are sloped toward floor drains at the correct pitch so melt water from vehicles drains away cleanly. We use high-strength concrete mixes with proper water-to-cement ratios for maximum surface hardness and minimal dusting. Whether you're finishing a new build, replacing a deteriorating slab, or prepping for an epoxy system, we pour it right the first time.",
+    "icon": "home",
+    "features": [
+      "Smooth trowel finish — flat, non-porous, easy to clean",
+      "Epoxy and polyaspartic coating ready on every pour",
+      "Vapor barrier installation — controls moisture from below",
+      "Proper drainage slope toward floor drains",
+      "High-strength mix for maximum surface hardness",
+      "New construction and replacement slabs both available"
+    ],
+    "image": "/images/garage-basement-floors.png",
+    "order": 4
+  }
+]
