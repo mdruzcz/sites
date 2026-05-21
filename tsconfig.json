@@ -28,6 +28,12 @@
     },
     {
       "path": "apps/get-legal-basements"
+    },
+    {
+      "path": "apps/admin"
+    },
+    {
+      "path": "apps/holiday-lights-direct"
     }
   ]
 }
