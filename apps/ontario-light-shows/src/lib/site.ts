@@ -1,8 +1,8 @@
 export const site = {
   name: "Ontario Light Shows",
   shortName: "Ontario Light Shows",
-  phone: "519-264-5847",
-  phoneHref: "tel:+15192645847",
+  phone: "519-878-6735",
+  phoneHref: "tel:+15198786735",
   email: "service@masterdecker.com",
   emailHref: "mailto:service@masterdecker.com",
   address: {

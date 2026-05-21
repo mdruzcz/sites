@@ -16,6 +16,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { StepProcess } from "@/components/StepProcess";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { MegaTreeSection } from "@/components/MegaTreeSection";
 import { faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
@@ -158,7 +159,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Why choose us */}
+      {/* 5. Pixel Mega Trees — signature build */}
+      <MegaTreeSection />
+
+      {/* 6. Why choose us */}
       <section className="py-20 sm:py-28 bg-midnight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
