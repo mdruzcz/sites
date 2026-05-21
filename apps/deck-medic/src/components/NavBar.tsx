@@ -31,9 +31,27 @@ export function NavBar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+        <div className="relative flex items-center justify-between h-16 lg:h-20">
+
+          {/* Desktop nav — left */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-xs font-semibold uppercase tracking-wider transition-colors hover:text-[var(--blue)]"
+                style={{ color: "var(--slate-light)" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Logo — centered on desktop, left-aligned on mobile */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 group lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+          >
             <Image
               src="/images/Deck-Medic-Logo-Updated-2-1-rkeqandwm6nvjvcu7jpw9wbck6ynkxq32rbqwqiczk.png"
               alt="Deck Medic logo"
@@ -50,21 +68,7 @@ export function NavBar() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {navLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-sm font-medium transition-colors hover:text-[var(--blue)]"
-                style={{ color: "var(--slate-light)" }}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
+          {/* Desktop CTA — right */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={site.phoneHref}

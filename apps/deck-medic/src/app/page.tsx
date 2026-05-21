@@ -35,7 +35,6 @@ const localBusinessSchema = {
     "Professional deck restoration, staining, and wood preservation services in Toronto, Mississauga, Oakville, and Burlington, Ontario.",
   url: site.url,
   telephone: site.phone,
-  email: site.email,
   image: `${site.url}/images/Deck-Medic-Banner.png`,
   priceRange: "$$",
   address: {
