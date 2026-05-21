@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "permanent-ramp-installation",
+    "title": "Permanent Ramp Installation",
+    "shortDescription": "Custom-built aluminum modular ramps professionally installed for homes, businesses, and public buildings — AODA-compliant, weather-resistant, and built to last.",
+    "fullDescription": "A permanent wheelchair ramp changes everything. It removes the barrier at the front door so that a family member, customer, or employee can come and go independently — without calling ahead, without help, without hesitation. We design and install aluminum modular ramp systems that are engineered for Ontario's freeze-thaw winters, comply with AODA and Ontario Building Code requirements, and fit the specific rise, run, and landing dimensions of your entrance.\n\nEvery permanent installation starts with a free on-site consultation. We measure the rise and horizontal distance, assess the existing threshold and handrail situation, and give you a written quote that covers materials, labour, and all hardware. Most residential installs are complete in a single day. Commercial installs — including multi-level entries, wide-aisle platforms, and code-required handrails on both sides — typically take one to two days depending on scope.\n\nWe use heavy-gauge extruded aluminum decking with a raised-tread, non-slip surface and powder-coat finish that holds up to road salt and UV exposure. Footings are either ground plates (no digging) or concrete-set posts for longer runs. Our installations are clean, professional, and designed to complement your building's entry rather than distract from it.",
+    "features": [
+      "AODA and Ontario Building Code compliant",
+      "Extruded aluminum decking — non-slip, rust-proof",
+      "Free on-site measurement and written quote",
+      "Most residential installs completed in one day",
+      "Modular design — can be modified or extended later",
+      "Handrails on both sides (required for commercial, optional for residential)",
+      "Powder-coat finish holds up to Ontario salt and UV"
+    ],
+    "icon": "ramp",
+    "image": "/images/permanent-ramp.jpg",
+    "order": 1
+  },
+  {
+    "slug": "temporary-ramp-rental",
+    "title": "Temporary Ramp Rental",
+    "shortDescription": "Flexible ramp rental with delivery, setup, and takedown across Ontario — daily, weekly, or monthly terms for post-surgery recovery, visiting guests, or short-term needs.",
+    "fullDescription": "Not every accessibility need is permanent. A post-surgery recovery, a visiting family member using a wheelchair, a rental property between tenants, a short-term facility — these situations call for a ramp that goes up fast, works reliably, and comes back down when you're done. That's exactly what our rental program is built for.\n\nWe deliver, set up, and take down temporary modular aluminum ramps across Ontario. You choose the term — daily, weekly, monthly, or longer. We handle the logistics: measuring the site in advance (or working from your dimensions), delivering on the day you need it, installing it properly with secure footings and handrails, and picking it up when your rental period ends. No tools required on your end, no assembly surprises, no wondering if it's safe.\n\nRental ramps are the same heavy-duty aluminum modular system we use for permanent installs — not consumer-grade portable ramps. They're non-slip, load-tested, and set up level regardless of the threshold height. If your needs change mid-rental (you need a longer term, or a different configuration), just call us. We're flexible.",
+    "features": [
+      "Daily, weekly, monthly, and long-term rental terms",
+      "Delivery, professional setup, and takedown included",
+      "Same heavy-duty aluminum as our permanent installs",
+      "Available province-wide — we deliver across Ontario",
+      "Flexible: extend your term or change configuration anytime",
+      "Ideal for post-surgery recovery, guest visits, short-term needs",
+      "No tools required — we handle all setup"
+    ],
+    "icon": "rental",
+    "image": "/images/temp-rental-ramp.jpg",
+    "order": 2
+  },
+  {
+    "slug": "event-accessibility",
+    "title": "Event Accessibility",
+    "shortDescription": "Temporary ramp and accessibility solutions for weddings, festivals, corporate events, community gatherings, and anywhere your venue needs to be barrier-free for every guest.",
+    "fullDescription": "Every guest at your event deserves equal access. Whether it's a wedding at a historic venue with a stepped entrance, an outdoor festival on uneven ground, a corporate product launch in a space never designed for accessibility, or a community fundraiser in an old hall — Ontario Ramp Solutions makes sure no one is left standing outside.\n\nWe specialize in event accessibility: reading the venue in advance, specifying the right ramp configurations for each barrier, delivering and setting up on your timeline (often the morning of, or the day before), and returning to tear down after the event wraps. We can accommodate multiple access points, level outdoor platforms for stages and vendor areas, and provide portable handrails and threshold ramps for interior transitions.\n\nOur event clients include wedding planners, festival producers, corporate event teams, municipal recreation departments, religious organizations, and non-profit event organizers. We understand that events run on tight schedules, and we are never the reason access isn't ready when the doors open.",
+    "features": [
+      "Weddings, festivals, corporate events, community gatherings",
+      "Multi-point access: main entrance, stage, bar, washrooms",
+      "Delivery and setup to match your event-day timeline",
+      "Outdoor platforms and landing areas on uneven ground",
+      "Portable handrails and interior threshold ramps",
+      "Experienced in heritage venues, tents, and temporary structures",
+      "Teardown and removal after your event wraps"
+    ],
+    "icon": "event",
+    "image": "/images/event-ramp.jpg",
+    "order": 3
+  },
+  {
+    "slug": "handrail-installation",
+    "title": "Handrail Installation",
+    "shortDescription": "Safety handrails for exterior steps, existing ramps, interior staircases, and raised platforms — professionally installed to Ontario Building Code standards.",
+    "fullDescription": "A handrail is often the difference between a step being manageable and a step being a fall risk. We install safety handrails for exterior stairs, existing concrete or wood ramps, interior stairways, front stoops, decks, and raised platforms — both as standalone installations and as part of a full ramp project.\n\nOur handrails are aluminum, powder-coated, graspable in diameter (conforming to Ontario Building Code), and mounted with structural brackets that go into masonry, concrete, or wood framing. We offer wall-mounted rails, post-mounted rails, and code-required two-sided railing for commercial ramps and public buildings.\n\nFor homeowners, a single graspable handrail on one side of a front step can eliminate a significant fall risk for elderly family members or those recovering from surgery. For commercial properties and public buildings, we ensure compliance with AODA and the Ontario Building Code — the right height, the right extension beyond the top and bottom risers, and the right clearance from the wall.\n\nMost residential handrail installs are a half-day job. We bring the hardware, drill the brackets, and leave your entrance safer than we found it.",
+    "features": [
+      "Aluminum powder-coated rails — rust-proof and durable",
+      "AODA and Ontario Building Code compliant sizing and mounting",
+      "Exterior steps, ramps, interior staircases, raised platforms",
+      "Wall-mounted and post-mounted configurations",
+      "Two-sided railing available for commercial compliance",
+      "Concrete, masonry, and wood frame mounting",
+      "Most residential installs completed in a half-day"
+    ],
+    "icon": "handrail",
+    "image": "/images/handrail.jpg",
+    "order": 4
+  }
+]

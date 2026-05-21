@@ -1,0 +1,51 @@
+{
+  "primaryCity": "London",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "Ontario Ramp Solutions is based in London, Ontario, making us the fastest and most reliable ramp provider in Middlesex County. We install permanent aluminum wheelchair ramps for London homes and businesses, deliver rental ramps province-wide from our London depot, and serve event venues across the city — from Budweiser Gardens to Forest City banquet halls and outdoor festivals in Victoria Park. Most London-area installs can be booked within 24–48 hours."
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "description": "We serve Hamilton and the surrounding Niagara Peninsula with permanent ramp installation, temporary rental, and event accessibility services. Hamilton's mix of older residential housing stock and growing event scene means accessibility needs are constant — from heritage-home front stoops to festival venues along James Street North. Our crews travel to Hamilton regularly and can coordinate same-week installation for most projects."
+    },
+    {
+      "slug": "kitchener-waterloo",
+      "name": "Kitchener-Waterloo",
+      "description": "Ontario Ramp Solutions serves the Kitchener-Waterloo-Cambridge tri-cities region with full ramp installation, rental, and event accessibility services. The region's strong corporate and tech sector drives steady demand for AODA-compliant commercial ramp installs and accessible event solutions for conferences, product launches, and community gatherings. We also serve Guelph and surrounding Waterloo Region municipalities."
+    },
+    {
+      "slug": "toronto",
+      "name": "Toronto",
+      "description": "We provide wheelchair ramp installation and event accessibility services across Toronto and the Greater Toronto Area. From condo building entrances in the downtown core to backyard weddings in Etobicoke, North York, and Scarborough, our team delivers, installs, and removes ramps on your timeline. Toronto event venues — whether a historic building in the Annex, a King West restaurant, or a tent event in the Distillery District — often need temporary accessibility solutions that we have ready to deploy."
+    },
+    {
+      "slug": "mississauga",
+      "name": "Mississauga",
+      "description": "Ontario Ramp Solutions installs permanent wheelchair ramps and delivers rental ramps throughout Mississauga. Whether you need an AODA-compliant ramp for a retail entrance, a residential ramp for a family member recovering from surgery, or event accessibility for a corporate gathering at the Living Arts Centre or Square One, our team is available to assess, quote, and install quickly."
+    },
+    {
+      "slug": "brampton",
+      "name": "Brampton",
+      "description": "We serve Brampton with professional ramp installation, flexible rental programs, and event accessibility solutions. Brampton's large and diverse community events, busy recreational facilities, and growing residential base keep our team active in the region. We work with homeowners, property managers, event planners, and businesses to make every entrance barrier-free."
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "description": "Ontario Ramp Solutions provides wheelchair ramp installation, rental, and event accessibility services in Burlington and surrounding Halton Region. From family homes near the waterfront to corporate offices in the Alton Business Park, we design, install, and maintain aluminum ramp systems that are safe, code-compliant, and built for Burlington's lakeside winters."
+    },
+    {
+      "slug": "guelph",
+      "name": "Guelph",
+      "description": "We install permanent wheelchair ramps and deliver rental solutions to Guelph homes, businesses, and event venues. Guelph's active community event scene — including outdoor festivals, farmers markets, and university events — means frequent demand for temporary event accessibility setups. Our team knows the venue landscape and can work within event-day logistics to ensure every guest has full access."
+    },
+    {
+      "slug": "cambridge",
+      "name": "Cambridge",
+      "description": "Ontario Ramp Solutions serves Cambridge with permanent aluminum ramp installation, temporary rental programs, and event accessibility services. Cambridge's heritage buildings and older housing stock often present challenging threshold situations that our modular ramp systems are designed to solve. We serve Cambridge, Hespeler, Preston, and surrounding Waterloo Region communities."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "author": "Sandra K.",
+    "role": "Homeowner",
+    "city": "London",
+    "quote": "My mother came home from the hospital after hip surgery and couldn't manage the two steps at our front door. Ontario Ramp Solutions had a ramp delivered and installed the next morning. It made a world of difference — she could come and go on her own terms.",
+    "rating": 5,
+    "service": "Temporary Ramp Rental",
+    "featured": true
+  },
+  {
+    "author": "Bridal Barn Event Venue",
+    "role": "Venue Manager",
+    "city": "London",
+    "quote": "We had a bride's grandmother who uses a power wheelchair attending the wedding. The team showed up the morning of, set up a ramp at the main entrance and a platform at the ceremony area, and everything was perfect. Professional, fast, and completely reliable.",
+    "rating": 5,
+    "service": "Event Accessibility",
+    "featured": true
+  },
+  {
+    "author": "Jim A.",
+    "role": "Property Manager",
+    "city": "Hamilton",
+    "quote": "We manage 12 residential rental properties. Ontario Ramp Solutions helped us bring three of them into AODA compliance with permanent aluminum ramps. Fair pricing, clean installs, and they handled all the permit paperwork. I'll use them for every future property.",
+    "rating": 5,
+    "service": "Permanent Ramp Installation",
+    "featured": true
+  },
+  {
+    "author": "Kitchener-Waterloo Food Festival",
+    "role": "Event Coordinator",
+    "city": "Kitchener-Waterloo",
+    "quote": "We had 3,000 attendees and a heritage building entrance that had never been accessible before. Ontario Ramp Solutions solved it with a modular ramp and landing platform that looked intentional, not like an afterthought. They were set up before our first vendor arrived.",
+    "rating": 5,
+    "service": "Event Accessibility",
+    "featured": true
+  },
+  {
+    "author": "Margaret & David P.",
+    "role": "Homeowners",
+    "city": "Toronto",
+    "quote": "We wanted a permanent ramp that didn't look like an eyesore. The team designed something that works with our porch instead of against it — powder-coated black to match the iron railing. Our daughter, who uses a wheelchair, helped choose the design. She loves it.",
+    "rating": 5,
+    "service": "Permanent Ramp Installation",
+    "featured": true
+  },
+  {
+    "author": "Community Living Association",
+    "role": "Facilities Director",
+    "city": "Burlington",
+    "quote": "We've used Ontario Ramp Solutions three times now — permanent installs at two of our group homes and a rental for an outdoor fundraiser. Every job has been on time, within budget, and built to code. They understand what accessibility actually means.",
+    "rating": 5,
+    "service": "Permanent Ramp Installation",
+    "featured": false
+  },
+  {
+    "author": "Tony R.",
+    "role": "Homeowner",
+    "city": "Mississauga",
+    "quote": "Called on a Tuesday after my father's stroke. Ramp was installed Thursday. I don't know how they moved that fast but they did — and it was a proper professional install, not a rush job.",
+    "rating": 5,
+    "service": "Temporary Ramp Rental",
+    "featured": false
+  },
+  {
+    "author": "St. Mary's Church",
+    "role": "Parish Administrator",
+    "city": "Cambridge",
+    "quote": "Our stone church steps have been a barrier for years. Ontario Ramp Solutions installed a permanent aluminum ramp that handles the grade beautifully and holds up through our Ontario winters. Our congregation is finally fully accessible.",
+    "rating": 5,
+    "service": "Permanent Ramp Installation",
+    "featured": false
+  }
+]
