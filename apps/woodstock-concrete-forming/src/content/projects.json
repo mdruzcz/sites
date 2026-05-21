@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "woodstock-stamped-driveway",
+    "title": "Stamped Concrete Driveway",
+    "city": "Woodstock",
+    "service": "concrete-driveways",
+    "finish": "Coloured Stamped",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Coloured stamped concrete driveway by Woodstock Concrete Forming in Woodstock, ON",
+    "featured": true
+  },
+  {
+    "slug": "brantford-broom-driveway",
+    "title": "Natural Broom Finish Driveway",
+    "city": "Brantford",
+    "service": "concrete-driveways",
+    "finish": "Natural Broom",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Natural broom finish concrete driveway installation in Brantford, ON",
+    "featured": true
+  },
+  {
+    "slug": "cambridge-stamped-patio",
+    "title": "Stamped Concrete Patio",
+    "city": "Cambridge",
+    "service": "concrete-patios",
+    "finish": "Coloured Stamped",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Coloured stamped concrete patio with seating area in Cambridge, ON",
+    "featured": true
+  },
+  {
+    "slug": "woodstock-patio-seating-wall",
+    "title": "Patio with Seating Wall",
+    "city": "Woodstock",
+    "service": "concrete-patios",
+    "finish": "Natural Broom",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Custom concrete patio with integrated seating wall in Woodstock, ON",
+    "featured": true
+  },
+  {
+    "slug": "brantford-decorative-patio",
+    "title": "Decorative Stamped Patio",
+    "city": "Brantford",
+    "service": "concrete-patios",
+    "finish": "Coloured Stamped",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Decorative stamped concrete patio with slate pattern in Brantford, ON",
+    "featured": true
+  },
+  {
+    "slug": "cambridge-wide-driveway",
+    "title": "Double-Wide Concrete Driveway",
+    "city": "Cambridge",
+    "service": "concrete-driveways",
+    "finish": "Natural Broom",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Wide reinforced concrete driveway poured in Cambridge, Ontario",
+    "featured": true
+  }
+]

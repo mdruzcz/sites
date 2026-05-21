@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "concrete-driveways",
+    "title": "Concrete Driveways",
+    "shortDescription": "Custom-poured concrete driveways built for Ontario winters — reinforced with rebar, properly graded, and finished in natural broom or decorative stamped patterns.",
+    "fullDescription": "A concrete driveway is the first thing visitors notice and one of the highest-value improvements you can make to your home. We pour every driveway with a compacted granular base, reinforced rebar or wire mesh, air-entrained concrete for freeze-thaw resistance, and engineered control joints that prevent random cracking. Choose from natural broom finish for a classic clean look, or upgrade to coloured and stamped concrete for a high-end decorative surface. Every project includes proper grading for drainage and a written workmanship warranty.",
+    "features": [
+      "4\"–6\" reinforced concrete pour",
+      "Compacted granular base with drainage",
+      "Air-entrained mix for freeze-thaw resistance",
+      "Engineered control joints prevent cracking",
+      "Natural broom or stamped finishes available",
+      "25–30 year lifespan with proper sealing"
+    ],
+    "finishes": [
+      {
+        "name": "Natural Broom Finish",
+        "description": "The classic choice — textured for grip, clean modern lines, built to outlast Ontario winters. Timeless and low-maintenance."
+      },
+      {
+        "name": "Coloured Stamped Concrete",
+        "description": "Integrally coloured mix stamped with stone, slate, or brick patterns. The look of premium hardscape at a fraction of the cost."
+      }
+    ],
+    "icon": "truck",
+    "image": "/images/driveway-placeholder.jpg",
+    "order": 1
+  },
+  {
+    "slug": "concrete-patios",
+    "title": "Concrete Patios",
+    "shortDescription": "Custom backyard patios poured to expand your outdoor living space — natural broom finish or coloured stamped concrete with fire pit and seating wall options.",
+    "fullDescription": "Your patio is the heart of your backyard. We pour custom concrete patios with the same engineered base and reinforced construction as our driveways — designed for your specific layout, slope, and style. Natural broom-finished patios deliver a clean, modern surface that stays cool and slip-resistant. For something more dramatic, our coloured stamped concrete mimics flagstone, slate, or brick with integral colour that won't fade or peel. We can integrate seating walls, steps, and fire pit surrounds during the pour for a cohesive finished outdoor living space.",
+    "features": [
+      "Custom shapes and multi-level layouts",
+      "Natural broom or coloured stamped finishes",
+      "Optional seating walls, steps, and fire pits",
+      "Reinforced for heavy patio furniture and traffic",
+      "Slip-resistant texture options",
+      "Properly graded away from the house foundation"
+    ],
+    "finishes": [
+      {
+        "name": "Natural Broom Finish",
+        "description": "Clean, textured surface perfect for outdoor dining and entertaining. Easy to clean, stays cool, and matches any home style."
+      },
+      {
+        "name": "Coloured Stamped Concrete",
+        "description": "Transform your patio into a showpiece with custom colours and stone patterns. Sealed for UV protection and long-lasting vibrancy."
+      }
+    ],
+    "icon": "home",
+    "image": "/images/patio-placeholder.jpg",
+    "order": 2
+  }
+]

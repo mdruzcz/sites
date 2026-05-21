@@ -1,0 +1,26 @@
+[
+  {
+    "author": "TODO: Replace with real customer name",
+    "city": "Woodstock",
+    "rating": 5,
+    "quote": "TODO: Replace with real testimonial from Google Reviews or HomeStars.",
+    "service": "concrete-driveways",
+    "featured": true
+  },
+  {
+    "author": "TODO: Replace with real customer name",
+    "city": "Brantford",
+    "rating": 5,
+    "quote": "TODO: Replace with real testimonial from Google Reviews or HomeStars.",
+    "service": "concrete-patios",
+    "featured": true
+  },
+  {
+    "author": "TODO: Replace with real customer name",
+    "city": "Cambridge",
+    "rating": 5,
+    "quote": "TODO: Replace with real testimonial from Google Reviews or HomeStars.",
+    "service": "concrete-driveways",
+    "featured": true
+  }
+]

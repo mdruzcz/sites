@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  --charcoal: #2D2E32;
+  --charcoal-700: #1E1F22;
+  --charcoal-900: #131416;
+  --concrete: #6C757D;
+  --concrete-200: #C7CFDD;
+  --accent: #E63946;
+  --accent-600: #CC2D38;
+  --accent-700: #A82028;
+  --background: #FFFFFF;
+  --surface: #F4F4F4;
+  --border: #E9ECEF;
+  --foreground: #2D2E32;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-inter, system-ui), -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat, system-ui), sans-serif;
+}
+
+.bg-charcoal { background-color: var(--charcoal); }
+.bg-charcoal-900 { background-color: var(--charcoal-900); }
+.bg-concrete { background-color: var(--concrete); }
+.bg-accent { background-color: var(--accent); }
+.bg-surface { background-color: var(--surface); }
+
+.text-charcoal { color: var(--charcoal); }
+.text-concrete { color: var(--concrete); }
+.text-accent { color: var(--accent); }
+
+.border-accent { border-color: var(--accent); }
+
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: white;
+  box-shadow: 0 1px 3px rgba(45, 46, 50, 0.06);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 150ms ease;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.28);
+}
+.btn-primary:hover {
+  background-color: var(--accent-600);
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 2px solid var(--charcoal);
+  color: var(--charcoal);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--charcoal);
+  color: white;
+}
+
+.btn-outline-white {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+.btn-outline-white:hover {
+  background: white;
+  color: var(--charcoal);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-dark {
+  background-color: var(--charcoal);
+  color: white;
+}
+.btn-dark:hover {
+  background-color: var(--charcoal-700);
+}
+
+/* ALL-CAPS display headings */
+.h-display {
+  font-family: var(--font-montserrat, system-ui), sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Accent left border for cards */
+.corner-accent {
+  border-left: 4px solid var(--accent);
+}
+
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(45, 46, 50, 0.78) 0%, rgba(45, 46, 50, 0.65) 100%);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #F4F4F4 25%, #E9ECEF 50%, #F4F4F4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}

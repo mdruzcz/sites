@@ -1,0 +1,21 @@
+{
+  "primaryCity": "Woodstock",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Serving Woodstock and Oxford County with expert concrete driveways and patios. From historic neighbourhoods near Dundas Street to new builds on the city's east side, we pour driveways and patios that stand up to Ontario freeze-thaw cycles and improve your home's curb appeal for decades."
+    },
+    {
+      "slug": "brantford",
+      "name": "Brantford",
+      "description": "Professional concrete driveway and patio installation throughout Brantford and Brant County. We serve Brantford homeowners with the same reinforced pours and written warranty we deliver across Oxford County — natural broom finish or decorative stamped concrete to match your home."
+    },
+    {
+      "slug": "cambridge",
+      "name": "Cambridge",
+      "description": "Trusted concrete contractor serving Cambridge, Preston, and Hespeler. We pour custom concrete driveways and patios for Cambridge homeowners with proper base preparation, air-entrained concrete, and engineered control joints built for Waterloo Region winters."
+    }
+  ]
+}
