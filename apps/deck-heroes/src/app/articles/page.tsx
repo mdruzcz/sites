@@ -101,24 +101,22 @@ const categoryColors: Record<string, string> = {
 export default function ArticlesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-forest-dark py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
+      {/* Hero — image-based */}
+      <section className="relative min-h-[350px] lg:min-h-[400px] flex items-center">
+        <Image src="/images/deck-seats.jpeg" alt="Professional deck and fence care tips and articles" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-forest-dark/85" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center py-16">
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+            Articles
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Deck Care Articles, Tips &amp; Expert Advice
           </h1>
-          <p className="mt-4 text-lg text-cream-dark max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Everything you need to know about maintaining, staining, and
             protecting your deck. Practical advice from Ontario&apos;s deck care
             professionals.
           </p>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-10 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image src="/images/wooden-fence.jpeg" alt="Professional deck and fence care tips and articles" width={1200} height={800} className="h-auto w-full object-cover" priority />
         </div>
       </section>
 

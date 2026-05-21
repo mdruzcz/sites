@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import ContactCTA from "@/components/ContactCTA";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "When is the best season to stain a deck in St. Thomas?",
     answer:
-      "The best time for deck staining in St. Thomas is late May through September. The Lake Erie influence gives St. Thomas slightly milder temperatures than areas farther north, which can extend the staining season. We look for a window of two to three dry days with temperatures above 10°C for optimal results.",
+      "The best time for deck staining in St. Thomas is late May through September. The Lake Erie influence gives St. Thomas slightly milder temperatures than areas farther north, which can extend the staining season. We look for a window of two to three dry days with temperatures above 10Â°C for optimal results.",
   },
   {
     question: "Does the lake effect climate in St. Thomas affect my deck?",
@@ -92,23 +92,29 @@ export default function StThomasPage() {
       />
 
       {/* Hero */}
-      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
-            Professional Deck Staining &amp; Restoration in St. Thomas, Ontario
-          </h1>
-          <p className="mt-6 text-lg text-cream leading-relaxed">
-            The Railway City deserves decks that stand the test of time. Deck
-            Heroes delivers premium deck care to St. Thomas and Elgin County
-            homeowners who demand lasting quality.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image src="/images/beautiful-home-deck.jpg" alt="Deck restoration services in St. Thomas, Ontario" width={1200} height={800} className="h-auto w-full object-cover" priority />
+      <section className="relative min-h-[400px] lg:min-h-[500px] flex items-center">
+        <Image
+          src="/images/backyard-deck-furniture.jpg"
+          alt="Professional deck staining and restoration services in St. Thomas, Ontario"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/70 to-forest-dark/40" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+              Service Area
+            </span>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
+              Professional Deck Staining &amp; Restoration in St. Thomas, Ontario
+            </h1>
+            <p className="mt-6 text-lg text-white/85 leading-relaxed">
+              The Railway City deserves decks that stand the test of time. Deck
+              Heroes delivers premium deck care to St. Thomas and Elgin County
+              homeowners who demand lasting quality.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -203,7 +209,7 @@ export default function StThomasPage() {
       {/* Why Trust Us */}
       <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-serif text-3xl font-bold text-cream">
+          <h2 className="font-serif text-3xl font-bold text-white">
             Why St. Thomas Homeowners Trust Deck Heroes
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -226,10 +232,10 @@ export default function StThomasPage() {
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl bg-forest-light/10 p-6">
-                <h3 className="font-serif text-lg font-bold text-cream">
+                <h3 className="font-serif text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-cream leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-white/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -298,7 +304,7 @@ export default function StThomasPage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
+                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-white"
               >
                 {city.name}
               </Link>

@@ -69,46 +69,37 @@ export default function DeckBuildingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
-            Custom Deck Building in Ontario
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
-            From a simple backyard platform to a multi-level outdoor
-            entertainment space, we design and build decks that fit your home,
-            your lifestyle, and your budget. Expert craftsmanship backed by years
-            of experience across Southwestern Ontario.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark"
-            >
-              Get a Free Quote
-            </Link>
-            <a
-              href={PHONE_HREF}
-              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
-            >
-              Call {PHONE}
-            </a>
+      {/* Hero — image-based */}
+      <section className="relative min-h-[400px] lg:min-h-[500px] flex items-center">
+        <Image
+          src="/images/modern-house-deck.jpg"
+          alt="Custom deck building by Deck Heroes — expert craftsmanship in Ontario"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/70 to-forest-dark/40" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+              Our Services
+            </span>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
+              Custom Deck Building in Ontario
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-white/85">
+              From a simple backyard platform to a multi-level entertainment space,
+              we design and build decks that fit your home, lifestyle, and budget.
+            </p>
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+              <Link href="/contact" className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-terra-dark">
+                Get a Free Quote
+              </Link>
+              <a href={PHONE_HREF} className="rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/20">
+                Call {PHONE}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image
-            src="/images/composite-maintenance.png"
-            alt="Custom composite deck building and maintenance"
-            width={683}
-            height={1024}
-            className="h-auto w-full max-h-[500px] object-cover"
-            priority
-          />
         </div>
       </section>
 
@@ -181,7 +172,7 @@ export default function DeckBuildingPage() {
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta text-xl font-bold text-cream">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta text-xl font-bold text-white">
                   {item.step}
                 </div>
                 <div>
@@ -227,11 +218,11 @@ export default function DeckBuildingPage() {
             Explore Our Other Services
           </h2>
           <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/services/deck-staining" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Staining</Link>
-            <Link href="/services/deck-refinishing" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Refinishing</Link>
-            <Link href="/services/deck-resurfacing" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Resurfacing</Link>
-            <Link href="/services/deck-cleaning" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Deck Cleaning</Link>
-            <Link href="/contact" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">Contact Us</Link>
+            <Link href="/services/deck-staining" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-white">Deck Staining</Link>
+            <Link href="/services/deck-refinishing" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-white">Deck Refinishing</Link>
+            <Link href="/services/deck-resurfacing" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-white">Deck Resurfacing</Link>
+            <Link href="/services/deck-cleaning" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-white">Deck Cleaning</Link>
+            <Link href="/contact" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-white">Contact Us</Link>
           </div>
         </div>
       </section>

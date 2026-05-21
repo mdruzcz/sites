@@ -2,28 +2,28 @@
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
 
 @theme inline {
-  /* Primary — Forest Green */
-  --color-forest: #2D6A4F;
-  --color-forest-dark: #1B4332;
-  --color-forest-light: #40916C;
+  /* Primary — Deep Forest (inspired by dependablelawn.ca) */
+  --color-forest: #1A5632;
+  --color-forest-dark: #0B3D2C;
+  --color-forest-light: #2A7D2E;
 
-  /* Secondary — Terracotta / Cedar */
-  --color-terracotta: #BC6C25;
-  --color-terra-dark: #9A5518;
-  --color-terra-light: #DDA15E;
+  /* Secondary — Warm Gold / Amber */
+  --color-terracotta: #C8963E;
+  --color-terra-dark: #A67A2E;
+  --color-terra-light: #E4B96A;
 
   /* Accent — Warm Cream */
   --color-cream: #FEFAE0;
   --color-cream-dark: #E9E5C8;
 
   /* Backgrounds */
-  --color-bg: #F8F9FA;
-  --color-bg-alt: #EDF2F4;
+  --color-bg: #FAFAF7;
+  --color-bg-alt: #F0F0EB;
 
   /* Neutrals */
-  --color-wood-dark: #2B2D42;
-  --color-wood: #495057;
-  --color-wood-light: #6C757D;
+  --color-wood-dark: #1A1A2E;
+  --color-wood: #3D3D50;
+  --color-wood-light: #6B6B7B;
   --color-sand: #D4A574;
   --color-sand-light: #EDD5AA;
 
@@ -45,4 +45,20 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
+}
+
+/* Counter animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }

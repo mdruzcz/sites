@@ -122,10 +122,13 @@ export default function FAQPage() {
       {/* Hero */}
       <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
-            Frequently Asked Questions About Deck Staining &amp; Maintenance
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+            FAQ
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+            Frequently Asked Questions
           </h1>
-          <p className="mt-4 text-lg text-cream-dark max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Find answers to the most common questions we hear from homeowners
             about deck care, staining, building, and our process.
           </p>

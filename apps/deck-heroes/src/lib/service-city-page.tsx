@@ -229,12 +229,15 @@ export function ServiceCityPage({
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+            Service Area
+          </span>
+          <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
             {service.title} in {city.name}, Ontario
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
             Professional {service.title.toLowerCase()} services for homeowners in{" "}
             {city.name} and surrounding {city.province} communities.{" "}
             {COMPANY_NAME} brings expert craftsmanship and premium products to
@@ -243,13 +246,13 @@ export function ServiceCityPage({
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark"
+              className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-terra-dark"
             >
               Get a Free Quote
             </Link>
             <a
               href={PHONE_HREF}
-              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
+              className="rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/20"
             >
               Call {PHONE}
             </a>
@@ -294,7 +297,7 @@ export function ServiceCityPage({
           <div className="mt-12 space-y-8">
             {serviceInfo.processSteps.map((item, i) => (
               <div key={i} className="flex gap-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta text-xl font-bold text-cream">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta text-xl font-bold text-white">
                   {i + 1}
                 </div>
                 <div>

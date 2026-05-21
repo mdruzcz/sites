@@ -42,7 +42,7 @@ function StarDisplay({ rating }: { rating: number }) {
       {Array.from({ length: 5 }, (_, i) => (
         <svg
           key={i}
-          className={`h-7 w-7 ${i < Math.floor(rating) ? "text-cream" : "text-cream-dark"}`}
+          className={`h-7 w-7 ${i < Math.floor(rating) ? "text-terracotta" : "text-white/60"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -61,23 +61,21 @@ export default function TestimonialsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="bg-forest-dark py-16 lg:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
+      {/* Hero — image-based */}
+      <section className="relative min-h-[350px] lg:min-h-[400px] flex items-center">
+        <Image src="/images/deck-furniture.jpeg" alt="Happy homeowners enjoying their professionally restored deck" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-forest-dark/85" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center py-16">
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+            Testimonials
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             What Our Customers Say
           </h1>
-          <p className="mt-4 text-lg text-cream-dark max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
             Don&apos;t just take our word for it. Here is what homeowners across
             Southwestern Ontario say about their experience with {COMPANY_NAME}.
           </p>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-10 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image src="/images/deck-furniture.jpeg" alt="Happy homeowners enjoying their professionally restored deck" width={1200} height={800} className="h-auto w-full object-cover" priority />
         </div>
       </section>
 

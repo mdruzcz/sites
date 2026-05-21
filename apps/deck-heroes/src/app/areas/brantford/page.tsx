@@ -93,24 +93,30 @@ export default function BrantfordPage() {
       />
 
       {/* Hero */}
-      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
-            Professional Deck Staining &amp; Restoration in Brantford, Ontario
-          </h1>
-          <p className="mt-6 text-lg text-cream leading-relaxed">
-            Brantford and Brant County homeowners trust Deck Heroes for expert
-            deck staining, sealing, and refinishing. Protect your outdoor
-            investment with professionals who understand the Grand River valley
-            climate.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image src="/images/luxury-home-exterior.jpg" alt="Deck staining and restoration in Brantford, Ontario" width={1200} height={800} className="h-auto w-full object-cover" priority />
+      <section className="relative min-h-[400px] lg:min-h-[500px] flex items-center">
+        <Image
+          src="/images/backyard-deck-furniture.jpg"
+          alt="Professional deck staining and restoration services in Brantford, Ontario"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/70 to-forest-dark/40" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+              Service Area
+            </span>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
+              Professional Deck Staining &amp; Restoration in Brantford, Ontario
+            </h1>
+            <p className="mt-6 text-lg text-white/85 leading-relaxed">
+              Brantford and Brant County homeowners trust Deck Heroes for expert
+              deck staining, sealing, and refinishing. Protect your outdoor
+              investment with professionals who understand the Grand River valley
+              climate.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -206,7 +212,7 @@ export default function BrantfordPage() {
       {/* Why Trust Us */}
       <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-serif text-3xl font-bold text-cream">
+          <h2 className="font-serif text-3xl font-bold text-white">
             Why Brantford Homeowners Trust Deck Heroes
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -229,10 +235,10 @@ export default function BrantfordPage() {
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl bg-forest-light/10 p-6">
-                <h3 className="font-serif text-lg font-bold text-cream">
+                <h3 className="font-serif text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-cream leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-white/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -301,7 +307,7 @@ export default function BrantfordPage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
+                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-white"
               >
                 {city.name}
               </Link>

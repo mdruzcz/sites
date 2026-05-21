@@ -96,24 +96,30 @@ export default function LondonPage() {
       />
 
       {/* Hero */}
-      <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
-            Professional Deck Staining &amp; Restoration in London, Ontario
-          </h1>
-          <p className="mt-6 text-lg text-cream leading-relaxed">
-            Serving London homeowners with expert deck care since day one. From
-            the tree-lined streets of Old North to the growing communities of
-            Hyde Park, Deck Heroes keeps your outdoor living space looking its
-            best all year round.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Image */}
-      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image src="/images/backyard-deck-furniture.jpg" alt="Professional deck services in London, Ontario" width={1200} height={800} className="h-auto w-full object-cover" priority />
+      <section className="relative min-h-[400px] lg:min-h-[500px] flex items-center">
+        <Image
+          src="/images/backyard-deck-furniture.jpg"
+          alt="Professional deck staining and restoration services in London, Ontario"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/70 to-forest-dark/40" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+              Service Area
+            </span>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
+              Professional Deck Staining &amp; Restoration in London, Ontario
+            </h1>
+            <p className="mt-6 text-lg text-white/85 leading-relaxed">
+              Serving London homeowners with expert deck care since day one. From
+              the tree-lined streets of Old North to the growing communities of
+              Hyde Park, Deck Heroes keeps your outdoor living space looking its
+              best all year round.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -207,7 +213,7 @@ export default function LondonPage() {
       {/* Why Trust Us */}
       <section className="bg-forest-dark py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-serif text-3xl font-bold text-cream">
+          <h2 className="font-serif text-3xl font-bold text-white">
             Why London Homeowners Trust Deck Heroes
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -230,10 +236,10 @@ export default function LondonPage() {
               },
             ].map((item) => (
               <div key={item.title} className="rounded-xl bg-forest-light/10 p-6">
-                <h3 className="font-serif text-lg font-bold text-cream">
+                <h3 className="font-serif text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-cream leading-relaxed">{item.desc}</p>
+                <p className="mt-2 text-white/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -302,7 +308,7 @@ export default function LondonPage() {
               <Link
                 key={city.slug}
                 href={`/areas/${city.slug}`}
-                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-cream"
+                className="rounded-lg bg-bg-alt px-5 py-2 font-medium text-wood-dark transition hover:bg-terracotta hover:text-white"
               >
                 {city.name}
               </Link>

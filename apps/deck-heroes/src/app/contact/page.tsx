@@ -61,10 +61,13 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-forest-dark py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-3xl font-bold text-cream sm:text-4xl lg:text-5xl">
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+            Contact Us
+          </span>
+          <h1 className="font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Get Your Free Deck Staining Quote
           </h1>
-          <p className="mt-4 text-lg text-cream-dark max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Fill out the form below and we will get back to you within 24 hours
             with a detailed, no-obligation estimate for your project.
           </p>

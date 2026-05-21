@@ -72,52 +72,53 @@ export default function DeckStainingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-forest-dark via-forest to-forest-light py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-4xl font-bold text-cream sm:text-5xl">
-            Professional Deck Staining in Ontario
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-cream">
-            Bring out the natural beauty of your wood deck while adding lasting
-            protection against the elements. Our expert staining service combines
-            thorough preparation with premium products for results that endure.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-cream shadow-lg transition hover:bg-terra-dark"
-            >
-              Get a Free Quote
-            </Link>
-            <a
-              href={PHONE_HREF}
-              className="rounded-lg border-2 border-cream/40 px-8 py-4 text-lg font-semibold text-cream transition hover:bg-white/10"
-            >
-              Call {PHONE}
-            </a>
+      {/* Hero — image-based */}
+      <section className="relative min-h-[400px] lg:min-h-[500px] flex items-center">
+        <Image
+          src="/images/staining-sealing.png"
+          alt="Professional deck staining and sealing service by Deck Heroes"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/90 via-forest-dark/70 to-forest-dark/40" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-2xl">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta mb-4">
+              Our Services
+            </span>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl">
+              Professional Deck Staining in Ontario
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-white/85">
+              Bring out the natural beauty of your wood deck while adding lasting
+              protection against the elements. Expert preparation with premium products.
+            </p>
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="rounded-lg bg-terracotta px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-terra-dark"
+              >
+                Get a Free Quote
+              </Link>
+              <a
+                href={PHONE_HREF}
+                className="rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/20"
+              >
+                Call {PHONE}
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="bg-bg py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
-          <Image
-            src="/images/staining-sealing.png"
-            alt="Professional deck staining and sealing service by Deck Heroes"
-            width={1024}
-            height={683}
-            className="h-auto w-full object-cover"
-            priority
-          />
-        </div>
-      </section>
-
       {/* What is Deck Staining */}
-      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl font-bold text-wood-dark">
+          <span className="inline-block text-sm font-semibold uppercase tracking-widest text-forest-light">
+            About This Service
+          </span>
+          <h2 className="mt-3 font-serif text-3xl font-bold text-wood-dark">
             What Is Deck Staining and Why Does It Matter?
           </h2>
           <div className="mt-6 space-y-4 text-wood-light leading-relaxed">
@@ -148,16 +149,21 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Our Process */}
-      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-forest-dark py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
-            Our Deck Staining Process
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-wood-light">
-            Every project follows our proven five-step process to ensure a flawless,
-            long-lasting finish.
-          </p>
-          <div className="mt-12 space-y-8">
+          <div className="text-center">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-terracotta">
+              Step by Step
+            </span>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-white">
+              Our Deck Staining Process
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/70">
+              Every project follows our proven five-step process to ensure a flawless,
+              long-lasting finish.
+            </p>
+          </div>
+          <div className="mt-14 space-y-8">
             {[
               {
                 step: "1",
@@ -186,14 +192,14 @@ export default function DeckStainingPage() {
               },
             ].map((item) => (
               <div key={item.step} className="flex gap-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta text-xl font-bold text-cream">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-terracotta/20 border-2 border-terracotta text-xl font-bold text-terracotta">
                   {item.step}
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl font-semibold text-wood-dark">
+                  <h3 className="font-serif text-xl font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-wood-light leading-relaxed">{item.desc}</p>
+                  <p className="mt-2 text-white/70 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -202,12 +208,17 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-bg py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
-            Benefits of Professional Deck Staining
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+          <div className="text-center">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-forest-light">
+              Why Stain Your Deck
+            </span>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-wood-dark">
+              Benefits of Professional Deck Staining
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {[
               {
                 title: "UV Protection",
@@ -230,14 +241,16 @@ export default function DeckStainingPage() {
                 icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
               },
             ].map((b) => (
-              <div key={b.title} className="rounded-xl bg-white p-6 shadow-sm border border-sand/30">
-                <svg className="h-8 w-8 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d={b.icon} />
-                </svg>
-                <h3 className="mt-4 font-serif text-xl font-semibold text-wood-dark">
+              <div key={b.title} className="rounded-2xl bg-white p-8 shadow-sm border border-transparent hover:shadow-md hover:border-forest-light/20 transition-all">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-forest/10 text-forest">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={b.icon} />
+                  </svg>
+                </div>
+                <h3 className="mt-5 font-serif text-xl font-semibold text-wood-dark">
                   {b.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-wood-light">{b.desc}</p>
+                <p className="mt-3 text-sm leading-relaxed text-wood-light">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -245,12 +258,17 @@ export default function DeckStainingPage() {
       </section>
 
       {/* Stain Types */}
-      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
-            Stain Types We Use
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-3">
+          <div className="text-center">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-forest-light">
+              Options
+            </span>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-wood-dark">
+              Stain Types We Use
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-3">
             {[
               {
                 type: "Transparent",
@@ -265,11 +283,11 @@ export default function DeckStainingPage() {
                 desc: "Full colour coverage similar to paint, but still penetrates the wood. Ideal for older decks with imperfections you want to conceal, or when you want a specific colour to match your home. Maximum UV protection and longest lifespan.",
               },
             ].map((s) => (
-              <div key={s.type} className="rounded-xl bg-white p-6 shadow-sm border border-sand/30 text-center">
-                <h3 className="font-serif text-xl font-semibold text-terracotta">
+              <div key={s.type} className="rounded-2xl bg-white p-8 shadow-sm text-center hover:shadow-md transition-shadow">
+                <h3 className="font-serif text-xl font-semibold text-forest">
                   {s.type}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-wood-light">{s.desc}</p>
+                <p className="mt-4 text-sm leading-relaxed text-wood-light">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -282,22 +300,18 @@ export default function DeckStainingPage() {
           <h2 className="font-serif text-2xl font-bold text-wood-dark">
             Explore Our Other Services
           </h2>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/services/deck-refinishing" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Deck Refinishing
-            </Link>
-            <Link href="/services/deck-resurfacing" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Deck Resurfacing
-            </Link>
-            <Link href="/services/deck-building" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Deck Building
-            </Link>
-            <Link href="/services/deck-cleaning" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Deck Cleaning
-            </Link>
-            <Link href="/contact" className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-terracotta hover:text-cream">
-              Contact Us
-            </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              { href: "/services/deck-refinishing", label: "Deck Refinishing" },
+              { href: "/services/deck-resurfacing", label: "Deck Resurfacing" },
+              { href: "/services/deck-building", label: "Deck Building" },
+              { href: "/services/deck-cleaning", label: "Deck Cleaning" },
+              { href: "/contact", label: "Contact Us" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="rounded-lg bg-bg-alt px-5 py-3 text-sm font-semibold text-wood-dark transition hover:bg-forest hover:text-white">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -310,14 +324,16 @@ export default function DeckStainingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-bg-alt py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-bg-alt py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center font-serif text-3xl font-bold text-wood-dark">
-            Deck Staining FAQ
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-wood-light">
-            Common questions about our deck staining services.
-          </p>
+          <div className="text-center">
+            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-forest-light">
+              Common Questions
+            </span>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-wood-dark">
+              Deck Staining FAQ
+            </h2>
+          </div>
           <div className="mt-10">
             <FAQAccordion items={FAQS} />
           </div>
