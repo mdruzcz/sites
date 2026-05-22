@@ -1,0 +1,11 @@
+{
+  "primaryCity": "Brantford",
+  "region": "ON",
+  "cities": [
+    { "slug": "brantford", "name": "Brantford", "description": "Serving all of Brantford with expert concrete driveway installation, stamped concrete, patios, and more." },
+    { "slug": "paris", "name": "Paris", "description": "Professional concrete services in Paris, ON — driveways, patios, broom finish, and stamped concrete." },
+    { "slug": "burford", "name": "Burford", "description": "Expert concrete forming in Burford, ON. Residential and commercial driveways, patios, and concrete work." },
+    { "slug": "st-george", "name": "St. George", "description": "Concrete contractors serving St. George, ON with quality driveway installation and custom patio work." },
+    { "slug": "mount-pleasant", "name": "Mount Pleasant", "description": "Trusted concrete services in Mount Pleasant, ON — driveways, stamped concrete, and broom finish." }
+  ]
+}

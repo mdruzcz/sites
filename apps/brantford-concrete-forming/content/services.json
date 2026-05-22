@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "concrete-driveway-installation",
+    "title": "Concrete Driveway Installation",
+    "shortDescription": "High-strength 32 MPa concrete driveways built for Ontario winters with steel reinforcement and deep gravel base.",
+    "fullDescription": "Make a lasting impression with a driveway engineered for durability and long-term performance. We remove old surfaces and install a solid, steel-reinforced foundation designed to handle heavy loads and harsh Canadian weather. Our driveways are poured at 32 MPa strength with wire mesh or rebar throughout.",
+    "icon": "truck",
+    "image": "/images/Concrete-Driveway-Installation-1.png",
+    "features": ["32 MPa high-strength concrete", "Steel wire mesh or rebar reinforcement", "Deep excavation & compacted gravel base", "Built for freeze-thaw cycles", "Full excavation & grading included"],
+    "order": 1
+  },
+  {
+    "slug": "stamped-concretes",
+    "title": "Stamped Concretes",
+    "shortDescription": "Luxury look of slate, brick, or stone at a fraction of the cost. Custom patterns, colors, and sealed for durability.",
+    "fullDescription": "Get the luxury look of slate, brick, or stone without the high maintenance of pavers. Our stamped concrete provides a seamless, weed-free surface that is custom-colored and professionally sealed to withstand the elements. Ideal for patios, pool decks, and entranceways that demand a premium finish.",
+    "icon": "sparkles",
+    "image": "/images/Stamped-Concrete-1.jpg",
+    "features": ["Endless patterns & color combinations", "Seamless weed-free surface", "Professional sealer coat", "Ideal for patios & pool decks", "Custom colors to match your home"],
+    "order": 2
+  },
+  {
+    "slug": "concrete-patio-installation",
+    "title": "Concrete Patio Installation",
+    "shortDescription": "Durable, rot-free concrete patios for outdoor living. Curves, multi-level platforms, steps, and retaining walls.",
+    "fullDescription": "Forget the hassle of maintaining a wood deck. Our custom concrete patios provide a durable, rot-free foundation for your outdoor living space. From simple pads for hot tubs to expansive stamped entertainment areas, we build patios that look great and last a lifetime.",
+    "icon": "home",
+    "image": "/images/Concrete-Patio-Installation.jpg",
+    "features": ["No rotting, warping, or splintering", "Curves, multi-level platforms & steps", "Low maintenance — sweep and rinse", "Hot tub pads & pool surrounds", "Custom retaining walls available"],
+    "order": 3
+  },
+  {
+    "slug": "broom-finish-concretes",
+    "title": "Broom Finish Concrete",
+    "shortDescription": "Industry-standard non-slip textured finish for driveways, sidewalks, and garage floors. Safe in rain and snow.",
+    "fullDescription": "The perfect balance of function and affordability. Our broom-finished concrete provides a high-traction, non-slip surface essential for Canadian winters. Ideal for driveways, city sidewalks, and garage floors where safety and durability are the top priorities. Available in standard brush or decorative swirl patterns.",
+    "icon": "shield-check",
+    "image": "/images/Broom-Finish-Concrete.jpg",
+    "features": ["Maximum grip in rain & snow", "Available in standard or swirl pattern", "Ideal for driveways & sidewalks", "Garage floor solution", "Most affordable concrete finish"],
+    "order": 4
+  },
+  {
+    "slug": "driveway-replacement",
+    "title": "Driveway Replacement",
+    "shortDescription": "Complete removal of failing asphalt or concrete. Full demolition, disposal, regrading, and steel-reinforced installation.",
+    "fullDescription": "Don't settle for temporary patches. We specialize in complete removal of failing asphalt and concrete driveways, including demolition, disposal, soil regrading, and steel-reinforced concrete installation. Increase your home's value with a driveway built to last 2–3x longer than asphalt.",
+    "icon": "wrench",
+    "image": "/images/65a1a493b5f6179da0d4601b_concrete-driveway-replacement.jpg",
+    "features": ["Full demolition & disposal", "Soil regrading & drainage correction", "Lasts 2–3x longer than asphalt", "No yearly sealing required", "Increases home resale value"],
+    "order": 5
+  }
+]

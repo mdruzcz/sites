@@ -1,0 +1,23 @@
+export const site = {
+  name: "Brantford Concrete Forming",
+  shortName: "BCF",
+  phone: "519-914-5697",
+  phoneHref: "tel:+15199145697",
+  email: "service@brantfordconcreteforming.ca",
+  emailHref: "mailto:service@brantfordconcreteforming.ca",
+  address: { street: "Brantford", city: "Brantford", region: "ON", postal: "N3T 5L8", country: "CA" },
+  addressLine: "Brantford, ON",
+  hours: "Mon–Fri 8AM–5PM · Weekends Closed",
+  yearsExperience: 5,
+  projectsCompleted: 56,
+  serviceAreas: ["Brantford", "Paris", "Burford", "St. George", "Mount Pleasant"],
+  url: "https://brantfordconcreteforming.ca",
+  priceRange: "$8–$14/sq.ft.",
+  responseTime: "1 business day",
+  trustBadges: [
+    { label: "Projects Completed", value: "56+" },
+    { label: "Price Range", value: "$8–$14/sq.ft." },
+    { label: "Concrete Strength", value: "32 MPa" },
+    { label: "Service Areas", value: "Brantford & Area" },
+  ],
+} as const;

@@ -1,0 +1,5 @@
+[
+  { "author": "James L.", "role": "Property Manager", "quote": "We hired for flat work and a concrete pad for our swim spa at a rental property. Everything was clean, and done exactly as promised.", "rating": 5, "service": "concrete-patio-installation", "featured": true },
+  { "author": "Mark T.", "role": "Homeowner", "quote": "These guys did an amazing job on our new driveway. It looks clean, solid, super professional and finished on time!", "rating": 5, "service": "concrete-driveway-installation", "featured": true },
+  { "author": "Lisa R.", "role": "Residential Client", "quote": "We had a stamped concrete patio installed in our backyard and it looks beautiful and has totally transformed our outdoor space.", "rating": 5, "service": "stamped-concretes", "featured": true }
+]

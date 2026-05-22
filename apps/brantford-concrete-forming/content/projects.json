@@ -1,0 +1,8 @@
+[
+  { "slug": "patio-installation-brantford", "title": "Concrete Patio Installation", "service": "concrete-patio-installation", "city": "Brantford", "image": "/images/Concrete-Patio-Installation.jpg", "featured": true, "order": 1 },
+  { "slug": "stamped-concrete-brantford", "title": "Stamped Concrete Patio", "service": "stamped-concretes", "city": "Brantford", "image": "/images/Stamped-Concrete-1.jpg", "featured": true, "order": 2 },
+  { "slug": "driveway-replacement-brantford", "title": "Driveway Replacement", "service": "driveway-replacement", "city": "Brantford", "image": "/images/65a1a493b5f6179da0d4601b_concrete-driveway-replacement.jpg", "featured": true, "order": 3 },
+  { "slug": "patio-installation-paris", "title": "Concrete Patio Installation", "service": "concrete-patio-installation", "city": "Paris", "image": "/images/concrete-patio-installation-1.jpg", "featured": false, "order": 4 },
+  { "slug": "stamped-concrete-brantford-2", "title": "Stamped Concrete Driveway", "service": "stamped-concretes", "city": "Brantford", "image": "/images/Stamped-Concrete-in-Brantford.jpg", "featured": true, "order": 5 },
+  { "slug": "broom-finish-driveway", "title": "Broom Finish Driveway", "service": "broom-finish-concretes", "city": "Brantford", "image": "/images/Broom-Finish-Concrete.jpg", "featured": false, "order": 6 }
+]
