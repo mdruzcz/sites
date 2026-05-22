@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "toronto-deck-stainers",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=toronto-deck-stainers"],
+      "port": 3014
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "author": "Sarah M.",
+    "city": "Richmond Hill",
+    "quote": "Our deck was grey and peeling after just three years. Toronto Deck Stainers came out, did a full assessment, and now it looks better than when it was first built. The prep work they did before staining was thorough — you could tell right away this wasn't a rush job.",
+    "rating": 5,
+    "service": "Deck Restoration",
+    "featured": true
+  },
+  {
+    "author": "James K.",
+    "city": "Vaughan",
+    "quote": "Got three quotes. Toronto Deck Stainers was the only one who told me the truth — that my deck needed a full sand-down before staining, not just a quick coat over the old finish. They were right. The result is stunning and I know it will last.",
+    "rating": 5,
+    "service": "Deck Refinishing",
+    "featured": true
+  },
+  {
+    "author": "Linda P.",
+    "city": "Markham",
+    "quote": "They were on time, respectful of our property, and the finished product is exactly what I was hoping for. The cedar colour we chose looks amazing against our new landscaping. Would absolutely recommend for anyone in the GTA.",
+    "rating": 5,
+    "service": "Deck Staining",
+    "featured": true
+  },
+  {
+    "author": "David R.",
+    "city": "North York",
+    "quote": "I was skeptical about the pricing at first, but after seeing the end result I understand why quality costs more. Our fence and deck look incredible — like we just had new wood installed. The stain they used is clearly a premium product.",
+    "rating": 5,
+    "service": "Fence Staining",
+    "featured": true
+  },
+  {
+    "author": "Karen T.",
+    "city": "Mississauga",
+    "quote": "Quick response to my inquiry, free estimate the next day, and the job was done within the week. No surprise charges, exactly as quoted. The deck looks brand new and they left the yard perfectly clean.",
+    "rating": 5,
+    "service": "Deck Staining",
+    "featured": false
+  },
+  {
+    "author": "Michael B.",
+    "city": "Oakville",
+    "quote": "Used them for our cottage deck in the spring. They power washed, repaired a couple of rotted boards, and then applied a two-coat stain. Three years later and it still looks excellent — no peeling, no greying.",
+    "rating": 5,
+    "service": "Deck Restoration",
+    "featured": false
+  }
+]

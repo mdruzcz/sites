@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "deck-staining",
+    "title": "Deck Staining",
+    "shortDescription": "Premium oil-based stains in an extensive palette — enriching the natural grain while delivering superior UV and moisture protection built for Canadian winters.",
+    "fullDescription": "Professional deck staining is the single most effective way to protect and beautify your outdoor wood surfaces. At Toronto Deck Stainers, we use premium oil-based penetrating stains that soak deep into the wood fibres rather than sitting on top like a film. This means the protection goes where the damage comes from — inside the wood itself. Our stain palette covers everything from natural cedar tones to deep espresso browns, warm honey ambers, and contemporary grey-washes, so your deck complements your home's exterior perfectly. Every stain application includes integrated UV inhibitors that prevent the sun bleaching that turns beautiful cedar grey and dull within one season. We also add mould and mildew inhibitors to the mix, because Toronto's humid spring and summer conditions are prime conditions for growth on untreated wood. After proper pressure washing and surface preparation, our team applies stain in controlled, even passes — never lap marks, never dry edges, never uneven colour. The result is a deep, rich finish that protects your deck for three to five years before requiring a light maintenance coat.",
+    "icon": "brush",
+    "features": [
+      "Extensive palette — natural cedar, honey, espresso, grey-wash, and more",
+      "Oil-based penetrating formula — works inside the wood, not on top",
+      "UV inhibitors — prevents sun bleaching and greying",
+      "Mould & mildew inhibitors — essential for Toronto's humid climate",
+      "Professional application — no lap marks, no dry edges, even coverage",
+      "1-coat and 2-coat options available for every budget"
+    ],
+    "image": "/images/banner-1.webp",
+    "order": 1
+  },
+  {
+    "slug": "deck-sealing",
+    "title": "Deck Sealing",
+    "shortDescription": "Complete waterproofing with a moisture-resistant barrier that blocks freeze-thaw damage, mould growth, and UV degradation — clear or tinted to preserve the natural look.",
+    "fullDescription": "Deck sealing is the most targeted form of wood protection — it creates a clear or lightly tinted waterproof barrier on the surface that physically repels water rather than relying solely on wood absorption. Unlike staining, which adds colour and penetrates deep, sealing focuses entirely on the protective barrier. This is ideal for homeowners who love the current colour of their wood and want to lock it in, or for freshly stained decks that need an added top coat of protection. At Toronto Deck Stainers, we use premium waterproofing sealers specifically formulated for Ontario's climate — engineered to handle heavy spring rainfall, summer humidity, and most importantly, the brutal freeze-thaw cycles that cause untreated decks to crack and warp every winter. Water that soaks into unsealed wood and then freezes expands by roughly 9%, which is enough to split fibres, pop screws, and create the splintering and cracking homeowners discover every spring. Our sealers stop that cycle at the source. They're also UV-resistant, preventing the sun bleaching that greys wood prematurely. We offer both clear sealers (preserves the exact current look) and tinted sealers (adds a light wash of colour while protecting).",
+    "icon": "shield",
+    "features": [
+      "Complete waterproofing — physically repels water absorption",
+      "Freeze-thaw protection — prevents the splitting and cracking Ontario winters cause",
+      "Mould & mildew prevention — stops spore growth in humid conditions",
+      "UV protection — shields wood from sun bleaching and surface degradation",
+      "Clear or tinted options — preserve the natural look or add a light tone",
+      "Extends deck lifespan significantly between major restoration jobs"
+    ],
+    "image": "/images/deck-sealing.webp",
+    "order": 2
+  },
+  {
+    "slug": "deck-refinishing",
+    "title": "Deck Refinishing",
+    "shortDescription": "Full sand-down to bare wood, removal of old failing finishes, repair of surface damage, and application of a fresh premium stain — like new in a day.",
+    "fullDescription": "Deck refinishing is the right choice when the existing finish has failed — whether it's peeling, flaking, turning chalky, or simply worn through to bare grey wood. Rather than trying to patch over a failing finish, our refinishing process starts over from scratch. We begin with professional-grade power sanding that strips the surface back to bare, clean wood, removing all traces of the old stain, sealer, or paint. This step is non-negotiable — applying new stain over failing old finish is one of the most common DIY mistakes, and it results in a blotchy, uneven finish that fails again within months. Once the surface is clean and sanded smooth, we inspect every board for surface cracks, splinters, raised grain, and nail or screw heads that need to be set. Minor surface repairs are made at this stage. We then apply your choice of premium stain in an even, controlled application that the freshly sanded wood absorbs perfectly. The result is a deck that looks brand new — rich colour, smooth surface, and full protection — without the cost of full replacement.",
+    "icon": "tool",
+    "features": [
+      "Full sand-down — strips all old failing finish back to bare wood",
+      "No patch jobs — we start clean for a lasting, even result",
+      "Surface repairs included — splinters, cracks, nail heads set",
+      "Premium stain application over fresh, receptive wood",
+      "Colour refresh or change — pick any shade from our palette",
+      "Dramatically extends deck life vs. replacing boards"
+    ],
+    "image": "/images/deck-refinishing.png",
+    "order": 3
+  },
+  {
+    "slug": "deck-restoration",
+    "title": "Deck Restoration",
+    "shortDescription": "Full structural restoration — board replacement, framework reinforcement, rot repair, and protective coating. From damaged to stunning in one complete project.",
+    "fullDescription": "Deck restoration is the most comprehensive service we offer — it's for decks that have gone beyond cosmetic wear and have real structural issues that need to be addressed. This includes rotted or broken boards, loose or corroded fasteners, unstable railings, compromised ledger connections, and framework damage. Our restoration process starts with a thorough structural inspection to identify every issue before we begin. We document the condition of the deck and provide a clear, itemized scope of work before any tools come out. During restoration, we replace compromised boards with fresh, properly dried lumber, replace corroded fasteners with hot-dipped galvanized or stainless steel hardware, and reinforce any structural connections that have weakened over time. We also address drainage issues — ensuring water doesn't pond on the deck surface or collect at the ledger connection, where rot begins. Once all structural work is complete and inspected, we complete the full staining and sealing process to protect the fresh wood and restore the deck's appearance to better than new. The result is a deck that's safe, structurally sound, and beautiful — without the expense of a full tear-down and rebuild.",
+    "icon": "home",
+    "features": [
+      "Full structural inspection — documented before work begins",
+      "Board replacement — rotted or broken boards swapped for fresh lumber",
+      "Hardware replacement — corroded fasteners upgraded to galvanized or stainless",
+      "Framework reinforcement — ledger connections, posts, and beams tightened",
+      "Drainage correction — eliminates water pooling that causes rot",
+      "Complete staining and sealing to finish the restored structure"
+    ],
+    "image": "/images/deck-restoration.webp",
+    "order": 4
+  },
+  {
+    "slug": "fence-staining",
+    "title": "Fence Staining",
+    "shortDescription": "Deep-penetrating stains that shield your fence from sun damage, moisture, and decay — boosting curb appeal with a clean, durable finish that lasts years.",
+    "fullDescription": "A properly stained fence makes an immediate difference to your property's curb appeal, but more importantly, it's what keeps your fence standing straight and looking good for years instead of months. Untreated cedar and pine fencing absorbs moisture from rain, morning dew, and snowmelt, and then dries out again in the sun — this repeated wetting and drying cycle is what causes boards to cup, split, check, and eventually rot. Our fence staining service uses deep-penetrating oil-based stains that soak into the wood fibres and stabilize the moisture content, dramatically slowing this cycle. The result is a fence that resists warping and splitting, stays cleaner between seasons, and holds its colour for significantly longer than untreated wood. We prep every fence with a thorough pressure wash before staining, which removes dirt, mould, mildew, and any chalking from old finish — all of which would prevent proper absorption if left in place. Our team applies stain carefully on both sides of the fence for complete protection, working systematically to ensure even coverage on every board including hard-to-reach sections. Colour options range from natural cedar through honey amber, medium walnut, dark mahogany, and contemporary grey tones.",
+    "icon": "layers",
+    "features": [
+      "Both sides stained — complete protection on every board",
+      "Deep-penetrating oil-based formula — stabilizes wood moisture content",
+      "Pressure wash prep included — clean surface for proper absorption",
+      "UV, moisture, and mould inhibitors in every stain",
+      "Colour options from natural cedar to deep dark tones",
+      "Priced per linear foot — clear, predictable pricing"
+    ],
+    "image": "/images/fence-staining.webp",
+    "order": 5
+  },
+  {
+    "slug": "power-washing",
+    "title": "Power Washing",
+    "shortDescription": "Professional-grade pressure washing to strip years of dirt, mould, mildew, and old finish — the essential first step before any staining or sealing project.",
+    "fullDescription": "Proper pressure washing is the most important step in any deck staining or restoration project, and it's also the most commonly skipped by DIYers. Staining or sealing over dirty, mouldy, or previously finished wood produces poor adhesion, blotchy colour, and a finish that fails in one to two seasons instead of the expected three to five. Our professional power washing uses commercial-grade equipment operating at pressures and water volumes far beyond what a rented residential unit can deliver. We calibrate the pressure and nozzle distance based on the wood type and condition — too much pressure on soft wood causes surface fuzzing and raised grain, while too little on hard or heavily soiled surfaces leaves contamination behind. We use appropriate deck cleaning solutions where needed to break down embedded mould, mildew, and grey oxidation before rinsing clean. After washing, we allow the correct drying time before any stain or sealer is applied — rushing this step causes moisture entrapment under the finish, which leads to bubbling and peeling. Power washing is available as a standalone service or as the preparatory first step in our staining, sealing, and restoration packages.",
+    "icon": "droplets",
+    "features": [
+      "Commercial-grade equipment — far more effective than rental units",
+      "Calibrated pressure — protects wood while cleaning thoroughly",
+      "Deck cleaning solution where needed — removes mould, mildew, oxidation",
+      "Correct drying time before any finish applied — prevents trapped moisture",
+      "Available standalone or as prep for staining and sealing",
+      "Transforms greyed, dirty decks before any stain is applied"
+    ],
+    "image": "/images/before-1.jpg",
+    "order": 6
+  }
+]
