@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,7 +60,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://analytics.masterdecker.com/script.js"
+          data-website-id="3b5c2f72-435b-423f-85fb-8dfbb875da4e"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
