@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "James R.",
+    "location": "Brantford, ON",
+    "text": "We hired Brantford Retaining Walls to build a retaining wall in our backyard, and the results were amazing. The team was professional, on time, and very clean. Our yard looks completely transformed. Highly recommended!",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Sarah M.",
+    "location": "Paris, ON",
+    "text": "From the first call to the final installation, everything was handled perfectly. They explained the process clearly and delivered exactly what they promised. Our retaining wall is strong, beautiful, and built to last.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Michael D.",
+    "location": "Cambridge, ON",
+    "text": "I was worried about soil erosion on my property, but these guys solved the problem completely. Great workmanship, fair pricing, and excellent customer service. I would definitely use them again.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "David L.",
+    "location": "St. George, ON",
+    "text": "Brantford Retaining Walls did an excellent job on our project. They finished on time and stayed within our budget. The wall is solid and has improved our property value.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Emily T.",
+    "location": "Brantford, ON",
+    "text": "The quality of work is outstanding. They built a custom retaining wall and steps in our backyard, and it looks fantastic. Very honest and hardworking team.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Rachel K.",
+    "location": "Hamilton, ON",
+    "text": "Very reliable and professional company. Communication was great, and the crew respected our property. We are extremely happy with the final result.",
+    "rating": 5,
+    "featured": true
+  }
+]

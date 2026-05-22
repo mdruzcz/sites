@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "residential-retaining-walls",
+    "title": "Residential Retaining Walls",
+    "shortDescription": "Turn unusable hills into functional masterpieces that blend with your home's architecture while providing soil stabilization.",
+    "description": "Turn that unusable hill into a functional masterpiece. We specialize in residential wall systems that blend seamlessly with your home's architecture while providing necessary soil stabilization. From tiered garden walls to driveway and foundation support, we build stylish stone borders that define your outdoor spaces.",
+    "features": [
+      "Tiered garden walls for multi-level planting beds",
+      "Driveway & foundation support walls",
+      "Patio enclosures & borders",
+      "Custom height and material options",
+      "Proper drainage included"
+    ],
+    "image": "/images/Residential-Retaining-Walls.png"
+  },
+  {
+    "slug": "armour-stone-installation",
+    "title": "Armour Stone Installation",
+    "shortDescription": "The gold standard for Brantford properties near the Grand River or with significant erosion issues. Natural beauty meets extreme durability.",
+    "description": "Armour stone is the gold standard for Brantford properties near the Grand River or those with significant erosion issues. Large-scale limestone blocks offer a rugged, timeless look while withstanding massive soil pressure and the harshest Ontario winters. Faster installation on major slopes with instant visual impact.",
+    "features": [
+      "Natural limestone blocks",
+      "Extreme durability & weight capacity",
+      "Ideal for large grade changes",
+      "Timeless aesthetic appeal",
+      "Faster installation on slopes"
+    ],
+    "image": "/images/Armour-Stone-Installation.png"
+  },
+  {
+    "slug": "interlocking-concrete-blocks",
+    "title": "Interlocking Concrete Blocks",
+    "shortDescription": "Clean lines and modern appeal. Engineered block systems ideal for tiered gardens, driveway edges, and structural support.",
+    "description": "Interlocking concrete block systems offer clean lines and modern appeal. These engineered systems are ideal for tiered gardens, driveway edges, and structural support. Perfect for tight spaces where precision matters, with a wide range of colors and textures available to match your home.",
+    "features": [
+      "Engineered locking system",
+      "Modern clean-line aesthetic",
+      "Wide color and texture range",
+      "Ideal for tiered designs",
+      "Precise fit for tight spaces"
+    ],
+    "image": "/images/Interlocking-Concrete-Blocks.png"
+  },
+  {
+    "slug": "erosion-control-drainage",
+    "title": "Erosion Control & Drainage",
+    "shortDescription": "Professional-grade weeping tiles and gravel backfill systems to manage hydrostatic pressure and protect your retaining wall investment.",
+    "description": "A wall is only as good as the drainage behind it. We install professional-grade weeping tiles and gravel backfill to manage hydrostatic pressure — the number one cause of wall failure. Our drainage solutions protect your investment and ensure your wall stands strong for decades.",
+    "features": [
+      "Weep holes & perforated drain pipes",
+      "Gravel backfill systems",
+      "Hydrostatic pressure management",
+      "French drain integration",
+      "Proper grading & water redirection"
+    ],
+    "image": "/images/Erosion-Control-Drainage-Solutions.png"
+  },
+  {
+    "slug": "engineered-commercial-walls",
+    "title": "Engineered & Commercial Walls",
+    "shortDescription": "Fully engineered wall solutions for projects requiring municipal approval or high-load capacity with Geogrid reinforcement.",
+    "description": "For projects requiring municipal approval or high-load capacity, we offer fully engineered wall solutions. We manage complex elevations for new builds and industrial properties, utilizing advanced Geogrid soil-stabilization fabrics for walls over 4 feet with proper drainage systems included.",
+    "features": [
+      "Municipal code compliance",
+      "Geogrid reinforcement",
+      "Site grading for complex elevations",
+      "Engineered drawings available",
+      "High-load capacity design"
+    ],
+    "image": "/images/Engineered-Commercial-Walls.png"
+  },
+  {
+    "slug": "wall-repair-restoration",
+    "title": "Wall Repair & Restoration",
+    "shortDescription": "Don't wait for a collapse. Our restoration experts fix leaning, bulging, or cracking walls through excavation, re-leveling, and drainage retrofitting.",
+    "description": "Is your current wall leaning, bulging, or cracking? Don't wait for a collapse. Our restoration experts can often save a wall through excavation and re-leveling, drainage retrofitting, and stone matching to replace damaged blocks that match your existing landscape.",
+    "features": [
+      "Excavation & re-leveling",
+      "Drainage retrofitting",
+      "Stone matching & replacement",
+      "Structural assessment",
+      "Preventative maintenance plans"
+    ],
+    "image": "/images/Wall-Repair-Restoration.png"
+  }
+]

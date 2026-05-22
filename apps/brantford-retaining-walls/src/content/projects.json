@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Armour Stone Retaining Wall",
+    "slug": "armour-stone-retaining-wall",
+    "service": "armour-stone-installation",
+    "location": "Brantford, ON",
+    "description": "Large-scale armour stone installation for a residential property with significant grade change.",
+    "image": "/images/Armour-Stone-Installation.png",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Engineered Commercial Wall",
+    "slug": "engineered-commercial-wall",
+    "service": "engineered-commercial-walls",
+    "location": "Cambridge, ON",
+    "description": "Commercial retaining wall with Geogrid reinforcement for a new development site.",
+    "image": "/images/Engineered-Commercial-Walls.png",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Wall Repair & Restoration",
+    "slug": "wall-repair-restoration-project",
+    "service": "wall-repair-restoration",
+    "location": "Paris, ON",
+    "description": "Complete restoration of a failing residential retaining wall with drainage retrofitting.",
+    "image": "/images/Wall-Repair-Restoration.png",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Residential Garden Wall",
+    "slug": "residential-garden-wall",
+    "service": "residential-retaining-walls",
+    "location": "Brantford, ON",
+    "description": "Multi-tiered garden retaining wall creating usable planting beds on a sloped backyard.",
+    "image": "/images/Residential-Retaining-Walls.png",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Interlocking Block System",
+    "slug": "interlocking-block-system",
+    "service": "interlocking-concrete-blocks",
+    "location": "Hamilton, ON",
+    "description": "Modern interlocking concrete block wall with clean lines and tiered garden design.",
+    "image": "/images/Interlocking-Concrete-Blocks.png",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "Erosion Control Solution",
+    "slug": "erosion-control-solution",
+    "service": "erosion-control-drainage",
+    "location": "St. George, ON",
+    "description": "Complete erosion control system with weeping tiles, gravel backfill, and retaining wall.",
+    "image": "/images/Erosion-Control-Drainage-Solutions.png",
+    "featured": true
+  }
+]

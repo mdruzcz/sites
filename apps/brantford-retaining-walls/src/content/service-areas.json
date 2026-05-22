@@ -1,0 +1,35 @@
+{
+  "region": "Brant County & Surrounding Areas",
+  "cities": [
+    {
+      "name": "Brantford",
+      "slug": "brantford",
+      "description": "Serving all of Brantford with professional retaining wall installation, armour stone, and erosion control solutions.",
+      "population": "104,000+"
+    },
+    {
+      "name": "Paris",
+      "slug": "paris",
+      "description": "Expert retaining wall contractors serving Paris, ON. Custom walls built to handle local soil conditions and Grand River terrain.",
+      "population": "14,000+"
+    },
+    {
+      "name": "Cambridge",
+      "slug": "cambridge",
+      "description": "Professional retaining wall services in Cambridge. From residential garden walls to commercial engineered solutions.",
+      "population": "138,000+"
+    },
+    {
+      "name": "Hamilton",
+      "slug": "hamilton",
+      "description": "Retaining wall installation and repair across Hamilton. Armour stone, interlocking blocks, and drainage solutions.",
+      "population": "580,000+"
+    },
+    {
+      "name": "St. George",
+      "slug": "st-george",
+      "description": "Retaining wall specialists serving St. George and surrounding Brant County communities.",
+      "population": "3,500+"
+    }
+  ]
+}

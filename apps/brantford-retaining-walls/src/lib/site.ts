@@ -1,0 +1,42 @@
+export const site = {
+  name: "Brantford Retaining Walls",
+  shortName: "BRW",
+  phone: "519-914-5697",
+  phoneHref: "tel:+15199145697",
+  email: "sales@brantfordretainingwalls.ca",
+  emailHref: "mailto:sales@brantfordretainingwalls.ca",
+  address: {
+    city: "Brantford",
+    region: "ON",
+    country: "CA",
+  },
+  addressLine: "Brantford, ON",
+  hours: "Mon – Fri · 8 AM – 5 PM",
+  yearsExperience: 10,
+  url: "https://brantfordretainingwalls.ca",
+  tagline: "Strong. Durable. Built to Last.",
+  description:
+    "Professional retaining wall contractors in Brantford. We design and build high-quality retaining walls that protect your property, prevent soil erosion, and enhance curb appeal across Brantford and Brant County.",
+  serviceAreas: ["Brantford", "Paris", "Cambridge", "Hamilton", "St. George", "Brant County"],
+  stats: {
+    projectsCompleted: 120,
+    yearsExperience: 10,
+    satisfaction: 100,
+    warrantyYears: 50,
+  },
+  features: [
+    "Free on-site estimate",
+    "Engineered for Ontario winters",
+    "Proper drainage systems included",
+    "Geogrid reinforcement on walls 4ft+",
+    "Fully insured & licensed",
+    "Clean site promise",
+  ],
+  trustBadges: [
+    { label: "Projects Completed", value: "120+" },
+    { label: "Years Experience", value: "10+" },
+    { label: "Satisfaction", value: "100%" },
+    { label: "Wall Lifespan", value: "50+ yrs" },
+  ],
+  responseTime: "24–48 hours",
+} as const;

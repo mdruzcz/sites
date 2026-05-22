@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --charcoal: #2C3E2D;
+  --charcoal-700: #1E2D1F;
+  --charcoal-900: #131A14;
+  --concrete: #6C757D;
+  --concrete-200: #C7CFDD;
+  --accent: #C17817;
+  --accent-600: #A56614;
+  --accent-700: #8A5510;
+  --background: #FFFFFF;
+  --surface: #F7F5F2;
+  --border: #E9ECEF;
+  --foreground: #2C3E2D;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-inter, system-ui), -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat, system-ui), sans-serif;
+}
+
+.bg-charcoal { background-color: var(--charcoal); }
+.bg-charcoal-700 { background-color: var(--charcoal-700); }
+.bg-charcoal-900 { background-color: var(--charcoal-900); }
+.bg-accent { background-color: var(--accent); }
+.bg-surface { background-color: var(--surface); }
+
+.text-charcoal { color: var(--charcoal); }
+.text-concrete { color: var(--concrete); }
+.text-accent { color: var(--accent); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-montserrat, system-ui), sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  border: 2px solid var(--accent);
+}
+.btn-primary:hover {
+  background-color: var(--accent-600);
+  border-color: var(--accent-600);
+}
+
+.btn-secondary {
+  background-color: var(--charcoal);
+  color: white;
+  border: 2px solid var(--charcoal);
+}
+.btn-secondary:hover {
+  background-color: var(--charcoal-700);
+  border-color: var(--charcoal-700);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.6);
+}
+.btn-outline-white:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: var(--font-montserrat, system-ui), sans-serif;
+}
+
+.h-display {
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+
+@media (min-width: 640px) {
+  .section-title { font-size: 2.25rem; }
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(44,62,45,0.88) 0%, rgba(44,62,45,0.6) 100%);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
