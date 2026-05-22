@@ -1,8 +1,8 @@
 export const site = {
   name: "Ontario Ramp Solutions",
   shortName: "ORS",
-  phone: "(519) 555-0100",
-  phoneHref: "tel:+15195550100",
+  phone: "(519) 266-6796",
+  phoneHref: "tel:+15192666796",
   email: "info@ontariorampsolutions.ca",
   emailHref: "mailto:info@ontariorampsolutions.ca",
   address: {

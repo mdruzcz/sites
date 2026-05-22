@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices, getServiceBySlug, getServiceAreas } from "@/lib/content";
 import { CtaBand } from "@/components/CtaBand";
@@ -55,9 +56,18 @@ export default async function ServicePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
 
-      {/* Hero */}
-      <section className="hero-gradient text-white py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero with background image */}
+      <section className="relative isolate text-white py-20 sm:py-28 overflow-hidden bg-[#0057A8]">
+        <Image
+          src={service.image}
+          alt={`${service.title} by Ontario Ramp Solutions - Wheelchair accessibility in Ontario`}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0057A8]/95 via-[#0057A8]/85 to-[#0057A8]/55" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-blue-200 mb-6">
             <Link href="/" className="hover:text-white">Home</Link>
             <span className="mx-2">/</span>
@@ -66,10 +76,10 @@ export default async function ServicePage({
             <span>{service.title}</span>
           </nav>
           <p className="eyebrow text-blue-200">Service</p>
-          <h1 className="h-display text-4xl sm:text-5xl text-white mb-4 max-w-3xl">
+          <h1 className="h-display text-4xl sm:text-5xl text-white mb-4 max-w-3xl drop-shadow-lg">
             {service.title}
           </h1>
-          <p className="text-blue-100 text-lg max-w-3xl leading-relaxed">{service.shortDescription}</p>
+          <p className="text-blue-50 text-lg max-w-3xl leading-relaxed drop-shadow">{service.shortDescription}</p>
         </div>
       </section>
 
