@@ -27,11 +27,26 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[var(--charcoal)] min-h-[540px] sm:min-h-[620px] flex items-center">
+        <Image
+          src="/images/Concrete-Driveways-scaled.png"
+          alt="Premium stamped concrete driveway installation by Total Brantford Concrete in Brantford, Ontario"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-60"
+        />
         <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
               "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.04) 2px, rgba(255,255,255,0.04) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(15,17,21,0.85) 0%, rgba(15,17,21,0.65) 50%, rgba(15,17,21,0.45) 100%)",
           }}
         />
         <div className="hero-overlay absolute inset-0" />
