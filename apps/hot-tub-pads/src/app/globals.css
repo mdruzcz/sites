@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --white:        #FFFFFF;
+  --off-white:    #F8F9FB;
+  --light-bg:     #f1f3f1;
+  --navy:         #223035;
+  --navy-dark:    #1a252a;
+  --navy-light:   #2d4148;
+  --teal:         #0e4d64;
+  --orange:       #f47a55;
+  --orange-dark:  #e06040;
+  --orange-light: #f8957a;
+  --orange-pale:  #fef3ef;
+  --slate-muted:  #6b7c85;
+  --text:         #223035;
+  --accent:       #f47a55;
+}
+
+@theme inline {
+  --color-white:        var(--white);
+  --color-off-white:    var(--off-white);
+  --color-light-bg:     var(--light-bg);
+  --color-navy:         var(--navy);
+  --color-navy-dark:    var(--navy-dark);
+  --color-navy-light:   var(--navy-light);
+  --color-teal:         var(--teal);
+  --color-orange:       var(--orange);
+  --color-orange-dark:  var(--orange-dark);
+  --color-orange-light: var(--orange-light);
+  --color-orange-pale:  var(--orange-pale);
+  --color-slate-muted:  var(--slate-muted);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-poppins, var(--font-inter, Arial, Helvetica, sans-serif));
+  letter-spacing: -0.02em;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #f47a55 0%, #e06040 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease-out forwards; }
