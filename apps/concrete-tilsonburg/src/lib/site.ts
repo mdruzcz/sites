@@ -1,8 +1,8 @@
 export const site = {
   name: "Concrete Tilsonburg",
   shortName: "Concrete Tilsonburg",
-  phone: "(833) 243-3987",
-  phoneHref: "tel:+18332433987",
+  phone: "(519) 878-6735",
+  phoneHref: "tel:+15198786735",
   email: "service@concretetilsonburg.ca",
   emailHref: "mailto:service@concretetilsonburg.ca",
   address: {

@@ -7,31 +7,43 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group card overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+      className="img-card group aspect-[4/3] block"
+      aria-label={`${service.title} — learn more`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--surface)]">
-        <Image
-          src={service.image}
-          alt={`${service.title} — Concrete Tilsonburg, Tillsonburg ON`}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute top-3 left-3 w-12 h-12 rounded-lg bg-[var(--charcoal)] flex items-center justify-center">
-          <ServiceIcon name={service.icon} className="w-6 h-6 text-[var(--accent)]" />
-        </div>
+      <Image
+        src={service.image}
+        alt={`${service.title} — Concrete Tilsonburg, Tillsonburg ON`}
+        fill
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+
+      {/* Gradient overlay */}
+      <div className="img-card-overlay" aria-hidden="true" />
+
+      {/* Icon badge */}
+      <div className="absolute top-4 left-4 w-11 h-11 rounded-lg bg-[var(--accent)] flex items-center justify-center shadow-lg z-10">
+        <ServiceIcon name={service.icon} className="w-5 h-5 text-white" />
       </div>
-      <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-bold text-lg text-[var(--charcoal)] group-hover:text-[var(--accent)] transition-colors mb-2">
+
+      {/* Text content */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+        <h3 className="font-bold text-lg text-white leading-snug mb-1 group-hover:text-[var(--accent)] transition-colors">
           {service.title}
         </h3>
-        <p className="text-sm text-[var(--concrete)] leading-relaxed flex-1">
+        <p className="text-sm text-white/75 leading-snug line-clamp-2">
           {service.shortDescription}
         </p>
-        <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-[var(--accent)]">
+        <div className="mt-3 flex items-center gap-1.5 text-xs font-bold text-[var(--accent)] uppercase tracking-wide">
           Learn more
-          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg
+            className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </div>
       </div>

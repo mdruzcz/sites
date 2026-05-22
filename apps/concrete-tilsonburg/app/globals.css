@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --charcoal: #2B2D42;
-  --charcoal-700: #1F2133;
-  --charcoal-900: #15172A;
-  --concrete: #8D99AE;
-  --concrete-200: #C7CFDD;
-  --accent: #F3722C;
-  --accent-600: #DC5C13;
-  --accent-700: #B94A0E;
-  --background: #EDF2F4;
-  --surface: #DDE3E7;
-  --border: #C7CFDD;
-  --foreground: #2B2D42;
+  /* Deep navy-charcoal + warm stone + burnt orange */
+  --charcoal: #111827;
+  --charcoal-700: #0C1321;
+  --charcoal-900: #070D18;
+  --concrete: #6B7280;
+  --concrete-200: #9CA3AF;
+  --accent: #E8561A;
+  --accent-600: #CF450E;
+  --accent-700: #A83308;
+  --background: #F4F0EA;
+  --surface: #EAE5DA;
+  --border: #D5CEC4;
+  --foreground: #111827;
+  --stone: #FAF8F5;
 }
 
 html, body {
@@ -21,39 +23,41 @@ html, body {
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
   -webkit-font-smoothing: antialiased;
 }
 
-.bg-charcoal { background-color: var(--charcoal); }
+/* Utility classes */
+.bg-charcoal     { background-color: var(--charcoal); }
 .bg-charcoal-900 { background-color: var(--charcoal-900); }
-.bg-concrete { background-color: var(--concrete); }
-.bg-accent { background-color: var(--accent); }
-.bg-surface { background-color: var(--surface); }
+.bg-concrete     { background-color: var(--concrete); }
+.bg-accent       { background-color: var(--accent); }
+.bg-surface      { background-color: var(--surface); }
+.text-charcoal   { color: var(--charcoal); }
+.text-concrete   { color: var(--concrete); }
+.text-accent     { color: var(--accent); }
+.border-accent   { border-color: var(--accent); }
 
-.text-charcoal { color: var(--charcoal); }
-.text-concrete { color: var(--concrete); }
-.text-accent { color: var(--accent); }
-
-.border-accent { border-color: var(--accent); }
-
+/* Card */
 .card {
   border-radius: 0.75rem;
   border: 1px solid var(--border);
   background: white;
-  box-shadow: 0 1px 2px rgba(43, 45, 66, 0.05);
+  box-shadow: 0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
 }
 
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
   font-size: 0.875rem;
-  transition: all 150ms ease;
+  letter-spacing: 0.01em;
+  transition: all 180ms ease;
   cursor: pointer;
   min-height: 44px;
 }
@@ -61,11 +65,12 @@ body {
 .btn-primary {
   background-color: var(--accent);
   color: white;
-  box-shadow: 0 2px 6px rgba(243, 114, 44, 0.25);
+  box-shadow: 0 2px 8px rgba(232, 86, 26, 0.30);
 }
 .btn-primary:hover {
   background-color: var(--accent-600);
-  box-shadow: 0 4px 10px rgba(243, 114, 44, 0.35);
+  box-shadow: 0 5px 14px rgba(232, 86, 26, 0.40);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -79,12 +84,13 @@ body {
 }
 
 .btn-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
   color: white;
   background: transparent;
 }
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
 .btn-dark {
@@ -95,60 +101,130 @@ body {
   background-color: var(--charcoal-700);
 }
 
+.btn-light {
+  background-color: white;
+  color: var(--charcoal);
+  box-shadow: 0 1px 4px rgba(17, 24, 39, 0.12);
+}
+.btn-light:hover {
+  background-color: var(--stone);
+}
+
+/* Typography */
 .h-display {
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
   color: var(--accent);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Use on dark sections where eyebrow needs to be light */
+.eyebrow-light {
+  color: var(--accent);
 }
 
 .prose-cd p {
   margin-bottom: 1rem;
   line-height: 1.7;
-  color: #475569;
+  color: #4B5563;
 }
 
+/* Shimmer skeleton */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
 
 .shimmer {
-  background: linear-gradient(90deg, #DDE3E7 25%, #C7CFDD 50%, #DDE3E7 75%);
+  background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 0.5rem;
 }
 
+/* Hero gradient overlay */
 .hero-gradient {
-  background:
-    linear-gradient(180deg, rgba(43, 45, 66, 0.85) 0%, rgba(43, 45, 66, 0.7) 100%);
+  background: linear-gradient(
+    170deg,
+    rgba(7, 13, 24, 0.82) 0%,
+    rgba(7, 13, 24, 0.60) 55%,
+    rgba(7, 13, 24, 0.78) 100%
+  );
 }
 
-.section-divider-top {
-  background-image: linear-gradient(180deg, var(--background) 0%, white 100%);
-}
-
-/* Accent corner */
-.corner-accent {
+/* Image overlay card (service cards) */
+.img-card {
   position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
 }
-.corner-accent::before {
-  content: "";
+
+.img-card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 13, 24, 0.92) 0%,
+    rgba(7, 13, 24, 0.45) 50%,
+    rgba(7, 13, 24, 0.08) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+.img-card:hover .img-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(7, 13, 24, 0.96) 0%,
+    rgba(7, 13, 24, 0.60) 55%,
+    rgba(7, 13, 24, 0.20) 100%
+  );
+}
+
+/* Accent left-border accent for "why us" items */
+.feature-item {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* Section accent divider used inside dark sections */
+.accent-dot {
+  width: 2.5rem;
+  height: 3px;
   background: var(--accent);
-  border-radius: 4px 0 0 4px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* Stat number display (large) */
+.stat-value {
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* Angled divider between hero and stats */
+.clip-hero {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
 }
