@@ -14,16 +14,16 @@
       "port": 3005
     },
     {
-      "name": "spotless-deck-staining",
+      "name": "woodstock-concrete-forming",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--workspace=spotless-deck-staining"],
-      "port": 3007
+      "runtimeArgs": ["run", "dev", "--workspace=woodstock-concrete-forming"],
+      "port": 3006
     },
     {
-      "name": "total-brantford-concrete",
+      "name": "hot-tub-pads",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--workspace=total-brantford-concrete"],
-      "port": 3008
+      "runtimeArgs": ["run", "dev", "--workspace=hot-tub-pads"],
+      "port": 3013
     }
   ]
 }
