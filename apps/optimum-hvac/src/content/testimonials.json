@@ -1,0 +1,42 @@
+[
+  {
+    "name": "TODO: Replace with real client name",
+    "location": "Woodstock, ON",
+    "text": "TODO: Replace with real Google review. Placeholder: Optimum HVAC installed a new high-efficiency furnace for us last fall. The team was professional, on time, and cleaned up completely. We've noticed a big difference in our heating bills already.",
+    "rating": 5,
+    "service": "Furnace Installation",
+    "featured": true
+  },
+  {
+    "name": "TODO: Replace with real client name",
+    "location": "Ingersoll, ON",
+    "text": "TODO: Replace with real Google review. Placeholder: Our AC stopped working on the hottest day of the summer. Optimum HVAC had a technician out within a few hours and had us up and running the same day. Incredible service.",
+    "rating": 5,
+    "service": "AC Repair",
+    "featured": true
+  },
+  {
+    "name": "TODO: Replace with real client name",
+    "location": "Tillsonburg, ON",
+    "text": "TODO: Replace with real Google review. Placeholder: We switched from oil heating to a heat pump system. Optimum HVAC handled everything — the installation, permits, and all the rebate applications. We received over $12,000 back. Highly recommend.",
+    "rating": 5,
+    "service": "Heat Pump Installation",
+    "featured": true
+  },
+  {
+    "name": "TODO: Replace with real client name",
+    "location": "Norwich, ON",
+    "text": "TODO: Replace with real Google review. Placeholder: We signed up for the Gold maintenance plan two years ago. The annual tune-ups have kept our furnace and AC running perfectly, and the priority service is a real bonus when something comes up.",
+    "rating": 5,
+    "service": "Maintenance Plan",
+    "featured": false
+  },
+  {
+    "name": "TODO: Replace with real client name",
+    "location": "Burgessville, ON",
+    "text": "TODO: Replace with real Google review. Placeholder: Optimum HVAC installed a mini-split in our addition last spring. It heats and cools perfectly, and it was done in one day. Fair price and great workmanship.",
+    "rating": 5,
+    "service": "Mini-Split Installation",
+    "featured": false
+  }
+]

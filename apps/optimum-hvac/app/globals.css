@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0F2940;
+  --navy-700: #0a1e30;
+  --navy-900: #061220;
+  --heat: #F26B1D;
+  --heat-600: #d95a10;
+  --heat-700: #b84c0e;
+  --cool: #3FA9E0;
+  --cool-600: #2d8fc5;
+  --ink: #1A222C;
+  --slate: #5C6B7A;
+  --surface: #F5F7FA;
+  --border: #E2E8F0;
+  --background: #FFFFFF;
+  --foreground: #1A222C;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-inter, system-ui), -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-jakarta, system-ui), sans-serif;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 150ms ease;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background-color: var(--heat);
+  color: white;
+  box-shadow: 0 2px 8px rgba(242, 107, 29, 0.28);
+}
+.btn-primary:hover {
+  background-color: var(--heat-600);
+  box-shadow: 0 4px 14px rgba(242, 107, 29, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-navy {
+  background-color: var(--navy);
+  color: white;
+  box-shadow: 0 2px 8px rgba(15, 41, 64, 0.28);
+}
+.btn-navy:hover {
+  background-color: var(--navy-700);
+  box-shadow: 0 4px 14px rgba(15, 41, 64, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-cool {
+  background-color: var(--cool);
+  color: white;
+}
+.btn-cool:hover {
+  background-color: var(--cool-600);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 2px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--navy);
+  color: white;
+}
+
+.btn-outline-white {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+.btn-outline-white:hover {
+  background: white;
+  color: var(--navy);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: white;
+  box-shadow: 0 1px 3px rgba(26, 34, 44, 0.06);
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--heat);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow-cool {
+  display: inline-block;
+  color: var(--cool);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.corner-accent {
+  border-left: 4px solid var(--heat);
+}
+
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(15, 41, 64, 0.82) 0%, rgba(15, 41, 64, 0.68) 100%);
+}
+
+.rebate-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a4a6e 100%);
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.section-sm {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 0.375rem;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  background: white;
+  color: var(--ink);
+  transition: border-color 150ms, box-shadow 150ms;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--cool);
+  box-shadow: 0 0 0 3px rgba(63, 169, 224, 0.15);
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.25rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.04em;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #F5F7FA 25%, #E2E8F0 50%, #F5F7FA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
