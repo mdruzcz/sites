@@ -14,9 +14,12 @@ export const site = {
   hours: "Mon – Fri · 8 AM – 6 PM | Sat · 9 AM – 3 PM",
   hoursEmergency: "24/7 Emergency Service Available",
   url: "https://optimumhvac.ca",
-  tagline: "Oxford County's TSSA-Certified HVAC Specialists.",
+  tagline: "Oxford County's TSSA-Certified HVAC Specialists. Est. 2019.",
   description:
-    "Optimum HVAC delivers expert furnace repair, AC installation, heat pump conversions, and indoor air quality solutions across Oxford County and southwestern Ontario. TSSA G2 certified. 24/7 emergency service.",
+    "Optimum HVAC delivers expert furnace repair, AC installation, heat pump conversions, and indoor air quality solutions across Oxford County and southwestern Ontario. Founded by Dino — TSSA G2 certified, honest, and hardworking. 24/7 emergency service.",
+  founder: "Dino",
+  foundedYear: 2019,
+  founderOrigin: "Greece",
   responseTime: "same day",
   serviceAreas: [
     "Burgessville",

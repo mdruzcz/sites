@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { localBusinessSchema } from "@/lib/jsonld";
 import { getFeaturedServices, getFeaturedTestimonials, getServiceAreas } from "@/lib/content";
@@ -200,6 +201,83 @@ export default function HomePage() {
                 <a href={site.phoneHref} className="text-xl font-extrabold text-[var(--navy)] hover:text-[var(--heat)] transition-colors">
                   {site.phone}
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Dino */}
+      <section className="section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] col-span-2 sm:col-span-1">
+                  <Image
+                    src="/images/dino-brazing-close.jpg"
+                    alt="Dino, founder of Optimum HVAC, performing brazing work on an HVAC system in Oxford County"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                </div>
+                <div className="hidden sm:flex flex-col gap-4">
+                  <div className="relative rounded-2xl overflow-hidden flex-1">
+                    <Image
+                      src="/images/dino-brazing-hvac.jpg"
+                      alt="Dino from Optimum HVAC soldering refrigerant lines on an AC evaporator coil"
+                      fill
+                      className="object-cover"
+                      sizes="15vw"
+                    />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden flex-1">
+                    <Image
+                      src="/images/furnace-installation-basement.jpg"
+                      alt="Optimum HVAC furnace installation in a Woodstock Ontario home"
+                      fill
+                      className="object-cover"
+                      sizes="15vw"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-[var(--heat)] text-white rounded-xl px-4 py-3 text-center shadow-lg">
+                <p className="font-extrabold text-2xl">2019</p>
+                <p className="text-xs font-bold uppercase tracking-wider opacity-80">Est.</p>
+              </div>
+            </div>
+            <div>
+              <p className="eyebrow">The Tech Behind the Name</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--navy)] tracking-tight mb-5">
+                Meet Dino
+              </h2>
+              <div className="space-y-4 text-[var(--slate)] leading-relaxed">
+                <p>
+                  I came to Canada from Greece with a straightforward approach to life and work:
+                  be honest, work hard, and genuinely help people. That&apos;s what Optimum HVAC is built on.
+                </p>
+                <p>
+                  Since founding the company in 2019, I&apos;ve served Oxford County homeowners as a
+                  TSSA G2 certified gas technician — the licence Ontario requires for gas appliance work.
+                  When I show up at your door, you deal with me directly. No subcontractors, no runarounds,
+                  no upsells you don&apos;t need.
+                </p>
+                <p>
+                  I&apos;ll tell you exactly what&apos;s wrong, what it costs to fix it, and what I&apos;d
+                  do if it were my own house. That&apos;s the standard I hold myself to on every job.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="text-sm font-semibold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-[var(--slate)]">🇬🇷 Originally from Greece</span>
+                <span className="text-sm font-semibold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-[var(--slate)]">🏅 TSSA G2 Certified</span>
+                <span className="text-sm font-semibold px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-[var(--slate)]">📍 Based in Burgessville</span>
+              </div>
+              <div className="mt-6">
+                <Link href="/about" className="btn btn-outline">
+                  More About Dino →
+                </Link>
               </div>
             </div>
           </div>
