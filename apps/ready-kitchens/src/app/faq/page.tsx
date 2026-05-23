@@ -19,7 +19,11 @@ const FAQ = [
   },
   {
     q: "What are the standard sizes?",
-    a: "Base cabinets are 34½\" tall × 24\" deep. Wall cabinets are 36\" tall × 12\" deep (over-range and over-fridge variants are 18\" tall). The 90\" tall pantry is 24\" deep × 24\" wide.",
+    a: "Base cabinets are 34½\" tall × 24\" deep. Wall cabinets are 36\" tall × 12\" deep. Over-fridge cabinets are 36\" wide × 18\" tall × 24\" deep. The 90\" tall pantry is 24\" deep × 24\" wide. We don't include an over-range cabinet — the layout leaves a 30\" gap for a wall-mounted chimney hood you supply.",
+  },
+  {
+    q: "Why isn't there a cabinet above the range?",
+    a: "By design — every kit leaves a 30\" gap above the range so you can mount a wall-mounted chimney hood (the kind that vents straight up the wall). We don't sell the hood; you bring your own. This is the modern look and gives you better venting than an over-the-range microwave cabinet.",
   },
   {
     q: "Can I add or swap cabinets in a kit?",

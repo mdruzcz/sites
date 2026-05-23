@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KitsPage() {
-  const kits = getAllKits();
+export default async function KitsPage() {
+  const kits = await getAllKits();
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
       <header className="max-w-3xl">

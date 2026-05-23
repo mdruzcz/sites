@@ -50,13 +50,13 @@ export async function submitOrder(input: SubmitInput) {
   const ok = await verifyTurnstile(input.turnstile_token);
   if (!ok) throw new Error("Captcha failed — please try again");
 
-  const items = input.lines
-    .map((l) => {
-      const kit = getKitBySlug(l.slug);
-      if (!kit) return null;
-      return { line: l, kit };
-    })
-    .filter((x): x is { line: { slug: string; qty: number }; kit: NonNullable<ReturnType<typeof getKitBySlug>> } => x !== null);
+  const resolved = await Promise.all(
+    input.lines.map(async (l) => {
+      const kit = await getKitBySlug(l.slug);
+      return kit ? { line: l, kit } : null;
+    }),
+  );
+  const items = resolved.filter((x): x is { line: { slug: string; qty: number }; kit: NonNullable<Awaited<ReturnType<typeof getKitBySlug>>> } => x !== null);
 
   if (items.length === 0) throw new Error("Cart is empty");
 
@@ -144,14 +144,14 @@ export async function submitOrder(input: SubmitInput) {
         </tbody>
       </table>
       <p>Pickup: <strong>50432 Yorke Line, Belmont, ON</strong>. We&rsquo;ll confirm a time when we reply.</p>
-      <p style="margin-top:24px;">— ${SITE.name}<br><span style="color:#666;font-size:13px;">${SITE.email} · ${SITE.phoneDisplay}</span></p>
+      <p style="margin-top:24px;">— ${SITE.name}<br><span style="color:#666;font-size:13px;">${SITE.phoneDisplay} · readykitchens.ca/contact</span></p>
     </div>`;
 
   if (process.env.RESEND_API_KEY) {
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
       const from = process.env.CONTACT_FROM_EMAIL || `noreply@${SITE.domain}`;
-      const to = process.env.CONTACT_TO_EMAIL || SITE.email;
+      const to = process.env.CONTACT_TO_EMAIL || SITE.internalEmail;
       await resend.emails.send({
         from,
         to,

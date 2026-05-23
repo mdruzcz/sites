@@ -6,8 +6,8 @@ import { formatCad } from "@/lib/utils";
 
 export const revalidate = 3600;
 
-export default function HomePage() {
-  const kits = getAllKits();
+export default async function HomePage() {
+  const kits = await getAllKits();
   const startingPrice = Math.min(...kits.map((k) => k.price_cad));
 
   const ldJson = {
@@ -17,7 +17,7 @@ export default function HomePage() {
     image: `${SITE.url}/og.jpg`,
     url: SITE.url,
     telephone: SITE.phone,
-    email: SITE.email,
+    contactPoint: { "@type": "ContactPoint", contactType: "customer service", telephone: SITE.phone, areaServed: "CA" },
     address: {
       "@type": "PostalAddress",
       streetAddress: "50432 Yorke Line",

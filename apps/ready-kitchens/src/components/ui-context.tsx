@@ -18,6 +18,7 @@ import {
   writeCart,
   type CartLine,
 } from "@/lib/cart";
+import type { KitSnapshot } from "@/lib/kits-snapshot";
 
 type UIState = {
   drawerOpen: boolean;
@@ -30,11 +31,13 @@ type UIState = {
   remove: (slug: string) => void;
   clear: () => void;
   hydrated: boolean;
+  kits: KitSnapshot[];
+  getKit: (slug: string) => KitSnapshot | undefined;
 };
 
 const UIContext = createContext<UIState | null>(null);
 
-export function UIProvider({ children }: { children: ReactNode }) {
+export function UIProvider({ children, kits }: { children: ReactNode; kits: KitSnapshot[] }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [lines, setLines] = useState<CartLine[]>([]);
   const [hydrated, setHydrated] = useState(false);
@@ -85,6 +88,9 @@ export function UIProvider({ children }: { children: ReactNode }) {
 
   const clear = useCallback(() => setLines([]), []);
 
+  const kitMap = useMemo(() => Object.fromEntries(kits.map((k) => [k.slug, k])), [kits]);
+  const getKit = useCallback((slug: string) => kitMap[slug], [kitMap]);
+
   const value = useMemo<UIState>(
     () => ({
       drawerOpen,
@@ -97,8 +103,10 @@ export function UIProvider({ children }: { children: ReactNode }) {
       remove,
       clear,
       hydrated,
+      kits,
+      getKit,
     }),
-    [drawerOpen, openDrawer, closeDrawer, lines, addItem, setQty, remove, clear, hydrated],
+    [drawerOpen, openDrawer, closeDrawer, lines, addItem, setQty, remove, clear, hydrated, kits, getKit],
   );
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;

@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { useUI } from "./ui-context";
-import { getAllKits } from "@/lib/kits";
 import { formatCad, SITE } from "@/lib/utils";
 
 export function CartDrawer() {
-  const { drawerOpen, closeDrawer, lines, setQty, remove } = useUI();
-  const kits = getAllKits();
+  const { drawerOpen, closeDrawer, lines, setQty, remove, getKit } = useUI();
   const items = lines.map((l) => {
-    const kit = kits.find((k) => k.slug === l.slug);
+    const kit = getKit(l.slug);
     return { line: l, kit };
   });
   const subtotal = items.reduce(

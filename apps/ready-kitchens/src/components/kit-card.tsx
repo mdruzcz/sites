@@ -8,7 +8,7 @@ export function KitCard({ kit }: { kit: Kit }) {
     <article className="group flex flex-col overflow-hidden rounded-md border border-[var(--color-line)] bg-white shadow-sm transition-shadow hover:shadow-lg">
       <Link href={`/kits/${kit.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-paper-warm)]">
-          <KitPlaceholder shape={kit.shape} />
+          <KitPlaceholder shape={kit.shape ?? "Kit"} />
           <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-[var(--color-ink)]">
             {kit.shape}
           </span>

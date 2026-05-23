@@ -10,26 +10,26 @@ export const revalidate = 3600;
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllKits().map((k) => ({ slug: k.slug }));
+  return (await getAllKits()).map((k) => ({ slug: k.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const kit = getKitBySlug(slug);
+  const kit = await getKitBySlug(slug);
   if (!kit) return {};
   return {
     title: `${kit.name} — ${kit.pieces}-Piece White Shaker Kitchen Kit`,
     description: `${kit.tagline}. ${kit.summary} Assembled and ready for pickup in Belmont, Ontario.`,
     openGraph: {
       title: `${kit.name} · ${formatCad(kit.price_cad)} CAD`,
-      description: kit.tagline,
+      description: kit.tagline ?? undefined,
     },
   };
 }
 
 export default async function KitPage({ params }: Props) {
   const { slug } = await params;
-  const kit = getKitBySlug(slug);
+  const kit = await getKitBySlug(slug);
   if (!kit) notFound();
 
   const codes = getCabinetCodes();
@@ -55,6 +55,12 @@ export default async function KitPage({ params }: Props) {
     },
   };
 
+  const totalWalls =
+    (kit.wall_a_inches ?? 0) +
+    (kit.wall_b_inches ?? 0) +
+    (kit.wall_c_inches ?? 0) +
+    (kit.island_inches ?? 0);
+
   return (
     <article className="mx-auto max-w-7xl px-4 py-10 lg:px-8">
       <script
@@ -62,7 +68,6 @@ export default async function KitPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
       />
 
-      {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-[var(--color-ink-soft)]">
         <Link href="/" className="hover:underline">Home</Link>
         <span className="mx-2">/</span>
@@ -75,7 +80,7 @@ export default async function KitPage({ params }: Props) {
         {/* Gallery */}
         <div>
           <div className="relative aspect-[5/4] overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-paper-warm)] shadow-sm">
-            <KitHeroSvg shape={kit.shape} />
+            <KitHeroSvg shape={kit.shape ?? "Kit"} />
             <span className="absolute left-4 top-4 rounded-full bg-[var(--color-accent)] px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white">
               {kit.pieces} pieces
             </span>
@@ -113,13 +118,37 @@ export default async function KitPage({ params }: Props) {
           </div>
           <p className="mt-1 text-xs text-[var(--color-ink-soft)]">No payment now — we confirm stock and pickup before billing.</p>
 
-          <p className="mt-6 text-[15px] leading-relaxed text-[var(--color-ink-soft)]">
+          {/* Savings vs retail */}
+          {kit.savings_vs_retail_cad > 0 && (
+            <div className="mt-5 rounded-md border border-[var(--color-sage-soft)] bg-[var(--color-sage-soft)]/60 p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-[var(--color-sage)]">
+                You save {formatCad(kit.savings_vs_retail_cad)}
+              </p>
+              <p className="mt-1 text-sm text-[var(--color-ink-soft)]">
+                Buying these {kit.pieces} cabinets individually at{" "}
+                <a href={SITE.parentUrl} target="_blank" rel="noopener" className="font-medium text-[var(--color-ink)] underline-offset-2 hover:underline">
+                  {SITE.parentDomain}
+                </a>{" "}
+                would total <strong className="text-[var(--color-ink)]">{formatCad(kit.total_retail_cad)}</strong> — the kit price below already includes assembly &amp; bundle savings.
+              </p>
+            </div>
+          )}
+
+          <p className="mt-5 text-[15px] leading-relaxed text-[var(--color-ink-soft)]">
             {kit.summary}
           </p>
 
           <div className="mt-5 rounded-md border border-[var(--color-line)] bg-white p-4">
             <p className="text-[11px] uppercase tracking-widest text-[var(--color-ink-soft)]">Best for</p>
             <p className="mt-1 text-sm">{kit.best_for}</p>
+          </div>
+
+          {/* Hood note */}
+          <div className="mt-3 rounded-md border border-[var(--color-line)] bg-white p-4 text-sm">
+            <p className="font-semibold text-[var(--color-ink)]">Range &amp; hood</p>
+            <p className="mt-1 text-[var(--color-ink-soft)]">
+              The layout leaves a clean 30&quot; gap for a freestanding range with a wall-mounted <strong>chimney hood (not included)</strong>. No upper cabinet sits above the range — by design.
+            </p>
           </div>
 
           <ul className="mt-5 space-y-2">
@@ -137,8 +166,8 @@ export default async function KitPage({ params }: Props) {
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <AddToCartButton slug={kit.slug} label={`Add to Cart — ${formatCad(kit.price_cad)}`} className="btn-primary flex-1" />
-            <Link href="/request" className="btn-secondary">
-              Skip & quote
+            <Link href="/contact" className="btn-secondary">
+              Ask a question
             </Link>
           </div>
           <p className="mt-3 text-center text-[11px] text-[var(--color-ink-soft)]">
@@ -153,9 +182,19 @@ export default async function KitPage({ params }: Props) {
           <div>
             <span className="accent-rule mb-3" />
             <h2 className="font-display text-3xl">What&rsquo;s in the {kit.name}</h2>
-            <p className="mt-1 text-[var(--color-ink-soft)]">{kit.pieces} cabinets, every one assembled and ready.</p>
+            <p className="mt-1 text-[var(--color-ink-soft)]">
+              {kit.pieces} cabinets, every one assembled and ready.
+              {totalWalls > 0 && (
+                <> Designed for {formatInches(totalWalls)} of total cabinet wall.</>
+              )}
+            </p>
           </div>
-          <p className="text-xs text-[var(--color-ink-soft)]">Additional cabinets available — ask us.</p>
+          <p className="text-xs text-[var(--color-ink-soft)]">
+            Need more pieces?{" "}
+            <a href={SITE.parentUrl} target="_blank" rel="noopener" className="font-medium text-[var(--color-accent-dark)] underline-offset-2 hover:underline">
+              Add individual cabinets from {SITE.parentDomain} →
+            </a>
+          </p>
         </div>
 
         <div className="mt-6 overflow-hidden rounded-lg border border-[var(--color-line)] bg-white">
@@ -188,10 +227,25 @@ export default async function KitPage({ params }: Props) {
           </table>
         </div>
 
+        {/* Forevercabinets upsell */}
+        <div className="mt-6 rounded-lg border border-[var(--color-line)] bg-[var(--color-paper-warm)] p-6">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h3 className="font-display text-lg">Need extra cabinets?</h3>
+              <p className="mt-1 max-w-xl text-sm text-[var(--color-ink-soft)]">
+                Additional cabinets, fillers, mouldings, and finishing panels can be purchased individually from our parent brand <strong>{SITE.parentBrand}</strong>. Add them to your order in the notes — we&rsquo;ll bundle pickup at no extra freight.
+              </p>
+            </div>
+            <a href={SITE.parentUrl} target="_blank" rel="noopener" className="btn-ghost shrink-0">
+              Shop forevercabinets.ca →
+            </a>
+          </div>
+        </div>
+
         {/* Code key */}
-        <div className="mt-8 rounded-lg border border-[var(--color-line)] bg-[var(--color-paper-warm)] p-6">
+        <div className="mt-8 rounded-lg border border-[var(--color-line)] bg-white p-6">
           <h3 className="font-display text-lg">Cabinet code key</h3>
-          <p className="mt-1 text-xs text-[var(--color-ink-soft)]">Most of our codes follow standard cabinet shop convention. Hover any SKU above to identify it here.</p>
+          <p className="mt-1 text-xs text-[var(--color-ink-soft)]">Our codes follow standard cabinet-shop convention.</p>
           <ul className="mt-4 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
             {codes.map((c) => (
               <li key={c.code} className={`flex gap-3 ${codesInKit.has(c.code) ? "" : "opacity-60"}`}>
@@ -234,6 +288,13 @@ export default async function KitPage({ params }: Props) {
   );
 }
 
+function formatInches(n: number) {
+  const feet = Math.floor(n / 12);
+  const inches = n % 12;
+  if (inches === 0) return `${feet} ft`;
+  return `${feet} ft ${inches} in`;
+}
+
 function KitHeroSvg({ shape }: { shape: string }) {
   return (
     <svg viewBox="0 0 500 400" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
@@ -250,26 +311,40 @@ function KitHeroSvg({ shape }: { shape: string }) {
       <rect width="500" height="400" fill="url(#wall2)" />
       <rect y="290" width="500" height="110" fill="url(#floor2)" />
       <rect x="30" y="220" width="440" height="14" fill="#3a4252" />
-      <rect x="40" y="60" width="420" height="100" fill="#ffffff" stroke="#c7bfae" />
-      <line x1="140" y1="60" x2="140" y2="160" stroke="#c7bfae" />
-      <line x1="240" y1="60" x2="240" y2="160" stroke="#c7bfae" />
-      <line x1="340" y1="60" x2="340" y2="160" stroke="#c7bfae" />
-      <rect x="40" y="234" width="420" height="90" fill="#ffffff" stroke="#c7bfae" />
+      {/* Wall uppers, with 30" hood gap above range */}
+      <rect x="40" y="60" width="180" height="100" fill="#ffffff" stroke="#c7bfae" />
+      <line x1="100" y1="60" x2="100" y2="160" stroke="#c7bfae" />
+      <line x1="160" y1="60" x2="160" y2="160" stroke="#c7bfae" />
+      {/* Chimney hood */}
+      <path d="M 225 60 L 235 110 L 285 110 L 295 60 Z" fill="#1f2532" />
+      <rect x="240" y="110" width="40" height="50" fill="#2a3140" />
+      {/* Right uppers */}
+      <rect x="300" y="60" width="160" height="100" fill="#ffffff" stroke="#c7bfae" />
+      <line x1="360" y1="60" x2="360" y2="160" stroke="#c7bfae" />
+      <line x1="410" y1="60" x2="410" y2="160" stroke="#c7bfae" />
+      {/* Base cabinets */}
+      <rect x="40" y="234" width="180" height="90" fill="#ffffff" stroke="#c7bfae" />
+      <line x1="100" y1="234" x2="100" y2="324" stroke="#c7bfae" />
       <line x1="160" y1="234" x2="160" y2="324" stroke="#c7bfae" />
-      <line x1="280" y1="234" x2="280" y2="324" stroke="#c7bfae" />
-      <line x1="380" y1="234" x2="380" y2="324" stroke="#c7bfae" />
-      <line x1="160" y1="265" x2="280" y2="265" stroke="#c7bfae" />
-      <line x1="160" y1="295" x2="280" y2="295" stroke="#c7bfae" />
-      <circle cx="90" cy="120" r="2.5" fill="#a8853e" />
-      <circle cx="190" cy="120" r="2.5" fill="#a8853e" />
-      <circle cx="290" cy="120" r="2.5" fill="#a8853e" />
-      <circle cx="390" cy="120" r="2.5" fill="#a8853e" />
-      <circle cx="100" cy="280" r="2.5" fill="#a8853e" />
-      <circle cx="220" cy="280" r="2.5" fill="#a8853e" />
-      <circle cx="330" cy="280" r="2.5" fill="#a8853e" />
-      <circle cx="420" cy="280" r="2.5" fill="#a8853e" />
-      <text x="250" y="380" textAnchor="middle" fontFamily="serif" fontSize="13" fill="#4a5263">
-        {shape} — Ready Kitchens warehouse, Belmont ON
+      <line x1="100" y1="262" x2="160" y2="262" stroke="#c7bfae" />
+      <line x1="100" y1="290" x2="160" y2="290" stroke="#c7bfae" />
+      {/* Range */}
+      <rect x="225" y="234" width="60" height="90" fill="#1f2532" />
+      <circle cx="240" cy="255" r="5" fill="none" stroke="#888" strokeWidth="1.5" />
+      <circle cx="270" cy="255" r="5" fill="none" stroke="#888" strokeWidth="1.5" />
+      <rect x="232" y="270" width="46" height="40" fill="#2a3140" stroke="#888" />
+      {/* Right bases */}
+      <rect x="300" y="234" width="160" height="90" fill="#ffffff" stroke="#c7bfae" />
+      <line x1="360" y1="234" x2="360" y2="324" stroke="#c7bfae" />
+      <line x1="410" y1="234" x2="410" y2="324" stroke="#c7bfae" />
+      <circle cx="70" cy="125" r="2.5" fill="#a8853e" />
+      <circle cx="130" cy="125" r="2.5" fill="#a8853e" />
+      <circle cx="190" cy="125" r="2.5" fill="#a8853e" />
+      <circle cx="330" cy="125" r="2.5" fill="#a8853e" />
+      <circle cx="385" cy="125" r="2.5" fill="#a8853e" />
+      <circle cx="435" cy="125" r="2.5" fill="#a8853e" />
+      <text x="250" y="382" textAnchor="middle" fontFamily="serif" fontSize="13" fill="#4a5263">
+        {shape} — chimney hood above 30&quot; range bay
       </text>
     </svg>
   );

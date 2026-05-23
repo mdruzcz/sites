@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer";
 import { TrustStrip } from "@/components/trust-strip";
 import { CartDrawer } from "@/components/cart-drawer";
 import { SITE } from "@/lib/utils";
+import { getAllKits } from "@/lib/kits";
+import { toSnapshot } from "@/lib/kits-snapshot";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -45,11 +47,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const revalidate = 60;
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const kits = (await getAllKits()).map(toSnapshot);
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body>
-        <UIProvider>
+        <UIProvider kits={kits}>
           <TrustStrip />
           <Header />
           <main>{children}</main>

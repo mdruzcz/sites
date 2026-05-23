@@ -46,9 +46,9 @@ export function Footer() {
             <a href={`tel:${SITE.phone.replace(/[^+\d]/g, "")}`} className="block pt-2 font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)]">
               {SITE.phoneDisplay}
             </a>
-            <a href={`mailto:${SITE.email}`} className="block hover:text-[var(--color-accent)]">
-              {SITE.email}
-            </a>
+            <Link href="/contact" className="block hover:text-[var(--color-accent)]">
+              Send us a message →
+            </Link>
             <p className="pt-2 text-xs">{SITE.pickupHours}</p>
           </address>
         </div>

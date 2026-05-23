@@ -4,22 +4,20 @@ import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useUI } from "./ui-context";
-import { getAllKits } from "@/lib/kits";
 import { submitOrder } from "@/lib/actions/quote";
 import { formatCad, SITE } from "@/lib/utils";
 
 export function RequestForm() {
   const router = useRouter();
-  const { lines, setQty, remove, hydrated, clear } = useUI();
+  const { lines, setQty, remove, hydrated, clear, getKit } = useUI();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
-  const kits = getAllKits();
   const items = lines.map((l) => {
-    const kit = kits.find((k) => k.slug === l.slug);
+    const kit = getKit(l.slug);
     return { line: l, kit };
   });
   const subtotal = items.reduce(
@@ -52,8 +50,10 @@ export function RequestForm() {
     );
   }
 
-  function onSubmit(formData: FormData) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setError(null);
+    const formData = new FormData(e.currentTarget);
     const payload = {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
@@ -82,7 +82,7 @@ export function RequestForm() {
   return (
     <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
       {/* Form */}
-      <form action={onSubmit} className="rounded-lg border border-[var(--color-line)] bg-white p-6 md:p-8">
+      <form onSubmit={handleSubmit} className="rounded-lg border border-[var(--color-line)] bg-white p-6 md:p-8">
         <h2 className="font-display text-2xl">Your details</h2>
         <p className="mt-1 text-sm text-[var(--color-ink-soft)]">
           We&rsquo;ll reply within one business day with stock confirmation, final total, and pickup arrangements. No payment now.

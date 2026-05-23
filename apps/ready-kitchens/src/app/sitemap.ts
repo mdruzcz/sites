@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllKits } from "@/lib/kits";
 import { SITE } from "@/lib/utils";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const routes = [
     "",
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1.0 : 0.7,
   }));
 
-  const kitRoutes = getAllKits().map((kit) => ({
+  const kitRoutes = (await getAllKits()).map((kit) => ({
     url: `${SITE.url}/kits/${kit.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
