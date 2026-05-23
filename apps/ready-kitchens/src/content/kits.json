@@ -1,0 +1,223 @@
+[
+  {
+    "slug": "urban-starter",
+    "name": "The Urban Starter",
+    "tagline": "12-piece galley kitchen — fits two 8' runs",
+    "shape": "Galley",
+    "pieces": 12,
+    "price_cad": 2900,
+    "layout_fits": "Two 8-foot opposing walls (96\" + 96\")",
+    "best_for": "Apartments, basement suites, secondary kitchens, rental flips.",
+    "summary": "A complete galley kitchen that drops into two opposing 8-foot walls. Sink wall, cooking wall, plus full upper storage — all assembled and ready for pickup.",
+    "hero_image": "/images/kits/urban-starter.jpg",
+    "gallery": [
+      "/images/kits/urban-starter.jpg",
+      "/images/kits/urban-starter-detail.jpg"
+    ],
+    "highlights": [
+      "Solid plywood box construction (no particleboard)",
+      "Soft-close doors and drawer glides",
+      "36\" tall wall cabinets for maximum storage",
+      "Fully assembled at our Belmont warehouse"
+    ],
+    "items": [
+      { "sku": "SB36", "name": "36\" Sink Base", "qty": 1, "note": "Holds standard double-bowl sink" },
+      { "sku": "DB18", "name": "18\" Drawer Base (3 drawer)", "qty": 1, "note": "Utensils + cookware" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 2, "note": "Door + adjustable shelf" },
+      { "sku": "B36",  "name": "36\" Base Cabinet", "qty": 1, "note": "Two doors + adjustable shelf" },
+      { "sku": "DB30", "name": "30\" Drawer Base (3 drawer)", "qty": 1, "note": "Pots and pans bay" },
+      { "sku": "W3018", "name": "30\" × 18\" Wall Cabinet", "qty": 1, "note": "Above range or sink" },
+      { "sku": "W3036", "name": "30\" × 36\" Wall Cabinet", "qty": 2, "note": "Tall pantry-height storage" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 2, "note": "Glassware + dry goods" },
+      { "sku": "TK8",   "name": "96\" Toe Kick", "qty": 1, "note": "Finishing kick plate" }
+    ]
+  },
+  {
+    "slug": "modern-symmetrical",
+    "name": "The Modern Symmetrical",
+    "tagline": "16-piece galley kitchen — fits two 10' runs",
+    "shape": "Galley",
+    "pieces": 16,
+    "price_cad": 3900,
+    "layout_fits": "Two 10-foot opposing walls (120\" + 120\")",
+    "best_for": "Family kitchens, mid-size remodels, balanced sink-and-stove layouts.",
+    "summary": "Balanced galley layout with a generous sink wall and a full cooking wall. Mirrored proportions give the kitchen a designer-finished look at a builder-friendly price.",
+    "hero_image": "/images/kits/modern-symmetrical.jpg",
+    "gallery": [
+      "/images/kits/modern-symmetrical.jpg",
+      "/images/kits/modern-symmetrical-detail.jpg"
+    ],
+    "highlights": [
+      "Twin 10' runs — true symmetrical layout",
+      "Three full drawer stacks for everyday storage",
+      "Sink-wall and stove-wall over-cabinets included",
+      "Soft-close everywhere, plywood boxes"
+    ],
+    "items": [
+      { "sku": "SB36", "name": "36\" Sink Base", "qty": 1, "note": "Holds standard double-bowl sink" },
+      { "sku": "DB30", "name": "30\" Drawer Base (3 drawer)", "qty": 1, "note": "Cookware bay" },
+      { "sku": "B30",  "name": "30\" Base Cabinet", "qty": 2, "note": "Two doors + shelf" },
+      { "sku": "B36",  "name": "36\" Base Cabinet", "qty": 1, "note": "Two doors + shelf" },
+      { "sku": "DB18", "name": "18\" Drawer Base", "qty": 1, "note": "Utensil bay" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "B24",  "name": "24\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "W3018", "name": "30\" × 18\" Over-range Wall", "qty": 1, "note": "Above range hood" },
+      { "sku": "W3036", "name": "30\" × 36\" Wall Cabinet", "qty": 2, "note": "Pantry-height storage" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 2, "note": "Tall glassware" },
+      { "sku": "W2436", "name": "24\" × 36\" Wall Cabinet", "qty": 2, "note": "Plates + dry goods" },
+      { "sku": "TK8",   "name": "96\" Toe Kick", "qty": 1, "note": "Finishing kick plate" }
+    ]
+  },
+  {
+    "slug": "the-compact",
+    "name": "The Compact",
+    "tagline": "14-piece L-shape — fits 8' × 8' corner",
+    "shape": "L-Shape",
+    "pieces": 14,
+    "price_cad": 3900,
+    "layout_fits": "L-shape, roughly 96\" × 96\" inside-corner",
+    "best_for": "Open-concept kitchens, condos, additions, in-law suites.",
+    "summary": "Tight L-shape that maximises a small footprint with a 33\" lazy-susan corner so nothing is wasted. Sink wall, cook wall, and a true working corner.",
+    "hero_image": "/images/kits/the-compact.jpg",
+    "gallery": [
+      "/images/kits/the-compact.jpg",
+      "/images/kits/the-compact-detail.jpg"
+    ],
+    "highlights": [
+      "33\" lazy-susan corner — fully usable corner space",
+      "Wall diagonal corner cabinet keeps uppers continuous",
+      "Three-drawer base for cookware",
+      "Designed around a 30\" range and 36\" sink"
+    ],
+    "items": [
+      { "sku": "LS33", "name": "33\" Lazy Susan Corner Base", "qty": 1, "note": "Two rotating shelves" },
+      { "sku": "SB36", "name": "36\" Sink Base", "qty": 1, "note": "Double-bowl sink ready" },
+      { "sku": "DB18", "name": "18\" Drawer Base", "qty": 1, "note": "Utensils" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 2, "note": "Door + shelf" },
+      { "sku": "B24",  "name": "24\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "B36",  "name": "36\" Base Cabinet", "qty": 1, "note": "Two doors + shelf" },
+      { "sku": "WDC2436", "name": "24\" Wall Diagonal Corner", "qty": 1, "note": "Continuous corner uppers" },
+      { "sku": "W3018", "name": "30\" × 18\" Over-range Wall", "qty": 1, "note": "Above range" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 2, "note": "Tall storage" },
+      { "sku": "W2436", "name": "24\" × 36\" Wall Cabinet", "qty": 1, "note": "Plates + bowls" },
+      { "sku": "W3036", "name": "30\" × 36\" Wall Cabinet", "qty": 1, "note": "Pantry-height" },
+      { "sku": "W2736", "name": "27\" × 36\" Wall Cabinet", "qty": 1, "note": "Glassware bay" }
+    ]
+  },
+  {
+    "slug": "island-entertainer",
+    "name": "The Island Entertainer",
+    "tagline": "23-piece L-shape with island — fits 12' × 10' + 8' island",
+    "shape": "L-Shape + Island",
+    "pieces": 23,
+    "price_cad": 6800,
+    "layout_fits": "L-shape with separate 8-foot island run",
+    "best_for": "Hosting kitchens, open floor plans, full-home renovations.",
+    "summary": "Hosting-grade kitchen with a working L-shape perimeter plus a full 8-foot island. Pantry tower, lazy-susan corner, two drawer banks, and seating-ready island base.",
+    "hero_image": "/images/kits/island-entertainer.jpg",
+    "gallery": [
+      "/images/kits/island-entertainer.jpg",
+      "/images/kits/island-entertainer-detail.jpg"
+    ],
+    "highlights": [
+      "Full 90\" tall pantry — broom, food, or oven-tower ready",
+      "8-foot island with seating overhang + drawer storage",
+      "Lazy-susan corner + wall diagonal corner",
+      "Built for a 36\" range and 36\" sink"
+    ],
+    "items": [
+      { "sku": "WP249024", "name": "24\" × 90\" Tall Pantry", "qty": 1, "note": "Full-height storage tower" },
+      { "sku": "LS33", "name": "33\" Lazy Susan Corner Base", "qty": 1, "note": "Rotating corner" },
+      { "sku": "SB36", "name": "36\" Sink Base", "qty": 1, "note": "Sink-ready" },
+      { "sku": "DB30", "name": "30\" Drawer Base", "qty": 1, "note": "Pots + pans" },
+      { "sku": "DB18", "name": "18\" Drawer Base", "qty": 1, "note": "Utensils" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "B24",  "name": "24\" Base Cabinet", "qty": 2, "note": "Door + shelf" },
+      { "sku": "B30",  "name": "30\" Base Cabinet", "qty": 1, "note": "Two doors + shelf" },
+      { "sku": "B36",  "name": "36\" Base Cabinet", "qty": 2, "note": "Island seating base" },
+      { "sku": "DB24", "name": "24\" Drawer Base", "qty": 1, "note": "Island flatware drawer" },
+      { "sku": "WDC2436", "name": "24\" Wall Diagonal Corner", "qty": 1, "note": "Continuous uppers" },
+      { "sku": "W3018", "name": "30\" × 18\" Over-range Wall", "qty": 1, "note": "Above range" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 2, "note": "Glassware" },
+      { "sku": "W2436", "name": "24\" × 36\" Wall Cabinet", "qty": 1, "note": "Plates + bowls" },
+      { "sku": "W3036", "name": "30\" × 36\" Wall Cabinet", "qty": 1, "note": "Pantry-height" },
+      { "sku": "W2736", "name": "27\" × 36\" Wall Cabinet", "qty": 1, "note": "Storage bay" },
+      { "sku": "WMC2736", "name": "27\" × 36\" Microwave Wall", "qty": 1, "note": "Built-in microwave nook" },
+      { "sku": "WGC1836", "name": "18\" × 36\" Wall Glass Cabinet", "qty": 1, "note": "Display cabinet" },
+      { "sku": "TK8", "name": "96\" Toe Kick", "qty": 2, "note": "Finishing kick plates" }
+    ]
+  },
+  {
+    "slug": "full-u-shape",
+    "name": "The Full U-Shape",
+    "tagline": "21-piece U-shape — fits 10' × 8' × 10' walls",
+    "shape": "U-Shape",
+    "pieces": 21,
+    "price_cad": 4800,
+    "layout_fits": "Three-wall U-shape, ~120\" × 96\" × 120\"",
+    "best_for": "Three-walled kitchens, classic family layouts, no-island floor plans.",
+    "summary": "Classic three-wall U-shape with two working corners, a tall pantry, and a sink-and-stove wall. Maximum cabinet storage for the footprint.",
+    "hero_image": "/images/kits/full-u-shape.jpg",
+    "gallery": [
+      "/images/kits/full-u-shape.jpg",
+      "/images/kits/full-u-shape-detail.jpg"
+    ],
+    "highlights": [
+      "Two lazy-susan corners — every inch used",
+      "Tall pantry tower included",
+      "Two wall diagonal-corner uppers",
+      "Three drawer banks across the cooking zone"
+    ],
+    "items": [
+      { "sku": "WP249024", "name": "24\" × 90\" Tall Pantry", "qty": 1, "note": "Full-height storage" },
+      { "sku": "LS33", "name": "33\" Lazy Susan Corner Base", "qty": 2, "note": "Two working corners" },
+      { "sku": "SB36", "name": "36\" Sink Base", "qty": 1, "note": "Sink-ready" },
+      { "sku": "DB18", "name": "18\" Drawer Base", "qty": 2, "note": "Utensils + bakeware" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "B24",  "name": "24\" Base Cabinet", "qty": 2, "note": "Door + shelf" },
+      { "sku": "B30",  "name": "30\" Base Cabinet", "qty": 1, "note": "Two doors + shelf" },
+      { "sku": "B36",  "name": "36\" Base Cabinet", "qty": 1, "note": "Two doors + shelf" },
+      { "sku": "WDC2436", "name": "24\" Wall Diagonal Corner", "qty": 2, "note": "Continuous corner uppers" },
+      { "sku": "W3018", "name": "30\" × 18\" Over-range Wall", "qty": 1, "note": "Above range" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 3, "note": "Tall storage" },
+      { "sku": "W2436", "name": "24\" × 36\" Wall Cabinet", "qty": 1, "note": "Plates + bowls" },
+      { "sku": "W3036", "name": "30\" × 36\" Wall Cabinet", "qty": 1, "note": "Pantry-height" },
+      { "sku": "WMC2736", "name": "27\" × 36\" Microwave Wall", "qty": 1, "note": "Built-in microwave nook" },
+      { "sku": "TK8", "name": "96\" Toe Kick", "qty": 2, "note": "Finishing kick plates" }
+    ]
+  },
+  {
+    "slug": "kitchenette",
+    "name": "The Kitchenette",
+    "tagline": "10-piece studio kitchen — fits one 10' run",
+    "shape": "Single Wall",
+    "pieces": 10,
+    "price_cad": 1950,
+    "layout_fits": "Single 10-foot wall (120\")",
+    "best_for": "Basement apartments, garage suites, granny flats, office kitchenettes.",
+    "summary": "The most affordable way to drop in a complete kitchen along a single wall. Sink, base storage, full upper bank — assembled and ready.",
+    "hero_image": "/images/kits/kitchenette.jpg",
+    "gallery": [
+      "/images/kits/kitchenette.jpg",
+      "/images/kits/kitchenette-detail.jpg"
+    ],
+    "highlights": [
+      "Single-wall layout — easiest install possible",
+      "33\" sink base, 24\" range-ready base",
+      "Full upper cabinet bank for storage",
+      "Most affordable complete kitchen we offer"
+    ],
+    "items": [
+      { "sku": "SB33", "name": "33\" Sink Base", "qty": 1, "note": "Double or single bowl" },
+      { "sku": "B12",  "name": "12\" Base Cabinet", "qty": 1, "note": "Spice or sheet pan slot" },
+      { "sku": "B18",  "name": "18\" Base Cabinet", "qty": 1, "note": "Door + shelf" },
+      { "sku": "DB15", "name": "15\" Drawer Base", "qty": 1, "note": "Utensil drawer bank" },
+      { "sku": "B24",  "name": "24\" Base Cabinet", "qty": 1, "note": "Range-side base" },
+      { "sku": "W3018", "name": "30\" × 18\" Over-range Wall", "qty": 1, "note": "Above range" },
+      { "sku": "W1236", "name": "12\" × 36\" Wall Cabinet", "qty": 1, "note": "Tall narrow upper" },
+      { "sku": "W1836", "name": "18\" × 36\" Wall Cabinet", "qty": 1, "note": "Tall storage" },
+      { "sku": "W2436", "name": "24\" × 36\" Wall Cabinet", "qty": 1, "note": "Plates + bowls" },
+      { "sku": "W2736", "name": "27\" × 36\" Wall Cabinet", "qty": 1, "note": "Glassware" }
+    ]
+  }
+]
