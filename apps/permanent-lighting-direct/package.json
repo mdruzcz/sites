@@ -10,8 +10,6 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@sites/db": "*",
-    "@sites/ui": "*",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.45.4",
     "clsx": "^2.1.1",
@@ -22,7 +20,6 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@sites/tsconfig": "*",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
