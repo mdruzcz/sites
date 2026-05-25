@@ -1,0 +1,31 @@
+{
+  "primaryCity": "Woodstock",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Serving every neighbourhood in Woodstock — from historic Vansittart Avenue and Devonshire to newer developments in Sally Creek and North Woodstock. We build custom decks and install every style of fence with 4-ft frost-line footings engineered for Oxford County's freeze-thaw winters."
+    },
+    {
+      "slug": "ingersoll",
+      "name": "Ingersoll",
+      "description": "Trusted deck builders and fence installers for Ingersoll homeowners. Whether you're upgrading a Thames-side cottage or a newer subdivision home, we deliver the same premium cedar, composite, and vinyl craftsmanship we provide across Oxford County — with the same 5-year workmanship warranty."
+    },
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Tillsonburg's choice for professional deck and fence construction. We serve Tillsonburg, Brownsville, and Glen Meyer with custom-built decks, vinyl privacy fences, decorative steel, and pressure-treated wood — all set with deep-frost-line posts that hold solid through Ontario winters."
+    },
+    {
+      "slug": "norwich",
+      "name": "Norwich",
+      "description": "Norwich Township homeowners trust us for rural and acreage deck and fence projects — from cedar wraparound decks on country properties to chain-link dog runs, decorative steel front fences, and farm-perimeter fencing. Fully insured, fully equipped for rural service calls."
+    },
+    {
+      "slug": "embro",
+      "name": "Embro",
+      "description": "Local deck and fence experts serving Embro, Thamesford, and Zorra Township. We handle everything from full custom composite decks to long runs of board-on-board privacy fencing, with the same premium materials and 4-ft frost-line footings we use across Oxford County."
+    }
+  ]
+}

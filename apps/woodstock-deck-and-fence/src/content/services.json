@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "deck-building",
+    "title": "Deck Building",
+    "shortDescription": "Custom-built decks in cedar, composite, or pressure-treated wood — engineered for Ontario winters with 4-ft frost-line footings and a 5-year workmanship warranty.",
+    "fullDescription": "Transform your backyard into a premium outdoor living space with a custom-built deck designed for beauty and durability. We design each deck around your home's architecture and how you actually live — entertaining, dining, hot tubs, multi-level layouts with built-in benches and planters. Every deck is engineered to exceed local building codes with 4-foot minimum frost-line footings, premium-grade lumber, galvanized fasteners, and properly sized joists and ledger boards. Choose pressure-treated for value, Western Red Cedar for natural beauty, or composite (Trex/TimberTech) for zero maintenance.",
+    "features": [
+      "Custom design to fit your home and lifestyle",
+      "Pressure-treated, Western Red Cedar, or composite",
+      "4 ft minimum frost-line footings",
+      "Galvanized fasteners + reinforced ledger boards",
+      "Built-in railings, stairs, and planters available",
+      "Built to exceed Ontario building code"
+    ],
+    "finishes": [
+      {
+        "name": "Western Red Cedar",
+        "description": "Premium natural decking with the timeless beauty of real wood. Naturally resistant to rot and insects, with a beautiful grain that ages to a silvery patina or stays warm with annual staining."
+      },
+      {
+        "name": "Composite (Trex / TimberTech)",
+        "description": "Zero maintenance, never rots, never needs staining. Capped composite boards resist scratches, fading, and stains — backed by 25-year manufacturer warranties."
+      }
+    ],
+    "icon": "home",
+    "image": "/images/deck-building-placeholder.jpg",
+    "order": 1
+  },
+  {
+    "slug": "deck-restoration",
+    "title": "Deck Restoration",
+    "shortDescription": "Don't replace it — restore it. Professional pressure washing, sanding, structural repairs, and premium staining bring a tired deck back to life for a fraction of the cost.",
+    "fullDescription": "A weathered, graying deck doesn't have to mean a teardown. Our restoration process starts with professional-grade pressure washing to strip away years of mold, mildew, and dirt. We sand high-traffic areas to remove splinters, replace any rotted boards, tighten loose railings, and finish with premium UV-stable stain for protection against harsh Canadian winters. Most decks look brand new for a fraction of the cost of replacement — and the new finish typically lasts 3 to 5 years before re-application.",
+    "features": [
+      "Deep pressure-wash to remove mold and graying",
+      "Sand high-traffic areas to remove splinters",
+      "Replace rotted boards + tighten loose railings",
+      "Premium weather-resistant UV-stable stain",
+      "Structural safety inspection on every job",
+      "Most projects completed in 2 to 3 days"
+    ],
+    "icon": "wrench",
+    "image": "/images/deck-restoration-placeholder.jpg",
+    "order": 2
+  },
+  {
+    "slug": "vinyl-fences",
+    "title": "Vinyl Fences",
+    "shortDescription": "Durable, maintenance-free privacy that looks brand new for decades — no paint, no stain, no rot. Built with steel-reinforced posts set 4 ft deep.",
+    "fullDescription": "Vinyl fencing delivers the look of a freshly painted white wood fence — but without any of the maintenance. UV-stabilized PVC won't warp, rot, peel, or fade. Our vinyl fences use steel-reinforced posts set in concrete a minimum of 4 feet deep to beat Ontario frost heave, and tongue-and-groove panels that lock together for solid privacy. Available in classic white, almond, or grey, with privacy, semi-private, and picket styles.",
+    "features": [
+      "UV-stabilized PVC — won't fade or yellow",
+      "Steel-reinforced posts set 4 ft deep in concrete",
+      "Tongue-and-groove privacy panels",
+      "Lifetime manufacturer warranty on materials",
+      "Available in white, almond, and grey",
+      "Privacy, semi-private, picket, and ranch styles"
+    ],
+    "icon": "shield",
+    "image": "/images/vinyl-fence-placeholder.jpg",
+    "order": 3
+  },
+  {
+    "slug": "wood-fences",
+    "title": "Wood Fences",
+    "shortDescription": "Professional, long-lasting pressure-treated and cedar fencing in classic picket, board-on-board, and modern horizontal styles — built for maximum privacy and durability.",
+    "fullDescription": "The timeless look of real wood, built to last. We construct wood fences using premium pressure-treated lumber or naturally rot-resistant Western Red Cedar, with heavy-duty posts set a minimum of 4 feet deep in concrete. Choose from classic picket, solid board-on-board for maximum privacy, lattice-top for partial sight lines, or horizontal modern designs. All fasteners are hot-dipped galvanized or stainless to handle Ontario weather without rust streaks.",
+    "features": [
+      "Pressure-treated or Western Red Cedar lumber",
+      "Heavy-duty 4×4 or 6×6 posts set 4 ft deep",
+      "Classic picket, board-on-board, or horizontal modern",
+      "Hot-dipped galvanized or stainless fasteners",
+      "Optional lattice tops, post caps, and decorative trims",
+      "Can be stained or painted to your colour"
+    ],
+    "icon": "fence",
+    "image": "/images/wood-fence-placeholder.jpg",
+    "order": 4
+  },
+  {
+    "slug": "steel-decorative-fences",
+    "title": "Steel Decorative Fences",
+    "shortDescription": "Elegant powder-coated steel fencing that combines maximum security with timeless curb appeal — zero maintenance, lifetime durability.",
+    "fullDescription": "Ornamental steel fencing brings the look of historic wrought iron with none of the rust or maintenance. Our powder-coated steel panels resist peeling, fading, and corrosion for decades. Choose classic spear-top, flat-top, or decorative ring styles, in standard black or custom colours. Steel fences are ideal for front-yard accents, pool enclosures (we follow Ontario pool fence regulations), and any property that needs strength plus style.",
+    "features": [
+      "Powder-coated for rust + UV resistance",
+      "Spear-top, flat-top, or decorative ring designs",
+      "Pool-code compliant configurations",
+      "Self-closing, self-latching pool gates available",
+      "Custom colours beyond standard black",
+      "Decades of lifetime with zero maintenance"
+    ],
+    "icon": "shield",
+    "image": "/images/steel-fence-placeholder.jpg",
+    "order": 5
+  },
+  {
+    "slug": "chain-link-fences",
+    "title": "Chain-Link Fences",
+    "shortDescription": "Affordable, high-security chain-link fencing in galvanized or vinyl-coated steel — perfect for dog runs, backyards, and commercial property boundaries.",
+    "fullDescription": "Chain-link is the most cost-effective way to secure a property without blocking sightlines. We install galvanized steel or vinyl-coated (black or green) chain-link with heavy-gauge posts set 4 feet deep, top rails for strength, and your choice of mesh size (2\" standard, 1¾\" for small dogs). Ideal for dog runs, garden enclosures, kids' play areas, commercial yards, and backyards that need security without the cost of a privacy fence.",
+    "features": [
+      "Galvanized or vinyl-coated (black/green) finish",
+      "Heavy-gauge steel posts set 4 ft deep",
+      "2\" mesh standard, 1¾\" available for small pets",
+      "Top rail + tension wire for long-term tightness",
+      "Walk gates + drive gates available",
+      "Heights from 4 ft to 8 ft"
+    ],
+    "icon": "grid",
+    "image": "/images/chain-link-fence-placeholder.jpg",
+    "order": 6
+  }
+]

@@ -1,0 +1,43 @@
+export const site = {
+  name: "Woodstock Deck and Fence",
+  shortName: "WDF",
+  phone: "(519) 914-5697",
+  phoneHref: "tel:+15199145697",
+  email: "service@woodstockdeckandfence.ca",
+  emailHref: "mailto:service@woodstockdeckandfence.ca",
+  address: {
+    city: "Woodstock",
+    region: "ON",
+    country: "CA",
+  },
+  addressLine: "Woodstock, ON",
+  hours: "Mon – Fri · 8 AM – 5 PM | Weekends Closed",
+  yearsExperience: 10,
+  url: "https://woodstockdeckandfence.ca",
+  tagline: "Built to Last. Designed to Impress.",
+  description:
+    "Expert deck and fence construction in Woodstock, Ingersoll, and Tillsonburg. Custom cedar, composite, and pressure-treated decks plus vinyl, wood, steel, and chain-link fences — built to outlast Ontario winters with a 5-year workmanship warranty.",
+  serviceAreas: ["Woodstock", "Ingersoll", "Tillsonburg", "Norwich", "Embro", "Innerkip"],
+  stats: {
+    decks: 220,
+    fences: 380,
+    happyHomes: 600,
+    yearsLifespan: 25,
+  },
+  finishOptions: ["Pressure-Treated", "Western Red Cedar", "Composite (Trex/TimberTech)", "Vinyl", "Decorative Steel", "Chain-link"],
+  features: [
+    "5-year workmanship warranty on every build",
+    "Post holes dug a minimum 4 ft to beat frost heave",
+    "Premium rot-resistant lumber + galvanized fasteners",
+    "We pull all City of Woodstock permits for you",
+    "Free on-site quote within 48 hours",
+    "Fully insured + locally owned and operated",
+  ],
+  trustBadges: [
+    { label: "Customer Reviews", value: "5 / 5 Stars" },
+    { label: "Years in Business", value: "10+ Years" },
+    { label: "Projects Completed", value: "600+ Builds" },
+    { label: "Warranty", value: "5-Year Workmanship" },
+  ],
+  responseTime: "4 business hours",
+} as const;
