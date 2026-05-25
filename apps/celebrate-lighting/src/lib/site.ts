@@ -1,8 +1,8 @@
 export const site = {
   name: "Celebrate Lighting",
   tagline: "Permanent Outdoor LED Lighting in Ontario",
-  phone: "1-833-243-3068",
-  phoneHref: "tel:+18332433068",
+  phone: "519-266-6796",
+  phoneHref: "tel:+15192666796",
   email: "contact@celebratelighting.ca",
   emailHref: "mailto:contact@celebratelighting.ca",
   address: {

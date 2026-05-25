@@ -81,10 +81,7 @@ export function Footer() {
               <li>
                 <a href={site.phoneHref} className="hover:text-white transition-colors">{site.phone}</a>
               </li>
-              <li>
-                <a href={site.emailHref} className="hover:text-white transition-colors break-all">{site.email}</a>
-              </li>
-              <li>{site.addressLine}</li>
+<li>{site.addressLine}</li>
               <li className="text-xs leading-relaxed">
                 Mon–Fri: 8 AM–8 PM<br />
                 Sat: 9 AM–6 PM<br />

@@ -18,45 +18,21 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+    <header className="sticky top-0 z-50">
+      {/* Row 1: centered logo */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between lg:justify-center py-3">
+          <Link href="/" className="flex items-center" aria-label="Celebrate Lighting home">
             <Image
               src="/images/logo.png"
               alt="Celebrate Lighting logo"
-              width={160}
-              height={44}
-              className="h-10 w-auto object-contain"
+              width={240}
+              height={66}
+              className="h-16 w-auto object-contain"
               priority
             />
           </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-gray-600 hover:text-[var(--accent)] transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a href={site.phoneHref} className="text-sm font-semibold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
-              {site.phone}
-            </a>
-            <Link href="/contact" className="btn btn-primary text-sm">
-              Get Free Quote
-            </Link>
-          </div>
-
-          {/* Mobile menu toggle */}
+          {/* Mobile hamburger */}
           <button
             className="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors"
             onClick={() => setOpen(!open)}
@@ -75,24 +51,61 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Row 2: nav bar (desktop only) */}
+      <div className="hidden lg:block" style={{ background: "var(--foreground)" }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-11">
+            <nav className="flex items-center gap-7" aria-label="Main navigation">
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="flex items-center gap-4">
+              <a
+                href={site.phoneHref}
+                className="text-sm font-semibold text-white hover:text-[var(--accent)] transition-colors"
+              >
+                {site.phone}
+              </a>
+              <Link
+                href="/contact"
+                className="btn btn-primary text-xs h-8 min-h-0 py-0 px-4"
+              >
+                Get Free Quote
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu drawer */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-1 shadow-lg">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block py-2 text-sm font-medium text-gray-700 hover:text-[var(--accent)]"
+              className="block py-2.5 text-sm font-medium text-gray-700 hover:text-[var(--accent)] border-b border-gray-50 last:border-0"
               onClick={() => setOpen(false)}
             >
               {item.label}
             </Link>
           ))}
-          <div className="pt-3 flex flex-col gap-2">
+          <div className="pt-4 flex flex-col gap-2">
             <a href={site.phoneHref} className="btn btn-outline w-full justify-center">
               {site.phone}
             </a>
-            <Link href="/contact" className="btn btn-primary w-full justify-center" onClick={() => setOpen(false)}>
+            <Link
+              href="/contact"
+              className="btn btn-primary w-full justify-center"
+              onClick={() => setOpen(false)}
+            >
               Get Free Quote
             </Link>
           </div>
