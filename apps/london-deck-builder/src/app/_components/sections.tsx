@@ -171,6 +171,9 @@ export function Hero({ city }: { city?: string }) {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={75}
         />
         {/* Warm dark overlay */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(44,24,16,0.82) 0%, rgba(92,61,46,0.55) 60%, rgba(44,24,16,0.4) 100%)" }} />
