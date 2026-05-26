@@ -466,7 +466,7 @@ export const blogPosts: BlogPost[] = [
       "The two most common options for a hot tub pad are concrete and gravel — but which one is right for you? Compare durability, cost, and maintenance.",
     image: "/images/blog-thumb.jpg",
     imageAlt: "Comparison between concrete and gravel hot tub pads",
-    metaTitle: "Concrete vs. Gravel Hot Tub Pads: Which Is Best?",
+    metaTitle: "Concrete vs. Gravel Hot Tub Pads",
     metaDescription:
       "Concrete vs. gravel hot tub pads — compare cost, durability, drainage, and installation time. Find the best foundation for your spa. Expert guide from HotTubPads.ca.",
   },
@@ -477,7 +477,7 @@ export const blogPosts: BlogPost[] = [
       "Everything you need to do before your contractor arrives. From choosing the right pad type to planning for electrical, this checklist covers it all.",
     image: "/images/hot-tub-pad-1.jpg",
     imageAlt: "Homeowner preparing backyard for hot tub pad installation",
-    metaTitle: "Hot Tub Pad Installation Checklist for Homeowners",
+    metaTitle: "Hot Tub Pad Installation Checklist",
     metaDescription:
       "Prepare for your hot tub pad installation with this step-by-step homeowner's checklist. Site prep, electrical planning, pad type selection, and more.",
   },
