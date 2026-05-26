@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
-  NavBar,
   Hero,
   StatsStrip,
   WhyUs,
@@ -10,12 +9,11 @@ import {
   Materials,
   Benefits,
   Testimonials,
-  FAQ,
   ServiceAreas,
   RelatedTrades,
-  Contact,
   Footer,
 } from "../../_components/sections";
+import { NavBar, FAQ, Contact } from "../../_components/sections-interactive";
 import { CITIES, CITY_SLUGS, getCity } from "../../../content/cities";
 
 type Params = { city: string };

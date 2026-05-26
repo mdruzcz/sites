@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { NavBar, Footer, RelatedTrades, Contact } from "../_components/sections";
+import { Footer, RelatedTrades } from "../_components/sections";
+import { NavBar, Contact } from "../_components/sections-interactive";
 
 export const metadata: Metadata = {
   title: "About London Deck Builder",

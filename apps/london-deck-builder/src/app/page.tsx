@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  NavBar,
   Hero,
   StatsStrip,
   WhyUs,
@@ -8,12 +7,11 @@ import {
   Materials,
   Benefits,
   Testimonials,
-  FAQ,
   ServiceAreas,
-  Contact,
   Footer,
   RelatedTrades,
 } from "./_components/sections";
+import { NavBar, FAQ, Contact } from "./_components/sections-interactive";
 
 export const metadata: Metadata = {
   title: { absolute: "London Deck Builder | Expert Decks in London, Ontario" },

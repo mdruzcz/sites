@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { NavBar, Footer, RelatedTrades, Contact } from "../../_components/sections";
+import { Footer, RelatedTrades } from "../../_components/sections";
+import { NavBar, Contact } from "../../_components/sections-interactive";
 import { POSTS, POST_SLUGS, getPost, type PostBlock } from "../../../content/posts";
 
 type Params = { slug: string };

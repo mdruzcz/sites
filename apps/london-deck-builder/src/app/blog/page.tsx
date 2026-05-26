@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { NavBar, Footer } from "../_components/sections";
+import { Footer } from "../_components/sections";
+import { NavBar } from "../_components/sections-interactive";
 import { POSTS } from "../../content/posts";
 
 export const metadata: Metadata = {
