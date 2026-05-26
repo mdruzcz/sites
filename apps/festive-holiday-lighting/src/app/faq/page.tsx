@@ -5,8 +5,9 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
 import { Contact } from "@/components/Contact";
-import { FAQ, homeFaqs } from "@/components/FAQ";
-import type { FAQItem } from "@/components/FAQ";
+import { FAQ } from "@/components/FAQ";
+import { homeFaqs } from "@/lib/faqs";
+import type { FAQItem } from "@/lib/faqs";
 
 export const revalidate = 3600;
 
