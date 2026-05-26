@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import {
   NavBar,
@@ -35,7 +34,8 @@ export async function generateMetadata({
   const { city: slug } = await params;
   const city = getCity(slug);
   if (!city) return { title: "Service Area Not Found" };
-  const title = `Deck Builder in ${city.name}, ${city.region} | London Deck Builder`;
+  // Title is appended with " | London Deck Builder" via layout template
+  const title = `Deck Builder in ${city.name}, ${city.region}`;
   const description = city.blurb;
   const url = `/services/${city.slug}`;
   return {
@@ -47,11 +47,20 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
+      images: [
+        {
+          url: "/og-default.png",
+          width: 1200,
+          height: 630,
+          alt: `Deck builder in ${city.name}, ${city.region}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/og-default.png"],
     },
   };
 }
@@ -107,13 +116,11 @@ export default async function CityPage({
 
   return (
     <main>
-      <Script
-        id={`ld-service-${city.slug}`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id={`ld-breadcrumbs-${city.slug}`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />

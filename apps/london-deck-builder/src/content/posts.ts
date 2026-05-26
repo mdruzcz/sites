@@ -1,6 +1,12 @@
 export type BlogPost = {
   slug: string;
   title: string;
+  /**
+   * Optional shorter title used in <title> meta only (kept under 60 chars
+   * once the " | London Deck Builder" suffix is appended by the layout
+   * template). When omitted, `title` is used.
+   */
+  seoTitle?: string;
   description: string;
   date: string;
   category: "Buying Guide" | "Maintenance" | "Permits" | "Design" | "Cost" | "Materials";
@@ -23,6 +29,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "composite-vs-pressure-treated-decking",
     title: "Composite vs Pressure-Treated Decking: Which Should You Build in Ontario?",
+    seoTitle: "Composite vs Pressure-Treated Decking in Ontario",
     description:
       "A practical Ontario homeowner's guide comparing composite and PT decking — cost, lifespan, maintenance, look and resale value.",
     date: "2026-03-15",
@@ -128,6 +135,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "deck-permit-guide-london-ontario",
     title: "The Deck Permit Guide for London, Ontario (2026)",
+    seoTitle: "Deck Permit Guide for London, Ontario (2026)",
     description:
       "Everything you need to know about deck permits in London, Middlesex County and Elgin County — when you need one, how to get one, and what inspectors actually check.",
     date: "2026-03-08",
@@ -214,6 +222,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "deck-maintenance-schedule",
     title: "The Honest Deck Maintenance Schedule (Composite, Cedar &amp; PT)",
+    seoTitle: "Deck Maintenance Schedule (Composite, Cedar & PT)",
     description:
       "What deck maintenance actually looks like across composite, cedar and pressure-treated builds — month by month and year by year.",
     date: "2026-02-22",
@@ -277,6 +286,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "deck-cost-guide-ontario",
     title: "How Much Does a Deck Really Cost in London, Ontario? (2026 Pricing)",
+    seoTitle: "Deck Cost in London, Ontario (2026 Pricing Guide)",
     description:
       "Real 2026 deck pricing for Southwestern Ontario — broken down by material, size and feature, with three real project examples.",
     date: "2026-02-10",
@@ -369,6 +379,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "best-decking-materials-southwestern-ontario",
     title: "The Best Decking Materials for Southwestern Ontario Weather",
+    seoTitle: "Best Decking Materials for SW Ontario Weather",
     description:
       "Composite, cedar, PT, PVC, hardwood — which decking material handles Ontario's winters and humid summers best? An honest breakdown.",
     date: "2026-01-28",
@@ -434,6 +445,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "small-backyard-deck-design-ideas",
     title: "6 Small Backyard Deck Design Ideas That Actually Work",
+    seoTitle: "6 Small Backyard Deck Design Ideas That Work",
     description:
       "Small backyard deck ideas for Ontario homes — multi-level builds, built-in storage, screens for privacy and modular footprints.",
     date: "2026-01-12",

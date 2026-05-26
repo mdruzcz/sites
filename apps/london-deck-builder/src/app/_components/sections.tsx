@@ -171,6 +171,9 @@ export function Hero({ city }: { city?: string }) {
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={75}
         />
         {/* Warm dark overlay */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(44,24,16,0.82) 0%, rgba(92,61,46,0.55) 60%, rgba(44,24,16,0.4) 100%)" }} />
@@ -1204,6 +1207,12 @@ export function Footer() {
           <p className="text-xs text-white/30">
             © {new Date().getFullYear()} London Deck Builder. All rights reserved.
           </p>
+          <div className="flex items-center gap-4 text-xs text-white/30">
+            <a href="/about" className="hover:text-white/60 transition">About</a>
+            <a href="/contact" className="hover:text-white/60 transition">Contact</a>
+            <a href="/privacy" className="hover:text-white/60 transition">Privacy</a>
+            <a href="/terms" className="hover:text-white/60 transition">Terms</a>
+          </div>
           <p className="text-xs text-white/20">Serving London, St. Thomas, Woodstock &amp; surrounding areas</p>
         </div>
       </div>
