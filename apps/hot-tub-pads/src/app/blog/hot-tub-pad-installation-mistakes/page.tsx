@@ -10,15 +10,17 @@ import { blogPosts, site } from "@/lib/site";
 
 export const revalidate = 3600;
 
-const post = blogPosts.find((p) => p.slug === "post-1")!;
+const post = blogPosts.find((p) => p.slug === "hot-tub-pad-installation-mistakes")!;
+const postPath = `/blog/${post.slug}`;
 
 export const metadata: Metadata = {
-  title: post.metaTitle,
+  title: { absolute: `${post.metaTitle} | Hot Tub Pads` },
   description: post.metaDescription,
+  alternates: { canonical: postPath },
   openGraph: {
     title: post.metaTitle,
     description: post.metaDescription,
-    url: `${site.url}/blog/post-1`,
+    url: `${site.url}${postPath}`,
     type: "article",
     images: [
       {
@@ -45,7 +47,7 @@ const jsonLd = {
   headline: post.title,
   description: post.metaDescription,
   image: `${site.url}${post.image}`,
-  url: `${site.url}/blog/post-1`,
+  url: `${site.url}${postPath}`,
   datePublished: "2025-06-01",
   dateModified: "2025-06-01",
   author: {
@@ -64,19 +66,27 @@ const jsonLd = {
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": `${site.url}/blog/post-1`,
+    "@id": `${site.url}${postPath}`,
   },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${site.url}/blog` },
+    { "@type": "ListItem", position: 3, name: post.title, item: `${site.url}${postPath}` },
+  ],
 };
 
 /* ─── Related Posts ─── */
 
-const relatedPosts = blogPosts.filter(
-  (p) => p.slug === "post-2" || p.slug === "post-3"
-);
+const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug);
 
 /* ─── Page Component ─── */
 
-export default function Post1Page() {
+export default function MistakesPostPage() {
   return (
     <>
       <NavBar />
@@ -85,6 +95,10 @@ export default function Post1Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* ═══════════════ Page Hero ═══════════════ */}

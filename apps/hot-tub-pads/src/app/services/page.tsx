@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 
 import NavBar from "@/components/NavBar";
 import CtaBand from "@/components/CtaBand";
@@ -12,9 +11,10 @@ import { site, services } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Hot Tub Pad Services | Installation & More",
+  title: "Hot Tub Pad Services",
   description:
     "Expert hot tub pad installation, repair, and maintenance services across Ontario. Custom concrete pads, swim spa pads, and gravel alternatives. Free quotes.",
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "Hot Tub Pad Services | Installation & More",
     description:
@@ -77,16 +77,28 @@ const serviceJsonLd = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
+  ],
+};
+
 /* ─── Page Component ─── */
 
 export default function ServicesPage() {
   return (
     <>
       {/* Structured Data */}
-      <Script
-        id="ld-service"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <NavBar />
