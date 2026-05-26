@@ -18,7 +18,6 @@ const nextConfig = {
       { source: "/category/recommendations", destination: "/blog", permanent: true },
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/contact-us", destination: "/contact", permanent: true },
-      { source: "/service-areas", destination: "/service-areas", permanent: false },
     ];
   },
 };

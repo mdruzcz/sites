@@ -3,7 +3,6 @@ import path from "node:path";
 
 // Source-site → new-site redirect map (preserves SEO from the WordPress URLs).
 const wpRedirects: { source: string; destination: string; permanent: boolean }[] = [
-  { source: "/product-category/wires-plugs", destination: "/product-category/wires-plugs", permanent: true },
   { source: "/professional-installer/", destination: "/professional-installer", permanent: true },
   { source: "/shipping-returns/", destination: "/shipping-returns", permanent: true },
   { source: "/warranty/", destination: "/warranty", permanent: true },
