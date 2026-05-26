@@ -34,6 +34,9 @@
     },
     {
       "path": "apps/holiday-lights-direct"
+    },
+    {
+      "path": "apps/woodstock-deck-fence"
     }
   ]
 }
