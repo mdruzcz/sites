@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
@@ -16,6 +15,7 @@ export const metadata: Metadata = {
   title: "Hot Tub Pads | Expert Concrete Pad Installation in Ontario",
   description:
     "Professional hot tub pad installation across Ontario. Durable, level concrete and gravel foundations for hot tubs, swim spas, and outdoor structures. Free quotes.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Hot Tub Pads | Expert Concrete Pad Installation in Ontario",
     description:
@@ -213,14 +213,12 @@ const customPadItems = [
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data */}
-      <Script
-        id="ld-local-business"
+      {/* Structured Data — rendered as raw <script> so crawlers without JS see it */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
-      <Script
-        id="ld-faq"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />

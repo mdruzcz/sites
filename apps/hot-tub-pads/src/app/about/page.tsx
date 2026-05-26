@@ -11,9 +11,10 @@ import { site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us | Hot Tub Pads Installation Experts in Ontario",
+  title: { absolute: "About Hot Tub Pads | Ontario Concrete Pad Installers" },
   description:
     "Ontario's trusted hot tub pad installation experts. We deliver durable, level concrete foundations for hot tubs and swim spas with quality materials and precision craftsmanship.",
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About Us | Hot Tub Pads Installation Experts in Ontario",
     description:

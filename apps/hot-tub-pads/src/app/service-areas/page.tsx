@@ -10,9 +10,10 @@ import { site, cities } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Hot Tub Pad Installation Service Areas | Ontario-Wide",
+  title: { absolute: "Hot Tub Pad Service Areas | Hot Tub Pads" },
   description:
     "Professional hot tub pad installation serving Hamilton, London, Kitchener, Woodstock, Sarnia, and St. Thomas. Durable concrete and gravel pads across Ontario.",
+  alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Hot Tub Pad Installation Service Areas | Ontario-Wide",
     description:
