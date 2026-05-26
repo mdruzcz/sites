@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { NavBar, Footer, RelatedTrades, Contact } from "../../_components/sections";
 import { POSTS, POST_SLUGS, getPost, type PostBlock } from "../../../content/posts";
@@ -22,24 +21,32 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return { title: "Post Not Found" };
   const url = `/blog/${post.slug}`;
-  return {
-    title: `${post.title.replace(/&amp;/g, "&")} | London Deck Builder`,
+  const cleanTitle = post.title.replace(/&amp;/g, "&");
+  // seoTitle is the absolute <title> (we keep it ≤60 chars).
+  // When absent, the layout template appends " | London Deck Builder".
+  const meta: Metadata = {
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
       url,
       type: "article",
-      title: post.title,
+      title: cleanTitle,
       description: post.description,
       images: [{ url: post.heroImage, alt: post.heroAlt }],
       publishedTime: post.date,
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: cleanTitle,
       description: post.description,
     },
   };
+  if (post.seoTitle) {
+    meta.title = { absolute: post.seoTitle };
+  } else {
+    meta.title = cleanTitle;
+  }
+  return meta;
 }
 
 function renderBlock(block: PostBlock, i: number) {
@@ -146,8 +153,14 @@ export default async function BlogPostPage({
 
   return (
     <main>
-      <Script id={`ld-article-${post.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <Script id={`ld-bc-${post.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
 
       <NavBar homeHref="/" />
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import {
   NavBar,
   Hero,
@@ -17,7 +16,7 @@ import {
 } from "./_components/sections";
 
 export const metadata: Metadata = {
-  title: "London Deck Builder | Expert Deck Building Services in London, Ontario",
+  title: { absolute: "London Deck Builder | Expert Decks in London, Ontario" },
   description:
     "London's trusted deck builders. PT, Cedar, Composite & PVC decking with a 5-year workmanship warranty. Free quotes. Serving London, St. Thomas, Woodstock & surrounding areas.",
   alternates: { canonical: "/" },
@@ -26,6 +25,18 @@ export const metadata: Metadata = {
     title: "London Deck Builder | Decks Built to Last",
     description:
       "Premium PT, Cedar, Composite & PVC decks across London, St. Thomas & Woodstock. 5-year workmanship warranty.",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "London Deck Builder — premium deck contractor in London, Ontario",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-default.png"],
   },
 };
 
@@ -126,8 +137,14 @@ const faqSchema = {
 export default function Home() {
   return (
     <main>
-      <Script id="ld-business" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
-      <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <NavBar />
       <Hero />
       <StatsStrip />

@@ -4,7 +4,7 @@ import { NavBar, Footer } from "../_components/sections";
 import { POSTS } from "../../content/posts";
 
 export const metadata: Metadata = {
-  title: "Deck Building Guides &amp; Resources | London Deck Builder Blog",
+  title: "Deck Building Guides & Resources",
   description:
     "Honest deck-building guides for Ontario homeowners — material comparisons, permit help, maintenance, design ideas and real cost data from 500+ builds.",
   alternates: { canonical: "/blog" },
@@ -12,6 +12,18 @@ export const metadata: Metadata = {
     url: "/blog",
     title: "London Deck Builder Blog",
     description: "Practical deck building guides for Southwestern Ontario homeowners.",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "London Deck Builder blog — deck-building guides for Ontario homeowners",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-default.png"],
   },
 };
 
