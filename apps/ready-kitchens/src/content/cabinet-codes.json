@@ -1,0 +1,15 @@
+[
+  { "code": "B",   "label": "Base Cabinet", "description": "Standard floor cabinet — 34½\" tall, 24\" deep, door + adjustable shelf." },
+  { "code": "DB",  "label": "Drawer Base", "description": "Three-drawer base cabinet — soft-close drawer glides." },
+  { "code": "SB",  "label": "Sink Base", "description": "Open base cabinet sized to hold a kitchen sink — no drawer." },
+  { "code": "EB",  "label": "End Base Cabinet", "description": "Finished end-panel base cabinet for run terminations." },
+  { "code": "CB",  "label": "Corner Base", "description": "Square corner base for inside-corner runs." },
+  { "code": "LS",  "label": "Lazy Susan", "description": "Rotating corner base — two shelves, full corner usable." },
+  { "code": "MBC", "label": "Microwave Base Cabinet", "description": "Base cabinet with built-in microwave shelf opening." },
+  { "code": "UC",  "label": "Pantry / Utility Cabinet", "description": "Tall floor-to-ceiling pantry cabinet, 90\" tall." },
+  { "code": "UOC", "label": "Oven Cabinet", "description": "Tall cabinet with cut-out for a built-in wall oven." },
+  { "code": "W",   "label": "Wall Cabinet", "description": "Standard upper cabinet — 36\" tall, 12\" deep, door + shelves." },
+  { "code": "WDC", "label": "Wall Diamond Corner", "description": "Wall diagonal-corner cabinet — keeps uppers continuous at corners." },
+  { "code": "WCC", "label": "Wall Corner Cabinet", "description": "Square wall corner cabinet for inside-corner uppers." },
+  { "code": "WG",  "label": "Wall Glass Cabinet", "description": "Wall cabinet with glass-front door for display storage." }
+]

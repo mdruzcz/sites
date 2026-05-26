@@ -1,0 +1,110 @@
+[
+  {
+    "city": "Burgessville",
+    "slug": "burgessville",
+    "tier": 1,
+    "county": "Oxford County",
+    "geo": { "lat": 43.0178, "lon": -80.6549 },
+    "headline": "HVAC Service in Burgessville, Oxford County",
+    "description": "Optimum HVAC is based in Burgessville and serves the surrounding Oxford County community with fast, reliable heating and cooling service. Whether you need a furnace repair in the middle of winter or a new heat pump installation, our TSSA-certified technicians are minutes away."
+  },
+  {
+    "city": "Woodstock",
+    "slug": "woodstock",
+    "tier": 1,
+    "county": "Oxford County",
+    "geo": { "lat": 43.1303, "lon": -80.7467 },
+    "headline": "HVAC Contractor in Woodstock, Ontario",
+    "description": "As Oxford County's largest city, Woodstock demands reliable HVAC service. Optimum HVAC provides fast furnace repair, AC installation, heat pump conversions, and indoor air quality solutions to Woodstock homeowners and businesses."
+  },
+  {
+    "city": "Ingersoll",
+    "slug": "ingersoll",
+    "tier": 1,
+    "county": "Oxford County",
+    "geo": { "lat": 43.0392, "lon": -80.8831 },
+    "headline": "Heating & Cooling Services in Ingersoll, ON",
+    "description": "Ingersoll homeowners trust Optimum HVAC for all their heating and cooling needs. From emergency furnace repairs to high-efficiency heat pump installations, we serve Ingersoll with the same fast, professional service our Oxford County neighbors count on."
+  },
+  {
+    "city": "Tillsonburg",
+    "slug": "tillsonburg",
+    "tier": 1,
+    "county": "Oxford County",
+    "geo": { "lat": 42.8601, "lon": -80.7262 },
+    "headline": "HVAC Services in Tillsonburg, Ontario",
+    "description": "Serving Tillsonburg and the south end of Oxford County, Optimum HVAC delivers professional furnace repair, air conditioning installation, and heat pump service. Our TSSA G2 certified team is ready when you need us most."
+  },
+  {
+    "city": "Norwich",
+    "slug": "norwich",
+    "tier": 1,
+    "county": "Oxford County",
+    "geo": { "lat": 42.9870, "lon": -80.6046 },
+    "headline": "Heating & Air Conditioning in Norwich, ON",
+    "description": "Norwich homeowners have counted on Optimum HVAC for expert heating and cooling service. We offer same-day service for HVAC emergencies and complete system installations across Norwich and the surrounding Oxford County area."
+  },
+  {
+    "city": "Brantford",
+    "slug": "brantford",
+    "tier": 2,
+    "county": "Brant County",
+    "geo": { "lat": 43.1394, "lon": -80.2644 },
+    "headline": "HVAC Services in Brantford, Ontario",
+    "description": "Optimum HVAC extends our expert heating and cooling services to Brantford and Brant County. Whether you need a furnace tune-up, AC repair, or a complete heat pump system installation, our team is available throughout Brantford."
+  },
+  {
+    "city": "Paris",
+    "slug": "paris",
+    "tier": 2,
+    "county": "Brant County",
+    "geo": { "lat": 43.2008, "lon": -80.3839 },
+    "headline": "HVAC Contractor in Paris, Ontario",
+    "description": "Paris, Ontario residents can count on Optimum HVAC for all their heating and cooling needs. We serve Paris with the same TSSA-certified expertise and responsive service that Oxford County homeowners rely on year-round."
+  },
+  {
+    "city": "Simcoe",
+    "slug": "simcoe",
+    "tier": 2,
+    "county": "Norfolk County",
+    "geo": { "lat": 42.8396, "lon": -80.3035 },
+    "headline": "Heating & Cooling Services in Simcoe, ON",
+    "description": "Optimum HVAC serves Simcoe and Norfolk County with professional furnace and air conditioner service. Our technicians are familiar with the specific needs of Norfolk County homes and available for emergency service."
+  },
+  {
+    "city": "St. Thomas",
+    "slug": "st-thomas",
+    "tier": 2,
+    "county": "Elgin County",
+    "geo": { "lat": 42.7751, "lon": -81.1897 },
+    "headline": "HVAC Services in St. Thomas, Ontario",
+    "description": "St. Thomas homeowners and businesses can access Optimum HVAC's full range of heating and cooling services. From emergency furnace repair to new high-efficiency system installations, we serve Elgin County with the same commitment to quality."
+  },
+  {
+    "city": "London",
+    "slug": "london",
+    "tier": 3,
+    "county": "Middlesex County",
+    "geo": { "lat": 42.9849, "lon": -81.2453 },
+    "headline": "HVAC Services in London, Ontario",
+    "description": "Optimum HVAC provides heating and cooling services to London and surrounding Middlesex County. For complex commercial projects or residential installations in the Forest City, our experienced team delivers the same quality and TSSA certification."
+  },
+  {
+    "city": "Oakville",
+    "slug": "oakville",
+    "tier": 3,
+    "county": "Halton Region",
+    "geo": { "lat": 43.4675, "lon": -79.6877 },
+    "headline": "HVAC Installation Services in Oakville, ON",
+    "description": "Optimum HVAC extends premium HVAC services to Oakville and the Halton Region. Specializing in high-efficiency heat pump installations and indoor air quality systems, we bring Oxford County expertise to Greater Toronto Area homeowners."
+  },
+  {
+    "city": "Burlington",
+    "slug": "burlington",
+    "tier": 3,
+    "county": "Halton Region",
+    "geo": { "lat": 43.3255, "lon": -79.7990 },
+    "headline": "Heat Pump & HVAC Services in Burlington, ON",
+    "description": "Burlington homeowners seeking premium HVAC service and heat pump installations can trust Optimum HVAC. We bring our Oxford County expertise and TSSA G2 certification to Burlington, specializing in energy-efficient systems and rebate applications."
+  }
+]

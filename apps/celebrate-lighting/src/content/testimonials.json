@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Sarah M.",
+    "location": "Tillsonburg",
+    "quote": "The installation was flawless and the lights look absolutely stunning. We can now enjoy beautiful lighting for every holiday without the hassle of putting up and taking down decorations.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Michael R.",
+    "location": "Brantford",
+    "quote": "Professional service from start to finish. The team was punctual, respectful, and the quality of work exceeded our expectations. Highly recommend!",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Jennifer L.",
+    "location": "London",
+    "quote": "Best investment we've made for our home! The app control is so convenient and the lights have held up perfectly through two Canadian winters.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "George M.",
+    "location": "London, ON",
+    "quote": "Absolutely thrilled with our permanent lighting! The team was professional, and the installation was flawless. Our home looks stunning year-round.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "David R.",
+    "location": "London, ON",
+    "quote": "Best investment we've made for our home. The energy savings are noticeable, and we love being able to change colors for different seasons and holidays.",
+    "rating": 5,
+    "featured": false
+  },
+  {
+    "author": "Vanessa L.",
+    "location": "London, ON",
+    "quote": "The quality is exceptional and the warranty gives us peace of mind. Highly recommend Celebrate Lighting to anyone in London looking for permanent lighting.",
+    "rating": 5,
+    "featured": false
+  }
+]

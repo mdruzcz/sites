@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "richmond-hill-deck-restoration",
+    "title": "Full Deck Restoration",
+    "city": "Richmond Hill",
+    "service": "deck-restoration",
+    "image": "/images/deck-restoration.webp",
+    "alt": "Fully restored cedar deck with rich honey stain in Richmond Hill, Ontario",
+    "description": "Complete structural restoration and two-coat honey stain on a 350 sq ft cedar deck.",
+    "featured": true
+  },
+  {
+    "slug": "vaughan-deck-staining",
+    "title": "Two-Coat Deck Staining",
+    "city": "Vaughan",
+    "service": "deck-staining",
+    "image": "/images/after-1.jpg",
+    "alt": "Beautiful two-coat deck staining completed in Vaughan, GTA",
+    "description": "Premium two-coat dark walnut stain on a 280 sq ft pressure-treated deck.",
+    "featured": true
+  },
+  {
+    "slug": "markham-deck-refinishing",
+    "title": "Deck Refinishing",
+    "city": "Markham",
+    "service": "deck-refinishing",
+    "image": "/images/banner-2.webp",
+    "alt": "Refinished deck showing rich stain colour and smooth surface in Markham, Ontario",
+    "description": "Full sand-down and cedar stain refresh on a weathered 15-year-old deck.",
+    "featured": true
+  },
+  {
+    "slug": "toronto-fence-staining",
+    "title": "Fence & Deck Staining",
+    "city": "Toronto",
+    "service": "fence-staining",
+    "image": "/images/fence-staining.webp",
+    "alt": "Freshly stained wooden fence and deck in Toronto backyard",
+    "description": "Matching stain applied to both deck and 80 linear feet of cedar fence.",
+    "featured": true
+  },
+  {
+    "slug": "mississauga-deck-sealing",
+    "title": "Deck Sealing",
+    "city": "Mississauga",
+    "service": "deck-sealing",
+    "image": "/images/deck-sealing.webp",
+    "alt": "Sealed deck with clear waterproofing coat in Mississauga, Ontario",
+    "description": "Clear waterproofing sealer applied after full power wash prep on a composite-edge cedar deck.",
+    "featured": false
+  },
+  {
+    "slug": "north-york-before-after",
+    "title": "Before & After Restoration",
+    "city": "North York",
+    "service": "deck-restoration",
+    "image": "/images/after-2.jpg",
+    "alt": "Deck before and after full restoration and staining in North York, Toronto",
+    "description": "Dramatic before and after — full board replacement, sanding, and two-coat stain.",
+    "featured": false
+  },
+  {
+    "slug": "scarborough-deck-staining",
+    "title": "Deck Staining",
+    "city": "Scarborough",
+    "service": "deck-staining",
+    "image": "/images/deck-refinishing.png",
+    "alt": "Professional deck staining completed in Scarborough, Toronto GTA",
+    "description": "Single-coat dark espresso stain on a freshly washed 200 sq ft deck.",
+    "featured": false
+  },
+  {
+    "slug": "brampton-deck-refinishing",
+    "title": "Full Refinishing",
+    "city": "Brampton",
+    "service": "deck-refinishing",
+    "image": "/images/banner-1.webp",
+    "alt": "Refinished deck with new warm amber stain in Brampton, Ontario",
+    "description": "Complete refinishing from grey weathered wood to a rich amber finish.",
+    "featured": false
+  }
+]

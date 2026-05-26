@@ -1,0 +1,62 @@
+[
+  {
+    "question": "How quickly can you respond to a furnace breakdown?",
+    "answer": "We offer same-day emergency service across Oxford County and surrounding areas. For true emergencies (no heat in winter), we prioritize your call and aim to have a technician on-site within 2–4 hours during business hours.",
+    "category": "Emergency"
+  },
+  {
+    "question": "Do you offer 24/7 emergency HVAC service?",
+    "answer": "Yes. We offer 24/7 emergency HVAC service for heating and cooling failures. After-hours emergency calls may carry an additional service fee, which our dispatcher will communicate clearly before dispatch.",
+    "category": "Emergency"
+  },
+  {
+    "question": "What should I do while waiting for a furnace repair technician?",
+    "answer": "Keep interior doors closed to retain heat in occupied rooms. Use space heaters carefully — never leave them unattended. Turn off your furnace at the thermostat if you smell gas, and call Enbridge Gas at 1-877-362-7434 if you suspect a gas leak.",
+    "category": "Emergency"
+  },
+  {
+    "question": "What size furnace do I need for my home?",
+    "answer": "Furnace sizing depends on your home's square footage, insulation, ceiling height, number of windows, and local climate. We perform a proper Manual J load calculation before recommending any equipment — never just 'matching' the old furnace size.",
+    "category": "Furnace"
+  },
+  {
+    "question": "How long does a furnace last?",
+    "answer": "A well-maintained gas furnace typically lasts 15–20 years. With regular tune-ups and filter changes, many last even longer. If your furnace is over 15 years old and needing frequent repairs, replacement is often the more economical choice.",
+    "category": "Furnace"
+  },
+  {
+    "question": "What rebates are available for heat pumps in Ontario?",
+    "answer": "Ontario homeowners can access multiple programs: the Canada Greener Homes Loan offers up to $40,000 interest-free over 10 years; Enbridge HER+ provides up to $10,000+ for natural gas customers switching to heat pumps; Save on Energy offers additional incentives. Total savings often reach $15,000–$25,000. We handle all applications.",
+    "category": "Heat Pumps"
+  },
+  {
+    "question": "Do I need to replace my furnace when installing a heat pump?",
+    "answer": "Not necessarily. A dual-fuel system pairs a heat pump with your existing gas furnace, using the heat pump for mild weather and the furnace as backup in extreme cold. This reduces gas use while avoiding a full furnace replacement.",
+    "category": "Heat Pumps"
+  },
+  {
+    "question": "How much can I save with a heat pump compared to a gas furnace?",
+    "answer": "In most Ontario homes, a heat pump reduces heating costs by 40–60% compared to electric baseboard and 20–35% compared to gas, depending on electricity rates and natural gas prices. Air conditioning costs are also reduced since the heat pump replaces your AC.",
+    "category": "Heat Pumps"
+  },
+  {
+    "question": "Why is my air conditioner freezing up?",
+    "answer": "Common causes include restricted airflow (dirty filter, blocked vents), low refrigerant, or a dirty evaporator coil. Turn off the AC, switch to 'fan only' mode to thaw it, then call us. Running a frozen AC can damage the compressor.",
+    "category": "Air Conditioning"
+  },
+  {
+    "question": "How often should HVAC filters be changed?",
+    "answer": "Standard 1-inch filters: every 1–3 months. Thicker media filters (4–5 inch): every 6–12 months. Homes with pets or allergies: more frequently. A clogged filter is the leading cause of HVAC breakdowns and efficiency loss.",
+    "category": "Maintenance"
+  },
+  {
+    "question": "Do you offer financing for new HVAC systems?",
+    "answer": "Yes. We partner with approved lenders to offer flexible financing including 0% interest promotional periods on new furnace, AC, and heat pump installations. Ask about current offers when you request your free quote.",
+    "category": "Financing"
+  },
+  {
+    "question": "What is TSSA certification and why does it matter?",
+    "answer": "TSSA (Technical Standards and Safety Authority) G2 certification is required by Ontario law to install gas appliances. Always verify your HVAC contractor holds a valid TSSA G2 licence before allowing any gas work in your home. Optimum HVAC is fully TSSA G2 certified and insured.",
+    "category": "Indoor Air Quality"
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "primaryCity": "Toronto",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "richmond-hill",
+      "name": "Richmond Hill",
+      "description": "Serving Richmond Hill homeowners with professional deck staining, sealing, and restoration. We protect GTA decks from Ontario's freeze-thaw cycles with eco-friendly premium stains."
+    },
+    {
+      "slug": "vaughan",
+      "name": "Vaughan",
+      "description": "Premium deck staining and restoration for Vaughan properties. Our team delivers long-lasting results engineered for York Region's climate — free estimates available."
+    },
+    {
+      "slug": "markham",
+      "name": "Markham",
+      "description": "Expert deck staining, sealing, and refinishing throughout Markham. We restore and protect outdoor wood surfaces with 15+ years of GTA experience."
+    },
+    {
+      "slug": "mississauga",
+      "name": "Mississauga",
+      "description": "Trusted deck staining and restoration services across Mississauga. Eco-friendly products, transparent pricing, and free on-site estimates for all homeowners."
+    },
+    {
+      "slug": "north-york",
+      "name": "North York",
+      "description": "Deck staining, sealing, and full restoration for North York homes. Premium finishes that protect against Toronto's harsh winters and UV summers."
+    },
+    {
+      "slug": "scarborough",
+      "name": "Scarborough",
+      "description": "Professional deck staining and restoration across Scarborough. We breathe new life into weathered decks and fences with proven techniques and premium stains."
+    },
+    {
+      "slug": "etobicoke",
+      "name": "Etobicoke",
+      "description": "Expert deck and fence staining for Etobicoke homeowners. 1,500+ decks restored across the GTA — your neighbourhood is well within our service area."
+    },
+    {
+      "slug": "brampton",
+      "name": "Brampton",
+      "description": "Deck staining, sealing, and full restoration throughout Brampton. Licensed, insured, and backed by 15+ years of outdoor wood restoration experience."
+    },
+    {
+      "slug": "oakville",
+      "name": "Oakville",
+      "description": "Premium deck staining and restoration for Oakville properties. We match your preferred look with a custom stain colour and protect it for years to come."
+    },
+    {
+      "slug": "pickering",
+      "name": "Pickering",
+      "description": "Serving Pickering with professional deck staining, sealing, refinishing, and restoration. Free estimates and eco-friendly stains that stand up to Ontario winters."
+    }
+  ]
+}

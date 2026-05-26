@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "brantford-roofline",
+    "title": "Roofline Installation — Brantford",
+    "service": "new-installation",
+    "city": "Brantford",
+    "image": "/images/project-brantford.jpg",
+    "description": "Full roofline and soffit LED installation on a two-storey home in Brantford, colour-matched to the existing trim.",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "tillsonburg-residential",
+    "title": "Residential LED System — Tillsonburg",
+    "service": "new-installation",
+    "city": "Tillsonburg",
+    "image": "/images/project-tillsonburg.jpg",
+    "description": "Complete permanent lighting installation in Tillsonburg featuring warm-white architectural lighting and seasonal colour capability.",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "london-heritage-home",
+    "title": "Heritage Home — London",
+    "service": "new-installation",
+    "city": "London",
+    "image": "/images/project-london.jpg",
+    "description": "Permanent LED track system installed on a heritage-style property in London, highlighting architectural details with programmable colours.",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "gallery-1",
+    "title": "Holiday Display — Southwestern Ontario",
+    "service": "new-installation",
+    "city": "Woodstock",
+    "image": "/images/gallery-1.jpg",
+    "description": "Vibrant holiday colour display demonstrating the full colour range of our LED system.",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "slug": "gallery-2",
+    "title": "Residential Installation — SW Ontario",
+    "service": "new-installation",
+    "city": "Waterloo",
+    "image": "/images/gallery-2.jpg",
+    "description": "Clean soffit-mounted LED track installation on a modern residential property.",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "slug": "gallery-3",
+    "title": "Full Exterior — SW Ontario",
+    "service": "new-installation",
+    "city": "Guelph",
+    "image": "/images/gallery-3.jpg",
+    "description": "Complete exterior lighting solution featuring roofline, landscape, and pathway LEDs.",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "slug": "gallery-4",
+    "title": "Colour Showcase — SW Ontario",
+    "service": "new-installation",
+    "city": "Stratford",
+    "image": "/images/gallery-4.jpg",
+    "description": "Seasonal colour display showcasing the system's multi-million colour capability.",
+    "featured": false,
+    "order": 7
+  }
+]

@@ -1,0 +1,236 @@
+[
+  {
+    "slug": "furnace-repair-installation",
+    "title": "Furnace Repair & Installation",
+    "shortDescription": "Expert furnace repair and high-efficiency installation for Ontario winters.",
+    "fullDescription": "When your furnace fails in the middle of an Oxford County winter, you need a team that responds fast and gets it right the first time. Optimum HVAC provides same-day furnace repair and professional high-efficiency furnace installation for homeowners across Woodstock, Ingersoll, Tillsonburg, and surrounding communities. We service all major brands including Lennox, Carrier, Trane, and Goodman.",
+    "features": [
+      "Same-day emergency furnace repair",
+      "High-efficiency gas furnace installation (up to 98% AFUE)",
+      "All major brands serviced and installed",
+      "TSSA G2 certified technicians",
+      "10-year parts and labour warranty on new installs",
+      "Free in-home estimate"
+    ],
+    "faqs": [
+      {
+        "question": "How do I know if my furnace needs repair or replacement?",
+        "answer": "If your furnace is over 15 years old, requires frequent repairs, or your energy bills have risen significantly, replacement is often more cost-effective. Our technicians will give you an honest assessment."
+      },
+      {
+        "question": "What brands of furnace do you install?",
+        "answer": "We install Lennox, Carrier, Trane, Goodman, and Napoleon furnaces. We'll help you choose the right unit for your home size, budget, and efficiency goals."
+      },
+      {
+        "question": "Do you offer financing for furnace installation?",
+        "answer": "Yes. We offer flexible financing options including 0% interest plans through approved lenders. Ask us about current promotions."
+      }
+    ],
+    "icon": "🔥",
+    "accentColor": "heat",
+    "order": 1,
+    "featured": true
+  },
+  {
+    "slug": "air-conditioner-repair-installation",
+    "title": "Air Conditioner Repair & Installation",
+    "shortDescription": "Keep cool all summer with expert AC service and new system installation.",
+    "fullDescription": "Don't suffer through a southwestern Ontario summer with a failing air conditioner. Optimum HVAC provides fast AC repair and professional central air conditioner installation. We service all makes and models and can have a new high-efficiency system running in your home within days.",
+    "features": [
+      "Same-day AC repair in most cases",
+      "Central air conditioner installation",
+      "SEER2-rated high-efficiency units",
+      "Refrigerant recharge and leak detection",
+      "Annual AC tune-up service",
+      "Free estimate on new installations"
+    ],
+    "faqs": [
+      {
+        "question": "My AC is running but not cooling. What's wrong?",
+        "answer": "Common causes include low refrigerant, dirty coils, a failing compressor, or a clogged filter. Our technicians will diagnose the issue and provide an upfront quote before any work begins."
+      },
+      {
+        "question": "What SEER rating should I look for?",
+        "answer": "In Ontario, we recommend a minimum SEER2 of 14.3 for good efficiency. Units rated 18+ SEER2 offer significant long-term savings and may qualify for rebates."
+      }
+    ],
+    "icon": "❄️",
+    "accentColor": "cool",
+    "order": 2,
+    "featured": true
+  },
+  {
+    "slug": "heat-pump-installation",
+    "title": "Heat Pump Installation",
+    "shortDescription": "Year-round comfort with modern heat pumps — and up to $40,000 in government rebates.",
+    "fullDescription": "Heat pumps are the most energy-efficient way to heat and cool your home. A single system replaces both your furnace and air conditioner, using electricity to move heat rather than burn fuel. Optimum HVAC specializes in heat pump installation across Oxford County and southwestern Ontario, and we'll help you navigate every available rebate program to maximize your savings.",
+    "features": [
+      "Air source and ground source heat pump installation",
+      "Cold-climate heat pumps rated to -25°C",
+      "Replaces both furnace and AC",
+      "Up to $40,000 in Canada Greener Homes rebates",
+      "Enbridge HER+ rebates up to $10,000+",
+      "Save on Energy incentives",
+      "TSSA G2 certified installation"
+    ],
+    "rebateHighlight": "Up to $40,000 in rebates available",
+    "faqs": [
+      {
+        "question": "Do heat pumps work in cold Canadian winters?",
+        "answer": "Modern cold-climate heat pumps work efficiently down to -25°C or colder. Many systems include a backup electric or gas heat strip for extreme cold snaps, ensuring you're always comfortable."
+      },
+      {
+        "question": "What rebates are available for heat pumps in Ontario?",
+        "answer": "The Canada Greener Homes Loan offers up to $40,000 interest-free. Enbridge HER+ provides $10,000+ for natural gas customers switching to heat pumps. Save on Energy offers additional incentives. We handle the paperwork for you."
+      },
+      {
+        "question": "How long does heat pump installation take?",
+        "answer": "Most residential heat pump installations take one to two days. We handle permits, inspections, and rebate applications as part of our full-service installation."
+      }
+    ],
+    "icon": "♻️",
+    "accentColor": "cool",
+    "order": 3,
+    "featured": true
+  },
+  {
+    "slug": "ductless-mini-split",
+    "title": "Ductless Mini-Split Systems",
+    "shortDescription": "Efficient zone-by-zone heating and cooling without ductwork.",
+    "fullDescription": "Ductless mini-split systems are ideal for home additions, garages, older homes without ductwork, or any space where you want independent temperature control. Optimum HVAC installs Mitsubishi, Daikin, and Napoleon mini-splits — the quietest and most efficient units available.",
+    "features": [
+      "Single-zone and multi-zone systems",
+      "No ductwork required",
+      "Heating and cooling in one unit",
+      "Whisper-quiet operation",
+      "Eligible for heat pump rebates",
+      "Professional installation and commissioning"
+    ],
+    "faqs": [
+      {
+        "question": "Can a mini-split heat my whole house?",
+        "answer": "A multi-zone mini-split system with multiple indoor heads can heat and cool an entire home. We'll assess your home's layout and recommend the right configuration."
+      }
+    ],
+    "icon": "🌬️",
+    "accentColor": "cool",
+    "order": 4,
+    "featured": false
+  },
+  {
+    "slug": "indoor-air-quality",
+    "title": "Indoor Air Quality",
+    "shortDescription": "Breathe cleaner air with whole-home filtration, humidifiers, and UV systems.",
+    "fullDescription": "The air inside your home can be up to 5x more polluted than outdoor air. Optimum HVAC installs whole-home air purification systems, HRVs (heat recovery ventilators), humidifiers, dehumidifiers, and UV germicidal lights to dramatically improve indoor air quality for your family.",
+    "features": [
+      "HEPA and media air cleaners",
+      "UV germicidal light systems",
+      "Heat recovery ventilators (HRV)",
+      "Whole-home humidifiers and dehumidifiers",
+      "Carbon monoxide and air quality monitors",
+      "Duct cleaning partnerships"
+    ],
+    "faqs": [
+      {
+        "question": "Do I need an HRV if I have a newer, airtight home?",
+        "answer": "Yes — tightly built homes trap stale air, moisture, and pollutants. An HRV exchanges stale indoor air with fresh outdoor air while recovering up to 80% of the heat energy, keeping your home comfortable and healthy."
+      }
+    ],
+    "icon": "💨",
+    "accentColor": "cool",
+    "order": 5,
+    "featured": false
+  },
+  {
+    "slug": "tankless-water-heaters",
+    "title": "Tankless Water Heaters",
+    "shortDescription": "Endless hot water and 30–40% energy savings with tankless water heater installation.",
+    "fullDescription": "Upgrade from a conventional tank to a high-efficiency tankless water heater and enjoy endless hot water on demand — while cutting your water heating costs by 30–40%. Optimum HVAC installs Navien and Rinnai tankless units, which are TSSA G2 certified and backed by industry-leading warranties.",
+    "features": [
+      "Endless on-demand hot water",
+      "30–40% energy savings vs. tank units",
+      "Navien and Rinnai installations",
+      "Indoor and outdoor units available",
+      "TSSA G2 certified installation",
+      "10-year heat exchanger warranty"
+    ],
+    "faqs": [
+      {
+        "question": "Can a tankless heater supply hot water to my whole home?",
+        "answer": "Yes. We size the unit to your home's demand, accounting for the number of bathrooms, appliances, and simultaneous usage patterns to ensure you always have enough hot water."
+      }
+    ],
+    "icon": "💧",
+    "accentColor": "heat",
+    "order": 6,
+    "featured": false
+  },
+  {
+    "slug": "smart-thermostats",
+    "title": "Smart Thermostat Installation",
+    "shortDescription": "Cut energy bills 15–23% with a professionally installed smart thermostat.",
+    "fullDescription": "A smart thermostat learns your schedule, adjusts automatically, and lets you control your home's temperature from anywhere. Optimum HVAC installs and configures Ecobee and Nest thermostats, ensuring seamless integration with your existing HVAC system.",
+    "features": [
+      "Ecobee and Nest installation",
+      "Professional configuration and setup",
+      "Integration with heat pumps and furnaces",
+      "App-based remote control",
+      "Energy usage reports",
+      "Potential Enbridge and hydro rebates"
+    ],
+    "faqs": [
+      {
+        "question": "Will any smart thermostat work with my heating system?",
+        "answer": "Most smart thermostats are compatible with standard forced-air systems. Heat pumps, two-stage systems, and hydronic heating require specific models. We'll verify compatibility before installation."
+      }
+    ],
+    "icon": "📱",
+    "accentColor": "heat",
+    "order": 7,
+    "featured": false
+  },
+  {
+    "slug": "maintenance-plans",
+    "title": "HVAC Maintenance Plans",
+    "shortDescription": "Annual tune-ups, priority service, and peace of mind — starting at $149/year.",
+    "fullDescription": "Regular HVAC maintenance prevents costly breakdowns, extends equipment life, and keeps your systems running at peak efficiency. Optimum HVAC's maintenance plans include annual furnace and AC tune-ups, priority emergency service, and discounts on parts and repairs.",
+    "features": [
+      "Annual furnace tune-up",
+      "Annual AC tune-up",
+      "Priority emergency response",
+      "15% discount on parts and repairs",
+      "Filter replacement reminders",
+      "Transferable to new homeowners"
+    ],
+    "plans": [
+      {
+        "name": "Bronze",
+        "price": 149,
+        "period": "year",
+        "features": ["Annual furnace OR AC tune-up", "Filter replacement reminder", "10% parts discount"]
+      },
+      {
+        "name": "Silver",
+        "price": 249,
+        "period": "year",
+        "features": ["Annual furnace AND AC tune-up", "Priority service booking", "15% parts discount", "Free service call"]
+      },
+      {
+        "name": "Gold",
+        "price": 399,
+        "period": "year",
+        "features": ["Furnace + AC + HRV tune-up", "24/7 priority emergency line", "20% parts discount", "2 free service calls", "Annual IAQ inspection"]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often should I service my furnace and AC?",
+        "answer": "We recommend annual service for both your furnace (in fall) and air conditioner (in spring). Regular tune-ups catch small issues before they become expensive breakdowns and keep your warranties valid."
+      }
+    ],
+    "icon": "🛡️",
+    "accentColor": "heat",
+    "order": 8,
+    "featured": true
+  }
+]

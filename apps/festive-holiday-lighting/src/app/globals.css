@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --night:        #08080F;
+  --night-deep:   #040408;
+  --midnight:     #0F0F1A;
+  --slate-mid:    #1A1A2E;
+  --crimson:      #B22222;
+  --crimson-deep: #8B0000;
+  --crimson-bright: #CC3333;
+  --gold:         #C9A84C;
+  --gold-bright:  #E8C56B;
+  --gold-pale:    #F5DFA0;
+  --cream:        #FAF6EE;
+  --green-pine:   #1B5E20;
+}
+
+@theme inline {
+  --color-night:          var(--night);
+  --color-night-deep:     var(--night-deep);
+  --color-midnight:       var(--midnight);
+  --color-slate-mid:      var(--slate-mid);
+  --color-crimson:        var(--crimson);
+  --color-crimson-deep:   var(--crimson-deep);
+  --color-crimson-bright: var(--crimson-bright);
+  --color-gold:           var(--gold);
+  --color-gold-bright:    var(--gold-bright);
+  --color-gold-pale:      var(--gold-pale);
+  --color-cream:          var(--cream);
+  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night-deep);
+  color: var(--cream);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-poppins, var(--font-inter, Arial, Helvetica, sans-serif));
+  letter-spacing: -0.01em;
+}
+
+.crimson-glow {
+  box-shadow: 0 0 30px rgba(178,34,34,0.45), 0 0 60px rgba(139,0,0,0.25);
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(201,168,76,0.45), 0 0 60px rgba(232,197,107,0.25);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #E8C56B 0%, #C9A84C 50%, #B8960F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-festive {
+  background: linear-gradient(135deg, #E8C56B 0%, #CC3333 60%, #8B0000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Bokeh / festive light dots */
+@keyframes float-bokeh {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-12px) scale(1.1); opacity: 1; }
+}
+.bokeh-dot {
+  animation: float-bokeh var(--duration, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.8); }
+}
+.animate-twinkle { animation: twinkle 2s ease-in-out infinite; }
