@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getServerSupabase } from "@/lib/supabase/server";
 import type { City, Category, WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export const revalidate = 60;
 

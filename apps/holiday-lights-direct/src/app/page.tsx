@@ -9,7 +9,13 @@ import { UseCases } from "@/components/sections/use-cases";
 import { Testimonial } from "@/components/sections/testimonial";
 import { ServiceAreas } from "@/components/sections/service-areas";
 import { CtaBand } from "@/components/sections/cta-band";
+import type { Metadata } from "next";
 import { getCategories, listProducts } from "@/lib/catalog";
+import { SITE_URL } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 export const revalidate = 3600;
 

@@ -58,7 +58,6 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  alternates: { canonical: SITE_URL },
 };
 
 export default function RootLayout({
