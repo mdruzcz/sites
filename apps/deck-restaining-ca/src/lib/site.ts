@@ -14,7 +14,7 @@ export const site = {
   url: "https://deckrestaining.ca",
   tagline: "Premium Oil-Based Deck & Fence Staining",
   description:
-    "Professional deck restaining and fence staining services in Oakville, Burlington, and the Halton Region. We use exclusively oil-based stains for superior durability and lasting beauty.",
+    "Professional deck and fence staining in Oakville, Burlington & the Halton Region. Oil-based stains only — 3–5 year durability, no peeling. Free quotes.",
   serviceAreas: [
     "Oakville",
     "Burlington",

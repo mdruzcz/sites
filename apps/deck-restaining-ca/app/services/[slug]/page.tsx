@@ -22,12 +22,22 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
+  // Trim shortDescription to keep meta description <=160 chars after suffix.
+  const suffix = ` Serving Oakville, Burlington & Halton.`;
+  const max = 160 - suffix.length;
+  const short = service.shortDescription.length > max
+    ? service.shortDescription.slice(0, max - 1).trimEnd() + "…"
+    : service.shortDescription;
+  const description = `${short}${suffix}`;
+
   return {
     title: `${service.title} in Oakville & Burlington`,
-    description: `${service.shortDescription} Serving ${site.serviceAreas.join(", ")}. Contact us for a free quote.`,
+    description,
+    alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.title} | ${site.name}`,
-      description: service.shortDescription,
+      description,
+      url: `${site.url}/services/${service.slug}`,
     },
   };
 }

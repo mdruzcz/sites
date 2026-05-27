@@ -6,7 +6,8 @@ import { CtaBand } from "@/components/CtaBand";
 
 export const metadata: Metadata = {
   title: "About Us | Professional Deck Staining Experts",
-  description: `Learn about ${site.name} — ${site.yearsExperience}+ years of professional deck and fence staining in the Halton Region. Oil-based stains, proper prep, lasting results.`,
+  description: `${site.yearsExperience}+ years staining decks & fences across the Halton Region. Oil-based stains, proper prep, 3–5 year lasting results from ${site.name}.`,
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

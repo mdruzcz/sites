@@ -5,7 +5,8 @@ import { breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "FAQ | Deck Staining Questions Answered",
-  description: `Common questions about deck staining, oil vs water-based stains, prep work, timelines, and pricing. Expert answers from ${site.name}.`,
+  description: `Common questions about deck staining, oil vs water-based stains, prep, timelines, and pricing — answered by ${site.name}.`,
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [
