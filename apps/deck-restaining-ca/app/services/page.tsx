@@ -7,7 +7,8 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Services | Deck & Fence Staining",
-  description: `Professional deck restaining, stripping, sanding, restoration, and fence staining services in ${site.serviceAreas.join(", ")}. Oil-based stains only.`,
+  description: `Deck restaining, stripping, sanding, restoration & fence staining across Oakville, Burlington & the Halton Region. Oil-based stains only.`,
+  alternates: { canonical: "/services" },
 };
 
 export const revalidate = 3600;

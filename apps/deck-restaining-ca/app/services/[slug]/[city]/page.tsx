@@ -31,12 +31,25 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const title = `${service.title} in ${city.name}, ON`;
-  const description = `Professional ${service.title.toLowerCase()} in ${city.name}. ${service.shortDescription} Contact ${site.name} for a free quote.`;
+  // Keep description <=160 chars. Format: lead in + city + concise pitch.
+  const lead = `Professional ${service.title.toLowerCase()} in ${city.name}, ON.`;
+  const suffix = ` Free quotes from ${site.name}.`;
+  const max = 160 - lead.length - suffix.length - 1;
+  const pitch = service.shortDescription.length > max
+    ? service.shortDescription.slice(0, max - 1).trimEnd() + "…"
+    : service.shortDescription;
+  const description = `${lead} ${pitch}${suffix}`;
+  const canonical = `/services/${service.slug}/${city.slug}`;
 
   return {
     title,
     description,
-    openGraph: { title, description },
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: `${site.url}${canonical}`,
+    },
   };
 }
 

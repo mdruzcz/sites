@@ -8,7 +8,8 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Gallery | Before & After Deck Transformations",
-  description: `See our deck and fence staining results. Before & after photos from projects across ${site.serviceAreas.join(", ")}. Professional oil-based staining.`,
+  description: `Before & after photos of deck and fence staining projects across Oakville, Burlington & the Halton Region — premium oil-based finishes.`,
+  alternates: { canonical: "/gallery" },
 };
 
 const beforeAfterPairs = [
