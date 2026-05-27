@@ -1,7 +1,8 @@
 export const site = {
   name: "Deck Restaining",
-  phone: "519-000-0000",
-  phoneHref: "tel:+15190000000",
+  phone: "(519) 878-6735",
+  phoneE164: "+15198786735",
+  phoneHref: "tel:+15198786735",
   email: "info@deckrestaining.ca",
   address: {
     city: "Oakville",
