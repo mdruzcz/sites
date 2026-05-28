@@ -4,11 +4,17 @@ import { Resend } from "resend";
 
 export const runtime = "edge";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// Lazy-init to avoid build-time crash when env vars aren't visible during
+// Next.js "collect page data" phase (Resend now throws on empty/undefined key).
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  );
+}
 
 async function verifyTurnstile(token: string): Promise<boolean> {
   const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
@@ -33,11 +39,11 @@ export async function POST(req: NextRequest) {
   const valid = await verifyTurnstile(token);
   if (!valid) return NextResponse.json({ error: "Invalid captcha" }, { status: 400 });
 
-  await supabase.from("rmd_quote_requests").insert({
+  await getSupabase().from("rmd_quote_requests").insert({
     name, email, phone, message: message || "", created_at: new Date().toISOString(),
   });
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: "noreply@restoremydeck.ca",
     to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
     subject: `New Quote Request from ${name} – Restore My Deck`,
