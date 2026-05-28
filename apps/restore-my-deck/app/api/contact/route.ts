@@ -11,10 +11,11 @@ const supabase = createClient(
 );
 
 async function verifyTurnstile(token: string): Promise<boolean> {
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+  const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+  const res = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: token }),
+    body: JSON.stringify({ token, hostname: "restoremydeck.ca" }),
   });
   const data = (await res.json()) as { success: boolean };
   return data.success;

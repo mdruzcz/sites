@@ -18,13 +18,12 @@ type SubmitInput = {
 };
 
 async function verifyTurnstile(token: string | undefined): Promise<boolean> {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return true;
-  if (!token) return false;
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+  if (!token) return process.env.NODE_ENV !== "production";
+  const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+  const res = await fetch(endpoint, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `secret=${encodeURIComponent(secret)}&response=${encodeURIComponent(token)}`,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token, hostname: "readykitchens.ca" }),
   });
   const data = (await res.json()) as { success: boolean };
   return data.success;

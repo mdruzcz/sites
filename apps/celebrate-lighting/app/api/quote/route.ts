@@ -3,14 +3,12 @@ export const runtime = "edge";
 export async function POST(req: Request) {
   const body = await req.json();
 
-  // Turnstile verification
-  const turnstileRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+  // Turnstile verification via shared Worker
+  const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+  const turnstileRes = await fetch(turnstileEndpoint, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      secret: process.env.TURNSTILE_SECRET_KEY ?? "",
-      response: body.turnstileToken ?? "",
-    }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token: body.turnstileToken ?? "", hostname: "celebratelighting.ca" }),
   });
   const turnstileData = await turnstileRes.json() as { success: boolean };
   if (!turnstileData.success) {
