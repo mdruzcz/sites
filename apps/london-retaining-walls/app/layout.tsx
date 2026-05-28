@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,8 +7,19 @@ import CallNowFab from "@/components/CallNowFab";
 import { site } from "@/lib/site";
 import { localBusinessSchema } from "@/lib/jsonld";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat", weight: ["400", "600", "700", "800", "900"], display: "swap" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -25,14 +36,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${roboto.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
         />
       </head>
-      <body className="font-[var(--font-inter)] antialiased">
+      <body className="font-[family-name:var(--font-roboto)] antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

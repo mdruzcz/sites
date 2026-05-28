@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 
-export default function QuoteForm({ dark = false }: { dark?: boolean }) {
+export default function QuoteForm({ dark = false, compact = false }: { dark?: boolean; compact?: boolean }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [token, setToken] = useState("");
   const successRef = useRef<HTMLDivElement>(null);
@@ -53,23 +53,29 @@ export default function QuoteForm({ dark = false }: { dark?: boolean }) {
       {/* Honeypot */}
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className={labelCls}>Name *</label>
-          <input type="text" name="name" required autoComplete="name" placeholder="Your full name" className={inputCls} />
+          <label className={labelCls}>First Name *</label>
+          <input type="text" name="name" required autoComplete="given-name" placeholder="First name" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Phone *</label>
+          <label className={labelCls}>Last Name</label>
+          <input type="text" name="last_name" autoComplete="family-name" placeholder="Last name" className={inputCls} />
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className={labelCls}>Email *</label>
+          <input type="email" name="email" required autoComplete="email" placeholder="Email address" className={inputCls} />
+        </div>
+        <div>
+          <label className={labelCls}>Phone/Mobile *</label>
           <input type="tel" name="phone" required autoComplete="tel" inputMode="tel" placeholder="519-555-0100" className={inputCls} />
         </div>
       </div>
       <div>
-        <label className={labelCls}>Email *</label>
-        <input type="email" name="email" required autoComplete="email" placeholder="your@email.com" className={inputCls} />
-      </div>
-      <div>
-        <label className={labelCls}>Tell us about your project</label>
-        <textarea name="message" rows={3} placeholder="Wall type, height, location, any drainage issues..." className={inputCls} />
+        <label className={labelCls}>Your Message</label>
+        <textarea name="message" rows={compact ? 2 : 3} placeholder="Wall type, height, location..." className={inputCls} />
       </div>
 
       <Turnstile
@@ -80,7 +86,7 @@ export default function QuoteForm({ dark = false }: { dark?: boolean }) {
       {status === "error" && <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>}
 
       <button type="submit" disabled={status === "submitting" || !token} className="btn btn-accent w-full disabled:opacity-60">
-        {status === "submitting" ? "Sending…" : "Get My Free Quote"}
+        {status === "submitting" ? "Sending…" : "Get in Touch Now"}
       </button>
     </form>
   );

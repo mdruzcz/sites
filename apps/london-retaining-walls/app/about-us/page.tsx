@@ -32,7 +32,7 @@ export default function AboutPage() {
             <Image src="/images/about-kyle.jpg" alt="Kyle, owner of London Retaining Walls, on a job site in London, Ontario" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
           </div>
           <div>
-            <h2 className="text-3xl font-extrabold text-[var(--dark)] font-[var(--font-montserrat)]">Built on Experience and Doing It Right</h2>
+            <h2 className="text-3xl font-extrabold text-[var(--dark)] font-[family-name:var(--font-poppins)]">Built on Experience and Doing It Right</h2>
             <p className="mt-4 text-gray-600 leading-relaxed">Kyle started London Retaining Walls after years of hands-on experience in landscaping and construction across Southwestern Ontario. He saw too many retaining walls fail prematurely — bowing, cracking, or completely collapsing — because contractors cut corners on drainage, footings, or material selection.</p>
             <p className="mt-4 text-gray-600 leading-relaxed">That experience gave Kyle a clear mission: build retaining walls the right way, every time. Every project starts with a proper site assessment, the right material recommendation for your soil and load conditions, and drainage engineered to last for decades — not just a few seasons.</p>
             <p className="mt-4 text-gray-600 leading-relaxed">Today, London Retaining Walls serves homeowners and commercial clients across London, Woodstock, Brantford, St. Thomas and all surrounding communities, building everything from small garden terrace walls to large-scale commercial retaining systems.</p>
@@ -57,7 +57,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-extrabold text-center text-[var(--dark)] font-[var(--font-montserrat)] mb-10">What We Stand For</h2>
+          <h2 className="text-3xl font-extrabold text-center text-[var(--dark)] font-[family-name:var(--font-poppins)] mb-10">What We Stand For</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { icon: "🏗️", title: "Expert Construction", desc: "Every wall is built with proper footings, compacted base material, and drainage solutions that prevent the most common causes of retaining wall failure." },

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #A0713A;
-  --accent-hover: #8A5F2E;
-  --dark: #1A2332;
-  --dark-mid: #243044;
+  --accent: #F89D2B;
+  --accent-hover: #E08920;
+  --dark: #1C2833;
+  --dark-mid: #334155;
 }
 
 @theme inline {
@@ -14,10 +14,14 @@
 
 html { scroll-behavior: smooth; }
 
-body { font-family: var(--font-inter), sans-serif; }
+body { font-family: var(--font-roboto), system-ui, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
 
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 px-6 py-3 text-sm min-h-[44px];
+  @apply inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 px-6 py-3 text-sm min-h-[44px] uppercase tracking-wide;
 }
 .btn-accent {
   @apply bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white shadow-md hover:shadow-lg;
@@ -37,5 +41,5 @@ body { font-family: var(--font-inter), sans-serif; }
 }
 
 .card {
-  @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  @apply bg-white rounded shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
 }
