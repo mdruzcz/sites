@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "image": "/images/project-01.jpg",
+    "alt": "Deck staining project in London, Ontario - natural cedar finish",
+    "title": "Natural Cedar Finish",
+    "city": "London",
+    "service": "Deck Staining",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "image": "/images/project-02.jpg",
+    "alt": "Fence staining project - dark walnut finish in Woodstock",
+    "title": "Dark Walnut Fence",
+    "city": "Woodstock",
+    "service": "Fence Staining",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "image": "/images/project-03.jpg",
+    "alt": "Deck restoration and staining in Brantford Ontario",
+    "title": "Full Deck Restoration",
+    "city": "Brantford",
+    "service": "Deck Restoration",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "image": "/images/project-04.jpg",
+    "alt": "Deck refinishing project - sanded and restained in St. Thomas",
+    "title": "Complete Refinish",
+    "city": "St. Thomas",
+    "service": "Deck Refinishing",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "image": "/images/project-05.jpg",
+    "alt": "After professional deck staining in Mississauga Ontario",
+    "title": "Deck Staining - Dark Walnut",
+    "city": "Mississauga",
+    "service": "Deck Staining",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "image": "/images/project-06.jpg",
+    "alt": "Cedar deck staining and sealing project",
+    "title": "Cedar Deck Sealing",
+    "city": "London",
+    "service": "Deck Sealing",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "image": "/images/project-07.jpg",
+    "alt": "Before and after deck cleaning and staining transformation",
+    "title": "Before & After Transformation",
+    "city": "Woodstock",
+    "service": "Deck Cleaning",
+    "featured": false
+  }
+]
