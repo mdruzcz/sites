@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Professional Concrete Shed Pad Installer | London Concrete Forming",
+  title: "Professional Concrete Shed Pad Installer",
   description: "Professional concrete shed pad installation in London, Ontario. Garage pads, hot tub pads, and more. ,800–,600.",
-  openGraph: { title: "Expert Concrete Shed Pad Installation | London Concrete Forming", description: "Professional concrete shed pad installation in London, Ontario. Garage pads, hot tub pads, and more. ,800–,600." },
+  openGraph: { title: "Expert Concrete Shed Pad Installation", description: "Professional concrete shed pad installation in London, Ontario. Garage pads, hot tub pads, and more. ,800–,600." },
 };
 
 export default function Page() {

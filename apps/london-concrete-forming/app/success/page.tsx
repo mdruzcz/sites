@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Thank You | London Concrete Forming",
+  title: "Thank You",
   description: "Thank you for contacting London Concrete Forming. We have received your quote request and will be in touch within 1 business day.",
   robots: { index: false, follow: false },
 };

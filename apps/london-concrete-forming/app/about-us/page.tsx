@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -8,10 +8,10 @@ import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us | London Concrete Forming",
+  title: "About Us",
   description: "Learn about London Concrete Forming — London, Ontario's trusted concrete contractor with 20+ years of experience in driveways, patios, and retaining walls.",
   openGraph: {
-    title: "About Us | London Concrete Forming",
+    title: "About Us",
     description: "Over 20 years of experience helping London homeowners with quality concrete driveways, patios, and more.",
   },
 };

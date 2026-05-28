@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Driveways in St. Thomas, ON | London Concrete Forming",
+  title: "Concrete Driveways in St. Thomas, ON",
   description: "Professional concrete driveway installation in St. Thomas, Ontario. Natural, stamped & coloured options. 0–6/sq.ft. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Driveways in St. Thomas, ON | London Concrete Forming", description: "Expert concrete driveway installation in St. Thomas, Ontario." },
+  openGraph: { title: "Concrete Driveways in St. Thomas, ON", description: "Expert concrete driveway installation in St. Thomas, Ontario." },
 };
 
 export default function Page() {

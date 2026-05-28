@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 export const revalidate = 3600;
 export const metadata: Metadata = {
-  title: "Stamped Concrete Driveways Cost Guide | London Concrete Forming",
+  title: "Stamped Concrete Driveways Cost Guide",
   description: "How much does a stamped concrete driveway cost in London, Ontario? Full pricing breakdown by size, pattern, and colour. Free quotes from LCF.",
   openGraph: { title: "Stamped Concrete Driveways Cost Guide", description: "Complete pricing guide for stamped concrete driveways in London, Ontario." },
 };

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
@@ -6,10 +6,10 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Contact Us | London Concrete Forming",
+  title: "Contact Us",
   description: "Contact London Concrete Forming for a free concrete quote in London, Ontario. Call 519-914-1901 or fill out our online form. We respond within 1 business day.",
   openGraph: {
-    title: "Contact Us | London Concrete Forming",
+    title: "Contact Us",
     description: "Get a free concrete quote in London, Ontario. Call 519-914-1901 or fill out our form.",
   },
 };

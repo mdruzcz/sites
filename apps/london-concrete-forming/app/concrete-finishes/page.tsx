@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Finishes | London Concrete Forming",
+  title: "Concrete Finishes",
   description: "Explore all available concrete finish options including broom, exposed aggregate, stamped, polished, and coloured concrete.",
-  openGraph: { title: "Concrete Finishes | London Concrete Forming", description: "Explore all available concrete finish options including broom, exposed aggregate, stamped, polished, and coloured concrete." },
+  openGraph: { title: "Concrete Finishes", description: "Explore all available concrete finish options including broom, exposed aggregate, stamped, polished, and coloured concrete." },
 };
 
 export default function Page() {

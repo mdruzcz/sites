@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Stamps | London Concrete Forming",
+  title: "Concrete Stamps",
   description: "See our collection of concrete stamping patterns available for driveways and patios in London, Ontario.",
-  openGraph: { title: "Concrete Stamps | London Concrete Forming", description: "See our collection of concrete stamping patterns available for driveways and patios in London, Ontario." },
+  openGraph: { title: "Concrete Stamps", description: "See our collection of concrete stamping patterns available for driveways and patios in London, Ontario." },
 };
 
 export default function Page() {

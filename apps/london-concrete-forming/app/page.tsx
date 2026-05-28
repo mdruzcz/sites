@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -10,15 +10,15 @@ import { localBusinessSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Driveways & Patios London, ON | London Concrete Forming",
+  title: "Concrete Driveways & Patios London, ON",
   description: "Expert concrete contractor in London, Ontario. Driveways, patios, retaining walls, stamped concrete & more. 20+ years experience. Call 519-914-1901 for a FREE quote!",
   openGraph: {
-    title: "Concrete Driveways & Patios London, ON | London Concrete Forming",
+    title: "Concrete Driveways & Patios London, ON",
     description: "Expert concrete contractor in London, Ontario. Driveways, patios, retaining walls & stamped concrete. 20+ years experience.",
     url: site.url,
     images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete driveway by London Concrete Forming in London, ON" }],
   },
-  twitter: { card: "summary_large_image", title: "Concrete Driveways London, ON | London Concrete Forming" },
+  twitter: { card: "summary_large_image", title: "Concrete Driveways London, ON" },
 };
 
 const faqItems = [

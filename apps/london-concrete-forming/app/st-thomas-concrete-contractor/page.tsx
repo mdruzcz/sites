@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -8,9 +8,9 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in St. Thomas, ON | London Concrete Forming",
+  title: "Concrete Contractor in St. Thomas, ON",
   description: "Top-rated concrete contractor serving St. Thomas, Ontario. Driveways, patios, stamped concrete & more. 20+ years experience. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Contractor in St. Thomas, ON | London Concrete Forming", description: "Expert concrete services in St. Thomas, Ontario. Driveways, patios, retaining walls & stamped concrete." },
+  openGraph: { title: "Concrete Contractor in St. Thomas, ON", description: "Expert concrete services in St. Thomas, Ontario. Driveways, patios, retaining walls & stamped concrete." },
 };
 
 const faqItems = [

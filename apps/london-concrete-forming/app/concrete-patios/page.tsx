@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -9,9 +9,9 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Expert Concrete Patio Contractor | London Concrete Forming",
+  title: "Expert Concrete Patio Contractor",
   description: "Professional concrete patio installation in London, Ontario. Stamped, coloured, and custom finishes. Call 519-914-1901 for a free quote.",
-  openGraph: { title: "Expert Concrete Patio Contractor | London Concrete Forming", description: "Professional concrete patio installation in London, Ontario. Stamped, coloured, and custom finishes." },
+  openGraph: { title: "Expert Concrete Patio Contractor", description: "Professional concrete patio installation in London, Ontario. Stamped, coloured, and custom finishes." },
 };
 
 const faqItems = [

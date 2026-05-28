@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 export const revalidate = 3600;
 export const metadata: Metadata = {
-  title: "Advantages of a Concrete Driveway | London Concrete Forming",
+  title: "Advantages of a Concrete Driveway",
   description: "Discover the top advantages of choosing a concrete driveway over asphalt or gravel in London, Ontario. Durability, low maintenance, and curb appeal.",
   openGraph: { title: "Advantages of a Concrete Driveway", description: "Why concrete driveways are the smart choice for London, Ontario homeowners." },
 };

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -9,10 +9,10 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Professional Concrete Driveway Installation | London Concrete Forming",
+  title: "Professional Concrete Driveway Installation",
   description: "Expert concrete driveway installation in London, ON. Natural, coloured, stamped & broomed options. $10–$16/sq.ft. Free estimates — call 519-914-1901.",
   openGraph: {
-    title: "Professional Concrete Driveway Installation | London Concrete Forming",
+    title: "Professional Concrete Driveway Installation",
     description: "Expert concrete driveway contractor in London, Ontario. Natural, coloured, stamped & broomed options.",
     images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete driveway installation in London, Ontario" }],
   },

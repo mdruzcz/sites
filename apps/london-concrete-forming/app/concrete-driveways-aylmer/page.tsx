@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Driveways in Aylmer, ON | London Concrete Forming",
+  title: "Concrete Driveways in Aylmer, ON",
   description: "Professional concrete driveway installation in Aylmer, Ontario. Natural, stamped & coloured options. 0–6/sq.ft. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Driveways in Aylmer, ON | London Concrete Forming", description: "Expert concrete driveway installation in Aylmer, Ontario." },
+  openGraph: { title: "Concrete Driveways in Aylmer, ON", description: "Expert concrete driveway installation in Aylmer, Ontario." },
 };
 
 export default function Page() {

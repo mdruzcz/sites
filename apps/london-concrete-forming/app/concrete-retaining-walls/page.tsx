@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -9,9 +9,9 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Professional Concrete Retaining Wall Company | London Concrete Forming",
+  title: "Professional Concrete Retaining Wall Company",
   description: "Expert concrete retaining wall installation in London, Ontario. Garden terracing, erosion control & functional landscaping. Free quotes — 519-914-1901.",
-  openGraph: { title: "Expert Concrete Retaining Wall Installation | London Concrete Forming", description: "Professional concrete retaining walls in London, Ontario for gardens, erosion control, and landscaping." },
+  openGraph: { title: "Expert Concrete Retaining Wall Installation", description: "Professional concrete retaining walls in London, Ontario for gardens, erosion control, and landscaping." },
 };
 
 const faqItems = [

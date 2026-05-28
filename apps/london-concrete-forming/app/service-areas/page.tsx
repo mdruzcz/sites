@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
@@ -6,9 +6,9 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Service Areas | London Concrete Forming",
+  title: "Service Areas",
   description: "London Concrete Forming serves London, St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley. Get a free concrete quote in your area.",
-  openGraph: { title: "Service Areas | London Concrete Forming", description: "Concrete contractor serving London, St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley, Ontario." },
+  openGraph: { title: "Service Areas", description: "Concrete contractor serving London, St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley, Ontario." },
 };
 
 const cities = [

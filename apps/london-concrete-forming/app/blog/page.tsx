@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog | London Concrete Forming",
+  title: "Blog",
   description: "Read the London Concrete Forming blog for tips, guides, and insights on concrete driveways, patios, stamped concrete, and more in London, Ontario.",
-  openGraph: { title: "Blog | London Concrete Forming", description: "Concrete tips, guides, and insights from London Concrete Forming." },
+  openGraph: { title: "Blog", description: "Concrete tips, guides, and insights from London Concrete Forming." },
 };
 
 const posts = [

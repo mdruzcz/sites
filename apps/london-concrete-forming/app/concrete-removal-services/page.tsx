@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "#1 Concrete Removal Service in London, ST Thomas and Woodstock | LCF",
   description: "Professional concrete removal and disposal services in London, Ontario. Fast, clean, and affordable. Call 519-914-1901.",
-  openGraph: { title: "Concrete Removal Services in London, ON | London Concrete Forming", description: "Professional concrete removal and disposal services in London, Ontario. Fast, clean, and affordable. Call 519-914-1901." },
+  openGraph: { title: "Concrete Removal Services in London, ON", description: "Professional concrete removal and disposal services in London, Ontario. Fast, clean, and affordable. Call 519-914-1901." },
 };
 
 export default function Page() {

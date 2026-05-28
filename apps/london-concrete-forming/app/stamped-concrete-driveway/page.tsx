@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
@@ -7,9 +7,9 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Stamped Concrete Driveway Installation | London Concrete Forming",
+  title: "Stamped Concrete Driveway Installation",
   description: "Transform your home with a beautiful stamped concrete driveway in London, Ontario. Patterns, colours, and custom designs. Free quotes.",
-  openGraph: { title: "Stamped Concrete Driveway Installation | London Concrete Forming", description: "Transform your home with a beautiful stamped concrete driveway in London, Ontario. Patterns, colours, and custom designs. Free quotes." },
+  openGraph: { title: "Stamped Concrete Driveway Installation", description: "Transform your home with a beautiful stamped concrete driveway in London, Ontario. Patterns, colours, and custom designs. Free quotes." },
 };
 
 export default function Page() {
