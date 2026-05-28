@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <Image
-            src="/images/logo.png"
+            src="/images/logo-transparent.png"
             alt="London Retaining Walls logo"
             width={180}
             height={55}
