@@ -1,15 +1,22 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { submitApplication } from "@/lib/actions/application";
 
 export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" | "municipality" }) {
   const [pending, startTransition] = useTransition();
   const [state, setState] = useState<"idle" | "ok" | "err">("idle");
   const [message, setMessage] = useState<string>("");
+  const [token, setToken] = useState<string | null>(null);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) {
+      setState("err");
+      setMessage("Please complete the captcha.");
+      return;
+    }
     const form = new FormData(e.currentTarget);
     setState("idle");
     startTransition(async () => {
@@ -24,7 +31,8 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
           years_experience: String(form.get("years_experience") ?? "") || null,
           annual_volume: String(form.get("annual_volume") ?? "") || null,
           website: String(form.get("website") ?? "") || null,
-          additional_info: String(form.get("additional_info") ?? "") || null
+          additional_info: String(form.get("additional_info") ?? "") || null,
+          turnstile_token: token
         });
         setState("ok");
         (e.target as HTMLFormElement).reset();
@@ -92,7 +100,11 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
       )}
       <Field label="Website (optional)" name="website" type="url" placeholder="https://" />
       <Field label="Additional information" name="additional_info" element="textarea" rows={4} />
-      <button type="submit" disabled={pending} className="btn-primary mt-2 disabled:opacity-50">
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+      <button type="submit" disabled={pending || !token} className="btn-primary mt-2 disabled:opacity-50">
         {pending ? "Submitting…" : "Submit application"}
       </button>
       {state === "err" && <p className="text-sm text-rose-700">{message}</p>}

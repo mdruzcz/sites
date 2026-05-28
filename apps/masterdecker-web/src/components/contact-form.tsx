@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 
 const serviceCheckboxes = [
@@ -17,10 +18,12 @@ const serviceCheckboxes = [
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [token, setToken] = useState<string | null>(null);
   const successRef = useRef<HTMLDivElement>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) { setStatus("error"); return; }
     setStatus("submitting");
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -35,6 +38,7 @@ export function ContactForm() {
       services,
       message: formData.get("message"),
       website: formData.get("website"),
+      token,
     };
     try {
       const res = await fetch("/api/contact", {
@@ -124,7 +128,12 @@ export function ContactForm() {
         </p>
       )}
 
-      <button type="submit" disabled={status === "submitting"} className="btn-primary w-full justify-center disabled:opacity-60">
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
+      <button type="submit" disabled={status === "submitting" || !token} className="btn-primary w-full justify-center disabled:opacity-60">
         {status === "submitting" ? "Sending…" : "Submit"}
       </button>
     </form>

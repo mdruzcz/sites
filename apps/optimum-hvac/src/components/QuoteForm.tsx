@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 import { getServices } from "@/lib/content";
 
@@ -14,15 +15,18 @@ type Props = {
 
 export function QuoteForm({ defaultService, formType = "contact", variant = "card" }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [token, setToken] = useState<string | null>(null);
   const services = getServices();
 
   const endpoint = formType === "emergency" ? "/api/emergency" : formType === "quote" ? "/api/quote" : "/api/contact";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) { setStatus("error"); return; }
     setStatus("sending");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    data.token = token;
     try {
       const res = await fetch(endpoint, {
         method: "POST",
@@ -167,9 +171,14 @@ export function QuoteForm({ defaultService, formType = "contact", variant = "car
         />
       </div>
 
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
       <button
         type="submit"
-        disabled={status === "sending"}
+        disabled={status === "sending" || !token}
         className={`btn w-full disabled:opacity-60 disabled:cursor-not-allowed ${formType === "emergency" ? "btn-navy" : "btn-primary"}`}
       >
         {status === "sending" ? (

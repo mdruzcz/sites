@@ -13,7 +13,20 @@ export async function submitApplication(input: {
   annual_volume: string | null;
   website: string | null;
   additional_info: string | null;
+  turnstile_token: string;
 }) {
+  if (!input.turnstile_token) throw new Error("Captcha required");
+  const verifyRes = await fetch(
+    process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: input.turnstile_token, hostname: "permanentlightingdirect.ca" }),
+    },
+  );
+  const verify = (await verifyRes.json()) as { success: boolean };
+  if (!verify.success) throw new Error("Captcha verification failed");
+
   const service = getServiceSupabase();
   const { data: tier, error: tierErr } = await service
     .from("ecom_pricing_tiers")

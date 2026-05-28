@@ -171,6 +171,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
   }
 
+  const token = pickString(form, "token");
+  if (!token) {
+    return NextResponse.json({ error: "Captcha required" }, { status: 400 });
+  }
+  const verifyRes = await fetch(
+    process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, hostname: "haltonglowlighting.ca" }),
+    },
+  );
+  const verify = (await verifyRes.json()) as { success: boolean };
+  if (!verify.success) {
+    return NextResponse.json({ error: "Captcha verification failed" }, { status: 400 });
+  }
+
   // Photo uploads
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

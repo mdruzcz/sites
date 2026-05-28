@@ -9,9 +9,25 @@ export async function POST(req: Request) {
       return Response.json({ ok: true });
     }
 
-    const { name, phone, email, service, message } = body;
+    const { name, phone, email, service, message, token } = body;
     if (!name || !phone || !service) {
       return Response.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (!token) {
+      return Response.json({ error: "Captcha required" }, { status: 400 });
+    }
+    const verifyRes = await fetch(
+      process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, hostname: "optimumhvac.ca" }),
+      },
+    );
+    const verify = (await verifyRes.json()) as { success: boolean };
+    if (!verify.success) {
+      return Response.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
     // Save to Supabase

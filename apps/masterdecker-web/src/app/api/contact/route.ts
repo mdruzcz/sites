@@ -17,12 +17,29 @@ export async function POST(req: NextRequest) {
       services,
       message,
       website,
+      token,
     } = body;
 
     if (website) return NextResponse.json({ ok: true });
 
     if (!firstName || !phone || !email || !streetAddress || !city) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (!token) {
+      return NextResponse.json({ error: "Captcha required" }, { status: 400 });
+    }
+    const verifyRes = await fetch(
+      process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, hostname: "masterdecker.com" }),
+      },
+    );
+    const verify = (await verifyRes.json()) as { success: boolean };
+    if (!verify.success) {
+      return NextResponse.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
     try {

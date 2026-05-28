@@ -8,6 +8,7 @@ interface QuoteBody {
   address?: string;
   service?: string;
   message?: string;
+  token?: string;
 }
 
 export async function POST(req: Request) {
@@ -18,6 +19,22 @@ export async function POST(req: Request) {
 
   if (!body.name || !body.phone || !body.email || !body.service) {
     return Response.json({ error: "All fields required." }, { status: 400 });
+  }
+
+  if (!body.token) {
+    return Response.json({ error: "Captcha required" }, { status: 400 });
+  }
+  const verifyRes = await fetch(
+    process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: body.token, hostname: "ontariolightshows.ca" }),
+    },
+  );
+  const verify = (await verifyRes.json()) as { success: boolean };
+  if (!verify.success) {
+    return Response.json({ error: "Captcha verification failed" }, { status: 400 });
   }
 
   const payload = {

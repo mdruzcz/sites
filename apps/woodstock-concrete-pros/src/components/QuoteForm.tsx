@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 import { getServices } from "@/lib/content";
 
@@ -9,6 +10,7 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
 export function QuoteForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [token, setToken] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const services = getServices();
@@ -29,10 +31,12 @@ export function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) { setStatus("error"); return; }
     setStatus("sending");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    formData.append("token", token);
 
     // Append image files
     files.forEach((file) => formData.append("images", file));
@@ -238,9 +242,14 @@ export function QuoteForm() {
         </select>
       </div>
 
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
       <button
         type="submit"
-        disabled={status === "sending"}
+        disabled={status === "sending" || !token}
         className="btn btn-primary w-full disabled:opacity-50 min-h-[44px]"
       >
         {status === "sending" ? "Sending..." : "Request Free Quote"}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 /* --- Types --- */
 
@@ -41,6 +42,7 @@ export default function ContactForm() {
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [dragActive, setDragActive] = useState(false);
   const [loadedAt] = useState(() => Date.now());
+  const [token, setToken] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
@@ -150,6 +152,11 @@ export default function ContactForm() {
     setErrorMessage("");
 
     if (!validate()) return;
+    if (!token) {
+      setStatus("error");
+      setErrorMessage("Please complete the captcha.");
+      return;
+    }
 
     setStatus("submitting");
 
@@ -161,6 +168,7 @@ export default function ContactForm() {
       body.append("phone", form.phone.trim());
       body.append("message", form.message.trim());
       body.append("_loaded", String(loadedAt));
+      body.append("token", token);
 
       // Honeypot
       const honeypotInput = formRef.current?.querySelector<HTMLInputElement>(
@@ -553,10 +561,15 @@ export default function ContactForm() {
         )}
       </div>
 
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || !token}
         className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-orange px-8 py-3 text-base font-semibold text-white shadow-md transition-colors hover:bg-orange-dark focus:outline-none focus:ring-2 focus:ring-orange/40 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (

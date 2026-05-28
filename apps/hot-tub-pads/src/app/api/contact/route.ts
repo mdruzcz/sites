@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
     const email = (formData.get("email") as string | null)?.trim() ?? "";
     const phone = (formData.get("phone") as string | null)?.trim() ?? "";
     const message = (formData.get("message") as string | null)?.trim() ?? "";
+    const token = (formData.get("token") as string | null)?.trim() ?? "";
     const website = (formData.get("website") as string | null) ?? "";
     const loadedAt = parseInt(
       (formData.get("_loaded") as string | null) ?? "0",
@@ -57,6 +58,22 @@ export async function POST(req: NextRequest) {
 
     if (errors.length > 0) {
       return json({ success: false, error: errors.join(" ") }, 400);
+    }
+
+    if (!token) {
+      return json({ success: false, error: "Captcha required" }, 400);
+    }
+    const verifyRes = await fetch(
+      process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, hostname: "hottubpads.ca" }),
+      },
+    );
+    const verify = (await verifyRes.json()) as { success: boolean };
+    if (!verify.success) {
+      return json({ success: false, error: "Captcha verification failed" }, 400);
     }
 
     const fullName = `${first_name} ${last_name}`;

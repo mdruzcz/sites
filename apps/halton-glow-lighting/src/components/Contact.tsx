@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 import { PhoneIcon, MapPinIcon, CheckIcon } from "./icons";
 
@@ -40,6 +41,7 @@ export function Contact() {
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [token, setToken] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
@@ -73,12 +75,14 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!token) { setErrorMsg("Please complete the captcha."); setStatus("error"); return; }
     setStatus("sending");
     setErrorMsg("");
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       fd.append("_loaded", String(loadedAt.current));
+      fd.append("token", token);
       files.forEach((f) => fd.append("photos", f));
 
       const res = await fetch("/api/contact", { method: "POST", body: fd });
@@ -431,9 +435,14 @@ export function Contact() {
                   </p>
                 )}
 
+                <Turnstile
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+                  onSuccess={setToken}
+                />
+
                 <button
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={status === "sending" || !token}
                   className="w-full py-4 rounded-full font-semibold text-[var(--night-deep)] bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] hover:from-[var(--gold)] hover:to-[var(--amber)] transition-all hover:scale-[1.01] hover:shadow-[0_10px_30px_rgba(245,194,107,0.4)] disabled:opacity-60 disabled:cursor-not-allowed min-h-11 flex items-center justify-center gap-2"
                 >
                   {status === "sending" ? (
