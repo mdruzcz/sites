@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "london-stamped-patio",
+    "title": "Stamped Concrete Patio",
+    "city": "London",
+    "service": "stamped-concrete-sealing",
+    "image": "/images/result_Stamped-Concrete-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Sealed stamped concrete patio by TriCity Concrete Sealing in London, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "woodstock-driveway",
+    "title": "Residential Driveway Seal",
+    "city": "Woodstock",
+    "service": "driveway-sealing",
+    "image": "/images/result_Concrete-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Sealed concrete driveway by TriCity Concrete Sealing in Woodstock, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "brantford-patio",
+    "title": "Backyard Patio Sealing",
+    "city": "Brantford",
+    "service": "patio-sealing",
+    "image": "/images/result_Patio-Sealing-TriCity-Concrete-Sealing-1.jpg",
+    "alt": "Freshly sealed backyard patio by TriCity Concrete Sealing in Brantford, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "st-thomas-walkway",
+    "title": "Front Walkway Restoration",
+    "city": "St. Thomas",
+    "service": "walkway-sealing",
+    "image": "/images/result_Walkway-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Restored and sealed concrete walkway by TriCity Concrete Sealing in St. Thomas, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "stratford-exposed-aggregate",
+    "title": "Exposed Aggregate Driveway",
+    "city": "Stratford",
+    "service": "exposed-aggregate-sealing",
+    "image": "/images/Extreme-Durability-TriCity-Concrete-Sealing.jpg",
+    "alt": "Sealed exposed aggregate concrete driveway by TriCity Concrete Sealing in Stratford, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "london-commercial",
+    "title": "Commercial Parking Area",
+    "city": "London",
+    "service": "commercial-sealing",
+    "image": "/images/result_Professional-Installation-and-Low-Maintenance-TriCity-Concrete-Sealing-1.jpg",
+    "alt": "Commercial concrete sealing in progress by TriCity Concrete Sealing in London, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "ingersoll-concrete-restore",
+    "title": "Concrete Restoration & Seal",
+    "city": "Ingersoll",
+    "service": "driveway-sealing",
+    "image": "/images/result_Restore-Your-Concretes-Beauty-with-TriCity-TriCity-Concrete-Sealing.jpg",
+    "alt": "Concrete restoration and sealing by TriCity in Ingersoll, Ontario",
+    "featured": false
+  }
+]

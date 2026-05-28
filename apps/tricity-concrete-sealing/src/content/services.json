@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "driveway-sealing",
+    "title": "Driveway Sealing",
+    "shortDescription": "Protect your concrete driveway from oil stains, water damage, road salt, and UV fading with our professional-grade sealing service.",
+    "description": "Your driveway takes a beating every day — road salt, freeze-thaw cycles, oil drips, and constant traffic all work against it. Our professional driveway sealing service applies a premium, penetrating sealer that locks out moisture, resists staining, and brings back the clean, fresh look of new concrete. We clean and prepare the surface thoroughly before application, ensuring maximum adhesion and a flawless, streak-free finish.",
+    "image": "/images/result_Concrete-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Freshly sealed concrete driveway with glossy protective finish in London, Ontario",
+    "icon": "🚗",
+    "benefits": ["Stops oil and fluid stains", "Resists road salt damage", "Prevents freeze-thaw cracking", "Enhances curb appeal"],
+    "featured": true
+  },
+  {
+    "slug": "patio-sealing",
+    "title": "Patio Sealing",
+    "shortDescription": "Keep your outdoor patio looking beautiful and protected from weather, stains, and heavy foot traffic all year long.",
+    "description": "Your patio is an extension of your home — it deserves the same care and protection. Our patio sealing service uses UV-stable, weather-resistant sealers that guard against fading, staining, and moisture penetration. Whether your patio is plain concrete, exposed aggregate, or decorative stamped concrete, we tailor the sealer and finish to match your surface type and your aesthetic preferences.",
+    "image": "/images/result_Patio-Sealing-TriCity-Concrete-Sealing-1.jpg",
+    "alt": "Beautiful sealed concrete patio ready for outdoor entertaining in Woodstock, Ontario",
+    "icon": "🏡",
+    "benefits": ["UV-resistant finish", "Slip-resistant options available", "Resists mold and mildew", "Enhances colour & texture"],
+    "featured": true
+  },
+  {
+    "slug": "stamped-concrete-sealing",
+    "title": "Stamped Concrete Sealing",
+    "shortDescription": "Preserve the intricate patterns and vivid colours of your stamped concrete with our specialized, colour-enhancing sealers.",
+    "description": "Stamped concrete is a significant investment — and it deserves specialized protection. Our stamped concrete sealing service uses solvent-based or water-based acrylic sealers specifically formulated to penetrate stamped surfaces and enhance the depth of colour and pattern detail. We offer gloss, semi-gloss, and matte finishes to match your preference, and our careful preparation ensures the sealer bonds perfectly without bubbling or peeling.",
+    "image": "/images/result_Stamped-Concrete-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Vibrant sealed stamped concrete patio with enhanced colour and pattern definition in Brantford, Ontario",
+    "icon": "✨",
+    "benefits": ["Enhances colour depth", "Protects intricate patterns", "Multiple finish options", "Prevents efflorescence"],
+    "featured": true
+  },
+  {
+    "slug": "walkway-sealing",
+    "title": "Walkway Sealing",
+    "shortDescription": "Keep walkways and sidewalks safe, clean, and visually appealing with our professional concrete sealing service.",
+    "description": "Walkways and sidewalks are one of the first things visitors notice about your property. Cracked, stained, or faded concrete makes a poor impression. Our walkway sealing service deep-cleans the surface, fills hairline cracks where possible, and applies a durable sealer that repels water, prevents salt damage, and provides a slip-resistant finish for year-round safety. Available for residential and commercial properties.",
+    "image": "/images/result_Walkway-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Clean, safely sealed concrete walkway with slip-resistant finish in St. Thomas, Ontario",
+    "icon": "🚶",
+    "benefits": ["Slip-resistant finish", "Prevents cracking & heaving", "Easy to clean", "Improves curb appeal"],
+    "featured": true
+  },
+  {
+    "slug": "exposed-aggregate-sealing",
+    "title": "Exposed Aggregate Sealing",
+    "shortDescription": "Restore and protect your exposed aggregate concrete with a sealer that enhances the natural stone colours and keeps them locked in.",
+    "description": "Exposed aggregate concrete has a beautiful textured look — but without sealing, those embedded stones lose their colour and the concrete becomes vulnerable to spalling and staining. Our exposed aggregate sealing service uses a high-solids, penetrating sealer that saturates the stone and concrete matrix, bringing out the natural colours and providing durable protection from the elements.",
+    "image": "/images/Extreme-Durability-TriCity-Concrete-Sealing.jpg",
+    "alt": "Sealed exposed aggregate concrete driveway with enhanced stone colours in Stratford, Ontario",
+    "icon": "🪨",
+    "benefits": ["Enhances stone colours", "Prevents staining between stones", "Extends surface life", "Easy-to-clean texture"],
+    "featured": false
+  },
+  {
+    "slug": "commercial-sealing",
+    "title": "Commercial Sealing",
+    "shortDescription": "Large-area concrete sealing for parking lots, commercial patios, warehouses, and industrial floors — fast, professional, minimal disruption.",
+    "description": "Commercial concrete takes far more abuse than residential surfaces. We provide comprehensive commercial sealing services for parking lots, loading docks, warehouse floors, retail entrances, and commercial patios across Southwestern Ontario. Our commercial-grade sealers are formulated for high-traffic environments, and we schedule work around your business hours to minimize disruption.",
+    "image": "/images/result_Professional-Installation-and-Low-Maintenance-TriCity-Concrete-Sealing-1.jpg",
+    "alt": "Professional commercial concrete sealing service in progress at a business in London, Ontario",
+    "icon": "🏢",
+    "benefits": ["Handles heavy traffic loads", "Flexible scheduling", "Large-area application", "Reduces long-term maintenance"],
+    "featured": false
+  }
+]
