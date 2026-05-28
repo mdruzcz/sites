@@ -205,29 +205,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── WALL TYPES DETAIL ─── */}
-      <section className="section bg-[var(--dark)] text-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wide text-center mb-10 font-[family-name:var(--font-poppins)]">
-            Building Long Lasting Retaining Walls
-          </h2>
-          <p className="text-gray-300 text-center mb-8 max-w-2xl mx-auto">We specialize in tailored designs and installations, offering expertise in various landscaping retaining walls:</p>
-          <ul className="space-y-5">
-            {[
-              { name: "Cantilevered Retaining Walls", desc: "A sleek option that optimizes materials, focusing on meticulous design and construction. Characterized by a thin wall, it extends into the backfill (heel) and forward beneath the soil (toe), showcasing a blend of efficiency and attention to detail." },
-              { name: "Gravity Retaining Walls", desc: "A fundamental design leveraging the wall's mass and weight to secure the soil. Suited for various materials and finishes, shorter walls may not require additional reinforcement, while stability is enhanced through a small trench in most cases." },
-              { name: "Anchored Retaining Walls", desc: "Versatile and adaptable, this design employs cables or strips to anchor the wall to the earth. Compatible with any material or style, anchored retaining walls provide a robust solution for diverse landscaping needs." },
-            ].map((w) => (
-              <li key={w.name} className="flex gap-4">
-                <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-[var(--accent)]" />
-                <div>
-                  <strong className="text-white font-semibold">{w.name}:</strong>{" "}
-                  <span className="text-gray-300">{w.desc}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-gray-400 text-sm text-center">During your consultation, our experts assess soil conditions, property specifics, and your unique requirements to determine the most suitable retaining wall type.</p>
+      {/* ─── BUILDING LONG LASTING RETAINING WALLS ─── */}
+      <section className="section bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative rounded overflow-hidden h-80 lg:h-[480px]">
+              <Image
+                src="/images/long-lasting-walls.png"
+                alt="Long-lasting block retaining wall with garden landscaping in London, Ontario"
+                fill
+                className="object-cover"
+                sizes="(max-width:1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide leading-tight mb-4 font-[family-name:var(--font-poppins)]">
+                Building Long Lasting Retaining Walls
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                We specialize in tailored designs and installations, offering expertise in various landscaping retaining walls:
+              </p>
+              <ul className="space-y-5">
+                {[
+                  { name: "Cantilevered Retaining Walls", desc: "A sleek option that optimizes materials, focusing on meticulous design and construction. Characterized by a thin wall, it extends into the backfill (heel) and forward beneath the soil (toe), showcasing a blend of efficiency and attention to detail." },
+                  { name: "Gravity Retaining Walls", desc: "A fundamental design leveraging the wall's mass and weight to secure the soil. Suited for various materials and finishes, shorter walls may not require additional reinforcement, while stability is enhanced through a small trench in most cases." },
+                  { name: "Anchored Retaining Walls", desc: "Versatile and adaptable, this design employs cables or strips to anchor the wall to the earth. Compatible with any material or style, anchored retaining walls provide a robust solution for diverse landscaping needs." },
+                ].map((w) => (
+                  <li key={w.name} className="flex gap-4 items-start">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[var(--accent)] flex items-center justify-center mt-0.5">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <div>
+                      <strong className="text-[var(--dark)] font-bold">{w.name}:</strong>{" "}
+                      <span className="text-gray-600">{w.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-gray-500 text-sm">During your consultation, our experts assess soil conditions, property specifics, and your unique requirements to determine the most suitable retaining wall type.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -281,16 +300,17 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-10 font-[family-name:var(--font-poppins)]">
             FAQS
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-2">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded border border-gray-200 overflow-hidden">
-                <div className="bg-gray-50 px-6 py-4">
+              <details key={faq.q} className="group rounded border border-gray-200 overflow-hidden">
+                <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer bg-gray-50 hover:bg-gray-100 list-none [&::-webkit-details-marker]:hidden">
                   <h3 className="font-bold text-[var(--dark)] font-[family-name:var(--font-poppins)]">{faq.q}</h3>
-                </div>
-                <div className="px-6 py-4">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[var(--accent)] flex items-center justify-center text-white font-bold text-lg leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <div className="px-6 py-4 bg-white border-t border-gray-100">
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
-              </div>
+              </details>
             ))}
           </div>
         </div>
