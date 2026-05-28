@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "permanent-govee-lighting",
+    "name": "Permanent Govee Outdoor Lighting",
+    "shortName": "Permanent LED Lighting",
+    "icon": "💡",
+    "description": "Say goodbye to seasonal hassle. Our permanent Govee LED systems are installed once and stay put year-round — controlling millions of colours from your phone.",
+    "features": [
+      "50,000+ hour LED lifespan (20+ years)",
+      "WiFi-controlled via the Govee app",
+      "Millions of colour options & patterns",
+      "Weather-resistant, CSA-approved hardware",
+      "Custom-matched to your soffit colour",
+      "Alexa & Google Assistant compatible"
+    ]
+  },
+  {
+    "slug": "govee-elite-pro-installation",
+    "name": "Govee Elite & Pro Models",
+    "shortName": "Elite & Pro Install",
+    "icon": "⭐",
+    "description": "We specialize in Govee's top-tier Elite and Pro permanent outdoor lighting lines — the most vibrant, durable smart LED systems available for Canadian homes.",
+    "features": [
+      "Govee Elite and Pro certified installation",
+      "Higher pixel density for richer colour",
+      "Seamless roofline & fascia integration",
+      "Low-voltage, energy-efficient operation",
+      "Up to 90% less energy than traditional lights",
+      "Professional cable management"
+    ]
+  },
+  {
+    "slug": "commercial-lighting",
+    "name": "Commercial Property Lighting",
+    "shortName": "Commercial Lighting",
+    "icon": "🏢",
+    "description": "From storefronts to warehouses, we design and install striking commercial Govee lighting that puts your business on the map after dark.",
+    "features": [
+      "Storefront and facade accent lighting",
+      "Custom scene programming for seasons",
+      "Multi-zone control for large properties",
+      "Durable hardware for high-traffic areas",
+      "Holiday programming included",
+      "Financing options available"
+    ]
+  }
+]
