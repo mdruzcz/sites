@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 
@@ -18,17 +19,16 @@ export default function DeckRebuildingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema("Deck Rebuilding", "Complete deck teardown and rebuild with custom sizing, layouts and features.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Deck Rebuilding", href: "/deck-rebuilding" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest mb-2">Deck Rebuilding</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Deck Rebuilding</h1>
-          <p className="mt-4 text-gray-400 text-lg max-w-2xl">When restoration isn&apos;t enough, we do complete teardown and rebuilds. Custom size, design, features — built to last and finished beautifully.</p>
-          <div className="flex flex-wrap gap-4 mt-6">
-            <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
-            <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
-          </div>
+      <PageHero
+        eyebrow="Deck Rebuilding"
+        title="Deck Rebuilding"
+        subtitle="When restoration isn't enough, we do complete teardown and rebuilds. Custom size, design, features — built to last and finished beautifully."
+      >
+        <div className="flex flex-wrap gap-4 mt-6">
+          <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
+          <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
         </div>
-      </div>
+      </PageHero>
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">

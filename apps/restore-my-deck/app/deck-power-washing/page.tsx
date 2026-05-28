@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 
@@ -18,17 +19,16 @@ export default function DeckPowerWashingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema("Deck Power Washing", "Professional deck pressure washing to remove dirt, mold and algae without damaging wood.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Deck Power Washing", href: "/deck-power-washing" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest mb-2">Pressure Washing Services</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Deck Power Washing</h1>
-          <p className="mt-4 text-gray-400 text-lg max-w-2xl">Professional pressure washing with calibrated PSI to clean your deck effectively without damaging the wood. Serving Kitchener-Waterloo and area.</p>
-          <div className="flex flex-wrap gap-4 mt-6">
-            <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
-            <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
-          </div>
+      <PageHero
+        eyebrow="Pressure Washing Services"
+        title="Deck Power Washing"
+        subtitle="Professional pressure washing with calibrated PSI to clean your deck effectively without damaging the wood. Serving Kitchener-Waterloo and area."
+      >
+        <div className="flex flex-wrap gap-4 mt-6">
+          <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
+          <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
         </div>
-      </div>
+      </PageHero>
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">

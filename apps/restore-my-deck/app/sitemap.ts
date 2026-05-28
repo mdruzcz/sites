@@ -37,8 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/woodstock-deck-staining`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${base}/fergus-deck-staining`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${base}/paris-deck-staining`, priority: 0.8, changeFrequency: "monthly" as const },
-    // Blog
+    // Blog / Helpful Tips
     { url: `${base}/how-to-save-money-restore-dont-replace`, priority: 0.6, changeFrequency: "yearly" as const },
+    { url: `${base}/how-to-prepare-your-deck-for-staining`, priority: 0.6, changeFrequency: "yearly" as const },
+    { url: `${base}/oil-based-vs-water-based-deck-stain`, priority: 0.6, changeFrequency: "yearly" as const },
+    { url: `${base}/how-often-should-you-restain-your-deck`, priority: 0.6, changeFrequency: "yearly" as const },
+    { url: `${base}/5-signs-your-deck-needs-restoration`, priority: 0.6, changeFrequency: "yearly" as const },
+    { url: `${base}/pressure-washing-vs-soft-washing-deck`, priority: 0.6, changeFrequency: "yearly" as const },
     // Legal
     { url: `${base}/privacy-policy`, priority: 0.3, changeFrequency: "yearly" as const },
     { url: `${base}/terms-of-service`, priority: 0.3, changeFrequency: "yearly" as const },

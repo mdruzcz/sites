@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 
@@ -18,17 +19,16 @@ export default function DeckSealingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema("Deck Sealing", "Professional deck sealing to protect against moisture, UV damage and wood rot.")) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Deck Sealing", href: "/deck-sealing" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest mb-2">Sealing Services</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Deck Sealing</h1>
-          <p className="mt-4 text-gray-400 text-lg max-w-2xl">Quality deck sealants that protect against moisture penetration, UV fading and wood rot. Extending your deck&apos;s lifespan significantly.</p>
-          <div className="flex flex-wrap gap-4 mt-6">
-            <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
-            <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
-          </div>
+      <PageHero
+        eyebrow="Sealing Services"
+        title="Deck Sealing"
+        subtitle="Quality deck sealants that protect against moisture penetration, UV fading and wood rot. Extending your deck's lifespan significantly."
+      >
+        <div className="flex flex-wrap gap-4 mt-6">
+          <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
+          <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
         </div>
-      </div>
+      </PageHero>
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">

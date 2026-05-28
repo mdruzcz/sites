@@ -67,7 +67,7 @@ export default function Header() {
             )}
           </li>
           <li><Link href="/service-areas" className="hover:text-[var(--accent)] transition-colors">Service Areas</Link></li>
-          <li><Link href="/blog" className="hover:text-[var(--accent)] transition-colors">Blog</Link></li>
+          <li><Link href="/blog" className="hover:text-[var(--accent)] transition-colors">Helpful Tips</Link></li>
           <li><Link href="/contact-us" className="hover:text-[var(--accent)] transition-colors">Contact Us</Link></li>
         </ul>
 
@@ -101,7 +101,7 @@ export default function Header() {
             { label: "Projects", href: "/projects" },
             { label: "Services", href: "/services" },
             { label: "Service Areas", href: "/service-areas" },
-            { label: "Blog", href: "/blog" },
+            { label: "Helpful Tips", href: "/blog" },
             { label: "Contact Us", href: "/contact-us" },
           ].map((item) => (
             <Link key={item.href} href={item.href} className="block py-2 px-3 rounded-lg hover:bg-orange-50 hover:text-[var(--accent)] font-medium" onClick={() => setMenuOpen(false)}>

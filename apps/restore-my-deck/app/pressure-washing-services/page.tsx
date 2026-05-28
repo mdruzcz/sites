@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -23,12 +24,11 @@ export default function PressureWashingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Pressure Washing Services", href: "/pressure-washing-services" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Pressure Washing Services</h1>
-          <p className="mt-4 text-gray-400 text-lg">Professional eco-friendly deck and fence washing in Kitchener-Waterloo and area. Removes mold, algae and weathering — essential before any staining.</p>
-        </div>
-      </div>
+      <PageHero
+        title="Pressure Washing Services"
+        subtitle="Professional eco-friendly deck and fence washing in Kitchener-Waterloo and area. Removes mold, algae and weathering — essential before any staining."
+        center
+      />
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid sm:grid-cols-2 gap-6 max-w-4xl">

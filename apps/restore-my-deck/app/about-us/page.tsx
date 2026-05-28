@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -17,14 +18,12 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "About Us", href: "/about-us" }])) }} />
 
-      {/* Hero */}
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto text-center">
-          <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest mb-2">Our Story</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">About Restore My Deck</h1>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">Over a decade of combined experience in deck and fence restoration, built on better products and better techniques.</p>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Our Story"
+        title="About Restore My Deck"
+        subtitle="Over a decade of combined experience in deck and fence restoration, built on better products and better techniques."
+        center
+      />
 
       {/* Story */}
       <section className="section bg-white">

@@ -6,20 +6,6 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[var(--dark)] text-white">
-      {/* CTA band */}
-      <div className="bg-[var(--accent)] py-10 px-4">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div>
-            <h2 className="text-2xl font-bold text-white">Ready to Restore Your Deck or Fence?</h2>
-            <p className="text-white/90 mt-1">Get a free no-obligation quote — most projects completed in 2 days.</p>
-          </div>
-          <div className="flex gap-3 flex-wrap justify-center">
-            <Link href="/contact-us" className="btn btn-white text-[var(--dark)] font-bold">Get a Free Quote</Link>
-            <a href={site.phoneHref} className="btn btn-dark">Call {site.phone}</a>
-          </div>
-        </div>
-      </div>
-
       {/* Main footer */}
       <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}

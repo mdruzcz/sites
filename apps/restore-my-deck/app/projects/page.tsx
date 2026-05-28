@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -26,12 +27,13 @@ export default function ProjectsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Projects", href: "/projects" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Our Projects</h1>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">Real results from real decks and fences across Kitchener-Waterloo and surrounding areas.</p>
-        </div>
-      </div>
+      <PageHero
+        title="Our Projects"
+        subtitle="Real results from real decks and fences across Kitchener-Waterloo and surrounding areas."
+        image="/images/deck-before-after.jpg"
+        imageAlt="Deck restoration before and after results by Restore My Deck"
+        center
+      />
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import QuoteForm from "@/components/QuoteForm";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -15,12 +16,11 @@ export default function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Contact Us", href: "/contact-us" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Contact Us</h1>
-          <p className="mt-4 text-gray-400 max-w-xl mx-auto">Get a free no-obligation quote. We&apos;ll respond within 24 hours.</p>
-        </div>
-      </div>
+      <PageHero
+        title="Contact Us"
+        subtitle="Get a free no-obligation quote. We'll respond within 24 hours."
+        center
+      />
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">

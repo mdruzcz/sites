@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -58,12 +59,11 @@ export default function ServicesPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-[var(--font-montserrat)]">Our Services</h1>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">From a basic power wash to a full deck rebuild — we offer a complete range of professional wood restoration services.</p>
-        </div>
-      </div>
+      <PageHero
+        title="Our Services"
+        subtitle="From a basic power wash to a full deck rebuild — we offer a complete range of professional wood restoration services."
+        center
+      />
 
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 space-y-12">

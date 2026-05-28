@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
+import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
@@ -16,13 +17,11 @@ export default function BlogPostPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }, { name: "How to Save Money – Restore, Don't Replace!", href: "/how-to-save-money-restore-dont-replace" }])) }} />
 
-      <div className="bg-[var(--dark)] py-16 px-4 text-white">
-        <div className="container mx-auto max-w-3xl">
-          <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-widest mb-2">Blog</p>
-          <h1 className="text-3xl md:text-4xl font-extrabold font-[var(--font-montserrat)]">How to Save Money – Restore, Don&apos;t Replace!</h1>
-          <p className="mt-4 text-gray-400">January 2024 · By Restore My Deck</p>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Helpful Tips"
+        title="How to Save Money – Restore, Don't Replace!"
+        subtitle="January 2024 · By Restore My Deck"
+      />
 
       <article className="section bg-white">
         <div className="container mx-auto px-4 max-w-3xl prose prose-gray prose-lg">
