@@ -31,21 +31,29 @@ const services = [
   {
     name: "Block Retaining Walls",
     href: "/block-retaining-walls",
+    img: "/images/long-lasting-walls.png",
+    imgAlt: "Gray concrete block retaining wall installation by London Retaining Walls",
     desc: "Block retaining walls are engineered structures built with interlocking concrete blocks. These walls serve both functional and aesthetic purposes, preventing soil erosion and creating visually appealing terraced landscapes.",
   },
   {
     name: "Concrete Retaining Walls",
     href: "/concrete-retaining-walls",
+    img: "/images/service-concrete.jpg",
+    imgAlt: "Concrete retaining wall forming and installation in London, Ontario",
     desc: "Concrete retaining walls are sturdy structures designed to hold back soil and prevent erosion. Known for their durability, concrete walls provide long-lasting stability in various landscapes.",
   },
   {
     name: "Wood & Timber Retaining Walls",
     href: "/wood-and-timber-retaining-walls",
+    img: "/images/service-wood.jpg",
+    imgAlt: "Wood and timber retaining wall with deck installation in London, Ontario",
     desc: "Wood and timber retaining walls bring a natural and warm aesthetic to outdoor spaces. Crafted from treated lumber or hardwood, these walls blend seamlessly with the environment.",
   },
   {
     name: "Retaining Wall Repair",
     href: "/retaining-wall-repair",
+    img: "/images/service-repair.jpg",
+    imgAlt: "Professional retaining wall repair and restoration service",
     desc: "Retaining wall repair involves addressing cracks, shifts, or damage to existing retaining structures. Timely repair is crucial to prevent further damage and maintain structural effectiveness.",
   },
 ];
@@ -140,12 +148,17 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
-              <div key={s.href} className="card p-6 border border-gray-100">
-                <h3 className="text-lg font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">{s.name}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{s.desc}</p>
-                <Link href={s.href} className="text-[var(--accent)] text-sm font-semibold hover:underline">
-                  Read More →
-                </Link>
+              <div key={s.href} className="card border border-gray-100 flex flex-col">
+                <div className="relative h-48 overflow-hidden">
+                  <Image src={s.img} alt={s.imgAlt} fill className="object-cover" sizes="(max-width:640px) 100vw,(max-width:1024px) 50vw,25vw" />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">{s.name}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{s.desc}</p>
+                  <Link href={s.href} className="text-[var(--accent)] text-sm font-semibold hover:underline">
+                    Read More →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -168,14 +181,25 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-10 font-[family-name:var(--font-poppins)]">
             Installing Residential and Commercial Retaining Walls
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded p-8 border border-gray-100">
-              <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Residential</h3>
-              <p className="text-gray-600 leading-relaxed">Transform your home&rsquo;s landscape with our custom-designed residential retaining walls. Perfect for controlling soil erosion, creating terraced gardens, and enhancing outdoor living spaces, our retaining walls combine functionality with aesthetic appeal. Choose from a variety of materials like block, concrete, or wood to perfectly match your home&rsquo;s style.</p>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded p-8 border border-gray-100">
+                <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Residential</h3>
+                <p className="text-gray-600 leading-relaxed">Transform your home&rsquo;s landscape with our custom-designed residential retaining walls. Perfect for controlling soil erosion, creating terraced gardens, and enhancing outdoor living spaces, our retaining walls combine functionality with aesthetic appeal. Choose from a variety of materials like block, concrete, or wood to perfectly match your home&rsquo;s style.</p>
+              </div>
+              <div className="bg-gray-50 rounded p-8 border border-gray-100">
+                <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Commercial</h3>
+                <p className="text-gray-600 leading-relaxed">Elevate your commercial property with our durable and efficient commercial retaining wall services. Ideal for supporting sloped terrains, enhancing property aesthetics, and ensuring landscape stability. We specialize in large-scale projects, offering solutions that are both code-compliant and tailored to the unique needs of your business landscape.</p>
+              </div>
             </div>
-            <div className="bg-gray-50 rounded p-8 border border-gray-100">
-              <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Commercial</h3>
-              <p className="text-gray-600 leading-relaxed">Elevate your commercial property with our durable and efficient commercial retaining wall services. Ideal for supporting sloped terrains, enhancing property aesthetics, and ensuring landscape stability. We specialize in large-scale projects, offering solutions that are both code-compliant and tailored to the unique needs of your business landscape.</p>
+            <div className="relative h-80 md:h-full min-h-[400px] rounded overflow-hidden">
+              <Image
+                src="/images/residential-commercial.png"
+                alt="Residential and commercial retaining wall installations by London Retaining Walls"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw,50vw"
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
@@ -41,6 +42,9 @@ export default function WoodTimberRetainingWallsPage() {
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-8">
+            <div className="relative rounded-xl overflow-hidden h-72 w-full">
+              <Image src="/images/service-wood.jpg" alt="Wood and timber retaining wall installation with deck in London, Ontario" fill className="object-cover" sizes="(max-width:1024px) 100vw, 66vw" />
+            </div>
             <div>
               <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">The Natural Choice for Landscape Retaining Walls</h2>
               <p className="text-gray-600 leading-relaxed">Wood and timber retaining walls offer a natural, organic aesthetic that concrete and block simply can&apos;t match. For garden terraces, raised planting beds, residential landscape features, and low-to-medium height grade changes, wood walls are an excellent choice — and they&apos;re often more economical than concrete or block.</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
@@ -41,6 +42,9 @@ export default function ConcreteRetainingWallsPage() {
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-8">
+            <div className="relative rounded-xl overflow-hidden h-72 w-full">
+              <Image src="/images/service-concrete.jpg" alt="Concrete retaining wall forming and installation in London, Ontario" fill className="object-cover" sizes="(max-width:1024px) 100vw, 66vw" />
+            </div>
             <div>
               <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Why Choose Concrete for Your Retaining Wall?</h2>
               <p className="text-gray-600 leading-relaxed">Concrete is the most durable retaining wall material available. It creates a monolithic, continuous structure that resists lateral soil pressure better than any other option. For walls taller than 4–5 feet, walls retaining heavy loads (like a driveway above), or commercial applications, concrete is almost always the right choice.</p>

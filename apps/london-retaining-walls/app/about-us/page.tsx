@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="section bg-white">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200">
-            <Image src="/images/about-kyle.jpg" alt="Kyle, owner of London Retaining Walls, on a job site in London, Ontario" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
+            <Image src="/images/about.jpg" alt="London Retaining Walls professional team on a retaining wall installation job site" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
           </div>
           <div>
             <h2 className="text-3xl font-extrabold text-[var(--dark)] font-[family-name:var(--font-poppins)]">Built on Experience and Doing It Right</h2>

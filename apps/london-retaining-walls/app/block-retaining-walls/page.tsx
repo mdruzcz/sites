@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
@@ -41,6 +42,9 @@ export default function BlockRetainingWallsPage() {
       <section className="section bg-gray-50">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-8">
+            <div className="relative rounded-xl overflow-hidden h-72 w-full">
+              <Image src="/images/long-lasting-walls.png" alt="Block retaining wall installation — interlocking concrete blocks in London, Ontario" fill className="object-cover" sizes="(max-width:1024px) 100vw, 66vw" />
+            </div>
             <div>
               <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Why Interlocking Block Retaining Walls?</h2>
               <p className="text-gray-600 leading-relaxed">Interlocking concrete block is the most popular retaining wall system for residential applications in Ontario. Systems like Permacon and Allan Block are engineered for structural performance, freeze-thaw resistance, and long-term durability — while offering a wide range of colours, textures, and styles to complement your landscape.</p>
