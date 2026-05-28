@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --brand-red:        #E7464E;
+  --brand-red-deep:   #C53A41;
+  --brand-green:      #04603A;
+  --brand-green-deep: #034F30;
+  --accent-blue:      #2098D1;
+  --bg:               #FFFFFF;
+  --bg-soft:          #FFF8F4;
+  --bg-cream:         #FBF6EE;
+  --ink:              #04603A;
+  --ink-strong:       #022B1A;
+  --ink-soft:         #4A6B5C;
+  --border:           #E6E6E6;
+  --muted:            #6b7280;
+}
+
+@theme inline {
+  --color-brand-red:        var(--brand-red);
+  --color-brand-red-deep:   var(--brand-red-deep);
+  --color-brand-green:      var(--brand-green);
+  --color-brand-green-deep: var(--brand-green-deep);
+  --color-accent-blue:      var(--accent-blue);
+  --color-bg:               var(--bg);
+  --color-bg-soft:          var(--bg-soft);
+  --color-bg-cream:         var(--bg-cream);
+  --color-ink:              var(--ink);
+  --color-ink-strong:       var(--ink-strong);
+  --color-ink-soft:         var(--ink-soft);
+  --color-border:           var(--border);
+  --font-heading: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-source), Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-source), Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  color: var(--ink-strong);
+  letter-spacing: -0.005em;
+}
+
+.heading-display {
+  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  line-height: 1.05;
+}
+
+.eyebrow {
+  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-green);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-height: 48px;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-red {
+  background: var(--brand-red);
+  color: #fff;
+}
+.btn-red:hover { background: var(--brand-red-deep); }
+.btn-green {
+  background: var(--brand-green);
+  color: #fff;
+}
+.btn-green:hover { background: var(--brand-green-deep); }
+.btn-outline-white {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.btn-outline-white:hover {
+  background: #fff;
+  color: var(--brand-green);
+}
+.btn-outline-green {
+  border: 2px solid var(--brand-green);
+  background: transparent;
+  color: var(--brand-green);
+}
+.btn-outline-green:hover {
+  background: var(--brand-green);
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(4, 96, 58, 0.05);
+}
+
+/* Sections */
+.section {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+/* Shimmer skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Twinkle animation for festive accents */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease forwards; }
