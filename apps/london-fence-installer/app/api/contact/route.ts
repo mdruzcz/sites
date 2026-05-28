@@ -4,11 +4,17 @@ import { Resend } from "resend";
 
 export const runtime = "edge";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// Lazy-init — Resend throws on empty key at module-load, which breaks the
+// "collect page data" build phase even when the key is set at runtime.
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  );
+}
 
 async function verifyTurnstile(token: string): Promise<boolean> {
   const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
@@ -33,7 +39,7 @@ export async function POST(req: NextRequest) {
   const valid = await verifyTurnstile(token);
   if (!valid) return NextResponse.json({ error: "Invalid captcha" }, { status: 400 });
 
-  await supabase.from("lfi_quote_requests").insert({
+  await getSupabase().from("lfi_quote_requests").insert({
     name,
     email,
     phone,
@@ -41,7 +47,7 @@ export async function POST(req: NextRequest) {
     created_at: new Date().toISOString(),
   });
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: "noreply@londonfenceinstaller.ca",
     to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
     subject: `New Quote Request from ${name} – London Fence Installer`,
