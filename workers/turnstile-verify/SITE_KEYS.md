@@ -9,6 +9,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-01 | `brantford-retaining-walls` | brantfordretainingwalls.ca | `0x4AAAAAADXeqV66AiVqKTne` |
 | MD-02 | `bright-event-lighting` | brighteventlighting.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | MD-02 | `celebrate-lighting` | celebratelighting.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
+| MD-02 | `christmas-lights-london` | christmaslightslondon.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | MD-03 | `concrete-driveways-ca` | concretedriveways.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `concrete-tilsonburg` | concretetilsonburg.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `deck-heroes` | deckheroes.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
@@ -25,6 +26,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-07 | `london-concrete-forming` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-08 | `london-deck-builder` | londondeckbuilder.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-08 | `london-fence-installer` | londonfenceinstaller.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
+| MD-08 | `london-retaining-walls` | londonretainingwalls.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-08 | `masterdecker-web` | masterdecker.com | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-09 | `matt-druzcz-real-estate` | mattdruzcz.ca | `0x4AAAAAADXesbgG3_xVYc5b` |
 | MD-09 | `ontario-light-shows` | ontariolightshows.ca | `0x4AAAAAADXesbgG3_xVYc5b` |
@@ -38,6 +40,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-11 | `spotless-property-cleaning` | spotlesspropertycleaning.ca | `0x4AAAAAADXes3pUk4chWGDN` |
 | MD-12 | `toronto-deck-stainers` | torontodeckstainers.ca | `0x4AAAAAADXetJL8ofEdIMn-` |
 | MD-12 | `total-brantford-concrete` | totalbrantfordconcrete.ca | `0x4AAAAAADXetJL8ofEdIMn-` |
+| MD-12 | `tricity-concrete-sealing` | tricityconcretesealing.ca | `0x4AAAAAADXetJL8ofEdIMn-` |
 | MD-13 | `woodstock-concrete-forming` | woodstockconcreteforming.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-concrete-pros` | woodstockconcretepros.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-deck-and-fence` | woodstockdeckandfence.ca | `0x4AAAAAADXetRNHN8PdanEk` |
@@ -48,7 +51,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 |---|---|---|
 | 1stchoicebasementrenovations.ca | MD-01 | `0x4AAAAAADXeqV66AiVqKTne` |
 | azpatiosdriveways.ca | MD-01 | `0x4AAAAAADXeqV66AiVqKTne` |
-| christmaslightslondon.ca | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` |
+| ~~christmaslightslondon.ca~~ | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` | → moved to main table |
 | classicchristmaslighting.ca | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | commercialholidaydecor.ca | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | deckrevitalize.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
@@ -63,7 +66,6 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | kmkitchenrenovations.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | listinglift.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | londonconcretesealing.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
-| londonretainingwalls.ca | MD-08 | `0x4AAAAAADXesI_x9qC6ztVo` |
 | masterdecker.app | MD-08 | `0x4AAAAAADXesI_x9qC6ztVo` |
 | mortgage-right.ca | MD-09 | `0x4AAAAAADXesbgG3_xVYc5b` |
 | mregresswindow.ca | MD-09 | `0x4AAAAAADXesbgG3_xVYc5b` |
@@ -71,6 +73,5 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | rtacabinetscanada.ca | MD-11 | `0x4AAAAAADXes3pUk4chWGDN` |
 | seniorsafe.ca | MD-11 | `0x4AAAAAADXes3pUk4chWGDN` |
 | tentasticpartyrentals.ca | MD-12 | `0x4AAAAAADXetJL8ofEdIMn-` |
-| tricityconcretesealing.ca | MD-12 | `0x4AAAAAADXetJL8ofEdIMn-` |
 | weinstallchristmaslights.ca | MD-12 | `0x4AAAAAADXetJL8ofEdIMn-` |
 | weinstallgoveelights.ca | MD-13 | `0x4AAAAAADXetRNHN8PdanEk` |
