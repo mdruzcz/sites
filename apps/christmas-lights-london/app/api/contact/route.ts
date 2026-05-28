@@ -16,8 +16,16 @@ export async function POST(req: Request) {
     );
   }
 
-  // Verify Turnstile via shared worker
-  if (body.turnstileToken && process.env.TURNSTILE_VERIFY_ENDPOINT) {
+  // Require Turnstile token — reject submissions without it
+  if (!body.turnstileToken) {
+    return Response.json(
+      { error: "Security verification required. Please complete the CAPTCHA." },
+      { status: 400 }
+    );
+  }
+
+  // Verify Turnstile token via shared worker at turnstile.masterdecker.com
+  if (process.env.TURNSTILE_VERIFY_ENDPOINT) {
     try {
       const turnstileRes = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT, {
         method: "POST",
@@ -35,7 +43,10 @@ export async function POST(req: Request) {
         );
       }
     } catch {
-      // Allow through if Turnstile check fails — don't block legitimate users
+      return Response.json(
+        { error: "Security verification unavailable. Please try again shortly." },
+        { status: 503 }
+      );
     }
   }
 

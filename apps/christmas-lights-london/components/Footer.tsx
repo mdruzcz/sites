@@ -139,8 +139,8 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <Mail className="h-4 w-4 text-[var(--accent)] shrink-0 mt-0.5" />
-                <a href={site.emailHref} className="hover:text-white transition-colors break-all">
-                  {site.email}
+                <a href="/contact" className="hover:text-white transition-colors">
+                  Get a Free Quote
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">

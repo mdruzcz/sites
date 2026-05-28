@@ -88,12 +88,9 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-[var(--accent)] shrink-0 mt-0.5" />
                     <div>
                       <p className="text-xs text-[var(--muted)] mb-0.5">Email</p>
-                      <a
-                        href={site.emailHref}
-                        className="text-[var(--foreground)] font-medium hover:text-[var(--accent)] transition-colors break-all"
-                      >
-                        {site.email}
-                      </a>
+                      <p className="text-[var(--foreground)] font-medium">
+                        Use the form on this page
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
