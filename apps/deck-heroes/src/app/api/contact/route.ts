@@ -4,18 +4,17 @@ import { NextRequest, NextResponse } from "next/server";
  * POST /api/contact
  *
  * Accepts JSON: { first_name, last_name, email, phone, address?, city?,
- *                 service, message?, website?, _loaded?, recaptchaToken? }
+ *                 service, message?, website?, _loaded?, token }
  *
  * Spam protection (3 layers):
  * 1. Honeypot — hidden "website" field; if filled, silently 200 to waste bot time.
  * 2. Time-gate — "_loaded" is a timestamp (ms) set when the page renders.
  *    Submissions < 3 s after load are almost certainly bots.
- * 3. reCAPTCHA v3 — token verified server-side; score < 0.3 is rejected.
+ * 3. Cloudflare Turnstile via shared Worker at turnstile.masterdecker.com.
  *
  * On success: saves to Supabase AND creates a CRM Lead in ERPNext.
  */
 
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET_KEY;
 const ERPNEXT_URL = process.env.ERPNEXT_URL;           // https://masterdecker.app
 const ERPNEXT_API_KEY = process.env.ERPNEXT_API_KEY;
 const ERPNEXT_API_SECRET = process.env.ERPNEXT_API_SECRET;
@@ -32,29 +31,22 @@ type ContactBody = {
   message?: string;
   website?: string;      // honeypot
   _loaded?: number;       // page-load timestamp
-  recaptchaToken?: string;
+  token?: string;         // Turnstile token
 };
 
-async function verifyRecaptcha(token: string): Promise<{ success: boolean; score: number }> {
-  if (!RECAPTCHA_SECRET) {
-    console.warn("[contact] RECAPTCHA_SECRET_KEY not set — skipping verification");
-    return { success: true, score: 1.0 };
-  }
-
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
   try {
-    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    const res = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        secret: RECAPTCHA_SECRET,
-        response: token,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, hostname: "deckheroes.ca" }),
     });
-    const data = await res.json();
-    return { success: data.success === true, score: data.score ?? 0 };
+    const data = (await res.json()) as { success: boolean };
+    return data.success === true;
   } catch (e) {
-    console.error("[contact] reCAPTCHA verify error:", e);
-    return { success: false, score: 0 };
+    console.error("[contact] Turnstile verify error:", e);
+    return false;
   }
 }
 
@@ -155,20 +147,17 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // ── Layer 3: reCAPTCHA v3 ──────────────────────────────────────────
-  if (body.recaptchaToken) {
-    const { success, score } = await verifyRecaptcha(body.recaptchaToken);
-    if (!success || score < 0.3) {
-      console.warn(`[contact] reCAPTCHA failed — success=${success}, score=${score}`);
-      return NextResponse.json(
-        { error: "Spam check failed. Please try again or call us directly." },
-        { status: 403 }
-      );
-    }
-  } else if (RECAPTCHA_SECRET) {
-    console.warn("[contact] No reCAPTCHA token in request");
+  // ── Layer 3: Cloudflare Turnstile (via shared Worker) ──────────────
+  if (!body.token) {
     return NextResponse.json(
-      { error: "Spam check failed. Please try again or call us directly." },
+      { error: "Captcha required. Please refresh and try again." },
+      { status: 400 }
+    );
+  }
+  const captchaOk = await verifyTurnstile(body.token);
+  if (!captchaOk) {
+    return NextResponse.json(
+      { error: "Captcha verification failed. Please try again or call us directly." },
       { status: 403 }
     );
   }

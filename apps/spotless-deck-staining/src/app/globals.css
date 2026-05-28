@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette */
+  --greige:        #E5E5E1;  /* Primary background */
+  --greige-soft:   #F3F2EE;  /* Lifted background */
+  --driftwood:     #4A4238;  /* Typography + primary buttons */
+  --driftwood-dark:#332E26;  /* Headlines / footer */
+  --terracotta:    #B07D62;  /* "Get a Quote" CTA */
+  --terracotta-deep:#8E614A;  /* Hover state */
+  --cream:         #FAF8F3;  /* Card / hero overlay */
+  --line:          #D6D3CC;  /* Hairline borders */
+  --foreground:    #4A4238;
+}
+
+@theme inline {
+  --color-greige:         var(--greige);
+  --color-greige-soft:    var(--greige-soft);
+  --color-driftwood:      var(--driftwood);
+  --color-driftwood-dark: var(--driftwood-dark);
+  --color-terracotta:     var(--terracotta);
+  --color-terracotta-deep:var(--terracotta-deep);
+  --color-cream:          var(--cream);
+  --color-line:           var(--line);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--greige);
+  color: var(--driftwood);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-poppins, var(--font-inter, Arial, Helvetica, sans-serif));
+  letter-spacing: -0.015em;
+  color: var(--driftwood-dark);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(74,66,56,0.04) 25%, rgba(74,66,56,0.08) 50%, rgba(74,66,56,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.6s ease-out both; }
+
+/* Soft elevation for cards on the warm-grey body */
+.shadow-warm {
+  box-shadow:
+    0 1px 2px rgba(74,66,56,0.04),
+    0 8px 24px -8px rgba(74,66,56,0.12);
+}
+.shadow-warm-lg {
+  box-shadow:
+    0 2px 4px rgba(74,66,56,0.05),
+    0 18px 40px -12px rgba(74,66,56,0.18);
+}
