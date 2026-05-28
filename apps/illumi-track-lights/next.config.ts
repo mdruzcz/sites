@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 
 // WP → new-site redirect map. Preserves SEO; matches every URL in the old sitemap.
 const wpRedirects: { source: string; destination: string; permanent: boolean }[] = [
@@ -40,8 +39,6 @@ const wpRedirects: { source: string; destination: string; permanent: boolean }[]
 ];
 
 const config: NextConfig = {
-  turbopack: { root: path.resolve(__dirname) },
-  outputFileTracingRoot: path.resolve(__dirname),
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],

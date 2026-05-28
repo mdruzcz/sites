@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 
 const wpRedirects: { source: string; destination: string; permanent: boolean }[] = [
   { source: "/shop/", destination: "/shop", permanent: true },
@@ -14,8 +13,6 @@ const wpRedirects: { source: string; destination: string; permanent: boolean }[]
 ];
 
 const config: NextConfig = {
-  turbopack: { root: path.resolve(__dirname) },
-  outputFileTracingRoot: path.resolve(__dirname),
   reactStrictMode: true,
   images: {
     formats: ["image/avif", "image/webp"],
