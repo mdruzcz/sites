@@ -1,0 +1,42 @@
+[
+  {
+    "question": "How long does the Christmas light installation take?",
+    "answer": "Most average-sized homes take 2 to 4 hours for a complete installation. Larger properties or commercial buildings may take longer. We'll give you a time estimate when we quote your project so you can plan accordingly.",
+    "featured": true
+  },
+  {
+    "question": "Are your Christmas lights energy efficient?",
+    "answer": "Yes — we use professional-grade LED lights exclusively. LED Christmas lights use up to 75% less energy than traditional incandescent bulbs, which means lower electricity bills for you while still delivering a brilliant, vibrant display all season long.",
+    "featured": true
+  },
+  {
+    "question": "What safety measures does your team take during installation?",
+    "answer": "Safety is our top priority. Our fully trained 7-person team uses professional equipment including two aerial lift vehicles with a 30-foot platform height, ensuring safe access to all areas of your home or business. We use quality fixtures and proper anchoring techniques that won't damage your property.",
+    "featured": true
+  },
+  {
+    "question": "Can I customize the colour scheme and design?",
+    "answer": "Absolutely. We work closely with you to create a display that matches your vision. Whether you prefer classic warm white, festive multicolour, a specific colour palette to match your home's exterior, or a themed display, our team will bring your ideas to life with precision.",
+    "featured": true
+  },
+  {
+    "question": "Do you offer any warranties or guarantees on your work?",
+    "answer": "Yes — we provide a season-long guarantee on all our installations. If any lights go out or any part of your display has an issue during the season, we'll come back and fix it at no extra charge. We stand behind every installation we do.",
+    "featured": false
+  },
+  {
+    "question": "How do you handle weather damage to the lights?",
+    "answer": "Southern Ontario winter weather can be unpredictable. Our team is on standby throughout the holiday season to address any weather-related issues. If a storm knocks out part of your display or causes any damage, just give us a call and we'll be there to make repairs promptly.",
+    "featured": false
+  },
+  {
+    "question": "Is takedown and removal included in the price?",
+    "answer": "Yes — both installation and seasonal takedown are included in our service. After the holidays, we return to carefully remove your lights, label all components, and store them properly for next year. You get a complete, hassle-free service from start to finish.",
+    "featured": false
+  },
+  {
+    "question": "How far in advance should I book my Christmas light installation?",
+    "answer": "We recommend booking 4 to 6 weeks in advance, especially for installations in October or November. Our calendar fills up quickly as the holiday season approaches — slots typically sell out by early November. Don't wait — contact us today to secure your preferred installation date.",
+    "featured": false
+  }
+]

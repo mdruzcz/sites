@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "london",
+    "city": "London",
+    "province": "Ontario",
+    "description": "London, Ontario is our home base. We serve all London neighbourhoods including Byron, Lambeth, Masonville, Old North, and more with professional Christmas light installation.",
+    "featured": true
+  },
+  {
+    "slug": "kitchener",
+    "city": "Kitchener",
+    "province": "Ontario",
+    "description": "Serving Kitchener homeowners and businesses with professional holiday lighting installations. Make your Kitchener home the brightest on the block this Christmas season.",
+    "featured": true
+  },
+  {
+    "slug": "hamilton",
+    "city": "Hamilton",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation for Hamilton homes and commercial properties. Our team brings the holiday spirit to Steeltown with expert lighting displays.",
+    "featured": true
+  },
+  {
+    "slug": "mississauga",
+    "city": "Mississauga",
+    "province": "Ontario",
+    "description": "Transform your Mississauga home or plaza with a stunning professional Christmas light display. We serve all Mississauga neighbourhoods with our aerial lift equipment.",
+    "featured": true
+  },
+  {
+    "slug": "brantford",
+    "city": "Brantford",
+    "province": "Ontario",
+    "description": "Bringing professional holiday lighting to Brantford and surrounding areas. Make your home or business stand out this Christmas season with a custom light display.",
+    "featured": true
+  },
+  {
+    "slug": "ancaster",
+    "city": "Ancaster",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Ancaster, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "brampton",
+    "city": "Brampton",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Brampton, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "burlington",
+    "city": "Burlington",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Burlington, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "cambridge",
+    "city": "Cambridge",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Cambridge, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "chatham",
+    "city": "Chatham",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Chatham, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "etobicoke",
+    "city": "Etobicoke",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Etobicoke, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "georgetown",
+    "city": "Georgetown",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Georgetown, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "guelph",
+    "city": "Guelph",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Guelph, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "ingersoll",
+    "city": "Ingersoll",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Ingersoll, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "milton",
+    "city": "Milton",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Milton, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "oakville",
+    "city": "Oakville",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Oakville, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "sarnia",
+    "city": "Sarnia",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Sarnia, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "st-thomas",
+    "city": "St. Thomas",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in St. Thomas, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "strathroy",
+    "city": "Strathroy",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Strathroy, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "waterloo",
+    "city": "Waterloo",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Waterloo, Ontario.",
+    "featured": false
+  },
+  {
+    "slug": "woodstock",
+    "city": "Woodstock",
+    "province": "Ontario",
+    "description": "Professional Christmas light installation in Woodstock, Ontario.",
+    "featured": false
+  }
+]
