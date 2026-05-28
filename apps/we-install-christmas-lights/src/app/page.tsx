@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Hero } from "@/components/Hero";
-import { StatsBar } from "@/components/StatsBar";
 import { Pitch } from "@/components/Pitch";
 import { PackageGrid } from "@/components/PackageGrid";
 import { Testimonials } from "@/components/Testimonials";
@@ -103,7 +102,6 @@ export default function HomePage() {
       />
 
       <Hero />
-      <StatsBar />
       <Pitch />
       <PackageGrid />
       <Testimonials />

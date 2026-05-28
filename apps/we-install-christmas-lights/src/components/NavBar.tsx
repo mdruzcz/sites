@@ -64,21 +64,21 @@ export function NavBar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-4">
+        <div className="flex h-24 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="We Install Christmas Lights — Home">
             <Image
               src="/images/logo.png"
               alt="We Install Christmas Lights logo"
-              width={220}
-              height={56}
+              width={300}
+              height={76}
               priority
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-7 text-[12px] font-bold tracking-[0.14em] uppercase text-[color:var(--brand-green)]">
+          <ul className="hidden lg:flex items-center gap-8 text-[14px] font-bold tracking-[0.12em] uppercase text-[color:var(--brand-green)]">
             <li>
               <Link href="/about-us" className="hover:text-[color:var(--brand-red)] transition-colors">About Us</Link>
             </li>
@@ -146,7 +146,7 @@ export function NavBar() {
           </ul>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Link href="/contact-us" className="btn btn-red text-xs">Contact Us</Link>
+            <Link href="/contact-us" className="btn btn-red text-sm">Contact Us</Link>
           </div>
 
           {/* Mobile menu button */}

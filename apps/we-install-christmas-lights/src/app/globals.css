@@ -51,8 +51,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
-  color: var(--ink-strong);
   letter-spacing: -0.005em;
+  color: var(--ink-strong);
+}
+
+h1.text-white, h2.text-white, h3.text-white, h4.text-white {
+  color: #fff;
 }
 
 .heading-display {

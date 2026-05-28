@@ -18,8 +18,8 @@ export function Hero() {
             <Bulb className="w-3.5 h-3.5 twinkle" color="#FFFFFF" />
           </div>
 
-          <div className="relative max-w-xl">
-            <h1 className="heading-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          <div className="relative max-w-xl text-white">
+            <h1 className="heading-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-white">
               Professional<br />Christmas and<br />Holiday Lighting
             </h1>
             <p className="mt-6 text-lg lg:text-xl font-medium leading-snug text-white/95">
