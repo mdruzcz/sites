@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
+import { Hero } from "@/components/hero";
 import { ContactForm } from "@/components/contact-form";
 import { site } from "@/lib/site";
 
@@ -39,15 +40,13 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
-        <section className="bg-[var(--accent-dark)] text-white">
-          <div className="container section text-center">
-            <p className="eyebrow text-[var(--accent-light)] mb-3">Contact Us</p>
-            <h1 className="h-display text-4xl md:text-5xl mb-5">Contact Us</h1>
-            <p className="text-lg text-white/85 max-w-2xl mx-auto">
-              Talk to us today and see how easy it is to get started with Master Decker
-            </p>
-          </div>
-        </section>
+        <Hero
+          eyebrow="Contact Us"
+          title="Contact Us"
+          subtitle="Talk to us today and see how easy it is to get started with Master Decker."
+          background="/images/deck-bg.jpg"
+          align="center"
+        />
 
         <section className="section bg-white">
           <div className="container">
@@ -60,7 +59,7 @@ export default function ContactPage() {
             <div className="grid gap-12 lg:grid-cols-[1fr_380px] max-w-5xl mx-auto">
               <ContactForm />
               <aside className="space-y-6">
-                <div className="bg-[var(--surface)] rounded p-7 border border-[var(--border)] space-y-5">
+                <div className="bg-[var(--surface)] p-7 border border-[var(--border)] space-y-5">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-1.5">Phone</p>
                     <a href={site.phoneHref} className="text-lg font-bold text-[var(--ink)] hover:text-[var(--accent)]">{site.phone}</a>
@@ -79,9 +78,9 @@ export default function ContactPage() {
                     <p className="text-sm text-[var(--ink-soft)]">London, Ontario and surrounding areas across Southwestern Ontario.</p>
                   </div>
                 </div>
-                <div className="bg-[var(--accent-dark)] text-white rounded p-7">
+                <div className="bg-[var(--ink)] text-white p-7">
                   <p className="font-bold mb-2 text-lg">Need it done faster?</p>
-                  <p className="text-sm text-white/75 mb-5">Call us directly and we&apos;ll aim to schedule a site visit within 48 hours.</p>
+                  <p className="text-sm text-white/80 mb-5">Call us directly and we&apos;ll aim to schedule a site visit within 48 hours.</p>
                   <a href={site.phoneHref} className="btn-primary w-full">{site.phone}</a>
                 </div>
               </aside>

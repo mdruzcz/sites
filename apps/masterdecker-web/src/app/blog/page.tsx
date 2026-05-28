@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
+import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -26,24 +27,22 @@ export default function BlogPage() {
     <>
       <Header />
       <main>
-        <section className="bg-[var(--accent-dark)] text-white">
-          <div className="container section text-center">
-            <p className="eyebrow text-[var(--accent-light)] mb-3">Resources</p>
-            <h1 className="h-display text-4xl md:text-5xl mb-5">Master Decker Blog</h1>
-            <p className="text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
-              Practical advice on decks, fences, concrete, and everything in between — from the team that builds them.
-            </p>
-          </div>
-        </section>
+        <Hero
+          eyebrow="Resources"
+          title="Master Decker Blog"
+          subtitle="Practical advice on decks, fences, concrete, and everything in between — from the team that builds them."
+          background="/images/stamped-bg.jpg"
+          align="center"
+        />
 
         <section className="section bg-white">
           <div className="container max-w-4xl">
             <div className="space-y-6">
               {posts.map((p) => (
-                <article key={p.slug} className="bg-[var(--surface)] border border-[var(--border)] rounded p-7 hover:border-[var(--accent)] hover:shadow-md transition-all">
+                <article key={p.slug} className="bg-[var(--surface)] border border-[var(--border)] p-7 hover:border-[var(--accent)] hover:shadow-md transition-all">
                   <h2 className="font-bold text-2xl mb-3"><Link href={`/blog/${p.slug}`} className="hover:text-[var(--accent)]">{p.title}</Link></h2>
                   <p className="text-[var(--ink-soft)] leading-relaxed mb-3">{p.excerpt}</p>
-                  <Link href={`/blog/${p.slug}`} className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] hover:text-[var(--accent-dark)]">Read More →</Link>
+                  <Link href={`/blog/${p.slug}`} className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] hover:text-[var(--ink)]">Read More →</Link>
                 </article>
               ))}
             </div>

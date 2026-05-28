@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
+import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 import services from "@/content/services.json";
-import locations from "@/content/locations.json";
 
 export const revalidate = 3600;
 
@@ -16,6 +16,13 @@ const reservedSlugs = new Set([
   "about", "services", "contact", "faq", "service-locations", "project-examples", "blog",
   "api", "_next", "images", "sitemap.xml", "robots.txt",
 ]);
+
+const categoryBg: Record<string, string> = {
+  "staining-sealing": "/images/deck-bg.jpg",
+  "woodwork": "/images/pergola-bg.jpg",
+  "concrete": "/images/concrete-bg.jpg",
+  "landscaping": "/images/outdoor-deck.jpg",
+};
 
 type Params = { slug: string };
 
@@ -35,6 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title: `${svc.title} | Master Decker`,
       description: svc.blurb,
       url: `${site.url}/${slug}`,
+      images: [categoryBg[svc.categoryId] || "/images/pergola-bg.jpg"],
     },
   };
 }
@@ -46,6 +54,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   if (!svc) notFound();
 
   const related = allServices.filter((s) => s.categoryId === svc.categoryId && s.slug !== svc.slug).slice(0, 3);
+  const bg = categoryBg[svc.categoryId] || "/images/pergola-bg.jpg";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,22 +75,25 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
-        <section className="bg-[var(--accent-dark)] text-white">
-          <div className="container section">
-            <nav className="text-sm mb-5 text-white/70" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white">Home</Link>
+        <Hero
+          eyebrow={svc.category}
+          title={svc.title}
+          subtitle={svc.blurb}
+          background={bg}
+          primaryCta={{ label: "Request a Quote", href: "/contact" }}
+          showPhone
+        />
+
+        {/* Breadcrumb */}
+        <section className="bg-[var(--surface)] border-b border-[var(--border)]">
+          <div className="container py-3">
+            <nav className="text-xs text-[var(--ink-soft)]" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
               <span className="mx-2">/</span>
-              <Link href="/services" className="hover:text-white">Services</Link>
+              <Link href="/services" className="hover:text-[var(--accent)]">Services</Link>
               <span className="mx-2">/</span>
-              <span className="text-white">{svc.title}</span>
+              <span className="text-[var(--ink)] font-semibold">{svc.title}</span>
             </nav>
-            <p className="eyebrow text-[var(--accent-light)] mb-3">{svc.category}</p>
-            <h1 className="h-display text-4xl md:text-5xl mb-5">{svc.title}</h1>
-            <p className="text-lg text-white/85 max-w-3xl leading-relaxed mb-8">{svc.blurb}</p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">Request a Quote</Link>
-              <a href={site.phoneHref} className="btn-outline border-white text-white hover:bg-white hover:text-[var(--accent)]">{site.phone}</a>
-            </div>
           </div>
         </section>
 
@@ -124,12 +136,15 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
                 <p className="eyebrow mb-3">Related Services</p>
                 <h2 className="h-display text-3xl md:text-4xl">More from {svc.category}</h2>
               </div>
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((r) => (
-                  <Link key={r.slug} href={`/${r.slug}`} className="group bg-white rounded border border-[var(--border)] p-6 hover:border-[var(--accent)] hover:shadow-md transition-all flex flex-col">
-                    <h3 className="font-bold text-lg mb-2 group-hover:text-[var(--accent)]">{r.title}</h3>
-                    <p className="text-sm text-[var(--ink-soft)] leading-relaxed mb-4">{r.blurb}</p>
-                    <span className="mt-auto text-xs font-bold uppercase tracking-widest text-[var(--accent)]">Learn More →</span>
+                  <Link key={r.slug} href={`/${r.slug}`} className="svc-card" aria-label={r.title}>
+                    <div className="svc-card-bg" style={{ backgroundImage: `url(${categoryBg[r.categoryId]})` }} role="img" aria-label={r.title} />
+                    <div className="svc-card-overlay" />
+                    <div className="svc-card-content">
+                      <div className="svc-card-title">{r.title}</div>
+                      <p className="svc-card-desc">{r.blurb}</p>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -137,10 +152,12 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </section>
         )}
 
-        <section className="section bg-[var(--accent-dark)] text-white text-center">
-          <div className="container max-w-3xl">
+        <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
+          <div className="absolute inset-0" style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+          <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-4">Ready for your free estimate?</h2>
-            <p className="text-white/80 mb-8 text-lg">
+            <p className="text-white/85 mb-8 text-lg">
               Tell us about your {svc.title.toLowerCase()} project — we&apos;ll respond within 1 business day.
             </p>
             <Link href="/contact" className="btn-primary">Request Quote</Link>

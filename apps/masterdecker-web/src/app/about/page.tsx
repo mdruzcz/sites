@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
+import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 import locations from "@/content/locations.json";
 
@@ -32,16 +33,14 @@ export default function AboutPage() {
     <>
       <Header />
       <main>
-        <section className="bg-[var(--accent-dark)] text-white">
-          <div className="container section text-center">
-            <p className="eyebrow text-[var(--accent-light)] mb-3">About</p>
-            <h1 className="h-display text-4xl md:text-5xl mb-6">About Master Decker Inc.</h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed mb-8">
-              Welcome to Master Decker Inc., where we specialize in crafting exceptional outdoor living spaces. Based just outside of London, Ontario, we serve a broad range of areas including Kitchener-Waterloo, Hamilton, the Greater Toronto Area, and beyond. Our commitment to quality and a deep understanding of our clients&apos; needs have established us as a leader in the outdoor living industry.
-            </p>
-            <Link href="/contact" className="btn-primary">Request Quote</Link>
-          </div>
-        </section>
+        <Hero
+          eyebrow="About"
+          title="About Master Decker Inc."
+          subtitle="Welcome to Master Decker Inc., where we specialize in crafting exceptional outdoor living spaces. Based just outside of London, Ontario, we serve a broad range of areas across Southwestern Ontario."
+          background="/images/pergola-bg.jpg"
+          primaryCta={{ label: "Request Quote", href: "/contact" }}
+          secondaryCta={{ label: "Our Projects", href: "/project-examples" }}
+        />
 
         <section className="section bg-white">
           <div className="container">
@@ -52,7 +51,7 @@ export default function AboutPage() {
             <div className="grid gap-10 md:grid-cols-3">
               {journey.map((j, i) => (
                 <div key={j.title}>
-                  <div className="text-[var(--accent)] font-extrabold text-5xl mb-3">0{i + 1}</div>
+                  <div className="text-[var(--accent)] font-extrabold text-6xl mb-3">0{i + 1}</div>
                   <h3 className="font-bold text-xl mb-3">{j.title}</h3>
                   <p className="text-sm text-[var(--ink-soft)] leading-relaxed">{j.desc}</p>
                 </div>
@@ -67,10 +66,10 @@ export default function AboutPage() {
               <p className="eyebrow mb-3">What Drives Us</p>
               <h2 className="h-display text-3xl md:text-4xl">Our Mission and Values</h2>
             </div>
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-3">
               {mission.map((m) => (
-                <div key={m.title} className="bg-white rounded p-7 border border-[var(--border)]">
-                  <div className="w-12 h-0.5 bg-[var(--accent)] mb-5" />
+                <div key={m.title} className="bg-white p-8 border border-[var(--border)]">
+                  <div className="w-12 h-1 bg-[var(--accent)] mb-5" />
                   <h3 className="font-bold text-xl mb-3">{m.title}</h3>
                   <p className="text-sm text-[var(--ink-soft)] leading-relaxed">{m.desc}</p>
                 </div>
@@ -99,10 +98,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="section bg-[var(--accent-dark)] text-white text-center">
-          <div className="container max-w-3xl">
+        <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/deck-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+          <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-5">Connect With Us</h2>
-            <p className="text-white/80 mb-3 leading-relaxed">
+            <p className="text-white/85 mb-3 leading-relaxed">
               Master Decker Inc. is more than just an outdoor living company; we are partners in making your dream outdoor spaces a reality. Contact us today to schedule a consultation and begin the journey toward transforming your outdoor living space.
             </p>
             <p className="text-white/70 mb-8 italic">
