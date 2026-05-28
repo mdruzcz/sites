@@ -127,7 +127,7 @@ export default function HomePage() {
       {/* Final CTA band */}
       <section className="bg-[color:var(--brand-red)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
-          <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl">
+          <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl text-white">
             Ready for the Most Magical Season Yet?
           </h2>
           <p className="mt-4 text-white/90 max-w-2xl mx-auto">

@@ -68,7 +68,7 @@ export default async function CityPage({ params }: Props) {
           <div className="bg-[color:var(--brand-red)] text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-24 flex items-center">
             <div className="max-w-xl">
               <p className="text-white/85 text-xs font-bold uppercase tracking-[0.18em]">Service Area</p>
-              <h1 className="heading-display text-4xl sm:text-5xl mt-3">
+              <h1 className="heading-display text-4xl sm:text-5xl mt-3 text-white">
                 Christmas Light<br />Installation in<br />{city.name}
               </h1>
               <p className="mt-5 text-lg text-white/95">{city.heroIntro}</p>

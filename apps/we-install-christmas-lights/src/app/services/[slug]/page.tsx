@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: Props) {
               <p className="text-white/85 text-xs font-bold uppercase tracking-[0.18em]">
                 {service.category === "commercial" ? "Commercial Service" : service.category === "residential" ? "Residential Service" : "Add-on Service"}
               </p>
-              <h1 className="heading-display text-4xl sm:text-5xl mt-3">{service.name}</h1>
+              <h1 className="heading-display text-4xl sm:text-5xl mt-3 text-white">{service.name}</h1>
               <p className="mt-5 text-lg text-white/95">{service.tagline}</p>
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <Link href="/contact-us" className="btn btn-outline-white">Online Quote</Link>
