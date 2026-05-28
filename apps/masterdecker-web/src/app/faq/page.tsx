@@ -36,7 +36,7 @@ export default function FAQPage() {
           eyebrow="Have Questions?"
           title="Frequently Asked Questions"
           subtitle="Here you can find answers to some of the most commonly asked questions about our services. If you don't find the answer you're looking for, please contact us."
-          background="/images/outdoor-deck.jpg"
+          background="/images/wp-project-1.jpg"
           primaryCta={{ label: "Request Quote", href: "/contact" }}
         />
 
@@ -60,7 +60,7 @@ export default function FAQPage() {
         ))}
 
         <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/pergola-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/pergola.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
           <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-4">Get a FREE Quote</h2>

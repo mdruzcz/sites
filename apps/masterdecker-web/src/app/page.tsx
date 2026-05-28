@@ -21,21 +21,21 @@ export const metadata: Metadata = {
     title: `${site.name} | Decks, Fences & Concrete | London Ontario`,
     description: site.description,
     url: site.url,
-    images: ["/images/pergola-bg.jpg"],
+    images: ["/images/wp-deck-railing.jpg"],
   },
 };
 
 const hpServices = [
-  { title: "Fence Painting", desc: "Brighten and protect your property boundary.", bg: "/images/fence-bg.jpg", href: "/fence-painting-services" },
-  { title: "Deck Staining", desc: "Preserve the longevity and beauty of your deck.", bg: "/images/deck-bg.jpg", href: "/deck-staining-services" },
-  { title: "Concrete Sealing", desc: "Guard your surfaces against wear and weather.", bg: "/images/concrete-bg.jpg", href: "/concrete-sealing" },
-  { title: "Pressure Washing", desc: "Comprehensive cleaning for decks, fences, and patios.", bg: "/images/outdoor-deck.jpg", href: "/patio-pressure-washing-services" },
-  { title: "Decks", desc: "Custom deck building, resurfacing, and repairs.", bg: "/images/deck-bg.jpg", href: "/deck-building" },
-  { title: "Pergolas & Gazebos", desc: "Crafted to complement your outdoor living.", bg: "/images/pergola-bg.jpg", href: "/custom-pergolas" },
-  { title: "Fences & Privacy Screens", desc: "From classic wood to modern designs.", bg: "/images/fence-bg.jpg", href: "/fence-building" },
-  { title: "Retaining Walls", desc: "Functional, stylish solutions for sloped yards.", bg: "/images/retaining-wall-bg.jpg", href: "/wooden-retaining-wall" },
-  { title: "Driveways & Patios", desc: "Durable, stylish concrete installations.", bg: "/images/concrete-bg.jpg", href: "/concrete-driveways" },
-  { title: "Stamped Concrete", desc: "Beautiful patterns for a unique look.", bg: "/images/stamped-bg.jpg", href: "/stamped-concrete-driveway-installation" },
+  { title: "Fence Painting", desc: "Brighten and protect your property boundary.", bg: "/images/fence.jpg", href: "/fence-painting-services" },
+  { title: "Deck Staining", desc: "Preserve the longevity and beauty of your deck.", bg: "/images/wp-deck-stained-cedar.jpg", href: "/deck-staining-services" },
+  { title: "Concrete Sealing", desc: "Guard your surfaces against wear and weather.", bg: "/images/wp-stamped-concrete.jpg", href: "/concrete-sealing" },
+  { title: "Pressure Washing", desc: "Comprehensive cleaning for decks, fences, and patios.", bg: "/images/wp-project-2.jpg", href: "/patio-pressure-washing-services" },
+  { title: "Decks", desc: "Custom deck building, resurfacing, and repairs.", bg: "/images/wp-deck-building.jpg", href: "/deck-building" },
+  { title: "Pergolas & Gazebos", desc: "Crafted to complement your outdoor living.", bg: "/images/pergola.jpg", href: "/custom-pergolas" },
+  { title: "Fences & Privacy Screens", desc: "From classic wood to modern designs.", bg: "/images/testimonial-3.jpg", href: "/fence-building" },
+  { title: "Retaining Walls", desc: "Functional, stylish solutions for sloped yards.", bg: "/images/wp-arbor.jpg", href: "/wooden-retaining-wall" },
+  { title: "Driveways & Patios", desc: "Durable, stylish concrete installations.", bg: "/images/wp-heated-driveway.jpg", href: "/concrete-driveways" },
+  { title: "Stamped Concrete", desc: "Beautiful patterns for a unique look.", bg: "/images/wp-stamped-concrete-2.jpg", href: "/stamped-concrete-driveway-installation" },
 ];
 
 const whyUs = [
@@ -51,16 +51,18 @@ const recentProjects = [
   { title: "Fences", desc: "Make your backyard eye-catching and extend its lifespan with fence restoration.", image: "/images/fence.jpg", alt: "Cedar fence build by Master Decker in London Ontario" },
 ];
 
+const testimonialBg = "/images/wp-cedar-deck.jpg";
+
 const gallery = [
-  { src: "/images/pergola.jpg", alt: "Pergola with swing — Master Decker, London Ontario" },
-  { src: "/images/fence.jpg", alt: "Cedar fence install — Master Decker" },
-  { src: "/images/gazebo.jpg", alt: "Custom gazebo build — Master Decker" },
-  { src: "/images/deck-bg.jpg", alt: "Custom backyard deck — Master Decker" },
-  { src: "/images/stamped-bg.jpg", alt: "Stamped concrete patio — Master Decker" },
-  { src: "/images/pergola-bg.jpg", alt: "Pergola installation — Master Decker" },
-  { src: "/images/outdoor-deck.jpg", alt: "Outdoor living deck — Master Decker" },
-  { src: "/images/concrete-bg.jpg", alt: "Concrete driveway pour — Master Decker" },
-  { src: "/images/gazebo-bg.jpg", alt: "Garden gazebo — Master Decker" },
+  { src: "/images/wp-backyard-deck.jpg", alt: "Backyard deck build — Master Decker, London Ontario" },
+  { src: "/images/wp-deck-railing.jpg", alt: "Deck with custom railing — Master Decker" },
+  { src: "/images/wp-deck-tree.jpg", alt: "Custom deck wrapped around a tree — Master Decker" },
+  { src: "/images/wp-project-1.jpg", alt: "Master Decker deck project" },
+  { src: "/images/wp-deck-stained-cedar.jpg", alt: "Stained cedar deck — Master Decker" },
+  { src: "/images/wp-project-3.jpg", alt: "Master Decker outdoor living project" },
+  { src: "/images/wp-stamped-concrete.jpg", alt: "Stamped concrete patio — Master Decker" },
+  { src: "/images/wp-stamped-concrete-2.jpg", alt: "Stamped concrete driveway — Master Decker" },
+  { src: "/images/wp-heated-driveway.jpg", alt: "Heated concrete driveway install — Master Decker" },
 ];
 
 const cities = [
@@ -113,7 +115,7 @@ export default function HomePage() {
         <Hero
           title="Master Decker Home Services"
           subtitle="We Help Enhance Your Outdoor Living Spaces From Deck Staining to Concrete Patios and Everything In Between"
-          background="/images/outdoor-deck.jpg"
+          background="/images/wp-deck-railing.jpg"
           primaryCta={{ label: "More About Us", href: "/about" }}
           secondaryCta={{ label: "Our Projects", href: "/project-examples" }}
         />
@@ -185,7 +187,7 @@ export default function HomePage() {
 
         {/* WHY CHOOSE */}
         <section className="section relative bg-[var(--ink)] text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url(/images/pergola-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url(/images/wp-cedar-deck.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" aria-hidden="true" />
           <div className="container relative">
             <div className="text-center max-w-3xl mx-auto mb-14">
@@ -283,7 +285,7 @@ export default function HomePage() {
         </section>
 
         {/* TESTIMONIALS SLIDER */}
-        <TestimonialSlider items={[...testimonials]} background="/images/pergola-bg.jpg" />
+        <TestimonialSlider items={[...testimonials]} background={testimonialBg} />
 
         {/* SERVICE AREAS */}
         <section className="section bg-white">
@@ -337,7 +339,7 @@ export default function HomePage() {
 
         {/* CTA */}
         <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/deck-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/wp-backyard-deck.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
           <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-4">Get a FREE Quote</h2>

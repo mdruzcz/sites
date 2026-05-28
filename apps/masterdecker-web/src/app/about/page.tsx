@@ -37,7 +37,7 @@ export default function AboutPage() {
           eyebrow="About"
           title="About Master Decker Inc."
           subtitle="Welcome to Master Decker Inc., where we specialize in crafting exceptional outdoor living spaces. Based just outside of London, Ontario, we serve a broad range of areas across Southwestern Ontario."
-          background="/images/pergola-bg.jpg"
+          background="/images/wp-cedar-deck.jpg"
           primaryCta={{ label: "Request Quote", href: "/contact" }}
           secondaryCta={{ label: "Our Projects", href: "/project-examples" }}
         />
@@ -99,7 +99,7 @@ export default function AboutPage() {
         </section>
 
         <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/deck-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/wp-backyard-deck.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
           <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-5">Connect With Us</h2>

@@ -18,10 +18,10 @@ const reservedSlugs = new Set([
 ]);
 
 const categoryBg: Record<string, string> = {
-  "staining-sealing": "/images/deck-bg.jpg",
-  "woodwork": "/images/pergola-bg.jpg",
-  "concrete": "/images/concrete-bg.jpg",
-  "landscaping": "/images/outdoor-deck.jpg",
+  "staining-sealing": "/images/wp-deck-stained-cedar.jpg",
+  "woodwork": "/images/wp-deck-building.jpg",
+  "concrete": "/images/wp-stamped-concrete.jpg",
+  "landscaping": "/images/wp-backyard-deck.jpg",
 };
 
 type Params = { slug: string };

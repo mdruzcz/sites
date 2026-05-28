@@ -44,7 +44,7 @@ export default function ContactPage() {
           eyebrow="Contact Us"
           title="Contact Us"
           subtitle="Talk to us today and see how easy it is to get started with Master Decker."
-          background="/images/deck-bg.jpg"
+          background="/images/wp-deck-stained-cedar.jpg"
           align="center"
         />
 

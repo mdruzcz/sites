@@ -28,16 +28,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      {/* TOP ROW — hides on scroll */}
+      {/* TOP ROW — orange, hides on scroll */}
       <div
-        className={`hidden lg:block bg-[var(--shell)] text-white text-sm transition-[max-height,opacity] duration-300 overflow-hidden ${
+        className={`hidden lg:block bg-[var(--accent)] text-white text-sm transition-[max-height,opacity] duration-300 overflow-hidden ${
           scrolled ? "max-h-0 opacity-0" : "max-h-16 opacity-100"
         }`}
       >
         <div className="container flex items-center justify-between h-11 gap-8">
           <nav className="flex items-center gap-7">
             <div className="relative group">
-              <button className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-3">
+              <button className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors flex items-center gap-1 py-3">
                 About Us
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 7.5L10 12l4.5-4.5z" /></svg>
               </button>
@@ -49,13 +49,13 @@ export function Header() {
                 </div>
               </div>
             </div>
-            <Link href="/project-examples" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--accent)] transition-colors">Projects</Link>
-            <Link href="/blog" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--accent)] transition-colors">Blog</Link>
-            <Link href="/contact" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--accent)] transition-colors">Contact Us</Link>
+            <Link href="/project-examples" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors">Projects</Link>
+            <Link href="/blog" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors">Blog</Link>
+            <Link href="/contact" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors">Contact Us</Link>
           </nav>
           <div className="flex items-center gap-5">
-            <a href={`mailto:${site.email}`} className="text-xs hover:text-[var(--accent)] transition-colors">{site.email}</a>
-            <a href={site.phoneHref} className="text-base font-bold hover:text-[var(--accent)] transition-colors">{site.phone}</a>
+            <a href={`mailto:${site.email}`} className="text-xs hover:text-[var(--ink)] transition-colors">{site.email}</a>
+            <a href={site.phoneHref} className="text-base font-bold hover:text-[var(--ink)] transition-colors">{site.phone}</a>
           </div>
         </div>
       </div>

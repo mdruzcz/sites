@@ -20,12 +20,15 @@ const projects = [
   { title: "Premium Pergola with Swing", category: "Pergolas", image: "/images/pergola.jpg", alt: "Premium pergola with built-in swing — Master Decker, London Ontario" },
   { title: "Custom Cedar Fence", category: "Fences", image: "/images/fence.jpg", alt: "Custom cedar fence install by Master Decker" },
   { title: "Restored Gazebo", category: "Gazebos", image: "/images/gazebo.jpg", alt: "Restored gazebo by Master Decker in Southwestern Ontario" },
-  { title: "Backyard Deck Build", category: "Decks", image: "/images/deck-bg.jpg", alt: "Backyard deck build by Master Decker" },
-  { title: "Stamped Concrete Patio", category: "Concrete", image: "/images/stamped-bg.jpg", alt: "Stamped concrete patio install" },
-  { title: "Pergola Restoration", category: "Pergolas", image: "/images/pergola-bg.jpg", alt: "Pergola restoration and re-stain" },
-  { title: "Outdoor Living Deck", category: "Decks", image: "/images/outdoor-deck.jpg", alt: "Outdoor living deck space by Master Decker" },
-  { title: "Concrete Driveway Pour", category: "Concrete", image: "/images/concrete-bg.jpg", alt: "Concrete driveway pour" },
-  { title: "Garden Gazebo", category: "Gazebos", image: "/images/gazebo-bg.jpg", alt: "Custom garden gazebo build" },
+  { title: "Backyard Deck Build", category: "Decks", image: "/images/wp-backyard-deck.jpg", alt: "Backyard deck build by Master Decker" },
+  { title: "Deck with Railing", category: "Decks", image: "/images/wp-deck-railing.jpg", alt: "Deck with custom railing by Master Decker" },
+  { title: "Deck Around a Tree", category: "Decks", image: "/images/wp-deck-tree.jpg", alt: "Custom deck wrapped around a tree by Master Decker" },
+  { title: "Stained Cedar Deck", category: "Staining", image: "/images/wp-deck-stained-cedar.jpg", alt: "Stained cedar deck by Master Decker" },
+  { title: "Stamped Concrete Patio", category: "Concrete", image: "/images/wp-stamped-concrete.jpg", alt: "Stamped concrete patio by Master Decker" },
+  { title: "Stamped Concrete Driveway", category: "Concrete", image: "/images/wp-stamped-concrete-2.jpg", alt: "Stamped concrete driveway by Master Decker" },
+  { title: "Heated Driveway Install", category: "Concrete", image: "/images/wp-heated-driveway.jpg", alt: "Heated driveway installation by Master Decker" },
+  { title: "Custom Arbor", category: "Pergolas", image: "/images/wp-arbor.jpg", alt: "Custom arbor by Master Decker" },
+  { title: "Boat Dock Staining", category: "Staining", image: "/images/wp-boat-dock.jpg", alt: "Boat dock staining by Master Decker" },
 ];
 
 export default function ProjectsPage() {
@@ -37,7 +40,7 @@ export default function ProjectsPage() {
           eyebrow="Our Work"
           title="Project Examples"
           subtitle="Showcasing our completed decks, fences, pergolas, gazebos, and concrete works across Southwestern Ontario."
-          background="/images/pergola-bg.jpg"
+          background="/images/pergola.jpg"
           primaryCta={{ label: "Start Your Project", href: "/contact" }}
         />
 
@@ -57,7 +60,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/deck-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/wp-deck-railing.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
           <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-4">Ready to start yours?</h2>

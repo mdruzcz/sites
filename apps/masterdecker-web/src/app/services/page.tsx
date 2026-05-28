@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 };
 
 const categoryBg: Record<string, string> = {
-  "staining-sealing": "/images/deck-bg.jpg",
-  "woodwork": "/images/pergola-bg.jpg",
-  "concrete": "/images/concrete-bg.jpg",
-  "landscaping": "/images/outdoor-deck.jpg",
+  "staining-sealing": "/images/wp-deck-stained-cedar.jpg",
+  "woodwork": "/images/wp-deck-building.jpg",
+  "concrete": "/images/wp-stamped-concrete.jpg",
+  "landscaping": "/images/wp-backyard-deck.jpg",
 };
 
 export default function ServicesPage() {
@@ -32,7 +32,7 @@ export default function ServicesPage() {
           eyebrow="What We Do"
           title="Premium Outdoor Services"
           subtitle="We are dedicated to providing exceptional service to our clients, offering a wide range of outdoor services to enhance the beauty and functionality of your outdoor spaces."
-          background="/images/concrete-bg.jpg"
+          background="/images/wp-deck-building.jpg"
           primaryCta={{ label: "Request Quote", href: "/contact" }}
         />
 
@@ -61,7 +61,7 @@ export default function ServicesPage() {
         ))}
 
         <section className="relative section text-white text-center overflow-hidden bg-[var(--ink)]">
-          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/pergola-bg.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
+          <div className="absolute inset-0" style={{ backgroundImage: "url(/images/wp-cedar-deck.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} aria-hidden="true" />
           <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
           <div className="container relative max-w-3xl">
             <h2 className="h-display text-3xl md:text-4xl mb-4">Get a FREE Quote</h2>

@@ -31,7 +31,7 @@ export default function BlogPage() {
           eyebrow="Resources"
           title="Master Decker Blog"
           subtitle="Practical advice on decks, fences, concrete, and everything in between — from the team that builds them."
-          background="/images/stamped-bg.jpg"
+          background="/images/wp-stamped-concrete-2.jpg"
           align="center"
         />
 
