@@ -15,6 +15,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-03 | `deck-heroes` | deckheroes.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `deck-medic` | deckmedic.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `deck-restaining-ca` | deckrestaining.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
+| MD-04 | `deckstain` | deckstain.ca | `0x4AAAAAADXerJyobPe6aoAR` |
 | MD-04 | `festive-holiday-lighting` | festiveholidaylighting.ca | `0x4AAAAAADXerJyobPe6aoAR` |
 | MD-04 | `forevercabinets` | forevercabinets.ca | `0x4AAAAAADXerJyobPe6aoAR` |
 | MD-05 | `get-legal-basements` | getlegalbasements.ca | `0x4AAAAAADXerarSEfHtSa8U` |
@@ -55,7 +56,6 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | classicchristmaslighting.ca | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | commercialholidaydecor.ca | MD-02 | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | deckrevitalize.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
-| deckstain.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
 | foreverecabinets.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
 | foreverlights.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
 | gtachristmaslighting.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
@@ -74,4 +74,4 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | seniorsafe.ca | MD-11 | `0x4AAAAAADXes3pUk4chWGDN` |
 | tentasticpartyrentals.ca | MD-12 | `0x4AAAAAADXetJL8ofEdIMn-` |
 | weinstallchristmaslights.ca | MD-12 | `0x4AAAAAADXetJL8ofEdIMn-` |
-| weinstallgoveelights.ca | MD-13 | `0x4AAAAAADXetRNHN8PdanEk` |
+| MD-13 | `weinstallgoveelights` | weinstallgoveelights.ca | `0x4AAAAAADXetRNHN8PdanEk` |
