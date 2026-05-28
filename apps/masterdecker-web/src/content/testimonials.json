@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Shirley and Jim Newton",
+    "location": "London, Ontario",
+    "quote": "The crew was prompt, worked steady and did a great job.",
+    "image": "/images/testimonial-1.webp"
+  },
+  {
+    "name": "W. Truant",
+    "location": "Windsor, Ontario",
+    "quote": "Can't believe how well they restored our deck. It looks like new! Fast, efficient and reasonably priced.",
+    "image": "/images/testimonial-2.webp"
+  },
+  {
+    "name": "A. Keller",
+    "location": "London, Ontario",
+    "quote": "Thanks so much – everything is looking amazing!",
+    "image": "/images/testimonial-3.jpg"
+  }
+]

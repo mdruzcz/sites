@@ -2,7 +2,18 @@
 import { useState, useRef } from "react";
 import { site } from "@/lib/site";
 
-const services = ["Deck Staining", "Deck Building", "Fence Installation", "Concrete Driveway / Patio", "Concrete Sealing", "Retaining Wall", "Other"];
+const serviceCheckboxes = [
+  "Deck/Fence Staining",
+  "Existing Deck Remodel",
+  "New Deck",
+  "New Fence",
+  "Fence Repair",
+  "New Concrete Patios",
+  "New Concrete Driveway",
+  "New Concrete Walkway",
+  "Concrete Sealing",
+  "Retaining Wall",
+];
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -12,9 +23,25 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+    const services = formData.getAll("services").join(", ");
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      streetAddress: formData.get("streetAddress"),
+      city: formData.get("city"),
+      services,
+      message: formData.get("message"),
+      website: formData.get("website"),
+    };
     try {
-      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
       if (!res.ok) throw new Error();
       setStatus("success");
       form.reset();
@@ -27,43 +54,78 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div ref={successRef} className="bg-green-50 border border-green-200 rounded-xl p-8">
-        <h2 className="text-xl font-bold text-green-800 mb-2">Thanks! We&apos;ll be in touch soon.</h2>
-        <p className="text-green-700">Expect a response within 1 business day. Urgent? Call us at <a href={site.phoneHref} className="underline">{site.phone}</a>.</p>
+        <h2 className="text-2xl font-bold text-green-800 mb-2">Thanks! We&apos;ll be in touch soon.</h2>
+        <p className="text-green-700">
+          Expect a response within 1 business day. Urgent? Call us at{" "}
+          <a href={site.phoneHref} className="underline font-bold">{site.phone}</a>.
+        </p>
       </div>
     );
   }
 
+  const fieldClass =
+    "w-full border border-[var(--border)] rounded px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] bg-white";
+  const labelClass = "block text-sm font-bold mb-1.5 text-[var(--ink)]";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
+      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-semibold mb-1.5">Name *</label>
-          <input name="name" required autoComplete="name" className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]" placeholder="Your full name" />
+          <label htmlFor="firstName" className={labelClass}>First Name *</label>
+          <input id="firstName" name="firstName" required autoComplete="given-name" className={fieldClass} placeholder="First name" />
         </div>
         <div>
-          <label className="block text-sm font-semibold mb-1.5">Phone *</label>
-          <input name="phone" required inputMode="tel" autoComplete="tel" className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]" placeholder="(519) 555-0100" />
+          <label htmlFor="lastName" className={labelClass}>Last Name <span className="font-normal text-[var(--ink-soft)]">(Optional)</span></label>
+          <input id="lastName" name="lastName" autoComplete="family-name" className={fieldClass} placeholder="Last name" />
         </div>
       </div>
-      <div>
-        <label className="block text-sm font-semibold mb-1.5">Email</label>
-        <input name="email" type="email" autoComplete="email" className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]" placeholder="you@example.com" />
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="email" className={labelClass}>Email *</label>
+          <input id="email" name="email" type="email" required autoComplete="email" className={fieldClass} placeholder="you@example.com" />
+        </div>
+        <div>
+          <label htmlFor="phone" className={labelClass}>Phone *</label>
+          <input id="phone" name="phone" required inputMode="tel" autoComplete="tel" className={fieldClass} placeholder="(519) 555-0100" />
+        </div>
       </div>
+
       <div>
-        <label className="block text-sm font-semibold mb-1.5">Service Needed</label>
-        <select name="service" className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] bg-white">
-          <option value="">Select a service…</option>
-          {services.map((s) => <option key={s} value={s}>{s}</option>)}
-        </select>
+        <label className={labelClass}>Address *</label>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <input name="streetAddress" required autoComplete="street-address" className={fieldClass} placeholder="Street Address" />
+          <input name="city" required autoComplete="address-level2" className={fieldClass} placeholder="City" />
+        </div>
       </div>
+
+      <fieldset>
+        <legend className={labelClass}>Interested in the following services (Please check all that apply)</legend>
+        <div className="grid gap-2 sm:grid-cols-2 mt-2">
+          {serviceCheckboxes.map((s) => (
+            <label key={s} className="flex items-start gap-2 text-sm cursor-pointer hover:text-[var(--accent)]">
+              <input type="checkbox" name="services" value={s} className="mt-1 accent-[var(--accent)]" />
+              <span>{s}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
       <div>
-        <label className="block text-sm font-semibold mb-1.5">Message</label>
-        <textarea name="message" rows={4} className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] resize-none" placeholder="Describe your project…" />
+        <label htmlFor="message" className={labelClass}>Message <span className="font-normal text-[var(--ink-soft)]">(Optional)</span></label>
+        <textarea id="message" name="message" rows={4} className={`${fieldClass} resize-none`} placeholder="Tell us about your project…" />
       </div>
-      {status === "error" && <p className="text-red-600 text-sm">Something went wrong. Call us at {site.phone}.</p>}
+
+      {status === "error" && (
+        <p className="text-red-600 text-sm">
+          Something went wrong sending your message. Please call us at <a href={site.phoneHref} className="font-bold underline">{site.phone}</a>.
+        </p>
+      )}
+
       <button type="submit" disabled={status === "submitting"} className="btn-primary w-full justify-center disabled:opacity-60">
-        {status === "submitting" ? "Sending…" : "Send Message"}
+        {status === "submitting" ? "Sending…" : "Submit"}
       </button>
     </form>
   );

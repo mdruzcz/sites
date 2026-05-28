@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swa
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | London's Outdoor Living Experts`,
+    default: `${site.name} | Decks, Fences & Concrete | London Ontario`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  icons: { icon: "/images/logo.png", apple: "/images/logo.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

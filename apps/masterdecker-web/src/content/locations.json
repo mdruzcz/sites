@@ -1,0 +1,15 @@
+{
+  "regions": [
+    { "name": "Toronto", "cities": ["Markham", "Vaughan", "Mississauga", "Richmond Hill", "Brampton", "Oakville"] },
+    { "name": "Guelph", "cities": ["Milton", "Halton Hills", "Rockwood", "Erin", "Fergus"] },
+    { "name": "London", "cities": ["St. Thomas", "Strathroy", "Woodstock", "Sarnia", "Chatham", "Grand Bend"] },
+    { "name": "Hamilton", "cities": ["Brantford", "Caledonia", "Ancaster", "Grimsby", "Waterdown", "Burlington"] },
+    { "name": "Kitchener", "cities": ["Waterloo", "Cambridge", "New Hamburg", "Elmira", "Elora", "Listowel", "Baden"] },
+    { "name": "Niagara Falls", "cities": ["St. Catharines", "Welland", "Port Colborne", "Lincoln"] }
+  ],
+  "additional": [
+    "Windsor", "Chatham", "Cambridge", "Guelph", "Sarnia", "St. Marys", "Thornhill", "Dorchester", "Byron", "Masonville",
+    "Ingersoll", "Delaware", "Arva", "Sharon", "Mount Brydges", "Ilderton", "Putnam", "Banner", "Belmont", "Springfield",
+    "Avon", "Aylmer", "New Sarum", "Talbotville", "Tillsonburg", "Strathroy", "Port Stanley", "Port Bruce", "Thorndale", "Lucan"
+  ]
+}

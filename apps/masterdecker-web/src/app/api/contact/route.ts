@@ -1,33 +1,70 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await req.json();
-    const { name, phone, email, service, message, website } = body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      streetAddress,
+      city,
+      services,
+      message,
+      website,
+    } = body;
 
-    // Honeypot check
     if (website) return NextResponse.json({ ok: true });
-    if (!name || !phone) return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
 
+    if (!firstName || !phone || !email || !streetAddress || !city) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (supabaseUrl && supabaseKey) {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+        await supabase.from("masterdecker_quote_requests").insert({
+          first_name: firstName,
+          last_name: lastName || null,
+          email,
+          phone,
+          street_address: streetAddress,
+          city,
+          services: services || null,
+          message: message || null,
+        });
+      }
+    } catch (err) {
+      console.error("supabase insert failed", err);
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: "noreply@masterdecker.com",
-      to: "service@masterdecker.com",
-      subject: `New Estimate Request — ${service || "General Inquiry"}`,
+      from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
+      to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
+      subject: `New Quote Request — ${firstName}${lastName ? " " + lastName : ""}`,
       text: [
-        `Name: ${name}`,
+        `Name: ${firstName}${lastName ? " " + lastName : ""}`,
         `Phone: ${phone}`,
-        `Email: ${email || "—"}`,
-        `Service: ${service || "—"}`,
-        `Message:\n${message || "—"}`,
+        `Email: ${email}`,
+        `Address: ${streetAddress}, ${city}`,
+        `Services: ${services || "—"}`,
+        "",
+        `Message:`,
+        message || "—",
       ].join("\n"),
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("contact route error", err);
     return NextResponse.json({ error: "Internal error" }, { status: 500 });
   }
 }

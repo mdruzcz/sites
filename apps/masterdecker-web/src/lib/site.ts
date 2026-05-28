@@ -11,10 +11,13 @@ export const site = {
   },
   addressLine: "London, ON",
   url: "https://masterdecker.com",
-  tagline: "London's Outdoor Living Experts. Est. 2014.",
+  tagline: "We Help Enhance Your Outdoor Living Spaces",
   description:
-    "Master Decker Inc. transforms outdoor spaces with expert deck staining, deck building, fence installation, concrete driveways, and retaining walls. Serving London, Ontario and surrounding areas since 2014.",
-  hours: "Mon – Fri · 8 AM – 6 PM | Sat · 10 AM – 5 PM",
+    "Master Decker Inc. is London Ontario's outdoor living experts since 2014 — deck staining, deck building, fence installation, concrete driveways, retaining walls, and more across Southwestern Ontario.",
+  hours: {
+    weekday: "Mon – Fri · 8:00 AM – 6:00 PM",
+    saturday: "Sat · 10:00 AM – 5:00 PM",
+  },
   foundedYear: 2014,
   serviceAreas: [
     "London",
@@ -27,6 +30,7 @@ export const site = {
     "Strathroy",
   ],
   socials: {
-    facebook: "https://www.facebook.com/masterdecker",
+    facebook: "https://www.facebook.com/themasterdecker/",
+    linkedin: "https://www.linkedin.com/company/masterdecker-inc-",
   },
 } as const;
