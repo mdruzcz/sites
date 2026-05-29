@@ -89,7 +89,6 @@ const schema = {
   description:
     "Professional Govee permanent outdoor LED light installation across Southwestern Ontario.",
   url: "https://weinstallgoveelights.ca",
-  email: "info@weinstallgoveelights.ca",
   address: {
     "@type": "PostalAddress",
     addressLocality: "London",
@@ -450,12 +449,12 @@ export default function HomePage() {
             >
               Get a Free Quote →
             </Link>
-            <a
-              href="mailto:info@weinstallgoveelights.ca"
+            <Link
+              href="/faq"
               className="px-8 py-4 rounded-xl border border-white/30 hover:border-white/60 text-white font-semibold text-lg transition-colors"
             >
-              Email Us
-            </a>
+              View FAQ
+            </Link>
           </div>
         </div>
       </section>

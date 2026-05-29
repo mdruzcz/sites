@@ -87,7 +87,7 @@ export default function WarrantyPage() {
         <div className="bg-[#141430] border border-[#1E1E42] rounded-2xl p-6">
           <h2 className="text-white font-bold text-base mb-3">How to Make a Claim</h2>
           <ol className="space-y-2 list-decimal list-inside">
-            <li>Contact us at <a href="mailto:info@weinstallgoveelights.ca" className="text-[#A78BFA] hover:text-white transition-colors">info@weinstallgoveelights.ca</a></li>
+            <li>Use the contact form at <Link href="/contact" className="text-[#A78BFA] hover:text-white transition-colors">/contact</Link> to submit your claim</li>
             <li>Provide your proof of purchase and a description of the issue</li>
             <li>We'll schedule an inspection within a reasonable timeframe</li>
             <li>Repairs or replacements are completed at no additional charge to you</li>

@@ -91,12 +91,12 @@ export default function FaqPage() {
             >
               Get a Free Quote
             </Link>
-            <a
-              href="mailto:info@weinstallgoveelights.ca"
+            <Link
+              href="/service-areas"
               className="px-6 py-3 rounded-xl border border-[#8B5CF6]/50 hover:border-[#8B5CF6] text-[#A78BFA] hover:text-white font-semibold transition-colors"
             >
-              Email Us Directly
-            </a>
+              View Service Areas
+            </Link>
           </div>
         </div>
       </section>

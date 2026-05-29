@@ -63,12 +63,10 @@ export default function ContactPage() {
               <h2 className="text-white font-bold text-lg">Contact Information</h2>
               <ul className="space-y-4 text-sm text-gray-300">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#8B5CF6] text-base mt-0.5">✉️</span>
+                  <span className="text-[#8B5CF6] text-base mt-0.5">💬</span>
                   <div>
-                    <p className="font-medium text-white">Email</p>
-                    <a href="mailto:info@weinstallgoveelights.ca" className="text-[#A78BFA] hover:text-white transition-colors">
-                      info@weinstallgoveelights.ca
-                    </a>
+                    <p className="font-medium text-white">How to Reach Us</p>
+                    <p className="text-gray-400">Use the form on this page — we respond within one business day.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

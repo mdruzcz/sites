@@ -67,7 +67,6 @@ export default async function CityPage({
       "@type": "LocalBusiness",
       name: "We Install Govee Lights",
       url: "https://weinstallgoveelights.ca",
-      email: "info@weinstallgoveelights.ca",
     },
     areaServed: area.cities.map((c) => ({
       "@type": "City",

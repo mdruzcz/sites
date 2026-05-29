@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -18,14 +18,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#07071A]/95 backdrop-blur-md border-b border-[#1E1E42]">
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <Image
-            src="/images/we-install-govee-new-logo-2-300x200.jpeg"
-            alt="We Install Govee Lights logo"
-            width={120}
-            height={80}
-            className="h-10 w-auto object-contain"
-          />
+        <Link href="/" className="flex items-center shrink-0">
+          <Logo className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}

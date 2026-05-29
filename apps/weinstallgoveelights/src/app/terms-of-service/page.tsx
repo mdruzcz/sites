@@ -19,7 +19,7 @@ export default function TermsOfService() {
         <h2 className="text-white text-lg font-bold">Warranty</h2>
         <p>Our warranty terms are detailed on our <a href="/warranty" className="text-[#A78BFA]">Warranty page</a>. All warranties are subject to the conditions described therein.</p>
         <h2 className="text-white text-lg font-bold">Contact</h2>
-        <p>Questions? Email us at <a href="mailto:info@weinstallgoveelights.ca" className="text-[#A78BFA]">info@weinstallgoveelights.ca</a>.</p>
+        <p>Questions? <a href="/contact" className="text-[#A78BFA]">Use our contact form</a> and we&apos;ll get back to you within one business day.</p>
       </div>
     </section>
   );

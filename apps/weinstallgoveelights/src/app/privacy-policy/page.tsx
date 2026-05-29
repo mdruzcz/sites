@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
         <h2 className="text-white text-lg font-bold">How We Use Your Information</h2>
         <p>We use your information solely to respond to your quote request, provide our services, and communicate with you about your project. We do not sell or share your information with third parties for marketing purposes.</p>
         <h2 className="text-white text-lg font-bold">Contact</h2>
-        <p>Questions about this policy? Email us at <a href="mailto:info@weinstallgoveelights.ca" className="text-[#A78BFA]">info@weinstallgoveelights.ca</a>.</p>
+        <p>Questions about this policy? <a href="/contact" className="text-[#A78BFA]">Use our contact form</a> and we&apos;ll respond within one business day.</p>
       </div>
     </section>
   );
