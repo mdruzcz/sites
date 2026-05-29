@@ -28,14 +28,14 @@ export function Navbar() {
         scrolled ? 'bg-[#07070f]/95 backdrop-blur-md shadow-lg shadow-black/40' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
+      <div className="container mx-auto px-4 flex items-center justify-between h-20 md:h-24">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           {/* SVG logo — transparent bg, gold + white brand colours */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logo.svg"
             alt="Forever Lights — Permanent LED Lighting"
-            style={{ height: '44px', width: 'auto' }}
+            style={{ height: '80px', width: 'auto' }}
           />
         </Link>
 

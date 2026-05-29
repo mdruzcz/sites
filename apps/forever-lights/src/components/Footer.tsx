@@ -13,7 +13,7 @@ export function Footer() {
             <img
               src="/images/logo.svg"
               alt="Forever Lights — Permanent LED Lighting"
-              style={{ height: '52px', width: 'auto' }}
+              style={{ height: '96px', width: 'auto' }}
               className="mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed">
