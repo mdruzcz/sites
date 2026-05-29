@@ -40,7 +40,7 @@ export default function ConcreteRemovalPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/concrete-removal-services-scaled.jpg"
+            src="/images/concrete-driveway-removal.jpg"
             alt="Concrete removal and demolition service in London, Ontario"
             fill className="object-cover opacity-20" priority
           />
@@ -110,7 +110,7 @@ export default function ConcreteRemovalPage() {
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/concrete-removal-services-scaled.jpg"
+                src="/images/concrete-driveway-removal.jpg"
                 alt="Concrete demolition and removal equipment in action in London, Ontario"
                 fill className="object-cover"
               />

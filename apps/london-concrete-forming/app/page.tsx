@@ -33,9 +33,9 @@ const services = [
   { href: "/concrete-driveways", title: "Concrete Driveways", desc: "Natural, coloured, stamped, and broomed driveway options. Durable and low-maintenance.", img: "/images/drive.jpg", alt: "Freshly poured concrete driveway in London, ON by London Concrete Forming" },
   { href: "/concrete-patios", title: "Concrete Patios", desc: "Beautiful outdoor living spaces with custom finishes and stamped patterns.", img: "/images/PXL_20230718_125644595.jpg", alt: "Stamped concrete patio installation in London, Ontario" },
   { href: "/concrete-retaining-walls", title: "Retaining Walls", desc: "Expert concrete retaining wall construction for erosion control and landscaping.", img: "/images/IMG-20231218-WA0003.jpg", alt: "Concrete retaining wall construction in London, ON" },
-  { href: "/stamped-concrete-driveway", title: "Stamped Concrete", desc: "Add curb appeal with decorative stamped patterns and custom colour options.", img: "/images/IMG-20231218-WA0005.jpg", alt: "Stamped concrete driveway with decorative pattern in London, Ontario" },
-  { href: "/concrete-removal-services", title: "Concrete Removal", desc: "Professional removal and disposal of old driveways, patios, and slabs.", img: "/images/image-5.png", alt: "Concrete removal service in London, Ontario" },
-  { href: "/concrete-shed-pad-installer", title: "Shed Pads", desc: "Solid concrete shed pad installations for garages, sheds, and hot tubs.", img: "/images/PXL_20230718_125644595.jpg", alt: "Concrete shed pad installation in London, Ontario" },
+  { href: "/stamped-concrete-driveway", title: "Stamped Concrete", desc: "Add curb appeal with decorative stamped patterns and custom colour options.", img: "/images/stamped-cobblestone-driveway.jpg", alt: "Stamped concrete driveway with decorative pattern in London, Ontario" },
+  { href: "/concrete-removal-services", title: "Concrete Removal", desc: "Professional removal and disposal of old driveways, patios, and slabs.", img: "/images/concrete-driveway-removal.jpg", alt: "Concrete removal service in London, Ontario" },
+  { href: "/concrete-shed-pad-installer", title: "Shed Pads", desc: "Solid concrete shed pad installations for garages, sheds, and hot tubs.", img: "/images/concrete-garage-pad.jpg", alt: "Concrete shed pad installation in London, Ontario" },
 ];
 
 const benefits = [

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stamped Concrete Driveway Installation in London, Ontario",
     description: "Beautiful stamped concrete driveways in London, Ontario. 50+ patterns, custom colours. London Concrete Forming â€” 20+ years experience.",
-    images: [{ url: "/images/stampedfinish.jpg", alt: "Stamped concrete driveway installation in London, Ontario" }],
+    images: [{ url: "/images/stamped-cobblestone-driveway.jpg", alt: "Stamped concrete driveway installation in London, Ontario" }],
   },
 };
 
@@ -41,7 +41,7 @@ export default function StampedConcreteDrivewayPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/stampedfinish.jpg"
+            src="/images/stamped-cobblestone-driveway.jpg"
             alt="Stamped concrete driveway with cobblestone pattern installed in London, Ontario"
             fill className="object-cover opacity-30" priority
           />
@@ -85,7 +85,7 @@ export default function StampedConcreteDrivewayPage() {
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/stampedfinish.jpg"
+                src="/images/stamped-cobblestone-driveway.jpg"
                 alt="Beautiful stamped concrete driveway by London Concrete Forming"
                 fill className="object-cover"
               />

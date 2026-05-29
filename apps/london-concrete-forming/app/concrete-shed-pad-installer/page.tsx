@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Concrete Shed Pad & Garage Pad Installation in London, ON",
     description: "Expert concrete pad installation for sheds, garages, hot tubs, and more in London, Ontario. Free quotes from London Concrete Forming.",
-    images: [{ url: "/images/drive.jpg", alt: "Concrete shed pad installation by London Concrete Forming" }],
+    images: [{ url: "/images/concrete-garage-pad.jpg", alt: "Concrete shed pad installation by London Concrete Forming" }],
   },
 };
 
@@ -41,7 +41,7 @@ export default function ConcreteShedPadPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/drive.jpg"
+            src="/images/concrete-garage-pad.jpg"
             alt="Concrete shed pad and garage pad installation by London Concrete Forming in London, Ontario"
             fill className="object-cover opacity-20" priority
           />
@@ -91,7 +91,7 @@ export default function ConcreteShedPadPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/drive.jpg"
+                src="/images/concrete-garage-pad.jpg"
                 alt="Properly installed concrete shed pad with gravel base in London, Ontario"
                 fill className="object-cover"
               />
