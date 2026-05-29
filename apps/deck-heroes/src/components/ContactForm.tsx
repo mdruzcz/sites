@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FormEvent } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { SERVICES, CITIES } from "@/lib/constants";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -9,6 +10,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [loadedAt, setLoadedAt] = useState(0);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
     setLoadedAt(Date.now());
@@ -16,6 +18,11 @@ export default function ContactForm() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) {
+      setStatus("error");
+      setErrorMsg("Please complete the captcha.");
+      return;
+    }
     setStatus("loading");
     setErrorMsg("");
 
@@ -30,6 +37,7 @@ export default function ContactForm() {
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       website: (form.elements.namedItem("website") as HTMLInputElement).value, // honeypot
       _loaded: loadedAt,
+      token,
     };
 
     try {
@@ -193,10 +201,16 @@ export default function ContactForm() {
         </div>
       )}
 
+      {/* Turnstile captcha */}
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
       {/* Submit */}
       <button
         type="submit"
-        disabled={status === "loading"}
+        disabled={status === "loading" || !token}
         className="w-full rounded-lg bg-terracotta px-6 py-3.5 text-base font-semibold text-white shadow-sm hover:bg-terra-dark focus:ring-2 focus:ring-terracotta/40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
       >
         {status === "loading" ? (

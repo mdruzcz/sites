@@ -1,0 +1,66 @@
+{
+  "headline": "Serving Southwestern Ontario",
+  "description": "We serve customers across Southwestern Ontario — from Windsor to Niagara, from the GTA south to Lake Erie.",
+  "cities": [
+    {
+      "name": "London",
+      "slug": "london-on",
+      "region": "Southwestern Ontario",
+      "description": "As one of our primary service areas, we help London homeowners protect and beautify their decks year-round."
+    },
+    {
+      "name": "Woodstock",
+      "slug": "woodstock-on",
+      "region": "Oxford County",
+      "description": "Expert deck staining solutions that last, keeping your Woodstock home looking great year-round."
+    },
+    {
+      "name": "St. Thomas",
+      "slug": "st-thomas-on",
+      "region": "Elgin County",
+      "description": "From new decks to well-loved ones needing restoration, we ensure your St. Thomas deck is ready for every season."
+    },
+    {
+      "name": "Stratford",
+      "slug": "stratford-on",
+      "region": "Perth County",
+      "description": "Enhance the charm of your outdoor space in Stratford with our premium deck staining and sealing services."
+    },
+    {
+      "name": "Brantford",
+      "slug": "brantford-on",
+      "region": "Brant County",
+      "description": "We help Brantford residents maintain the beauty and durability of their outdoor spaces."
+    },
+    {
+      "name": "Kitchener",
+      "slug": "kitchener-on",
+      "region": "Waterloo Region",
+      "description": "Professional deck staining and restoration services for Kitchener homeowners."
+    },
+    {
+      "name": "Cambridge",
+      "slug": "cambridge-on",
+      "region": "Waterloo Region",
+      "description": "Premium deck staining services to keep your Cambridge deck protected and looking its best."
+    },
+    {
+      "name": "Guelph",
+      "slug": "guelph-on",
+      "region": "Wellington County",
+      "description": "Expert deck and fence staining services for Guelph homeowners and businesses."
+    },
+    {
+      "name": "Tillsonburg",
+      "slug": "tillsonburg-on",
+      "region": "Oxford County",
+      "description": "DeckStain.ca is proud to serve Tillsonburg with expert care to maintain and restore deck beauty."
+    },
+    {
+      "name": "Ingersoll",
+      "slug": "ingersoll-on",
+      "region": "Oxford County",
+      "description": "Homeowners in Ingersoll count on us for quality deck restoration that withstands the test of time."
+    }
+  ]
+}

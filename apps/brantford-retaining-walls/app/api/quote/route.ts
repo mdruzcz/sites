@@ -17,10 +17,26 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    const { name, phone, email, service, message } = body;
+    const { name, phone, email, service, message, token } = body;
 
     if (!name || !phone || !email || !service) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (!token) {
+      return NextResponse.json({ error: "Captcha required" }, { status: 400 });
+    }
+    const verifyRes = await fetch(
+      process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, hostname: "brantfordretainingwalls.ca" }),
+      },
+    );
+    const verify = (await verifyRes.json()) as { success: boolean };
+    if (!verify.success) {
+      return NextResponse.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
     await supabase.from("brw_quote_requests").insert({

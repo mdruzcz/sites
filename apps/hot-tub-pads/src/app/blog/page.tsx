@@ -11,9 +11,10 @@ import { blogPosts, site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Hot Tub Pad Blog — Ideas, Tips & How-Tos",
+  title: "Hot Tub Pad Blog",
   description:
     "Expert advice on hot tub pad installation, maintenance, and planning. Concrete vs. gravel comparisons, common mistakes to avoid, and homeowner checklists from HotTubPads.ca.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Hot Tub Pad Blog — Ideas, Tips & How-Tos",
     description:

@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "new-installation",
+    "title": "New Installation",
+    "shortDescription": "Professional permanent LED lighting installation tailored to your home or business architecture. Track-mounted, colour-matched to your soffit.",
+    "fullDescription": "Our new installation service transforms your property with professionally installed permanent LED track lighting. We begin with a free on-site consultation, take colour samples to match your soffit and fascia, then install a weatherproof, WiFi-connected system built for Ontario winters. Every installation includes mobile app setup and training so you can control every bulb from your phone.",
+    "icon": "zap",
+    "features": [
+      "Free on-site consultation and measurement",
+      "Colour match to soffit and fascia",
+      "WiFi controller and app setup",
+      "Clean, concealed cable routing",
+      "Completed in 1–2 days"
+    ],
+    "order": 1
+  },
+  {
+    "slug": "repair-service",
+    "title": "Repair Service",
+    "shortDescription": "Fast, professional repair for any permanent outdoor lighting system. We diagnose and fix electrical, mounting, and app connectivity issues.",
+    "fullDescription": "If your existing permanent lighting system has stopped working, our certified technicians will diagnose and repair it quickly. We work on all major brands and can replace individual LED modules, fix wiring, reseat tracks, and restore app connectivity. Most repairs are completed same-day.",
+    "icon": "tool",
+    "features": [
+      "Works on all major brands",
+      "Same-day repair for most issues",
+      "Individual LED module replacement",
+      "Wiring and controller diagnostics",
+      "24/7 emergency support for existing customers"
+    ],
+    "order": 2
+  },
+  {
+    "slug": "consultation",
+    "title": "Consultation",
+    "shortDescription": "Not sure where to start? Our free in-home consultation covers design options, product selection, pricing, and answers all your questions.",
+    "fullDescription": "Our free consultation visits are no-pressure and educational. A lighting specialist will walk your property, discuss design options, explain the technology, and provide a transparent, itemized quote. You'll leave with a clear plan and no obligation.",
+    "icon": "clipboard",
+    "features": [
+      "No obligation, completely free",
+      "On-site property walkthrough",
+      "Personalized design recommendations",
+      "Transparent itemized quote",
+      "Answers to all your questions"
+    ],
+    "order": 3
+  },
+  {
+    "slug": "maintenance",
+    "title": "Maintenance",
+    "shortDescription": "Annual inspection and cleaning packages to keep your permanent lighting system performing like new for decades.",
+    "fullDescription": "Our optional annual maintenance package includes a full system inspection, cleaning, connection checks, app and controller firmware updates, and minor adjustments. Keep your investment in top condition and catch minor issues before they become costly repairs.",
+    "icon": "settings",
+    "features": [
+      "Full system inspection",
+      "Track and fixture cleaning",
+      "Controller and app firmware update",
+      "Connection and waterproofing check",
+      "Priority scheduling for existing customers"
+    ],
+    "order": 4
+  },
+  {
+    "slug": "replace-existing-lights",
+    "title": "Replace Existing Lights",
+    "shortDescription": "Upgrade your old permanent lighting system to our premium LED track system with better colour range, smarter controls, and a 25-year warranty.",
+    "fullDescription": "Already have permanent outdoor lighting but want better performance, more colours, or modern app controls? We remove your old system cleanly and install our premium LED track lighting. Existing wiring is often reusable, which keeps costs down and installation time short.",
+    "icon": "refresh-cw",
+    "features": [
+      "Clean removal of existing system",
+      "Reuse existing wiring where possible",
+      "Upgrade to 16M+ colour LED",
+      "New WiFi controller and mobile app",
+      "25-year warranty on new installation"
+    ],
+    "order": 5
+  }
+]

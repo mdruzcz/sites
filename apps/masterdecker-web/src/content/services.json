@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "id": "staining-sealing",
+      "name": "Staining & Sealing",
+      "blurb": "Restore and protect decks, fences, concrete, and outdoor wood structures.",
+      "services": [
+        { "slug": "fence-painting-services", "title": "Fence Painting", "blurb": "Brighten and protect your property boundary with professional fence painting." },
+        { "slug": "deck-staining-services", "title": "Deck Staining", "blurb": "Preserve the longevity and beauty of your deck with our premium staining service." },
+        { "slug": "concrete-sealing", "title": "Concrete Sealing", "blurb": "Guard concrete surfaces against staining, weather, and seasonal wear." },
+        { "slug": "deck-cleaning", "title": "Deck Cleaning", "blurb": "Deep-cleaning to remove mildew, dirt, and weather stains from your deck." },
+        { "slug": "cedar-shake-cleaning", "title": "Cedar Shake Cleaning", "blurb": "Specialty cleaning to revive cedar siding and shake rooftops." },
+        { "slug": "boat-docks", "title": "Boat Dock Staining", "blurb": "Stain and protect your boat dock from sun and waterline damage." },
+        { "slug": "gazebo-staining", "title": "Gazebo Staining", "blurb": "Stain and seal your gazebo so it stays beautiful season after season." },
+        { "slug": "patio-pressure-washing-services", "title": "Patio Pressure Washing", "blurb": "Restore your patio with professional pressure-washing service." },
+        { "slug": "deck-sanding-london-ontario", "title": "Deck Refinishing", "blurb": "Heavy sanding and refinishing for decks that need more than a recoat." },
+        { "slug": "fence-pressure-washing-services", "title": "Fence Pressure Washing", "blurb": "Strip dirt and grime to prep your fence for a fresh coat." },
+        { "slug": "pergola-staining", "title": "Pergola Staining", "blurb": "Stain your pergola to keep its colour and protect against the elements." },
+        { "slug": "fence-staining-services", "title": "Fence Staining", "blurb": "Stain and seal your wood fence for years of low-maintenance beauty." }
+      ]
+    },
+    {
+      "id": "woodwork",
+      "name": "Woodwork",
+      "blurb": "Custom deck building, pergolas, gazebos, and outdoor wood structures.",
+      "services": [
+        { "slug": "deck-resurfacing", "title": "Deck Resurfacing", "blurb": "Replace deck boards while keeping your existing frame — a fresh look at a fraction of new-build cost." },
+        { "slug": "deck-repairs", "title": "Deck Repair Services", "blurb": "Spot repairs for loose boards, rotted posts, wobbly railings, and more." },
+        { "slug": "deck-building", "title": "Deck Building", "blurb": "Custom new-deck design and construction in pressure-treated, cedar, composite, or PVC." },
+        { "slug": "deck-rebuilding-services", "title": "Deck Rebuilding", "blurb": "Full deck rebuilds when restoration isn't enough." },
+        { "slug": "custom-pergolas", "title": "Custom Pergolas", "blurb": "Custom pergolas crafted to complement your outdoor living space." },
+        { "slug": "wooden-retaining-wall", "title": "Wooden Retaining Wall", "blurb": "Functional, stylish solutions for sloped yards and grade changes." },
+        { "slug": "custom-gazebos", "title": "Custom Gazebos", "blurb": "Custom gazebos that create the perfect gathering spot in your yard." },
+        { "slug": "fence-building", "title": "Fence Building", "blurb": "Wood, cedar, vinyl, or ornamental metal fences built right the first time." }
+      ]
+    },
+    {
+      "id": "concrete",
+      "name": "Concrete Work",
+      "blurb": "Driveways, patios, walkways, and reinforced concrete installations.",
+      "services": [
+        { "slug": "concrete-patios", "title": "Concrete Patios", "blurb": "Reinforced, attractive concrete patios poured to last." },
+        { "slug": "concrete-driveways", "title": "Concrete Driveways", "blurb": "Durable concrete driveways formed 4.5–5.5 inches thick." },
+        { "slug": "hot-tub-and-shed-pads", "title": "Hot Tub & Shed Pads", "blurb": "Level, properly reinforced pads for hot tubs and storage sheds." },
+        { "slug": "concrete-walkway-installation", "title": "Concrete Walkway Installation", "blurb": "Walkways that improve curb appeal and yard accessibility." },
+        { "slug": "heated-driveway-installation", "title": "Heated Driveway Installation", "blurb": "Snow-melt driveway systems that keep you moving all winter." },
+        { "slug": "concrete-retaining-wall-installation", "title": "Concrete Retaining Wall", "blurb": "Reinforced concrete walls to hold back soil on sloped sites." },
+        { "slug": "stamped-concrete-driveway-installation", "title": "Stamped Concrete Driveway", "blurb": "Decorative stamped patterns — Ashlar Slate, cobblestone, and more." },
+        { "slug": "swim-spa-pad-installation", "title": "Swim Spa Pad Installation", "blurb": "Engineered concrete pads to support a swim spa's weight and water load." },
+        { "slug": "stamped-patio-installation", "title": "Stamped Patio Installation", "blurb": "Stamped concrete patios that look like stone — for a fraction of the cost." }
+      ]
+    },
+    {
+      "id": "landscaping",
+      "name": "Landscaping & Lighting",
+      "blurb": "Privacy screens, railings, fencing, holiday lighting, and turf.",
+      "services": [
+        { "slug": "christmas-lighting", "title": "Christmas Lighting", "blurb": "Professional installation, take-down, and storage of holiday lights." },
+        { "slug": "outdoor-privacy-screens", "title": "Outdoor Privacy Screens", "blurb": "Wood and composite privacy screens that block sightlines without blocking light." },
+        { "slug": "artificial-turf-installation", "title": "Artificial Turf Installation", "blurb": "Low-maintenance turf for yards, dog runs, and putting greens." },
+        { "slug": "railing-installation", "title": "Railing Installation", "blurb": "Pressure-treated, cedar, aluminum, and glass railings to code." },
+        { "slug": "vinyl-composite-fencing-installation", "title": "Vinyl & Composite Fencing", "blurb": "Maintenance-free vinyl and composite fencing in modern styles." },
+        { "slug": "chain-link-fence-installation", "title": "Chain-Link Fence Installation", "blurb": "Durable chain-link fencing for residential and commercial properties." },
+        { "slug": "block-retaining-wall-installation", "title": "Block Retaining Wall", "blurb": "Engineered block retaining walls — Allan Block, Versa-Lok, and more." }
+      ]
+    }
+  ]
+}

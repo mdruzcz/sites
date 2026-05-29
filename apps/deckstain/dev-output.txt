@@ -1,0 +1,27 @@
+npm warn config ignoring workspace config at C:\Users\Matt\Documents\Claude\Projects\Website Building\sites\apps\deckstain/.npmrc
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3029
+- Network:       http://10.14.0.2:3029
+- Environments: .env.local
+✓ Ready in 285ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Matt\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Matt\Documents\Claude\Projects\Website Building\sites\package-lock.json
+
+
+ GET / 200 in 1535ms (next.js: 1125ms, application-code: 410ms)
+ GET /about 200 in 238ms (next.js: 167ms, application-code: 71ms)
+ GET /services 200 in 256ms (next.js: 183ms, application-code: 74ms)
+ GET /services/deck-staining 200 in 580ms (next.js: 497ms, generate-params: 286ms, application-code: 83ms)
+ GET /services/deck-staining/london-on 200 in 547ms (next.js: 469ms, generate-params: 270ms, application-code: 78ms)
+ GET /projects 200 in 249ms (next.js: 179ms, application-code: 70ms)
+ GET /stain-choices 200 in 249ms (next.js: 173ms, application-code: 76ms)
+ GET /service-areas 200 in 257ms (next.js: 191ms, application-code: 66ms)
+ GET /service-areas/london-on 200 in 529ms (next.js: 470ms, generate-params: 277ms, application-code: 59ms)
+ GET /faq 200 in 229ms (next.js: 172ms, application-code: 57ms)
+ GET /testimonials 200 in 256ms (next.js: 186ms, application-code: 70ms)
+ GET /contact 200 in 248ms (next.js: 177ms, application-code: 71ms)
+[?25h

@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "deck-staining",
+    "title": "Deck Staining",
+    "shortDescription": "Choose from READY Seal® oil-based stains in 8 rich colors. Protects against UV, moisture, and fading.",
+    "fullDescription": "Our professional deck staining service uses READY Seal® premium oil-based stain and sealer to transform your outdoor living space. Unlike water-based products that sit on top of the wood, our oil-based formula penetrates deep into the grain for lasting protection against UV rays, moisture, and weathering.\n\nWe offer 8 rich color options — from Natural Cedar to Dark Walnut — so you can match your home's exterior perfectly. Every staining job begins with a thorough cleaning and inspection to ensure the stain adheres properly and delivers a flawless, streak-free finish.\n\nBecause READY Seal® is a combined stain and sealer, you get two layers of protection in one application. The result is a rich, natural-looking finish that resists peeling and flaking far longer than conventional products — saving you time and money on maintenance.",
+    "features": [
+      "8 READY Seal® color options to match any home style",
+      "Oil-based formula penetrates deep for lasting protection",
+      "UV and moisture resistant — no fading, no cracking",
+      "Combined stain and sealer in a single application",
+      "Professional prep work included (cleaning + inspection)",
+      "Results typically last 2–3 years with minimal upkeep"
+    ],
+    "icon": "paint",
+    "image": "/images/after-staining.jpg",
+    "order": 1
+  },
+  {
+    "slug": "deck-cleaning",
+    "title": "Deck Cleaning",
+    "shortDescription": "Professional pressure washing removes mold, mildew, and old stain. Prepares wood for a perfect finish.",
+    "fullDescription": "A thorough cleaning is the foundation of any great staining job. Our professional deck cleaning service uses commercial-grade pressure washing equipment to strip away years of dirt, mold, mildew, algae, and old peeling stain — revealing the fresh, clean wood underneath.\n\nProper cleaning opens the wood's pores so the new stain can penetrate deeply and bond fully. Skipping this step is the most common reason stains fail prematurely. Our technicians know exactly the right pressure and technique for different wood types, ensuring a thorough clean without damaging the fibers.\n\nStand-alone deck cleaning is also available for homeowners who just want to refresh their outdoor space. We leave your deck looking years younger, free of slippery algae and unsightly staining — often in just a few hours.",
+    "features": [
+      "Commercial-grade pressure washing equipment",
+      "Removes mold, mildew, algae, and old stain",
+      "Opens wood pores for better stain penetration",
+      "Safe technique for all wood types (cedar, pine, composite)",
+      "Includes hand-washing of railings and spindles",
+      "Available as a standalone service or pre-staining prep"
+    ],
+    "icon": "droplets",
+    "image": "/images/before-after-cleaning.jpg",
+    "order": 2
+  },
+  {
+    "slug": "deck-sealing",
+    "title": "Deck Sealing",
+    "shortDescription": "Deep-penetrating sealers form a barrier against water, mold, and weather damage to extend your deck's life.",
+    "fullDescription": "Our deck sealing service creates an invisible, deep-penetrating barrier that shields your wood from the harshest Canadian weather. Water is the number one enemy of outdoor wood — it causes swelling, cracking, mold growth, and eventually rot. A quality sealer stops moisture at the surface, keeping your deck structurally sound season after season.\n\nWe use READY Seal® oil-based products that provide sealing and staining in a single step. The oil base penetrates past the surface into the cellular structure of the wood, rather than just coating the top like water-based sealers. This means protection that won't wash away or peel after the first hard rain.\n\nRegular sealing every 2–3 years dramatically extends the lifespan of your deck and fence, protecting your investment and keeping your outdoor space safe and beautiful for your family.",
+    "features": [
+      "Deep-penetrating oil-based sealer protects at the cellular level",
+      "Creates water-repellent barrier against rain, snow, and humidity",
+      "Prevents mold, mildew, and algae growth",
+      "Reduces cracking, warping, and splinter formation",
+      "Can be applied as a clear or tinted finish",
+      "Long-lasting results — 2 to 3 years between applications"
+    ],
+    "icon": "shield",
+    "image": "/images/after-deck-cleaning-staining.jpg",
+    "order": 3
+  },
+  {
+    "slug": "deck-restoration",
+    "title": "Deck Restoration",
+    "shortDescription": "Full restoration including structural repairs, board replacement, and sanding to make your deck safe and beautiful again.",
+    "fullDescription": "When a deck has been neglected for years, a simple stain job won't cut it. Our full deck restoration service addresses everything from structural safety to cosmetic appearance — giving you a deck that looks and performs like new.\n\nWe begin with a thorough structural inspection, identifying any loose boards, rotting sections, failing fasteners, or unstable posts. Our team handles all necessary carpentry repairs before proceeding to cleaning, sanding, and final finishing. We source matching lumber and hardware so the repairs are seamless.\n\nRestoration is the most comprehensive — and most satisfying — service we offer. Homeowners are consistently amazed by the transformation. If your deck feels spongy underfoot, has boards pulling up, or looks like it's seen better days, a full restoration may be your best investment before the summer season.",
+    "features": [
+      "Full structural inspection and safety assessment",
+      "Board replacement, fastener upgrades, and carpentry repairs",
+      "Professional sanding to remove all old finish and rough spots",
+      "Pressure washing and deep cleaning between each stage",
+      "Premium READY Seal® finish applied after all repairs",
+      "Documented before-and-after photos for every project"
+    ],
+    "icon": "wrench",
+    "image": "/images/project-04.jpg",
+    "order": 4
+  },
+  {
+    "slug": "deck-refinishing",
+    "title": "Deck Refinishing",
+    "shortDescription": "Sand to bare wood and apply a premium oil-based stain for like-new results on tired, faded decks.",
+    "fullDescription": "Deck refinishing is the ideal solution for decks that are structurally sound but cosmetically tired — with old, peeling stain, gray weathered wood, or an outdated color. We sand the entire deck down to bare, raw wood, then apply a fresh coat of READY Seal® stain for stunning results.\n\nSanding is a critical step that most DIYers underestimate. Without proper sanding, new stain simply sits on top of old residue and fails within a season. Our team uses professional drum sanders and detail sanders to reach every spindle and edge, creating a perfectly smooth surface that drinks up the new stain evenly.\n\nThe final result is a deck that looks as good as the day it was built — rich color, even finish, no lap marks or blotchiness. It's also the perfect opportunity to change colors, whether you want to go darker for a modern look or lighter for a natural feel.",
+    "features": [
+      "Full drum and detail sanding down to bare wood",
+      "Removes all old stain, gray weathering, and surface oxidation",
+      "Even, professional finish with no lap marks or blotchiness",
+      "Color change option — go lighter or darker as you like",
+      "READY Seal® oil-based stain for long-lasting results",
+      "Ideal for decks that are structurally sound but cosmetically worn"
+    ],
+    "icon": "sparkles",
+    "image": "/images/cedar-staining.jpg",
+    "order": 5
+  },
+  {
+    "slug": "fence-staining",
+    "title": "Fence Staining",
+    "shortDescription": "Protect and beautify your wood fence with the same READY Seal® staining process we use on decks.",
+    "fullDescription": "Your fence works just as hard as your deck — exposed to rain, sun, snow, and ground moisture on all sides. Our professional fence staining service applies the same READY Seal® premium oil-based formula used on our deck projects, giving your fence deep protection and a rich, uniform color finish.\n\nWe handle all fence styles — privacy fences, picket fences, split-rail fences, and lattice. The cleaning and prep process is tailored to each fence type to ensure full penetration and even application. Unlike painting, which can trap moisture and peel, staining lets the wood breathe while still providing a strong protective barrier.\n\nA freshly stained fence dramatically improves your property's curb appeal and can add years to its lifespan. We complete most fence projects in a single day, with minimal disruption to your yard.",
+    "features": [
+      "READY Seal® oil-based stain — same premium formula as decks",
+      "Handles all fence styles: privacy, picket, split-rail, lattice",
+      "Thorough cleaning and prep before every application",
+      "Protects against rot, mold, UV fading, and moisture damage",
+      "Available in all 8 READY Seal® color options",
+      "Most fence projects completed in a single day"
+    ],
+    "icon": "fence",
+    "image": "/images/project-02.jpg",
+    "order": 6
+  }
+]

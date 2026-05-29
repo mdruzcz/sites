@@ -1,0 +1,54 @@
+{
+  "primaryCity": "Woodstock",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "Serving London homeowners and businesses with premium permanent outdoor LED lighting. From charming heritage properties to modern builds, we tailor every installation to London's unique architecture.",
+      "population": "404,000"
+    },
+    {
+      "slug": "waterloo",
+      "name": "Waterloo",
+      "description": "Bringing permanent LED lighting to Waterloo Region homes and businesses. Energy-efficient systems built for Ontario winters, with smart app control and a lifetime warranty.",
+      "population": "121,000"
+    },
+    {
+      "slug": "guelph",
+      "name": "Guelph",
+      "description": "Illuminate your Guelph home year-round with our weatherproof LED track lighting. Enjoy every holiday, season, and special occasion with a single tap on your phone.",
+      "population": "143,000"
+    },
+    {
+      "slug": "brantford",
+      "name": "Brantford",
+      "description": "Certified permanent lighting installers serving Brantford and the surrounding area. Professional installation, colour-matched to your home, with a 25-year warranty.",
+      "population": "106,000"
+    },
+    {
+      "slug": "st-thomas",
+      "name": "St. Thomas",
+      "description": "Trusted permanent lighting installers in St. Thomas. Our systems are weatherproof, energy-efficient, and controlled by a simple mobile app — perfect for every Ontario season.",
+      "population": "42,000"
+    },
+    {
+      "slug": "stratford",
+      "name": "Stratford",
+      "description": "Enhance your Stratford home or business with professionally installed permanent outdoor LED lighting. Beautiful architectural accent lighting that adapts to any occasion.",
+      "population": "34,000"
+    },
+    {
+      "slug": "tillsonburg",
+      "name": "Tillsonburg",
+      "description": "Celebrate Lighting serves Tillsonburg with premium permanent LED installations. Our track-mounted, soffit-matched systems provide year-round beauty with zero seasonal hassle.",
+      "population": "18,000"
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Based in Woodstock, we know Oxford County homes inside and out. Our permanent lighting systems are designed for Canadian winters and installed by local experts who care about the community.",
+      "population": "43,000"
+    }
+  ]
+}

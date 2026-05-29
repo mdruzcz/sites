@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "woodstock-cedar-deck",
+    "title": "Custom Western Red Cedar Deck",
+    "city": "Woodstock",
+    "service": "deck-building",
+    "finish": "Cedar",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Custom Western Red Cedar deck build by Woodstock Deck and Fence in Woodstock, ON",
+    "featured": true
+  },
+  {
+    "slug": "ingersoll-composite-deck",
+    "title": "Two-Level Composite Deck",
+    "city": "Ingersoll",
+    "service": "deck-building",
+    "finish": "Composite",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Two-level composite deck installation in Ingersoll, ON",
+    "featured": true
+  },
+  {
+    "slug": "tillsonburg-vinyl-fence",
+    "title": "Vinyl Privacy Fence — 120 ft Run",
+    "city": "Tillsonburg",
+    "service": "vinyl-fences",
+    "finish": "Vinyl",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "White vinyl privacy fence installation along backyard property line in Tillsonburg, ON",
+    "featured": true
+  },
+  {
+    "slug": "woodstock-board-on-board-fence",
+    "title": "Board-on-Board Cedar Fence",
+    "city": "Woodstock",
+    "service": "wood-fences",
+    "finish": "Cedar",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Board-on-board Western Red Cedar privacy fence in Woodstock, ON",
+    "featured": true
+  },
+  {
+    "slug": "norwich-steel-fence",
+    "title": "Decorative Steel Front Fence",
+    "city": "Norwich",
+    "service": "steel-decorative-fences",
+    "finish": "Powder-coated Steel",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Black powder-coated decorative steel front fence in Norwich, ON",
+    "featured": true
+  },
+  {
+    "slug": "ingersoll-deck-restoration",
+    "title": "Deck Restoration + Stain Refresh",
+    "city": "Ingersoll",
+    "service": "deck-restoration",
+    "finish": "Stained PT",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Restored and freshly stained pressure-treated deck in Ingersoll, ON",
+    "featured": true
+  },
+  {
+    "slug": "woodstock-chain-link-dog-run",
+    "title": "Backyard Chain-Link Dog Run",
+    "city": "Woodstock",
+    "service": "chain-link-fences",
+    "finish": "Galvanized",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Galvanized chain-link dog run fence with gate in Woodstock, ON",
+    "featured": true
+  },
+  {
+    "slug": "embro-cedar-deck-pergola",
+    "title": "Cedar Deck with Integrated Pergola",
+    "city": "Embro",
+    "service": "deck-building",
+    "finish": "Cedar",
+    "image": "/images/project-placeholder.jpg",
+    "alt": "Western Red Cedar deck with attached pergola in Embro, ON",
+    "featured": true
+  }
+]

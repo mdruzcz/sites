@@ -1,0 +1,42 @@
+[
+  {
+    "author": "Mark T.",
+    "city": "Woodstock",
+    "rating": 5,
+    "quote": "Woodstock Deck & Fence did an amazing job building our new backyard deck. The craftsmanship is excellent, and the team was professional from start to finish. Highly recommend them to anyone in the Woodstock area.",
+    "service": "deck-building",
+    "featured": true
+  },
+  {
+    "author": "Ashley M.",
+    "city": "Tillsonburg",
+    "rating": 5,
+    "quote": "Very professional and easy to work with. They repaired our damaged fence posts and stained the deck, and everything looks brand new again.",
+    "service": "deck-restoration",
+    "featured": true
+  },
+  {
+    "author": "David K.",
+    "city": "Norwich",
+    "rating": 5,
+    "quote": "Fair pricing, clear communication, and high-quality workmanship. They completed our project on time and within budget. Couldn't be happier.",
+    "service": "wood-fences",
+    "featured": true
+  },
+  {
+    "author": "Jennifer L.",
+    "city": "Ingersoll",
+    "rating": 5,
+    "quote": "We had our old fence replaced, and the results exceeded our expectations. The crew worked efficiently, kept the site clean, and delivered exactly what they promised. Great experience overall.",
+    "service": "vinyl-fences",
+    "featured": true
+  },
+  {
+    "author": "Ryan P.",
+    "city": "Woodstock",
+    "rating": 5,
+    "quote": "Our composite deck looks incredible. The quality of materials and attention to detail really show. If you're looking for reliable deck builders in Woodstock, these are the guys to call.",
+    "service": "deck-building",
+    "featured": true
+  }
+]

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 
 const serviceOptions = [
@@ -29,6 +30,7 @@ export function Contact() {
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [token, setToken] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
@@ -50,12 +52,14 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!token) { setErrorMsg("Please complete the captcha."); setStatus("error"); return; }
     setStatus("sending");
     setErrorMsg("");
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       fd.append("_loaded", String(loadedAt.current));
+      fd.append("token", token);
       files.forEach((f) => fd.append("photos", f));
       const res = await fetch("/api/contact", { method: "POST", body: fd });
       const data = await res.json().catch(() => ({}));
@@ -236,9 +240,14 @@ export function Contact() {
                   <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">{errorMsg}</p>
                 )}
 
+                <Turnstile
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+                  onSuccess={setToken}
+                />
+
                 <button
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={status === "sending" || !token}
                   className="w-full py-4 rounded-full font-semibold text-white text-base transition-all hover:scale-[1.01] hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed min-h-11 flex items-center justify-center gap-2"
                   style={{ background: "var(--blue)" }}
                 >

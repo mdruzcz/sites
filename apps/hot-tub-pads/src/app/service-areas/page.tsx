@@ -10,9 +10,10 @@ import { site, cities } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Hot Tub Pad Installation Service Areas | Ontario-Wide",
+  title: { absolute: "Hot Tub Pad Service Areas | Hot Tub Pads" },
   description:
     "Professional hot tub pad installation serving Hamilton, London, Kitchener, Woodstock, Sarnia, and St. Thomas. Durable concrete and gravel pads across Ontario.",
+  alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Hot Tub Pad Installation Service Areas | Ontario-Wide",
     description:
@@ -36,11 +37,24 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Service Areas", item: `${site.url}/service-areas` },
+  ],
+};
+
 /* ─── Page Component ─── */
 
 export default function ServiceAreasPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <NavBar />
 
       {/* ═══════════════ Page Hero ═══════════════ */}

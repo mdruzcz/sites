@@ -8,12 +8,22 @@ import Footer from "@/components/Footer";
 import QuoteFab from "@/components/QuoteFab";
 import { site } from "@/lib/site";
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "About", item: `${site.url}/about` },
+  ],
+};
+
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us | Hot Tub Pads Installation Experts in Ontario",
+  title: { absolute: "About Hot Tub Pads | Ontario Concrete Pad Installers" },
   description:
     "Ontario's trusted hot tub pad installation experts. We deliver durable, level concrete foundations for hot tubs and swim spas with quality materials and precision craftsmanship.",
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About Us | Hot Tub Pads Installation Experts in Ontario",
     description:
@@ -42,6 +52,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <NavBar />
 
       {/* ═══════════════ Page Hero ═══════════════ */}

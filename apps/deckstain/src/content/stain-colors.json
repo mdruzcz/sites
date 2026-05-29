@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Natural Cedar",
+    "slug": "natural-cedar",
+    "description": "A warm cedar tone that enhances the natural grain of your wood. Perfect for homeowners who want a classic, timeless look that blends seamlessly with the outdoors.",
+    "swatchHex": "#C4813B"
+  },
+  {
+    "name": "Light Oak",
+    "slug": "light-oak",
+    "description": "A soft golden tone that brightens your outdoor space and complements lighter home exteriors. An excellent choice for newer decks where you want to maintain a fresh, open feel.",
+    "swatchHex": "#D4A054"
+  },
+  {
+    "name": "Pecan",
+    "slug": "pecan",
+    "description": "A rich nutty hue that is one of our most versatile and popular color choices. Pecan works beautifully with a wide range of home styles and exterior paint colors.",
+    "swatchHex": "#8B5E3C"
+  },
+  {
+    "name": "Dark Walnut",
+    "slug": "dark-walnut",
+    "description": "A bold deep brown that creates a modern, sophisticated aesthetic for your outdoor space. Dark Walnut pairs beautifully with contemporary architecture and darker home exteriors.",
+    "swatchHex": "#3D2010"
+  },
+  {
+    "name": "Redwood",
+    "slug": "redwood",
+    "description": "A vibrant earthy red that makes a strong statement and adds warmth to any deck or fence. Redwood is ideal for homeowners looking for a rich, eye-catching color with real character.",
+    "swatchHex": "#8B2500"
+  },
+  {
+    "name": "Burnt Hickory",
+    "slug": "burnt-hickory",
+    "description": "Darker warm undertones give Burnt Hickory a sophisticated, grounded feel. This color is perfect for creating a cozy, cabin-inspired outdoor retreat.",
+    "swatchHex": "#4A2810"
+  },
+  {
+    "name": "Mission Brown",
+    "slug": "mission-brown",
+    "description": "A deep chocolate brown that is timeless, elegant, and universally flattering. Mission Brown hides weathering well and maintains its rich appearance over multiple seasons.",
+    "swatchHex": "#2F1A0F"
+  },
+  {
+    "name": "Mahogany",
+    "slug": "mahogany",
+    "description": "A rich reddish-brown that brings warmth and luxury to your outdoor living space. Mahogany is a premium choice that adds visual depth and a sense of refined craftsmanship.",
+    "swatchHex": "#6B2A1F"
+  }
+]

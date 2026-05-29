@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #F89D2B;
+  --accent-hover: #E08920;
+  --dark: #1C2833;
+  --dark-mid: #334155;
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-dark: var(--dark);
+}
+
+html { scroll-behavior: smooth; }
+
+body { font-family: var(--font-roboto), system-ui, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 px-6 py-3 text-sm min-h-[44px] uppercase tracking-wide;
+}
+.btn-accent {
+  @apply bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white shadow-md hover:shadow-lg;
+}
+.btn-dark {
+  @apply bg-[var(--dark)] hover:bg-[var(--dark-mid)] text-white shadow-md hover:shadow-lg;
+}
+.btn-outline {
+  @apply border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white;
+}
+.btn-white {
+  @apply bg-white text-[var(--dark)] hover:bg-gray-100 shadow-md;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.card {
+  @apply bg-white rounded shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+}

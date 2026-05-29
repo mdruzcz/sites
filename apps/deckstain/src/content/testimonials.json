@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "author": "W. Truant",
+    "city": "Windsor",
+    "rating": 5,
+    "quote": "They transformed our old deck into a beautiful outdoor space. Their attention to detail and quality of work are outstanding.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "author": "A. Keller",
+    "city": "London",
+    "rating": 5,
+    "quote": "Great team. It was very easy and quick to get a quote back from a photo I uploaded. They charged exactly what they quoted and I'm thrilled.",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "author": "Shirley & Jim Newton",
+    "city": "London",
+    "rating": 5,
+    "quote": "Deck staining in Canada is always an annual chore. I'm so glad these young guys are operating. They do great work.",
+    "featured": true
+  }
+]

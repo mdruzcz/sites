@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Script from "next/script";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -11,9 +10,10 @@ import ContactForm from "./ContactForm";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Contact Us | Hot Tub Pads Ontario",
+  title: "Contact Us",
   description:
     "Get in touch with Hot Tub Pads for a free quote on concrete pad installation for hot tubs, swim spas, and outdoor structures in Ontario. Fast response within 24 hours.",
+  alternates: { canonical: "/contact-us" },
   openGraph: {
     title: "Contact Us | Hot Tub Pads Ontario",
     description:
@@ -99,13 +99,11 @@ export default function ContactPage() {
   return (
     <>
       {/* Structured Data */}
-      <Script
-        id="ld-contact-page"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
       />
-      <Script
-        id="ld-breadcrumb"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />

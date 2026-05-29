@@ -1,0 +1,67 @@
+[
+  {
+    "region": "London-Middlesex County",
+    "slug": "london-ontario",
+    "cities": ["London", "Strathroy", "Komoka", "Ilderton", "Dorchester", "Arva", "Kilworth", "Belmont", "Delaware", "Thorndale", "Byron", "Masonville", "Old North", "Westmount", "Lambeth"]
+  },
+  {
+    "region": "Oxford County",
+    "slug": "woodstock-oxford-county",
+    "cities": ["Woodstock", "Tillsonburg", "Ingersoll", "Norwich", "Tavistock"]
+  },
+  {
+    "region": "Waterloo Region",
+    "slug": "kitchener-waterloo",
+    "cities": ["Kitchener", "Waterloo", "Cambridge", "Elmira", "Baden"]
+  },
+  {
+    "region": "Hamilton-Niagara Region",
+    "slug": "hamilton-niagara",
+    "cities": ["Hamilton", "St. Catharines", "Niagara Falls", "Welland", "Grimsby", "Brantford", "Burlington"]
+  },
+  {
+    "region": "Windsor-Essex County",
+    "slug": "windsor-essex",
+    "cities": ["Windsor", "Tecumseh", "Lakeshore", "Amherstburg", "LaSalle", "Leamington", "Kingsville"]
+  },
+  {
+    "region": "Huron-Perth County",
+    "slug": "stratford-ontario",
+    "cities": ["Stratford", "Goderich", "Exeter", "Listowel", "Mitchell"]
+  },
+  {
+    "region": "Halton Region",
+    "slug": "halton-region",
+    "cities": ["Burlington", "Oakville", "Milton", "Georgetown"]
+  },
+  {
+    "region": "Peel Region",
+    "slug": "peel-region",
+    "cities": ["Mississauga", "Brampton", "Caledon"]
+  },
+  {
+    "region": "Durham Region",
+    "slug": "durham-region",
+    "cities": ["Oshawa", "Ajax", "Whitby", "Pickering", "Clarington"]
+  },
+  {
+    "region": "Elgin County",
+    "slug": "elgin-county",
+    "cities": ["St. Thomas", "Aylmer", "Port Stanley", "Dutton"]
+  },
+  {
+    "region": "Sarnia-Lambton County",
+    "slug": "sarnia-lambton",
+    "cities": ["Sarnia", "Petrolia", "Forest", "Grand Bend"]
+  },
+  {
+    "region": "Chatham-Kent Region",
+    "slug": "chatham-kent",
+    "cities": ["Chatham", "Wallaceburg", "Tilbury", "Dresden", "Ridgetown"]
+  },
+  {
+    "region": "Wellington County",
+    "slug": "wellington-county",
+    "cities": ["Guelph", "Fergus", "Elora", "Palmerston"]
+  }
+]

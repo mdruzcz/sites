@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+:root {
+  --forest:       #1A3528;
+  --forest-mid:   #2D5A40;
+  --forest-light: #4A7C5A;
+  --cedar:        #C4762A;
+  --cedar-dark:   #A05E1C;
+  --cedar-light:  #DFA055;
+  --cream:        #F5EFE6;
+  --cream-dark:   #E8DCCF;
+  --stone:        #8A9A8A;
+  --text-dark:    #1A2518;
+  --accent:       #C4762A;
+}
+
+@theme inline {
+  --color-forest:       var(--forest);
+  --color-forest-mid:   var(--forest-mid);
+  --color-forest-light: var(--forest-light);
+  --color-cedar:        var(--cedar);
+  --color-cedar-dark:   var(--cedar-dark);
+  --color-cedar-light:  var(--cedar-light);
+  --color-cream:        var(--cream);
+  --color-cream-dark:   var(--cream-dark);
+  --color-stone:        var(--stone);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text-dark);
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair, Georgia, serif);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--cream-dark) 25%, var(--cream) 50%, var(--cream-dark) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--cedar);
+  transition: background-color 0.2s;
+}
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--cedar-dark);
+}

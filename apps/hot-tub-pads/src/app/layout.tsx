@@ -18,6 +18,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hottubpads.ca"),
+  alternates: { canonical: "/" },
   title: {
     default: "Hot Tub Pads | Expert Concrete Pad Installation in Ontario",
     template: "%s | Hot Tub Pads",

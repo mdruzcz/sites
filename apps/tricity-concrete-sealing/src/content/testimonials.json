@@ -1,0 +1,44 @@
+[
+  {
+    "author": "James T.",
+    "city": "London",
+    "rating": 5,
+    "quote": "TriCity sealed our driveway last spring and it still looks brand new. Zero staining from our vehicles and it survived a brutal winter without a single crack. Absolutely worth it.",
+    "featured": true
+  },
+  {
+    "author": "Karen M.",
+    "city": "Woodstock",
+    "rating": 5,
+    "quote": "The crew was on time, professional, and the stamped concrete on our backyard patio looks incredible now. The colour really popped after sealing. Highly recommend them!",
+    "featured": true
+  },
+  {
+    "author": "Derek L.",
+    "city": "Brantford",
+    "rating": 5,
+    "quote": "We had our walkway and front steps sealed. The whole job took about 3 hours and the results are stunning. Great communication throughout and the pricing was fair.",
+    "featured": true
+  },
+  {
+    "author": "Sandra P.",
+    "city": "St. Thomas",
+    "rating": 5,
+    "quote": "After years of oil stains on my driveway I finally got it professionally sealed. TriCity cleaned everything up and applied a gorgeous semi-gloss finish. No more embarrassing stains!",
+    "featured": true
+  },
+  {
+    "author": "Mike R.",
+    "city": "Stratford",
+    "rating": 5,
+    "quote": "Excellent service from start to finish. They explained exactly what they were applying and why, and the 5-year warranty gives real peace of mind. Driveway looks like day one.",
+    "featured": false
+  },
+  {
+    "author": "Lisa W.",
+    "city": "Ingersoll",
+    "rating": 5,
+    "quote": "Our exposed aggregate patio was looking dull and faded. TriCity brought it back to life — the stone colours really came out beautifully. Very happy with the result.",
+    "featured": false
+  }
+]

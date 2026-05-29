@@ -1,0 +1,14 @@
+{
+  "cities": [
+    { "name": "London", "slug": "london", "region": "Middlesex County" },
+    { "name": "Woodstock", "slug": "woodstock", "region": "Oxford County" },
+    { "name": "Brantford", "slug": "brantford", "region": "Brant County" },
+    { "name": "St. Thomas", "slug": "st-thomas", "region": "Elgin County" },
+    { "name": "Stratford", "slug": "stratford", "region": "Perth County" },
+    { "name": "Ingersoll", "slug": "ingersoll", "region": "Oxford County" },
+    { "name": "Tillsonburg", "slug": "tillsonburg", "region": "Oxford County" },
+    { "name": "St. Marys", "slug": "st-marys", "region": "Perth County" },
+    { "name": "Aylmer", "slug": "aylmer", "region": "Elgin County" },
+    { "name": "Simcoe", "slug": "simcoe", "region": "Norfolk County" }
+  ]
+}

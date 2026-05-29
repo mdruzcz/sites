@@ -1,0 +1,37 @@
+[
+  {
+    "author": "Jessica Ferreira",
+    "location": "London, ON",
+    "quote": "Our last installers left lights on our roof and never came back. Kyle and Cameron took the lights down, and their lights are way better! Professional from start to finish.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Linda Zimmerman",
+    "location": "London, ON",
+    "quote": "Kyle and his team were absolute professionals. The installation in North London was seamless, and their communication throughout was top-notch. Our home was the talk of the neighbourhood.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Roy Langille",
+    "location": "London, ON",
+    "quote": "Great company to work with, very conscientious team and exceptional end product. I wouldn't hesitate to recommend them to anyone wanting professional Christmas lights.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Sharad Kamdar",
+    "location": "London, ON",
+    "quote": "Thanks to the entire team. Everything from quote to installation was great. Smooth process, beautiful result, and the lights looked incredible on our home.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Hang Lee",
+    "location": "London, ON",
+    "quote": "Kyle and the crew transformed our Lambeth home with their Christmas light installation. The custom-cut lights fit perfectly and the whole neighbourhood was commenting on how great it looked.",
+    "rating": 5,
+    "featured": true
+  }
+]

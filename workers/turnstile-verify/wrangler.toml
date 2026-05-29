@@ -1,0 +1,20 @@
+name = "turnstile-verify"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Account ID injected at deploy time (or set here once known)
+# account_id = "<your-cloudflare-account-id>"
+
+# Public workers.dev URL: https://turnstile-verify.<your-subdomain>.workers.dev
+workers_dev = true
+
+# Optional: bind to a custom route (requires masterdecker.com zone in Cloudflare)
+# [[routes]]
+# pattern = "turnstile.masterdecker.com/*"
+# zone_name = "masterdecker.com"
+
+# Secret is set via: wrangler secret put TURNSTILE_SECRET_KEY
+# Do NOT commit the secret to this file.
+
+[observability]
+enabled = true

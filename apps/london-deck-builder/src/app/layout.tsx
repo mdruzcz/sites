@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "Premium PT, Cedar, Composite & PVC decks across London, St. Thomas & Woodstock. 5-year workmanship warranty.",
     images: [
       {
-        url: "/images/og-default.jpg",
+        url: "/og-default.png",
         width: 1200,
         height: 630,
         alt: "London Deck Builder — premium deck contractor in London, Ontario",
@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     title: "London Deck Builder | Decks Built to Last",
     description:
       "Premium PT, Cedar, Composite & PVC decks across London, St. Thomas & Woodstock.",
+    images: ["/og-default.png"],
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],

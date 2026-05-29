@@ -1,0 +1,117 @@
+﻿@import "tailwindcss";
+
+@theme inline {
+  --color-accent: #F7931E;
+  --color-accent-dark: #D4761A;
+  --color-concrete-dark: #333333;
+  --color-surface: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-foreground: #33373D;
+  --font-sans: var(--font-inter);
+  --font-body: var(--font-mulish);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #33373D;
+  font-family: var(--font-mulish, var(--font-inter, sans-serif));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter, sans-serif);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #F7931E;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #D4761A;
+}
+
+.btn-outline {
+  border: 2px solid #F7931E;
+  color: #F7931E;
+}
+.btn-outline:hover {
+  background-color: #F7931E;
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #333333;
+}
+.btn-white:hover {
+  background-color: #f1f5f9;
+}
+
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

@@ -7,6 +7,7 @@ import { localBusinessSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   title: {
     default: `${site.name} | Professional Deck & Fence Staining in Oakville & Burlington`,
     template: `%s | ${site.name}`,
@@ -27,8 +28,21 @@ export const metadata: Metadata = {
     title: site.name,
     description: site.description,
     url: site.url,
+    images: [
+      {
+        url: "/images/deck10.jpeg",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} — professional deck and fence staining in Oakville and Burlington`,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: ["/images/deck10.jpeg"],
+  },
   robots: { index: true, follow: true },
 };
 

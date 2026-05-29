@@ -6,7 +6,7 @@ export function localBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: site.name,
-    telephone: site.phone,
+    telephone: site.phoneE164,
     email: site.email,
     url: site.url,
     address: {
@@ -34,7 +34,7 @@ export function serviceSchema(service: Service, city?: string) {
     provider: {
       "@type": "LocalBusiness",
       name: site.name,
-      telephone: site.phone,
+      telephone: site.phoneE164,
     },
     ...(city && { areaServed: { "@type": "City", name: city } }),
   };

@@ -5,7 +5,8 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Contact Us | Get a Free Deck Staining Quote",
-  description: `Get a free deck staining quote from ${site.name}. Email ${site.email} or fill out our form. Serving ${site.serviceAreas.join(", ")}.`,
+  description: `Get a free deck staining quote from ${site.name}. Call ${site.phone} or fill out the form. Serving Oakville, Burlington & Halton Region.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "residential-installation",
+    "title": "Residential Installation",
+    "shortDescription": "Custom cut lights fitted precisely to your roofline, gutters, and eaves. No ladders needed — we handle everything.",
+    "description": "Our residential Christmas light installation service transforms your home into a stunning holiday display. We custom cut every strand to fit your roofline precisely, ensuring a clean, professional look that store-bought lights can never match. Our team handles everything from design to installation — you never need to climb a ladder.",
+    "icon": "home",
+    "image": "/images/IMG_8253-scaled-1.jpg",
+    "imageAlt": "Professional residential Christmas light installation on a London Ontario home"
+  },
+  {
+    "slug": "commercial-installation",
+    "title": "Commercial Installation",
+    "shortDescription": "Transform shopping centers, office buildings, and plazas into festive destinations that attract customers.",
+    "description": "Make your commercial property the destination this holiday season. We specialize in large-scale Christmas light installations for shopping centers, office buildings, plazas, and commercial properties across Southwestern Ontario. Our aerial lift vehicles allow us to safely reach heights that standard ladders cannot, ensuring a spectacular result.",
+    "icon": "building",
+    "image": "/images/How-Professional-Lighting-Attracts-Customers-in-Mississauga-Plazas.png",
+    "imageAlt": "Commercial Christmas lighting on a plaza in Mississauga Ontario attracting holiday shoppers"
+  },
+  {
+    "slug": "custom-design",
+    "title": "Custom Design",
+    "shortDescription": "Tailored holiday displays crafted to match your vision, colour scheme, and architectural style.",
+    "description": "Every home and business is unique. Our custom design service lets you collaborate with our team to create a display that perfectly matches your vision. Whether you want classic warm white, colourful multicolour lights, or a specific theme, we design and execute a display tailored entirely to you.",
+    "icon": "palette",
+    "image": "/images/Classic-Christmas-Lighting-Professional-Christmas-Lighting-2-1.jpeg",
+    "imageAlt": "Custom professional Christmas lighting design on a home in London Ontario"
+  },
+  {
+    "slug": "takedown-storage",
+    "title": "Takedown & Storage",
+    "shortDescription": "We remove, label, and store your lights after the season — organized and ready for next year.",
+    "description": "When the season ends, we return to carefully remove your lights, label each component, and store them properly so they're in perfect condition for next year. No tangled strings, no damaged bulbs, no storage headaches. Your investment is protected and ready to go when the holidays come around again.",
+    "icon": "package",
+    "image": "/images/IMG_7746-scaled-1.jpg",
+    "imageAlt": "Christmas light takedown and organized storage service in London Ontario"
+  },
+  {
+    "slug": "wreath-installation",
+    "title": "Wreath Installation",
+    "shortDescription": "Lush evergreen wreaths with berries, pinecones, and decorative hooks — installed professionally.",
+    "description": "Add a classic touch to your front door, windows, and garage with our professional wreath installation service. We use full, lush evergreen wreaths adorned with berries, pinecones, and ribbons, secured with professional-grade hooks that won't damage your home. Beautiful, traditional, and completely hands-free for you.",
+    "icon": "circle",
+    "image": "/images/IMG_8241-scaled-1.jpg",
+    "imageAlt": "Professional wreath installation on front door of home in London Ontario"
+  },
+  {
+    "slug": "garland-installation",
+    "title": "Garland Installation",
+    "shortDescription": "Lush garland for banisters, mantels, doorways, and fences — the finishing touch to any holiday display.",
+    "description": "Complete your holiday look with professionally installed garland. We drape and secure lush greenery along banisters, mantels, doorways, porch railings, and fences. Paired with your Christmas lights, garland adds depth and warmth to create a magazine-worthy holiday display that impresses every visitor.",
+    "icon": "leaf",
+    "image": "/images/IMG_8346-scaled-1.jpg",
+    "imageAlt": "Professional garland installation on porch railing of home in London Ontario"
+  }
+]

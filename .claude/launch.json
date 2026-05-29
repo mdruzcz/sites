@@ -24,6 +24,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--workspace=hot-tub-pads"],
       "port": 3013
+    },
+    {
+      "name": "london-fence-installer",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=london-fence-installer"],
+      "port": 3020
     }
   ]
 }

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #24C1B1;
+  --accent-dark: #1a9e90;
+  --accent-light: #e8faf8;
+  --gold: #E8B600;
+  --gold-dark: #c49b00;
+  --surface: #f8f9fa;
+  --surface-2: #f0f2f4;
+  --border: #e5e7eb;
+  --foreground: #1a1a2e;
+  --muted: #6b7280;
+  --background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  min-height: 44px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+.btn-secondary {
+  background: var(--gold);
+  color: #1a1a2e;
+}
+.btn-secondary:hover {
+  background: var(--gold-dark);
+}
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--accent-light);
+}
+.btn-ghost-white {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  background: transparent;
+}
+.btn-ghost-white:hover {
+  background: rgba(255,255,255,0.1);
+}
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+/* Shimmer skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}

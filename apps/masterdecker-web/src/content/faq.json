@@ -1,0 +1,55 @@
+{
+  "groups": [
+    {
+      "heading": "Fence Building",
+      "items": [
+        { "q": "Do I need a permit for a fence?", "a": "For a standard fence in most areas, you typically do not require a permit. However, in special situations like the front of your home, you may require one. It's best to reach out to us directly." },
+        { "q": "What is the maximum height of a fence you can build?", "a": "While this varies by area, in most areas the maximum height for a backyard fence is 7 feet." },
+        { "q": "Does a fence need to be stained or sealed?", "a": "If your fence is made of wood like Pressure Treated Pine or Cedar, it is recommended to seal your fence to protect it from drying out, cracking, and rotting. We use the same products on fences as we do decks." },
+        { "q": "What materials can you build my fence out of?", "a": "For fences, there are several options for materials. The standard fence is made out of Pressure Treated lumber. Premium fences can be built out of Cedar, Vinyl, or Ornamental Metal." }
+      ]
+    },
+    {
+      "heading": "Concrete Patios and Driveways",
+      "items": [
+        { "q": "What thickness do you form our patio and driveway?", "a": "Driveways are typically formed to be between 4.5–5.5 inches thick and backyard patios between 2.5–3.5 inches thick." },
+        { "q": "What options do we have for concrete?", "a": "Concrete patios and driveways can be tinted with a color or stamped with a design like the popular Ashlar Slate." },
+        { "q": "How long should we avoid parking on our new concrete driveway?", "a": "We recommend avoiding parking on new driveways until the concrete has had 48 hours to cure. It's even better to wait until the concrete is sealed if you are concerned about leaving rubber tire marks or other fluid spills from your vehicle." },
+        { "q": "How often should I re-seal my concrete?", "a": "It depends on various factors, but we typically recommend re-washing and sealing every 2 years on average." }
+      ]
+    },
+    {
+      "heading": "Deck and Fence Staining",
+      "items": [
+        { "q": "How do I prep my deck for staining services?", "a": "Simply remove any furniture and planters from the deck, close all nearby windows and doors, and ensure that the hose line has access to water. We'll handle the rest." },
+        { "q": "Are the chemicals used safe for my plants and pets?", "a": "Yes, by spraying plants down with water prior to deck cleaning/stripping, any chemicals which may land on nearby greenery will be diluted and have no harmful effects. We also take care to neutralize and properly rinse off chemicals when completed, ensuring pets and vegetation are completely safe." },
+        { "q": "How long does the deck staining process take?", "a": "Cleaning/stripping will be completed on the first available day. After a minimum of 2–3 days of drying, the staining crew will come. Times will vary depending on weather, as the deck should be dry for at least 24 hours before and after staining." },
+        { "q": "How long should we stay off our deck once it's finished?", "a": "We recommend giving the deck at least 24 hours to fully dry after all work is completed." },
+        { "q": "How often should I re-stain my deck?", "a": "When you see your deck fading and absorbing water rather than beading it, it's time for a new coat. Typically, this is every year for transparent stains, every 2 years for semi-transparent stains, and every 3–5 years for semi-solid stains." },
+        { "q": "What's a good way to make my deck stand out?", "a": "Consider a dual-tone deck. For an extra cost, we can give your deck a unique look with two different stain colors; one to highlight the borders, and the other to fill the main area." },
+        { "q": "Why are oil-based stains better than water-based?", "a": "Oil-based stains penetrate the wood, which means they have less chance of peeling as they do not film on top. They are also easier to maintain by cleaning and reapplying every 2–3 years rather than performing heavy sanding between coats." }
+      ]
+    },
+    {
+      "heading": "Deck Building",
+      "items": [
+        { "q": "Who takes care of the permit process?", "a": "For an additional charge, we can handle the permit process for you, or you can choose to manage it yourself at no extra fee." },
+        { "q": "What is involved with the permit process?", "a": "The permit process includes submitting a permit application, drawings to the municipality for review, and scheduling inspections by building officials at various stages." },
+        { "q": "Should we seal the deck right away?", "a": "After your deck project is complete, we recommend waiting one winter season before sealing/staining the deck to ensure the wood has adequately acclimatized for the stain to penetrate properly." },
+        { "q": "What materials can you build my deck out of?", "a": "We can construct decks out of multiple materials. The framing of a deck is always made of Pressure Treated lumber, and the surface of the deck can be Pressure Treated, Cedar, Composite, or PVC materials." },
+        { "q": "What options do I have for railings?", "a": "Railings must meet the standard height required by the Ontario Building Code. The style and material of the railing are up to you. We can install Pressure Treated, Cedar, Aluminum, or Glass Railings." }
+      ]
+    },
+    {
+      "heading": "General",
+      "items": [
+        { "q": "What areas do you service?", "a": "We service a wide range of areas across Southwestern Ontario including London, Kitchener-Waterloo, Hamilton, the Greater Toronto Area, and surrounding cities. Please contact us to see if we cover your specific location." },
+        { "q": "Do you offer financing options?", "a": "Yes, we offer financing options to help make your project more affordable. Please contact us for more details on available plans and how to apply." },
+        { "q": "How do I schedule a project with Master Decker?", "a": "Fill out the contact form on our website, give us a call, or send us an email. We'll get back to you promptly to discuss your needs and set up a convenient time for a consultation." },
+        { "q": "Can you work with other contractors on my project?", "a": "Yes, we can coordinate and work with other contractors to ensure your project runs smoothly. Whether you have an existing contractor or need recommendations, we are flexible and can collaborate effectively to meet your needs." },
+        { "q": "Do you provide free estimates?", "a": "Yes, we provide free estimates for all potential projects. Contact us to schedule a consultation, and we'll provide you with a detailed estimate based on your specific needs." },
+        { "q": "What is your process for project consultations?", "a": "Our process begins with an initial consultation where we discuss your project ideas, budget, and timeline. We then conduct a site visit to assess the space and provide recommendations. Afterward, we deliver a detailed estimate and project plan." }
+      ]
+    }
+  ]
+}

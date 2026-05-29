@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { NavBar, Services, Materials, Testimonials, ServiceAreas, Contact, Footer } from "../_components/sections";
 
 export const metadata: Metadata = {
-  title: "Deck & Fence Services in Woodstock, Ontario | Woodstock Deck & Fence",
-  description:
-    "Full deck and fence services in Woodstock, ON. Deck building, fence installation, deck restoration, pergolas and outdoor structures. PT, cedar, composite, vinyl, wood and steel.",
+  title: "Deck & Fence Services Woodstock Ontario | Woodstock Deck & Fence",
+  description: "Full deck and fence services in Woodstock, ON. Deck building, fence installation, deck restoration, pergolas and outdoor structures. PT, cedar, composite, vinyl, wood and steel.",
   alternates: { canonical: "/services" },
-  openGraph: { url: "/services", title: "Deck & Fence Services | Woodstock Deck & Fence", description: "Custom decks and fences in Woodstock and Oxford County. All services, all materials." },
+  openGraph: { url: "/services", title: "Deck & Fence Services | Woodstock Deck & Fence", description: "Custom decks and fences in Woodstock and Oxford County." },
 };
 
 export const revalidate = 3600;

@@ -22,6 +22,23 @@ export async function POST(req: Request) {
   if (!name || !phone || !email || !service)
     return Response.json({ error: "All fields required." }, { status: 400 });
 
+  const token = formData.get("token") as string | null;
+  if (!token) {
+    return Response.json({ error: "Captcha required" }, { status: 400 });
+  }
+  const verifyRes = await fetch(
+    process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, hostname: "woodstockconcretepros.ca" }),
+    },
+  );
+  const verify = (await verifyRes.json()) as { success: boolean };
+  if (!verify.success) {
+    return Response.json({ error: "Captcha verification failed" }, { status: 400 });
+  }
+
   // Process uploaded images — store as base64 data URIs
   const imageFiles = formData.getAll("images") as File[];
   const imageUrls: string[] = [];

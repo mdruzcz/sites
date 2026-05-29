@@ -1,0 +1,23 @@
+export const site = {
+  name: "London Concrete Forming",
+  shortName: "LCF",
+  phone: "519-914-1901",
+  phoneHref: "tel:+15199141901",
+  email: "service@londonconcreteforming.ca",
+  emailHref: "mailto:service@londonconcreteforming.ca",
+  address: { street: "550 Second Street", city: "London", region: "ON", postal: "N5V3S3", country: "CA" },
+  addressLine: "550 Second Street, London, ON N5V3S3",
+  hours: "Mon–Sun 8:00am–6:00pm",
+  hoursDetailed: "Mon–Sat 8:00am–6:00pm / Sunday Closed",
+  yearsExperience: 20,
+  url: "https://londonconcreteforming.ca",
+  priceRange: "$10–$16/sq.ft.",
+  responseTime: "1 business day",
+  trustBadges: [
+    { label: "Years Experience", value: "20+" },
+    { label: "Driveway Cost", value: "$10–$16/sq.ft." },
+    { label: "Projects Completed", value: "500+" },
+    { label: "Service Areas", value: "London & Area" },
+  ],
+  serviceAreas: ["London", "St. Thomas", "Woodstock", "Stratford", "Sarnia", "Chatham", "Port Stanley"],
+} as const;

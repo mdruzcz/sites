@@ -1,19 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 import { getServices } from "@/lib/content";
 
 export function QuoteForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [token, setToken] = useState<string | null>(null);
   const services = getServices();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!token) { setStatus("error"); return; }
     setStatus("sending");
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    data.token = token;
 
     try {
       const res = await fetch("/api/quote", {
@@ -132,9 +136,14 @@ export function QuoteForm() {
         />
       </div>
 
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+        onSuccess={setToken}
+      />
+
       <button
         type="submit"
-        disabled={status === "sending"}
+        disabled={status === "sending" || !token}
         className="btn btn-primary w-full disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : "Request Free Consultation"}

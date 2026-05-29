@@ -1,0 +1,161 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Poppins",
+        "role": "heading"
+      },
+      {
+        "family": "Roboto",
+        "role": "body"
+      }
+    ],
+    "colors": {
+      "primary": "#F89D2B",
+      "secondary": "#6F757E",
+      "accent": "#334155",
+      "background": "#FFFFFF",
+      "textPrimary": "#000000",
+      "link": "#334155"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Roboto",
+        "heading": "Poppins"
+      },
+      "fontStacks": {
+        "heading": [
+          "Poppins",
+          "sans-serif"
+        ],
+        "body": [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Oxygen-Sans",
+          "Ubuntu",
+          "Cantarell",
+          "Helvetica Neue",
+          "sans-serif"
+        ],
+        "paragraph": [
+          "Roboto",
+          "sans-serif"
+        ]
+      },
+      "fontSizes": {
+        "h1": "63px",
+        "h2": "42px",
+        "body": "22px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "3px"
+    },
+    "components": {
+      "input": {
+        "background": "#F9FAFB",
+        "textColor": "#000000",
+        "borderColor": "#E2E8F0",
+        "borderRadius": "7px",
+        "borderRadiusCorners": {
+          "topLeft": "7px",
+          "topRight": "7px",
+          "bottomRight": "7px",
+          "bottomLeft": "7px"
+        },
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "logo": "https://londonretainingwalls.ca/wp-content/uploads/2024/01/londonretainingwalls.png",
+      "favicon": "https://londonretainingwalls.ca/wp-content/uploads/2024/01/cropped-londonretainingwalllogotransparent-32x32.png",
+      "ogImage": null,
+      "logoHref": "https://londonretainingwalls.ca"
+    },
+    "__llm_logo_reasoning": {
+      "selectedIndex": 0,
+      "reasoning": "Selected #0 because it is located in the header, links to the homepage, and matches the brand inferred from the URL and page title.",
+      "confidence": 0.85,
+      "source": "llm"
+    },
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "targetAudience": "homeowners and contractors"
+    },
+    "designSystem": {
+      "framework": "custom",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0,
+      "colors": 0.9,
+      "overall": 0.45
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": true,
+        "llmSucceeded": true,
+        "finalSource": "llm",
+        "rawLogoSelection": {
+          "selectedLogoIndex": 0,
+          "selectedLogoReasoning": "Selected #0 because it is located in the header, links to the homepage, and matches the brand inferred from the URL and page title.",
+          "confidence": 0.85
+        }
+      },
+      "buttonClassification": {
+        "llmCalled": false,
+        "llmSucceeded": false
+      }
+    }
+  },
+  "metadata": {
+    "og:type": "website",
+    "ogDescription": "Concrete, Block, Wood, Retaining Wall Contractor and Retaining Wall Repair. Build a Beautiful and Functional Retaining Wall Today.",
+    "modifiedTime": "2025-11-04T18:09:23+00:00",
+    "twitter:title": "London Retaining Walls | Professional Retaining Wall Contractor",
+    "og:url": "https://londonretainingwalls.ca/",
+    "language": "en-US",
+    "title": "London Retaining Walls | Professional Retaining Wall Contractor",
+    "twitter:description": "Concrete, Block, Wood, Retaining Wall Contractor and Retaining Wall Repair. Build a Beautiful and Functional Retaining Wall Today.",
+    "twitter:data2": "7 minutes",
+    "generator": "Elementor 3.20.3; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap",
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "msapplication-TileImage": "https://londonretainingwalls.ca/wp-content/uploads/2024/01/cropped-londonretainingwalllogotransparent-270x270.png",
+    "description": "Concrete, Block, Wood, Retaining Wall Contractor and Retaining Wall Repair. Build a Beautiful and Functional Retaining Wall Today.",
+    "og:site_name": "London Retaining Walls",
+    "twitter:data1": "officeadmin",
+    "og:title": "London Retaining Walls | Professional Retaining Wall Contractor",
+    "article:modified_time": "2025-11-04T18:09:23+00:00",
+    "twitter:label2": "Time to read",
+    "og:updated_time": "2025-11-04T18:09:23+00:00",
+    "article:published_time": "2024-01-05T11:58:45+00:00",
+    "ogSiteName": "London Retaining Walls",
+    "og:locale": "en_US",
+    "og:description": "Concrete, Block, Wood, Retaining Wall Contractor and Retaining Wall Repair. Build a Beautiful and Functional Retaining Wall Today.",
+    "twitter:card": "summary_large_image",
+    "ogTitle": "London Retaining Walls | Professional Retaining Wall Contractor",
+    "twitter:label1": "Written by",
+    "publishedTime": "2024-01-05T11:58:45+00:00",
+    "ogUrl": "https://londonretainingwalls.ca/",
+    "ogLocale": "en_US",
+    "favicon": "https://londonretainingwalls.ca/wp-content/uploads/2024/01/cropped-londonretainingwalllogotransparent-32x32.png",
+    "scrapeId": "019e6c12-0bdd-706c-bb5e-74ecb8f24294",
+    "sourceURL": "https://londonretainingwalls.ca",
+    "url": "https://londonretainingwalls.ca/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=utf-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "d03097f5-1a95-4914-baf4-1f66345146e0",
+    "creditsUsed": 1,
+    "concurrencyLimited": true,
+    "concurrencyQueueDurationMs": 5090
+  },
+  "warning": "This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan."
+}

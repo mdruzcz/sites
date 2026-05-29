@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+<<<<<<< HEAD
 
 export type FAQItem = { q: string; a: string };
 
@@ -42,6 +43,13 @@ export const homeFaqs: FAQItem[] = [
     a: "We serve all of Southern Ontario including Hamilton, Burlington, Oakville, Mississauga, Brampton, Milton, Ancaster, Grimsby, St. Catharines, and Niagara Falls. Not sure if we cover your area? Just call us at (289) 426-5764.",
   },
 ];
+=======
+import type { FAQItem } from "@/lib/faqs";
+import { homeFaqs } from "@/lib/faqs";
+
+export type { FAQItem };
+export { homeFaqs };
+>>>>>>> origin/main
 
 function FAQItem({ item }: { item: FAQItem }) {
   const [open, setOpen] = useState(false);

@@ -10,16 +10,13 @@ export async function POST(request: Request) {
       return Response.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Verify Turnstile token
-    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-    if (turnstileSecret && turnstileToken) {
-      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    // Verify Turnstile via shared Worker
+    if (turnstileToken) {
+      const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+      const verifyRes = await fetch(turnstileEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          secret: turnstileSecret,
-          response: turnstileToken,
-        }),
+        body: JSON.stringify({ token: turnstileToken, hostname: "brantfordconcreteforming.ca" }),
       });
       const verifyData = await verifyRes.json() as { success: boolean };
       if (!verifyData.success) {
