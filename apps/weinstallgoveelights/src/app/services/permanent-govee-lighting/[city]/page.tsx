@@ -108,7 +108,7 @@ export default async function CityPage({
           <p className="text-lg text-gray-300 max-w-2xl mb-8 leading-relaxed">
             Professional Govee permanent outdoor LED lighting installation serving{" "}
             {mainCity} and the surrounding {area.region}. App-controlled, weatherproof,
-            starting at <strong className="text-white">$28/linear foot</strong>.
+            starting at <strong className="text-white">$13/linear foot</strong>.
           </p>
           <Link
             href="/contact"

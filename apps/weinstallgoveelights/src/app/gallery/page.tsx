@@ -100,7 +100,7 @@ export default function GalleryPage() {
             Your Home Could Be Next
           </h2>
           <p className="text-gray-400 mb-8">
-            Professional Govee installation from <strong className="text-white">$28/linear foot</strong>. Free quotes. 5-year warranty.
+            Professional Govee installation from <strong className="text-white">$13/linear foot</strong>. Free quotes. 5-year warranty.
           </p>
           <Link
             href="/contact"

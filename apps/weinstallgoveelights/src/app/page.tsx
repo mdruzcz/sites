@@ -11,7 +11,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Professional Govee Permanent Outdoor Lighting Ontario",
   description:
-    "We install Govee permanent outdoor LED lighting across Southwestern Ontario. App-controlled, weatherproof, 5-year warranty. Starts at $28/linear foot. Free quotes.",
+    "We install Govee permanent outdoor LED lighting across Southwestern Ontario. App-controlled, weatherproof, 5-year warranty. Starts at $13/linear foot. Free quotes.",
   openGraph: {
     title: "Professional Govee Permanent Outdoor Lighting Ontario",
     description:
@@ -139,7 +139,7 @@ export default function HomePage() {
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             Professional Govee permanent outdoor LED installation across Ontario.
             Millions of colours, app-controlled, weatherproof — starting at{" "}
-            <strong className="text-white">$28/linear foot</strong>.
+            <strong className="text-white">$13/linear foot</strong>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
