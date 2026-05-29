@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "london-ontario",
+    "city": "London",
+    "province": "ON",
+    "label": "London, Ontario",
+    "description": "Serving all of London, Ontario including North London, South London, Byron, Westmount, and surrounding neighbourhoods.",
+    "population": "550,000+",
+    "neighbourhoods": ["Byron", "Westmount", "Old North", "Wortley Village", "Masonville"]
+  },
+  {
+    "slug": "st-thomas",
+    "city": "St. Thomas",
+    "province": "ON",
+    "label": "St. Thomas, Ontario",
+    "description": "Bringing permanent LED lighting to homes and businesses throughout St. Thomas and Elgin County.",
+    "population": "40,000+",
+    "neighbourhoods": ["Southgate", "Elgin Heights", "Central St. Thomas"]
+  },
+  {
+    "slug": "woodstock",
+    "city": "Woodstock",
+    "province": "ON",
+    "label": "Woodstock, Ontario",
+    "description": "Serving Woodstock and Oxford County with professional permanent outdoor lighting installations.",
+    "population": "45,000+",
+    "neighbourhoods": ["Havelock Corners", "Sally Creek", "Northridge Estates", "Old Town Woodstock", "Woodstock Meadows"]
+  },
+  {
+    "slug": "brantford",
+    "city": "Brantford",
+    "province": "ON",
+    "label": "Brantford, Ontario",
+    "description": "Permanent lighting for Brantford homes and commercial properties across the city.",
+    "population": "100,000+",
+    "neighbourhoods": ["Echo Place", "Holmedale", "Henderson Survey", "East Ward"]
+  },
+  {
+    "slug": "stratford",
+    "city": "Stratford",
+    "province": "ON",
+    "label": "Stratford, Ontario",
+    "description": "Beautiful permanent LED installations for Stratford's heritage homes and new builds.",
+    "population": "33,000+",
+    "neighbourhoods": ["West End", "Avon Heights", "Downtown Stratford"]
+  },
+  {
+    "slug": "ingersoll",
+    "city": "Ingersoll",
+    "province": "ON",
+    "label": "Ingersoll, Ontario",
+    "description": "Serving Ingersoll and the surrounding Oxford County area with top-rated permanent lighting.",
+    "population": "13,000+",
+    "neighbourhoods": ["North Ingersoll", "South Ingersoll", "Town Centre"]
+  },
+  {
+    "slug": "tillsonburg",
+    "city": "Tillsonburg",
+    "province": "ON",
+    "label": "Tillsonburg, Ontario",
+    "description": "Professional permanent LED lighting installations for Tillsonburg homeowners.",
+    "population": "18,000+",
+    "neighbourhoods": ["North Broadway", "Annandale", "Lake Lisgar area"]
+  }
+]

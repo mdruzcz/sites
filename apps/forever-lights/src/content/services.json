@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "permanent-christmas-lighting",
+    "title": "Permanent Christmas Lighting",
+    "shortTitle": "Christmas Lighting",
+    "description": "Transform your home into a festive wonderland every year — without ever touching a ladder. Our permanent tracks are installed once and light up your holiday season with a tap on your phone.",
+    "icon": "🎄",
+    "features": ["Custom colour schedules", "Holiday presets built-in", "Invisible tracks year-round"]
+  },
+  {
+    "slug": "permanent-accent-lighting",
+    "title": "Year-Round Accent Lighting",
+    "shortTitle": "Accent Lighting",
+    "description": "Highlight your home's architectural details with warm ambient LED light every night. Boosts curb appeal, deters intruders, and adds undeniable character — all controlled from your phone.",
+    "icon": "✨",
+    "features": ["Warm white to 6500K daylight", "Automated dusk-to-dawn schedules", "Enhances resale value"]
+  },
+  {
+    "slug": "holiday-colour-themes",
+    "title": "Holiday Colour Themes",
+    "shortTitle": "Holiday Themes",
+    "description": "Pink for Valentine's Day. Orange for Halloween. Green for St. Patrick's Day. Blue and gold for Hanukkah. With 16+ million colours, every occasion becomes a light show.",
+    "icon": "🌈",
+    "features": ["16+ million colour options", "One-tap holiday switching", "Schedule months in advance"]
+  }
+]

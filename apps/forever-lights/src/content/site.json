@@ -1,0 +1,19 @@
+{
+  "name": "Forever Lights",
+  "tagline": "Permanent LED Lighting — Installed Once, Enjoyed Forever",
+  "description": "Forever Lights installs permanent outdoor LED track lighting on homes and businesses across London, Ontario and surrounding areas. App-controlled, weatherproof, 5-year warranty. Get a free quote today.",
+  "phone": "(519) 914-3404",
+  "email": "service@foreverlights.ca",
+  "address": "London, Ontario",
+  "region": "Southwestern Ontario",
+  "domain": "foreverlights.ca",
+  "hours": "Monday–Friday, 8:00 AM–5:00 PM",
+  "priceFrom": "Get a free quote",
+  "warranty": "5-year parts · 1-year labour",
+  "social": {
+    "facebook": "https://facebook.com",
+    "youtube": "https://youtube.com"
+  },
+  "cta": "Get a Free Quote",
+  "ctaPath": "/contact"
+}

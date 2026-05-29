@@ -1,0 +1,56 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
+import { Resend } from 'resend';
+
+export const runtime = 'edge';
+
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+
+  // Honeypot
+  if (body.website) return NextResponse.json({ ok: true });
+
+  // Turnstile verification
+  const verifyRes = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT!, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token: body.token, hostname: 'foreverlights.ca' }),
+  });
+  const verify = await verifyRes.json();
+  if (!verify.success) {
+    return NextResponse.json({ error: 'Captcha failed' }, { status: 400 });
+  }
+
+  const { name, email, phone, address, city, message } = body;
+
+  // Save to Supabase (anon key — RLS allows inserts)
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+  await supabase.from('foreverlights_leads').insert({
+    name, email, phone, address, city, message,
+    created_at: new Date().toISOString(),
+  });
+
+  // Email notification
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  await resend.emails.send({
+    from: process.env.CONTACT_FROM_EMAIL!,
+    to: process.env.CONTACT_TO_EMAIL!,
+    subject: `New Forever Lights Quote Request — ${name} (${city || 'London'})`,
+    html: `
+      <h2>New Quote Request — Forever Lights</h2>
+      <table cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+        <tr><td><strong>Name</strong></td><td>${name}</td></tr>
+        <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
+        <tr><td><strong>Email</strong></td><td>${email}</td></tr>
+        <tr><td><strong>Address</strong></td><td>${address || '—'}</td></tr>
+        <tr><td><strong>City</strong></td><td>${city || '—'}</td></tr>
+        <tr><td><strong>Message</strong></td><td>${message || '—'}</td></tr>
+      </table>
+    `,
+  });
+
+  return NextResponse.json({ ok: true });
+}
