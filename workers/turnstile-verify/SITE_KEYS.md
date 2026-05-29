@@ -19,12 +19,14 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-04 | `festive-holiday-lighting` | festiveholidaylighting.ca | `0x4AAAAAADXerJyobPe6aoAR` |
 | MD-04 | `forevercabinets` | forevercabinets.ca | `0x4AAAAAADXerJyobPe6aoAR` |
 | MD-05 | `get-legal-basements` | getlegalbasements.ca | `0x4AAAAAADXerarSEfHtSa8U` |
+| MD-05 | `gta-christmas-lights` | gtachristmaslighting.ca | `0x4AAAAAADXerarSEfHtSa8U` |
 | MD-05 | `halton-glow-lighting` | haltonglowlighting.ca | `0x4AAAAAADXerarSEfHtSa8U` |
 | MD-06 | `holiday-lights-direct` | holidaylightsdirect.ca | `0x4AAAAAADXeroRTS-DACiRW` |
 | MD-06 | `hot-tub-pads` | hottubpads.ca | `0x4AAAAAADXeroRTS-DACiRW` |
 | MD-07 | `illumi-track-lights` | illumitracklights.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `lcf-web` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `london-concrete-forming` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
+| MD-07 | `london-concrete-sealing` | londonconcretesealing.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-08 | `london-deck-builder` | londondeckbuilder.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-08 | `london-fence-installer` | londonfenceinstaller.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-08 | `london-retaining-walls` | londonretainingwalls.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
@@ -58,14 +60,14 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | deckrevitalize.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
 | foreverecabinets.ca | MD-04 | `0x4AAAAAADXerJyobPe6aoAR` |
 | foreverlights.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
-| gtachristmaslighting.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
+| ~~gtachristmaslighting.ca~~ | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` | → moved to main table |
 | heateddrivewaypros.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
 | holidaylightsupplies.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | homeenhance.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | homeserviceawards.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | kmkitchenrenovations.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | listinglift.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
-| londonconcretesealing.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
+| ~~londonconcretesealing.ca~~ | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` | → moved to main table |
 | masterdecker.app | MD-08 | `0x4AAAAAADXesI_x9qC6ztVo` |
 | mortgage-right.ca | MD-09 | `0x4AAAAAADXesbgG3_xVYc5b` |
 | mregresswindow.ca | MD-09 | `0x4AAAAAADXesbgG3_xVYc5b` |
