@@ -8,7 +8,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "FAQ | Deck Staining & Restoration Questions Answered | Deck Medic",
+  title: { absolute: "Deck Staining & Restoration FAQ | Deck Medic" },
   description:
     "Answers to common questions about deck staining, restoration, power washing, and wood care in Southern Ontario. Deck Medic's expert FAQ.",
   alternates: { canonical: "https://deckmedic.ca/faq" },

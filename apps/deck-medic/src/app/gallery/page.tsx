@@ -8,7 +8,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Project Gallery | Deck Restoration & Staining Photos | Deck Medic",
+  title: { absolute: "Deck Restoration Gallery | Deck Medic Toronto" },
   description:
     "Browse Deck Medic's project gallery — before & after deck restorations, staining, power washing, and fence refinishing across Toronto, Mississauga, Oakville & Burlington.",
   alternates: { canonical: "https://deckmedic.ca/gallery" },

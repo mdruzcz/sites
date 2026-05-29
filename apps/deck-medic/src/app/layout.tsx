@@ -18,7 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://deckmedic.ca"),
   title: {
-    default: "Deck Medic | Professional Deck Restoration & Staining in Toronto",
+    default: "Deck Medic | Deck Restoration & Staining Toronto",
     template: "%s | Deck Medic",
   },
   description:

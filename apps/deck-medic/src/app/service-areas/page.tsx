@@ -9,7 +9,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Service Areas | Deck Medic Serves Toronto, Mississauga, Oakville & Burlington",
+  title: { absolute: "Service Areas | Deck Medic GTA" },
   description:
     "Deck Medic serves Toronto, Mississauga, Oakville, and Burlington. Professional deck restoration and staining throughout Southern Ontario. Free estimate.",
   alternates: { canonical: "https://deckmedic.ca/service-areas" },

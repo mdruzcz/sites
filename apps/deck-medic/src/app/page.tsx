@@ -19,7 +19,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Deck Medic | Professional Deck Restoration & Staining in Toronto",
+  title: { absolute: "Deck Medic | Deck Restoration & Staining Toronto" },
   description:
     "Toronto's deck restoration and staining specialists. Expert sanding, wood repairs, and premium weather-shield finishes for cedar and pressure-treated decks. Free estimate.",
   alternates: { canonical: "https://deckmedic.ca" },

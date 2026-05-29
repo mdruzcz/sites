@@ -7,7 +7,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Contact Deck Medic | Free Estimate for Deck Restoration & Staining",
+  title: { absolute: "Contact Deck Medic | Free Deck Restoration Estimate" },
   description:
     "Request a free estimate from Deck Medic. We serve Toronto, Mississauga, Oakville, and Burlington. Reach us by phone or use our online form for a no-obligation quote.",
   alternates: { canonical: "https://deckmedic.ca/contact" },

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const city = getCityBySlug(slug);
   if (!city) return {};
   return {
-    title: city.metaTitle,
+    title: { absolute: city.metaTitle },
     description: city.metaDescription,
     alternates: { canonical: `${site.url}/service-areas/${city.slug}` },
     openGraph: {

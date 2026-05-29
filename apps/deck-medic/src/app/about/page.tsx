@@ -9,7 +9,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Deck Medic | Toronto's Wood Preservation Specialists",
+  title: { absolute: "About Deck Medic | Toronto's Wood Preservation Specialists" },
   description:
     "Learn about Deck Medic — Toronto's trusted deck restoration experts. Our surgical approach means 80% prep and 20% finish, using only premium weather-shield products.",
   alternates: { canonical: "https://deckmedic.ca/about" },

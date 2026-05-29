@@ -10,7 +10,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Deck Services | Staining, Restoration & Power Washing in Toronto",
+  title: { absolute: "Deck Services Toronto | Staining & Restoration | Deck Medic" },
   description:
     "Professional deck staining, full-service restoration, power washing, and fence staining in Toronto, Mississauga, Oakville & Burlington. Free estimate from Deck Medic.",
   alternates: { canonical: "https://deckmedic.ca/services" },
