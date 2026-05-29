@@ -30,6 +30,7 @@ export async function submitContact(formData: FormData): Promise<ContactResult> 
   }
 
   const supabase = createServerSupabase();
+  if (!supabase) return { ok: false, error: "Server misconfigured: Supabase env vars missing" };
   const files = formData.getAll("attachments").filter((f): f is File => f instanceof File && f.size > 0);
   if (files.length > MAX_IMAGES) {
     return { ok: false, error: `You can attach up to ${MAX_IMAGES} images.` };

@@ -90,6 +90,7 @@ type RawKit = {
 
 async function loadAll(): Promise<{ kits: Kit[]; cabinets: Cabinet[] }> {
   const sb = createServerSupabase();
+  if (!sb) return { kits: [], cabinets: [] };
   const [{ data: rawKits }, { data: rawItems }, { data: cabinets }] = await Promise.all([
     sb.from("readykitchens_kits").select("*").eq("is_active", true).order("price_cad"),
     sb.from("readykitchens_kit_items").select("*").order("position"),

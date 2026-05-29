@@ -63,6 +63,7 @@ export async function submitOrder(input: SubmitInput) {
   const totalPieces = items.reduce((s, { line, kit }) => s + kit.pieces * line.qty, 0);
 
   const supabase = createServerSupabase();
+  if (!supabase) throw new Error("Supabase env vars missing");
   const requestId = crypto.randomUUID();
   const { error: reqErr } = await supabase.from("readykitchens_quote_requests").insert({
     id: requestId,
