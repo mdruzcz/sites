@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #D4500A;
+  --accent-dark: #b03e08;
+  --foreground: #111827;
+  --background: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f9fafb 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.accent-btn {
+  background-color: var(--accent);
+  color: white;
+  transition: background-color 0.2s;
+}
+.accent-btn:hover {
+  background-color: var(--accent-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "London Concrete Sealing",
+  "tagline": "Professional Concrete Sealing & Repair",
+  "description": "London's trusted concrete sealing specialists. Over a decade of experience protecting driveways, patios, walkways, and stamped concrete across London, St. Thomas, Woodstock, and Stratford.",
+  "phone": "(519) 555-0199",
+  "email": "service@londonconcretesealing.ca",
+  "address": "London, Ontario",
+  "city": "London",
+  "province": "Ontario",
+  "country": "Canada",
+  "postalCode": "N6A",
+  "hours": {
+    "weekdays": "Monday to Friday: 8:00 AM – 5:00 PM",
+    "weekends": "Weekends: Closed"
+  },
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "youtube": ""
+  },
+  "founded": "2014",
+  "founderName": "Alex",
+  "accentColor": "#D4500A",
+  "url": "https://londonconcretesealing.ca"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "london",
+    "name": "London",
+    "province": "ON",
+    "description": "London, Ontario's trusted concrete sealing specialists serving all neighbourhoods from Old North to Byron."
+  },
+  {
+    "slug": "st-thomas",
+    "name": "St. Thomas",
+    "province": "ON",
+    "description": "Professional concrete sealing services in St. Thomas, ON — over a decade of experience restoring patios and driveways."
+  },
+  {
+    "slug": "woodstock",
+    "name": "Woodstock",
+    "province": "ON",
+    "description": "Concrete sealing and driveway services in Woodstock, Oxford County and surrounding areas."
+  },
+  {
+    "slug": "stratford",
+    "name": "Stratford",
+    "province": "ON",
+    "description": "Quality concrete sealing for Stratford homeowners and businesses in Perth County."
+  },
+  {
+    "slug": "ingersoll",
+    "name": "Ingersoll",
+    "province": "ON",
+    "description": "Concrete sealing and driveway protection services in Ingersoll and the surrounding Oxford County region."
+  }
+]

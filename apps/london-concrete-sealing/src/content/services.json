@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "driveway-sealing",
+    "name": "Driveway Sealing",
+    "shortDescription": "Protect your driveway from weather, oil, and freeze-thaw cycles with our professional sealing service.",
+    "description": "At London Concrete Sealing, we understand that your driveway is not just a practical space — it's also a significant component of your home's curb appeal. Our professional driveway sealing service uses high-quality sealants to provide durable protection against the elements, ensuring your driveway remains in excellent condition year after year.",
+    "benefits": [
+      "Extended lifespan — protective layer guards against water, oil spills, and freeze-thaw damage",
+      "Improved appearance — rich colour and smooth finish boosts curb appeal",
+      "Stain resistance — easier to clean and resists oil and grease",
+      "Eco-friendly sealants safe for family and pets",
+      "Variety of finishes: matte, semi-gloss, and high-gloss"
+    ],
+    "process": [
+      { "step": "Surface Preparation", "detail": "We thoroughly clean the driveway to remove dirt, debris, and existing stains for optimal sealant adherence." },
+      { "step": "Crack Repair", "detail": "Any cracks or damages are repaired to create a smooth, uniform surface and prevent further deterioration." },
+      { "step": "Sealant Application", "detail": "Our professionals apply a high-quality sealant designed for driveways, providing durable protection and an enhanced finish." },
+      { "step": "Drying & Curing", "detail": "We allow sufficient time for the sealant to dry and cure, ensuring it bonds properly for long-lasting protection." }
+    ],
+    "icon": "🛤️",
+    "image": "/images/driveway-sealing.jpg"
+  },
+  {
+    "slug": "concrete-sealing",
+    "name": "Concrete Sealing",
+    "shortDescription": "Expert concrete sealing for all surfaces — patios, walkways, garage floors, pool decks, and more.",
+    "description": "Our concrete sealing service uses top-of-the-line sealants to protect all concrete surfaces from the elements, stains, and daily wear. Whether it's a patio, walkway, garage floor, or pool deck, we have the right solution to extend the life and enhance the appearance of your concrete.",
+    "benefits": [
+      "Protects against moisture, stains, and environmental damage",
+      "Extends concrete lifespan by years",
+      "Enhances natural colour and appearance",
+      "Slip-resistant finishes available",
+      "Prevents fading from UV exposure"
+    ],
+    "process": [
+      { "step": "Assessment", "detail": "We assess the condition of your concrete surface and recommend the most suitable sealing solution." },
+      { "step": "Cleaning", "detail": "Professional pressure washing removes all dirt, mildew, and contaminants before sealing." },
+      { "step": "Application", "detail": "Even, professional-grade sealant application ensures complete coverage and deep penetration." },
+      { "step": "Quality Check", "detail": "We inspect the finished surface to ensure a uniform, high-quality seal." }
+    ],
+    "icon": "🏗️",
+    "image": "/images/concrete-sealing.jpg"
+  },
+  {
+    "slug": "concrete-driveway-installation",
+    "name": "Concrete Driveway Installation",
+    "shortDescription": "Full concrete driveway installation — remove the old, pour new. Patios included.",
+    "description": "Expert concrete driveway installation services from start to finish. We handle everything from removing your old driveway to pouring and finishing the new concrete. Our team can also install concrete patios, walkways, and other hardscaping features to transform your outdoor space.",
+    "benefits": [
+      "Complete removal of old driveway included",
+      "Professional formwork and grading",
+      "Reinforced concrete for lasting strength",
+      "Custom finishes available",
+      "Patios and walkways included"
+    ],
+    "process": [
+      { "step": "Site Preparation", "detail": "Removal of existing materials, proper grading, and sub-base preparation for a stable foundation." },
+      { "step": "Formwork", "detail": "Precise forms are set to ensure clean edges and correct dimensions throughout your project." },
+      { "step": "Pouring", "detail": "High-quality concrete is poured and levelled for a flat, even surface." },
+      { "step": "Finishing & Curing", "detail": "Surface finishing to your chosen texture, followed by a proper curing period for maximum strength." }
+    ],
+    "icon": "🏠",
+    "image": "/images/driveway-installation.jpg"
+  },
+  {
+    "slug": "stamped-concrete-sealing",
+    "name": "Stamped Concrete Sealing",
+    "shortDescription": "Preserve the colour and pattern of your stamped concrete with specialized sealing.",
+    "description": "Stamped concrete adds a decorative element to your surfaces but requires protection to maintain its look. Our stamped concrete sealing service enhances the colour and design while providing a durable, protective layer that guards against fading, weathering, and wear.",
+    "benefits": [
+      "Maintains vibrant colours and patterns",
+      "Protects against UV fading",
+      "Enhances the depth of decorative patterns",
+      "Available in gloss, satin, and matte finishes",
+      "Extends the life of your investment"
+    ],
+    "process": [
+      { "step": "Inspection", "detail": "We assess the current condition of your stamped concrete and identify any repairs needed." },
+      { "step": "Stripping (if required)", "detail": "Old sealant is stripped when resealing to ensure proper adhesion of the new coat." },
+      { "step": "Cleaning", "detail": "Thorough cleaning removes dirt, algae, and contaminants embedded in the pattern." },
+      { "step": "Sealing", "detail": "Thin coat application of specialized stamped concrete sealer for optimal colour enhancement and protection." }
+    ],
+    "icon": "🎨",
+    "image": "/images/stamped-concrete.jpg"
+  },
+  {
+    "slug": "concrete-finishes",
+    "name": "Concrete Finishes",
+    "shortDescription": "Custom concrete finishes including broom, exposed aggregate, polished, and stained options.",
+    "description": "Enhance your concrete surfaces with a variety of professional finishes that combine beauty and function. From classic broom finishes to decorative exposed aggregate and polished options, we can customize the look of your concrete to complement your property.",
+    "benefits": [
+      "Wide range of finish options",
+      "Slip-resistant textures for safety",
+      "Custom colours and stains available",
+      "Suitable for driveways, patios, pool decks, and walkways",
+      "Professional application for consistent results"
+    ],
+    "finishTypes": [
+      { "name": "Broom Finish", "description": "Classic textured finish for driveways and sidewalks — slip-resistant and durable." },
+      { "name": "Exposed Aggregate", "description": "Stone and pebble surface revealed through washing — decorative and long-lasting." },
+      { "name": "Polished Concrete", "description": "Smooth, glossy finish ideal for patios and interior floors." },
+      { "name": "Stamped", "description": "Patterns mimicking brick, stone, or tile for a decorative outdoor surface." },
+      { "name": "Stained", "description": "Colour stains that penetrate the surface for rich, lasting hues." }
+    ],
+    "process": [
+      { "step": "Design Consultation", "detail": "We discuss finish options and help you select the best choice for your project." },
+      { "step": "Surface Preparation", "detail": "Proper preparation ensures the finish adheres correctly and performs well." },
+      { "step": "Application", "detail": "Skilled application of the chosen finish technique." },
+      { "step": "Sealing", "detail": "A protective sealant is applied to preserve the finish and extend its lifespan." }
+    ],
+    "icon": "✨",
+    "image": "/images/concrete-finishes.jpg"
+  }
+]
