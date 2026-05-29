@@ -1,5 +1,6 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
@@ -8,62 +9,160 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in Stratford, ON",
-  description: "Top-rated concrete contractor serving Stratford, Ontario. Driveways, patios, stamped concrete & more. 20+ years experience. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Contractor in Stratford, ON", description: "Expert concrete services in Stratford, Ontario. Driveways, patios, retaining walls & stamped concrete." },
+  title: "Concrete Contractor in Stratford, ON — Driveways & Patios",
+  description: "Expert concrete contractor serving Stratford, Ontario. Driveways, patios, stamped concrete, retaining walls & more. 20+ years experience. Free quotes — 519-914-1901.",
+  openGraph: {
+    title: "Concrete Contractor in Stratford, ON",
+    description: "Professional concrete services in Stratford, Ontario. Driveways, patios, retaining walls & stamped concrete from London Concrete Forming.",
+  },
 };
 
-const faqItems = [
-  { question: "Do you serve Stratford, Ontario?", answer: "Yes! London Concrete Forming regularly serves Stratford and the surrounding area. We handle all residential concrete projects including driveways, patios, retaining walls, and shed pads." },
-  { question: "How far is Stratford from your London base?", answer: "We travel throughout Southwestern Ontario to serve our customers. Stratford is within our regular service area and we do not charge additional travel fees for most projects in the region." },
-  { question: "What concrete services do you offer in Stratford?", answer: "We provide the full range of concrete services in Stratford: driveway installation, patio construction, retaining walls, concrete removal, shed pads, and stamped concrete." },
+const services = [
+  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "🚗" },
+  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs — plain, exposed aggregate, stamped, or coloured to match your home.", icon: "☀️" },
+  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "🧱" },
+  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "🎨" },
+  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "🔨" },
+  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "🏗️" },
 ];
 
-export default function CityPage() {
+const faqItems = [
+  { question: "Do you serve Stratford, Ontario?", answer: "Yes — Stratford is within our regular service area. London Concrete Forming serves Perth County homeowners with no additional travel fees for most projects." },
+  { question: "What concrete services do you offer in Stratford?", answer: "We offer the full range: new driveways, patio installation, retaining walls, concrete removal, shed pads, and stamped concrete patterns in 50+ designs." },
+  { question: "How long does it take to get a quote in Stratford?", answer: "We typically schedule free on-site estimates within 2–5 business days of your inquiry. Call 519-914-1901 or fill out the form below and we will be in touch quickly." },
+  { question: "What is the best concrete finish for a Stratford home?", answer: "Broom finish is the most popular and practical for Ontario driveways. For patios and feature areas, stamped concrete in ashlar slate or cobblestone patterns is very popular in Stratford. We bring sample boards to every consultation." },
+];
+
+export default function StratfordPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Contractor in Stratford, ON", description: "Professional concrete services in Stratford, Ontario.", url: site.url + "/stratford-concrete-contractor", city: "Stratford" }),
+    serviceSchema({ name: "Concrete Contractor in Stratford, ON", description: "Professional concrete services in Stratford, Ontario — driveways, patios, retaining walls, and more.", url: site.url + "/stratford-concrete-contractor", city: "Stratford" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: site.url + "/service-areas" }, { name: "Stratford", url: site.url + "/stratford-concrete-contractor" }]),
     faqSchema(faqItems),
   ];
+
   return (
     <>
       {jsonLd.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
-      <section className="bg-[#1a2332] py-20">
-        <div className="container-custom text-center max-w-4xl mx-auto">
+
+      {/* Hero */}
+      <section className="bg-[#333333] relative overflow-hidden py-24">
+        <div className="absolute inset-0">
+          <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete driveway installation in Stratford, Ontario" fill className="object-cover opacity-25" priority unoptimized />
+        </div>
+        <div className="relative container-custom max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Stratford, Ontario</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Contractor in Stratford, ON</h1>
-          <p className="text-slate-300 text-xl mb-8">Top-Rated Driveway &amp; Stamped Concrete Services</p>
-          <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Concrete Contractor in Stratford, ON</h1>
+          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete — 20+ years of experience serving Stratford and Perth County.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
+            <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
+          </div>
         </div>
       </section>
+
+      {/* Trust Bar */}
+      <section className="bg-[#F7931E] py-8">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+            {[{ v: "20+", l: "Years Experience" }, { v: "500+", l: "Projects Completed" }, { v: "Free", l: "On-Site Estimates" }, { v: "1 Day", l: "Response Time" }].map((s) => (
+              <div key={s.l}><p className="text-3xl font-extrabold">{s.v}</p><p className="text-sm font-medium opacity-90">{s.l}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-extrabold text-[#333333] mb-3">Concrete Services in Stratford</h2>
+            <p className="text-slate-600 max-w-xl mx-auto">Full-service concrete installation for Stratford and Perth County homeowners.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s) => (
+              <Link key={s.href} href={s.href} className="card p-6 hover:border-[#F7931E] hover:shadow-md transition-all group">
+                <div className="text-3xl mb-3">{s.icon}</div>
+                <h3 className="font-bold text-[#333333] mb-2 group-hover:text-[#F7931E] transition-colors">{s.name}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us */}
+      <section className="section bg-[#f8fafc]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-[#1a2332] mb-5">Expert Concrete Services in Stratford</h2>
-              <p className="text-slate-600 leading-relaxed mb-4">London Concrete Forming proudly serves Stratford and the surrounding area with professional concrete installation services. Our experienced team brings the same high standards of quality and craftsmanship to every project in Stratford as we do in London.</p>
-              <p className="text-slate-600 leading-relaxed mb-4">Whether you need a new concrete driveway, a stamped patio, a retaining wall, or a shed pad, we have the skills and equipment to get the job done right. We serve Stratford regularly and understand the local soil conditions and requirements.</p>
-              <p className="text-slate-600 leading-relaxed mb-6">Nearby communities we also serve: Mitchell, St. Marys, Listowel, Tavistock, Exeter.</p>
-              <h3 className="font-bold text-[#1a2332] text-xl mb-4">Our Concrete Services in Stratford</h3>
-              <ul className="space-y-2 mb-8">
-                <li><Link href="/concrete-driveways" className="text-[#F7931E] hover:underline font-medium">Concrete Driveway Installation</Link></li>
-                <li><Link href="/concrete-patios" className="text-[#F7931E] hover:underline font-medium">Concrete Patio Construction</Link></li>
-                <li><Link href="/concrete-retaining-walls" className="text-[#F7931E] hover:underline font-medium">Concrete Retaining Walls</Link></li>
-                <li><Link href="/stamped-concrete-driveway" className="text-[#F7931E] hover:underline font-medium">Stamped Concrete Driveways</Link></li>
-                <li><Link href="/concrete-removal-services" className="text-[#F7931E] hover:underline font-medium">Concrete Removal</Link></li>
-              </ul>
+              <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Choose London Concrete Forming for Your Stratford Project</h2>
+              <div className="space-y-4">
+                {[
+                  { title: "Perth County Experience", desc: "We have completed dozens of projects in Stratford and surrounding Perth County. We know the local soil types and building practices." },
+                  { title: "No Travel Fees", desc: "Stratford falls within our standard service radius. You receive the same transparent pricing and no added travel costs." },
+                  { title: "32 MPa Concrete Standard", desc: "We always use minimum 32 MPa concrete — engineered for Ontario's freeze-thaw cycle and heavy vehicle traffic." },
+                  { title: "Start-to-Finish Coordination", desc: "One crew handles excavation, forming, pouring, and finishing. No subcontractors, no handoffs, no missed communications." },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-[#F7931E] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[#333333] mb-1">{item.title}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="bg-[#f8fafc] rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-[#1a2332] mb-4">Get a Free Quote for Your Stratford Project</h3>
-              <QuoteForm compact />
+            <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
+              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete driveway project completed by London Concrete Forming near Stratford, Ontario" fill className="object-cover" unoptimized />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Nearby */}
+      <section className="section bg-white">
+        <div className="container-custom max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-extrabold text-[#333333] mb-4">Also Serving Stratford&apos;s Surrounding Communities</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["St. Marys", "Mitchell", "Listowel", "Seaforth", "Exeter", "Tavistock", "New Hamburg"].map((city) => (
+              <span key={city} className="bg-[#f8fafc] text-slate-700 px-4 py-2 rounded-full text-sm font-medium border border-slate-200">{city}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-3xl mx-auto">
-          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Frequently Asked Questions</h2></div>
+          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Frequently Asked Questions</h2></div>
           <FaqAccordion items={faqItems} />
+        </div>
+      </section>
+
+      {/* Form */}
+      <section className="section bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-extrabold text-[#333333] mb-4">Get a Free Quote for Your Stratford Project</h2>
+              <p className="text-slate-600 leading-relaxed mb-4">Fill out the form and we will respond within 1 business day to schedule your free on-site estimate.</p>
+              <p className="text-slate-600 mb-4">Or call <a href={site.phoneHref} className="text-[#F7931E] font-semibold hover:underline">{site.phone}</a></p>
+              <div className="bg-[#f8fafc] rounded-xl p-5">
+                <ul className="space-y-2 text-sm text-slate-600">
+                  {["Free on-site estimate within 2–5 business days", "Detailed written quote with itemized breakdown", "No travel fees for Stratford projects", "No obligation after the estimate"].map((i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#F7931E] flex-shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8"><QuoteForm /></div>
+          </div>
         </div>
       </section>
     </>

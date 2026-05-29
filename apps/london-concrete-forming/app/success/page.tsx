@@ -19,7 +19,7 @@ export default function SuccessPage() {
             </svg>
           </div>
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-4">Thank You!</h1>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-4">Thank You!</h1>
         <p className="text-slate-600 text-lg mb-3">Your quote request has been received.</p>
         <p className="text-slate-600 mb-8">We will get back to you within <strong>{site.responseTime}</strong> to discuss your concrete project. If you need to reach us sooner, please call us at <a href={site.phoneHref} className="text-[#F7931E] font-semibold hover:underline">{site.phone}</a>.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -30,7 +30,7 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
-      <section className="bg-[#1a2332] py-16">
+      <section className="bg-[#333333] py-16">
         <div className="container-custom text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Tips & Guides</h1>
           <p className="text-slate-300 text-lg">Expert insights from London Concrete Forming</p>
@@ -48,7 +48,7 @@ export default function BlogPage() {
                     <span>·</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className="text-xl font-bold text-[#1a2332] mb-3 group-hover:text-[#F7931E] transition-colors">{post.title}</h2>
+                  <h2 className="text-xl font-bold text-[#333333] mb-3 group-hover:text-[#F7931E] transition-colors">{post.title}</h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                   <span className="text-[#F7931E] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read more

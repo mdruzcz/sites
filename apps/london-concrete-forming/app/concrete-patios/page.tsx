@@ -31,7 +31,7 @@ export default function ConcretePatiosPage() {
     <>
       {jsonLd.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
 
-      <section className="bg-[#1a2332] relative overflow-hidden py-20">
+      <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595.jpg" alt="Stamped concrete patio in London, Ontario" fill className="object-cover opacity-25" priority unoptimized />
         </div>
@@ -46,7 +46,7 @@ export default function ConcretePatiosPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-[#1a2332] mb-5">Create Your Perfect Outdoor Space</h2>
+              <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Create Your Perfect Outdoor Space</h2>
               <p className="text-slate-600 leading-relaxed mb-4">A concrete patio is one of the best investments you can make in your home. It extends your living space outdoors, adds property value, and provides a durable surface that handles Ontario weather beautifully.</p>
               <p className="text-slate-600 leading-relaxed mb-4">Whether you want a simple broom-finished pad for a barbecue area or an intricate stamped concrete design, our team has the skills and experience to bring your vision to life.</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
@@ -64,14 +64,14 @@ export default function ConcretePatiosPage() {
 
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-3xl mx-auto">
-          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Frequently Asked Questions</h2></div>
+          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Frequently Asked Questions</h2></div>
           <FaqAccordion items={faqItems} />
         </div>
       </section>
 
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
-          <div className="text-center mb-8"><h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Get a Free Patio Quote</h2></div>
+          <div className="text-center mb-8"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Get a Free Patio Quote</h2></div>
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8"><QuoteForm /></div>
         </div>
       </section>

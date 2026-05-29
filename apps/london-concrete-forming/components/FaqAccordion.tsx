@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
             aria-expanded={openIndex === i}
             style={{ minHeight: 44 }}
           >
-            <span className="font-semibold text-[#1a2332] pr-4">
+            <span className="font-semibold text-[#333333] pr-4">
               {item.question}
             </span>
             <span

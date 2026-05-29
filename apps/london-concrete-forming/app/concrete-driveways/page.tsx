@@ -35,7 +35,7 @@ export default function ConcreteDrivewaysPage() {
     <>
       {jsonLd.map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}
 
-      <section className="bg-[#1a2332] relative overflow-hidden py-20">
+      <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete driveway installation in London, Ontario" fill className="object-cover opacity-25" priority unoptimized />
         </div>
@@ -52,19 +52,19 @@ export default function ConcreteDrivewaysPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-[#1a2332] mb-5">Why Choose Concrete Over Asphalt or Gravel?</h2>
+              <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Choose Concrete Over Asphalt or Gravel?</h2>
               <div className="space-y-4">
                 <div className="flex gap-4">
                   <div className="w-8 h-8 rounded-lg bg-[#F7931E] flex items-center justify-center flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg></div>
-                  <div><h3 className="font-bold text-[#1a2332] mb-1">Resistance to Cracking</h3><p className="text-slate-600 text-sm leading-relaxed">Properly installed concrete driveways resist cracking far better than asphalt, especially in Ontario freeze-thaw conditions.</p></div>
+                  <div><h3 className="font-bold text-[#333333] mb-1">Resistance to Cracking</h3><p className="text-slate-600 text-sm leading-relaxed">Properly installed concrete driveways resist cracking far better than asphalt, especially in Ontario freeze-thaw conditions.</p></div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-8 rounded-lg bg-[#F7931E] flex items-center justify-center flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg></div>
-                  <div><h3 className="font-bold text-[#1a2332] mb-1">Strength in Structure</h3><p className="text-slate-600 text-sm leading-relaxed">Concrete can bear heavier loads and lasts 30–50 years with minimal maintenance versus 15–20 years for asphalt.</p></div>
+                  <div><h3 className="font-bold text-[#333333] mb-1">Strength in Structure</h3><p className="text-slate-600 text-sm leading-relaxed">Concrete can bear heavier loads and lasts 30–50 years with minimal maintenance versus 15–20 years for asphalt.</p></div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-8 rounded-lg bg-[#F7931E] flex items-center justify-center flex-shrink-0 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg></div>
-                  <div><h3 className="font-bold text-[#1a2332] mb-1">Low Maintenance</h3><p className="text-slate-600 text-sm leading-relaxed">No annual sealing required. Just occasional cleaning keeps your concrete driveway looking great for decades.</p></div>
+                  <div><h3 className="font-bold text-[#333333] mb-1">Low Maintenance</h3><p className="text-slate-600 text-sm leading-relaxed">No annual sealing required. Just occasional cleaning keeps your concrete driveway looking great for decades.</p></div>
                 </div>
               </div>
             </div>
@@ -78,22 +78,22 @@ export default function ConcreteDrivewaysPage() {
       <section className="section bg-[#f8fafc]">
         <div className="container-custom">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Design Options: Endless Possibilities</h2>
+            <h2 className="text-3xl font-extrabold text-[#333333] mb-3">Design Options: Endless Possibilities</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="card p-6 text-center">
               <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🎨</div>
-              <h3 className="font-bold text-[#1a2332] mb-2">Endless Possibilities</h3>
+              <h3 className="font-bold text-[#333333] mb-2">Endless Possibilities</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Broom finish, exposed aggregate, stamped patterns, or smooth — we offer every style to match your home.</p>
             </div>
             <div className="card p-6 text-center">
               <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🛡️</div>
-              <h3 className="font-bold text-[#1a2332] mb-2">Non-Slip Surface</h3>
+              <h3 className="font-bold text-[#333333] mb-2">Non-Slip Surface</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Broom-finished concrete provides excellent traction in all weather conditions — important for Ontario winters.</p>
             </div>
             <div className="card p-6 text-center">
               <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🌈</div>
-              <h3 className="font-bold text-[#1a2332] mb-2">Colour Options</h3>
+              <h3 className="font-bold text-[#333333] mb-2">Colour Options</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Integral colour, acid staining, and colour hardeners allow you to match or complement any exterior palette.</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function ConcreteDrivewaysPage() {
 
       <section className="section bg-white">
         <div className="container-custom max-w-4xl mx-auto">
-          <div className="bg-[#1a2332] rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-[#333333] rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-4">Driveway Cost Guide</h2>
             <p className="text-slate-300 text-lg mb-2">Standard Concrete Driveway: <span className="text-[#F7931E] font-bold">$10–$16 per sq.ft.</span></p>
             <p className="text-slate-300 mb-6">Includes excavation, grading, reinforcement, pour, and standard broom finish. Stamped and coloured options priced separately.</p>
@@ -113,14 +113,14 @@ export default function ConcreteDrivewaysPage() {
 
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-3xl mx-auto">
-          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Frequently Asked Questions</h2></div>
+          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Frequently Asked Questions</h2></div>
           <FaqAccordion items={faqItems} />
         </div>
       </section>
 
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
-          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#1a2332] mb-3">Get a Free Driveway Quote</h2><p className="text-slate-600">We serve London, St. Thomas, Woodstock, and surrounding area.</p></div>
+          <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Get a Free Driveway Quote</h2><p className="text-slate-600">We serve London, St. Thomas, Woodstock, and surrounding area.</p></div>
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8"><QuoteForm /></div>
         </div>
       </section>

@@ -1,9 +1,9 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @theme inline {
   --color-accent: #F7931E;
   --color-accent-dark: #D4761A;
-  --color-concrete-dark: #1a2332;
+  --color-concrete-dark: #333333;
   --color-surface: #f8fafc;
   --color-border: #e2e8f0;
   --color-foreground: #33373D;
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-white {
   background-color: #fff;
-  color: #1a2332;
+  color: #333333;
 }
 .btn-white:hover {
   background-color: #f1f5f9;

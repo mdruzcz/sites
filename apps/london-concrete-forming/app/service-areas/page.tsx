@@ -30,7 +30,7 @@ export default function ServiceAreasPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <section className="bg-[#1a2332] py-16">
+      <section className="bg-[#333333] py-16">
         <div className="container-custom text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Our Service Areas</h1>
           <p className="text-slate-300 text-lg">London Concrete Forming serves London and the surrounding communities across Southwestern Ontario.</p>
@@ -47,7 +47,7 @@ export default function ServiceAreasPage() {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.083 3.203-4.599 3.203-7.327C19.5 7.116 15.964 3.5 12 3.5 8.037 3.5 4.5 7.116 4.5 12c0 2.728 1.259 5.244 3.203 7.327a19.58 19.58 0 002.683 2.282 16.975 16.975 0 001.144.742zM12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" /></svg>
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-[#1a2332] mb-1 group-hover:text-[#F7931E] transition-colors">{city.name}, ON</h2>
+                    <h2 className="text-lg font-bold text-[#333333] mb-1 group-hover:text-[#F7931E] transition-colors">{city.name}, ON</h2>
                     <p className="text-slate-600 text-sm leading-relaxed">{city.desc}</p>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ export default function ServiceAreasPage() {
             ))}
           </div>
 
-          <div className="mt-12 bg-[#1a2332] rounded-2xl p-8 text-center">
+          <div className="mt-12 bg-[#333333] rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-extrabold text-white mb-3">Don&apos;t See Your City?</h2>
             <p className="text-slate-300 mb-6">We serve the entire Southwestern Ontario region. Contact us to check availability in your area.</p>
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>

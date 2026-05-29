@@ -1,8 +1,8 @@
-import { site } from "@/lib/site";
+﻿import { site } from "@/lib/site";
 
 export default function TrustBar() {
   return (
-    <div className="bg-[#1a2332] border-b border-slate-700">
+    <div className="bg-[#333333] border-b border-slate-700">
       <div className="container-custom">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-slate-700">
           {site.trustBadges.map((badge) => (

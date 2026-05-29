@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/site";
 
 const serviceLinks = [
@@ -15,13 +14,24 @@ const serviceLinks = [
 ];
 
 const areaLinks = [
-  { href: "/woodstock-concrete-contractor", label: "Concrete Contractor in Woodstock" },
-  { href: "/stratford-concrete-contractor", label: "Concrete Contractor in Stratford" },
-  { href: "/chatham-concrete-contractor", label: "Concrete Contractor in Chatham" },
-  { href: "/port-stanley-concrete-contractor", label: "Concrete Contractor in Port Stanley" },
-  { href: "/sarnia-concrete-contractor", label: "Concrete Contractor in Sarnia" },
-  { href: "/st-thomas-concrete-contractor", label: "Concrete Contractor in St. Thomas" },
+  { href: "/woodstock-concrete-contractor", label: "Woodstock" },
+  { href: "/stratford-concrete-contractor", label: "Stratford" },
+  { href: "/chatham-concrete-contractor", label: "Chatham" },
+  { href: "/port-stanley-concrete-contractor", label: "Port Stanley" },
+  { href: "/sarnia-concrete-contractor", label: "Sarnia" },
+  { href: "/st-thomas-concrete-contractor", label: "St. Thomas" },
 ];
+
+function LcfLogo() {
+  return (
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="42" height="42" rx="8" fill="#F7931E" />
+      <rect x="9" y="11" width="24" height="5" rx="1.5" fill="white" />
+      <rect x="9" y="18.5" width="24" height="5" rx="1.5" fill="white" />
+      <rect x="9" y="26" width="24" height="5" rx="1.5" fill="white" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +39,7 @@ export default function Header() {
   const [areasOpen, setAreasOpen] = useState(false);
 
   return (
-    <header className="bg-[#1a2332] sticky top-0 z-40 shadow-lg">
+    <header className="bg-[#333333] sticky top-0 z-40 shadow-lg">
       <div className="bg-[#F7931E] text-white text-xs text-center py-2 px-4">
         Over 20 years of experience across the team helping homeowners and their families.{" "}
         <a href={site.phoneHref} className="font-bold underline ml-1">{site.phone}</a>
@@ -37,14 +47,7 @@ export default function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between h-16" aria-label="Main navigation">
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <Image
-              src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/LondonConcreteFormingLogo-1.png"
-              alt="London Concrete Forming logo"
-              width={44}
-              height={44}
-              className="rounded-md object-contain"
-              unoptimized
-            />
+            <LcfLogo />
             <span className="text-white font-bold text-base leading-tight hidden sm:block">
               London<br />
               <span className="text-[#F7931E]">Concrete Forming</span>
@@ -84,7 +87,7 @@ export default function Header() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4" aria-hidden="true"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
               </button>
               {areasOpen && (
-                <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
+                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
                   {areaLinks.map((a) => (
                     <Link key={a.href} href={a.href} className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-[#F7931E] transition-colors">{a.label}</Link>
                   ))}
@@ -111,7 +114,7 @@ export default function Header() {
         </nav>
 
         {mobileOpen && (
-          <div className="lg:hidden border-t border-slate-700 pb-4">
+          <div className="lg:hidden border-t border-slate-600 pb-4">
             <div className="flex flex-col gap-1 pt-3">
               <Link href="/" onClick={() => setMobileOpen(false)} className="text-slate-300 hover:text-white px-3 py-3 text-sm font-medium">Home</Link>
               <Link href="/about-us" onClick={() => setMobileOpen(false)} className="text-slate-300 hover:text-white px-3 py-3 text-sm font-medium">About Us</Link>

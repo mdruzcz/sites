@@ -57,7 +57,7 @@ export default function HomePage() {
       ))}
 
       {/* Hero */}
-      <section className="bg-[#1a2332] relative overflow-hidden">
+      <section className="bg-[#333333] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg"
@@ -85,14 +85,14 @@ export default function HomePage() {
                 <Link href="/contact-us" className="btn btn-primary text-base">
                   Get a Free Quote Now!
                 </Link>
-                <a href={site.phoneHref} className="btn border-2 border-white text-white hover:bg-white hover:text-[#1a2332] transition-colors text-base">
+                <a href={site.phoneHref} className="btn border-2 border-white text-white hover:bg-white hover:text-[#333333] transition-colors text-base">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true"><path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" /></svg>
                   {site.phone}
                 </a>
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
-              <h2 className="text-xl font-bold text-[#1a2332] mb-1">Get a Free Quote</h2>
+              <h2 className="text-xl font-bold text-[#333333] mb-1">Get a Free Quote</h2>
               <p className="text-slate-500 text-sm mb-5">We respond within {site.responseTime}.</p>
               <QuoteForm compact />
             </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
       <section className="section bg-[#f8fafc]">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-3">How Can We Help You?</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-3">How Can We Help You?</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">From driveways and patios to retaining walls and shed pads — we handle all your concrete needs across London and area.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -140,7 +140,7 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-3">Why Choose London Concrete Forming?</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-3">Why Choose London Concrete Forming?</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">We take pride in delivering exceptional results that last decades.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -151,7 +151,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d={b.icon} />
                   </svg>
                 </div>
-                <h3 className="font-bold text-[#1a2332] text-lg mb-2">{b.title}</h3>
+                <h3 className="font-bold text-[#333333] text-lg mb-2">{b.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{b.desc}</p>
               </div>
             ))}
@@ -160,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* About / Trust */}
-      <section className="section bg-[#1a2332]">
+      <section className="section bg-[#333333]">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -192,7 +192,7 @@ export default function HomePage() {
       {/* Quality section */}
       <section className="section bg-white">
         <div className="container-custom max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-5">Quality Concrete That Lasts Is Our Number One Priority</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-5">Quality Concrete That Lasts Is Our Number One Priority</h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-4">
             At London Concrete Forming, we understand that a concrete driveway or patio is a long-term investment. That is why we only use high-quality concrete mixes and proper reinforcement techniques to ensure your project stands the test of time — especially through Ontario winters.
           </p>
@@ -220,7 +220,7 @@ export default function HomePage() {
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-3">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-3">Frequently Asked Questions</h2>
             <p className="text-slate-600">Common questions about concrete services in London, Ontario.</p>
           </div>
           <FaqAccordion items={faqItems} />
@@ -228,7 +228,7 @@ export default function HomePage() {
       </section>
 
       {/* What Makes Us Stand Out */}
-      <section className="section bg-[#1a2332]">
+      <section className="section bg-[#333333]">
         <div className="container-custom">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What Makes Us Stand Out</h2>
@@ -257,7 +257,7 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-3">Get Your Free Quote Today</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-3">Get Your Free Quote Today</h2>
             <p className="text-slate-600">Fill out the form below and we will get back to you within {site.responseTime}.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8">
@@ -269,7 +269,7 @@ export default function HomePage() {
       {/* Service Areas */}
       <section className="section bg-[#f8fafc]">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2332] mb-4">Areas We Serve</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-4">Areas We Serve</h2>
           <p className="text-slate-600 mb-8 max-w-xl mx-auto">Proudly serving London and surrounding communities across Southwestern Ontario.</p>
           <div className="flex flex-wrap gap-3 justify-center">
             {site.serviceAreas.map((area) => (
