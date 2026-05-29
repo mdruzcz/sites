@@ -3,18 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 /**
  * POST /api/contact
  *
- * Fields: first_name, last_name, email, phone, intent, city, message
- *         website (honeypot), _loaded (timestamp), recaptchaToken
- *
- * Spam protection — 3 layers:
- * 1. Honeypot   — "website" field; if filled, silently 200 (waste bot time).
- * 2. Time-gate  — submission < 3 s after page load → silent drop.
- * 3. reCAPTCHA v3 — score < 0.5 → 403.
- *
- * On success: saves lead to Supabase `realtor_leads` table.
+ * Spam layers: honeypot → time-gate (3 s) → reCAPTCHA v3
+ * On success: saves to Supabase `realtor_leads` + emails via Resend
  */
 
 const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET_KEY;
+const RESEND_API_KEY   = process.env.RESEND_API_KEY;
+const TO_EMAIL         = process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com";
+const FROM_EMAIL       = process.env.CONTACT_FROM_EMAIL ?? "noreply@mattdruzcz.ca";
 const MIN_FILL_TIME_MS = 3_000;
 
 type ContactBody = {
@@ -25,16 +21,13 @@ type ContactBody = {
   intent?: string;
   city?: string;
   message?: string;
-  website?: string;    // honeypot
-  _loaded?: number;    // page-load epoch ms
+  website?: string;
+  _loaded?: number;
   recaptchaToken?: string;
 };
 
 async function verifyRecaptcha(token: string): Promise<{ success: boolean; score: number }> {
-  if (!RECAPTCHA_SECRET) {
-    console.warn("[contact] RECAPTCHA_SECRET_KEY not set — skipping");
-    return { success: true, score: 1.0 };
-  }
+  if (!RECAPTCHA_SECRET) return { success: true, score: 1.0 };
   try {
     const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
       method: "POST",
@@ -43,10 +36,42 @@ async function verifyRecaptcha(token: string): Promise<{ success: boolean; score
     });
     const data = await res.json();
     return { success: data.success === true, score: data.score ?? 0 };
-  } catch (e) {
-    console.error("[contact] reCAPTCHA error:", e);
+  } catch {
     return { success: false, score: 0 };
   }
+}
+
+async function sendEmail(body: ContactBody): Promise<void> {
+  if (!RESEND_API_KEY) {
+    console.warn("[contact] RESEND_API_KEY not set — skipping email");
+    return;
+  }
+  const fullName = `${body.first_name} ${body.last_name}`.trim();
+  const html = `
+    <h2 style="font-family:Georgia,serif;color:#1a1a2e;">New Real Estate Enquiry — Matt Druzcz</h2>
+    <table style="font-family:Arial,sans-serif;font-size:14px;color:#333;border-collapse:collapse;width:100%;">
+      <tr><td style="padding:8px 0;font-weight:bold;width:140px;">Name</td><td style="padding:8px 0;">${fullName}</td></tr>
+      <tr><td style="padding:8px 0;font-weight:bold;">Email</td><td style="padding:8px 0;"><a href="mailto:${body.email}">${body.email}</a></td></tr>
+      <tr><td style="padding:8px 0;font-weight:bold;">Phone</td><td style="padding:8px 0;"><a href="tel:${body.phone}">${body.phone}</a></td></tr>
+      <tr><td style="padding:8px 0;font-weight:bold;">Looking to</td><td style="padding:8px 0;">${body.intent ?? "—"}</td></tr>
+      <tr><td style="padding:8px 0;font-weight:bold;">City/Area</td><td style="padding:8px 0;">${body.city ?? "—"}</td></tr>
+      ${body.message ? `<tr><td style="padding:8px 0;font-weight:bold;vertical-align:top;">Message</td><td style="padding:8px 0;">${body.message.replace(/\n/g, "<br>")}</td></tr>` : ""}
+    </table>
+    <hr style="margin:20px 0;border:none;border-top:1px solid #e5e7eb;">
+    <p style="font-size:12px;color:#6b7280;">Submitted via mattdruzcz.ca</p>
+  `;
+
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${RESEND_API_KEY}` },
+    body: JSON.stringify({
+      from: FROM_EMAIL,
+      to: TO_EMAIL,
+      reply_to: body.email,
+      subject: `Quote Request from ${fullName} - Matt Druzcz Real Estate`,
+      html,
+    }),
+  });
 }
 
 export async function POST(req: NextRequest) {
@@ -57,25 +82,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  // ── Layer 1: Honeypot ──────────────────────────────────────────────
   if (body.website && body.website.trim() !== "") {
-    return NextResponse.json({ success: true }); // silent bot drop
+    return NextResponse.json({ success: true });
   }
 
-  // ── Layer 2: Time-gate ─────────────────────────────────────────────
   if (body._loaded) {
     const elapsed = Date.now() - body._loaded;
     if (elapsed < MIN_FILL_TIME_MS) {
-      console.warn(`[contact] Time-gate: ${elapsed}ms — likely bot`);
-      return NextResponse.json({ success: true }); // silent bot drop
+      return NextResponse.json({ success: true });
     }
   }
 
-  // ── Layer 3: reCAPTCHA v3 ──────────────────────────────────────────
   if (body.recaptchaToken) {
     const { success, score } = await verifyRecaptcha(body.recaptchaToken);
     if (!success || score < 0.5) {
-      console.warn(`[contact] reCAPTCHA fail — success=${success} score=${score}`);
       return NextResponse.json(
         { error: "Spam check failed. Please try again or call (519) 878-6735." },
         { status: 403 }
@@ -88,7 +108,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // ── Validation ─────────────────────────────────────────────────────
   const errors: string[] = [];
   if (!body.first_name?.trim() || body.first_name.trim().length < 2) errors.push("First name is required.");
   if (!body.last_name?.trim()  || body.last_name.trim().length < 2)  errors.push("Last name is required.");
@@ -99,41 +118,37 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
   }
 
-  // ── Save to Supabase ───────────────────────────────────────────────
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  if (!supabaseUrl || !supabaseKey) {
-    console.error("[contact] Supabase env vars not configured");
-    return NextResponse.json({ error: "Server configuration error. Please call (519) 878-6735." }, { status: 500 });
+  if (supabaseUrl && supabaseKey) {
+    const response = await fetch(`${supabaseUrl}/rest/v1/realtor_leads`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify({
+        first_name: body.first_name!.trim(),
+        last_name:  body.last_name!.trim(),
+        email:      body.email!.trim().toLowerCase(),
+        phone:      body.phone!.trim(),
+        intent:     body.intent,
+        city:       body.city   || null,
+        message:    body.message || null,
+        status:     "new",
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.text();
+      console.error("[contact] Supabase insert error:", err);
+    }
   }
 
-  const response = await fetch(`${supabaseUrl}/rest/v1/realtor_leads`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: supabaseKey,
-      Authorization: `Bearer ${supabaseKey}`,
-      Prefer: "return=minimal",
-    },
-    body: JSON.stringify({
-      first_name: body.first_name!.trim(),
-      last_name:  body.last_name!.trim(),
-      email:      body.email!.trim().toLowerCase(),
-      phone:      body.phone!.trim(),
-      intent:     body.intent,
-      city:       body.city   || null,
-      message:    body.message || null,
-      status:     "new",
-    }),
-  });
+  await sendEmail(body).catch(err => console.error("[contact] Resend error:", err));
 
-  if (!response.ok) {
-    const err = await response.text();
-    console.error("[contact] Supabase insert error:", err);
-    return NextResponse.json({ error: "Failed to save your message. Please call (519) 878-6735." }, { status: 500 });
-  }
-
-  console.log(`[contact] Lead saved — ${body.first_name} ${body.last_name} <${body.email}> intent=${body.intent}`);
   return NextResponse.json({ success: true }, { status: 200 });
 }

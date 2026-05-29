@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
 
 /* ─── ICON HELPERS ─────────────────────────────────────────────────────── */
 const PhoneIcon = () => (
@@ -20,16 +21,6 @@ const MapPinIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
-);
-const MenuIcon = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-);
-const XIcon = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 const CheckIcon = () => (
@@ -76,6 +67,13 @@ const HandshakeIcon = () => (
       d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
+const WrenchIcon = () => (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+);
 const FacebookIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
@@ -97,113 +95,6 @@ const GoldDivider = () => (
   </div>
 );
 
-/* ─── NAVBAR ────────────────────────────────────────────────────────────── */
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  const links = [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Areas", href: "#areas" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
-  ];
-
-  return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled ? "rgba(10,15,30,0.97)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(201,168,76,0.15)" : "none",
-        boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.4)" : "none",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3 group">
-          <div
-            className="w-11 h-11 rounded-full flex items-center justify-center font-serif text-lg font-bold border-2"
-            style={{ borderColor: "var(--gold)", color: "var(--gold)", background: "rgba(201,168,76,0.08)" }}
-          >
-            MD
-          </div>
-          <div className="hidden sm:block">
-            <div className="font-serif text-base font-semibold leading-none" style={{ color: "var(--cream)" }}>Matt Druzcz</div>
-            <div className="text-xs mt-0.5" style={{ color: "var(--cream-muted)" }}>Realtor · London & Area</div>
-          </div>
-        </a>
-
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium transition-colors duration-200 hover:text-gold"
-              style={{ color: "var(--cream-muted)" }}
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            className="ml-4 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{ background: "var(--gold)", color: "#0A0F1E" }}
-          >
-            Free Valuation
-          </a>
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-md"
-          style={{ color: "var(--cream)" }}
-          aria-label="Toggle menu"
-        >
-          {open ? <XIcon /> : <MenuIcon />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div
-          className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{ background: "rgba(10,15,30,0.98)" }}
-        >
-          {links.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="py-2 text-base font-medium border-b"
-              style={{ color: "var(--cream)", borderColor: "var(--navy-border)" }}
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="mt-2 px-5 py-3 rounded-full text-sm font-semibold text-center"
-            style={{ background: "var(--gold)", color: "#0A0F1E" }}
-          >
-            Get a Free Home Valuation
-          </a>
-        </div>
-      )}
-    </nav>
-  );
-}
-
 /* ─── HERO ──────────────────────────────────────────────────────────────── */
 function HeroSection() {
   const [loaded, setLoaded] = useState(false);
@@ -218,14 +109,12 @@ function HeroSection() {
           url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&auto=format&fit=crop&q=80') center/cover no-repeat`,
       }}
     >
-      {/* Gold accent line top */}
       <div
         className="absolute top-0 left-0 right-0 h-0.5"
         style={{ background: "linear-gradient(to right, transparent, var(--gold), transparent)" }}
       />
 
       <div className="relative max-w-5xl mx-auto px-6 text-center pt-24 pb-16">
-        {/* Badge */}
         <div
           className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-8 border transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           style={{
@@ -235,7 +124,7 @@ function HeroSection() {
           }}
         >
           <MapPinIcon />
-          Serving London · Aylmer · St. Thomas
+          Serving London · Aylmer · St. Thomas · Woodstock
         </div>
 
         <h1
@@ -252,8 +141,8 @@ function HeroSection() {
           className={`text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           style={{ color: "var(--cream-muted)" }}
         >
-          London & area's trusted realtor. Honest advice, zero middlemen, and results
-          you can count on — whether you're buying, selling, or investing.
+          Licensed realtor, experienced investor, and former contractor — Matt brings a rare combination of market
+          knowledge, renovation insight, and financial expertise to every deal.
         </p>
 
         <div
@@ -276,7 +165,6 @@ function HeroSection() {
           </a>
         </div>
 
-        {/* Scroll cue */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" style={{ color: "var(--gold)" }}>
           <ChevronDownIcon />
         </div>
@@ -298,8 +186,8 @@ function StatsBar() {
 
   const stats = [
     { value: "200+", label: "Homes Sold" },
-    { value: "10+", label: "Years of Experience" },
-    { value: "3", label: "Communities Served" },
+    { value: "10+", label: "Years Experience" },
+    { value: "4", label: "Communities Served" },
     { value: "5★", label: "Client Satisfaction" },
   ];
 
@@ -344,7 +232,6 @@ function AboutSection() {
       style={{ background: "var(--navy)" }}
     >
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        {/* Photo placeholder */}
         <div
           className={`relative rounded-2xl overflow-hidden transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
         >
@@ -355,7 +242,6 @@ function AboutSection() {
               border: "1px solid var(--navy-border)",
             }}
           >
-            {/* Decorative placeholder — replace with <img src="/headshot.jpg" alt="Matt Druzcz" /> */}
             <div className="text-center px-8">
               <div
                 className="w-24 h-24 rounded-full border-2 flex items-center justify-center font-serif text-3xl font-bold mx-auto mb-4"
@@ -364,25 +250,15 @@ function AboutSection() {
                 MD
               </div>
               <p className="text-sm" style={{ color: "var(--cream-muted)" }}>
-                Photo coming soon — drop your headshot at <code className="text-xs">/public/headshot.jpg</code>
+                Drop your headshot at <code className="text-xs">/public/headshot.jpg</code>
               </p>
             </div>
           </div>
-          {/* Gold corner accent */}
-          <div
-            className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 rounded-tr-lg"
-            style={{ borderColor: "var(--gold)" }}
-          />
-          <div
-            className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 rounded-bl-lg"
-            style={{ borderColor: "var(--gold)" }}
-          />
+          <div className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 rounded-tr-lg" style={{ borderColor: "var(--gold)" }} />
+          <div className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 rounded-bl-lg" style={{ borderColor: "var(--gold)" }} />
         </div>
 
-        {/* Text */}
-        <div
-          className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-        >
+        <div className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
           <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--gold)" }}>
             About Matt
           </p>
@@ -396,31 +272,31 @@ function AboutSection() {
 
           <div className="space-y-4 text-base leading-relaxed mt-6" style={{ color: "var(--cream-muted)" }}>
             <p>
-              My path into real estate came through my own hands-on experience. After buying and managing several
-              properties, I realised I had a real knack for negotiation, spotting value, and preparing homes to
-              stand out in the market. That experience naturally led me to helping others do the same.
+              My path into real estate came through years of doing it myself. As a contractor, I spent over a decade
+              working on homes — learning what makes them tick and what makes them sell. I bought and managed my own
+              investment properties before becoming a licensed realtor, and that hands-on experience shapes every
+              client conversation I have.
             </p>
             <p>
               Today, I specialise in single-family and multi-family homes across{" "}
-              <strong style={{ color: "var(--cream)" }}>London, Aylmer, and St. Thomas</strong>. Whether you're
-              buying your first home or selling a property that's been in the family for decades, I bring the same
-              commitment to every client: honesty, strategy, and results.
+              <strong style={{ color: "var(--cream)" }}>London, Aylmer, St. Thomas, and Woodstock</strong>.
+              Whether you&apos;re buying your first home, selling a property, or building a portfolio through flips
+              and rentals — I bring the same commitment: honesty, strategy, and results.
             </p>
             <p>
-              I live just outside the peaceful town of Belmont, raising two kids with my wife. I chose this area
-              for the same reasons many of my clients do — a slower pace, more space, and a strong sense of
-              community.
+              I live just outside Belmont with my wife and two kids. I chose this area for the same reasons many of
+              my clients do — a slower pace, more space, and a strong sense of community.
             </p>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contact"
+            <Link
+              href="/about"
               className="px-6 py-3 rounded-full text-sm font-bold transition-all hover:opacity-90"
               style={{ background: "var(--gold)", color: "#0A0F1E" }}
             >
-              Let's Connect
-            </a>
+              More About Matt
+            </Link>
             <a
               href="tel:+15198786735"
               className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:bg-white/5"
@@ -459,7 +335,7 @@ function ServicesSection() {
         "Transparent process from listing to close",
       ],
       cta: "List My Home",
-      intent: "Sell My Home",
+      href: "/services/selling",
     },
     {
       icon: <TrendingUpIcon />,
@@ -473,21 +349,21 @@ function ServicesSection() {
         "Support from offer to keys",
       ],
       cta: "Start My Search",
-      intent: "Buy a Home",
+      href: "/services/buying",
     },
     {
       icon: <BuildingIcon />,
       title: "Investment Properties",
       subtitle: "Build Wealth Through Real Estate.",
       points: [
-        "Single-family & multi-family analysis",
-        "Cash-flow and cap-rate guidance",
-        "Identify undervalued properties",
-        "Portfolio growth strategy",
-        "Experience as an investor myself",
+        "Property flipping analysis & ARV assessment",
+        "Long-term rental cash-flow guidance",
+        "Contractor insight on renovation costs",
+        "Single-family & multi-family strategies",
+        "Personal experience as an investor",
       ],
       cta: "Grow My Portfolio",
-      intent: "Investment Properties",
+      href: "/services/investment-properties",
     },
   ];
 
@@ -507,7 +383,7 @@ function ServicesSection() {
             Full-Service Real Estate
           </h2>
           <p className="max-w-xl mx-auto text-base" style={{ color: "var(--cream-muted)" }}>
-            From your first showing to closing day — and every step in between — I handle it all so you don't have to.
+            From your first showing to closing day — and every step in between — I handle it all so you don&apos;t have to.
           </p>
         </div>
 
@@ -533,17 +409,13 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={`#contact?intent=${encodeURIComponent(s.intent)}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <Link
+                href={s.href}
                 className="text-center py-3 rounded-full text-sm font-semibold border transition-all hover:bg-white/5"
                 style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
               >
                 {s.cta} →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -568,25 +440,37 @@ function AreasSection() {
       city: "London, ON",
       nickname: "The Forest City",
       description:
-        "Ontario's seventh-largest city, London offers a diverse mix of established neighbourhoods, new developments, and a strong rental market. From Old South to Masonville, I know every pocket.",
+        "Ontario's seventh-largest city — diverse neighbourhoods, strong rental demand, and a market Matt knows block by block.",
       highlights: ["Strong resale values", "Top-rated schools", "Growing tech sector", "University & hospital workers"],
+      href: "/areas/london-ontario",
       img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=70",
     },
     {
       city: "Aylmer, ON",
       nickname: "Elgin County's Gem",
       description:
-        "A charming small town with deep roots and an increasingly strong market. Aylmer is attracting buyers priced out of larger cities while retaining the community feel that keeps families here for generations.",
-      highlights: ["Affordable entry points", "Strong community ties", "Growing demand", "Quiet, family-friendly streets"],
+        "A charming small town with deep roots and an increasingly strong market — attracting buyers priced out of larger cities.",
+      highlights: ["Affordable entry points", "Strong community ties", "Growing demand", "Family-friendly streets"],
+      href: "/areas/aylmer-ontario",
       img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=70",
     },
     {
       city: "St. Thomas, ON",
       nickname: "The Railway City",
       description:
-        "With major investment arriving and home prices still accessible, St. Thomas is one of Southwestern Ontario's most exciting markets right now. Don't miss the window — this city is moving fast.",
-      highlights: ["Volkswagen EV plant incoming", "Rapid appreciation", "Access to Highway 401", "Affordable vs. London"],
+        "With the Volkswagen EV plant incoming and home prices still accessible, St. Thomas is one of SW Ontario's most exciting markets.",
+      highlights: ["Volkswagen EV plant incoming", "Rapid appreciation", "401 access", "Affordable vs. London"],
+      href: "/areas/st-thomas-ontario",
       img: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=800&auto=format&fit=crop&q=70",
+    },
+    {
+      city: "Woodstock, ON",
+      nickname: "The Friendly City",
+      description:
+        "Oxford County's commercial hub offers solid value and strong rental demand — a smart addition to any real estate portfolio.",
+      highlights: ["Strong rental demand", "Highway 401 access", "Growing population", "Good cap rates"],
+      href: "/areas/woodstock-ontario",
+      img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=70",
     },
   ];
 
@@ -607,31 +491,32 @@ function AreasSection() {
             <span style={{ color: "var(--gold)" }}>Real Results</span>
           </h2>
           <p className="max-w-xl mx-auto text-base" style={{ color: "var(--cream-muted)" }}>
-            I don't just sell homes here — I live here. That local intelligence is your competitive edge.
+            I don&apos;t just sell homes here — I live here. That local intelligence is your competitive edge.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {areas.map((a, i) => (
-            <div
+            <Link
               key={a.city}
-              className={`rounded-2xl overflow-hidden transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              href={a.href}
+              className={`rounded-2xl overflow-hidden transition-all duration-700 hover:scale-[1.02] block ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 120}ms`, border: "1px solid var(--navy-border)" }}
             >
               <div
-                className="h-48 relative"
+                className="h-40 relative"
                 style={{
                   background: `linear-gradient(to bottom, rgba(10,15,30,0.3) 0%, rgba(10,15,30,0.7) 100%), url('${a.img}') center/cover`,
                 }}
               >
-                <div className="absolute bottom-4 left-5">
-                  <div className="font-serif text-xl font-bold" style={{ color: "var(--cream)" }}>{a.city}</div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="font-serif text-lg font-bold" style={{ color: "var(--cream)" }}>{a.city}</div>
                   <div className="text-xs" style={{ color: "var(--gold-light)" }}>{a.nickname}</div>
                 </div>
               </div>
-              <div className="p-6" style={{ background: "var(--navy-card)" }}>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--cream-muted)" }}>{a.description}</p>
-                <ul className="space-y-2">
+              <div className="p-5" style={{ background: "var(--navy-card)" }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--cream-muted)" }}>{a.description}</p>
+                <ul className="space-y-1.5">
                   {a.highlights.map(h => (
                     <li key={h} className="flex items-center gap-2 text-xs" style={{ color: "var(--cream-muted)" }}>
                       <span style={{ color: "var(--gold)" }}>✦</span> {h}
@@ -639,8 +524,18 @@ function AreasSection() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/areas"
+            className="inline-block px-6 py-3 rounded-full text-sm font-semibold border transition-all hover:bg-white/5"
+            style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
+          >
+            View All Service Areas →
+          </Link>
         </div>
       </div>
     </section>
@@ -670,14 +565,14 @@ function WhyMattSection() {
       body: "No fluff, no upsells. I'll tell you what your home is actually worth, what needs fixing, and how to get results.",
     },
     {
-      icon: <HomeIcon />,
-      title: "Hands-On Help",
-      body: "From staging and professional photography to coordinating repairs and open houses — I handle the details so you don't have to.",
+      icon: <WrenchIcon />,
+      title: "Contractor Insight",
+      body: "10+ years in home improvement means I can spot what needs fixing and accurately estimate costs — before they become surprises.",
     },
     {
       icon: <TrendingUpIcon />,
-      title: "Negotiation You Can Trust",
-      body: "I've been on both sides of the table as a buyer and investor. I know how to get you the most value, every time.",
+      title: "Investor Mindset",
+      body: "I've bought, renovated, rented, and flipped properties myself. I know what the numbers need to look like for a deal to make sense.",
     },
   ];
 
@@ -710,8 +605,7 @@ function WhyMattSection() {
               }}
             >
               <div className="mx-auto mb-5 w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: "rgba(201,168,76,0.10)", color: "var(--gold)" }}
-              >
+                style={{ background: "rgba(201,168,76,0.10)", color: "var(--gold)" }}>
                 {p.icon}
               </div>
               <h3 className="font-serif text-lg font-bold mb-3" style={{ color: "var(--cream)" }}>{p.title}</h3>
@@ -720,7 +614,6 @@ function WhyMattSection() {
           ))}
         </div>
 
-        {/* CTA strip */}
         <div
           className="mt-16 rounded-2xl p-10 text-center"
           style={{
@@ -729,10 +622,10 @@ function WhyMattSection() {
           }}
         >
           <h3 className="font-serif text-2xl font-bold mb-3" style={{ color: "var(--cream)" }}>
-            If you're looking for a realtor who treats your goals like his own —
+            Looking for a realtor who treats your goals like his own?
           </h3>
           <p className="mb-8 text-base" style={{ color: "var(--cream-muted)" }}>
-            Let's make your next move a smart one.
+            Let&apos;s make your next move a smart one.
           </p>
           <a
             href="#contact"
@@ -760,40 +653,34 @@ function TestimonialsSection() {
 
   const testimonials = [
     {
-      quote:
-        "Matt sold our home in 11 days — $35,000 over asking. His staging advice and pricing strategy were spot on. We were blown away.",
+      quote: "Matt sold our home in 11 days — $35,000 over asking. His staging advice and pricing strategy were spot on. We were blown away.",
       name: "Sarah & Tom K.",
       location: "St. Thomas, ON",
     },
     {
-      quote:
-        "As first-time buyers, we were nervous about the process. Matt walked us through everything patiently and fought hard to get us the home we wanted within budget. He's the real deal.",
+      quote: "As first-time buyers, we were nervous about the whole process. Matt walked us through everything patiently and fought hard to get us the home we wanted within budget.",
       name: "James & Lisa M.",
       location: "London, ON",
     },
     {
-      quote:
-        "I've bought three investment properties with Matt. His market knowledge and no-nonsense negotiation have made every deal a win. I won't use anyone else.",
+      quote: "I've bought three investment properties with Matt. His market knowledge and no-nonsense negotiation have made every deal a win. I won't use anyone else.",
       name: "David R.",
       location: "Aylmer, ON",
     },
     {
-      quote:
-        "Matt was upfront with us from day one — told us exactly what our home needed and what it would sell for. No games. Sold in a week.",
+      quote: "Matt was upfront with us from day one — told us exactly what our home needed and what it would sell for. No games. Sold in a week.",
       name: "Mark & Carol B.",
       location: "St. Thomas, ON",
     },
     {
-      quote:
-        "Moving from Toronto, we didn't know the London market at all. Matt gave us a masterclass in the neighbourhoods and helped us land a place we absolutely love.",
+      quote: "Moving from Toronto, we didn't know the London market at all. Matt gave us a masterclass on the neighbourhoods and helped us land a place we absolutely love.",
       name: "Priya & Anand S.",
       location: "London, ON",
     },
     {
-      quote:
-        "Professional, responsive, and always had our best interests in mind. The closing process was completely stress-free. Highly recommend Matt to anyone.",
+      quote: "His contractor background was a huge bonus. He spotted issues other agents would have missed and helped us negotiate a better price because of it.",
       name: "Jennifer L.",
-      location: "Aylmer, ON",
+      location: "Woodstock, ON",
     },
   ];
 
@@ -833,7 +720,7 @@ function TestimonialsSection() {
                 {[...Array(5)].map((_, j) => <StarIcon key={j} />)}
               </div>
               <blockquote className="flex-1 text-sm leading-relaxed italic mb-6" style={{ color: "var(--cream-muted)" }}>
-                "{t.quote}"
+                &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div>
                 <div className="font-semibold text-sm" style={{ color: "var(--cream)" }}>{t.name}</div>
@@ -856,7 +743,7 @@ type FormData = {
   intent: string;
   city: string;
   message: string;
-  website: string; // honeypot
+  website: string;
 };
 
 function ContactSection() {
@@ -886,7 +773,6 @@ function ContactSection() {
     setErrorMsg("");
 
     try {
-      // Get reCAPTCHA token
       let recaptchaToken = "";
       if (typeof window !== "undefined" && (window as any).grecaptcha) {
         const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
@@ -898,11 +784,7 @@ function ContactSection() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          _loaded: loadedAt.current,
-          recaptchaToken,
-        }),
+        body: JSON.stringify({ ...form, _loaded: loadedAt.current, recaptchaToken }),
       });
 
       const data = await res.json();
@@ -935,18 +817,17 @@ function ContactSection() {
       style={{ background: "var(--navy-mid)" }}
     >
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
-        {/* Left: info */}
         <div className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
           <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--gold)" }}>
             Get in Touch
           </p>
           <h2 className="font-serif text-4xl font-bold mb-4" style={{ color: "var(--cream)" }}>
-            Let's Talk About{" "}
+            Let&apos;s Talk About{" "}
             <span style={{ color: "var(--gold)" }}>Your Next Move</span>
           </h2>
           <GoldDivider />
           <p className="mt-6 text-base leading-relaxed mb-10" style={{ color: "var(--cream-muted)" }}>
-            Whether you're ready to list, just starting to look, or curious what your home is worth —
+            Whether you&apos;re ready to list, just starting to look, or curious what your home is worth —
             reach out. The first conversation is always free, always honest, and always with Matt directly.
           </p>
 
@@ -954,7 +835,7 @@ function ContactSection() {
             {[
               { icon: <PhoneIcon />, label: "Phone", value: "(519) 878-6735", href: "tel:+15198786735" },
               { icon: <MailIcon />, label: "Email", value: "matt.druzcz@gmail.com", href: "mailto:matt.druzcz@gmail.com" },
-              { icon: <MapPinIcon />, label: "Serving", value: "London · Aylmer · St. Thomas, ON", href: undefined },
+              { icon: <MapPinIcon />, label: "Serving", value: "London · Aylmer · St. Thomas · Woodstock, ON", href: undefined },
             ].map(item => (
               <div key={item.label} className="flex items-center gap-4">
                 <div
@@ -977,7 +858,6 @@ function ContactSection() {
             ))}
           </div>
 
-          {/* Social links */}
           <div className="mt-10 flex gap-3">
             {[
               { href: "https://www.facebook.com/mattdruzcz", icon: <FacebookIcon />, label: "Facebook" },
@@ -998,7 +878,6 @@ function ContactSection() {
           </div>
         </div>
 
-        {/* Right: form */}
         <div
           className={`rounded-2xl p-8 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
           style={{ background: "var(--navy-card)", border: "1px solid var(--navy-border)" }}
@@ -1013,7 +892,7 @@ function ContactSection() {
               </div>
               <h3 className="font-serif text-2xl font-bold mb-3" style={{ color: "var(--cream)" }}>Message Received!</h3>
               <p className="text-sm" style={{ color: "var(--cream-muted)" }}>
-                Thanks! I'll be in touch within 24 hours. You can also reach me directly at (519) 878-6735.
+                Thanks! I&apos;ll be in touch within 24 hours. You can also reach me directly at (519) 878-6735.
               </p>
             </div>
           ) : (
@@ -1022,8 +901,7 @@ function ContactSection() {
                 Send Me a Message
               </h3>
 
-              {/* Honeypot — hidden from real users */}
-              <div className="absolute left-[-9999px] top-0 aria-hidden" aria-hidden="true">
+              <div className="absolute left-[-9999px] top-0" aria-hidden="true">
                 <input
                   type="text"
                   name="website"
@@ -1034,111 +912,61 @@ function ContactSection() {
                 />
               </div>
 
-              {/* Name row */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>First Name *</label>
-                  <input
-                    type="text"
-                    required
-                    autoComplete="given-name"
-                    value={form.first_name}
-                    onChange={e => set("first_name", e.target.value)}
-                    className={inputClass}
-                    style={inputStyle}
-                    placeholder="Jane"
-                  />
+                  <input type="text" required autoComplete="given-name" value={form.first_name}
+                    onChange={e => set("first_name", e.target.value)} className={inputClass} style={inputStyle} placeholder="Jane" />
                 </div>
                 <div>
                   <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>Last Name *</label>
-                  <input
-                    type="text"
-                    required
-                    autoComplete="family-name"
-                    value={form.last_name}
-                    onChange={e => set("last_name", e.target.value)}
-                    className={inputClass}
-                    style={inputStyle}
-                    placeholder="Smith"
-                  />
+                  <input type="text" required autoComplete="family-name" value={form.last_name}
+                    onChange={e => set("last_name", e.target.value)} className={inputClass} style={inputStyle} placeholder="Smith" />
                 </div>
               </div>
 
-              {/* Email & Phone */}
               <div>
                 <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>Email Address *</label>
-                <input
-                  type="email"
-                  required
-                  autoComplete="email"
-                  value={form.email}
-                  onChange={e => set("email", e.target.value)}
-                  className={inputClass}
-                  style={inputStyle}
-                  placeholder="jane@example.com"
-                />
+                <input type="email" required autoComplete="email" value={form.email}
+                  onChange={e => set("email", e.target.value)} className={inputClass} style={inputStyle} placeholder="jane@example.com" />
               </div>
               <div>
                 <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>Phone Number *</label>
-                <input
-                  type="tel"
-                  required
-                  autoComplete="tel"
-                  value={form.phone}
-                  onChange={e => set("phone", e.target.value)}
-                  className={inputClass}
-                  style={inputStyle}
-                  placeholder="(519) 555-0100"
-                />
+                <input type="tel" required autoComplete="tel" inputMode="tel" value={form.phone}
+                  onChange={e => set("phone", e.target.value)} className={inputClass} style={inputStyle} placeholder="(519) 555-0100" />
               </div>
 
-              {/* Intent */}
               <div>
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>I'm Looking To… *</label>
-                <select
-                  required
-                  value={form.intent}
-                  onChange={e => set("intent", e.target.value)}
-                  className={inputClass}
-                  style={inputStyle}
-                >
+                <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>I&apos;m Looking To… *</label>
+                <select required value={form.intent} onChange={e => set("intent", e.target.value)} className={inputClass} style={inputStyle}>
                   <option value="" disabled>Select an option</option>
                   <option value="Sell My Home">Sell My Home</option>
                   <option value="Buy a Home">Buy a Home</option>
-                  <option value="Buy & Sell">Buy & Sell</option>
-                  <option value="Investment Properties">Investment Properties</option>
+                  <option value="Buy & Sell">Buy &amp; Sell</option>
+                  <option value="Investment / Flip">Investment / Flip Property</option>
+                  <option value="Long-Term Rental">Long-Term Rental</option>
                   <option value="Just Exploring">Just Exploring / Get a Valuation</option>
                 </select>
               </div>
 
-              {/* City */}
               <div>
                 <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>City / Area</label>
-                <select
-                  value={form.city}
-                  onChange={e => set("city", e.target.value)}
-                  className={inputClass}
-                  style={inputStyle}
-                >
+                <select value={form.city} onChange={e => set("city", e.target.value)} className={inputClass} style={inputStyle}>
                   <option value="">Select your area (optional)</option>
                   <option value="London, ON">London, ON</option>
                   <option value="Aylmer, ON">Aylmer, ON</option>
                   <option value="St. Thomas, ON">St. Thomas, ON</option>
+                  <option value="Woodstock, ON">Woodstock, ON</option>
+                  <option value="Belmont, ON">Belmont, ON</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
 
-              {/* Message */}
               <div>
                 <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--cream-muted)" }}>Message (optional)</label>
-                <textarea
-                  rows={4}
-                  value={form.message}
-                  onChange={e => set("message", e.target.value)}
-                  className={inputClass}
-                  style={{ ...inputStyle, resize: "none" }}
-                  placeholder="Tell me a bit about what you're looking for…"
-                />
+                <textarea rows={4} value={form.message} onChange={e => set("message", e.target.value)}
+                  className={inputClass} style={{ ...inputStyle, resize: "none" }}
+                  placeholder="Tell me a bit about what you're looking for…" />
               </div>
 
               {errorMsg && (
@@ -1167,112 +995,18 @@ function ContactSection() {
   );
 }
 
-/* ─── FOOTER ────────────────────────────────────────────────────────────── */
-function Footer() {
-  return (
-    <footer
-      className="py-12"
-      style={{ background: "#06090F", borderTop: "1px solid var(--navy-border)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-10 h-10 rounded-full border-2 flex items-center justify-center font-serif text-base font-bold"
-                style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
-              >
-                MD
-              </div>
-              <div>
-                <div className="font-serif font-semibold text-sm" style={{ color: "var(--cream)" }}>Matt Druzcz</div>
-                <div className="text-xs" style={{ color: "var(--cream-muted)" }}>Realtor · London & Area</div>
-              </div>
-            </div>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--cream-muted)" }}>
-              Honest real estate advice for buyers, sellers, and investors across London, Aylmer, and St. Thomas, Ontario.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--gold)" }}>
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              {["About", "Services", "Areas", "Testimonials", "Contact"].map(l => (
-                <li key={l}>
-                  <a
-                    href={`#${l.toLowerCase()}`}
-                    className="text-sm hover:underline transition-colors"
-                    style={{ color: "var(--cream-muted)" }}
-                  >
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--gold)" }}>
-              Contact
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="tel:+15198786735" className="flex items-center gap-2 text-sm hover:underline" style={{ color: "var(--cream-muted)" }}>
-                  <PhoneIcon /> (519) 878-6735
-                </a>
-              </li>
-              <li>
-                <a href="mailto:matt.druzcz@gmail.com" className="flex items-center gap-2 text-sm hover:underline" style={{ color: "var(--cream-muted)" }}>
-                  <MailIcon /> matt.druzcz@gmail.com
-                </a>
-              </li>
-              <li>
-                <span className="flex items-center gap-2 text-sm" style={{ color: "var(--cream-muted)" }}>
-                  <MapPinIcon /> London · Aylmer · St. Thomas, ON
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div
-          className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8"
-          style={{ borderTop: "1px solid var(--navy-border)" }}
-        >
-          <p className="text-xs" style={{ color: "var(--cream-muted)" }}>
-            © {new Date().getFullYear()} Matt Druzcz. All rights reserved.
-          </p>
-          <p className="text-xs" style={{ color: "var(--cream-muted)" }}>
-            Realtor® serving London, Aylmer & St. Thomas, Ontario
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 /* ─── PAGE ──────────────────────────────────────────────────────────────── */
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <StatsBar />
-        <AboutSection />
-        <ServicesSection />
-        <AreasSection />
-        <WhyMattSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <HeroSection />
+      <StatsBar />
+      <AboutSection />
+      <ServicesSection />
+      <AreasSection />
+      <WhyMattSection />
+      <TestimonialsSection />
+      <ContactSection />
+    </main>
   );
 }
