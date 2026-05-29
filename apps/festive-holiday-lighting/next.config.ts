@@ -7,10 +7,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-<<<<<<< HEAD
-      { source: "/services", destination: "/services", permanent: false },
-=======
->>>>>>> origin/main
       { source: "/hamilton", destination: "/service-areas/hamilton", permanent: true },
       { source: "/burlington", destination: "/service-areas/burlington", permanent: true },
       { source: "/oakville", destination: "/service-areas/oakville", permanent: true },
@@ -21,10 +17,6 @@ const nextConfig: NextConfig = {
       { source: "/grimbsy", destination: "/service-areas/grimsby", permanent: true },
       { source: "/niagara-falls", destination: "/service-areas/niagara-falls", permanent: true },
       { source: "/st-catharines", destination: "/service-areas/st-catharines", permanent: true },
-<<<<<<< HEAD
-      { source: "/contact", destination: "/contact", permanent: false },
-=======
->>>>>>> origin/main
       { source: "/about-us", destination: "/about", permanent: true },
       { source: "/holiday-lighting-installation", destination: "/services/christmas-light-installation", permanent: true },
       { source: "/residential-holiday-lighting", destination: "/services/residential-holiday-lighting", permanent: true },
@@ -32,10 +24,6 @@ const nextConfig: NextConfig = {
       { source: "/commercial-municipal-lighting", destination: "/services/municipal-bia-lighting", permanent: true },
       { source: "/tree-lighting", destination: "/services/tree-lighting", permanent: true },
       { source: "/interior-holiday-decorating-services", destination: "/services/interior-holiday-decorating", permanent: true },
-<<<<<<< HEAD
-      { source: "/service-areas", destination: "/service-areas", permanent: false },
-=======
->>>>>>> origin/main
     ];
   },
   async headers() {

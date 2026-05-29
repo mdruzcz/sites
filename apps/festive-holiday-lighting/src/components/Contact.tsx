@@ -1,10 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-<<<<<<< HEAD
-=======
 import { Turnstile } from "@marsidev/react-turnstile";
->>>>>>> origin/main
 import { site } from "@/lib/site";
 import { PhoneIcon, MapPinIcon, CheckIcon } from "./icons";
 
@@ -49,10 +46,7 @@ export function Contact({ cityName }: { cityName?: string }) {
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
-<<<<<<< HEAD
-=======
   const [token, setToken] = useState<string | null>(null);
->>>>>>> origin/main
   const fileInputRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
@@ -82,20 +76,14 @@ export function Contact({ cityName }: { cityName?: string }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-<<<<<<< HEAD
-=======
     if (!token) { setErrorMsg("Please complete the captcha."); setStatus("error"); return; }
->>>>>>> origin/main
     setStatus("sending");
     setErrorMsg("");
     try {
       const fd = new FormData();
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       fd.append("_loaded", String(loadedAt.current));
-<<<<<<< HEAD
-=======
       fd.append("token", token);
->>>>>>> origin/main
       files.forEach((f) => fd.append("photos", f));
       const res = await fetch("/api/contact", { method: "POST", body: fd });
       const data = await res.json().catch(() => ({}));
@@ -325,11 +313,6 @@ export function Contact({ cityName }: { cityName?: string }) {
                   </p>
                 )}
 
-<<<<<<< HEAD
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-=======
                 <Turnstile
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
                   onSuccess={setToken}
@@ -338,7 +321,6 @@ export function Contact({ cityName }: { cityName?: string }) {
                 <button
                   type="submit"
                   disabled={status === "sending" || !token}
->>>>>>> origin/main
                   className="w-full py-4 rounded-full font-semibold text-white transition-all hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed min-h-11 flex items-center justify-center gap-2"
                   style={{
                     background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))",
