@@ -7,6 +7,7 @@ import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 import services from "@/content/services.json";
+import { imageFor } from "@/lib/service-images";
 
 export const revalidate = 3600;
 
@@ -16,13 +17,6 @@ const reservedSlugs = new Set([
   "about", "services", "contact", "faq", "service-locations", "project-examples", "blog",
   "api", "_next", "images", "sitemap.xml", "robots.txt",
 ]);
-
-const categoryBg: Record<string, string> = {
-  "staining-sealing": "/images/wp-deck-stained-cedar.jpg",
-  "woodwork": "/images/wp-deck-building.jpg",
-  "concrete": "/images/wp-stamped-concrete.jpg",
-  "landscaping": "/images/wp-backyard-deck.jpg",
-};
 
 type Params = { slug: string };
 
@@ -42,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title: `${svc.title} | Master Decker`,
       description: svc.blurb,
       url: `${site.url}/${slug}`,
-      images: [categoryBg[svc.categoryId] || "/images/pergola-bg.jpg"],
+      images: [imageFor(svc.slug, svc.categoryId)],
     },
   };
 }
@@ -54,7 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   if (!svc) notFound();
 
   const related = allServices.filter((s) => s.categoryId === svc.categoryId && s.slug !== svc.slug).slice(0, 3);
-  const bg = categoryBg[svc.categoryId] || "/images/pergola-bg.jpg";
+  const bg = imageFor(svc.slug, svc.categoryId);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -139,7 +133,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {related.map((r) => (
                   <Link key={r.slug} href={`/${r.slug}`} className="svc-card" aria-label={r.title}>
-                    <div className="svc-card-bg" style={{ backgroundImage: `url(${categoryBg[r.categoryId]})` }} role="img" aria-label={r.title} />
+                    <div className="svc-card-bg" style={{ backgroundImage: `url(${imageFor(r.slug, r.categoryId)})` }} role="img" aria-label={r.title} />
                     <div className="svc-card-overlay" />
                     <div className="svc-card-content">
                       <div className="svc-card-title">{r.title}</div>

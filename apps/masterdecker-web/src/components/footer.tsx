@@ -21,7 +21,7 @@ const additionalLinks = [
 export function Footer() {
   return (
     <footer className="bg-[var(--shell)] text-white">
-      <div className="container py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container pt-24 pb-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link href="/" aria-label="Master Decker home" className="inline-block mb-5">
             <Image src="/images/logo-white.png" alt="Master Decker Inc. logo" width={180} height={55} className="h-14 w-auto" />
@@ -73,7 +73,7 @@ export function Footer() {
           <div className="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--accent)]">Join Our Newsletter</div>
           <form className="flex gap-2">
             <input type="email" placeholder="Email" aria-label="Email address" className="flex-1 px-3 py-2 rounded text-[var(--ink)] text-sm bg-white" />
-            <button type="submit" className="bg-[var(--accent)] hover:bg-[#d56814] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">Send</button>
+            <button type="submit" className="bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">Send</button>
           </form>
         </div>
       </div>

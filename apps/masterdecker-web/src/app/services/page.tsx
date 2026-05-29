@@ -6,6 +6,7 @@ import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 import services from "@/content/services.json";
+import { imageFor } from "@/lib/service-images";
 
 export const revalidate = 3600;
 
@@ -14,13 +15,6 @@ export const metadata: Metadata = {
   title: "Our Services | Decks, Fences, Concrete | Master Decker",
   description:
     "Full list of Master Decker outdoor services — deck staining, deck building, fence installation, concrete driveways, retaining walls, pergolas, gazebos, and more across Southwestern Ontario.",
-};
-
-const categoryBg: Record<string, string> = {
-  "staining-sealing": "/images/wp-deck-stained-cedar.jpg",
-  "woodwork": "/images/wp-deck-building.jpg",
-  "concrete": "/images/wp-stamped-concrete.jpg",
-  "landscaping": "/images/wp-backyard-deck.jpg",
 };
 
 export default function ServicesPage() {
@@ -47,7 +41,7 @@ export default function ServicesPage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {cat.services.map((s) => (
                   <Link key={s.slug} href={`/${s.slug}`} className="svc-card" aria-label={s.title}>
-                    <div className="svc-card-bg" style={{ backgroundImage: `url(${categoryBg[cat.id]})` }} role="img" aria-label={s.title} />
+                    <div className="svc-card-bg" style={{ backgroundImage: `url(${imageFor(s.slug, cat.id)})` }} role="img" aria-label={s.title} />
                     <div className="svc-card-overlay" />
                     <div className="svc-card-content">
                       <div className="svc-card-title">{s.title}</div>
