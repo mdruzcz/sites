@@ -5,12 +5,14 @@ import {
   Star,
   CheckCircle,
   Phone,
-  Award,
   ShieldCheck,
   Sparkles,
   Calendar,
   Snowflake,
   Lightbulb,
+  Camera,
+  Wrench,
+  Truck,
 } from "lucide-react";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -27,103 +29,103 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title:
-    "Award-Winning Christmas Light Installation in the GTA | GTA Christmas Lights",
+    "Professional Christmas Light Installation in the GTA | GTA Christmas Lighting",
   description:
-    "Professional Christmas light installation across the Greater Toronto Area. 35+ years experience, 3× Landscape Ontario Award of Excellence, commercial-grade LED lights, full design–install–takedown–storage. Free quote.",
+    "GTA's top-rated Christmas light installers. All-inclusive holiday lighting: rental or purchase, custom design, install, maintain, takedown & storage. Serving Toronto, Mississauga, Burlington, Oakville & the rest of the GTA. Free quotes.",
   openGraph: {
-    title: "Award-Winning Christmas Light Installation in the GTA",
+    title: "Professional Christmas Light Installation in the GTA",
     description:
-      "35+ years, 3× Landscape Ontario Award of Excellence. Commercial-grade LED lights, custom design, full-service install. Book before slots fill.",
+      "All-inclusive holiday lighting: rental or purchase, custom design, install, maintain, takedown & storage. Free quotes across the GTA.",
     url: site.url,
     images: [
       {
-        url: "/images/gallery-1.png",
-        alt: "Award-winning Christmas light installation on a luxury Toronto home by GTA Christmas Lights",
+        url: "/images/hero.jpg",
+        alt: "Professional Christmas light installation by GTA Christmas Lighting on a GTA home",
       },
     ],
   },
 };
 
 const trustStats = [
-  { value: "35+", label: "Years in Business" },
-  { value: "3×", label: "Award of Excellence" },
-  { value: "20", label: "GTA Cities Served" },
-  { value: "97%", label: "Lower Energy Use" },
+  { value: "$700+", label: "Full-Season Packages" },
+  { value: "14", label: "GTA Cities Served" },
+  { value: "Rental", label: "Or Purchase" },
+  { value: "Oct 1", label: "Install Season Starts" },
 ];
 
 const pricingTiers = [
   {
-    name: "Classic",
-    tagline: "Refined roofline + entrance",
-    startingAt: "From $1,500",
+    name: "Rental",
+    tagline: "Hassle-free full season",
+    startingAt: "From $700",
     features: [
-      "Custom-cut LED roofline lights",
-      "Programmable dusk-to-dawn timer",
-      "Front-door wreath",
-      "Perfect-Until-Christmas-Eve Guarantee",
-      "End-of-season takedown & storage",
+      "No upfront cost for lights",
+      "Custom design for your home",
+      "Professional install",
+      "In-season maintenance",
+      "Takedown & storage included",
     ],
-    cta: "Request a Quote",
+    cta: "Get a Rental Quote",
   },
   {
-    name: "Signature",
-    tagline: "Our most popular package",
+    name: "Purchase + Install",
+    tagline: "Most popular package",
     featured: true,
-    startingAt: "From $2,900",
+    startingAt: "From $1,200",
     features: [
-      "Everything in Classic",
-      "Garlands on pillars & railings",
-      "Lit shrubs across the front",
-      "Two oversized custom wreaths",
-      "Priority maintenance all season",
+      "Own custom-cut LED lights",
+      "Lower install fees year two onward",
+      "Professional installation",
+      "In-season maintenance",
+      "Takedown & storage included",
     ],
-    cta: "Request a Quote",
+    cta: "Get a Purchase Quote",
   },
   {
-    name: "Estate",
-    tagline: "Full property transformation",
-    startingAt: "From $4,500",
+    name: "Permanent LED",
+    tagline: "Year-round programmable",
+    startingAt: "Custom Quote",
     features: [
-      "Everything in Signature",
-      "Wrapped trees & spiral-wrapped trunks",
-      "Window candles & accents",
-      "Custom design rendered for your home",
-      "Dedicated design consultant",
+      "Year-round programmable lighting",
+      "App-controlled scenes & colours",
+      "Christmas mode at the tap of a button",
+      "No annual install fees",
+      "Holiday-ready presets",
     ],
-    cta: "Request a Quote",
+    cta: "Learn More",
   },
 ];
 
 const processSteps = [
   {
-    icon: Phone,
-    title: "Reach Out",
+    icon: Camera,
+    title: "Send a Photo",
     description:
-      "Tell us your address. We'll review your property and book a design visit at a time that suits you.",
+      "Text or email a photo of your home or business. We'll send a quick, accurate quote — no on-site visit required to get started.",
   },
   {
     icon: Sparkles,
     title: "Custom Design",
     description:
-      "An award-winning designer plans every detail — bulb colour, layout, accents — to compliment your home.",
+      "Our designers create a lighting plan tailored to your property — roofline, trees, columns, walkways. We work to your style and budget.",
   },
   {
     icon: Lightbulb,
     title: "Professional Install",
     description:
-      "Our certified team arrives with aerial lifts, custom-cut LED lights, and finishes every detail before they leave.",
+      "Our skilled team installs your lights safely and efficiently. Custom-cut to your roofline, secure connections, programmed timers.",
   },
   {
-    icon: ShieldCheck,
-    title: "All-Season Care",
+    icon: Wrench,
+    title: "Season Maintenance",
     description:
-      "Hassle-Free Christmas Guarantee. We monitor your display and fix anything that misbehaves — fast.",
+      "A bulb goes out — we replace it. Strand stops working — we're there. Your display looks perfect all season long.",
   },
   {
-    icon: Snowflake,
-    title: "Takedown & Storage",
+    icon: Truck,
+    title: "Removal & Storage",
     description:
-      "After the season we remove everything, inventory it, and store it labelled for next year's install.",
+      "At the end of January, we take everything down and store it. No tangled wires in your attic. Just an effortless next year.",
   },
 ];
 
@@ -157,8 +159,8 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden bg-[var(--dark-bg)]">
         <Image
-          src="/images/hero-burton-rd.jpg"
-          alt="Award-winning Christmas light installation on a Toronto luxury home at twilight by GTA Christmas Lights"
+          src="/images/hero.jpg"
+          alt="Professional Christmas light installation on a GTA home at night by GTA Christmas Lighting"
           fill
           className="object-cover opacity-45"
           priority
@@ -167,20 +169,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--dark-bg)]/55 via-[var(--dark-bg)]/35 to-[var(--dark-bg)]" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <p className="text-[var(--accent-gold)] text-xs sm:text-sm tracking-[0.32em] uppercase mb-5 font-medium">
-            Greater Toronto Area · 35+ Years · 3× Award of Excellence
+            Greater Toronto Area · All-Inclusive Holiday Lighting
           </p>
           <h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] max-w-4xl mx-auto"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Christmas Lights{" "}
-            <span className="text-[var(--accent-gold)]">Done Right</span>{" "}
+            Christmas Light Installation{" "}
+            <span className="text-[var(--accent-gold)]">Done For You</span>{" "}
             Across the GTA
           </h1>
           <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
-            Award-winning design. Commercial-grade LED lights. Full-service from
-            install to takedown. The Greater Toronto Area&apos;s most-trusted holiday
-            lighting team since 1989.
+            Rental or purchase. Custom design. Professional install. In-season
+            maintenance. Takedown and storage included. Send us a photo of your
+            home for a free quote — that&apos;s all it takes.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -200,15 +202,15 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-white/65">
             <span className="flex items-center gap-1.5">
               <CheckCircle className="h-4 w-4 text-[var(--accent-gold)]" />
-              Custom-cut LED lights
+              From $700 / full season
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle className="h-4 w-4 text-[var(--accent-gold)]" />
-              Fully insured · WSIB
+              Free quote from a photo
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle className="h-4 w-4 text-[var(--accent-gold)]" />
-              Perfect-Until-Christmas-Eve Guarantee
+              All-holiday lighting
             </span>
           </div>
         </div>
@@ -235,67 +237,166 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US — Split with image */}
-      <section className="bg-[var(--background)]">
-        <div className="grid lg:grid-cols-2 min-h-[560px]">
-          <div className="relative min-h-[400px] lg:min-h-full">
-            <Image
-              src="/images/gallery-12.png"
-              alt="Landscape Ontario Award of Excellence for Christmas lighting won by GTA Christmas Lights"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="bg-[var(--background)] px-8 py-14 lg:px-14 flex flex-col justify-center">
-            <p className="text-[var(--accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-4">
-              Why Choose Us
-            </p>
-            <h2
-              className="text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight mb-8"
-              style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-            >
-              The GTA&apos;s Most-Awarded Christmas Lighting Team
-            </h2>
-            <div className="space-y-6">
-              {[
-                {
-                  icon: Award,
-                  title: "Three Awards of Excellence",
-                  desc: "Three Landscape Ontario Awards of Excellence for Christmas Holiday Lighting Design and Installation — recognised by our industry, year after year.",
-                },
-                {
-                  icon: Lightbulb,
-                  title: "Commercial-Grade LED",
-                  desc: "Bulbs that shine 5–6× brighter than retail, use up to 97% less electricity, and look the same on year five as they do on day one.",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Fully Insured · WSIB · Heights-Certified",
-                  desc: "Aerial-lift equipment, working-at-heights certification, and full insurance mean you and our crew are protected on every install.",
-                },
-              ].map((f) => (
-                <div key={f.title} className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--accent)]/10">
-                    <f.icon className="h-5 w-5 text-[var(--accent)]" />
-                  </div>
-                  <div>
-                    <h3
-                      className="font-bold text-[var(--foreground)] mb-1"
-                      style={{ fontFamily: "var(--font-sans)" }}
-                    >
-                      {f.title}
-                    </h3>
-                    <p className="text-sm text-[var(--muted)] leading-relaxed">
-                      {f.desc}
-                    </p>
-                  </div>
+      {/* BENEFITS — three cards */}
+      <section className="bg-[var(--background)] py-20 md:py-24">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-[var(--accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
+            Why GTA Christmas Lighting
+          </p>
+          <h2
+            className="text-center text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-3 max-w-3xl mx-auto"
+            style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+          >
+            All-Inclusive Holiday Lighting — Nothing Left On Your Plate
+          </h2>
+          <p className="text-center text-[var(--muted)] mb-12 max-w-2xl mx-auto">
+            We provide the lights, install them, maintain them, take them down,
+            and store them. You enjoy the holidays — that&apos;s it.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                img: "/images/extra-installer.png",
+                title: "Easy, Full-Service",
+                desc: "Free quote from a photo, custom design, install, in-season maintenance, takedown at end of January, and storage. All in one package.",
+              },
+              {
+                img: "/images/extra-services.png",
+                title: "Professional LED Lights",
+                desc: "Energy-efficient, weather-resistant, professional-grade LED bulbs. Custom-cut to your roofline so wires are never visible.",
+              },
+              {
+                img: "/images/extra-phoenix.png",
+                title: "Safety + Right Equipment",
+                desc: "Decorating tall homes is risky. We bring aerial-lift equipment, working-at-heights training, and full insurance to every install.",
+              },
+            ].map((b) => (
+              <div key={b.title} className="card p-7 flex flex-col">
+                <div className="relative aspect-[4/3] mb-5 rounded-lg overflow-hidden bg-[var(--background)]">
+                  <Image
+                    src={b.img}
+                    alt={b.title}
+                    fill
+                    className="object-contain p-6"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-              ))}
+                <h3
+                  className="font-bold text-[var(--foreground)] text-xl mb-3"
+                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+                >
+                  {b.title}
+                </h3>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">
+                  {b.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPLIT — Residential vs Commercial */}
+      <section className="bg-[var(--evergreen)] text-white">
+        <div className="container mx-auto px-4 py-20">
+          <p className="text-center text-[var(--accent-gold)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
+            Residential &amp; Commercial
+          </p>
+          <h2
+            className="text-center text-3xl md:text-4xl font-bold mb-12"
+            style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+          >
+            Homes &amp; Businesses Across the GTA
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/images/hero.jpg"
+                  alt="Residential Christmas light installation by GTA Christmas Lighting"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--evergreen)]/60 to-transparent" />
+              </div>
+              <div className="p-7">
+                <h3
+                  className="text-2xl font-bold text-white mb-3"
+                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+                >
+                  Residential
+                </h3>
+                <p className="text-white/75 text-sm leading-relaxed mb-5">
+                  Transform your home into a festive wonderland. Custom-cut
+                  roofline lights, lit walkways, garden features, wrapped trees,
+                  oversized wreaths, and more.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Custom displays for homes of all sizes",
+                    "Elegant roofline lighting",
+                    "Beautifully lit pathways &amp; garden features",
+                    "Wrapped trees, columns, and entrances",
+                  ].map((f) => (
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-sm text-white/75"
+                    >
+                      <CheckCircle className="h-4 w-4 text-[var(--accent-gold)] shrink-0 mt-0.5" />
+                      <span dangerouslySetInnerHTML={{ __html: f }} />
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="btn btn-gold">
+                  Get a Residential Quote
+                </Link>
+              </div>
             </div>
-            <Link href="/about" className="btn btn-ghost-dark mt-10 self-start">
-              Our Story →
-            </Link>
+            <div className="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/images/benefit-installers.png"
+                  alt="Commercial Christmas light installation for a business by GTA Christmas Lighting"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--evergreen)]/60 to-transparent" />
+              </div>
+              <div className="p-7">
+                <h3
+                  className="text-2xl font-bold text-white mb-3"
+                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+                >
+                  Commercial
+                </h3>
+                <p className="text-white/75 text-sm leading-relaxed mb-5">
+                  Attract customers and create a festive atmosphere. We design,
+                  install, and maintain large-scale displays that make
+                  businesses stand out.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Eye-catching displays for storefronts",
+                    "Festive lighting for hotels, restaurants &amp; condos",
+                    "Municipal &amp; park installations",
+                    "After-hours scheduling &amp; minimal disruption",
+                  ].map((f) => (
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-sm text-white/75"
+                    >
+                      <CheckCircle className="h-4 w-4 text-[var(--accent-gold)] shrink-0 mt-0.5" />
+                      <span dangerouslySetInnerHTML={{ __html: f }} />
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact" className="btn btn-gold">
+                  Get a Commercial Quote
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -304,7 +405,7 @@ export default function HomePage() {
       <section className="bg-[var(--dark-bg)] py-14">
         <div className="container mx-auto px-4">
           <p className="text-center text-white/55 text-xs tracking-[0.3em] uppercase mb-3">
-            Real GTA Installs
+            Recent GTA Installs
           </p>
           <h2
             className="text-center text-3xl md:text-4xl font-bold text-white mb-10"
@@ -315,20 +416,20 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               {
-                src: "/images/gallery-1.png",
-                alt: "Christmas lights on Wellesley Street luxury Toronto home by GTA Christmas Lights",
+                src: "/images/hero.jpg",
+                alt: "Custom Christmas light installation by GTA Christmas Lighting",
               },
               {
-                src: "/images/gallery-2.png",
-                alt: "Custom Christmas lighting on a Glenwood Etobicoke home by GTA Christmas Lights",
+                src: "/images/benefit-installers.png",
+                alt: "Holiday lighting installation by GTA Christmas Lighting",
               },
               {
-                src: "/images/gallery-9.png",
-                alt: "Christmas light installation in Vellore Park Vaughan by GTA Christmas Lights",
+                src: "/images/extra-installer.png",
+                alt: "Tree lighting installation by GTA Christmas Lighting",
               },
               {
-                src: "/images/gallery-7.png",
-                alt: "Front-door Christmas decorating in Hoggs Hollow Toronto by GTA Christmas Lights",
+                src: "/images/extra-services.png",
+                alt: "Custom display Christmas lighting by GTA Christmas Lighting",
               },
             ].map((img) => (
               <div
@@ -348,7 +449,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-8">
             <Link href="/gallery" className="btn btn-ghost">
-              View Full Design Gallery →
+              View Full Gallery →
             </Link>
           </div>
         </div>
@@ -358,17 +459,17 @@ export default function HomePage() {
       <section className="bg-[var(--background)] py-20 md:py-24">
         <div className="container mx-auto px-4">
           <p className="text-center text-[var(--accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
-            What We Do
+            What We Offer
           </p>
           <h2
             className="text-center text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-3 max-w-2xl mx-auto"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Full-Service Holiday Lighting for Homes &amp; Businesses
+            Services for Every Festive Occasion
           </h2>
           <p className="text-center text-[var(--muted)] max-w-2xl mx-auto mb-12">
-            From a refined warm-white roofline to a fully transformed estate
-            property, we design, install, maintain, take down, and store.
+            From Christmas to Diwali to Hanukkah — we design and install
+            festive lighting for every celebration.
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
@@ -426,7 +527,7 @@ export default function HomePage() {
                 className="text-3xl md:text-4xl font-bold text-white mb-10"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
-                Simple, Stress-Free, From Start to Finish
+                Five Simple Steps to a Stunning Display
               </h2>
               <div className="space-y-6">
                 {processSteps.map((step) => (
@@ -448,13 +549,12 @@ export default function HomePage() {
             </div>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden order-first lg:order-last">
               <Image
-                src="/images/gallery-11.png"
-                alt="Spiral-wrapped tree Christmas lighting installation by GTA Christmas Lights"
+                src="/images/benefit-installers.png"
+                alt="GTA Christmas Lighting installers placing professional Christmas lights on a tree"
                 fill
-                className="object-cover"
+                className="object-contain bg-[var(--dark-surface)] p-12"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)]/30 to-transparent" />
             </div>
           </div>
         </div>
@@ -500,13 +600,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SPLIT SECTION — Pro vs DIY */}
+      {/* RENTAL VS PURCHASE */}
       <section className="bg-[var(--dark-surface)]">
         <div className="grid lg:grid-cols-2 min-h-[500px]">
           <div className="relative min-h-[400px] lg:min-h-full">
             <Image
-              src="/images/rooftop-warm.jpg"
-              alt="Professional Christmas lights installation on Burton Road Toronto by GTA Christmas Lights"
+              src="/images/extra-phoenix.png"
+              alt="Permanent LED lighting installation on a GTA home by GTA Christmas Lighting"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -514,35 +614,36 @@ export default function HomePage() {
           </div>
           <div className="px-8 py-14 lg:px-14 flex flex-col justify-center">
             <p className="text-[var(--accent-gold)] text-xs tracking-[0.25em] uppercase font-semibold mb-4">
-              The Professional Difference
+              Rental, Purchase, or Permanent
             </p>
             <h2
               className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
-              Skip the Ladders. Skip the Stress.
+              Three Ways to Light Up Your Home
             </h2>
             <div className="space-y-4 text-white/72 text-sm leading-relaxed">
               <p>
-                Standing on a ladder in November, untangling last year&apos;s
-                lights, chasing a single dead bulb — that&apos;s the DIY
-                Christmas experience. Our clients haven&apos;t done it in years.
+                <strong className="text-white">Rental</strong> is hassle-free.
+                We provide the lights, install, maintain, take down, and store —
+                all for one seasonal fee. Perfect for trying out a display or
+                for homeowners who don&apos;t want long-term commitment.
               </p>
               <p>
-                We arrive with a full crew, aerial-lift equipment, and
-                commercial-grade LED lights cut to fit your home. The lights
-                look like they were made for your house. The power runs
-                discreetly. Everything turns on at dusk automatically.
+                <strong className="text-white">Purchase + Install</strong> is
+                ideal if you want to invest. You own custom-cut, professional-grade
+                LEDs. Year-two and beyond cost less since the lights are yours.
               </p>
               <p>
-                When the season ends, we take everything down, store it
-                labelled, and bring it back next November ready to install. You
-                own the lights — we own the work.
+                <strong className="text-white">Permanent LED</strong> goes up
+                once and stays year-round. Tasteful daytime profile, vibrant
+                night-time scenes for every holiday and special occasion, all
+                controlled from your phone.
               </p>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="btn btn-primary">
-                Get a Free Quote
+                Compare Options
               </Link>
               <a href={site.phoneHref} className="btn btn-ghost">
                 <Phone className="h-4 w-4" />
@@ -556,8 +657,8 @@ export default function HomePage() {
       {/* PHOTO BANNER */}
       <section className="relative h-72 md:h-80 flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/hero-burton-rd-2.jpg"
-          alt="Award-winning Christmas lighting on a Toronto street by GTA Christmas Lights"
+          src="/images/hero.jpg"
+          alt="Stunning Christmas lights on a GTA home at twilight by GTA Christmas Lighting"
           fill
           className="object-cover"
         />
@@ -574,8 +675,8 @@ export default function HomePage() {
             October &amp; November Slots Fill Fast
           </h2>
           <p className="text-white/75 text-base mb-7">
-            We design, build, and install all year — but October and November
-            are when calendars fill. Reserve your install date now.
+            Our installs run October 1 through late December. Earlier bookings
+            get preferred install dates — reserve yours now.
           </p>
           <Link href="/contact" className="btn btn-gold text-base px-10">
             Reserve My Spot
@@ -593,13 +694,12 @@ export default function HomePage() {
             className="text-center text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Transparent, Custom-Quoted Packages
+            Choose Your Package
           </h2>
           <p className="text-center text-[var(--muted)] mb-12 max-w-2xl mx-auto text-sm">
-            Every package includes design, custom-cut LED lights, professional
-            install, timer programming, season-long maintenance, takedown, and
-            storage. Year-two pricing drops 45–55% because the lights are
-            already yours.
+            Most full-season residential packages run $700–$2,000 depending on
+            home size and chosen features. Custom quote sent the same day for
+            most properties.
           </p>
           <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
             {pricingTiers.map((tier) => (
@@ -685,11 +785,11 @@ export default function HomePage() {
             className="text-center text-3xl md:text-4xl font-bold text-white mb-3"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Serving 20 Cities Across the Greater Toronto Area
+            Serving the Greater Toronto Area
           </h2>
           <p className="text-center text-white/65 mb-12 max-w-2xl mx-auto text-sm">
-            From Toronto&apos;s heritage neighbourhoods to the executive estates
-            of Caledon and Kleinburg — we light the GTA.
+            Toronto, Mississauga, Burlington, Oakville, Vaughan, Markham, and
+            beyond — we light up the GTA every holiday season.
           </p>
           <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
             {serviceAreas.map((area) => (
@@ -722,19 +822,19 @@ export default function HomePage() {
                 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight mb-5"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
-                Ready to See Your Home in Lights?
+                Light Up Your GTA Home — Send Us a Photo
               </h2>
               <p className="text-[var(--muted)] mb-7 leading-relaxed">
-                Send us your address and a few details. A designer will review
-                your property and respond within 1 business day with a free,
-                no-obligation quote.
+                The fastest way to get a quote: send us a photo of your home or
+                business with a few details. A designer will respond the same
+                day with a custom-tailored quote.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Free property review and quote",
-                  "Award-winning custom design",
-                  "Insured · WSIB · Heights-certified",
-                  "Hassle-Free Christmas Guarantee",
+                  "Free, no-obligation quote",
+                  "Custom design for your property",
+                  "Rental or purchase options",
+                  "All-inclusive: install · maintain · take down · store",
                 ].map((f) => (
                   <li
                     key={f}
@@ -746,7 +846,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="flex gap-3 items-center text-sm text-[var(--muted)]">
-                Prefer to chat?
+                Prefer to call?
                 <a
                   href={site.phoneHref}
                   className="text-[var(--accent)] font-semibold hover:underline"
@@ -756,7 +856,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="card p-7 md:p-9">
-              <QuoteForm heading="Tell Us About Your Home" />
+              <QuoteForm heading="Tell Us About Your Property" />
             </div>
           </div>
         </div>
@@ -765,8 +865,8 @@ export default function HomePage() {
       {/* FINAL CTA */}
       <section className="relative py-24 md:py-32 flex items-center overflow-hidden">
         <Image
-          src="/images/gallery-1.png"
-          alt="Award-winning luxury Christmas light display on a Toronto home by GTA Christmas Lights"
+          src="/images/hero.jpg"
+          alt="Stunning Christmas light display on a GTA home by GTA Christmas Lighting"
           fill
           className="object-cover"
         />
@@ -780,12 +880,12 @@ export default function HomePage() {
               className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
-              Make This the Best-Looking Year Yet.
+              Make This Holiday Season Effortless.
             </h2>
             <p className="text-white/72 text-lg leading-relaxed mb-8">
-              Join thousands of GTA homes that don&apos;t worry about Christmas
-              lights anymore. We design it. We install it. We maintain it. We
-              take it down. You enjoy it.
+              Send a photo. Get a quote. Pick your install date. That&apos;s
+              it. Everything else — design, install, maintain, take down,
+              store — is on us.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

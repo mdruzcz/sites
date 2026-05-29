@@ -7,46 +7,48 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Design Gallery | Award-Winning Christmas Lighting Across the GTA",
+  title: "Project Gallery | GTA Christmas Lighting Past Installs",
   description:
-    "Browse our design gallery of professional Christmas light installations across Toronto, Vaughan, Markham, Oakville, and the rest of the GTA. Award-winning displays you can recreate at your home.",
+    "Browse our gallery of past Christmas lighting projects across the Greater Toronto Area — Toronto, Mississauga, Oakville, Vaughan, Markham, and more.",
   openGraph: {
-    title: "Design Gallery — GTA Christmas Lights",
+    title: "Project Gallery — GTA Christmas Lighting",
     description:
-      "Award-winning Christmas light displays across the Greater Toronto Area.",
+      "Past Christmas light installations across the Greater Toronto Area.",
     url: `${site.url}/gallery`,
   },
 };
 
 const galleryItems = [
-  { src: "/images/gallery-1.png", alt: "Award-winning Christmas lights on Wellesley Street Toronto by GTA Christmas Lights", caption: "Wellesley · Toronto" },
-  { src: "/images/gallery-2.png", alt: "Glenwood Etobicoke Christmas light installation by GTA Christmas Lights", caption: "Glenwood · Etobicoke" },
-  { src: "/images/gallery-3.jpg", alt: "St. Georges Road award-winning Christmas lighting in Toronto", caption: "St. Georges · Toronto" },
-  { src: "/images/gallery-4.png", alt: "Chaplin Crescent Christmas lights Toronto by GTA Christmas Lights", caption: "Chaplin · Toronto" },
-  { src: "/images/gallery-5.png", alt: "Neville Beaches Toronto Christmas lighting by GTA Christmas Lights", caption: "Neville · Beaches" },
-  { src: "/images/gallery-6.jpg", alt: "Burton Road Toronto Christmas lights night-time by GTA Christmas Lights", caption: "Burton Rd · Toronto" },
-  { src: "/images/gallery-7.png", alt: "Hoggs Hollow front door Christmas decorating by GTA Christmas Lights", caption: "Hoggs Hollow · Toronto" },
-  { src: "/images/gallery-8.png", alt: "Mississauga Christmas light installation by GTA Christmas Lights", caption: "Mississauga" },
-  { src: "/images/gallery-9.png", alt: "Vellore Park Vaughan Christmas lights by GTA Christmas Lights", caption: "Vellore Park · Vaughan" },
-  { src: "/images/gallery-10.jpg", alt: "King City Christmas light installation by GTA Christmas Lights", caption: "King City" },
-  { src: "/images/gallery-11.png", alt: "Spiral-wrapped Christmas tree by GTA Christmas Lights", caption: "Wrapped Tree" },
-  { src: "/images/gallery-12.png", alt: "Award of Excellence trophy GTA Christmas Lights", caption: "Award of Excellence" },
-  { src: "/images/gallery-13.jpg", alt: "Warm white LED Christmas lights on King City home", caption: "Warm White · King City" },
-  { src: "/images/gallery-14.png", alt: "Western colours multi-color Christmas lighting by GTA Christmas Lights", caption: "Multi-color Display" },
-  { src: "/images/gallery-15.jpg", alt: "Burton Road Toronto daytime Christmas decorations", caption: "Burton Rd · Daytime" },
-  { src: "/images/gallery-16.jpg", alt: "Well-lit multi-color spruce tree Christmas lighting", caption: "Lit Spruce Tree" },
-  { src: "/images/rooftop-warm.jpg", alt: "Rooftop warm Christmas lighting daytime Toronto", caption: "Roofline Warm-White" },
-  { src: "/images/tree-railing.jpg", alt: "Front door and railing Christmas decorating Toronto", caption: "Front Door & Railing" },
-  { src: "/images/pillars-green.jpg", alt: "Christmas greenery on pillars by GTA Christmas Lights", caption: "Pillar Greenery" },
-  { src: "/images/white-trees.jpg", alt: "White lights on trees with roofline display", caption: "White Trees & Roofline" },
-  { src: "/images/commercial-cne.jpg", alt: "Commercial CNE Christmas installation by GTA Christmas Lights", caption: "CNE · Commercial" },
-  { src: "/images/ridley-school.jpg", alt: "Ridley school Christmas decorations by GTA Christmas Lights", caption: "Ridley · Institutional" },
-  { src: "/images/locale-restaurant.jpg", alt: "Locale Restaurant King City Christmas decorations", caption: "Locale Restaurant" },
-  { src: "/images/interior-1.png", alt: "Interior Christmas decorating service Toronto by GTA Christmas Lights", caption: "Interior · Toronto" },
-  { src: "/images/interior-2.png", alt: "Holiday decorators interior service Toronto", caption: "Interior Styling" },
-  { src: "/images/wreath-1.jpg", alt: "Custom Christmas wreath installation", caption: "Custom Wreath" },
-  { src: "/images/wreath-2.jpg", alt: "Lit Christmas wreath with pinecones and gold bow", caption: "Wreath · Gold Ribbon" },
-  { src: "/images/garland-1.jpg", alt: "Christmas garland on pillars installation", caption: "Pillar Garland" },
+  {
+    src: "/images/hero.jpg",
+    alt: "Stunning Christmas lights on a GTA home at twilight by GTA Christmas Lighting",
+    caption: "GTA Residential",
+  },
+  {
+    src: "/images/benefit-installers.png",
+    alt: "Two GTA Christmas Lighting installers placing lights around a tree",
+    caption: "Install in Progress",
+  },
+  {
+    src: "/images/extra-installer.png",
+    alt: "Professional Christmas light installer by GTA Christmas Lighting",
+    caption: "Professional Installer",
+  },
+  {
+    src: "/images/extra-services.png",
+    alt: "Full-service Christmas light services by GTA Christmas Lighting",
+    caption: "Full Services",
+  },
+  {
+    src: "/images/extra-phoenix.png",
+    alt: "Programmable LED Christmas lighting by GTA Christmas Lighting",
+    caption: "LED Lighting",
+  },
+  {
+    src: "/images/hero.jpg",
+    alt: "Beautiful holiday lighting installation across the GTA by GTA Christmas Lighting",
+    caption: "Holiday Display",
+  },
 ];
 
 export default function GalleryPage() {
@@ -67,7 +69,7 @@ export default function GalleryPage() {
       <section className="bg-[var(--dark-bg)] py-20 md:py-24">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <p className="text-[var(--accent-gold)] text-xs tracking-[0.3em] uppercase font-semibold mb-4">
-            Design Gallery
+            Project Gallery
           </p>
           <h1
             className="text-4xl md:text-6xl font-bold text-white mb-5"
@@ -76,9 +78,10 @@ export default function GalleryPage() {
             Real Installs Across the GTA
           </h1>
           <p className="text-white/75 text-lg leading-relaxed">
-            A selection of recent Christmas lighting installations from Toronto,
-            Vaughan, Mississauga, Oakville, Markham, and beyond. Every display
-            is custom-designed for the home it&apos;s on.
+            A selection of past Christmas, holiday, and permanent lighting
+            projects from Toronto, Mississauga, Oakville, Vaughan, Markham, and
+            beyond. Every display is custom-designed for the property it&apos;s
+            on.
           </p>
         </div>
       </section>
@@ -116,7 +119,7 @@ export default function GalleryPage() {
             Want a Display Like These?
           </h2>
           <p className="text-white/85 mb-6">
-            Get a free, custom design and quote for your home.
+            Send us a photo of your home — get a custom quote the same day.
           </p>
           <Link
             href="/contact"

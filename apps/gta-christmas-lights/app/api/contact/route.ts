@@ -34,7 +34,7 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           token: body.turnstileToken,
-          hostname: "gtachristmaslights.ca",
+          hostname: "gtachristmaslighting.ca",
         }),
       });
       const turnstileData = await turnstileRes.json();
@@ -96,12 +96,12 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({
           from:
-            process.env.CONTACT_FROM_EMAIL || "noreply@gtachristmaslights.ca",
+            process.env.CONTACT_FROM_EMAIL || "noreply@gtachristmaslighting.ca",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-          subject: `New GTA Christmas Lights Quote: ${body.serviceType} — ${body.name}`,
+          subject: `New GTA Christmas Lighting Quote: ${body.serviceType} — ${body.name}`,
           html: `
-            <h2 style="color:#C2151E;margin-bottom:8px;">New GTA Christmas Lights Quote Request</h2>
-            <p style="color:#666;margin-top:0;">A new quote request just came in via gtachristmaslights.ca.</p>
+            <h2 style="color:#C2151E;margin-bottom:8px;">New GTA Christmas Lighting Quote Request</h2>
+            <p style="color:#666;margin-top:0;">A new quote request just came in via gtachristmaslighting.ca.</p>
             <table style="border-collapse:collapse;width:100%;max-width:640px;">
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;width:160px;">Name</td><td style="padding:8px;border:1px solid #eee;">${body.name}</td></tr>
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #eee;">${body.email}</td></tr>
@@ -112,7 +112,7 @@ export async function POST(req: Request) {
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Budget</td><td style="padding:8px;border:1px solid #eee;">${body.budget || "—"}</td></tr>
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Message</td><td style="padding:8px;border:1px solid #eee;">${body.message || "None"}</td></tr>
             </table>
-            <p style="color:#999;font-size:12px;margin-top:16px;">Submitted via gtachristmaslights.ca</p>
+            <p style="color:#999;font-size:12px;margin-top:16px;">Submitted via gtachristmaslighting.ca</p>
           `,
         }),
       });

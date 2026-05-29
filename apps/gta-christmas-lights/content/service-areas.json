@@ -3,180 +3,126 @@
     "slug": "toronto",
     "city": "Toronto",
     "region": "ON",
-    "heroImage": "/images/gallery-1.png",
-    "neighborhoods": "Forest Hill, Rosedale, Lawrence Park, Hoggs Hollow, The Annex, Leaside, Bridle Path, Yorkville, Cabbagetown, Wellesley, Chaplin Crescent",
-    "intro": "Toronto is our backyard, and we've spent over three decades lighting some of the city's most distinguished homes. From the historic mansions of Rosedale and Forest Hill to the contemporary builds in Lawrence Park, our designers know how to compliment every architectural style.",
-    "extra": "We're the team behind the displays you've stopped to photograph on Wellesley, Chaplin Crescent, and Neville in the Beaches. Award-winning, fully insured, and built for Toronto's unique mix of mature trees, intricate rooflines, and tight urban lots."
-  },
-  {
-    "slug": "vaughan",
-    "city": "Vaughan",
-    "region": "ON",
-    "heroImage": "/images/gallery-9.png",
-    "neighborhoods": "Woodbridge, Maple, Kleinburg, Thornhill, Vellore Village, Sonoma Heights, Patterson, Concord",
-    "intro": "Vaughan is home base for our team. We've lit thousands of homes across Woodbridge, Maple, Kleinburg, and the newer Vellore communities. Our crew lives here — we know the streets, the architectural styles, and the expectations.",
-    "extra": "Vaughan homes tend to feature large rooflines, dramatic entrances, and significant landscape features. We design displays that scale appropriately, lighting the entire property — not just the eaves — for a complete, magazine-worthy look."
-  },
-  {
-    "slug": "markham",
-    "city": "Markham",
-    "region": "ON",
-    "heroImage": "/images/gallery-4.png",
-    "neighborhoods": "Unionville, Cornell, Cathedraltown, Berczy Village, Cachet, Buttonville, Markham Village, Thornhill",
-    "intro": "Markham residents demand quality, and we deliver. From the heritage homes of Unionville to the executive estates in Cachet, our award-winning designs add elegance without overstatement.",
-    "extra": "We handle the entire process — design, install, maintenance, takedown, storage. Most Markham clients come back year after year. Subsequent years cost 45–55% less because you already own the lights."
-  },
-  {
-    "slug": "richmond-hill",
-    "city": "Richmond Hill",
-    "region": "ON",
-    "heroImage": "/images/rooftop-warm.jpg",
-    "neighborhoods": "Bayview Hill, Mill Pond, Oak Ridges, Jefferson, South Richvale, Doncrest, Westbrook",
-    "intro": "Richmond Hill has been a core service area for over 20 years. We light executive homes in Bayview Hill, classic estates in Mill Pond, and family homes throughout Oak Ridges and Jefferson.",
-    "extra": "Our installation crews are certified for working at heights and operate aerial platforms, which means we can safely light second- and third-story rooflines on the larger Richmond Hill homes without compromise."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Downtown, Forest Hill, Rosedale, Lawrence Park, Hoggs Hollow, The Annex, Leaside, Yorkville, Cabbagetown, The Beaches, Riverdale",
+    "intro": "Toronto homes get the full GTA Christmas Lighting treatment — custom design, professional-grade LEDs, full-service install to takedown. We light heritage homes in Forest Hill, contemporary builds in Lawrence Park, and family homes throughout the city.",
+    "extra": "Our team understands Toronto's unique mix of architectural styles. Whether your home is a Rosedale Edwardian, a Leaside bungalow, or a downtown condo balcony, we design a display that fits."
   },
   {
     "slug": "mississauga",
     "city": "Mississauga",
     "region": "ON",
-    "heroImage": "/images/city-mississauga.jpg",
-    "neighborhoods": "Lorne Park, Mineola, Port Credit, Streetsville, Erin Mills, Meadowvale, Clarkson, Lakeview, Credit Mills",
-    "intro": "Mississauga clients trust GTA Christmas Lights for one reason: consistency. From Lorne Park to Meadowvale, our installs look the same on year five as they do on day one — because we maintain them all season.",
-    "extra": "We also serve Mississauga commercial properties — plazas, condo lobbies, restaurants, and retail centres benefit from our larger-scale designs and commercial-grade equipment."
-  },
-  {
-    "slug": "oakville",
-    "city": "Oakville",
-    "region": "ON",
-    "heroImage": "/images/gallery-7.png",
-    "neighborhoods": "Old Oakville, Glen Abbey, Bronte, Glenorchy, Joshua Creek, Iroquois Ridge, Falgarwood, River Oaks",
-    "intro": "Oakville is one of the GTA's most discerning markets, and we've earned a reputation as the area's go-to lighting design firm. We light homes in Old Oakville, Glen Abbey, Joshua Creek, and Bronte's lakeside estates.",
-    "extra": "Our LED bulbs shine 5–6× brighter than retail options, use up to 97% less electricity, and are custom-cut so wires are never visible. That's the level of finish Oakville homeowners expect."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Lorne Park, Mineola, Port Credit, Streetsville, Erin Mills, Meadowvale, Clarkson, Lakeview, Credit Mills, Mississauga Valleys",
+    "intro": "Mississauga is one of our busiest service areas. From the estate homes of Lorne Park and Credit Mills to the family neighbourhoods of Meadowvale and Erin Mills, our team installs custom holiday displays that elevate every property.",
+    "extra": "We also serve Mississauga commercial properties — plazas, restaurants, condo lobbies, and retail centres benefit from our commercial-grade lighting and large-scale design experience."
   },
   {
     "slug": "brampton",
     "city": "Brampton",
     "region": "ON",
-    "heroImage": "/images/city-brampton.jpg",
-    "neighborhoods": "Castlemore, Vales of Castlemore, Mount Pleasant, Springdale, Heart Lake, Bramalea, Snelgrove, Fletcher's Meadow",
-    "intro": "Brampton homeowners across Castlemore, Mount Pleasant, and Springdale trust our team for safe, beautiful, hassle-free Christmas displays. Large rooflines and dramatic entrances are our specialty.",
-    "extra": "We handle large-scale homes and estate properties with aerial-lift equipment and a full crew. Every install is fully insured, WSIB-covered, and certified for working at heights."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Castlemore, Vales of Castlemore, Mount Pleasant, Springdale, Heart Lake, Bramalea, Snelgrove, Fletcher's Meadow, Credit Valley",
+    "intro": "Brampton homeowners trust GTA Christmas Lighting for safe, beautiful, hassle-free holiday displays. Large rooflines, dramatic entrances, and significant landscape features make Brampton homes ideal for our custom installations.",
+    "extra": "We celebrate every festive season — Christmas, Diwali, Hanukkah, and beyond. Our designs honour your traditions with lighting that compliments your home and your celebration."
   },
   {
-    "slug": "aurora",
-    "city": "Aurora",
+    "slug": "vaughan",
+    "city": "Vaughan",
     "region": "ON",
-    "heroImage": "/images/gallery-5.png",
-    "neighborhoods": "Aurora Highlands, Bayview Northeast, Stonehaven, Aurora Estates, Aurora Heights, Aurora Village",
-    "intro": "Aurora's mix of executive estates and family neighbourhoods makes for memorable lighting projects. We design for the home — not a one-size-fits-all template.",
-    "extra": "From classic warm-white traditional looks to vibrant multicolor displays, your home gets a custom plan rendered by our award-winning designers before a single light goes up."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Woodbridge, Maple, Kleinburg, Thornhill, Vellore Village, Sonoma Heights, Patterson, Concord, Pine Valley",
+    "intro": "Vaughan's mix of executive estates and family neighbourhoods gives our designers a wide canvas. We light large estate homes in Kleinburg, multi-storey rooflines in Patterson, and quieter family streets across Woodbridge and Maple.",
+    "extra": "Our 7-figure rooflines and dramatic entrances suit our Custom Cut LED roofline lighting beautifully. Every strand is sized to your home — no bunching, no visible wires."
   },
   {
-    "slug": "newmarket",
-    "city": "Newmarket",
+    "slug": "markham",
+    "city": "Markham",
     "region": "ON",
-    "heroImage": "/images/gallery-6.jpg",
-    "neighborhoods": "Stonehaven-Wyndham, Gorham-College Manor, Glenway Estates, Bristol-London, Summerhill Estates, Woodland Hill",
-    "intro": "Newmarket has been part of our service area for over a decade. We light family homes in Stonehaven and executive properties in Glenway Estates with the same attention to detail.",
-    "extra": "Our Hassle-Free Christmas Guarantee means we proactively check your display through Christmas Eve. If anything stops working, we're back to fix it — no charge, no hassle."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Unionville, Cornell, Cathedraltown, Berczy Village, Cachet, Buttonville, Markham Village, Thornhill",
+    "intro": "Markham residents demand quality, and we deliver. From the heritage homes of Unionville to the executive estates in Cachet, our designs add elegance without overstatement.",
+    "extra": "We handle the full lifecycle — design, install, in-season maintenance, takedown, storage — so Markham clients return year after year. Subsequent years cost less because the design is already in place."
   },
   {
-    "slug": "king-city",
-    "city": "King City",
+    "slug": "richmond-hill",
+    "city": "Richmond Hill",
     "region": "ON",
-    "heroImage": "/images/city-king.jpg",
-    "neighborhoods": "King City, Nobleton, Schomberg, Kettleby, Pottageville, Eversley",
-    "intro": "King City's expansive estate properties are where our design team truly shines. We've created award-winning displays on some of the township's most photographed homes — and we've decorated for King City's annual Christmas festivities.",
-    "extra": "Larger properties mean larger possibilities. We light multiple trees, long driveways, gates, columns, and architectural features that other companies simply skip."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Bayview Hill, Mill Pond, Oak Ridges, Jefferson, South Richvale, Doncrest, Westbrook, Crosby",
+    "intro": "Richmond Hill has been a core service area since day one. We light executive homes in Bayview Hill, classic estates in Mill Pond, and family homes throughout Oak Ridges and Jefferson.",
+    "extra": "Our installation crews are trained and equipped for working at heights, which means we can safely light second- and third-story rooflines on Richmond Hill's larger homes without compromise."
   },
   {
-    "slug": "kleinburg",
-    "city": "Kleinburg",
+    "slug": "oakville",
+    "city": "Oakville",
     "region": "ON",
-    "heroImage": "/images/city-kleinburg.jpg",
-    "neighborhoods": "Kleinburg Heritage Village, Copper Creek, Settlers Walk, Boyd Conservation Area",
-    "intro": "Kleinburg's heritage village and estate homes deserve thoughtful, elegant lighting. We design with the architecture in mind — restrained where it should be, dramatic where it can be.",
-    "extra": "Our crew has been installing in Kleinburg for years. We know the rooflines, the driveways, and the way homes here are meant to feel during the holidays."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Old Oakville, Glen Abbey, Bronte, Glenorchy, Joshua Creek, Iroquois Ridge, Falgarwood, River Oaks",
+    "intro": "Oakville is one of the GTA's most discerning markets, and we've earned a reputation as a go-to lighting design choice. We light homes in Old Oakville, Glen Abbey, Joshua Creek, and Bronte's lakeside estates.",
+    "extra": "Our LED bulbs are professional-grade, custom-cut so wires are never visible. That's the level of finish Oakville homeowners expect — and what our local clients keep coming back for."
   },
   {
-    "slug": "caledon",
-    "city": "Caledon",
+    "slug": "burlington",
+    "city": "Burlington",
     "region": "ON",
-    "heroImage": "/images/city-mississauga.jpg",
-    "neighborhoods": "Bolton, Caledon East, Inglewood, Cheltenham, Mono Mills, Palgrave, Alton",
-    "intro": "Caledon's rural and estate properties get the same attention as our urban work. Long driveways, oversized homes, mature evergreens — perfect for an immersive light display.",
-    "extra": "We bring aerial-lift equipment, commercial-grade LED lights, and a full crew to make Caledon's larger properties shine. No property is too big or too remote."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Downtown Burlington, Aldershot, Tyandaga, Roseland, Headon Forest, Millcroft, Tansley, Orchard",
+    "intro": "Burlington's mix of waterfront estates and family neighbourhoods makes for memorable installs. We light large homes overlooking the lake, executive properties in Roseland, and family streets across Headon Forest and Millcroft.",
+    "extra": "Our team brings the right equipment — aerial lifts, professional safety gear, custom-cut LED — to every Burlington property. No ladder climbing for you. No bunched wires."
   },
   {
-    "slug": "bradford",
-    "city": "Bradford",
+    "slug": "pickering",
+    "city": "Pickering",
     "region": "ON",
-    "heroImage": "/images/city-bradford.jpg",
-    "neighborhoods": "Bradford West Gwillimbury, Bond Head, Newton Robinson, Holland Landing",
-    "intro": "Bradford homes get the full estate-style treatment from our team. Whether you're in a modern subdivision or one of the township's older streets, our installs blend with the architecture.",
-    "extra": "Our design-first approach means we visit, measure, and plan before installing anything. The result: a display that compliments your home, not a generic strand-of-lights template."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Bay Ridges, West Shore, Liverpool, Amberlea, Highbush, Rosebank, Fairport, Dunbarton",
+    "intro": "Pickering homeowners love our hassle-free service. We design, install, maintain, take down, and store — you focus on enjoying the season.",
+    "extra": "Our rental packages are especially popular in Pickering. No upfront cost for lights, beautiful display, full takedown and storage at season's end."
   },
   {
-    "slug": "stouffville",
-    "city": "Stouffville",
+    "slug": "ajax",
+    "city": "Ajax",
     "region": "ON",
-    "heroImage": "/images/city-stouffville.jpg",
-    "neighborhoods": "Whitchurch-Stouffville, Ballantrae, Gormley, Musselman's Lake, Vandorf, Lemonville",
-    "intro": "Stouffville and Whitchurch's mix of newer subdivisions and rural estate properties are right in our wheelhouse. We design displays that suit the scale and character of every home.",
-    "extra": "Our installs are insured, WSIB-covered, and backed by our Perfect-Until-Christmas-Eve Guarantee. If a bulb fails, we're there to fix it — fast."
-  },
-  {
-    "slug": "whitby",
-    "city": "Whitby",
-    "region": "ON",
-    "heroImage": "/images/city-whitby.jpg",
-    "neighborhoods": "Brooklin, Downtown Whitby, Williamsburg, Rolling Acres, Pringle Creek, Taunton North",
-    "intro": "Whitby clients expect quality and reliability — and our 35+ years in the GTA Christmas lighting business is exactly that. We light estate homes in Brooklin and family homes throughout the older Whitby neighbourhoods.",
-    "extra": "Our seasonal-removal-and-storage service is especially popular here. We take everything down, store it labelled and organized, and bring it back next November ready to re-install."
-  },
-  {
-    "slug": "thornhill",
-    "city": "Thornhill",
-    "region": "ON",
-    "heroImage": "/images/city-thornhill.jpg",
-    "neighborhoods": "Thornhill Woods, Royal Orchard, German Mills, Henderson Hill, Westgate, Doncrest",
-    "intro": "Thornhill has been a top GTA Christmas Lights service area for two decades. We've lit homes throughout Thornhill Woods, Royal Orchard, and the older heritage streets.",
-    "extra": "Our 7-person crews bring commercial-grade LED lights, aerial-lift equipment, and an award-winning design eye to every Thornhill install. No ladders. No bunched wires. Just a stunning display."
-  },
-  {
-    "slug": "woodbridge",
-    "city": "Woodbridge",
-    "region": "ON",
-    "heroImage": "/images/city-woodbridge.jpg",
-    "neighborhoods": "West Woodbridge, East Woodbridge, Sonoma Heights, Islington Woods, Pine Valley, Vellore",
-    "intro": "Woodbridge homes are some of the most spectacular we light all season. Large entrances, long driveways, dramatic rooflines, and significant landscape features make for memorable installations.",
-    "extra": "We custom-cut every strand, light every column, and finish every detail. The result is the kind of display Woodbridge neighbours photograph and share."
-  },
-  {
-    "slug": "north-york",
-    "city": "North York",
-    "region": "ON",
-    "heroImage": "/images/gallery-7.png",
-    "neighborhoods": "Hoggs Hollow, Willowdale, Lawrence Manor, Bayview Village, York Mills, Cricket Club, North York Centre",
-    "intro": "North York's mature, established neighbourhoods are some of our favourite places to work. From the executive homes of Hoggs Hollow to family homes throughout Bayview Village and Willowdale, our installs add character without ostentation.",
-    "extra": "Our designers understand North York's mix of mid-century, contemporary, and traditional architecture, and tailor every display accordingly."
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "South Ajax, Central Ajax, Northeast Ajax, Pickering Beach, Audley South, Carruthers Creek",
+    "intro": "Ajax has been part of our service area since the start. Family homes, executive properties, and community lighting — all get the same custom design treatment.",
+    "extra": "Our team installs throughout October and November and continues right up until the week before Christmas. Book early for preferred dates."
   },
   {
     "slug": "etobicoke",
     "city": "Etobicoke",
     "region": "ON",
-    "heroImage": "/images/city-etobicoke.jpg",
+    "heroImage": "/images/hero.jpg",
     "neighborhoods": "Kingsway, Edenbridge, Humber Bay, Mimico, Long Branch, Princess Anne Manor, Sunnylea, Markland Wood",
-    "intro": "We've lit some of Etobicoke's most beautiful homes — including the Glenwood property that helped earn one of our Landscape Ontario Awards of Excellence.",
-    "extra": "Etobicoke's mature trees and traditional architecture suit our classic warm-white designs perfectly, though we'll happily go bold with color where the home calls for it."
+    "intro": "Etobicoke's mature, established neighbourhoods are some of our favourite places to work. From The Kingsway's executive homes to family streets throughout Sunnylea and Markland Wood, our installs honour the character of each property.",
+    "extra": "We're also one of the few GTA installers offering permanent LED lighting — a year-round option that gives you Christmas mode at the tap of a button, plus accent lighting for every other occasion."
+  },
+  {
+    "slug": "north-york",
+    "city": "North York",
+    "region": "ON",
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Hoggs Hollow, Willowdale, Lawrence Manor, Bayview Village, York Mills, Cricket Club, North York Centre, Bedford Park",
+    "intro": "North York is a long-time stronghold for our team. From the executive homes of Hoggs Hollow to family homes throughout Bayview Village and Willowdale, our installs add character to every property.",
+    "extra": "Our designers understand North York's mix of mid-century, contemporary, and traditional architecture, and tailor every display accordingly."
   },
   {
     "slug": "scarborough",
     "city": "Scarborough",
     "region": "ON",
-    "heroImage": "/images/city-scarborough.jpg",
+    "heroImage": "/images/hero.jpg",
     "neighborhoods": "Cliffside, Guildwood, Birch Cliff, Highland Creek, Centennial, Agincourt, Scarborough Village, Bendale",
-    "intro": "Scarborough's diverse mix of homes — from waterfront estates in Cliffside to family homes in Agincourt — all get the same professional, custom-fit treatment.",
-    "extra": "We bring aerial-lift equipment to every install, which means tall trees, two-story rooflines, and harder-to-reach features are no problem. Safety, every time."
+    "intro": "Scarborough's diverse mix of homes — from waterfront estates in Cliffside to family homes in Agincourt — all get the same custom-fit treatment.",
+    "extra": "We bring aerial-lift equipment to every install, which means tall trees, two-story rooflines, and harder-to-reach features are no problem."
+  },
+  {
+    "slug": "georgetown",
+    "city": "Georgetown",
+    "region": "ON",
+    "heroImage": "/images/hero.jpg",
+    "neighborhoods": "Halton Hills, Glen Williams, Limehouse, Norval, Stewarttown",
+    "intro": "Georgetown and the Halton Hills countryside are stunning canvases for our designs. Larger rural properties get bigger trees, longer driveways, and gate-to-gate displays.",
+    "extra": "We service Halton Hills, Glen Williams, and surrounding villages with the same attention to detail as our urban work."
   }
 ]

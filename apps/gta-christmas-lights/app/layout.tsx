@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     siteName: site.name,
     images: [
       {
-        url: "/images/gallery-1.png",
-        alt: "Award-winning Christmas light installation on Toronto home by GTA Christmas Lights",
+        url: "/images/hero.jpg",
+        alt: "Professional Christmas light installation on a GTA home by GTA Christmas Lighting",
       },
     ],
   },
@@ -69,14 +69,14 @@ export default function RootLayout({
               contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  telephone: "+1-416-707-9994",
+                  telephone: "+1-289-475-0433",
                   contactType: "customer service",
                   areaServed: "CA",
                   availableLanguage: "English",
                 },
                 {
                   "@type": "ContactPoint",
-                  telephone: "+1-905-707-9994",
+                  telephone: "+1-519-266-6734",
                   contactType: "customer service",
                   areaServed: "CA",
                   availableLanguage: "English",

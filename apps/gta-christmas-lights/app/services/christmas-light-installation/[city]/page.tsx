@@ -322,14 +322,14 @@ export default async function CityPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { src: "/images/gallery-1.png", alt: `Christmas lights installation near ${area.city}` },
-              { src: "/images/gallery-9.png", alt: `Vellore Park GTA Christmas Lights installation` },
-              { src: "/images/gallery-4.png", alt: `Chaplin Crescent Christmas lights by GTA Christmas Lights` },
-              { src: "/images/rooftop-warm.jpg", alt: `Warm-white rooftop Christmas lights near ${area.city}` },
-              { src: "/images/gallery-7.png", alt: `Front door Christmas decorating near ${area.city}` },
-              { src: "/images/wreath-2.jpg", alt: `Custom lit wreath installation near ${area.city}` },
-              { src: "/images/gallery-11.png", alt: `Spiral-wrapped tree Christmas lights near ${area.city}` },
-              { src: "/images/gallery-13.jpg", alt: `Elegant warm-white LED Christmas lights near ${area.city}` },
+              { src: "/images/hero.jpg", alt: `Christmas lights installation near ${area.city}` },
+              { src: "/images/benefit-installers.png", alt: `Christmas tree lighting install near ${area.city}` },
+              { src: "/images/extra-installer.png", alt: `Professional Christmas light installer near ${area.city}` },
+              { src: "/images/extra-services.png", alt: `Full Christmas light services near ${area.city}` },
+              { src: "/images/extra-phoenix.png", alt: `Permanent LED lighting near ${area.city}` },
+              { src: "/images/hero.jpg", alt: `GTA Christmas Lighting display near ${area.city}` },
+              { src: "/images/benefit-installers.png", alt: `Tree lighting installation near ${area.city}` },
+              { src: "/images/extra-services.png", alt: `Custom Christmas lights display near ${area.city}` },
             ].map((img) => (
               <div
                 key={img.src}

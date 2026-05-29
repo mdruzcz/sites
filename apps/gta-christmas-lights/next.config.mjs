@@ -3,6 +3,13 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [70, 75, 85],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "gtachristmaslighting.ca",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
   },
   async redirects() {
     return [
@@ -12,33 +19,23 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/get-an-estimate",
+        source: "/contact-us",
         destination: "/contact",
         permanent: true,
       },
       {
-        source: "/design-gallery",
+        source: "/past-lighting-projects",
         destination: "/gallery",
         permanent: true,
       },
       {
-        source: "/products-services",
-        destination: "/services",
-        permanent: true,
-      },
-      {
-        source: "/testimonials",
-        destination: "/about#testimonials",
-        permanent: true,
-      },
-      {
-        source: "/service-areas/:city-christmas-light-installation-near-you",
+        source: "/service-areas/:city-christmas-light-installation",
         destination: "/services/christmas-light-installation/:city",
         permanent: true,
       },
       {
-        source: "/interior-christmas-decorating-service-toronto-interior-holiday-decorator-near-you",
-        destination: "/services",
+        source: "/service-areas/:city-christmas-light-installer",
+        destination: "/services/christmas-light-installation/:city",
         permanent: true,
       },
     ];

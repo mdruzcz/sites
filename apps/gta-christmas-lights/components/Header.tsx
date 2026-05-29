@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Sparkles } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
 const navLinks = [
@@ -40,27 +41,34 @@ export function Header() {
         <span className="mx-3 opacity-60">|</span>
         <span>{site.hours}</span>
         <span className="mx-3 opacity-60">|</span>
-        <span>35+ Years · 3× Award of Excellence Winner</span>
+        <span>Free Quote From a Photo</span>
       </div>
 
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link
           href="/"
           className="flex items-center gap-2.5"
-          aria-label="GTA Christmas Lights home"
+          aria-label="GTA Christmas Lighting home"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent)]">
-            <Sparkles className="h-5 w-5 text-[var(--accent-gold)]" />
+          <span className="relative h-10 w-10 rounded-full bg-white p-1 shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="GTA Christmas Lighting logo"
+              fill
+              className="object-contain p-0.5"
+              sizes="40px"
+              priority
+            />
           </span>
           <span className="flex flex-col leading-tight">
             <span
               className="text-white font-bold text-base sm:text-lg"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
-              GTA Christmas Lights
+              GTA Christmas Lighting
             </span>
             <span className="text-[var(--accent-gold)] text-[10px] uppercase tracking-[0.18em] font-medium">
-              Professional Installation
+              Holiday Light Installation
             </span>
           </span>
         </Link>

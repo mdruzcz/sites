@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Award, Star, ShieldCheck, Sparkles, CheckCircle } from "lucide-react";
+import { Star, ShieldCheck, Sparkles, CheckCircle, Calendar, CreditCard } from "lucide-react";
 import { site } from "@/lib/site";
 import { getTestimonials } from "@/lib/content";
 import { breadcrumbSchema } from "@/lib/jsonld";
@@ -9,13 +9,13 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About GTA Christmas Lights | 35+ Years · 3× Award of Excellence",
+  title: "About | GTA Christmas Lighting · Professional Holiday Lighting",
   description:
-    "Learn about GTA Christmas Lights — three-time Landscape Ontario Award of Excellence winner. 35+ years designing and installing professional Christmas lighting across the Greater Toronto Area.",
+    "About GTA Christmas Lighting — bringing festive cheer to the Greater Toronto Area. Custom Christmas, Diwali, Hanukkah, and permanent lighting. Rental or purchase. Free quotes across the GTA.",
   openGraph: {
-    title: "About GTA Christmas Lights",
+    title: "About GTA Christmas Lighting",
     description:
-      "Three-time Landscape Ontario Award of Excellence winner. 35+ years lighting GTA homes and businesses.",
+      "Bringing festive cheer to the Greater Toronto Area with custom holiday lighting for every celebration.",
     url: `${site.url}/about`,
   },
 };
@@ -40,8 +40,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative bg-[var(--dark-bg)] py-24 md:py-28 overflow-hidden">
         <Image
-          src="/images/gallery-12.png"
-          alt="Landscape Ontario Award of Excellence trophy presented to GTA Christmas Lights"
+          src="/images/hero.jpg"
+          alt="Stunning Christmas light display on a GTA home by GTA Christmas Lighting"
           fill
           className="object-cover opacity-30"
           priority
@@ -55,14 +55,13 @@ export default function AboutPage() {
             className="text-4xl md:text-6xl font-bold text-white max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Lighting the GTA for{" "}
-            <span className="text-[var(--accent-gold)]">35+ Years</span>
+            Bringing Festive Cheer to the{" "}
+            <span className="text-[var(--accent-gold)]">Greater Toronto Area</span>
           </h1>
           <p className="mt-6 text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
-            We&apos;re the team behind the most photographed Christmas displays
-            in the Greater Toronto Area. Three Landscape Ontario Awards of
-            Excellence. Hundreds of returning clients. One promise: a holiday
-            you actually enjoy.
+            We specialize in transforming homes and businesses into festive
+            wonderlands — whether you&apos;re celebrating Christmas, Diwali,
+            Hanukkah, or any other festive occasion.
           </p>
         </div>
       </section>
@@ -72,77 +71,64 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-[var(--foreground)] leading-relaxed mb-6">
-              GTA Christmas Lights — formerly known as LawnSavers Christmas
-              Decorators — was founded in Vaughan, Ontario in the late 1980s
-              with a simple idea: take the worst part of the holidays (climbing
-              ladders, untangling lights, replacing dead bulbs) and turn it into
-              the best part — a custom-designed display you come home to.
+              At GTA Christmas Lighting, our mission is simple: take the hardest
+              part of the holidays — climbing ladders, untangling lights,
+              chasing dead bulbs — and turn it into something you actually look
+              forward to.
             </p>
             <p className="text-[var(--muted)] leading-relaxed mb-6">
-              Three decades later, we&apos;ve installed on some of the finest
-              homes in Toronto, Vaughan, Markham, Oakville, and the rest of the
-              GTA. Our team has decorated St. Joseph&apos;s Hospital, the CNE
-              grounds, Locale Restaurant, and even film productions including
-              Netflix&apos;s <em>The Christmas Chronicles</em>.
+              We&apos;re a Greater Toronto Area team of professional installers,
+              designers, and seasonal-lighting specialists. Each year we plan,
+              design, and install custom displays for hundreds of homes and
+              businesses — from compact downtown Toronto rowhouses to sweeping
+              estates in Kleinburg, Vaughan, and Oakville.
             </p>
             <p className="text-[var(--muted)] leading-relaxed mb-6">
-              Along the way we&apos;ve earned three Landscape Ontario Awards of
-              Excellence for Christmas Holiday Lighting Design and Installation,
-              plus the Landscape Lighting Program&apos;s Award of Excellence —
-              recognition from our industry for what our clients already know:
-              we sweat every detail, and we don&apos;t leave until it looks
-              perfect.
+              Our service is intentionally all-inclusive. You don&apos;t need
+              to provide lights, ladders, equipment, or expertise — just
+              power. We bring the rest: custom-cut professional LEDs,
+              aerial-lift equipment, working-at-heights certification, full
+              insurance, and design experience that makes every property look
+              its best.
             </p>
             <p className="text-[var(--muted)] leading-relaxed">
-              Every install includes our Perfect-Until-Christmas-Eve Guarantee.
-              If anything stops working, we&apos;re back to fix it. If you want
-              to tweak the design, we&apos;ll come adjust. When the season&apos;s
-              over, we remove, inventory, and store everything until next year.
-              That&apos;s what 35+ years of doing this taught us: the install
-              is just the start.
+              We&apos;re a year-round business too. Our season runs October 1
+              through January 31, with permanent LED installations and interior
+              decorating available all year. Every install is backed by
+              in-season maintenance — if a bulb fails or a strand needs
+              adjustment, we&apos;re back to fix it.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Awards strip */}
+      {/* Quick facts */}
       <section className="bg-[var(--dark-surface)] py-16">
         <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-3 max-w-4xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
             {[
               {
-                src: "/images/award-2018.jpg",
-                title: "2018 Award of Excellence",
-                desc: "Landscape Ontario · Christmas Holiday Lighting Design &amp; Installation",
+                icon: Calendar,
+                title: "Our Season",
+                desc: "October 1 – January 31. Installs continue right up until the week before Christmas. Permanent LED available year-round.",
               },
               {
-                src: "/images/award-2020.jpg",
-                title: "2020 Award of Excellence",
-                desc: "Landscape Ontario · Christmas Holiday Lighting Design &amp; Installation",
+                icon: Sparkles,
+                title: "Every Celebration",
+                desc: "Christmas, Diwali, Hanukkah, and special occasions. Custom lighting tailored to your tradition and your property.",
               },
               {
-                src: "/images/gallery-12.png",
-                title: "Award of Excellence",
-                desc: "Landscape Lighting Program",
+                icon: CreditCard,
+                title: "Payment Options",
+                desc: "Visa, MasterCard, American Express, cash, and cheques. Transparent quotes — no surprises.",
               },
-            ].map((a) => (
-              <div key={a.title} className="text-center">
-                <div className="relative aspect-[3/4] max-w-[180px] mx-auto rounded-lg overflow-hidden mb-4 border border-[var(--border-dark)]">
-                  <Image
-                    src={a.src}
-                    alt={`${a.title} trophy for GTA Christmas Lights`}
-                    fill
-                    className="object-cover"
-                    sizes="180px"
-                  />
+            ].map((f) => (
+              <div key={f.title} className="text-center">
+                <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-[var(--accent)]/10 mb-4">
+                  <f.icon className="h-5 w-5 text-[var(--accent-gold)]" />
                 </div>
-                <h3 className="font-bold text-white text-base mb-1">
-                  {a.title}
-                </h3>
-                <p
-                  className="text-xs text-white/55"
-                  dangerouslySetInnerHTML={{ __html: a.desc }}
-                />
+                <h3 className="font-bold text-white text-lg mb-2">{f.title}</h3>
+                <p className="text-sm text-white/65 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -161,37 +147,37 @@ export default function AboutPage() {
           >
             Why GTA Homeowners Trust Us
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: Award,
-                title: "Award-Winning Design",
-                desc: "3× Landscape Ontario Award of Excellence for Christmas Holiday Lighting. Our designers don't just install — they curate.",
+                icon: Sparkles,
+                title: "Experienced Professionals",
+                desc: "Our team has years of experience in holiday lighting and decoration — we bring expertise and creativity to every project.",
               },
               {
                 icon: Sparkles,
-                title: "Commercial-Grade LED",
-                desc: "Bulbs that shine 5–6× brighter than retail and last 5–10× longer. You own them after year one.",
+                title: "Customized Designs",
+                desc: "Custom lighting designs that enhance the beauty of your property, making it stand out during the festive season.",
               },
               {
-                icon: ShieldCheck,
-                title: "Fully Insured & Certified",
-                desc: "WSIB-covered, fully insured, certified for aerial-platform operation and working at heights. Real protection.",
+                icon: Sparkles,
+                title: "High-Quality Materials",
+                desc: "We use only the best materials and energy-efficient LED lights to ensure your display is bright, beautiful, and durable.",
               },
               {
                 icon: CheckCircle,
-                title: "Hassle-Free Guarantee",
-                desc: "Perfect-Until-Christmas-Eve. If anything stops working, we're back to fix it — no charge, no hassle.",
+                title: "Full-Service Installation",
+                desc: "From planning and installation to maintenance and takedown, we handle everything so you can enjoy a stress-free holiday season.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Safety First",
+                desc: "We prioritize safety in all our installations, following strict guidelines to ensure your home and our team remain safe.",
               },
               {
                 icon: Star,
-                title: "Decades of Reviews",
-                desc: "Hundreds of 5-star reviews on Google, HomeStars, and Yelp. The same families come back year after year.",
-              },
-              {
-                icon: Sparkles,
-                title: "Full-Service Always",
-                desc: "Design, install, maintain, take down, store. The only thing you provide is power.",
+                title: "Five-Star Reviews",
+                desc: "Hundreds of 5-star reviews from clients across Toronto, Mississauga, Oakville, Richmond Hill, Markham, and beyond.",
               },
             ].map((p) => (
               <div key={p.title} className="card p-6">
@@ -211,10 +197,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section
-        id="testimonials"
-        className="bg-[var(--dark-bg)] py-20 md:py-24"
-      >
+      <section id="testimonials" className="bg-[var(--dark-bg)] py-20 md:py-24">
         <div className="container mx-auto px-4">
           <p className="text-center text-[var(--accent-gold)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
             Client Reviews
@@ -239,7 +222,7 @@ export default function AboutPage() {
                 <p className="text-sm text-white/75 leading-relaxed italic mb-4">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <p className="text-xs text-white/50">
+                <p className="text-xs text-white/55">
                   <strong className="text-white/80">{t.author}</strong> ·{" "}
                   {t.location} · {t.source}
                 </p>
@@ -256,11 +239,11 @@ export default function AboutPage() {
             className="text-3xl md:text-4xl font-bold text-white mb-5"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
-            Add Your Home to the List.
+            Ready to Light Up Your Home?
           </h2>
           <p className="text-white/85 mb-8 text-lg">
-            Get a free, no-obligation quote. Slots fill fast in October &amp;
-            November.
+            Send us a photo — get a free quote the same day. Installs run
+            October through December.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
