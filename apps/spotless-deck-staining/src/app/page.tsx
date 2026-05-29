@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { site, faqs } from "@/lib/site";
 import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
@@ -77,16 +76,12 @@ const faqSchema = {
 export default function Home() {
   return (
     <>
-      <Script
-        id="ld-localbusiness"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <Script
-        id="ld-faq"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main>

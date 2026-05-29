@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { cities, getCityBySlug, site, services } from "@/lib/site";
 import { NavBar } from "@/components/NavBar";
@@ -33,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   const url = `${site.url}/service-areas/${city.slug}`;
   return {
-    title: city.metaTitle,
+    title: { absolute: city.metaTitle },
     description: city.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -123,22 +122,16 @@ export default async function CityPage({ params }: { params: Promise<Params> }) 
 
   return (
     <>
-      <Script
-        id="ld-localbusiness-city"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <Script
-        id="ld-service"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id="ld-breadcrumb"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main>
