@@ -16,12 +16,12 @@ function getSupabase() {
   );
 }
 
-async function verifyTurnstile(token: string): Promise<boolean> {
+async function verifyTurnstile(token: string, hostname: string): Promise<boolean> {
   const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
   const res = await fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ token, hostname: "restoremydeck.ca" }),
+    body: JSON.stringify({ token, hostname }),
   });
   const data = (await res.json()) as { success: boolean };
   return data.success;
@@ -36,12 +36,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
-  const valid = await verifyTurnstile(token);
+  const valid = await verifyTurnstile(token, new URL(req.url).hostname);
   if (!valid) return NextResponse.json({ error: "Invalid captcha" }, { status: 400 });
 
-  await getSupabase().from("rmd_quote_requests").insert({
+  const { error: insertError } = await getSupabase().from("rmd_quote_requests").insert({
     name, email, phone, message: message || "", created_at: new Date().toISOString(),
   });
+  if (insertError) {
+    console.error("rmd_quote_requests insert failed:", insertError.message);
+    return NextResponse.json({ error: "Could not save your request. Please try again or call us." }, { status: 500 });
+  }
 
   await getResend().emails.send({
     from: "noreply@restoremydeck.ca",

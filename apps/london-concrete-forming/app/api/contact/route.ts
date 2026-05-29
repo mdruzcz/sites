@@ -13,10 +13,11 @@ export async function POST(request: Request) {
     // Verify Turnstile via shared Worker
     if (turnstileToken) {
       const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+      const requestHostname = new URL(request.url).hostname;
       const verifyRes = await fetch(turnstileEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: turnstileToken, hostname: "londonconcreteforming.ca" }),
+        body: JSON.stringify({ token: turnstileToken, hostname: requestHostname }),
       });
       const verifyData = await verifyRes.json() as { success: boolean };
       if (!verifyData.success) {
