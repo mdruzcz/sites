@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { NavBar } from "@/components/NavBar";
 import { FAQ } from "@/components/FAQ";
 import { CtaBand } from "@/components/CtaBand";
@@ -30,7 +29,7 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <>
-      <Script id="ld-faq" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main>
         <NavBar />
         <div className="pt-20">

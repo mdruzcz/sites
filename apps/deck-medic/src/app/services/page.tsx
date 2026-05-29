@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { site, services } from "@/lib/site";
@@ -45,7 +44,7 @@ const schema = {
 export default function ServicesPage() {
   return (
     <>
-      <Script id="ld-services" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main>
         <NavBar />
 

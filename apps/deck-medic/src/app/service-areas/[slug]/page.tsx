@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { site, cities, services, getCityBySlug } from "@/lib/site";
@@ -59,7 +58,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
-      <Script id="ld-city" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main>
         <NavBar />
 

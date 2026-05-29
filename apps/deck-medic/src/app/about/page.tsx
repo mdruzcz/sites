@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { site } from "@/lib/site";
 import { NavBar } from "@/components/NavBar";
 import { Contact } from "@/components/Contact";
@@ -47,7 +46,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <Script id="ld-about" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
       <main>
         <NavBar />
 
