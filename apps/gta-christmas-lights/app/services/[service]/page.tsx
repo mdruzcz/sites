@@ -132,7 +132,7 @@ export default async function ServicePage({ params }: Props) {
                   "Custom-cut to fit your home",
                   "Programmable dusk/dawn timer",
                   "Season-long maintenance",
-                  "Perfect-Until-Christmas-Eve Guarantee",
+                  "In-season maintenance included",
                   "End-of-season takedown",
                   "Climate-controlled storage",
                 ].map((f) => (

@@ -20,34 +20,69 @@ export const metadata: Metadata = {
 
 const galleryItems = [
   {
-    src: "/images/hero.jpg",
-    alt: "Stunning Christmas lights on a GTA home at twilight by GTA Christmas Lighting",
+    src: "/images/project-night-1.jpg",
+    alt: "Christmas light installation on a GTA home at night by GTA Christmas Lighting",
     caption: "GTA Residential",
   },
   {
-    src: "/images/benefit-installers.png",
-    alt: "Two GTA Christmas Lighting installers placing lights around a tree",
-    caption: "Install in Progress",
+    src: "/images/project-night-2.jpg",
+    alt: "Custom Christmas roofline lighting on a GTA home at night by GTA Christmas Lighting",
+    caption: "Roofline Display",
   },
   {
-    src: "/images/extra-installer.png",
-    alt: "Professional Christmas light installer by GTA Christmas Lighting",
-    caption: "Professional Installer",
+    src: "/images/project-night-3.jpg",
+    alt: "Warm-white Christmas lighting on a GTA home at night by GTA Christmas Lighting",
+    caption: "Warm-White Classic",
   },
   {
-    src: "/images/extra-services.png",
-    alt: "Full-service Christmas light services by GTA Christmas Lighting",
-    caption: "Full Services",
+    src: "/images/project-night-4.jpg",
+    alt: "Multi-colour Christmas lighting on a GTA home at night by GTA Christmas Lighting",
+    caption: "Multi-Colour Display",
   },
   {
-    src: "/images/extra-phoenix.png",
-    alt: "Programmable LED Christmas lighting by GTA Christmas Lighting",
-    caption: "LED Lighting",
+    src: "/images/project-night-5.jpg",
+    alt: "Christmas light display on a GTA property at night by GTA Christmas Lighting",
+    caption: "Estate Display",
+  },
+  {
+    src: "/images/service-christmas.png",
+    alt: "Custom Christmas light installation on a GTA home by GTA Christmas Lighting",
+    caption: "Custom Install",
+  },
+  {
+    src: "/images/service-holiday.jpg",
+    alt: "Holiday lighting installation on a GTA home by GTA Christmas Lighting",
+    caption: "Holiday Lights",
+  },
+  {
+    src: "/images/service-tree.jpg",
+    alt: "Outdoor tree lighting installation by GTA Christmas Lighting",
+    caption: "Tree Lighting",
+  },
+  {
+    src: "/images/service-permanent.jpg",
+    alt: "Permanent LED lighting installation on a GTA home by GTA Christmas Lighting",
+    caption: "Permanent LED",
+  },
+  {
+    src: "/images/service-custom.jpg",
+    alt: "Custom Christmas lighting display by GTA Christmas Lighting",
+    caption: "Custom Design",
+  },
+  {
+    src: "/images/process-installers.png",
+    alt: "GTA Christmas Lighting installers placing lights around a Christmas tree",
+    caption: "Install Team",
+  },
+  {
+    src: "/images/process-genie-lift.png",
+    alt: "GTA Christmas Lighting installer using a genie lift on a tall home",
+    caption: "Tall-Home Install",
   },
   {
     src: "/images/hero.jpg",
-    alt: "Beautiful holiday lighting installation across the GTA by GTA Christmas Lighting",
-    caption: "Holiday Display",
+    alt: "Christmas light installation by GTA Christmas Lighting on a GTA home at twilight",
+    caption: "Twilight Display",
   },
 ];
 

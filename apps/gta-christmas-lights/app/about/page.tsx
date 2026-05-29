@@ -40,8 +40,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative bg-[var(--dark-bg)] py-24 md:py-28 overflow-hidden">
         <Image
-          src="/images/hero.jpg"
-          alt="Stunning Christmas light display on a GTA home by GTA Christmas Lighting"
+          src="/images/project-night-2.jpg"
+          alt="Stunning Christmas light display on a GTA home at night by GTA Christmas Lighting"
           fill
           className="object-cover opacity-30"
           priority

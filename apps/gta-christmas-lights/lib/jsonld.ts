@@ -29,7 +29,7 @@ export function localBusinessSchema() {
       "@type": "City",
       name: city,
     })),
-    image: `${site.url}/images/gallery-1.png`,
+    image: `${site.url}/images/hero.jpg`,
     priceRange: "$$$",
     sameAs: [site.facebookUrl, site.instagramUrl],
     award:

@@ -256,17 +256,17 @@ export default function HomePage() {
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                img: "/images/extra-installer.png",
+                img: "/images/project-night-2.jpg",
                 title: "Easy, Full-Service",
                 desc: "Free quote from a photo, custom design, install, in-season maintenance, takedown at end of January, and storage. All in one package.",
               },
               {
-                img: "/images/extra-services.png",
+                img: "/images/service-permanent.jpg",
                 title: "Professional LED Lights",
                 desc: "Energy-efficient, weather-resistant, professional-grade LED bulbs. Custom-cut to your roofline so wires are never visible.",
               },
               {
-                img: "/images/extra-phoenix.png",
+                img: "/images/process-genie-lift.png",
                 title: "Safety + Right Equipment",
                 desc: "Decorating tall homes is risky. We bring aerial-lift equipment, working-at-heights training, and full insurance to every install.",
               },
@@ -277,7 +277,7 @@ export default function HomePage() {
                     src={b.img}
                     alt={b.title}
                     fill
-                    className="object-contain p-6"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
@@ -312,7 +312,7 @@ export default function HomePage() {
             <div className="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/images/hero.jpg"
+                  src="/images/service-christmas.png"
                   alt="Residential Christmas light installation by GTA Christmas Lighting"
                   fill
                   className="object-cover"
@@ -356,7 +356,7 @@ export default function HomePage() {
             <div className="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/images/benefit-installers.png"
+                  src="/images/project-night-5.jpg"
                   alt="Commercial Christmas light installation for a business by GTA Christmas Lighting"
                   fill
                   className="object-cover"
@@ -416,20 +416,20 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               {
-                src: "/images/hero.jpg",
-                alt: "Custom Christmas light installation by GTA Christmas Lighting",
+                src: "/images/project-night-1.jpg",
+                alt: "Custom Christmas light installation on a GTA home at night by GTA Christmas Lighting",
               },
               {
-                src: "/images/benefit-installers.png",
-                alt: "Holiday lighting installation by GTA Christmas Lighting",
+                src: "/images/project-night-2.jpg",
+                alt: "Holiday lighting installation on a GTA property at night by GTA Christmas Lighting",
               },
               {
-                src: "/images/extra-installer.png",
-                alt: "Tree lighting installation by GTA Christmas Lighting",
+                src: "/images/project-night-3.jpg",
+                alt: "Roofline Christmas lighting on a GTA home at night by GTA Christmas Lighting",
               },
               {
-                src: "/images/extra-services.png",
-                alt: "Custom display Christmas lighting by GTA Christmas Lighting",
+                src: "/images/project-night-4.jpg",
+                alt: "Custom Christmas light display on a GTA home at night by GTA Christmas Lighting",
               },
             ].map((img) => (
               <div
@@ -549,10 +549,10 @@ export default function HomePage() {
             </div>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden order-first lg:order-last">
               <Image
-                src="/images/benefit-installers.png"
+                src="/images/process-installers.png"
                 alt="GTA Christmas Lighting installers placing professional Christmas lights on a tree"
                 fill
-                className="object-contain bg-[var(--dark-surface)] p-12"
+                className="object-contain bg-[var(--dark-surface)] p-8"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -605,7 +605,7 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-2 min-h-[500px]">
           <div className="relative min-h-[400px] lg:min-h-full">
             <Image
-              src="/images/extra-phoenix.png"
+              src="/images/service-permanent.jpg"
               alt="Permanent LED lighting installation on a GTA home by GTA Christmas Lighting"
               fill
               className="object-cover"
@@ -657,8 +657,8 @@ export default function HomePage() {
       {/* PHOTO BANNER */}
       <section className="relative h-72 md:h-80 flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/hero.jpg"
-          alt="Stunning Christmas lights on a GTA home at twilight by GTA Christmas Lighting"
+          src="/images/project-night-3.jpg"
+          alt="Stunning Christmas lights on a GTA home at night by GTA Christmas Lighting"
           fill
           className="object-cover"
         />
@@ -865,8 +865,8 @@ export default function HomePage() {
       {/* FINAL CTA */}
       <section className="relative py-24 md:py-32 flex items-center overflow-hidden">
         <Image
-          src="/images/hero.jpg"
-          alt="Stunning Christmas light display on a GTA home by GTA Christmas Lighting"
+          src="/images/project-night-5.jpg"
+          alt="Stunning Christmas light display on a GTA home at night by GTA Christmas Lighting"
           fill
           className="object-cover"
         />

@@ -7,7 +7,6 @@ import {
   Phone,
   Star,
   MapPin,
-  Award,
   ShieldCheck,
   Sparkles,
   Calendar,
@@ -42,7 +41,7 @@ export async function generateMetadata({
   if (!area) return {};
 
   const title = `Christmas Light Installation in ${area.city}, ON | GTA Christmas Lights`;
-  const description = `Professional Christmas light installation in ${area.city}, Ontario. Award-winning design, commercial-grade LED lights, full-service from install to takedown. 35+ years experience. Free quote.`;
+  const description = `Professional Christmas light installation in ${area.city}, Ontario. Rental or purchase, custom design, professional-grade LED lights, full-service from install to takedown. Free quote from a photo.`;
 
   return {
     title,
@@ -81,7 +80,7 @@ export default async function CityPage({ params }: Props) {
           __html: JSON.stringify(
             serviceSchema(
               `Christmas Light Installation in ${area.city}, ON`,
-              `Professional Christmas light installation in ${area.city}, Ontario. Award-winning design, commercial-grade LED lights, full-service from design through storage. 35+ years experience.`,
+              `Professional Christmas light installation in ${area.city}, Ontario. Rental or purchase, custom design, professional-grade LED lights, full-service from design through storage.`,
               area.city
             )
           ),
@@ -138,16 +137,16 @@ export default async function CityPage({ params }: Props) {
                 <span className="text-[var(--accent-gold)]">{area.city}</span>
               </h1>
               <p className="mt-5 text-lg text-white/80 leading-relaxed">
-                Award-winning custom design, commercial-grade LED lights,
-                full-service install to takedown. The {area.city} team that
-                takes the worst part of the holidays off your plate.
+                Custom design, professional-grade LED lights, full-service
+                install to takedown. The {area.city} team that takes the
+                worst part of the holidays off your plate.
               </p>
               <div className="mt-7 grid sm:grid-cols-2 gap-3 max-w-md">
                 {[
-                  "3× Award of Excellence",
-                  "Custom-cut LED lights",
+                  "Free quote from a photo",
+                  "Professional LED lights",
+                  "Rental or purchase",
                   "Fully insured · WSIB",
-                  "Perfect-Until-Christmas-Eve",
                 ].map((b) => (
                   <div
                     key={b}
@@ -183,7 +182,7 @@ export default async function CityPage({ params }: Props) {
                   ))}
                 </div>
                 <span>
-                  Hundreds of 5-star reviews from {area.city} &amp; the GTA
+                  Loved by {area.city} homeowners &amp; businesses
                 </span>
               </div>
             </div>
@@ -220,8 +219,8 @@ export default async function CityPage({ params }: Props) {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-xs sm:text-sm font-medium">
             <span className="flex items-center gap-2">
-              <Award className="h-4 w-4" />
-              3× Award of Excellence
+              <Sparkles className="h-4 w-4" />
+              Free Quote From a Photo
             </span>
             <span className="opacity-50">·</span>
             <span className="flex items-center gap-2">
@@ -231,7 +230,7 @@ export default async function CityPage({ params }: Props) {
             <span className="opacity-50">·</span>
             <span className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
-              35+ Years Lighting the GTA
+              Oct 1 – Jan 31 Season
             </span>
           </div>
         </div>
@@ -273,7 +272,7 @@ export default async function CityPage({ params }: Props) {
                   "Custom-cut to fit your home",
                   "Programmable timer setup",
                   "Season-long maintenance",
-                  "Perfect-Until-Christmas-Eve Guarantee",
+                  "In-season maintenance included",
                   "End-of-season takedown",
                   "Climate-controlled storage",
                 ].map((f) => (
@@ -322,14 +321,14 @@ export default async function CityPage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { src: "/images/hero.jpg", alt: `Christmas lights installation near ${area.city}` },
-              { src: "/images/benefit-installers.png", alt: `Christmas tree lighting install near ${area.city}` },
-              { src: "/images/extra-installer.png", alt: `Professional Christmas light installer near ${area.city}` },
-              { src: "/images/extra-services.png", alt: `Full Christmas light services near ${area.city}` },
-              { src: "/images/extra-phoenix.png", alt: `Permanent LED lighting near ${area.city}` },
-              { src: "/images/hero.jpg", alt: `GTA Christmas Lighting display near ${area.city}` },
-              { src: "/images/benefit-installers.png", alt: `Tree lighting installation near ${area.city}` },
-              { src: "/images/extra-services.png", alt: `Custom Christmas lights display near ${area.city}` },
+              { src: "/images/project-night-1.jpg", alt: `Christmas lights installation at night near ${area.city}` },
+              { src: "/images/project-night-2.jpg", alt: `Custom roofline Christmas lighting near ${area.city}` },
+              { src: "/images/project-night-3.jpg", alt: `Warm-white Christmas lights near ${area.city}` },
+              { src: "/images/project-night-4.jpg", alt: `Multi-colour Christmas display near ${area.city}` },
+              { src: "/images/project-night-5.jpg", alt: `Estate Christmas display near ${area.city}` },
+              { src: "/images/service-tree.jpg", alt: `Tree lighting installation near ${area.city}` },
+              { src: "/images/service-holiday.jpg", alt: `Holiday lighting display near ${area.city}` },
+              { src: "/images/service-permanent.jpg", alt: `Permanent LED lighting near ${area.city}` },
             ].map((img) => (
               <div
                 key={img.src}
@@ -493,7 +492,7 @@ export default async function CityPage({ params }: Props) {
               {
                 n: "05",
                 title: "Season-Long Care",
-                desc: "Perfect-Until-Christmas-Eve Guarantee. We monitor and fix anything that misbehaves.",
+                desc: "We're on standby all season. A bulb burns out — we replace it. Display stops working — we fix it.",
               },
               {
                 n: "06",

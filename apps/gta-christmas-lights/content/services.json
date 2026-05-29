@@ -4,7 +4,7 @@
     "title": "Christmas Light Installation",
     "shortDescription": "Custom-designed, professional-grade LED Christmas light installation for homes and businesses across the GTA — fully managed from design to takedown.",
     "longDescription": "Brighten up your home or business with our professional Christmas light installation. We create dazzling displays tailored to your property's roofline, trees, columns, and walkways. Send a photo of your home for a free quote — we'll design, install, maintain, take down, and store your lights at the end of January.",
-    "image": "/images/hero.jpg",
+    "image": "/images/service-christmas.png",
     "imageAlt": "Professional Christmas light installation by GTA Christmas Lighting on a GTA home",
     "icon": "lightbulb"
   },
@@ -13,7 +13,7 @@
     "title": "Holiday Lighting Installation",
     "shortDescription": "Custom lighting for every holiday — Diwali, Hanukkah, Christmas, and beyond. Festive displays tailored to your celebration and your property.",
     "longDescription": "Celebrate every holiday with custom-designed lighting. From the warm glow of Diwali diyas to bright Hanukkah candles to Christmas wonderlands, we install festive displays for any occasion. Fully managed: we plan, install, maintain, and remove — you simply enjoy.",
-    "image": "/images/benefit-installers.png",
+    "image": "/images/service-holiday.jpg",
     "imageAlt": "Custom holiday lighting installation for Diwali, Hanukkah, and Christmas by GTA Christmas Lighting",
     "icon": "gift"
   },
@@ -22,7 +22,7 @@
     "title": "Permanent Lighting Installation",
     "shortDescription": "Year-round LED accent lighting for your home or business — programmable colours, holiday-ready presets, no seasonal install required.",
     "longDescription": "Permanent LED lighting on your eaves gives you Christmas mode at the tap of a button — plus accent lighting for every holiday, game day, and special occasion the rest of the year. Tasteful daytime profile, vibrant night-time options, app-controlled scenes, and no annual install fees.",
-    "image": "/images/extra-phoenix.png",
+    "image": "/images/service-permanent.jpg",
     "imageAlt": "Permanent LED lighting installation on a GTA home by GTA Christmas Lighting",
     "icon": "sparkles"
   },
@@ -31,7 +31,7 @@
     "title": "Tree Lighting",
     "shortDescription": "Illuminate outdoor trees with stunning even-cast displays — wrapped spruces, lit canopies, and showcase entrance trees.",
     "longDescription": "We bring outdoor trees to life with custom tree lighting. From small front-yard spruces wrapped branch-by-branch to oversized estate-property trees with thousands of bulbs, we design and install displays that compliment the natural shape of each tree.",
-    "image": "/images/benefit-installers.png",
+    "image": "/images/service-tree.jpg",
     "imageAlt": "Outdoor tree lighting installation by GTA Christmas Lighting on a residential property",
     "icon": "trees"
   },
@@ -40,7 +40,7 @@
     "title": "Interior Decorations",
     "shortDescription": "Wreaths, garlands, mantel styling, and seasonal interior touches — bring the festive spirit inside.",
     "longDescription": "Christmas trees, mantel garlands, banister wraps, oversized wreaths, table-scapes, and statement pieces. Our interior team styles your home for the holidays with a designer's eye and a white-glove install.",
-    "image": "/images/extra-installer.png",
+    "image": "/images/service-custom.jpg",
     "imageAlt": "Interior Christmas decorations and wreaths by GTA Christmas Lighting in a Toronto home",
     "icon": "home"
   },
@@ -49,8 +49,8 @@
     "title": "Custom Displays",
     "shortDescription": "One-of-a-kind lighting tailored to your style — from refined warm white to full multi-colour signature looks.",
     "longDescription": "Have a specific vision in mind? Our designers will bring it to life. Custom-cut lights to your roofline, custom-coloured bulbs, special-occasion themed designs, and entirely bespoke installations. We've decorated film sets, restaurants, hospitals, and homes that draw crowds of admirers.",
-    "image": "/images/hero.jpg",
-    "imageAlt": "Custom Christmas lighting display by GTA Christmas Lighting on a residential home",
+    "image": "/images/project-night-3.jpg",
+    "imageAlt": "Custom Christmas lighting display by GTA Christmas Lighting on a residential home at night",
     "icon": "palette"
   },
   {
@@ -58,7 +58,7 @@
     "title": "Commercial Light Installation",
     "shortDescription": "Storefronts, hotels, restaurants, municipalities, and parks — large-scale holiday lighting that attracts customers and energizes spaces.",
     "longDescription": "Eye-catching displays for storefronts, festive lighting for municipalities, hotels, restaurants, condo lobbies, and parks. We handle commercial-grade installations with the right safety equipment, after-hours scheduling, and customized designs that scale to your property.",
-    "image": "/images/extra-services.png",
+    "image": "/images/project-night-5.jpg",
     "imageAlt": "Commercial Christmas light installation for a GTA business by GTA Christmas Lighting",
     "icon": "building"
   }

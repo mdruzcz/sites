@@ -9,7 +9,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Get a Free Quote | GTA Christmas Lights",
   description:
-    "Request a free quote for professional Christmas light installation in the Greater Toronto Area. Award-winning design, commercial-grade LED lights, full-service install to takedown.",
+    "Request a free quote for professional Christmas light installation in the Greater Toronto Area. Custom design, professional-grade LED lights, full-service rental or purchase. Send us a photo of your home for a same-day quote.",
   openGraph: {
     title: "Get a Free Quote — GTA Christmas Lights",
     description:
@@ -55,9 +55,9 @@ export default function ContactPage() {
               <ul className="space-y-3 mb-10">
                 {[
                   "Free, no-obligation quote",
-                  "Award-winning custom design",
-                  "Insured · WSIB · Heights-certified",
-                  "Hassle-Free Christmas Guarantee",
+                  "Custom design for your property",
+                  "Fully insured · WSIB covered",
+                  "All-inclusive: install · maintain · take down · store",
                 ].map((b) => (
                   <li
                     key={b}
