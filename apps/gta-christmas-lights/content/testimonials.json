@@ -1,0 +1,74 @@
+[
+  {
+    "quote": "WOW, spectacular! That's the word that all our guests said as they walked through the door. It feels like we're in a winter wonderland — and we didn't have to lift a finger.",
+    "author": "Vince",
+    "location": "Oakville, ON",
+    "rating": 5,
+    "source": "Google",
+    "featured": true
+  },
+  {
+    "quote": "I can't explain the joy and relief I have knowing that our home is beautifully decorated for Christmas and I DON'T have to do it. Worth every dollar.",
+    "author": "Oliver",
+    "location": "Toronto, ON",
+    "rating": 5,
+    "source": "HomeStars",
+    "featured": true
+  },
+  {
+    "quote": "Their attention to detail is impeccable. Every strand is perfectly cut, every wreath perfectly hung. They always make sure the lights are to perfection.",
+    "author": "J. Serpe",
+    "location": "Vaughan, ON",
+    "rating": 5,
+    "source": "HomeStars",
+    "featured": true
+  },
+  {
+    "quote": "Exceptional both in quality and service. They install, maintain, and then come back to remove and store everything until next year's installation. The hassle-free experience is real.",
+    "author": "Erica & Ramesh",
+    "location": "Markham, ON",
+    "rating": 5,
+    "source": "HomeStars",
+    "featured": true
+  },
+  {
+    "quote": "LawnSavers — now GTA Christmas Lights — eliminates all the risk of falling off a ladder, the aggravation with wires and bulbs. I sleep better in December because of these guys.",
+    "author": "Hugh",
+    "location": "Richmond Hill, ON",
+    "rating": 5,
+    "source": "Yelp",
+    "featured": true
+  },
+  {
+    "quote": "They come on time, they do a great job, and it looks great. Year after year. I highly recommend them to anyone in the GTA who wants their home to shine.",
+    "author": "Sarah",
+    "location": "Mississauga, ON",
+    "rating": 5,
+    "source": "HomeStars",
+    "featured": true
+  },
+  {
+    "quote": "We've used the team for our commercial property for three years running. Reliable, insured, and the design is always elevated. It draws customers in.",
+    "author": "Marco D.",
+    "location": "King City, ON",
+    "rating": 5,
+    "source": "Google",
+    "featured": false
+  },
+  {
+    "quote": "Award-winning is right — neighbours stop to take pictures. The custom-cut LED lights look like they're built into the house.",
+    "author": "Janet & Paul",
+    "location": "Etobicoke, ON",
+    "rating": 5,
+    "source": "Google",
+    "featured": false
+  },
+  {
+    "quote": "Best decision we made this year. The design consult was thorough, the install team was professional, and the takedown was just as smooth. Booking again next year.",
+    "author": "Diane",
+    "location": "North York, ON",
+    "rating": 5,
+    "source": "Google",
+    "featured": false
+  }
+]

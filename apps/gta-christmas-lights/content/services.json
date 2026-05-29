@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "christmas-light-installation",
+    "title": "Christmas Light Installation",
+    "shortDescription": "Custom-designed, commercial-grade LED Christmas light installation for homes and businesses across the GTA — no ladders, no tangled wires, no stress.",
+    "longDescription": "Our designers visit your property, plan a one-of-a-kind display, and our certified install team brings it to life. We use commercial-grade LED bulbs (97% less electricity than retail), custom-cut strands to your roofline, and timers programmed for sunset-on / dawn-off. Every install is backed by our Perfect-Until-Christmas-Eve Guarantee.",
+    "image": "/images/gallery-1.png",
+    "imageAlt": "Professional Christmas light installation on luxury Toronto home by GTA Christmas Lights",
+    "icon": "lightbulb"
+  },
+  {
+    "slug": "design-consultation",
+    "title": "Custom Lighting Design",
+    "shortDescription": "Award-winning designers create a holiday lighting plan tailored to your home's architecture, landscape, and personal style.",
+    "longDescription": "Three Landscape Ontario Awards of Excellence speak for themselves. Our designers spend 2–4 hours on site measuring rooflines, mapping power sources, photographing key features, and rendering a custom plan. From classic warm-white to bold multicolor, every detail is intentional.",
+    "image": "/images/gallery-12.png",
+    "imageAlt": "Award of Excellence holiday lighting design by GTA Christmas Lights",
+    "icon": "palette"
+  },
+  {
+    "slug": "wreaths-and-garlands",
+    "title": "Wreaths & Garlands",
+    "shortDescription": "Hand-decorated lit wreaths, custom garlands on pillars, railings, and doorways for a complete holiday look.",
+    "longDescription": "Beyond rooflines, we transform front entrances with fresh-look greenery, lit garlands on pillars and railings, oversized lit wreaths with custom ribbons, and decorative bows. Commercial-grade greenery that holds up to GTA winters and stores beautifully for next year.",
+    "image": "/images/wreath-2.jpg",
+    "imageAlt": "Custom lit Christmas wreath with pinecones and gold ribbon installed by GTA Christmas Lights",
+    "icon": "gift"
+  },
+  {
+    "slug": "tree-and-shrub-lighting",
+    "title": "Tree & Shrub Lighting",
+    "shortDescription": "From wrapped spruces to spiral-wrapped trunks and lit shrubs — we light the entire landscape, not just the roof.",
+    "longDescription": "Large evergreens get up to 3,500 lights, wrapped branch-by-branch for a 360° glow. Smaller shrubs get even-cast wraps that look stunning from the street. Spiral-wrapped trunks make a refined statement that DIY just can't match.",
+    "image": "/images/gallery-11.png",
+    "imageAlt": "Spiral-wrapped Christmas tree lighting by GTA Christmas Lights",
+    "icon": "trees"
+  },
+  {
+    "slug": "interior-decorating",
+    "title": "Interior Holiday Decorating",
+    "shortDescription": "Christmas trees, mantels, staircases, and entertaining spaces decorated with a designer's eye and white-glove install.",
+    "longDescription": "Our interior team styles your home for the holidays — fresh or premium-faux Christmas trees, garlanded mantels and banisters, table-scapes, and statement pieces. Perfect for entertaining season. We deliver, install, refresh, and remove.",
+    "image": "/images/interior-1.png",
+    "imageAlt": "Interior Christmas decorating service in a Toronto home by GTA Christmas Lights",
+    "icon": "home"
+  },
+  {
+    "slug": "commercial-displays",
+    "title": "Commercial & Property Displays",
+    "shortDescription": "Hospitals, hotels, restaurants, retail centres, and condo lobbies — large-scale holiday lighting installed safely with aerial equipment.",
+    "longDescription": "We've designed and installed for St. Joseph's Hospital, the CNE, Locale Restaurant, and Netflix productions. Insured, WSIB-covered, certified for aerial platforms and working-at-heights. We handle traffic plans, after-hours installs, and multi-day projects.",
+    "image": "/images/commercial-cne.jpg",
+    "imageAlt": "Large-scale commercial Christmas lighting installation at the CNE by GTA Christmas Lights",
+    "icon": "building"
+  },
+  {
+    "slug": "maintenance-and-takedown",
+    "title": "Maintenance, Takedown & Storage",
+    "shortDescription": "Lights stop working? We're on it. After the season, we remove, label, and store everything so next year is effortless.",
+    "longDescription": "Our Perfect-Until-Christmas-Eve Guarantee means we proactively check your display and respond fast to any issue. Post-season, we carefully take everything down, inventory every component, and store it in climate-controlled space — yours and ready to re-install next November.",
+    "image": "/images/led-lights.jpg",
+    "imageAlt": "Commercial-grade Christmas LED lights stored and maintained by GTA Christmas Lights",
+    "icon": "wrench"
+  }
+]

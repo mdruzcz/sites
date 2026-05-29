@@ -30,6 +30,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--workspace=london-fence-installer"],
       "port": 3020
+    },
+    {
+      "name": "forever-lights",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--workspace=forever-lights"],
+      "port": 3034
     }
   ]
 }

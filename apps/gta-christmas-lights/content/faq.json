@@ -1,0 +1,62 @@
+[
+  {
+    "question": "How much does a Christmas light installation cost?",
+    "answer": "Our minimum installation is $1,500. Most first-year residential installs (roofline, garlands, shrubs, wreath) range $2,900–$4,500. Subsequent years are 45–55% less because you already own the lights — we just install and maintain them. Free estimates are always part of the process.",
+    "featured": true
+  },
+  {
+    "question": "What's included in a Christmas light installation?",
+    "answer": "Everything. Custom design, commercial-grade LED lights, extension cords, timers, professional installation, season-long maintenance, end-of-season takedown, and labelled climate-controlled storage. The only thing you provide is power.",
+    "featured": true
+  },
+  {
+    "question": "When should I book my Christmas lights?",
+    "answer": "As early as possible. We start booking in August and continue through November. Most installs happen between late October and early December, with the very last installs going up a few days before Christmas. Earlier bookings get preferred dates and design time.",
+    "featured": true
+  },
+  {
+    "question": "Do you use my old Christmas lights?",
+    "answer": "No — we use commercial-grade LED lights that look brighter, last longer, save up to 97% on electricity, and are custom-cut to your roofline. Retail bulbs simply can't match the quality or durability. You own the lights after year one.",
+    "featured": true
+  },
+  {
+    "question": "What if a bulb burns out or a strand fails?",
+    "answer": "Our Perfect-Until-Christmas-Eve Guarantee means we proactively check your display all season and respond quickly to any reported issue. If something stops working, we come back and fix it at no extra charge.",
+    "featured": true
+  },
+  {
+    "question": "Do I need to be home during installation?",
+    "answer": "No. Most exterior installations don't require you to be home — we plan the layout during the design visit. Interior decorating does require an adult on site so we can stage and style properly.",
+    "featured": true
+  },
+  {
+    "question": "Are you insured?",
+    "answer": "Yes — fully insured, WSIB-covered, and certified for aerial-platform operation and working-at-heights safety. You're protected and so is our crew.",
+    "featured": false
+  },
+  {
+    "question": "What areas of the GTA do you serve?",
+    "answer": "We serve Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Oakville, Brampton, Aurora, Newmarket, King City, Kleinburg, Caledon, Bradford, Stouffville, Whitby, Thornhill, Woodbridge, North York, Etobicoke, and Scarborough. Travel beyond core areas may incur a small hourly charge.",
+    "featured": false
+  },
+  {
+    "question": "Why is there a design fee?",
+    "answer": "Our designers spend 2–4 hours on site measuring rooflines, mapping power sources, photographing key features, and rendering a custom plan. The design fee is fully deductible from any package over $2,500.",
+    "featured": false
+  },
+  {
+    "question": "Do you light large trees?",
+    "answer": "Yes. A 30-foot spruce typically takes 2,500–3,500 lights and ranges $1,900–$3,900 in year one for full professional install. Subsequent years cost a fraction of that since you already own the lights.",
+    "featured": false
+  },
+  {
+    "question": "Can you decorate the inside of my home too?",
+    "answer": "Absolutely. We offer interior Christmas decorating — fresh or premium-faux trees, garlanded mantels, banister wraps, table-scapes, and statement pieces. Perfect for entertaining or for clients who'd rather come home to a fully styled holiday space.",
+    "featured": false
+  },
+  {
+    "question": "Do you do commercial properties?",
+    "answer": "Yes. We've installed at St. Joseph's Hospital, the CNE, Locale Restaurant, Netflix productions, and dozens of condo lobbies, retail centres, and restaurants. We're insured for commercial work and certified for aerial platforms.",
+    "featured": false
+  }
+]
