@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { site } from '@/lib/site';
 import { serviceAreas } from '@/lib/site';
 
@@ -9,12 +8,13 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
-            <Image
-              src="/images/logo.jpg"
-              alt="Forever Lights logo"
-              width={140}
-              height={56}
-              className="h-12 w-auto mb-4 object-contain"
+            {/* SVG logo — transparent background, renders cleanly on dark footer */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo.svg"
+              alt="Forever Lights — Permanent LED Lighting"
+              style={{ height: '52px', width: 'auto' }}
+              className="mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed">
               Professional permanent LED lighting for homes across London, Ontario and Southwestern Ontario.

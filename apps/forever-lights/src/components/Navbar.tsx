@@ -30,13 +30,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <Image
-            src="/images/logo.jpg"
-            alt="Forever Lights logo"
-            width={120}
-            height={48}
-            style={{ width: 'auto', height: '40px' }}
-            className="object-contain"
+          {/* SVG logo — transparent bg, gold + white brand colours */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.svg"
+            alt="Forever Lights — Permanent LED Lighting"
+            style={{ height: '44px', width: 'auto' }}
           />
         </Link>
 
