@@ -26,6 +26,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-07 | `illumi-track-lights` | illumitracklights.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `lcf-web` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `london-concrete-forming` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
+| MD-07 | `km-kitchen-renovations` | kmkitchenrenovations.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `london-concrete-sealing` | londonconcretesealing.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-08 | `london-deck-builder` | londondeckbuilder.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
 | MD-08 | `london-fence-installer` | londonfenceinstaller.ca | `0x4AAAAAADXesI_x9qC6ztVo` |
@@ -65,7 +66,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | holidaylightsupplies.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | homeenhance.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | homeserviceawards.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
-| kmkitchenrenovations.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
+| ~~kmkitchenrenovations.ca~~ | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` | → moved to main table |
 | listinglift.ca | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | ~~londonconcretesealing.ca~~ | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` | → moved to main table |
 | masterdecker.app | MD-08 | `0x4AAAAAADXesI_x9qC6ztVo` |
