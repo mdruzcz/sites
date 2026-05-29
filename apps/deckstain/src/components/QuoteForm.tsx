@@ -91,7 +91,7 @@ export default function QuoteForm() {
             required
             autoComplete="name"
             placeholder="Jane Smith"
-            className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white"
+            className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors"
           />
         </div>
         <div>
@@ -106,24 +106,40 @@ export default function QuoteForm() {
             inputMode="tel"
             autoComplete="tel"
             placeholder="519-555-0123"
-            className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white"
+            className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors"
           />
         </div>
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-[var(--charcoal)] mb-1.5">
-          Email Address <span className="text-red-500">*</span>
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          placeholder="jane@example.com"
-          className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white"
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="email" className="block text-sm font-semibold text-[var(--charcoal)] mb-1.5">
+            Email Address <span className="text-red-500">*</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="jane@example.com"
+            className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors"
+          />
+        </div>
+        <div>
+          <label htmlFor="city" className="block text-sm font-semibold text-[var(--charcoal)] mb-1.5">
+            Your City <span className="text-red-500">*</span>
+          </label>
+          <input
+            id="city"
+            name="city"
+            type="text"
+            required
+            autoComplete="address-level2"
+            placeholder="London, Woodstock..."
+            className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors"
+          />
+        </div>
       </div>
 
       <div>
@@ -134,7 +150,7 @@ export default function QuoteForm() {
           id="service"
           name="service"
           required
-          className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm text-[var(--charcoal)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white"
+          className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors"
         >
           <option value="">Select a service...</option>
           {services.map((s) => (
@@ -150,9 +166,9 @@ export default function QuoteForm() {
         <textarea
           id="message"
           name="message"
-          rows={4}
-          placeholder="Tell us about your deck (size, condition, location). You can also reply to our email with photos — we'll use them to prepare your quote."
-          className="w-full border border-[var(--border)] rounded-lg px-4 py-3 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white resize-none"
+          rows={3}
+          placeholder="Tell us about your deck (size, condition, type of wood). You can reply to our email with photos for your quote."
+          className="w-full border border-[var(--border)] rounded-lg px-4 py-2.5 text-sm text-[var(--charcoal)] placeholder-[var(--concrete)]/60 focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-[var(--accent)] bg-white transition-colors resize-none"
         />
       </div>
 

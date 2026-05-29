@@ -50,7 +50,7 @@ export default function HomePage() {
       />
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <Image
           src="/images/deck-01.jpg"
           alt="Professionally stained deck in Ontario - DeckStain.ca"
@@ -61,37 +61,41 @@ export default function HomePage() {
           blurDataURL={BLUR_DATA_URL}
           sizes="100vw"
         />
-        <div className="hero-overlay absolute inset-0" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(35,31,27,0.90) 0%, rgba(35,31,27,0.75) 55%, rgba(35,31,27,0.50) 100%)" }} />
 
-        <div className="container relative z-10 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-10 xl:gap-16 items-center">
             {/* Left: Copy */}
             <div>
-              <p className="eyebrow text-[var(--accent)] mb-4">READY Seal® Certified Applicators</p>
-              <h1 className="h-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+              <div className="inline-flex items-center gap-2 bg-[var(--accent)]/20 border border-[var(--accent)]/40 rounded-full px-4 py-1.5 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[var(--accent)] shrink-0" />
+                <p className="eyebrow text-[var(--accent)] tracking-wider" style={{ fontSize: "0.7rem" }}>READY Seal® Certified Applicators</p>
+              </div>
+              <h1 className="h-display text-4xl md:text-5xl lg:text-6xl text-white mb-5 leading-[1.05]">
                 Professional Deck &amp; Fence Staining Across Ontario
               </h1>
-              <p className="text-white/80 text-lg mb-8 leading-relaxed normal-case font-normal max-w-lg">
+              <p className="text-white/75 text-lg mb-8 leading-relaxed font-normal max-w-lg">
                 We use READY Seal® oil-based stains — no peeling, no flaking — and deliver free
                 photo quotes in just 2 business days. Serving 40+ cities across Southwestern Ontario.
               </p>
 
               {/* Trust badges inline */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: "📷", label: "Photo Quotes", sub: "No visit needed" },
-                  { icon: "⚡", label: "2-Day Response", sub: "Fast turnaround" },
-                  { icon: "✅", label: "100% Satisfaction", sub: "Guaranteed" },
+                  { label: "Photo quotes — no site visit needed" },
+                  { label: "Response within 2 business days" },
+                  { label: "100% satisfaction guaranteed" },
                 ].map((badge) => (
-                  <div key={badge.label} className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center border border-white/20">
-                    <span className="text-2xl mb-1 block">{badge.icon}</span>
-                    <p className="text-white font-bold text-xs">{badge.label}</p>
-                    <p className="text-white/60 text-xs">{badge.sub}</p>
+                  <div key={badge.label} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+                    <svg className="w-4 h-4 text-[var(--accent)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p className="text-white text-xs font-semibold">{badge.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="btn btn-primary">
                   Get Free Photo Quote
                 </Link>
@@ -102,12 +106,16 @@ export default function HomePage() {
             </div>
 
             {/* Right: Quote form */}
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl">
-              <h2 className="h-display text-xl text-[var(--charcoal)] mb-1">Get a Free Quote</h2>
-              <p className="text-[var(--concrete)] text-sm mb-6 normal-case font-normal">
-                Tell us about your project — we&apos;ll respond within 2 business days.
-              </p>
-              <QuoteForm />
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="bg-[var(--accent)] px-6 py-4">
+                <h2 className="h-display text-lg text-white">Get a Free Quote</h2>
+                <p className="text-white/80 text-xs font-normal mt-0.5">
+                  We respond within 2 business days — no visit needed.
+                </p>
+              </div>
+              <div className="p-6">
+                <QuoteForm />
+              </div>
             </div>
           </div>
         </div>
@@ -176,16 +184,16 @@ export default function HomePage() {
               </ul>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {[
                   { value: "500+", label: "Projects Completed" },
                   { value: "8+", label: "Years Experience" },
                   { value: "40+", label: "Cities Served" },
                   { value: "100%", label: "Satisfaction Rate" },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-[var(--surface)] rounded-xl p-4 text-center border border-[var(--border)]">
-                    <p className="text-[var(--accent)] font-bold text-2xl font-[var(--font-montserrat)]">{stat.value}</p>
-                    <p className="text-[var(--concrete)] text-xs mt-1 normal-case font-normal">{stat.label}</p>
+                  <div key={stat.label} className="bg-[var(--surface)] rounded-xl p-4 border border-[var(--border)]">
+                    <p className="text-[var(--accent)] font-bold text-2xl font-[var(--font-montserrat)] leading-none">{stat.value}</p>
+                    <p className="text-[var(--concrete)] text-xs mt-1.5 font-normal">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -287,31 +295,35 @@ export default function HomePage() {
       </section>
 
       {/* ─── TESTIMONIALS ─── */}
-      <section className="section bg-white">
+      <section className="section bg-[var(--surface)]">
         <div className="container">
           <SectionHeader
-            eyebrow="Reviews"
-            title="What Our Clients Say"
+            eyebrow="Client Reviews"
+            title="What Our Customers Say"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.map((t) => (
-              <div key={t.id} className="card p-6">
-                <div className="flex gap-1 mb-4">
+              <div key={t.id} className="bg-white rounded-2xl p-6 border border-[var(--border)] shadow-sm flex flex-col">
+                {/* Quote mark */}
+                <svg className="w-8 h-8 text-[var(--accent)]/30 mb-3 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <div className="flex gap-0.5 mb-3">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <blockquote className="text-[var(--concrete)] text-sm leading-relaxed mb-4 normal-case font-normal italic">
+                <blockquote className="text-[var(--charcoal)]/70 text-sm leading-relaxed font-normal flex-1 mb-4">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[var(--accent)] flex items-center justify-center text-white font-bold text-sm">
+                <div className="flex items-center gap-3 pt-4 border-t border-[var(--border)]">
+                  <div className="w-9 h-9 rounded-full bg-[var(--accent)] flex items-center justify-center text-white font-bold text-sm shrink-0">
                     {t.author[0]}
                   </div>
                   <div>
-                    <p className="font-bold text-[var(--charcoal)] text-sm">{t.author}</p>
+                    <p className="font-semibold text-[var(--charcoal)] text-sm">{t.author}</p>
                     <p className="text-[var(--concrete)] text-xs">{t.city}, ON</p>
                   </div>
                 </div>
@@ -322,7 +334,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── SERVICE AREAS ─── */}
-      <section className="section bg-[var(--surface)]">
+      <section className="section bg-white">
         <div className="container">
           <SectionHeader
             eyebrow="Service Areas"

@@ -6,7 +6,7 @@ export async function POST(req: Request) {
   // Honeypot
   if (body.website?.trim()) return Response.json({ ok: true });
 
-  if (!body.name || !body.phone || !body.email || !body.service)
+  if (!body.name || !body.phone || !body.email || !body.service || !body.city)
     return Response.json({ error: "All fields required." }, { status: 400 });
 
   if (!body.token)
@@ -28,6 +28,7 @@ export async function POST(req: Request) {
     name: body.name,
     phone: body.phone,
     email: body.email,
+    city: body.city,
     service: body.service,
     message: body.message || null,
   };
@@ -64,6 +65,7 @@ export async function POST(req: Request) {
           <p><strong>Name:</strong> ${body.name}</p>
           <p><strong>Phone:</strong> ${body.phone}</p>
           <p><strong>Email:</strong> ${body.email}</p>
+          <p><strong>City:</strong> ${body.city}</p>
           <p><strong>Service:</strong> ${body.service}</p>
           <p><strong>Message:</strong> ${body.message || "None"}</p>
         `,

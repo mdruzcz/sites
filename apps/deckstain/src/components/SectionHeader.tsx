@@ -14,15 +14,15 @@ export default function SectionHeader({
   light = false,
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
+    <div className={`mb-8 md:mb-12 ${centered ? "text-center" : ""}`}>
       {eyebrow && (
         <p className={`eyebrow mb-3 ${light ? "text-[var(--accent-600)]" : ""}`}>{eyebrow}</p>
       )}
-      <h2 className={`h-display text-3xl md:text-4xl lg:text-5xl mb-4 ${light ? "text-white" : "text-[var(--charcoal)]"}`}>
+      <h2 className={`h-display text-2xl md:text-3xl lg:text-4xl mb-4 ${light ? "text-white" : "text-[var(--charcoal)]"}`}>
         {title}
       </h2>
       {description && (
-        <p className={`text-base md:text-lg max-w-2xl leading-relaxed normal-case font-normal ${centered ? "mx-auto" : ""} ${light ? "text-white/80" : "text-[var(--concrete)]"}`}>
+        <p className={`text-base max-w-2xl leading-relaxed normal-case font-normal ${centered ? "mx-auto" : ""} ${light ? "text-white/80" : "text-[var(--concrete)]"}`}>
           {description}
         </p>
       )}

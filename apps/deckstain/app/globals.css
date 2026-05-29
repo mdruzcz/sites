@@ -41,8 +41,7 @@ body {
 .h-display {
   font-family: var(--font-montserrat);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
@@ -194,11 +193,21 @@ body {
 
 /* Section spacing */
 .section {
-  padding: 5rem 0;
+  padding: 3.5rem 0;
 }
 
 .section-sm {
-  padding: 3rem 0;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-sm {
+    padding: 3rem 0;
+  }
 }
 
 /* Container */
