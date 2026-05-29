@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {

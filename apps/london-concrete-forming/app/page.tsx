@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -16,26 +16,26 @@ export const metadata: Metadata = {
     title: "Concrete Driveways & Patios London, ON",
     description: "Expert concrete contractor in London, Ontario. Driveways, patios, retaining walls & stamped concrete. 20+ years experience.",
     url: site.url,
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete driveway by London Concrete Forming in London, ON" }],
+    images: [{ url: "/images/Long-Concrete-Driveway.jpg", width: 1200, height: 630, alt: "Concrete driveway by London Concrete Forming in London, ON" }],
   },
   twitter: { card: "summary_large_image", title: "Concrete Driveways London, ON" },
 };
 
 const faqItems = [
-  { question: "How much does a concrete driveway cost in London, ON?", answer: "Our concrete driveway installation costs between $10–$16 per square foot depending on the size, finish, and site conditions. This includes all labour, materials, and the concrete itself." },
-  { question: "How long does concrete take to cure?", answer: "Concrete reaches walking strength within 24–48 hours and can handle light vehicle traffic after 7 days. Full strength is reached at 28 days. We recommend waiting the full 7 days before driving on a new driveway." },
+  { question: "How much does a concrete driveway cost in London, ON?", answer: "Our concrete driveway installation costs between $10�$16 per square foot depending on the size, finish, and site conditions. This includes all labour, materials, and the concrete itself." },
+  { question: "How long does concrete take to cure?", answer: "Concrete reaches walking strength within 24�48 hours and can handle light vehicle traffic after 7 days. Full strength is reached at 28 days. We recommend waiting the full 7 days before driving on a new driveway." },
   { question: "Do you offer stamped concrete options?", answer: "Yes! We offer a wide variety of stamped concrete patterns including slate, cobblestone, brick, and more. Stamped concrete adds beautiful curb appeal and can be combined with custom colours." },
   { question: "What areas do you serve?", answer: "We serve London and the surrounding area including St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley." },
   { question: "Do you provide free quotes?", answer: "Yes, we provide free no-obligation quotes for all concrete projects. Contact us by phone at 519-914-1901 or fill out our online quote form and we will get back to you within 1 business day." },
 ];
 
 const services = [
-  { href: "/concrete-driveways", title: "Concrete Driveways", desc: "Natural, coloured, stamped, and broomed driveway options. Durable and low-maintenance.", img: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Freshly poured concrete driveway in London, ON by London Concrete Forming" },
-  { href: "/concrete-patios", title: "Concrete Patios", desc: "Beautiful outdoor living spaces with custom finishes and stamped patterns.", img: "https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595.jpg", alt: "Stamped concrete patio installation in London, Ontario" },
-  { href: "/concrete-retaining-walls", title: "Retaining Walls", desc: "Expert concrete retaining wall construction for erosion control and landscaping.", img: "https://londonconcreteforming.ca/wp-content/uploads/2023/12/IMG-20231218-WA0003.jpg", alt: "Concrete retaining wall construction in London, ON" },
-  { href: "/stamped-concrete-driveway", title: "Stamped Concrete", desc: "Add curb appeal with decorative stamped patterns and custom colour options.", img: "https://londonconcreteforming.ca/wp-content/uploads/2023/12/IMG-20231218-WA0005.jpg", alt: "Stamped concrete driveway with decorative pattern in London, Ontario" },
-  { href: "/concrete-removal-services", title: "Concrete Removal", desc: "Professional removal and disposal of old driveways, patios, and slabs.", img: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/image-5.png", alt: "Concrete removal service in London, Ontario" },
-  { href: "/concrete-shed-pad-installer", title: "Shed Pads", desc: "Solid concrete shed pad installations for garages, sheds, and hot tubs.", img: "https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595-1024x771.jpg", alt: "Concrete shed pad installation in London, Ontario" },
+  { href: "/concrete-driveways", title: "Concrete Driveways", desc: "Natural, coloured, stamped, and broomed driveway options. Durable and low-maintenance.", img: "/images/drive.jpg", alt: "Freshly poured concrete driveway in London, ON by London Concrete Forming" },
+  { href: "/concrete-patios", title: "Concrete Patios", desc: "Beautiful outdoor living spaces with custom finishes and stamped patterns.", img: "/images/PXL_20230718_125644595.jpg", alt: "Stamped concrete patio installation in London, Ontario" },
+  { href: "/concrete-retaining-walls", title: "Retaining Walls", desc: "Expert concrete retaining wall construction for erosion control and landscaping.", img: "/images/IMG-20231218-WA0003.jpg", alt: "Concrete retaining wall construction in London, ON" },
+  { href: "/stamped-concrete-driveway", title: "Stamped Concrete", desc: "Add curb appeal with decorative stamped patterns and custom colour options.", img: "/images/IMG-20231218-WA0005.jpg", alt: "Stamped concrete driveway with decorative pattern in London, Ontario" },
+  { href: "/concrete-removal-services", title: "Concrete Removal", desc: "Professional removal and disposal of old driveways, patios, and slabs.", img: "/images/image-5.png", alt: "Concrete removal service in London, Ontario" },
+  { href: "/concrete-shed-pad-installer", title: "Shed Pads", desc: "Solid concrete shed pad installations for garages, sheds, and hot tubs.", img: "/images/PXL_20230718_125644595.jpg", alt: "Concrete shed pad installation in London, Ontario" },
 ];
 
 const benefits = [
@@ -43,7 +43,7 @@ const benefits = [
   { icon: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z", title: "Timely Completion", desc: "We respect your time and schedule. Projects are completed on time with minimal disruption to your property." },
   { icon: "M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z", title: "Customer Satisfaction", desc: "5-star rated service. We stand behind our work and ensure every customer is completely satisfied." },
   { icon: "M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5", title: "Quality Materials", desc: "We use premium concrete mixes and reinforcement to ensure your project withstands Ontario winters for decades." },
-  { icon: "M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42", title: "Creative Design", desc: "From natural broom finish to intricate stamped patterns — we help you design the perfect look for your home." },
+  { icon: "M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42", title: "Creative Design", desc: "From natural broom finish to intricate stamped patterns � we help you design the perfect look for your home." },
   { icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418", title: "Environmental Responsibility", desc: "We practice responsible concrete disposal and site cleanup, minimizing our environmental footprint on every job." },
 ];
 
@@ -60,12 +60,12 @@ export default function HomePage() {
       <section className="bg-[#333333] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg"
+            src="/images/drive.jpg"
             alt="Professional concrete driveway installation in London, Ontario by London Concrete Forming"
             fill
             className="object-cover opacity-30"
             priority
-            unoptimized
+           
           />
         </div>
         <div className="relative container-custom py-16 md:py-24">
@@ -107,7 +107,7 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-3">How Can We Help You?</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">From driveways and patios to retaining walls and shed pads — we handle all your concrete needs across London and area.</p>
+            <p className="text-slate-600 max-w-2xl mx-auto">From driveways and patios to retaining walls and shed pads � we handle all your concrete needs across London and area.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
@@ -118,7 +118,7 @@ export default function HomePage() {
                     alt={service.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    unoptimized
+                   
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <h3 className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg leading-tight">{service.title}</h3>
@@ -172,17 +172,17 @@ export default function HomePage() {
                 We specialize in residential concrete work including driveways, patios, retaining walls, and shed pads. Every project is completed with attention to detail and a commitment to quality that has earned us a reputation as one of the most trusted concrete contractors in the region.
               </p>
               <p className="text-slate-300 leading-relaxed mb-8">
-                Our pricing is transparent and competitive — typically $10–$16 per square foot for standard driveway installation. We provide detailed quotes with no hidden fees, and we stand behind every project we complete.
+                Our pricing is transparent and competitive � typically $10�$16 per square foot for standard driveway installation. We provide detailed quotes with no hidden fees, and we stand behind every project we complete.
               </p>
               <Link href="/about-us" className="btn btn-primary text-base">Learn About Us</Link>
             </div>
             <div className="relative h-80 lg:h-full min-h-[300px] rounded-2xl overflow-hidden">
               <Image
-                src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595-1024x771.jpg"
+                src="/images/PXL_20230718_125644595.jpg"
                 alt="London Concrete Forming team at work on a concrete project in London, Ontario"
                 fill
                 className="object-cover"
-                unoptimized
+               
               />
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function HomePage() {
         <div className="container-custom max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#333333] mb-5">Quality Concrete That Lasts Is Our Number One Priority</h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-4">
-            At London Concrete Forming, we understand that a concrete driveway or patio is a long-term investment. That is why we only use high-quality concrete mixes and proper reinforcement techniques to ensure your project stands the test of time — especially through Ontario winters.
+            At London Concrete Forming, we understand that a concrete driveway or patio is a long-term investment. That is why we only use high-quality concrete mixes and proper reinforcement techniques to ensure your project stands the test of time � especially through Ontario winters.
           </p>
           <p className="text-slate-600 text-lg leading-relaxed mb-8">
             Every project begins with proper site preparation including excavation, grading, and compaction. We then set forms to exact specifications before pouring and finishing the concrete. The result is a smooth, level surface that drains properly and resists cracking.
@@ -209,7 +209,7 @@ export default function HomePage() {
               <p className="text-slate-700 font-semibold">Projects Completed</p>
             </div>
             <div className="bg-[#f8fafc] rounded-xl p-6">
-              <p className="text-3xl font-extrabold text-[#F7931E] mb-2">$10–$16</p>
+              <p className="text-3xl font-extrabold text-[#F7931E] mb-2">$10�$16</p>
               <p className="text-slate-700 font-semibold">Per Sq. Ft.</p>
             </div>
           </div>
@@ -235,19 +235,19 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10">
-              <div className="text-4xl mb-3">💰</div>
+              <div className="text-4xl mb-3">??</div>
               <h3 className="text-white font-bold text-xl mb-3">Affordable Pricing</h3>
-              <p className="text-slate-300 leading-relaxed">Competitive rates of $10–$16/sq.ft. with transparent pricing. No hidden fees or surprise charges — ever.</p>
+              <p className="text-slate-300 leading-relaxed">Competitive rates of $10�$16/sq.ft. with transparent pricing. No hidden fees or surprise charges � ever.</p>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10">
-              <div className="text-4xl mb-3">🏗️</div>
+              <div className="text-4xl mb-3">???</div>
               <h3 className="text-white font-bold text-xl mb-3">Financing Options</h3>
               <p className="text-slate-300 leading-relaxed">We work with homeowners to find payment solutions that fit their budget. Ask us about our flexible financing options.</p>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10">
-              <div className="text-4xl mb-3">🎨</div>
+              <div className="text-4xl mb-3">??</div>
               <h3 className="text-white font-bold text-xl mb-3">Diverse Finishes</h3>
-              <p className="text-slate-300 leading-relaxed">Broom finish, exposed aggregate, stamped patterns, coloured concrete — we offer every finish option to match your vision.</p>
+              <p className="text-slate-300 leading-relaxed">Broom finish, exposed aggregate, stamped patterns, coloured concrete � we offer every finish option to match your vision.</p>
             </div>
           </div>
         </div>

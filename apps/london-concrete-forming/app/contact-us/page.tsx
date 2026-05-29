@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";

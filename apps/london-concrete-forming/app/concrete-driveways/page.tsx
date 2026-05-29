@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Concrete Driveway Installation",
     description: "Expert concrete driveway contractor in London, Ontario. Natural, coloured, stamped & broomed options.",
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete driveway installation in London, Ontario" }],
+    images: [{ url: "/images/Long-Concrete-Driveway.jpg", alt: "Concrete driveway installation in London, Ontario" }],
   },
 };
 
@@ -37,7 +37,7 @@ export default function ConcreteDrivewaysPage() {
 
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
-          <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete driveway installation in London, Ontario" fill className="object-cover opacity-25" priority unoptimized />
+          <Image src="/images/Long-Concrete-Driveway.jpg" alt="Concrete driveway installation in London, Ontario" fill className="object-cover opacity-25" priority />
         </div>
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Concrete Driveways</span>
@@ -69,7 +69,7 @@ export default function ConcreteDrivewaysPage() {
               </div>
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden">
-              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Beautiful concrete driveway by London Concrete Forming in London, Ontario" fill className="object-cover" unoptimized />
+              <Image src="/images/Long-Concrete-Driveway.jpg" alt="Beautiful concrete driveway by London Concrete Forming in London, Ontario" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -82,17 +82,17 @@ export default function ConcreteDrivewaysPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="card p-6 text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🎨</div>
+              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">??</div>
               <h3 className="font-bold text-[#333333] mb-2">Endless Possibilities</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Broom finish, exposed aggregate, stamped patterns, or smooth — we offer every style to match your home.</p>
             </div>
             <div className="card p-6 text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🛡️</div>
+              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">???</div>
               <h3 className="font-bold text-[#333333] mb-2">Non-Slip Surface</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Broom-finished concrete provides excellent traction in all weather conditions — important for Ontario winters.</p>
             </div>
             <div className="card p-6 text-center">
-              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">🌈</div>
+              <div className="w-12 h-12 rounded-xl bg-[#F7931E]/10 flex items-center justify-center mx-auto mb-4 text-[#F7931E]">??</div>
               <h3 className="font-bold text-[#333333] mb-2">Colour Options</h3>
               <p className="text-slate-600 text-sm leading-relaxed">Integral colour, acid staining, and colour hardeners allow you to match or complement any exterior palette.</p>
             </div>

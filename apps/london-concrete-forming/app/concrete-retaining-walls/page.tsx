@@ -10,16 +10,16 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Professional Concrete Retaining Wall Company",
-  description: "Expert concrete retaining wall installation in London, Ontario. Garden terracing, erosion control & functional landscaping. Free quotes — 519-914-1901.",
+  description: "Expert concrete retaining wall installation in London, Ontario. Garden terracing, erosion control & functional landscaping. Free quotes â€” 519-914-1901.",
   openGraph: {
     title: "Expert Concrete Retaining Wall Installation in London, ON",
     description: "Professional concrete retaining walls in London, Ontario for gardens, erosion control, and landscaping.",
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png", alt: "Concrete retaining wall by London Concrete Forming" }],
+    images: [{ url: "/images/Concrete-Contractor-in-St.-Thomas.png", alt: "Concrete retaining wall by London Concrete Forming" }],
   },
 };
 
 const faqItems = [
-  { question: "How much do concrete retaining walls cost?", answer: "Concrete retaining walls typically cost $150–$400 per linear foot depending on height, length, and site conditions. We provide free detailed quotes after assessing your site." },
+  { question: "How much do concrete retaining walls cost?", answer: "Concrete retaining walls typically cost $150â€“$400 per linear foot depending on height, length, and site conditions. We provide free detailed quotes after assessing your site." },
   { question: "What are concrete retaining walls used for?", answer: "Retaining walls hold back soil to create level areas in sloped yards. They are commonly used for garden terracing, erosion control, creating level driveways, and adding functional seating areas." },
   { question: "Do you build retaining walls in other materials?", answer: "We specialize in concrete retaining walls only. Concrete provides the strongest, most durable solution for residential applications with the best value over time." },
   { question: "How long does a concrete retaining wall last?", answer: "A properly built concrete retaining wall can last 50+ years. Concrete is highly resistant to moisture, frost, and structural stress when installed with proper drainage and reinforcement." },
@@ -41,15 +41,15 @@ export default function RetainingWallsPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png"
+            src="/images/Concrete-Contractor-in-St.-Thomas.png"
             alt="Concrete retaining wall installation by London Concrete Forming in London, Ontario"
-            fill className="object-cover opacity-25" priority unoptimized
+            fill className="object-cover opacity-25" priority
           />
         </div>
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Concrete Retaining Walls</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Expert Concrete Retaining Wall Installation</h1>
-          <p className="text-slate-300 text-xl mb-6">Garden terracing, erosion control, and functional outdoor spaces — built to last 50+ years.</p>
+          <p className="text-slate-300 text-xl mb-6">Garden terracing, erosion control, and functional outdoor spaces â€” built to last 50+ years.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -92,17 +92,17 @@ export default function RetainingWallsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png"
+                src="/images/Concrete-Contractor-in-St.-Thomas.png"
                 alt="Completed concrete retaining wall with terraced garden beds in London, Ontario"
-                fill className="object-cover" unoptimized
+                fill className="object-cover"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Concrete — Not Block or Stone?</h2>
+              <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Concrete â€” Not Block or Stone?</h2>
               <div className="space-y-4">
                 {[
                   { title: "Monolithic Strength", desc: "Poured concrete walls form a single solid unit, eliminating the weak points between individual blocks or stones." },
-                  { title: "No Frost Heaving", desc: "Properly designed poured concrete walls with drainage resist frost heaving — a major issue for stacked stone and interlocking block walls in Ontario." },
+                  { title: "No Frost Heaving", desc: "Properly designed poured concrete walls with drainage resist frost heaving â€” a major issue for stacked stone and interlocking block walls in Ontario." },
                   { title: "Custom Heights & Curves", desc: "Unlike block, poured concrete can be formed to any height and curved to follow your yard's contours precisely." },
                   { title: "50+ Year Lifespan", desc: "Reinforced concrete retaining walls outlast block walls significantly. No individual blocks to shift, crack, or fall out." },
                 ].map((item) => (
@@ -127,7 +127,7 @@ export default function RetainingWallsPage() {
         <div className="container-custom max-w-4xl mx-auto">
           <div className="bg-[#333333] rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-4">Retaining Wall Cost Guide</h2>
-            <p className="text-slate-300 text-lg mb-2">Typical Range: <span className="text-[#F7931E] font-bold">$150–$400 per linear foot</span></p>
+            <p className="text-slate-300 text-lg mb-2">Typical Range: <span className="text-[#F7931E] font-bold">$150â€“$400 per linear foot</span></p>
             <p className="text-slate-400 mb-6">Cost depends on wall height, length, drainage requirements, and site access. We provide a detailed, itemized quote for every project.</p>
             <Link href="/contact-us" className="btn btn-primary text-base">Get Your Free Quote</Link>
           </div>

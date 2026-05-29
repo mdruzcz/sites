@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -33,7 +33,7 @@ export default function ConcretePatiosPage() {
 
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
-          <Image src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595.jpg" alt="Stamped concrete patio in London, Ontario" fill className="object-cover opacity-25" priority unoptimized />
+          <Image src="/images/concrete-Patio.jpg" alt="Stamped concrete patio in London, Ontario" fill className="object-cover opacity-25" priority />
         </div>
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Professional Concrete Patio Contractor</h1>
@@ -56,7 +56,7 @@ export default function ConcretePatiosPage() {
               </div>
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden">
-              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595.jpg" alt="Beautiful stamped concrete patio installed by London Concrete Forming in London, Ontario" fill className="object-cover" unoptimized />
+              <Image src="/images/concrete-Patio.jpg" alt="Beautiful stamped concrete patio installed by London Concrete Forming in London, Ontario" fill className="object-cover" />
             </div>
           </div>
         </div>

@@ -9,18 +9,18 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Shed Pad & Garage Pad Installer — London, Ontario",
-  description: "Professional concrete shed pads, garage pads, and hot tub pads in London, Ontario. Properly graded, reinforced, and built to last. Free quotes — 519-914-1901.",
+  title: "Concrete Shed Pad & Garage Pad Installer â€” London, Ontario",
+  description: "Professional concrete shed pads, garage pads, and hot tub pads in London, Ontario. Properly graded, reinforced, and built to last. Free quotes â€” 519-914-1901.",
   openGraph: {
     title: "Concrete Shed Pad & Garage Pad Installation in London, ON",
     description: "Expert concrete pad installation for sheds, garages, hot tubs, and more in London, Ontario. Free quotes from London Concrete Forming.",
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete shed pad installation by London Concrete Forming" }],
+    images: [{ url: "/images/drive.jpg", alt: "Concrete shed pad installation by London Concrete Forming" }],
   },
 };
 
 const faqItems = [
-  { question: "How much does a concrete shed pad cost in London, Ontario?", answer: "A standard 10×12 concrete shed pad typically costs $1,200–$1,800 installed, including excavation, gravel base, forming, pour, and broom finish. Larger pads and those in difficult access areas cost more. We provide free exact quotes." },
-  { question: "How thick should a concrete shed pad be?", answer: "For a garden shed or small outbuilding, 4 inches (100mm) of concrete is standard. For larger structures, heavy equipment storage, or hot tubs, we recommend 5–6 inches (125–150mm) with rebar reinforcement. We will advise the right thickness for your project." },
+  { question: "How much does a concrete shed pad cost in London, Ontario?", answer: "A standard 10Ã—12 concrete shed pad typically costs $1,200â€“$1,800 installed, including excavation, gravel base, forming, pour, and broom finish. Larger pads and those in difficult access areas cost more. We provide free exact quotes." },
+  { question: "How thick should a concrete shed pad be?", answer: "For a garden shed or small outbuilding, 4 inches (100mm) of concrete is standard. For larger structures, heavy equipment storage, or hot tubs, we recommend 5â€“6 inches (125â€“150mm) with rebar reinforcement. We will advise the right thickness for your project." },
   { question: "Do I need a permit for a shed pad in London, Ontario?", answer: "A permit is generally not required for a shed pad alone, but may be required for the shed structure itself if it exceeds 10 square metres. If you are pouring a garage pad, a permit is typically required. We can advise you on the permit requirements during your consultation." },
   { question: "How long does a concrete shed pad installation take?", answer: "Most shed pads are completed in 1 day: excavation and forming in the morning, pour and finish in the afternoon. The concrete needs 7 days to cure before placing the shed on it, and 28 days for full strength." },
   { question: "Can you pour a concrete pad in winter in Ontario?", answer: "Yes, with proper cold-weather concrete practices including heated enclosures and insulating blankets, we can pour concrete in colder temperatures. We schedule winter pours during mild spells and use winter-grade concrete mixes. Contact us for seasonal availability." },
@@ -41,9 +41,9 @@ export default function ConcreteShedPadPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg"
+            src="/images/drive.jpg"
             alt="Concrete shed pad and garage pad installation by London Concrete Forming in London, Ontario"
-            fill className="object-cover opacity-20" priority unoptimized
+            fill className="object-cover opacity-20" priority
           />
         </div>
         <div className="relative container-custom text-center max-w-4xl mx-auto">
@@ -62,14 +62,14 @@ export default function ConcreteShedPadPage() {
         <div className="container-custom">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-[#333333] mb-3">Concrete Pads We Install</h2>
-            <p className="text-slate-600 max-w-xl mx-auto">From small garden shed pads to large detached garage floors — every pad is built to last 30+ years.</p>
+            <p className="text-slate-600 max-w-xl mx-auto">From small garden shed pads to large detached garage floors â€” every pad is built to last 30+ years.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { name: "Garden Shed Pads", desc: "Small to mid-size pads (8×8 to 12×16) for garden sheds, wood storage, and backyard workshops. Standard 4\" thickness.", price: "From $900" },
-              { name: "Large Outbuilding Pads", desc: "Heavy-duty pads for larger structures. 5–6\" thickness with rebar for extra load capacity.", price: "From $1,800" },
+              { name: "Garden Shed Pads", desc: "Small to mid-size pads (8Ã—8 to 12Ã—16) for garden sheds, wood storage, and backyard workshops. Standard 4\" thickness.", price: "From $900" },
+              { name: "Large Outbuilding Pads", desc: "Heavy-duty pads for larger structures. 5â€“6\" thickness with rebar for extra load capacity.", price: "From $1,800" },
               { name: "Detached Garage Pads", desc: "Full garage floors with perimeter footings, rebar grid, and smooth trowel finish. Permits advised.", price: "From $3,500" },
-              { name: "Hot Tub Pads", desc: "Reinforced pads designed to support 2,000–5,000 lbs of water-filled hot tubs. Sized to your tub's footprint.", price: "From $1,200" },
+              { name: "Hot Tub Pads", desc: "Reinforced pads designed to support 2,000â€“5,000 lbs of water-filled hot tubs. Sized to your tub's footprint.", price: "From $1,200" },
               { name: "Equipment Pads", desc: "Heavy-duty concrete pads for generators, HVAC units, commercial equipment, and agricultural outbuildings.", price: "Custom quote" },
               { name: "Pool Equipment Pads", desc: "Small pads for pool pumps, filter systems, and pool houses. Smooth and easy to clean.", price: "From $600" },
             ].map((pad) => (
@@ -91,18 +91,18 @@ export default function ConcreteShedPadPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg"
+                src="/images/drive.jpg"
                 alt="Properly installed concrete shed pad with gravel base in London, Ontario"
-                fill className="object-cover" unoptimized
+                fill className="object-cover"
               />
             </div>
             <div>
               <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Proper Installation Matters</h2>
-              <p className="text-slate-600 leading-relaxed mb-5">Many homeowners try to install concrete pads on bare ground or skip the gravel base to save money — this leads to cracking, heaving, and a sunken structure within a few years. We do it right the first time.</p>
+              <p className="text-slate-600 leading-relaxed mb-5">Many homeowners try to install concrete pads on bare ground or skip the gravel base to save money â€” this leads to cracking, heaving, and a sunken structure within a few years. We do it right the first time.</p>
               <div className="space-y-4">
                 {[
-                  { title: "Proper Excavation", desc: "We excavate to the correct depth — removing organic material that would decompose and cause settling." },
-                  { title: "Compacted Gravel Base", desc: "4–6 inches of compacted gravel provides drainage and a stable, frost-resistant foundation." },
+                  { title: "Proper Excavation", desc: "We excavate to the correct depth â€” removing organic material that would decompose and cause settling." },
+                  { title: "Compacted Gravel Base", desc: "4â€“6 inches of compacted gravel provides drainage and a stable, frost-resistant foundation." },
                   { title: "Correct Grade & Drainage", desc: "Every pad is formed with a slight slope away from structures to prevent water pooling." },
                   { title: "Rebar Where Required", desc: "Rebar or wire mesh reinforcement prevents cracking under heavy loads and during freeze-thaw cycles." },
                   { title: "Proper Cure Time", desc: "Concrete reaches 70% strength in 7 days and full strength at 28 days. We advise you on when the pad is ready to use." },
@@ -111,7 +111,7 @@ export default function ConcreteShedPadPage() {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-[#F7931E] flex-shrink-0 mt-0.5" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
                     <div>
                       <span className="font-semibold text-[#333333]">{item.title}</span>
-                      <span className="text-slate-600 text-sm"> — {item.desc}</span>
+                      <span className="text-slate-600 text-sm"> â€” {item.desc}</span>
                     </div>
                   </div>
                 ))}
@@ -130,8 +130,8 @@ export default function ConcreteShedPadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               { step: "1", title: "Free On-Site Estimate", desc: "We visit your property, take measurements, assess the site, and provide a detailed written quote at no charge." },
-              { step: "2", title: "Excavation", desc: "Topsoil, grass, and any organic material are removed to the correct depth (typically 8–10 inches below finished surface)." },
-              { step: "3", title: "Granular Base Installation", desc: "4–6 inches of compacted crusher run gravel provides drainage and a stable frost-resistant base." },
+              { step: "2", title: "Excavation", desc: "Topsoil, grass, and any organic material are removed to the correct depth (typically 8â€“10 inches below finished surface)." },
+              { step: "3", title: "Granular Base Installation", desc: "4â€“6 inches of compacted crusher run gravel provides drainage and a stable frost-resistant base." },
               { step: "4", title: "Forming", desc: "Pressure-treated lumber or steel forms are set to your pad's exact dimensions with the correct grade and slope for drainage." },
               { step: "5", title: "Reinforcement", desc: "Wire mesh or rebar grid is placed inside the form, elevated off the base to sit in the middle third of the concrete pour." },
               { step: "6", title: "Concrete Pour & Finish", desc: "32 MPa concrete is poured, screeded, and trowelled to a smooth or broom finish. Control joints are cut to manage cracking." },
@@ -156,18 +156,18 @@ export default function ConcreteShedPadPage() {
             <h2 className="text-3xl font-extrabold text-white mb-4">Shed Pad Cost Guide</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-sm">
               <div className="bg-white/10 rounded-xl p-4">
-                <p className="text-slate-300 mb-1">8×10 to 10×12</p>
-                <p className="text-[#F7931E] font-extrabold text-2xl">$900–$1,400</p>
+                <p className="text-slate-300 mb-1">8Ã—10 to 10Ã—12</p>
+                <p className="text-[#F7931E] font-extrabold text-2xl">$900â€“$1,400</p>
                 <p className="text-slate-400">Small shed pad</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4 border-2 border-[#F7931E]">
-                <p className="text-slate-300 mb-1">12×16 to 16×20</p>
-                <p className="text-[#F7931E] font-extrabold text-2xl">$1,400–$2,400</p>
+                <p className="text-slate-300 mb-1">12Ã—16 to 16Ã—20</p>
+                <p className="text-[#F7931E] font-extrabold text-2xl">$1,400â€“$2,400</p>
                 <p className="text-slate-400">Mid-size pad</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
-                <p className="text-slate-300 mb-1">20×20 to 24×24</p>
-                <p className="text-[#F7931E] font-extrabold text-2xl">$2,400–$4,200</p>
+                <p className="text-slate-300 mb-1">20Ã—20 to 24Ã—24</p>
+                <p className="text-[#F7931E] font-extrabold text-2xl">$2,400â€“$4,200</p>
                 <p className="text-slate-400">Large pad / garage</p>
               </div>
             </div>

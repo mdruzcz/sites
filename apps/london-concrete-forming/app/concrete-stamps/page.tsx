@@ -9,12 +9,12 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Stamped Concrete Patterns — Cobblestone, Slate, Brick & More",
-  description: "Explore our full collection of stamped concrete patterns for driveways and patios in London, Ontario. 50+ designs. Free quotes — call 519-914-1901.",
+  title: "Stamped Concrete Patterns â€” Cobblestone, Slate, Brick & More",
+  description: "Explore our full collection of stamped concrete patterns for driveways and patios in London, Ontario. 50+ designs. Free quotes â€” call 519-914-1901.",
   openGraph: {
-    title: "Stamped Concrete Patterns — Cobblestone, Slate, Brick & More",
+    title: "Stamped Concrete Patterns â€” Cobblestone, Slate, Brick & More",
     description: "See our full collection of stamped concrete patterns from London Concrete Forming. Realistic designs at a fraction of the cost of natural stone.",
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Stamped concrete patterns by London Concrete Forming" }],
+    images: [{ url: "/images/drive.jpg", alt: "Stamped concrete patterns by London Concrete Forming" }],
   },
 };
 
@@ -23,7 +23,7 @@ const patterns = [
     name: "Cobblestone",
     description: "One of the most requested stamped patterns. Cobblestone creates the look of old-world European street paving. Individual rounded stones are impressed into the concrete for a rich, dimensional texture. Works beautifully for driveways, walkways, and patio borders.",
     ideal: "Driveways, front walkways, patio borders",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg",
+    image: "/images/stampedfinish.jpg",
     imageAlt: "Cobblestone stamped concrete driveway pattern installed in London, Ontario",
     colours: ["Charcoal", "Sandstone", "Terracotta", "Slate Grey"],
   },
@@ -31,23 +31,23 @@ const patterns = [
     name: "Ashlar Slate",
     description: "Irregular slate-shaped stones arranged in a random pattern. Ashlar slate provides a sophisticated, natural look that resembles high-end flagstone patios. The random cut lines add visual interest while maintaining the even surface of concrete.",
     ideal: "Patios, pool decks, backyard entertainment areas",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png",
+    image: "/images/PXL_20230718_125644595.jpg",
     imageAlt: "Ashlar slate stamped concrete patio pattern in London, Ontario",
     colours: ["Slate Grey", "Flagstone", "Buff", "Charcoal"],
   },
   {
     name: "Running Bond Brick",
-    description: "Classic brick pattern with offset horizontal rows — the same layout used in traditional brick construction. Running bond gives any surface a familiar, timeless appeal that complements brick or stone homes. Popular for driveway aprons, walkways, and patio edges.",
+    description: "Classic brick pattern with offset horizontal rows â€” the same layout used in traditional brick construction. Running bond gives any surface a familiar, timeless appeal that complements brick or stone homes. Popular for driveway aprons, walkways, and patio edges.",
     ideal: "Driveways, walkways, patio edging",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg",
+    image: "/images/IMG-20231218-WA0005.jpg",
     imageAlt: "Running bond brick stamped concrete walkway pattern in London, Ontario",
     colours: ["Red Brick", "Adobe", "Charcoal", "Sandstone"],
   },
   {
     name: "Herringbone Brick",
-    description: "Bricks arranged in a V-shaped zigzag pattern — one of the most visually striking designs available. Herringbone brick creates a sense of movement and energy underfoot. A favourite for feature driveways and large patio spaces where the pattern can really be appreciated.",
+    description: "Bricks arranged in a V-shaped zigzag pattern â€” one of the most visually striking designs available. Herringbone brick creates a sense of movement and energy underfoot. A favourite for feature driveways and large patio spaces where the pattern can really be appreciated.",
     ideal: "Feature driveways, large patios",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png",
+    image: "/images/IMG-20231218-WA0003.jpg",
     imageAlt: "Herringbone brick stamped concrete driveway pattern in London, Ontario",
     colours: ["Red Brick", "Adobe", "Buff", "Slate"],
   },
@@ -55,23 +55,23 @@ const patterns = [
     name: "Wood Plank",
     description: "Long, straight plank lines mimic the look of deck boards or reclaimed wood. Wood plank stamped concrete is especially popular for covered patios and pool surrounds where homeowners want the aesthetic of wood without the maintenance issues. Highly realistic with the right colour and release combination.",
     ideal: "Covered patios, pool surrounds, walkways",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg",
+    image: "/images/drive.jpg",
     imageAlt: "Wood plank stamped concrete patio pattern in London, Ontario",
     colours: ["Cedar", "Redwood", "Driftwood Grey", "Walnut"],
   },
   {
     name: "Flagstone",
-    description: "Large irregular shapes resembling natural flat stone — similar to traditional flagstone patio installation, but without the unevenness or weed-growth issues. Flagstone stamp pairs beautifully with garden beds and natural landscaping. Available in several sizes from small stepping-stone to large slab.",
+    description: "Large irregular shapes resembling natural flat stone â€” similar to traditional flagstone patio installation, but without the unevenness or weed-growth issues. Flagstone stamp pairs beautifully with garden beds and natural landscaping. Available in several sizes from small stepping-stone to large slab.",
     ideal: "Patios, garden paths, entry walks",
-    image: "https://londonconcreteforming.ca/wp-content/uploads/2025/09/Concrete-Contractor-in-St.-Thomas.png",
+    image: "/images/Concrete-Contractor-in-St.-Thomas.png",
     imageAlt: "Flagstone stamped concrete patio pattern with grey tones in London, Ontario",
     colours: ["Flagstone", "Buff", "Slate Grey", "Natural Stone"],
   },
 ];
 
 const faqItems = [
-  { question: "How much does stamped concrete cost compared to real stone?", answer: "Stamped concrete typically costs $15–$25 per square foot installed, while real natural stone or brick can run $30–$60+ per square foot. Stamped concrete provides a nearly identical look at roughly half the cost, and it eliminates weed growth between joints." },
-  { question: "How long does stamped concrete last?", answer: "Properly installed stamped concrete lasts 25–30+ years. The key to longevity is proper sealing — we recommend resealing every 2–3 years to maintain the colour and protect the surface from Ontario freeze-thaw cycles." },
+  { question: "How much does stamped concrete cost compared to real stone?", answer: "Stamped concrete typically costs $15â€“$25 per square foot installed, while real natural stone or brick can run $30â€“$60+ per square foot. Stamped concrete provides a nearly identical look at roughly half the cost, and it eliminates weed growth between joints." },
+  { question: "How long does stamped concrete last?", answer: "Properly installed stamped concrete lasts 25â€“30+ years. The key to longevity is proper sealing â€” we recommend resealing every 2â€“3 years to maintain the colour and protect the surface from Ontario freeze-thaw cycles." },
   { question: "Can stamped concrete be slippery when wet?", answer: "Standard stamped concrete can be slippery when wet. We always apply a non-slip additive to the sealer on driveways and pool decks. The texture of the stamp pattern also helps provide grip compared to a smooth trowelled surface." },
   { question: "What colours are available for stamped concrete?", answer: "We offer dozens of colour combinations using integral colour (mixed into the concrete), colour hardeners (broadcast on top), and release agents (applied before stamping to create the colour variation in the pattern joints). We bring sample boards to every consultation." },
   { question: "Can I see samples before I commit to a pattern?", answer: "Absolutely. We bring physical sample boards to your free on-site consultation so you can see and feel the patterns and colours in natural light next to your home's exterior." },
@@ -79,7 +79,7 @@ const faqItems = [
 
 export default function ConcreteStampsPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Stamp Patterns", description: "Full collection of stamped concrete patterns — cobblestone, slate, brick, wood, flagstone — in London, Ontario.", url: site.url + "/concrete-stamps" }),
+    serviceSchema({ name: "Concrete Stamp Patterns", description: "Full collection of stamped concrete patterns â€” cobblestone, slate, brick, wood, flagstone â€” in London, Ontario.", url: site.url + "/concrete-stamps" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Concrete Stamps", url: site.url + "/concrete-stamps" }]),
     faqSchema(faqItems),
   ];
@@ -92,15 +92,15 @@ export default function ConcreteStampsPage() {
       <section className="bg-[#333333] relative overflow-hidden py-20">
         <div className="absolute inset-0">
           <Image
-            src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg"
+            src="/images/drive.jpg"
             alt="Stamped concrete patterns by London Concrete Forming in London, Ontario"
-            fill className="object-cover opacity-20" priority unoptimized
+            fill className="object-cover opacity-20" priority
           />
         </div>
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Stamped Concrete</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Beautiful Stamped Concrete Patterns for London Homes</h1>
-          <p className="text-slate-300 text-xl mb-6">Cobblestone, slate, brick, wood plank, flagstone — over 50 patterns to choose from. Custom colours included.</p>
+          <p className="text-slate-300 text-xl mb-6">Cobblestone, slate, brick, wood plank, flagstone â€” over 50 patterns to choose from. Custom colours included.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Pattern Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -116,7 +116,7 @@ export default function ConcreteStampsPage() {
               { value: "50+", label: "Stamp Patterns" },
               { value: "30+", label: "Colour Options" },
               { value: "20+", label: "Years Experience" },
-              { value: "$15–$25", label: "Per Sq.Ft. Installed" },
+              { value: "$15â€“$25", label: "Per Sq.Ft. Installed" },
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-3xl font-extrabold mb-1">{s.value}</p>
@@ -151,7 +151,7 @@ export default function ConcreteStampsPage() {
               </div>
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Stamped concrete installation process — pattern being pressed into fresh concrete in London, Ontario" fill className="object-cover" unoptimized />
+              <Image src="/images/drive.jpg" alt="Stamped concrete installation process â€” pattern being pressed into fresh concrete in London, Ontario" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function ConcreteStampsPage() {
             {patterns.map((pattern) => (
               <div key={pattern.name} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                 <div className="relative h-52">
-                  <Image src={pattern.image} alt={pattern.imageAlt} fill className="object-cover" unoptimized />
+                  <Image src={pattern.image} alt={pattern.imageAlt} fill className="object-cover" />
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-[#333333] mb-2">{pattern.name}</h3>
@@ -195,13 +195,13 @@ export default function ConcreteStampsPage() {
                 <h2 className="text-3xl font-extrabold text-white mb-4">Stamped Concrete Cost Guide</h2>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
-                    <span>Single colour, simple pattern</span><span className="text-[#F7931E] font-bold">$15–$18/sqft</span>
+                    <span>Single colour, simple pattern</span><span className="text-[#F7931E] font-bold">$15â€“$18/sqft</span>
                   </div>
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
-                    <span>Dual colour, detailed pattern</span><span className="text-[#F7931E] font-bold">$18–$22/sqft</span>
+                    <span>Dual colour, detailed pattern</span><span className="text-[#F7931E] font-bold">$18â€“$22/sqft</span>
                   </div>
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
-                    <span>Custom design with borders</span><span className="text-[#F7931E] font-bold">$22–$25/sqft</span>
+                    <span>Custom design with borders</span><span className="text-[#F7931E] font-bold">$22â€“$25/sqft</span>
                   </div>
                 </div>
                 <p className="text-slate-400 text-xs mt-4">All prices include excavation, grading, rebar, forming, pour, stamping, and sealing. Based on standard residential projects.</p>

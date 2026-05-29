@@ -9,34 +9,34 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in Woodstock, ON — Driveways & Patios",
-  description: "Top-rated concrete contractor serving Woodstock, Ontario. Driveways, patios, stamped concrete, retaining walls & more. 20+ years experience. Free quotes — 519-914-1901.",
+  title: "Concrete Contractor in Woodstock, ON â€” Driveways & Patios",
+  description: "Top-rated concrete contractor serving Woodstock, Ontario. Driveways, patios, stamped concrete, retaining walls & more. 20+ years experience. Free quotes â€” 519-914-1901.",
   openGraph: {
     title: "Concrete Contractor in Woodstock, ON",
     description: "Expert concrete services in Woodstock, Ontario. Driveways, patios, retaining walls & stamped concrete from London Concrete Forming.",
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", alt: "Concrete contractor services in Woodstock, Ontario" }],
+    images: [{ url: "/images/Long-Concrete-Driveway.jpg", alt: "Concrete contractor services in Woodstock, Ontario" }],
   },
 };
 
 const services = [
-  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "🚗" },
-  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs — plain, exposed aggregate, stamped, or coloured to match your home.", icon: "☀️" },
-  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "🧱" },
-  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "🎨" },
-  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "🔨" },
-  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "🏗️" },
+  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "ðŸš—" },
+  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs â€” plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
+  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "ðŸ§±" },
+  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "ðŸŽ¨" },
+  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "ðŸ”¨" },
+  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "ðŸ—ï¸" },
 ];
 
 const faqItems = [
-  { question: "Do you serve Woodstock, Ontario?", answer: "Yes — London Concrete Forming regularly serves Woodstock and the surrounding Oxford County area. We do not charge additional travel fees for projects in Woodstock." },
+  { question: "Do you serve Woodstock, Ontario?", answer: "Yes â€” London Concrete Forming regularly serves Woodstock and the surrounding Oxford County area. We do not charge additional travel fees for projects in Woodstock." },
   { question: "What concrete services do you offer in Woodstock?", answer: "We provide the full range: driveway installation, patio construction, retaining walls, concrete removal, shed pads, and stamped concrete. All the same services we offer in London." },
   { question: "How far is Woodstock from your London base?", answer: "Woodstock is approximately 45 minutes from London. We travel throughout Southwestern Ontario and serve Woodstock regularly as part of our Oxford County service area." },
-  { question: "How quickly can you provide a quote in Woodstock?", answer: "We aim to schedule free on-site estimates within 2–5 business days in Woodstock. Call 519-914-1901 or fill out the form and we will be in touch quickly." },
+  { question: "How quickly can you provide a quote in Woodstock?", answer: "We aim to schedule free on-site estimates within 2â€“5 business days in Woodstock. Call 519-914-1901 or fill out the form and we will be in touch quickly." },
 ];
 
 export default function WoodstockPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Contractor in Woodstock, ON", description: "Professional concrete services in Woodstock, Ontario — driveways, patios, retaining walls, and more.", url: site.url + "/woodstock-concrete-contractor", city: "Woodstock" }),
+    serviceSchema({ name: "Concrete Contractor in Woodstock, ON", description: "Professional concrete services in Woodstock, Ontario â€” driveways, patios, retaining walls, and more.", url: site.url + "/woodstock-concrete-contractor", city: "Woodstock" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: site.url + "/service-areas" }, { name: "Woodstock", url: site.url + "/woodstock-concrete-contractor" }]),
     faqSchema(faqItems),
   ];
@@ -48,12 +48,12 @@ export default function WoodstockPage() {
       {/* Hero */}
       <section className="bg-[#333333] relative overflow-hidden py-24">
         <div className="absolute inset-0">
-          <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete contractor working on a driveway in Woodstock, Ontario" fill className="object-cover opacity-25" priority unoptimized />
+          <Image src="/images/Long-Concrete-Driveway.jpg" alt="Concrete contractor working on a driveway in Woodstock, Ontario" fill className="object-cover opacity-25" priority />
         </div>
         <div className="relative container-custom max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Woodstock, Ontario</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Concrete Contractor in Woodstock, ON</h1>
-          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete — 20+ years of experience serving Woodstock and Oxford County.</p>
+          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete â€” 20+ years of experience serving Woodstock and Oxford County.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -77,7 +77,7 @@ export default function WoodstockPage() {
         <div className="container-custom">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-[#333333] mb-3">Concrete Services in Woodstock</h2>
-            <p className="text-slate-600 max-w-xl mx-auto">Everything from new driveway installation to stamped concrete patios — fully serviced in Woodstock, ON.</p>
+            <p className="text-slate-600 max-w-xl mx-auto">Everything from new driveway installation to stamped concrete patios â€” fully serviced in Woodstock, ON.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
@@ -117,7 +117,7 @@ export default function WoodstockPage() {
               </div>
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="London Concrete Forming team completing a concrete project near Woodstock, Ontario" fill className="object-cover" unoptimized />
+              <Image src="/images/Long-Concrete-Driveway.jpg" alt="London Concrete Forming team completing a concrete project near Woodstock, Ontario" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function WoodstockPage() {
               <div className="bg-[#f8fafc] rounded-xl p-5">
                 <p className="font-semibold text-[#333333] mb-2">What to expect:</p>
                 <ul className="space-y-2 text-sm text-slate-600">
-                  {["Free on-site estimate within 2–5 business days", "Detailed written quote with itemized breakdown", "No travel fees for Woodstock projects", "No obligation to book after the estimate"].map((i) => (
+                  {["Free on-site estimate within 2â€“5 business days", "Detailed written quote with itemized breakdown", "No travel fees for Woodstock projects", "No obligation to book after the estimate"].map((i) => (
                     <li key={i} className="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#F7931E] flex-shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
                       {i}

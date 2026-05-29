@@ -9,8 +9,8 @@ import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in Port Stanley, ON — Driveways & Patios",
-  description: "Expert concrete contractor serving Port Stanley, Ontario. Driveways, patios, stamped concrete & more for cottage country and lakeside homes. Free quotes — 519-914-1901.",
+  title: "Concrete Contractor in Port Stanley, ON â€” Driveways & Patios",
+  description: "Expert concrete contractor serving Port Stanley, Ontario. Driveways, patios, stamped concrete & more for cottage country and lakeside homes. Free quotes â€” 519-914-1901.",
   openGraph: {
     title: "Concrete Contractor in Port Stanley, ON",
     description: "Professional concrete services in Port Stanley and Elgin County. Driveways, patios & stamped concrete for Lake Erie cottages and homes.",
@@ -18,24 +18,24 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "🚗" },
-  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs — plain, exposed aggregate, stamped, or coloured to match your home.", icon: "☀️" },
-  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "🧱" },
-  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "🎨" },
-  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "🔨" },
-  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "🏗️" },
+  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "ðŸš—" },
+  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs â€” plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
+  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "ðŸ§±" },
+  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "ðŸŽ¨" },
+  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "ðŸ”¨" },
+  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "ðŸ—ï¸" },
 ];
 
 const faqItems = [
-  { question: "Do you serve Port Stanley, Ontario?", answer: "Yes — Port Stanley and surrounding Elgin County beach communities are within our regular service area. We have completed many projects for both full-time residents and seasonal cottage owners in the area." },
-  { question: "Can you work on cottage or seasonal properties in Port Stanley?", answer: "Absolutely. We are experienced with seasonal property scheduling and understand the unique considerations of lakeside properties — including drainage, sandy soils, and seasonal access." },
+  { question: "Do you serve Port Stanley, Ontario?", answer: "Yes â€” Port Stanley and surrounding Elgin County beach communities are within our regular service area. We have completed many projects for both full-time residents and seasonal cottage owners in the area." },
+  { question: "Can you work on cottage or seasonal properties in Port Stanley?", answer: "Absolutely. We are experienced with seasonal property scheduling and understand the unique considerations of lakeside properties â€” including drainage, sandy soils, and seasonal access." },
   { question: "What is the best concrete for a Lake Erie cottage driveway?", answer: "For cottage and lakeside driveways, we recommend standard broom finish concrete at 5 inches thick with rebar reinforcement, designed for vehicle traffic and Ontario freeze-thaw conditions. Exposed aggregate is also popular for the natural stone look it provides." },
   { question: "How far is Port Stanley from London?", answer: "Port Stanley is approximately 40 minutes south of London on Lake Erie. We travel there regularly and do not charge additional travel fees for most projects in the community." },
 ];
 
 export default function PortStanleyPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Contractor in Port Stanley, ON", description: "Professional concrete services in Port Stanley, Ontario — driveways, patios, retaining walls, and more.", url: site.url + "/port-stanley-concrete-contractor", city: "Port Stanley" }),
+    serviceSchema({ name: "Concrete Contractor in Port Stanley, ON", description: "Professional concrete services in Port Stanley, Ontario â€” driveways, patios, retaining walls, and more.", url: site.url + "/port-stanley-concrete-contractor", city: "Port Stanley" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: site.url + "/service-areas" }, { name: "Port Stanley", url: site.url + "/port-stanley-concrete-contractor" }]),
     faqSchema(faqItems),
   ];
@@ -47,12 +47,12 @@ export default function PortStanleyPage() {
       {/* Hero */}
       <section className="bg-[#333333] relative overflow-hidden py-24">
         <div className="absolute inset-0">
-          <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete driveway and patio installation in Port Stanley, Ontario" fill className="object-cover opacity-25" priority unoptimized />
+          <Image src="/images/concrete-Patio.jpg" alt="Concrete driveway and patio installation in Port Stanley, Ontario" fill className="object-cover opacity-25" priority />
         </div>
         <div className="relative container-custom max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Port Stanley, Ontario</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Concrete Contractor in Port Stanley, ON</h1>
-          <p className="text-slate-300 text-xl mb-8">Driveways, patios &amp; stamped concrete for Lake Erie cottages and homes — expert installation from London Concrete Forming.</p>
+          <p className="text-slate-300 text-xl mb-8">Driveways, patios &amp; stamped concrete for Lake Erie cottages and homes â€” expert installation from London Concrete Forming.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -100,7 +100,7 @@ export default function PortStanleyPage() {
               <div className="space-y-4">
                 {[
                   { title: "High-Strength Concrete Mix", desc: "We use minimum 32 MPa concrete to withstand Ontario freeze-thaw cycles and the moisture-heavy environment of Lake Erie shoreline communities." },
-                  { title: "Proper Drainage Design", desc: "Every slab is formed with the correct slope and drainage to prevent water pooling — critical in higher-moisture environments." },
+                  { title: "Proper Drainage Design", desc: "Every slab is formed with the correct slope and drainage to prevent water pooling â€” critical in higher-moisture environments." },
                   { title: "Seasonal Scheduling", desc: "We work around seasonal access and can schedule your project for your spring visit or fall close-up to fit your cottage schedule." },
                   { title: "No Travel Fees", desc: "Port Stanley is within our standard service radius from London. Your quote reflects the actual project cost only." },
                 ].map((item) => (
@@ -117,7 +117,7 @@ export default function PortStanleyPage() {
               </div>
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg" alt="Concrete patio installed at a Port Stanley Lake Erie cottage by London Concrete Forming" fill className="object-cover" unoptimized />
+              <Image src="/images/concrete-Patio.jpg" alt="Concrete patio installed at a Port Stanley Lake Erie cottage by London Concrete Forming" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function PortStanleyPage() {
               <p className="text-slate-600 mb-4">Or call <a href={site.phoneHref} className="text-[#F7931E] font-semibold hover:underline">{site.phone}</a></p>
               <div className="bg-white rounded-xl p-5 border border-slate-200">
                 <ul className="space-y-2 text-sm text-slate-600">
-                  {["Free on-site estimate — no charge", "Seasonal cottage scheduling available", "No travel fees for Port Stanley", "No obligation after your estimate"].map((i) => (
+                  {["Free on-site estimate â€” no charge", "Seasonal cottage scheduling available", "No travel fees for Port Stanley", "No obligation after your estimate"].map((i) => (
                     <li key={i} className="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#F7931E] flex-shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
                       {i}

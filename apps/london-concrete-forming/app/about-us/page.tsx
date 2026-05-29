@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
@@ -62,11 +62,11 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden">
               <Image
-                src="https://londonconcreteforming.ca/wp-content/uploads/2023/12/PXL_20230718_125644595-1024x771.jpg"
+                src="/images/PXL_20230718_125644595.jpg"
                 alt="London Concrete Forming team completing a concrete project in London, Ontario"
                 fill
                 className="object-cover"
-                unoptimized
+               
               />
             </div>
           </div>

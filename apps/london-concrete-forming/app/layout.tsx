@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: site.url,
     siteName: site.name,
-    images: [{ url: "https://londonconcreteforming.ca/wp-content/uploads/2025/02/drive.jpg", width: 1200, height: 630, alt: "Concrete driveway by London Concrete Forming" }],
+    images: [{ url: "/images/drive.jpg", width: 1200, height: 630, alt: "Concrete driveway by London Concrete Forming" }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
