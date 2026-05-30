@@ -9,14 +9,16 @@ import { SectionHeader } from "@/components/SectionHeader";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Concrete Tilsonburg — Oxford County Concrete Contractor",
+  title: "About Us",
   description:
     "Locally owned and operated in Tillsonburg, ON for 12+ years. Concrete Tilsonburg serves Oxford County homeowners with custom driveways, stamped patios, and structural repairs built to last.",
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Concrete Tilsonburg — Oxford County Concrete Contractor",
+    title: "About Us | Concrete Tilsonburg",
     description:
       "Locally owned in Tillsonburg for 12+ years. Custom driveways, stamped patios, and structural repairs built to last through Ontario winters.",
     url: `${site.url}/about`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "About Concrete Tilsonburg" }],
   },
 };
 

@@ -36,16 +36,20 @@ export async function generateMetadata({
   const city = getCityBySlug(citySlug);
   if (!service || !city) return {};
 
-  const title = `${service.title} in ${city.name}, ON`;
+  const title = `${service.title} ${city.name} ON`;
   const description = `Professional ${service.title.toLowerCase()} in ${city.name}, Ontario. Reinforced construction, written warranty, free on-site estimate. Call ${site.phone}.`;
 
   return {
     title,
     description,
+    alternates: { canonical: `/services/${service.slug}/${city.slug}` },
     openGraph: {
-      title,
+      title: `${service.title} ${city.name} ON | Concrete Tilsonburg`,
       description,
-      images: [{ url: service.image, alt: `${service.title} in ${city.name}` }],
+      images: [
+        { url: service.image, alt: `${service.title} in ${city.name}` },
+        { url: "/images/og-default.jpg", width: 1200, height: 630, alt: `${service.title} in ${city.name}, ON` },
+      ],
       url: `${site.url}/services/${service.slug}/${city.slug}`,
     },
   };

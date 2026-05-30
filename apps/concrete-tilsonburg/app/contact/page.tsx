@@ -7,14 +7,16 @@ import { QuoteForm } from "@/components/QuoteForm";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Get a Free Concrete Estimate — Tillsonburg, ON",
+  title: "Free Concrete Estimate",
   description:
-    "Request a free on-site concrete estimate in Tillsonburg, Woodstock, Delhi, Ingersoll, or Simcoe. We respond within 4 business hours. Call (833) 243-3987.",
+    "Request a free on-site concrete estimate in Tillsonburg, Woodstock, Delhi, Ingersoll, or Simcoe. We respond within 4 business hours. Call (519) 878-6735.",
+  alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Get a Free Concrete Estimate — Tillsonburg, ON",
+    title: "Free Concrete Estimate | Concrete Tilsonburg",
     description:
       "Request a free on-site concrete estimate across Oxford County. We respond within 4 business hours.",
     url: `${site.url}/contact`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "Free concrete estimate — Tillsonburg, ON" }],
   },
 };
 

@@ -29,15 +29,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  const title = `${service.title} in Tillsonburg, ON & Area`;
+  const title = service.title;
   const description = `${service.shortDescription} Free on-site estimate. Written warranty. Call ${site.phone}.`;
   return {
     title,
     description,
+    alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title,
+      title: `${service.title} | Concrete Tilsonburg`,
       description,
-      images: [{ url: service.image, alt: `${service.title} in Tillsonburg, ON` }],
+      images: [
+        { url: service.image, alt: `${service.title} in Tillsonburg, ON` },
+        { url: "/images/og-default.jpg", width: 1200, height: 630, alt: `${service.title} — Oxford County` },
+      ],
       url: `${site.url}/services/${service.slug}`,
     },
   };

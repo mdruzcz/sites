@@ -11,14 +11,16 @@ import { ServiceIcon } from "@/components/ServiceIcon";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Services in Tillsonburg, ON",
+  title: "Concrete Services Tillsonburg ON",
   description:
-    "Custom driveways, stamped patios, concrete repair, and garage floors in Tillsonburg and Oxford County. Written warranty. Free on-site estimate. Call (833) 243-3987.",
+    "Custom driveways, stamped patios, concrete repair, and garage floors in Tillsonburg and Oxford County. Written warranty. Free on-site estimate. Call (519) 878-6735.",
+  alternates: { canonical: "/services" },
   openGraph: {
-    title: "Concrete Services in Tillsonburg, ON",
+    title: "Concrete Services Tillsonburg ON | Concrete Tilsonburg",
     description:
       "Custom driveways, stamped patios, concrete repair, and garage floors in Tillsonburg and Oxford County. Written warranty. Free on-site estimate.",
     url: `${site.url}/services`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "Concrete services in Tillsonburg, ON" }],
   },
 };
 
