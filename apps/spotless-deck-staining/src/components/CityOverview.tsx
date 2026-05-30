@@ -16,6 +16,11 @@ export function CityOverview({ city }: { city: City }) {
           <p className="text-lg text-[var(--driftwood)]/80 leading-relaxed max-w-3xl mx-auto">
             {city.intro}
           </p>
+          {city.localDetail && (
+            <p className="text-base text-[var(--driftwood)]/70 leading-relaxed max-w-3xl mx-auto mt-5">
+              {city.localDetail}
+            </p>
+          )}
         </div>
 
         <div className="p-8 rounded-2xl border border-[var(--line)] bg-[var(--cream)] shadow-warm">

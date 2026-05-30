@@ -14,6 +14,9 @@ export function Footer() {
               protect, restore and transform outdoor wood with premium
               penetrating stains and proper prep — every time.
             </p>
+            <p className="mt-4 text-sm font-semibold text-[var(--driftwood-dark)]">
+              Owner-operated by {site.owner}
+            </p>
           </div>
 
           <div>

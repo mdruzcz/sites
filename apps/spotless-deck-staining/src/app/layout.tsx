@@ -18,7 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://spotlessdeckstaining.ca"),
   title: {
-    default: "Spotless Deck Staining | Premium Deck & Fence Staining in Kitchener-Waterloo",
+    default: "Deck & Fence Staining in Kitchener-Waterloo | Spotless",
     template: "%s | Spotless Deck Staining",
   },
   description:

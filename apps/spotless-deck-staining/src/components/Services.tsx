@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { services } from "@/lib/site";
 import { CheckIcon } from "./icons";
 
@@ -54,15 +55,23 @@ export function Services() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--terracotta-deep)] hover:text-[var(--driftwood-dark)] transition-colors"
-                >
-                  Get a free quote for this service
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--terracotta-deep)] hover:text-[var(--driftwood-dark)] transition-colors"
+                  >
+                    Learn more about {s.shortName}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--driftwood)]/70 hover:text-[var(--terracotta-deep)] transition-colors"
+                  >
+                    Get a free quote
+                  </a>
+                </div>
               </div>
             </div>
           ))}
