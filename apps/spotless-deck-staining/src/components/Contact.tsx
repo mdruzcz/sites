@@ -154,6 +154,18 @@ export function Contact() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex items-center gap-4 min-h-11">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[var(--terracotta)] text-white">
+                  <CheckIcon />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider mb-0.5 text-[var(--driftwood)]/55">Owner-Operated</p>
+                  <p className="font-semibold text-[var(--driftwood-dark)]">
+                    {site.owner} · local, family-run &amp; fully insured
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="mt-10 p-5 rounded-xl border border-[var(--line)] bg-[var(--cream)] shadow-warm">

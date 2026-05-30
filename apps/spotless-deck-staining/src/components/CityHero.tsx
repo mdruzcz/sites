@@ -38,9 +38,9 @@ export function CityHero({ city }: { city: City }) {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-[#FAF8F3]">
-            Deck &amp; Fence
+            Deck &amp; Fence{" "}
             <br />
-            <span className="text-[var(--terracotta)]">Staining</span>
+            <span className="text-[var(--terracotta)]">Staining</span>{" "}
             <br />
             in {city.name}
           </h1>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site, faqs } from "@/lib/site";
+import { site, faqs, testimonials } from "@/lib/site";
 import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
@@ -18,7 +18,7 @@ import { CallNowFab } from "@/components/CallNowFab";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Spotless Deck Staining | Premium Deck & Fence Staining in Kitchener-Waterloo",
+  title: { absolute: "Deck & Fence Staining in Kitchener-Waterloo | Spotless" },
   description:
     "Premium deck and fence staining in Kitchener, Waterloo, Cambridge and Guelph. Two-coat penetrating stains, written 2-year warranty, free 24-hour quote.",
   alternates: { canonical: "https://spotlessdeckstaining.ca" },
@@ -41,6 +41,7 @@ const localBusinessSchema = {
     addressRegion: "ON",
     addressCountry: "CA",
   },
+  founder: { "@type": "Person", name: site.owner },
   areaServed: site.serviceAreas.map((c) => ({ "@type": "City", name: c })),
   openingHoursSpecification: [
     {
@@ -60,7 +61,21 @@ const localBusinessSchema = {
     "@type": "AggregateRating",
     ratingValue: "5.0",
     reviewCount: "23",
+    bestRating: "5",
+    worstRating: "1",
   },
+  review: testimonials.map((t) => ({
+    "@type": "Review",
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(t.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    author: { "@type": "Person", name: t.name },
+    reviewBody: t.quote,
+    ...(t.location && { locationCreated: t.location }),
+  })),
 };
 
 const faqSchema = {

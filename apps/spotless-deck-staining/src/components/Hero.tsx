@@ -37,9 +37,9 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-[#FAF8F3]">
-            Decks That Look
+            Decks That Look{" "}
             <br />
-            <span className="text-[var(--terracotta)]">Brand New</span>
+            <span className="text-[var(--terracotta)]">Brand New</span>{" "}
             <br />
             Every Single Season
           </h1>
