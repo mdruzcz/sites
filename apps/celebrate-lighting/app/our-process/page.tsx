@@ -4,13 +4,15 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Our Process | How Celebrate Lighting Installs Permanent LED Lighting",
+  title: "Our Process",
   description:
-    "Learn how Celebrate Lighting's 4-step process works — from free consultation through custom design, professional installation, and app setup. Serving SW Ontario.",
+    "How Celebrate Lighting's 4-step process works — free consultation, custom design, professional installation, and app setup. Serving Southwestern Ontario.",
+  alternates: { canonical: "/our-process" },
   openGraph: {
     title: "Our Process | How Celebrate Lighting Works",
     description: "How Celebrate Lighting installs permanent outdoor LED lighting — 4 simple steps, usually done in two days.",
     url: "https://celebratelighting.ca/our-process",
+    images: [{ url: "/images/hero-main.jpg", alt: "How Celebrate Lighting installs permanent outdoor LED lighting" }],
   },
 };
 

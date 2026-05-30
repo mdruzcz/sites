@@ -6,13 +6,15 @@ import { getProjects } from "@/lib/content";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Project Gallery | Permanent LED Lighting — Celebrate Lighting",
+  title: "Project Gallery",
   description:
-    "Browse Celebrate Lighting's gallery of permanent outdoor LED installations across Southwestern Ontario. Real homes, real results — from Brantford to London to Waterloo.",
+    "Browse Celebrate Lighting's permanent outdoor LED installations across Southwestern Ontario — real homes, real results from Brantford to London to Waterloo.",
+  alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Project Gallery | Permanent LED Lighting — Celebrate Lighting",
     description: "See our permanent outdoor LED lighting installations across SW Ontario homes and businesses.",
     url: "https://celebratelighting.ca/gallery",
+    images: [{ url: "/images/hero-main.jpg", alt: "Gallery of permanent outdoor LED lighting installs by Celebrate Lighting" }],
   },
 };
 

@@ -4,13 +4,15 @@ import { site } from "@/lib/site";
 import { faqSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "FAQ | Permanent Outdoor Lighting — Celebrate Lighting",
+  title: "Permanent Lighting FAQ",
   description:
-    "Get answers to common questions about permanent outdoor LED lighting: installation time, cost, warranty, app control, and how systems perform in Canadian winters.",
+    "Answers to common permanent outdoor LED lighting questions: install time, cost, warranty, app control, and winter performance. Celebrate Lighting, SW Ontario.",
+  alternates: { canonical: "/faq" },
   openGraph: {
     title: "FAQ | Permanent Outdoor Lighting — Celebrate Lighting",
     description: "Everything you need to know about permanent outdoor LED lighting installation in Ontario.",
     url: "https://celebratelighting.ca/faq",
+    images: [{ url: "/images/hero-main.jpg", alt: "Permanent outdoor LED lighting FAQ — Celebrate Lighting" }],
   },
 };
 

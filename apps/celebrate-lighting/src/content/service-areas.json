@@ -6,49 +6,57 @@
       "slug": "london",
       "name": "London",
       "description": "Serving London homeowners and businesses with premium permanent outdoor LED lighting. From charming heritage properties to modern builds, we tailor every installation to London's unique architecture.",
-      "population": "404,000"
+      "population": "404,000",
+      "localContext": "London — the Forest City — is the largest community we serve, and its mix of century homes in Old North and Wortley Village alongside newer subdivisions in Hyde Park and Summerside means no two installations are alike. We colour-match tracks to everything from ornate Victorian fascia to clean modern soffit, and our systems are built to shrug off the lake-effect snow and freeze-thaw swings that London winters are known for. A short drive up Highway 401 from our Woodstock base, London is one of our most-requested service areas."
     },
     {
       "slug": "waterloo",
       "name": "Waterloo",
       "description": "Bringing permanent LED lighting to Waterloo Region homes and businesses. Energy-efficient systems built for Ontario winters, with smart app control and a lifetime warranty.",
-      "population": "121,000"
+      "population": "121,000",
+      "localContext": "Waterloo's tech-forward community appreciates a lighting system you control entirely from your phone, and our app-based setup fits right in with the smart homes throughout Beechwood, Laurelwood, and the Uptown core. From executive properties near the universities to family homes backing onto the Laurel Creek corridor, we size each system to the home and the lot. Waterloo Region's humid summers and snowy winters are exactly what our IP67, −40&deg;C-rated components are built for."
     },
     {
       "slug": "guelph",
       "name": "Guelph",
       "description": "Illuminate your Guelph home year-round with our weatherproof LED track lighting. Enjoy every holiday, season, and special occasion with a single tap on your phone.",
-      "population": "143,000"
+      "population": "143,000",
+      "localContext": "Guelph — the Royal City — is full of beautiful limestone heritage homes in the Old University and Exhibition Park neighbourhoods, where a tastefully colour-matched track makes all the difference. Out toward Kortright Hills and Westminster Woods, larger newer builds are perfect canvases for full-roofline displays. Guelph's tree-lined streets and Wellington County freeze-thaw cycles demand weatherproof, properly-mounted systems — which is exactly what we install, backed for life."
     },
     {
       "slug": "brantford",
       "name": "Brantford",
       "description": "Certified permanent lighting installers serving Brantford and the surrounding area. Professional installation, colour-matched to your home, with a 25-year warranty.",
-      "population": "106,000"
+      "population": "106,000",
+      "localContext": "Brantford — the Telephone City — sits along the Grand River, and we light homes throughout Echo Place, West Brant, and the historic core. The city's blend of established neighbourhoods and rapidly growing new subdivisions means we handle everything from heritage fascia to brand-new soffit. A straightforward drive from our Oxford County base, Brantford homeowners get the same colour-matched, app-controlled, lifetime-warrantied installations we're known for across Southwestern Ontario."
     },
     {
       "slug": "st-thomas",
       "name": "St. Thomas",
       "description": "Trusted permanent lighting installers in St. Thomas. Our systems are weatherproof, energy-efficient, and controlled by a simple mobile app — perfect for every Ontario season.",
-      "population": "42,000"
+      "population": "42,000",
+      "localContext": "St. Thomas — the Railway City — has a strong stock of well-kept older homes plus growing new developments on the south and east edges of town. Just south of London, it's an easy service area for our crews, and the city's classic architecture takes beautifully to a warm-white everyday wash with full-colour holiday scenes layered on top. Our weatherproof systems handle the open-country wind and snow that roll across Elgin County all winter long."
     },
     {
       "slug": "stratford",
       "name": "Stratford",
       "description": "Enhance your Stratford home or business with professionally installed permanent outdoor LED lighting. Beautiful architectural accent lighting that adapts to any occasion.",
-      "population": "34,000"
+      "population": "34,000",
+      "localContext": "Stratford's renowned theatre heritage gives the town a real eye for presentation, and permanent architectural lighting suits its picturesque streets perfectly. We light grand century homes near the Avon River and Festival district as well as quieter residential streets throughout the city. Because Stratford homeowners care about how a finished detail looks, our hidden, colour-matched tracks and clean cable routing are a natural fit — and they shine through every Perth County winter."
     },
     {
       "slug": "tillsonburg",
       "name": "Tillsonburg",
       "description": "Celebrate Lighting serves Tillsonburg with premium permanent LED installations. Our track-mounted, soffit-matched systems provide year-round beauty with zero seasonal hassle.",
-      "population": "18,000"
+      "population": "18,000",
+      "localContext": "Tillsonburg, in the heart of Oxford County, is one of our closest service areas, and our local crews know its neighbourhoods well — from the established homes near Lake Lisgar to the new builds spreading out toward the edges of town. The town's friendly, community feel makes year-round permanent lighting especially popular for holidays and local events. Being just down the road from our Woodstock base means fast scheduling and easy follow-up service for Tillsonburg homeowners."
     },
     {
       "slug": "woodstock",
       "name": "Woodstock",
       "description": "Based in Woodstock, we know Oxford County homes inside and out. Our permanent lighting systems are designed for Canadian winters and installed by local experts who care about the community.",
-      "population": "43,000"
+      "population": "43,000",
+      "localContext": "Woodstock — the Dairy Capital of Canada — is our home base, so no one knows its homes and neighbourhoods better than we do. From the heritage streets around Museum Square to the new subdivisions on the north and east sides of the city, we've lit properties of every style across Oxford County. Being local means same-week consultations, fast installs, and a team you can actually reach if you ever need service — all backed by our lifetime warranty."
     }
   ]
 }

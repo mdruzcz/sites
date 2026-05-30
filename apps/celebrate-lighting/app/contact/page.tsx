@@ -5,13 +5,15 @@ import { site } from "@/lib/site";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Contact Celebrate Lighting | Free Quote for LED Lighting in Ontario",
+  title: "Contact Us — Free Quote",
   description:
-    "Ready to transform your home? Contact Celebrate Lighting for a free, no-obligation consultation and quote for permanent outdoor LED lighting anywhere in Southwestern Ontario.",
+    "Contact Celebrate Lighting for a free, no-obligation quote on permanent outdoor LED lighting across Southwestern Ontario. We reply within 24 hours.",
+  alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Celebrate Lighting | Free Quote for LED Lighting in Ontario",
     description: "Get your free consultation and quote for permanent outdoor LED lighting in Southwestern Ontario. We reply within 24 hours.",
     url: "https://celebratelighting.ca/contact",
+    images: [{ url: "/images/hero-main.jpg", alt: "Contact Celebrate Lighting for a free permanent LED lighting quote" }],
   },
 };
 

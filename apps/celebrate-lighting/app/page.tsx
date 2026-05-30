@@ -3,13 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { QuoteForm } from "@/components/QuoteForm";
 import { site } from "@/lib/site";
-import { getFeaturedProjects, getFeaturedTestimonials, getServices } from "@/lib/content";
+import { getFeaturedProjects, getFeaturedTestimonials, getServices, getTestimonials } from "@/lib/content";
 import { localBusinessSchema, faqSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Celebrate Lighting | Permanent Outdoor LED Lighting in Ontario",
+  title: { absolute: "Permanent LED Lighting in Ontario | Celebrate Lighting" },
   description:
-    "Stop climbing ladders every holiday season. Celebrate Lighting installs permanent outdoor LED lighting across Southwestern Ontario — app-controlled, lifetime warranty, built for Canadian winters.",
+    "Stop climbing ladders every holiday season. Permanent outdoor LED lighting across Southwestern Ontario — app-controlled, lifetime warranty, built for winters.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Celebrate Lighting | Permanent Outdoor LED Lighting in Ontario",
     description: "Stop climbing ladders every holiday season. Professional permanent LED lighting, app-controlled, lifetime warranty.",
@@ -35,7 +36,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(getTestimonials())) }}
       />
       <script
         type="application/ld+json"

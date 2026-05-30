@@ -3,8 +3,9 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Celebrate Lighting",
+  title: "Privacy Policy",
   description: "Celebrate Lighting's privacy policy — how we collect, use, and protect your personal information in accordance with PIPEDA.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

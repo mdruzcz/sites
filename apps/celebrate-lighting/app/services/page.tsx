@@ -5,13 +5,15 @@ import { getServices, getServiceAreas } from "@/lib/content";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Services | Permanent Outdoor Lighting — Celebrate Lighting",
+  title: "Permanent Lighting Services",
   description:
-    "Explore Celebrate Lighting's full range of services: new installations, repairs, consultations, maintenance, and system replacements across Southwestern Ontario.",
+    "New installs, repairs, consultations, maintenance, and system replacements for permanent outdoor LED lighting across Southwestern Ontario.",
+  alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | Permanent Outdoor Lighting — Celebrate Lighting",
     description: "New installs, repairs, maintenance, and consultation for permanent outdoor LED lighting in SW Ontario.",
     url: "https://celebratelighting.ca/services",
+    images: [{ url: "/images/hero-main.jpg", alt: "Permanent outdoor LED lighting services by Celebrate Lighting" }],
   },
 };
 

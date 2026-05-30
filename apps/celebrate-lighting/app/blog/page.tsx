@@ -5,13 +5,15 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Blog | Permanent Lighting Tips & Advice — Celebrate Lighting",
+  title: "Permanent Lighting Blog",
   description:
-    "Expert tips, seasonal inspiration, and the latest trends in permanent outdoor LED lighting for Ontario homeowners. Learn from Celebrate Lighting's team.",
+    "Expert tips, seasonal inspiration, and trends in permanent outdoor LED lighting for Ontario homeowners — from the Celebrate Lighting team.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Blog | Permanent Lighting Tips & Advice — Celebrate Lighting",
     description: "Expert tips on permanent outdoor LED lighting for Ontario homes.",
     url: "https://celebratelighting.ca/blog",
+    images: [{ url: "/images/hero-main.jpg", alt: "Permanent outdoor LED lighting tips from Celebrate Lighting" }],
   },
 };
 

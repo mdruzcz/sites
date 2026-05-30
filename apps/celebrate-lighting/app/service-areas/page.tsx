@@ -5,13 +5,15 @@ import { getServiceAreas, getServices } from "@/lib/content";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Service Areas | Celebrate Lighting — SW Ontario LED Lighting",
+  title: "Service Areas in SW Ontario",
   description:
-    "Celebrate Lighting serves London, Waterloo, Guelph, Brantford, St. Thomas, Stratford, Tillsonburg, Woodstock and surrounding areas with permanent outdoor LED lighting installation.",
+    "Permanent outdoor LED lighting installation across Southwestern Ontario — London, Waterloo, Guelph, Brantford, St. Thomas, Stratford, Tillsonburg & Woodstock.",
+  alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Service Areas | Celebrate Lighting — SW Ontario LED Lighting",
     description: "Professional permanent outdoor LED lighting installation across Southwestern Ontario. Find your city.",
     url: "https://celebratelighting.ca/service-areas",
+    images: [{ url: "/images/hero-main.jpg", alt: "Celebrate Lighting service areas across Southwestern Ontario" }],
   },
 };
 

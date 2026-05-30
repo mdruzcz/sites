@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const city = getCityBySlug(citySlug);
   if (!city) return {};
   return {
-    title: `Permanent Lighting Installer in ${city.name}, ON | Celebrate Lighting`,
-    description: `Celebrate Lighting offers permanent outdoor LED lighting installation in ${city.name}, Ontario. Professional, app-controlled, weatherproof systems with lifetime warranty. Call ${site.phone}.`,
+    title: `Permanent Lighting in ${city.name}`,
+    description: `Permanent outdoor LED lighting installation in ${city.name}, ON. App-controlled, weatherproof, lifetime warranty. Free quote — call ${site.phone}.`,
+    alternates: { canonical: `/service-areas/${citySlug}` },
     openGraph: {
       title: `Permanent Lighting Installer in ${city.name}, ON | Celebrate Lighting`,
       description: `Professional permanent LED lighting in ${city.name}, Ontario. Lifetime warranty, app-controlled, built for Canadian winters.`,
       url: `${site.url}/service-areas/${citySlug}`,
+      images: [{ url: "/images/hero-main.jpg", alt: `Permanent outdoor LED lighting in ${city.name}, Ontario by Celebrate Lighting` }],
     },
   };
 }
@@ -62,6 +64,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 Permanent Light Installer in {city.name}
               </h1>
               <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">{city.description}</p>
+              <p className="text-[var(--muted)] leading-relaxed mb-4">{city.localContext}</p>
               <p className="text-[var(--muted)] leading-relaxed mb-6">
                 We offer a full range of permanent lighting solutions in {city.name}, including{" "}
                 {services.map((s, i) => (

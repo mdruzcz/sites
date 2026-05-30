@@ -57,7 +57,7 @@ export function QuoteForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {/* Honeypot */}
-      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
+      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" aria-label="Leave this field empty" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>

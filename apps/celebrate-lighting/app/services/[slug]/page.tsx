@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.title} | Celebrate Lighting`,
-    description: `${service.shortDescription} Serving ${site.serviceAreas.slice(0, 3).join(", ")} and more. Call ${site.phone} for a free quote.`,
+    title: service.title,
+    description: `Professional ${service.title.toLowerCase()} across Southwestern Ontario — permanent app-controlled LED lighting with a lifetime warranty. Call ${site.phone}.`,
+    alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
       title: `${service.title} | Celebrate Lighting`,
       description: service.shortDescription,
       url: `${site.url}/services/${service.slug}`,
+      images: [{ url: "/images/hero-main.jpg", alt: `${service.title} — permanent LED lighting by Celebrate Lighting` }],
     },
   };
 }
@@ -86,6 +88,59 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <QuoteForm />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* In-depth content */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-6 text-[var(--muted)] leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight">
+            Why Choose Celebrate Lighting for {service.title}
+          </h2>
+          <p>
+            {service.title} is more than a quick add-on — it&apos;s a permanent
+            improvement to your home that you&apos;ll use every night of the year. Our
+            team approaches every {service.title.toLowerCase()} project the same way:
+            licensed, insured electricians, commercial-grade IP67 LED components rated to
+            −40&deg;C, and a clean, colour-matched track that disappears into your soffit
+            and fascia. Nothing about the finished result looks bolted-on or temporary.
+          </p>
+          <p>
+            Because our systems are app-controlled over WiFi, your {service.title.toLowerCase()}{" "}
+            gives you 16&nbsp;million-plus colours, custom scenes, and full scheduling from
+            your phone. Warm white for everyday curb appeal, team colours on game day,
+            orange and purple for Halloween, the full spectrum for the holidays — all
+            without ever touching a ladder again. And every installation is backed by our
+            comprehensive lifetime warranty covering LED modules, mounting hardware, and
+            workmanship.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight pt-2">
+            What to Expect
+          </h2>
+          <p>
+            We start with a free, no-obligation consultation: a lighting specialist visits
+            your property, takes measurements, colour-matches your soffit and fascia, and
+            provides a transparent, itemized quote. Once you approve, our certified
+            technicians complete most residential installations in one to two days with
+            clean, concealed cable routing. Before we leave, we configure your mobile app,
+            walk you through every control, and make sure you&apos;re comfortable running
+            your new system. From first call to a fully lit home, most projects wrap up
+            within the same week.
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight pt-2">
+            Built for Southwestern Ontario
+          </h2>
+          <p>
+            From the freeze-thaw swings of a London winter to the humid summers across
+            Oxford and Waterloo Region, our {service.title.toLowerCase()} systems are built
+            for the local climate. We serve {areas.cities.map((c) => c.name).slice(0, -1).join(", ")} and{" "}
+            {areas.cities[areas.cities.length - 1]?.name}, and we know the homes and
+            architecture in each community. Whether you have a century brick home or a new
+            build, we tailor the {service.title.toLowerCase()} to your property and your
+            vision — and we stand behind it for life.
+          </p>
         </div>
       </section>
 

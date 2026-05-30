@@ -5,13 +5,15 @@ import { site } from "@/lib/site";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "About Celebrate Lighting | Permanent LED Lighting Experts in Ontario",
+  title: "About Us",
   description:
-    "Learn about Celebrate Lighting — Ontario's trusted permanent outdoor LED lighting installer. Licensed, insured, lifetime warranty, serving SW Ontario since 2020.",
+    "Celebrate Lighting is Ontario's trusted permanent outdoor LED lighting installer — licensed, insured, lifetime warranty, serving SW Ontario since 2020.",
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About Celebrate Lighting | Permanent LED Lighting Experts in Ontario",
     description: "Licensed & insured permanent lighting specialists serving Southwestern Ontario. Lifetime warranty on all installations.",
     url: "https://celebratelighting.ca/about",
+    images: [{ url: "/images/hero-main.jpg", alt: "About Celebrate Lighting — permanent LED lighting experts in Ontario" }],
   },
 };
 
