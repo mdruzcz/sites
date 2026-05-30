@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     // Save to Supabase
     if (supabaseUrl && supabaseKey) {
-      await fetch(`${supabaseUrl}/rest/v1/lcf_contact_requests`, {
+      const insertRes = await fetch(`${supabaseUrl}/rest/v1/lcf_contact_requests`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,14 +39,19 @@ export async function POST(request: Request) {
           Prefer: "return=minimal",
         },
         body: JSON.stringify({
-          name,
+          first_name: firstName,
+          last_name: lastName || null,
           phone,
-          email: email || null,
-          services: Array.isArray(services) ? services.join(", ") : services || null,
+          email,
+          services: Array.isArray(services) ? services : services ? [services] : null,
           message: message || null,
-          created_at: new Date().toISOString(),
         }),
       });
+      if (!insertRes.ok) {
+        const detail = await insertRes.text();
+        console.error("Supabase insert failed", insertRes.status, detail);
+        return Response.json({ error: "Could not save your request" }, { status: 502 });
+      }
     }
 
     // Send email via Resend
