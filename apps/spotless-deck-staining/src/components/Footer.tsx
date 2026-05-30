@@ -30,6 +30,7 @@ export function Footer() {
                 { label: "How It Works",     href: "/#how" },
                 { label: "Gallery",          href: "/#gallery" },
                 { label: "Service Areas",    href: "/#service-areas" },
+                { label: "Blog",             href: "/blog" },
                 { label: "FAQ",              href: "/#faq" },
                 { label: "Get a Quote",      href: "/#contact" },
               ].map((l) => (
