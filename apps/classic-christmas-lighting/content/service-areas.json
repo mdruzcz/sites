@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "kitchener",
+    "city": "Kitchener",
+    "region": "ON",
+    "description": "Professional Christmas light installation in Kitchener, Ontario. Classic Christmas Lighting serves homes and businesses throughout Kitchener with custom LED lighting displays, tree lighting, and full decoration services.",
+    "population": "250,000",
+    "nearbyAreas": ["Waterloo", "Cambridge", "Guelph"]
+  },
+  {
+    "slug": "waterloo",
+    "city": "Waterloo",
+    "region": "ON",
+    "description": "Christmas light installation in Waterloo, Ontario. We serve residential neighbourhoods and commercial properties throughout Waterloo with professional-grade LED lighting and full-service installation.",
+    "population": "120,000",
+    "nearbyAreas": ["Kitchener", "Cambridge", "Guelph"]
+  },
+  {
+    "slug": "cambridge",
+    "city": "Cambridge",
+    "region": "ON",
+    "description": "Christmas light installation in Cambridge, Ontario. Serving Galt, Preston, and Hespeler neighbourhoods with professional holiday lighting for homes and businesses.",
+    "population": "140,000",
+    "nearbyAreas": ["Kitchener", "Guelph", "Hamilton"]
+  },
+  {
+    "slug": "guelph",
+    "city": "Guelph",
+    "region": "ON",
+    "description": "Professional Christmas light installation in Guelph, Ontario. Classic Christmas Lighting transforms homes and commercial properties throughout Guelph with brilliant LED displays.",
+    "population": "140,000",
+    "nearbyAreas": ["Cambridge", "Kitchener", "Hamilton"]
+  },
+  {
+    "slug": "hamilton",
+    "city": "Hamilton",
+    "region": "ON",
+    "description": "Christmas light installation in Hamilton, Ontario. We serve homeowners and businesses across Hamilton with professional holiday lighting, tree lighting, and festive decoration services.",
+    "population": "580,000",
+    "nearbyAreas": ["Cambridge", "Brantford", "Burlington"]
+  },
+  {
+    "slug": "woodstock",
+    "city": "Woodstock",
+    "region": "ON",
+    "description": "Christmas light installation in Woodstock, Ontario. Serving homes and businesses in Oxford County with professional LED Christmas lighting.",
+    "population": "45,000",
+    "nearbyAreas": ["Kitchener", "Hamilton", "Stratford"]
+  },
+  {
+    "slug": "stratford",
+    "city": "Stratford",
+    "region": "ON",
+    "description": "Professional Christmas lighting in Stratford, Ontario. Classic Christmas Lighting brings brilliant holiday displays to homes and businesses in Stratford and Perth County.",
+    "population": "35,000",
+    "nearbyAreas": ["Woodstock", "Kitchener", "Guelph"]
+  }
+]

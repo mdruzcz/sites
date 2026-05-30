@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Do you supply the lights, or do I need to buy my own?",
+    "answer": "We provide everything — high-quality, energy-efficient LED lights are included in our service. You don't need to purchase or supply anything. Our lights are commercial-grade and far brighter and more reliable than store-bought strands.",
+    "featured": true
+  },
+  {
+    "question": "How long does a typical installation take?",
+    "answer": "Most residential installations are completed in 2–4 hours. Larger homes or commercial properties may take longer. We work efficiently and respect your time, so we always provide an estimated window when booking.",
+    "featured": true
+  },
+  {
+    "question": "Are your services fully insured?",
+    "answer": "Yes, absolutely. Classic Christmas Lighting is fully insured. You can book with complete peace of mind knowing our team, your property, and your lights are all covered.",
+    "featured": true
+  },
+  {
+    "question": "Can I customize my lighting design and colours?",
+    "answer": "Yes! We offer fully custom designs. During our consultation we'll discuss your colour preferences, the areas you want lit (roofline, trees, windows, etc.), and any special effects you'd like. We design every display to match your vision.",
+    "featured": true
+  },
+  {
+    "question": "Do you offer maintenance during the season?",
+    "answer": "Yes — we provide ongoing maintenance throughout the holiday season. If a strand goes out or a connection loosens due to weather, give us a call and we'll come out to fix it at no extra charge.",
+    "featured": true
+  },
+  {
+    "question": "When do you take the lights down?",
+    "answer": "Takedown is typically scheduled for January, once the holiday season wraps up. We'll coordinate a convenient time, remove everything carefully, and leave your property exactly as we found it.",
+    "featured": false
+  },
+  {
+    "question": "What areas do you serve?",
+    "answer": "We serve Kitchener, Waterloo, Cambridge, Guelph, Hamilton, Woodstock, Stratford, and surrounding areas within the Kitchener-Waterloo region and Southern Ontario. We never charge for travel within our service area.",
+    "featured": false
+  },
+  {
+    "question": "Do you do commercial properties and BIAs?",
+    "answer": "Yes! We love commercial projects — storefronts, office buildings, shopping plazas, and municipal/BIA projects. We work around your business hours to minimize disruption and can scale up for large installations.",
+    "featured": false
+  },
+  {
+    "question": "When should I book?",
+    "answer": "We recommend booking as early as possible — ideally September or October. November slots fill up very quickly, especially for popular weekends. Early bookers get the best selection of installation dates.",
+    "featured": false
+  },
+  {
+    "question": "Do you offer other holiday decorations beyond lights?",
+    "answer": "Yes! We offer a full Christmas decoration service including wreaths, garlands, bows, and custom arrangements for both indoor and outdoor spaces. Ask about bundling decorations with your lighting package.",
+    "featured": false
+  }
+]

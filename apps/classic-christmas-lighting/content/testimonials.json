@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Jennifer M.",
+    "location": "Kitchener, ON",
+    "quote": "Classic Christmas Lighting transformed our home into something straight out of a holiday movie. Ben and his team were professional, fast, and the result was absolutely stunning. Our neighbours keep asking who did it!",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "David T.",
+    "location": "Waterloo, ON",
+    "quote": "We've used Classic Christmas Lighting for two years now and will never go back to doing it ourselves. The installation takes a couple of hours and the lights look a thousand times better than what we managed. Worth every penny.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "Sarah & Mike L.",
+    "location": "Cambridge, ON",
+    "quote": "Our whole family looks forward to the yearly transformation now. Ben worked with us to get the colour scheme exactly right. The takedown in January was just as smooth — no mess, no damage to the gutters.",
+    "rating": 5,
+    "featured": true
+  },
+  {
+    "author": "The Robinsons",
+    "location": "Guelph, ON",
+    "quote": "We hired Classic Christmas Lighting for our storefront and the response from customers was incredible. It definitely drove more foot traffic during the holidays. Highly recommend their commercial service.",
+    "rating": 5,
+    "featured": false
+  },
+  {
+    "author": "Karen W.",
+    "location": "Hamilton, ON",
+    "quote": "I was worried the installation would take all day but the team was in and out in under three hours. Absolutely beautiful result. I've already booked for next season!",
+    "rating": 5,
+    "featured": false
+  },
+  {
+    "author": "Paul D.",
+    "location": "Woodstock, ON",
+    "quote": "Excellent service from start to finish. The team was respectful of our property, cleaned up perfectly, and the lights look amazing even after a few storms. Great investment for the holidays.",
+    "rating": 5,
+    "featured": false
+  }
+]

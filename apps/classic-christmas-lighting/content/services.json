@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "christmas-lighting-installation",
+    "title": "Christmas Lighting Installation",
+    "shortDescription": "Professional full-service installation for homes and businesses. We handle everything from design to takedown — no ladders needed.",
+    "description": "Our signature Christmas lighting installation service covers everything from initial design consultation to the final takedown after the season. We arrive with professional equipment, custom-fit lights to your roofline, and leave you with a stunning holiday display. Serving Kitchener-Waterloo and surrounding Southern Ontario communities.",
+    "icon": "star",
+    "image": "/images/Classic-Christmas-Lighting-Residential-Light-Installation.jpg",
+    "imageAlt": "Professional Christmas light installation on a home in Kitchener-Waterloo Ontario by Classic Christmas Lighting"
+  },
+  {
+    "slug": "christmas-lighting-for-homes",
+    "title": "Residential Christmas Lighting",
+    "shortDescription": "Transform your home into the most beautiful on the block. Custom-designed displays, energy-efficient LEDs, and zero stress.",
+    "description": "Make your home the talk of the neighbourhood this Christmas. Our residential lighting service creates custom-designed displays that perfectly complement your home's architecture. We use energy-efficient LED lights that keep your electricity bills low while delivering brilliant, vibrant colour. From rooflines to trees, we handle it all.",
+    "icon": "home",
+    "image": "/images/Christmas-LIghting-For-Homes-Kitchener-Waterloo.jpg",
+    "imageAlt": "Beautiful residential Christmas lights on a Kitchener-Waterloo home by Classic Christmas Lighting"
+  },
+  {
+    "slug": "christmas-lighting-for-businesses",
+    "title": "Commercial Christmas Lighting",
+    "shortDescription": "Attract holiday shoppers and boost curb appeal with professional commercial holiday lighting for any business size.",
+    "description": "Stand out from the competition this holiday season. Our commercial Christmas lighting service transforms office buildings, retail storefronts, restaurants, and plazas into festive destinations. We work around your business hours to minimize disruption and create displays that attract customers and spread holiday cheer throughout your community.",
+    "icon": "building",
+    "image": "/images/Christmas-LIght-Installation-For-Businesses-Guelph.jpg",
+    "imageAlt": "Commercial Christmas lighting installation on a business in Guelph Ontario by Classic Christmas Lighting"
+  },
+  {
+    "slug": "tree-lighting-services",
+    "title": "Tree Lighting Services",
+    "shortDescription": "Make your trees sparkle with professionally wrapped lights. Indoor and outdoor trees, any size.",
+    "description": "Trees wrapped in lights create the most magical Christmas displays. Our tree lighting service precisely wraps branches in warm white or multicolour LEDs, creating a breathtaking effect whether indoors or outdoors. From small ornamental trees to large mature oaks, our team has the experience and equipment to make them glow.",
+    "icon": "tree",
+    "image": "/images/Christmas-Lighting-Guelph.jpg",
+    "imageAlt": "Professional tree lighting service in Guelph Ontario - trees wrapped in Christmas lights by Classic Christmas Lighting"
+  },
+  {
+    "slug": "christmas-light-rental",
+    "title": "Christmas Light Rental",
+    "shortDescription": "Premium LED light rentals for BIAs, municipalities, and event organizers. Full setup and takedown included.",
+    "description": "Our Christmas light rental program is perfect for Business Improvement Areas, municipalities, event planners, and community organizations. We supply premium commercial-grade LED lights, handle full installation and setup, provide maintenance throughout the season, and complete full takedown afterward. Brighten your community's public spaces this holiday season.",
+    "icon": "package",
+    "image": "/images/new-pic-services-1.jpg",
+    "imageAlt": "Christmas light rental installation for a BIA or municipality in Southern Ontario by Classic Christmas Lighting"
+  },
+  {
+    "slug": "christmas-decoration-services",
+    "title": "Christmas Decoration Services",
+    "shortDescription": "Complete holiday décor including wreaths, garlands, bows, and custom arrangements for homes and businesses.",
+    "description": "Go beyond lights with our full Christmas decoration service. We professionally install lush evergreen wreaths, draped garlands along banisters and doorways, festive bows, and custom holiday arrangements. Everything is professionally sourced, installed securely, and removed carefully after the season — leaving zero damage to your property.",
+    "icon": "circle",
+    "image": "/images/new-pic-services-2.jpg",
+    "imageAlt": "Professional Christmas decoration service including wreaths and garlands installed by Classic Christmas Lighting"
+  }
+]
