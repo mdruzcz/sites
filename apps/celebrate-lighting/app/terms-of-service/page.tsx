@@ -3,8 +3,9 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Celebrate Lighting",
+  title: "Terms of Service",
   description: "Celebrate Lighting's terms of service governing use of our website and services.",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 export default function TermsPage() {

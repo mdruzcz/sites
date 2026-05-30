@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { getTestimonials } from "@/lib/content";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, reviewsSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews | Celebrate Lighting — Ontario LED Lighting",
+  title: "Customer Reviews",
   description:
     "Read what Celebrate Lighting customers across Southwestern Ontario say about their permanent outdoor LED lighting installations. Real reviews from real homeowners.",
+  alternates: { canonical: "/reviews" },
   openGraph: {
     title: "Customer Reviews | Celebrate Lighting",
     description: "Real customer reviews for Celebrate Lighting's permanent outdoor LED lighting installations across Ontario.",
     url: "https://celebratelighting.ca/reviews",
+    images: [{ url: "/images/hero-main.jpg", alt: "Customer reviews for Celebrate Lighting permanent LED lighting" }],
   },
 };
 
@@ -19,6 +21,7 @@ export default function ReviewsPage() {
   const testimonials = getTestimonials();
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema(testimonials)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: "Home", url: site.url },
         { name: "Reviews", url: `${site.url}/reviews` },

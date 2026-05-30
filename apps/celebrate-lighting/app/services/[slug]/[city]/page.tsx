@@ -22,12 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const city = getCityBySlug(citySlug);
   if (!service || !city) return {};
   return {
-    title: `${service.title} in ${city.name}, Ontario | Celebrate Lighting`,
-    description: `Professional ${service.title.toLowerCase()} in ${city.name}, Ontario. Celebrate Lighting provides permanent outdoor LED lighting for ${city.name} homes and businesses. Call ${site.phone}.`,
+    title: `${service.title} in ${city.name}`,
+    description: `Professional ${service.title.toLowerCase()} in ${city.name}, ON. Permanent app-controlled outdoor LED lighting, weatherproof with a lifetime warranty. Call ${site.phone}.`,
+    alternates: { canonical: `/services/${slug}/${citySlug}` },
     openGraph: {
       title: `${service.title} in ${city.name}, Ontario | Celebrate Lighting`,
       description: `Professional ${service.title.toLowerCase()} in ${city.name}, ON. App-controlled, weatherproof, lifetime warranty.`,
       url: `${site.url}/services/${slug}/${citySlug}`,
+      images: [{ url: "/images/hero-main.jpg", alt: `${service.title} in ${city.name}, Ontario by Celebrate Lighting` }],
     },
   };
 }
@@ -74,7 +76,8 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
               <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">
                 Looking for professional {service.title.toLowerCase()} in {city.name}? Celebrate Lighting brings permanent outdoor LED lighting to {city.name} homes and businesses — app-controlled, weatherproof, and built for Ontario winters.
               </p>
-              <p className="text-[var(--muted)] leading-relaxed mb-6">{city.description}</p>
+              <p className="text-[var(--muted)] leading-relaxed mb-4">{city.description}</p>
+              <p className="text-[var(--muted)] leading-relaxed mb-6">{city.localContext}</p>
               <ul className="space-y-3 mb-8">
                 {service.features.map((f) => (
                   <li key={f} className="flex items-center gap-3 text-sm">
