@@ -5,27 +5,112 @@
     {
       "slug": "tillsonburg",
       "name": "Tillsonburg",
-      "description": "Our home base. We serve Tillsonburg homeowners and businesses with custom driveways, stamped patios, and concrete repairs built for Oxford County winters."
+      "description": "Our home base. We serve Tillsonburg homeowners and businesses with custom driveways, stamped patios, and concrete repairs built for Oxford County winters.",
+      "localContent": "Tillsonburg sits in the heart of Oxford County at the edge of Norfolk County, with a frost line that regularly reaches 1.2 metres and clay-loam soils that shift with freeze-thaw cycles. We account for this by installing a minimum 150 mm compacted granular base before every pour — standard in our local builds but often skipped by out-of-area crews. Whether your project is near Lake Lisgar, in Annandale, or along Broadway Street, our crews know the drainage patterns and grading challenges specific to this area. We have completed over 200 residential concrete projects in Tillsonburg alone, ranging from single-car broom-finish driveways to multi-level stamped patios. Oxford County Building Services requires a permit for structural concrete work on properties over certain thresholds — we handle the paperwork.",
+      "whyHeading": "Why Tillsonburg Homeowners Choose Concrete Tilsonburg",
+      "whyBody": "Local knowledge matters. Oxford County's freeze-thaw season runs from November through March, with temperatures swinging above and below zero dozens of times. Every mix we pour is air-entrained to handle this — microscopic bubbles give expanding ice room to move without fracturing the surface. We also install expansion joints at 3-metre intervals, which most homeowners never see but which dramatically extend slab life. We live here. We drive past your driveway every day.",
+      "faqs": [
+        {
+          "question": "How deep is the concrete base in Tillsonburg?",
+          "answer": "We install a minimum 150 mm compacted granular base (crusher run) beneath all slabs in Tillsonburg. Oxford County's clay-loam soils drain poorly, so this base layer is critical to prevent frost heave and differential settling."
+        },
+        {
+          "question": "Do I need a permit for a new driveway in Tillsonburg?",
+          "answer": "Most residential driveway replacements in Tillsonburg do not require a building permit, but any new construction driveway or work near a property line may. We advise checking with the Town of Tillsonburg's Building Department or letting us handle the inquiry as part of your project."
+        },
+        {
+          "question": "How long does a concrete pour take in Tillsonburg?",
+          "answer": "A typical residential driveway (50–80 sq metres) can be poured in a single day. Stamped patios take 1–2 days depending on the pattern complexity. We schedule work around Oxford County weather windows to ensure proper curing temperatures."
+        }
+      ]
     },
     {
       "slug": "woodstock",
       "name": "Woodstock",
-      "description": "Serving Woodstock with high-strength concrete work — driveways, patios, and structural repairs engineered for southwestern Ontario's freeze-thaw climate."
+      "description": "Serving Woodstock with high-strength concrete work — driveways, patios, and structural repairs engineered for southwestern Ontario's freeze-thaw climate.",
+      "localContent": "Woodstock, Oxford County's seat, has a mix of older downtown neighbourhoods with narrow driveways and newer subdivisions in the north end. The city sits on heavier clay soils than Tillsonburg — we add an extra 50 mm of granular base in clay-heavy areas such as the Pittock Lake corridor. Our crews are familiar with Woodstock's grid streets, laneway access challenges, and the CN rail corridor's vibration effects on adjacent slabs. We have completed stamped patio and driveway projects throughout Woodstock, from the historic Vincent Park neighbourhood to the newer Harvest Run community. Oxford County Building Services oversees permits for the Woodstock area.",
+      "whyHeading": "Why Woodstock Homeowners Choose Concrete Tilsonburg",
+      "whyBody": "Woodstock's clay soils are notoriously difficult for concrete. We've seen slabs installed by other contractors heave and crack within two winters because the base wasn't built for the soil type. Our Woodstock projects use a reinforced base suited to clay-heavy ground, proper site drainage planning, and air-entrained concrete mixes. We're 20 minutes from Tillsonburg — that means a local crew with no travel surcharge and a team that can respond quickly for repairs or warranty work.",
+      "faqs": [
+        {
+          "question": "Why does concrete crack faster in Woodstock than in other areas?",
+          "answer": "Woodstock's heavier clay soils expand significantly when wet and contract when dry — and freeze-thaw cycles amplify this movement. Concrete poured on improperly compacted clay without adequate drainage will crack within 2–3 winters. We engineer our bases specifically for clay-heavy Woodstock soils."
+        },
+        {
+          "question": "Can you work on narrow driveways in older Woodstock neighbourhoods?",
+          "answer": "Yes. We regularly work in older Woodstock areas with tight lane access and heritage setbacks. Our equipment includes smaller skid steers and hand tools where needed. We assess site access during the free estimate."
+        },
+        {
+          "question": "Do Woodstock concrete projects cost more than Tillsonburg?",
+          "answer": "No travel surcharge applies. Woodstock is within our standard service radius. Pricing is based on project scope, materials, and access — not location within our service area."
+        }
+      ]
     },
     {
       "slug": "delhi",
       "name": "Delhi",
-      "description": "Providing Delhi and surrounding Norfolk County with premium concrete driveways, walkways, and garage floors backed by our Oxford County expertise."
+      "description": "Providing Delhi and surrounding Norfolk County with premium concrete driveways, walkways, and garage floors backed by our Oxford County expertise.",
+      "localContent": "Delhi sits in Norfolk County's tobacco belt, where sandier soils and excellent natural drainage create different concrete challenges compared to the clay-heavy areas to the north. Drainage is less of a concern here, but sandy subbase can shift under load if not properly compacted. Our crews compact Delhi subgrades to a minimum 95% proctor density before forming — a step that prevents settling under heavy vehicles. Delhi's rural roads mean many properties have long driveways, and we've completed multiple 200+ metre rural lane pours in the area. Delhi is approximately 35 minutes from our Tillsonburg base, well within our standard service range.",
+      "whyHeading": "Why Delhi Homeowners Choose Concrete Tilsonburg",
+      "whyBody": "Delhi's sandy soils are forgiving for drainage but require careful compaction to prevent long-term settling. We bring the same engineered approach to every Delhi project — proper subgrade compaction, reinforced rebar grid, and air-entrained mix — that we use across Oxford County. For rural properties, we also plan for heavy equipment (farm tractors, transport trucks) and design slab thickness accordingly. Written warranty included on every project regardless of municipality.",
+      "faqs": [
+        {
+          "question": "Do you serve rural properties outside Delhi town limits?",
+          "answer": "Yes. We serve all of Norfolk County including rural properties around Delhi, Courtland, and Mount Elgin. Long driveways, farm lanes, and outbuilding slabs are well within our scope."
+        },
+        {
+          "question": "Is a concrete driveway better than asphalt in Delhi?",
+          "answer": "Concrete typically outlasts asphalt 2:1 in this climate (25–30 years vs. 15 years with maintenance), requires no resealing, and holds up better under heavy farm equipment loads. For Delhi properties with rural use, concrete is usually the better long-term investment."
+        },
+        {
+          "question": "What thickness do you pour for heavy-load driveways?",
+          "answer": "Standard residential is 100 mm (4 inches). For driveways that will see heavy trucks or farm equipment, we pour 125–150 mm with rebar reinforcement on a fully compacted granular base."
+        }
+      ]
     },
     {
       "slug": "ingersoll",
       "name": "Ingersoll",
-      "description": "Trusted concrete services throughout Ingersoll — from broom-finish driveways to decorative stamped patios and professional-grade floor pours."
+      "description": "Trusted concrete services throughout Ingersoll — from broom-finish driveways to decorative stamped patios and professional-grade floor pours.",
+      "localContent": "Ingersoll is a compact city with a strong mix of Victorian-era homes requiring careful concrete work around heritage landscaping, and newer subdivisions in the southeast. The area's proximity to the Thames River means some properties sit on alluvial soils with variable load-bearing capacity. We test subgrade conditions and adjust base depth accordingly — sometimes 200 mm of granular base is needed for sites near the river plain. Ingersoll is also home to several manufacturing facilities, and our commercial concrete work in the area includes exterior aprons, loading bays, and interior slab repairs. We are approximately 30 minutes from Tillsonburg.",
+      "whyHeading": "Why Ingersoll Homeowners Choose Concrete Tilsonburg",
+      "whyBody": "Ingersoll's Victorian-era streetscapes mean precision matters — tight clearances, heritage tree roots, and complex grading are common on older lots. We've completed projects on Ingersoll's tree-lined streets where excavation required hand tools and careful root management. For newer subdivisions, we work efficiently with builders and general contractors. Every project, old street or new subdivision, gets the same engineered process and written warranty.",
+      "faqs": [
+        {
+          "question": "Can you work around heritage trees and existing landscaping in Ingersoll?",
+          "answer": "Yes. We regularly navigate older Ingersoll lots with mature trees and established gardens. We assess root zones during the estimate and plan forming and excavation to minimize disruption. In some cases we recommend root barriers."
+        },
+        {
+          "question": "Do you do commercial concrete work in Ingersoll?",
+          "answer": "Yes. We handle residential and light commercial concrete including exterior aprons, loading dock approaches, interior slab repairs, and commercial walkways. Contact us for a commercial quote."
+        },
+        {
+          "question": "How soon can you start a project in Ingersoll?",
+          "answer": "Typical lead time is 2–4 weeks depending on season. Spring and early summer book up quickly. Contact us for current availability — we reply within 4 business hours."
+        }
+      ]
     },
     {
       "slug": "simcoe",
       "name": "Simcoe",
-      "description": "Delivering durable, weather-resistant concrete solutions to Simcoe homeowners, including custom driveways, patios, and full repair and resurfacing services."
+      "description": "Delivering durable, weather-resistant concrete solutions to Simcoe homeowners, including custom driveways, patios, and full repair and resurfacing services.",
+      "localContent": "Simcoe is the seat of Norfolk County, located approximately 45 minutes southwest of Tillsonburg. The area features diverse soil conditions — sandy loam near the lake plain transitions to heavier soils inland. Simcoe homeowners benefit from Norfolk County's slightly milder winters compared to the Oxford County interior, but freeze-thaw cycles still require proper air-entrained concrete and adequate base preparation. Simcoe's newer subdivisions in the east end have seen significant concrete driveway and patio work as landscaping matures. The city's older core has repair and resurfacing demand from aging slabs installed in the 1970s–1980s.",
+      "whyHeading": "Why Simcoe Homeowners Choose Concrete Tilsonburg",
+      "whyBody": "We serve Simcoe as part of our Norfolk County coverage alongside Delhi. Our crews are experienced with the soil transitions common in this area and apply the appropriate base and mix design for each property. Concrete repair and resurfacing is a specialty — many Simcoe slabs from 30–40 years ago have surface wear that can be fixed without full replacement, saving homeowners thousands. We assess every repair project honestly and recommend the most cost-effective solution, whether that's resurfacing or full removal and replacement.",
+      "faqs": [
+        {
+          "question": "Can aging Simcoe driveways be resurfaced instead of replaced?",
+          "answer": "Often yes. If the structural base is sound and there is no significant heaving or cracking that goes through the full slab depth, resurfacing with a bonded overlay can restore appearance and add years of life at a fraction of replacement cost. We assess this during the free estimate."
+        },
+        {
+          "question": "How far is Simcoe from your Tillsonburg base?",
+          "answer": "Simcoe is approximately 45 minutes from Tillsonburg. It falls within our standard service area with no travel surcharge. We regularly complete projects in Simcoe and the surrounding Norfolk County area."
+        },
+        {
+          "question": "What concrete services are most popular in Simcoe?",
+          "answer": "Driveway replacements and stamped patios are most common in newer Simcoe subdivisions. In the older core, repair and resurfacing is in high demand as 30–40 year old slabs reach end of life."
+        }
+      ]
     }
   ]
 }

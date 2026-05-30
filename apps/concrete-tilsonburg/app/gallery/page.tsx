@@ -10,14 +10,16 @@ import { SectionHeader } from "@/components/SectionHeader";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Project Gallery — Concrete Work in Tillsonburg, ON",
+  title: "Project Gallery",
   description:
     "Browse completed concrete driveways, stamped patios, garage floors, and repair projects by Concrete Tilsonburg across Oxford County and Southwestern Ontario.",
+  alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Project Gallery — Concrete Work in Tillsonburg, ON",
+    title: "Project Gallery | Concrete Tilsonburg",
     description:
       "Browse completed concrete driveways, stamped patios, garage floors, and repair projects across Oxford County.",
     url: `${site.url}/gallery`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "Concrete project gallery — Oxford County" }],
   },
 };
 

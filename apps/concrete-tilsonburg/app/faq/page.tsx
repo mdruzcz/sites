@@ -12,11 +12,13 @@ export const metadata: Metadata = {
   title: "Concrete FAQ — Common Questions Answered",
   description:
     "Answers to the most common concrete questions from Tillsonburg homeowners — permits, curing time, stamped concrete, warranties, and why Ontario winters crack concrete.",
+  alternates: { canonical: "/faq" },
   openGraph: {
-    title: "Concrete FAQ — Common Questions Answered",
+    title: "Concrete FAQ — Common Questions Answered | Concrete Tilsonburg",
     description:
       "Answers to common concrete questions: permits, curing time, stamped concrete, warranties, and Ontario freeze-thaw.",
     url: `${site.url}/faq`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "Concrete FAQ — Tillsonburg, ON" }],
   },
 };
 

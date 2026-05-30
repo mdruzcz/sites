@@ -15,6 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   title: {
     default: "Concrete Tilsonburg | Tillsonburg ON Concrete Contractor",
     template: "%s | Concrete Tilsonburg",
@@ -38,8 +39,19 @@ export const metadata: Metadata = {
     title: "Concrete Tilsonburg | Tillsonburg ON Concrete Contractor",
     description: site.description,
     url: site.url,
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Concrete Tilsonburg — Oxford County concrete contractor",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-default.jpg"],
+  },
   robots: { index: true, follow: true },
 };
 

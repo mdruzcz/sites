@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy policy for ${site.name} — how we collect, use, and protect your personal information in accordance with PIPEDA.`,
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

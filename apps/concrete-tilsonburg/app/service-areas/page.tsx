@@ -9,14 +9,16 @@ import { CtaBand } from "@/components/CtaBand";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Service Areas — Tillsonburg & Oxford County",
+  title: "Service Areas — Oxford County",
   description:
     "Concrete Tilsonburg serves Tillsonburg, Woodstock, Delhi, Ingersoll, Simcoe, and surrounding Oxford County communities. Free on-site estimates across Southwestern Ontario.",
+  alternates: { canonical: "/service-areas" },
   openGraph: {
-    title: "Concrete Service Areas — Tillsonburg & Oxford County",
+    title: "Service Areas — Oxford County | Concrete Tilsonburg",
     description:
       "Concrete Tilsonburg serves Tillsonburg, Woodstock, Delhi, Ingersoll, Simcoe, and surrounding Oxford County communities.",
     url: `${site.url}/service-areas`,
+    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "Concrete service areas in Oxford County, ON" }],
   },
 };
 
