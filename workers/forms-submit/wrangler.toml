@@ -1,0 +1,22 @@
+name = "forms-submit"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+workers_dev = false
+
+# Workers Custom Domain — mirrors turnstile.masterdecker.com.
+# wrangler provisions the DNS record + cert automatically.
+[[routes]]
+pattern = "forms.masterdecker.com"
+custom_domain = true
+
+# Non-secret var: the shared Supabase project URL.
+[vars]
+SUPABASE_URL = "https://symgxmokposzjcgikgnz.supabase.co"
+
+# Secret (the Supabase publishable key) is set out-of-band, never committed:
+#   wrangler secret put SUPABASE_KEY
+# Use the modern sb_publishable_... key so it survives JWT-secret rotation.
+
+[observability]
+enabled = true

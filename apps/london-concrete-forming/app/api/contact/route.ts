@@ -25,33 +25,28 @@ export async function POST(request: Request) {
       }
     }
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    // Save to Supabase
-    if (supabaseUrl && supabaseKey) {
-      const insertRes = await fetch(`${supabaseUrl}/rest/v1/lcf_contact_requests`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
+    // Save the lead via the shared forms Worker (holds the Supabase publishable
+    // key in one place, so a key rotation never silently drops leads fleet-wide).
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    const insertRes = await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hostname: "londonconcreteforming.ca",
+        row: {
           first_name: firstName,
           last_name: lastName || null,
           phone,
           email,
           services: Array.isArray(services) ? services : services ? [services] : null,
           message: message || null,
-        }),
-      });
-      if (!insertRes.ok) {
-        const detail = await insertRes.text();
-        console.error("Supabase insert failed", insertRes.status, detail);
-        return Response.json({ error: "Could not save your request" }, { status: 502 });
-      }
+        },
+      }),
+    });
+    if (!insertRes.ok) {
+      const detail = await insertRes.text();
+      console.error("Forms worker insert failed", insertRes.status, detail);
+      return Response.json({ error: "Could not save your request" }, { status: 502 });
     }
 
     // Send email via Resend
