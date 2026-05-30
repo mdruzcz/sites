@@ -118,19 +118,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (supabaseUrl && supabaseKey) {
-    const response = await fetch(`${supabaseUrl}/rest/v1/realtor_leads`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify({
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const response = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostname: "mattdruzcz.ca",
+      row: {
         first_name: body.first_name!.trim(),
         last_name:  body.last_name!.trim(),
         email:      body.email!.trim().toLowerCase(),
@@ -139,13 +133,13 @@ export async function POST(req: NextRequest) {
         city:       body.city   || null,
         message:    body.message || null,
         status:     "new",
-      }),
-    });
+      },
+    }),
+  });
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error("[contact] Supabase insert error:", err);
-    }
+  if (!response.ok) {
+    const err = await response.text();
+    console.error("[contact] Forms worker insert error:", err);
   }
 
   await sendEmail(body).catch(err => console.error("[contact] Resend error:", err));

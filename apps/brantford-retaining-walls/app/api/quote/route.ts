@@ -1,14 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
   const resend = new Resend(process.env.RESEND_API_KEY!);
   try {
     const body = await req.json();
@@ -39,13 +34,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
-    await supabase.from("brw_quote_requests").insert({
-      name,
-      phone,
-      email,
-      service,
-      message: message || null,
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    const insertRes = await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hostname: "brantfordretainingwalls.ca",
+        row: { name, phone, email, service, message: message || null },
+      }),
     });
+    if (!insertRes.ok) {
+      console.error("Forms worker insert error:", insertRes.status, await insertRes.text());
+      return NextResponse.json({ error: "Failed to save request" }, { status: 502 });
+    }
 
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || "noreply@brantfordretainingwalls.ca",

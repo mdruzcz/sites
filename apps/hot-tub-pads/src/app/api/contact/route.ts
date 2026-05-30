@@ -116,18 +116,15 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    /* ── Insert into Supabase ── */
-    if (supabaseUrl && supabaseKey) {
-      try {
-        await fetch(`${supabaseUrl}/rest/v1/hottubpads_quote_requests`, {
-          method: "POST",
-          headers: {
-            apikey: supabaseKey,
-            Authorization: `Bearer ${supabaseKey}`,
-            "Content-Type": "application/json",
-            Prefer: "return=minimal",
-          },
-          body: JSON.stringify({
+    /* ── Insert lead via shared forms Worker ── */
+    try {
+      const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+      await fetch(formsEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          hostname: "hottubpads.ca",
+          row: {
             first_name,
             last_name,
             email,
@@ -135,11 +132,11 @@ export async function POST(req: NextRequest) {
             message,
             photo_urls: photoUrls.length > 0 ? photoUrls : null,
             status: "new",
-          }),
-        });
-      } catch {
-        // Supabase insert failed — continue to send email
-      }
+          },
+        }),
+      });
+    } catch {
+      // Forms worker insert failed — continue to send email
     }
 
     /* ── Send email via Resend ── */

@@ -33,23 +33,16 @@ export async function POST(req: Request) {
     message: body.message || null,
   };
 
-  // Store lead in Supabase
+  // Store lead via shared forms Worker
   try {
-    await fetch(
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/glb_quote_requests`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ hostname: "getlegalbasements.ca", row: payload }),
+    });
   } catch {
-    // Supabase insert failed — continue to send email anyway
+    // Forms worker insert failed — continue to send email anyway
   }
 
   // Send email notification via Resend

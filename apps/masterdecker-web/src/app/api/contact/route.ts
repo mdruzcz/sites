@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "edge";
 
@@ -43,23 +42,26 @@ export async function POST(req: NextRequest) {
     }
 
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      if (supabaseUrl && supabaseKey) {
-        const supabase = createClient(supabaseUrl, supabaseKey);
-        await supabase.from("masterdecker_quote_requests").insert({
-          first_name: firstName,
-          last_name: lastName || null,
-          email,
-          phone,
-          street_address: streetAddress,
-          city,
-          services: services || null,
-          message: message || null,
-        });
-      }
+      const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+      await fetch(formsEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          hostname: "masterdecker.com",
+          row: {
+            first_name: firstName,
+            last_name: lastName || null,
+            email,
+            phone,
+            street_address: streetAddress,
+            city,
+            services: services || null,
+            message: message || null,
+          },
+        }),
+      });
     } catch (err) {
-      console.error("supabase insert failed", err);
+      console.error("forms worker insert failed", err);
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);

@@ -96,20 +96,18 @@ async function uploadPhotoToSupabase(file: File): Promise<string | null> {
 }
 
 async function saveLeadToSupabase(fields: LeadFields): Promise<boolean> {
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return false;
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/deck_leads`, {
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const res = await fetch(formsEndpoint, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: SUPABASE_ANON_KEY,
-      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      Prefer: "return=minimal",
-    },
-    body: JSON.stringify({ ...fields, status: "new" }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostname: "londondeckbuilder.ca",
+      row: { ...fields, status: "new" },
+    }),
   });
   if (!res.ok) {
     const err = await res.text();
-    console.error("[contact] Supabase insert error:", res.status, err);
+    console.error("[contact] Forms worker insert error:", res.status, err);
     return false;
   }
   return true;

@@ -32,17 +32,17 @@ export async function POST(req: Request) {
     message: body.message ?? null,
   };
 
-  // Save to Supabase
-  await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/celebratelighting_quote_requests`, {
+  // Save via shared forms Worker
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const insertRes = await fetch(formsEndpoint, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ""}`,
-      Prefer: "return=minimal",
-    },
-    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ hostname: "celebratelighting.ca", row: payload }),
   });
+  if (!insertRes.ok) {
+    console.error("Forms worker insert error:", insertRes.status, await insertRes.text());
+    return Response.json({ error: "Failed to save request" }, { status: 502 });
+  }
 
   // Send email via Resend
   if (process.env.RESEND_API_KEY) {

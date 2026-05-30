@@ -160,31 +160,30 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  if (supabaseUrl && supabaseKey) {
-    const res = await fetch(`${supabaseUrl}/rest/v1/festive_quote_requests`, {
+  {
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    const res = await fetch(formsEndpoint, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
-        Prefer: "return=minimal",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        first_name: lead.first_name,
-        last_name: lead.last_name,
-        email: lead.email,
-        phone: lead.phone,
-        address: lead.address || null,
-        city: lead.city || null,
-        service: lead.service,
-        property_type: lead.property_type || null,
-        heard_about: lead.heard_about || null,
-        message: lead.message || null,
-        photo_urls: photoUrls.length ? photoUrls : null,
-        status: "new",
+        hostname: "festiveholidaylighting.ca",
+        row: {
+          first_name: lead.first_name,
+          last_name: lead.last_name,
+          email: lead.email,
+          phone: lead.phone,
+          address: lead.address || null,
+          city: lead.city || null,
+          service: lead.service,
+          property_type: lead.property_type || null,
+          heard_about: lead.heard_about || null,
+          message: lead.message || null,
+          photo_urls: photoUrls.length ? photoUrls : null,
+          status: "new",
+        },
       }),
     });
-    if (!res.ok) console.error("[contact] Supabase insert error:", await res.text());
+    if (!res.ok) console.error("[contact] Forms worker insert error:", await res.text());
   }
 
   await sendEmail(lead, photoUrls);

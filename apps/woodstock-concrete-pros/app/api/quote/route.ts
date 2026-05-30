@@ -64,20 +64,17 @@ export async function POST(req: Request) {
     image_urls: imageUrls.length > 0 ? imageUrls : null,
   };
 
-  // Store in Supabase
-  await fetch(
-    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/wcp_quote_requests`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify(payload),
-    }
-  );
+  // Store via shared forms Worker
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const insertRes = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ hostname: "woodstockconcretepros.ca", row: payload }),
+  });
+  if (!insertRes.ok) {
+    console.error("Forms worker insert error:", insertRes.status, await insertRes.text());
+    return Response.json({ error: "Failed to save request" }, { status: 502 });
+  }
 
   // Build image attachment list for email
   const imageHtml = imageUrls.length > 0

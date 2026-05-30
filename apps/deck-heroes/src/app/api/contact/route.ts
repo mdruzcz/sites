@@ -173,39 +173,30 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
   }
 
-  // ── Save to Supabase ───────────────────────────────────────────────
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseKey) {
-    console.error("Supabase env vars not set");
-    return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
-  }
-
-  const response = await fetch(`${supabaseUrl}/rest/v1/deck_leads`, {
+  // ── Save the lead via the shared forms Worker ──────────────────────
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const response = await fetch(formsEndpoint, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": supabaseKey,
-      "Authorization": `Bearer ${supabaseKey}`,
-      "Prefer": "return=minimal",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      first_name: body.first_name,
-      last_name: body.last_name,
-      email: body.email,
-      phone: body.phone,
-      address: body.address || null,
-      city: body.city || null,
-      service: body.service,
-      message: body.message || null,
-      status: "new",
+      hostname: "deckheroes.ca",
+      row: {
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,
+        phone: body.phone,
+        address: body.address || null,
+        city: body.city || null,
+        service: body.service,
+        message: body.message || null,
+        status: "new",
+      },
     }),
   });
 
   if (!response.ok) {
     const err = await response.text();
-    console.error("Supabase insert error:", err);
+    console.error("Forms worker insert error:", err);
     return NextResponse.json({ error: "Failed to save lead" }, { status: 500 });
   }
 

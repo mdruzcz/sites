@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
 export const runtime = "edge";
@@ -8,12 +7,6 @@ export const runtime = "edge";
 // "collect page data" build phase even when the key is set at runtime.
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
-}
-function getSupabase() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  );
 }
 
 async function verifyTurnstile(token: string): Promise<boolean> {
@@ -39,13 +32,18 @@ export async function POST(req: NextRequest) {
   const valid = await verifyTurnstile(token);
   if (!valid) return NextResponse.json({ error: "Invalid captcha" }, { status: 400 });
 
-  await getSupabase().from("lfi_quote_requests").insert({
-    name,
-    email,
-    phone,
-    message: message || "",
-    created_at: new Date().toISOString(),
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const insertRes = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostname: "londonfenceinstaller.ca",
+      row: { name, email, phone, message: message || "", created_at: new Date().toISOString() },
+    }),
   });
+  if (!insertRes.ok) {
+    console.error("[lfi contact] Forms worker insert failed:", insertRes.status, await insertRes.text());
+  }
 
   await getResend().emails.send({
     from: "noreply@londonfenceinstaller.ca",
