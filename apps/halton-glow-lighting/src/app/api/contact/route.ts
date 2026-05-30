@@ -206,39 +206,30 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Save lead
-  if (supabaseUrl && supabaseKey) {
-    const response = await fetch(
-      `${supabaseUrl}/rest/v1/halton_glow_quote_requests`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
-          first_name: lead.first_name,
-          last_name: lead.last_name,
-          email: lead.email,
-          phone: lead.phone,
-          address: lead.address || null,
-          city: lead.city || null,
-          service: lead.service,
-          heard_about: lead.heard_about || null,
-          message: lead.message || null,
-          photo_urls: photoUrls.length ? photoUrls : null,
-          status: "new",
-        }),
-      }
-    );
-
-    if (!response.ok) {
-      console.error("[contact] Supabase insert error:", await response.text());
-    }
-  } else {
-    console.warn("[contact] Supabase env vars not set — skipping DB insert");
+  // Save lead via shared forms Worker
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const response = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostname: "haltonglowlighting.ca",
+      row: {
+        first_name: lead.first_name,
+        last_name: lead.last_name,
+        email: lead.email,
+        phone: lead.phone,
+        address: lead.address || null,
+        city: lead.city || null,
+        service: lead.service,
+        heard_about: lead.heard_about || null,
+        message: lead.message || null,
+        photo_urls: photoUrls.length ? photoUrls : null,
+        status: "new",
+      },
+    }),
+  });
+  if (!response.ok) {
+    console.error("[contact] Forms worker insert error:", response.status, await response.text());
   }
 
   await sendEmailViaResend(lead, photoUrls);

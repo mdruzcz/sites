@@ -29,18 +29,13 @@ export async function POST(req: Request) {
       return Response.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (supabaseUrl && supabaseKey) {
-      await fetch(`${supabaseUrl}/rest/v1/optimum_hvac_leads`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hostname: "optimumhvac.ca",
+        row: {
           full_name: name,
           phone,
           email: email || null,
@@ -50,9 +45,9 @@ export async function POST(req: Request) {
           form_type: "emergency",
           page_path: req.headers.get("referer") || null,
           user_agent: req.headers.get("user-agent") || null,
-        }),
-      });
-    }
+        },
+      }),
+    });
 
     const resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {

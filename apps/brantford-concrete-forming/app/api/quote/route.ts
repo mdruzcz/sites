@@ -24,20 +24,14 @@ export async function POST(request: Request) {
       }
     }
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    // Save to Supabase
-    if (supabaseUrl && supabaseKey) {
-      await fetch(`${supabaseUrl}/rest/v1/bcf_quote_requests`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
+    // Save via shared forms Worker
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hostname: "brantfordconcreteforming.ca",
+        row: {
           name,
           phone,
           email: email || null,
@@ -45,9 +39,9 @@ export async function POST(request: Request) {
           service,
           message: message || null,
           created_at: new Date().toISOString(),
-        }),
-      });
-    }
+        },
+      }),
+    });
 
     // Send email via Resend
     const resendKey = process.env.RESEND_API_KEY;

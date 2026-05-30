@@ -31,21 +31,15 @@ export async function POST(req: Request) {
     source: body.source || "contact",
   };
 
-  // Save to Supabase (using anon key — RLS allows INSERT only)
-  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    await fetch(
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/km_kitchen_leads`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+  // Save via shared forms Worker
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const insertRes = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ hostname: "kmkitchenrenovations.ca", row: payload }),
+  });
+  if (!insertRes.ok) {
+    console.error("Forms worker insert error:", insertRes.status, await insertRes.text());
   }
 
   // Send email via Resend

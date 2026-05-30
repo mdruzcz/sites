@@ -152,16 +152,13 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  if (supabaseUrl && supabaseKey) {
-    const res = await fetch(`${supabaseUrl}/rest/v1/deck_medic_quote_requests`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify({
+  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+  const res = await fetch(formsEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostname: "deckmedic.ca",
+      row: {
         first_name: lead.first_name,
         last_name: lead.last_name,
         email: lead.email,
@@ -173,12 +170,10 @@ export async function POST(req: NextRequest) {
         message: lead.message || null,
         photo_urls: photoUrls.length ? photoUrls : null,
         status: "new",
-      }),
-    });
-    if (!res.ok) console.error("[contact] Supabase insert error:", await res.text());
-  } else {
-    console.warn("[contact] Supabase env vars not set — skipping DB insert");
-  }
+      },
+    }),
+  });
+  if (!res.ok) console.error("[contact] Forms worker insert error:", res.status, await res.text());
 
   await sendEmail(lead, photoUrls);
   return NextResponse.json({ success: true }, { status: 200 });

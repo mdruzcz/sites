@@ -46,24 +46,15 @@ export async function POST(req: Request) {
     message: body.message || null,
   };
 
-  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    try {
-      await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/ontariolightshows_quote_requests`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
-            Prefer: "return=minimal",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-    } catch {
-      // swallow — email is the primary delivery
-    }
+  try {
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ hostname: "ontariolightshows.ca", row: payload }),
+    });
+  } catch {
+    // swallow — email is the primary delivery
   }
 
   if (process.env.RESEND_API_KEY) {

@@ -59,25 +59,16 @@ export async function POST(req: Request) {
     message: body.message || null,
   };
 
-  // Insert into Supabase
-  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    try {
-      await fetch(
-        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/cll_quote_requests`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-            Prefer: "return=minimal",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-    } catch {
-      // Log but don't fail the request
-    }
+  // Save via shared forms Worker
+  try {
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ hostname: "christmaslightslondon.ca", row: payload }),
+    });
+  } catch {
+    // Log but don't fail the request
   }
 
   // Send email via Resend

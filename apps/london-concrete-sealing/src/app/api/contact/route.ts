@@ -24,24 +24,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Security check failed.' }, { status: 400 });
     }
 
-    // Save to Supabase via REST API (anon key — INSERT allowed by RLS policy)
-    if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-      await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/lcs_contact_submissions`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-          Prefer: 'return=minimal',
-        },
-        body: JSON.stringify({
+    // Save via shared forms Worker
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? 'https://forms.masterdecker.com';
+    const insertRes = await fetch(formsEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        hostname: 'londonconcretesealing.ca',
+        row: {
           first_name: firstName,
           last_name: lastName || null,
           email,
           phone,
           message: message || null,
-        }),
-      });
+        },
+      }),
+    });
+    if (!insertRes.ok) {
+      console.error('Forms worker insert error:', insertRes.status, await insertRes.text());
     }
 
     // Send email notification

@@ -44,32 +44,27 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
   }
 
-  // 1) Store in Supabase (best-effort)
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (supabaseUrl && supabaseKey) {
-    try {
-      await fetch(`${supabaseUrl}/rest/v1/wicl_quote_requests`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({
+  // 1) Store via shared forms Worker (best-effort)
+  try {
+    const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
+    await fetch(formsEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hostname: HOSTNAME,
+        row: {
           name: data.name,
           email: data.email,
           phone: data.phone || null,
           city: data.city || null,
           service: data.service || null,
           message: data.message || null,
-        }),
-      });
-    } catch (e) {
-      console.error("Supabase insert failed", e);
-      // continue — we still want the email to send
-    }
+        },
+      }),
+    });
+  } catch (e) {
+    console.error("Forms worker insert failed", e);
+    // continue — we still want the email to send
   }
 
   // 2) Email via Resend
