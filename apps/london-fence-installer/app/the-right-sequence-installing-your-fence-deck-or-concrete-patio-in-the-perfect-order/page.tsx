@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Installing Your Fence, Deck or Concrete Patio in the Perfect Order",
+  title: { absolute: "Right Order: Fence, Deck & Patio | London Fence Installer" },
   description: "What comes first — the fence, deck, or concrete patio? Learn the right sequence for outdoor projects to avoid costly mistakes and conflicts between contractors.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/the-right-sequence-installing-your-fence-deck-or-concrete-patio-in-the-perfect-order" },
   openGraph: {
-    title: "The Right Sequence: Fence, Deck or Concrete Patio | London Fence Installer",
+    title: "Right Order: Fence, Deck & Patio | London Fence Installer",
     description: "Learn the right order to install your fence, deck, and concrete patio for a seamless outdoor build.",
     url: `${site.url}/the-right-sequence-installing-your-fence-deck-or-concrete-patio-in-the-perfect-order`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "The right sequence for fence, deck and patio installation" }],
   },
 };
 
@@ -21,10 +23,17 @@ export default function BlogSequencePage() {
     { name: "Home", url: site.url },
     { name: "The Right Sequence", url: `${site.url}/the-right-sequence-installing-your-fence-deck-or-concrete-patio-in-the-perfect-order` },
   ]);
+  const article = articleSchema({
+    headline: "The Right Sequence: Installing Your Fence, Deck or Concrete Patio in the Perfect Order",
+    description: "What comes first — the fence, deck, or concrete patio? Learn the right sequence for outdoor projects.",
+    url: "/the-right-sequence-installing-your-fence-deck-or-concrete-patio-in-the-perfect-order",
+    datePublished: "2025-10-15",
+  });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
 
       <section className="bg-green py-12 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

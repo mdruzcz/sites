@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "The Ultimate Guide to Fencing Materials: Which One Is Right for You?",
-  description: "Compare wood, vinyl, metal, and chainlink fencing materials. Learn about durability, maintenance, cost, and which material is best for your London, Ontario property.",
+  title: { absolute: "Fencing Materials Comparison Guide | London Fence Installer" },
+  description: "Compare wood, vinyl, metal, and chainlink fencing. Learn about durability, maintenance, cost, and which material is best for your London, Ontario property.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/the-ultimate-guide-to-fencing-materials-which-one-is-right-for-you" },
   openGraph: {
-    title: "Ultimate Guide to Fencing Materials | London Fence Installer",
+    title: "Fencing Materials Comparison Guide | London Fence Installer",
     description: "Compare all fence materials — wood, vinyl, metal, and chainlink — to find the right fit for your property.",
     url: `${site.url}/the-ultimate-guide-to-fencing-materials-which-one-is-right-for-you`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Fencing materials comparison guide" }],
   },
 };
 
@@ -21,6 +23,12 @@ export default function BlogMaterialsPage() {
     { name: "Home", url: site.url },
     { name: "Ultimate Guide to Fencing Materials", url: `${site.url}/the-ultimate-guide-to-fencing-materials-which-one-is-right-for-you` },
   ]);
+  const article = articleSchema({
+    headline: "The Ultimate Guide to Fencing Materials: Which One Is Right for You?",
+    description: "Compare wood, vinyl, metal, and chainlink fencing materials for your London, Ontario property.",
+    url: "/the-ultimate-guide-to-fencing-materials-which-one-is-right-for-you",
+    datePublished: "2025-12-01",
+  });
 
   const materials = [
     {
@@ -64,6 +72,7 @@ export default function BlogMaterialsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
 
       <section className="bg-green py-12 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -9,11 +9,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Fence Repair Service in London, ON – Fast Free Quote",
-  description: "Quick and dependable fence repair services in London, St Thomas, and Woodstock. Sagging fences, broken boards, rust, vandalism & more. Fully insured. Call today!",
+  description: "Fast fence repair in London, ON. Fix sagging, broken boards, rust & vandalism. Wood, vinyl, metal & chainlink. Free quote in 48 hrs. Call 519.914.1909.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/fence-repair" },
   openGraph: {
     title: "Fence Repair Service | London Fence Installer",
     description: "Professional fence repair in London, ON. We fix wood, vinyl, metal, and chain-link fences.",
     url: `${site.url}/fence-repair`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Fence repair service in London, Ontario" }],
   },
 };
 
@@ -114,6 +116,55 @@ export default function FenceRepairPage() {
                 <h3 className="font-bold text-[var(--green)] mb-2">{f.question}</h3>
                 <p className="text-sm text-[var(--muted)]">{f.answer}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Fence Repair Cost in London</h2>
+          <p className="text-[var(--muted)] mb-4 leading-relaxed">
+            Fence repair costs in London typically range from <strong>$150–$800</strong>, depending on the type of damage and extent of the repair. Minor fixes such as replacing a broken board or tightening hardware are at the lower end. Replacing multiple posts or sections of fencing are at the higher end.
+          </p>
+          <ul className="space-y-2 mb-4 text-sm text-[var(--muted)]">
+            {[
+              "Board replacement: ~$50–$150 per section",
+              "Post replacement: ~$150–$300 per post (includes new concrete footing)",
+              "Gate repair or rehang: ~$100–$250",
+              "Rust treatment and repainting (metal fences): ~$200–$500",
+              "Major sections or full fence replacement: custom quote required",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-[var(--green)] flex-shrink-0">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[var(--muted)] text-sm">
+            Not sure if your fence needs repair or replacement? We provide free, honest assessments — <Link href="/contact-us" className="text-[var(--green)] font-semibold hover:underline">contact us</Link> within 48 hours.
+          </p>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section bg-[var(--surface)]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Fence Repair Near You</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "St. Thomas", href: "/st-thomas-wood-fence" },
+              { label: "Woodstock", href: "/woodstock-fence-builder" },
+              { label: "Aylmer", href: "/wood-fence-alymer" },
+              { label: "Strathroy", href: "/strathroy-fence-builder" },
+              { label: "Tillsonburg", href: "/tilsonburg-fence-builder" },
+              { label: "St. Marys", href: "/st-marys-fence-builder" },
+              { label: "Ingersoll", href: "/ingersoll-wood-fence-builder" },
+            ].map((area) => (
+              <Link key={area.label} href={area.href} className="px-4 py-2 bg-white border border-[var(--border)] rounded-full text-sm font-semibold hover:bg-[var(--green)] hover:text-white hover:border-[var(--green)] transition-colors">
+                {area.label}
+              </Link>
             ))}
           </div>
         </div>

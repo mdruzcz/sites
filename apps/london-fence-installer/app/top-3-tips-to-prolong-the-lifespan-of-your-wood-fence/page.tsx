@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Top 3 Tips to Prolong the Lifespan of Your Wood Fence",
-  description: "Expert advice on extending the life of your wood fence. Learn the top three maintenance tips that will keep your fence looking great and standing strong for years.",
+  title: { absolute: "Extend Your Wood Fence Lifespan | London Fence Installer" },
+  description: "Expert tips on extending the life of your wood fence. The top three maintenance practices that keep your fence looking great and standing strong for decades.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/top-3-tips-to-prolong-the-lifespan-of-your-wood-fence" },
   openGraph: {
-    title: "Top 3 Tips to Prolong Your Wood Fence Lifespan | London Fence Installer",
+    title: "Extend Your Wood Fence Lifespan | London Fence Installer",
     description: "3 expert tips for making your wood fence last longer in London, Ontario's climate.",
     url: `${site.url}/top-3-tips-to-prolong-the-lifespan-of-your-wood-fence`,
+    images: [{ url: "/images/wood-fence.jpg", width: 1200, height: 630, alt: "Tips to extend wood fence lifespan" }],
   },
 };
 
@@ -21,10 +23,18 @@ export default function BlogWoodFenceTipsPage() {
     { name: "Home", url: site.url },
     { name: "Top 3 Tips to Prolong Your Wood Fence", url: `${site.url}/top-3-tips-to-prolong-the-lifespan-of-your-wood-fence` },
   ]);
+  const article = articleSchema({
+    headline: "Top 3 Tips to Prolong the Lifespan of Your Wood Fence",
+    description: "Expert maintenance tips to keep your wood fence looking great and lasting longer in Ontario's climate.",
+    url: "/top-3-tips-to-prolong-the-lifespan-of-your-wood-fence",
+    datePublished: "2026-01-10",
+    image: "/images/wood-fence.jpg",
+  });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
 
       <section className="bg-green py-12 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

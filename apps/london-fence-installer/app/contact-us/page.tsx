@@ -8,11 +8,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Contact Us – Get a Free Fence Quote in London, ON",
-  description: "Reach out to London Fence Installer for wood, vinyl, chain-link & metal fencing across London, ON and surrounding areas. Fast quotes, 20 years' experience.",
+  description: "Get a free fence quote from London Fence Installer. Wood, vinyl, chain-link & metal fencing. We respond within 48 hours. Call 519.914.1909 or fill out the form.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/contact-us" },
   openGraph: {
     title: "Contact Us | London Fence Installer",
     description: "Get a free fence quote in London, ON. We respond within 48 hours.",
     url: `${site.url}/contact-us`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Contact London Fence Installer for a free quote" }],
   },
 };
 

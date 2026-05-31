@@ -8,12 +8,14 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Wood Fence Builder in Ingersoll | London Fence Installer",
-  description: "Transform your yard with expert wood fence installation in Ingersoll. Quality, durability, and aesthetic appeal guaranteed. Get a free quote today!",
+  title: { absolute: "Fence Installation in Ingersoll | London Fence Installer" },
+  description: "Expert fence installation in Ingersoll & Oxford County. Wood, vinyl, chainlink & metal fences. Free quote in 48 hrs, 5-year warranty. Call today!",
+  alternates: { canonical: "https://londonfenceinstaller.ca/ingersoll-wood-fence-builder" },
   openGraph: {
-    title: "Wood Fence Builder in Ingersoll | London Fence Installer",
+    title: "Fence Installation in Ingersoll | London Fence Installer",
     description: "Expert fence installation in Ingersoll, ON. Free quotes within 48 hrs. 5-year warranty.",
     url: `${site.url}/ingersoll-wood-fence-builder`,
+    images: [{ url: "/images/wood-fence.jpg", width: 1200, height: 630, alt: "Fence installation in Ingersoll, Ontario" }],
   },
 };
 
@@ -38,8 +40,8 @@ export default function IngersollPage() {
                 <span className="mx-2">›</span>
                 <span>Ingersoll Fence Builder</span>
               </nav>
-              <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Wood Fence Builder in Ingersoll</h1>
-              <p className="text-gray-200">Transform your yard with expert wood fence installation in Ingersoll. Quality, durability, and aesthetic appeal guaranteed.</p>
+              <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Fence Installation in Ingersoll</h1>
+              <p className="text-gray-200">Transform your yard with expert fence installation in Ingersoll. Quality, durability, and aesthetic appeal guaranteed.</p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-xl">
               <QuoteForm title="Get a Free Ingersoll Quote" />
@@ -51,16 +53,19 @@ export default function IngersollPage() {
       <section className="section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <h2 className="text-3xl font-extrabold mb-4">Fence Installation in Ingersoll</h2>
+            <h2 className="text-3xl font-extrabold mb-4">Fence Installation in Ingersoll, Ontario</h2>
             <p className="text-[var(--muted)] mb-4 leading-relaxed">
-              London Fence Installer proudly serves Ingersoll and the broader Oxford County area. Our experienced team installs wood, vinyl, chainlink, and metal fences for residential and commercial properties throughout the region.
+              London Fence Installer proudly serves Ingersoll and the broader Oxford County area. Our experienced team installs wood, vinyl, chainlink, and metal fences for residential and commercial properties throughout the region. Ingersoll homeowners rely on us for the same quality and reliability that has made us one of London&apos;s most trusted fence contractors.
+            </p>
+            <p className="text-[var(--muted)] mb-4 leading-relaxed">
+              Transform your yard with a quality fence installation backed by our five-year limited warranty and 20 years of combined experience. We install posts a minimum of 42 inches below grade with 30 kg of quick-setting concrete per post — the right way to build a fence in Ontario&apos;s climate. We aim to provide free quotes within 48 hours of your request.
             </p>
             <p className="text-[var(--muted)] leading-relaxed">
-              Transform your yard with a quality fence installation backed by our five-year limited warranty and 20 years of combined experience. We aim to provide free quotes within 48 hours of your request.
+              Oxford County municipalities generally require building permits for fences taller than 2 metres and for all pool enclosures. We will ensure your Ingersoll fence project complies with all local bylaws and guide you through any permit requirements before work begins.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {[
               { title: "Wood Fences", href: "/wood-fencing-contractor", body: "Cedar and pressure-treated pine fences for Ingersoll properties." },
               { title: "Vinyl Fences", href: "/vinyl-fence-installation", body: "Low-maintenance vinyl fencing that looks great year after year." },
@@ -74,6 +79,23 @@ export default function IngersollPage() {
                 <p className="text-sm text-[var(--muted)]">{s.body}</p>
               </Link>
             ))}
+          </div>
+
+          <div className="bg-[var(--surface)] rounded-xl p-6">
+            <h3 className="font-bold text-lg mb-3">Why Ingersoll Homeowners Choose London Fence Installer</h3>
+            <ul className="space-y-2">
+              {[
+                "Free quotes within 48 hours",
+                "Five-year limited warranty on all installations",
+                "20 years of combined experience in Southwestern Ontario",
+                "Posts installed 42+ inches deep to handle Oxford County frost",
+                "Fully insured and familiar with local permit requirements",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                  <span className="text-[var(--green)]">✓</span> {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

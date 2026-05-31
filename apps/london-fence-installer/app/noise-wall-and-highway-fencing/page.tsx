@@ -9,11 +9,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Noise Wall & Highway Fencing in London, ON",
-  description: "We take pride in being your go-to destination for high-quality chain link fences and noise barrier walls. Specializing in highway and roadside delineation in London, ON.",
+  description: "Noise barrier wall and highway fencing installation in London, ON. Sound reduction, highway delineation, and roadside fencing that meets provincial standards.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/noise-wall-and-highway-fencing" },
   openGraph: {
     title: "Noise Wall & Highway Fencing | London Fence Installer",
     description: "Professional noise barrier wall and highway fencing installation in London, Ontario.",
     url: `${site.url}/noise-wall-and-highway-fencing`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Noise wall and highway fencing installation in London, Ontario" }],
   },
 };
 

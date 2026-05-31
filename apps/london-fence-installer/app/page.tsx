@@ -9,13 +9,14 @@ import { site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Your #1 Fence Company in London & Surrounding Areas",
-  description: "Experienced fence contractors serving London, St. Thomas, Woodstock & surrounding areas. Wood, vinyl, chainlink, metal fences. Free quotes within 48 hrs. 5-year warranty.",
+  title: { absolute: "Fence Installation London, ON | London Fence Installer" },
+  description: "London's top fence contractor for wood, vinyl, chainlink & metal fences. Serving London, St. Thomas & Woodstock. Free quote within 48 hours. Call 519.914.1909.",
+  alternates: { canonical: "https://londonfenceinstaller.ca" },
   openGraph: {
-    title: "Your #1 Fence Company in London & Surrounding Areas | London Fence Installer",
-    description: "Wood, vinyl, chainlink & metal fence installation across London, ON. Free quotes in 48 hrs. 5-year warranty. 20 years experience.",
+    title: "Fence Installation London, ON | London Fence Installer",
+    description: "London's top fence contractor for wood, vinyl, chainlink & metal fences. Serving London, St. Thomas & Woodstock. Free quote within 48 hours.",
     url: site.url,
-    images: [{ url: "/images/hero-fence.jpg" }],
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Professional fence installation in London, Ontario" }],
   },
 };
 
@@ -90,7 +91,7 @@ export default function HomePage() {
             {/* Left: headline */}
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-                Experienced Fence Contractors
+                Fence Installation in London, Ontario
               </h1>
               <p className="text-lg sm:text-xl font-semibold text-white/90 mb-8">
                 We Can Help With Wood, Chainlink, Vinyl, Dog Fences, Pool Fences, and more!

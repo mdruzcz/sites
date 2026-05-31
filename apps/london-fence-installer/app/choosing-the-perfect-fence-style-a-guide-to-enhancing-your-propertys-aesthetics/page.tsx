@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Choosing the Perfect Fence Style: A Guide to Enhancing Your Property's Aesthetics",
-  description: "How do you choose the right fence style for your property? Our expert guide covers wood, vinyl, metal, and chainlink fence styles to help you find the perfect match.",
+  title: { absolute: "Choosing the Right Fence Style | London Fence Installer" },
+  description: "How do you choose the right fence style for your property? Expert guide to wood, vinyl, metal, and chainlink fence styles for London, Ontario homeowners.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/choosing-the-perfect-fence-style-a-guide-to-enhancing-your-propertys-aesthetics" },
   openGraph: {
-    title: "Choosing the Perfect Fence Style | London Fence Installer",
+    title: "Choosing the Right Fence Style | London Fence Installer",
     description: "Expert guide to choosing the right fence style for your London, Ontario property.",
     url: `${site.url}/choosing-the-perfect-fence-style-a-guide-to-enhancing-your-propertys-aesthetics`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Guide to choosing the right fence style" }],
   },
 };
 
@@ -21,6 +23,12 @@ export default function BlogFenceStylePage() {
     { name: "Home", url: site.url },
     { name: "Choosing the Perfect Fence Style", url: `${site.url}/choosing-the-perfect-fence-style-a-guide-to-enhancing-your-propertys-aesthetics` },
   ]);
+  const article = articleSchema({
+    headline: "Choosing the Perfect Fence Style: A Guide to Enhancing Your Property's Aesthetics",
+    description: "How to choose the right fence style for your property — wood, vinyl, metal, and chainlink options explained.",
+    url: "/choosing-the-perfect-fence-style-a-guide-to-enhancing-your-propertys-aesthetics",
+    datePublished: "2025-12-15",
+  });
 
   const fenceStyles = [
     { title: "Privacy Fence", best: "Backyards, pool areas", description: "A tall, solid fence that completely blocks visibility from the street and neighbours. Wood and vinyl are the most common materials for privacy fences in Ontario." },
@@ -34,6 +42,7 @@ export default function BlogFenceStylePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
 
       <section className="bg-green py-12 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

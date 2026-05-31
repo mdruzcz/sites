@@ -3,7 +3,7 @@ import { site } from "./site";
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HomeAndConstructionBusiness",
     name: site.name,
     telephone: site.phone,
     email: site.email,
@@ -29,6 +29,11 @@ export function localBusinessSchema() {
     openingHours: "Mo-Fr 08:00-18:00",
     priceRange: "$$",
     description: site.description,
+    sameAs: [
+      site.social.facebook,
+      site.social.twitter,
+      site.social.linkedin,
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Fencing Services",
@@ -89,5 +94,37 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       name: item.name,
       item: item.url,
     })),
+  };
+}
+
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    url: `${site.url}${opts.url}`,
+    datePublished: opts.datePublished,
+    image: opts.image ? `${site.url}${opts.image}` : `${site.url}/images/hero-fence.jpg`,
+    author: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/images/logo.png`,
+      },
+    },
   };
 }
