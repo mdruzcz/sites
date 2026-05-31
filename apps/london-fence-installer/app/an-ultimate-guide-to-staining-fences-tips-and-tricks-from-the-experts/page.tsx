@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "An Ultimate Guide to Staining Fences: Tips and Tricks from the Experts",
-  description: "Learn everything you need to know about staining your fence the right way. Expert tips on preparation, product selection, application techniques, and maintenance from London Fence Installer.",
+  title: { absolute: "Fence Staining Tips & Tricks | London Fence Installer" },
+  description: "Learn how to stain your fence the right way. Expert tips on preparation, product selection, application techniques, and maintenance schedule from London Fence Installer.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/an-ultimate-guide-to-staining-fences-tips-and-tricks-from-the-experts" },
   openGraph: {
-    title: "Ultimate Guide to Staining Fences | London Fence Installer",
+    title: "Fence Staining Tips & Tricks | London Fence Installer",
     description: "Expert tips and tricks for fence staining. Preparation, products, and application techniques.",
     url: `${site.url}/an-ultimate-guide-to-staining-fences-tips-and-tricks-from-the-experts`,
+    images: [{ url: "/images/fence-staining.jpg", width: 1200, height: 630, alt: "Professional fence staining guide" }],
   },
 };
 
@@ -21,10 +23,18 @@ export default function BlogStainingGuidePage() {
     { name: "Home", url: site.url },
     { name: "An Ultimate Guide to Staining Fences", url: `${site.url}/an-ultimate-guide-to-staining-fences-tips-and-tricks-from-the-experts` },
   ]);
+  const article = articleSchema({
+    headline: "An Ultimate Guide to Staining Fences: Tips and Tricks from the Experts",
+    description: "Learn everything you need to know about staining your fence the right way. Expert tips on preparation, product selection, application techniques, and maintenance.",
+    url: "/an-ultimate-guide-to-staining-fences-tips-and-tricks-from-the-experts",
+    datePublished: "2025-11-15",
+    image: "/images/fence-staining.jpg",
+  });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
 
       <section className="bg-green py-12 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

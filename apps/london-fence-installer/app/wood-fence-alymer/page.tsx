@@ -8,12 +8,14 @@ import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Wood Fence Builder in Aylmer | London Fence Installer",
-  description: "Transform your yard with expert wood fence installation in Aylmer. Quality, durability, and aesthetic appeal guaranteed. Get a free quote today!",
+  title: { absolute: "Fence Installation in Aylmer, ON | London Fence Installer" },
+  description: "Expert fence installation in Aylmer & Elgin County. Wood, vinyl, chainlink & metal fences. Free quote in 48 hrs, 5-year warranty, fully insured. Call today!",
+  alternates: { canonical: "https://londonfenceinstaller.ca/wood-fence-alymer" },
   openGraph: {
-    title: "Wood Fence Builder in Aylmer | London Fence Installer",
+    title: "Fence Installation in Aylmer, ON | London Fence Installer",
     description: "Expert fence installation in Aylmer, ON. Free quotes within 48 hrs. 5-year warranty.",
     url: `${site.url}/wood-fence-alymer`,
+    images: [{ url: "/images/wood-fence.jpg", width: 1200, height: 630, alt: "Fence installation in Aylmer, Ontario" }],
   },
 };
 
@@ -38,8 +40,8 @@ export default function AylmerPage() {
                 <span className="mx-2">›</span>
                 <span>Aylmer Fence Builder</span>
               </nav>
-              <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Wood Fence Builder in Aylmer</h1>
-              <p className="text-gray-200">Transform your yard with expert wood fence installation in Aylmer. Quality, durability, and aesthetic appeal guaranteed.</p>
+              <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Fence Installation in Aylmer</h1>
+              <p className="text-gray-200">Transform your yard with expert fence installation in Aylmer, Ontario. Quality, durability, and aesthetic appeal guaranteed.</p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-xl">
               <QuoteForm title="Get a Free Aylmer Quote" />
@@ -50,13 +52,16 @@ export default function AylmerPage() {
 
       <section className="section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mb-8">
             <h2 className="text-3xl font-extrabold mb-4">Fence Installation in Aylmer, Ontario</h2>
             <p className="text-[var(--muted)] mb-4 leading-relaxed">
-              London Fence Installer is proud to serve Aylmer and the surrounding Elgin County area. Our team provides high-quality fence installations that combine craftsmanship, durable materials, and a commitment to customer satisfaction.
+              London Fence Installer is proud to serve Aylmer and the surrounding Elgin County area. Our team provides high-quality fence installations that combine craftsmanship, durable materials, and a commitment to customer satisfaction. Whether you need a wood privacy fence for a residential property in Aylmer&apos;s historic core or a chainlink enclosure for a rural property in the county, we deliver exceptional results.
             </p>
-            <p className="text-[var(--muted)] mb-8 leading-relaxed">
-              Whether you need a wood privacy fence, chainlink enclosure, vinyl panel fence, or metal gate, we deliver exceptional results backed by our five-year limited warranty and 20 years of combined experience.
+            <p className="text-[var(--muted)] mb-4 leading-relaxed">
+              Whether you need a wood privacy fence, chainlink enclosure, vinyl panel fence, or metal gate, we deliver exceptional results backed by our five-year limited warranty and 20 years of combined experience. Posts are installed a minimum of 42 inches deep with concrete footings to withstand Ontario&apos;s frost cycles.
+            </p>
+            <p className="text-[var(--muted)] leading-relaxed">
+              Aylmer and Elgin County permit requirements apply to fences over 2 metres (6.5 feet) in height, with additional requirements for pool enclosures under the Ontario Building Code. Our team regularly installs fences in Aylmer, Port Stanley, Dutton, and throughout Elgin County — we are familiar with local bylaws and can guide you through the process.
             </p>
           </div>
 
@@ -77,9 +82,21 @@ export default function AylmerPage() {
 
           <div className="bg-[var(--surface)] rounded-xl p-6">
             <h3 className="font-bold text-lg text-[var(--green)] mb-3">Serving Aylmer & Elgin County</h3>
-            <p className="text-sm text-[var(--muted)]">
-              Our team regularly installs fences in Aylmer, Port Stanley, Dutton, and throughout Elgin County. Contact us today for a free quote — we aim to respond within 48 hours.
+            <p className="text-sm text-[var(--muted)] mb-3">
+              Our team regularly installs fences in Aylmer, Port Stanley, Dutton, Rodney, and throughout Elgin County. Contact us today for a free quote — we aim to respond within 48 hours.
             </p>
+            <ul className="space-y-2">
+              {[
+                "Free quotes within 48 hours",
+                "5-year limited warranty on all installations",
+                "Fully insured and locally operated",
+                "Familiar with Elgin County permit requirements",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                  <span className="text-[var(--green)]">✓</span> {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

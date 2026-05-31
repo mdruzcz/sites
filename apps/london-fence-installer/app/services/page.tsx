@@ -7,12 +7,14 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Services – Fencing Solutions in London, ON",
-  description: "London Fence Installer offers wood, metal, vinyl, chain-link fences, fence repair, guardrail installation, and noise wall services. Serving London, St Thomas, and Woodstock.",
+  title: "Fencing Services in London, ON",
+  description: "London Fence Installer offers wood, metal, vinyl, chain-link fences, fence repair, guardrail and noise wall services. Serving London, St Thomas, and Woodstock.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/services" },
   openGraph: {
     title: "Fencing Services | London Fence Installer",
     description: "Full range of residential and commercial fencing services in London, ON and surrounding areas.",
     url: `${site.url}/services`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "Fencing services in London, Ontario" }],
   },
 };
 

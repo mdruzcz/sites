@@ -10,12 +10,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Wood Privacy Fence Installation in London, ON",
-  description: "Quick and dependable wood fence installation services in London, St Thomas, and Woodstock. Pressure treated pine & cedar. Fully insured and warrantied. Call today!",
+  description: "Expert wood fence installation in London, ON. Cedar & pressure-treated pine. Privacy, picket & horizontal styles. 5-year warranty. Free quote today.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/wood-fencing-contractor" },
   openGraph: {
     title: "Wood Fence Contractor | London Fence Installer",
-    description: "Expert wood fence installation in London, ON. Cedar and pressure treated pine. Free quotes within 48 hrs.",
+    description: "Expert wood fence installation in London, ON. Cedar and pressure-treated pine. Free quotes within 48 hrs.",
     url: `${site.url}/wood-fencing-contractor`,
-    images: [{ url: "/images/wood-fence.jpg" }],
+    images: [{ url: "/images/wood-fence.jpg", width: 1200, height: 630, alt: "Cedar wood privacy fence installed in London, Ontario" }],
   },
 };
 
@@ -180,6 +181,55 @@ export default function WoodFencePage() {
                 <h3 className="font-bold text-[var(--green)] mb-2">{faq.question}</h3>
                 <p className="text-sm text-[var(--muted)]">{faq.answer}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Guide */}
+      <section className="section bg-[var(--surface)]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Wood Fence Installation Cost in London</h2>
+          <p className="text-[var(--muted)] mb-4 leading-relaxed">
+            Wood fence installation in London typically costs <strong>$30–$60 per linear foot installed</strong>, depending on fence style, height, and wood species. Cedar fences are slightly more expensive than pressure-treated pine but require less long-term maintenance.
+          </p>
+          <ul className="space-y-2 mb-4 text-sm text-[var(--muted)]">
+            {[
+              "Pressure-treated pine fence: ~$30–$45/linear foot installed",
+              "Cedar fence: ~$40–$60/linear foot installed",
+              "Prices include materials, labour, post holes, and concrete footings",
+              "Gates, decorative caps, and lattice tops are additional",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-[var(--green)] flex-shrink-0">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[var(--muted)] text-sm">
+            For an exact quote on your property, <Link href="/contact-us" className="text-[var(--green)] font-semibold hover:underline">contact us</Link> — we respond within 48 hours.
+          </p>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Wood Fence Installation Near You</h2>
+          <p className="text-[var(--muted)] mb-5 text-sm">We install wood fences throughout London and Southwestern Ontario:</p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "St. Thomas", href: "/st-thomas-wood-fence" },
+              { label: "Woodstock", href: "/woodstock-fence-builder" },
+              { label: "Aylmer", href: "/wood-fence-alymer" },
+              { label: "Strathroy", href: "/strathroy-fence-builder" },
+              { label: "Tillsonburg", href: "/tilsonburg-fence-builder" },
+              { label: "St. Marys", href: "/st-marys-fence-builder" },
+              { label: "Ingersoll", href: "/ingersoll-wood-fence-builder" },
+            ].map((area) => (
+              <Link key={area.label} href={area.href} className="px-4 py-2 bg-[var(--surface)] border border-[var(--border)] rounded-full text-sm font-semibold hover:bg-[var(--green)] hover:text-white hover:border-[var(--green)] transition-colors">
+                Wood Fences in {area.label}
+              </Link>
             ))}
           </div>
         </div>

@@ -9,11 +9,13 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Guardrail Installation in London, Ontario",
-  description: "Ensure safety and compliance with professionally installed guardrails in London, ON. Durable, code-compliant solutions backed by 20 years of trusted fencing experience.",
+  description: "Code-compliant guardrail installation in London, ON. Road & highway safety barriers, property gates, and custom gate installation. Free quote in 48 hrs.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/guardrail-installation" },
   openGraph: {
     title: "Guardrail Installation | London Fence Installer",
     description: "Professional guardrail installation in London, Ontario. Code-compliant, durable solutions.",
     url: `${site.url}/guardrail-installation`,
+    images: [{ url: "/images/guardrail.jpg", width: 1200, height: 630, alt: "Guardrail installation in London, Ontario" }],
   },
 };
 

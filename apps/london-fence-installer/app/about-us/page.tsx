@@ -9,12 +9,14 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us – London Fence Installer",
-  description: "Expert fence installation across London, Ontario — wood, vinyl, metal & more. Fast quotes within 48 hrs, 5-year warranty, and 20 years of skilled craftsmanship. Locally owned and operated.",
+  title: "About Us",
+  description: "Locally owned fence contractors with 20 years of experience in London, ON. Wood, vinyl, metal & more. Fast quotes within 48 hrs, 5-year warranty. Fully insured.",
+  alternates: { canonical: "https://londonfenceinstaller.ca/about-us" },
   openGraph: {
     title: "About Us | London Fence Installer",
     description: "Local, trusted fence contractors with 20 years experience serving London, ON and surrounding areas.",
     url: `${site.url}/about-us`,
+    images: [{ url: "/images/hero-fence.jpg", width: 1200, height: 630, alt: "London Fence Installer – trusted local fence contractors" }],
   },
 };
 

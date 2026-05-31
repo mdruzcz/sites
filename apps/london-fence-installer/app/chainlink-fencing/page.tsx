@@ -4,20 +4,28 @@ import Image from "next/image";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
 import { site } from "@/lib/site";
-import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Chainlink Fencing in London, ON – Fast Free Quote",
-  description: "A chain-link fence offers highly durable yet lightweight fencing from interwoven metal wires. Serving London, St Thomas, and Woodstock. Call for a free quote today!",
+  description: "Durable chainlink fence installation in London, ON. Budget-friendly interwoven steel mesh fencing for homes and businesses. Free quote in 48 hrs. Call today!",
+  alternates: { canonical: "https://londonfenceinstaller.ca/chainlink-fencing" },
   openGraph: {
     title: "Chainlink Fencing | London Fence Installer",
     description: "Reliable chainlink fence installation in London, ON. Budget-friendly, durable, and versatile.",
     url: `${site.url}/chainlink-fencing`,
-    images: [{ url: "/images/chainlink-fence.jpg" }],
+    images: [{ url: "/images/chainlink-fence.jpg", width: 1200, height: 630, alt: "Chainlink fence installation in London, Ontario" }],
   },
 };
+
+const faqs = [
+  { question: "How much does chainlink fencing cost in London, Ontario?", answer: "Chain-link fence installation in London typically costs $15–$30 per linear foot installed, depending on the height and gauge of the mesh. Commercial-grade chainlink with heavier posts may be at the higher end of the range. Contact us for a free quote specific to your property." },
+  { question: "How long does a chainlink fence last?", answer: "A properly installed galvanized chain-link fence typically lasts 20–30 years with minimal maintenance. Vinyl-coated chain-link can last even longer and resists rust and corrosion better than bare galvanized wire." },
+  { question: "Can you add a privacy screen to a chainlink fence?", answer: "Yes. Privacy slats in vinyl or aluminium can be woven through the mesh to add privacy and reduce visibility. Alternatively, a fabric privacy screen can be attached to the fence. Ask us about privacy options when requesting your quote." },
+  { question: "Do I need a permit for chainlink fencing in London, Ontario?", answer: "Fences over 2 metres (approximately 6.5 feet) typically require a building permit in London. Pool enclosures require a permit regardless of height. We can advise you on permit requirements for your specific property and project." },
+];
 
 const advantages = [
   { title: "Longevity & Durability", body: "Galvanized steel construction withstands wear and tear, weather, and impacts." },
@@ -35,11 +43,13 @@ export default function ChainlinkPage() {
     { name: "Services", url: `${site.url}/services` },
     { name: "Chainlink Fencing", url: `${site.url}/chainlink-fencing` },
   ]);
+  const faq = faqSchema(faqs);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
 
       <section className="bg-green py-14 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,6 +127,56 @@ export default function ChainlinkPage() {
                 <h3 className="font-bold text-[var(--green)] mb-2">{a.title}</h3>
                 <p className="text-sm text-[var(--muted)]">{a.body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section bg-[var(--surface)]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Chainlink Fence Cost in London</h2>
+          <p className="text-[var(--muted)] mb-4 leading-relaxed">
+            Chain-link fencing is the most affordable fencing option, typically costing <strong>$15–$30 per linear foot installed</strong> in London. The final cost depends on fence height, mesh gauge, and whether you need gates or privacy slats.
+          </p>
+          <p className="text-[var(--muted)] text-sm">
+            For an exact quote, <Link href="/contact-us" className="text-[var(--green)] font-semibold hover:underline">contact us</Link> — we respond within 48 hours.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-center mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div key={f.question} className="card p-5">
+                <h3 className="font-bold text-[var(--green)] mb-2">{f.question}</h3>
+                <p className="text-sm text-[var(--muted)]">{f.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="section bg-[var(--surface)]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-extrabold mb-4">Chainlink Fencing Near You</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { label: "St. Thomas", href: "/st-thomas-wood-fence" },
+              { label: "Woodstock", href: "/woodstock-fence-builder" },
+              { label: "Aylmer", href: "/wood-fence-alymer" },
+              { label: "Strathroy", href: "/strathroy-fence-builder" },
+              { label: "Tillsonburg", href: "/tilsonburg-fence-builder" },
+              { label: "St. Marys", href: "/st-marys-fence-builder" },
+              { label: "Ingersoll", href: "/ingersoll-wood-fence-builder" },
+            ].map((area) => (
+              <Link key={area.label} href={area.href} className="px-4 py-2 bg-white border border-[var(--border)] rounded-full text-sm font-semibold hover:bg-[var(--green)] hover:text-white hover:border-[var(--green)] transition-colors">
+                {area.label}
+              </Link>
             ))}
           </div>
         </div>
