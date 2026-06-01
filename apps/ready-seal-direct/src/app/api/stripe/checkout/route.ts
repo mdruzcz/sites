@@ -98,7 +98,7 @@ export async function POST(req: Request) {
   // Flat 13% Ontario HST. Reuse a single tax rate so we don't create duplicates.
   const hstRateId = await getOrCreateHstRate(stripe);
 
-  const lineItems = cart.items.map((l) => ({
+  const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cart.items.map((l) => ({
     quantity: l.quantity,
     tax_rates: [hstRateId],
     price_data: {
@@ -107,6 +107,19 @@ export async function POST(req: Request) {
       product_data: { name: `${l.product_name} — ${l.variant_name}`, metadata: { sku: l.sku } }
     }
   }));
+
+  // Paid shipping is HST-taxable in Ontario, so add it as a taxed line item.
+  if (shippingCad > 0) {
+    lineItems.push({
+      quantity: 1,
+      tax_rates: [hstRateId],
+      price_data: {
+        currency: "cad",
+        unit_amount: Math.round(shippingCad * 100),
+        product_data: { name: `Shipping — ${ship.zoneLabel || "Ontario"}` }
+      }
+    });
+  }
 
   // Record a pending order so we can match it on the webhook.
   const service = getServiceSupabase();
@@ -145,16 +158,19 @@ export async function POST(req: Request) {
     line_items: lineItems,
     discounts,
     shipping_address_collection: { allowed_countries: ["CA"] },
-    shipping_options: [
-      {
-        shipping_rate_data: {
-          type: "fixed_amount",
-          display_name: shippingCad === 0 ? "Free shipping (orders over $750)" : `Shipping — ${ship.zoneLabel || "Ontario"}`,
-          fixed_amount: { amount: Math.round(shippingCad * 100), currency: "cad" },
-          tax_behavior: "exclusive"
-        }
-      }
-    ],
+    // Free shipping shows as a $0 option; paid shipping is a taxed line item (above).
+    shipping_options:
+      shippingCad === 0
+        ? [
+            {
+              shipping_rate_data: {
+                type: "fixed_amount",
+                display_name: "Free shipping (orders over $750)",
+                fixed_amount: { amount: 0, currency: "cad" }
+              }
+            }
+          ]
+        : undefined,
     success_url: `${SITE_URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${SITE_URL}/cart`,
     metadata: { cart_id: cart.id, order_id: order?.id ?? "", order_number: order?.order_number ?? "" }
