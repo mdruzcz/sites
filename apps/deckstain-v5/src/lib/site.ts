@@ -1,0 +1,17 @@
+export const SITE = {
+  brand: "DeckStain",
+  domain: "deckstain.ca",
+  url: "https://deckstain.ca",
+  legalName: "DeckStain.ca",
+  phone: "519-914-3387",
+  phoneHref: "tel:+15199143387",
+  email: "service@masterdecker.com",
+  hours: "Mon–Fri 8 AM – 6 PM · Sat by appointment",
+  region: "Southwestern Ontario",
+  baseCity: "London",
+  promise: "Send a photo, get a real quote in 2 business days.",
+  responseTime: "2 business days",
+  stainBrand: "READY Seal®",
+  geo: { lat: 42.9849, lng: -81.2453 },
+  stats: { decks: "500+", years: "8", cities: "40+", rating: "4.9", reviews: "127" },
+} as const;

@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@source "../app/**/*.{ts,tsx}";
+@source "../src/**/*.{ts,tsx}";
+
+/* ============================================================
+   DeckStain v5 — "Evergreen"
+   Conversion-first contractor site inspired by deckrestoration.ca.
+   Green primary + warm-wood secondary, Poppins headings, Open Sans
+   body. DENSER spacing than prior builds (Matt disliked the airy
+   padding in v1–v4). Written clean — shares no tokens with them.
+   ============================================================ */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f6f2;        /* soft green-tinted gray section */
+  --bg-deep: #14241a;       /* deep forest for dark bands */
+  --ink: #1a1f1b;           /* near-black green-black */
+  --ink-2: #515a52;         /* secondary text */
+  --ink-3: #828b83;         /* muted */
+  --hair: #e4e8e2;          /* hairline */
+
+  --green: #4f7a3a;         /* primary */
+  --green-600: #406630;
+  --green-700: #335227;
+  --green-tint: #eaf1e4;
+
+  --wood: #b06a33;          /* warm wood secondary accent */
+  --wood-600: #95571f;
+  --gold: #e0a33c;          /* stars / highlights */
+
+  --shadow-sm: 0 1px 2px rgba(20,36,26,.06), 0 1px 3px rgba(20,36,26,.05);
+  --shadow-md: 0 8px 24px -10px rgba(20,36,26,.18);
+  --shadow-lg: 0 24px 50px -20px rgba(20,36,26,.28);
+
+  --r: 8px;
+  --r-lg: 14px;
+
+  --font-head: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-opensans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* NOTE: Tailwind v4's preflight already provides
+     `*, ::after, ::before, ::backdrop { box-sizing: border-box; margin: 0; padding: 0 }`
+   inside @layer base. A duplicate UNLAYERED `*` reset (which this file
+   had previously) beats every Tailwind utility because unlayered CSS
+   wins over any cascade layer — silently killing px-3, gap-0.5, mx-auto,
+   text-center, etc. Body styling goes in @layer base so utilities still
+   win where they should. */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: var(--font-body);
+    line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection { background: var(--green-tint); color: var(--ink); }
+}
+
+/* ---------- layout (tight rhythm) ---------- */
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) { .wrap { padding: 0 2rem; } }
+
+.sec { padding: 4.5rem 0; }               /* generous, premium rhythm */
+@media (min-width: 768px) { .sec { padding: 7.5rem 0; } }   /* ~120px desktop */
+.sec-lg { padding: 5.5rem 0; }
+@media (min-width: 768px) { .sec-lg { padding: 9.5rem 0; } } /* ~152px desktop */
+.sec-sm { padding: 3.25rem 0; }
+@media (min-width: 768px) { .sec-sm { padding: 5rem 0; } }
+
+/* ---------- type ---------- */
+.h { font-family: var(--font-head); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; }
+.h-xl { font-family: var(--font-head); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.eyebrow { font-family: var(--font-head); font-weight: 700; font-size: .73rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+.eyebrow-wood { color: var(--wood); }
+.muted { color: var(--ink-2); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font-family: var(--font-head); font-weight: 600; font-size: .95rem; padding: .8rem 1.4rem;
+  border-radius: var(--r); border: 2px solid transparent; cursor: pointer; text-decoration: none;
+  min-height: 48px; white-space: nowrap; transition: transform .16s ease, background .16s ease, box-shadow .16s ease, color .16s ease, border-color .16s ease; }
+.btn-green { background: var(--green); color: #fff; box-shadow: var(--shadow-md); }
+.btn-green:hover { background: var(--green-600); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-wood { background: var(--wood); color: #fff; }
+.btn-wood:hover { background: var(--wood-600); transform: translateY(-2px); }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #2b332c; transform: translateY(-2px); }
+.btn-out { background: #fff; color: var(--ink); border-color: var(--hair); }
+.btn-out:hover { border-color: var(--green); color: var(--green); }
+.btn-clear { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.5); backdrop-filter: blur(6px); }
+.btn-clear:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.btn-lg { padding: .95rem 1.7rem; font-size: 1rem; min-height: 54px; }
+
+/* ---------- cards / chips ---------- */
+.card { background: #fff; border: 1px solid var(--hair); border-radius: var(--r-lg); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.chip { display: inline-flex; align-items: center; gap: .4rem; background: var(--bg-alt); border: 1px solid var(--hair); color: var(--ink-2); border-radius: 999px; padding: .35rem .8rem; font-size: .8rem; font-weight: 600; }
+
+/* ---------- inputs ---------- */
+.field { width: 100%; background: #fff; border: 1.5px solid var(--hair); border-radius: var(--r); padding: .72rem .9rem; font-size: .95rem; color: var(--ink); font-family: var(--font-body); transition: border-color .15s ease, box-shadow .15s ease; }
+.field:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(79,122,58,.16); }
+.flabel { display: block; font-family: var(--font-head); font-weight: 600; font-size: .8rem; color: var(--ink); margin-bottom: .35rem; }
+
+/* ---------- before/after auto reveal (hero) ---------- */
+.ba { position: relative; overflow: hidden; }
+.ba-after { position: absolute; inset: 0; }
+.ba-before { position: absolute; inset: 0; overflow: hidden; animation: sweep 7s ease-in-out infinite; will-change: width; }
+.ba-before > .ba-img { position: absolute; inset: 0; width: 100vw; max-width: none; }
+.ba-divider { position: absolute; top: 0; bottom: 0; width: 3px; background: #fff; box-shadow: 0 0 12px rgba(0,0,0,.4); animation: sweepline 7s ease-in-out infinite; }
+.ba-knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 40px; height: 40px; border-radius: 999px; background: #fff; box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; }
+@keyframes sweep {
+  0%,100% { width: 62%; } 50% { width: 22%; }
+}
+@keyframes sweepline {
+  0%,100% { left: 62%; } 50% { left: 22%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ba-before { animation: none; width: 50%; }
+  .ba-divider { animation: none; left: 50%; }
+}
+
+/* ---------- misc ---------- */
+.no-bar::-webkit-scrollbar { display: none; }
+.no-bar { -ms-overflow-style: none; scrollbar-width: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.rise { animation: rise .6s cubic-bezier(.16,1,.3,1) both; }
+.rise-2 { animation-delay: .07s; } .rise-3 { animation-delay: .14s; } .rise-4 { animation-delay: .21s; }
+@keyframes bob { 0%,100% { transform: translateY(0); opacity:.7;} 50% { transform: translateY(6px); opacity:1; } }
+.bob { animation: bob 1.8s ease-in-out infinite; }
