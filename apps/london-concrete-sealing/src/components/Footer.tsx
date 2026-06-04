@@ -1,69 +1,88 @@
 import Link from 'next/link';
-import { site, services } from '@/lib/content';
+import Image from 'next/image';
+import { site, services, serviceAreas } from '@/lib/content';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto max-w-6xl px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-deep text-slate-300">
+      <div className="container-x py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
-          <div className="md:col-span-1">
-            <p className="text-white text-xl font-bold mb-3">
-              <span style={{ color: 'var(--accent)' }}>London</span> Concrete Sealing
+          <div>
+            <div className="bg-white inline-flex rounded-lg p-3 mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="London Concrete Sealing logo"
+                width={200}
+                height={60}
+                className="h-9 w-auto"
+              />
+            </div>
+            <p className="text-sm leading-relaxed text-slate-400">
+              Discover more about our services and how we can help protect and beautify your
+              concrete surfaces. Experience the commitment, quality, and care that set London
+              Concrete Sealing apart.
             </p>
-            <p className="text-sm text-gray-400 mb-4">
-              Professional concrete sealing and repair across London, St. Thomas, Woodstock, and Stratford.
-            </p>
-            <p className="text-sm">{site.hours.weekdays}</p>
-            <p className="text-sm">{site.hours.weekends}</p>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick links */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-[var(--accent)] transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-[var(--accent)] transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-[var(--accent)] transition-colors">Our Services</Link></li>
-              <li><Link href="/gallery" className="hover:text-[var(--accent)] transition-colors">Gallery</Link></li>
-              <li><Link href="/contact" className="hover:text-[var(--accent)] transition-colors">Contact Us</Link></li>
+            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2.5 text-sm">
+              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li><Link href="/about-us" className="hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link href="/our-services" className="hover:text-accent transition-colors">Our Services</Link></li>
+              <li><Link href="/gallery" className="hover:text-accent transition-colors">Gallery</Link></li>
+              <li><Link href="/contact-us" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Services</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <ul className="space-y-2.5 text-sm">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="hover:text-[var(--accent)] transition-colors">
-                    {s.name}
+                  <Link href={s.urlPath} className="hover:text-accent transition-colors">
+                    {s.menuName}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact + areas */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Contact</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-white font-semibold mb-4">Get In Touch</h3>
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <a href={`mailto:${site.email}`} className="hover:text-[var(--accent)] transition-colors">
+                <a href={`tel:${site.phone}`} className="hover:text-accent transition-colors">
+                  {site.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`} className="hover:text-accent transition-colors break-all">
                   {site.email}
                 </a>
               </li>
-              <li>{site.city}, {site.province}</li>
+              <li className="text-slate-400">{site.hours.weekdays}</li>
+              <li className="text-slate-400">{site.hours.weekends}</li>
             </ul>
-            <div className="mt-4">
-              <h4 className="text-white font-semibold mb-2 text-sm">Service Areas</h4>
-              <p className="text-sm text-gray-400">London · St. Thomas · Woodstock · Stratford · Ingersoll</p>
+            <h3 className="text-white font-semibold mt-6 mb-3">Service Areas</h3>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-400">
+              {serviceAreas.filter((a) => a.slug !== 'london-surrounding-areas').map((a) => (
+                <Link key={a.slug} href={a.urlPath} className="hover:text-accent transition-colors">
+                  {a.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} London Concrete Sealing. All Rights Reserved.</p>
+      <div className="border-t border-white/10">
+        <div className="container-x py-5 text-center text-xs text-slate-500">
+          © {new Date().getFullYear()} London Concrete Sealing. All Rights Reserved.
         </div>
       </div>
     </footer>

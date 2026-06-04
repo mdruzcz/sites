@@ -1,32 +1,102 @@
 [
   {
     "slug": "london",
+    "urlPath": "/concrete-sealing-in-london",
     "name": "London",
+    "region": "Middlesex County",
     "province": "ON",
-    "description": "London, Ontario's trusted concrete sealing specialists serving all neighbourhoods from Old North to Byron."
+    "primary": true,
+    "image": "/images/concrete-sealing-driveway.jpg",
+    "description": "London, Ontario's trusted concrete sealing specialists, protecting driveways and patios in every neighbourhood from Old North and Masonville to Byron, Oakridge, and Hyde Park."
   },
   {
     "slug": "st-thomas",
+    "urlPath": "/st-thomas-concrete-sealing-services",
     "name": "St. Thomas",
+    "region": "Elgin County",
     "province": "ON",
-    "description": "Professional concrete sealing services in St. Thomas, ON — over a decade of experience restoring patios and driveways."
+    "image": "/images/st-thomas-concrete-sealing.jpg",
+    "description": "Professional concrete sealing services in St. Thomas, ON — over a decade of experience restoring and protecting patios, driveways, and walkways across Elgin County."
   },
   {
     "slug": "woodstock",
+    "urlPath": "/woodstock-concrete-sealing",
     "name": "Woodstock",
+    "region": "Oxford County",
     "province": "ON",
-    "description": "Concrete sealing and driveway services in Woodstock, Oxford County and surrounding areas."
+    "image": "/images/woodstock-concrete-sealing.jpg",
+    "description": "Concrete sealing and driveway protection in Woodstock and across Oxford County, keeping your concrete looking new through harsh Ontario winters."
   },
   {
     "slug": "stratford",
+    "urlPath": "/concrete-sealing-in-stratford",
     "name": "Stratford",
+    "region": "Perth County",
     "province": "ON",
-    "description": "Quality concrete sealing for Stratford homeowners and businesses in Perth County."
+    "image": "/images/concrete-sealing-coloured.jpg",
+    "description": "Quality concrete sealing for Stratford homeowners and businesses in Perth County — driveways, patios, and decorative stamped concrete."
+  },
+  {
+    "slug": "tillsonburg",
+    "urlPath": "/concrete-sealing-tilsonburg",
+    "name": "Tillsonburg",
+    "region": "Oxford County",
+    "province": "ON",
+    "image": "/images/sealing-stamped-concrete.jpg",
+    "description": "Expert concrete sealing services in Tillsonburg, protecting your driveways and patios from moisture, oil, and freeze-thaw damage."
+  },
+  {
+    "slug": "strathroy",
+    "urlPath": "/concrete-sealing-strathroy",
+    "name": "Strathroy",
+    "region": "Middlesex County",
+    "province": "ON",
+    "image": "/images/exposed-aggregate-sealing.jpg",
+    "description": "Concrete sealing and driveway services in Strathroy and surrounding Middlesex County communities, delivered by experienced local professionals."
+  },
+  {
+    "slug": "kitchener",
+    "urlPath": "/concrete-sealing-in-kitchener",
+    "name": "Kitchener",
+    "region": "Waterloo Region",
+    "province": "ON",
+    "image": "/images/concrete-cleaning-sealing.jpg",
+    "description": "Professional concrete sealing in Kitchener and the Waterloo Region — preserve the look and lifespan of your driveways, patios, and walkways."
   },
   {
     "slug": "ingersoll",
+    "urlPath": "/concrete-sealing-ingersoll",
     "name": "Ingersoll",
+    "region": "Oxford County",
     "province": "ON",
-    "description": "Concrete sealing and driveway protection services in Ingersoll and the surrounding Oxford County region."
+    "image": "/images/ashlar-slate-stamped.webp",
+    "description": "Concrete sealing and protection services in Ingersoll and the surrounding Oxford County region, tailored to Canada's freeze-thaw climate."
+  },
+  {
+    "slug": "brantford",
+    "urlPath": "/concrete-sealing-brantford",
+    "name": "Brantford",
+    "region": "Brant County",
+    "province": "ON",
+    "image": "/images/stamped-concrete.jpg",
+    "description": "Trusted concrete sealing in Brantford and Brant County, keeping driveways, patios, and stamped concrete vibrant and protected year-round."
+  },
+  {
+    "slug": "cambridge",
+    "urlPath": "/concrete-sealing-cambridge",
+    "name": "Cambridge",
+    "region": "Waterloo Region",
+    "province": "ON",
+    "image": "/images/concrete-sealing-coloured.jpg",
+    "description": "Concrete sealing services for Cambridge homeowners — durable protection and enhanced curb appeal for every concrete surface."
+  },
+  {
+    "slug": "london-surrounding-areas",
+    "urlPath": "/concrete-sealing-in-london-surrounding-areas",
+    "name": "London & Surrounding Areas",
+    "region": "Southwestern Ontario",
+    "province": "ON",
+    "image": "/images/broom-finishes.jpg",
+    "description": "Serving London and the surrounding Southwestern Ontario communities with professional concrete sealing, driveway installation, and decorative finishes."
   }
 ]

@@ -1,38 +1,92 @@
 @import "tailwindcss";
 
+/* Tailwind v4 needs explicit source globs — auto-detection is unreliable in this monorepo */
+@source "../**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source "../content/**/*.json";
+
+@theme {
+  --color-accent: #dd8839;
+  --color-accent-dark: #c2722a;
+  --color-accent-light: #f0a85f;
+  --color-accent-soft: #fdf3e8;
+
+  --color-ink: #1e293b;
+  --color-deep: #0f172a;
+  --color-slate-muted: #69727d;
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
-  --accent: #D4500A;
-  --accent-dark: #b03e08;
-  --foreground: #111827;
+  --accent: #dd8839;
+  --accent-dark: #c2722a;
+  --foreground: #1e293b;
   --background: #ffffff;
+}
+
+* {
+  border-color: #e2e8f0;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-inter), system-ui, sans-serif;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.shimmer {
-  background: linear-gradient(90deg, #e5e7eb 25%, #f9fafb 50%, #e5e7eb 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-.accent-btn {
-  background-color: var(--accent);
-  color: white;
-  transition: background-color 0.2s;
-}
-.accent-btn:hover {
-  background-color: var(--accent-dark);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Reusable utilities ---- */
+.accent-btn {
+  background-color: var(--accent);
+  color: #fff;
+  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 8px 20px -8px rgba(221, 136, 57, 0.6);
+}
+.accent-btn:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Shimmer skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Fade-up on scroll-in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+/* Subtle dotted texture for dark sections */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
