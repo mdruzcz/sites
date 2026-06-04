@@ -1,0 +1,269 @@
+[
+  {
+    "slug": "10x10-kitchen-package",
+    "name": "10x10 White Shaker Kitchen Package",
+    "tagline": "The most popular starter layout — a complete L-shaped 10x10 kitchen.",
+    "layout": "10' x 10' L-shaped",
+    "bestFor": "Apartments, condos, and compact kitchens",
+    "hero_image": "/images/DSC09482-Front-Closed-New-scaled-1-1536x1024-1.webp",
+    "items": [
+      {
+        "sku": "B30",
+        "name": "White Shaker 30\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 418.86,
+        "line_total": 418.86
+      },
+      {
+        "sku": "B18",
+        "name": "White Shaker 18\" Base Cabinet - Single Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 313.02,
+        "line_total": 313.02
+      },
+      {
+        "sku": "SB36",
+        "name": "White Shaker Sink Base Cabinet - 36\"",
+        "qty": 1,
+        "unit_price_cad": 413.39,
+        "line_total": 413.39
+      },
+      {
+        "sku": "BBC42",
+        "name": "White Shaker 42\" Blind Base Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 465.94,
+        "line_total": 465.94
+      },
+      {
+        "sku": "DB18",
+        "name": "White Shaker 18\" Three Drawer Base Cabinet",
+        "qty": 1,
+        "unit_price_cad": 443.11,
+        "line_total": 443.11
+      },
+      {
+        "sku": "W3036",
+        "name": "White Shaker Wall Cabinet - 30\"",
+        "qty": 1,
+        "unit_price_cad": 332.62,
+        "line_total": 332.62
+      },
+      {
+        "sku": "W1836",
+        "name": "White Shaker 18\" Wall Cabinet",
+        "qty": 2,
+        "unit_price_cad": 267.86,
+        "line_total": 535.72
+      },
+      {
+        "sku": "W3018",
+        "name": "White Shaker 30\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 271.44,
+        "line_total": 271.44
+      },
+      {
+        "sku": "WBC2736",
+        "name": "White Shaker 27\" Wall Blind Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 256.17,
+        "line_total": 256.17
+      }
+    ],
+    "subtotal_cad": 3450.27,
+    "from_price": false
+  },
+  {
+    "slug": "10x12-kitchen-package",
+    "name": "10x12 White Shaker Kitchen Package",
+    "tagline": "A roomier U-shaped layout with extra drawer and wall storage.",
+    "layout": "10' x 12' U-shaped",
+    "bestFor": "Family kitchens that need more prep and storage space",
+    "hero_image": "/images/DSC09482-Front-Closed-New-scaled-1-1536x1024-1.webp",
+    "items": [
+      {
+        "sku": "B36",
+        "name": "White Shaker 36\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 483.81,
+        "line_total": 483.81
+      },
+      {
+        "sku": "B24",
+        "name": "White Shaker 24\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 370.57,
+        "line_total": 370.57
+      },
+      {
+        "sku": "B18",
+        "name": "White Shaker 18\" Base Cabinet - Single Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 313.02,
+        "line_total": 313.02
+      },
+      {
+        "sku": "SB36",
+        "name": "White Shaker Sink Base Cabinet - 36\"",
+        "qty": 1,
+        "unit_price_cad": 413.39,
+        "line_total": 413.39
+      },
+      {
+        "sku": "BBC42",
+        "name": "White Shaker 42\" Blind Base Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 465.94,
+        "line_total": 465.94
+      },
+      {
+        "sku": "DB24",
+        "name": "White Shaker 24\" Three Drawer Base Cabinet",
+        "qty": 1,
+        "unit_price_cad": 509.69,
+        "line_total": 509.69
+      },
+      {
+        "sku": "DB18",
+        "name": "White Shaker 18\" Three Drawer Base Cabinet",
+        "qty": 1,
+        "unit_price_cad": 443.11,
+        "line_total": 443.11
+      },
+      {
+        "sku": "W3036",
+        "name": "White Shaker Wall Cabinet - 30\"",
+        "qty": 2,
+        "unit_price_cad": 332.62,
+        "line_total": 665.24
+      },
+      {
+        "sku": "W2436",
+        "name": "White Shaker 24\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 301.75,
+        "line_total": 301.75
+      },
+      {
+        "sku": "W1836",
+        "name": "White Shaker 18\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 267.86,
+        "line_total": 267.86
+      },
+      {
+        "sku": "WBC2736",
+        "name": "White Shaker 27\" Wall Blind Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 256.17,
+        "line_total": 256.17
+      }
+    ],
+    "subtotal_cad": 4490.55,
+    "from_price": false
+  },
+  {
+    "slug": "12x12-kitchen-package",
+    "name": "12x12 White Shaker Kitchen Package",
+    "tagline": "Our largest preset — generous base, drawer, and tall pantry storage.",
+    "layout": "12' x 12' U-shaped with pantry",
+    "bestFor": "Larger kitchens and full renovations",
+    "hero_image": "/images/DSC09482-Front-Closed-New-scaled-1-1536x1024-1.webp",
+    "items": [
+      {
+        "sku": "B36",
+        "name": "White Shaker 36\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 483.81,
+        "line_total": 483.81
+      },
+      {
+        "sku": "B30",
+        "name": "White Shaker 30\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 418.86,
+        "line_total": 418.86
+      },
+      {
+        "sku": "B24",
+        "name": "White Shaker 24\" Base Cabinet - Double Door / Single Drawer",
+        "qty": 1,
+        "unit_price_cad": 370.57,
+        "line_total": 370.57
+      },
+      {
+        "sku": "SB36",
+        "name": "White Shaker Sink Base Cabinet - 36\"",
+        "qty": 1,
+        "unit_price_cad": 413.39,
+        "line_total": 413.39
+      },
+      {
+        "sku": "BBC45",
+        "name": "White Shaker 45\" Blind Base Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 465.94,
+        "line_total": 465.94
+      },
+      {
+        "sku": "DB30",
+        "name": "White Shaker 30\" Three Drawer Base Cabinet",
+        "qty": 1,
+        "unit_price_cad": 574.65,
+        "line_total": 574.65
+      },
+      {
+        "sku": "DB18",
+        "name": "White Shaker 18\" Three Drawer Base Cabinet",
+        "qty": 1,
+        "unit_price_cad": 443.11,
+        "line_total": 443.11
+      },
+      {
+        "sku": "WP249024",
+        "name": "White Shaker 24\" Pantry / Utility Cabinet",
+        "qty": 1,
+        "unit_price_cad": 791.51,
+        "line_total": 791.51
+      },
+      {
+        "sku": "W3036",
+        "name": "White Shaker Wall Cabinet - 30\"",
+        "qty": 2,
+        "unit_price_cad": 332.62,
+        "line_total": 665.24
+      },
+      {
+        "sku": "W2736",
+        "name": "White Shaker 27\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 320.67,
+        "line_total": 320.67
+      },
+      {
+        "sku": "W2436",
+        "name": "White Shaker 24\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 301.75,
+        "line_total": 301.75
+      },
+      {
+        "sku": "W1836",
+        "name": "White Shaker 18\" Wall Cabinet",
+        "qty": 1,
+        "unit_price_cad": 267.86,
+        "line_total": 267.86
+      },
+      {
+        "sku": "WBC2736",
+        "name": "White Shaker 27\" Wall Blind Corner Cabinet",
+        "qty": 1,
+        "unit_price_cad": 256.17,
+        "line_total": 256.17
+      }
+    ],
+    "subtotal_cad": 5773.53,
+    "from_price": false
+  }
+]
