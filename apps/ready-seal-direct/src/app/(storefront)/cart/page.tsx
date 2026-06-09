@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getCart } from "@/lib/cart";
 import { CartLineEditor } from "@/components/cart-line-editor";
 import { CheckoutBar } from "@/components/checkout-bar";
-import { formatCad } from "@/lib/utils";
+import { formatCad, FREE_SHIPPING_THRESHOLD_DEFAULT, MIN_ORDER_GALLONS, cartGallons } from "@/lib/utils";
 
 export const metadata = { title: "Your cart" };
 
@@ -14,13 +14,18 @@ export default async function CartPage() {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center">
         <h1 className="text-3xl font-semibold tracking-tight">Your cart is empty</h1>
-        <p className="mt-2 text-slate-500">Browse the shop to add lights, clips, wires and connectors.</p>
+        <p className="mt-2 text-slate-500">Browse the shop to add Ready Seal stain, sealer and applicators.</p>
         <Link href="/shop" className="btn-primary mt-6 inline-block">
           Start shopping
         </Link>
       </div>
     );
   }
+
+  const gallons = cartGallons(cart.items);
+  const belowMinimum = gallons < MIN_ORDER_GALLONS;
+  const gallonsShort = Math.max(0, MIN_ORDER_GALLONS - gallons);
+  const freeShipThreshold = FREE_SHIPPING_THRESHOLD_DEFAULT;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
@@ -71,19 +76,19 @@ export default async function CartPage() {
             <Row label="Subtotal" value={formatCad(cart.subtotal_cad)} />
             <Row
               label="Shipping"
-              value={cart.subtotal_cad >= 500 ? "FREE" : "Calculated at checkout"}
+              value={cart.subtotal_cad >= freeShipThreshold ? "FREE" : "Calculated at checkout"}
             />
             <Row label="Tax" value="Calculated at checkout" />
           </dl>
           <div className="mt-4 border-t border-slate-200 pt-4 text-sm">
             <Row label="Estimated total" value={formatCad(cart.subtotal_cad)} bold />
           </div>
-          {cart.subtotal_cad < 500 && (
+          {cart.subtotal_cad < freeShipThreshold && (
             <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
-              Spend {formatCad(500 - cart.subtotal_cad)} more for FREE shipping in Canada.
+              Spend {formatCad(freeShipThreshold - cart.subtotal_cad)} more for FREE shipping in Ontario.
             </p>
           )}
-          <CheckoutBar />
+          <CheckoutBar belowMinimum={belowMinimum} gallonsShort={gallonsShort} />
         </aside>
       </div>
     </div>

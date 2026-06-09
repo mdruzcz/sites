@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+
+// Self-hosted Umami analytics (analytics.masterdecker.com). Feeds the admin
+// conversion funnel's traffic stages (visits, checkout-page views).
+const UMAMI_WEBSITE_ID = "abf81153-2943-4dcf-aa7c-3f9bc3dd87fd";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { UIProvider } from "@/components/ui-context";
@@ -49,6 +54,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <PredictiveSearch />
           <OfferPopup />
         </UIProvider>
+        <Script
+          src="https://analytics.masterdecker.com/script.js"
+          data-website-id={UMAMI_WEBSITE_ID}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

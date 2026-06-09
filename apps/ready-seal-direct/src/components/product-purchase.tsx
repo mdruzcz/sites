@@ -216,6 +216,11 @@ export function ProductPurchase({ productSlug, variants, brushUpsell }: Props) {
         </p>
       )}
 
+      <p className="mt-3 rounded-md bg-[var(--color-brand-soft)] px-3 py-2 text-xs text-[var(--color-brand-dark)]">
+        <span aria-hidden>📦</span> <strong>2-gallon minimum order.</strong> We don&rsquo;t ship single
+        gallons on their own — order 2+ gallons, or grab a 5-gallon pail (cheaper per gallon).
+      </p>
+
       <div className="mt-4 flex items-center gap-2 border-t border-[var(--color-border)] pt-3 text-xs text-slate-600">
         <span aria-hidden>🪵</span>
         <span>Professional-grade · Oil-based stain &amp; sealer in one · Goof-proof application</span>

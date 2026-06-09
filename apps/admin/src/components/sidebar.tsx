@@ -4,9 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const NAV: Array<{ section: string; items: { href: string; label: string; storeScoped?: boolean }[] }> = [
+// `onlyStore` limits a section to a specific active store slug (e.g. the
+// Ready Kitchens module only makes sense under the Ready Kitchens store).
+// `hideForStore` hides a section when that slug is active (the ecom catalog/
+// commerce sections are meaningless for the quote-only Ready Kitchens store).
+const READY_KITCHENS_SLUG = "ready-kitchens";
+
+const NAV: Array<{
+  section: string;
+  onlyStore?: string;
+  hideForStore?: string;
+  items: { href: string; label: string; storeScoped?: boolean }[];
+}> = [
   {
     section: "Catalog",
+    hideForStore: READY_KITCHENS_SLUG,
     items: [
       { href: "/products", label: "Products", storeScoped: true },
       { href: "/categories", label: "Categories", storeScoped: true },
@@ -16,6 +28,7 @@ const NAV: Array<{ section: string; items: { href: string; label: string; storeS
   },
   {
     section: "Commerce",
+    hideForStore: READY_KITCHENS_SLUG,
     items: [
       { href: "/orders", label: "Orders", storeScoped: true },
       { href: "/customers", label: "Customers" },
@@ -24,6 +37,7 @@ const NAV: Array<{ section: string; items: { href: string; label: string; storeS
   },
   {
     section: "Ready Kitchens",
+    onlyStore: READY_KITCHENS_SLUG,
     items: [
       { href: "/ready-kitchens/kits", label: "Kit Packages" },
       { href: "/ready-kitchens/cabinets", label: "Cabinet Catalog" },
@@ -40,8 +54,20 @@ const NAV: Array<{ section: string; items: { href: string; label: string; storeS
   }
 ];
 
-export function Sidebar({ activeStoreName }: { activeStoreName: string | null }) {
+export function Sidebar({
+  activeStoreName,
+  activeStoreSlug
+}: {
+  activeStoreName: string | null;
+  activeStoreSlug: string | null;
+}) {
   const pathname = usePathname();
+
+  const sections = NAV.filter((section) => {
+    if (section.onlyStore && activeStoreSlug !== section.onlyStore) return false;
+    if (section.hideForStore && activeStoreSlug === section.hideForStore) return false;
+    return true;
+  });
 
   return (
     <aside className="hidden w-60 shrink-0 border-r border-slate-200 bg-white md:flex md:flex-col">
@@ -61,7 +87,7 @@ export function Sidebar({ activeStoreName }: { activeStoreName: string | null })
         >
           Dashboard
         </Link>
-        {NAV.map((section) => (
+        {sections.map((section) => (
           <div key={section.section} className="mt-4">
             <div className="px-3 pb-1 text-xs font-medium uppercase tracking-wide text-slate-500">
               {section.section}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useUI } from "@/components/ui-context";
 import { setLineQuantityAction, removeLineAction } from "@/lib/actions/cart";
 import type { Cart } from "@/lib/cart";
+import { FREE_SHIPPING_THRESHOLD_DEFAULT, MIN_ORDER_GALLONS, cartGallons } from "@/lib/utils";
 
 function formatCad(n: number) {
   return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(n);
@@ -40,8 +41,11 @@ export function MiniCartDrawer() {
   if (!miniCartOpen) return null;
 
   const subtotal = cart?.subtotal_cad ?? 0;
-  const remaining = Math.max(0, 500 - subtotal);
-  const progress = Math.min(100, (subtotal / 500) * 100);
+  const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD_DEFAULT - subtotal);
+  const progress = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD_DEFAULT) * 100);
+  const gallons = cart ? cartGallons(cart.items) : 0;
+  const belowMinimum = !!cart && cart.items.length > 0 && gallons < MIN_ORDER_GALLONS;
+  const gallonsShort = Math.max(0, MIN_ORDER_GALLONS - gallons);
 
   function setQty(lineId: string, qty: number) {
     startTransition(async () => {
@@ -114,7 +118,7 @@ export function MiniCartDrawer() {
               <div>
                 <p className="font-display text-xl text-slate-700">Your cart is empty</p>
                 <p className="mt-2 text-sm text-slate-500">
-                  Add some lights to get started.
+                  Add Ready Seal stain to get started.
                 </p>
                 <Link
                   href="/shop"
@@ -200,13 +204,29 @@ export function MiniCartDrawer() {
             <p className="mt-1 text-right text-xs text-slate-500">
               Shipping &amp; tax calculated at checkout
             </p>
-            <Link
-              href="/checkout"
-              onClick={closeMiniCart}
-              className="btn-primary mt-4 w-full justify-center"
-            >
-              Checkout →
-            </Link>
+            {belowMinimum ? (
+              <>
+                <div className="mt-4 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+                  <strong>2-gallon minimum.</strong> Add {gallonsShort} more gallon
+                  {gallonsShort === 1 ? "" : "s"}{" "}of stain to check out — we don&rsquo;t ship single gallons.
+                </div>
+                <button
+                  type="button"
+                  disabled
+                  className="btn-primary mt-3 w-full cursor-not-allowed justify-center opacity-50"
+                >
+                  Checkout →
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/checkout"
+                onClick={closeMiniCart}
+                className="btn-primary mt-4 w-full justify-center"
+              >
+                Checkout →
+              </Link>
+            )}
             <Link
               href="/cart"
               onClick={closeMiniCart}

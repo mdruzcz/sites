@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { getCart } from "@/lib/cart";
 import { getStore } from "@/lib/catalog";
 import { getServiceSupabase } from "@/lib/supabase/server";
-import { SITE_URL } from "@/lib/utils";
+import { SITE_URL, MIN_ORDER_GALLONS, cartGallons } from "@/lib/utils";
 import { estimateShipping } from "@/lib/shipping/estimate";
 
 // Get-or-create a single reusable 13% Ontario HST tax rate (avoids duplicates per checkout).
@@ -31,10 +31,14 @@ export async function POST(req: Request) {
   }
   const body = (await req.json().catch(() => ({}))) as {
     email?: string;
+    phone?: string;
     province?: string;
     postal?: string;
     discountCode?: string;
   };
+
+  // A real email lets us recover the order if the customer abandons checkout.
+  const validEmail = body.email && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email) ? body.email : null;
 
   // Ontario-only online ordering (server-side enforcement).
   if (body.province && body.province !== "ON") {
@@ -47,6 +51,15 @@ export async function POST(req: Request) {
   const cart = await getCart();
   if (!cart || cart.items.length === 0) {
     return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
+  }
+
+  // Minimum order: we don't ship single gallons. Enforced server-side so the
+  // rule can't be bypassed by skipping the cart-page UI.
+  if (cartGallons(cart.items) < MIN_ORDER_GALLONS) {
+    return NextResponse.json(
+      { error: `Our minimum order is ${MIN_ORDER_GALLONS} gallons of stain — please add more before checking out.` },
+      { status: 400 }
+    );
   }
   const store = await getStore();
   if (!store) return NextResponse.json({ error: "Store missing" }, { status: 500 });
@@ -127,7 +140,8 @@ export async function POST(req: Request) {
     .from("ecom_orders")
     .insert({
       store_id: store.id,
-      email: "pending@checkout",  // updated by webhook
+      email: validEmail ?? "pending@checkout",  // captured for abandoned-cart recovery; webhook overwrites with Stripe's email on success
+      phone: body.phone || null,
       status: "pending_payment",
       payment_method: "card",
       subtotal_cad: cart.subtotal_cad,
@@ -157,6 +171,7 @@ export async function POST(req: Request) {
     payment_method_types: ["card"],
     line_items: lineItems,
     discounts,
+    phone_number_collection: { enabled: true },
     shipping_address_collection: { allowed_countries: ["CA"] },
     // Free shipping shows as a $0 option; paid shipping is a taxed line item (above).
     shipping_options:

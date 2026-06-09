@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import Link from "next/link";
 import type { Cart } from "@/lib/cart";
 import { estimateShipping } from "@/lib/shipping/estimate";
-import { FREE_SHIPPING_THRESHOLD_DEFAULT, formatCad } from "@/lib/utils";
+import { FREE_SHIPPING_THRESHOLD_DEFAULT, MIN_ORDER_GALLONS, cartGallons, formatCad } from "@/lib/utils";
 
 const PROVINCES = [
   ["AB", "Alberta"],
@@ -34,6 +34,11 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   const [postal, setPostal] = useState("");
   const [province, setProvince] = useState("ON");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const gallons = cartGallons(cart.items);
+  const belowMinimum = gallons < MIN_ORDER_GALLONS;
+  const gallonsShort = Math.max(0, MIN_ORDER_GALLONS - gallons);
 
   const cleanPostal = postal.replace(/\s+/g, "").toUpperCase();
   const shipEst = /^[A-Z]\d[A-Z]\d[A-Z]\d$/.test(cleanPostal)
@@ -51,7 +56,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, province, postal, discountCode: readDiscountCookie() ?? "SAVE15" })
+        body: JSON.stringify({ email, phone, province, postal, discountCode: readDiscountCookie() ?? "SAVE15" })
       });
       const json = (await res.json()) as { url?: string; error?: string };
       if (json.url) window.location.href = json.url;
@@ -87,7 +92,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           <Input label="Email" name="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-          <Input label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
+          <Input label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
         </div>
         <label className="mt-3 flex items-start gap-2 text-xs text-slate-600">
           <input type="checkbox" name="marketing_opt_in" defaultChecked />
@@ -97,32 +102,12 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
 
       {/* Shipping */}
       <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
-        <h2 className="font-display text-xl">2 · Shipping address</h2>
+        <h2 className="font-display text-xl">2 · Shipping region</h2>
+        <p className="mt-1 text-xs text-slate-500">
+          Just your province and postal code for the shipping estimate — you&rsquo;ll enter your full
+          delivery address securely on the next step. No need to type it twice.
+        </p>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Input label="First name" name="first_name" autoComplete="given-name" required />
-          <Input label="Last name" name="last_name" autoComplete="family-name" required />
-        </div>
-        <Input
-          label="Company (optional)"
-          name="company"
-          autoComplete="organization"
-          className="mt-3"
-        />
-        <Input
-          label="Street address"
-          name="line1"
-          autoComplete="address-line1"
-          required
-          className="mt-3"
-        />
-        <Input
-          label="Apartment, suite, etc. (optional)"
-          name="line2"
-          autoComplete="address-line2"
-          className="mt-3"
-        />
-        <div className="mt-3 grid gap-3 md:grid-cols-3">
-          <Input label="City" name="city" autoComplete="address-level2" required />
           <label className="block">
             <span className="text-xs font-medium text-slate-600">Province</span>
             <select
@@ -142,7 +127,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             label="Postal code"
             name="postal_code"
             autoComplete="postal-code"
-            required
+            inputMode="text"
             value={postal}
             onChange={(e) => setPostal(e.target.value.toUpperCase())}
             placeholder="A1A 1A1"
@@ -209,10 +194,17 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             </div>
           </section>
 
+          {belowMinimum && (
+            <p className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              <strong>2-gallon minimum order.</strong> We don&rsquo;t ship single gallons — add{" "}
+              {gallonsShort} more gallon{gallonsShort === 1 ? "" : "s"} of stain to complete your order.
+            </p>
+          )}
+
           <button
             type="button"
             onClick={startCheckout}
-            disabled={pending || cart.items.length === 0}
+            disabled={pending || cart.items.length === 0 || belowMinimum}
             className="btn-primary w-full justify-center text-base disabled:opacity-50"
           >
             {pending ? "Redirecting to Stripe…" : "Complete order →"}
