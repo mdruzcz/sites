@@ -87,7 +87,8 @@ export async function POST(req: NextRequest) {
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL || "noreply@rtacabinetscanada.ca",
+      // Resend only has masterdecker.com verified — any other from-domain 403s silently.
+      from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
       to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
       subject: `New RTA Cabinets Quote Request from ${name}`,
       html: `<h2>New Quote Request</h2>

@@ -87,7 +87,7 @@ export async function submitContact(formData: FormData): Promise<ContactResult> 
   if (process.env.RESEND_API_KEY) {
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
-      const from = process.env.CONTACT_FROM_EMAIL || `noreply@${SITE.domain}`;
+      const from = process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com";
       const to = process.env.CONTACT_TO_EMAIL || SITE.internalEmail;
       const attachmentsHtml = attachmentUrls.length
         ? `<p><strong>Attachments (${attachmentUrls.length}):</strong></p>

@@ -6,19 +6,21 @@ import { cn } from "@/lib/utils";
 
 // `onlyStore` limits a section to a specific active store slug (e.g. the
 // Ready Kitchens module only makes sense under the Ready Kitchens store).
-// `hideForStore` hides a section when that slug is active (the ecom catalog/
-// commerce sections are meaningless for the quote-only Ready Kitchens store).
+// `hideForStores` hides a section when one of those slugs is active (the ecom
+// catalog/commerce sections are meaningless for quote-only stores).
 const READY_KITCHENS_SLUG = "ready-kitchens";
+const RTA_CABINETS_SLUG = "rta-cabinets-canada";
+const QUOTE_ONLY_SLUGS = [READY_KITCHENS_SLUG, RTA_CABINETS_SLUG];
 
 const NAV: Array<{
   section: string;
   onlyStore?: string;
-  hideForStore?: string;
+  hideForStores?: string[];
   items: { href: string; label: string; storeScoped?: boolean }[];
 }> = [
   {
     section: "Catalog",
-    hideForStore: READY_KITCHENS_SLUG,
+    hideForStores: QUOTE_ONLY_SLUGS,
     items: [
       { href: "/products", label: "Products", storeScoped: true },
       { href: "/categories", label: "Categories", storeScoped: true },
@@ -28,12 +30,18 @@ const NAV: Array<{
   },
   {
     section: "Commerce",
-    hideForStore: READY_KITCHENS_SLUG,
+    hideForStores: QUOTE_ONLY_SLUGS,
     items: [
       { href: "/orders", label: "Orders", storeScoped: true },
+      { href: "/contact-messages", label: "Contact Messages", storeScoped: true },
       { href: "/customers", label: "Customers" },
       { href: "/applications", label: "B2B Applications" }
     ]
+  },
+  {
+    section: "Forever Cabinets",
+    onlyStore: "forevercabinets",
+    items: [{ href: "/forever-cabinets/quote-requests", label: "Quote Requests" }]
   },
   {
     section: "Ready Kitchens",
@@ -44,6 +52,11 @@ const NAV: Array<{
       { href: "/ready-kitchens/quote-requests", label: "Quote Requests" },
       { href: "/ready-kitchens/contact-messages", label: "Contact Messages" }
     ]
+  },
+  {
+    section: "RTA Cabinets",
+    onlyStore: RTA_CABINETS_SLUG,
+    items: [{ href: "/rta-cabinets/quote-requests", label: "Quote Requests" }]
   },
   {
     section: "Operations",
@@ -65,7 +78,7 @@ export function Sidebar({
 
   const sections = NAV.filter((section) => {
     if (section.onlyStore && activeStoreSlug !== section.onlyStore) return false;
-    if (section.hideForStore && activeStoreSlug === section.hideForStore) return false;
+    if (section.hideForStores && activeStoreSlug && section.hideForStores.includes(activeStoreSlug)) return false;
     return true;
   });
 
