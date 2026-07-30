@@ -122,7 +122,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/images/fence-1.jpg"
+                src="/images/vinyl-fence-2.jpg"
                 alt="Professional fence installation in London, Ontario by London Fence Installer"
                 width={600}
                 height={450}
@@ -225,7 +225,7 @@ export default function HomePage() {
             </div>
             <div>
               <Image
-                src="/images/commercial-section.jpg"
+                src="/images/chainlink-fence.jpg"
                 alt="Commercial fence installation by London Fence Installer"
                 width={600}
                 height={400}

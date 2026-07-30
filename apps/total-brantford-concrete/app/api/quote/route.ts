@@ -52,9 +52,9 @@ export async function POST(req: NextRequest) {
 
     // Send email notification
     await resend.emails.send({
-      from: "noreply@totalbrantfordconcrete.ca",
+      from: process.env.CONTACT_FROM_EMAIL ?? "noreply@masterdecker.com",
       to: process.env.CONTACT_TO_EMAIL!,
-      subject: `New Quote Request — ${service} — ${name}`,
+      subject: `New Quote Request - ${service} - ${name}`,
       html: `
         <h2>New Quote Request — Total Brantford Concrete</h2>
         <p><strong>Name:</strong> ${name}</p>

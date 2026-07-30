@@ -166,7 +166,7 @@ export function Hero({ city }: { city?: string }) {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG-9498-scaled-1-1024x768.jpg"
+          src="/images/IMG-9498-scaled-1.jpg"
           alt={`Beautiful deck built by London Deck Builder in ${city || "London"}, Ontario`}
           fill
           className="object-cover"
@@ -334,7 +334,7 @@ export function WhyUs() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
-                src="https://londondeckbuilder.ca/wp-content/uploads/2025/05/Wilmot-Deck-and-Concrete-rotated-2-768x1024.jpg"
+                src="/images/Wilmot-Deck-and-Concrete-rotated-2.jpg"
                 alt="London Deck Builder project"
                 width={768}
                 height={1024}
@@ -362,32 +362,32 @@ export function WhyUs() {
 export function Services() {
   const services = [
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG_0370.jpg",
+      img: "/images/IMG_0370.jpg",
       title: "Pressure Treated Decks",
       desc: "Durable, affordable PT lumber decks built to withstand Ontario's harsh climate. Resistant to decay and pests.",
     },
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Gails-Cedar-Deck.jpg",
+      img: "/images/Light-Oak-Deck.jpg",
       title: "Cedar Deck Building",
       desc: "Premium natural cedar decks with beautiful aesthetics. Cedar is naturally rot-resistant and stands the test of time.",
     },
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG-9498-scaled-2-768x576.jpg",
+      img: "/images/IMG-9498-scaled-2.jpg",
       title: "Composite & PVC Decking",
       desc: "Low-maintenance composite and PVC decking from top brands. Beautiful, durable, and virtually maintenance-free.",
     },
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Permit.jpg",
+      img: "/images/Permit.jpg",
       title: "Deck Permit Assistance",
       desc: "Navigating permits can be a hurdle. We handle the entire permit process and ensure full local compliance.",
     },
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Gazebo-and-Deck-2-1.jpg",
+      img: "/images/Gazebo-and-Deck-2-1.jpg",
       title: "Lighting & Features",
       desc: "Enhance your deck with custom lighting, built-in benches, planters, pergolas, and more. We make it functional and stunning.",
     },
     {
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Deck-Before-Heavy-Sanding.jpg",
+      img: "/images/Deck-Cleaning.jpg",
       title: "Deck Repair & Maintenance",
       desc: "Annual maintenance packages, deck cleaning, sealing, and repairs. Protect your investment for years to come.",
     },
@@ -514,7 +514,7 @@ export function Benefits() {
           <div className="order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG-9498-scaled-1-1024x768.jpg"
+                src="/images/IMG-9498-scaled-1.jpg"
                 alt="Backyard deck lifestyle"
                 width={1024}
                 height={768}
@@ -582,19 +582,16 @@ export function Testimonials() {
       name: "Ahmad",
       location: "Belmont, Ontario",
       text: "Kyle transformed our deck beyond our expectations. He skillfully doubled its size, blending the new seamlessly with the old. Thanks to him, our gatherings are bigger and better than ever!",
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2024/03/testimonial-1.jpg",
     },
     {
       name: "John",
       location: "London, Ontario",
       text: "Working with London Deck Builders was a game-changer for us. Their expertise during the planning stages was invaluable, ensuring our vision was both practical and beautiful. It's rare to find a contractor so committed to a project from start to finish.",
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2024/03/testimonial-3.jpg",
     },
     {
       name: "Joshua",
       location: "Dorchester, Ontario",
       text: "Cameron was the supervisor on our project. His attention to detail was truly remarkable. He ensured every aspect of our deck was executed to perfection. With Cameron at the helm, we felt confident and thrilled with the results.",
-      img: "https://londondeckbuilder.ca/wp-content/uploads/2024/03/testimonial-2.jpg",
     },
   ];
 
@@ -621,8 +618,12 @@ export function Testimonials() {
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--wood)" }}>"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                  <Image src={t.img} alt={t.name} width={48} height={48} className="w-full h-full object-cover" />
+                <div
+                  className="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center font-serif text-lg font-semibold text-white"
+                  style={{ backgroundColor: "var(--terracotta)" }}
+                  aria-hidden="true"
+                >
+                  {t.name.charAt(0)}
                 </div>
                 <div>
                   <p className="font-semibold text-sm" style={{ color: "var(--wood-dark)" }}>{t.name}</p>
@@ -1145,6 +1146,8 @@ export function Contact({ presetCity }: { presetCity?: string } = {}) {
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────────────── */
+import { AwardBadge } from "./award-badge";
+
 export function Footer() {
   return (
     <footer style={{ backgroundColor: "#1C0E08", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
@@ -1214,6 +1217,9 @@ export function Footer() {
             <a href="/terms" className="hover:text-white/60 transition">Terms</a>
           </div>
           <p className="text-xs text-white/20">Serving London, St. Thomas, Woodstock &amp; surrounding areas</p>
+        </div>
+        <div style={{ marginTop: "24px", display: "flex", justifyContent: "center" }}>
+          <AwardBadge />
         </div>
       </div>
     </footer>

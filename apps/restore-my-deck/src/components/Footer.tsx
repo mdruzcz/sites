@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -48,11 +49,14 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-gray-500">
-        <p>&copy; {year} {site.name}. All rights reserved. &nbsp;|&nbsp;
-          <Link href="/privacy-policy" className="hover:text-[var(--accent)] transition-colors">Privacy Policy</Link>
-          &nbsp;|&nbsp;
-          <Link href="/terms-of-service" className="hover:text-[var(--accent)] transition-colors">Terms of Service</Link>
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p>&copy; {year} {site.name}. All rights reserved. &nbsp;|&nbsp;
+            <Link href="/privacy-policy" className="hover:text-[var(--accent)] transition-colors">Privacy Policy</Link>
+            &nbsp;|&nbsp;
+            <Link href="/terms-of-service" className="hover:text-[var(--accent)] transition-colors">Terms of Service</Link>
+          </p>
+          <AwardBadge />
+        </div>
       </div>
     </footer>
   );

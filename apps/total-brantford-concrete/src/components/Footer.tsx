@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices, getServiceAreas } from "@/lib/content";
+import { AwardBadge } from "@/components/award-badge";
 
 export function Footer() {
   const services = getServices();
@@ -110,6 +111,9 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex justify-center mb-6">
+            <AwardBadge />
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--concrete-200)]">
             <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
             <div className="flex gap-6">

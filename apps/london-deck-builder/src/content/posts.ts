@@ -35,7 +35,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-03-15",
     category: "Buying Guide",
     readingMinutes: 9,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG-9498-scaled-2-768x576.jpg",
+    heroImage: "/images/IMG-9498-scaled-2.jpg",
     heroAlt: "Composite deck built by London Deck Builder, comparing material choices",
     body: [
       {
@@ -141,7 +141,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-03-08",
     category: "Permits",
     readingMinutes: 7,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Permit.jpg",
+    heroImage: "/images/Permit.jpg",
     heroAlt: "Deck permit paperwork for a London Ontario backyard deck",
     body: [
       {
@@ -228,7 +228,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-02-22",
     category: "Maintenance",
     readingMinutes: 6,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Deck-Before-Heavy-Sanding.jpg",
+    heroImage: "/images/Deck-Cleaning.jpg",
     heroAlt: "Pressure treated deck mid-restoration showing the difference cleaning makes",
     body: [
       {
@@ -292,7 +292,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-02-10",
     category: "Cost",
     readingMinutes: 8,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Wilmot-Deck-and-Concrete-rotated-2-768x1024.jpg",
+    heroImage: "/images/Wilmot-Deck-and-Concrete-rotated-2.jpg",
     heroAlt: "Custom multi-level deck and concrete project in London Ontario",
     body: [
       {
@@ -385,7 +385,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-01-28",
     category: "Materials",
     readingMinutes: 7,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Gails-Cedar-Deck.jpg",
+    heroImage: "/images/Light-Oak-Deck.jpg",
     heroAlt: "Cedar deck installation in London Ontario backyard",
     body: [
       {
@@ -451,7 +451,7 @@ export const POSTS: BlogPost[] = [
     date: "2026-01-12",
     category: "Design",
     readingMinutes: 6,
-    heroImage: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/Gazebo-and-Deck-2-1.jpg",
+    heroImage: "/images/Gazebo-and-Deck-2-1.jpg",
     heroAlt: "Backyard deck with gazebo and integrated lighting in Southwestern Ontario",
     body: [
       {
