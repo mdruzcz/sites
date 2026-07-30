@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../**/*.{ts,tsx}";
+
 :root {
   --accent: #FC8C04;
   --accent-hover: #e07a00;
