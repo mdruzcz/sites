@@ -47,9 +47,9 @@ export async function POST(req: NextRequest) {
   }
 
   await getResend().emails.send({
-    from: "noreply@restoremydeck.ca",
+    from: process.env.CONTACT_FROM_EMAIL ?? "noreply@masterdecker.com",
     to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
-    subject: `New Quote Request from ${name} – Restore My Deck`,
+    subject: `New Quote Request from ${name} - Restore My Deck`,
     html: `
       <h2>New Quote Request</h2>
       <p><strong>Name:</strong> ${name}</p>

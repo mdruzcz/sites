@@ -49,7 +49,7 @@ const homeSchema = {
   name: "London Deck Builder",
   url: "https://londondeckbuilder.ca",
   telephone: "+1-519-914-1663",
-  image: "https://londondeckbuilder.ca/wp-content/uploads/2025/05/IMG-9498-scaled-1-1024x768.jpg",
+  image: "/images/IMG-9498-scaled-1.jpg",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

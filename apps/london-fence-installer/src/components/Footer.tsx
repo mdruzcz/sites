@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 export function Footer() {
   return (
@@ -99,6 +100,9 @@ export function Footer() {
             <Link href="/privacy-policy" className="hover:text-[var(--accent)]">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-[var(--accent)]">Terms of Service</Link>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center mt-4">
+          <AwardBadge />
         </div>
       </div>
     </footer>
