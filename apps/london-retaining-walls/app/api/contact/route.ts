@@ -3,7 +3,11 @@ import { Resend } from "resend";
 
 export const runtime = "edge";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-init — Resend throws on empty key at module-load, which breaks the
+// build's collect-page-data phase even when the key is set at runtime.
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 async function verifyTurnstile(token: string, hostname: string): Promise<boolean> {
   const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
@@ -41,7 +45,7 @@ export async function POST(req: NextRequest) {
     console.error("[lrw contact] Forms worker insert failed:", insertRes.status, await insertRes.text());
   }
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: process.env.CONTACT_FROM_EMAIL ?? "noreply@londonretainingwalls.ca",
     to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
     subject: `New Quote Request from ${name} – London Retaining Walls`,
