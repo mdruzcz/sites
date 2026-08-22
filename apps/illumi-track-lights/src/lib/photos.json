@@ -1,0 +1,163 @@
+{
+  "hero-home-twilight": {
+    "src": "/images/photos/hero-home-twilight.webp",
+    "alt": "Home outlined in warm-white permanent LED track lighting at twilight",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoMAAkAA4BaJbACdAChfQZYIAD+zGaamlcZtxmhBq8CinpnE0Tp5F17YQvFejz2/2FLO3YSLfrfsnVxi4iOs6HhwROu5J1EEAAAAA=="
+  },
+  "home-night-lit": {
+    "src": "/images/photos/home-night-lit.webp",
+    "alt": "Two-storey home fully outlined at night by soffit-mounted LED track lighting",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoMAAgAA4BaJbACdAENz5srwAD+9J1Gaj3bDTgqjqskUKlqh9T2qd4hXVF+RMURWP8PAVY2Av/RWKsYvPD92adAAAA="
+  },
+  "home-day-hidden": {
+    "src": "/images/photos/home-day-hidden.webp",
+    "alt": "The same home by day, with the aluminum track tucked invisibly into the soffit",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJZQCdAD0sRIRVeAA/ugAVEaPmCWPgr7rTukVdsR6Q3nUrPxJf5xsWCx/YJjlk97kJweYqF37xgAA"
+  },
+  "detail-pucks": {
+    "src": "/images/photos/detail-pucks.webp",
+    "alt": "Close-up of RGBW LED puck lights seated in an aluminum soffit track",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoMAAkAA4BaJQBOgBwijQEAAP72i14gG01UszY34cJ5swvtNcuLsxqqs75GOJcRLmMX2t/sijLLDYgA"
+  },
+  "detail-track-install": {
+    "src": "/images/photos/detail-track-install.webp",
+    "alt": "Installer fastening aluminum LED track into a soffit with colour-matched screws",
+    "width": 1024,
+    "height": 683,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAgAA4BaJZACdADc+azaHwAA/t2BWuwpDVKoRGPge9CpEMdusOLlJ6a+ETyvFFGP10HMVRUZZgAA"
+  },
+  "track-day": {
+    "src": "/images/photos/track-day.webp",
+    "alt": "Daytime roofline where the LED track blends into the soffit line",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoMAAgAA4BaJQBOgCHmoHMAAP7tsU3v9/8IH+OPe616NV/AtTEBwonP/v6GgvdwgEGrqrsTU8YQiAAA"
+  },
+  "track-night": {
+    "src": "/images/photos/track-night.webp",
+    "alt": "The same roofline at night glowing with warm-white LED track lighting",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAgAA4BaJagCdDBAAXBxQxAAAP70oCTNF8oHvSY0CN+YTbaSStiXWRuM0VFHFNUOYFDq7SkJ2VlAlzdkenLWa6Skw2velAA="
+  },
+  "scene-green": {
+    "src": "/images/photos/scene-green.webp",
+    "alt": "Soffit LED track lighting glowing green along a home's rooflines",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoMAAkAA4BaJZQC7AEPDH8gfgAA/vXxoy96FBh8SHIkpLfV0391gutCJebxwQHe9ETAAAAA"
+  },
+  "scene-red": {
+    "src": "/images/photos/scene-red.webp",
+    "alt": "Permanent LED house lighting set to red and white for Canada Day",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAkAA4BaJZQCdADdiSDgAAD+9vOPPPfskNVa9hPjReMfTbnK8824RcXyQNFczTWMI5jHlJ4oAA=="
+  },
+  "scene-pink": {
+    "src": "/images/photos/scene-pink.webp",
+    "alt": "RGBW soffit lighting washing a house facade in pink and magenta",
+    "width": 2200,
+    "height": 2933,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoMABAAA4BaJbACdAEPDxJs56fiAAD+8Q02i7TsLFLcBTzMesw4wQTfnvYRb6TpM+cJdh/k9nw27t45vrcE9CoPRw+155cgAAA="
+  },
+  "scene-rainbow": {
+    "src": "/images/photos/scene-rainbow.webp",
+    "alt": "Full-spectrum rainbow scene running along a home's LED track",
+    "width": 2200,
+    "height": 2933,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoMABAAA4BaJYwC7IExGBb3z1i2LAD++Q5U216iaI6xQp+WGkvsNZQ8A++5qbTYNDAuMwGadYkD7x42+NNK4SIAAAA="
+  },
+  "scene-blue": {
+    "src": "/images/photos/scene-blue.webp",
+    "alt": "Wide home elevation lit cool blue from the smartphone app",
+    "width": 2200,
+    "height": 1132,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAYAA4BaJaACdEf/gYf1OoAA/rxmEUsUpYvEImx2bRwjYG3Xk2kp2iAfL0J6AUIb3Lh2atIi0JuttN0MXpBsfGJxoAAA"
+  },
+  "scene-warm-white": {
+    "src": "/images/photos/scene-warm-white.webp",
+    "alt": "Soffit LED track lighting set to warm white for Christmas",
+    "width": 2200,
+    "height": 1590,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAkAA4BaJQBOgCHwhG4CsAAA/vfFikBUZPGV1y5EV3Ee4jqI1jD7zXIlgUDwUrU/W/0AAAA="
+  },
+  "home-cottage": {
+    "src": "/images/photos/home-cottage.webp",
+    "alt": "Cottage eaves lit with warm permanent LED lighting at dusk",
+    "width": 1536,
+    "height": 2048,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoMABAAA4BaJbACdADc5tVytiAA/uWOzSPA8Gs6Eqbu84G0fNWGkGLMkhJqswgb7FrmAR98nzl7CShYtFffjlVn/Gjj37dIsXocp5gVuxJZUAAA"
+  },
+  "home-wide": {
+    "src": "/images/photos/home-wide.webp",
+    "alt": "Long home elevation lit end to end with permanent LED track lighting",
+    "width": 2200,
+    "height": 990,
+    "blurDataURL": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoMAAUAA4BaJaACdAEfUmq+EgAAzgy3upBwcTHC3qCC5FgUJ/xp1fcOe9CdkGm0u4AAAA=="
+  },
+  "home-install": {
+    "src": "/images/photos/home-install.webp",
+    "alt": "Completed soffit LED track install on a two-storey suburban home",
+    "width": 1800,
+    "height": 1190,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJaACdAD0THdgGwAA/vGo96i4gBk4RGsdVIklk9yQcO7bbNVSJ9yaq4yBmC0yccEwa1hpE566AAAA"
+  },
+  "banner-install": {
+    "src": "/images/photos/banner-install.webp",
+    "alt": "Wide view of a completed permanent LED lighting install across a full roofline",
+    "width": 2000,
+    "height": 1102,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAcAA4BaJagCdAD0sKhBAAAA/vS2b+7mv2MOZMjFAsEdWBAkQucj9fQaUVQIKKJRFwqvTsMg9NVOuhflYKqRGTV6fT0tkDBj9rAA"
+  },
+  "home-elevation-blue": {
+    "src": "/images/photos/home-elevation-blue.webp",
+    "alt": "Wide building elevation lit end to end with soffit LED track lighting at night",
+    "width": 2200,
+    "height": 1308,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwAgCdASoMAAcAA4BaJYgCdEf/gehTTBcpAAD+72qWHEO372kTjrZo9ce9VR+tJwRKB3Krtapegrh7cbXHjZU+l5agmmO9t4AAAA=="
+  },
+  "scene-security": {
+    "src": "/images/photos/scene-security.webp",
+    "alt": "Bright daylight-white soffit lighting used as security lighting",
+    "width": 1518,
+    "height": 949,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoMAAgAA4BaJYwCdAELVnayMJAAAP7zNbLiUeLilm+qO0bZeu2rwJJUANweH1SV6oFn7UPTJzZA3eqKwmRwAA=="
+  },
+  "home-residential": {
+    "src": "/images/photos/home-residential.webp",
+    "alt": "Residential street view of a home fitted with permanent LED track lighting",
+    "width": 1000,
+    "height": 872,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAoAA4BaJZgCdADcqV4TAYAA/vNMoV3HDxbQN0qZsVlXflDwmu7pkyhtzERBfuxdtX4+VVgt3FH0ar7QG56xLc6vkSXHQaWLawAA"
+  },
+  "home-roofline-garage": {
+    "src": "/images/photos/home-roofline-garage.webp",
+    "alt": "Home exterior lit with warm LED track lighting along the roofline and garage",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoMAAgAA4BaJbACdAELKVU+EAD+7tfPNTg8mcyHDxBc/pAYJmhK53EJJh1v2y8gqLGTIpNqCbTfj4etzTh88SMKe/9vDpg9A2H5R1ZwAAA="
+  },
+  "install-wide": {
+    "src": "/images/photos/install-wide.webp",
+    "alt": "Permanent LED track lighting running the full width of a home",
+    "width": 2000,
+    "height": 1102,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAcAA4BaJagCdAD0sKhBAAAA/vS2b+7mv2MOZMjFAsEdWBAkQucj9fQaUVQIKKJRFwqvTsMg9NVOuhflYKqRGTV6fT0tkDBj9rAA"
+  },
+  "home-street": {
+    "src": "/images/photos/home-street.webp",
+    "alt": "Home fitted with discreet aluminum-tracked LED soffit lighting",
+    "width": 1000,
+    "height": 872,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAoAA4BaJZgCdADcqV4TAYAA/vNMoV3HDxbQN0qZsVlXflDwmu7pkyhtzERBfuxdtX4+VVgt3FH0ar7QG56xLc6vkSXHQaWLawAA"
+  }
+}

@@ -1,9 +1,17 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/utils";
 import Image from "next/image";
 
 export const metadata = {
   title: "About Illumi Track Lights",
-  description: "Built in London, Ontario. Smart permanent LED soffit lighting kits engineered for Canadian homes and shipped across the country."
+  description: "Built in London, Ontario. Smart permanent LED soffit lighting kits engineered for Canadian homes and shipped across the country.",
+  alternates: { canonical: `${SITE_URL}/about` },
+  openGraph: {
+    title: "About Illumi Track Lights",
+    description:
+      "Built in London, Ontario. Smart permanent LED soffit lighting kits engineered for Canadian homes and shipped across the country.",
+    url: `${SITE_URL}/about`
+  }
 };
 
 export default function AboutPage() {

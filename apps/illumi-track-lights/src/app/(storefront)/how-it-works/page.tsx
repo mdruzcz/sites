@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
   title: "How they work",
-  description: "How Illumi Track Lights' DIY permanent LED soffit kits go from delivery to first scene. Step-by-step install for Canadian DIYers."
+  description: "How Illumi Track Lights' DIY permanent LED soffit kits go from delivery to first scene. Step-by-step install for Canadian DIYers.",
+  alternates: { canonical: `${SITE_URL}/how-it-works` },
+  openGraph: {
+    title: "How they work",
+    description:
+      "How Illumi Track Lights' DIY permanent LED soffit kits go from delivery to first scene. Step-by-step install for Canadian DIYers.",
+    url: `${SITE_URL}/how-it-works`
+  }
 };
 
 const STEPS = [

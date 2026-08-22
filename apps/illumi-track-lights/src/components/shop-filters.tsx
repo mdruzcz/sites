@@ -9,7 +9,6 @@ interface Props {
   activeCategory?: string;
   activePrice?: string;
   activeSort?: string;
-  activeQ?: string;
 }
 
 const PRICE_BUCKETS = [
@@ -19,10 +18,17 @@ const PRICE_BUCKETS = [
   { label: "$500 +", value: "500-99999" }
 ];
 
-export function ShopFilters({ categories, activeCategory, activePrice, activeSort, activeQ }: Props) {
+/**
+ * Catalog facets. The free-text search box was removed by request — browsing is
+ * driven by category and price only.
+ */
+export function ShopFilters({ categories, activeCategory, activePrice, activeSort }: Props) {
+  // On phones the facet stack pushed every product below the fold, so it
+  // collapses by default and is always open from `lg` up.
+  const [open, setOpen] = useState(false);
+  const activeCount = [activeCategory, activePrice, activeSort].filter(Boolean).length;
   const router = useRouter();
   const params = useSearchParams();
-  const [q, setQ] = useState(activeQ ?? "");
 
   function update(patch: Record<string, string | undefined>) {
     const next = new URLSearchParams(params.toString());
@@ -30,37 +36,36 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
       if (v === undefined || v === "" || v === "all") next.delete(k);
       else next.set(k, v);
     }
-    router.push(`/shop?${next.toString()}`);
+    const qs = next.toString();
+    router.push(qs ? `/shop?${qs}` : "/shop");
   }
 
   return (
-    <aside className="space-y-6">
-      {/* Search within filters */}
-      <div>
-        <label className="eyebrow text-slate-500" htmlFor="filter-q">
-          Search in catalog
-        </label>
-        <input
-          id="filter-q"
-          type="search"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          onBlur={() => update({ q })}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") update({ q });
-          }}
-          placeholder="e.g. C9 bulb"
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        />
-      </div>
+    <aside>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="mb-6 flex min-h-11 w-full items-center justify-between rounded-full border border-[var(--color-border-strong)] bg-white px-5 text-sm font-semibold lg:hidden"
+      >
+        <span>
+          Filter &amp; sort
+          {activeCount > 0 && (
+            <span className="ml-2 rounded-full bg-[var(--color-amber-soft)] px-2 py-0.5 text-xs text-[var(--color-amber-text)]">
+              {activeCount}
+            </span>
+          )}
+        </span>
+        <span aria-hidden className={`transition ${open ? "rotate-180" : ""}`}>▾</span>
+      </button>
 
-      {/* Sort */}
+      <div className={`space-y-8 ${open ? "block" : "hidden"} lg:block`}>
       <div>
-        <p className="eyebrow text-slate-500">Sort by</p>
+        <p className="eyebrow text-[var(--color-muted)]">Sort by</p>
         <select
           value={activeSort ?? "default"}
           onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })}
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+          className="mt-3 min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-2.5 text-sm"
         >
           <option value="default">Featured</option>
           <option value="name">Name (A–Z)</option>
@@ -69,10 +74,9 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
         </select>
       </div>
 
-      {/* Category */}
       <div>
-        <p className="eyebrow text-slate-500">Category</p>
-        <ul className="mt-2 space-y-1 text-sm">
+        <p className="eyebrow text-[var(--color-muted)]">Category</p>
+        <ul className="mt-3 space-y-1 text-sm">
           <li>
             <Filter
               label="All categories"
@@ -94,16 +98,11 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
         </ul>
       </div>
 
-      {/* Price */}
       <div>
-        <p className="eyebrow text-slate-500">Price (CAD)</p>
-        <ul className="mt-2 space-y-1 text-sm">
+        <p className="eyebrow text-[var(--color-muted)]">Price (CAD)</p>
+        <ul className="mt-3 space-y-1 text-sm">
           <li>
-            <Filter
-              label="Any price"
-              active={!activePrice}
-              onClick={() => update({ price: undefined })}
-            />
+            <Filter label="Any price" active={!activePrice} onClick={() => update({ price: undefined })} />
           </li>
           {PRICE_BUCKETS.map((b) => (
             <li key={b.value}>
@@ -117,17 +116,22 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
         </ul>
       </div>
 
-      {(activeCategory || activePrice || activeSort || activeQ) && (
+      {(activeCategory || activePrice || activeSort) && (
         <Link
           href="/shop"
-          className="block rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-center text-sm text-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]"
+          className="flex min-h-11 items-center justify-center rounded-full border border-[var(--color-border-strong)] bg-white px-4 text-sm font-semibold text-[var(--color-amber-text)] transition hover:bg-[var(--color-amber-soft)]"
         >
           Clear all filters
         </Link>
       )}
 
-      <div className="rounded-lg bg-[var(--color-brand-soft)] p-3 text-xs text-[var(--color-brand-dark)]">
-        🎁 First order? Use code <span className="font-bold">ILLUMI10</span> at checkout for 10% off.
+      <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-amber-soft)] p-5 text-sm text-[var(--color-text-soft)]">
+        <p className="font-semibold text-[var(--color-text)]">First order?</p>
+        <p className="mt-1.5 leading-relaxed">
+          Use code <span className="font-bold text-[var(--color-amber-text)]">ILLUMI10</span> at checkout for
+          10% off.
+        </p>
+      </div>
       </div>
     </aside>
   );
@@ -148,14 +152,14 @@ function Filter({
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left transition ${
+      className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 py-2.5 text-left transition ${
         active
-          ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]"
-          : "hover:bg-slate-50"
+          ? "bg-[var(--color-amber-soft)] font-semibold text-[var(--color-amber-text)]"
+          : "hover:bg-[var(--color-bg-warm)]"
       }`}
     >
       <span>{label}</span>
-      {count !== undefined && <span className="text-xs text-slate-400">{count}</span>}
+      {count !== undefined && <span className="text-xs text-[var(--color-muted)]">{count}</span>}
     </button>
   );
 }

@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { RichText } from "@/components/rich-text";
+import { productPhoto, PRODUCT_PLACEHOLDER } from "@/lib/product-photos";
 import Link from "next/link";
-import { getProduct, listProducts, primaryImage, type CatalogProduct } from "@/lib/catalog";
+import { getProduct, listProducts, type CatalogProduct } from "@/lib/catalog";
 import { ProductPurchase } from "@/components/product-purchase";
 import { ProductCard } from "@/components/product-card";
 import { SITE_URL, formatCad } from "@/lib/utils";
@@ -23,7 +25,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: product.name,
       description: product.short_description ?? undefined,
-      images: primaryImage(product)?.public_url ? [primaryImage(product)!.public_url!] : []
+      images: [productPhoto(product.slug)?.src ?? PRODUCT_PLACEHOLDER]
     }
   };
 }
@@ -33,7 +35,8 @@ export default async function ProductPage({ params }: PageProps) {
   const product = await getProduct(slug);
   if (!product) notFound();
 
-  const img = primaryImage(product);
+  // Catalog rows still hold dead wp-content URLs; use the recovered local photo.
+  const photo = productPhoto(product.slug);
   const variants = (product.ecom_variants ?? []).filter((v) => v.is_active);
   const prices = variants.map((v) => Number(v.price_cad));
   const min = prices.length ? Math.min(...prices) : 0;
@@ -47,7 +50,7 @@ export default async function ProductPage({ params }: PageProps) {
     "@type": "Product",
     name: product.name,
     description: product.short_description ?? product.long_description ?? undefined,
-    image: img?.public_url ? [img.public_url] : undefined,
+    image: [productPhoto(product.slug)?.src ?? PRODUCT_PLACEHOLDER],
     brand: { "@type": "Brand", name: "Illumi Track Lights" },
     offers: {
       "@type": "AggregateOffer",
@@ -72,39 +75,16 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="mt-4 grid gap-10 lg:grid-cols-2">
         <div>
           <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
-            {img?.public_url ? (
-              <Image
-                src={img.public_url}
-                alt={img.alt_text}
-                width={1000}
-                height={1000}
-                className="aspect-square w-full object-contain"
-                priority
-              />
-            ) : (
-              <div className="grid aspect-square place-items-center text-slate-400">No image</div>
-            )}
+            <Image
+              src={photo?.src ?? PRODUCT_PLACEHOLDER}
+              alt={photo?.alt ?? product.name}
+              width={1000}
+              height={1000}
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="aspect-square w-full object-contain p-6"
+              priority
+            />
           </div>
-          {product.ecom_product_images.length > 1 && (
-            <div className="mt-3 grid grid-cols-5 gap-2">
-              {product.ecom_product_images.slice(0, 10).map((i) => (
-                <div
-                  key={i.id}
-                  className="aspect-square overflow-hidden rounded-lg border border-[var(--color-border)] bg-white"
-                >
-                  {i.public_url && (
-                    <Image
-                      src={i.public_url}
-                      alt={i.alt_text}
-                      width={160}
-                      height={160}
-                      className="h-full w-full object-contain"
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
         <div>
@@ -149,8 +129,8 @@ export default async function ProductPage({ params }: PageProps) {
           </ul>
 
           {product.long_description && (
-            <article className="prose-clean mt-10 max-w-none whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
-              {product.long_description}
+            <article className="mt-12 max-w-none border-t border-[var(--color-border)] pt-10 text-[0.9375rem]">
+              <RichText text={product.long_description} />
             </article>
           )}
         </div>

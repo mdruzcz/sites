@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
   title: "Find a permanent lighting installer",
-  description: "Don't want to DIY? Find a trusted permanent LED lighting installer in your area. Illumi Track Lights partners with installers across Canada."
+  description: "Don't want to DIY? Find a trusted permanent LED lighting installer in your area. Illumi Track Lights partners with installers across Canada.",
+  alternates: { canonical: `${SITE_URL}/installers` },
+  openGraph: {
+    title: "Find a permanent lighting installer",
+    description:
+      "Don't want to DIY? Find a trusted permanent LED lighting installer in your area. Illumi Track Lights partners with installers across Canada.",
+    url: `${SITE_URL}/installers`
+  }
 };
 
 export default function InstallersPage() {

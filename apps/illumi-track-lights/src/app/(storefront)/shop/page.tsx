@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/utils";
+import { Photo } from "@/components/photo";
 import { ProductCard } from "@/components/product-card";
 import { ShopFilters } from "@/components/shop-filters";
 import { getCategories, listProducts, priceRange } from "@/lib/catalog";
@@ -6,17 +8,24 @@ import { getCategories, listProducts, priceRange } from "@/lib/catalog";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Shop — All products",
+  title: "Shop All LED Soffit Track Lighting Parts & Kits",
   description:
-    "Browse every C9 LED bulb, mini-light strand, clip, wire, and permanent LED housing package. Bulk-priced for installers. Shipped from London, Ontario."
+    "Browse every aluminum track, RGBW puck, controller, power supply and connector. Installer-grade gear, bulk priced, shipped from London, Ontario.",
+  alternates: { canonical: `${SITE_URL}/shop` },
+  openGraph: {
+    title: "Shop All LED Soffit Track Lighting Parts & Kits",
+    description:
+      "Browse every aluminum track, RGBW puck, controller, power supply and connector. Installer-grade gear, bulk priced, shipped from London, Ontario.",
+    url: `${SITE_URL}/shop`
+  }
 };
 
 interface PageProps {
-  searchParams: Promise<{ category?: string; price?: string; sort?: string; q?: string }>;
+  searchParams: Promise<{ category?: string; price?: string; sort?: string }>;
 }
 
 export default async function ShopPage({ searchParams }: PageProps) {
-  const { category, price, sort, q } = await searchParams;
+  const { category, price, sort } = await searchParams;
   const [allProducts, categories] = await Promise.all([listProducts(), getCategories()]);
 
   let products = allProducts;
@@ -30,10 +39,6 @@ export default async function ShopPage({ searchParams }: PageProps) {
     }
   }
 
-  if (q) {
-    const term = q.toLowerCase();
-    products = products.filter((p) => p.name.toLowerCase().includes(term));
-  }
 
   if (price) {
     const [lo, hi] = price.split("-").map(Number);
@@ -60,21 +65,39 @@ export default async function ShopPage({ searchParams }: PageProps) {
     categoryCounts.set(cat.slug, count);
   }
 
-  return (
-    <div className="mx-auto max-w-7xl px-4 py-10">
-      <nav aria-label="Breadcrumb" className="text-xs text-slate-500">
-        <Link href="/" className="hover:underline">Home</Link>
-        <span className="mx-1">/</span>
-        <span>Shop</span>
-      </nav>
-      <div className="mt-3 flex flex-wrap items-baseline justify-between gap-3">
-        <h1 className="font-display text-3xl tracking-tight md:text-4xl">Shop the catalog</h1>
-        <p className="text-sm text-slate-500">
-          {products.length} of {allProducts.length} products
-        </p>
-      </div>
+  const activeCategory = categories.find((c) => c.slug === category);
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[260px_1fr]">
+  return (
+    <div>
+      {/* Banner photo with a scrim so the heading always reads */}
+      <section className="relative isolate">
+        <Photo
+          name="home-wide"
+          alt="Long home elevation lit end to end with permanent LED soffit track lighting"
+          ratio="aspect-[16/7] md:aspect-[21/6]"
+          sizes="100vw"
+          priority
+          scrim="strong"
+        />
+        <div className="absolute inset-0 flex items-end">
+          <div className="shell pb-10 md:pb-14">
+            <nav aria-label="Breadcrumb" className="text-xs text-white/70">
+              <Link href="/" className="hover:text-white hover:underline">Home</Link>
+              <span className="mx-1.5">/</span>
+              <span className="text-white">Shop</span>
+            </nav>
+            <h1 className="font-display mt-3 text-[2.1rem] text-white md:text-5xl">
+              {activeCategory ? activeCategory.name : "Shop the catalog"}
+            </h1>
+            <p className="mt-3 max-w-xl text-sm text-white/80 md:text-base">
+              Tracks, pucks, controllers, power supplies and cable &mdash; shipped from London, Ontario.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="shell py-14 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-[268px_1fr] lg:gap-14">
         <ShopFilters
           categories={categories.map((c) => ({
             slug: c.slug,
@@ -84,7 +107,6 @@ export default async function ShopPage({ searchParams }: PageProps) {
           activeCategory={category}
           activePrice={price}
           activeSort={sort}
-          activeQ={q}
         />
 
         <div>
@@ -96,11 +118,13 @@ export default async function ShopPage({ searchParams }: PageProps) {
               </Link>
             </div>
           )}
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+          <p className="mb-6 text-sm text-[var(--color-muted)]">Showing {products.length} of {allProducts.length} products</p>
+          <div className="grid grid-cols-2 gap-5 md:grid-cols-3 md:gap-6">
             {products.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,17 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/utils";
 import Image from "next/image";
 
 export const metadata = {
   title: "Gallery — Illumi Track Lights",
-  description: "Real Canadian homes with Illumi Track Lights installed. See the soffit-mounted LED systems by day and lit up at night."
+  description: "Real Canadian homes with Illumi Track Lights installed. See the soffit-mounted LED systems by day and lit up at night.",
+  alternates: { canonical: `${SITE_URL}/gallery` },
+  openGraph: {
+    title: "Gallery — Illumi Track Lights",
+    description:
+      "Real Canadian homes with Illumi Track Lights installed. See the soffit-mounted LED systems by day and lit up at night.",
+    url: `${SITE_URL}/gallery`
+  }
 };
 
 const SHOTS: Array<{ src: string; alt: string; tag: string; location: string }> = [

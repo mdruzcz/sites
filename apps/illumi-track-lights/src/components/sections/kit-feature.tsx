@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type CatalogProduct, primaryImage, priceRange } from "@/lib/catalog";
+import { type CatalogProduct, priceRange } from "@/lib/catalog";
+import { productPhoto, PRODUCT_PLACEHOLDER } from "@/lib/product-photos";
 import { formatCad } from "@/lib/utils";
 
 export function KitFeature({ housingPackages }: { housingPackages: CatalogProduct[] }) {
@@ -40,7 +41,7 @@ export function KitFeature({ housingPackages }: { housingPackages: CatalogProduc
 
           <div className="grid grid-cols-2 gap-3">
             {housingPackages.map((p) => {
-              const img = primaryImage(p);
+              const photo = productPhoto(p.slug);
               const range = priceRange(p);
               const footage = p.slug.replace(/.*-(\d+).*/, "$1");
               return (
@@ -49,18 +50,15 @@ export function KitFeature({ housingPackages }: { housingPackages: CatalogProduc
                   href={`/product/${p.slug}`}
                   className="group overflow-hidden rounded-xl border border-[var(--color-border)] bg-white transition hover:-translate-y-0.5 hover:border-[var(--color-brand)] hover:shadow-md"
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-slate-50">
-                    {img?.public_url ? (
-                      <Image
-                        src={img.public_url}
-                        alt={img.alt_text}
-                        width={400}
-                        height={300}
-                        className="h-full w-full object-cover transition group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="grid h-full place-items-center text-slate-400">No image</div>
-                    )}
+                  <div className="aspect-[4/3] overflow-hidden bg-[var(--color-bg-warm)]">
+                    <Image
+                      src={photo?.src ?? PRODUCT_PLACEHOLDER}
+                      alt={photo?.alt ?? p.name}
+                      width={400}
+                      height={300}
+                      sizes="(max-width: 768px) 50vw, 260px"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="p-4">
                     <p className="eyebrow text-[var(--color-brand)]">{footage}&prime; linear feet</p>

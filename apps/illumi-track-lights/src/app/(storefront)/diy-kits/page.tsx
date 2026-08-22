@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getServerSupabase } from "@/lib/supabase/server";
-import { getStore, primaryImage, type CatalogProduct } from "@/lib/catalog";
+import { getStore, type CatalogProduct } from "@/lib/catalog";
+import { productPhoto } from "@/lib/product-photos";
 import { DiyKitsConfigurator } from "@/components/diy-kits-configurator";
 import { SITE_URL, formatCad } from "@/lib/utils";
 
@@ -128,7 +129,7 @@ function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
               footage: parseInt(p.slug.replace(/.*-(\d+).*/, "$1"), 10) || 0,
               price: minPrice,
               colors,
-              image: primaryImage(p)?.public_url ?? null,
+              image: productPhoto(p.slug)?.src ?? null,
               firstVariantId:
                 variants.find((v) => v.attribute_value?.toLowerCase() === "white")?.id ??
                 variants[0]?.id ??
