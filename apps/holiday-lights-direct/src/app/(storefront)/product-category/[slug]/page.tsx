@@ -1,9 +1,24 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/product-card";
+import { PageHero } from "@/components/page-hero";
 import { getCategories, listProducts } from "@/lib/catalog";
+import type { PhotoKey } from "@/lib/photos";
 import { SITE_URL } from "@/lib/utils";
 
 export const revalidate = 3600;
+
+/** Category slug → lifestyle photo used for the page header. */
+const CATEGORY_PHOTOS: Record<string, PhotoKey> = {
+  "permanent-lights": "track-night-glow",
+  "christmas-light-bulbs": "home-christmas-warm-white",
+  "mini-light-strands": "home-cottage-evening",
+  "light-attachment-clips": "detail-track-mounting",
+  "wires-plugs": "track-residential",
+  "led-connectors": "track-daytime-discreet",
+  "power-injection-cables": "home-side-elevation",
+  "decor-other-lights": "home-rainbow"
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -14,10 +29,20 @@ export async function generateMetadata({ params }: PageProps) {
   const categories = await getCategories();
   const cat = categories.find((c) => c.slug === slug);
   if (!cat) return { title: "Category not found" };
+
+  const description =
+    cat.description ??
+    `Shop ${cat.name} from Holiday Lights Direct — installer-grade lighting hardware, bulk priced and shipped from London, Ontario. Free Canadian shipping over $500.`;
+
   return {
-    title: `${cat.name}`,
-    description: cat.description ?? `Shop ${cat.name} — professional-grade lighting parts from Holiday Lights Direct.`,
-    alternates: { canonical: `${SITE_URL}/product-category/${cat.slug}` }
+    title: `${cat.name} — Installer-Grade Lighting Supplies`,
+    description,
+    alternates: { canonical: `${SITE_URL}/product-category/${cat.slug}` },
+    openGraph: {
+      title: `${cat.name} — Installer-Grade Lighting Supplies`,
+      description,
+      url: `${SITE_URL}/product-category/${cat.slug}`
+    }
   };
 }
 
@@ -28,20 +53,61 @@ export default async function CategoryPage({ params }: PageProps) {
   if (!cat) notFound();
   const products = await listProducts({ categorySlug: slug });
 
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <nav className="text-xs text-slate-500">
-        <a href="/shop" className="hover:underline">Shop</a> / {cat.name}
-      </nav>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight">{cat.name}</h1>
-      {cat.description && <p className="mt-2 max-w-2xl text-sm text-slate-600">{cat.description}</p>}
-      <p className="mt-2 text-sm text-slate-500">{products.length} products</p>
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Shop", item: `${SITE_URL}/shop` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: cat.name,
+        item: `${SITE_URL}/product-category/${cat.slug}`
+      }
+    ]
+  };
 
-      <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
-      </div>
-    </div>
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <PageHero
+        photo={CATEGORY_PHOTOS[cat.slug] ?? "home-nighttime-lit"}
+        photoAlt={`${cat.name} from Holiday Lights Direct, shipped from London, Ontario`}
+        eyebrow="Catalog"
+        title={cat.name}
+        intro={cat.description ?? undefined}
+        crumb={cat.name}
+      />
+
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-sm text-[var(--color-muted)]">
+              {products.length} {products.length === 1 ? "product" : "products"}
+            </p>
+            <Link href="/shop" className="text-sm font-semibold text-[var(--color-gold-text)] hover:underline">
+              Browse all categories →
+            </Link>
+          </div>
+
+          {products.length === 0 ? (
+            <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-white p-12 text-center">
+              <p className="font-display text-xl">Nothing in this category yet.</p>
+              <Link href="/shop" className="btn-secondary mt-6">
+                Back to the shop
+              </Link>
+            </div>
+          ) : (
+            <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+              {products.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

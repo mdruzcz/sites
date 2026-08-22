@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { RichText } from "@/components/rich-text";
 import { getProduct, listProducts, primaryImage, type CatalogProduct } from "@/lib/catalog";
 import { ProductPurchase } from "@/components/product-purchase";
 import { ProductCard } from "@/components/product-card";
@@ -149,8 +150,8 @@ export default async function ProductPage({ params }: PageProps) {
           </ul>
 
           {product.long_description && (
-            <article className="prose-clean mt-10 max-w-none whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
-              {product.long_description}
+            <article className="mt-12 max-w-none border-t border-[var(--color-border)] pt-10 text-[0.9375rem]">
+              <RichText text={product.long_description} />
             </article>
           )}
         </div>

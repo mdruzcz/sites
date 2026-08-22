@@ -1,36 +1,63 @@
 @import "tailwindcss";
 
+/* Tailwind v4 needs explicit sources — auto content-detection is unreliable here. */
+@source "../**/*.{ts,tsx}";
+
 @theme {
-  /* Christmas palette derived from the logo: festive red house, green trees, gold ornaments, snow cream */
-  --color-bg:                 #fefaf3;            /* warm snow */
-  --color-surface:            #ffffff;
-  --color-text:               #1a1a1a;
-  --color-muted:              #64748b;
-  --color-border:             #ecdfd0;            /* warm cream border */
-  --color-border-strong:      #d9c9b2;
+  --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-display-loaded), ui-serif, Georgia, "Times New Roman", serif;
+}
 
-  --color-brand:              #c8262e;            /* festive red — primary */
-  --color-brand-dark:         #962024;            /* door / hover */
-  --color-brand-soft:         #fdecec;
-  --color-brand-deep:         #6b1418;            /* deepest red for footer / dark backgrounds */
+/* ---------------------------------------------------------------------------
+   Palette — warm ivory + brass gold.
+   Every token lives on :root so a `bg-[var(--token)]` arbitrary value can never
+   resolve to nothing. The previous build referenced --color-accent,
+   --color-accent-soft and --color-night-soft without ever defining them, which
+   rendered white headings on a white background.
+--------------------------------------------------------------------------- */
+:root {
+  /* Neutrals */
+  --color-bg:              #faf7f1;   /* warm ivory page */
+  --color-bg-warm:         #f3ece0;   /* deeper sand — alternating bands */
+  --color-surface:         #ffffff;
+  --color-text:            #1a1d23;
+  --color-text-soft:       #454c59;
+  --color-muted:           #6a7280;
+  --color-border:          #e9e1d3;
+  --color-border-strong:   #d2c5af;
 
-  --color-green:              #2d6a3d;            /* Christmas evergreen */
-  --color-green-dark:         #1f4a2b;
-  --color-green-soft:         #e8f3e8;
-  --color-green-bright:       #4a8c3e;            /* bright ornament green */
+  /* Ink — dark sections */
+  --color-ink:             #2a2f3a;
+  --color-ink-deep:        #1b1f27;
+  --color-ink-soft:        #39404e;
 
-  --color-gold:               #f4c842;            /* window glow / yellow ornament */
-  --color-gold-dark:          #d4a82a;
-  --color-gold-soft:          #fdf3c1;
+  /* Brass gold — the brand accent */
+  --color-gold:            #b8862b;   /* fills, rules, icons, display type */
+  --color-gold-text:       #86601a;   /* AA-contrast gold for small text on ivory */
+  --color-gold-dark:       #96691d;   /* button hover */
+  --color-gold-bright:     #e0b155;   /* gold on dark backgrounds */
+  --color-gold-soft:       #faf2e1;   /* tinted panels */
 
-  --color-night:              #0b1220;
-  --color-snow:                #fdfdfb;            /* off-white */
+  /* Support */
+  --color-red:             #a8322c;   /* sale / urgency only */
+  --color-red-soft:        #fbedec;
+  --color-green:           #2f6b44;   /* in stock / success */
+  --color-green-dark:      #235233;
+  --color-green-bright:    #3e8c56;
+  --color-green-soft:      #eaf3ed;
 
-  --color-danger:             #b91c1c;
-  --color-success:            #15803d;
-
-  --font-sans:                "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display:             "Playfair Display", "Inter", ui-serif, Georgia, serif;
+  /* ---- Back-compat aliases (several were previously undefined) ---- */
+  --color-brand:           var(--color-gold-text);
+  --color-brand-dark:      var(--color-gold-dark);
+  --color-brand-deep:      var(--color-ink-deep);
+  --color-brand-soft:      var(--color-gold-soft);
+  --color-accent:          var(--color-gold-text);
+  --color-accent-soft:     var(--color-gold-soft);
+  --color-night:           var(--color-ink-deep);
+  --color-night-soft:      var(--color-ink-soft);
+  --color-snow:            #ffffff;
+  --color-danger:          var(--color-red);
+  --color-success:         var(--color-green);
 }
 
 html, body {
@@ -38,6 +65,7 @@ html, body {
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -45,125 +73,207 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 input, textarea, select { font-family: inherit; }
 
-input:focus, textarea:focus, select:focus, button:focus-visible {
-  outline: 2px solid var(--color-brand);
+input:focus-visible, textarea:focus-visible, select:focus-visible,
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
-.font-display { font-family: var(--font-display); letter-spacing: -0.015em; }
+/* --------------------------------- Type --------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+h1, h2, h3, h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
 .eyebrow {
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.btn-primary {
-  background: var(--color-brand);
-  color: #fff;
-  padding: 0.85rem 1.4rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: background 0.15s, transform 0.05s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+/* Thin gold rule that sits under an eyebrow */
+.eyebrow-rule::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.75rem;
+  background: var(--color-gold);
 }
-.btn-primary:hover { background: var(--color-brand-dark); }
-.btn-primary:active { transform: translateY(1px); }
 
-.btn-green {
-  background: var(--color-green);
-  color: #fff;
-  padding: 0.85rem 1.4rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: background 0.15s;
-  display: inline-flex; align-items: center; gap: 0.4rem;
+/* ------------------------------- Layout --------------------------------- */
+/* Generous, consistent gutters and vertical rhythm across every page. */
+.shell { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 768px) { .shell { padding-inline: 2rem; } }
+
+.section    { padding-block: 4.5rem; }
+.section-lg { padding-block: 5.5rem; }
+@media (min-width: 768px) {
+  .section    { padding-block: 7rem; }
+  .section-lg { padding-block: 9rem; }
 }
-.btn-green:hover { background: var(--color-green-dark); }
+
+/* ------------------------------- Buttons -------------------------------- */
+/* All at least 44px tall for touch targets. */
+.btn-primary {
+  background: var(--color-gold-text);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  transition: background 0.18s ease, transform 0.06s ease, box-shadow 0.18s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px;
+  box-shadow: 0 1px 2px rgba(26, 29, 35, 0.12);
+}
+.btn-primary:hover { background: var(--color-gold-dark); box-shadow: 0 6px 18px rgba(134, 96, 26, 0.24); }
+.btn-primary:active { transform: translateY(1px); }
 
 .btn-gold {
   background: var(--color-gold);
-  color: var(--color-text);
-  padding: 0.85rem 1.4rem;
-  border-radius: 0.5rem;
+  color: #17130a;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  transition: background 0.15s;
-  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.9375rem;
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px;
 }
-.btn-gold:hover { background: var(--color-gold-dark); }
+.btn-gold:hover { background: var(--color-gold-bright); box-shadow: 0 6px 20px rgba(184, 134, 43, 0.35); }
+
+.btn-ink {
+  background: var(--color-ink);
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background 0.18s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px;
+}
+.btn-ink:hover { background: var(--color-ink-deep); }
 
 .btn-secondary {
   border: 1px solid var(--color-border-strong);
-  background: #fff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: border-color 0.15s, background 0.15s;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px;
 }
-.btn-secondary:hover { border-color: var(--color-brand); background: var(--color-brand-soft); }
+.btn-secondary:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold-soft);
+  color: var(--color-gold-text);
+}
 
+/* On photos and dark bands */
 .btn-ghost-light {
-  border: 1px solid rgba(255,255,255,0.35);
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background 0.15s;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 44px;
+  backdrop-filter: blur(4px);
 }
-.btn-ghost-light:hover { background: rgba(255,255,255,0.1); }
+.btn-ghost-light:hover { background: rgba(255, 255, 255, 0.16); border-color: #fff; }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.55; }
-  50%      { opacity: 1; }
+/* Legacy alias so older markup keeps its shape */
+.btn-green {
+  background: var(--color-green); color: #fff; padding: 0.9rem 1.6rem; border-radius: 999px;
+  font-weight: 600; display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; min-height: 44px;
 }
-.twinkle { animation: twinkle 2.4s ease-in-out infinite; }
-.twinkle-delay-1 { animation-delay: 0.4s; }
-.twinkle-delay-2 { animation-delay: 0.8s; }
-.twinkle-delay-3 { animation-delay: 1.2s; }
-.twinkle-delay-4 { animation-delay: 1.6s; }
+.btn-green:hover { background: var(--color-green-dark); }
 
-/* Snowfall effect for hero (subtle dots) */
-@keyframes snowfall {
-  0% { transform: translateY(-20px); opacity: 0; }
-  10% { opacity: 0.7; }
-  90% { opacity: 0.7; }
-  100% { transform: translateY(120vh); opacity: 0; }
+/* -------------------------- Photo scrims and cards ---------------------- */
+/* Any headline sitting on a photo gets a real scrim behind it. */
+.photo-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(16, 18, 23, 0.92) 0%,
+    rgba(16, 18, 23, 0.66) 38%,
+    rgba(16, 18, 23, 0.34) 68%,
+    rgba(16, 18, 23, 0.25) 100%
+  );
+}
+.photo-scrim-soft {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(16, 18, 23, 0.80) 0%,
+    rgba(16, 18, 23, 0.32) 55%,
+    rgba(16, 18, 23, 0.16) 100%
+  );
 }
 
-.prose-clean p { line-height: 1.7; color: #334155; }
-.prose-clean h2, .prose-clean h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.card:hover { border-color: var(--color-gold); box-shadow: 0 12px 32px rgba(26, 29, 35, 0.09); }
+
+/* ------------------------------- Prose ---------------------------------- */
+.prose-clean p { line-height: 1.75; color: var(--color-text-soft); }
+.prose-clean h2, .prose-clean h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
 .prose-clean ul { padding-left: 1.25rem; list-style: disc; }
-.prose-clean a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 2px; }
+.prose-clean li { line-height: 1.75; color: var(--color-text-soft); }
+.prose-clean a { color: var(--color-gold-text); text-decoration: underline; text-underline-offset: 3px; }
 
-/* Drawer overlay + slide */
-.drawer-overlay {
-  position: fixed; inset: 0;
-  background: rgba(11, 18, 32, 0.5);
-  z-index: 50;
-  animation: fade-in 0.2s ease;
+/* ------------------------------ Animation ------------------------------- */
+@keyframes twinkle { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+.twinkle { animation: twinkle 2.8s ease-in-out infinite; }
+.twinkle-delay-1 { animation-delay: 0.4s; }
+.twinkle-delay-2 { animation-delay: 0.9s; }
+.twinkle-delay-3 { animation-delay: 1.4s; }
+.twinkle-delay-4 { animation-delay: 1.9s; }
+
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+.skeleton { position: relative; overflow: hidden; background: var(--color-bg-warm); }
+.skeleton::after {
+  content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer 1.6s infinite;
 }
+
+/* Drawer overlay and slide */
+.drawer-overlay { position: fixed; inset: 0; background: rgba(27, 31, 39, 0.55); z-index: 50; animation: fade-in 0.2s ease; }
 .drawer-panel {
-  position: fixed; top: 0; right: 0; bottom: 0;
-  width: 100%; max-width: 420px;
-  background: #fff;
-  z-index: 51;
-  box-shadow: -20px 0 40px rgba(0,0,0,0.15);
-  animation: slide-in 0.25s ease;
-  display: flex; flex-direction: column;
+  position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 430px;
+  background: #fff; z-index: 51; box-shadow: -20px 0 48px rgba(0, 0, 0, 0.18);
+  animation: slide-in 0.25s ease; display: flex; flex-direction: column;
 }
-@keyframes slide-in {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(0); }
-}
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes slide-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @supports (padding: env(safe-area-inset-bottom)) {

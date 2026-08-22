@@ -1,31 +1,35 @@
+const CITIES = [
+  "London", "St. Thomas", "Woodstock", "Stratford", "Ingersoll",
+  "Tillsonburg", "Brantford", "Kitchener-Waterloo", "Hamilton",
+  "Mississauga", "Toronto", "Ottawa", "Windsor", "Sarnia",
+  "Burlington", "Oakville", "Niagara"
+];
+
 export function ServiceAreas() {
-  const cities = [
-    "London", "St. Thomas", "Woodstock", "Stratford", "Ingersoll",
-    "Tillsonburg", "Brantford", "Kitchener-Waterloo", "Hamilton",
-    "Mississauga", "Toronto", "Ottawa", "Windsor", "Sarnia",
-    "Burlington", "Oakville", "Niagara"
-  ];
   return (
     <section className="bg-[var(--color-bg)]">
-      <div className="mx-auto max-w-6xl px-4 py-16">
-        <p className="eyebrow text-[var(--color-brand)]">Where we ship</p>
-        <h2 className="font-display mt-2 text-3xl md:text-4xl">
-          Shipping out of London, Ontario &mdash; arriving anywhere in Canada.
-        </h2>
-        <p className="mt-4 max-w-2xl text-slate-600">
-          We carry our full catalog in stock in London ON. Most orders ship same- or next-business-day via
-          Canada Post. Free shipping over $500 CAD anywhere in the country.
-        </p>
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {cities.map((c) => (
+      <div className="shell section">
+        <div className="max-w-3xl">
+          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Where we ship</p>
+          <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">
+            Out of London, Ontario — arriving anywhere in Canada.
+          </h2>
+          <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+            We hold the full catalog in stock in London. Most orders leave the same or next business day via
+            Canada Post, and shipping is free anywhere in the country on orders over $500 CAD.
+          </p>
+        </div>
+
+        <ul className="mt-11 flex flex-wrap gap-2.5">
+          {CITIES.map((c) => (
             <li
               key={c}
-              className="rounded-full border border-[var(--color-border)] bg-white px-3 py-1 text-sm text-slate-700"
+              className="rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-sm text-[var(--color-text-soft)]"
             >
               {c}
             </li>
           ))}
-          <li className="rounded-full border border-[var(--color-brand)] bg-[var(--color-brand-soft)] px-3 py-1 text-sm font-semibold text-[var(--color-brand)]">
+          <li className="rounded-full border border-[var(--color-gold)] bg-[var(--color-gold-soft)] px-4 py-2 text-sm font-semibold text-[var(--color-gold-text)]">
             + every Canadian postal code
           </li>
         </ul>

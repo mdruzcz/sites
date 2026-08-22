@@ -9,9 +9,6 @@ interface UIContextValue {
   toggleMiniCart: () => void;
   popupOpen: boolean;
   dismissPopup: () => void;
-  searchOpen: boolean;
-  openSearch: () => void;
-  closeSearch: () => void;
 }
 
 const UIContext = createContext<UIContextValue | null>(null);
@@ -21,7 +18,6 @@ const POPUP_KEY = "hld_popup_dismissed_v1";
 export function UIProvider({ children }: { children: ReactNode }) {
   const [miniCartOpen, setMiniCartOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   // Show popup after a short delay on first visit
   useEffect(() => {
@@ -31,15 +27,14 @@ export function UIProvider({ children }: { children: ReactNode }) {
     return () => clearTimeout(t);
   }, []);
 
-  // Lock body scroll when drawer or popup is open
+  // Lock body scroll when the drawer or popup is open
   useEffect(() => {
     if (typeof document === "undefined") return;
-    const lock = miniCartOpen || popupOpen || searchOpen;
-    document.body.style.overflow = lock ? "hidden" : "";
+    document.body.style.overflow = miniCartOpen || popupOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [miniCartOpen, popupOpen, searchOpen]);
+  }, [miniCartOpen, popupOpen]);
 
   const value: UIContextValue = {
     miniCartOpen,
@@ -52,10 +47,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
       try {
         localStorage.setItem(POPUP_KEY, "1");
       } catch {}
-    }, []),
-    searchOpen,
-    openSearch: useCallback(() => setSearchOpen(true), []),
-    closeSearch: useCallback(() => setSearchOpen(false), [])
+    }, [])
   };
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
