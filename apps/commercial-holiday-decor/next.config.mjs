@@ -3,6 +3,9 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [65, 70, 74, 78, 82],
+    // Optimised variants are immutable content — cache them hard at the edge.
+    minimumCacheTTL: 31536000,
   },
   async redirects() {
     return [

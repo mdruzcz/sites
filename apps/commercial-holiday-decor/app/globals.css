@@ -11,6 +11,7 @@
 
 /* ---------------------------------------------------------------------------
    Palette — deep evergreen, warm ember and gold on a warm neutral.
+   (Refined-light system, 2026 redesign.)
 
    Every token is declared on :root so a `bg-[var(--token)]` arbitrary value
    can never resolve to nothing.
@@ -23,15 +24,17 @@
        let a fill inherit its text colour.
 --------------------------------------------------------------------------- */
 :root {
-  /* Neutrals */
-  --color-bg:              #f8f7f4;
-  --color-bg-warm:         #eeece5;
+  /* Neutrals — warmer, with a touch more separation between bg and surface. */
+  --color-bg:              #f7f5f0;
+  --color-bg-warm:         #efece3;
+  --color-bg-tint:         #f2efe7;   /* alternating band, sits between bg and warm */
   --color-surface:         #ffffff;
+  --color-surface-2:       #fbfaf6;
   --color-text:            #16201a;
-  --color-text-soft:       #414b45;   /* 8.9:1 on --color-bg */
-  --color-muted:           #5f6a63;   /* 5.6:1 on --color-bg (was 4.4:1) */
-  --color-border:          #e4e1d7;
-  --color-border-strong:   #cbc6b6;
+  --color-text-soft:       #3f4a44;   /* 9.3:1 on --color-bg */
+  --color-muted:           #5d6860;   /* 5.8:1 on --color-bg */
+  --color-border:          #e6e2d7;
+  --color-border-strong:   #cdc8b8;
 
   /* Ink — deep evergreen-black for dark bands */
   --color-ink:             #16201a;
@@ -43,7 +46,7 @@
   --color-green-dark:      #0e3123;
   --color-green-text:      #145238;   /* 8.6:1 on --color-bg — green TEXT */
   --color-green-bright:    #4f9e7d;   /* green on dark backgrounds */
-  --color-green-soft:      #e7efea;
+  --color-green-soft:      #e6efe9;
 
   /* Ember — the warm accent, taken from the reference site's orange */
   --color-ember:           #bd4d25;   /* fills; white on it = 4.9:1 (AA) */
@@ -57,7 +60,7 @@
   --color-gold-text:       #7d5a0d;   /* 5.5:1 on --color-bg */
   --color-gold-dark:       #a67a18;
   --color-gold-bright:     #e8bd63;   /* DARK backgrounds only */
-  --color-gold-soft:       #faf3e2;
+  --color-gold-soft:       #f9f2e1;
 
   /* Explicit foregrounds for filled surfaces */
   --color-on-green:        #ffffff;
@@ -80,6 +83,27 @@
   --color-night-soft:      var(--color-ink-soft);
   --color-danger:          var(--color-red);
   --color-success:         var(--color-green);
+
+  /* Warm, layered shadow system — tinted toward the ink so it reads soft and
+     premium rather than a hard grey drop. */
+  --shadow-xs:  0 1px 2px rgba(22, 32, 26, 0.06);
+  --shadow-sm:  0 2px 6px rgba(22, 32, 26, 0.06), 0 1px 2px rgba(22, 32, 26, 0.05);
+  --shadow-md:  0 10px 24px -10px rgba(22, 32, 26, 0.16), 0 4px 8px -4px rgba(22, 32, 26, 0.08);
+  --shadow-lg:  0 22px 48px -18px rgba(22, 32, 26, 0.22), 0 8px 16px -10px rgba(22, 32, 26, 0.10);
+  --shadow-xl:  0 40px 80px -28px rgba(13, 21, 17, 0.34);
+  --shadow-ember: 0 12px 30px -8px rgba(189, 77, 37, 0.45);
+  --shadow-green: 0 12px 30px -10px rgba(20, 67, 47, 0.42);
+
+  /* Fluid display type scale (clamped, viewport-aware). */
+  --fs-display: clamp(2.6rem, 1.6rem + 4.2vw, 4.35rem);
+  --fs-h1:      clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+  --fs-h2:      clamp(1.85rem, 1.35rem + 2.1vw, 3rem);
+  --fs-h3:      clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  --fs-lead:    clamp(1.0625rem, 1rem + 0.35vw, 1.2rem);
+
+  --radius:     1rem;
+  --radius-lg:  1.5rem;
+  --radius-xl:  1.85rem;
 }
 
 /* Element resets go in @layer base so the cascade runs base -> components ->
@@ -87,8 +111,19 @@
    `.btn-primary { color: #fff }`, so every link-button rendered near-black text
    on the green fill (1.73:1) instead of white. */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Sticky header is ~112px; keep anchored targets clear of it. */
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
   html, body {
-    background: var(--color-bg);
+    /* A whisper of warmth instead of a flat fill — reads like paper. */
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(1200px 620px at 82% -8%, rgba(201, 150, 46, 0.06), transparent 60%),
+      radial-gradient(1000px 560px at -10% 4%, rgba(20, 67, 47, 0.05), transparent 58%);
+    background-attachment: fixed;
     color: var(--color-text);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -99,18 +134,30 @@
   a { color: inherit; text-decoration: none; }
   button { font-family: inherit; cursor: pointer; }
   input, textarea, select { font-family: inherit; }
+  img, svg, video { display: block; max-width: 100%; }
+
+  ::selection { background: var(--color-green); color: #fff; }
 
   input:focus-visible, textarea:focus-visible, select:focus-visible,
   button:focus-visible, a:focus-visible {
     outline: 2px solid var(--color-gold);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 3px;
+  }
+
+  /* Quiet, warm scrollbar (progressive; ignored where unsupported). */
+  @media (min-width: 1024px) {
+    * { scrollbar-width: thin; scrollbar-color: var(--color-border-strong) transparent; }
   }
 }
 
 @keyframes shimmer { 100% { transform: translateX(100%); } }
 @keyframes slide-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes reveal-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes reveal-in-sm { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes twinkle { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+@keyframes fab-ring { 0% { transform: scale(1); opacity: 0.55; } 70%, 100% { transform: scale(1.9); opacity: 0; } }
 
 /* Component classes live in @layer components so Tailwind utilities always win.
    Un-layered rules beat layered ones, which meant `.btn-primary` (display:
@@ -127,19 +174,40 @@
   h1, h2, h3, h4 { text-wrap: balance; }
   p { text-wrap: pretty; }
 
+  /* Fluid display sizes — opt-in, so existing arbitrary sizes still work. */
+  .display   { font-size: var(--fs-display); }
+  .h1-fluid  { font-size: var(--fs-h1); }
+  .h2-fluid  { font-size: var(--fs-h2); }
+  .h3-fluid  { font-size: var(--fs-h3); }
+  .lead      { font-size: var(--fs-lead); line-height: 1.6; }
+
   .eyebrow {
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
+  /* Small four-point sparkle before an eyebrow — festive, not cheesy. */
+  .eyebrow-star { display: inline-flex; align-items: center; gap: 0.55rem; }
+  .eyebrow-star::before {
+    content: "";
+    width: 0.5rem; height: 0.5rem; flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  }
   .eyebrow-rule::after {
     content: "";
     display: block;
-    width: 2.5rem;
+    width: 2.75rem;
     height: 2px;
-    margin-top: 0.75rem;
-    background: var(--color-ember);
+    margin-top: 0.85rem;
+    background: linear-gradient(90deg, var(--color-gold), rgba(201, 150, 46, 0));
+  }
+
+  /* A hairline gold rule used as a section divider / accent. */
+  .hairline {
+    height: 1px; border: 0;
+    background: linear-gradient(90deg, transparent, var(--color-border-strong) 20%, var(--color-border-strong) 80%, transparent);
   }
 
   /* ------------------------------- Layout --------------------------------- */
@@ -156,33 +224,36 @@
   /* ------------------------------- Buttons -------------------------------- */
   /* All at least 44px tall for touch targets. */
   .btn-primary {
-    background: var(--color-green);
+    background: linear-gradient(180deg, #1a5139, var(--color-green));
     color: var(--color-on-green);
     padding: 0.9rem 1.6rem;
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.9375rem;
-    transition: background 0.18s ease, transform 0.06s ease, box-shadow 0.18s ease;
+    transition: background 0.18s ease, transform 0.08s ease, box-shadow 0.22s ease;
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
+    box-shadow: var(--shadow-sm);
   }
-  .btn-primary:hover { background: var(--color-green-dark); box-shadow: 0 8px 20px rgba(20, 67, 47, 0.32); }
+  .btn-primary:hover { background: linear-gradient(180deg, #17482f, var(--color-green-dark)); box-shadow: var(--shadow-green); }
   .btn-primary:active { transform: translateY(1px); }
 
   /* The primary CTA. Ember reads far better than gold against the evergreen
      bands and the night photography. */
   .btn-ember {
-    background: var(--color-ember);
+    background: linear-gradient(180deg, #cc5a30, var(--color-ember));
     color: var(--color-on-ember);
     padding: 0.9rem 1.6rem;
     border-radius: 999px;
     font-weight: 700;
     font-size: 0.9375rem;
-    transition: background 0.18s ease, box-shadow 0.18s ease;
+    transition: background 0.18s ease, transform 0.08s ease, box-shadow 0.22s ease;
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
+    box-shadow: var(--shadow-sm);
   }
-  .btn-ember:hover { background: var(--color-ember-dark); box-shadow: 0 8px 22px rgba(189, 77, 37, 0.42); }
+  .btn-ember:hover { background: linear-gradient(180deg, #b5461f, var(--color-ember-dark)); box-shadow: var(--shadow-ember); }
+  .btn-ember:active { transform: translateY(1px); }
 
   .btn-gold {
     background: var(--color-gold);
@@ -191,7 +262,7 @@
     border-radius: 999px;
     font-weight: 700;
     font-size: 0.9375rem;
-    transition: background 0.18s ease, box-shadow 0.18s ease;
+    transition: background 0.18s ease, box-shadow 0.22s ease;
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
   }
@@ -205,19 +276,21 @@
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.9375rem;
-    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.22s ease;
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
+    box-shadow: var(--shadow-xs);
   }
   .btn-secondary:hover {
     border-color: var(--color-green);
     background: var(--color-green-soft);
     color: var(--color-green-text);
+    box-shadow: var(--shadow-sm);
   }
 
   .btn-ghost-light {
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
     color: #fff;
     padding: 0.9rem 1.5rem;
     border-radius: 999px;
@@ -226,9 +299,23 @@
     transition: background 0.18s ease, border-color 0.18s ease;
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
   }
-  .btn-ghost-light:hover { background: rgba(255, 255, 255, 0.16); border-color: #fff; }
+  .btn-ghost-light:hover { background: rgba(255, 255, 255, 0.18); border-color: #fff; }
+
+  /* Arrow that eases forward on hover of a parent `.group`. */
+  .btn-arrow { transition: transform 0.2s ease; }
+  .group:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Animated underline for inline text links. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s ease;
+  }
+  .link-underline:hover { background-size: 100% 1.5px; }
 
   /* -------------------------- Photo scrims and cards ---------------------- */
   .photo-scrim {
@@ -254,20 +341,31 @@
   .card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 1rem;
-    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .card:hover { border-color: var(--color-ember); box-shadow: 0 12px 32px rgba(22, 32, 26, 0.10); }
+  .card:hover { border-color: var(--color-border-strong); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+  /* A softly tinted panel — used for the "why no price" / callout boxes. */
+  .panel {
+    background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
 
   /* ------------------------------- Prose ---------------------------------- */
   .prose-clean p { line-height: 1.75; color: var(--color-text-soft); }
   .prose-clean h2, .prose-clean h3 { font-family: var(--font-display); letter-spacing: -0.025em; }
+  .prose-clean h2 { margin-top: 2.25rem; }
+  .prose-clean h3 { margin-top: 1.75rem; }
+  .prose-clean p + p { margin-top: 1.1rem; }
   .prose-clean ul { padding-left: 1.25rem; list-style: disc; }
   .prose-clean li { line-height: 1.75; color: var(--color-text-soft); }
   .prose-clean a { color: var(--color-ember-text); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ------------------------------ Animation ------------------------------- */
-
   .skeleton { position: relative; overflow: hidden; background: var(--color-bg-warm); }
   .skeleton::after {
     content: ""; position: absolute; inset: 0; transform: translateX(-100%);
@@ -275,18 +373,36 @@
     animation: shimmer 1.6s infinite;
   }
 
-  .drawer-overlay { position: fixed; inset: 0; background: rgba(13, 21, 17, 0.55); z-index: 50; animation: fade-in 0.2s ease; }
+  .drawer-overlay { position: fixed; inset: 0; background: rgba(13, 21, 17, 0.55); z-index: 50; animation: fade-in 0.2s ease; backdrop-filter: blur(2px); }
   .drawer-panel {
     position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 430px;
     background: #fff; z-index: 51; box-shadow: -20px 0 48px rgba(0, 0, 0, 0.18);
     animation: slide-in 0.25s ease; display: flex; flex-direction: column;
   }
 
+  /* Scroll-reveal. Content is only ever hidden where scroll-driven timelines
+     are supported AND motion is welcome — everywhere else these elements are
+     fully visible, so nothing is ever lost to a browser that can't animate. */
+  .reveal, .reveal-sm { will-change: opacity, transform; }
+}
 
-
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 26%;
+    }
+    .reveal-sm {
+      animation: reveal-in-sm linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 20%;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

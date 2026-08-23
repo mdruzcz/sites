@@ -39,7 +39,7 @@ export default function FaqPage() {
         eyebrow="Answers"
         title="Frequently asked questions"
         intro="Lead times, sizing, insurance and what a commercial contract actually covers."
-        crumb="FAQ"
+        crumbs={[{ name: "FAQ", href: "/faq" }]}
       />
 
       <section className="bg-[var(--color-bg)]">
@@ -50,7 +50,7 @@ export default function FaqPage() {
                 <h2 className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">{g.category}</h2>
                 <dl className="mt-8 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
                   {g.items.map((f) => (
-                    <div key={f.q} className="py-8">
+                    <div key={f.q} className="reveal-sm py-8">
                       <dt className="font-display text-lg md:text-xl">{f.q}</dt>
                       <dd className="mt-3.5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
                         {f.a}
@@ -61,14 +61,19 @@ export default function FaqPage() {
               </div>
             ))}
 
-            <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
+            <div className="reveal rounded-3xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
               <h2 className="font-display text-2xl">Still have a question?</h2>
-              <p className="mx-auto mt-4 max-w-md text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+              <p className="mx-auto mt-4 max-w-md lead leading-relaxed text-[var(--color-text-soft)]">
                 Call us or send the property details and we will tell you straight away whether it is
                 something we can do this season.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Link href="/quote" className="btn-primary">{site.quote.cta}</Link>
+                <Link href="/quote" className="btn-ember group">
+                  {site.quote.cta}
+                  <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
                 <a href={site.phoneHref} className="btn-secondary">Call {site.phone}</a>
               </div>
             </div>

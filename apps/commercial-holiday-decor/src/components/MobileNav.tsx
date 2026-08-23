@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { BrandMark } from "@/components/BrandMark";
 import { site } from "@/lib/site";
 import { products } from "@/lib/content";
 
@@ -59,7 +60,10 @@ export function MobileNav() {
           <div className="drawer-overlay" onClick={() => setOpen(false)} aria-hidden />
           <div className="drawer-panel left-0 right-auto" role="dialog" aria-modal="true" aria-label="Site menu">
             <div className="flex items-center justify-between border-b border-[var(--color-border)] px-5 py-4">
-              <span className="font-display text-lg">Menu</span>
+              <span className="flex items-center gap-2">
+                <BrandMark className="size-7" />
+                <span className="font-display text-lg">Menu</span>
+              </span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -110,7 +114,7 @@ export function MobileNav() {
             </nav>
 
             <div className="space-y-3 border-t border-[var(--color-border)] p-4 pb-safe">
-              <Link href="/quote" onClick={() => setOpen(false)} className="btn-primary w-full">
+              <Link href="/quote" onClick={() => setOpen(false)} className="btn-ember w-full">
                 {site.quote.cta}
               </Link>
               <a href={site.phoneHref} className="btn-secondary w-full">

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Commercial Holiday Decor">
+  <rect width="512" height="512" rx="112" fill="#14432f"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#4f9e7d" stroke-width="20" opacity="0.35"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#e6efe9" stroke-width="22" stroke-linecap="round" stroke-dasharray="2 78"/>
+  <circle cx="256" cy="426" r="26" fill="#bd4d25"/>
+  <path d="M256 120l31 74 80 6-61 52 20 78-70-42-70 42 20-78-61-52 80-6z" fill="#e8bd63"/>
+</svg>

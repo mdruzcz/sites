@@ -42,7 +42,7 @@ export default function ProductsPage() {
         eyebrow="What we build"
         title="Commercial decor products"
         intro="Ten product lines, all built on steel and commercial LED, all sized on site before anything is quoted."
-        crumb="Products"
+        crumbs={[{ name: "Products", href: "/products" }]}
       />
 
       <section className="bg-[var(--color-bg)]">
@@ -51,7 +51,7 @@ export default function ProductsPage() {
             {products.map((p, i) => (
               <article
                 key={p.slug}
-                className={`grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16 ${
+                className={`reveal grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16 ${
                   i % 2 === 1 ? "lg:[&>figure]:order-2" : ""
                 }`}
               >
@@ -61,12 +61,13 @@ export default function ProductsPage() {
                     ratio="aspect-[4/3]"
                     sizes="(max-width: 1024px) 100vw, 560px"
                     rounded="rounded-3xl"
+                    className="shadow-[var(--shadow-lg)]"
                   />
                 </figure>
                 <div>
                   <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">{p.eyebrow}</p>
-                  <h2 className="font-display mt-6 text-[1.9rem] md:text-[2.5rem]">{p.headline}</h2>
-                  <p className="mt-5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">{p.summary}</p>
+                  <h2 className="font-display h2-fluid mt-6">{p.headline}</h2>
+                  <p className="lead mt-5 leading-relaxed text-[var(--color-text-soft)]">{p.summary}</p>
                   <ul className="mt-7 space-y-2.5">
                     {p.items.slice(0, 4).map((it) => (
                       <li key={it.name} className="flex items-start gap-2.5 text-sm text-[var(--color-text-soft)]">

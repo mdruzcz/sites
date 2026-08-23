@@ -48,7 +48,7 @@ export default function InstallationPage() {
         eyebrow="Installation & service"
         title="We install it, service it and take it down."
         intro="Design, installation, in-season maintenance, January takedown and off-season storage — on one contract with one contractor."
-        crumb="Installation"
+        crumbs={[{ name: "Installation", href: "/installation" }]}
       />
 
       {/* Services */}
@@ -56,7 +56,7 @@ export default function InstallationPage() {
         <div className="shell section">
           <div className="grid gap-6 md:grid-cols-2 md:gap-7">
             {services.map((s, i) => (
-              <div key={s.slug} className="card p-8">
+              <div key={s.slug} className="reveal-sm card p-8">
                 <span className="font-display text-sm font-bold tracking-[0.2em] text-[var(--color-gold-text)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -72,18 +72,18 @@ export default function InstallationPage() {
       <section className="bg-[var(--color-surface)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-            <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 480px" rounded="rounded-3xl" />
-            <div>
+            <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 480px" rounded="rounded-3xl" className="shadow-[var(--shadow-lg)]" />
+            <div className="reveal">
               <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Who we work for</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.75rem]">Commercial and municipal only.</h2>
-              <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+              <h2 className="font-display h2-fluid mt-6">Commercial and municipal only.</h2>
+              <p className="lead mt-6 text-[var(--color-text-soft)]">
                 We do not do houses. Everything here is built and priced for properties where the decor has
                 to survive a season of weather, meet insurance requirements and go up without disrupting
                 trading hours.
               </p>
               <dl className="mt-10 space-y-6">
                 {CLIENTS.map(([t, d]) => (
-                  <div key={t} className="border-l-2 border-[var(--color-gold)] pl-5">
+                  <div key={t} className="reveal-sm border-l-2 border-[var(--color-gold)] pl-5">
                     <dt className="font-semibold">{t}</dt>
                     <dd className="mt-1.5 text-sm leading-relaxed text-[var(--color-text-soft)]">{d}</dd>
                   </div>
@@ -97,10 +97,10 @@ export default function InstallationPage() {
       {/* Season timeline */}
       <section className="bg-[var(--color-ink-deep)]">
         <div className="shell section">
-          <div className="max-w-2xl">
+          <div className="reveal max-w-2xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-bright)]">The season</p>
-            <h2 className="font-display mt-6 text-[2rem] text-white md:text-[2.75rem]">Book early, or wait a year.</h2>
-            <p className="mt-6 text-[1.0625rem] leading-relaxed text-white/70">
+            <h2 className="font-display h2-fluid mt-6 text-white">Book early, or wait a year.</h2>
+            <p className="lead mt-6 text-white/70">
               Commercial install calendars fill from the top down. Mega trees and custom fabrication get
               locked first because they have the longest lead times.
             </p>
@@ -112,7 +112,7 @@ export default function InstallationPage() {
               ["Dec", "In season", "One call and we are back out for outages or storm damage."],
               ["January", "Takedown", "Removed, inspected, repaired, labelled and stored for next year."]
             ].map(([when, what, detail]) => (
-              <li key={what} className="rounded-2xl border border-white/12 bg-white/5 p-7">
+              <li key={what} className="reveal-sm rounded-2xl border border-white/12 bg-white/5 p-7">
                 <p className="eyebrow text-[var(--color-gold-bright)]">{when}</p>
                 <h3 className="font-display mt-3 text-lg text-white">{what}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/65">{detail}</p>
@@ -126,9 +126,9 @@ export default function InstallationPage() {
       <section className="bg-[var(--color-bg-warm)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
-            <div>
+            <div className="reveal">
               <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Coverage</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.75rem]">Across Southwestern Ontario.</h2>
+              <h2 className="font-display h2-fluid mt-6">Across Southwestern Ontario.</h2>
               <ul className="mt-9 flex flex-wrap gap-2.5">
                 {serviceAreas.map((a) => (
                   <li key={a.slug}>

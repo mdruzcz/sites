@@ -27,14 +27,14 @@ export default function AboutPage() {
         eyebrow="About us"
         title="One contractor for the whole season."
         intro="We supply the decor, install it, look after it while it is up, and take it down in January. No coordinating three vendors."
-        crumb="About"
+        crumbs={[{ name: "About", href: "/about" }]}
       />
 
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            <div className="prose-clean max-w-none">
-              <h2 className="font-display text-[1.9rem] md:text-[2.4rem]">What we actually do</h2>
+            <div className="reveal prose-clean max-w-none">
+              <h2 className="font-display h2-fluid">What we actually do</h2>
               <p>
                 Commercial Holiday Decor is a {site.addressLine} contractor working exclusively on commercial
                 and municipal properties across Southwestern Ontario. We are not a residential Christmas light
@@ -48,7 +48,7 @@ export default function AboutPage() {
                 lit, and every crew that goes up a lift is covered.
               </p>
 
-              <h2 className="font-display text-[1.6rem] md:text-2xl">Why one contractor</h2>
+              <h2 className="font-display h3-fluid">Why one contractor</h2>
               <p>
                 The usual arrangement is messy: one supplier sells the decor, a second company installs it, and
                 when a run goes dark in mid-December nobody owns the problem. We do all of it — design, supply,
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 faster because the plan and the parts already exist.
               </p>
 
-              <h2 className="font-display text-[1.6rem] md:text-2xl">Where we work</h2>
+              <h2 className="font-display h3-fluid">Where we work</h2>
               <p>
                 Crews run out of London and cover {serviceAreas.map((a) => a.name).join(", ")}, plus the
                 smaller centres in between. For larger contracts and multi-site programs we travel further —
@@ -69,14 +69,19 @@ export default function AboutPage() {
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/quote" className="btn-primary">{site.quote.cta}</Link>
+                <Link href="/quote" className="btn-ember group">
+                  {site.quote.cta}
+                  <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
                 <Link href="/installation" className="btn-secondary">How installation works</Link>
               </div>
             </div>
 
-            <div className="space-y-6 lg:sticky lg:top-32 lg:self-start">
-              <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" />
-              <Photo name="tree-lighting-row" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" />
+            <div className="reveal space-y-6 lg:sticky lg:top-32 lg:self-start">
+              <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" className="shadow-[var(--shadow-lg)]" />
+              <Photo name="tree-lighting-row" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" className="shadow-[var(--shadow-lg)]" />
               <div className="rounded-2xl border border-[var(--color-border)] bg-white p-7">
                 <p className="eyebrow text-[var(--color-muted)]">At a glance</p>
                 <dl className="mt-4 space-y-3 text-sm">

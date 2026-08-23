@@ -57,17 +57,17 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         eyebrow="Service area"
         title={`Commercial holiday decor in ${area.name}`}
         intro={area.blurb}
-        crumb={area.name}
+        crumbs={[{ name: "Service areas", href: "/service-areas" }, { name: area.name, href: `/service-areas/${area.slug}` }]}
       />
 
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            <div>
-              <h2 className="font-display text-[1.9rem] md:text-[2.4rem]">
+            <div className="reveal">
+              <h2 className="font-display h2-fluid">
                 What we do for {area.name} properties
               </h2>
-              <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+              <p className="lead mt-6 leading-relaxed text-[var(--color-text-soft)]">
                 We handle the whole season for commercial and municipal clients in {area.name}: the site
                 walk, the drawn plan, the decor itself, the install, the in-season call-outs and the January
                 takedown. Everything is stored labelled by property, so the second season costs less and goes
@@ -81,7 +81,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
               <div className="mt-10 grid gap-5 sm:grid-cols-2">
                 {products.map((p) => (
-                  <Link key={p.slug} href={`/products/${p.slug}`} className="card p-6">
+                  <Link key={p.slug} href={`/products/${p.slug}`} className="reveal-sm card p-6">
                     <h3 className="font-display text-lg">{p.name}</h3>
                     <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--color-text-soft)]">
                       {p.summary}
@@ -90,7 +90,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 ))}
               </div>
 
-              <h2 className="font-display mt-14 text-[1.6rem] md:text-2xl">Included on every contract</h2>
+              <h2 className="font-display h3-fluid mt-14">Included on every contract</h2>
               <ul className="mt-6 space-y-3">
                 {services.map((s) => (
                   <li key={s.slug} className="flex items-start gap-2.5 text-sm text-[var(--color-text-soft)]">
@@ -103,14 +103,19 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               </ul>
 
               <div className="mt-12 flex flex-wrap gap-4">
-                <Link href="/quote" className="btn-primary">{site.quote.cta}</Link>
+                <Link href="/quote" className="btn-ember group">
+                  {site.quote.cta}
+                  <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
                 <a href={site.phoneHref} className="btn-secondary">Call {site.phone}</a>
               </div>
             </div>
 
-            <div className="space-y-6 lg:sticky lg:top-32 lg:self-start">
-              <Photo name="tree-lighting-row" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" />
-              <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" />
+            <div className="reveal space-y-6 lg:sticky lg:top-32 lg:self-start">
+              <Photo name="tree-lighting-row" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" className="shadow-[var(--shadow-lg)]" />
+              <Photo name="wreath-building-front" ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 460px" rounded="rounded-3xl" className="shadow-[var(--shadow-lg)]" />
             </div>
           </div>
         </div>
@@ -119,7 +124,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* Nearby */}
       <section className="bg-[var(--color-bg-warm)]">
         <div className="shell section">
-          <h2 className="font-display text-[1.9rem] md:text-[2.4rem]">We also cover</h2>
+          <h2 className="reveal font-display h2-fluid">We also cover</h2>
           <ul className="mt-8 flex flex-wrap gap-2.5">
             {nearby.map((a) => (
               <li key={a.slug}>
@@ -149,10 +154,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
             <div>
               <p className="eyebrow text-[var(--color-gold-bright)]">{site.quote.promise}</p>
-              <h2 className="font-display mt-5 text-[2rem] text-white md:text-[2.75rem]">
+              <h2 className="font-display h2-fluid mt-5 text-white">
                 Get a quote for your {area.name} property.
               </h2>
-              <p className="mt-6 max-w-md text-[1.0625rem] leading-relaxed text-white/70">{site.quote.detail}</p>
+              <p className="lead mt-6 max-w-md leading-relaxed text-white/70">{site.quote.detail}</p>
             </div>
             <div className="rounded-3xl bg-white p-7 md:p-10">
               <QuoteForm />

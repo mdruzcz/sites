@@ -83,7 +83,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   }
 
   const field =
-    "mt-2 min-h-11 w-full rounded-xl border border-[var(--color-border-strong)] bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-green)]";
+    "mt-2 min-h-11 w-full rounded-xl border border-[var(--color-border-strong)] bg-[var(--color-surface-2)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-green)] focus:bg-white focus:ring-4 focus:ring-[var(--color-green)]/10";
   const label = "text-sm font-semibold text-[var(--color-text)]";
 
   return (
@@ -125,7 +125,10 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
           <legend className={label}>What are you interested in?</legend>
           <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
             {INTERESTS.map((i) => (
-              <label key={i} className="flex min-h-11 items-center gap-3 rounded-xl border border-[var(--color-border)] bg-white px-4 text-sm">
+              <label
+                key={i}
+                className="flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-[var(--color-border)] bg-white px-4 text-sm transition hover:border-[var(--color-green)] has-[:checked]:border-[var(--color-green)] has-[:checked]:bg-[var(--color-green-soft)]"
+              >
                 <input type="checkbox" name="interests" value={i} className="size-4 accent-[var(--color-green)]" />
                 {i}
               </label>
@@ -167,8 +170,13 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
         </p>
       )}
 
-      <button type="submit" disabled={status === "loading"} className="btn-primary w-full disabled:opacity-60">
+      <button type="submit" disabled={status === "loading"} className="btn-ember group w-full disabled:opacity-60">
         {status === "loading" ? "Sending…" : site.quote.ctaLong}
+        {status !== "loading" && (
+          <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
       </button>
 
       <p className="text-center text-xs leading-relaxed text-[var(--color-muted)]">

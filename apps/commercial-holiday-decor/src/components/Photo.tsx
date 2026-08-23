@@ -14,6 +14,8 @@ interface PhotoProps {
   /** Adds a bottom-up gradient so overlaid text stays readable. */
   scrim?: "none" | "soft" | "strong";
   rounded?: string;
+  /** Compression quality (must be whitelisted in next.config images.qualities). */
+  quality?: number;
 }
 
 /**
@@ -31,7 +33,8 @@ export function Photo({
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
   scrim = "none",
-  rounded = ""
+  rounded = "",
+  quality = 78
 }: PhotoProps) {
   const p = photo(name);
   return (
@@ -42,6 +45,7 @@ export function Photo({
         fill
         sizes={sizes}
         priority={priority}
+        quality={quality}
         placeholder="blur"
         blurDataURL={p.blurDataURL}
         className="object-cover"

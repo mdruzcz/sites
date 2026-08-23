@@ -52,19 +52,19 @@ export default function GalleryPage() {
         eyebrow="Our work"
         title="Gallery"
         intro="Wreaths, trees, displays and full frontage packages on commercial and municipal properties."
-        crumb="Gallery"
+        crumbs={[{ name: "Gallery", href: "/gallery" }]}
       />
 
       {/* Installed scenes */}
       <section className="bg-[var(--color-ink-deep)]">
         <div className="shell section">
-          <div className="max-w-2xl">
+          <div className="reveal max-w-2xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-bright)]">Installed</p>
-            <h2 className="font-display mt-6 text-[2.1rem] text-white md:text-[3rem]">On the property.</h2>
+            <h2 className="font-display h2-fluid mt-6 text-white">On the property.</h2>
           </div>
           <div className="mt-14 grid auto-rows-[200px] grid-cols-2 gap-4 md:auto-rows-[230px] md:grid-cols-4 md:gap-5">
             {SCENES.map((s) => (
-              <figure key={s.photo} className={`group relative isolate overflow-hidden rounded-2xl ${s.span ?? ""}`}>
+              <figure key={s.photo} className={`reveal-sm group relative isolate overflow-hidden rounded-2xl ${s.span ?? ""}`}>
                 <Photo
                   name={s.photo}
                   ratio="h-full w-full"
@@ -85,10 +85,10 @@ export default function GalleryPage() {
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
+            <div className="reveal max-w-2xl">
               <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">The pieces</p>
-              <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Displays we build and install.</h2>
-              <p className="mt-5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+              <h2 className="font-display h2-fluid mt-6">Displays we build and install.</h2>
+              <p className="lead mt-5 text-[var(--color-text-soft)]">
                 A sample of the 2D, 3D and photo-op range. Anything here can be scaled, and anything that is
                 not here can be fabricated.
               </p>
@@ -101,7 +101,7 @@ export default function GalleryPage() {
               const p = productPhoto(k);
               if (!p) return null;
               return (
-                <figure key={k} className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white p-4">
+                <figure key={k} className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white p-4">
                   <Image
                     src={p.src}
                     alt={p.alt}
@@ -115,15 +115,20 @@ export default function GalleryPage() {
             })}
           </div>
 
-          <div className="mt-16 rounded-3xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
+          <div className="reveal mt-16 rounded-3xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
             <h2 className="font-display text-2xl">Want something that is not here?</h2>
-            <p className="mx-auto mt-4 max-w-lg text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+            <p className="mx-auto mt-4 max-w-lg lead text-[var(--color-text-soft)]">
               Custom fabrication is a large part of what we do — illuminated logos, entrance archways and
               one-off centrepieces scaled to a specific property.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/products/custom-displays" className="btn-primary">Custom displays</Link>
-              <Link href="/quote" className="btn-secondary">{site.quote.cta}</Link>
+              <Link href="/quote" className="btn-ember group">
+                {site.quote.cta}
+                <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

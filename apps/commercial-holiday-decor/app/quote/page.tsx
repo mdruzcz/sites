@@ -25,22 +25,22 @@ export default function QuotePage() {
         eyebrow="Get started"
         title="Request a quote"
         intro={site.quote.detail}
-        crumb="Quote"
+        crumbs={[{ name: "Quote", href: "/quote" }]}
       />
 
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
-            <div>
+            <div className="reveal">
               <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">What happens next</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.5rem]">Three steps, no obligation.</h2>
+              <h2 className="font-display h2-fluid mt-6">Three steps, no obligation.</h2>
               <ol className="mt-10 space-y-8">
                 {[
                   ["We call you back", `Within ${site.responseTime}, to understand the property and what you are trying to achieve.`],
                   ["We walk the site", "Sightlines, power, anchor points and measurements — done in person, not from a photo."],
                   ["You get a line-item quote", "Decor, install, in-season service and January takedown, priced separately so you can see what you are paying for."]
                 ].map(([t, d], i) => (
-                  <li key={t} className="flex gap-5">
+                  <li key={t} className="reveal-sm flex gap-5">
                     <span className="font-display grid size-10 shrink-0 place-items-center rounded-full bg-[var(--color-green)] text-sm font-bold text-white">
                       {i + 1}
                     </span>
@@ -52,7 +52,7 @@ export default function QuotePage() {
                 ))}
               </ol>
 
-              <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-white p-7">
+              <div className="reveal-sm mt-12 rounded-2xl border border-[var(--color-border)] bg-white p-7">
                 <p className="text-sm font-semibold">Every contract includes</p>
                 <ul className="mt-4 space-y-2.5">
                   {services.map((s) => (
@@ -69,11 +69,11 @@ export default function QuotePage() {
                 ratio="aspect-[3/2]"
                 sizes="(max-width: 1024px) 100vw, 460px"
                 rounded="rounded-3xl"
-                className="mt-10 hidden lg:block"
+                className="mt-10 hidden lg:block shadow-[var(--shadow-lg)]"
               />
             </div>
 
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-7 md:p-10">
+            <div className="reveal rounded-3xl border border-[var(--color-border)] bg-white p-7 md:p-10">
               <QuoteForm />
             </div>
           </div>
