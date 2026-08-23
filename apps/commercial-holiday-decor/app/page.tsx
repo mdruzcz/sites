@@ -50,11 +50,12 @@ export default function HomePage() {
               <span className="mt-1 block text-[var(--color-gold-bright)]">installed and looked after.</span>
             </h1>
             <p className="mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-white/80 md:text-lg">
-              4-foot wreaths, 14-foot mega trees, large LED displays and custom fabrication — designed for
-              your property, installed by insured crews, serviced all season and taken down in January.
+              Commercial trees to 100 feet, 4-foot wreaths, pole motifs, giant ornaments and custom
+              fabrication — designed for your property, installed by insured crews, serviced all season and
+              taken down in January.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/quote" className="btn-gold">{site.quote.ctaLong}</Link>
+              <Link href="/quote" className="btn-ember">{site.quote.ctaLong}</Link>
               <Link href="/products" className="btn-ghost-light">See what we build</Link>
             </div>
             <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.14em] text-white/60">
@@ -65,7 +66,7 @@ export default function HomePage() {
           </div>
 
           <div className="hidden rounded-3xl border border-white/15 bg-[rgba(16,22,18,0.72)] p-8 backdrop-blur-md md:block">
-            <p className="eyebrow text-[var(--color-gold-bright)]">The four lines</p>
+            <p className="eyebrow text-[var(--color-gold-bright)]">The catalogue</p>
             <ul className="mt-6 space-y-0">
               {products.map((p) => (
                 <li key={p.slug} className="border-b border-white/10 last:border-0">
@@ -78,7 +79,7 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <Link href="/quote" className="btn-gold mt-7 w-full">{site.quote.cta}</Link>
+            <Link href="/quote" className="btn-ember mt-7 w-full">{site.quote.cta}</Link>
           </div>
         </div>
       </section>
@@ -105,10 +106,11 @@ export default function HomePage() {
         <div className="shell section">
           <div className="max-w-2xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">What we build</p>
-            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Four lines, one contractor.</h2>
+            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Ten lines, one contractor.</h2>
             <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
               Everything is sized on site. A wreath that works on a house disappears on a building front, and
-              a tree that suits a lobby looks lost in a civic square — so we measure before we quote.
+              a tree that suits a lobby looks lost in a civic square — so we measure before we quote. Ten
+              product lines, one contractor, one invoice.
             </p>
           </div>
 
@@ -153,7 +155,7 @@ export default function HomePage() {
                 walk-through photo-ops and custom fabrication built to stand outside all season.
               </p>
             </div>
-            <Link href="/products/large-displays" className="btn-gold">Browse displays</Link>
+            <Link href="/products/holiday-displays" className="btn-ember">Browse displays</Link>
           </div>
 
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">

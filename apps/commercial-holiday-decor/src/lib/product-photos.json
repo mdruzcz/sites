@@ -76,5 +76,359 @@
     "alt": "Aluminum folding LED sphere for commercial hanging displays",
     "width": 713,
     "height": 532
+  },
+  "bg-1": {
+    "src": "/images/products/bg-1.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 1200,
+    "height": 1797
+  },
+  "bg-2": {
+    "src": "/images/products/bg-2.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 1200,
+    "height": 1797
+  },
+  "bg-3": {
+    "src": "/images/products/bg-3.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 1200,
+    "height": 1797
+  },
+  "bg-4": {
+    "src": "/images/products/bg-4.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 896,
+    "height": 709
+  },
+  "tree-1": {
+    "src": "/images/products/tree-1.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1800
+  },
+  "tree-2": {
+    "src": "/images/products/tree-2.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1800
+  },
+  "tree-3": {
+    "src": "/images/products/tree-3.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1799
+  },
+  "tree-4": {
+    "src": "/images/products/tree-4.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 800
+  },
+  "tree-5": {
+    "src": "/images/products/tree-5.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1801
+  },
+  "tree-6": {
+    "src": "/images/products/tree-6.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1804
+  },
+  "tree-7": {
+    "src": "/images/products/tree-7.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 798
+  },
+  "tree-8": {
+    "src": "/images/products/tree-8.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 752
+  },
+  "tree-9": {
+    "src": "/images/products/tree-9.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 1200,
+    "height": 1600
+  },
+  "flr-1": {
+    "src": "/images/products/flr-1.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 1200,
+    "height": 802
+  },
+  "flr-2": {
+    "src": "/images/products/flr-2.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 1200,
+    "height": 800
+  },
+  "flr-3": {
+    "src": "/images/products/flr-3.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 1200,
+    "height": 800
+  },
+  "flr-4": {
+    "src": "/images/products/flr-4.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 1200,
+    "height": 800
+  },
+  "orn-1": {
+    "src": "/images/products/orn-1.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 1200,
+    "height": 1800
+  },
+  "orn-2": {
+    "src": "/images/products/orn-2.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 1200,
+    "height": 1800
+  },
+  "orn-3": {
+    "src": "/images/products/orn-3.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 1200,
+    "height": 1800
+  },
+  "orn-4": {
+    "src": "/images/products/orn-4.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 677,
+    "height": 855
+  },
+  "orn-5": {
+    "src": "/images/products/orn-5.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 584,
+    "height": 875
+  },
+  "gtree-1": {
+    "src": "/images/products/gtree-1.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1800
+  },
+  "gtree-2": {
+    "src": "/images/products/gtree-2.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1800
+  },
+  "gtree-3": {
+    "src": "/images/products/gtree-3.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1799
+  },
+  "gtree-4": {
+    "src": "/images/products/gtree-4.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 800
+  },
+  "gtree-5": {
+    "src": "/images/products/gtree-5.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1801
+  },
+  "gtree-6": {
+    "src": "/images/products/gtree-6.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1804
+  },
+  "gtree-7": {
+    "src": "/images/products/gtree-7.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 798
+  },
+  "gtree-8": {
+    "src": "/images/products/gtree-8.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 752
+  },
+  "gtree-9": {
+    "src": "/images/products/gtree-9.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 1200,
+    "height": 1600
+  },
+  "disp-1": {
+    "src": "/images/products/disp-1.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 1600
+  },
+  "disp-2": {
+    "src": "/images/products/disp-2.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 1800
+  },
+  "disp-3": {
+    "src": "/images/products/disp-3.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 1206
+  },
+  "disp-4": {
+    "src": "/images/products/disp-4.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 1143
+  },
+  "disp-5": {
+    "src": "/images/products/disp-5.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 800
+  },
+  "disp-6": {
+    "src": "/images/products/disp-6.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 800
+  },
+  "disp-7": {
+    "src": "/images/products/disp-7.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 800
+  },
+  "disp-8": {
+    "src": "/images/products/disp-8.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 800
+  },
+  "disp-9": {
+    "src": "/images/products/disp-9.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1200,
+    "height": 800
+  },
+  "pole-1": {
+    "src": "/images/products/pole-1.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1800
+  },
+  "pole-2": {
+    "src": "/images/products/pole-2.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1600
+  },
+  "pole-3": {
+    "src": "/images/products/pole-3.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1680
+  },
+  "pole-4": {
+    "src": "/images/products/pole-4.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1680
+  },
+  "pole-5": {
+    "src": "/images/products/pole-5.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1800
+  },
+  "pole-6": {
+    "src": "/images/products/pole-6.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 1800
+  },
+  "pole-7": {
+    "src": "/images/products/pole-7.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 778
+  },
+  "pole-8": {
+    "src": "/images/products/pole-8.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 800
+  },
+  "pole-9": {
+    "src": "/images/products/pole-9.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 1200,
+    "height": 800
+  },
+  "snow-1": {
+    "src": "/images/products/snow-1.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 960
+  },
+  "snow-2": {
+    "src": "/images/products/snow-2.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 888
+  },
+  "snow-3": {
+    "src": "/images/products/snow-3.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 801
+  },
+  "snow-4": {
+    "src": "/images/products/snow-4.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 801
+  },
+  "snow-5": {
+    "src": "/images/products/snow-5.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 800
+  },
+  "snow-6": {
+    "src": "/images/products/snow-6.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 800
+  },
+  "snow-7": {
+    "src": "/images/products/snow-7.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 800
+  },
+  "snow-8": {
+    "src": "/images/products/snow-8.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 745
+  },
+  "snow-9": {
+    "src": "/images/products/snow-9.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 1200,
+    "height": 648
+  },
+  "top-1": {
+    "src": "/images/products/top-1.webp",
+    "alt": "Artificial topiary animal figure for commercial landscaping",
+    "width": 1200,
+    "height": 794
   }
 }

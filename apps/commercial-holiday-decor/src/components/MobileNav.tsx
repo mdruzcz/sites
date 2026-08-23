@@ -4,12 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { site } from "@/lib/site";
+import { products } from "@/lib/content";
 
-const LINKS: { label: string; href: string; note?: string }[] = [
-  { label: "Commercial Wreaths", href: "/products/commercial-wreaths", note: "3 ft to 8 ft, pre-lit" },
-  { label: "Mega Trees", href: "/products/mega-trees", note: "8 ft to 30 ft" },
-  { label: "Large Displays", href: "/products/large-displays", note: "3D figures & photo-ops" },
-  { label: "Custom Displays", href: "/products/custom-displays", note: "Logos, arches, one-offs" },
+const PAGES: { label: string; href: string; note?: string }[] = [
   { label: "All products", href: "/products" },
   { label: "Installation & service", href: "/installation" },
   { label: "Service areas", href: "/service-areas" },
@@ -76,8 +73,28 @@ export function MobileNav() {
             </div>
 
             <nav className="flex-1 overflow-y-auto px-3 py-3" aria-label="Mobile">
+              <p className="px-4 pb-2 pt-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+                Products
+              </p>
               <ul className="space-y-0.5">
-                {LINKS.map((l) => (
+                {products.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/products/${p.slug}`}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl px-4 py-3.5 transition hover:bg-[var(--color-green-soft)]"
+                    >
+                      <span className="text-[15px] font-semibold">{p.name}</span>
+                      <span className="mt-0.5 block text-xs text-[var(--color-muted)]">{p.eyebrow}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="px-4 pb-2 pt-5 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[var(--color-muted)]">
+                More
+              </p>
+              <ul className="space-y-0.5">
+                {PAGES.map((l) => (
                   <li key={l.href}>
                     <Link
                       href={l.href}

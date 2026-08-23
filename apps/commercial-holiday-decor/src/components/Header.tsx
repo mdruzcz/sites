@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { MobileNav } from "@/components/MobileNav";
+import { ProductsMenu } from "@/components/ProductsMenu";
 import { site } from "@/lib/site";
 
 const NAV = [
-  { label: "Wreaths", href: "/products/commercial-wreaths" },
-  { label: "Mega Trees", href: "/products/mega-trees" },
-  { label: "Displays", href: "/products/large-displays" },
-  { label: "Custom", href: "/products/custom-displays" },
   { label: "Installation", href: "/installation" },
-  { label: "Service Areas", href: "/service-areas" }
+  { label: "Service Areas", href: "/service-areas" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "FAQ", href: "/faq" }
 ];
 
 export function Header() {
@@ -25,7 +24,7 @@ export function Header() {
       <div className="shell flex items-center justify-between gap-4 py-4">
         <Link href="/" aria-label={`${site.name} home`} className="mr-auto flex shrink-0 flex-col leading-none">
           <span className="font-display text-[1.15rem] tracking-tight md:text-[1.35rem]">
-            Commercial <span className="text-[var(--color-green)]">Holiday Decor</span>
+            Commercial <span className="text-[var(--color-green-text)]">Holiday Decor</span>
           </span>
           <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
             Southwestern Ontario
@@ -33,8 +32,9 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm lg:flex xl:gap-8" aria-label="Primary">
+          <ProductsMenu />
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="whitespace-nowrap font-medium transition hover:text-[var(--color-green)]">
+            <Link key={n.href} href={n.href} className="whitespace-nowrap font-medium transition hover:text-[var(--color-green-text)]">
               {n.label}
             </Link>
           ))}

@@ -93,7 +93,7 @@ export default function GalleryPage() {
                 not here can be fabricated.
               </p>
             </div>
-            <Link href="/products/large-displays" className="btn-secondary">Browse displays</Link>
+            <Link href="/products/holiday-displays" className="btn-secondary">Browse displays</Link>
           </div>
 
           <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-5 md:gap-6">

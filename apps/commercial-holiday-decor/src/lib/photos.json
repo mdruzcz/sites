@@ -47,5 +47,194 @@
     "width": 750,
     "height": 750,
     "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAwAA4BaJZwAAudiS65qAAD++VGalaZiEIRccR2tnm2ucIacYWn2CClyDywg6eEy3jD8TgAAAA=="
+  },
+  "bg-scene-1": {
+    "src": "/images/photos/bg-scene-1.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 2000,
+    "height": 1330,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoMAAgAA4BaJYwCdADYC6gAAP7dfv4UyFA1V0dRWFlJkXedDzsxQ+n0lE4VgBv8cD1HqS4PydmbKHW1Ou9Oqtus/gA="
+  },
+  "bg-scene-2": {
+    "src": "/images/photos/bg-scene-2.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 2000,
+    "height": 1336,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAgCdASoMAAgAA4BaJZQCdAEfUX8n/HxoAP73xzZLxZ6y0h28t4obAuH1tgk+FSnPfvISEjhvFuwV1AMqsAAA"
+  },
+  "bg-scene-3": {
+    "src": "/images/photos/bg-scene-3.webp",
+    "alt": "Illuminated sculptural display installed in a botanical garden",
+    "width": 2000,
+    "height": 1336,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAgAA4BaJZQCdAEfUX8lKWAA/vfHNkvFnrLSHhe7nzvJngIXHV8h2tfABVzMeZhHAt+uziACMYAA"
+  },
+  "tree-scene-1": {
+    "src": "/images/photos/tree-scene-1.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 2000,
+    "height": 1335,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJYgCdAEObf6ioIAA/tx2CyM/VtcS75dpqWx7gmwRuXm9dDsJTnP/H0YlJldbZAzVpTdGXIU+jgAA"
+  },
+  "tree-scene-2": {
+    "src": "/images/photos/tree-scene-2.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAgAA4BaJbACdADcrTJVAAD2iVairId64YcWjeAHNXfkvkxQ8LGyXmicxO3soi+GbLav18x+T9NClLeMF8q9VQAAAA=="
+  },
+  "tree-scene-3": {
+    "src": "/images/photos/tree-scene-3.webp",
+    "alt": "Commercial Christmas tree installed and lit on a retail plaza at night",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJYwC7AELZauGfLAA/sXt1Wukq6+C7dNxkraJKkJU6tQtruZQWYcSFq0KlzLiMhsAmBLbAAA="
+  },
+  "flr-scene-1": {
+    "src": "/images/photos/flr-scene-1.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 2000,
+    "height": 1333,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAgAA4BaJagCdADaP/aYAAD+5np0loRMItiRI5+z98UpQ8Y37meZCAOMVkKZRjQlUxoGEnatNhYDz8l6B/sp7gAAAA=="
+  },
+  "flr-scene-2": {
+    "src": "/images/photos/flr-scene-2.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 2000,
+    "height": 1333,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoMAAgAA4BaJbACdACyZ2WwAAD+xe8AyvvycrVst+QW8zsPYZ4Okc7Zv2HCfjY2dWjd5ali1Cibq/lGTltoVvINtoVBNAAA"
+  },
+  "flr-scene-3": {
+    "src": "/images/photos/flr-scene-3.webp",
+    "alt": "Seasonal floral pole planter display on a commercial street",
+    "width": 2000,
+    "height": 1336,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJZACdAEO+Y1dQAAA/vQ293XviEM/WN3cwhQ+xhZFn5t+ObIf8ZNmz8X+aRnkfz9AqObKAAA="
+  },
+  "orn-scene-1": {
+    "src": "/images/photos/orn-scene-1.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 2000,
+    "height": 1500,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoMAAkAA4BaJagCdADdavrtG2AA+UFDwuLS1v7f7w6Qs63YbvgfkSLNg+dP426brydHlWmy/WjSnG6aidDpqTPFyyy0ofFIAm7vo0ftnlAQAA=="
+  },
+  "orn-scene-2": {
+    "src": "/images/photos/orn-scene-2.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 1920,
+    "height": 1080,
+    "blurDataURL": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4WAoAAAAQAAAACwAABgAAQUxQSEkAAAABcGrb2qKc8Wa4S4NKd8ieidapU0laPenTubdp8wwRkbiXd7qyrNOdAKNXWP+P2V9UCOShFiecQcB20paz4PzQIDvUxF6Ojo07AFZQOCBeAAAAUAIAnQEqDAAHAAOAWiWgAnQwSsiDDHvsPyiAAP63zXuXNKATsdkp+Le886Xmo2Tr/C1OHRrTW7+6n2VJzIfid1W56YfUCJrfn4PtKdFeXwb8yh0Zkg9C0gC/4b0AAA=="
+  },
+  "orn-scene-3": {
+    "src": "/images/photos/orn-scene-3.webp",
+    "alt": "Oversized commercial Christmas ornament display on a plaza",
+    "width": 960,
+    "height": 720,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoMAAkAA4BaJYwCdAEQFHZ849ZgAMtLLAxrMr4RMXfm33YIMF2dsnF7xFEdUo9wonVFVdtOfCV7llP1zMcO95TdDiAAAA=="
+  },
+  "gtree-scene-1": {
+    "src": "/images/photos/gtree-scene-1.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 2000,
+    "height": 1335,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJYgCdAEObf6ioIAA/tx2CyM/VtcS75dpqWx7gmwRuXm9dDsJTnP/H0YlJldbZAzVpTdGXIU+jgAA"
+  },
+  "gtree-scene-2": {
+    "src": "/images/photos/gtree-scene-2.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAgAA4BaJbACdADcrTJVAAD2iVairId64YcWjeAHNXfkvkxQ8LGyXmicxO3soi+GbLav18x+T9NClLeMF8q9VQAAAA=="
+  },
+  "gtree-scene-3": {
+    "src": "/images/photos/gtree-scene-3.webp",
+    "alt": "Giant commercial Christmas tree lighting a downtown square at night",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJYwC7AELZauGfLAA/sXt1Wukq6+C7dNxkraJKkJU6tQtruZQWYcSFq0KlzLiMhsAmBLbAAA="
+  },
+  "disp-scene-1": {
+    "src": "/images/photos/disp-scene-1.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 2000,
+    "height": 1241,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAcAA4BaJbACdAEfAyrlqwAA/ORPWvFU1z3fLn2xaoFzKDAEVEkrdnWE/sEcdUHBZDcK5e4rvAdquBsT3+WGFJJAAA=="
+  },
+  "disp-scene-2": {
+    "src": "/images/photos/disp-scene-2.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1920,
+    "height": 1281,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoMAAgAA4BaJZwC7ADwdXyN/YAA/t4fhDJfa3Iu2su006oieLHfq0Yx63m095ayu4fxTkvcUDaB+wj4/HgAAA=="
+  },
+  "disp-scene-3": {
+    "src": "/images/photos/disp-scene-3.webp",
+    "alt": "Illuminated commercial holiday display lighting a public space",
+    "width": 1630,
+    "height": 1080,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAgAA4BaJQBOgBwtn/3gAAD+8159AdB/OLNLtJlKtAt2IeDceDu+V+H+YHKscaTWOL4LqoCL0FG2tFE/AAAA"
+  },
+  "pole-scene-1": {
+    "src": "/images/photos/pole-scene-1.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoMAAgAA4BaJQBOgMWbyZ7pvkJAAP7kSn8zLJr5u5VBtycxjI4HYDLPiIDsflss/cl/1kEoCicJdjn1dV4WSiQAAAA="
+  },
+  "pole-scene-2": {
+    "src": "/images/photos/pole-scene-2.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAgAA4BaJZQCdADdtD/vuZgA/sjx646RpTMOjzT9V+y1lcL1b9q3Ng3qeJqZ5qtmoNYgWnCTAIIIksDyylCohbQAAA=="
+  },
+  "pole-scene-3": {
+    "src": "/images/photos/pole-scene-3.webp",
+    "alt": "Lit garland pole wrap and street-light décor on a downtown street",
+    "width": 2000,
+    "height": 1334,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAgAA4BaJbACdADdp1aw6qAA/t4daIGP1UwFgjeTNb9f6BcHxUCdxJ4bf7tnnupIf298Q3plEdR14SRmGOc8MAA="
+  },
+  "snow-scene-1": {
+    "src": "/images/photos/snow-scene-1.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 2000,
+    "height": 1161,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAcAA4BaJZACdAEPS4EXvToAAP7lOJAiP4Wy4FRWiBDUvFevWwCa57h+tUiK/NbSZ0hEErJ5i0qIe6N/JkAA"
+  },
+  "snow-scene-2": {
+    "src": "/images/photos/snow-scene-2.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 2000,
+    "height": 1333,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAgAA4BaJagCdADZlOVQAP7zD91U4BPm+w2n4jJk41QiSE6TLsGR3AuT7Yk18oFjNQNCyIjUQDEaoAAAAA=="
+  },
+  "snow-scene-3": {
+    "src": "/images/photos/snow-scene-3.webp",
+    "alt": "Illuminated LED snowflake pole motif mounted on a street light",
+    "width": 2000,
+    "height": 1500,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAkAA4BaJYgCdADc/k7QAP7tIRYRO1rqq5XYj5lo2U1rHczd+56UEMJiqj3eMq2VNWiNaxC9s+ejesAAAA=="
+  },
+  "top-scene-1": {
+    "src": "/images/photos/top-scene-1.webp",
+    "alt": "Artificial topiary animal figure for commercial landscaping",
+    "width": 1872,
+    "height": 1248,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAgAA4BaJZACdAYqDqffZQnaUAD7ITYfFlIE+LyyAi2oQZNMOn7AwEcgpb+mYJcN6LJ/YKBbHJeDmKiMjU6V8rutLtHhZ7H8AAAA"
+  },
+  "top-scene-2": {
+    "src": "/images/photos/top-scene-2.webp",
+    "alt": "Artificial topiary animal figure for commercial landscaping",
+    "width": 1870,
+    "height": 1248,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJZQCdAD5hDDjsoAAzdzVqIlROxnCGRTY6vezaBN2ttQRlQY2s61yHK8vqiAk7ApIVxagAAA="
+  },
+  "top-scene-3": {
+    "src": "/images/photos/top-scene-3.webp",
+    "alt": "Artificial topiary animal figure for commercial landscaping",
+    "width": 1870,
+    "height": 1242,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJZQCdAEWzCtzpaAAzgJE2H9axf09gL7XwgrIumIBQToFsukDiHk+PhUwsF4EJMpoYgDegAA="
   }
 }

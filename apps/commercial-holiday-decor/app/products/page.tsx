@@ -10,11 +10,11 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Commercial Christmas Decor Products",
   description:
-    "Commercial wreaths from 3 to 8 feet, mega trees from 8 to 30 feet, 3D LED displays and custom fabrication — built for commercial and municipal properties in Southwestern Ontario.",
+    "Commercial Christmas trees to 100 feet, 4-foot wreaths, pole motifs, snowflakes, giant ornaments, holiday displays, topiaries, florals and custom fabrication for commercial and municipal properties in Southwestern Ontario.",
   alternates: { canonical: `${site.url}/products` },
   openGraph: {
     title: "Commercial Christmas Decor Products",
-    description: "Wreaths, mega trees, large LED displays and custom fabrication for commercial properties.",
+    description: "Trees, wreaths, pole motifs, ornaments, displays and custom fabrication for commercial properties.",
     url: `${site.url}/products`
   }
 };
@@ -41,7 +41,7 @@ export default function ProductsPage() {
         photoAlt="Row of large illuminated commercial Christmas trees at night"
         eyebrow="What we build"
         title="Commercial decor products"
-        intro="Four lines, all built on steel and commercial LED, all sized on site before anything is quoted."
+        intro="Ten product lines, all built on steel and commercial LED, all sized on site before anything is quoted."
         crumb="Products"
       />
 

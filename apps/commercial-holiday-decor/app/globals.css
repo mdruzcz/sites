@@ -10,12 +10,17 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Palette — evergreen and gold on a warm neutral. B2B first: this sells to
-   property managers and municipalities, so it stays closer to "architectural"
-   than "candy-cane", with the festive colour carried by the photography.
+   Palette — deep evergreen, warm ember and gold on a warm neutral.
 
    Every token is declared on :root so a `bg-[var(--token)]` arbitrary value
    can never resolve to nothing.
+
+   Contrast rules, so the "black on green" problem cannot come back:
+     * `-text`  variants are the only ones safe for small text on the LIGHT
+       background (all >= 4.5:1 on #f8f7f4).
+     * `-bright` variants are for DARK backgrounds only.
+     * Every filled surface has an explicit `--color-on-*` foreground; never
+       let a fill inherit its text colour.
 --------------------------------------------------------------------------- */
 :root {
   /* Neutrals */
@@ -23,8 +28,8 @@
   --color-bg-warm:         #eeece5;
   --color-surface:         #ffffff;
   --color-text:            #16201a;
-  --color-text-soft:       #47514a;
-  --color-muted:           #6b756e;
+  --color-text-soft:       #414b45;   /* 8.9:1 on --color-bg */
+  --color-muted:           #5f6a63;   /* 5.6:1 on --color-bg (was 4.4:1) */
   --color-border:          #e4e1d7;
   --color-border-strong:   #cbc6b6;
 
@@ -34,17 +39,31 @@
   --color-ink-soft:        #24312a;
 
   /* Evergreen — the brand colour */
-  --color-green:           #1b4d3e;
-  --color-green-dark:      #123528;
-  --color-green-bright:    #2f7a5f;
-  --color-green-soft:      #e9f0ec;
+  --color-green:           #14432f;   /* fills; white on it = 11.4:1 */
+  --color-green-dark:      #0e3123;
+  --color-green-text:      #145238;   /* 8.6:1 on --color-bg — green TEXT */
+  --color-green-bright:    #4f9e7d;   /* green on dark backgrounds */
+  --color-green-soft:      #e7efea;
 
-  /* Gold — accent, rules, numerals */
+  /* Ember — the warm accent, taken from the reference site's orange */
+  --color-ember:           #bd4d25;   /* fills; white on it = 4.9:1 (AA) */
+  --color-ember-text:      #a83f18;   /* 5.9:1 on --color-bg — ember TEXT */
+  --color-ember-dark:      #9e3b16;
+  --color-ember-bright:    #f08a5c;   /* ember on dark backgrounds */
+  --color-ember-soft:      #fdefe8;
+
+  /* Gold — fine rules, numerals, festive highlights */
   --color-gold:            #c9962e;
-  --color-gold-text:       #8a6410;   /* AA-contrast gold for small text on light */
+  --color-gold-text:       #7d5a0d;   /* 5.5:1 on --color-bg */
   --color-gold-dark:       #a67a18;
-  --color-gold-bright:     #e8bd63;   /* gold on dark backgrounds */
+  --color-gold-bright:     #e8bd63;   /* DARK backgrounds only */
   --color-gold-soft:       #faf3e2;
+
+  /* Explicit foregrounds for filled surfaces */
+  --color-on-green:        #ffffff;
+  --color-on-ember:        #ffffff;
+  --color-on-gold:         #1a1305;
+  --color-on-ink:          #ffffff;
 
   /* Support */
   --color-red:             #a8322c;
@@ -55,32 +74,38 @@
   --color-brand-dark:      var(--color-green-dark);
   --color-brand-soft:      var(--color-green-soft);
   --color-brand-deep:      var(--color-ink-deep);
-  --color-accent:          var(--color-gold-text);
-  --color-accent-soft:     var(--color-gold-soft);
+  --color-accent:          var(--color-ember-text);
+  --color-accent-soft:     var(--color-ember-soft);
   --color-night:           var(--color-ink-deep);
   --color-night-soft:      var(--color-ink-soft);
   --color-danger:          var(--color-red);
   --color-success:         var(--color-green);
 }
 
-html, body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+/* Element resets go in @layer base so the cascade runs base -> components ->
+   utilities. Un-layered they outrank everything: `a { color: inherit }` beat
+   `.btn-primary { color: #fff }`, so every link-button rendered near-black text
+   on the green fill (1.73:1) instead of white. */
+@layer base {
+  html, body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-*, *::before, *::after { box-sizing: border-box; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
-input, textarea, select { font-family: inherit; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+  input, textarea, select { font-family: inherit; }
 
-input:focus-visible, textarea:focus-visible, select:focus-visible,
-button:focus-visible, a:focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 2px;
-  border-radius: 2px;
+  input:focus-visible, textarea:focus-visible, select:focus-visible,
+  button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
 
 @keyframes shimmer { 100% { transform: translateX(100%); } }
@@ -114,7 +139,7 @@ button:focus-visible, a:focus-visible {
     width: 2.5rem;
     height: 2px;
     margin-top: 0.75rem;
-    background: var(--color-gold);
+    background: var(--color-ember);
   }
 
   /* ------------------------------- Layout --------------------------------- */
@@ -132,7 +157,7 @@ button:focus-visible, a:focus-visible {
   /* All at least 44px tall for touch targets. */
   .btn-primary {
     background: var(--color-green);
-    color: #fff;
+    color: var(--color-on-green);
     padding: 0.9rem 1.6rem;
     border-radius: 999px;
     font-weight: 600;
@@ -141,12 +166,27 @@ button:focus-visible, a:focus-visible {
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     min-height: 44px;
   }
-  .btn-primary:hover { background: var(--color-green-dark); box-shadow: 0 6px 18px rgba(27, 77, 62, 0.28); }
+  .btn-primary:hover { background: var(--color-green-dark); box-shadow: 0 8px 20px rgba(20, 67, 47, 0.32); }
   .btn-primary:active { transform: translateY(1px); }
+
+  /* The primary CTA. Ember reads far better than gold against the evergreen
+     bands and the night photography. */
+  .btn-ember {
+    background: var(--color-ember);
+    color: var(--color-on-ember);
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 44px;
+  }
+  .btn-ember:hover { background: var(--color-ember-dark); box-shadow: 0 8px 22px rgba(189, 77, 37, 0.42); }
 
   .btn-gold {
     background: var(--color-gold);
-    color: #1a1305;
+    color: var(--color-on-gold);
     padding: 0.9rem 1.6rem;
     border-radius: 999px;
     font-weight: 700;
@@ -172,7 +212,7 @@ button:focus-visible, a:focus-visible {
   .btn-secondary:hover {
     border-color: var(--color-green);
     background: var(--color-green-soft);
-    color: var(--color-green-dark);
+    color: var(--color-green-text);
   }
 
   .btn-ghost-light {
@@ -217,14 +257,14 @@ button:focus-visible, a:focus-visible {
     border-radius: 1rem;
     transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
   }
-  .card:hover { border-color: var(--color-gold); box-shadow: 0 12px 32px rgba(22, 32, 26, 0.09); }
+  .card:hover { border-color: var(--color-ember); box-shadow: 0 12px 32px rgba(22, 32, 26, 0.10); }
 
   /* ------------------------------- Prose ---------------------------------- */
   .prose-clean p { line-height: 1.75; color: var(--color-text-soft); }
   .prose-clean h2, .prose-clean h3 { font-family: var(--font-display); letter-spacing: -0.025em; }
   .prose-clean ul { padding-left: 1.25rem; list-style: disc; }
   .prose-clean li { line-height: 1.75; color: var(--color-text-soft); }
-  .prose-clean a { color: var(--color-gold-text); text-decoration: underline; text-underline-offset: 3px; }
+  .prose-clean a { color: var(--color-ember-text); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ------------------------------ Animation ------------------------------- */
 

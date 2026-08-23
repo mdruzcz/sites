@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // The catalogue went from 4 lines to 10; keep the original URLs alive.
+      { source: "/products/commercial-wreaths", destination: "/products/wreaths-garlands-pole-decor", permanent: true },
+      { source: "/products/mega-trees", destination: "/products/commercial-christmas-trees", permanent: true },
+      { source: "/products/large-displays", destination: "/products/holiday-displays", permanent: true }
+    ];
+  },
   async headers() {
     return [
       {
