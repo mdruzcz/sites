@@ -3,11 +3,30 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Photo } from "@/components/Photo";
+import { VideoClip } from "@/components/VideoClip";
+import { JsonLd } from "@/components/JsonLd";
 import { productPhoto } from "@/lib/product-photos";
 import type { PhotoKey } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
+
+const CLIPS = [
+  { src: "/videos/clip-lit-tree.mp4", poster: "/images/video/clip-lit-tree-poster.webp", label: "Fully-lit office tree with ribbon work" },
+  { src: "/videos/clip-entrance.mp4", poster: "/images/video/clip-entrance-poster.webp", label: "Decorated tree at a building entrance" },
+  { src: "/videos/clip-lobby.mp4", poster: "/images/video/clip-lobby-poster.webp", label: "Grand tree in a corporate marble lobby" }
+];
+
+const clipVideos = CLIPS.map((c) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: `Commercial Holiday Decor install — ${c.label}`,
+  description: `${c.label}. A commercial Christmas decor installation by ${site.name} in Southwestern Ontario.`,
+  thumbnailUrl: [`${site.url}${c.poster}`],
+  uploadDate: "2026-01-05",
+  contentUrl: `${site.url}${c.src}`,
+  publisher: { "@type": "Organization", name: site.name, url: site.url }
+}));
 
 const TITLE = "Gallery — Commercial Christmas Decor & Displays";
 const DESCRIPTION =
@@ -54,6 +73,32 @@ export default function GalleryPage() {
         intro="Wreaths, trees, displays and full frontage packages on commercial and municipal properties."
         crumbs={[{ name: "Gallery", href: "/gallery" }]}
       />
+
+      {clipVideos.map((v) => <JsonLd key={v.contentUrl as string} data={v} />)}
+
+      {/* Video — real installs */}
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <div className="reveal flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">On camera</p>
+              <h2 className="font-display h2-fluid mt-6">Recent installs, on video.</h2>
+              <p className="lead mt-5 text-[var(--color-text-soft)]">
+                Real commercial trees and holiday decor we installed across Southwestern Ontario — tap to
+                play. Corporate lobbies, office interiors and building entrances.
+              </p>
+            </div>
+            <Link href="/quote" className="btn-secondary">Get a quote</Link>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-7">
+            {CLIPS.map((c) => (
+              <div key={c.src} className="reveal-sm">
+                <VideoClip src={c.src} poster={c.poster} label={c.label} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Installed scenes */}
       <section className="bg-[var(--color-ink-deep)]">

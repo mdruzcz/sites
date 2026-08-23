@@ -2,12 +2,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { Photo } from "@/components/Photo";
 import { QuoteForm } from "@/components/QuoteForm";
+import { VideoLoop } from "@/components/VideoLoop";
+import { JsonLd } from "@/components/JsonLd";
 import { photo } from "@/lib/photos";
 import { productPhoto } from "@/lib/product-photos";
 import { products, services, serviceAreas, faqs } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
+
+const reelVideo = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Commercial Holiday Decor — installation highlight reel",
+  description:
+    "Real commercial Christmas tree and holiday decor installs by Commercial Holiday Decor across Southwestern Ontario — corporate lobbies, office interiors and building entrances.",
+  thumbnailUrl: [`${site.url}/images/video/reel-poster.webp`],
+  uploadDate: "2026-01-05",
+  contentUrl: `${site.url}/videos/reel.mp4`,
+  duration: "PT25S",
+  publisher: { "@type": "Organization", name: site.name, url: site.url }
+};
 
 const STEPS = [
   ["01", "We walk the property", "Someone stands on your site, checks sightlines from the road, finds the power and measures the frontage."],
@@ -29,6 +44,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={reelVideo} />
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden">
         <Image
@@ -147,6 +163,57 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --------------------------------------------------------- Video showcase */}
+      <section className="bg-[var(--color-surface)]">
+        <div className="shell section">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
+            <div className="reveal order-2 lg:order-1">
+              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">On real properties</p>
+              <h2 className="font-display h2-fluid mt-6">See the work, not stock photos.</h2>
+              <p className="lead mt-6 text-[var(--color-text-soft)]">
+                Corporate lobbies, office interiors and building entrances we decorated across Southwestern
+                Ontario — the real trees, the real ribbon work, the real install. Every piece is designed for
+                the property, installed by insured crews and taken down in January.
+              </p>
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Commercial trees to 100 ft",
+                  "Custom ribbon & ornament work",
+                  "Installed by insured crews",
+                  "Serviced & stored off-season"
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2.5 text-sm text-[var(--color-text-soft)]">
+                    <svg className="mt-0.5 size-4 shrink-0 text-[var(--color-green-text)]" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link href="/quote" className="btn-ember group">
+                  {site.quote.ctaLong}
+                  <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+                <Link href="/gallery" className="btn-secondary">See the gallery</Link>
+              </div>
+            </div>
+
+            <div className="reveal order-1 mx-auto w-full max-w-[320px] lg:order-2">
+              <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-ink-deep)] p-2.5 shadow-[var(--shadow-xl)]">
+                <VideoLoop
+                  src="/videos/reel.mp4"
+                  poster="/images/video/reel-poster.webp"
+                  className="aspect-[9/16] w-full rounded-[1.5rem] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
