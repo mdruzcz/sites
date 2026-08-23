@@ -1,0 +1,206 @@
+[
+  {
+    "slug": "commercial-wreaths",
+    "name": "Commercial Wreaths",
+    "headline": "4-foot wreaths built for building fronts.",
+    "eyebrow": "Wreaths & garland",
+    "photo": "commercial-wreath",
+    "scenePhoto": "hero-commercial-wreath",
+    "summary": "Commercial-grade wreaths from 3 to 8 feet, pre-lit and weather-rated, sized so they still read from across a parking lot.",
+    "intro": "A residential wreath disappears on a commercial facade. Ours are built on welded steel frames with UV-stable PVC tips, pre-lit with commercial LED, and finished with weatherproof velvet bows. The 4-foot wreath is the workhorse — big enough to anchor a main entrance, small enough to hang on a standard bracket.",
+    "specs": [
+      [
+        "Sizes",
+        "3 ft · 4 ft · 5 ft · 6 ft · 8 ft"
+      ],
+      [
+        "Frame",
+        "Welded steel, powder-coated"
+      ],
+      [
+        "Lighting",
+        "Commercial LED, warm white or multi"
+      ],
+      [
+        "Bow",
+        "Weatherproof velvet, colour to spec"
+      ],
+      [
+        "Mounting",
+        "Bracket, cable or pole-mount hardware included"
+      ]
+    ],
+    "items": [
+      {
+        "name": "4′ Commercial Wreath",
+        "detail": "The standard for entrances and building fronts. Pre-lit, bow included."
+      },
+      {
+        "name": "5′ & 6′ Commercial Wreath",
+        "detail": "For two-storey entrances, atriums and civic buildings."
+      },
+      {
+        "name": "8′ Commercial Wreath",
+        "detail": "Statement scale for plazas, malls and municipal facades."
+      },
+      {
+        "name": "Matching Garland",
+        "detail": "Pre-lit garland runs to tie wreaths into railings, columns and canopies."
+      }
+    ]
+  },
+  {
+    "slug": "mega-trees",
+    "name": "Mega Trees",
+    "headline": "14-foot mega trees that hold a courtyard.",
+    "eyebrow": "Trees",
+    "photo": "mega-tree",
+    "scenePhoto": "tree-lighting-row",
+    "summary": "Freestanding commercial Christmas trees from 8 to 30 feet, engineered for wind, assembled on site and taken down in January.",
+    "intro": "A mega tree is the centrepiece — it decides whether a plaza reads as decorated or as an afterthought. Ours ship as a sectional steel frame with pre-strung commercial LED, guy-wire or ballast anchoring rated for exposed sites, and a topper. The 14-foot is the most-specified size for courtyards, entrances and small squares.",
+    "specs": [
+      [
+        "Sizes",
+        "8 ft · 10 ft · 12 ft · 14 ft · 20 ft · 30 ft"
+      ],
+      [
+        "Frame",
+        "Sectional steel, bolt-together"
+      ],
+      [
+        "Lighting",
+        "Pre-strung commercial LED, warm white / multi / RGB"
+      ],
+      [
+        "Anchoring",
+        "Ballast plate or guy-wire, engineered for exposed sites"
+      ],
+      [
+        "Storage",
+        "Breaks down flat; off-season storage available"
+      ]
+    ],
+    "items": [
+      {
+        "name": "14′ Mega Tree",
+        "detail": "The most-specified size. Courtyards, entrances, small squares."
+      },
+      {
+        "name": "8′ – 12′ Mega Trees",
+        "detail": "For lobbies, covered entrances and tighter frontages."
+      },
+      {
+        "name": "20′ & 30′ Mega Trees",
+        "detail": "Civic squares, malls and downtown cores. Engineered anchoring."
+      },
+      {
+        "name": "RGB Show Trees",
+        "detail": "Pixel-mapped trees that run scheduled colour shows."
+      }
+    ]
+  },
+  {
+    "slug": "large-displays",
+    "name": "Large Displays",
+    "headline": "3D LED displays people stop and photograph.",
+    "eyebrow": "Displays",
+    "photo": "display-santa-sleigh",
+    "scenePhoto": "scene-santa-group",
+    "summary": "Freestanding 2D and 3D LED figures, walk-through photo-ops and hanging spheres — the pieces that turn lighting into a destination.",
+    "intro": "Rooflines make a property look decorated. Displays make people drive to it. These are commercial-grade steel-and-LED figures built to stand outdoors all season, sized from tabletop motifs up to walk-through arches, and shipped with the stakes, ballast and power distribution to install them properly.",
+    "specs": [
+      [
+        "Formats",
+        "2D silhouette · 3D sculptural · walk-through photo-op"
+      ],
+      [
+        "Sizes",
+        "4 ft to 16 ft"
+      ],
+      [
+        "Construction",
+        "Powder-coated steel frame, commercial LED"
+      ],
+      [
+        "Power",
+        "Low-voltage distribution, timers and photocells"
+      ],
+      [
+        "Anchoring",
+        "Lawn stakes, ballast plates or hard-surface anchors"
+      ]
+    ],
+    "items": [
+      {
+        "name": "Photo-Op Displays",
+        "detail": "Snow globes, gingerbread figures and look-through scenes built for crowds.",
+        "photo": "display-snow-globe"
+      },
+      {
+        "name": "3D Character Displays",
+        "detail": "Santa, sleighs, reindeer and skating figures in full sculptural 3D.",
+        "photo": "display-santa-group"
+      },
+      {
+        "name": "2D Silhouette Displays",
+        "detail": "Flat-profile snowmen, candy canes and motifs for walls and medians.",
+        "photo": "display-snowman"
+      },
+      {
+        "name": "Hanging Spheres & Motifs",
+        "detail": "Folding LED spheres and pole motifs for streetscapes and canopies.",
+        "photo": "display-sphere"
+      }
+    ]
+  },
+  {
+    "slug": "custom-displays",
+    "name": "Custom Displays",
+    "headline": "Built to your brand, not from a catalogue.",
+    "eyebrow": "Custom",
+    "photo": "display-gingerbread",
+    "scenePhoto": "photo-op-gingerbread",
+    "summary": "Custom-fabricated LED displays — logos, wordmarks, archways and one-off centrepieces designed for a specific property.",
+    "intro": "When the catalogue does not have it, we build it. Custom work starts with the property and the brand: we scale a concept to the sightlines, draw it, quote it, fabricate it, and install it. Common briefs are illuminated logos and wordmarks, entrance archways, themed photo-ops for a downtown BIA, and centrepieces sized to a specific atrium.",
+    "specs": [
+      [
+        "Process",
+        "Concept → drawing → quote → fabrication → install"
+      ],
+      [
+        "Lead time",
+        "Book by June for the same season"
+      ],
+      [
+        "Typical briefs",
+        "Logos, wordmarks, archways, themed photo-ops"
+      ],
+      [
+        "Construction",
+        "Steel frame, commercial LED, weather-rated finish"
+      ],
+      [
+        "Ownership",
+        "You own the piece; we store and maintain it"
+      ]
+    ],
+    "items": [
+      {
+        "name": "Illuminated Logos & Wordmarks",
+        "detail": "Your brand, fabricated in LED at architectural scale."
+      },
+      {
+        "name": "Entrance Archways",
+        "detail": "Walk-through and drive-through arches for plazas and events."
+      },
+      {
+        "name": "Themed Photo-Ops",
+        "detail": "Destination pieces designed to pull foot traffic and social posts."
+      },
+      {
+        "name": "One-Off Centrepieces",
+        "detail": "Scaled to a specific atrium, courtyard or civic square."
+      }
+    ]
+  }
+]

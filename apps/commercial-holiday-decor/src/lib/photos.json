@@ -1,0 +1,51 @@
+{
+  "hero-commercial-wreath": {
+    "src": "/images/photos/hero-commercial-wreath.webp",
+    "alt": "Large lit commercial Christmas wreath with a red bow mounted in a shopping centre concourse",
+    "width": 800,
+    "height": 798,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoMAAwAA4BaJbACdADz/vBzgAD+6fwOStMTVJGQGouGCsGPio9PcniOCndnmtk9uue0c8WL8Vg7hmYRFJbBErxNhyb2JkN0wVNWvPogAAA="
+  },
+  "wreath-building-front": {
+    "src": "/images/photos/wreath-building-front.webp",
+    "alt": "Decorated commercial wreath with ornaments and a red bow mounted on a stone building facade",
+    "width": 1000,
+    "height": 1000,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoMAAwAA4BaJQBOgCIZs0BI6Ol9IAD+6vOsFp9S/Lzq9jnOtLgV/u3ZoZLKvazRRvUVv92GJ3zxaiKkEZymkKJ/yzjk9a1x09neXGMsf+jWkQgmZgSB1QAA"
+  },
+  "tree-lighting-row": {
+    "src": "/images/photos/tree-lighting-row.webp",
+    "alt": "Row of large illuminated Christmas trees lighting a commercial property at night",
+    "width": 1536,
+    "height": 1152,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAAkAA4BaJYgCdH8AFb0ZFR4AAP74bJMF2orKJAkC7Qz5p+l4jXjJcsYOcpfEU3g5B+WG5eaAAA=="
+  },
+  "photo-op-gingerbread": {
+    "src": "/images/photos/photo-op-gingerbread.webp",
+    "alt": "Illuminated gingerbread figures set up as a walk-through holiday photo opportunity",
+    "width": 535,
+    "height": 596,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoMAA0AA4BaJZACdAELHJ5h3sgA/vGmB2HxXpb01gDJf3vmLgAnBa4KtViQ2erD8NaHa8q6x9EHNbR6KQXbCTXkRCmo7rpLynA+q8XV34EwXg16sMAAAA=="
+  },
+  "scene-santa-sleigh": {
+    "src": "/images/photos/scene-santa-sleigh.webp",
+    "alt": "Illuminated 3D LED Santa sleigh display set up outdoors at night",
+    "width": 600,
+    "height": 600,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoMAAwAA4BaJYwC7AELULEcMcAA/u0k1POOWYa0c9bY1dUGsjOBz4ggQRs1YqcP6O1sqIUo5++mKfO8HcsHGOOhIqmNnRH0E4KVx9dDxreGNVelAAA="
+  },
+  "scene-santa-group": {
+    "src": "/images/photos/scene-santa-group.webp",
+    "alt": "3D LED Santa, elf and reindeer display lit outdoors",
+    "width": 750,
+    "height": 750,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoMAAwAA4BaJbACdAYtBlYVr9SvWgAA/vd6iPKAkcpcGufbu3GuAvyPmIK1a9mDJnaiaLgeSJjxYSPhr0JwYtKn5q6nBncTmhfBO9be7nWycL+70YA4AA=="
+  },
+  "scene-penguins": {
+    "src": "/images/photos/scene-penguins.webp",
+    "alt": "LED penguin look-through photo-op display lit at night",
+    "width": 750,
+    "height": 750,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAwAA4BaJZwAAudiS65qAAD++VGalaZiEIRccR2tnm2ucIacYWn2CClyDywg6eEy3jD8TgAAAA=="
+  }
+}

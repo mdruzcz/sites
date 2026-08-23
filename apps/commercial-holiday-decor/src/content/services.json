@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "design",
+    "name": "Design & Site Assessment",
+    "summary": "We walk the property, take the measurements and come back with a drawn plan and a line-item quote.",
+    "detail": "Before anything is quoted, someone stands on the site. We look at sightlines from the road, find the power, check roof access and anchor points, and photograph the frontage. You get a plan showing what goes where, what it draws, and what it costs — not a catalogue page."
+  },
+  {
+    "slug": "installation",
+    "name": "Commercial Installation",
+    "summary": "Insured crews, proper lift equipment and a scheduled install window between September and late November.",
+    "detail": "Our crews install rooflines, wreaths, garland, trees and displays on commercial and municipal properties across Southwestern Ontario. We carry liability insurance and WSIB coverage, work from lifts rather than ladders where height requires it, and schedule around your operating hours so the work does not interrupt trading."
+  },
+  {
+    "slug": "maintenance",
+    "name": "In-Season Maintenance",
+    "summary": "One call and we are back on site. Outages, storm damage and timer faults fixed through the season.",
+    "detail": "Weather happens. Every install includes in-season maintenance: if a run goes dark, a bow blows loose or a timer drifts, we come back and fix it. No trip charges and no arguing about whose fault it was."
+  },
+  {
+    "slug": "takedown-storage",
+    "name": "Takedown & Storage",
+    "summary": "We pull it down in January, label it, and store it climate-controlled until next season.",
+    "detail": "January takedown is included in the contract, so nothing is still hanging in March. Everything comes back to our facility, gets inspected and repaired, is labelled by property and section, and is stored until next season — which means year two costs less and installs faster."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  { "slug": "london", "name": "London", "blurb": "Our home base. Downtown BIA frontages, Wonderland and Fanshawe Park commercial plazas, office parks and dealerships." },
+  { "slug": "kitchener-waterloo", "name": "Kitchener-Waterloo", "blurb": "Uptown Waterloo, downtown Kitchener and the tech-park campuses along King Street." },
+  { "slug": "windsor", "name": "Windsor", "blurb": "Riverfront properties, Ouellette Avenue frontages and the Devonshire retail corridor." },
+  { "slug": "sarnia", "name": "Sarnia", "blurb": "Christina Street businesses, waterfront civic spaces and Lambton County industrial campuses." },
+  { "slug": "chatham", "name": "Chatham", "blurb": "Downtown Chatham-Kent storefronts, municipal buildings and agricultural-sector head offices." },
+  { "slug": "woodstock", "name": "Woodstock", "blurb": "Dundas Street retail, the museum square and Oxford County commercial properties." },
+  { "slug": "stratford", "name": "Stratford", "blurb": "Downtown heritage frontages and the theatre district, where the decor has to suit the architecture." },
+  { "slug": "st-thomas", "name": "St. Thomas", "blurb": "Talbot Street businesses, civic buildings and Elgin County commercial sites." },
+  { "slug": "brantford", "name": "Brantford", "blurb": "Colborne Street frontages, Brant County plazas and campus properties." },
+  { "slug": "cambridge", "name": "Cambridge", "blurb": "Galt, Preston and Hespeler cores, plus the Highway 401 commercial corridor." },
+  { "slug": "guelph", "name": "Guelph", "blurb": "Downtown Guelph, the Stone Road retail corridor and university-adjacent properties." },
+  { "slug": "tillsonburg", "name": "Tillsonburg", "blurb": "Broadway storefronts and Oxford County industrial and retail properties." }
+]

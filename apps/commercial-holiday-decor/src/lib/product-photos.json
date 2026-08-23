@@ -1,0 +1,80 @@
+{
+  "commercial-wreath": {
+    "src": "/images/products/commercial-wreath.webp",
+    "alt": "Commercial LED Christmas wreath with red velvet bow",
+    "width": 800,
+    "height": 798
+  },
+  "wreath-ornamented": {
+    "src": "/images/products/wreath-ornamented.webp",
+    "alt": "Ornamented commercial wreath mounted on a building front",
+    "width": 1000,
+    "height": 1000
+  },
+  "mega-tree": {
+    "src": "/images/products/mega-tree.webp",
+    "alt": "Large illuminated commercial Christmas tree",
+    "width": 1536,
+    "height": 1152
+  },
+  "display-santa-sleigh": {
+    "src": "/images/products/display-santa-sleigh.webp",
+    "alt": "3D LED Santa sleigh commercial display",
+    "width": 600,
+    "height": 600
+  },
+  "display-snow-globe": {
+    "src": "/images/products/display-snow-globe.webp",
+    "alt": "9-foot LED walk-in snow globe photo-op display",
+    "width": 450,
+    "height": 450
+  },
+  "display-candy-cane": {
+    "src": "/images/products/display-candy-cane.webp",
+    "alt": "LED candy cane commercial display",
+    "width": 1080,
+    "height": 1080
+  },
+  "display-santa-group": {
+    "src": "/images/products/display-santa-group.webp",
+    "alt": "3D LED Santa, elf and reindeer display with presents",
+    "width": 750,
+    "height": 750
+  },
+  "display-santa-sleigh-2": {
+    "src": "/images/products/display-santa-sleigh-2.webp",
+    "alt": "3D LED Santa and snowman in a sleigh display",
+    "width": 750,
+    "height": 750
+  },
+  "display-penguins": {
+    "src": "/images/products/display-penguins.webp",
+    "alt": "LED penguin look-through photo-op display on an iceberg base",
+    "width": 750,
+    "height": 750
+  },
+  "display-snowman": {
+    "src": "/images/products/display-snowman.webp",
+    "alt": "2D LED snowman commercial display",
+    "width": 450,
+    "height": 450
+  },
+  "display-skating-santa": {
+    "src": "/images/products/display-skating-santa.webp",
+    "alt": "LED skating Santa commercial display",
+    "width": 750,
+    "height": 750
+  },
+  "display-gingerbread": {
+    "src": "/images/products/display-gingerbread.webp",
+    "alt": "LED gingerbread figures photo-op display",
+    "width": 535,
+    "height": 596
+  },
+  "display-sphere": {
+    "src": "/images/products/display-sphere.webp",
+    "alt": "Aluminum folding LED sphere for commercial hanging displays",
+    "width": 713,
+    "height": 532
+  }
+}

@@ -1,0 +1,61 @@
+# Commercial Holiday Decor
+
+> Commercial Holiday Decor supplies, installs, services and stores commercial-grade
+> Christmas decor for commercial and municipal properties across Southwestern Ontario.
+> Four product lines — commercial wreaths (3–8 ft, with the 4 ft as the standard for
+> building fronts), mega trees (8–30 ft, with the 14 ft the most-specified size), large
+> 2D/3D LED displays and photo-ops, and custom fabrication. Everything is quoted per
+> property after a site walk rather than from a price list.
+
+## Business details
+- Name: Commercial Holiday Decor
+- Based in: London, Ontario, Canada
+- Phone: 519-266-6796
+- Email: service@masterdecker.com
+- Hours: Mon–Fri 8 AM–6 PM; 7 days during peak season
+- Works on: commercial and municipal properties only (not residential)
+- Service area: London, Kitchener-Waterloo, Windsor, Sarnia, Chatham, Woodstock,
+  Stratford, St. Thomas, Brantford, Cambridge, Guelph, Tillsonburg and the rest of
+  Southwestern Ontario
+
+## Season
+- Booking opens: June (book by June for a same-season install)
+- Installation window: September through late November
+- Takedown: January, included in the contract
+- Off-season storage: included; decor is inspected, repaired and labelled by property
+
+## Product lines
+- Commercial Wreaths — /products/commercial-wreaths
+  3 ft, 4 ft, 5 ft, 6 ft and 8 ft. Welded steel frames, UV-stable PVC tips, pre-lit
+  commercial LED, weatherproof velvet bows, mounting hardware included.
+- Mega Trees — /products/mega-trees
+  8 ft to 30 ft. Sectional bolt-together steel frame, pre-strung commercial LED
+  (warm white, multi or RGB), ballast or guy-wire anchoring, breaks down flat.
+- Large Displays — /products/large-displays
+  2D silhouette, 3D sculptural and walk-through photo-op pieces from 4 ft to 16 ft.
+  Powder-coated steel frames, commercial LED, low-voltage distribution with timers.
+- Custom Displays — /products/custom-displays
+  Illuminated logos and wordmarks, entrance archways, themed photo-ops and one-off
+  centrepieces. Concept → drawing → quote → fabrication → install.
+
+## Services
+- Design & site assessment — someone walks the property and measures before quoting
+- Commercial installation — insured, WSIB-covered crews working from lifts
+- In-season maintenance — outages, storm damage and timer faults, no trip charges
+- Takedown & storage — January removal, inspection, repair and labelled storage
+
+## Pricing
+Priced per property, not per catalogue page. Frontage length, mounting height, power
+availability, lift time and buy-versus-rent all change the total, so there are no list
+prices on the site. Quotes are line-itemed across decor, install, in-season service and
+takedown.
+
+## Key pages
+- Home: /
+- All products: /products
+- Installation & service: /installation
+- Service areas: /service-areas
+- Gallery: /gallery
+- FAQ: /faq
+- Request a quote: /quote
+- Contact: /contact
