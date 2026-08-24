@@ -14,10 +14,10 @@ export function SpecCallouts() {
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <div className="order-2 lg:order-1">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">The numbers</p>
-            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">
+            <h2 className="font-display h2-fluid mt-6">
               Engineered for serious lighting.
             </h2>
-            <p className="mt-6 max-w-lg text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+            <p className="lead mt-6 max-w-lg text-[var(--color-text-soft)]">
               Every puck is potted and sealed to IP68, seated in extruded aluminum rather than clipped to a
               wire, and driven by a CSA-approved Class 2 supply. It is the hardware spec installers ask for
               because it is the one that survives a decade of Ontario weather.
@@ -25,7 +25,7 @@ export function SpecCallouts() {
 
             <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-11">
               {SPECS.map((s) => (
-                <div key={s.label}>
+                <div key={s.label} className="reveal-sm">
                   <dt className="font-display text-[2rem] leading-none text-[var(--color-gold-text)] sm:text-[2.5rem] md:text-5xl">
                     {s.value}
                     <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)] sm:ml-1.5 sm:mt-0 sm:inline sm:align-middle">
@@ -38,13 +38,13 @@ export function SpecCallouts() {
             </dl>
           </div>
 
-          <div className="order-1 grid gap-5 sm:grid-cols-2 lg:order-2">
+          <div className="reveal order-1 grid gap-5 sm:grid-cols-2 lg:order-2">
             <Photo
               name="detail-led-pucks"
               ratio="aspect-[4/5]"
               sizes="(max-width: 640px) 100vw, 320px"
               rounded="rounded-2xl"
-              className="sm:col-span-1"
+              className="sm:col-span-1 shadow-[var(--shadow-lg)]"
             />
             <div className="grid gap-5">
               <Photo
@@ -52,12 +52,14 @@ export function SpecCallouts() {
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 320px"
                 rounded="rounded-2xl"
+                className="shadow-[var(--shadow-lg)]"
               />
               <Photo
                 name="track-residential"
                 ratio="aspect-square"
                 sizes="(max-width: 640px) 100vw, 320px"
                 rounded="rounded-2xl"
+                className="shadow-[var(--shadow-lg)]"
               />
             </div>
           </div>

@@ -19,12 +19,12 @@ export function Gallery() {
     <section className="bg-[var(--color-ink-deep)]">
       <div className="shell section">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-bright)]">Real installs</p>
-            <h2 className="font-display mt-6 text-[2.1rem] text-white md:text-[3rem]">
+          <div className="reveal max-w-2xl">
+            <p className="eyebrow eyebrow-star text-[var(--color-gold-bright)]">Real installs</p>
+            <h2 className="font-display h2-fluid mt-6 text-white">
               Every colour. Same set of lights.
             </h2>
-            <p className="mt-5 text-[1.0625rem] leading-relaxed text-white/70">
+            <p className="lead mt-5 text-white/70">
               These are all the same aluminum-tracked RGBW system — the only thing that changes is the scene
               selected in the app.
             </p>
@@ -38,7 +38,7 @@ export function Gallery() {
           {SCENES.map((s) => (
             <figure
               key={s.photo}
-              className={`group relative isolate overflow-hidden rounded-2xl ${s.span ?? ""}`}
+              className={`reveal-sm group relative isolate overflow-hidden rounded-2xl ${s.span ?? ""}`}
             >
               <Photo
                 name={s.photo}

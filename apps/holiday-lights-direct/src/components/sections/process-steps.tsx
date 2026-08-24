@@ -26,16 +26,16 @@ export function ProcessSteps() {
   return (
     <section className="bg-[var(--color-bg-warm)]">
       <div className="shell section">
-        <div className="max-w-2xl">
+        <div className="reveal max-w-2xl">
           <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">How it works</p>
-          <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">
+          <h2 className="font-display h2-fluid mt-6">
             From order to install in three steps.
           </h2>
         </div>
 
         <ol className="mt-14 grid gap-8 md:grid-cols-3 md:gap-7">
           {STEPS.map((s) => (
-            <li key={s.n} className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
+            <li key={s.n} className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-sm)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-lg)]">
               <Photo name={s.photo} ratio="aspect-[3/2]" sizes="(max-width: 768px) 100vw, 380px" />
               <div className="p-8">
                 <span className="font-display text-sm font-bold tracking-[0.2em] text-[var(--color-gold-text)]">

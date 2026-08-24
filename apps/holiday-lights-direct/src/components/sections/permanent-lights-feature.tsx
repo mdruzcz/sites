@@ -17,13 +17,13 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
     <section className="bg-[var(--color-bg-warm)]">
       <div className="shell section">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
-          <div>
+          <div className="reveal">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Flagship — Permanent Lights</p>
-            <h2 className="font-display mt-6 text-[2.1rem] leading-tight md:text-[3.25rem]">
+            <h2 className="font-display h2-fluid mt-6">
               The lights pros install,
               <span className="block text-[var(--color-gold-text)]">sold as a complete kit.</span>
             </h2>
-            <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+            <p className="mt-6 max-w-xl lead text-[var(--color-text-soft)]">
               Soffit-matched aluminum tracks holding 24V RGBW LED pucks. Pick your house perimeter, pick your
               track colour, and we ship the whole system to your door — lights, tracks, controller, power
               supply, connectors, screws and the drill bit.
@@ -39,8 +39,11 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
             </ul>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/permanent-lights" className="btn-primary">
+              <Link href="/permanent-lights" className="btn-primary group">
                 Pick your footage
+                <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </Link>
               <Link href="/product-category/permanent-lights" className="btn-secondary">
                 Browse just the parts
@@ -50,7 +53,7 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
 
           {/* Day / night pair — the clearest way to explain the product */}
           <div className="grid gap-5 sm:grid-cols-2">
-            <figure className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
+            <figure className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)]">
               <Photo
                 name="track-daytime-discreet"
                 ratio="aspect-[4/3]"
@@ -63,7 +66,7 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
                 </p>
               </figcaption>
             </figure>
-            <figure className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white sm:mt-10">
+            <figure className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)] sm:mt-10">
               <Photo
                 name="track-night-glow"
                 ratio="aspect-[4/3]"
@@ -83,7 +86,7 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
         {housingPackages.length > 0 && (
           <div className="mt-20 border-t border-[var(--color-border-strong)] pt-14">
             <div className="flex flex-wrap items-end justify-between gap-5">
-              <h3 className="font-display text-2xl md:text-3xl">Popular kit sizes</h3>
+              <h3 className="font-display h3-fluid">Popular kit sizes</h3>
               <Link
                 href="/permanent-lights"
                 className="text-sm font-semibold text-[var(--color-gold-text)] hover:underline"
@@ -96,7 +99,7 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
                 const range = priceRange(p);
                 const footage = p.slug.replace(/.*?-(\d+).*/, "$1");
                 return (
-                  <Link key={p.id} href={`/product/${p.slug}`} className="card group p-6">
+                  <Link key={p.id} href={`/product/${p.slug}`} className="card group reveal-sm p-6">
                     <p className="font-display text-4xl text-[var(--color-gold-text)]">
                       {footage}
                       <span className="ml-1 align-top text-base">ft</span>

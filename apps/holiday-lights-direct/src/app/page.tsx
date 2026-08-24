@@ -78,10 +78,10 @@ export default async function HomePage() {
       {/* Categories */}
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="reveal flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">The catalog</p>
-              <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Shop by category</h2>
+              <h2 className="font-display h2-fluid mt-6">Shop by category</h2>
             </div>
             <Link href="/shop" className="btn-secondary">
               See all products
@@ -93,7 +93,7 @@ export default async function HomePage() {
               <Link
                 key={c.id}
                 href={`/product-category/${c.slug}`}
-                className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white transition hover:border-[var(--color-gold)] hover:shadow-[0_12px_32px_rgba(26,29,35,0.09)]"
+                className="reveal-sm group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-sm)] transition hover:-translate-y-1 hover:border-[var(--color-gold)] hover:shadow-[var(--shadow-lg)]"
               >
                 <Photo
                   name={CATEGORY_PHOTOS[c.slug] ?? "home-nighttime-lit"}
@@ -119,13 +119,15 @@ export default async function HomePage() {
       {/* Best sellers */}
       <section className="bg-[var(--color-surface)]">
         <div className="shell section">
-          <div className="max-w-2xl">
+          <div className="reveal max-w-2xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Best sellers</p>
-            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">What pros are ordering.</h2>
+            <h2 className="font-display h2-fluid mt-6">What pros are ordering.</h2>
           </div>
           <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
             {products.slice(0, 4).map((p) => (
-              <ProductCard key={p.id} product={p} />
+              <div key={p.id} className="reveal-sm">
+                <ProductCard product={p} />
+              </div>
             ))}
           </div>
         </div>

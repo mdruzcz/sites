@@ -5,7 +5,7 @@ export function Testimonial() {
     <section className="bg-[var(--color-surface)]">
       <div className="shell section">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
-          <div>
+          <div className="reveal">
             <p aria-hidden className="font-display text-6xl leading-none text-[var(--color-gold)]">&ldquo;</p>
             <blockquote className="font-display mt-4 text-[1.65rem] leading-[1.3] text-[var(--color-text)] md:text-[2.25rem]">
               We have been buying our C9 strings and the RGBW housing kits from Holiday Lights Direct all
@@ -24,6 +24,7 @@ export function Testimonial() {
             ratio="aspect-[4/3]"
             sizes="(max-width: 1024px) 100vw, 460px"
             rounded="rounded-3xl"
+            className="shadow-[var(--shadow-lg)]"
           />
         </div>
       </div>

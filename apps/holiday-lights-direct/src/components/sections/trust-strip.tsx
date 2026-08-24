@@ -10,7 +10,7 @@ export function TrustStrip() {
     <section className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
       <div className="shell grid grid-cols-2 gap-x-8 gap-y-9 py-10 md:grid-cols-4 md:py-12">
         {BADGES.map((b) => (
-          <div key={b.label} className="text-center md:text-left">
+          <div key={b.label} className="reveal-sm text-center md:text-left">
             <p className="text-sm font-semibold leading-snug text-[var(--color-text)]">{b.label}</p>
             <p className="mt-1.5 text-xs leading-relaxed text-[var(--color-muted)]">{b.note}</p>
           </div>

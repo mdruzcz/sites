@@ -36,27 +36,31 @@ export function Hero() {
         aria-hidden
         className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent"
       />
+      <div aria-hidden className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[rgba(14,16,21,0.85)] to-transparent" />
 
       <div className="shell grid gap-14 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-32 lg:py-36">
         <div>
-          <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-[var(--color-gold)]/40 bg-white/10 px-4 py-2 text-[var(--color-gold-bright)] backdrop-blur">
+          <p className="eyebrow eyebrow-star inline-flex rounded-full border border-[var(--color-gold)]/40 bg-white/10 px-4 py-2 text-[var(--color-gold-bright)] backdrop-blur">
             Proudly Canadian · London, Ontario
           </p>
 
-          <h1 className="font-display mt-7 text-[2.6rem] leading-[1.04] text-white sm:text-5xl md:text-[4.2rem]">
+          <h1 className="font-display display mt-7 text-white">
             Permanent LED lighting,
             <span className="mt-1 block text-[var(--color-gold-bright)]">shipped to your door.</span>
           </h1>
 
-          <p className="mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-white/80 md:text-lg">
+          <p className="lead mt-7 max-w-xl text-white/85">
             Soffit-matched aluminum tracks holding 24V RGBW pucks — the same kit professional installers
             buy, sold direct from London, Ontario. One system covers Christmas, Halloween, game day and
             everyday warm-white accent.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/permanent-lights" className="btn-gold">
+            <Link href="/permanent-lights" className="btn-gold group">
               Build your system
+              <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </Link>
             <Link href="/shop" className="btn-ghost-light">
               Shop the catalog
@@ -72,8 +76,8 @@ export function Hero() {
         </div>
 
         {/* Pricing card */}
-        <div className="hidden self-center rounded-3xl border border-white/15 bg-[rgba(20,23,30,0.72)] p-8 backdrop-blur-md md:block">
-          <p className="eyebrow text-[var(--color-gold-bright)]">LED housing packages</p>
+        <div className="hidden self-center rounded-3xl border border-white/15 bg-[rgba(20,23,30,0.72)] p-8 shadow-[var(--shadow-xl)] backdrop-blur-md md:block">
+          <p className="eyebrow eyebrow-star text-[var(--color-gold-bright)]">LED housing packages</p>
           <h2 className="font-display mt-3 text-[1.75rem] text-white">Priced by linear foot</h2>
           <ul className="mt-7 space-y-0">
             {PACKAGES.map(([span, price]) => (

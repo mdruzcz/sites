@@ -12,7 +12,7 @@ export function Header() {
   const hasLogo = existsSync(join(process.cwd(), "public", "images", "logo.png"));
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 shadow-[0_1px_0_rgba(255,255,255,0.6),0_6px_24px_-18px_rgba(26,29,35,0.4)] backdrop-blur-md">
       <div className="bg-[var(--color-ink-deep)] px-4 py-2 text-center text-[11px] tracking-wide text-white/80">
         <span className="font-semibold text-[var(--color-gold-bright)]">FIRST10</span>
         <span className="mx-2 text-white/25">·</span>
@@ -49,13 +49,13 @@ export function Header() {
             Permanent Lights
           </Link>
           <MegaMenu />
-          <Link href="/professional-installer" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/professional-installer" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             Pro Installers
           </Link>
-          <Link href="/municipalities" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/municipalities" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             Municipalities
           </Link>
-          <Link href="/faq" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/faq" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             FAQ
           </Link>
         </nav>
