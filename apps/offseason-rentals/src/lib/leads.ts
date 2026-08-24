@@ -99,6 +99,41 @@ export async function sendLeadEmail(
 }
 
 /**
+ * Text Matt when something lands. Best effort only — a Twilio outage must
+ * never fail a lead that has already been emailed and stored.
+ *
+ * Auth is an API key pair (SK…/secret) rather than the account auth token, so
+ * the credential can be revoked without touching the account.
+ */
+export async function sendSms(body: string): Promise<boolean> {
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const from = process.env.TWILIO_FROM_NUMBER;
+  const to = process.env.NOTIFY_SMS_TO;
+  const user = process.env.TWILIO_API_KEY_SID ?? accountSid;
+  const pass = process.env.TWILIO_API_KEY_SECRET ?? process.env.TWILIO_AUTH_TOKEN;
+
+  if (!accountSid || !from || !to || !user || !pass) return false;
+
+  try {
+    const res = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${btoa(`${user}:${pass}`)}`,
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      // A single SMS segment is 160 chars; past that Twilio bills per segment.
+      body: new URLSearchParams({ To: to, From: from, Body: body.slice(0, 300) })
+    });
+    if (res.ok) return true;
+    console.error("Twilio error:", res.status, await res.text());
+    return false;
+  } catch (err) {
+    console.error("Twilio unreachable:", err);
+    return false;
+  }
+}
+
+/**
  * Insert the backup row. Uses the anon publishable key against an
  * INSERT-only RLS policy.
  *

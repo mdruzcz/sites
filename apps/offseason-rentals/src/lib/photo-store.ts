@@ -44,19 +44,14 @@ async function toJpegMaster(
   bytes: Uint8Array,
   contentType: string
 ): Promise<{ bytes: Uint8Array; contentType: string }> {
-  try {
-    const sharp = (await import("sharp")).default;
-    const out = await sharp(Buffer.from(bytes))
-      .rotate() // honour EXIF orientation before we strip it
-      .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: "inside", withoutEnlargement: true })
-      .jpeg({ quality: 86, mozjpeg: true })
-      .toBuffer();
-    return { bytes: new Uint8Array(out), contentType: "image/jpeg" };
-  } catch (err) {
-    // Better a working original than a failed upload.
-    console.error("Image normalisation failed, storing as received:", err);
-    return { bytes, contentType };
-  }
+  const sharp = (await import("sharp")).default;
+  const out = await sharp(Buffer.from(bytes))
+    .rotate() // honour EXIF orientation before we strip it
+    .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 86, mozjpeg: true })
+    .toBuffer();
+  void contentType;
+  return { bytes: new Uint8Array(out), contentType: "image/jpeg" };
 }
 
 function randomId(): string {
@@ -97,9 +92,20 @@ export async function storePhoto({
   const db = adminClient();
   if (!db) throw new Error("SUPABASE_SERVICE_ROLE_KEY is not configured.");
 
+  if (!incoming.byteLength) throw new Error("That file is empty.");
   if (incoming.byteLength > MAX_BYTES) throw new Error("That image is larger than 15 MB.");
 
-  const { bytes, contentType } = await toJpegMaster(incoming, incomingType);
+  // Decoding is the real validation. A declared content-type proves nothing —
+  // an empty or truncated file will happily arrive as "image/jpeg", and storing
+  // it produces a listing photo that renders as a broken box forever.
+  let bytes: Uint8Array;
+  let contentType: string;
+  try {
+    ({ bytes, contentType } = await toJpegMaster(incoming, incomingType));
+  } catch (err) {
+    console.error("Image could not be decoded:", err);
+    throw new Error("That file is not a readable image.");
+  }
 
   const ext = EXT_BY_TYPE[contentType.toLowerCase()] ?? "jpg";
   const path = `${propertyId}/${Date.now()}-${randomId()}.${ext}`;

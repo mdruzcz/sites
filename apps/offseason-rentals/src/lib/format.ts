@@ -13,12 +13,50 @@ export function money(value: number | null | undefined): string | null {
   return CAD.format(value);
 }
 
-/** The headline price for a card or a schema Offer. Monthly wins when present. */
-export function headlineRate(p: Property): { amount: number; unit: string; label: string } | null {
-  if (p.monthly_rate) return { amount: p.monthly_rate, unit: "month", label: `${CAD.format(p.monthly_rate)} / month` };
-  if (p.weekly_rate) return { amount: p.weekly_rate, unit: "week", label: `${CAD.format(p.weekly_rate)} / week` };
-  if (p.nightly_rate) return { amount: p.nightly_rate, unit: "night", label: `${CAD.format(p.nightly_rate)} / night` };
+export interface Rate {
+  /** What the renter pays — the discount when there is one. */
+  amount: number;
+  /** The list price to strike through, or null when nothing is discounted. */
+  original: number | null;
+  unit: string;
+  /** Formatted effective amount, e.g. "$2,400". */
+  display: string;
+  /** Formatted list price, e.g. "$2,500". Null when not discounted. */
+  originalDisplay: string | null;
+}
+
+/**
+ * The headline price for a card, a rate panel or a schema Offer.
+ *
+ * Monthly wins when present. When a discount is set it becomes the amount, and
+ * the list price is returned alongside so the UI can strike it through — the
+ * effective figure is the one that should reach a renter, a filter or Google.
+ */
+export function headlineRate(p: Property): Rate | null {
+  const tiers: [number | null, number | null, string][] = [
+    [p.monthly_rate, p.discount_monthly_rate, "month"],
+    [p.weekly_rate, p.discount_weekly_rate, "week"],
+    [p.nightly_rate, null, "night"]
+  ];
+
+  for (const [list, discount, unit] of tiers) {
+    if (!list && !discount) continue;
+    const amount = discount ?? list!;
+    const original = discount && list && list > discount ? list : null;
+    return {
+      amount,
+      original,
+      unit,
+      display: CAD.format(amount),
+      originalDisplay: original ? CAD.format(original) : null
+    };
+  }
   return null;
+}
+
+/** What a renter actually pays per month — used by budget filtering. */
+export function effectiveMonthly(p: Property): number | null {
+  return p.discount_monthly_rate ?? p.monthly_rate;
 }
 
 /** "3 bedrooms · 2 baths · Sleeps 6" — the standard sub-line under a title. */

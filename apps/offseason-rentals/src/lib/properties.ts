@@ -32,10 +32,14 @@ function normalise(row: Record<string, unknown>): Property {
 export async function getProperties(): Promise<Property[]> {
   const db = publicClient();
   if (!db) return [];
+  // sort_rank is the paid ordering: Gold and house listings 10, Silver 20,
+  // Bronze 30. Everything else is a tie-break inside a tier, so a Bronze
+  // listing can never appear above a Silver one however it is priced.
   const { data, error } = await db
     .from(TABLE)
     .select(SELECT)
     .eq("status", "published")
+    .order("sort_rank", { ascending: true })
     .order("featured", { ascending: false })
     .order("monthly_rate", { ascending: true, nullsFirst: false });
   if (error) {

@@ -8,7 +8,8 @@ export const NAV_LINKS = [
   { href: "/how-it-works", label: "How it works" },
   { href: "/perfect-for/travel-nurses", label: "Who it suits" },
   { href: "/about", label: "About" },
-  { href: "/faq", label: "FAQ" }
+  { href: "/faq", label: "FAQ" },
+  { href: "/owners/login", label: "Owner login" }
 ];
 
 function Wordmark() {

@@ -47,8 +47,9 @@ export const site = {
   cta: {
     renter: "Check availability",
     renterLong: "Check off-season availability",
-    owner: "List your property",
-    ownerLong: "Want to list your property?"
+    browse: "Browse Off-Season Stays",
+    owner: "List a Property",
+    ownerLong: "List a Property"
   },
 
   /** What an owner gets — used on the list-your-property page and in schema. */

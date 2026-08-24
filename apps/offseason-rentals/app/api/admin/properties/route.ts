@@ -10,6 +10,7 @@ const WRITABLE = new Set([
   "latitude", "longitude", "property_type", "headline", "summary", "description",
   "bedrooms", "bathrooms", "sleeps", "beds", "square_feet", "parking_spaces",
   "monthly_rate", "weekly_rate", "nightly_rate", "min_stay_nights", "security_deposit",
+  "discount_monthly_rate", "discount_weekly_rate", "discount_note",
   "cleaning_fee", "utilities_included", "wifi_included", "pets_allowed", "pet_fee",
   "smoking_allowed", "available_from", "available_to", "status", "featured",
   "perfect_for", "amenities", "highlights", "house_rules", "source_url"

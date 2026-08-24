@@ -9,13 +9,24 @@ import type { PropertyPhoto } from "@/lib/types";
 interface Props {
   propertyId: string;
   photos: PropertyPhoto[];
+  /**
+   * Which API family to talk to. Owners hit /api/owners/... where their tier's
+   * photo cap is enforced; the admin hits /api/admin/... with no cap.
+   */
+  mode?: "admin" | "owner";
+  /** Tier photo cap, when one applies. Shown as "12 of 25 used". */
+  limit?: number;
 }
 
 /**
  * Drag files anywhere onto the panel to upload, drag a tile onto another to
  * reorder. Order matters: photo one is the card image and the OG preview.
  */
-export function PhotoManager({ propertyId, photos: initial }: Props) {
+export function PhotoManager({ propertyId, photos: initial, mode = "admin", limit }: Props) {
+  const uploadUrl =
+    mode === "owner"
+      ? `/api/owners/properties/${propertyId}/photos`
+      : `/api/admin/properties/${propertyId}/photos`;
   const router = useRouter();
   const [photos, setPhotos] = useState<PropertyPhoto[]>(initial);
   const [over, setOver] = useState(false);
@@ -40,24 +51,30 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
       for (const f of list) form.append("files", f);
 
       try {
-        const res = await fetch(`/api/admin/properties/${propertyId}/photos`, {
-          method: "POST",
-          body: form
-        });
+        const res = await fetch(uploadUrl, { method: "POST", body: form });
         const data = (await res.json().catch(() => ({}))) as {
           stored?: number;
           failed?: { source: string; reason: string }[];
+          rejectedForSpace?: number;
+          limit?: number;
           error?: string;
         };
 
         if (!res.ok && !data.stored) {
           setError(data.error ?? "Upload failed.");
-        } else if (data.failed?.length) {
-          setError(
-            `${data.stored} uploaded. ${data.failed.length} failed: ${data.failed
-              .map((f) => `${f.source} (${f.reason})`)
-              .join("; ")}`
-          );
+        } else {
+          const notes: string[] = [];
+          if (data.failed?.length) {
+            notes.push(
+              `${data.failed.length} failed: ${data.failed.map((f) => `${f.source} (${f.reason})`).join("; ")}`
+            );
+          }
+          if (data.rejectedForSpace) {
+            notes.push(
+              `${data.rejectedForSpace} not uploaded — this package allows ${data.limit} photographs.`
+            );
+          }
+          if (notes.length) setError(`${data.stored} uploaded. ${notes.join(" ")}`);
         }
         router.refresh();
       } catch {
@@ -67,7 +84,7 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
         setProgress(null);
       }
     },
-    [propertyId, router]
+    [uploadUrl, router]
   );
 
   function onDrop(e: DragEvent<HTMLDivElement>) {
@@ -79,7 +96,14 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
   async function remove(id: string) {
     if (!confirm("Delete this photo? This cannot be undone.")) return;
     setPhotos((p) => p.filter((x) => x.id !== id));
-    const res = await fetch(`/api/admin/photos/${id}`, { method: "DELETE" });
+    const res =
+      mode === "owner"
+        ? await fetch(uploadUrl, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ photoId: id })
+          })
+        : await fetch(`/api/admin/photos/${id}`, { method: "DELETE" });
     if (!res.ok) setError("Could not delete that photo.");
     router.refresh();
   }
@@ -95,6 +119,15 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
   /** Reorder locally for instant feedback, then persist every new position. */
   async function commitOrder(next: PropertyPhoto[]) {
     setPhotos(next);
+    if (mode === "owner") {
+      await fetch(uploadUrl, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ order: next.map((p) => p.id) })
+      });
+      router.refresh();
+      return;
+    }
     await Promise.all(
       next.map((p, i) =>
         p.position === i
@@ -122,13 +155,15 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
       <div className="flex items-baseline justify-between gap-4 mb-3">
         <h2 className="text-[18px] font-bold">
           Photographs{" "}
-          <span className="text-[14px] font-normal text-[var(--muted)]">({photos.length})</span>
+          <span className="text-[14px] font-normal text-[var(--muted)]">
+            {limit ? `(${photos.length} of ${limit} used)` : `(${photos.length})`}
+          </span>
         </h2>
         <button
           type="button"
           className="btn btn-quiet btn-sm"
           onClick={() => inputRef.current?.click()}
-          disabled={busy}
+          disabled={busy || (limit !== undefined && photos.length >= limit)}
         >
           <Icon name="upload" size={15} strokeWidth={2} />
           Add photos
@@ -240,17 +275,21 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
                   <span className="ml-auto text-[12px] tabular-nums text-[var(--muted)]">{i + 1}</span>
                 </div>
 
-                <label className="sr-only" htmlFor={`alt-${ph.id}`}>
-                  Alt text for photo {i + 1}
-                </label>
-                <input
-                  id={`alt-${ph.id}`}
-                  defaultValue={ph.alt}
-                  onBlur={(e) => void saveAlt(ph.id, e.target.value)}
-                  className="field mt-1.5"
-                  style={{ minHeight: 36, fontSize: 12, padding: "6px 8px" }}
-                  placeholder="Describe this photo"
-                />
+                {mode === "admin" ? (
+                  <>
+                    <label className="sr-only" htmlFor={`alt-${ph.id}`}>
+                      Alt text for photo {i + 1}
+                    </label>
+                    <input
+                      id={`alt-${ph.id}`}
+                      defaultValue={ph.alt}
+                      onBlur={(e) => void saveAlt(ph.id, e.target.value)}
+                      className="field mt-1.5"
+                      style={{ minHeight: 36, fontSize: 12, padding: "6px 8px" }}
+                      placeholder="Describe this photo"
+                    />
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -274,8 +313,8 @@ export function PhotoManager({ propertyId, photos: initial }: Props) {
       ) : null}
 
       <p className="mt-3 text-[13px] text-[var(--muted)]">
-        Drag a tile onto another to reorder. The first photo is used on cards and social previews.
-        Alt text saves when you click away.
+        Drag a tile onto another to reorder — the first photograph is the one shown on cards and
+        when your listing is shared.{mode === "admin" ? " Alt text saves when you click away." : ""}
       </p>
     </section>
   );

@@ -63,9 +63,9 @@ export function ListPropertyForm() {
         </span>
         <h3 className="mt-4 text-[18px] font-bold">Got it — thank you</h3>
         <p className="mt-2 text-[15px] text-[var(--ink-soft)]">
-          We will review the property and come back within {site.responseTime} with what we think the
-          off season is worth on it. If you sent a VRBO or Airbnb link, we will pull your photographs
-          and details across so there is nothing for you to re-upload.
+          We will come back within {site.responseTime}, build the listing with you and tell you which
+          package fits. If you sent a VRBO or Airbnb link, we will pull your photographs and details
+          across so there is nothing for you to re-upload.
         </p>
         <p className="mt-4 text-[14px] text-[var(--muted)]">
           Questions in the meantime?{" "}
@@ -282,7 +282,7 @@ export function ListPropertyForm() {
       </button>
 
       <p className="mt-3 text-center text-[13px] text-[var(--muted)]">
-        Nothing to pay up front. We reply within {site.responseTime}.
+        No obligation. We reply within {site.responseTime} and set the listing up with you.
       </p>
     </form>
   );

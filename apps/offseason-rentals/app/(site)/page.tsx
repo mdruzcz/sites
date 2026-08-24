@@ -49,20 +49,19 @@ export default async function HomePage() {
           </span>
 
           <h1 className="mt-5 text-[34px] leading-[1.08] sm:text-[52px] font-extrabold tracking-tight">
-            The cottage you cannot afford in July,
-            <span className="text-[var(--accent)]"> rented by the month.</span>
+            Premium Port Stanley living
+            <span className="text-[var(--accent)]">—without the summer price tag.</span>
           </h1>
 
           <p className="mt-5 text-[17px] sm:text-[19px] leading-relaxed text-[var(--muted)]">
-            Furnished Port Stanley homes let from Labour Day to Victoria Day — the months they would
-            otherwise sit dark and heated. Utilities included, one month minimum, fifteen minutes to
-            St.&nbsp;Thomas and thirty-five to London.
+            Rent fully furnished beachfront and village homes month-to-month through the off-season.
+            One simple monthly price covers heat, hydro, and high-speed Wi-Fi.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link href="/rentals" className="btn btn-primary">
               <Icon name="search" size={18} strokeWidth={2.2} />
-              Browse off-season rentals
+              {site.cta.browse}
             </Link>
             <Link href="/list-your-property" className="btn btn-outline">
               {site.cta.ownerLong}

@@ -1,4 +1,4 @@
-import { verifyTurnstile, sendLeadEmail, storeLead, leadResponse } from "@/lib/leads";
+import { verifyTurnstile, sendLeadEmail, storeLead, leadResponse, sendSms } from "@/lib/leads";
 
 export const runtime = "edge";
 
@@ -68,6 +68,13 @@ export async function POST(req: Request) {
     row.email
   );
   const stored = await storeLead("osr_booking_inquiries", row);
+
+  // Best effort, and deliberately last: the lead is already safe by this point.
+  await sendSms(
+    `Off Season Rentals enquiry — ${which}. ${row.name}, ${row.phone}. ${
+      row.duration ?? "length not given"
+    }${row.arrival ? `, from ${row.arrival}` : ""}. ${row.email}`
+  );
 
   return leadResponse(emailed, stored);
 }

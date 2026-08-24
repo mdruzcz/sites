@@ -149,21 +149,44 @@ export function propertyLd(p: Property) {
   const url = abs(`/rentals/${p.slug}`);
 
   const offers: Record<string, unknown>[] = [];
-  if (p.monthly_rate) {
+  // The discounted figure is the price, and the list price rides along as a
+  // strikethrough reference — quoting the pre-discount number to Google would
+  // put a price in the SERP that nobody is being asked to pay.
+  const monthly = p.discount_monthly_rate ?? p.monthly_rate;
+  if (monthly) {
     offers.push({
       "@type": "Offer",
       url,
       priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
       businessFunction: "https://purl.org/goodrelations/v1#LeaseOut",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: p.monthly_rate,
-        priceCurrency: "CAD",
-        unitCode: "MON",
-        unitText: "month",
-        description: p.utilities_included ? "Monthly off-season rate, utilities included" : "Monthly off-season rate"
-      },
+      // When an offer is running, the effective price and the struck-through
+      // list price are published as two specifications, the latter tagged
+      // ListPrice — the same shape a retailer uses for a sale item.
+      priceSpecification: [
+        {
+          "@type": "UnitPriceSpecification",
+          price: monthly,
+          priceCurrency: "CAD",
+          unitCode: "MON",
+          unitText: "month",
+          description: p.utilities_included
+            ? "Monthly off-season rate, utilities included"
+            : "Monthly off-season rate"
+        },
+        ...(p.discount_monthly_rate && p.monthly_rate
+          ? [
+              {
+                "@type": "UnitPriceSpecification",
+                priceType: "https://schema.org/ListPrice",
+                price: p.monthly_rate,
+                priceCurrency: "CAD",
+                unitCode: "MON",
+                unitText: "month"
+              }
+            ]
+          : [])
+      ],
       eligibleDuration: {
         "@type": "QuantitativeValue",
         minValue: p.min_stay_nights,
@@ -171,7 +194,8 @@ export function propertyLd(p: Property) {
       }
     });
   }
-  if (p.weekly_rate) {
+  const weekly = p.discount_weekly_rate ?? p.weekly_rate;
+  if (weekly) {
     offers.push({
       "@type": "Offer",
       url,
@@ -179,7 +203,7 @@ export function propertyLd(p: Property) {
       availability: "https://schema.org/InStock",
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: p.weekly_rate,
+        price: weekly,
         priceCurrency: "CAD",
         unitCode: "WEE",
         unitText: "week"

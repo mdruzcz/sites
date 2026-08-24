@@ -60,6 +60,12 @@ export function Footer() {
             <Link href="/list-your-property" className="btn btn-primary btn-sm">
               {site.cta.owner}
             </Link>
+            <p className="mt-3 text-[14px] text-[var(--muted)]">
+              Already listed?{" "}
+              <Link href="/owners/login" className="font-semibold text-[var(--ink)] underline">
+                Owner login
+              </Link>
+            </p>
 
             <div className="mt-6 space-y-2.5">
               <a

@@ -5,6 +5,7 @@ import { getProperties } from "@/lib/properties";
 import { audiences, getAudience } from "@/lib/content";
 import { Filters } from "@/components/Filters";
 import { PropertyGrid } from "@/components/Section";
+import { effectiveMonthly } from "@/lib/format";
 import { PropertyCardSkeleton } from "@/components/PropertyCard";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbLd, propertyListLd } from "@/lib/seo";
@@ -45,7 +46,12 @@ export function applyFilters(all: Property[], sp: Record<string, string>): Prope
 
   const budget = Number.parseInt(sp.budget ?? "", 10);
   if (Number.isFinite(budget)) {
-    out = out.filter((p) => p.monthly_rate !== null && p.monthly_rate <= budget);
+    // Filter on what they would actually pay, so a discounted home shows up
+    // under the budget its offer puts it in.
+    out = out.filter((p) => {
+      const rate = effectiveMonthly(p);
+      return rate !== null && rate <= budget;
+    });
   }
 
   if (sp.for) out = out.filter((p) => p.perfect_for.includes(sp.for));

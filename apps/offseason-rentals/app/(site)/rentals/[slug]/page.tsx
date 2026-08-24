@@ -15,6 +15,7 @@ import {
 } from "@/lib/format";
 import { Icon } from "@/components/Icon";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import { Price } from "@/components/Price";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PropertyCard } from "@/components/PropertyCard";
 import { JsonLd } from "@/components/JsonLd";
@@ -40,7 +41,9 @@ export async function generateMetadata({
 
   const rate = headlineRate(p);
   const title = `${p.name} — ${p.bedrooms} Bed Off-Season Rental in ${p.city}`;
-  const description = `${p.summary} ${rate ? `${rate.label}, ${minStayLabel(p.min_stay_nights)}.` : ""} ${
+  const description = `${p.summary} ${
+    rate ? `${rate.display} / ${rate.unit}, ${minStayLabel(p.min_stay_nights)}.` : ""
+  } ${
     p.utilities_included ? "Utilities included." : ""
   }`
     .replace(/\s+/g, " ")
@@ -78,11 +81,37 @@ function Fact({ icon, label, value }: { icon: string; label: string; value: stri
   );
 }
 
-function RateRow({ label, value, strong = false }: { label: string; value: string; strong?: boolean }) {
+function RateRow({
+  label,
+  value,
+  strong = false,
+  struck = false,
+  accent = false
+}: {
+  label: string;
+  value: string;
+  strong?: boolean;
+  /** The list price when an offer supersedes it. */
+  struck?: boolean;
+  accent?: boolean;
+}) {
   return (
     <div className="flex items-baseline justify-between gap-4 py-2">
-      <span className={`text-[15px] ${strong ? "font-bold" : "text-[var(--muted)]"}`}>{label}</span>
-      <span className={`text-[15px] tabular-nums ${strong ? "font-bold" : ""}`}>{value}</span>
+      <span
+        className={`text-[15px] ${strong ? "font-bold" : "text-[var(--muted)]"}`}
+        style={accent ? { color: "var(--accent-dark)" } : undefined}
+      >
+        {label}
+      </span>
+      <span
+        className={`text-[15px] tabular-nums ${strong ? "font-bold" : ""} ${struck ? "line-through" : ""}`}
+        style={{
+          color: accent ? "var(--accent)" : struck ? "var(--muted)" : undefined,
+          textDecorationThickness: struck ? "1.5px" : undefined
+        }}
+      >
+        {value}
+      </span>
     </div>
   );
 }
@@ -284,21 +313,37 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           {/* ------------------- Right column: sticky rate card ------------------- */}
           <aside className="lg:sticky lg:top-[104px] lg:self-start">
             <div className="card card-pad" style={{ boxShadow: "var(--shadow-lg)" }}>
-              {rate ? (
-                <p className="text-[22px] font-bold">
-                  {rate.label.split(" / ")[0]}
-                  <span className="text-[16px] font-normal text-[var(--muted)]"> / {rate.unit}</span>
-                </p>
-              ) : (
-                <p className="text-[22px] font-bold">Rate on request</p>
-              )}
+              <Price rate={rate} note={p.discount_note} size="md" />
               <p className="mt-1 text-[14px] text-[var(--muted)]">{minStayLabel(p.min_stay_nights)}</p>
 
               <div className="my-5 rule" />
 
               <div className="divide-y" style={{ borderColor: "var(--line-soft)" }}>
-                {p.monthly_rate ? <RateRow label="Monthly" value={money(p.monthly_rate)!} /> : null}
-                {p.weekly_rate ? <RateRow label="Weekly" value={money(p.weekly_rate)!} /> : null}
+                {p.monthly_rate ? (
+                  <RateRow
+                    label="Monthly"
+                    value={money(p.monthly_rate)!}
+                    struck={Boolean(p.discount_monthly_rate)}
+                  />
+                ) : null}
+                {p.discount_monthly_rate ? (
+                  <RateRow
+                    label={p.discount_note || "Off-season offer"}
+                    value={money(p.discount_monthly_rate)!}
+                    accent
+                    strong
+                  />
+                ) : null}
+                {p.weekly_rate ? (
+                  <RateRow
+                    label="Weekly"
+                    value={money(p.weekly_rate)!}
+                    struck={Boolean(p.discount_weekly_rate)}
+                  />
+                ) : null}
+                {p.discount_weekly_rate ? (
+                  <RateRow label="Weekly offer" value={money(p.discount_weekly_rate)!} accent strong />
+                ) : null}
                 {p.nightly_rate ? <RateRow label="Nightly" value={money(p.nightly_rate)!} /> : null}
                 {p.cleaning_fee ? <RateRow label="Cleaning" value={money(p.cleaning_fee)!} /> : null}
                 {p.security_deposit ? (
@@ -383,14 +428,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
       >
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
-            {rate ? (
-              <p className="text-[16px] font-bold truncate">
-                {rate.label.split(" / ")[0]}
-                <span className="text-[13px] font-normal text-[var(--muted)]"> / {rate.unit}</span>
-              </p>
-            ) : (
-              <p className="text-[16px] font-bold">Rate on request</p>
-            )}
+            <Price rate={rate} size="sm" />
             <p className="text-[12px] text-[var(--muted)] truncate">{minStayLabel(p.min_stay_nights)}</p>
           </div>
           <a href="#enquire" className="btn btn-primary btn-sm shrink-0">

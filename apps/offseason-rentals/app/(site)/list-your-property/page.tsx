@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { ownerFaqs } from "@/lib/content";
+import { ownerFaqs, packages } from "@/lib/content";
 import { Icon } from "@/components/Icon";
-import { ListPropertyForm } from "@/components/ListPropertyForm";
 import { StepGrid } from "@/components/Section";
+import { PackageCards } from "@/components/PackageCards";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbLd, faqLd, webPageLd } from "@/lib/seo";
+import { breadcrumbLd, faqLd, webPageLd, abs } from "@/lib/seo";
 
 export const revalidate = 3600;
 
-const TITLE = "Want to List Your Property? Off-Season Rentals in Port Stanley";
+const TITLE = "List Your Port Stanley Property — Packages from $149 a Year";
 const DESCRIPTION =
-  "Own a Port Stanley cottage? Earn from the nine months it sits empty. We market your off season only, screen the tenants, and import your VRBO or Airbnb photos free.";
+  "Advertise your Port Stanley cottage to off-season renters. Build the listing yourself, choose Bronze, Silver or Gold, and it runs for 12 months. No commission on bookings.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -29,27 +29,46 @@ export const metadata: Metadata = {
 
 const STEPS = [
   {
-    icon: "link",
-    title: "Send us the property",
-    body: "Fill in the form below. If it is already on VRBO or Airbnb, paste the link — we import the photographs and details straight across."
+    icon: "key",
+    title: "Create your account",
+    body: "Two minutes and an email address. You get a login you can come back to whenever you want to change a rate or swap a photograph."
+  },
+  {
+    icon: "upload",
+    title: "Build the listing yourself",
+    body: "Drag your photographs in, write the description, set the rate and the months you will release. It saves as you go, and nothing is public until you say so."
   },
   {
     icon: "sparkle",
-    title: "We build the listing",
-    body: "We rewrite the copy for an off-season audience rather than a summer one, set a monthly rate that actually clears, and put it live."
-  },
-  {
-    icon: "key",
-    title: "You approve the tenant",
-    body: "We screen enquiries, run the agreement and hold the deposit. Nobody gets your keys until you have said yes."
+    title: "Pick a package and submit",
+    body: "We invoice you, review the listing, and put it live. It runs for a full twelve months from the day it publishes."
   }
 ];
 
-const MATH = [
-  { k: "3 months", v: "What most Port Stanley cottages actually earn", tone: "muted" },
-  { k: "9 months", v: "What they cost you to hold, heated and insured", tone: "muted" },
-  { k: "Sept – May", v: "The window we turn back into income", tone: "accent" }
-];
+/** Offer schema so the packages can surface in search. */
+function offerCatalogLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "Off Season Rentals listing packages",
+    url: abs("/list-your-property"),
+    itemListElement: packages.map((p) => ({
+      "@type": "Offer",
+      name: `${p.name} listing package`,
+      description: p.summary,
+      price: p.price,
+      priceCurrency: "CAD",
+      url: abs("/owners/register"),
+      eligibleDuration: { "@type": "QuantitativeValue", value: 12, unitCode: "MON" },
+      itemOffered: {
+        "@type": "Service",
+        name: `${p.name} property listing`,
+        serviceType: "Vacation rental advertising",
+        provider: { "@id": `${site.url}/#business` }
+      }
+    }))
+  };
+}
 
 export default function ListYourPropertyPage() {
   return (
@@ -58,6 +77,7 @@ export default function ListYourPropertyPage() {
         data={[
           webPageLd(TITLE, DESCRIPTION, "/list-your-property"),
           breadcrumbLd([{ name: "List your property", href: "/list-your-property" }]),
+          offerCatalogLd(),
           faqLd(ownerFaqs)
         ]}
       />
@@ -71,85 +91,95 @@ export default function ListYourPropertyPage() {
           <span className="text-[var(--ink)]">List your property</span>
         </nav>
 
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:gap-16 items-start">
-          <div>
-            <span className="pill pill-accent">For owners</span>
-            <h1 className="mt-4 text-[32px] sm:text-[46px] font-extrabold leading-[1.08] tracking-tight">
-              {site.ownerPromise.headline}
-            </h1>
-            <p className="mt-5 text-[17px] sm:text-[19px] leading-relaxed text-[var(--muted)]">
-              Between Labour Day and Victoria Day your cottage is a liability: heated, insured,
-              checked on, and earning nothing. We rent those months to people who need somewhere real
-              to live, and we do not touch your summer.
-            </p>
+        <div className="max-w-3xl">
+          <span className="pill pill-accent">For owners</span>
+          <h1 className="mt-4 text-[32px] sm:text-[46px] font-extrabold leading-[1.08] tracking-tight">
+            {site.ownerPromise.headline}
+          </h1>
+          <p className="mt-5 text-[17px] sm:text-[19px] leading-relaxed text-[var(--muted)]">
+            Between Labour Day and Victoria Day your cottage is a liability: heated, insured, checked
+            on, and earning nothing. Advertise it here to the people who actually want those months —
+            and keep every dollar of what you rent it for.
+          </p>
 
-            <ul className="mt-8 space-y-4">
-              {site.ownerPromise.points.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-[16px]">
-                  <Icon
-                    name="check"
-                    size={20}
-                    strokeWidth={2.4}
-                    className="mt-0.5 shrink-0"
-                    style={{ color: "var(--ok)" }}
-                  />
-                  {p}
-                </li>
-              ))}
-            </ul>
-
-            <dl
-              className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-px overflow-hidden rounded-[var(--r-md)]"
-              style={{ background: "var(--line)" }}
-            >
-              {MATH.map((m) => (
-                <div key={m.k} className="bg-[var(--surface)] p-5">
-                  <dt
-                    className="text-[22px] font-extrabold tracking-tight"
-                    style={{ color: m.tone === "accent" ? "var(--accent)" : "var(--ink)" }}
-                  >
-                    {m.k}
-                  </dt>
-                  <dd className="mt-1 text-[14px] text-[var(--muted)]">{m.v}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <div
-              className="mt-8 rounded-[var(--r-md)] p-5 flex items-start gap-4"
-              style={{ background: "var(--lake-soft)", border: "1px solid rgba(14,90,99,0.18)" }}
-            >
-              <Icon name="link" size={22} strokeWidth={1.8} style={{ color: "var(--lake)" }} className="mt-0.5 shrink-0" />
-              <div>
-                <p className="text-[15px] font-bold" style={{ color: "var(--lake)" }}>
-                  Already on VRBO or Airbnb?
-                </p>
-                <p className="mt-1 text-[15px]" style={{ color: "var(--lake)" }}>
-                  Paste the link in the form. We pull your photographs and property details across
-                  automatically — no re-shooting, no re-typing, no upload.
-                </p>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Link href="/owners/register" className="btn btn-primary">
+              Create an owner account
+            </Link>
+            <Link href="/owners/login" className="btn btn-outline">
+              Owner login
+            </Link>
           </div>
 
-          <div className="card card-pad lg:sticky lg:top-[104px]" style={{ boxShadow: "var(--shadow-lg)" }}>
-            <h2 className="text-[20px] font-bold">Tell us about the property</h2>
-            <p className="mt-1.5 mb-6 text-[14px] text-[var(--muted)]">
-              Takes about two minutes. We reply within {site.responseTime}.
-            </p>
-            <ListPropertyForm />
-          </div>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[14px] text-[var(--muted)]">
+            {[
+              "No commission on bookings",
+              "You keep your summer calendar",
+              "12 months from the day it publishes",
+              "Edit it yourself, any time"
+            ].map((t) => (
+              <li key={t} className="flex items-center gap-2">
+                <Icon name="check" size={16} strokeWidth={2} style={{ color: "var(--ok)" }} />
+                {t}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="border-y bg-[var(--surface-2)]" style={{ borderColor: "var(--line)" }}>
+      {/* ---------------- Packages ---------------- */}
+      <section id="packages" className="border-y bg-[var(--surface-2)] scroll-mt-28" style={{ borderColor: "var(--line)" }}>
         <div className="container-page py-14">
-          <h2 className="text-[24px] sm:text-[30px] font-bold mb-8">What happens next</h2>
-          <StepGrid steps={STEPS} />
+          <div className="max-w-2xl mb-9">
+            <h2 className="text-[26px] sm:text-[34px] font-extrabold tracking-tight">
+              One price, twelve months, no commission
+            </h2>
+            <p className="mt-3 text-[16px] leading-relaxed text-[var(--muted)]">
+              Pay once when your listing goes live and it runs for a full year. What you charge your
+              tenant is yours — we do not take a cut of the rent, and there is nothing to pay per
+              enquiry or per booking.
+            </p>
+          </div>
+
+          <PackageCards />
+
+          <p className="mt-8 text-[14px] text-[var(--muted)]">
+            All prices in Canadian dollars. We invoice by email once you submit; your listing goes
+            live when the invoice is settled and we have checked it over. Not sure which tier fits?{" "}
+            <a href={site.phoneHref} className="font-semibold text-[var(--ink)] underline">
+              Call {site.phone}
+            </a>
+            .
+          </p>
         </div>
       </section>
 
+      {/* ---------------- How it works ---------------- */}
       <section className="container-page py-14">
+        <h2 className="text-[26px] sm:text-[32px] font-extrabold tracking-tight mb-8">
+          You build it, we check it, it goes live
+        </h2>
+        <StepGrid steps={STEPS} />
+
+        <div
+          className="mt-10 rounded-[var(--r-md)] p-5 flex items-start gap-4"
+          style={{ background: "var(--lake-soft)", border: "1px solid rgba(14,90,99,0.18)" }}
+        >
+          <Icon name="link" size={22} strokeWidth={1.8} style={{ color: "var(--lake)" }} className="mt-0.5 shrink-0" />
+          <div>
+            <p className="text-[15px] font-bold" style={{ color: "var(--lake)" }}>
+              Already on VRBO or Airbnb?
+            </p>
+            <p className="mt-1 text-[15px]" style={{ color: "var(--lake)" }}>
+              Send us the link when you sign up and we will pull your photographs and property
+              details across for you — no re-shooting, no re-typing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Owner FAQ ---------------- */}
+      <section className="container-page pb-14">
         <h2 className="text-[24px] sm:text-[30px] font-bold mb-8">Owner questions</h2>
         <div className="grid gap-x-12 gap-y-8 lg:grid-cols-2">
           {ownerFaqs.map((f) => (
@@ -161,11 +191,12 @@ export default function ListYourPropertyPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-[16px] text-[var(--muted)]">Would rather just talk it through?</p>
-          <a href={site.phoneHref} className="btn btn-outline mt-4">
-            <Icon name="phone" size={18} strokeWidth={2} />
-            Call {site.phone}
-          </a>
+          <Link href="/owners/register" className="btn btn-primary">
+            Create an owner account
+          </Link>
+          <p className="mt-3 text-[14px] text-[var(--muted)]">
+            Nothing is charged until you submit a listing and we invoice you.
+          </p>
         </div>
       </section>
     </>

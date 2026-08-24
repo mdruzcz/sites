@@ -47,26 +47,51 @@
   {
     "audience": "owner",
     "q": "I own a cottage here. How does listing work?",
-    "a": "Send us the property using the listing form. Tell us the months you are willing to release and what you want for them, or ask us what the market is paying. We photograph or import your existing listing photos, write the page, and market it to the people already searching for off-season housing in this area."
+    "a": "Create an owner account, then build the listing yourself: drag your photographs in, write the description, set the monthly rate and the months you are willing to release. Nothing is public while you work on it. When it is ready you pick a package and submit it — we invoice you, check the listing over, and put it live for twelve months."
+  },
+  {
+    "audience": "owner",
+    "q": "What does a listing cost?",
+    "a": "Bronze is $149, Silver $299 and Gold $499, each for a full twelve months from the day the listing publishes. That is the whole cost. We do not take a commission on what you rent the property for, and there is nothing to pay per enquiry or per booking."
+  },
+  {
+    "audience": "owner",
+    "q": "What is the difference between the packages?",
+    "a": "Photographs and placement. Bronze carries 10 photographs and a standard listing. Silver carries 25 and always ranks above every Bronze listing, with a Featured badge. Gold carries 40, sits above everything else on the site, holds a permanent homepage slot and can include a video walkthrough. Every tier gets the same listing page, the same enquiry form and the same twelve months."
+  },
+  {
+    "audience": "owner",
+    "q": "Can I change the listing after it is live?",
+    "a": "Yes, whenever you like, from your owner login. Rates, photographs, availability, description — it is your listing. Changes appear on the site within the hour."
+  },
+  {
+    "audience": "owner",
+    "q": "Can I run a discount?",
+    "a": "Yes. Set a discounted monthly rate and your normal price appears struck through with the offer beneath it and the saving alongside, which is exactly how a renter scanning a list of properties notices you. You can add a short label — \"Winter special\", \"Book by October 31\" — and remove it at any time."
   },
   {
     "audience": "owner",
     "q": "Do I lose my summer calendar?",
-    "a": "No. We market the off season only. Your July and August stay exactly where they are, on whatever platform you already use. If anything, a well-maintained winter tenant means your place opens in May in better shape than it closed in September."
+    "a": "No. This site advertises the off season only. Your July and August stay exactly where they are, on whatever platform you already use. If anything, a well-kept winter tenant means your place opens in May in better shape than it closed in September."
   },
   {
     "audience": "owner",
     "q": "Can I import my existing VRBO or Airbnb listing?",
-    "a": "Yes, and it is the fastest way to get live. Send us the link and we pull the photographs and the property details straight across, then edit the copy for an off-season audience rather than a summer one. You do not have to re-photograph anything."
+    "a": "Yes, and it is the fastest way to get live. Send us the link and we pull the photographs and the property details straight across, then help you rework the copy for an off-season audience rather than a summer one. You do not have to re-photograph anything."
   },
   {
     "audience": "owner",
-    "q": "What does it cost me to list?",
-    "a": "Nothing up front. We make our money on the bookings we bring you, so if the property does not rent, it has not cost you anything but the time it took to send us the link."
+    "q": "Who handles the enquiries?",
+    "a": "They come to you. A renter fills in the form on your listing page and it goes straight to your inbox — you decide who you want in your property, you sign the agreement, and you hold the deposit. We are advertising, not a booking agent."
   },
   {
     "audience": "owner",
     "q": "Who are these tenants?",
-    "a": "Overwhelmingly people working: travel nurses on hospital contracts, trades on long project bookings, families out of their house for a renovation or an insurance claim, and people between a sale and a closing. They are here because of a job or a deadline, they stay for months rather than weekends, and they are screened before they get your keys."
+    "a": "Overwhelmingly people working: travel nurses on hospital contracts, trades on long project bookings, families out of their house for a renovation or an insurance claim, and people between a sale and a closing. They are here because of a job or a deadline and they stay for months rather than weekends."
+  },
+  {
+    "audience": "owner",
+    "q": "What happens after twelve months?",
+    "a": "We email you before the listing expires so you can renew for another year. If you do nothing it simply comes off the site — nothing renews automatically and there is no subscription running in the background."
   }
 ]

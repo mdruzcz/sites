@@ -1,4 +1,4 @@
-import { verifyTurnstile, sendLeadEmail, storeLead, leadResponse } from "@/lib/leads";
+import { verifyTurnstile, sendLeadEmail, storeLead, leadResponse, sendSms } from "@/lib/leads";
 
 export const runtime = "edge";
 
@@ -92,6 +92,12 @@ export async function POST(req: Request) {
     row.email
   );
   const stored = await storeLead("osr_listing_requests", row);
+
+  await sendSms(
+    `Off Season Rentals — owner wants to list ${row.property_address}, ${row.city}. ${row.name}, ${
+      row.phone
+    }.${row.listing_url ? ` ${row.listing_platform} link supplied.` : ""}`
+  );
 
   return leadResponse(emailed, stored);
 }

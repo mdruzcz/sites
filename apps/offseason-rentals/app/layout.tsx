@@ -16,9 +16,9 @@ const figtree = Figtree({
   display: "swap"
 });
 
-const TITLE = "Off-Season Rentals in Port Stanley | Furnished Monthly Cottages";
+const TITLE = "Premium Port Stanley Living Without the Summer Price Tag";
 const DESCRIPTION =
-  "Furnished Port Stanley cottages rented by the month from September to May. Winter rates, utilities included, 30-night minimum — 15 minutes to St. Thomas, 35 to London.";
+  "Rent fully furnished Port Stanley beachfront and village homes month-to-month through the off-season. One monthly price covers heat, hydro and high-speed Wi-Fi.";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 

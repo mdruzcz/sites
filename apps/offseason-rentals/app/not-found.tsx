@@ -30,7 +30,7 @@ export default function NotFound() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
           <Link href="/rentals" className="btn btn-primary">
-            Browse off-season rentals
+            Browse Off-Season Stays
           </Link>
           <Link href="/contact" className="btn btn-outline">
             Tell us what you need

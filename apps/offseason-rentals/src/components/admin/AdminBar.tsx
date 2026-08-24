@@ -17,6 +17,9 @@ export function AdminBar() {
 
   return (
     <div className="flex items-center gap-2">
+      <Link href="/admin/review" className="btn btn-quiet btn-sm">
+        Owner queue
+      </Link>
       <Link href="/" className="btn btn-quiet btn-sm" target="_blank" rel="noreferrer">
         View site
       </Link>

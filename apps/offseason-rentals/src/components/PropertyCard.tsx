@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Photo } from "@/components/Photo";
 import { Icon } from "@/components/Icon";
 import { headlineRate, specLine, minStayLabel } from "@/lib/format";
+import { Price } from "@/components/Price";
 import type { Property } from "@/lib/types";
 
 /**
@@ -76,15 +77,10 @@ export function PropertyCard({
           {p.utilities_included ? " · Utilities included" : ""}
         </p>
 
-        {rate ? (
-          <p className="mt-1.5 text-[15px]">
-            <span className="font-semibold">{rate.label.split(" / ")[0]}</span>
-            <span className="text-[var(--muted)]"> / {rate.unit}</span>
-            <span className="text-[var(--muted)]"> · {minStayLabel(p.min_stay_nights)}</span>
-          </p>
-        ) : (
-          <p className="mt-1.5 text-[15px] font-semibold">Rate on request</p>
-        )}
+        <div className="mt-1.5">
+          <Price rate={rate} note={p.discount_note} size="sm" />
+          <p className="mt-0.5 text-[13px] text-[var(--muted)]">{minStayLabel(p.min_stay_nights)}</p>
+        </div>
       </div>
     </Link>
   );

@@ -367,7 +367,10 @@ export function PropertyForm({ property }: { property?: Property }) {
         </div>
       </Group>
 
-      <Group title="Off-season rates" hint="All figures in CAD. Leave a rate blank to hide that row.">
+      <Group
+        title="Off-season rates"
+        hint="All figures in CAD. Leave a rate blank to hide that row. Set a discount and the list price shows struck through with the offer beneath it."
+      >
         <div className={grid}>
           {(
             [
@@ -421,6 +424,55 @@ export function PropertyForm({ property }: { property?: Property }) {
               placeholder="May"
             />
           </Field>
+        </div>
+
+        <div className="mt-5 rounded-[var(--r-md)] p-4" style={{ background: "var(--accent-soft)" }}>
+          <p className="text-[14px] font-bold" style={{ color: "var(--accent-dark)" }}>
+            Running an offer?
+          </p>
+          <p className="mt-1 mb-3 text-[13px]" style={{ color: "var(--accent-dark)" }}>
+            The monthly rate above is shown struck through and the discounted figure appears beneath
+            it in red, with the saving. Leave blank for no offer. Must be below the list price.
+          </p>
+          <div className={grid}>
+            <Field label="Discounted monthly" id="p-dmr">
+              <input
+                id="p-dmr"
+                type="number"
+                min={0}
+                inputMode="numeric"
+                className="field"
+                value={d.discount_monthly_rate ?? ""}
+                onChange={(e) => set("discount_monthly_rate", num(e.target.value))}
+                placeholder="2400"
+              />
+            </Field>
+            <Field label="Discounted weekly" id="p-dwr">
+              <input
+                id="p-dwr"
+                type="number"
+                min={0}
+                inputMode="numeric"
+                className="field"
+                value={d.discount_weekly_rate ?? ""}
+                onChange={(e) => set("discount_weekly_rate", num(e.target.value))}
+              />
+            </Field>
+            <Field label="Offer label" id="p-dnote">
+              <input
+                id="p-dnote"
+                className="field"
+                value={d.discount_note ?? ""}
+                onChange={(e) => set("discount_note", e.target.value || null)}
+                placeholder="Winter special"
+              />
+            </Field>
+          </div>
+          {d.discount_monthly_rate && d.monthly_rate && d.discount_monthly_rate >= d.monthly_rate ? (
+            <p className="mt-2 text-[13px] font-semibold" style={{ color: "var(--danger)" }}>
+              The discount has to be below the ${d.monthly_rate} list price.
+            </p>
+          ) : null}
         </div>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

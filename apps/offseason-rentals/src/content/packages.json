@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "bronze",
+    "name": "Bronze",
+    "price": 149,
+    "priceLabel": "$149",
+    "term": "12 months",
+    "sortRank": 30,
+    "photoLimit": 10,
+    "tagline": "A proper listing, live for a year",
+    "summary": "Everything a renter needs to choose your place and get in touch. The right tier if you have one property and want to see how the off season performs before committing further.",
+    "features": [
+      "Your own listing page with rates, amenities and availability",
+      "Up to 10 photographs",
+      "Listed in search, on the town pages and on the audience pages",
+      "Enquiries emailed straight to you",
+      "Live for 12 months"
+    ],
+    "notIncluded": ["Priority placement", "Featured badge", "Homepage slot"],
+    "popular": false
+  },
+  {
+    "slug": "silver",
+    "name": "Silver",
+    "price": 299,
+    "priceLabel": "$299",
+    "term": "12 months",
+    "sortRank": 20,
+    "photoLimit": 25,
+    "tagline": "Above every Bronze listing, all year",
+    "summary": "The tier most owners take. More photographs than anyone can shoot in an afternoon, and your listing sits above every Bronze property in every list a renter sees.",
+    "features": [
+      "Everything in Bronze",
+      "Up to 25 photographs",
+      "Priority placement — always above Bronze listings",
+      "A Featured badge on your listing card",
+      "Eligible for the homepage selection",
+      "Live for 12 months"
+    ],
+    "notIncluded": ["Guaranteed top placement", "Video"],
+    "popular": true
+  },
+  {
+    "slug": "gold",
+    "name": "Gold",
+    "price": 499,
+    "priceLabel": "$499",
+    "term": "12 months",
+    "sortRank": 10,
+    "photoLimit": 40,
+    "tagline": "Top of every list, on every page",
+    "summary": "For owners who would rather not compete for attention. Gold listings appear above everything else on the site, hold a permanent homepage slot, and can carry a video walkthrough.",
+    "features": [
+      "Everything in Silver",
+      "Up to 40 photographs",
+      "Top placement — above every Silver and Bronze listing",
+      "A permanent slot on the homepage",
+      "Video walkthrough on your listing page",
+      "First call on enquiries we cannot place elsewhere",
+      "Live for 12 months"
+    ],
+    "notIncluded": [],
+    "popular": false
+  }
+]

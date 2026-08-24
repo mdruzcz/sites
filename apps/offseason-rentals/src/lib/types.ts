@@ -45,10 +45,15 @@ export interface Property {
   square_feet: number | null;
   parking_spaces: number | null;
 
-  /** Off-season pricing. Monthly is the headline number; the rest are optional. */
+  /** Off-season pricing. The list price; struck through when discounted. */
   monthly_rate: number | null;
   weekly_rate: number | null;
   nightly_rate: number | null;
+  /** What the renter actually pays, when the owner is running an offer. */
+  discount_monthly_rate: number | null;
+  discount_weekly_rate: number | null;
+  /** Short reason shown beside the price — "Winter special". */
+  discount_note: string | null;
   min_stay_nights: number;
   security_deposit: number | null;
   cleaning_fee: number | null;
@@ -74,10 +79,61 @@ export interface Property {
   /** Set when the listing was imported from a VRBO or Airbnb URL. */
   source_url: string | null;
 
+  /**
+   * Package state. Null owner_id means one of the house listings — no tier, no
+   * expiry, ranked with Gold.
+   */
+  owner_id: string | null;
+  package_tier: Tier | null;
+  package_status: PackageStatus;
+  package_started_at: string | null;
+  package_expires_at: string | null;
+  submitted_at: string | null;
+  approved_at: string | null;
+  rejection_note: string | null;
+  /** Lower sorts first. gold/house 10, silver 20, bronze 30. */
+  sort_rank: number;
+
   created_at: string;
   updated_at: string;
 
   photos: PropertyPhoto[];
+}
+
+export type Tier = "bronze" | "silver" | "gold";
+
+export type PackageStatus =
+  | "none"
+  | "draft"
+  | "submitted"
+  | "awaiting_payment"
+  | "active"
+  | "expired"
+  | "rejected";
+
+export interface PackageOrder {
+  id: string;
+  owner_id: string | null;
+  property_id: string | null;
+  tier: Tier;
+  price_cad: number;
+  status: "invoiced" | "paid" | "cancelled" | "refunded";
+  invoiced_at: string;
+  paid_at: string | null;
+  expires_at: string | null;
+  note: string | null;
+  created_at: string;
+}
+
+export interface Owner {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  city: string | null;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 /** The shape the admin form posts. Everything optional except the essentials. */

@@ -2,10 +2,11 @@ import { NextResponse, type NextRequest } from "next/server";
 import { SESSION_COOKIE, verifySession } from "@/lib/auth";
 
 /**
- * Gate everything under /admin. The login page and the login endpoint have to
+ * Gate everything under /admin. (Next 16 renamed this convention from
+ * `middleware` to `proxy`; same runtime, same matcher.) The login page and the login endpoint have to
  * stay reachable or there is no way in.
  */
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
 
   if (pathname === "/admin/login" || pathname === "/api/admin/login") {
