@@ -22,6 +22,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-05 | `gta-christmas-lights` | gtachristmaslighting.ca | `0x4AAAAAADXerarSEfHtSa8U` |
 | MD-05 | `halton-glow-lighting` | haltonglowlighting.ca | `0x4AAAAAADXerarSEfHtSa8U` |
 | MD-06 | `holiday-lights-direct` | holidaylightsdirect.ca | `0x4AAAAAADXeroRTS-DACiRW` |
+| MD-06 | `holiday-light-supplies` | holidaylightsupplies.ca | `0x4AAAAAADXeroRTS-DACiRW` |
 | MD-06 | `hot-tub-pads` | hottubpads.ca | `0x4AAAAAADXeroRTS-DACiRW` |
 | MD-07 | `illumi-track-lights` | illumitracklights.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
 | MD-07 | `lcf-web` | londonconcreteforming.ca | `0x4AAAAAADXer-k_vf_2nWrZ` |
@@ -48,6 +49,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-13 | `woodstock-concrete-forming` | woodstockconcreteforming.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-concrete-pros` | woodstockconcretepros.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-deck-and-fence` | woodstockdeckandfence.ca | `0x4AAAAAADXetRNHN8PdanEk` |
+| MD-13 | `offseason-rentals` | offseasonrentals.ca | `0x4AAAAAADXetRNHN8PdanEk` | **hostname not yet added in CF dashboard — key stays unset until it is** |
 
 ## Zones not mapped to a Vercel project
 
@@ -63,7 +65,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | foreverlights.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
 | ~~gtachristmaslighting.ca~~ | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` | → moved to main table |
 | heateddrivewaypros.ca | MD-05 | `0x4AAAAAADXerarSEfHtSa8U` |
-| holidaylightsupplies.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
+| ~~holidaylightsupplies.ca~~ | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` | → moved to main table |
 | homeenhance.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | homeserviceawards.ca | MD-06 | `0x4AAAAAADXeroRTS-DACiRW` |
 | ~~kmkitchenrenovations.ca~~ | MD-07 | `0x4AAAAAADXer-k_vf_2nWrZ` | → moved to main table |
