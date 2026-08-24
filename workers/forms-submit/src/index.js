@@ -16,7 +16,8 @@ const HOSTNAME_TO_TABLE = {
   "celebratelighting.ca": "celebratelighting_quote_requests",
   "christmaslightslondon.ca": "cll_quote_requests",
   "classicchristmaslighting.ca": "classic_christmas_leads",
-  "commercialholidaydecor.ca": "chd_quote_requests",
+  // commercialholidaydecor.ca moved to the ecom back-office (admin.masterdecker.com):
+  // it stores quote submissions in ecom_contact_messages, not via this Worker.
   "concretedriveways.ca": "concretedriveways_quote_requests",
   "concretetilsonburg.ca": "concrete_tilsonburg_quote_requests",
   "deckheroes.ca": "deck_leads",
