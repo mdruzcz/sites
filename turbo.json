@@ -31,7 +31,13 @@
         "ADMIN_PASSWORD",
         "ADMIN_SESSION_SECRET",
         "FIRECRAWL_API_KEY",
-        "NEXT_PUBLIC_GTM_ID"
+        "NEXT_PUBLIC_GTM_ID",
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_API_KEY_SID",
+        "TWILIO_API_KEY_SECRET",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "NOTIFY_SMS_TO"
       ]
     },
     "dev": {
