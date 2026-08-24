@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "port-stanley",
+    "name": "Port Stanley",
+    "isHome": true,
+    "minutes": 0,
+    "km": 0,
+    "headline": "Off-season rentals in Port Stanley, Ontario",
+    "intro": "Port Stanley is a fishing village at the mouth of Kettle Creek that swells every July and empties every September. Our homes are here, in the village, available by the month from Labour Day to Victoria Day.",
+    "body": "The village runs on a summer calendar. Between Labour Day and Victoria Day the patios close, the parking meters stop, and a stretch of Blue Flag beach belongs to whoever is willing to put a coat on. That is the season we rent. Every home on this site is a furnished summer property being let by the month while its owner would otherwise be paying to heat an empty building.",
+    "anchors": [
+      "Main Beach — Blue Flag water quality, a short walk from most of our homes",
+      "Little Beach — 185 m of shallow, sheltered sand on the east side of the harbour",
+      "The harbour, marina and King George VI lift bridge",
+      "Port Stanley Festival Theatre and the Terminal Rail line",
+      "Village groceries, coffee and the pier, all walkable"
+    ],
+    "why": [
+      "Walk to the beach, the harbour and the village on foot",
+      "Off-season rates a fraction of the July weekly number",
+      "Fifteen minutes to St. Thomas, thirty-five to London",
+      "A real winter village — plowed roads, open shops, year-round neighbours"
+    ],
+    "meta": "Furnished off-season rentals in Port Stanley, Ontario. Monthly winter rates on Lake Erie cottages, utilities included, September through May."
+  },
+  {
+    "slug": "st-thomas",
+    "name": "St. Thomas",
+    "isHome": false,
+    "minutes": 15,
+    "km": 15,
+    "headline": "Off-season rentals near St. Thomas, Ontario",
+    "intro": "St. Thomas is fifteen minutes up Sunset Road from our front doors. If you are on contract at the hospital, at a plant, or on one of the big builds south of the 401, a furnished Port Stanley cottage beats a motel room by a distance.",
+    "body": "St. Thomas has more contract work than it has short-term housing. The hospital runs travel-nurse contracts, the fulfilment centre runs seasonal peaks, and the industrial land east of the city is in the middle of a build cycle that will run for years. Almost none of that generates a twelve-month lease — it generates people who need somewhere furnished for three to six months. Port Stanley has hundreds of furnished homes sitting empty for exactly those months.",
+    "anchors": [
+      "St. Thomas Elgin General Hospital — 15 minutes",
+      "The Amazon fulfilment centre on Highbury — 20 minutes",
+      "The east-end industrial lands and battery plant site — 20 minutes",
+      "Elgin County administrative offices and courthouse",
+      "Highway 401 at Highbury or Wellington Road — 20 minutes"
+    ],
+    "why": [
+      "A fifteen-minute commute, entirely on paved county road",
+      "Furnished whole homes instead of a motel room",
+      "Monthly rates that a per-diem or contract budget can absorb",
+      "Kitchens and laundry, which matter a lot by week six"
+    ],
+    "meta": "Furnished monthly rentals near St. Thomas, Ontario — 15 minutes away in Port Stanley. Built for hospital contracts, plant work and project crews."
+  },
+  {
+    "slug": "london",
+    "name": "London",
+    "isHome": false,
+    "minutes": 35,
+    "km": 40,
+    "headline": "Off-season rentals near London, Ontario",
+    "intro": "Port Stanley is London's beach, thirty-five minutes down Wellington Road. Out of season it is also some of the cheapest furnished housing within an hour of the city — and it comes with a lake instead of a parking lot.",
+    "body": "London runs on hospitals and schools, and both run on terms. Thirteen-week nursing contracts, four-month co-op placements, eight-month residencies, and a steady flow of people relocating into the city who need somewhere to live while they house-hunt. A furnished Port Stanley cottage from September to May costs less than a downtown one-bedroom and does not ask you to sign for a year.",
+    "anchors": [
+      "London Health Sciences Centre — Victoria and University hospitals",
+      "Western University and Fanshawe College",
+      "Downtown London and the Covent Garden Market",
+      "London International Airport (YXU)",
+      "Highway 401 — 20 minutes from the village"
+    ],
+    "why": [
+      "Thirty-five minutes door to door, one road most of the way",
+      "Off-season monthly rates below comparable London apartment rents",
+      "No twelve-month lease for a term-length stay",
+      "Somewhere genuinely quiet to come home to after a shift"
+    ],
+    "meta": "Furnished monthly rentals near London, Ontario — 35 minutes away in Port Stanley. Term-length housing for hospital contracts, students and relocations."
+  },
+  {
+    "slug": "aylmer",
+    "name": "Aylmer",
+    "isHome": false,
+    "minutes": 30,
+    "km": 35,
+    "headline": "Off-season rentals near Aylmer, Ontario",
+    "intro": "Aylmer is half an hour east through Sparta. It is the home of the Ontario Police College, which puts a steady stream of people in town for training blocks measured in weeks rather than years.",
+    "body": "Residential training does not fit a normal lease. Neither does the agricultural season work that fills Aylmer and the surrounding townships. Both need furnished, flexible, month-at-a-time housing, and both fall squarely inside Port Stanley's empty season. The drive is thirty minutes on county roads with no traffic worth the name.",
+    "anchors": [
+      "Ontario Police College — 30 minutes",
+      "Aylmer's downtown and the East Elgin Community Complex",
+      "Springwater Conservation Area",
+      "Highway 3 running east to Tillsonburg",
+      "Port Burwell and the east Elgin lakeshore"
+    ],
+    "why": [
+      "Thirty minutes on quiet county road, no highway",
+      "Training-block-length stays without a lease",
+      "Furnished, with laundry and a kitchen",
+      "Somewhere to decompress that is not the building you train in"
+    ],
+    "meta": "Furnished monthly rentals near Aylmer, Ontario — 30 minutes away in Port Stanley. Flexible terms for police college training blocks and seasonal work."
+  },
+  {
+    "slug": "belmont",
+    "name": "Belmont",
+    "isHome": false,
+    "minutes": 25,
+    "km": 28,
+    "headline": "Off-season rentals near Belmont, Ontario",
+    "intro": "Belmont sits between St. Thomas and London on the old Highway 74 route. It is twenty-five minutes from the village, which makes Port Stanley a realistic base for anyone working the corridor between the two cities.",
+    "body": "There is very little short-term furnished housing anywhere in this corridor. If you are here for a season — a build, a placement, a renovation at home — the options are a motel in St. Thomas or an apartment lease in London. A Port Stanley cottage by the month sits between the two on price and well above both on where you actually spend your evenings.",
+    "anchors": [
+      "The St. Thomas–London corridor along Highbury Avenue",
+      "Belmont's arena and community centre",
+      "Dorchester and the eastern edge of Middlesex",
+      "Highway 401 at Putnam — 25 minutes"
+    ],
+    "why": [
+      "Twenty-five minutes to Belmont, twenty to the 401",
+      "Central to both St. Thomas and London job sites",
+      "Month-to-month rather than an annual lease",
+      "Furnished and heated, with utilities in one number"
+    ],
+    "meta": "Furnished monthly rentals near Belmont, Ontario — 25 minutes away in Port Stanley. Off-season cottage stays for work between St. Thomas and London."
+  },
+  {
+    "slug": "sparta",
+    "name": "Sparta",
+    "isHome": false,
+    "minutes": 15,
+    "km": 12,
+    "headline": "Off-season rentals near Sparta, Ontario",
+    "intro": "Sparta is a preserved Quaker village fifteen minutes east of Port Stanley — a handful of nineteenth-century buildings, a tea room, and not much else. It is a lovely place to visit and a difficult place to find a room.",
+    "body": "There is effectively no rental stock in Sparta itself. Anyone spending a season in this corner of Elgin County — working the farms, restoring a property, or simply wanting a winter somewhere very quiet — needs to base themselves nearby. Port Stanley is the closest place with furnished homes and a grocery store, fifteen minutes west along the lake.",
+    "anchors": [
+      "Sparta's heritage main street and tea room",
+      "The Elgin County agricultural belt",
+      "Local estate wineries along the lakeshore road",
+      "Port Bruce and the eastern lakeshore beaches"
+    ],
+    "why": [
+      "Fifteen minutes to Sparta on the lakeshore road",
+      "Furnished stock where Sparta has none",
+      "Village groceries, fuel and coffee at your end of the drive",
+      "Monthly off-season rates through the whole quiet half of the year"
+    ],
+    "meta": "Furnished monthly rentals near Sparta, Ontario — 15 minutes away in Port Stanley. Off-season housing in Elgin County's quiet lakeshore corner."
+  },
+  {
+    "slug": "union",
+    "name": "Union",
+    "isHome": false,
+    "minutes": 8,
+    "km": 7,
+    "headline": "Off-season rentals near Union, Ontario",
+    "intro": "Union is the hamlet immediately north of Port Stanley on Sunset Road — eight minutes, and the last stop before the hill down into the village.",
+    "body": "Union is small enough that its housing market is essentially a handful of houses changing hands every few years. For a stay measured in months, Port Stanley is the practical answer: same stretch of road, same run into St. Thomas, but with furnished homes that are genuinely available between September and May.",
+    "anchors": [
+      "Sunset Road running north to St. Thomas",
+      "Union's hall and the surrounding Central Elgin farmland",
+      "Port Stanley village — 8 minutes south",
+      "St. Thomas — 10 minutes north"
+    ],
+    "why": [
+      "Eight minutes down the road from Union",
+      "Furnished homes where the hamlet has no rental stock",
+      "Straight run to St. Thomas and the 401 beyond it",
+      "Month-to-month terms across the whole off season"
+    ],
+    "meta": "Furnished monthly rentals near Union, Ontario — 8 minutes away in Port Stanley. Off-season cottage stays in Central Elgin, utilities included."
+  },
+  {
+    "slug": "shedden",
+    "name": "Shedden",
+    "isHome": false,
+    "minutes": 20,
+    "km": 20,
+    "headline": "Off-season rentals near Shedden, Ontario",
+    "intro": "Shedden is twenty minutes west along Fingal Line, in the middle of the Southwold farmland. It is best known for its community complex and fall fair, and least known for having anywhere to stay.",
+    "body": "West Elgin is agricultural, and agriculture runs on seasons — which means people arriving for a stretch of months and leaving again. Port Stanley is the nearest village with furnished homes, a grocery store and a beach, and its empty season lines up almost exactly with the months this side of the county is busiest.",
+    "anchors": [
+      "The Shedden community complex and Southwold fairgrounds",
+      "Fingal and the Southwold agricultural belt",
+      "Highway 401 at Iona — 15 minutes",
+      "Port Stanley village and Main Beach — 20 minutes east"
+    ],
+    "why": [
+      "Twenty minutes east on Fingal Line",
+      "Furnished stock in a corner of the county that has none",
+      "Close to the 401 for crews moving between sites",
+      "Off-season monthly rates from Labour Day to Victoria Day"
+    ],
+    "meta": "Furnished monthly rentals near Shedden, Ontario — 20 minutes away in Port Stanley. Off-season housing for West Elgin seasonal and agricultural work."
+  }
+]

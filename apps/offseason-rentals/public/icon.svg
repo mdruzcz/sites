@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Off Season Rentals">
+  <rect width="512" height="512" rx="112" fill="#e1485e"/>
+  <g fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 300c34 0 34 30 68 30s34-30 68-30 34 30 68 30 34-30 68-30"/>
+    <path d="M120 372c34 0 34 30 68 30s34-30 68-30 34 30 68 30 34-30 68-30"/>
+    <path d="M136 236V150l120-72 120 72v86"/>
+    <path d="M216 236v-52h80v52"/>
+  </g>
+</svg>

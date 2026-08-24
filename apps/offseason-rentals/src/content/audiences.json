@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "travel-nurses",
+    "label": "Travel nurses & healthcare staff",
+    "short": "Travel nurses",
+    "icon": "stethoscope",
+    "headline": "A furnished place to land between contracts",
+    "intro": "Thirteen-week contracts and hotel rooms are a bad match. A furnished cottage a short drive from St. Thomas Elgin General or London Health Sciences gives you a kitchen, a laundry machine and a door that closes.",
+    "why": [
+      "Month-to-month terms that line up with a 13-week contract",
+      "Fully furnished — arrive with a suitcase, not a moving truck",
+      "Utilities and Wi-Fi already on, one payment covers it",
+      "Fifteen minutes to STEGH, thirty-five to LHSC and Victoria Hospital",
+      "Free parking at the door for shift work at odd hours"
+    ],
+    "meta": "Furnished monthly rentals in Port Stanley for travel nurses working St. Thomas and London hospitals. Utilities included, 30-night minimum, September to May."
+  },
+  {
+    "slug": "project-crews",
+    "label": "Trades & project crews",
+    "short": "Project crews",
+    "icon": "hardhat",
+    "headline": "Beds for the crew without the motel bill",
+    "intro": "Elgin County is in the middle of a long build cycle. If your crew is booked in for a season, a whole cottage costs less than four motel rooms and comes with a kitchen table to plan the week around.",
+    "why": [
+      "Whole-home rates that split cleanly across a crew",
+      "Kitchens and laundry — no per-diem burn on restaurant food",
+      "Driveway parking for trucks and trailers",
+      "Twenty minutes to Highway 401, fifteen to St. Thomas job sites",
+      "Longer terms priced by the month, invoiced to the company"
+    ],
+    "meta": "Monthly furnished housing in Port Stanley for trades and project crews working St. Thomas and Elgin County. Whole cottages, driveway parking, company invoicing."
+  },
+  {
+    "slug": "renovation-displacement",
+    "label": "Renovation & insurance stays",
+    "short": "Renovation stays",
+    "icon": "hammer",
+    "headline": "Somewhere to live while your house is a job site",
+    "intro": "A gut renovation runs long. So does a fire or water claim. A furnished cottage keeps the family together in one place instead of split between a hotel and a relative's basement.",
+    "why": [
+      "Month-to-month, so you are not guessing at the finish date",
+      "Room for the whole household, pets included at most homes",
+      "Documentation your insurer or adjuster can work from",
+      "Close enough to keep checking on the trades",
+      "Furnished top to bottom — your things stay in storage"
+    ],
+    "meta": "Furnished monthly rentals in Port Stanley for families displaced by renovation or an insurance claim. Pet friendly options, flexible terms, September to May."
+  },
+  {
+    "slug": "between-homes",
+    "label": "Between homes",
+    "short": "Between homes",
+    "icon": "boxes",
+    "headline": "For the gap between the sale and the keys",
+    "intro": "Closing dates rarely line up. Rather than sign a year-long lease for a three-month gap, take a furnished place by the month and move once, when your real house is ready.",
+    "why": [
+      "No twelve-month lease for a three-month problem",
+      "Furnished, so the moving truck goes straight to storage",
+      "Extend a month at a time if the closing slips",
+      "A real address for mail, licences and school registration",
+      "Quiet enough to actually get the paperwork done"
+    ],
+    "meta": "Short-term furnished rentals in Port Stanley for households between homes. Month-to-month terms, no annual lease, utilities included."
+  },
+  {
+    "slug": "remote-workers",
+    "label": "Remote workers & writers",
+    "short": "Remote workers",
+    "icon": "laptop",
+    "headline": "The lake, out of season, with good Wi-Fi",
+    "intro": "Port Stanley in February is not the Port Stanley of the August long weekend. The beach is empty, the parking is free, and the only thing competing for your attention is the weather over the lake.",
+    "why": [
+      "Wi-Fi and a dedicated place to work in every home",
+      "Off-season rates that undercut a city apartment",
+      "Walkable village — coffee, groceries and the pier on foot",
+      "Thirty-five minutes to London if you need an office day",
+      "Genuinely quiet from September through May"
+    ],
+    "meta": "Monthly off-season rentals in Port Stanley for remote workers and writers. Wi-Fi, workspace, walkable village, Lake Erie out of season."
+  },
+  {
+    "slug": "relocating",
+    "label": "Relocating to Elgin County",
+    "short": "Relocating",
+    "icon": "map",
+    "headline": "Try the area before you buy in it",
+    "intro": "Buying into a small lakeside village sight-unseen is a gamble. Spend a winter here first. If the place still looks good in March, you have your answer.",
+    "why": [
+      "Live in the village before you commit to a mortgage",
+      "See the off season — the part the summer visitors never meet",
+      "Learn the commute to London or St. Thomas for real",
+      "Month-to-month while you house-hunt",
+      "Local agents and trades are a phone call away"
+    ],
+    "meta": "Furnished monthly rentals in Port Stanley for people relocating to Elgin County. Try the village for a season before buying."
+  },
+  {
+    "slug": "students-coop",
+    "label": "Students & co-op placements",
+    "short": "Students",
+    "icon": "book",
+    "headline": "A term-length place near London and St. Thomas",
+    "intro": "Co-op terms are four months. Most leases are twelve. An off-season cottage matches the term you actually have, furnished, with the internet already connected.",
+    "why": [
+      "Four-month terms that match a co-op or placement",
+      "Furnished — no student-budget furniture run",
+      "Thirty-five minutes to Western and Fanshawe",
+      "Utilities in one number, easy to split with a roommate",
+      "Free parking, which campus will not give you"
+    ],
+    "meta": "Four-month furnished rentals near London and St. Thomas for students and co-op placements. Port Stanley off-season cottages, utilities included."
+  },
+  {
+    "slug": "quiet-getaway",
+    "label": "Quiet off-season getaways",
+    "short": "Quiet getaways",
+    "icon": "moon",
+    "headline": "The village with nobody in it",
+    "intro": "Some people want Port Stanley precisely because it is closed. Storm-watching in November, a wood stove in January, the whole beach to a dog in March.",
+    "why": [
+      "Off-season rates a fraction of the July number",
+      "Lake Erie storms and a horizon with nothing on it",
+      "Wood stoves and fireplaces at several homes",
+      "Dog-friendly beaches once the summer rules lift",
+      "Longer stays welcome — a month reads very differently to a weekend"
+    ],
+    "meta": "Off-season getaway rentals in Port Stanley, Ontario. Winter cottage stays on Lake Erie at a fraction of summer rates."
+  }
+]

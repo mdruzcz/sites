@@ -1,0 +1,50 @@
+[
+  { "slug": "wifi", "label": "Wi-Fi included", "group": "Essentials", "icon": "wifi" },
+  { "slug": "heat-included", "label": "Heat included", "group": "Essentials", "icon": "flame" },
+  { "slug": "hydro-included", "label": "Hydro included", "group": "Essentials", "icon": "bolt" },
+  { "slug": "water-included", "label": "Water included", "group": "Essentials", "icon": "drop" },
+  { "slug": "fully-furnished", "label": "Fully furnished", "group": "Essentials", "icon": "sofa" },
+  { "slug": "linens-towels", "label": "Linens and towels provided", "group": "Essentials", "icon": "bed" },
+  { "slug": "in-suite-laundry", "label": "In-suite washer and dryer", "group": "Essentials", "icon": "washer" },
+  { "slug": "shared-laundry", "label": "Shared laundry", "group": "Essentials", "icon": "washer" },
+
+  { "slug": "full-kitchen", "label": "Full kitchen", "group": "Kitchen", "icon": "kitchen" },
+  { "slug": "dishwasher", "label": "Dishwasher", "group": "Kitchen", "icon": "dishwasher" },
+  { "slug": "coffee-maker", "label": "Coffee maker", "group": "Kitchen", "icon": "coffee" },
+  { "slug": "cookware", "label": "Cookware and dishes", "group": "Kitchen", "icon": "pot" },
+  { "slug": "microwave", "label": "Microwave", "group": "Kitchen", "icon": "microwave" },
+  { "slug": "dining-seating", "label": "Dining table seating", "group": "Kitchen", "icon": "table" },
+
+  { "slug": "wood-stove", "label": "Wood stove", "group": "Comfort", "icon": "flame" },
+  { "slug": "fireplace", "label": "Fireplace", "group": "Comfort", "icon": "flame" },
+  { "slug": "air-conditioning", "label": "Air conditioning", "group": "Comfort", "icon": "snow" },
+  { "slug": "forced-air-gas", "label": "Forced-air gas heat", "group": "Comfort", "icon": "flame" },
+  { "slug": "smart-tv", "label": "Smart TV", "group": "Comfort", "icon": "tv" },
+  { "slug": "streaming", "label": "Streaming services", "group": "Comfort", "icon": "play" },
+  { "slug": "hot-tub", "label": "Hot tub", "group": "Comfort", "icon": "hottub" },
+  { "slug": "bathtub", "label": "Bathtub", "group": "Comfort", "icon": "bath" },
+
+  { "slug": "lake-view", "label": "Lake view", "group": "Outdoor", "icon": "water" },
+  { "slug": "harbour-view", "label": "Harbour view", "group": "Outdoor", "icon": "anchor" },
+  { "slug": "deck", "label": "Deck or balcony", "group": "Outdoor", "icon": "deck" },
+  { "slug": "bbq", "label": "Barbecue", "group": "Outdoor", "icon": "grill" },
+  { "slug": "fire-pit", "label": "Fire pit", "group": "Outdoor", "icon": "flame" },
+  { "slug": "fenced-yard", "label": "Fenced yard", "group": "Outdoor", "icon": "fence" },
+  { "slug": "private-entrance", "label": "Private entrance", "group": "Outdoor", "icon": "door" },
+
+  { "slug": "walk-to-beach", "label": "Walk to the beach", "group": "Location", "icon": "footprints" },
+  { "slug": "walk-to-village", "label": "Walk to the village", "group": "Location", "icon": "shop" },
+  { "slug": "driveway-parking", "label": "Driveway parking", "group": "Location", "icon": "car" },
+  { "slug": "trailer-parking", "label": "Room for a trailer or work truck", "group": "Location", "icon": "truck" },
+  { "slug": "ev-outlet", "label": "EV outlet", "group": "Location", "icon": "plug" },
+
+  { "slug": "workspace", "label": "Dedicated workspace", "group": "Work", "icon": "desk" },
+  { "slug": "fast-internet", "label": "Fast internet, suitable for video calls", "group": "Work", "icon": "signal" },
+  { "slug": "printer", "label": "Printer", "group": "Work", "icon": "printer" },
+
+  { "slug": "pet-friendly", "label": "Pet friendly", "group": "Policies", "icon": "paw" },
+  { "slug": "no-pets", "label": "No pets", "group": "Policies", "icon": "no-paw" },
+  { "slug": "smoke-free", "label": "Smoke free", "group": "Policies", "icon": "no-smoke" },
+  { "slug": "long-stay-friendly", "label": "Long stays welcome", "group": "Policies", "icon": "calendar" },
+  { "slug": "monthly-cleaning", "label": "Monthly cleaning available", "group": "Policies", "icon": "sparkle" }
+]
