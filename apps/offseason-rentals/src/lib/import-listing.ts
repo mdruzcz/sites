@@ -20,6 +20,10 @@ export interface ImportedListing {
   amenities: string[];
   rawAmenities: string[];
   photos: string[];
+  /** The platform's own advertised nightly rate — an anchor for pricing the
+   *  off season, not a rate we publish. */
+  nightlyRate: number | null;
+  currency: string | null;
 }
 
 export function detectPlatform(url: string): Platform {
@@ -182,7 +186,13 @@ const EXTRACT_SCHEMA = {
     bathrooms: { type: "number" },
     sleeps: { type: "number", description: "Maximum number of guests" },
     beds: { type: "number", description: "Total number of beds" },
-    amenities: { type: "array", items: { type: "string" } }
+    amenities: { type: "array", items: { type: "string" } },
+    nightlyRate: {
+      type: "number",
+      description:
+        "The advertised nightly rate in the listing currency, before taxes and fees. Omit if no price is shown."
+    },
+    currency: { type: "string", description: "Currency code of the advertised rate, e.g. CAD" }
   }
 } as const;
 
@@ -315,6 +325,8 @@ export async function scrapeListing(sourceUrl: string): Promise<ImportedListing>
     beds: num(j.beds),
     amenities: matched,
     rawAmenities,
-    photos: extractPhotos(html, platform)
+    photos: extractPhotos(html, platform),
+    nightlyRate: num(j.nightlyRate),
+    currency: j.currency ? orFallback(j.currency, "CAD").toUpperCase().slice(0, 3) : null
   };
 }
