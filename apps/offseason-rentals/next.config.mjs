@@ -16,6 +16,19 @@ const nextConfig = {
       }
     ]
   },
+  async redirects() {
+    return [
+      {
+        // www and the apex both resolve to this deployment, and both were
+        // answering 200 — two URLs for every page. Canonical tags cover the
+        // SEO side; this makes the duplicate actually go away.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.offseasonrentals.ca" }],
+        destination: "https://offseasonrentals.ca/:path*",
+        permanent: true
+      }
+    ];
+  },
   async headers() {
     return [
       {

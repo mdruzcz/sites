@@ -22,9 +22,42 @@ const EXT_BY_TYPE: Record<string, string> = {
 const BROWSER_HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-  Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+  // Deliberately no image/avif here. Offered AVIF, these CDNs serve AVIF, and
+  // an AVIF master is a dead end: next/image passes it through unresized, so
+  // every listing card would download the full-size original.
+  Accept: "image/jpeg,image/png,image/webp,image/*;q=0.8",
   "Accept-Language": "en-CA,en;q=0.9"
 };
+
+/** Longest edge we keep. Beyond this is storage cost with no visible gain. */
+const MAX_EDGE = 2400;
+
+/**
+ * Normalise whatever we were given into a JPEG master.
+ *
+ * next/image generates the AVIF and WebP variants at request time, but only
+ * from a format it can decode and re-encode. Storing the AVIF the source CDN
+ * happened to serve defeats that entirely — the optimizer gives up and returns
+ * the original bytes at every requested width.
+ */
+async function toJpegMaster(
+  bytes: Uint8Array,
+  contentType: string
+): Promise<{ bytes: Uint8Array; contentType: string }> {
+  try {
+    const sharp = (await import("sharp")).default;
+    const out = await sharp(Buffer.from(bytes))
+      .rotate() // honour EXIF orientation before we strip it
+      .resize({ width: MAX_EDGE, height: MAX_EDGE, fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 86, mozjpeg: true })
+      .toBuffer();
+    return { bytes: new Uint8Array(out), contentType: "image/jpeg" };
+  } catch (err) {
+    // Better a working original than a failed upload.
+    console.error("Image normalisation failed, storing as received:", err);
+    return { bytes, contentType };
+  }
+}
 
 function randomId(): string {
   return crypto.randomUUID().replace(/-/g, "").slice(0, 12);
@@ -50,8 +83,8 @@ async function measure(bytes: Uint8Array): Promise<{ width: number | null; heigh
 /** Put bytes in the bucket and record the row. Returns the stored photo. */
 export async function storePhoto({
   propertyId,
-  bytes,
-  contentType,
+  bytes: incoming,
+  contentType: incomingType,
   alt,
   position
 }: {
@@ -64,7 +97,9 @@ export async function storePhoto({
   const db = adminClient();
   if (!db) throw new Error("SUPABASE_SERVICE_ROLE_KEY is not configured.");
 
-  if (bytes.byteLength > MAX_BYTES) throw new Error("That image is larger than 15 MB.");
+  if (incoming.byteLength > MAX_BYTES) throw new Error("That image is larger than 15 MB.");
+
+  const { bytes, contentType } = await toJpegMaster(incoming, incomingType);
 
   const ext = EXT_BY_TYPE[contentType.toLowerCase()] ?? "jpg";
   const path = `${propertyId}/${Date.now()}-${randomId()}.${ext}`;
