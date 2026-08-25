@@ -3,8 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
+import { VideoLoop } from "@/components/VideoLoop";
 import { site } from "@/lib/site";
 import { faqSchema } from "@/lib/jsonld";
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "London Retaining Walls Project Highlight Reel",
+  description:
+    "A short highlight reel of block, concrete, and timber retaining walls designed and installed by London Retaining Walls across London and Southwestern Ontario.",
+  thumbnailUrl: `${site.url}/images/video/retaining-walls-reel-poster.webp`,
+  contentUrl: `${site.url}/videos/retaining-walls-reel.mp4`,
+  uploadDate: "2026-08-25",
+};
 
 export const revalidate = 3600;
 
@@ -31,29 +43,29 @@ const services = [
   {
     name: "Block Retaining Walls",
     href: "/block-retaining-walls",
-    img: "/images/long-lasting-walls.png",
-    imgAlt: "Gray concrete block retaining wall installation by London Retaining Walls",
+    img: "/images/gallery/curved-segmental-block-retaining-wall-front-yard-garden-01.jpg",
+    imgAlt: "Curved segmental block retaining wall creating a raised front-yard garden in London, Ontario",
     desc: "Block retaining walls are engineered structures built with interlocking concrete blocks. These walls serve both functional and aesthetic purposes, preventing soil erosion and creating visually appealing terraced landscapes.",
   },
   {
     name: "Concrete Retaining Walls",
     href: "/concrete-retaining-walls",
-    img: "/images/service-concrete.jpg",
-    imgAlt: "Concrete retaining wall forming and installation in London, Ontario",
+    img: "/images/gallery/parged-concrete-retaining-wall-with-steps-01.jpg",
+    imgAlt: "Smooth parged poured concrete retaining wall with steps in a landscaped London, Ontario backyard",
     desc: "Concrete retaining walls are sturdy structures designed to hold back soil and prevent erosion. Known for their durability, concrete walls provide long-lasting stability in various landscapes.",
   },
   {
     name: "Wood & Timber Retaining Walls",
     href: "/wood-and-timber-retaining-walls",
-    img: "/images/service-wood.jpg",
-    imgAlt: "Wood and timber retaining wall with deck installation in London, Ontario",
+    img: "/images/gallery/long-timber-retaining-wall-with-central-steps-01.jpg",
+    imgAlt: "Long wood timber retaining wall with central access steps in a terraced London, Ontario backyard",
     desc: "Wood and timber retaining walls bring a natural and warm aesthetic to outdoor spaces. Crafted from treated lumber or hardwood, these walls blend seamlessly with the environment.",
   },
   {
     name: "Retaining Wall Repair",
     href: "/retaining-wall-repair",
-    img: "/images/service-repair.jpg",
-    imgAlt: "Professional retaining wall repair and restoration service",
+    img: "/images/gallery/poured-concrete-retaining-wall-along-driveway-01.jpg",
+    imgAlt: "Repaired poured concrete retaining wall with weep-hole drainage stabilizing a slope beside a London, Ontario driveway",
     desc: "Retaining wall repair involves addressing cracks, shifts, or damage to existing retaining structures. Timely repair is crucial to prevent further damage and maintain structural effectiveness.",
   },
 ];
@@ -161,6 +173,33 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SEE OUR WORK — highlight reel ─── */}
+      <section className="section bg-[var(--dark)]">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-[var(--accent)] font-bold text-xs uppercase tracking-widest mb-3">See Our Work</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide font-[family-name:var(--font-poppins)]">
+            Retaining Walls We&apos;ve Built
+          </h2>
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
+            A short highlight reel of the block, concrete, and timber retaining walls we&apos;ve designed and installed across London and Southwestern Ontario.
+          </p>
+          <div className="mt-10 max-w-4xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/15 shadow-2xl bg-black">
+              <VideoLoop
+                src="/videos/retaining-walls-reel.mp4"
+                poster="/images/video/retaining-walls-reel-poster.webp"
+                className="aspect-video w-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center mt-8">
+            <Link href="/gallery" className="btn btn-accent px-8">View Our Gallery</Link>
+            <Link href="/contact-us" className="btn btn-white text-[var(--dark)] px-8">Get a Free Quote</Link>
           </div>
         </div>
       </section>

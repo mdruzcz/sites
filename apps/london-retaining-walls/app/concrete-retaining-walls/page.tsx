@@ -6,6 +6,9 @@ import CtaBand from "@/components/CtaBand";
 import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import gallery from "@/content/gallery.json";
+
+const projectPhotos = gallery.filter((p) => p.material === "poured-concrete").slice(0, 3);
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -93,6 +96,36 @@ export default function ConcreteRetainingWallsPage() {
               </div>
               <QuoteForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-3 font-[family-name:var(--font-poppins)]">
+            Recent Concrete Retaining Wall Projects
+          </h2>
+          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
+            A few of the poured concrete retaining walls we&apos;ve built across London and Southwestern Ontario.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {projectPhotos.map((p) => (
+              <div key={p.image} className="relative aspect-[4/3] overflow-hidden rounded-xl border border-gray-100 shadow-sm bg-gray-100">
+                <Image
+                  src={p.image}
+                  alt={p.alt}
+                  width={p.width}
+                  height={p.height}
+                  placeholder="blur"
+                  blurDataURL={p.blurDataURL}
+                  sizes="(max-width:768px) 100vw, 33vw"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/gallery" className="btn btn-outline">View Full Gallery</Link>
           </div>
         </div>
       </section>

@@ -9,9 +9,21 @@ import { TrustBar } from "@/components/TrustBar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { StepProcess } from "@/components/StepProcess";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { VideoLoop } from "@/components/VideoLoop";
 import { faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Brantford Retaining Walls Project Highlight Reel",
+  description:
+    "A highlight reel of retaining wall projects completed by Brantford Retaining Walls across Brantford and Brant County — armour stone, segmental block, poured concrete, and engineered walls.",
+  thumbnailUrl: `${site.url}/images/video/retaining-walls-reel-poster.webp`,
+  contentUrl: `${site.url}/videos/retaining-walls-reel.mp4`,
+  uploadDate: "2026-08-25",
+};
 
 export default function HomePage() {
   const services = getServices();
@@ -23,6 +35,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs.slice(0, 5))) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
 
       {/* Hero */}
@@ -177,6 +193,34 @@ export default function HomePage() {
             {services.map((service) => (
               <ServiceCard key={service.slug} service={service} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* See Our Work — highlight reel */}
+      <section className="py-16 sm:py-20 bg-[var(--charcoal)]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="See Our Work"
+            title="Retaining Walls Built to Last"
+            subtitle="Watch a short highlight reel of recent retaining wall projects across Brantford and Brant County — from armour stone and segmental block to fully engineered walls."
+            light
+            center
+          />
+          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black">
+            <VideoLoop
+              src="/videos/retaining-walls-reel.mp4"
+              poster="/images/video/retaining-walls-reel-poster.webp"
+              className="aspect-video w-full rounded-2xl object-cover"
+            />
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/gallery" className="btn btn-primary text-sm px-7 py-4">
+              View Full Project Gallery
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

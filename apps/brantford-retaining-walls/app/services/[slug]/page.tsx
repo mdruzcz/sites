@@ -7,8 +7,54 @@ import { site } from "@/lib/site";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CtaBand } from "@/components/CtaBand";
 import Link from "next/link";
+import gallery from "@/content/gallery.json";
 
 type Props = { params: Promise<{ slug: string }> };
+
+type GalleryItem = (typeof gallery)[number];
+
+// Map each service to the gallery material(s) that best represent it.
+// `mix: true` interleaves the listed materials for a varied strip; otherwise
+// the primary material is exhausted first before falling back to the next.
+const SERVICE_GALLERY: Record<string, { materials: string[]; mix?: boolean }> = {
+  "residential-retaining-walls": { materials: ["segmental-block", "timber"], mix: true },
+  "armour-stone-installation": { materials: ["armour-stone", "natural-stone", "boulder"] },
+  "interlocking-concrete-blocks": { materials: ["segmental-block"] },
+  "engineered-commercial-walls": { materials: ["poured-concrete"] },
+  "erosion-control-drainage": { materials: ["boulder", "poured-concrete"] },
+  "wall-repair-restoration": { materials: ["poured-concrete"] },
+};
+
+function getProjectPhotos(slug: string, exclude: string, count = 3): GalleryItem[] {
+  const config =
+    SERVICE_GALLERY[slug] ??
+    { materials: ["segmental-block", "timber", "poured-concrete"], mix: true };
+  const pools = config.materials.map((m) =>
+    gallery.filter((g) => g.material === m && g.image !== exclude)
+  );
+  const picked: GalleryItem[] = [];
+
+  if (config.mix) {
+    let round = 0;
+    while (picked.length < count && pools.some((p) => p.length > round)) {
+      for (const pool of pools) {
+        if (picked.length >= count) break;
+        if (pool[round]) picked.push(pool[round]);
+      }
+      round++;
+    }
+  } else {
+    for (const pool of pools) {
+      for (const item of pool) {
+        if (picked.length >= count) break;
+        picked.push(item);
+      }
+      if (picked.length >= count) break;
+    }
+  }
+
+  return picked.slice(0, count);
+}
 
 export async function generateStaticParams() {
   return getServices().map((s) => ({ slug: s.slug }));
@@ -32,6 +78,7 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const areas = getServiceAreas();
+  const projectPhotos = getProjectPhotos(service.slug, service.image);
 
   return (
     <>
@@ -90,6 +137,30 @@ export default async function ServicePage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+
+              {projectPhotos.length > 0 && (
+                <>
+                  <h2 className="font-bold text-lg uppercase tracking-wide text-[var(--charcoal)] mb-4">
+                    Recent {service.title} Projects
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    {projectPhotos.map((p) => (
+                      <div key={p.image} className="card overflow-hidden">
+                        <Image
+                          src={p.image}
+                          alt={p.alt}
+                          width={p.width}
+                          height={p.height}
+                          placeholder="blur"
+                          blurDataURL={p.blurDataURL}
+                          sizes="(max-width:768px) 100vw, 33vw"
+                          className="h-52 w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
 
               <h2 className="font-bold text-lg uppercase tracking-wide text-[var(--charcoal)] mb-4">Service Areas</h2>
               <div className="flex flex-wrap gap-2">

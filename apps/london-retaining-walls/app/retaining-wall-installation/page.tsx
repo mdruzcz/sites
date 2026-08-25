@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
 import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import gallery from "@/content/gallery.json";
+
+const segmentalBlock = gallery.filter((p) => p.material === "segmental-block");
+const timber = gallery.filter((p) => p.material === "timber");
+// General installation page — a mix of block and timber walls.
+const projectPhotos = [segmentalBlock[3], timber[4], segmentalBlock[5]];
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -99,6 +106,36 @@ export default function RetainingWallInstallationPage() {
               </div>
               <QuoteForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-3 font-[family-name:var(--font-poppins)]">
+            Recent Retaining Wall Installations
+          </h2>
+          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
+            A sample of the block and timber retaining walls we&apos;ve installed across London and Southwestern Ontario.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {projectPhotos.map((p) => (
+              <div key={p.image} className="relative aspect-[4/3] overflow-hidden rounded-xl border border-gray-100 shadow-sm bg-gray-100">
+                <Image
+                  src={p.image}
+                  alt={p.alt}
+                  width={p.width}
+                  height={p.height}
+                  placeholder="blur"
+                  blurDataURL={p.blurDataURL}
+                  sizes="(max-width:768px) 100vw, 33vw"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/gallery" className="btn btn-outline">View Full Gallery</Link>
           </div>
         </div>
       </section>

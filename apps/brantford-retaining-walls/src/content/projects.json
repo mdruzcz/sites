@@ -6,7 +6,7 @@
     "service": "armour-stone-installation",
     "location": "Brantford, ON",
     "description": "Large-scale armour stone installation for a residential property with significant grade change.",
-    "image": "/images/Armour-Stone-Installation.png",
+    "image": "/images/gallery/armour-stone-retaining-wall-with-steps-01.jpg",
     "featured": true
   },
   {
@@ -16,7 +16,7 @@
     "service": "engineered-commercial-walls",
     "location": "Cambridge, ON",
     "description": "Commercial retaining wall with Geogrid reinforcement for a new development site.",
-    "image": "/images/Engineered-Commercial-Walls.png",
+    "image": "/images/gallery/poured-concrete-retaining-wall-access-ramp-01.jpg",
     "featured": true
   },
   {
@@ -26,7 +26,7 @@
     "service": "wall-repair-restoration",
     "location": "Paris, ON",
     "description": "Complete restoration of a failing residential retaining wall with drainage retrofitting.",
-    "image": "/images/Wall-Repair-Restoration.png",
+    "image": "/images/gallery/poured-concrete-retaining-wall-and-staircase-01.jpg",
     "featured": true
   },
   {
@@ -36,7 +36,7 @@
     "service": "residential-retaining-walls",
     "location": "Brantford, ON",
     "description": "Multi-tiered garden retaining wall creating usable planting beds on a sloped backyard.",
-    "image": "/images/Residential-Retaining-Walls.png",
+    "image": "/images/gallery/terraced-timber-retaining-wall-stepped-tiers-01.jpg",
     "featured": true
   },
   {
@@ -46,7 +46,7 @@
     "service": "interlocking-concrete-blocks",
     "location": "Hamilton, ON",
     "description": "Modern interlocking concrete block wall with clean lines and tiered garden design.",
-    "image": "/images/Interlocking-Concrete-Blocks.png",
+    "image": "/images/gallery/segmental-block-retaining-wall-corner-02.jpg",
     "featured": true
   },
   {
@@ -56,7 +56,7 @@
     "service": "erosion-control-drainage",
     "location": "St. George, ON",
     "description": "Complete erosion control system with weeping tiles, gravel backfill, and retaining wall.",
-    "image": "/images/Erosion-Control-Drainage-Solutions.png",
+    "image": "/images/gallery/poured-concrete-retaining-wall-along-driveway-01.jpg",
     "featured": true
   }
 ]
