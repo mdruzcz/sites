@@ -42,6 +42,7 @@ export default function Header() {
             )}
           </li>
           <li><Link href="/service-areas" className="hover:text-[var(--accent)] transition-colors">Service Areas</Link></li>
+          <li><Link href="/gallery" className="hover:text-[var(--accent)] transition-colors">Gallery</Link></li>
           <li><Link href="/blog" className="hover:text-[var(--accent)] transition-colors">Helpful Tips</Link></li>
           <li><Link href="/contact-us" className="hover:text-[var(--accent)] transition-colors">Contact us</Link></li>
         </ul>
@@ -78,6 +79,7 @@ export default function Header() {
             { label: "About Us", href: "/about-us" },
             { label: "Services", href: "/services" },
             { label: "Service Areas", href: "/service-areas" },
+            { label: "Gallery", href: "/gallery" },
             { label: "Helpful Tips", href: "/blog" },
             { label: "Contact Us", href: "/contact-us" },
           ].map((item) => (

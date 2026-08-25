@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -50,6 +51,7 @@ export default function Footer() {
               { label: "Home", href: "/" },
               { label: "About Us", href: "/about-us" },
               { label: "Service Areas", href: "/service-areas" },
+              { label: "Gallery", href: "/gallery" },
               { label: "Helpful Tips", href: "/blog" },
               { label: "Contact Us", href: "/contact-us" },
             ].map((item) => (
@@ -83,6 +85,9 @@ export default function Footer() {
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <Link href="/terms-of-service" className="hover:text-[var(--accent)] transition-colors">Terms of Service</Link>
         </p>
+        <div style={{ marginTop: "16px", display: "flex", justifyContent: "center" }}>
+          <AwardBadge />
+        </div>
       </div>
     </footer>
   );
