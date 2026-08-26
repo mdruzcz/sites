@@ -1,0 +1,30 @@
+{
+  "reel": null,
+  "clips": [
+    {
+      "src": "/videos/warm-white-roofline-christmas-lights-large-home-wrapped-trees-01.mp4",
+      "alt": "Large home with warm-white roofline outline lights and wrapped trees and bushes lit at night",
+      "category": "residential-exterior"
+    },
+    {
+      "src": "/videos/warm-white-christmas-lights-modern-home-exterior-01.mp4",
+      "alt": "Warm white Christmas string lights and lit shrubs at a modern home exterior at dusk in Ontario",
+      "category": "residential-exterior"
+    },
+    {
+      "src": "/videos/commercial-grocery-storefront-warm-white-christmas-lights-01.mp4",
+      "alt": "Grocery store entrance columns wrapped in warm white Christmas lights with lit wreaths at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/commercial-storefront-christmas-lights-entrance-night-01.mp4",
+      "alt": "Commercial grocery storefront entrance with garland-wrapped columns and warm white Christmas lights at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/christmas-display-installation-shopping-mall-crew-01.mp4",
+      "alt": "Installation crew setting up and decorating a Christmas tree display inside a shopping mall",
+      "category": "install-action"
+    }
+  ]
+}

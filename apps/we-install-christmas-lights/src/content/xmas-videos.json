@@ -1,0 +1,40 @@
+{
+  "reel": null,
+  "clips": [
+    {
+      "src": "/videos/blue-white-wrapped-tree-commercial-christmas-lights-01.mp4",
+      "alt": "Large tree wrapped in blue and warm-white LED lights outside a commercial building at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/commercial-lobby-christmas-trees-warm-white-lights-gold-ribbon-01.mp4",
+      "alt": "Elegant warm-white lit Christmas trees with gold ribbon in a commercial building lobby",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/warm-white-roofline-christmas-lights-large-home-wrapped-trees-01.mp4",
+      "alt": "Large home with warm-white roofline outline lights and wrapped trees and bushes lit at night",
+      "category": "residential-exterior"
+    },
+    {
+      "src": "/videos/commercial-grocery-storefront-warm-white-christmas-lights-01.mp4",
+      "alt": "Grocery store entrance columns wrapped in warm white Christmas lights with lit wreaths at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/warm-white-christmas-lights-storefront-columns-wreaths-01.mp4",
+      "alt": "Storefront entrance columns wrapped in warm white lights with lit Christmas wreaths at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/office-lobby-christmas-tree-blue-gold-ornaments-01.mp4",
+      "alt": "Commercial office lobby Christmas tree decorated with blue and gold ornaments and warm-white lights",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/christmas-display-installation-shopping-mall-crew-01.mp4",
+      "alt": "Installation crew setting up and decorating a Christmas tree display inside a shopping mall",
+      "category": "install-action"
+    }
+  ]
+}

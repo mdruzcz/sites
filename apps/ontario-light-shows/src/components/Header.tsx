@@ -12,6 +12,7 @@ export function Header() {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/case-studies", label: "Case Studies" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/service-areas", label: "Service Areas" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },

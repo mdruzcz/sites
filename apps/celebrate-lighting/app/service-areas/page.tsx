@@ -80,7 +80,7 @@ export default function ServiceAreasPage() {
       </section>
 
       {/* Cross-link table */}
-      <section className="py-16 bg-white">
+      <section style={{ background: "var(--bg)" }} className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[var(--foreground)] mb-8 text-center">Services by Location</h2>
           <div className="overflow-x-auto">
@@ -97,7 +97,7 @@ export default function ServiceAreasPage() {
               </thead>
               <tbody>
                 {services.map((s, i) => (
-                  <tr key={s.slug} style={{ background: i % 2 === 0 ? "#fff" : "var(--surface)" }}>
+                  <tr key={s.slug} style={{ background: i % 2 === 0 ? "var(--panel)" : "var(--surface)" }}>
                     <td className="p-3 font-medium text-[var(--foreground)]">
                       <Link href={`/services/${s.slug}`} className="hover:text-[var(--accent)]">{s.title}</Link>
                     </td>

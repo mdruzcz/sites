@@ -2,12 +2,14 @@ import Link from "next/link";
 import { Phone, Mail, Clock, ExternalLink } from "lucide-react";
 import { site } from "@/lib/site";
 import { LogoMark } from "@/components/Logo";
+import { AwardBadge } from "@/components/award-badge";
 
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/service-areas", label: "Service Areas" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Get a Free Quote" },
 ];
@@ -147,6 +149,7 @@ export function Footer() {
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} Classic Christmas Lighting. All rights reserved.
           </p>
+          <AwardBadge />
           <p className="text-xs text-white/40">
             Proudly serving Kitchener-Waterloo &amp; Southern Ontario
           </p>

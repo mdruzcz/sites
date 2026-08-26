@@ -5,6 +5,7 @@ import { getServiceAreas, getCityBySlug, getServices } from "@/lib/content";
 import { site } from "@/lib/site";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 import { QuoteForm } from "@/components/QuoteForm";
+import { ServiceLineFork } from "@/components/ServiceLineFork";
 
 export const revalidate = 3600;
 
@@ -98,9 +99,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               </div>
             </div>
 
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">Free Quote in {city.name}</h2>
-              <p className="text-sm text-[var(--muted)] mb-6">We respond within 24 hours. No obligation.</p>
+            <div className="card-light p-7 sm:p-8">
+              <h2 className="font-display text-xl font-bold text-slate-900 mb-2">Free On-Site Demo in {city.name}</h2>
+              <p className="text-sm text-slate-600 mb-6">We come to you, light up a live sample on your house, and leave an itemized quote. No cost, no obligation.</p>
               <QuoteForm />
             </div>
           </div>
@@ -108,7 +109,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
 
       {/* Service links for this city */}
-      <section className="py-16 bg-white">
+      {/* Permanent or seasonal? Route them before they read on. */}
+      <ServiceLineFork city={city.name} compact />
+
+      <section style={{ background: "var(--bg)" }} className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
             Our Services in {city.name}

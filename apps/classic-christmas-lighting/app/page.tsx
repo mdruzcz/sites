@@ -4,11 +4,41 @@ import Link from "next/link";
 import { Star, CheckCircle, Phone, MapPin } from "lucide-react";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { QuoteForm } from "@/components/QuoteForm";
+import { VideoLoop } from "@/components/VideoLoop";
 import { site } from "@/lib/site";
 import { getServices, getTestimonials, getFeaturedFaqs, getServiceAreas } from "@/lib/content";
 import { localBusinessSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import videos from "@/content/xmas-videos.json";
 
 export const revalidate = 3600;
+
+// reel is preferred; fall back to the first showcase clip when no reel exists.
+const videoReel = videos.reel as null | { src: string; poster: string };
+const videoClip = videos.clips[0] as
+  | { src: string; alt: string; category: string }
+  | undefined;
+const heroVideoSrc = videoReel?.src ?? videoClip?.src ?? null;
+const heroVideoPoster = videoReel?.poster ?? "/images/Classic-Christmas-Lighting.webp";
+const heroVideoDescription =
+  videoClip?.alt ??
+  "Professional Christmas light installation by Classic Christmas Lighting in Kitchener-Waterloo.";
+
+const videoObjectSchema = heroVideoSrc
+  ? {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: "Classic Christmas Lighting — Christmas Light Installation Showcase",
+      description: heroVideoDescription,
+      thumbnailUrl: [`${site.url}${heroVideoPoster}`],
+      uploadDate: "2026-08-25",
+      contentUrl: `${site.url}${heroVideoSrc}`,
+      publisher: {
+        "@type": "Organization",
+        name: site.name,
+        url: site.url,
+      },
+    }
+  : null;
 
 export const metadata: Metadata = {
   title: "Professional Christmas Light Installation Kitchener-Waterloo | Classic Christmas Lighting",
@@ -83,6 +113,9 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", url: site.url }])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(featuredFaqs)) }} />
+      {videoObjectSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectSchema) }} />
+      )}
 
       {/* 1. HERO */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[var(--dark-bg)]">
@@ -235,6 +268,45 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 4b. SEE OUR WORK — video */}
+      {heroVideoSrc && (
+        <section className="bg-[var(--dark-surface)] py-20 md:py-24 border-t border-[var(--border-dark)]">
+          <div className="container mx-auto px-4">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <p className="text-[var(--accent-gold)] text-xs tracking-[0.25em] uppercase font-semibold mb-4">
+                  See Our Work
+                </p>
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-white mb-6"
+                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+                >
+                  Watch Our Holiday Displays in Action
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mb-8">
+                  From warm-white rooflines to fully wrapped trees, see the difference a professional installation makes. Every display is custom-designed, installed, maintained, and taken down by our own experienced crew.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/gallery" className="btn btn-primary min-h-[44px] px-8">
+                    View the Full Gallery
+                  </Link>
+                  <Link href="/contact" className="btn btn-ghost min-h-[44px] px-8">
+                    Get a Free Quote
+                  </Link>
+                </div>
+              </div>
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[var(--border-dark)]">
+                <VideoLoop
+                  src={heroVideoSrc}
+                  poster={heroVideoPoster}
+                  className="h-full w-full rounded-2xl object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 5. SERVICES */}
       <section className="bg-[var(--background)] py-20 md:py-24">

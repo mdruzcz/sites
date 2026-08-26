@@ -34,6 +34,7 @@ const navLinks = [
       { href: "/service-areas/stratford", label: "Stratford" },
     ],
   },
+  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];

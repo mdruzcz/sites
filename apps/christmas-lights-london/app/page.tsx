@@ -4,9 +4,11 @@ import Link from "next/link";
 import { Star, CheckCircle, Phone } from "lucide-react";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { QuoteForm } from "@/components/QuoteForm";
+import { VideoLoop } from "@/components/VideoLoop";
 import { site } from "@/lib/site";
 import { getServices, getTestimonials, getFeaturedFaqs, getServiceAreas } from "@/lib/content";
 import { localBusinessSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import videos from "@/src/content/xmas-videos.json";
 
 export const revalidate = 3600;
 
@@ -103,6 +105,28 @@ export default function HomePage() {
   const featuredFaqs = getFeaturedFaqs();
   const serviceAreas = getServiceAreas();
 
+  // Homepage showcase video: prefer the highlight reel, else the first clip.
+  const reel = videos.reel as { src: string; poster?: string } | null;
+  const showcaseSrc = reel?.src ?? videos.clips[0]?.src;
+  const showcasePoster = reel?.poster;
+  const videoObjectSchema = showcaseSrc && {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Professional Christmas Light Installation in London, Ontario",
+    description:
+      "A closer look at the professional Christmas light installations Christmas Lights London creates for homes and businesses across London and Southwestern Ontario.",
+    contentUrl: `${site.url}${showcaseSrc}`,
+    thumbnailUrl: [
+      `${site.url}${showcasePoster ?? "/images/Christmaslights.jpg"}`,
+    ],
+    uploadDate: "2026-08-25",
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+    },
+  };
+
   return (
     <>
       <script
@@ -121,6 +145,12 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema(featuredFaqs)),
         }}
       />
+      {videoObjectSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectSchema) }}
+        />
+      )}
 
       {/* 1. HERO */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[var(--dark-bg)]">
@@ -288,12 +318,51 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/services" className="btn btn-ghost min-h-[44px]">
+            <Link href="/gallery" className="btn btn-ghost min-h-[44px]">
               View All Our Work
             </Link>
           </div>
         </div>
       </section>
+
+      {/* 4b. VIDEO SHOWCASE — See us in action */}
+      {showcaseSrc && (
+        <section className="bg-[var(--background)] py-20 md:py-24">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-[var(--accent)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
+              See Us In Action
+            </p>
+            <h2
+              className="text-center text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4"
+              style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+            >
+              Watch Our Christmas Lights Come to Life
+            </h2>
+            <p className="text-center text-[var(--muted)] mb-10 max-w-xl mx-auto text-sm">
+              A closer look at the professional displays our team creates across London and
+              Southwestern Ontario.
+            </p>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl ring-1 ring-[var(--border-dark)] bg-[var(--dark-bg)]">
+                <VideoLoop
+                  src={showcaseSrc}
+                  poster={showcasePoster}
+                  ariaLabel="Christmas Lights London holiday lighting installation video"
+                  className="aspect-video w-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-primary min-h-[48px] px-8">
+                Get a Free Quote
+              </Link>
+              <Link href="/gallery" className="btn btn-ghost-dark min-h-[48px] px-8">
+                View Full Gallery
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 5. SERVICES */}
       <section className="bg-[var(--background)] py-20 md:py-24">

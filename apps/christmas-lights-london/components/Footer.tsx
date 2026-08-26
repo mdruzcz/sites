@@ -2,11 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Get a Free Quote" },
 ];
@@ -155,7 +157,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[var(--border-dark)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
+        <div className="mt-10 pt-6 border-t border-[var(--border-dark)] flex justify-center">
+          <AwardBadge />
+        </div>
+        <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/sitemap.xml" className="hover:text-white/70 transition-colors">

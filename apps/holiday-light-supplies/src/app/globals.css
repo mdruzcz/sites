@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  /* Holiday Light Supplies palette (Christmas Designers–inspired):
+     deep evergreen structure · warm rust CTA · cranberry accent · lots of white · Lora serif headings */
+  --color-bg:                 #ffffff;            /* clean white — white space leads */
+  --color-bg-warm:            #faf7f1;            /* warm cream for alternating sections */
+  --color-cream:              #f8f1e5;            /* warm cream — top bar + footer */
+  --color-cream-deep:         #efe6d4;            /* slightly deeper cream for bands */
+  --color-surface:            #ffffff;
+  --color-text:               #1f1d1b;            /* warm charcoal */
+  --color-muted:              #6b6358;
+  --color-border:             #e7e1d6;            /* warm hairline */
+  --color-border-strong:      #d8cfc0;
+
+  --color-brand:              #15402b;            /* deep evergreen — primary / structure */
+  --color-brand-dark:         #0e2c1d;            /* hover */
+  --color-brand-soft:         #eef3ef;
+  --color-brand-deep:         #0b2417;            /* deepest green for footer / dark backgrounds */
+
+  --color-accent:             #c64a17;            /* warm rust orange — CTA / links / highlight */
+  --color-accent-dark:        #a23a0f;
+  --color-accent-soft:        #fbeee6;
+  --color-accent-bright:      #e2611f;
+
+  --color-berry:              #931f2c;            /* cranberry — sale / urgency / scarcity */
+  --color-berry-dark:         #7a1824;
+  --color-berry-soft:         #fbecee;
+
+  --color-gold:               #c9a24a;            /* restrained warm gold — eyebrows on dark */
+  --color-gold-dark:          #a8842f;
+  --color-gold-soft:          #f3e7c8;
+
+  --color-night:              #0e2c1d;            /* deep evergreen for dark photo bands (not navy) */
+  --color-snow:                #faf7f1;            /* warm off-white */
+
+  --color-danger:             #b91c1c;
+  --color-success:            #15803d;
+
+  --font-sans:                var(--font-sans-loaded), "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display:             var(--font-serif-loaded), "Lora", Georgia, "Times New Roman", serif;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 17px;                                /* larger, more readable body */
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+input, textarea, select { font-family: inherit; }
+
+input:focus, textarea:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+.font-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.005em; line-height: 1.1; }
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+/* warm alternating section background helper */
+.bg-warm { background: var(--color-bg-warm); }
+
+.btn-primary {
+  background: var(--color-brand);
+  color: #fff;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, transform 0.05s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-primary:hover { background: var(--color-brand-dark); }
+.btn-primary:active { transform: translateY(1px); }
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.15s;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.btn-accent:hover { background: var(--color-accent-dark); }
+
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-text);
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: background 0.15s;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.btn-gold:hover { background: var(--color-gold-dark); }
+
+.btn-secondary {
+  border: 1px solid var(--color-border-strong);
+  background: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-secondary:hover { border-color: var(--color-brand); background: var(--color-brand-soft); }
+
+.btn-ghost-light {
+  border: 1px solid rgba(255,255,255,0.35);
+  background: transparent;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.btn-ghost-light:hover { background: rgba(255,255,255,0.1); }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+.twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+.twinkle-delay-1 { animation-delay: 0.4s; }
+.twinkle-delay-2 { animation-delay: 0.8s; }
+.twinkle-delay-3 { animation-delay: 1.2s; }
+.twinkle-delay-4 { animation-delay: 1.6s; }
+
+/* Snowfall effect for hero (subtle dots) */
+@keyframes snowfall {
+  0% { transform: translateY(-20px); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(120vh); opacity: 0; }
+}
+
+.prose-clean p { line-height: 1.7; color: #334155; }
+.prose-clean h2, .prose-clean h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+.prose-clean ul { padding-left: 1.25rem; list-style: disc; }
+.prose-clean a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Drawer overlay + slide */
+.drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(11, 18, 32, 0.5);
+  z-index: 50;
+  animation: fade-in 0.2s ease;
+}
+.drawer-panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 100%; max-width: 420px;
+  background: #fff;
+  z-index: 51;
+  box-shadow: -20px 0 40px rgba(0,0,0,0.15);
+  animation: slide-in 0.25s ease;
+  display: flex; flex-direction: column;
+}
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 0.75rem); }
+}

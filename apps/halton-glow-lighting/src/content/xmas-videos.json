@@ -1,0 +1,40 @@
+{
+  "reel": null,
+  "clips": [
+    {
+      "src": "/videos/red-pixel-christmas-cone-trees-light-show-01.mp4",
+      "alt": "Red pixel-lit cone Christmas trees framing a community hall holiday light display in the snow",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/blue-christmas-pixel-light-show-community-hall-01.mp4",
+      "alt": "Clean blue pixel Christmas light show on a community hall with lit cone trees in fresh snow",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/white-pixel-christmas-cone-trees-light-show-01.mp4",
+      "alt": "Cool white and blue pixel Christmas cone trees lighting a snowy community hall display",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/animated-blue-pixel-christmas-tree-light-display-night-01.mp4",
+      "alt": "Animated blue LED pixel Christmas trees with light-up star toppers glowing at night in an outdoor holiday light display",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/blue-pixel-snowflake-christmas-display-01.mp4",
+      "alt": "Blue pixel snowflake and cone-tree Christmas light display at a community holiday event",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/gold-poinsettia-garland-staircase-holiday-decor-detail-01.mp4",
+      "alt": "Close-up of a gold poinsettia and pinecone Christmas garland decorating a glass staircase railing",
+      "category": "detail"
+    },
+    {
+      "src": "/videos/pixel-snowflake-christmas-light-show-event-01.mp4",
+      "alt": "Pixel snowflake light show on a community hall gable during a Christmas tree-lighting event",
+      "category": "light-show"
+    }
+  ]
+}

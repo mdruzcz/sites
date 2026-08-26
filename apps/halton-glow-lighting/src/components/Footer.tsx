@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { Logo } from "./Logo";
+import { AwardBadge } from "@/components/award-badge";
 import {
   PhoneIcon,
   MapPinIcon,
@@ -61,6 +62,7 @@ export function Footer() {
                 { label: "Why Halton Glow", href: "/#why" },
                 { label: "How It Works", href: "/#how" },
                 { label: "Gallery", href: "/#gallery" },
+                { label: "Photo Gallery", href: "/gallery" },
                 { label: "Service Areas", href: "/#service-areas" },
                 { label: "Blog", href: "/blog" },
                 { label: "FAQ", href: "/#faq" },
@@ -114,6 +116,7 @@ export function Footer() {
           <p className="text-xs text-white/35">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
+          <AwardBadge />
           <p className="text-xs text-white/30">
             Permanent Outdoor LED Lighting · Burlington · Oakville · Halton Region
           </p>

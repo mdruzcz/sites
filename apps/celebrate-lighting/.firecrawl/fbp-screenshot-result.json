@@ -1,0 +1,62 @@
+{
+  "screenshot": "https://storage.googleapis.com/firecrawl-scrape-media/screenshot-70574b21-1684-4d1e-b6cc-3ef61fcc5ac7.png?GoogleAccessId=scrape-bucket-accessor%40firecrawl.iam.gserviceaccount.com&Expires=1780343145&Signature=ur2ntsQHtT3wFf1mjAXWdRdymvDzvLuX0T48WBvOZfcScI7ODbs75bclQ7%2BmaOHeY7A%2Bl0ojV4q6N1sDg3LhAhiW3vrwbFSF%2Baru0hn4HT%2FklzxHHNaNY9MImyVZKtZlEZD3i%2BaAFLK5eyPTRJnz5Nuf%2FSwrMrcNultGYC18W2pq6SlIK5lmFTCFVIsBzWJ8ALwWDMe06AJBwe4Pk23%2FgTTAtj9nARohoZCnggBBrXG8bkFdgHQT%2BD3npTh4tq%2FDm9FTKRvl92jrBEeiQtFkmeRIlrA2Ht4rHhm3cUDHuoypcKllJOOiGulALZChELi9o%2FGO83onwAJS4hQmfRswNw%3D%3D",
+  "metadata": {
+    "title": "Michigan's Trusted Basement Experts | Finished Basements Plus",
+    "ogUrl": "https://www.finishedbasementsplus.com/",
+    "og:image:height": "828",
+    "article:modified_time": "2026-05-05T19:13:03+00:00",
+    "description": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og:type": "website",
+    "ogImage": "https://www.finishedbasementsplus.com/wp-content/uploads/2021/01/Finished-Basements-Plus-Cover.jpg",
+    "generator": [
+      "Webflow",
+      "WordPress 6.9.4",
+      "Elementor 4.0.7; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap"
+    ],
+    "viewport": [
+      "width=device-width, initial-scale=1",
+      "width=device-width",
+      "width=device-width"
+    ],
+    "og:site_name": "Basements Plus",
+    "next-head-count": [
+      "2",
+      "2"
+    ],
+    "ogDescription": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "article:publisher": "https://www.facebook.com/Finishedbasementsplus",
+    "og:image": "https://www.finishedbasementsplus.com/wp-content/uploads/2021/01/Finished-Basements-Plus-Cover.jpg",
+    "ogTitle": "Basements Plus",
+    "og:description": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "ogLocale": "en_US",
+    "ogSiteName": "Basements Plus",
+    "language": "en-US",
+    "og:image:width": "1472",
+    "facebook-domain-verification": "wnntxud9gvwa1t1tpq4d5tfdc1ez1o",
+    "og:title": [
+      "Basements Plus",
+      "Michigan's Trusted Basement Experts | Finished Basements Plus"
+    ],
+    "google-site-verification": "GooGhywoiu9839t543j0s7543uw1 - pls add {jellis@finishedbasementsplus.com} to GA account {INSERT UA-136075936-1} with ‘Manage Users and Edit’ permissions - date {07/11/2023}.",
+    "msapplication-TileImage": "https://www.finishedbasementsplus.com/wp-content/uploads/2024/12/B-Icon.svg",
+    "twitter:title": "Basements Plus",
+    "og:image:type": "image/jpeg",
+    "modifiedTime": "2026-05-05T19:13:03+00:00",
+    "twitter:card": "summary_large_image",
+    "og:url": "https://www.finishedbasementsplus.com/",
+    "og:locale": "en_US",
+    "favicon": "https://www.finishedbasementsplus.com/wp-content/uploads/2024/12/B-Icon.svg",
+    "scrapeId": "019e60ab-f3cf-707f-97a2-6e473544c7ab",
+    "sourceURL": "https://www.finishedbasementsplus.com/",
+    "url": "https://www.finishedbasementsplus.com/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "cacheState": "miss",
+    "indexId": "9f96ef68-8848-430f-a25f-4196d30feaed",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

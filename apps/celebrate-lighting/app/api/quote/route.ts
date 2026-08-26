@@ -53,11 +53,13 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL ?? "noreply@celebratelighting.ca",
+        // masterdecker.com is the only Resend-verified sending domain —
+        // a noreply@celebratelighting.ca fallback would 403 silently.
+        from: process.env.CONTACT_FROM_EMAIL ?? "noreply@masterdecker.com",
         to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
-        subject: `New Quote Request: ${body.service} — ${body.name}`,
+        subject: `New Lead: ${body.service} - ${body.name}`,
         html: `
-          <h2>New Quote Request — Celebrate Lighting</h2>
+          <h2>New Lead — Celebrate Lighting</h2>
           <p><strong>Name:</strong> ${body.name}</p>
           <p><strong>Phone:</strong> ${body.phone}</p>
           <p><strong>Email:</strong> ${body.email}</p>

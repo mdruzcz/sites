@@ -68,7 +68,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: process.env.CONTACT_FROM_EMAIL || "noreply@ontariolightshows.ca",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-          subject: `New Quote: ${body.service} — ${body.name} (Ontario Light Shows)`,
+          subject: `New Quote: ${body.service} - ${body.name} (Ontario Light Shows)`,
           html: `
             <h2 style="font-family:system-ui;color:#05070F">New Quote Request — Ontario Light Shows</h2>
             <table style="font-family:system-ui;font-size:14px;line-height:1.6">

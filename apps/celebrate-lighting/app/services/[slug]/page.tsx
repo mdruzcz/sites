@@ -83,8 +83,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 ))}
               </div>
             </div>
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-6">Get a Free Quote for {service.title}</h2>
+            <div className="card-light p-7 sm:p-8">
+              <h2 className="font-display text-xl font-bold text-slate-900 mb-2">Book a Free Demo — {service.title}</h2>
+              <p className="text-sm text-slate-600 mb-6">See it on your own home before you pay. No cost, no obligation.</p>
               <QuoteForm />
             </div>
           </div>
@@ -92,7 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* In-depth content */}
-      <section className="py-16 md:py-20 bg-white">
+      <section style={{ background: "var(--bg)" }} className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-6 text-[var(--muted)] leading-relaxed">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight">
             Why Choose Celebrate Lighting for {service.title}
@@ -146,7 +147,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* Other Services */}
       {otherServices.length > 0 && (
-        <section className="py-16 bg-white">
+        <section style={{ background: "var(--surface)" }} className="py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-[var(--foreground)] mb-8">Other Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

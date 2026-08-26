@@ -17,26 +17,24 @@ const HOSTNAME = "weinstallchristmaslights.ca";
 export async function POST(req: Request) {
   const data = (await req.json()) as Payload;
 
-  // Verify Turnstile (only if widget configured)
-  const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT;
-  if (turnstileEndpoint) {
-    if (!data.turnstileToken) {
-      return NextResponse.json({ error: "Captcha required." }, { status: 400 });
+  // Verify Turnstile (required — fail closed)
+  const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
+  if (!data.turnstileToken) {
+    return NextResponse.json({ error: "Captcha required." }, { status: 400 });
+  }
+  try {
+    const verifyRes = await fetch(turnstileEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: data.turnstileToken, hostname: HOSTNAME }),
+    });
+    const verifyBody = (await verifyRes.json()) as { success: boolean; errors?: string[] };
+    if (!verifyBody.success) {
+      return NextResponse.json({ error: "Captcha verification failed." }, { status: 400 });
     }
-    try {
-      const verifyRes = await fetch(turnstileEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: data.turnstileToken, hostname: HOSTNAME }),
-      });
-      const verifyBody = (await verifyRes.json()) as { success: boolean; errors?: string[] };
-      if (!verifyBody.success) {
-        return NextResponse.json({ error: "Captcha verification failed." }, { status: 400 });
-      }
-    } catch (e) {
-      console.error("Turnstile verify error", e);
-      return NextResponse.json({ error: "Captcha service unavailable." }, { status: 500 });
-    }
+  } catch (e) {
+    console.error("Turnstile verify error", e);
+    return NextResponse.json({ error: "Captcha service unavailable." }, { status: 500 });
   }
 
   // Required basic validation
@@ -93,7 +91,7 @@ export async function POST(req: Request) {
           from: `We Install Christmas Lights <${fromEmail}>`,
           to: [toEmail],
           reply_to: data.email,
-          subject: `New Christmas Lights Lead — ${data.name}${data.city ? ` (${data.city})` : ""}`,
+          subject: `New Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}`,
           html,
         }),
       });

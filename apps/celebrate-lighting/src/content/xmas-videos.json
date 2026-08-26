@@ -1,0 +1,43 @@
+{
+  "reel": {
+    "src": "/videos/light-show-highlight-reel.mp4",
+    "poster": "/images/video/light-show-highlight-reel-poster.webp"
+  },
+  "clips": [
+    {
+      "src": "/videos/animated-pixel-christmas-light-show-community-hall-01.mp4",
+      "alt": "Colour-changing pixel Christmas light show on a snowy community hall with star-topped cone trees",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/blue-christmas-pixel-light-show-community-hall-01.mp4",
+      "alt": "Clean blue pixel Christmas light show on a community hall with lit cone trees in fresh snow",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/red-blue-color-change-pixel-light-show-01.mp4",
+      "alt": "Red-to-blue colour-changing pixel Christmas light show with star-topped cone trees in the snow",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/animated-blue-pixel-christmas-tree-light-display-night-01.mp4",
+      "alt": "Animated blue LED pixel Christmas trees with light-up star toppers glowing at night in an outdoor holiday light display",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/star-topped-pixel-christmas-trees-light-show-01.mp4",
+      "alt": "Star-topped blue pixel Christmas cone trees flanking a community hall holiday light display",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/commercial-lobby-christmas-tree-gold-ribbon-01.mp4",
+      "alt": "Professionally decorated Christmas tree with gold ribbon and silver ornaments in a marble office building lobby",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/community-christmas-light-festival-park-01.mp4",
+      "alt": "Families gathered at a community Christmas light festival with lit trees and illuminated displays",
+      "category": "light-show"
+    }
+  ]
+}

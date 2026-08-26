@@ -1,0 +1,35 @@
+{
+  "reel": null,
+  "clips": [
+    {
+      "src": "/videos/blue-white-wrapped-tree-commercial-christmas-lights-01.mp4",
+      "alt": "Large tree wrapped in blue and warm-white LED lights outside a commercial building at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/commercial-lobby-christmas-tree-gold-ribbon-blue-silver-ornaments-01.mp4",
+      "alt": "Full commercial lobby Christmas tree with gold ribbon, blue and silver ornaments and warm-white lights",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/warm-white-christmas-lights-modern-home-exterior-01.mp4",
+      "alt": "Warm white Christmas string lights and lit shrubs at a modern home exterior at dusk in Ontario",
+      "category": "residential-exterior"
+    },
+    {
+      "src": "/videos/commercial-storefront-christmas-lights-entrance-night-01.mp4",
+      "alt": "Commercial grocery storefront entrance with garland-wrapped columns and warm white Christmas lights at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/warm-white-christmas-lights-storefront-columns-wreaths-01.mp4",
+      "alt": "Storefront entrance columns wrapped in warm white lights with lit Christmas wreaths at night",
+      "category": "commercial-exterior"
+    },
+    {
+      "src": "/videos/commercial-entryway-lit-christmas-trees-gold-ribbon-01.mp4",
+      "alt": "Lit Christmas trees with gold ribbon in a commercial building entryway at night",
+      "category": "commercial-indoor"
+    }
+  ]
+}

@@ -82,7 +82,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--foreground)" }} className="py-16 text-white">
+      <section style={{ background: "var(--deep)" }} className="py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold mb-4">Ready to Get Started?</h2>
           <p className="text-gray-300 mb-8">Contact us today for a free consultation and transparent quote for your home or business.</p>

@@ -141,6 +141,10 @@ export function NavBar() {
             </li>
 
             <li>
+              <Link href="/gallery" className="hover:text-[color:var(--brand-red)] transition-colors">Gallery</Link>
+            </li>
+
+            <li>
               <Link href="/faq" className="hover:text-[color:var(--brand-red)] transition-colors">FAQ</Link>
             </li>
           </ul>
@@ -177,6 +181,7 @@ export function NavBar() {
               {CITIES.map((c) => (
                 <MobileLink key={c.href} href={c.href} onClick={() => setMobileOpen(false)}>{c.label}</MobileLink>
               ))}
+              <MobileLink href="/gallery" onClick={() => setMobileOpen(false)}>Gallery</MobileLink>
               <MobileLink href="/faq" onClick={() => setMobileOpen(false)}>FAQ</MobileLink>
               <MobileLink href="/contact-us" onClick={() => setMobileOpen(false)}>Contact Us</MobileLink>
               <li className="pt-3 flex flex-col gap-2 px-3">

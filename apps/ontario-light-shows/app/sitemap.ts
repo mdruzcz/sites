@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const caseStudies = getCaseStudies();
   const now = new Date();
 
-  const staticRoutes = ["", "/services", "/service-areas", "/case-studies", "/about", "/contact", "/faq", "/privacy-policy", "/terms-of-service"];
+  const staticRoutes = ["", "/services", "/service-areas", "/case-studies", "/gallery", "/about", "/contact", "/faq", "/privacy-policy", "/terms-of-service"];
 
   return [
     ...staticRoutes.map((path) => ({

@@ -17,9 +17,25 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { StepProcess } from "@/components/StepProcess";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { MegaTreeSection } from "@/components/MegaTreeSection";
+import { VideoLoop } from "@/components/VideoLoop";
 import { faqSchema } from "@/lib/jsonld";
+import videos from "@/content/xmas-videos.json";
 
 export const revalidate = 3600;
+
+const reel = videos.reel;
+const videoObjectSchema = reel
+  ? {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: `${site.name} — Music-Synced Christmas Light Show Highlight Reel`,
+      description:
+        "Highlight reel of Ontario Light Shows' music-synchronized addressable LED Christmas light shows and permanent holiday lighting installed across Ontario.",
+      thumbnailUrl: `${site.url}${reel.poster}`,
+      uploadDate: "2026-08-25",
+      contentUrl: `${site.url}${reel.src}`,
+    }
+  : null;
 
 export default function HomePage() {
   const services = getServices();
@@ -36,6 +52,12 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs.slice(0, 5))) }}
       />
+      {videoObjectSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectSchema) }}
+        />
+      )}
 
       {/* 1. Hero */}
       <section className="relative overflow-hidden">
@@ -161,6 +183,43 @@ export default function HomePage() {
 
       {/* 5. Pixel Mega Trees — signature build */}
       <MegaTreeSection />
+
+      {/* 5b. See our work — video reel */}
+      {reel && (
+        <section className="py-20 sm:py-28 bg-midnight">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+              <div className="lg:col-span-2">
+                <p className="eyebrow">See Our Work</p>
+                <h2 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+                  Watch a show <span className="gradient-text">come alive</span>.
+                </h2>
+                <p className="text-muted-strong text-base sm:text-lg leading-relaxed mb-6">
+                  A highlight reel of our music-synchronized addressable LED installs — pixel mega trees, snowflake gables, and animated facades sequenced frame by frame and weather-sealed for Ontario.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a href="#quote" className="btn btn-primary text-base px-7">
+                    Design My Show
+                    <Arrow />
+                  </a>
+                  <Link href="/gallery" className="btn btn-ghost text-base px-7">
+                    View the gallery
+                  </Link>
+                </div>
+              </div>
+              <div className="lg:col-span-3">
+                <div className="relative rounded-2xl overflow-hidden card card-glow">
+                  <VideoLoop
+                    src={reel.src}
+                    poster={reel.poster}
+                    className="aspect-video w-full rounded-2xl object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 6. Why choose us */}
       <section className="py-20 sm:py-28 bg-midnight">

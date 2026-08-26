@@ -3,8 +3,12 @@
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { trackFormSubmission } from "@/lib/gtm";
+import { site } from "@/lib/site";
 
+/* "Free On-Site Demo" is first and preselected — it's the offer we lead
+   with everywhere else, so the form shouldn't make people hunt for it. */
 const services = [
+  "Free On-Site Demo",
   "New Installation",
   "Repair Service",
   "Consultation",
@@ -42,14 +46,20 @@ export function QuoteForm() {
 
   if (status === "success") {
     return (
-      <div ref={successRef} className="rounded-2xl bg-[var(--accent-light)] border border-[var(--accent)] p-8 text-center">
+      <div ref={successRef} className="rounded-2xl bg-[#f0fdfb] border-2 border-[var(--accent)] p-8 text-center">
         <div className="w-12 h-12 rounded-full bg-[var(--accent)] flex items-center justify-center mx-auto mb-4">
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">Quote Request Received!</h3>
-        <p className="text-gray-600">We&apos;ll get back to you within 24 hours. Our team will reach out to discuss your project and schedule a free on-site consultation.</p>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Got it — request received</h3>
+        <p className="text-slate-600 leading-relaxed">
+          We&apos;ll call within <strong>24 hours</strong> to book your free on-site demo. We come out, mount
+          a live sample section on your house, and turn it on so you can see it before you decide.
+        </p>
+        <a href={site.phoneHref} className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">
+          Need us sooner? Call {site.phone}
+        </a>
       </div>
     );
   }
@@ -61,7 +71,7 @@ export function QuoteForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">Full Name *</label>
           <input
             id="name"
             name="name"
@@ -69,11 +79,11 @@ export function QuoteForm() {
             required
             autoComplete="name"
             placeholder="Jane Smith"
-            className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent"
+            className="field"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1.5">Phone *</label>
           <input
             id="phone"
             name="phone"
@@ -82,13 +92,13 @@ export function QuoteForm() {
             inputMode="tel"
             autoComplete="tel"
             placeholder="(519) 555-0100"
-            className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent"
+            className="field"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">Email *</label>
         <input
           id="email"
           name="email"
@@ -96,31 +106,31 @@ export function QuoteForm() {
           required
           autoComplete="email"
           placeholder="jane@example.com"
-          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent"
+          className="field"
         />
       </div>
 
       <div>
-        <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">Home Address</label>
+        <label htmlFor="address" className="block text-sm font-medium text-slate-700 mb-1.5">Home Address</label>
         <input
           id="address"
           name="address"
           type="text"
           autoComplete="street-address"
           placeholder="123 Main St, London, ON"
-          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent"
+          className="field"
         />
       </div>
 
       <div>
-        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">Service *</label>
+        <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-1.5">Service *</label>
         <select
           id="service"
           name="service"
           required
-          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent bg-white"
+          defaultValue="Free On-Site Demo"
+          className="field"
         >
-          <option value="">Select a service...</option>
           {services.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
@@ -128,13 +138,13 @@ export function QuoteForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">Project Details</label>
         <textarea
           id="message"
           name="message"
           rows={4}
           placeholder="Tell us about your home, any specific lighting ideas, or questions..."
-          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent resize-none"
+          className="field resize-none"
         />
       </div>
 
@@ -161,11 +171,13 @@ export function QuoteForm() {
             Processing...
           </>
         ) : (
-          "Get My Free Quote"
+          <>{site.demo.cta} →</>
         )}
       </button>
 
-      <p className="text-xs text-gray-500 text-center">No spam, ever. We reply within 24 hours.</p>
+      <p className="text-xs text-slate-500 text-center">
+        Free &amp; no obligation. No spam, ever. We reply within 24 hours.
+      </p>
     </form>
   );
 }

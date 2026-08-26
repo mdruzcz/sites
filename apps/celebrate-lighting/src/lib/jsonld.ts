@@ -29,13 +29,6 @@ export function localBusinessSchema(testimonials?: Testimonial[]) {
       "@type": "City",
       name: city,
     })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "27",
-      bestRating: "5",
-      worstRating: "1",
-    },
     ...(testimonials && testimonials.length > 0
       ? {
           review: testimonials.map((t) => ({
@@ -128,13 +121,6 @@ export function reviewsSchema(testimonials: Testimonial[]) {
     name: site.name,
     url: site.url,
     image: `${site.url}/images/hero-main.jpg`,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "27",
-      bestRating: "5",
-      worstRating: "1",
-    },
     review: testimonials.map((t) => ({
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: String(t.rating), bestRating: "5", worstRating: "1" },

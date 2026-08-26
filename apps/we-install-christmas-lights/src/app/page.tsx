@@ -8,9 +8,33 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 import { TenReasons } from "@/components/TenReasons";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { VideoLoop } from "@/components/VideoLoop";
+import { site } from "@/lib/site";
+import videosData from "@/content/xmas-videos.json";
 import Link from "next/link";
 
 export const revalidate = 3600;
+
+type Clip = { src: string; alt: string; category: string };
+type Videos = { reel: { src: string; poster: string } | null; clips: Clip[] };
+const videos = videosData as Videos;
+
+// Poster shown before the clip loads — a night blue/warm-white exterior that matches the reel.
+const VIDEO_POSTER = "/images/xmas-gallery/condo-building-blue-warm-white-christmas-lights-night-01.jpg";
+const heroVideo =
+  videos.reel ??
+  (videos.clips.length > 0 ? { src: videos.clips[0].src, poster: VIDEO_POSTER } : null);
+
+const VIDEO_SCHEMA = heroVideo && {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "We Install Christmas Lights — Commercial & Residential Christmas Light Installation",
+  description:
+    "Watch a Christmas light installation by We Install Christmas Lights — professional holiday lighting for homes and businesses across London Ontario and South-Western Ontario.",
+  thumbnailUrl: `${site.url}${heroVideo.poster}`,
+  contentUrl: `${site.url}${heroVideo.src}`,
+  uploadDate: "2026-08-25",
+};
 
 export const metadata: Metadata = {
   title: "Professional Christmas Light Installation | We Install Christmas Lights",
@@ -100,6 +124,13 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
+      {VIDEO_SCHEMA && (
+        <Script
+          id="video-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(VIDEO_SCHEMA) }}
+        />
+      )}
 
       <Hero />
       <Pitch />
@@ -108,6 +139,35 @@ export default function HomePage() {
       <ProcessSteps />
       <TenReasons />
       <ServicesGrid />
+
+      {/* See our work — video showcase */}
+      {heroVideo && (
+        <section className="section bg-[color:var(--brand-green)] text-white">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">See Our Work</p>
+              <h2 className="heading-display text-3xl sm:text-4xl mt-3 text-white">
+                Christmas Light Installations In Motion
+              </h2>
+              <p className="mt-4 max-w-2xl mx-auto text-white/90">
+                A look at the residential and commercial holiday displays we design, install, and
+                maintain across South-Western Ontario.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+              <VideoLoop
+                src={heroVideo.src}
+                poster={heroVideo.poster}
+                className="aspect-video w-full rounded-2xl object-cover"
+              />
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/gallery" className="btn btn-outline-white">View Full Gallery</Link>
+              <Link href="/contact-us" className="btn btn-red">Get a Free Quote</Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section bg-[color:var(--bg-cream)]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

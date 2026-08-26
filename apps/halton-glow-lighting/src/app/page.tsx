@@ -9,7 +9,9 @@ import { SmartControl } from "@/components/SmartControl";
 import { ColorShowcase } from "@/components/ColorShowcase";
 import { Process } from "@/components/Process";
 import { Gallery } from "@/components/Gallery";
+import { VideoShowcase } from "@/components/VideoShowcase";
 import { UseCases } from "@/components/UseCases";
+import videos from "@/content/xmas-videos.json";
 import { Testimonials } from "@/components/Testimonials";
 import { ServiceAreas } from "@/components/ServiceAreas";
 import { FAQ } from "@/components/FAQ";
@@ -111,6 +113,23 @@ const faqSchema = {
   ],
 };
 
+const heroVideo = videos.reel ?? videos.clips[0];
+const heroVideoPoster =
+  "/images/xmas-gallery/blue-led-cone-christmas-trees-outdoor-light-show-01.jpg";
+
+const videoSchema = heroVideo
+  ? {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: "Halton Glow Lighting Christmas Light Show",
+      description:
+        "Programmable pixel Christmas light show and permanent outdoor LED lighting installed by Halton Glow Lighting in Burlington and Oakville, Ontario.",
+      thumbnailUrl: [`${site.url}${heroVideoPoster}`],
+      uploadDate: "2026-08-25",
+      contentUrl: `${site.url}${heroVideo.src}`,
+    }
+  : null;
+
 export default function Home() {
   return (
     <>
@@ -126,6 +145,14 @@ export default function Home() {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {videoSchema && (
+        <Script
+          id="ld-video"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
       <main>
         <NavBar />
         <Hero />
@@ -135,6 +162,7 @@ export default function Home() {
         <ColorShowcase />
         <Process />
         <Gallery />
+        <VideoShowcase />
         <UseCases />
         <Testimonials />
         <ServiceAreas />

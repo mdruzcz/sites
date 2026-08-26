@@ -9,6 +9,7 @@ const links = [
   { href: "/#why", label: "Why Halton Glow" },
   { href: "/#how", label: "How It Works" },
   { href: "/#gallery", label: "Gallery" },
+  { href: "/gallery", label: "Photo Gallery" },
   { href: "/#service-areas", label: "Service Areas" },
   { href: "/blog", label: "Blog" },
   { href: "/#faq", label: "FAQ" },

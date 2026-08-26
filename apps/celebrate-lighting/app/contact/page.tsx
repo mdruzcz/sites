@@ -5,17 +5,25 @@ import { site } from "@/lib/site";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Quote",
+  title: "Book Your Free On-Site Demo",
   description:
-    "Contact Celebrate Lighting for a free, no-obligation quote on permanent outdoor LED lighting across Southwestern Ontario. We reply within 24 hours.",
+    "Book a free on-site demo of permanent LED lighting. We come to your home, colour-match your soffit and light up a live sample before you pay. Southwestern Ontario.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Celebrate Lighting | Free Quote for LED Lighting in Ontario",
-    description: "Get your free consultation and quote for permanent outdoor LED lighting in Southwestern Ontario. We reply within 24 hours.",
+    title: "Book a Free On-Site Demo | Celebrate Lighting",
+    description:
+      "We come to you, mount a live sample on your house and turn the lights on — before you spend a cent. Free, no obligation. Southwestern Ontario.",
     url: "https://celebratelighting.ca/contact",
-    images: [{ url: "/images/hero-main.jpg", alt: "Contact Celebrate Lighting for a free permanent LED lighting quote" }],
+    images: [{ url: "/images/hero-main.jpg", alt: "Contact Celebrate Lighting to book a free on-site permanent LED lighting demo" }],
   },
 };
+
+const whatToExpect = [
+  "We call you back within 24 hours to agree a time — evenings included, since the lights show best after dark.",
+  "A specialist walks your property, measures your rooflines and takes a physical colour sample of your soffit.",
+  "We mount a live sample section on your house and turn it on, so you see it on your own home.",
+  "You get a transparent, itemized quote before we leave. No deposit and no pressure to sign.",
+];
 
 export default function ContactPage() {
   return (
@@ -28,22 +36,39 @@ export default function ContactPage() {
 
       <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
+          <nav className="text-sm text-[var(--muted)] mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
             <span className="mx-2">/</span>
-            <span>Contact</span>
+            <span>Book a Demo</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left — info */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16">
+            {/* Left — the offer, then contact details */}
             <div>
-              <p className="section-eyebrow mb-3">Get in Touch</p>
-              <h1 className="text-4xl font-extrabold text-[var(--foreground)] tracking-tight mb-4">
-                Ready to Transform Your Home?
+              <p className="section-eyebrow mb-3">Free On-Site Demo</p>
+              <h1 className="font-display text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-5 text-balance">
+                See it on your home before you pay a cent.
               </h1>
-              <p className="text-[var(--muted)] leading-relaxed mb-10">
-                Get your free consultation and quote today. Our team is available 7 days a week to answer your questions and get your lighting project started.
+              <p className="text-[var(--muted)] leading-relaxed mb-8">
+                {site.demo.detail}
               </p>
+
+              <h2 className="font-semibold text-[var(--foreground)] mb-4">What happens next</h2>
+              <ol className="space-y-4 mb-10">
+                {whatToExpect.map((item, i) => (
+                  <li key={i} className="flex gap-3.5">
+                    <span
+                      className="w-6 h-6 rounded-full shrink-0 flex items-center justify-center text-xs font-bold mt-0.5"
+                      style={{ background: "var(--accent-light)", color: "var(--accent)" }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-[var(--muted)] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="hairline mb-8" />
 
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
@@ -53,9 +78,25 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-[var(--foreground)]">Phone</div>
-                    <a href={site.phoneHref} className="text-[var(--accent)] font-medium">{site.phone}</a>
-                    <div className="text-xs text-[var(--muted)] mt-1">Available 7 days a week, 8 AM – 8 PM</div>
+                    <div className="font-semibold text-[var(--foreground)]">Prefer to talk?</div>
+                    <a href={site.phoneHref} className="text-[var(--accent)] font-semibold text-lg hover:underline">
+                      {site.phone}
+                    </a>
+                    <div className="text-xs text-[var(--muted)] mt-1">Open 7 days a week</div>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center" style={{ background: "var(--accent-light)" }}>
+                    <svg className="w-5 h-5" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-[var(--foreground)]">Email</div>
+                    <a href={site.emailHref} className="text-[var(--accent)] font-medium break-all hover:underline">
+                      {site.email}
+                    </a>
                   </div>
                 </div>
 
@@ -67,8 +108,11 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-[var(--foreground)]">Address</div>
+                    <div className="font-semibold text-[var(--foreground)]">Based in</div>
                     <div className="text-[var(--muted)] text-sm">{site.addressLine}</div>
+                    <div className="text-xs text-[var(--muted)] mt-1">
+                      Serving {site.serviceAreas.slice(0, 4).join(", ")} and across Southwestern Ontario
+                    </div>
                   </div>
                 </div>
               </div>
@@ -77,7 +121,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-[var(--foreground)] mb-3">Business Hours</h3>
                 <div className="space-y-2 text-sm">
                   {site.hoursDetailed.map((h) => (
-                    <div key={h.day} className="flex justify-between">
+                    <div key={h.day} className="flex justify-between gap-4">
                       <span className="text-[var(--muted)]">{h.day}</span>
                       <span className="font-medium text-[var(--foreground)]">{h.hours}</span>
                     </div>
@@ -86,10 +130,16 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right — form */}
+            {/* Right — form. .card-light because QuoteForm renders dark text
+                on white fields; a dark .card would hide every label. */}
             <div>
-              <div className="card p-8">
-                <h2 className="text-2xl font-bold text-[var(--foreground)] mb-6">Request Your Free Quote</h2>
+              <div className="card-light p-7 sm:p-8 lg:sticky lg:top-24">
+                <h2 className="font-display text-2xl font-bold text-slate-900 mb-1.5">
+                  Book your free on-site demo
+                </h2>
+                <p className="text-sm text-slate-600 mb-6">
+                  No cost, no deposit, no obligation. We reply within {site.responseTime}.
+                </p>
                 <QuoteForm />
               </div>
             </div>

@@ -61,7 +61,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-white">
+      <section style={{ background: "var(--bg)" }} className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-eyebrow mb-3">What Guides Us</p>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Installation Process */}
-      <section className="py-16 md:py-24 bg-white">
+      <section style={{ background: "var(--bg)" }} className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-eyebrow mb-3">How We Work</p>
@@ -138,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* Service Areas CTA */}
-      <section style={{ background: "var(--foreground)" }} className="py-16 text-white">
+      <section style={{ background: "var(--deep)" }} className="py-16 text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold mb-4">Serving All of Southwestern Ontario</h2>
           <p className="text-gray-300 mb-8">

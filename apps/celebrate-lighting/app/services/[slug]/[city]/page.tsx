@@ -107,11 +107,14 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
               </p>
             </div>
 
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
-                Get a Free Quote in {city.name}
+            <div className="card-light p-7 sm:p-8">
+              <h2 className="font-display text-xl font-bold text-slate-900 mb-2">
+                Free On-Site Demo in {city.name}
               </h2>
-              <p className="text-sm text-[var(--muted)] mb-6">We respond within 24 hours. No obligation.</p>
+              <p className="text-sm text-slate-600 mb-6">
+                We come to your {city.name} home, light up a live sample, and leave an itemized quote.
+                No cost, no obligation.
+              </p>
               <QuoteForm />
             </div>
           </div>
@@ -119,7 +122,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
       </section>
 
       {/* Other services in this city */}
-      <section className="py-16 bg-white">
+      <section style={{ background: "var(--bg)" }} className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">Other Services in {city.name}</h2>
           <p className="text-sm text-[var(--muted)] mb-6">Celebrate Lighting offers a full range of permanent lighting services in {city.name}, Ontario.</p>

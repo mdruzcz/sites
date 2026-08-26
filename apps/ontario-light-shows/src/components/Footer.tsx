@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { getServices, getServiceAreas } from "@/lib/content";
+import { AwardBadge } from "@/components/award-badge";
 
 export function Footer() {
   const services = getServices();
@@ -88,8 +89,10 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-soft">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted">
+            <AwardBadge />
             <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
             <div className="flex gap-6">
+              <Link href="/gallery" className="hover:text-accent transition-colors">Gallery</Link>
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-accent transition-colors">Terms</Link>
               <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>

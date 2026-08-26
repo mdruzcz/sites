@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { QuoteForm } from "@/components/QuoteForm";
+import { VideoLoop } from "@/components/VideoLoop";
+import videos from "@/src/content/xmas-videos.json";
 import { site } from "@/lib/site";
 import {
   getServices,
@@ -134,6 +136,8 @@ export default function HomePage() {
   const testimonials = getFeaturedTestimonials();
   const featuredFaqs = getFeaturedFaqs();
   const serviceAreas = getServiceAreas();
+  const reelSrc = videos.reel?.src ?? videos.clips?.[0]?.src ?? null;
+  const reelPoster = videos.reel?.poster;
 
   return (
     <>
@@ -155,6 +159,30 @@ export default function HomePage() {
           __html: JSON.stringify(faqSchema(featuredFaqs)),
         }}
       />
+      {reelSrc && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "VideoObject",
+              name: "GTA Christmas Lighting — Holiday Light Show Highlight Reel",
+              description:
+                "Watch custom Christmas and pixel light shows designed and installed by GTA Christmas Lighting on homes and businesses across the Greater Toronto Area.",
+              thumbnailUrl: reelPoster
+                ? `${site.url}${reelPoster}`
+                : `${site.url}/images/hero.jpg`,
+              uploadDate: "2026-08-25",
+              contentUrl: `${site.url}${reelSrc}`,
+              publisher: {
+                "@type": "Organization",
+                name: site.name,
+                url: site.url,
+              },
+            }),
+          }}
+        />
+      )}
 
       {/* HERO */}
       <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden bg-[var(--dark-bg)]">
@@ -400,6 +428,44 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* VIDEO SHOWCASE */}
+      {reelSrc && (
+        <section className="bg-[var(--evergreen)] py-20 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <p className="text-[var(--accent-gold)] text-xs tracking-[0.25em] uppercase font-semibold mb-3">
+                Watch · Light Show Reel
+              </p>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-white mb-4"
+                style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+              >
+                See the Lights Come to Life
+              </h2>
+              <p className="text-white/70 leading-relaxed">
+                A quick look at the custom Christmas displays and animated pixel
+                light shows we design and install on homes and businesses across
+                the Greater Toronto Area.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden border border-[var(--border-dark)] shadow-2xl bg-[var(--dark-surface)]">
+                <VideoLoop
+                  src={reelSrc}
+                  poster={reelPoster}
+                  className="aspect-video w-full rounded-2xl object-cover"
+                />
+              </div>
+              <div className="text-center mt-8">
+                <Link href="/gallery" className="btn btn-gold px-8">
+                  View the Full Gallery →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* PHOTO GALLERY STRIP */}
       <section className="bg-[var(--dark-bg)] py-14">

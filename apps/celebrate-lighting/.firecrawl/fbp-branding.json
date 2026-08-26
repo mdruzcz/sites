@@ -1,0 +1,207 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Poppins",
+        "role": "heading"
+      },
+      {
+        "family": "Roboto",
+        "role": "body"
+      }
+    ],
+    "colors": {
+      "primary": "#00ADEF",
+      "secondary": "#D8AD6A",
+      "accent": "#112A40",
+      "background": "#FFFFFF",
+      "textPrimary": "#112A40",
+      "link": "#112A40"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Roboto",
+        "heading": "Poppins"
+      },
+      "fontStacks": {
+        "heading": [
+          "Poppins",
+          "sans-serif"
+        ],
+        "body": [
+          "Roboto",
+          "sans-serif"
+        ],
+        "paragraph": [
+          "Poppins",
+          "sans-serif"
+        ]
+      },
+      "fontSizes": {
+        "h1": "52px",
+        "h2": "25px",
+        "body": "13px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "8px"
+    },
+    "components": {
+      "input": {
+        "background": "#FFFFFF",
+        "textColor": "#000000",
+        "borderColor": "#2BADEF",
+        "borderRadius": "100px",
+        "borderRadiusCorners": {
+          "topLeft": "100px",
+          "topRight": "100px",
+          "bottomRight": "100px",
+          "bottomLeft": "100px"
+        },
+        "shadow": "none"
+      },
+      "buttonPrimary": {
+        "background": "#112A40",
+        "textColor": "#FFFFFF",
+        "borderColor": "#2BADEF",
+        "borderRadius": "39px",
+        "borderRadiusCorners": {
+          "topLeft": "39px",
+          "topRight": "39px",
+          "bottomRight": "39px",
+          "bottomLeft": "39px"
+        },
+        "shadow": "none"
+      },
+      "buttonSecondary": {
+        "background": "#D8AD6A",
+        "textColor": "#FFFFFF",
+        "borderColor": "#D8AD6A",
+        "borderRadius": "50px",
+        "borderRadiusCorners": {
+          "topLeft": "50px",
+          "topRight": "50px",
+          "bottomRight": "50px",
+          "bottomLeft": "50px"
+        },
+        "shadow": "rgba(17, 42, 64, 0.3) 1px 1px 3px 0px"
+      }
+    },
+    "images": {
+      "logo": "https://www.finishedbasementsplus.com/wp-content/uploads/2023/09/header-logo-300x58.webp",
+      "favicon": "https://www.finishedbasementsplus.com/wp-content/uploads/2024/12/B-Icon.svg",
+      "ogImage": "https://www.finishedbasementsplus.com/wp-content/uploads/2021/01/Finished-Basements-Plus-Cover.jpg",
+      "logoHref": "https://www.finishedbasementsplus.com",
+      "logoAlt": "Basements Plus Finishing & Waterproofing Logo"
+    },
+    "__llm_logo_reasoning": {
+      "selectedIndex": 0,
+      "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and the alt text matches the brand 'Basements Plus'.",
+      "confidence": 0.9,
+      "source": "llm"
+    },
+    "__llm_button_reasoning": {
+      "primary": {
+        "index": 2,
+        "text": "Get A Free Consultation",
+        "reasoning": "Button #5 has a vibrant brand color (#112A40) and strong CTA text 'Get A Free Consultation', making it the primary CTA."
+      },
+      "secondary": {
+        "index": 12,
+        "text": "Next",
+        "reasoning": "Button #9 has a different vibrant color (#D8AD6A) and serves as a secondary action with the text 'Next'."
+      },
+      "confidence": 0.95
+    },
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "targetAudience": "homeowners in Michigan"
+    },
+    "designSystem": {
+      "framework": "custom",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0.95,
+      "colors": 0.9,
+      "overall": 0.925
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": true,
+        "llmSucceeded": true,
+        "finalSource": "llm",
+        "rawLogoSelection": {
+          "selectedLogoIndex": 0,
+          "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and the alt text matches the brand 'Basements Plus'.",
+          "confidence": 0.9
+        }
+      },
+      "buttonClassification": {
+        "llmCalled": true,
+        "llmSucceeded": true
+      }
+    }
+  },
+  "metadata": {
+    "twitter:title": "Basements Plus",
+    "description": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "og:image:width": "1472",
+    "og:site_name": "Basements Plus",
+    "og:title": [
+      "Basements Plus",
+      "Michigan's Trusted Basement Experts | Finished Basements Plus"
+    ],
+    "viewport": [
+      "width=device-width, initial-scale=1",
+      "width=device-width",
+      "width=device-width"
+    ],
+    "ogImage": "https://www.finishedbasementsplus.com/wp-content/uploads/2021/01/Finished-Basements-Plus-Cover.jpg",
+    "ogUrl": "https://www.finishedbasementsplus.com/",
+    "og:image:type": "image/jpeg",
+    "og:description": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "facebook-domain-verification": "wnntxud9gvwa1t1tpq4d5tfdc1ez1o",
+    "language": "en-US",
+    "modifiedTime": "2026-05-05T19:13:03+00:00",
+    "ogLocale": "en_US",
+    "ogTitle": "Basements Plus",
+    "article:publisher": "https://www.facebook.com/Finishedbasementsplus",
+    "generator": [
+      "Webflow",
+      "WordPress 6.9.4",
+      "Elementor 4.0.7; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap"
+    ],
+    "og:type": "website",
+    "title": "Michigan's Trusted Basement Experts | Finished Basements Plus",
+    "ogDescription": "From finishing to waterproofing, Finished Basements Plus is your go-to solution in Michigan. Explore our services and schedule a consultation today!",
+    "og:url": "https://www.finishedbasementsplus.com/",
+    "twitter:card": "summary_large_image",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "og:image:height": "828",
+    "google-site-verification": "GooGhywoiu9839t543j0s7543uw1 - pls add {jellis@finishedbasementsplus.com} to GA account {INSERT UA-136075936-1} with ‘Manage Users and Edit’ permissions - date {07/11/2023}.",
+    "next-head-count": [
+      "2",
+      "2"
+    ],
+    "msapplication-TileImage": "https://www.finishedbasementsplus.com/wp-content/uploads/2024/12/B-Icon.svg",
+    "ogSiteName": "Basements Plus",
+    "article:modified_time": "2026-05-05T19:13:03+00:00",
+    "og:image": "https://www.finishedbasementsplus.com/wp-content/uploads/2021/01/Finished-Basements-Plus-Cover.jpg",
+    "og:locale": "en_US",
+    "favicon": "https://www.finishedbasementsplus.com/wp-content/uploads/2024/12/B-Icon.svg",
+    "scrapeId": "019e60ab-5478-720b-88cb-ba4add9a2937",
+    "sourceURL": "https://www.finishedbasementsplus.com/",
+    "url": "https://www.finishedbasementsplus.com/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "5945cd18-d700-431b-91de-34765afeb8a2",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

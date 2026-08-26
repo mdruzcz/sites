@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -175,6 +176,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-[var(--border-dark)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
+          <AwardBadge />
           <p>
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved. Proudly serving
             the Greater Toronto Area.

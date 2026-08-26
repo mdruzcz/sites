@@ -15,6 +15,8 @@ import { Contact } from "@/components/Contact";
 import { CtaBand } from "@/components/CtaBand";
 import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
+import { VideoLoop } from "@/components/VideoLoop";
+import videos from "@/content/xmas-videos.json";
 
 export const revalidate = 3600;
 
@@ -61,6 +63,24 @@ const localBusinessSchema = {
   },
 };
 
+const reel = videos.reel;
+
+const videoObjectSchema = reel && {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Festive Holiday Lighting — Christmas Light Show Highlight Reel",
+  description:
+    "A highlight reel of Festive Holiday Lighting's Christmas light shows and permanent LED installations across Southern Ontario.",
+  thumbnailUrl: `${site.url}${reel.poster}`,
+  contentUrl: `${site.url}${reel.src}`,
+  uploadDate: "2026-08-25",
+  publisher: {
+    "@type": "Organization",
+    name: site.name,
+    url: site.url,
+  },
+};
+
 export default function HomePage() {
   return (
     <>
@@ -69,6 +89,13 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      {videoObjectSchema && (
+        <Script
+          id="video-object-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectSchema) }}
+        />
+      )}
       <NavBar />
       <Hero />
       <TrustBar />
@@ -77,6 +104,49 @@ export default function HomePage() {
       <WhyChoose />
       <Process />
       <Testimonials />
+
+      {reel && (
+        <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--night)" }}>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--gold-bright)" }}>
+                See Our Work
+              </p>
+              <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                Watch the <span className="text-gradient-festive">Light Show</span> in Motion
+              </h2>
+              <p className="text-lg text-white/60 max-w-2xl mx-auto">
+                Music-synced pixel displays, glowing rooflines, and mega trees lit up across Southern Ontario. Press play and picture it on your home or business.
+              </p>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden border gold-glow" style={{ borderColor: "rgba(201,168,76,0.25)" }}>
+              <VideoLoop
+                src={reel.src}
+                poster={reel.poster}
+                className="aspect-video w-full rounded-2xl object-cover"
+              />
+            </div>
+
+            <div className="text-center mt-12">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105 min-h-11"
+                style={{
+                  background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))",
+                  boxShadow: "0 8px 32px rgba(178,34,34,0.4)",
+                }}
+              >
+                Get a Free Quote for Your Display
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
       <ServiceAreas />
       <CtaBand />
       <FAQ />

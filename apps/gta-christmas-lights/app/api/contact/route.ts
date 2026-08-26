@@ -87,7 +87,7 @@ export async function POST(req: Request) {
           from:
             process.env.CONTACT_FROM_EMAIL || "noreply@gtachristmaslighting.ca",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-          subject: `New GTA Christmas Lighting Quote: ${body.serviceType} — ${body.name}`,
+          subject: `New GTA Christmas Lighting Quote: ${body.serviceType} - ${body.name}`,
           html: `
             <h2 style="color:#C2151E;margin-bottom:8px;">New GTA Christmas Lighting Quote Request</h2>
             <p style="color:#666;margin-top:0;">A new quote request just came in via gtachristmaslighting.ca.</p>

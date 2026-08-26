@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site, cities, services } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 import { PhoneIcon } from "./icons";
 
 export function Footer() {
@@ -56,6 +57,7 @@ export function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
+                { label: "Gallery", href: "/gallery" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
@@ -74,6 +76,7 @@ export function Footer() {
           <p className="text-xs text-white/35">
             © {new Date().getFullYear()} Festive Holiday Lighting. All rights reserved.
           </p>
+          <AwardBadge />
           <div className="flex items-center gap-4">
             <span className="text-xs text-white/35">$5M Liability · WSIB Compliant · Family Owned</span>
           </div>
