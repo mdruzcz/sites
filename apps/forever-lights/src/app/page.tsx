@@ -1,13 +1,23 @@
 import type { Metadata } from 'next';
 import { HomePage } from '@/components/HomePage';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: 'Permanent LED Outdoor Lighting — London, Ontario | Forever Lights',
-  description: 'Forever Lights installs permanent LED track lighting on London Ontario homes. App-controlled, weatherproof, 5-year warranty. Never hang Christmas lights again. Free quote!',
+  title: 'Permanent Roofline Lighting in London, Ontario | Forever Lights',
+  description:
+    'Forever Lights installs permanent LED roofline lighting on London, Ontario homes. App-controlled, invisible by day, rated to -40°C, 5-year warranty. Free quote.',
+  alternates: { canonical: 'https://foreverlights.ca/' },
   openGraph: {
-    title: 'Permanent LED Outdoor Lighting — London, Ontario | Forever Lights',
-    description: 'App-controlled permanent LED soffit lighting for London, Ontario homes. Weatherproof, invisible by day, stunning at night.',
-    images: [{ url: '/images/hero-home-2.jpg', width: 1200, height: 630 }],
+    title: 'Permanent Roofline Lighting in London, Ontario | Forever Lights',
+    description: 'Never hang Christmas lights again. App-controlled permanent LED lighting, installed once and enjoyed every holiday and every night.',
+    url: 'https://foreverlights.ca/',
+    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Permanent Roofline Lighting in London, Ontario | Forever Lights',
+    description: 'Never hang Christmas lights again. App-controlled permanent LED lighting for London and Southwestern Ontario homes.',
   },
 };
 

@@ -1,99 +1,112 @@
 import Link from 'next/link';
-import { site } from '@/lib/site';
-import { serviceAreas } from '@/lib/site';
+import { site, serviceAreas, services, phoneHref } from '@/lib/site';
+import { AwardBadge } from '@/components/award-badge';
+import { Logo } from '@/components/Logo';
+import { Icon } from '@/components/icons';
+
+const isRealSocial = (url?: string) => !!url && !/^https?:\/\/(www\.)?(facebook|youtube|instagram)\.com\/?$/i.test(url);
 
 export function Footer() {
+  const featuredAreas = serviceAreas.slice(0, 8);
   return (
-    <footer className="bg-[#06060e] border-t border-white/8 pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-1">
-            {/* SVG logo — transparent background, renders cleanly on dark footer */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo.svg"
-              alt="Forever Lights — Permanent LED Lighting"
-              style={{ height: '96px', width: 'auto' }}
-              className="mb-4"
-            />
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Professional permanent LED lighting for homes across London, Ontario and Southwestern Ontario.
+    <footer className="bg-dark text-white">
+      <div className="wrap pt-16 pb-10">
+        <div className="grid gap-12 lg:grid-cols-12">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <Logo variant="white" tagline height={64} />
+            <p className="mt-6 text-white/70 text-[15px] leading-relaxed max-w-sm">
+              Permanent LED roofline lighting for homes and businesses across London, Ontario and {site.region}.
+              Installed once. Enjoyed every night, every holiday, forever.
             </p>
-            <div className="mt-4 flex gap-3">
-              <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/8 hover:bg-[#F5A623]/20 flex items-center justify-center text-slate-400 hover:text-[#F5A623] transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <div className="mt-6 flex flex-col gap-3 text-[15px]">
+              <a href={phoneHref} className="inline-flex items-center gap-3 font-semibold hover:text-accent transition-colors min-h-[44px]">
+                <Icon.phone size={18} className="text-accent" /> {site.phone}
               </a>
-              <a href={site.social.youtube} target="_blank" rel="noopener" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/8 hover:bg-[#F5A623]/20 flex items-center justify-center text-slate-400 hover:text-[#F5A623] transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 text-white/80 hover:text-accent transition-colors min-h-[44px]">
+                <Icon.mail size={18} className="text-accent" /> {site.email}
               </a>
+              <span className="inline-flex items-center gap-3 text-white/60">
+                <Icon.clock size={18} className="text-accent" /> {site.hours}
+              </span>
             </div>
+            {(isRealSocial(site.social?.facebook) || isRealSocial(site.social?.youtube)) && (
+              <div className="mt-5 flex gap-3">
+                {isRealSocial(site.social?.facebook) && (
+                  <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent hover:text-ink flex items-center justify-center transition-colors">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                  </a>
+                )}
+                {isRealSocial(site.social?.youtube) && (
+                  <a href={site.social.youtube} target="_blank" rel="noopener" aria-label="YouTube" className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent hover:text-ink flex items-center justify-center transition-colors">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+                  </a>
+                )}
+              </div>
+            )}
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {[
-                { href: '/', label: 'Home' },
-                { href: '/about', label: 'About Us' },
-                { href: '/gallery', label: 'Gallery' },
+          {/* Link columns */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <FooterCol title="Services" links={services.map(s => ({ href: `/services/${s.slug}`, label: s.shortTitle }))} />
+            <FooterCol
+              title="Plan & Learn"
+              links={[
+                { href: '/cost-estimator', label: 'Cost Estimator' },
+                { href: '/financing', label: 'Financing' },
+                { href: '/resources', label: 'Guides & Articles' },
                 { href: '/faq', label: 'FAQ' },
-                { href: '/contact', label: 'Contact' },
+                { href: '/gallery', label: 'Gallery' },
+              ]}
+            />
+            <FooterCol
+              title="Owner Support"
+              links={[
+                { href: '/support', label: 'Support Hub' },
+                { href: '/support/getting-started', label: 'Getting Started' },
+                { href: '/support/installation-videos', label: 'Installation Videos' },
+                { href: '/support/manuals', label: 'Manuals & Downloads' },
+                { href: '/support/troubleshooting', label: 'Troubleshooting' },
                 { href: '/warranty', label: 'Warranty' },
-              ].map(l => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-slate-400 hover:text-[#F5A623] text-sm transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Service Areas</h3>
-            <ul className="space-y-2">
-              {serviceAreas.map(a => (
-                <li key={a.slug}>
-                  <Link href={`/locations/${a.slug}`} className="text-slate-400 hover:text-[#F5A623] text-sm transition-colors">
-                    {a.city}, ON
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <a href={`tel:${site.phone.replace(/\D/g, '')}`} className="hover:text-[#F5A623] transition-colors font-medium text-white">
-                  {site.phone}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="hover:text-[#F5A623] transition-colors">
-                  {site.email}
-                </a>
-              </li>
-              <li>{site.hours}</li>
-              <li>Weekends: Closed</li>
-              <li className="pt-2">
-                <Link href="/contact" className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[#F5A623] text-black hover:bg-[#FFD47A] transition-colors">
-                  Get a Free Quote
-                </Link>
-              </li>
-            </ul>
+              ]}
+            />
+            <FooterCol
+              title="Service Areas"
+              links={[...featuredAreas.map(a => ({ href: `/locations/${a.slug}`, label: `${a.city}, ON` })), { href: '/locations', label: 'All areas →' }]}
+            />
           </div>
         </div>
 
-        <div className="border-t border-white/8 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
+        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <AwardBadge />
+          <div className="flex flex-col md:items-end gap-2 text-xs text-white/50 text-center md:text-right">
+            <div className="flex gap-5">
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
+            </div>
+            <p>© {new Date().getFullYear()} {site.name}. All rights reserved. London, Ontario, Canada.</p>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, links }: { title: string; links: { href: string; label: string }[] }) {
+  return (
+    <div>
+      <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50 mb-4">{title}</h3>
+      <ul className="space-y-2.5">
+        {links.map(l => (
+          <li key={l.href + l.label}>
+            <Link href={l.href} className="text-[15px] text-white/80 hover:text-accent transition-colors inline-flex min-h-[32px] items-center">
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

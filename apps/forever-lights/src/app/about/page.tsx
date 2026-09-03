@@ -1,86 +1,148 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { site } from '@/lib/site';
+import { site, serviceAreas, getPhoto } from '@/lib/site';
+import { Icon } from '@/components/icons';
+import { PageHeader, PhotoImg, FeatureCard, CtaBand, SectionHeading } from '@/components/ui';
+
+export const revalidate = 3600;
+
+const url = `https://${site.domain}/about`;
 
 export const metadata: Metadata = {
   title: 'About Us — Permanent LED Lighting Experts',
   description: `Learn about ${site.name} — the permanent outdoor LED lighting company serving London, Ontario and Southwestern Ontario. Local experts, 5-year warranty.`,
+  alternates: { canonical: url },
+  openGraph: {
+    title: `About ${site.name} — Permanent LED Lighting Experts`,
+    description: `The permanent outdoor LED lighting company serving London, Ontario and Southwestern Ontario. Local crew, 5-year parts warranty.`,
+    url,
+    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630 }],
+  },
 };
 
+const values = [
+  {
+    icon: <Icon.pin size={22} />,
+    title: 'Local experts',
+    text: 'We live and work in the communities we serve. We know the homes, the weather and what a roofline here has to stand up to.',
+  },
+  {
+    icon: <Icon.wrench size={22} />,
+    title: 'Professional install',
+    text: 'Bucket lifts, trained installers and a clean site when we leave. Every single time.',
+  },
+  {
+    icon: <Icon.shield size={22} />,
+    title: 'Quality products',
+    text: 'CSA-approved, IP68-rated, 50,000-hour LEDs backed by a 5-year parts warranty. No shortcuts.',
+  },
+  {
+    icon: <Icon.file size={22} />,
+    title: 'Transparent process',
+    text: 'Clear written quotes and invoices, a fixed price before we start and no surprises after.',
+  },
+];
+
+const numbers = [
+  { v: '200+', l: 'Homes lit across Southwestern Ontario' },
+  { v: String(serviceAreas.length), l: 'Communities we visit for free quotes' },
+  { v: '5 yr', l: 'Parts warranty on every install' },
+  { v: '1 day', l: 'Typical install for a family home' },
+];
+
 export default function AboutPage() {
+  const crew = getPhoto('technician');
+  const night = getPhoto('warm-white-night');
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${site.domain}/` },
+      { '@type': 'ListItem', position: 2, name: 'About', item: url },
+    ],
+  };
+
   return (
-    <div className="pt-28 pb-20 min-h-screen">
-      <div className="container mx-auto px-4 max-w-5xl">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <span className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest">About Us</span>
-          <h1 className="text-4xl md:text-5xl font-black text-white mt-2 mb-4">
-            We're Lighting Up Ontario — One Home at a Time
-          </h1>
-          <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Forever Lights was founded by a team of Southern Ontario locals who got tired of watching their neighbours (and themselves) risk their safety every December hanging lights. We decided there had to be a better way.
-          </p>
-        </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        {/* Image + Story */}
-        <div className="grid md:grid-cols-2 gap-10 mb-20 items-center">
-          <div className="rounded-3xl overflow-hidden">
-            <Image
-              src="/images/example-3.jpg"
-              alt="Forever Lights permanent LED installation on Ontario home - our team's craftsmanship"
-              width={700}
-              height={500}
-              quality={80}
-              className="w-full h-80 object-cover"
-            />
+      <PageHeader
+        eyebrow="About us"
+        title="Lighting up Ontario, one home at a time."
+        sub="Forever Lights was founded by a team of Southern Ontario locals who got tired of watching their neighbours (and themselves) risk their safety every December hanging lights. We decided there had to be a better way."
+        crumbs={[{ label: 'About' }]}
+      />
+
+      {/* ─── STORY ─── */}
+      <section className="section bg-white">
+        <div className="wrap grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid grid-cols-5 gap-4">
+            <figure className="relative col-span-3 rounded-2xl overflow-hidden aspect-[3/4]">
+              <PhotoImg photo={crew} sizes="(max-width: 1024px) 60vw, 30vw" />
+              <figcaption className="absolute bottom-3 left-3 rounded-full bg-white/90 text-ink text-xs font-semibold px-3 py-1.5">
+                {crew.caption}
+              </figcaption>
+            </figure>
+            <figure className="relative col-span-2 rounded-2xl overflow-hidden aspect-[3/4] translate-y-8">
+              <PhotoImg photo={night} sizes="(max-width: 1024px) 40vw, 20vw" />
+              <figcaption className="absolute top-3 left-3 rounded-full bg-ink text-white text-xs font-semibold px-3 py-1.5">
+                {night.caption}
+              </figcaption>
+            </figure>
           </div>
+
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
-            <p className="text-slate-400 leading-relaxed mb-4">
-              We grew up in Southwestern Ontario — London, Woodstock, Brantford, St. Thomas. We know these communities, we know the homes, and we understand what it means to take pride in your property.
-            </p>
-            <p className="text-slate-400 leading-relaxed mb-4">
-              When permanent LED track lighting technology became available, we saw an opportunity: install it right, back it with a real warranty, and make sure every homeowner in our community could enjoy their home year-round.
-            </p>
-            <p className="text-slate-400 leading-relaxed">
-              Today we serve hundreds of homes across the region with professional installations, a 5-year parts warranty, and a simple promise: your lights work, or we fix them.
-            </p>
+            <SectionHeading
+              align="left"
+              eyebrow="Our story"
+              title="Built by people who grew up under these rooflines."
+            />
+            <div className="mt-6 space-y-4 text-ink-soft leading-relaxed text-[1.05rem]">
+              <p>
+                We grew up in Southwestern Ontario — London, Woodstock, Brantford, St. Thomas. We know these
+                communities, we know the homes, and we understand what it means to take pride in your property.
+              </p>
+              <p>
+                When permanent LED track lighting became available, we saw an opportunity: install it right, back it
+                with a real warranty, and make sure every homeowner in our community could enjoy their home year-round.
+              </p>
+              <p>
+                Today we serve hundreds of homes across the region with professional installations, a 5-year parts
+                warranty, and a simple promise: your lights work, or we fix them.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Values */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {[
-            { icon: '🏠', title: 'Local Experts', desc: 'We live and work in the communities we serve. We understand your home.' },
-            { icon: '🔧', title: 'Professional Install', desc: 'Bucket lifts, trained installers, clean work — every single time.' },
-            { icon: '⭐', title: 'Quality Products', desc: 'CSA-approved, IP68-rated, 50,000-hour LEDs. No shortcuts.' },
-            { icon: '🤝', title: 'Transparent Process', desc: 'Track your project from quote to invoice through our customer portal.' },
-          ].map(v => (
-            <div key={v.title} className="bg-[#10101e] border border-white/8 rounded-2xl p-6 text-center">
-              <div className="text-3xl mb-3">{v.icon}</div>
-              <h3 className="text-white font-bold mb-2">{v.title}</h3>
-              <p className="text-slate-400 text-sm">{v.desc}</p>
+      {/* ─── VALUES ─── */}
+      <section className="section bg-soft">
+        <div className="wrap">
+          <SectionHeading eyebrow="What we stand for" title="Four things every customer can count on." />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {values.map(v => (
+              <FeatureCard key={v.title} icon={v.icon} title={v.title} text={v.text} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── BY THE NUMBERS ─── */}
+      <section className="bg-white border-y border-line">
+        <div className="wrap py-12 md:py-14 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {numbers.map(n => (
+            <div key={n.l}>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-ink">{n.v}</div>
+              <div className="mt-2 text-sm text-muted leading-snug max-w-[14rem] mx-auto">{n.l}</div>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* CTA */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#10101e] to-[#16162a] border border-[#F5A623]/20 p-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
-            Ready to See What We Can Do for Your Home?
-          </h2>
-          <p className="text-slate-400 mb-6 max-w-lg mx-auto">
-            Book a free site visit and get a detailed, no-obligation quote. We'll colour-match your soffit and show you exactly what your home will look like.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center min-h-[52px] px-10 py-3.5 rounded-full font-bold text-lg bg-[#F5A623] text-black hover:bg-[#FFD47A] transition-colors"
-          >
-            Get a Free Quote
-          </Link>
-        </div>
-      </div>
-    </div>
+      <CtaBand
+        title="Ready to see what we can do for your home?"
+        text="Book a free site visit and get a detailed, no-obligation quote. We colour-match your soffit and show you exactly what your home will look like."
+      />
+    </>
   );
 }

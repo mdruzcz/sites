@@ -1,0 +1,170 @@
+{
+  "slug": "how-permanent-led-lighting-works",
+  "title": "How Permanent LED Lighting Works: A Homeowner's Guide",
+  "metaTitle": "How Permanent LED Lighting Works | Forever Lights",
+  "metaDescription": "How permanent LED lighting works, explained for London, Ontario homeowners: the track, the RGBW chips, the controller and app, power draw, and the install process.",
+  "category": "How it works",
+  "excerpt": "A plain-language look at the track, the addressable RGBW LEDs, the controller and smartphone app, and exactly how permanent lighting disappears in daylight.",
+  "readMinutes": 8,
+  "updated": "2026-08-28",
+  "heroAlt": "Two-storey London Ontario home at dusk with warm white permanent LED track lighting outlining the roofline and soffit",
+  "keyTakeaways": [
+    "Permanent LED lighting is a slim aluminum track mounted under the soffit or along the fascia, holding a sealed strip of individually addressable RGBW LED chips.",
+    "A low-voltage transformer and a small controller run the whole system, which you operate from a smartphone app with scenes, colours, dimming, and schedules.",
+    "In daylight the track reads as a thin trim line, so the house looks normal until the lights are on.",
+    "Real-world power draw is modest, closer to a few household bulbs than to a big holiday display.",
+    "A typical single-home install takes one day and the fixtures are rated to last many years outdoors."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Permanent LED lighting has gone from a novelty to a normal upgrade on London and Southwestern Ontario homes in just a few years, and most people first notice it around the holidays. But the questions we hear most often are about the how, not the wow. What is actually attached to the house? Will you see it in the daytime? How much power does it pull? This guide walks through the whole system, part by part, so you can picture exactly what goes up on your soffit and how you control it."
+    },
+    {
+      "type": "h2",
+      "text": "The track: a slim aluminum channel that hugs your roofline"
+    },
+    {
+      "type": "p",
+      "text": "The visible hardware is an extruded aluminum track, usually somewhere between one and two centimetres wide, that mounts under the soffit or along the fascia. Aluminum matters here: it is weatherproof, it does not rust, and it acts as a heat sink that pulls warmth away from the LEDs, which is a big part of why these systems last. The channel holds the LED strip and is capped with a diffuser or lens that both protects the chips and softens the individual points of light into a cleaner line."
+    },
+    {
+      "type": "p",
+      "text": "Track comes in colours to match common trim and fascia finishes, most often white, black, brown, or grey, so it blends into the existing lines of the house rather than standing out. It is fastened mechanically and sealed at the ends and at any joints, which keeps out water, insects, and the wind-driven snow we get plenty of through an Ontario winter."
+    },
+    {
+      "type": "h2",
+      "text": "The lights: individually addressable RGBW LEDs"
+    },
+    {
+      "type": "p",
+      "text": "Inside the track sits a strip of LED chips spaced a few inches apart. The important term is RGBW, which means each point contains red, green, and blue diodes plus a dedicated white diode. The white chip is what separates architectural-grade permanent lighting from cheap colour-only strips: mixing red, green, and blue to fake white gives you a slightly off, bluish light, whereas a true dedicated white produces the clean, warm glow you actually want for everyday exterior lighting."
+    },
+    {
+      "type": "p",
+      "text": "Each point is also individually addressable, meaning the controller can tell any single LED what colour and brightness to be at any moment, independent of its neighbours. That is what makes chasing patterns, colour gradients, and multi-colour holiday scenes possible instead of the whole roofline being locked to one colour. For everyday use, most homeowners simply set every point to the same soft warm white and leave it there."
+    },
+    {
+      "type": "callout",
+      "text": "If you only remember one spec, make it RGBW. The dedicated white diode is the difference between a light that looks like tasteful trim lighting the other eleven months of the year and one that only ever looks like Christmas."
+    },
+    {
+      "type": "h2",
+      "text": "The brains: controller and transformer"
+    },
+    {
+      "type": "p",
+      "text": "Two small components run everything, and both are typically mounted out of sight, in a garage, an eave, or a weather-rated enclosure near an outdoor outlet."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "The transformer (power supply) steps your household 120V down to the low voltage the LEDs run on, usually 12V or 24V. Low voltage is safer to work with and is a major reason these systems sip power rather than gulp it.",
+        "The controller is the small computer that talks to the LEDs. It receives instructions from your phone over Wi-Fi or Bluetooth, then sends the right signal down the strip telling each addressable point what to do.",
+        "Wiring is low-voltage cable run discreetly behind fascia and through soffit, connecting the track runs back to the controller and transformer."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Because the controller connects to your home network, a good installer will confirm your Wi-Fi reaches the area where it is mounted, or use a range extender if the equipment ends up in a far corner of the garage."
+    },
+    {
+      "type": "h2",
+      "text": "The control: your smartphone app, scenes, and schedules"
+    },
+    {
+      "type": "p",
+      "text": "Day to day, you run the whole system from an app on your phone. This is where permanent lighting earns its keep, because you never touch a ladder or plug in a timer again. Typical controls include:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Colours and warm-white shades, chosen from a full palette or dialed to a specific temperature.",
+        "Brightness and dimming, so the same lights can be a bright feature or a subtle nighttime glow.",
+        "Preset scenes for holidays and events, from Halloween oranges to Canada Day red-and-white to a warm static white for everyday.",
+        "Zones, so you can light the front differently from the sides, or run just the peaks.",
+        "Schedules and timers that turn the lights on at dusk and off at a set hour automatically, using sunset times for your location."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The schedule feature is the one people underrate. Set it once and your home lights itself at dusk every evening through the dark London winter, then shuts off at bedtime, with no timers to reset when the clocks change. Many systems also tie into voice assistants and smart-home platforms if you want that."
+    },
+    {
+      "type": "h2",
+      "text": "How it disappears in daylight"
+    },
+    {
+      "type": "p",
+      "text": "This is the concern almost every homeowner raises, and it is a fair one. When the LEDs are off, the only thing on the house is that slim aluminum track tucked up under the soffit or tight against the fascia. From the ground it reads as a thin trim line, the kind of detail most passersby never register. Because it is colour-matched to your trim and mounted in the shadow line of the roof, the daytime look is a world away from the sagging strings and staple holes of temporary Christmas lights. When it is off, the house just looks like a house."
+    },
+    {
+      "type": "h2",
+      "text": "What it actually costs to run"
+    },
+    {
+      "type": "p",
+      "text": "LED technology is efficient, and a permanent roofline system is far lighter on power than most people assume. A whole-home installation running a warm white at a normal evening brightness typically draws on the order of tens of watts to roughly a couple hundred watts at most, depending on the length of track and how bright you run it, which puts a full evening of lighting in the range of pennies to a few cents on an Ontario hydro bill. Colour and animation on full blast pull more than a dim static white, but even then you are closer to running a few household bulbs than to the old incandescent holiday displays that spun the meter. Because you can dim and schedule everything, most homeowners run their system well below its maximum draw."
+    },
+    {
+      "type": "h2",
+      "text": "The install process, start to finish"
+    },
+    {
+      "type": "p",
+      "text": "A professional install on a typical single-family home is usually a one-day job. Here is the general sequence:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Site assessment and measurement: the installer maps your rooflines, soffit, and peaks, notes power sources, and plans track runs and where the controller and transformer will live.",
+        "Mounting the track: aluminum channel is cut to length and fastened cleanly under the soffit or along the fascia, following the architectural lines of the home.",
+        "Running low-voltage wiring: cable is routed discreetly back to the controller, with connections sealed against the weather.",
+        "Installing the controller and transformer, then connecting to power and your Wi-Fi network.",
+        "Testing, app setup, and a walkthrough: the installer verifies every point lights correctly, helps you set up the app, and shows you how to build scenes and schedules."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "In our Southwestern Ontario service area, from London out to St Thomas, Strathroy, Woodstock, Ingersoll, Tillsonburg and the surrounding towns, we plan installs around the weather and the specifics of local housing stock, including the deep soffits on many newer subdivisions and the trickier detailing on older century homes near the core. A local installer who has worked on both knows how to route wiring and mount track so it looks intentional on your particular roofline, and how to build a system that shrugs off freeze-thaw cycles and lake-effect snow."
+    },
+    {
+      "type": "h2",
+      "text": "How long it lasts"
+    },
+    {
+      "type": "p",
+      "text": "The whole point of permanent lighting is that it stays up. Quality architectural-grade LED chips are rated for many tens of thousands of hours of use, which translates to many years of nightly operation, and the aluminum track and sealed lenses are built to handle sun, rain, ice, and temperature swings outdoors. Reputable systems come with multi-year warranties covering the components, and because the fixtures never come down, you avoid the annual wear-and-tear and ladder risk of hanging and removing temporary lights."
+    },
+    {
+      "type": "p",
+      "text": "If you are weighing this for your own home, the honest next step is a proper look at your rooflines and a straight quote, since track length and layout drive both the price and the final look. You can book a free, no-pressure quote at /contact, or get a quick ballpark first using our cost estimator at /cost-estimator. Either way, we would rather help you understand the system than push you toward it, because a permanent lighting install is a decision you should make with the full picture in front of you."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can you see permanent LED lighting during the day?",
+      "a": "Only just. When the lights are off, all that remains is a slim aluminum track tucked under the soffit or against the fascia, colour-matched to your trim. From the ground it looks like a thin trim line, not a light fixture, so the house appears normal in daylight."
+    },
+    {
+      "q": "How much does permanent LED lighting cost to run?",
+      "a": "Very little. LEDs are highly efficient, so a whole-home system running warm white at a normal evening brightness typically costs only pennies to a few cents per night on an Ontario hydro bill. Colour and animation draw a bit more, but you can dim and schedule everything to keep usage low."
+    },
+    {
+      "q": "What does RGBW mean and why does it matter?",
+      "a": "RGBW means each LED point has red, green, and blue diodes plus a dedicated white one. The separate white diode produces a clean, warm everyday white instead of the bluish tint you get when colour LEDs try to mix white. It is the key spec that lets the same system look like tasteful trim lighting year-round and full colour for holidays."
+    },
+    {
+      "q": "How long does installation take?",
+      "a": "A professional install on a typical single-family home is usually completed in one day. That includes mounting the track, running low-voltage wiring, installing the controller and transformer, connecting to power and Wi-Fi, and walking you through the app."
+    },
+    {
+      "q": "How do I control the lights?",
+      "a": "Everything runs from a smartphone app over your home Wi-Fi. You can pick colours and warm-white shades, adjust brightness, save preset scenes for holidays and events, split the house into zones, and set automatic dusk-to-bedtime schedules so the lights run themselves."
+    },
+    {
+      "q": "How long do the lights and track last?",
+      "a": "Architectural-grade LED chips are rated for many tens of thousands of hours, which is years of nightly use, and the aluminum track and sealed lenses are built for full outdoor exposure. Quality systems carry multi-year warranties, and because the fixtures stay up permanently you avoid the yearly wear of hanging and removing temporary lights."
+    }
+  ]
+}

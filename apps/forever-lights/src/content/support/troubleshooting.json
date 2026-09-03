@@ -1,0 +1,61 @@
+{
+  "slug": "troubleshooting",
+  "title": "Troubleshooting: Lights Won't Turn On, Sections Dark, App Offline",
+  "metaTitle": "Troubleshooting Guide | Forever Lights Owner Support",
+  "metaDescription": "Fix the most common permanent lighting problems in minutes: the whole system dark, one section out, wrong colours, controller offline in the app, and what is covered by warranty.",
+  "category": "Owner's guide",
+  "icon": "wrench",
+  "excerpt": "Nine out of ten service calls are solved with a plug, a GFCI reset button or a Wi-Fi re-pair. Work through these checks first; if they don't solve it, we will.",
+  "readMinutes": 6,
+  "updated": "2026-09-03",
+  "keyTakeaways": [
+    "Whole system dark: check the plug, then the GFCI reset button, then the breaker. Storms and outages trip GFCIs constantly.",
+    "One section dark or the wrong colour: note exactly where it starts and call us. That is a connector or a single point and is covered under warranty.",
+    "Controller offline in the app: power-cycle the controller, then re-pair it if you changed your Wi-Fi network or password.",
+    "Never climb up to the track to investigate. Anything at roofline height is our job and is included in your warranty service.",
+    "Have your installation date or invoice handy when you call and we can pull up your system straight away."
+  ],
+  "body": [
+    { "type": "h2", "text": "Start here: the two-minute checks" },
+    { "type": "ol", "items": [
+      "Is the power supply plugged in? Look at the outlet in the garage or on the exterior wall where the boxes are mounted.",
+      "Press RESET on the GFCI outlet (or the nearest GFCI on that circuit). A tripped GFCI is the number one cause of a dark system after a storm or outage.",
+      "Check the breaker for that circuit in your panel. If it has tripped, reset it once. If it trips again, stop and call us.",
+      "Open the app. If the controller shows offline, follow the Wi-Fi steps below.",
+      "Toggle the lights off and on from the app, then try a plain white scene at full brightness to rule out a scene that is simply set to black or 0%."
+    ] },
+    { "type": "h2", "text": "Symptom by symptom" },
+    { "type": "table", "headers": ["What you see", "Most likely cause", "What to do"], "rows": [
+      ["Entire system dark, app says controller offline", "No power at the outlet (unplugged, GFCI tripped, breaker off) or router down", "Plug / GFCI reset / breaker. Restart your router. Wait two minutes for the controller to reconnect."],
+      ["Entire system dark, app says controller online", "A scene set to off, 0% brightness or a schedule that ended", "Tap a saved scene or set a colour manually. Check schedules for an 'off' window."],
+      ["Lights come on but one run or section stays dark", "A connector between track sections, or a failed point breaking the chain", "Warranty repair. Note where the dark section starts and call us; no need to climb up."],
+      ["One or two individual points out", "A single failed LED point", "Cosmetic and covered. We batch these with your next service visit or fix sooner on request."],
+      ["Colours look wrong or mismatched along the run", "A section reading data out of order, or an RGB/RGBW mismatch after a repair", "Power-cycle the controller first. If it persists, call us; this is a quick fix on site."],
+      ["Lights flicker or dim at the far end", "Voltage drop from a power feed issue or a loose low-voltage connection", "Power-cycle. If it continues, call us; we check the power injection points."],
+      ["App cannot find the controller after a new router or password", "The controller is still trying to join the old network", "Re-pair the controller to the new network (steps below)."],
+      ["Schedule stopped running", "Controller lost its clock after a long outage, or the schedule's date range ended", "Open the app while on home Wi-Fi so the controller re-syncs its time; re-check schedule dates."],
+      ["Lights on at the wrong time", "Time zone or location not set, or daylight saving change", "Confirm the app location is London, Ontario (or your town) and time zone is Eastern."]
+    ] },
+    { "type": "h2", "text": "Re-pairing the controller after a Wi-Fi change" },
+    { "type": "p", "text": "The controller remembers one Wi-Fi network. When you change routers, rename your network or change the password, it needs to be told the new details once. Stand near the controller with your phone connected to the new 2.4 GHz network (most controllers do not join 5 GHz-only networks)." },
+    { "type": "steps", "items": [
+      { "title": "Power-cycle the controller", "text": "Unplug the power supply for 15 seconds and plug it back in. Wait for the controller's status light to settle." },
+      { "title": "Start pairing in the app", "text": "In the app choose add device or re-connect, and follow the prompts. If asked, hold the controller's button until the status light blinks to enter pairing mode." },
+      { "title": "Enter the new Wi-Fi details", "text": "Select your new network and type the password carefully. The controller joins within a minute and the app shows it online." },
+      { "title": "Check your scenes and schedules", "text": "They are stored on the controller and should be intact. Run one scene to confirm every zone responds." }
+    ] },
+    { "type": "callout", "text": "If you would rather not do this yourself, call us during office hours. We can talk you through it in a few minutes, and if it is a controller fault we will replace it under warranty." },
+    { "type": "h2", "text": "After a storm, ice storm or power outage" },
+    { "type": "p", "text": "The track itself is built for exactly this weather and does not need inspection. What does get upset is the electrical side: GFCIs trip, routers reboot into a different state, and the controller loses its clock during a long outage. Reset the GFCI, wait for the router, then open the app on home Wi-Fi so the time re-syncs. If a schedule does not fire that night, run it manually once and it usually settles." },
+    { "type": "h2", "text": "What is a warranty repair and what is a service call" },
+    { "type": "p", "text": "Any failed component on a system we installed is a warranty repair for five years from your installation date: LED points, track sections, connectors, the power supply and the controller. Workmanship issues, such as a section that has come loose, are covered for one year. Problems caused outside the system, for example a dead outlet, a router that needs replacing or damage from a contractor working on the roof, are billed as a service call. We will always tell you which it is before we start." },
+    { "type": "h2", "text": "If we did not install your system" },
+    { "type": "p", "text": "We service permanent lighting from other companies as well. Bring us the make of the controller if you know it and a description of the fault, and we will quote a diagnostic visit. Sometimes it is a quick connector fix; sometimes the honest answer is that a cheaper system needs an upgrade. Either way you will get a straight recommendation." }
+  ],
+  "faq": [
+    { "q": "The GFCI trips every time it rains. Is the track leaking?", "a": "Almost never. The track and points are sealed. A GFCI that trips in wet weather usually means water is getting into the outlet box or an extension cord, not the lighting. Call us and we will check the outlet cover and power supply mounting." },
+    { "q": "Can I replace a dead LED point myself?", "a": "Please don't. Points are sealed into the channel and the work is at roofline height. It is covered under warranty and takes our crew a few minutes with a lift." },
+    { "q": "How fast do you respond to a service request?", "a": "We aim to call back within one business day and schedule most repairs within a week. In December, the busiest month, we prioritise systems that are fully dark." },
+    { "q": "Do you charge to diagnose a problem over the phone?", "a": "No. Phone and remote app support for systems we installed is free for the life of the system." }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "care-and-maintenance",
+  "title": "Care and Maintenance Through Ontario's Four Seasons",
+  "metaTitle": "Care & Maintenance Guide | Forever Lights Owner Support",
+  "metaDescription": "How to look after permanent LED roofline lighting in Southwestern Ontario: what needs attention each season, what never needs touching, and what to tell contractors working on your home.",
+  "category": "Owner's guide",
+  "icon": "leaf",
+  "excerpt": "The honest answer is that the lights need almost nothing. Here is the short list of things worth doing each season, and the things to avoid so you never need a repair.",
+  "readMinutes": 5,
+  "updated": "2026-09-03",
+  "download": { "href": "/downloads/forever-lights-care-and-maintenance-checklist.pdf", "label": "Download the one-page checklist (PDF)" },
+  "keyTakeaways": [
+    "The track, LED points and wiring are sealed and need no cleaning, tightening or seasonal removal.",
+    "Twice a year, glance at the power supply and controller mounting and make sure the outlet cover closes.",
+    "Tell every roofer, painter, eavestrough cleaner and siding contractor that there is a lighting track on the eaves before they start.",
+    "Never pressure-wash the track directly or hang other decorations from it.",
+    "A quick nightly look from the driveway is the best early warning. If a section changes, call us while it is still a small fix."
+  ],
+  "body": [
+    { "type": "h2", "text": "What never needs maintenance" },
+    { "type": "p", "text": "The aluminum channel, the LED points inside it and the low-voltage cable between sections are all sealed to IP68, which is the rating used for equipment that can sit under water. They are UV-stable and rated to -40°C. Snow can sit on them, ice can form on them and rain can pour over them all year without any effect. You do not need to clear snow from the track, cover it, or take anything down." },
+    { "type": "h2", "text": "Seasonal checklist" },
+    { "type": "table", "headers": ["Season", "Five-minute check", "Why"], "rows": [
+      ["Spring", "Look at the power supply and controller: dry, mounted firmly, outlet cover closes fully. Run each saved scene once from the driveway.", "Winter is hard on outlet covers and extension cords. Catching a loose cover prevents nuisance GFCI trips."],
+      ["Summer", "Before any painting, siding, roofing or eavestrough work, tell the contractor about the track. Book us if the track needs to come down and go back up.", "Contractor damage is the most common cause of a non-warranty repair."],
+      ["Fall", "Pre-load your holiday schedules. Check leaves are not packed around the power supply if it is mounted outdoors.", "December is our busiest month; a five-minute check in October avoids a wait."],
+      ["Winter", "Nothing on the roof. After an ice storm or outage, reset the GFCI and confirm the controller is online.", "Electrical side only. The track itself is built for this."]
+    ] },
+    { "type": "h2", "text": "Cleaning" },
+    { "type": "p", "text": "Dust and pollen rinse off the track with normal rain. If you are washing siding, a garden hose spray from the ground is fine. Do not aim a pressure washer directly at the track or at the joints between sections; the sealed points are fine but high-pressure water can drive grit under the channel and lift the colour-matched cap. Never use solvents or abrasive pads on the channel." },
+    { "type": "h2", "text": "Working with other contractors" },
+    { "type": "ul", "items": [
+      "Painters: the track can be masked and painted with the trim. Ask them to use painter's tape, not to remove sections. If they want the track down, call us; we will remove and re-hang it.",
+      "Roofers and eavestrough installers: the track is fastened to the soffit or fascia, not the roof deck. Ladders should rest on the roof edge, not on the channel.",
+      "Siding and soffit replacement: the track must come down first. This is a two-visit job for us (remove, then re-install once the new soffit is up) and we quote it in advance.",
+      "Eavestrough cleaning: ladders against the fascia can crush a section. Ask them to use a stand-off or ladder stabiliser, which most professionals carry anyway.",
+      "Holiday decorators: wreaths and garland should hang from their own hooks. Never clip anything to the track or its cable."
+    ] },
+    { "type": "h2", "text": "Landscaping and pests" },
+    { "type": "p", "text": "Keep climbing vines off the track; they trap moisture against the fascia and can pry the channel. If you have had squirrels or birds in the soffit, mention it when you call: chewed low-voltage cable is rare but it is one of the few things that can take out a section. Repairs are quick when we know what to look for." },
+    { "type": "h2", "text": "The nightly glance" },
+    { "type": "p", "text": "The best maintenance you can do is free: look at the house from the driveway when you come home. If a section is dimmer, a different colour or dark, note where it starts and call us. Small problems in a chain of addressable points can spread if a connector is left wet and unpowered, so a quick call keeps a five-minute repair from becoming a longer one." },
+    { "type": "callout", "text": "Everything at roofline height is our job. Warranty repairs, contractor removals and re-hangs are done by our crew with a lift. Please do not put a ladder against the track." }
+  ],
+  "faq": [
+    { "q": "Should I turn the lights off in summer to extend their life?", "a": "Not necessary. The LEDs are rated for roughly 50,000 hours, which is more than 20 years at six hours a night. Most owners run a warm-white schedule year-round for curb appeal and security." },
+    { "q": "Does snow on the track dim the lights?", "a": "Heavy snow packed against the points can soften them for a night, then it melts or slides off. There is nothing to do and no harm done." },
+    { "q": "Can the track be removed if I move?", "a": "Yes. We can remove it and re-install on your new home for a quoted fee, or leave it as a selling feature. Many buyers see permanent lighting as a plus." }
+  ]
+}

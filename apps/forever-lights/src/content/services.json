@@ -5,15 +5,27 @@
     "shortTitle": "Christmas Lighting",
     "description": "Transform your home into a festive wonderland every year — without ever touching a ladder. Our permanent tracks are installed once and light up your holiday season with a tap on your phone.",
     "icon": "🎄",
-    "features": ["Custom colour schedules", "Holiday presets built-in", "Invisible tracks year-round"]
+    "features": ["Custom colour schedules", "Holiday presets built-in", "Invisible tracks year-round"],
+    "intro": "Permanent Christmas lighting means your home is holiday-ready every December without a single trip up the ladder. We install a discreet LED track along your soffit and roofline once — then you switch on a full Christmas display from your phone in seconds.",
+    "body": [
+      "Traditional Christmas lights mean a cold weekend on a ladder in November and another one taking them down in January — plus a box of tangled strings that never quite works the next year. Our permanent LED system removes all of that. The track is mounted flush to your soffit and fascia, colour-matched so it disappears against your home during the day, and wired into a weatherproof controller.",
+      "When the holidays arrive, you open the Forever Lights app and choose from built-in Christmas presets — classic warm white, red and green, cool icicle blues, or a twinkling multicolour show. Set a schedule so the display turns on at dusk and off at bedtime automatically, all winter long.",
+      "Because the LEDs are rated to -40°C and sealed to IP68, they shine through every snowstorm and ice storm Southwestern Ontario can throw at them. And when the season ends, you don't take anything down — you just switch to a subtle warm-white accent for the rest of the year."
+    ]
   },
   {
     "slug": "permanent-accent-lighting",
-    "title": "Year-Round Accent Lighting",
+    "title": "Year-Round Architectural & Accent Lighting",
     "shortTitle": "Accent Lighting",
     "description": "Highlight your home's architectural details with warm ambient LED light every night. Boosts curb appeal, deters intruders, and adds undeniable character — all controlled from your phone.",
     "icon": "✨",
-    "features": ["Warm white to 6500K daylight", "Automated dusk-to-dawn schedules", "Enhances resale value"]
+    "features": ["Warm white to 6500K daylight", "Automated dusk-to-dawn schedules", "Enhances resale value"],
+    "intro": "The same track that powers your holiday displays doubles as elegant year-round architectural lighting. A soft warm-white glow along your rooflines makes your home look finished, intentional, and unmistakably high-end every single night.",
+    "body": [
+      "Most homeowners install our system for the holidays, then fall in love with the everyday accent lighting. A gentle warm-white wash along the eaves highlights your home's gables, peaks, and lines — the kind of architectural lighting you'd normally only see on custom builds and luxury properties.",
+      "Choose any colour temperature from cozy 2700K warm white to crisp 6500K daylight, and set dusk-to-dawn schedules so the lights handle themselves. Beyond curb appeal, a well-lit exterior is a proven deterrent to intruders and makes steps, walkways, and driveways safer after dark.",
+      "Real estate agents consistently point to exterior lighting as a low-cost way to lift perceived value and help a home stand out. With Forever Lights, that upgrade is permanent, energy-efficient at just 0.3 watts per point, and completely maintenance-free."
+    ]
   },
   {
     "slug": "holiday-colour-themes",
@@ -21,6 +33,54 @@
     "shortTitle": "Holiday Themes",
     "description": "Pink for Valentine's Day. Orange for Halloween. Green for St. Patrick's Day. Blue and gold for Hanukkah. With 16+ million colours, every occasion becomes a light show.",
     "icon": "🌈",
-    "features": ["16+ million colour options", "One-tap holiday switching", "Schedule months in advance"]
+    "features": ["16+ million colour options", "One-tap holiday switching", "Schedule months in advance"],
+    "intro": "One installation, every holiday. With 16 million+ addressable colours and animated effects, your home can celebrate Valentine's Day, St. Patrick's Day, Canada Day, Halloween, and every occasion in between — all from a single app.",
+    "body": [
+      "Permanent lighting isn't just for December. Because every LED point is individually addressable, you can paint your entire home in any colour or pattern in seconds. Pink and red hearts for Valentine's Day, green for St. Patrick's, red and white for Canada Day, orange and purple chases for Halloween, blue and gold for Hanukkah — the app has presets for all of them.",
+      "You can build and save your own custom themes too, then schedule them weeks or months in advance so the right display appears automatically on the right day. Support your kids' school colours on game day, light up in team colours during the playoffs, or go soft amber for a backyard dinner party.",
+      "Every theme uses the same discreet track already on your home, so switching occasions never involves a ladder, new bulbs, or new wiring — just a tap."
+    ]
+  },
+  {
+    "slug": "commercial-permanent-lighting",
+    "title": "Commercial Permanent Lighting",
+    "shortTitle": "Commercial",
+    "description": "Keep your storefront, plaza, or office building looking sharp and seasonal year-round with commercial-grade permanent LED lighting — no annual contractor call-outs required.",
+    "icon": "🏢",
+    "features": ["Storefronts, plazas & offices", "Brand & seasonal colour control", "Zero seasonal labour costs"],
+    "intro": "Retailers, restaurants, property managers, and offices across Southwestern Ontario use permanent LED lighting to stay festive at the holidays and on-brand the rest of the year — without hiring a lift crew twice a season.",
+    "body": [
+      "For commercial properties, seasonal lighting is usually a recurring headache: every November you're booking a contractor with a boom lift to hang lights, then paying again in January to take them down. Permanent LED lighting eliminates that cycle entirely. We install a professional-grade track once, and your building is ready for any season at the push of a button.",
+      "Switch to festive red and green for the holidays, your brand colours for a grand opening or sale, orange for Halloween, or a clean warm-white wash that keeps the property looking premium every night. Property managers can control multiple buildings from one app and set schedules that run automatically.",
+      "Our commercial installations are built to code, use CSA-approved components, and come backed by the same 5-year parts warranty as our residential work. Ask us about volume pricing for plazas and multi-unit properties."
+    ]
+  },
+  {
+    "slug": "soffit-roofline-track-lighting",
+    "title": "Soffit & Roofline Track Lighting",
+    "shortTitle": "Track Lighting",
+    "description": "The foundation of every Forever Lights install — a discreet aluminum LED track mounted flush to your soffit and roofline, colour-matched to vanish by day and dazzle at night.",
+    "icon": "🏠",
+    "features": ["Colour-matched to your soffit", "Aluminum channel, sealed LEDs", "Wood, aluminum & vinyl soffit"],
+    "intro": "Every Forever Lights installation is built on our soffit and roofline track — a slim, rigid aluminum channel that holds individually addressable LEDs and mounts cleanly along your eaves. It's the engineering that makes the lights invisible by day and stunning at night.",
+    "body": [
+      "The track is the heart of the system. Unlike clip-on string lights that sag and blow loose, our LEDs sit inside a rigid aluminum channel that's fastened securely to your soffit and fascia. Each diode points outward and downward for an even, professional line of light with no dark gaps or drooping.",
+      "During our free site visit we measure your rooflines precisely and colour-match the track to your soffit — white, black, brown, or custom — so from the street it reads as trim, not lights. We install on wood, aluminum, and vinyl soffit and fascia, and we route all wiring discreetly back to a weatherproof controller and a GFCI-protected outlet.",
+      "Because the channel and LEDs are sealed to IP68 and rated for 50,000 hours, this is a permanent architectural upgrade — not a seasonal add-on. It's the difference between lights that look hung and lights that look built-in."
+    ]
+  },
+  {
+    "slug": "repairs-maintenance",
+    "title": "Repairs & Maintenance",
+    "shortTitle": "Repairs & Service",
+    "description": "Already have permanent lighting that's failing, flickering, or partially dark? Our team services, repairs, and upgrades permanent LED systems across Southwestern Ontario.",
+    "icon": "🔧",
+    "features": ["Diagnostics & section repairs", "Controller & app support", "5-year warranty on our installs"],
+    "intro": "Permanent lighting should be maintenance-free — but connectors loosen, controllers fail, and cheaper systems go dark in sections. Our technicians diagnose and repair permanent LED lighting, whether we installed it or not.",
+    "body": [
+      "If a run of your lights has gone dark, colours look wrong, or the app has lost connection to your controller, our team can help. We carry replacement LED sections, connectors, power supplies, and controllers, and we diagnose most issues in a single visit — often repairing the affected section rather than replacing the whole run.",
+      "For systems we installed, our 5-year parts warranty covers defective components at no cost, and many problems are resolved remotely through the controller. For systems installed by other companies, we offer straightforward service call pricing and honest recommendations — sometimes a quick fix, sometimes an upgrade to a more reliable track.",
+      "Regular seasonal check-ups keep your display looking its best for decades. If your permanent lights aren't performing the way they should, give us a call and we'll get them shining again."
+    ]
   }
 ]

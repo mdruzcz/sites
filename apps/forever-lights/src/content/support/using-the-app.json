@@ -1,0 +1,57 @@
+{
+  "slug": "using-the-app",
+  "title": "Using the App: Scenes, Schedules, Effects and Zones",
+  "metaTitle": "Using the App: Scenes, Schedules & Zones | Forever Lights",
+  "metaDescription": "A plain-language guide to controlling your Forever Lights permanent lighting from your phone: colours and scenes, dusk-to-dawn schedules, effects, zones and sharing access.",
+  "category": "Owner's guide",
+  "icon": "smartphone",
+  "excerpt": "How the app is organised, the difference between a colour, a scene and a schedule, and the handful of settings that make the system truly hands-off.",
+  "readMinutes": 7,
+  "updated": "2026-09-03",
+  "keyTakeaways": [
+    "A colour is a single look. A scene is a saved look (colours, effect, brightness, zones). A schedule tells the controller when to play a scene.",
+    "Build a small library of scenes once (everyday warm white, Christmas, Halloween, Canada Day) and switch between them with one tap.",
+    "Dusk-to-dawn schedules follow the real sunset time, so they need no adjusting through the year.",
+    "Zones let you treat the garage, the front peaks and the back of the house separately.",
+    "Anyone you invite to the app can control the lights from anywhere, without your Wi-Fi password."
+  ],
+  "body": [
+    { "type": "p", "text": "Exact screen names vary a little between app versions, and your installer will have shown you the app that matches your controller. The ideas below are the same in every version: you pick colours, save them as scenes, and let schedules run those scenes automatically." },
+    { "type": "h2", "text": "Colours and brightness" },
+    { "type": "p", "text": "Open your controller in the app and you will see a colour picker. Drag around the wheel for any of 16 million colours, or tap a preset. For white light, use the white or colour-temperature control rather than mixing colours: warm white around 2700K is the classic architectural look, 4000K is a cleaner modern white, and 6500K is a crisp daylight white that reads slightly blue at night." },
+    { "type": "p", "text": "Brightness is a separate slider. Full brightness is impressive but most homes look best somewhere between 40 and 70%. Lower brightness also keeps light out of bedroom windows and is kinder to neighbours." },
+    { "type": "h2", "text": "Scenes: save it once, use it forever" },
+    { "type": "p", "text": "Once a look is right, save it as a scene. Give it a name you will recognise in December (\"Christmas red and green\", \"Everyday warm white\"). A scene stores the colours, the effect if any, the brightness and which zones are involved. Switching your whole house between scenes is a single tap." },
+    { "type": "ul", "items": [
+      "Everyday: warm white, 50% brightness, all zones.",
+      "Christmas: alternating red and warm white, slow twinkle, all zones.",
+      "Halloween: orange and purple chase, front zones only.",
+      "Canada Day: red and white, static, all zones.",
+      "Game night: your team colours, front zones, 100% brightness."
+    ] },
+    { "type": "h2", "text": "Effects and patterns" },
+    { "type": "p", "text": "Because every LED point is individually addressable, the app can run patterns: alternating colours, chases, fades, twinkles and gradients. Two settings matter for a tasteful result. First, speed: slow effects look premium, fast ones look like a fairground. Second, spacing: an alternating pattern that repeats every two or three points reads well from the street, while every point a different colour turns to mush at a distance." },
+    { "type": "callout", "text": "For year-round use keep effects for the holidays. A static warm white or a single colour is what makes the house look architecturally lit rather than decorated." },
+    { "type": "h2", "text": "Schedules and dusk-to-dawn" },
+    { "type": "p", "text": "Schedules are what make the system hands-off. A schedule pairs a scene with a start and end time. Start times can be a clock time or sunset with an offset (for example sunset minus 15 minutes); end times can be a clock time or sunrise. Because sunset in London, Ontario moves from about 4:45 PM in December to almost 9:00 PM in June, always use the sunset option for the start." },
+    { "type": "steps", "items": [
+      { "title": "Everyday schedule", "text": "Scene: Everyday warm white. Start: sunset. End: 11:30 PM (or sunrise if you prefer security lighting all night). Repeat: every day." },
+      { "title": "Holiday override", "text": "Add a second schedule for Christmas red and green from December 1 to January 6. When two schedules overlap, the app follows the more specific (dated) one. Delete or disable it in January and the everyday schedule takes over again." },
+      { "title": "Pre-load the year", "text": "Create dated schedules for Valentine's, St. Patrick's, Canada Day and Halloween once. They will recur every year without you remembering them." }
+    ] },
+    { "type": "h2", "text": "Zones" },
+    { "type": "p", "text": "If your home has more than one run of track, or a detached garage tie-in, your installer will have set up zones: separate sections you can control independently. Zones let you light the front peaks in colour while the back stays warm white, or turn the garage off for a party in the driveway. Scenes remember which zones they include, so a \"front only\" scene is easy to build." },
+    { "type": "h2", "text": "Sharing access" },
+    { "type": "p", "text": "Invite family members from the sharing or members section of the app. Each person installs the app and signs in with their own account; they never need your Wi-Fi password. If you sell your home, remove your account and the new owner pairs their own phone, or call us and we will reset the controller for them." },
+    { "type": "h2", "text": "Firmware and app updates" },
+    { "type": "p", "text": "Occasionally the app will offer a controller firmware update. Run it in the evening when you are home; the lights may go dark for a minute or two while it installs. Keep the phone app updated from the App Store or Google Play as normal." },
+    { "type": "h2", "text": "Voice assistants" },
+    { "type": "p", "text": "Many controllers can be linked to Amazon Alexa or Google Home so you can say \"turn on the roofline lights\". Support depends on the controller model installed on your home; ask us at your handover or call the office and we will confirm what yours supports and help you link it." }
+  ],
+  "faq": [
+    { "q": "The app asks for a location permission. Why?", "a": "Sunset and sunrise schedules need your approximate location to calculate the right times. You can also type in your city instead if you prefer not to share device location." },
+    { "q": "Can I control the lights when I am away from home?", "a": "Yes. As long as your home Wi-Fi and internet are up, the app works from anywhere in the world over mobile data." },
+    { "q": "Why do my colours look different from the app preview?", "a": "Phone screens and LEDs render colour differently, and light bouncing off a coloured wall shifts the tone. Adjust by eye from the street at night and save the scene once it looks right." },
+    { "q": "Can I dim to almost nothing for a bedroom side?", "a": "Yes. Create a zone for that side and give it its own brightness inside the scene, or schedule it to turn off earlier than the front." }
+  ]
+}

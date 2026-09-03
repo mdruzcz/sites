@@ -1,69 +1,151 @@
 @import "tailwindcss";
+@source "../**/*.{ts,tsx}";
 
+/* ─── Brand tokens (sampled from the Forever Lights logo set) ─── */
 :root {
-  --accent: #F5A623;
-  --accent-dark: #D4840F;
-  --accent-glow: rgba(245, 166, 35, 0.25);
-  --bg-dark: #07070f;
-  --bg-card: #10101e;
-  --bg-card-2: #16162a;
-  --text-primary: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border: rgba(255,255,255,0.08);
+  --ink: #201e1d;
+  --ink-soft: #3d3a38;
+  --muted: #6f6a66;
+  --line: #e8e5e0;
+  --bg: #ffffff;
+  --bg-soft: #f7f5f1;
+  --bg-tint: #fbf7ee;
+  --dark: #171615;
+  --dark-2: #23211f;
+  --accent: #f2a900;
+  --accent-hover: #ffbd1f;
+  --accent-ink: #201e1d;
+  --dot-red: #ec3013;
+  --dot-amber: #f2a900;
+  --dot-green: #17a15a;
+  --dot-cyan: #0aa5c9;
+  --dot-purple: #7b3fd4;
+  --radius: 1.25rem;
+  --font-heading: var(--font-archivo), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-soft: var(--bg-soft);
+  --color-tint: var(--bg-tint);
+  --color-dark: var(--dark);
+  --color-dark-2: var(--dark-2);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-dot-red: var(--dot-red);
+  --color-dot-amber: var(--dot-amber);
+  --color-dot-green: var(--dot-green);
+  --color-dot-cyan: var(--dot-cyan);
+  --color-dot-purple: var(--dot-purple);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
-  background: var(--bg-dark);
-  color: var(--text-primary);
-  font-family: var(--font-inter, system-ui, sans-serif);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Shimmer skeleton */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
+::selection { background: var(--accent); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 min-h-[48px] px-6 py-3 text-base leading-none whitespace-nowrap;
+  }
+  .btn-lg { @apply min-h-[56px] px-8 text-lg; }
+  .btn-sm { @apply min-h-[44px] px-5 text-sm; }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { background: var(--ink-soft); }
+  .btn-light { background: #fff; color: var(--ink); }
+  .btn-light:hover { background: var(--bg-soft); }
+  .btn-outline { border: 1.5px solid var(--line); color: var(--ink); background: transparent; }
+  .btn-outline:hover { border-color: var(--ink); }
+  .btn-outline-light { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; background: transparent; }
+  .btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em];
+    color: var(--muted);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px; height: 6px; border-radius: 999px; flex-shrink: 0;
+    background: linear-gradient(90deg, var(--dot-red), var(--dot-amber), var(--dot-green), var(--dot-cyan), var(--dot-purple));
+  }
+  .eyebrow-light { color: rgba(255,255,255,0.72); }
+
+  .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+  .card-soft { background: var(--bg-soft); border-radius: var(--radius); }
+  .card-dark { background: var(--dark-2); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); color: #fff; }
+
+  .section { @apply py-16 md:py-24; }
+  .section-tight { @apply py-12 md:py-16; }
+  .wrap { @apply container mx-auto px-5 md:px-8; }
+
+  .prose-fl h2 { @apply text-2xl md:text-3xl font-bold mt-12 mb-4; }
+  .prose-fl h3 { @apply text-xl font-bold mt-8 mb-3; }
+  .prose-fl p { @apply leading-relaxed mb-5 text-[1.05rem]; color: var(--ink-soft); }
+  .prose-fl ul { @apply space-y-2.5 mb-6; }
+  .prose-fl li { @apply flex items-start gap-3 leading-relaxed; color: var(--ink-soft); }
+
+  .input {
+    @apply w-full min-h-[48px] px-4 py-3 rounded-xl text-base transition-colors;
+    background: #fff; border: 1.5px solid var(--line); color: var(--ink);
+  }
+  .input::placeholder { color: #a39e98; }
+  .input:focus { outline: none; border-color: var(--ink); }
+  .input-dark { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: #fff; }
+  .input-dark::placeholder { color: rgba(255,255,255,0.4); }
+  .input-dark:focus { border-color: var(--accent); }
+  .label { @apply block text-sm font-medium mb-1.5; color: var(--ink-soft); }
+  .label-dark { color: rgba(255,255,255,0.75); }
+
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold; background: var(--bg-soft); color: var(--ink-soft); }
+}
+
+/* Shimmer skeleton (loading states) */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 .shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--bg-card) 25%,
-    var(--bg-card-2) 50%,
-    var(--bg-card) 75%
-  );
+  background: linear-gradient(90deg, var(--bg-soft) 25%, #efece6 50%, var(--bg-soft) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
 
-/* Glow pulse for accent elements */
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 12px var(--accent-glow); }
-  50% { box-shadow: 0 0 32px var(--accent-glow), 0 0 64px rgba(245,166,35,0.12); }
-}
+/* Subtle twinkle for the logo dots (decorative only) */
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+.twinkle circle { animation: twinkle 3.2s ease-in-out infinite; }
+.twinkle circle:nth-child(2n) { animation-delay: 0.6s; }
+.twinkle circle:nth-child(3n) { animation-delay: 1.3s; }
+.twinkle circle:nth-child(5n) { animation-delay: 2.1s; }
+@media (prefers-reduced-motion: reduce) { .twinkle circle { animation: none; } }
 
-.glow-pulse {
-  animation: glowPulse 3s ease-in-out infinite;
-}
+/* Native <details> polish */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
 
-/* LED dot animation */
-@keyframes ledBlink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0.4; }
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #F5A623 0%, #FFD47A 50%, #F5A623 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Print styles for warranty / guides */
+@media print {
+  header, footer, .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+  main { padding-top: 0 !important; }
+  a { color: #000; text-decoration: none; }
 }

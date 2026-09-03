@@ -61,5 +61,122 @@
     "description": "Professional permanent LED lighting installations for Tillsonburg homeowners.",
     "population": "18,000+",
     "neighbourhoods": ["North Broadway", "Annandale", "Lake Lisgar area"]
+  },
+  {
+    "slug": "strathroy",
+    "city": "Strathroy",
+    "province": "ON",
+    "label": "Strathroy, Ontario",
+    "description": "Serving Strathroy and the Municipality of Strathroy-Caradoc west of London with permanent LED lighting for homes and Main Street businesses.",
+    "population": "14,000+",
+    "neighbourhoods": ["Downtown Strathroy", "Caradoc", "West Strathroy", "Sydenham River area"]
+  },
+  {
+    "slug": "aylmer",
+    "city": "Aylmer",
+    "province": "ON",
+    "label": "Aylmer, Ontario",
+    "description": "Bringing permanent LED lighting to Aylmer homes and the surrounding Elgin County countryside, just east of St. Thomas.",
+    "population": "7,500+",
+    "neighbourhoods": ["Downtown Aylmer", "Malahide", "Springfield", "Copenhagen"]
+  },
+  {
+    "slug": "dorchester",
+    "city": "Dorchester",
+    "province": "ON",
+    "label": "Dorchester, Ontario",
+    "description": "Permanent LED lighting for Dorchester and the community of Thames Centre, just east of London off Highway 401.",
+    "population": "4,500+",
+    "neighbourhoods": ["Dorchester Village", "Thames Centre", "Edgewood Estates", "Dorchester Mill Pond area"]
+  },
+  {
+    "slug": "komoka-kilworth",
+    "city": "Komoka",
+    "province": "ON",
+    "label": "Komoka & Kilworth, Ontario",
+    "description": "Professional permanent LED lighting for the fast-growing Komoka and Kilworth communities in Middlesex Centre, just west of London.",
+    "population": "5,000+",
+    "neighbourhoods": ["Komoka", "Kilworth", "Kilworth Heights", "Middlesex Centre"]
+  },
+  {
+    "slug": "ilderton",
+    "city": "Ilderton",
+    "province": "ON",
+    "label": "Ilderton, Ontario",
+    "description": "Serving Ilderton and Middlesex Centre north of London with year-round permanent LED lighting installations.",
+    "population": "2,000+",
+    "neighbourhoods": ["Ilderton", "Timberwalk", "Middlesex Centre", "Birr area"]
+  },
+  {
+    "slug": "lucan",
+    "city": "Lucan",
+    "province": "ON",
+    "label": "Lucan, Ontario",
+    "description": "Permanent LED lighting for Lucan Biddulph homes north of London, including the growing subdivisions off Main Street.",
+    "population": "4,500+",
+    "neighbourhoods": ["Lucan", "Biddulph", "Granton area", "Clandeboye"]
+  },
+  {
+    "slug": "mount-brydges",
+    "city": "Mount Brydges",
+    "province": "ON",
+    "label": "Mount Brydges, Ontario",
+    "description": "Bringing permanent LED lighting to Mount Brydges and Strathroy-Caradoc, southwest of London.",
+    "population": "2,500+",
+    "neighbourhoods": ["Mount Brydges", "Caradoc", "Melrose", "Strathroy-Caradoc"]
+  },
+  {
+    "slug": "st-marys",
+    "city": "St. Marys",
+    "province": "ON",
+    "label": "St. Marys, Ontario",
+    "description": "Permanent LED lighting for St. Marys — the Stonetown — and the surrounding Perth County area northeast of London.",
+    "population": "7,500+",
+    "neighbourhoods": ["Downtown St. Marys", "Stonetown", "Thames River area", "Perth South"]
+  },
+  {
+    "slug": "exeter",
+    "city": "Exeter",
+    "province": "ON",
+    "label": "Exeter, Ontario",
+    "description": "Serving Exeter and South Huron with professional permanent LED lighting, north of London along Highway 4.",
+    "population": "4,800+",
+    "neighbourhoods": ["Downtown Exeter", "South Huron", "Riverview", "Usborne"]
+  },
+  {
+    "slug": "parkhill",
+    "city": "Parkhill",
+    "province": "ON",
+    "label": "Parkhill, Ontario",
+    "description": "Permanent LED lighting for Parkhill and North Middlesex, between London and the Lake Huron shoreline.",
+    "population": "1,700+",
+    "neighbourhoods": ["Parkhill", "North Middlesex", "West Williams", "Ausable River area"]
+  },
+  {
+    "slug": "belmont",
+    "city": "Belmont",
+    "province": "ON",
+    "label": "Belmont, Ontario",
+    "description": "Bringing permanent LED lighting to Belmont and Central Elgin, just south of London.",
+    "population": "2,000+",
+    "neighbourhoods": ["Belmont", "Central Elgin", "Yarmouth", "Mapleton area"]
+  },
+  {
+    "slug": "thorndale",
+    "city": "Thorndale",
+    "province": "ON",
+    "label": "Thorndale, Ontario",
+    "description": "Serving Thorndale and Thames Centre northeast of London with permanent LED lighting installations.",
+    "population": "1,200+",
+    "neighbourhoods": ["Thorndale", "Thames Centre", "Fairview", "North Thames"]
+  },
+  {
+    "slug": "delaware",
+    "city": "Delaware",
+    "province": "ON",
+    "label": "Delaware, Ontario",
+    "description": "Permanent LED lighting for Delaware and Middlesex Centre along the Thames River, southwest of London.",
+    "population": "2,000+",
+    "neighbourhoods": ["Delaware", "Middlesex Centre", "Gideon Drive area", "Thames River"]
   }
 ]

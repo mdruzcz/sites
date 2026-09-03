@@ -1,25 +1,53 @@
 import type { Metadata } from 'next';
-import { site } from '@/lib/site';
+import { site, phoneHref } from '@/lib/site';
+import { PageHeader } from '@/components/ui';
+
+export const revalidate = 3600;
+
+const url = `https://${site.domain}/privacy-policy`;
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: `Privacy policy for ${site.name} — how we collect, use, and protect your information.`,
+  alternates: { canonical: url },
 };
+
+const link = 'font-semibold text-ink underline underline-offset-4 decoration-line hover:decoration-ink';
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-28 pb-20 min-h-screen">
-      <div className="container mx-auto px-4 max-w-3xl prose prose-invert prose-slate">
-        <h1 className="text-4xl font-black text-white mb-8">Privacy Policy</h1>
-        <p className="text-slate-400">Last updated: May 2026</p>
-        <p className="text-slate-300">{site.name} ("{site.domain}") is committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your personal information.</p>
-        <h2 className="text-white">Information We Collect</h2>
-        <p className="text-slate-300">We collect information you provide directly — including your name, email, phone number, and property address when you request a quote or contact us.</p>
-        <h2 className="text-white">How We Use It</h2>
-        <p className="text-slate-300">We use your information only to respond to your enquiry, schedule your free site visit, and provide the services you requested. We do not sell your information to third parties.</p>
-        <h2 className="text-white">Contact</h2>
-        <p className="text-slate-300">Questions? Email us at <a href={`mailto:${site.email}`} className="text-[#F5A623]">{site.email}</a> or call <a href={`tel:${site.phone.replace(/\D/g,'')}`} className="text-[#F5A623]">{site.phone}</a>.</p>
-      </div>
-    </div>
+    <>
+      <PageHeader eyebrow="Legal" title="Privacy Policy" sub="Last updated: May 2026" crumbs={[{ label: 'Privacy Policy' }]} />
+
+      <section className="section bg-white">
+        <div className="wrap">
+          <div className="prose-fl max-w-3xl">
+            <p>
+              {site.name} (&ldquo;{site.domain}&rdquo;) is committed to protecting your privacy. This policy outlines how we
+              collect, use, and safeguard your personal information.
+            </p>
+
+            <h2>Information we collect</h2>
+            <p>
+              We collect information you provide directly — including your name, email, phone number, and property
+              address when you request a quote or contact us.
+            </p>
+
+            <h2>How we use it</h2>
+            <p>
+              We use your information only to respond to your enquiry, schedule your free site visit, and provide the
+              services you requested. We do not sell your information to third parties.
+            </p>
+
+            <h2>Contact</h2>
+            <p>
+              Questions? Email us at{' '}
+              <a href={`mailto:${site.email}`} className={link}>{site.email}</a> or call{' '}
+              <a href={phoneHref} className={link}>{site.phone}</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

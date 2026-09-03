@@ -1,0 +1,41 @@
+{
+  "_reviewNote": "Standard-form terms drafted 2026-09-03. Matt to confirm exclusions, transferability and the labour-warranty scope before relying on this as a contract document.",
+  "version": "2026.09",
+  "effective": "2026-09-03",
+  "summary": "Every residential and commercial installation completed by Forever Lights is covered by a 5-year parts warranty and a 1-year workmanship warranty, starting on the installation date shown on your invoice.",
+  "tiers": [
+    { "term": "5 years", "title": "Parts warranty", "text": "LED points, aluminum track and channel caps, section connectors, low-voltage cable, the power supply and the Wi-Fi controller are covered against defects in materials for five years from installation. Defective parts are replaced at no charge for the part or the labour to replace it." },
+    { "term": "1 year", "title": "Workmanship warranty", "text": "Any issue arising from how the system was installed, such as a section that comes loose, a connection that was not sealed, or wiring that was not secured, is corrected at no charge for one year from installation." },
+    { "term": "Lifetime", "title": "Phone and remote support", "text": "Help with the app, schedules, Wi-Fi re-pairing and remote diagnosis is free for as long as you own the system, whether or not it is still under the parts warranty." }
+  ],
+  "covered": [
+    "LED point failures due to manufacturing defects, including individual dark points and dark sections",
+    "Track, channel cap and mounting hardware defects, including finish delamination",
+    "Power supply and transformer failures",
+    "Wi-Fi controller failures, including a controller that will no longer pair or hold settings",
+    "Connector and low-voltage cable defects",
+    "App connectivity problems caused by the hardware we installed"
+  ],
+  "notCovered": [
+    "Damage caused by other contractors (roofing, siding, painting, eavestrough work) or by ladders placed against the track",
+    "Physical damage from impact, vandalism, fire, flood, falling trees or limbs, or animals chewing cable",
+    "Damage from power surges or lightning where the outlet was not GFCI-protected, and any issue on the household side of the outlet (breakers, outlets, wiring, routers or internet service)",
+    "Systems or sections modified, moved, repaired or added to by anyone other than Forever Lights",
+    "Normal cosmetic wear, such as gradual fading of the channel finish, that does not affect the lights",
+    "Consumable accessories and third-party smart-home devices"
+  ],
+  "claim": [
+    "Call (519) 914-3404 or email service@foreverlights.ca and tell us what you are seeing and where on the home it starts.",
+    "Have your installation date or invoice number handy so we can pull up your system.",
+    "We diagnose remotely first. Many controller and app issues are resolved on the phone the same day.",
+    "If a visit is needed we book it, usually within a week outside of December. Our crew brings the lift and the parts.",
+    "Defective parts are replaced and tested at no charge. You receive a short service note for your records."
+  ],
+  "terms": [
+    "The warranty period starts on the installation date printed on your Forever Lights invoice.",
+    "Replacement parts carry the remainder of the original warranty period.",
+    "The warranty applies to the property where the system was installed. If the home is sold during the warranty period, the remaining coverage may be transferred to the new owner on request; please let us know so we can update our records.",
+    "Repairs required for causes listed under 'What is not covered' are quoted before any work begins and billed at our standard service rates.",
+    "This warranty is in addition to any rights you have under Ontario consumer protection law and does not limit them."
+  ]
+}

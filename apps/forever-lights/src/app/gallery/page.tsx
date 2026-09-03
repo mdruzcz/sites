@@ -1,63 +1,55 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { gallery, site } from '@/lib/site';
+import { PageHeader, CtaBand } from '@/components/ui';
+import { GalleryGrid } from '@/components/GalleryGrid';
+
+export const revalidate = 3600;
+
+const url = `https://${site.domain}/gallery`;
 
 export const metadata: Metadata = {
   title: 'Gallery — Permanent LED Lighting Projects',
   description: `Browse real permanent LED lighting installations by ${site.name} across London, Ontario and Southwestern Ontario. See the transformation!`,
+  alternates: { canonical: url },
+  openGraph: {
+    title: `Gallery — Permanent LED Lighting Projects | ${site.name}`,
+    description: 'Real rooflines, gables, porches and shops across Southwestern Ontario, lit by a single permanent track.',
+    url,
+    images: [{ url: '/images/og-default.jpg', width: 1200, height: 630 }],
+  },
 };
 
 export default function GalleryPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${site.domain}/` },
+      { '@type': 'ListItem', position: 2, name: 'Gallery', item: url },
+    ],
+  };
+
   return (
-    <div className="pt-28 pb-20 min-h-screen">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
-          <span className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest">Our Work</span>
-          <h1 className="text-4xl md:text-5xl font-black text-white mt-2 mb-4">
-            Real Homes. Real Results.
-          </h1>
-          <p className="text-slate-400 max-w-xl mx-auto">
-            Every image is a real installation by our team across London, Ontario and Southwestern Ontario.
-          </p>
-        </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 mb-14">
-          {[...gallery, ...gallery].map((img, i) => (
-            <div key={i} className="break-inside-avoid rounded-2xl overflow-hidden relative group">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={800}
-                height={600}
-                quality={80}
-                className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              {img.caption && (
-                <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-xs text-white font-medium bg-black/60 rounded-full px-3 py-1.5">{img.caption}</span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+      <PageHeader
+        eyebrow="Our work"
+        title="Real homes. Real evenings."
+        sub="Every image is a real installation by our team across London, Ontario and Southwestern Ontario. Tap any photo to see it full size."
+        crumbs={[{ label: 'Gallery' }]}
+      />
 
-        <div className="rounded-3xl bg-gradient-to-br from-[#10101e] to-[#16162a] border border-[#F5A623]/20 p-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
-            Could Your Home Look Like This?
-          </h2>
-          <p className="text-slate-400 mb-6">
-            Book a free site visit and see exactly what your home would look like with permanent LED lighting.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center min-h-[52px] px-10 py-3.5 rounded-full font-bold text-lg bg-[#F5A623] text-black hover:bg-[#FFD47A] transition-colors"
-          >
-            Get a Free Quote
-          </Link>
+      <section className="section bg-white">
+        <div className="wrap">
+          <GalleryGrid photos={gallery} />
         </div>
-      </div>
-    </div>
+      </section>
+
+      <CtaBand
+        title="Could your home look like this?"
+        text="Book a free site visit and see exactly what your home would look like with permanent LED lighting."
+      />
+    </>
   );
 }
