@@ -1,0 +1,35 @@
+{
+  "reel": null,
+  "clips": [
+    {
+      "src": "/videos/commercial-lobby-christmas-trees-warm-white-lights-gold-ribbon-01.mp4",
+      "alt": "Elegant warm-white lit Christmas trees with gold ribbon in a commercial building lobby",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/commercial-lobby-christmas-tree-gold-ribbon-blue-silver-ornaments-01.mp4",
+      "alt": "Full commercial lobby Christmas tree with gold ribbon, blue and silver ornaments and warm-white lights",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/commercial-lobby-christmas-tree-gold-ribbon-01.mp4",
+      "alt": "Professionally decorated Christmas tree with gold ribbon and silver ornaments in a marble office building lobby",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/office-lobby-christmas-tree-blue-gold-ornaments-01.mp4",
+      "alt": "Commercial office lobby Christmas tree decorated with blue and gold ornaments and warm-white lights",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/commercial-entryway-lit-christmas-trees-gold-ribbon-01.mp4",
+      "alt": "Lit Christmas trees with gold ribbon in a commercial building entryway at night",
+      "category": "commercial-indoor"
+    },
+    {
+      "src": "/videos/gold-poinsettia-garland-staircase-holiday-decor-detail-01.mp4",
+      "alt": "Close-up of a gold poinsettia and pinecone Christmas garland decorating a glass staircase railing",
+      "category": "detail"
+    }
+  ]
+}
