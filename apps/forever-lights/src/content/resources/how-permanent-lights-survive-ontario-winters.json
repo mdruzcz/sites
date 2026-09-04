@@ -1,0 +1,176 @@
+{
+  "slug": "how-permanent-lights-survive-ontario-winters",
+  "title": "How Permanent Lights Survive Ontario Winters: Sealing, Cold Ratings and What Actually Fails",
+  "metaTitle": "How Permanent Lights Survive Ontario Winter | Forever Lights",
+  "metaDescription": "What IP68 sealing, a -40°C rating and aluminum track mean for permanent LED lights through a London, Ontario winter, plus what fails in cheap systems.",
+  "category": "How it works",
+  "excerpt": "Ice storms, lake-effect snow and freeze-thaw cycles are the real test of permanent lighting. Here is what the ratings mean, why nothing comes down, and where budget systems give out.",
+  "readMinutes": 9,
+  "updated": "2026-09-03",
+  "heroAlt": "Snow-covered London Ontario home at night with permanent LED track lighting glowing warm white along an icy roofline",
+  "keyTakeaways": [
+    "IP68 means the track, LED points and cable joints are sealed against dust and sustained submersion, so meltwater, driving rain and packed snow cannot reach the electronics.",
+    "A -40°C rating covers the coldest nights Southwestern Ontario produces; LEDs actually run more efficiently in the cold than in summer heat.",
+    "Rigid aluminum channel holds its shape and sheds heat through every freeze-thaw cycle, while plastic channel goes brittle, yellows and warps.",
+    "Nothing comes down for winter and nothing needs clearing. Snow and ice sitting on the track do no harm.",
+    "Almost all winter failures are on the electrical side, usually a GFCI trip after a storm or a damaged outlet cover, and those are quick fixes rather than roofline work."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Every homeowner in London or the surrounding towns asks some version of the same question: will these actually last through our winters? It is the right thing to ask. Between the lake-effect snow off Huron, the ice storms that seem to hit every few years, and the daily freeze-thaw swings of a Southwestern Ontario March, this region is about as hard on outdoor electronics as anywhere in the country. This article explains what each rating on a permanent lighting system really means in practice, why the material choices matter more than the marketing, and, just as usefully, what does go wrong on cheaper systems so you know what to look for."
+    },
+    {
+      "type": "h2",
+      "text": "IP68: what the sealing rating actually promises"
+    },
+    {
+      "type": "p",
+      "text": "IP ratings are a standard way of describing how well an enclosure keeps out solids and liquids. The first digit covers dust; 6 is the top of that scale and means dust-tight. The second digit covers water; 8 is the highest common rating and means the equipment can sit submerged for extended periods without water reaching the electronics. Together, IP68 is the rating used for gear that is expected to live under water."
+    },
+    {
+      "type": "p",
+      "text": "A roofline does not go under water, but it does see everything short of that. Meltwater runs off the shingles, over the eavestrough lip and along the fascia for hours at a time in a thaw. Wind drives rain and fine snow horizontally into every joint. Ice forms in the channel, then melts, then refreezes overnight. The point of IP68 is that none of this reaches the LED chips, the copper traces or the connectors. On a properly built system, the LED strip is fully encased inside the channel, the end caps are sealed, and the cable joints between sections use gasketed connectors rather than exposed plugs. That is where cheaper products cut corners, and where they fail first."
+    },
+    {
+      "type": "callout",
+      "text": "The rating that matters is the one on the joints and end caps, not just the strip. A strip rated IP68 with unsealed connectors is only as waterproof as its weakest plug, and a roofline has a lot of plugs."
+    },
+    {
+      "type": "h2",
+      "text": "The -40°C rating and how LEDs behave in the cold"
+    },
+    {
+      "type": "p",
+      "text": "Our fixtures are tested to operate down to -40°C. London's coldest nights typically bottom out well above that, even with wind chill, so the rating gives a wide margin. What people find surprising is that cold is not the enemy of an LED at all. LEDs are semiconductors, and they run more efficiently and last longer when they are cool. The real threat to LED lifespan is heat, which is why the same fixture will suffer more from a July afternoon on a south-facing fascia than from a January night."
+    },
+    {
+      "type": "p",
+      "text": "What cold does stress is everything around the diode: the solder joints, the cable insulation, the plastic in connectors, and any adhesive. A system rated to -40°C has been built with materials that stay flexible and keep their seal at that temperature. This is the difference between a product designed for a Canadian winter and one designed for a mild climate and shipped here anyway."
+    },
+    {
+      "type": "h2",
+      "text": "UV stability: the summer half of the problem"
+    },
+    {
+      "type": "p",
+      "text": "It is easy to think about winter and forget that the same track sits in direct summer sun for the other half of the year. Ultraviolet light breaks down plastics over time: lenses cloud and yellow, cable jackets get chalky and crack, and adhesives let go. A yellowed lens is more than cosmetic, because it shifts the colour of the light and cuts output, and a cracked jacket is a path for water in the following winter. UV-stable lenses, jackets and end caps are part of what you pay for in an architectural-grade system. A system that fails in its third winter often did the real damage in its second summer."
+    },
+    {
+      "type": "h2",
+      "text": "Aluminum channel versus plastic"
+    },
+    {
+      "type": "p",
+      "text": "The channel is the piece most people never think about, and it is the biggest single reason one system outlasts another. We mount an extruded aluminum track. Many consumer and mid-range products use a plastic channel or, in the cheapest cases, a bare adhesive strip with a silicone sleeve."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Aluminum acts as a heat sink. It pulls heat away from the LEDs in summer, which directly extends their life, and it does not care about cold.",
+        "Aluminum holds its shape. It does not sag between fasteners, bow in the sun, or shrink and pull on the strip in the cold. The light stays a straight, even line year after year.",
+        "Aluminum does not go brittle. Plastic channel at -20°C can crack when ice loads it or when a ladder brushes it. Aluminum flexes and returns.",
+        "Aluminum takes a durable colour-matched finish, so the track keeps disappearing against the fascia instead of chalking or fading.",
+        "Aluminum is mechanically fastened. Adhesive-only systems rely on glue holding to soffit in a freeze-thaw climate, which is exactly the condition adhesives handle worst."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ice damming, icicles and snow load"
+    },
+    {
+      "type": "p",
+      "text": "Ice dams form when heat escaping the attic melts snow on the roof, the water runs to the cold eave and refreezes, and a ridge of ice builds along the edge. Icicles and thick ice can then hang off the eavestrough right where the track lives. Two things matter here."
+    },
+    {
+      "type": "p",
+      "text": "First, the track is mounted under the soffit or tight to the fascia, below and behind the eavestrough lip, so in most installs it is out of the direct path of the ice that forms at the gutter. Second, where ice does reach it, sealed aluminum channel simply gets cold and wet, which it is built for. Ice forming on the lens does not damage the LEDs. Snow packing against a section may soften or hide the light for a night, and then it slides off or melts. There is nothing to clear and no reason to go near the roof."
+    },
+    {
+      "type": "p",
+      "text": "Ice dams themselves are a building problem rather than a lighting problem, and if you get them regularly it is worth looking at attic insulation and ventilation for the sake of your roof. But they are not a reason to avoid permanent lighting, and a well-mounted track is not in their way."
+    },
+    {
+      "type": "callout",
+      "text": "Never knock icicles off near the track, and ask anyone clearing your roof or eavestroughs to keep tools and ladders off the channel. Ice does not hurt the lights. A shovel or a ladder foot can."
+    },
+    {
+      "type": "h2",
+      "text": "Why nothing needs to come down"
+    },
+    {
+      "type": "p",
+      "text": "Temporary lights are removed every January because they are not built to stay: the clips work loose, the strings sag under ice, and the sockets corrode. A permanent system is the opposite. The channel is fastened to the structure, the electronics are sealed, and the materials are chosen for the full temperature range. There is no winter prep and no spring removal. Owners who used to spend a cold weekend on a ladder in November and another in January simply stop, and the system runs a warm-white schedule straight through the season."
+    },
+    {
+      "type": "h2",
+      "text": "GFCI trips after storms: the one thing that does happen"
+    },
+    {
+      "type": "p",
+      "text": "If you get a call from us in winter, or if you ever make one, it is almost always about this. The controller and power supply plug into a GFCI-protected outdoor receptacle. A GFCI is designed to trip the instant it detects current leaking to ground, and it errs heavily on the side of caution. After an ice storm, a heavy wet snowfall or a power outage, a GFCI can trip because water got into the outlet cover, because a cord end sat in slush, or simply because the power came back with a surge."
+    },
+    {
+      "type": "p",
+      "text": "When that happens the lights go dark all at once, which looks alarming and is usually nothing. The fix is to make sure the outlet cover is dry and closes fully, press the reset button, and confirm the controller comes back online in the app. This is why we recommend a quick look at the outlet and cover each spring and fall. A cracked or ill-fitting cover is the most common cause of nuisance trips, and it is a ten-dollar part."
+    },
+    {
+      "type": "h2",
+      "text": "What actually fails in cheap systems"
+    },
+    {
+      "type": "p",
+      "text": "Our repairs and maintenance work brings us out to a lot of systems installed by others, and the failures follow a pattern. If you are comparing products, these are the weaknesses to ask about."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Water in the connectors. Push-fit plugs without gaskets let meltwater in, the copper corrodes, and a whole section downstream goes dark or turns the wrong colour. This is the number-one winter failure we see.",
+        "Adhesive letting go. Strip stuck directly to soffit with tape or glue peels in freeze-thaw, first at the ends, then in a long sag that fills with ice.",
+        "Brittle plastic channel. Cracks at fastener points or where ice loaded it, letting water into the strip behind.",
+        "Yellowed or cracked lenses from UV, which throw the colour off and let water in the following winter.",
+        "Power supplies mounted where they get wet or buried under snow, with no weather-rated enclosure.",
+        "Undersized power supplies run at their limit, which overheat in summer and then fail in the cold when the load spikes at start-up.",
+        "Controllers with no local schedule, so a Wi-Fi drop during a storm leaves the house dark until someone notices."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Most of these are avoidable at the specification stage: gasketed connectors, mechanical fastening in aluminum, UV-stable lenses, a properly rated power supply in a dry location, and a controller that keeps its schedule offline. The premium for those choices is real but modest against the cost of a full replacement three winters in."
+    },
+    {
+      "type": "h2",
+      "text": "The spring check"
+    },
+    {
+      "type": "p",
+      "text": "The track needs no seasonal maintenance, but a five-minute check when the snow is gone is good practice and catches the small electrical things before December. From the driveway, run each saved scene once and look for any section that is dim, off-colour or dark. Then look at the power supply and controller: dry, mounted firmly, cover closes, no cord ends sitting in a puddle. If anything on the roofline looks different from last fall, note where the change starts and call us. Everything at roofline height is our job, done with a lift, and warranty parts are covered for 5 years on our installs."
+    },
+    {
+      "type": "p",
+      "text": "That is the whole story of a permanent lighting winter in Southwestern Ontario: sealed hardware that ignores the weather, one outlet that occasionally needs a reset, and a quick look in spring. If you are weighing systems, ask each installer about their connectors, their channel material and where the power supply lives. If you want to see how the numbers work out for your own roofline, use our cost estimator or book a free site visit at /contact, or call (519) 914-3404."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do permanent lights need to be taken down or covered in winter?",
+      "a": "No. The aluminum track, LED points and cable joints are sealed to IP68 and rated to -40°C, so they stay up year-round with no covering, clearing or seasonal removal. Snow and ice sitting on the track do no harm."
+    },
+    {
+      "q": "What does IP68 mean for roofline lighting?",
+      "a": "IP68 is the rating used for equipment that can sit submerged without water reaching the electronics. On a roofline it means meltwater, driving rain and packed snow cannot get to the LED chips or connectors, provided the joints and end caps are sealed to the same standard as the strip."
+    },
+    {
+      "q": "Why did all my lights go out after an ice storm?",
+      "a": "Almost always a tripped GFCI outlet. Water in the outlet cover, a cord end in slush, or a surge when power returns can trip it. Dry the cover, make sure it closes fully, press reset, and confirm the controller is back online in the app. If it trips repeatedly, the cover or receptacle usually needs replacing."
+    },
+    {
+      "q": "Is aluminum track really better than plastic?",
+      "a": "Yes, for a Canadian climate. Aluminum sheds heat in summer, holds its shape and colour, stays flexible in extreme cold and is mechanically fastened. Plastic channel and adhesive strips go brittle, sag, yellow and let go in freeze-thaw cycles, which is where most cheap-system failures start."
+    },
+    {
+      "q": "Does cold weather shorten LED life?",
+      "a": "No. LEDs run more efficiently and last longer when cool; heat is what shortens their life. A -40°C rating is about the materials around the diode, such as solder, insulation and seals, staying flexible and sealed in extreme cold rather than about the LED itself struggling."
+    }
+  ]
+}

@@ -65,7 +65,7 @@ export default function SupportPage() {
       >
         <div className="flex flex-wrap gap-3">
           <a href={phoneHref} className="btn btn-primary"><Icon.phone size={18} /> {site.phone}</a>
-          <a href={`mailto:${site.email}`} className="btn btn-outline"><Icon.mail size={18} /> {site.email}</a>
+          <Link href="/contact" className="btn btn-outline"><Icon.mail size={18} /> Send a message</Link>
         </div>
       </PageHeader>
 

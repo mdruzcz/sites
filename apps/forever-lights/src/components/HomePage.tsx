@@ -334,6 +334,25 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
         </div>
       </section>
 
+      {/* ─── DEALER BAND ─── */}
+      <section className="bg-tint border-y border-line">
+        <div className="wrap section-tight grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <span className="eyebrow">For installers and trades</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-ink">Become an authorized Forever Lights dealer.</h2>
+            <p className="mt-4 text-ink-soft leading-relaxed max-w-xl">
+              Electricians, holiday lighting crews, roofers and landscapers: add a year-round, high-margin product with a protected territory, hands-on training, dealer pricing, quoting software and co-marketing that sends leads your way.
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {['Protected territory', 'Training & certification', 'Volume pricing', 'Quoting software', 'Co-marketing'].map(t => <li key={t} className="chip bg-white">{t}</li>)}
+            </ul>
+          </div>
+          <div className="lg:col-span-5 flex lg:justify-end">
+            <Link href="/become-a-dealer" className="btn btn-dark btn-lg">Explore the dealer program <Icon.arrow size={18} /></Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SERVICE AREAS ─── */}
       <section className="section bg-white">
         <div className="wrap">

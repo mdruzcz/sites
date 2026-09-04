@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
-import { site } from '@/lib/site';
+import { site, phoneHref } from '@/lib/site';
 import { PageHeader } from '@/components/ui';
 
 export const revalidate = 3600;
@@ -44,7 +45,7 @@ export default function TermsPage() {
 
             <h2>Contact</h2>
             <p>
-              For questions, contact us at <a href={`mailto:${site.email}`} className={link}>{site.email}</a>.
+              For questions, call <a href={phoneHref} className={link}>{site.phone}</a> or use the <Link href="/contact" className={link}>contact form</Link>.
             </p>
           </div>
         </div>

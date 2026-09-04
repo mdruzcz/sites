@@ -1,0 +1,160 @@
+{
+  "slug": "how-much-electricity-do-permanent-lights-use",
+  "title": "How Much Electricity Do Permanent LED Lights Use? A Worked Example for a London, Ontario Home",
+  "metaTitle": "How Much Electricity Permanent Lights Use | Forever Lights",
+  "metaDescription": "How much electricity permanent LED roofline lights use on a London, Ontario home: watts per point, a worked two-storey example, hours per night and time-of-use.",
+  "category": "How it works",
+  "excerpt": "Watts per point, a real calculation for a typical two-storey home, how many hours the lights actually run, and what Ontario time-of-use pricing means for an evening display.",
+  "readMinutes": 8,
+  "updated": "2026-09-03",
+  "heroAlt": "Warm white permanent LED roofline lighting glowing on a two-storey home in London, Ontario on a clear winter evening",
+  "keyTakeaways": [
+    "Each LED point on a Forever Lights track draws about 0.3 watts at full white, so a typical two-storey home with around 200 points peaks at roughly 60 watts, less than a single old incandescent bulb.",
+    "Six hours a night at full brightness works out to well under half a kilowatt-hour per evening, and most homeowners run dimmer than that.",
+    "Incandescent C9 holiday strings draw many times more power for the same number of bulbs, which is why the old displays spun the meter and these do not.",
+    "Ontario's time-of-use pricing means evening hours in winter straddle on-peak and off-peak windows, but at this level of draw the difference is small either way.",
+    "Brightness, colour choice and schedule are the three things that move the number, and the app gives you control of all three."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Ask a dozen homeowners in London what worries them about permanent roofline lighting and the hydro bill will come up early. It is a fair concern, because most of us remember the incandescent Christmas displays of the past, when a serious front-yard setup could double a December bill and trip a breaker if you plugged the inflatable in on the same circuit. Modern permanent LED lighting is a completely different product, and the numbers are small enough that the honest problem is convincing people they are real. This guide walks through the arithmetic in plain terms so you can do it yourself for your own house."
+    },
+    {
+      "type": "h2",
+      "text": "Start with the number that matters: watts per point"
+    },
+    {
+      "type": "p",
+      "text": "A permanent lighting system is a run of individual LED points, spaced along an aluminum track, each one containing red, green, blue and white diodes. On a Forever Lights install each point draws about 0.3 watts when it is at full white brightness. That is the number every other calculation hangs off. Colours generally draw less than full white, because full white lights every diode in the point at once, while a single colour such as red or blue only lights one or two. Dimming reduces draw roughly in step with brightness."
+    },
+    {
+      "type": "p",
+      "text": "Two smaller items also sit on the circuit: the power supply that steps household 120 volts down to the low voltage the LEDs run on, and the Wi-Fi controller that takes instructions from the app. Both consume a small amount of power whenever they are plugged in, including when the lights are off, so the controller can respond to a schedule or a tap on your phone. It is a few watts of standby, similar to a modem or a phone charger, and it is part of the honest total."
+    },
+    {
+      "type": "h2",
+      "text": "A worked example: a two-storey home with 200 points"
+    },
+    {
+      "type": "p",
+      "text": "Take a typical two-storey home in a London subdivision, the kind you find in Summerside, Hyde Park or the newer streets in Ilderton. Track along the front roofline, up and over a couple of gables, and around the garage might come to somewhere around 200 points. The exact count depends on linear footage and point spacing, which is why we measure on a site visit rather than guess, but 200 is a reasonable working figure."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Maximum draw: 200 points multiplied by 0.3 watts equals 60 watts with every point at full white. That is the ceiling.",
+        "A typical evening: six hours from dusk until bedtime at 60 watts is 360 watt-hours, or 0.36 kilowatt-hours.",
+        "A month of evenings: roughly 11 kilowatt-hours over thirty nights at full brightness.",
+        "A full year at six hours a night: on the order of 130 kilowatt-hours, and that assumes you never dim the lights and never leave them off."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For context, a kilowatt-hour is the unit your hydro bill counts. An average Ontario household uses several hundred of them every month, so a permanent lighting system running every single night at full brightness adds a low single-digit percentage to typical consumption. Run it at half brightness in warm white, which is how most of our customers leave it outside the holidays, and you can halve that again."
+    },
+    {
+      "type": "callout",
+      "text": "The simplest way to put it: a whole-house permanent lighting system at full brightness draws about as much as one bright old-fashioned incandescent light bulb, and you would not think twice about leaving a porch light on."
+    },
+    {
+      "type": "h2",
+      "text": "How many hours a night the lights really run"
+    },
+    {
+      "type": "p",
+      "text": "The hours matter as much as the watts, and this is where the app earns its keep. Almost every homeowner sets a schedule that turns the lights on at sunset and off at a fixed time, often somewhere between ten and midnight. In a London December, sunset is before five in the afternoon, so a schedule that ends at eleven runs about six hours. In June, sunset is after nine, so the same schedule runs closer to two hours. Averaged over a year, a dusk-to-bedtime schedule tends to run around four hours a night, which is well below the six-hour figure in the example above."
+    },
+    {
+      "type": "p",
+      "text": "Some people run dusk to dawn for security lighting, which in the depths of winter is fourteen or fifteen hours. Even at that extreme the two-storey example above comes to under one kilowatt-hour per night at full brightness, and security lighting is usually run dim."
+    },
+    {
+      "type": "h2",
+      "text": "Ontario time-of-use, explained without the rate card"
+    },
+    {
+      "type": "p",
+      "text": "Most residential customers in Ontario, including those served by London Hydro and the utilities across Middlesex, Elgin and Oxford counties, are billed on time-of-use pricing by default. The idea is that electricity costs more during the hours when the whole province is using the most of it and less overnight and on weekends. The windows shift between a summer schedule and a winter schedule, and the winter schedule places an on-peak block in the early evening when people get home, cook and turn the lights on, before dropping to off-peak later in the evening. Weekends and holidays are off-peak all day."
+    },
+    {
+      "type": "p",
+      "text": "What that means for permanent lighting is that a winter dusk-to-bedtime schedule spends its first hour or two in the more expensive window and the rest in the cheapest one. Because the total draw is so small, the difference between the two rates on 60 watts of lighting is a rounding error on the bill. If you are on the tiered plan instead, or on the ultra-low overnight plan that some households choose for electric vehicle charging, the story is the same: the lights are not a large enough load for the rate structure to matter. The Ontario Energy Board publishes the current windows and rates, and your own bill shows which plan you are on."
+    },
+    {
+      "type": "h3",
+      "text": "If you want to shave it anyway"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Set the schedule to start at sunset rather than a fixed time, so it tracks the shorter summer nights automatically.",
+        "Run warm white at half brightness for everyday evenings and save full brightness and animated scenes for December.",
+        "Use zones so that only the front of the house is lit on ordinary nights, with the sides and back added for occasions.",
+        "Let the schedule turn the lights off at a sensible hour instead of dawn unless you specifically want security lighting."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Comparison to incandescent C9 strings"
+    },
+    {
+      "type": "p",
+      "text": "The old-style C9 bulbs many of us grew up with are incandescent lamps, and a typical incandescent C9 is commonly rated in the region of seven watts each. Put 200 of them on the same roofline and the draw is around 1,400 watts, more than twenty times the permanent LED figure, and enough to trip a standard 15-amp circuit once you add a second string or an inflatable. Six hours of that is over eight kilowatt-hours in a single evening, which is more than the permanent system uses in three weeks."
+    },
+    {
+      "type": "p",
+      "text": "LED C9 replacement bulbs narrowed the gap considerably, and if you already own quality LED strings there is no electricity argument for replacing them. The case for permanent lighting is not that it uses less power than modern LED strings, because it uses a similar amount. The case is that you never hang them, never take them down, never store them, and never climb a ladder in January to fix the dark section. The power saving is against the incandescent past, not against a good LED string."
+    },
+    {
+      "type": "h2",
+      "text": "Brightness versus draw: what you see is not what you pay for"
+    },
+    {
+      "type": "p",
+      "text": "There is a common assumption that a bright display must be an expensive display, and with LEDs that link is mostly broken. Efficient diodes convert most of what they draw into light rather than heat, which is why a 0.3-watt point can be seen clearly from across the street. Perceived brightness also depends on spacing, colour and contrast against the house, not just raw output. A crisp warm white on a dark brick front looks brighter than the same output on a white vinyl home, at the same draw."
+    },
+    {
+      "type": "p",
+      "text": "Colour matters too. A pure red scene lights only the red diode in each point, so it draws a fraction of full white. Multi-colour holiday scenes with chasing patterns light different diodes at different moments, so their average draw usually sits below the full-white maximum. The one setting that reliably hits the ceiling is every point at bright white, which is the everyday scene many people choose, and even that is the 60-watt example above."
+    },
+    {
+      "type": "h2",
+      "text": "What the power side of the install looks like"
+    },
+    {
+      "type": "p",
+      "text": "A common question is whether the system needs its own circuit or an electrician. It does not. The controller and power supply plug into an existing GFCI-protected outdoor or garage receptacle, no permit is required for that connection, and the components are CSA-listed. During the free site visit we confirm the outlet location, check that the circuit is not already loaded up with a hot tub or a freezer, and plan where the low-voltage feeds will run so every section of track gets full voltage. If the outlet trips after a storm, the fix is the reset button, not the lights."
+    },
+    {
+      "type": "h2",
+      "text": "Doing the math for your own house"
+    },
+    {
+      "type": "p",
+      "text": "You can estimate your own system in a minute. Count or estimate the points, multiply by 0.3 for the watts, multiply by the hours per night and divide by 1,000 for the kilowatt-hours per evening, then look at the rate on your last bill. For most homes across London and Southwestern Ontario the answer is small enough that the operating cost stops being a factor and the decision comes down to the install itself. If you would like a point count for your actual rooflines rather than an estimate, book a free site visit and we will measure, or use our cost estimator for a quick sense of scale first."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many watts does a permanent LED light system use?",
+      "a": "Each point draws about 0.3 watts at full white. A typical two-storey home with around 200 points peaks at roughly 60 watts with every point at bright white, plus a few watts of standby for the controller and power supply. Dimming and single colours reduce that."
+    },
+    {
+      "q": "Will permanent lights raise my hydro bill noticeably?",
+      "a": "Not by much. Six hours a night at full brightness on a 200-point system is about 0.36 kilowatt-hours per evening, or around 11 kilowatt-hours a month, which is a low single-digit share of typical household use. At half brightness it is half that."
+    },
+    {
+      "q": "Does Ontario time-of-use pricing affect permanent lighting?",
+      "a": "A winter dusk-to-bedtime schedule spends its first hour or two in the on-peak window and the rest off-peak, but at 60 watts the difference between rates is negligible. Setting the schedule to start at sunset and dimming for everyday use matters more than the rate plan."
+    },
+    {
+      "q": "How do permanent LEDs compare to incandescent C9 Christmas lights?",
+      "a": "Incandescent C9 bulbs are commonly rated around seven watts each, so 200 of them draw roughly 1,400 watts, more than twenty times a 200-point permanent system. Modern LED strings are much closer to permanent lighting in draw; the advantage there is convenience and safety, not electricity."
+    },
+    {
+      "q": "Do permanent lights need a dedicated circuit or an electrician?",
+      "a": "No. The controller and power supply plug into an existing GFCI-protected receptacle, the components are CSA-listed, and no permit is needed. We check the outlet and the circuit load during the free site visit."
+    }
+  ]
+}

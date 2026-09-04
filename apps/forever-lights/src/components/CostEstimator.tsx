@@ -7,9 +7,9 @@ import { Icon } from './icons';
 // ─── Pricing model (client-side, honest, shown as a range) ───────────────────
 const pricing = {
   currency: 'CAD',
-  perLinearFootLow: 28,
-  perLinearFootHigh: 44,
-  minimumJobCad: 1900,
+  perLinearFootLow: 14,
+  perLinearFootHigh: 22,
+  minimumJobCad: 950,
   resultDisclaimer:
     'This is a ballpark estimate based on typical rooflines, not a binding quote — a free on-site measurement confirms your exact linear footage and final pricing.',
   homeSizePresets: [
@@ -23,25 +23,19 @@ const pricing = {
     {
       key: 'second_storey_access',
       label: 'Two-storey or hard-to-reach access',
-      addPerFootCad: 4,
+      addPerFootCad: 2,
       note: 'Second-storey runs, steep pitches, or areas needing a lift add labour and safety time.',
-    },
-    {
-      key: 'premium_rgbw_white',
-      label: 'Premium RGBW + dedicated warm-white channel',
-      addPerFootCad: 3,
-      note: 'Adds a true warm-white channel for crisp everyday accent light alongside full-colour holiday scenes.',
     },
     {
       key: 'extra_zones_controller',
       label: 'Extra controller / multi-zone control',
-      addPerFootCad: 2,
+      addPerFootCad: 1,
       note: 'Independent zones (e.g. house, garage, peaks) controlled separately in the app.',
     },
     {
       key: 'outbuilding_tiein',
       label: 'Detached garage or outbuilding tie-in',
-      addPerFootCad: 2,
+      addPerFootCad: 1,
       note: 'Extends the system to a separate structure with its own wiring run and power feed.',
     },
   ],

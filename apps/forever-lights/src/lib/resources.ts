@@ -9,6 +9,16 @@ import permanentChristmasLightsCostOntario from '@/content/resources/permanent-c
 import permanentLightingBrandsCompared from '@/content/resources/permanent-lighting-brands-compared.json';
 import permanentVsSeasonalChristmasLights from '@/content/resources/permanent-vs-seasonal-christmas-lights.json';
 import yearRoundUsesPermanentLights from '@/content/resources/year-round-uses-permanent-lights.json';
+import diyPermanentLightsVsProfessionalInstallation from '@/content/resources/diy-permanent-lights-vs-professional-installation.json';
+import howMuchElectricityDoPermanentLightsUse from '@/content/resources/how-much-electricity-do-permanent-lights-use.json';
+import permanentLightsOnVinylAluminumWoodSoffit from '@/content/resources/permanent-lights-on-vinyl-aluminum-wood-soffit.json';
+import questionsToAskAPermanentLightingInstaller from '@/content/resources/questions-to-ask-a-permanent-lighting-installer.json';
+import permanentLightingColourGuideWarmWhiteVsCoolWhite from '@/content/resources/permanent-lighting-colour-guide-warm-white-vs-cool-white.json';
+import aYearOfPermanentLightingHolidayScheduleIdeas from '@/content/resources/a-year-of-permanent-lighting-holiday-schedule-ideas.json';
+import doesPermanentLightingIncreaseHomeValue from '@/content/resources/does-permanent-lighting-increase-home-value.json';
+import permanentLightingForBusinessesStorefrontsPlazas from '@/content/resources/permanent-lighting-for-businesses-storefronts-plazas.json';
+import howPermanentLightsSurviveOntarioWinters from '@/content/resources/how-permanent-lights-survive-ontario-winters.json';
+import doYouNeedAPermitOrHoaApprovalForPermanentLightsOntario from '@/content/resources/do-you-need-a-permit-or-hoa-approval-for-permanent-lights-ontario.json';
 
 // The block shape is owned by ArticleBody (shared with the support hub).
 // Re-exported so existing `import { ArticleBlock } from '@/lib/resources'` keeps working.
@@ -37,10 +47,20 @@ export interface Article {
 // Master index — order here drives listing order within a category.
 export const articles: Article[] = [
   howPermanentLedLightingWorks,
+  howMuchElectricityDoPermanentLightsUse,
+  permanentLightsOnVinylAluminumWoodSoffit,
+  howPermanentLightsSurviveOntarioWinters,
   permanentChristmasLightsCostOntario,
   arePermanentChristmasLightsWorthIt,
+  doesPermanentLightingIncreaseHomeValue,
+  questionsToAskAPermanentLightingInstaller,
+  permanentLightingColourGuideWarmWhiteVsCoolWhite,
+  aYearOfPermanentLightingHolidayScheduleIdeas,
+  permanentLightingForBusinessesStorefrontsPlazas,
+  doYouNeedAPermitOrHoaApprovalForPermanentLightsOntario,
   permanentVsSeasonalChristmasLights,
   permanentLightingBrandsCompared,
+  diyPermanentLightsVsProfessionalInstallation,
   yearRoundUsesPermanentLights,
 ] as Article[];
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { site, phoneHref } from '@/lib/site';
 import { PageHeader } from '@/components/ui';
@@ -41,9 +42,9 @@ export default function PrivacyPage() {
 
             <h2>Contact</h2>
             <p>
-              Questions? Email us at{' '}
-              <a href={`mailto:${site.email}`} className={link}>{site.email}</a> or call{' '}
-              <a href={phoneHref} className={link}>{site.phone}</a>.
+              Questions? Call{' '}
+              <a href={phoneHref} className={link}>{site.phone}</a> or use the{' '}
+              <Link href="/contact" className={link}>contact form</Link>.
             </p>
           </div>
         </div>

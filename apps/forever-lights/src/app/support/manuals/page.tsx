@@ -67,7 +67,7 @@ export default function ManualsPage() {
 
           <h2 className="text-2xl font-bold text-ink mt-14 mb-2">Coming soon</h2>
           <p className="text-muted mb-6 max-w-2xl">
-            These are being prepared with our suppliers. If you need one of them today, call the office and we will email you the current version.
+            These are being prepared with our suppliers. If you need one of them today, call the office and we will send you the current version.
           </p>
           <div className="grid md:grid-cols-3 gap-5">
             {soon.map(d => (
@@ -101,10 +101,10 @@ export default function ManualsPage() {
             </div>
             <div className="card-dark p-7">
               <h2 className="text-lg font-bold mb-2">Need a document we have not published?</h2>
-              <p className="text-sm text-white/70 leading-relaxed">Controller model manuals, spec sheets for insurers or condo boards, or a copy of your invoice. Call or email and we will send it the same business day.</p>
+              <p className="text-sm text-white/70 leading-relaxed">Controller model manuals, spec sheets for insurers or condo boards, or a copy of your invoice. Call us and we will send it the same business day.</p>
               <div className="mt-5 grid gap-2">
                 <a href={phoneHref} className="btn btn-primary btn-sm w-full"><Icon.phone size={16} /> {site.phone}</a>
-                <a href={`mailto:${site.email}`} className="btn btn-outline-light btn-sm w-full"><Icon.mail size={16} /> {site.email}</a>
+                <Link href="/contact" className="btn btn-outline-light btn-sm w-full"><Icon.mail size={16} /> Send a message</Link>
               </div>
             </div>
           </div>

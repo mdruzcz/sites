@@ -81,7 +81,6 @@ export default async function ServiceDetailPage({ params }: Props) {
         '@type': 'LocalBusiness',
         name: site.name,
         telephone: site.phone,
-        email: site.email,
         url: `https://${site.domain}`,
       },
       areaServed: serviceAreas.map(a => ({ '@type': 'City', name: `${a.city}, Ontario` })),

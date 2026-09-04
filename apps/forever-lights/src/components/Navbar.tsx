@@ -14,6 +14,7 @@ const links = [
   { href: '/support', label: 'Owner Support' },
   { href: '/locations', label: 'Service Areas' },
   { href: '/about', label: 'About' },
+  { href: '/become-a-dealer', label: 'Dealers' },
 ];
 
 export function Navbar() {

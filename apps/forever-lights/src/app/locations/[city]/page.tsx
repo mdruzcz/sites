@@ -63,7 +63,6 @@ export default async function CityPage({ params }: Props) {
       description: `Permanent outdoor LED track lighting installation in ${area.city}, Ontario. ${area.description}`,
       url,
       telephone: site.phone,
-      email: site.email,
       address: {
         '@type': 'PostalAddress',
         addressLocality: area.city,

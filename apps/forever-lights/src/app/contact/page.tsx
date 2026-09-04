@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { site, phoneHref } from '@/lib/site';
 import { QuoteForm } from '@/components/QuoteForm';
@@ -47,7 +48,7 @@ export default function ContactPage() {
 
   const rows: { icon: React.ReactNode; label: string; value: string; href?: string }[] = [
     { icon: <Icon.phone size={20} />, label: 'Phone', value: site.phone, href: phoneHref },
-    { icon: <Icon.mail size={20} />, label: 'Email', value: site.email, href: `mailto:${site.email}` },
+    { icon: <Icon.mail size={20} />, label: 'Message', value: 'Use the form and we reply within 24 hours' },
     { icon: <Icon.clock size={20} />, label: 'Hours', value: site.hours },
     { icon: <Icon.pin size={20} />, label: 'Service area', value: `${site.address} and ${site.region}` },
   ];

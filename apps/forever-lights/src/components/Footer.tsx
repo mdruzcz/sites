@@ -23,9 +23,9 @@ export function Footer() {
               <a href={phoneHref} className="inline-flex items-center gap-3 font-semibold hover:text-accent transition-colors min-h-[44px]">
                 <Icon.phone size={18} className="text-accent" /> {site.phone}
               </a>
-              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 text-white/80 hover:text-accent transition-colors min-h-[44px]">
-                <Icon.mail size={18} className="text-accent" /> {site.email}
-              </a>
+              <Link href="/contact" className="inline-flex items-center gap-3 text-white/80 hover:text-accent transition-colors min-h-[44px]">
+                <Icon.mail size={18} className="text-accent" /> Send us a message
+              </Link>
               <span className="inline-flex items-center gap-3 text-white/60">
                 <Icon.clock size={18} className="text-accent" /> {site.hours}
               </span>
@@ -57,6 +57,7 @@ export function Footer() {
                 { href: '/resources', label: 'Guides & Articles' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/gallery', label: 'Gallery' },
+                { href: '/become-a-dealer', label: 'Become a Dealer' },
               ]}
             />
             <FooterCol
@@ -83,6 +84,7 @@ export function Footer() {
             <div className="flex gap-5">
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/become-a-dealer" className="hover:text-white transition-colors">Dealers</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms</Link>
             </div>

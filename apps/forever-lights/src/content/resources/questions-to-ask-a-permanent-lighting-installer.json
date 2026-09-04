@@ -1,0 +1,176 @@
+{
+  "slug": "questions-to-ask-a-permanent-lighting-installer",
+  "title": "Questions to Ask a Permanent Lighting Installer Before You Sign Anything",
+  "metaTitle": "Questions to Ask a Lighting Installer | Forever Lights",
+  "metaDescription": "A buyer's checklist for hiring a permanent lighting installer in London, Ontario: track vs clips, addressable LEDs, warranty, service calls and app ownership.",
+  "category": "Guides",
+  "excerpt": "The questions that separate a system you will still love in year seven from one you will be paying to fix in year two: hardware, warranty, who answers the phone, insurance, the quote and the calendar.",
+  "readMinutes": 10,
+  "updated": "2026-09-03",
+  "heroAlt": "Homeowner and installer reviewing a written permanent lighting quote in the driveway of a two-storey home in London, Ontario",
+  "keyTakeaways": [
+    "Ask what the hardware actually is: a screwed aluminum track with individually addressable RGBW points is a different product from a clip-on strip, even if the night photos look alike.",
+    "Warranty questions need two answers, one for parts and one for labour, plus a straight answer on who climbs the ladder for a service call.",
+    "Ask what happens to the app if the manufacturer disappears, and whether your scenes and schedules live on the controller in your garage or on a server somewhere else.",
+    "Insurance, WSIB coverage and local references are not rude questions; they are the ones a professional expects and answers immediately.",
+    "A written quote should list linear footage, point count, track colour, controller location, power injection, warranty terms and a date, and December installs need to be booked well before December."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Permanent roofline lighting has become popular enough across London and Southwestern Ontario that there are now several ways to buy it: established installers, seasonal lighting companies adding it as a sideline, general contractors doing a few a year, and kits sold at the hardware store. The night-time photos on every website look about the same. The differences are in the hardware, the warranty, the person who answers the phone in year three and the paperwork. This is the checklist we would want a family member to use, including the questions we would expect to be asked ourselves."
+    },
+    {
+      "type": "h2",
+      "text": "1. What exactly is going on my house?"
+    },
+    {
+      "type": "h3",
+      "text": "Track or clips?"
+    },
+    {
+      "type": "p",
+      "text": "The first fork in the road. A track system is a rigid aluminum channel, cut to your rooflines and screwed into the fascia or framing, holding sealed LED points. A clip system is a flexible strip or a string of individual bulbs held by plastic clips or adhesive at intervals. Track costs more and looks built-in; clips are quicker and cheaper and look attached. If the installer cannot tell you what the channel is made of, how it is fastened and what it is sealed to, keep asking. On our installs the answer is an aluminum channel, screwed to solid material, sealed to IP68, CSA-listed components, rated to -40°C."
+    },
+    {
+      "type": "h3",
+      "text": "Addressable or not?"
+    },
+    {
+      "type": "p",
+      "text": "Individually addressable means the controller can set each point to its own colour and brightness. Non-addressable means the whole run, or a whole zone, is one colour at a time. Addressable is what makes chasing patterns, alternating red and green, and zone-by-zone control possible, and it is also what lets a single failed point stay a single failed point rather than darkening the run. Ask specifically for RGBW rather than RGB, because the dedicated white diode is what produces a clean warm white for everyday use instead of a bluish mixed white."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "What is the point spacing, and will it be the same on every run?",
+        "What colours does the track come in, and will you colour-match to my soffit and fascia in daylight?",
+        "Where will the controller and power supply be mounted, and is it a weather-rated enclosure or my garage?",
+        "How will you handle voltage drop on long runs? The answer should involve power injection at planned points, not a bigger power supply at one end."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "2. What does the warranty actually say?"
+    },
+    {
+      "type": "p",
+      "text": "Every installer says the word warranty. Ask for it in writing and read for two separate things: parts and labour. A parts warranty covers the LED points, track sections, connectors, power supply and controller if they fail. A labour or workmanship warranty covers the installation itself, such as a section that comes loose or a connector that was not sealed properly. They usually have different lengths, and a long parts warranty is worth much less if the labour to replace the part is billed to you every time."
+    },
+    {
+      "type": "p",
+      "text": "Forever Lights installs carry a five-year parts warranty and a one-year workmanship warranty. Whoever you are talking to, get the two numbers, get them on the quote, and ask what is excluded. Damage from a roofer or eavestrough contractor, a dead outlet, or a router that needs replacing are reasonable exclusions. Failed hardware inside the warranty period is not."
+    },
+    {
+      "type": "callout",
+      "text": "The single most useful warranty question is this: if one section of my lights goes dark in February of year three, who comes out, how quickly, and what does it cost me? Listen for a specific answer, not a reassurance."
+    },
+    {
+      "type": "h2",
+      "text": "3. Who does the service call?"
+    },
+    {
+      "type": "p",
+      "text": "Some companies install permanent lighting and hand you a manufacturer's phone number for anything afterwards. Some subcontract the install and are not set up to service what they sold. Ask whether the people who install your system are the same people who will repair it, whether they carry matching track and points in stock, whether they have a lift for roofline work, and what their response time is in December, which is the month everyone calls. Ask too whether phone and remote app support costs anything. It should not."
+    },
+    {
+      "type": "h2",
+      "text": "4. Who owns the app, and what happens if they vanish?"
+    },
+    {
+      "type": "p",
+      "text": "This question catches people off guard, and it matters more each year. Every permanent lighting system is run from a Wi-Fi controller and a phone app. Ask where your scenes and schedules are stored. If they live on the controller in your garage, the lights keep running on schedule even when the internet is down and even if the app changes. If they only live on a company's cloud server, an outage or a discontinued product line can leave you with a roofline you cannot control. Ask whether the controller can be replaced with a current model if it fails, whether the installer keeps controllers in stock, and whether the system depends on a subscription. Then ask the installer to show you the app on their own phone, on a real install, before you commit."
+    },
+    {
+      "type": "h2",
+      "text": "5. Insurance, WSIB and the ladder"
+    },
+    {
+      "type": "p",
+      "text": "A crew working at the roofline of your home needs commercial general liability insurance and, in Ontario, WSIB coverage for its workers. If someone falls off a ladder on your property without it, the exposure can land on you. Ask for a certificate of insurance and a WSIB clearance certificate. A professional will have both ready and will not be offended by the question. Ask also what equipment they bring: proper extension ladders with standoffs, and a lift for tall two-storey and three-storey homes, rather than whatever is in the truck."
+    },
+    {
+      "type": "h2",
+      "text": "6. References and installs you can drive past"
+    },
+    {
+      "type": "p",
+      "text": "Night photos are easy to make look good. Ask for addresses of installs you can drive past in daylight, ideally on homes with similar soffit and trim to yours, so you can see whether the track really disappears. Ask for a couple of customers from at least a year ago who are willing to take a call, because a system that looked great at the walkthrough and still works after a winter of ice storms and lake-effect snow is the thing you are buying. Any installer who has done hundreds of homes across London, St Thomas, Strathroy, Woodstock and the surrounding towns will have those references at hand."
+    },
+    {
+      "type": "h2",
+      "text": "7. What the written quote should contain"
+    },
+    {
+      "type": "p",
+      "text": "Do not accept a single number on a business card. A proper quote follows a site visit where someone measured your rooflines with a tape or a wheel, checked the soffit material and found the outlet. It should list:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Linear footage of track, broken out by run (front roofline, gables, garage, sides) so you can see what is included and what is not.",
+        "Point count and spacing, and whether the points are RGBW and individually addressable.",
+        "Track colour, and whether it is a stock colour or a custom match.",
+        "Controller and power supply model, where they will be mounted, and which outlet they will use.",
+        "Power injection points and how the wiring will be routed and concealed.",
+        "Parts warranty length, workmanship warranty length, and exclusions.",
+        "What is not included, such as electrical work if a new outlet is needed, or fascia repairs.",
+        "Total price, deposit, payment schedule, financing terms if you are using them, and a target install date."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Compare quotes on the same footage and point count, not on the bottom line. A cheaper quote that covers the front roofline only, with a lower point density, is not the same product as one that wraps the gables and garage with tight spacing. Ask each installer to quote the same scope and the comparison becomes honest."
+    },
+    {
+      "type": "h2",
+      "text": "8. Financing and how it is structured"
+    },
+    {
+      "type": "p",
+      "text": "Financing is common and can be a sensible way to spread a permanent install into monthly payments that land close to what a seasonal hang-and-remove service costs each year. Ask for the term, the rate, whether there is a fee, whether there is a penalty for paying it off early, and whether approval is on credit. Get it in writing alongside the quote rather than as a separate conversation. Forever Lights offers 24-month financing at 10% APR on approved credit, and we will lay the numbers out on the quote so nothing is a surprise. Whoever you go with, be wary of any offer that only makes sense if you sign today."
+    },
+    {
+      "type": "h2",
+      "text": "9. Timelines, and the December problem"
+    },
+    {
+      "type": "p",
+      "text": "A typical single-family install is one day, and no permit is required when the system connects to an existing GFCI-protected receptacle. The bottleneck is not the install; it is the calendar. Demand climbs sharply from September onward and every installer in the region is booked solid through late November and December. If you want lights on for the holidays, ask when the installer's calendar fills, whether a deposit holds your date, whether they install in cold weather, what weather cancels a day, and what happens if an ice storm pushes your slot. Ask about lead time on a custom track colour too. Booking in late summer or early fall gives you a comfortable slot; booking in the second week of December is a coin toss anywhere."
+    },
+    {
+      "type": "h2",
+      "text": "10. The questions you should hear from them"
+    },
+    {
+      "type": "p",
+      "text": "A good installer interviews you back. Expect questions about how you want to use the lights, whether everyday warm white matters as much as the holidays, which rooflines you actually see from the street, whether you have had ice damming, where your Wi-Fi reaches, and whether you plan to stay in the house. An installer who quotes without asking any of that is quoting a product, not a solution for your home. We would rather tell someone in a Byron bungalow that a smaller scope is right for them than sell them the largest system that fits."
+    },
+    {
+      "type": "p",
+      "text": "Print this list or keep it on your phone and work through it with every installer you talk to. The hardware questions tell you what you are buying, the warranty and service questions tell you what it will cost to own, the app question tells you whether you will still control it in a decade, and the paperwork protects you on the day. If you would like to put these questions to us, call (519) 914-3404 or book a free site visit and we will answer every one of them on your driveway, with a written quote for your actual rooflines. You can also try our cost estimator first for a rough sense of scale."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the most important question to ask a permanent lighting installer?",
+      "a": "Ask who comes out, how quickly, and at what cost if a section goes dark in year three. The answer tells you whether the warranty is real, whether the installer services what they sell, and whether they have the crew and equipment to work at roofline height in winter."
+    },
+    {
+      "q": "Should I ask for parts and labour warranty separately?",
+      "a": "Yes. A parts warranty covers the LED points, track, connectors, power supply and controller; a workmanship warranty covers the install itself. They often have different lengths, and a long parts warranty means little if every replacement is billed as labour. Forever Lights offers five years on parts and one year on workmanship."
+    },
+    {
+      "q": "Does a permanent lighting installer need insurance and WSIB in Ontario?",
+      "a": "Any crew working at your roofline should carry commercial general liability insurance and WSIB coverage for its workers. Ask for a certificate of insurance and a WSIB clearance certificate. A professional expects the question and has the documents ready."
+    },
+    {
+      "q": "What should be on a permanent lighting quote?",
+      "a": "Linear footage by run, point count and spacing, whether points are addressable RGBW, track colour, controller location and outlet, power injection points, parts and workmanship warranty terms, exclusions, total price, deposit and payment schedule, financing terms if used, and a target install date."
+    },
+    {
+      "q": "How early should I book to have lights for Christmas in London, Ontario?",
+      "a": "Late summer or early fall. Installer calendars across Southwestern Ontario fill from September onward and are usually solid through December. The install itself is one day; the wait for a slot is what catches people out."
+    }
+  ]
+}

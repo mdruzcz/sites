@@ -39,7 +39,6 @@ const jsonLd = [
     description: site.description,
     url: BASE,
     telephone: site.phone,
-    email: site.email,
     logo: `${BASE}/images/brand/logo-stacked.png`,
     image: `${BASE}/images/og-default.jpg`,
     address: { '@type': 'PostalAddress', addressLocality: 'London', addressRegion: 'ON', addressCountry: 'CA' },

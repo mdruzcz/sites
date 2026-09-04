@@ -47,7 +47,7 @@
     { "type": "p", "text": "The whole system draws less than most kitchen appliances. A typical two-storey home in warm white uses about the same electricity as three or four LED bulbs. You can leave it on all night, every night, for a few dollars a month." },
     { "type": "p", "text": "Because the power supply plugs into an ordinary outlet, it is easy to unplug by accident. If the lights ever go completely dark, check the plug and the GFCI reset button before you do anything else. GFCI outlets trip during storms and after power outages more often than people expect." },
     { "type": "h2", "text": "Who to call" },
-    { "type": "p", "text": "For anything that is not answered in the app or in our troubleshooting guide, call the office at (519) 914-3404 or email service@foreverlights.ca. Most questions are answered on the phone; many app and controller issues can be fixed remotely. Your installation date is your warranty start date, and your invoice is all we need to look up your system." }
+    { "type": "p", "text": "For anything that is not answered in the app or in our troubleshooting guide, call the office at (519) 914-3404 or send us a message through the contact form on our website. Most questions are answered on the phone; many app and controller issues can be fixed remotely. Your installation date is your warranty start date, and your invoice is all we need to look up your system." }
   ],
   "faq": [
     { "q": "Do I need to take the lights down or cover them in winter?", "a": "No. The track and LED points are sealed to IP68 and rated to -40°C. Snow, ice and freezing rain are all normal operating conditions. Nothing needs to come down, ever." },
