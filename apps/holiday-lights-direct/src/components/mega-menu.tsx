@@ -39,8 +39,8 @@ const COLUMNS: MenuColumn[] = [
     href: "/product-category/wires-plugs",
     emoji: "🔌",
     links: [
-      { label: "SPT-2 wire spools (250 & 500 ft)", href: "/product-category/wires-plugs" },
-      { label: "C9 socket wire", href: "/product/c7-c9-christmas-light-wire" },
+      { label: "SPT-2 extension wire (250 & 500 ft)", href: "/product-category/wires-plugs" },
+      { label: "C7 / C9 socket spools – 12″ spacing", href: "/product/c7-c9-christmas-light-wire" },
       { label: "Quick-plug adapters", href: "/product-category/wires-plugs" },
       { label: "LED extension cables", href: "/product-category/led-connectors" },
       { label: "T-connectors", href: "/product-category/led-connectors" }
