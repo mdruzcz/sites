@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCategories, listProducts } from "@/lib/catalog";
 import { SITE_URL } from "@/lib/utils";
+import { articles } from "@/lib/resources";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [categories, products] = await Promise.all([getCategories(), listProducts()]);
@@ -15,6 +16,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/warranty`, lastModified: now, priority: 0.5 },
     { url: `${SITE_URL}/faq`, lastModified: now, priority: 0.5 },
     { url: `${SITE_URL}/contact-us`, lastModified: now, priority: 0.6 },
+    { url: `${SITE_URL}/resources`, lastModified: now, priority: 0.8 },
+    ...articles.map((a) => ({ url: `${SITE_URL}/resources/${a.slug}`, lastModified: new Date(a.updated), priority: 0.7 })),
     ...categories.map((c) => ({
       url: `${SITE_URL}/product-category/${c.slug}`,
       lastModified: now,

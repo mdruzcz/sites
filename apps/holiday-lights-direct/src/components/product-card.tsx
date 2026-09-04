@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type CatalogProduct, primaryImage, priceRange } from "@/lib/catalog";
+import { type CatalogProduct, primaryImage, primaryImageUrl, priceRange } from "@/lib/catalog";
 import { formatCad } from "@/lib/utils";
 
 export function ProductCard({ product }: { product: CatalogProduct }) {
@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: CatalogProduct }) {
           still reads as a finished card rather than an empty box. */}
       <div className="aspect-square overflow-hidden bg-[var(--color-bg-warm)]">
         <Image
-          src={img?.public_url || "/images/products/placeholder.webp"}
+          src={primaryImageUrl(product)}
           alt={img?.alt_text || product.name}
           width={600}
           height={600}

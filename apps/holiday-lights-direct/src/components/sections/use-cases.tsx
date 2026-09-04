@@ -25,16 +25,16 @@ export function UseCases() {
   return (
     <section className="bg-[var(--color-bg)]">
       <div className="shell section">
-        <div className="max-w-2xl">
+        <div className="reveal max-w-2xl">
           <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Where they go</p>
-          <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">One system, every occasion.</h2>
+          <h2 className="font-display h2-fluid mt-6">One system, every occasion.</h2>
         </div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
           {CASES.map((c) => (
             <article
               key={c.title}
-              className="group relative isolate overflow-hidden rounded-3xl bg-[var(--color-ink-deep)]"
+              className="reveal-sm group relative isolate overflow-hidden rounded-3xl bg-[var(--color-ink-deep)] shadow-[var(--shadow-sm)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-lg)]"
             >
               <Photo
                 name={c.photo}
@@ -44,7 +44,7 @@ export function UseCases() {
                 className="transition duration-500 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                <p className="eyebrow text-[var(--color-gold-bright)]">{c.eyebrow}</p>
+                <p className="eyebrow eyebrow-star text-[var(--color-gold-bright)]">{c.eyebrow}</p>
                 <h3 className="font-display mt-3 text-2xl text-white md:text-[2rem]">{c.title}</h3>
                 <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80">{c.body}</p>
                 <Link

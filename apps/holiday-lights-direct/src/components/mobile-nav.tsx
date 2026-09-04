@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const LINKS: { label: string; href: string; note?: string }[] = [
-  { label: "Permanent Lights", href: "/permanent-lights", note: "Complete LED kits, 50–200 ft" },
+  { label: "Permanent Lights", href: "/permanent-lights", note: "Complete 12V LED kits, 50–250 ft" },
+  { label: "Tracks, pucks & connectors", href: "/product-category/permanent-lights" },
   { label: "Shop all products", href: "/shop", note: "Bulbs, clips, wire, connectors" },
   { label: "C9 LED bulbs", href: "/product-category/christmas-light-bulbs" },
   { label: "Wires & plugs", href: "/product-category/wires-plugs" },
   { label: "Clips & hardware", href: "/product-category/light-attachment-clips" },
   { label: "Pro Installers", href: "/professional-installer", note: "Bulk pricing" },
   { label: "Municipalities & BIAs", href: "/municipalities" },
+  { label: "Guides & how-tos", href: "/resources" },
   { label: "FAQ", href: "/faq" },
   { label: "Track your order", href: "/track-order" },
   { label: "Contact us", href: "/contact-us" }

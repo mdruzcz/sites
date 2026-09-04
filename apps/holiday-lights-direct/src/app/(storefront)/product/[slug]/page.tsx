@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { RichText } from "@/components/rich-text";
-import { getProduct, listProducts, primaryImage, type CatalogProduct } from "@/lib/catalog";
+import { getProduct, primaryImage } from "@/lib/catalog";
+import { relatedProducts } from "@/lib/related";
 import { ProductPurchase } from "@/components/product-purchase";
 import { ProductCard } from "@/components/product-card";
 import { SITE_URL, formatCad } from "@/lib/utils";
@@ -40,8 +41,10 @@ export default async function ProductPage({ params }: PageProps) {
   const min = prices.length ? Math.min(...prices) : 0;
   const max = prices.length ? Math.max(...prices) : 0;
 
-  // "Often bought with" rail — naive: 4 other products from the same store
-  const others = (await listProducts({ limit: 8 })).filter((p) => p.id !== product.id).slice(0, 4) as CatalogProduct[];
+  // "Often bought together": rule-based companions (C9 bulbs pair with the
+  // socket spool, male/female plugs, SPT-2 wire and clips), filled from the
+  // same category when a rule leaves gaps.
+  const others = await relatedProducts(product, 5);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -73,18 +76,14 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="mt-4 grid gap-10 lg:grid-cols-2">
         <div>
           <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
-            {img?.public_url ? (
-              <Image
-                src={img.public_url}
-                alt={img.alt_text}
-                width={1000}
-                height={1000}
-                className="aspect-square w-full object-contain"
-                priority
-              />
-            ) : (
-              <div className="grid aspect-square place-items-center text-slate-400">No image</div>
-            )}
+            <Image
+              src={img?.public_url || "/images/products/placeholder.webp"}
+              alt={img?.alt_text || product.name}
+              width={1000}
+              height={1000}
+              className="aspect-square w-full object-contain"
+              priority
+            />
           </div>
           {product.ecom_product_images.length > 1 && (
             <div className="mt-3 grid grid-cols-5 gap-2">
@@ -93,15 +92,13 @@ export default async function ProductPage({ params }: PageProps) {
                   key={i.id}
                   className="aspect-square overflow-hidden rounded-lg border border-[var(--color-border)] bg-white"
                 >
-                  {i.public_url && (
-                    <Image
-                      src={i.public_url}
-                      alt={i.alt_text}
-                      width={160}
-                      height={160}
-                      className="h-full w-full object-contain"
-                    />
-                  )}
+                  <Image
+                    src={i.public_url || "/images/products/placeholder.webp"}
+                    alt={i.alt_text || product.name}
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -162,7 +159,7 @@ export default async function ProductPage({ params }: PageProps) {
         <section className="mt-20">
           <p className="eyebrow text-[var(--color-brand)]">Pairs well with</p>
           <h2 className="font-display mt-2 text-2xl md:text-3xl">Often bought together</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
             {others.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

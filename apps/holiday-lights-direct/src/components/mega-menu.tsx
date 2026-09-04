@@ -16,10 +16,12 @@ const COLUMNS: MenuColumn[] = [
     href: "/permanent-lights",
     emoji: "★",
     links: [
-      { label: "All kits (by linear foot)", href: "/permanent-lights" },
-      { label: "Aluminum tracks", href: "/shop?category=permanent-lights" },
-      { label: "RGBW puck lights", href: "/shop?category=permanent-lights" },
-      { label: "Controllers & power", href: "/shop?category=permanent-lights" }
+      { label: "All kits (50–250 ft)", href: "/permanent-lights" },
+      { label: "Kits by size", href: "/product-category/permanent-lighting-kits" },
+      { label: "Aluminum tracks", href: "/product-category/aluminum-tracks" },
+      { label: "12V RGBW puck lights", href: "/product-category/led-puck-lights" },
+      { label: "Connectors & power injection", href: "/product-category/led-connectors" },
+      { label: "Everything permanent", href: "/product-category/permanent-lights" }
     ]
   },
   {
@@ -37,10 +39,11 @@ const COLUMNS: MenuColumn[] = [
     href: "/product-category/wires-plugs",
     emoji: "🔌",
     links: [
-      { label: "SPT-2 wire spools", href: "/product-category/wires-plugs" },
-      { label: "Extension cables", href: "/product-category/led-connectors" },
-      { label: "T-connectors", href: "/product-category/power-injection-cables" },
-      { label: "Quick-plug adapters", href: "/product-category/wires-plugs" }
+      { label: "SPT-2 wire spools (250 & 500 ft)", href: "/product-category/wires-plugs" },
+      { label: "C9 socket wire", href: "/product/c7-c9-christmas-light-wire" },
+      { label: "Quick-plug adapters", href: "/product-category/wires-plugs" },
+      { label: "LED extension cables", href: "/product-category/led-connectors" },
+      { label: "T-connectors", href: "/product-category/led-connectors" }
     ]
   },
   {
@@ -52,7 +55,7 @@ const COLUMNS: MenuColumn[] = [
       { label: "Parapet clips", href: "/product-category/light-attachment-clips" },
       { label: "Universal clips", href: "/product-category/light-attachment-clips" },
       { label: "Light stakes", href: "/product-category/light-attachment-clips" },
-      { label: "Soffit screws", href: "/product-category/permanent-lights" }
+      { label: "Soffit screws", href: "/product-category/aluminum-tracks" }
     ]
   }
 ];
@@ -119,9 +122,14 @@ export function MegaMenu() {
             <p className="font-medium text-[var(--color-brand-dark)]">
               🎁 First order? Use code <span className="font-bold">FIRST10</span> for 10% off.
             </p>
-            <Link href="/shop" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
-              Browse all products →
-            </Link>
+            <span className="flex items-center gap-4">
+              <Link href="/resources" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
+                Guides &amp; how-tos
+              </Link>
+              <Link href="/shop" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
+                Browse all products →
+              </Link>
+            </span>
           </div>
         </div>
       )}

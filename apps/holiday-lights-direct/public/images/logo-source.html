@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: transparent; }
+  body { display: inline-block; padding: 24px 32px; }
+  .logo { display: inline-flex; flex-direction: column; align-items: flex-start; }
+  .word {
+    font-family: 'Archivo Black', 'Archivo', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 160px;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--ink);
+    white-space: nowrap;
+    display: flex; align-items: baseline;
+  }
+  .sq {
+    display: inline-block;
+    width: 0.36em; height: 0.36em;
+    background: var(--gold);
+    margin: 0 0.055em 0 0.06em;
+    position: relative; top: -0.02em;
+    align-self: center;
+    transform: translateY(0.10em);
+  }
+  .sub {
+    margin-top: 0.19em;
+    display: flex; align-items: center; gap: 0.62em;
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 66px;
+    letter-spacing: 0.42em;
+    color: var(--ink);
+    line-height: 1;
+    padding-left: 0.02em;
+  }
+  .rule { display: inline-block; width: 1.55em; height: 0.115em; background: var(--gold); border-radius: 2px; }
+  .sub span { transform: translateX(0.02em); }
+</style>
+</head>
+<body style="--ink:#3a2a1c; --gold:#c8953c">
+  <div class="logo" id="logo">
+    <div class="word">Holiday&nbsp;L<span class="sq"></span>ghting</div>
+    <div class="sub"><span class="rule"></span><span>DIRECT</span></div>
+  </div>
+</body>
+</html>

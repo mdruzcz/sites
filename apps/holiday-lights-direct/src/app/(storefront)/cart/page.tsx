@@ -34,15 +34,13 @@ export default async function CartPage() {
               className="flex gap-4 rounded-lg border border-slate-200 bg-white p-4"
             >
               <div className="size-24 shrink-0 overflow-hidden rounded-md bg-slate-50">
-                {l.image_url && (
-                  <Image
-                    src={l.image_url}
-                    alt={l.product_name}
-                    width={120}
-                    height={120}
-                    className="h-full w-full object-contain"
-                  />
-                )}
+                <Image
+                  src={l.image_url || "/images/products/placeholder.webp"}
+                  alt={l.product_name}
+                  width={120}
+                  height={120}
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="flex-1">
                 <Link
@@ -68,21 +66,16 @@ export default async function CartPage() {
         <aside className="rounded-lg border border-slate-200 bg-white p-5">
           <h2 className="text-base font-semibold">Order summary</h2>
           <dl className="mt-4 space-y-2 text-sm">
-            <Row label="Subtotal" value={formatCad(cart.subtotal_cad)} />
-            <Row
-              label="Shipping"
-              value={cart.subtotal_cad >= 500 ? "FREE" : "Calculated at checkout"}
-            />
-            <Row label="Tax" value="Calculated at checkout" />
+            <Row label="Product subtotal" value={formatCad(cart.subtotal_cad)} />
+            <Row label="Shipping" value="Quoted by email" />
+            <Row label="Tax" value="Included in your quote" />
           </dl>
           <div className="mt-4 border-t border-slate-200 pt-4 text-sm">
-            <Row label="Estimated total" value={formatCad(cart.subtotal_cad)} bold />
+            <Row label="Products" value={formatCad(cart.subtotal_cad)} bold />
           </div>
-          {cart.subtotal_cad < 500 && (
-            <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
-              Spend {formatCad(500 - cart.subtotal_cad)} more for FREE shipping in Canada.
-            </p>
-          )}
+          <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
+            No payment is taken online — we&rsquo;ll email your shipping cost, usually within one business day.
+          </p>
           <CheckoutBar />
         </aside>
       </div>

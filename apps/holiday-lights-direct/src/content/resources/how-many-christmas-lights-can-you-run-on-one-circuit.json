@@ -1,0 +1,170 @@
+{
+  "slug": "how-many-christmas-lights-can-you-run-on-one-circuit",
+  "title": "How Many Christmas Lights Can You Run on One Circuit? Watts, Amps and Safe Runs Explained",
+  "metaTitle": "How Many Lights on One Circuit | Holiday Lights Direct",
+  "metaDescription": "How many Christmas lights one circuit can carry: watts and amps in plain terms, LED vs incandescent C9, wire and plug ratings, GFCI outlets for Canadian homes.",
+  "category": "Planning",
+  "excerpt": "The plain arithmetic behind a tripped breaker: what watts and amps actually mean, why LED C9 bulbs changed the limits, how to read the rating on wire and plugs, and how to split a display so nothing runs hot.",
+  "readMinutes": 9,
+  "updated": "2026-09-04",
+  "heroAlt": "Outdoor GFCI receptacle with a weatherproof cover feeding a green C9 LED light run on a home in Ontario",
+  "keyTakeaways": [
+    "Breakers trip on amps. Divide total watts by 120 volts, the standard for Canadian household outlets, and you have the amps a run will pull.",
+    "LED C9 bulbs draw a small fraction of what incandescent C9s draw, which is why one outlet can now feed a roofline that used to need three.",
+    "Every socket wire spool, plain wire spool, plug and extension cord has a rating printed on it, and the lowest-rated part in the chain sets your limit.",
+    "Outdoor plugs belong on GFCI-protected receptacles with outdoor-rated cords; a GFCI that trips is usually reporting moisture, not overload.",
+    "Split the display across outlets, put a timer at the wall, and call an electrician for a dedicated exterior circuit rather than stretching what you have."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Every December someone plugs in one more inflatable and the whole front yard goes dark. Sometimes it is the breaker in the basement, sometimes it is the little reset button on the outdoor outlet, and sometimes it is a plug that has quietly melted. All three have the same root cause: nobody added up what was on the circuit. This guide covers the arithmetic in plain terms, explains why LED C9 bulbs moved the goalposts, and shows you how to plan a display so the lights stay on and the wiring stays cool."
+    },
+    {
+      "type": "h2",
+      "text": "Watts and amps in plain terms"
+    },
+    {
+      "type": "p",
+      "text": "Think of electricity as water in a pipe. Volts are the pressure, amps are how much is flowing, and watts are the work being done at the end. A breaker does not care about watts directly; it trips when the flow, the amps, gets higher than it is rated for. The three are linked by one piece of arithmetic: watts equal volts multiplied by amps. Turn that around and amps equal watts divided by volts. Ordinary household outlets in Canada run at 120 volts, so a 120 watt load draws one amp, a 240 watt load draws two, and so on."
+    },
+    {
+      "type": "p",
+      "text": "Open your panel and look at the breaker that feeds the outdoor outlet. The number on the handle is the circuit rating in amps. Check yours rather than assuming, because older homes and finished basements can surprise you. Two more things matter. A circuit should not run at its full rating for hours on end, so leave real headroom. And that outdoor outlet is almost never alone: the same breaker often feeds the garage fridge, the porch light and a bedroom or two, all of which count against the same limit."
+    },
+    {
+      "type": "callout",
+      "text": "To work out a run: add up the watts of every bulb using the figure on the packaging, add any timer or controller, divide by 120 to get amps, then compare that with the breaker rating minus everything else already on the circuit."
+    },
+    {
+      "type": "h2",
+      "text": "Why LED C9 changed the math"
+    },
+    {
+      "type": "p",
+      "text": "Incandescent C9 bulbs make light by heating a filament, and most of what they draw becomes heat rather than light. Each one pulls several watts, so a roofline of a couple of hundred bulbs was a serious load and an outlet could only carry a few strings before the breaker complained. LED C9 bulbs make light directly from a diode and draw a small fraction of that per bulb. Rather than quoting a number here, check the wattage printed on the packaging of the bulbs you actually buy, because it varies by product."
+    },
+    {
+      "type": "p",
+      "text": "The practical result is that the limiting factor shifts. With incandescent bulbs the breaker was the wall you hit. With LED C9 you can run hundreds of feet from a single plug before the breaker matters, and the real limit becomes the rating of the wire and the plug carrying the run. That is a much more forgiving place to be, but it is still a limit, and it is printed on the product for a reason."
+    },
+    {
+      "type": "p",
+      "text": "If a few old incandescent strings are still in the mix, they dominate the total, and replacing them is usually the single biggest fix for a display that keeps tripping."
+    },
+    {
+      "type": "h2",
+      "text": "Reading the rating on wire and plugs"
+    },
+    {
+      "type": "p",
+      "text": "Custom runs are built from three parts, and each carries its own rating. C7/C9 socket wire, which we sell in 120 ft and 1000 ft spools with 12 inch socket spacing, has a maximum load printed on the spool label. SPT-2 18 AWG plain wire, sold in 250 ft and 500 ft spools, has its own rating for use as a lead from the outlet to the first socket. The male and female vampire plugs that snap onto SPT-2 wire are rated separately. Add an extension cord from the wall and the tag on that cord is a fourth rating. The lowest of the four is the number you design to, expressed in either amps or watts."
+    },
+    {
+      "type": "h3",
+      "text": "What 18 AWG actually means"
+    },
+    {
+      "type": "p",
+      "text": "AWG is the wire gauge, and a lower number means a thicker conductor. 18 AWG SPT-2 is the standard for custom C9 runs because it is thin enough to sit discreetly along a fascia and clip neatly, and that thinness is exactly why the run has a load limit. Thinner wire also loses a little voltage over distance, so a very long run fed from one end may look slightly dimmer at the far end. Feeding long runs from the middle, or splitting them into two runs with their own plugs, solves both problems at once."
+    },
+    {
+      "type": "h3",
+      "text": "Counting bulbs on a custom run"
+    },
+    {
+      "type": "p",
+      "text": "With 12 inch spacing you get one socket per foot, so a full 120 ft spool is roughly 120 bulbs and a run cut to 65 ft is roughly 65. Multiply the bulb count by the wattage on the bulb packaging, compare the result with the rating on the socket wire and the plug, and you know whether the run is within limits. One trap catches a lot of people: if you plug run B into the female end of run A, the plug and wire of run A now carry both runs. Chaining is convenient, but every link upstream is carrying everything downstream of it."
+    },
+    {
+      "type": "h2",
+      "text": "GFCI outlets and outdoor-rated cords"
+    },
+    {
+      "type": "p",
+      "text": "Outdoor receptacles in Canada are required to have ground fault protection, which is the outlet with the test and reset buttons or a GFCI breaker in the panel. A GFCI does a different job from a breaker. The breaker trips on overload. The GFCI trips when some current leaks to ground instead of returning through the wire, which is what happens when water gets into a socket, a bulb cracks, or a plug connection ends up lying in a puddle. A GFCI that keeps tripping is not faulty and it is not telling you the circuit is overloaded. It is telling you there is a wet connection somewhere, and the fix is to find it, not to bypass the outlet."
+    },
+    {
+      "type": "p",
+      "text": "Keep every plug and connection off the ground, use an in-use weatherproof cover on the outlet, and cap the far end of any run that ends in an open female plug. Extension cords must be marked for outdoor use and kept as short as practical, because a long, light-gauge cord loses voltage and warms up under load. Never pinch a cord in a closed window or door, and never chain extension cords to reach an outlet; build the run to the length you need instead."
+    },
+    {
+      "type": "h2",
+      "text": "Splitting the display across outlets"
+    },
+    {
+      "type": "p",
+      "text": "The cleanest displays are planned per outlet, not per string. Sketch the house from the street, mark every exterior outlet, and assign each part of the display to one of them: front roofline on one, garage and driveway on another, trees and shrubs on a third. If you only have one outdoor outlet, a garage outlet with a cord routed through an approved pass-through is often the second, and an electrician can add more. What you want to avoid is the whole display hanging off one plug simply because it was closest."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Flip each breaker in turn and note what goes dark indoors, so you know what else shares the outdoor outlet.",
+        "Give the roofline its own outlet where you can. Inflatables have fans and animated pieces have motors, and those loads behave differently from lights.",
+        "Build custom runs to the exact length with socket wire and vampire plugs rather than piling on extension cords to reach.",
+        "Use a length of SPT-2 plain wire as the lead from the outlet to the first socket so there are no empty sockets dangling near the ground.",
+        "Leave headroom on every outlet for the thing you will add next year, because there is always a thing next year."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Timers and controllers"
+    },
+    {
+      "type": "p",
+      "text": "A timer does not lower the peak draw, but it stops the lights running all night by accident and it removes the daily trip outside in the cold. Timers have a rating of their own, printed on the body, and it needs to be at or above the load passing through it. Put the timer at the wall outlet, not at the far end of a run, so the whole run is switched together. Photocell timers that turn on at dusk are the simplest option because they track the shortening days without adjustment. If you prefer a smart plug, make sure it is rated for outdoor use and sits under the weatherproof cover."
+    },
+    {
+      "type": "p",
+      "text": "Permanent LED roofline kits take a different route to the same place. The track and RGBW pucks run on 12 volts from a transformer that plugs into a standard outlet, the WiFi controller handles schedules from the app, and the transformer label carries its own input rating, so the same arithmetic applies at the wall."
+    },
+    {
+      "type": "h2",
+      "text": "Signs of an overloaded circuit"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "The breaker trips, especially when another load starts up, such as the furnace or a freezer compressor.",
+        "Plugs, cords, timers or the outlet cover feel warm to the touch after the lights have been on a while.",
+        "The lights dim briefly when something else on the circuit turns on.",
+        "A buzzing sound at the outlet, or a smell of hot plastic near a plug or cord.",
+        "Discolouration, scorch marks or a softened, deformed plug body."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "The first three are warnings to redistribute the load. The last two mean unplug it now, do not use that plug or cord again, and look at what was upstream of it before plugging anything back in. Heat at a connection is the failure mode that starts fires, and it usually shows up at a plug or a chained joint rather than along the wire itself."
+    },
+    {
+      "type": "h2",
+      "text": "When to call an electrician"
+    },
+    {
+      "type": "p",
+      "text": "Most holiday displays can be run safely on the outlets a house already has, provided the load is split sensibly. Call a licensed electrician when you want a dedicated exterior circuit for the display, when an outdoor outlet has no GFCI protection, when the panel is old or still uses fuses, when the house has aluminum wiring, or when any receptacle is loose, cracked or not properly weather-protected. If you light the house every year, a dedicated circuit with a switched outlet under the soffit is the single most useful upgrade you can make. It moves the plug up off the ground, gives the roofline its own breaker, and means you switch the display from inside the front door. Installers should carry a plug-in power meter, measure each run at the outlet during install, and note the reading and the outlet on the client's sheet; it settles any argument about what tripped and gives a starting point when the client adds a tree next year."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many LED C9 bulbs can I put on one run?",
+      "a": "It depends on the wattage of the bulbs and the rating printed on the socket wire and the plug. Multiply the number of bulbs by the wattage on the packaging and keep the total under the lowest rating in the chain. With LED C9 the wire and plug rating, not the breaker, is usually the limit."
+    },
+    {
+      "q": "Can I plug one light run into the end of another?",
+      "a": "Yes, but the plug and wire of the first run then carry both. Add up the load of everything downstream and check it against the rating of the upstream plug and wire. For long rooflines it is better to give each run its own plug or feed from the middle."
+    },
+    {
+      "q": "Why does my outdoor GFCI keep tripping?",
+      "a": "A GFCI trips on current leaking to ground, which almost always means moisture in a socket, a cracked bulb, or a plug connection lying on wet ground. It is not an overload signal. Dry and cap the connections, lift plugs off the ground and use an in-use cover on the outlet."
+    },
+    {
+      "q": "Are LED Christmas lights safe to leave on all night?",
+      "a": "LED bulbs run cool and draw little power, so the lights themselves are not the concern. Use a timer at the wall so they are off when nobody is looking at them, keep everything on a GFCI-protected outlet with outdoor-rated cords, and check that plugs and timers stay cool to the touch."
+    },
+    {
+      "q": "Does a permanent LED roofline kit need its own circuit?",
+      "a": "The kit runs on 12 volts from a transformer that plugs into a standard outlet, and the transformer label shows its input rating. It does not require a dedicated circuit, but a switched outlet under the soffit is a popular upgrade that keeps the transformer out of the weather and off the ground."
+    }
+  ]
+}

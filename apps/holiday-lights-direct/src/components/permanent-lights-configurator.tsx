@@ -17,10 +17,11 @@ export interface ConfigOption {
 }
 
 const COLOR_SWATCH: Record<string, string> = {
-  Beige: "#d2b48c",
   Black: "#1f2937",
-  Brown: "#5b3a29",
   White: "#f5f5f5",
+  Wicker: "#c9b58f",
+  Brown: "#5b3a29",
+  Beige: "#d2b48c",
   "Custom Color": "repeating-linear-gradient(45deg,#e2e8f0,#e2e8f0 5px,#cbd5e1 5px,#cbd5e1 10px)"
 };
 
@@ -54,7 +55,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
       {/* Footage selector */}
       <div>
         <p className="eyebrow text-slate-500">Linear footage</p>
-        <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-7">
+        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
           {options.map((o) => {
             const active = o.slug === selectedSlug;
             return (
@@ -112,7 +113,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
             <p className="font-display text-3xl text-[var(--color-brand)]">{formatCad(selected?.price ?? 0)}</p>
           </div>
           <p className="mt-2 text-xs text-slate-500">
-            Free Canadian shipping on this order. Same-day handling from London, ON.
+            No payment online — we&rsquo;ll email your shipping cost. Ships from London, ON.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <button
@@ -136,7 +137,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
                 onClick={() => router.push("/cart")}
                 className="text-sm font-semibold text-[var(--color-brand)] hover:underline"
               >
-                Go to checkout →
+                Go to cart →
               </button>
             )}
           </div>
@@ -145,17 +146,13 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
 
       {/* Visual preview */}
       <div className="overflow-hidden rounded-2xl bg-[var(--color-night)]">
-        {selected?.image ? (
-          <Image
-            src={selected.image}
-            alt={`${selected.name} preview`}
-            width={700}
-            height={500}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        ) : (
-          <div className="grid aspect-[4/3] place-items-center text-slate-500">No preview</div>
-        )}
+        <Image
+          src={selected?.image || "/images/products/placeholder.webp"}
+          alt={`${selected?.name ?? "Permanent lights kit"} preview`}
+          width={700}
+          height={500}
+          className="aspect-[4/3] w-full object-cover"
+        />
         <div className="p-4 text-xs text-slate-400">
           Pictured: kit components &mdash; controller, tracks, pucks, connectors.
         </div>

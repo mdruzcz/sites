@@ -12,13 +12,13 @@ export function Header() {
   const hasLogo = existsSync(join(process.cwd(), "public", "images", "logo.png"));
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 shadow-[0_1px_0_rgba(255,255,255,0.6),0_6px_24px_-18px_rgba(26,29,35,0.4)] backdrop-blur-md">
       <div className="bg-[var(--color-ink-deep)] px-4 py-2 text-center text-[11px] tracking-wide text-white/80">
         <span className="font-semibold text-[var(--color-gold-bright)]">FIRST10</span>
         <span className="mx-2 text-white/25">·</span>
         <span>10% off your first order</span>
         <span className="mx-2 text-white/25">·</span>
-        <span className="font-semibold text-[var(--color-gold-bright)]">Free shipping over $500</span>
+        <span className="font-semibold text-[var(--color-gold-bright)]">Fast shipping across Canada</span>
         <span className="mx-2 hidden text-white/25 sm:inline">·</span>
         <span className="hidden sm:inline">Ships from London, Ontario</span>
       </div>
@@ -29,10 +29,11 @@ export function Header() {
             <Image
               src="/images/logo.png"
               alt="Holiday Lights Direct"
-              width={320}
-              height={130}
+              width={1361}
+              height={239}
               priority
-              className="h-12 w-auto md:h-14"
+              sizes="(max-width: 768px) 220px, 300px"
+              className="h-10 w-auto md:h-12"
             />
           ) : (
             <span className="font-display text-[1.4rem] leading-none tracking-tight text-[var(--color-text)] md:text-2xl">
@@ -49,13 +50,16 @@ export function Header() {
             Permanent Lights
           </Link>
           <MegaMenu />
-          <Link href="/professional-installer" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/professional-installer" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             Pro Installers
           </Link>
-          <Link href="/municipalities" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/municipalities" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             Municipalities
           </Link>
-          <Link href="/faq" className="font-medium transition hover:text-[var(--color-gold-text)]">
+          <Link href="/resources" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
+            Guides
+          </Link>
+          <Link href="/faq" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
             FAQ
           </Link>
         </nav>

@@ -11,6 +11,9 @@ export const revalidate = 3600;
 /** Category slug → lifestyle photo used for the page header. */
 const CATEGORY_PHOTOS: Record<string, PhotoKey> = {
   "permanent-lights": "track-night-glow",
+  "permanent-lighting-kits": "home-nighttime-lit",
+  "aluminum-tracks": "track-daytime-discreet",
+  "led-puck-lights": "detail-led-pucks",
   "christmas-light-bulbs": "home-christmas-warm-white",
   "mini-light-strands": "home-cottage-evening",
   "light-attachment-clips": "detail-track-mounting",

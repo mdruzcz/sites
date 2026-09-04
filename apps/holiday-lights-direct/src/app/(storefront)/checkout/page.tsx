@@ -3,7 +3,7 @@ import { getCart } from "@/lib/cart";
 import { CheckoutForm } from "@/components/checkout-form";
 import { CheckoutSummary } from "@/components/checkout-summary";
 
-export const metadata = { title: "Checkout", robots: { index: false } };
+export const metadata = { title: "Request a shipping quote", robots: { index: false } };
 
 export default async function CheckoutPage() {
   const cart = await getCart();
@@ -23,7 +23,7 @@ export default async function CheckoutPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="font-display text-3xl tracking-tight">Checkout</h1>
+        <h1 className="font-display text-3xl tracking-tight">Request a shipping quote</h1>
         <Link href="/cart" className="text-sm text-[var(--color-brand)] hover:underline">
           ← Edit cart
         </Link>
@@ -31,7 +31,7 @@ export default async function CheckoutPage() {
 
       {/* Progress indicator */}
       <ol className="mx-auto mb-8 grid max-w-2xl grid-cols-3 gap-4 text-center text-xs">
-        {["Information", "Shipping & payment", "Confirmation"].map((step, idx) => (
+        {["Your details", "We email your quote", "Approve & we ship"].map((step, idx) => (
           <li key={step} className="flex flex-col items-center gap-2">
             <span
               className={`grid size-8 place-items-center rounded-full text-sm font-bold ${

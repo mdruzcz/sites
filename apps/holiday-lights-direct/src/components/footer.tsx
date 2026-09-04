@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const POLICIES = [
-  "Free shipping over $500",
+  "Shipping quoted per order",
   "30-day returns",
   "5-year LED warranty",
   "Ships from London, ON"
@@ -11,7 +12,8 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
   {
     heading: "Shop",
     links: [
-      { label: "Permanent Lights", href: "/permanent-lights" },
+      { label: "Permanent lighting kits", href: "/permanent-lights" },
+      { label: "Tracks, pucks & connectors", href: "/product-category/permanent-lights" },
       { label: "All products", href: "/shop" },
       { label: "C9 LED bulbs", href: "/product-category/christmas-light-bulbs" },
       { label: "Wires & plugs", href: "/product-category/wires-plugs" },
@@ -32,6 +34,7 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
     links: [
       { label: "Shipping & returns", href: "/shipping-returns" },
       { label: "5-year warranty", href: "/warranty" },
+      { label: "Guides & how-tos", href: "/resources" },
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact-us" },
       { label: "Terms of service", href: "/terms-of-service" },
@@ -42,7 +45,8 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--color-ink-deep)] text-white/70">
+    <footer className="relative bg-[var(--color-ink-deep)] text-white/70">
+      <div aria-hidden className="h-px w-full bg-gradient-to-r from-transparent via-[var(--color-gold)]/60 to-transparent" />
       <div className="border-b border-white/10">
         <ul className="shell grid grid-cols-2 gap-4 py-5 text-center text-xs md:grid-cols-4">
           {POLICIES.map((p) => (
@@ -55,9 +59,7 @@ export function Footer() {
 
       <div className="shell grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:py-20">
         <div>
-          <p className="font-display text-xl text-white">
-            Holiday Lights <span className="text-[var(--color-gold-bright)]">Direct</span>
-          </p>
+          <Image src="/images/logo-white.png" alt="Holiday Lights Direct" width={1361} height={239} sizes="240px" className="h-11 w-auto" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             Aluminum-tracked permanent LED systems and professional Christmas lighting gear, shipped direct
             from London, Ontario.

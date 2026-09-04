@@ -11,12 +11,12 @@ export const revalidate = 3600;
 export const metadata = {
   title: "Permanent LED Lights — Aluminum-Tracked RGBW Housing Kits",
   description:
-    "Complete permanent LED lighting kits: aluminum track, RGBW pucks, controller, power supply and connectors. Pick 50ft to 200ft. Free Canadian shipping over $500.",
+    "Complete 12V permanent LED lighting kits: aluminum track, RGBW pucks, WiFi controller, power supplies and every connector. Six sizes from 50 to 250 ft. Free Canadian shipping over $500.",
   alternates: { canonical: `${SITE_URL}/permanent-lights` },
   openGraph: {
     title: "Permanent LED Lights — Aluminum-Tracked RGBW Housing Kits",
     description:
-      "Complete permanent LED lighting kits from 50ft to 200ft, shipped from London, Ontario.",
+      "Complete 12V permanent LED lighting kits from 50 to 250 ft, shipped from London, Ontario.",
     url: `${SITE_URL}/permanent-lights`,
     images: [{ url: "/images/photos/track-night-glow.webp", width: 1600, height: 1067 }]
   }
@@ -88,8 +88,9 @@ function Hero() {
             <span className="block text-[var(--color-gold-bright)]">installed once.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-white/80">
-            Discreet aluminum tracks, RGBW LED pucks, smart-app control and the full hardware bundle,
-            delivered as one complete kit. Available in 50, 75, 100, 125, 150, 175 and 200 linear-foot sizes.
+            Discreet aluminum tracks, 12V RGBW LED pucks, smart-app control and the full hardware bundle,
+            delivered as one complete kit. Six sizes: 50, 75, 100, 150, 200 and 250 linear feet, in black,
+            white, wicker or brown track.
           </p>
           <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.14em] text-white/70">
             <li>5-year warranty</li>
@@ -148,9 +149,10 @@ function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
           <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Step 1 — Pick your kit</p>
           <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Match your home perimeter.</h2>
           <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
-            Measure the rooflines, soffits or fascia you want lit, then pick the kit that covers it — a
-            little extra never hurts. Every kit includes lights, aluminum tracks, controller, power supply,
-            T-connectors, extension cables, screws, drill bit and fuses.
+            Measure the rooflines, soffits or fascia you want lit, then pick the kit that covers it. Every
+            kit ships with a little more track than its nominal length for corners and offcuts, and includes
+            the lights, aluminum track, WiFi controller, power supplies, every connector and colour-matched
+            screws. Same hardware and the same kit pricing as our installer partner, Forever Lights.
           </p>
         </div>
 
@@ -188,18 +190,16 @@ function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
 }
 
 const BOX_CONTENTS: [string, string, string][] = [
-  ["24V RGBW LED Lights", "160 ×", "5 lights per metre of track, individually addressable"],
-  ["Aluminum Tracks (1 m / 3.28 ft)", "31 ×", "5-hole pre-drilled, beige / black / brown / white"],
-  ["Box of colour-matching screws", "1 ×", "5/8″ soffit screws (white or black to match track)"],
-  ["Controller", "1 ×", "WiFi-enabled, free Android and iOS app"],
-  ["300 W Power Supply (24V Controller)", "1 ×", "CSA Class 2"],
-  ["20 ft / 10 ft / 5 ft / 1 ft Connectors", "2 / 2 / 1 / 2", "Plug-and-play, waterproof"],
-  ["T-Connector for 2-run splits", "1 ×", "Branch around corners and second storeys"],
-  ["T-power injection connectors", "2 ×", "Maintains brightness on long runs"],
-  ["20 ft Power INJ Extension Cable", "2 ×", "For runs over 120 lights"],
-  ["20 ft PWR INJ Cable for Controller", "1 ×", "Connects controller to first run"],
-  ["Robertson drill bit", "1 ×", "For the included soffit screws"],
-  ["7.5 amp controller fuses", "2 ×", "Spare protection"]
+  ["12V 5-Light RGBW Strands", "31 ×", "155 sealed, individually addressable puck lights, five per lead"],
+  ["Aluminum Track, 42″ with 8″ spacing", "31 ×", "About 109 ft of track in black, white, wicker or brown"],
+  ["150 W Power Supply, 12V", "2 ×", "Plugs into an existing GFCI outlet, so no electrical permit"],
+  ["WiFi Controller", "1 ×", "Free Android and iOS app; scenes and schedules stored on board"],
+  ["1 ft / 5 ft / 10 ft / 20 ft Light Extension Connectors", "2 / 1 / 2 / 2", "Sealed twist fittings, no cutting or soldering"],
+  ["Power T Connector", "1 ×", "Feeds power into two directions from one supply"],
+  ["Light Extension T Connector", "1 ×", "Branch the run left and right from a single start point"],
+  ["20 ft Power Extension Connector", "1 ×", "Lets the supply live somewhere sheltered"],
+  ["Data Amplifier", "1 ×", "Keeps the far end of a long run in sync"],
+  ["Box of colour-matched screws", "1 ×", "5/8″ soffit screws matched to stock track colours"]
 ];
 
 function WhatsIncluded() {
@@ -213,7 +213,7 @@ function WhatsIncluded() {
               Everything you need, one delivery.
             </h2>
             <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
-              The list below is a 100&prime; kit. Larger kits scale proportionally.
+              The list below is the 100&prime; kit. Quantities scale with the size, and every kit page lists its exact contents.
             </p>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
               <Photo
