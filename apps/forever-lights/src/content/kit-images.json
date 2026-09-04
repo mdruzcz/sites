@@ -1,0 +1,68 @@
+{
+  "rgbw-light-strand": {
+    "src": "/images/kits/rgbw-light-strand.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQABAAA4BaJaQAD4kPGasT98ZsQAAA/vgUtwT86ciS3zzRMsw0tjfsNELMB3GR0/Ft/jgrKb7kThELmLeevWARwAuZwUe7AP0YVSLL8y2jBW2zWQJ3z06f0AAAAA=="
+  },
+  "aluminum-track": {
+    "src": "/images/kits/aluminum-track.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQABAAA4BaJZQAD5Mspg0Kyk8gAP702UcA90P4KmqMz5sme/EXkh77D7ecYBqh3M47yeYFwMnR8bPnnEECVRpkPSk7wP8vLqvzwneIYJuDs8+5VzMoAKbKfJMa/x19Kpl2u/42+P0CNiAA"
+  },
+  "power-supply-150w": {
+    "src": "/images/kits/power-supply-150w.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoQABAAA4BaJZwAAuagCZ3nwAD+9/8DADZ3Y9zdHieLDqbsV80bEvsQyuYzS+qgVqyC/jAq39zsZfIb3Pnrb9mgRz52ocLcUAA="
+  },
+  "connector-1ft": {
+    "src": "/images/kits/connector-1ft.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQABAAA4BaJaQAAudcS5lcg8AA/viwFEWAzunwGLChgv1+shXeZnJud1i0ZN/eQ47w9hVi7KP1/M1O9mHagAAA"
+  },
+  "connector-5ft": {
+    "src": "/images/kits/connector-5ft.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoQABAAA4BaJaQAD4wQb/H38WYAAP74r8rcuM9bN7IWAyw8B5F5yiztFYfHX3e6wFy5FzN1TYAAAA=="
+  },
+  "connector-10ft": {
+    "src": "/images/kits/connector-10ft.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoQABAAA4BaJaQAAucJl3rQAP74sAWhyIpnazqL/mYlrjXokcU9mLTfydel9hQTh4GEUYoxCn+33wAAAAA="
+  },
+  "connector-20ft": {
+    "src": "/images/kits/connector-20ft.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwAgCdASoQABAAA4BaJaQAD4SQcAYpNJvFeAD++K4v3ISI4J5G8FXaDMAjL091fUrWMwAwWr1HkeSiJGMibIM7pfzaMzBdNUb7p6zifTAmdygAAAA="
+  },
+  "light-t-connector": {
+    "src": "/images/kits/light-t-connector.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQABAAA4BaJaQAD4VQcDY0wAAA/viwLx6m+dcYFmtcLUBCd++Gd3h4lHxXmgR8wX7nG823FgAAAA=="
+  },
+  "power-t-connector": {
+    "src": "/images/kits/power-t-connector.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQABAAA4BaJaQAAudKEsmQAAD++LAjK9qCW/nEnjT0h1LKf2Xgdi6pgKuzNvWoDleZUQAA"
+  },
+  "power-extension-20ft": {
+    "src": "/images/kits/power-extension-20ft.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQABAAA4BaJaQAAudMXJY2AAD++LAUnoUGBX2TkSCEjjOXgRZwRoGTYWHpPqp7fFis1XpuWoqgAAAA"
+  },
+  "data-amplifier": {
+    "src": "/images/kits/data-amplifier.webp",
+    "width": 900,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoQABAAA4BaJaQAAudaXn8AAP74r7LF8fa9hd0ozThbXg7zaYOao5tIXXygm2gAAAA="
+  }
+}

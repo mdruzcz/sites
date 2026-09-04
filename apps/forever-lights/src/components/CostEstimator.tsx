@@ -5,11 +5,58 @@ import Link from 'next/link';
 import { Icon } from './icons';
 
 // ─── Pricing model (client-side, honest, shown as a range) ───────────────────
+//
+// PRICE ANCHORS supplied by Matt 2026-09-04, installed price in CAD. The high
+// end is exactly 1.2x the low end at every length, and the effective per-foot
+// rate falls as the roofline gets longer (fixed setup costs spread further).
+// We interpolate BETWEEN these anchors rather than fit a formula, so the
+// estimator reproduces the quoting sheet exactly at 50/75/100/150/200/250 ft.
+//
+//   ft     low        high
+//   50   1,665.00   1,998.00
+//   75   1,785.00   2,142.00
+//  100   2,129.20   2,555.04
+//  150   2,840.70   3,408.84
+//  200   3,448.80   4,138.56
+//  250   4,157.00   4,988.40
+//
+// Below 50 ft the 50 ft price is the floor (minimum job). Above 250 ft we
+// continue at the final segment's slope (about $14.16 per foot).
+const priceAnchors = [
+  { feet: 50, low: 1665.0 },
+  { feet: 75, low: 1785.0 },
+  { feet: 100, low: 2129.2 },
+  { feet: 150, low: 2840.7 },
+  { feet: 200, low: 3448.8 },
+  { feet: 250, low: 4157.0 },
+] as const;
+
+const HIGH_MULTIPLIER = 1.2;
+
+/** Installed base price (low end) for a given roofline length, in CAD. */
+function baseLowForFeet(feet: number): number {
+  const first = priceAnchors[0];
+  const last = priceAnchors[priceAnchors.length - 1];
+  if (feet <= first.feet) return first.low;
+  if (feet >= last.feet) {
+    const prev = priceAnchors[priceAnchors.length - 2];
+    const slope = (last.low - prev.low) / (last.feet - prev.feet);
+    return last.low + (feet - last.feet) * slope;
+  }
+  for (let i = 1; i < priceAnchors.length; i++) {
+    const a = priceAnchors[i - 1];
+    const b = priceAnchors[i];
+    if (feet <= b.feet) {
+      const t = (feet - a.feet) / (b.feet - a.feet);
+      return a.low + t * (b.low - a.low);
+    }
+  }
+  return last.low;
+}
+
 const pricing = {
   currency: 'CAD',
-  perLinearFootLow: 14,
-  perLinearFootHigh: 22,
-  minimumJobCad: 950,
+  minimumJobCad: priceAnchors[0].low,
   resultDisclaimer:
     'This is a ballpark estimate based on typical rooflines, not a binding quote — a free on-site measurement confirms your exact linear footage and final pricing.',
   homeSizePresets: [
@@ -21,10 +68,10 @@ const pricing = {
   ],
   featureModifiers: [
     {
-      key: 'second_storey_access',
-      label: 'Two-storey or hard-to-reach access',
+      key: 'difficult_access',
+      label: 'Steep pitch or difficult access',
       addPerFootCad: 2,
-      note: 'Second-storey runs, steep pitches, or areas needing a lift add labour and safety time.',
+      note: 'Steep rooflines, three-storey peaks, or areas where a lift cannot easily reach add labour and safety time.',
     },
     {
       key: 'extra_zones_controller',
@@ -41,7 +88,7 @@ const pricing = {
   ],
 } as const;
 
-const MIN_FEET = 40;
+const MIN_FEET = 50;
 const MAX_FEET = 500;
 
 function formatCad(n: number): string {
@@ -87,21 +134,24 @@ export function CostEstimator() {
     setActive(prev => ({ ...prev, [key]: !prev[key] }));
   }
 
-  const { low, high, addPerFoot } = useMemo(() => {
+  const { low, high, addPerFoot, perFootLow, perFootHigh } = useMemo(() => {
     const extraPerFoot = pricing.featureModifiers.reduce(
       (sum, m) => (active[m.key] ? sum + m.addPerFootCad : sum),
       0,
     );
-    const rawLow = feet * (pricing.perLinearFootLow + extraPerFoot);
-    const rawHigh = feet * (pricing.perLinearFootHigh + extraPerFoot);
+    const baseLow = baseLowForFeet(feet);
+    const rawLow = baseLow + feet * extraPerFoot;
+    const rawHigh = baseLow * HIGH_MULTIPLIER + feet * extraPerFoot;
     return {
       addPerFoot: extraPerFoot,
-      low: Math.max(pricing.minimumJobCad, rawLow),
-      high: Math.max(pricing.minimumJobCad, rawHigh),
+      low: rawLow,
+      high: rawHigh,
+      perFootLow: rawLow / feet,
+      perFootHigh: rawHigh / feet,
     };
   }, [feet, active]);
 
-  const atMinimum = low === pricing.minimumJobCad && high === pricing.minimumJobCad;
+  const atMinimum = feet <= priceAnchors[0].feet;
 
   // Financing: 10% APR over a 24-month term. Standard amortized monthly payment
   // per dollar financed = r / (1 - (1 + r)^-24), r = 0.10/12 ≈ 0.046145.
@@ -237,8 +287,7 @@ export function CostEstimator() {
             <span>{formatCad(high)}</span>
           </p>
           <p className="text-xs text-muted mt-3">
-            {feet} linear ft · {formatCad(pricing.perLinearFootLow + addPerFoot)}–
-            {formatCad(pricing.perLinearFootHigh + addPerFoot)} per ft
+            {feet} linear ft · about ${perFootLow.toFixed(2)}–${perFootHigh.toFixed(2)} per ft
             {addPerFoot > 0 && <> (incl. +${addPerFoot}/ft options)</>}
           </p>
 

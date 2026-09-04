@@ -8,11 +8,12 @@ import { Icon } from './icons';
 
 const links = [
   { href: '/services', label: 'Services' },
+  { href: '/kits', label: 'DIY Kits' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/cost-estimator', label: 'Cost Estimator' },
+  { href: '/cost-estimator', label: 'Pricing' },
   { href: '/resources', label: 'Guides' },
-  { href: '/support', label: 'Owner Support' },
-  { href: '/locations', label: 'Service Areas' },
+  { href: '/support', label: 'Support' },
+  { href: '/locations', label: 'Areas' },
   { href: '/about', label: 'About' },
   { href: '/become-a-dealer', label: 'Dealers' },
 ];

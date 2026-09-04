@@ -230,6 +230,33 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
       {/* ─── FINANCING ─── */}
       <FinancingCallout variant="band" ctaHref="/financing" />
 
+      {/* ─── INSTALLED OR DIY ─── */}
+      <section className="section bg-white">
+        <div className="wrap">
+          <SectionHeading eyebrow="Two ways to get it" title="We install it, or you do." sub="Identical hardware and the same 5-year parts warranty either way. The difference is who goes up the ladder." />
+          <div className="mt-12 grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            <div className="card p-7 md:p-8 flex flex-col">
+              <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center mb-5"><Icon.wrench size={24} /></span>
+              <h3 className="text-xl font-bold text-ink">Installed by our crew</h3>
+              <p className="mt-2 text-[15px] text-muted leading-relaxed flex-1">
+                We measure your roofline, colour-match the track to your soffit, mount it, wire it, commission every zone and hand
+                you a working system in a day. Backed by the workmanship warranty.
+              </p>
+              <Link href="/contact" className="btn btn-primary mt-6 self-start">Get a free quote</Link>
+            </div>
+            <div className="card p-7 md:p-8 flex flex-col">
+              <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center mb-5"><Icon.download size={24} /></span>
+              <h3 className="text-xl font-bold text-ink">DIY kits, shipped to you</h3>
+              <p className="mt-2 text-[15px] text-muted leading-relaxed flex-1">
+                Six sizes from 50 to 250 feet, with the track, lights, controller, power and every connector in the box. Sealed
+                twist fittings mean no cutting or soldering, and phone support is included.
+              </p>
+              <Link href="/kits" className="btn btn-dark mt-6 self-start">Browse the kits <Icon.arrow size={18} /></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── GALLERY STRIP ─── */}
       <section className="section bg-white">
         <div className="wrap">
@@ -317,11 +344,12 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
       <section className="section bg-soft">
         <div className="wrap">
           <SectionHeading eyebrow="Do your homework" title="Get a number, read the facts, and know what happens after." />
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { href: '/cost-estimator', icon: <Icon.ruler size={24} />, t: 'Cost estimator', d: 'Pick your home size or roofline length and see a live estimated range in seconds.', cta: 'Estimate my cost' },
               { href: '/resources', icon: <Icon.book size={24} />, t: 'Guides & articles', d: 'Plain-language guides on cost, how the system works, brand comparisons and year-round uses.', cta: 'Browse the guides' },
               { href: '/support', icon: <Icon.headset size={24} />, t: 'Owner support', d: 'Getting-started guide, installation videos, manuals, troubleshooting and warranty details.', cta: 'Visit the support hub' },
+              { href: '/kits', icon: <Icon.download size={24} />, t: 'DIY kits', d: 'Buy the same system as a complete kit and install it yourself. Six sizes, shipped across Canada.', cta: 'See kit pricing' },
             ].map(c => (
               <Link key={c.href} href={c.href} className="card p-7 group hover:border-ink transition-colors flex flex-col">
                 <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center mb-5">{c.icon}</span>

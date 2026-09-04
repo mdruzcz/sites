@@ -4,13 +4,14 @@
   "metaTitle": "DIY vs Professional Permanent Lights | Forever Lights",
   "metaDescription": "DIY permanent light kits vs professional aluminum-track installation for London, Ontario homes: mounting, weatherproofing, power, warranty and when DIY wins.",
   "category": "Comparisons",
-  "excerpt": "Govee-style strips and big-box track kits versus a professionally installed aluminum-track system: an honest look at mounting, brightness, weatherproofing, wiring, warranty and the ladder time nobody mentions.",
-  "readMinutes": 9,
+  "excerpt": "Govee-style strips and big-box track kits versus a professionally installed aluminum-track system, plus the middle path of professional hardware you fit yourself. An honest look at mounting, brightness, weatherproofing, wiring, warranty and the ladder time nobody mentions.",
+  "readMinutes": 10,
   "updated": "2026-09-03",
   "heroAlt": "Installer on a ladder fastening colour-matched aluminum LED track under the soffit of a brick two-storey home in London, Ontario",
   "keyTakeaways": [
     "DIY kits are real products that work, and for a bungalow with reachable eaves and a handy owner they can be a sensible choice.",
     "The gap between a DIY kit and a professional aluminum-track system is mostly in mounting, weather sealing, power distribution and what happens when something fails in year three.",
+    "There is a middle option: buy the professional-grade kit and install it yourself, which keeps the hardware quality and saves the labour.",
     "Most DIY runs on two-storey homes end up dimmer at the far end, sagging at the clips, or dark in one section after the first Southwestern Ontario ice storm.",
     "Professional systems carry a parts warranty and a workmanship warranty, and the installer, not you, goes up the ladder when a connector fails.",
     "The honest deciding factors are roof height, how long you plan to stay, and whether you want lights that look built-in or lights that look attached."
@@ -136,6 +137,30 @@
     },
     {
       "type": "h2",
+      "text": "The third option most people miss: professional hardware, self-installed"
+    },
+    {
+      "type": "p",
+      "text": "The comparison above sets a consumer strip kit against a professionally installed system, because that is the choice most people think they are making. There is a middle path. You can buy the same aluminum track, the same sealed RGBW pucks, the same controller and the same weatherproof connectors we mount on our own installs, and put them up yourself. That removes the hardware compromise entirely and leaves only the labour question."
+    },
+    {
+      "type": "p",
+      "text": "That is what our DIY kits are. Each one is boxed by roofline length, from 50 feet up to 250 feet, and includes the track, the light strands, the power supplies, the WiFi controller and every connector, T-splitter and amplifier the run needs. The fittings are sealed twist connectors, so there is no cutting, stripping or soldering. The parts warranty is the same five years we give our installed customers, and phone support from our crew comes with it."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "You keep the labour cost, which on a typical home is several hundred dollars.",
+        "You get architectural-grade hardware rather than a consumer strip, so the daylight look and the winter performance match a professional install.",
+        "You take on the measuring, the ladder time, the mounting and the commissioning, plus the workmanship risk, since we can only warranty how a kit was built, not how it was hung."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "A fair rule of thumb: if the eaves you want lit are reachable from a ladder you already own and are comfortable on, a kit is good value. If the run involves a steep pitch, a three-storey peak, or anywhere you would need a lift, the labour saving stops being worth it."
+    },
+    {
+      "type": "h2",
       "text": "Making the call"
     },
     {
@@ -163,6 +188,10 @@
     {
       "q": "Do professionally installed lights add value to my home?",
       "a": "Exterior lighting is widely regarded as a curb-appeal upgrade, but the effect depends on the daytime look. A colour-matched aluminum track that reads as trim is an asset to a buyer; a sagging strip with visible clips and cords is usually something they plan to remove."
+    },
+    {
+      "q": "Can I buy the professional hardware and install it myself?",
+      "a": "Yes. We sell the same track, lights, controller and connectors as complete DIY kits by roofline length, from 50 to 250 feet, shipped across Canada. They carry the same 5-year parts warranty as our installed systems and include phone support. The 1-year workmanship warranty applies only where our own crew did the install."
     }
   ]
 }

@@ -57,6 +57,7 @@ export function Footer() {
                 { href: '/resources', label: 'Guides & Articles' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/gallery', label: 'Gallery' },
+                { href: '/kits', label: 'DIY Kits' },
                 { href: '/become-a-dealer', label: 'Become a Dealer' },
               ]}
             />

@@ -32,6 +32,7 @@ export async function POST(req: NextRequest) {
   const message = String(body.message ?? '').trim().slice(0, 3000);
   const token = String(body.token ?? '');
   const isDealer = body.kind === 'dealer';
+  const isKit = body.kind === 'kit';
 
   if (!name || !email || !phone) {
     return NextResponse.json({ ok: false, error: 'Missing required fields' }, { status: 400 });
@@ -63,15 +64,17 @@ export async function POST(req: NextRequest) {
       replyTo: email,
       subject: isDealer
         ? `New DEALER inquiry - ${name} (${address || 'company n/a'}, ${city || 'territory n/a'})`
-        : `New Forever Lights quote request - ${name} (${city || 'London'})`,
+        : isKit
+          ? `New DIY KIT request - ${name} (${city || 'province n/a'})`
+          : `New Forever Lights quote request - ${name} (${city || 'London'})`,
       html: `
-        <h2 style="font-family:sans-serif">${isDealer ? 'New dealer inquiry' : 'New quote request'} — Forever Lights</h2>
+        <h2 style="font-family:sans-serif">${isDealer ? 'New dealer inquiry' : isKit ? 'New DIY kit request' : 'New quote request'} — Forever Lights</h2>
         <table cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
           <tr><td><strong>Name</strong></td><td>${esc(name)}</td></tr>
           <tr><td><strong>Phone</strong></td><td><a href="tel:${esc(phone.replace(/\D/g, ''))}">${esc(phone)}</a></td></tr>
           <tr><td><strong>Email</strong></td><td><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
-          <tr><td><strong>${isDealer ? 'Company' : 'Address'}</strong></td><td>${esc(address) || '—'}</td></tr>
-          <tr><td><strong>${isDealer ? 'Territory' : 'City'}</strong></td><td>${esc(city) || '—'}</td></tr>
+          <tr><td><strong>${isDealer ? 'Company' : isKit ? 'Ship to' : 'Address'}</strong></td><td>${esc(address) || '—'}</td></tr>
+          <tr><td><strong>${isDealer ? 'Territory' : isKit ? 'Province' : 'City'}</strong></td><td>${esc(city) || '—'}</td></tr>
           <tr><td valign="top"><strong>Message</strong></td><td>${esc(message).replace(/\n/g, '<br>') || '—'}</td></tr>
         </table>
         <p style="font-family:sans-serif;font-size:12px;color:#888">Sent from ${HOSTNAME} at ${new Date().toISOString()}</p>

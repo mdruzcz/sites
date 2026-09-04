@@ -1,0 +1,161 @@
+{
+  "_source": "Kit pricing and all-in quantities supplied by Matt 2026-09-04 (Forever Lights Pricing, Sheet2 + kit price list). Installed comparison prices come from the same sheet's full-service table and must stay in sync with CostEstimator.tsx.",
+  "trackPieceFeet": 3.5,
+  "lightsPerStrand": 5,
+  "colours": [
+    { "key": "white", "label": "White", "hex": "#f2efe9" },
+    { "key": "black", "label": "Black", "hex": "#2b2b2b" },
+    { "key": "brown", "label": "Brown", "hex": "#4a342a" },
+    { "key": "beige", "label": "Beige / tan", "hex": "#d8bd9a" },
+    { "key": "custom", "label": "Custom colour match", "hex": null }
+  ],
+  "components": [
+    {
+      "key": "strand",
+      "name": "Forever Lights 5-Light RGBW Strand",
+      "image": "rgbw-light-strand",
+      "blurb": "Five sealed RGBW puck lights on a moulded weatherproof lead. Each puck drops into the track and points down the face of your home.",
+      "detail": "The pucks are the part you actually see at night. Each one carries red, green, blue and warm-white diodes so the same light can run a full-colour holiday scene or a clean warm white on an ordinary evening. The leads snap together with sealed twist connectors, so a run is built strand by strand with no cutting or soldering."
+    },
+    {
+      "key": "track",
+      "name": "Aluminum Track, 42 inch with 8 inch spacing",
+      "image": "aluminum-track",
+      "blurb": "Extruded aluminum channel, 42 inches long, pre-drilled on 8 inch centres to hold five pucks per piece.",
+      "detail": "The channel is what makes the system disappear in daylight. It screws flush to the soffit or fascia, hides the wiring, and acts as a heat sink for the diodes. Available in white, black, brown and beige to match common trim, or a custom colour match on request."
+    },
+    {
+      "key": "powerSupply",
+      "name": "Forever Lights Power Supply, 150 W",
+      "image": "power-supply-150w",
+      "blurb": "24 V 150 W constant-voltage waterproof LED driver with a standard plug end.",
+      "detail": "Converts household power down to safe low voltage for the run. It plugs into an existing GFCI-protected outdoor or garage receptacle, which is why a standard install needs no electrical permit. Larger kits include more than one so power can be fed from more than one point."
+    },
+    {
+      "key": "controller",
+      "name": "Forever Lights WiFi Controller",
+      "image": null,
+      "blurb": "The brain of the system. Joins your 2.4 GHz WiFi and drives colours, scenes, schedules and zones from the app.",
+      "detail": "One controller runs the whole house. It stores your saved scenes and schedules on board, so a dusk-to-dawn routine keeps running even if your internet drops. You only need the app when you want to change something."
+    },
+    {
+      "key": "conn1",
+      "name": "1 ft Light Extension Connector",
+      "image": "connector-1ft",
+      "blurb": "Short sealed jumper for stepping the run across a corner or a narrow break in the soffit.",
+      "detail": "Used wherever the track stops and starts again a short distance away, for example around a corner board or a downspout."
+    },
+    {
+      "key": "conn5",
+      "name": "5 ft Light Extension Connector",
+      "image": "connector-5ft",
+      "blurb": "Mid-length jumper for gaps between runs, such as over a garage door or a window bay.",
+      "detail": "Keeps the lit sections evenly spaced while skipping the parts of the elevation you do not want lit."
+    },
+    {
+      "key": "conn10",
+      "name": "10 ft Light Extension Connector",
+      "image": "connector-10ft",
+      "blurb": "Longer jumper for crossing a wider unlit span without adding pucks.",
+      "detail": "Common on homes with a recessed entry or a break between the main roofline and a garage wing."
+    },
+    {
+      "key": "conn20",
+      "name": "20 ft Light Extension Connector",
+      "image": "connector-20ft",
+      "blurb": "The long jumper, used to reach a separate elevation or carry the run back to the controller.",
+      "detail": "Also the usual way to bring the start of the run from the controller location out to the first piece of track."
+    },
+    {
+      "key": "powerT",
+      "name": "Power T Connector",
+      "image": "power-t-connector",
+      "blurb": "Splits the low-voltage power feed so one supply can push power into two directions.",
+      "detail": "Power injection keeps the far end of a long run as bright as the near end. The T is how a single supply feeds two branches."
+    },
+    {
+      "key": "lightT",
+      "name": "Light Extension T Connector",
+      "image": "light-t-connector",
+      "blurb": "Splits the light run itself, so one controller output can branch left and right from a single start point.",
+      "detail": "Handy when the controller sits in the middle of the elevation and the track runs both ways from it."
+    },
+    {
+      "key": "powerExt20",
+      "name": "20 ft Power Extension Connector",
+      "image": "power-extension-20ft",
+      "blurb": "Extends the run between a power supply and the point where power is injected into the lights.",
+      "detail": "Lets the supply live somewhere sheltered and convenient, such as inside the garage, while still feeding a far corner of the roofline."
+    },
+    {
+      "key": "amplifier",
+      "name": "Forever Lights Data Amplifier",
+      "image": "data-amplifier",
+      "blurb": "Re-boosts the control signal partway along a long run so the last pucks stay in sync.",
+      "detail": "Addressable lighting sends a data signal down the whole chain. Over long distances that signal weakens, which shows up as flicker or wrong colours at the far end. The amplifier cleans it up."
+    },
+    {
+      "key": "screws",
+      "name": "Box of Colour Matched Screws",
+      "image": null,
+      "blurb": "100 pack of coloured-head screws that disappear against the track.",
+      "detail": "Standard on white, black, brown and beige kits. Custom colour orders ship without the screw pack, since the heads are matched to stock colours only."
+    }
+  ],
+  "kits": [
+    {
+      "slug": "50-foot-kit",
+      "feet": 50,
+      "price": 1265.0,
+      "installedLow": 1665.0,
+      "installedHigh": 1998.0,
+      "suits": "A garage face, a front elevation, a porch or a small bungalow.",
+      "bom": { "strand": 16, "track": 16, "powerSupply": 1, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 0, "conn20": 2, "powerT": 0, "lightT": 1, "powerExt20": 0, "amplifier": 0, "screws": 1 }
+    },
+    {
+      "slug": "75-foot-kit",
+      "feet": 75,
+      "price": 1485.0,
+      "installedLow": 1785.0,
+      "installedHigh": 2142.0,
+      "suits": "A small bungalow front and one side, or a wide single-storey elevation.",
+      "bom": { "strand": 24, "track": 24, "powerSupply": 1, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 1, "conn20": 2, "powerT": 0, "lightT": 1, "powerExt20": 0, "amplifier": 0, "screws": 1 }
+    },
+    {
+      "slug": "100-foot-kit",
+      "feet": 100,
+      "price": 1729.2,
+      "installedLow": 2129.2,
+      "installedHigh": 2555.04,
+      "suits": "A typical bungalow or townhome front, or a storey-and-a-half front elevation.",
+      "bom": { "strand": 31, "track": 31, "powerSupply": 2, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 2, "conn20": 2, "powerT": 1, "lightT": 1, "powerExt20": 1, "amplifier": 1, "screws": 1 }
+    },
+    {
+      "slug": "150-foot-kit",
+      "feet": 150,
+      "price": 2240.7,
+      "installedLow": 2840.7,
+      "installedHigh": 3408.84,
+      "suits": "A storey-and-a-half or mid-size home, front and partial sides.",
+      "bom": { "strand": 45, "track": 45, "powerSupply": 2, "controller": 1, "conn1": 2, "conn5": 2, "conn10": 2, "conn20": 2, "powerT": 1, "lightT": 1, "powerExt20": 1, "amplifier": 1, "screws": 2 }
+    },
+    {
+      "slug": "200-foot-kit",
+      "feet": 200,
+      "price": 2648.8,
+      "installedLow": 3448.8,
+      "installedHigh": 4138.56,
+      "suits": "A two-storey detached home, front elevation plus both sides.",
+      "bom": { "strand": 60, "track": 60, "powerSupply": 3, "controller": 1, "conn1": 4, "conn5": 4, "conn10": 3, "conn20": 3, "powerT": 2, "lightT": 2, "powerExt20": 2, "amplifier": 2, "screws": 2 }
+    },
+    {
+      "slug": "250-foot-kit",
+      "feet": 250,
+      "price": 3157.0,
+      "installedLow": 4157.0,
+      "installedHigh": 4988.4,
+      "suits": "A large or complex two-storey, multi-peak rooflines, or a house plus detached garage.",
+      "bom": { "strand": 75, "track": 75, "powerSupply": 3, "controller": 1, "conn1": 5, "conn5": 5, "conn10": 3, "conn20": 4, "powerT": 2, "lightT": 2, "powerExt20": 2, "amplifier": 2, "screws": 2 }
+    }
+  ]
+}
