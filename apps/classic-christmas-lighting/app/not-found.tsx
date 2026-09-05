@@ -1,40 +1,18 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { PageHero } from "@/components/PageHero";
+import { PICKS } from "@/lib/photos";
 
 export default function NotFound() {
   return (
-    <section className="min-h-[60vh] flex items-center justify-center bg-[var(--dark-bg)]">
-      <div className="text-center px-4 max-w-lg">
-        <p
-          className="text-7xl font-bold text-[var(--accent)] mb-4"
-          style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-        >
-          404
-        </p>
-        <h1
-          className="text-3xl font-bold text-white mb-4"
-          style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-        >
-          Page Not Found
-        </h1>
-        <p className="text-white/60 text-base leading-relaxed mb-8">
-          The page you&apos;re looking for doesn&apos;t exist. It may have moved or the URL might be incorrect.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="btn btn-primary min-h-[48px] px-8">
-            Go Home
-          </Link>
-          <Link href="/contact" className="btn btn-ghost min-h-[48px] px-8">
-            Get a Quote
-          </Link>
+    <>
+      <PageHero photo={PICKS.heroFaq} eyebrow="404" title="That page has come down for the season." intro="The link may be old, or the page moved. Head back home or pick a service below." crumbs={[{ label: "Not found" }]} compact form={false} />
+      <section className="bg-[var(--snow)]">
+        <div className="shell section flex flex-wrap gap-3">
+          <Link href="/" className="btn-candy">Back to home</Link>
+          <Link href="/services" className="btn-outline">Our services</Link>
+          <Link href="/contact" className="btn-outline">Get a free quote</Link>
         </div>
-        <p className="mt-8 text-sm text-white/40">
-          Or call us:{" "}
-          <a href={site.phoneHref} className="text-[var(--accent)] hover:underline font-medium">
-            {site.phone}
-          </a>
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

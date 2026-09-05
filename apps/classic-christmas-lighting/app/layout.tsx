@@ -1,81 +1,76 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
-import Script from "next/script";
-import { Header } from "@/components/Header";
+import type { Metadata, Viewport } from "next";
+import { Inter, Fredoka } from "next/font/google";
+import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
+import { site } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const display = Fredoka({ subsets: ["latin"], weight: ["500", "600", "700"], display: "swap", variable: "--font-display" });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-playfair",
-});
+const OG_IMAGE = "/images/xmas-gallery/estate-home-warm-white-roofline-christmas-lights-lit-trees-01.jpg";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://classicchristmaslighting.ca"),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Classic Christmas Lighting | Professional Christmas Light Installation Kitchener-Waterloo",
+    default: "Classic Christmas Lighting | Christmas Light Installation Kitchener-Waterloo",
     template: "%s | Classic Christmas Lighting",
   },
   description:
-    "Professional Christmas light installation in Kitchener-Waterloo, Cambridge, Guelph, Hamilton & Southern Ontario. Family-owned, 15 years experience. Full installation, maintenance & takedown. Get a free quote.",
+    "Professional Christmas light installation in Kitchener-Waterloo, Cambridge, Guelph, Hamilton, Woodstock and Stratford. Family-owned, 15 years, fully insured. Lights supplied, installed, maintained and taken down. Free quote.",
+  keywords: "Christmas light installation Kitchener, Christmas light installers Waterloo, holiday lighting Cambridge, Christmas lights Guelph, commercial Christmas lighting Kitchener-Waterloo",
   openGraph: {
     type: "website",
     locale: "en_CA",
-    siteName: "Classic Christmas Lighting",
-    images: [
-      {
-        url: "/images/Classic-Christmas-Lighting.webp",
-        alt: "Professional Christmas light installation in Kitchener-Waterloo Ontario by Classic Christmas Lighting",
-      },
-    ],
+    siteName: site.name,
+    title: "Classic Christmas Lighting | Christmas Light Installation Kitchener-Waterloo",
+    description: "Family-owned Christmas light installers serving Waterloo Region and Southern Ontario for 15 years. Free quotes.",
+    url: site.url,
+    images: [{ url: OG_IMAGE, width: 1600, height: 1200, alt: "Estate home with warm white roofline Christmas lights and lit trees installed by Classic Christmas Lighting in Kitchener-Waterloo" }],
   },
-  twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
+  twitter: { card: "summary_large_image", title: "Classic Christmas Lighting | Kitchener-Waterloo", description: "Professional Christmas light installation. Free quote: (226) 476-2038." },
+  robots: { index: true, follow: true, "max-image-preview": "large" },
+  alternates: { canonical: site.url },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = { themeColor: "#FFFFFF" };
+
+const siteGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      url: site.url,
+      logo: { "@type": "ImageObject", url: `${site.url}/images/logo.png` },
+      telephone: "+1-226-476-2038",
+      email: site.email,
+      areaServed: { "@type": "AdministrativeArea", name: "Waterloo Region and Southern Ontario" },
+      sameAs: [site.facebookUrl],
+      contactPoint: { "@type": "ContactPoint", telephone: "+1-226-476-2038", contactType: "customer service", areaServed: "CA", availableLanguage: "English" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      inLanguage: "en-CA",
+      publisher: { "@id": `${site.url}/#organization` },
+    },
+  ],
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
-        <Header />
+    <html lang="en-CA" className={`${inter.variable} ${display.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }} />
+        <NavBar />
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
-        <Script
-          id="ld-org"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Classic Christmas Lighting",
-              url: "https://classicchristmaslighting.ca",
-              logo: "https://classicchristmaslighting.ca/images/cropped-classic-christmas-lighting-logo-1-2048x874.png",
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+1-226-476-2038",
-                contactType: "customer service",
-                areaServed: "CA",
-                availableLanguage: "English",
-              },
-            }),
-          }}
-        />
       </body>
     </html>
   );

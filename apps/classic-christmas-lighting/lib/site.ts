@@ -1,5 +1,6 @@
 export const site = {
   name: "Classic Christmas Lighting",
+  shortName: "Classic",
   tagline: "Professional Christmas Light Installation in Kitchener-Waterloo & Southern Ontario",
   phone: "(226) 476-2038",
   phoneHref: "tel:+12264762038",
@@ -11,7 +12,9 @@ export const site = {
     country: "CA",
   },
   hours: "Mon–Fri: 9 AM–5 PM · Sat: 10 AM–4 PM",
+  hoursShort: "Mon–Fri 9–5 · Sat 10–4",
   yearsExperience: 15,
+  responseTime: "1 business day",
   serviceAreas: [
     "Kitchener",
     "Waterloo",
@@ -21,6 +24,12 @@ export const site = {
     "Woodstock",
     "Stratford",
     "Kitchener Surrounding Areas",
+  ],
+  trustBadges: [
+    { label: "15+ Years", value: "Hanging lights in Waterloo Region" },
+    { label: "Fully Insured", value: "Crew and property covered" },
+    { label: "No Travel Charges", value: "Anywhere in our service area" },
+    { label: "Family Owned", value: "Based in Kitchener" },
   ],
   url: "https://classicchristmaslighting.ca",
   facebookUrl: "https://facebook.com/classicchristmaslighting",

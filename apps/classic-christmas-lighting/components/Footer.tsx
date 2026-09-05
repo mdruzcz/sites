@@ -1,155 +1,55 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Clock, ExternalLink } from "lucide-react";
 import { site } from "@/lib/site";
-import { LogoMark } from "@/components/Logo";
-
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/service-areas", label: "Service Areas" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Get a Free Quote" },
-];
-
-const serviceLinks = [
-  { href: "/services/christmas-lighting-installation", label: "Christmas Lighting Installation" },
-  { href: "/services/christmas-lighting-for-homes", label: "Lighting for Homes" },
-  { href: "/services/christmas-lighting-for-businesses", label: "Lighting for Businesses" },
-  { href: "/services/tree-lighting-services", label: "Tree Lighting" },
-  { href: "/services/christmas-light-rental", label: "Light Rental" },
-  { href: "/services/christmas-decoration-services", label: "Decoration Services" },
-];
-
-const areaLinks = [
-  { href: "/service-areas/kitchener", label: "Kitchener" },
-  { href: "/service-areas/waterloo", label: "Waterloo" },
-  { href: "/service-areas/cambridge", label: "Cambridge" },
-  { href: "/service-areas/guelph", label: "Guelph" },
-  { href: "/service-areas/hamilton", label: "Hamilton" },
-  { href: "/service-areas/woodstock", label: "Woodstock" },
-];
+import { cities } from "@/lib/cities";
+import { getServices } from "@/lib/content";
+import { AwardBadge } from "@/components/award-badge";
+import { PhoneIcon, MailIcon } from "./icons";
 
 export function Footer() {
+  const services = getServices();
   return (
-    <footer className="bg-[var(--dark-bg)] text-white/70">
-      <div className="container mx-auto px-4 py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div>
-            <Link href="/" aria-label="Classic Christmas Lighting home" className="inline-block mb-5">
-              <LogoMark size="md" variant="light" />
-            </Link>
-            <p className="text-sm leading-relaxed mb-5">
-              Professional Christmas light installation serving Kitchener-Waterloo, Guelph, Cambridge, Hamilton, and surrounding Southern Ontario communities.
-            </p>
-            <a
-              href={site.facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 h-9 rounded-full bg-white/10 hover:bg-[var(--accent)] transition-colors text-xs font-medium w-fit"
-              aria-label="Facebook"
-            >
-              <ExternalLink className="h-3 w-3" />
-              Facebook
-            </a>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-4">
-              Our Services
-            </h4>
-            <ul className="space-y-2 mb-6">
-              {serviceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-3">
-              Service Areas
-            </h4>
-            <ul className="space-y-1.5">
-              {areaLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-xs font-semibold text-white uppercase tracking-[0.15em] mb-4">
-              Get In Touch
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href={site.phoneHref}
-                  className="flex items-start gap-3 hover:text-white transition-colors group"
-                >
-                  <Phone className="h-4 w-4 mt-0.5 text-[var(--accent-gold)] shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium text-white">{site.phone}</p>
-                    <p className="text-xs">Call or text anytime</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.emailHref}
-                  className="flex items-start gap-3 hover:text-white transition-colors"
-                >
-                  <Mail className="h-4 w-4 mt-0.5 text-[var(--accent-gold)] shrink-0" />
-                  <span className="text-sm break-all">{site.email}</span>
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="h-4 w-4 mt-0.5 text-[var(--accent-gold)] shrink-0" />
-                <div className="text-sm">
-                  <p>Mon–Fri: 9:00 AM – 5:00 PM</p>
-                  <p>Saturday: 10:00 AM – 4:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </li>
-            </ul>
-            <Link href="/contact" className="btn btn-primary mt-6 w-full justify-center min-h-[44px]">
-              Get a Free Quote
-            </Link>
-          </div>
+    <footer className="border-t border-[var(--line)] bg-white">
+      <div className="bulb-string pt-6" aria-hidden>{Array.from({ length: 18 }).map((_, i) => <span key={i} />)}</div>
+      <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-2">
+          <Image src="/images/logo.png" alt="Classic Christmas Lighting" width={2033} height={852} className="h-14 w-auto" />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--ink-soft)]">Family-owned Christmas light installers based in Kitchener. Rooflines, wrapped trees, wreaths and storefronts across Waterloo Region, Guelph, Hamilton, Woodstock and Stratford. Lights supplied, installed, maintained and taken down.</p>
+          <a href={site.phoneHref} className="btn-candy btn-sm mt-5"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
+          <a href={site.emailHref} className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-soft)] hover:text-[var(--candy)]"><MailIcon className="w-4 h-4" />{site.email}</a>
+          <p className="mt-2 text-xs text-[var(--muted)]">{site.hours}</p>
+          <div className="mt-5"><AwardBadge /></div>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Services</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {services.map((s) => (
+              <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-[var(--ink-soft)] hover:text-[var(--candy)]">{s.title}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Service areas</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {cities.map((c) => (
+              <li key={c.slug}><Link href={`/service-areas/${c.slug}`} className="text-[var(--ink-soft)] hover:text-[var(--candy)]">{c.name}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Company</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {[["Guides & tips", "/resources"], ["Gallery", "/gallery"], ["About us", "/about"], ["FAQ", "/faq"], ["Free quote", "/contact"]].map(([l, h]) => (
+              <li key={h}><Link href={h} className="text-[var(--ink-soft)] hover:text-[var(--candy)]">{l}</Link></li>
+            ))}
+            <li><a href={site.facebookUrl} target="_blank" rel="noopener noreferrer" className="text-[var(--ink-soft)] hover:text-[var(--candy)]">Facebook</a></li>
+          </ul>
         </div>
       </div>
-
-      <div className="border-t border-[var(--border-dark)]">
-        <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Classic Christmas Lighting. All rights reserved.
-          </p>
-          <p className="text-xs text-white/40">
-            Proudly serving Kitchener-Waterloo &amp; Southern Ontario
-          </p>
+      <div className="border-t border-[var(--line)]">
+        <div className="shell flex flex-col items-center justify-between gap-3 py-5 text-xs text-[var(--muted)] sm:flex-row">
+          <p>© {new Date().getFullYear()} Classic Christmas Lighting · Kitchener, Ontario</p>
+          <p>Fully insured · Family owned · No travel charges · {site.yearsExperience}+ years</p>
         </div>
       </div>
     </footer>

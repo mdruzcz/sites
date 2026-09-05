@@ -4,8 +4,7 @@ import { Resend } from "resend";
 export const runtime = "edge";
 
 async function verifyTurnstile(token: string, hostname: string) {
-  const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT;
-  if (!endpoint) return true;
+  const endpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
   try {
     const res = await fetch(endpoint, {
       method: "POST",
@@ -13,9 +12,9 @@ async function verifyTurnstile(token: string, hostname: string) {
       body: JSON.stringify({ token, hostname }),
     });
     const data = (await res.json()) as { success: boolean };
-    return data.success;
+    return data.success === true;
   } catch {
-    return true;
+    return false;
   }
 }
 
@@ -56,16 +55,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Name, email, and phone are required." }, { status: 400 });
   }
 
-  if (turnstileToken) {
-    const hostname =
-      req.headers.get("origin")?.replace(/^https?:\/\//, "") || "classicchristmaslighting.ca";
-    const valid = await verifyTurnstile(turnstileToken, hostname);
-    if (!valid) {
-      return NextResponse.json(
-        { error: "Captcha verification failed. Please try again." },
-        { status: 400 }
-      );
-    }
+  if (!turnstileToken) {
+    return NextResponse.json(
+      { error: "Captcha verification failed. Please try again." },
+      { status: 400 }
+    );
+  }
+  const hostname =
+    req.headers.get("origin")?.replace(/^https?:\/\//, "") || "classicchristmaslighting.ca";
+  const valid = await verifyTurnstile(turnstileToken, hostname);
+  if (!valid) {
+    return NextResponse.json(
+      { error: "Captcha verification failed. Please try again." },
+      { status: 400 }
+    );
   }
 
   await insertLead({
@@ -82,7 +85,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || "noreply@classicchristmaslighting.ca",
       to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-      subject: `New Quote Request — ${name} (${serviceType || "General"})`,
+      subject: `New Quote Request - ${name} (${serviceType || "General"})`,
       html: `
         <h2>New Quote Request — Classic Christmas Lighting</h2>
         <table cellpadding="8" style="border-collapse:collapse;width:100%">
