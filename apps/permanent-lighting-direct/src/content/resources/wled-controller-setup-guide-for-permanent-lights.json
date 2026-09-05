@@ -1,0 +1,193 @@
+{
+  "slug": "wled-controller-setup-guide-for-permanent-lights",
+  "title": "WLED Controller Setup Guide for Permanent Lights",
+  "metaTitle": "WLED Controller Setup Guide for Permanent Lights",
+  "metaDescription": "How to pair, configure and get the most from the WLED-based WiFi controller included with a 12V permanent lighting kit, from first boot to sunset schedules.",
+  "category": "How-to",
+  "excerpt": "Every 12V permanent lighting kit ships with a WLED-based WiFi controller. Here is how to pair it to your phone, join your home network, build scenes and set a sunset schedule so the lights run themselves.",
+  "readMinutes": 9,
+  "updated": "2026-09-04",
+  "heroAlt": "Smartphone displaying the WLED app colour wheel next to a WiFi permanent lighting controller mounted near a power supply",
+  "keyTakeaways": [
+    "The controller runs WLED, giving you 16 million colours, a dedicated warm white channel, and full control from a free app on Android or iOS.",
+    "It joins your home network on the 2.4 GHz band only, so a dual-band router needs the guest or IoT network split off correctly before pairing.",
+    "Sunset-triggered schedules, saved presets and zoned segments turn a one-time setup into a system that runs itself through the whole year.",
+    "Voice control through Alexa or Google Home is a short extra step once the controller is on your network.",
+    "A handful of common problems, an unresponsive controller, a dropped WiFi connection, colours that do not match, all have simple fixes covered below."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "The controller is the part of a permanent lighting system that turns a string of coloured pucks into something you actually enjoy using. It is what lets you tap a phone and switch the whole house from warm white to Canada Day red and white, or have the lights come on by themselves every evening without touching anything. Every 12V kit from Permanent Lighting Direct ships with a WiFi controller built on WLED, a well-established open firmware for addressable LED lighting. This guide walks through getting it paired, configured and set up to run on its own, plus the fixes for the handful of problems that come up most often."
+    },
+    {
+      "type": "h2",
+      "text": "What the WLED controller actually does"
+    },
+    {
+      "type": "p",
+      "text": "The controller sits between the 12V power supply and the aluminum track, and it is what tells each puck what colour and brightness to show. Because it runs WLED rather than a closed proprietary app, you get a genuinely capable feature set: full RGBW colour mixing across 16 million shades, a dedicated warm white channel so a plain white scene looks like actual white light rather than a cool-tinted RGB blend, adjustable brightness and speed for animated effects, and the ability to break one run into separate zones. None of this needs a subscription or a cloud account tied to the manufacturer; the app talks to the controller directly over your own WiFi network."
+    },
+    {
+      "type": "h2",
+      "text": "Before you start: network requirements"
+    },
+    {
+      "type": "p",
+      "text": "The controller connects to 2.4 GHz WiFi only, which is true of the large majority of smart home devices, not just permanent lighting controllers. If your router broadcasts a single combined 5 GHz and 2.4 GHz network under one name, most routers still let the device connect and simply negotiate down to 2.4 GHz automatically. If your router keeps the bands on separate network names, make sure you are pairing to the 2.4 GHz one, not the 5 GHz one, or the controller will not find it during setup."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Confirm your WiFi password before you climb the ladder or head to the outlet; typing it in wrong twice is the most common cause of a stalled pairing.",
+        "Check that the controller's mounting spot, wherever the power supply lives, is within reasonable WiFi range of the router. A weak signal at the edge of coverage will pair but drop intermittently later.",
+        "If you plan to use a WiFi extender or mesh node near the lighting, connect the controller to that node rather than the far-away main router for a more stable link.",
+        "Have the app downloaded and your phone on the same WiFi network before you power up the controller for the first time."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Pairing the controller to your WiFi network"
+    },
+    {
+      "type": "h3",
+      "text": "Step 1: Power up and enter pairing mode"
+    },
+    {
+      "type": "p",
+      "text": "Plug the 150W power supply and the controller into your outdoor GFCI outlet as described in our installation guide (see /how-it-works for the full walkthrough). On first power-up, or any time the controller cannot find a saved network, it broadcasts its own temporary WiFi network, usually named something like WLED-AP. On your phone, open WiFi settings and connect to that temporary network directly. This step feels backwards the first time you do it, connecting to the controller before it is connected to your home network, but it is how the initial handshake happens."
+    },
+    {
+      "type": "h3",
+      "text": "Step 2: Join your home network"
+    },
+    {
+      "type": "p",
+      "text": "With your phone connected to the controller's temporary network, open the WLED app (or a browser pointed at the controller's setup address, which the app will show you). Select your home WiFi network from the list, enter your password, and save. The controller will restart and join your home network. Your phone will drop the temporary connection automatically; reconnect your phone to your normal home WiFi and reopen the app. Within a few seconds the app should find the controller on your network and connect."
+    },
+    {
+      "type": "h3",
+      "text": "If the controller will not show up"
+    },
+    {
+      "type": "p",
+      "text": "Give it a minute after the restart before assuming something is wrong; the first join can take longer than later reconnects. If it still does not appear, double-check you typed the WiFi password correctly during pairing, confirm you selected the 2.4 GHz network, and power-cycle the controller by unplugging it for ten seconds. Most connection issues clear up on the second attempt once the password is right."
+    },
+    {
+      "type": "h2",
+      "text": "First test, zones and presets"
+    },
+    {
+      "type": "h3",
+      "text": "Step 3: Run the first test and check zones"
+    },
+    {
+      "type": "p",
+      "text": "Once connected, set the whole run to a single solid colour and walk the length of the installation to confirm every puck lights correctly and no section is dark. If your run has branches, for example a front eave and a separate gable fed through a T-connector, set up segments in the app now so each branch can be controlled and coloured independently. Segments are also how you separate the front of the house from the backyard if both are wired into one controller."
+    },
+    {
+      "type": "h3",
+      "text": "Step 4: Build and save presets"
+    },
+    {
+      "type": "p",
+      "text": "A preset is a saved combination of colour, brightness, effect and segment settings that you can call up instantly instead of rebuilding it every time. Spend fifteen minutes building the presets you will actually use: a warm white everyday look, a bold colour for the current season, and one or two effect-based scenes for special occasions. Give each one a plain name rather than leaving it as a number, since you will be selecting these from the driveway in the dark more often than you think."
+    },
+    {
+      "type": "callout",
+      "text": "Start every new preset from a moderate brightness rather than full. RGBW pucks are considerably brighter at 100 percent than most homeowners expect on a residential street, and it is easier to raise brightness later than to talk a neighbour through why the house lit up like a stadium."
+    },
+    {
+      "type": "h2",
+      "text": "Schedules and voice control"
+    },
+    {
+      "type": "h3",
+      "text": "Step 5: Set a sunset-based schedule"
+    },
+    {
+      "type": "p",
+      "text": "This is the feature that makes a permanent system worth having over anything you would put up and take down by hand. In the app's schedule section, set the lights to turn on relative to local sunset rather than a fixed clock time. Because the controller can follow sunset automatically, the on-time shifts through the year without you touching it again, coming on earlier in December and later in June. Pair that with a fixed off-time, commonly somewhere between 11 p.m. and 1 a.m., and the lights need no further attention."
+    },
+    {
+      "type": "h3",
+      "text": "Step 6: Connect Alexa or Google Home"
+    },
+    {
+      "type": "p",
+      "text": "WLED controllers support integration with both Alexa and Google Home, letting you turn the lights on and off or switch presets by voice, or bundle them into existing smart home routines such as an evening scene that also locks the doors and dims interior lights. Setup is done from within the Alexa or Google Home app, where the controller appears as a discoverable device once it is on your home WiFi network. Exact menu steps vary by app version, so follow the current in-app device discovery flow for your platform."
+    },
+    {
+      "type": "h2",
+      "text": "Effects and keeping firmware current"
+    },
+    {
+      "type": "h3",
+      "text": "Exploring the effects library"
+    },
+    {
+      "type": "p",
+      "text": "Beyond static colours, WLED includes a large library of built-in effects: gentle fades, chases, twinkles, colour wipes and more, each with its own speed and intensity sliders. For a permanent roofline system these are worth using sparingly rather than constantly. A slow fade between two seasonal colours reads as tasteful and holds attention without becoming distracting to drivers or neighbours, while a fast chase or strobe effect is better saved for a specific occasion like a Halloween night or a game-day countdown than run as a nightly default. Try a handful of effects at low speed and low intensity first, since most effects look busier on a real roofline, viewed from a distance in the dark, than they do previewed on a small phone screen indoors."
+    },
+    {
+      "type": "h3",
+      "text": "Firmware updates and keeping the controller current"
+    },
+    {
+      "type": "p",
+      "text": "WLED is actively maintained open firmware, and the app will periodically flag an available update for the controller. Updates typically add new effects, fix minor bugs, and occasionally improve WiFi reliability, so it is worth applying them when prompted rather than ignoring the notification indefinitely. Apply updates when the lights are not in the middle of an active scene, since the controller restarts during the process, and confirm your presets and schedule are still intact afterward. Because presets are stored on the controller itself rather than in a cloud account, an update should not erase your saved scenes, but it takes thirty seconds to check after any firmware change."
+    },
+    {
+      "type": "h2",
+      "text": "Common problems and fixes"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Controller drops off WiFi periodically: usually a weak signal at the mounting location. Move it closer to a router or mesh node, or add a WiFi extender near the power supply.",
+        "Colours look slightly different between two zones: check that both zones are set to the same colour temperature and that the warm white channel level matches across segments, since warm white and RGB mixed white can look different side by side.",
+        "App shows the controller as offline after a power outage: most home routers reassign the same network settings automatically on reboot, but if the controller does not reconnect within a few minutes, power-cycle it once the router is back online.",
+        "Schedule did not fire at the expected time: confirm the phone or app has the correct time zone set, since sunset calculations depend on it.",
+        "One segment behaves differently from the rest during an effect: this is usually a segment boundary set at the wrong puck; re-check where each zone starts and ends in the app's segment editor."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Getting the most out of it long term"
+    },
+    {
+      "type": "p",
+      "text": "Once the basics are dialled in, the WLED controller rewards a bit of exploration. Effects with adjustable speed and intensity can turn a static holiday colour into a gentle twinkle or a slow colour fade, and multiple presets mean you are never more than a tap away from switching the whole look of the house for a birthday, a playoff run, or a holiday most neighbours do not bother lighting for. Because the system is app-controlled rather than tied to a physical remote, adding new presets costs nothing and there is no reason not to build a few extra for occasions you only need once a year. Browse the full range of kits and controllers at /shop, or start with our /diy-kits page if you are still planning the install itself."
+    },
+    {
+      "type": "p",
+      "text": "The controller is a small piece of hardware doing a lot of work, and getting it set up properly the first time is what makes the rest of the system, the schedules, the seasonal colour changes, the voice commands, feel effortless for years afterward."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does the WLED controller need a subscription or cloud account?",
+      "a": "No. WLED is open firmware and the app talks to the controller directly over your home WiFi network. There is no subscription fee and no requirement to create a manufacturer cloud account to use the core features, including schedules and presets."
+    },
+    {
+      "q": "Can I control the lights when I am away from home?",
+      "a": "Remote access depends on your specific app and network setup, since the core WLED connection is local to your home network. For day-to-day use, schedules and sunset triggers handle the lights automatically so you do not need to be on-site or connected remotely for normal operation."
+    },
+    {
+      "q": "Will the controller work on a 5 GHz-only WiFi network?",
+      "a": "No. The controller connects on 2.4 GHz only. If your router setup does not offer a 2.4 GHz option, or has it disabled, you will need to enable it, at least temporarily, for the controller to join."
+    },
+    {
+      "q": "How many zones or segments can one controller handle?",
+      "a": "The number of practical segments depends on your run length and layout, but most residential installs split naturally into two to four zones, such as front eaves, gables and a backyard run. Set segment boundaries at the physical branch points in your wiring, typically at a T-connector."
+    },
+    {
+      "q": "What happens to my settings during a power outage?",
+      "a": "Saved presets and schedules are stored on the controller itself, not in a cloud account, so they are retained through a power outage. Once power and WiFi are restored, the controller reconnects and resumes its schedule without needing to be reconfigured."
+    },
+    {
+      "q": "Can I use the app to control more than one controller at once, for a large property?",
+      "a": "Yes, the app can manage multiple controllers on the same network, which is common on larger homes or properties with a detached garage or separate outbuilding wired as its own run with its own power supply and controller."
+    }
+  ]
+}

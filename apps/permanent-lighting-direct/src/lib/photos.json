@@ -1,0 +1,240 @@
+{
+  "hero-blue-porch": {
+    "src": "/images/photos/hero-blue-porch.webp",
+    "alt": "Two-storey brick home with permanent LED roofline lights glowing ice blue at dusk",
+    "width": 1163,
+    "height": 875,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAwAA4BaJbACdAEQ/TITaTgAAP73vt8QP7APHcKDyjcSYanEwdD5Gmr6kSZh2M0Btjun/6VQeMAGEpsgxQ8AcyNSKV0YKo4fAAAA"
+  },
+  "hero-multicolour-wide": {
+    "src": "/images/photos/hero-multicolour-wide.webp",
+    "alt": "Wide shot of a home outlined in red, green and pink permanent roofline lights at night",
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQAAsAA4BaJbACdDBAAYx0BDAAAP7xC570aYrdZ8wsYG3tI/SEOUBruaNIKcFPKZ2JW9Mc6IhLo1Q9hnuPqtbZsX36VwwVperJY2NmB5r6JQrvDfcOgcAA"
+  },
+  "home-blue-night": {
+    "src": "/images/photos/home-blue-night.webp",
+    "alt": "Blue permanent LED lights tracing every peak of a large home at night",
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAsAA4BaJbACdAEU3aMjXwdvIAD+9XmzsWs7+sjtrBCULxzA/ElWsS2fj3RJIhs5RG1GRJDdduQpqW0A1MjHKrE83FdpftYPEJ2Kf6O2Y4Nzu6oJU/UQAAA="
+  },
+  "home-warm-white-twilight": {
+    "src": "/images/photos/home-warm-white-twilight.webp",
+    "alt": "Warm white permanent LED roofline lighting on a bungalow at twilight",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAwAA4BaJbACdADxI5udgpv4AP6/d9v3XDTOUQuNXZoWXSWEMIXBZbYKoqMIVONWKHp57pIcHRmiQyn6yBwT8pAb+9CN0R47xhKLiMr/vi4AAAA="
+  },
+  "home-warm-white-christmas": {
+    "src": "/images/photos/home-warm-white-christmas.webp",
+    "alt": "Long ranch home lit in warm white permanent lights with frosted trees at night",
+    "width": 1800,
+    "height": 1301,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAgCdASoQAAwAA4BaJZgCdH8AGBxH7/JVwAAA/viSugqHYqlF1LRMZWHQU1b9GUxaEZjg6UlUtjwz6oCbWAAA"
+  },
+  "home-pink-magenta": {
+    "src": "/images/photos/home-pink-magenta.webp",
+    "alt": "Magenta permanent LED lights along the gables of a stone and siding home",
+    "width": 1350,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMABAAA4BaJbACdAEPDZu4fKgQAP7xDTaLoyLiwggEJS+bD+3d2px8vaao4moVvaJgftjv2UJTHsFxpd/HM9lXrZd1S6AA"
+  },
+  "home-rainbow": {
+    "src": "/images/photos/home-rainbow.webp",
+    "alt": "Rainbow multicolour permanent LED lighting on a bungalow roofline",
+    "width": 1350,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQAgCdASoMABAAA4BaJYwC7IExGBby0dNI8gAA/vkOVNjbgPDBSl/J4Mk0qbTuY1uwdTZvwGEnt5xuIcLmUZQYL21fdYAA"
+  },
+  "home-red-canada-day": {
+    "src": "/images/photos/home-red-canada-day.webp",
+    "alt": "Red and white permanent lighting on a long low building for Canada Day",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAQCdASoQAAwAA4BaJQBOgBs1xIAA/vkYKGGGp0x+eyc166Js+4dldm+8HtYmubgYviPKmNQuHvuP18HRugAA"
+  },
+  "home-green-roofline": {
+    "src": "/images/photos/home-green-roofline.webp",
+    "alt": "Green permanent LED roofline lights on a country home with a wide lawn",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAgCdASoQAAwAA4BaJYwCdH8AGBW8BVawAP73xr1l4oft2ay6TNrjQRDNTBJ8JY/S7mWKxMduAAAA"
+  },
+  "home-teal-hot-tub": {
+    "src": "/images/photos/home-teal-hot-tub.webp",
+    "alt": "Teal permanent LED soffit lighting over a backyard hot tub",
+    "width": 1350,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQAgCdASoMABAAA4BaJbACdLoBJgALTGBes6GvQAD+7y8GLfgRIB2L9ozPbKIIP8ehPpy4zxOG6tONfpL80swDrcecJRgPfC/aUv1Hoa/jzWuY3H12D4vn8jo/6mf7NpCuR+grxoAAAA=="
+  },
+  "home-cottage-evening": {
+    "src": "/images/photos/home-cottage-evening.webp",
+    "alt": "Warm white permanent lights on a cottage porch in the evening",
+    "width": 1350,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoMABAAA4BaJbACdADZaktP8wAA/uWYm83Q2oUhK0BJgFjODaz2xqN1vkYnsBS51U26roWyBlANoXcRO/Sil+VWf8aOPft0ixehynmBW7EllQAA"
+  },
+  "home-daytime-hidden": {
+    "src": "/images/photos/home-daytime-hidden.webp",
+    "alt": "Daytime view of a two-storey home where the permanent lighting track is hidden in the soffit",
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQAAsAA4BaJYwCdACZclY1iAD+8gYu0iHOp1o/YO31VWNt0TXPvsJ+CP47FMlvzv6Zs3mUHJdg8emWdRX/SKWF0Flk/s31IgZPTgAA"
+  },
+  "home-side-elevation": {
+    "src": "/images/photos/home-side-elevation.webp",
+    "alt": "Side elevation of a home with red and green permanent lights at sunset",
+    "width": 1800,
+    "height": 810,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoQAAcAA4BaJZACdAEf6RhaLbEgAPfR+4M1O3SXyYPqMIMDrXozUkc+lxdB4/RrsW8kvdDEU7caqyGrh6NVAAAA"
+  },
+  "home-blue-app-control": {
+    "src": "/images/photos/home-blue-app-control.webp",
+    "alt": "Bungalow lit in cool blue permanent roofline lights at dusk",
+    "width": 1800,
+    "height": 926,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAgAA4BaJbACdAEPfhroKDAAAP6jCi3sb2WCCkon5Eb4t3EBao+FYsVBYqmQ2Ct22/srhGoWR7xixhJ0i98a6CP/KQAA"
+  },
+  "home-example-multicolour": {
+    "src": "/images/photos/home-example-multicolour.webp",
+    "alt": "Multicolour permanent lights on a modern home at blue hour",
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQAAsAA4BaJZQAAudkiOQ3zYAA/vLbBN7/tuqaQKYBW77c+CQ5DhNzPsVfgF6bi9WMfWbDyAA="
+  },
+  "home-example-warm-white": {
+    "src": "/images/photos/home-example-warm-white.webp",
+    "alt": "Warm white permanent lighting on a large two-storey home at night",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoQAAwAA4BaJZgCdAEMHhkYAAD+8twcPghLgL1Xmd7/UFfWIiDlFFTwxaaZHFIbuxLRYPQv5G9VQWkRozW4a2JdHqt0UOaDAAA="
+  },
+  "home-purple": {
+    "src": "/images/photos/home-purple.webp",
+    "alt": "Purple permanent LED lights along the roofline and garage of a suburban home",
+    "width": 1536,
+    "height": 1024,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoQAAsAA4BaJbACdACpVGMjQAD+44fAS1X9M6DnxBy7AAs1O5VaqLFWjrvmkW+xfnaq9A86cEGoW2rt6bs0zwzCTC5dV14LWn6qx1AN6gAAAA=="
+  },
+  "home-craftsman-multicolour": {
+    "src": "/images/photos/home-craftsman-multicolour.webp",
+    "alt": "Multicolour permanent lights on a craftsman home with a covered porch",
+    "width": 960,
+    "height": 720,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoQAAwAA4BaJZwAAxf3Gy+B4AD++GyPO0+ip8mcn419h1ikhAHhf9tzm1OpuC4iakBrWIQa11f7fWjgAAA="
+  },
+  "detail-pucks-closeup": {
+    "src": "/images/photos/detail-pucks-closeup.webp",
+    "alt": "Close-up of warm white LED pucks in an aluminum soffit track",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQAgCdASoQAAwAA4BaJZgCdAELz56mu0aYgAAA/vaLPXdjL8VU8ke8iSJpQSquO5kaH9WFfl3aBnwQBHCP1v+3r4pdz7NXxXHQ9JGocKUmAAAA"
+  },
+  "detail-tracks": {
+    "src": "/images/photos/detail-tracks.webp",
+    "alt": "Black, wicker and white aluminum lighting tracks with RGBW pucks side by side",
+    "width": 990,
+    "height": 979,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQABAAA4BaJZQAD5IMqqd9VtkAAP701ZkFddirgLZGpU5KdeXpmAGFX37FYYNxWNcjHw7+cXwccbyedY5EFH3b4dLlPUlLmT7nsT+w/V2TAgdA3O5H3fuyYukdkAKY7XlI8QShwVNlAAAA"
+  },
+  "install-track-mounting": {
+    "src": "/images/photos/install-track-mounting.webp",
+    "alt": "Installer screwing aluminum lighting track into a soffit",
+    "width": 1024,
+    "height": 683,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAsAA4BaJagCdAEPVp2A8UigAP7cz/Tl+cEbZ/F4pyBTmBGyIYU/uTsIsMieUzyZ1vGmQ7v1z/y94ktcRARFYAA="
+  },
+  "install-home-day": {
+    "src": "/images/photos/install-home-day.webp",
+    "alt": "Home with permanent lighting track installed along the roofline in daylight",
+    "width": 1800,
+    "height": 1190,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAAsAA4BaJaACdAYtpuIQSI0SQAD+9uLzXeanFQ5rRRDpjMVgDG51bai0B9oyQExNRicOybKfciMKobjRHso+ahknuoyuYNKmdrXjtzelAAAA"
+  },
+  "install-technician": {
+    "src": "/images/photos/install-technician.webp",
+    "alt": "Installer with a ladder and truck in front of a home",
+    "width": 1352,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwAgCdASoMABAAA4BaJYwCdAYvruKGJmArB51AAPZHqAKTDwgSdKZgocn3UfOAU2utwtplqgUc1za7T8JfwN/CWyyDnnmMoVnRn3TnbyoCbdkLBLpUiUDOnvc7MvarDIk0su6QAAA="
+  },
+  "track-night-glow": {
+    "src": "/images/photos/track-night-glow.webp",
+    "alt": "Rainbow permanent LED lights glowing along a roofline at night",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJbACdAEOjbg+eUAA/vaoMI0oDtIl78bakAw1kEjeKVSe2bKeksbg7K7JjWDQ/sxR8CZDCJlR9bRPvcQ01TZLAAA="
+  },
+  "track-residential": {
+    "src": "/images/photos/track-residential.webp",
+    "alt": "Residential home with red, white and blue permanent lights under a full moon",
+    "width": 1000,
+    "height": 872,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoQAA4AA4BaJbACdAD0kVBS9fqgAP712aOKYLi9aig99goczNfrS8tq1seLZGVGmizFazArrUPzOKAWGANfLyMjTAFzdA3pvK0V66svLi5hENwY6p0qyEHq9BQFWkV0LAA="
+  },
+  "track-security-white": {
+    "src": "/images/photos/track-security-white.webp",
+    "alt": "White permanent lighting used as security lighting on a large home",
+    "width": 1518,
+    "height": 949,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAoAA4BaJQBOgCG/6cohU8AA/vQ6JXd5ERv4oqtmssWvZV6OuSf2kZ12/C/MuBHe9cwxoVZXNKwMKqXTFU2mbZByXRaxs7lAAA=="
+  },
+  "track-day-discreet": {
+    "src": "/images/photos/track-day-discreet.webp",
+    "alt": "Daytime front elevation of a home showing how discreet the lighting track is",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAsAA4BaJQBOgMW+7YT5AUwBAAD+6vNWoJbdQRUnvqIbDqFrQDJL8j6or7T7JZrpgPyaNhFwuUBgEYvMo+F7liolk1aTKeYHP6AA"
+  },
+  "track-four-seasons": {
+    "src": "/images/photos/track-four-seasons.webp",
+    "alt": "Collage of one home lit in four seasonal colour schemes",
+    "width": 1800,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoQAAsAA4BaJagCdADhToEvn20AAP7qOYCukhaTsZSZnkkR93nYD927PnCtTrclw2nNWn5bZlwr8f/5zTD72cJCIpgb1XyiMiLPrtLFnSzJWF05vEdP2BpPwAA="
+  },
+  "soffit-lights-day": {
+    "src": "/images/photos/soffit-lights-day.webp",
+    "alt": "Daytime close-up of 12V LED pucks in a white soffit track",
+    "width": 1800,
+    "height": 1013,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAkAA4BaJagCdAEVjZSE3qQAzKKsXWJ9xKG2TVeQb11PvSzymUodCALTeg8PLiWN9u0lwZUoBdKNR9DTq496HkUtYIgxHJPEi/eyChMbQAAA"
+  },
+  "soffit-lights-installed": {
+    "src": "/images/photos/soffit-lights-installed.webp",
+    "alt": "Aluminum lighting track installed flush along a soffit in daylight",
+    "width": 1800,
+    "height": 1013,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAkAA4BaJYgCdADbRJBr3AAA/pgmCvxyGw093pdDTwP5SoBecTkyGgekdXnjWRPdkPrN8fBNmew4sba3qMY8yAkAAA=="
+  },
+  "soffit-lights-more": {
+    "src": "/images/photos/soffit-lights-more.webp",
+    "alt": "Permanent LED pucks along a garage soffit at dusk",
+    "width": 1800,
+    "height": 1350,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAQCdASoQAAwAA4BaJQBOgBFEPUZ4AP75F7f6k9eWl+2gDb/XX1wSNm/C/30m3IlQ3/ZomvTbk3afQQshRUqbMtsZ16sTjCLc8Uq1D0vZSHCjPIyfe+gR/wAAAA=="
+  },
+  "soffit-lights-perm": {
+    "src": "/images/photos/soffit-lights-perm.webp",
+    "alt": "Permanent lighting track along a two-storey home with a wreath on the door",
+    "width": 1013,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoJABAAA4BaJYwCdAEfbQRTSQAA/mbM7k5ILHciipWZCpyvKu6RO8yiNmoLLb3EAKfjAn7azjErciEs42f6FlIAAAA="
+  },
+  "soffit-lights-perm2": {
+    "src": "/images/photos/soffit-lights-perm2.webp",
+    "alt": "Warm white pucks in a soffit track against a grey home",
+    "width": 1800,
+    "height": 1013,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQAAkAA4BaJYwC7AEUlPt8m4AA/s93gaBvdYDzAWxbpriPr+/LAMa+gdCNplQmcNFub5BsK1kj5596yVFOzoJ2AAA="
+  },
+  "install-eder": {
+    "src": "/images/photos/install-eder.webp",
+    "alt": "Installer fitting pucks into aluminum track under a soffit",
+    "width": 1350,
+    "height": 1800,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoMABAAA4BaJZQAD5URfZ4ibHN8gAD+2AEd5WGIseyRdLsGxYqakKCgwkZ3iYZkBO3szTh76Ox99xiIHcaZdJn4xtGST+oXXVnzuFOXAPH7GG3Q44yu24AgAAA="
+  }
+}

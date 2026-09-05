@@ -1,0 +1,165 @@
+{
+  "slug": "troubleshooting-permanent-led-lights",
+  "title": "Troubleshooting Permanent LED Lights: Flicker, Dead Sections, Wrong Colours and WiFi Drops",
+  "metaTitle": "Troubleshooting Permanent LED Roofline Lights",
+  "metaDescription": "Fix flicker, dead sections, wrong colours and WiFi drops on a 12V permanent LED lighting system with this step-by-step troubleshooting guide for DIY kits.",
+  "category": "How-to",
+  "excerpt": "Most permanent lighting problems trace back to one of four causes: a loose connector, a voltage drop over a long run, a data signal issue, or a WiFi hiccup. Here is how to diagnose and fix each one on a 12V system.",
+  "readMinutes": 9,
+  "updated": "2026-09-04",
+  "heroAlt": "Homeowner checking a twist connector between two pieces of aluminum LED track along a roofline to diagnose a lighting issue",
+  "keyTakeaways": [
+    "Flicker and wrong colours toward the end of a run are almost always a data signal issue, not a power issue, and are fixed with a data amplifier or a reseated connector.",
+    "A slow dimming or colour shift toward the far end of a long run is a voltage drop issue, fixed with a power-injection cable feeding fresh 12V partway along.",
+    "A fully dead section, rather than a dim or flickering one, is almost always a connector that is not seated or a puck strand connected backwards.",
+    "WiFi drops are usually a router or network issue rather than a controller fault, since the controller needs a stable 2.4 GHz connection.",
+    "Working through these checks in order, connectors first, then voltage, then data, then WiFi, resolves the large majority of issues without needing to replace parts."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "A permanent lighting system that has been running fine for months and then develops a fault can be frustrating to diagnose from the ground, especially when the fault only shows up after dark. The good news is that the symptoms almost always point to one of a small number of causes, and most of them can be checked and fixed without a ladder trip turning into a full afternoon. This guide walks through the four most common categories of problem in the order it makes sense to check them: physical connections, voltage, data signal, and WiFi."
+    },
+    {
+      "type": "h2",
+      "text": "Start here: what kind of problem is it"
+    },
+    {
+      "type": "p",
+      "text": "Before troubleshooting anything, look closely at what is actually happening, because the symptom points directly to the cause. A section that is completely dark is different from a section that is dim, and both are different from a section that flickers or shows the wrong colour. Note whether the problem is at one specific spot, spreads from a point outward, or affects the whole run, and whether it appeared suddenly or has been getting gradually worse over weeks. That single observation usually narrows the list of causes to one or two before you touch anything."
+    },
+    {
+      "type": "h2",
+      "text": "Problem: one section is completely dark"
+    },
+    {
+      "type": "p",
+      "text": "A fully dead section, with nothing lit at all past a certain point, is almost always a connection problem rather than a failed puck. Check the twist connector at the start of the dark section first. Every connector should be seated firmly with the collar turned until it stops; a connector that looks connected but was only pushed together without turning the collar will often work for a while and then fail as it loosens or takes on moisture."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Unplug the power supply before touching any connector, then separate and reseat the connector at the start of the dead section, turning the collar fully home.",
+        "Confirm the track piece is oriented the right way. Every piece has a data input end and an output end, and a section connected backwards will not light even though power is present.",
+        "If the dead section starts right after a T-connector or a branch, check both sides of that connector, since a branch point is a common spot for a loose connection.",
+        "Once reseated, plug the power supply back in and test before moving to the next connector, so you know exactly which one fixed it."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Problem: pucks get dimmer or shift colour toward the far end"
+    },
+    {
+      "type": "p",
+      "text": "This is a voltage drop, and it shows up as a gradual change rather than a hard cutoff. A 12V system loses a small amount of voltage over every foot of wire, so on a long run, the pucks farthest from the power supply receive less voltage than the ones closest to it. The visible symptom is brightness that fades gradually along the run, sometimes followed by a shift in colour accuracy at the very end, rather than a section going dark all at once."
+    },
+    {
+      "type": "p",
+      "text": "The fix is power injection: a cable that feeds fresh 12V into the line at a point partway along the run, using either a second power supply or, on shorter layouts, a T off the existing one. If your run was long enough at install time to need this and it was not included, a power-injection cable and, if there is a second nearby outlet, an additional 150 W supply solves the fade. Our install guide at /diy-kits covers where injection points typically go, generally at a corner or a gable base where the extra cable can be hidden."
+    },
+    {
+      "type": "h2",
+      "text": "Problem: flicker or wrong colours, especially toward the end of a run"
+    },
+    {
+      "type": "p",
+      "text": "This is a different issue from voltage drop even though it can appear on the same long runs. The controller sends colour and brightness instructions down the line as a data signal, separate from the 12V power feeding the pucks, and that data signal also weakens over distance and through connectors. Pucks that are bright but flicker, lag behind a command, or show a colour other than the one selected, particularly toward the far end of a run or past several connectors, are showing a data signal problem, not a power problem."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Reseat every connector between the controller and the affected section, since a loose or corroded connector degrades the data signal even if it still passes enough power to light the pucks.",
+        "If the run is long or has several branches and the issue persists after checking connectors, a data amplifier installed partway along regenerates the signal and typically resolves it.",
+        "Rule out a firmware or app glitch first by power-cycling the controller, unplugging it for about ten seconds and plugging it back in, before assuming it is a hardware signal issue.",
+        "If only one or two individual pucks show the wrong colour while everything around them is correct, that puck itself may have a fault rather than the run's signal being the issue."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "It is easy to mix up voltage drop and data signal problems because both show up near the far end of a long run. The distinction is simple: dimming or colour fading that happens gradually across many pucks is voltage. Flicker, lag or an outright wrong colour on specific pucks is data."
+    },
+    {
+      "type": "h2",
+      "text": "Problem: the controller won't connect to WiFi or keeps dropping"
+    },
+    {
+      "type": "p",
+      "text": "WiFi issues are almost always a network problem rather than a fault in the controller itself. The controller needs a 2.4 GHz WiFi network, which is the older, longer-range band that most home routers still broadcast alongside a faster 5 GHz band; if your router's app or settings show only a 5 GHz network, or if you have a mesh system that merges bands under one name, the controller may need you to temporarily isolate the 2.4 GHz network to pair."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Confirm your phone is on the same WiFi network as the controller during setup, not on mobile data.",
+        "Move the controller closer to the router temporarily during pairing if the outdoor mounting location is at the edge of WiFi range.",
+        "Restart the router if the controller was working previously and suddenly stopped connecting, since a router-side update or reboot can occasionally require re-pairing.",
+        "Check for a firmware update in the app once connected, since WLED-based controllers periodically receive updates that fix connectivity quirks."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Problem: one puck or a short cluster looks wrong while everything else is fine"
+    },
+    {
+      "type": "p",
+      "text": "A single puck, or a short cluster of a handful of pucks, showing a different colour, a dimmer output, or no light at all while the pucks immediately before and after look correct is usually a fault isolated to that puck strand rather than anything to do with the run as a whole. This is different from the gradual, distance-based patterns of voltage drop or data degradation, since it appears at one spot regardless of how far along the run it sits. Confirm the connectors on either side of the affected pucks are seated correctly first, since it is the cheaper and faster check, but if those are solid and the issue stays localized to the same few pucks after a power cycle, the strand itself is the likely cause and a replacement section resolves it."
+    },
+    {
+      "type": "h2",
+      "text": "Problem: the app shows the controller online but nothing changes on the roofline"
+    },
+    {
+      "type": "p",
+      "text": "Occasionally the app and controller stay connected over WiFi while the connection between the controller and the track itself has an issue, which shows up as commands appearing to send successfully with no visible change outside. Start by power-cycling the controller, since this clears the most common cause, a stalled internal state after a brief power interruption. If the issue continues, check that the low-voltage lead between the controller and the first piece of track is fully seated at both ends, since this connector is handled less often after the initial install and is easy to overlook when troubleshooting focuses on the app instead of the physical connection."
+    },
+    {
+      "type": "h2",
+      "text": "When to check the fuse"
+    },
+    {
+      "type": "p",
+      "text": "If an entire run is dark rather than just one section, and the power supply itself does not appear to be receiving power, check the fuse before assuming a bigger fault. Every kit ships with spare fuses for exactly this reason. A blown fuse is inexpensive to replace and is a far more common cause of a fully dark system than a failed power supply or controller."
+    },
+    {
+      "type": "h2",
+      "text": "Seasonal checks that prevent problems"
+    },
+    {
+      "type": "p",
+      "text": "A short walk around the roofline each spring, once the snow is gone, catches most issues before they become a pattern. Look for any connector that has worked loose, confirm the power supply and controller mounting is still secure, and run an all-white test along the full length to spot anything that faded or shifted over winter. This takes a few minutes and is far easier than troubleshooting from a ladder later. Our guide on winter performance at /diy-kits has more detail on what to expect through a Canadian winter specifically."
+    },
+    {
+      "type": "h2",
+      "text": "When to contact support"
+    },
+    {
+      "type": "p",
+      "text": "If you have worked through connectors, voltage, data signal and WiFi and a section still will not behave correctly, it may be a faulty puck strand or connector rather than an installation issue, and that is covered under the 5-year parts warranty detailed at /warranty. Have the kit size, the approximate location of the issue along the run, and what you have already tried ready when you reach out, since it speeds up getting a replacement part out to you. Full kit specifications and parts lists, useful for identifying exactly which connector or cable you need, are available at /shop."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why do the lights at the end of my run look dimmer than the rest?",
+      "a": "This is voltage drop, a normal effect on any 12V system where voltage decreases gradually over the length of the wire. It is fixed with power injection, a cable that feeds fresh 12V into the run partway along, either from a second power supply or a T off the existing one on shorter runs."
+    },
+    {
+      "q": "What causes flickering or wrong colours only at the far end of the run?",
+      "a": "This is typically a data signal issue rather than a power issue. The signal that carries colour and brightness commands weakens over long distances and through connectors. Reseating connectors along the run often fixes it; if it persists on a long or branched run, a data amplifier regenerates the signal."
+    },
+    {
+      "q": "One whole section of my lights is completely dark. What should I check first?",
+      "a": "Check the twist connector at the start of the dark section. Unplug the power supply, separate the connector, and reseat it, turning the collar until it stops. Also confirm the track piece is oriented the correct direction, since a section connected backwards will not light."
+    },
+    {
+      "q": "My controller won't connect to WiFi. Is the controller broken?",
+      "a": "Almost always this is a network issue, not a controller fault. The controller needs a 2.4 GHz WiFi connection specifically. Check that your router broadcasts a 2.4 GHz band, that your phone is on the same network during pairing, and try moving the controller closer to the router temporarily."
+    },
+    {
+      "q": "The entire system is dark and the power supply shows no sign of power. What now?",
+      "a": "Check the fuse before assuming a larger fault. Every kit ships with spare fuses, and a blown fuse is a far more common cause of a fully dark system than a failed power supply or controller."
+    },
+    {
+      "q": "How do I tell the difference between a voltage problem and a data problem?",
+      "a": "Voltage drop causes a gradual, even dimming or colour fade across many pucks toward the far end of a run. A data signal issue causes flicker, lag or an outright wrong colour on specific pucks, even if they are still bright. The pattern of the symptom is the key difference."
+    }
+  ]
+}

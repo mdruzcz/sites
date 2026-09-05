@@ -1,57 +1,58 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import Image from "next/image";
+import { useRef, useState } from "react";
 
 interface MenuColumn {
   title: string;
   href: string;
-  emoji: string;
   links: { label: string; href: string }[];
 }
 
-const COLUMNS: MenuColumn[] = [
+export const SHOP_COLUMNS: MenuColumn[] = [
   {
-    title: "DIY Kits",
+    title: "Permanent lighting kits",
     href: "/diy-kits",
-    emoji: "⚡",
     links: [
-      { label: "Complete kits — 50–200 ft", href: "/diy-kits" },
-      { label: "What's in the box", href: "/diy-kits#whats-included" },
-      { label: "Smart-app control", href: "/diy-kits#smart-control" }
+      { label: "All kits, 50 to 250 ft", href: "/diy-kits" },
+      { label: "50 ft kit", href: "/product/led-housing-package-50" },
+      { label: "100 ft kit", href: "/product/led-housing-package-100" },
+      { label: "150 ft kit", href: "/product/led-housing-package-150" },
+      { label: "200 ft kit", href: "/product/led-housing-package-200" },
+      { label: "What's in the box", href: "/diy-kits#whats-included" }
     ]
   },
   {
     title: "Lights",
     href: "/product-category/lights",
-    emoji: "💡",
     links: [
-      { label: "24V RGBW Puck Lights", href: "/product/24v-led-puck-lights-10-qty" },
-      { label: "24V ShowCone Lights", href: "/product/24v-showcone-lights-10-qty" },
-      { label: "24V LED Strip", href: "/product/24v-led-strip" },
-      { label: "Outdoor String Lights 20ft", href: "/product/outdoor-string-lights-20ft" }
+      { label: "12V RGBW puck lights", href: "/product/12v-led-puck-lights-10-pack" },
+      { label: "12V soffit light kit", href: "/product/12v-led-soffit-light-kit" },
+      { label: "Outdoor string lights 20 ft", href: "/product/outdoor-string-lights-20ft" },
+      { label: "All lights", href: "/product-category/lights" }
     ]
   },
   {
-    title: "Controllers & Power",
+    title: "Controllers & power",
     href: "/product-category/controllers",
-    emoji: "🎛️",
     links: [
-      { label: "4-Channel WLED Controller", href: "/product/4-channel-wled-controller-board" },
-      { label: "ShowHome Mini Controller", href: "/product/showhome-mini-2-channel-wled-controller" },
-      { label: "Amplifier for 12V LEDs", href: "/product/amplifier-for-12v-led-lights" },
-      { label: "Power supplies — 12V & 24V", href: "/product-category/power-supplies" }
+      { label: "2-channel WiFi controller", href: "/product/2-channel-12v-led-controller" },
+      { label: "4-channel controller", href: "/product/4-channel-12v-controller" },
+      { label: "Data amplifier", href: "/product/amplifier-for-12v-led-lights" },
+      { label: "12V power supplies", href: "/product-category/power-supplies" },
+      { label: "Power injection cables", href: "/product-category/connectors" }
     ]
   },
   {
-    title: "Tracks & Connectors",
-    href: "/product-category/connectors",
-    emoji: "🔌",
+    title: "Track, connectors & hardware",
+    href: "/product-category/hardware",
     links: [
-      { label: "Aluminum tracks", href: "/product/aluminum-track-for-12-24v-led-lights-2-qty" },
-      { label: "Extension cables (1/5/10/20 ft)", href: "/product-category/connectors" },
-      { label: "T-connectors", href: "/product-category/connectors" },
-      { label: "Soffit screws — 4 colors", href: "/product-category/hardware" }
+      { label: "Aluminum track (2 pack)", href: "/product/aluminum-track-12v-led-lights-2-pack" },
+      { label: "Extension connectors 1 to 20 ft", href: "/product-category/connectors" },
+      { label: "T-connectors", href: "/product/t-connector-for-12-24v-led-lights" },
+      { label: "Colour-matched soffit screws", href: "/product-category/hardware" },
+      { label: "Everything", href: "/shop" }
     ]
   }
 ];
@@ -65,47 +66,38 @@ export function MegaMenu() {
     setOpen(true);
   }
   function closeSoon() {
-    closeTimer.current = setTimeout(() => setOpen(false), 150);
+    closeTimer.current = setTimeout(() => setOpen(false), 160);
   }
 
   return (
-    <div
-      onMouseEnter={openNow}
-      onMouseLeave={closeSoon}
-      onFocus={openNow}
-      onBlur={closeSoon}
-      className="relative"
-    >
+    <div onMouseEnter={openNow} onMouseLeave={closeSoon} className="static">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="true"
-        className="inline-flex items-center gap-1 hover:text-[var(--color-brand)]"
+        className="nav-link inline-flex items-center gap-1.5"
       >
         Shop
-        <span aria-hidden className={`transition ${open ? "rotate-180" : ""}`}>▾</span>
+        <svg aria-hidden width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition ${open ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6" /></svg>
       </button>
 
       {open && (
         <div
-          role="menu"
-          className="absolute left-1/2 top-full z-40 mt-3 w-screen max-w-4xl -translate-x-1/2 rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-xl"
+          onMouseEnter={openNow}
+          onMouseLeave={closeSoon}
+          className="absolute inset-x-0 top-full z-40 border-t border-white/10 bg-[var(--color-ink)] text-white shadow-[var(--shadow-xl)]"
         >
-          <div className="grid grid-cols-4 gap-6">
-            {COLUMNS.map((col) => (
+          <div className="shell grid gap-8 py-8 lg:grid-cols-[1.15fr_1fr_1fr_1fr_1.1fr]">
+            {SHOP_COLUMNS.map((col) => (
               <div key={col.title}>
-                <Link
-                  href={col.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand)] hover:underline"
-                >
-                  <span aria-hidden className="text-base">{col.emoji}</span>
+                <Link href={col.href} onClick={() => setOpen(false)} className="eyebrow text-[var(--color-gold)] hover:text-white">
                   {col.title}
                 </Link>
-                <ul className="mt-3 space-y-2 text-sm">
+                <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
-                    <li key={l.label}>
-                      <Link href={l.href} className="text-slate-600 hover:text-[var(--color-brand)]">
+                    <li key={l.href + l.label}>
+                      <Link href={l.href} onClick={() => setOpen(false)} className="text-sm text-white/80 transition hover:text-white">
                         {l.label}
                       </Link>
                     </li>
@@ -113,13 +105,14 @@ export function MegaMenu() {
                 </ul>
               </div>
             ))}
-          </div>
-          <div className="mt-6 flex items-center justify-between gap-4 rounded-lg bg-[var(--color-brand-soft)] px-4 py-3 text-sm">
-            <p className="font-medium text-[var(--color-brand-dark)]">
-              ⚡ First DIY kit? Use code <span className="font-bold">DIY10</span> for 10% off.
-            </p>
-            <Link href="/shop" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
-              Browse all products →
+            <Link href="/diy-kits" onClick={() => setOpen(false)} className="group relative hidden overflow-hidden rounded-2xl lg:block">
+              <Image src="/images/photos/home-warm-white-twilight.webp" alt="Warm white permanent lights on a bungalow at twilight" width={640} height={480} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+              <span className="photo-scrim-soft" aria-hidden />
+              <span className="absolute inset-x-0 bottom-0 p-5">
+                <span className="eyebrow text-[var(--color-gold)]">Most popular</span>
+                <span className="font-display mt-1 block text-lg">100 ft kit, $1,729.20</span>
+                <span className="mt-1 block text-xs text-white/75">Everything for a typical bungalow front, one box.</span>
+              </span>
             </Link>
           </div>
         </div>

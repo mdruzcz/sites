@@ -1,62 +1,51 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
 import { InstallerApplicationForm } from "@/components/installer-application-form";
+import { SITE_URL } from "@/lib/utils";
 
-export const metadata = {
-  title: "Professional Installer Program",
-  description:
-    "Join the Holiday Lights Direct installer program for bulk pricing, free shipping, and priority service across Canada."
+export const metadata: Metadata = {
+  title: "Installer Program: Tier Pricing on 12V Permanent Lighting",
+  description: "Join the Permanent Lighting Direct installer program for tier pricing on 12V kits and parts, priority fulfilment in season, homeowner referrals and net terms for municipalities. Ships from London, Ontario.",
+  alternates: { canonical: `${SITE_URL}/professional-installer` }
 };
+
+const BENEFITS: [string, string][] = [
+  ["Tier pricing", "Lower per-unit pricing on kits, puck strands, track, controllers, power and connectors, locked to your tier for the season."],
+  ["Stock that is actually in stock", "We hold track, strands and controllers in London, Ontario through the season, so a Tuesday order is on your truck by Thursday."],
+  ["Homeowner referrals", "Homeowners who ask us for an installer are sent to program members in their area, in order of proximity."],
+  ["Priority fulfilment", "Program orders jump the queue from September to December."],
+  ["One system, every job", "All 12V, all compatible, same parts on every house. Your crew learns it once."],
+  ["Net terms for municipalities", "Towns and BIAs can apply for net-30 invoicing and bulk quotes on multi-building projects."]
+];
 
 export default function ProfessionalInstallerPage() {
   return (
-    <div>
-      <section className="bg-[var(--color-accent)] px-4 py-16 text-white">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="text-4xl font-bold tracking-tight">Professional Installer Program</h1>
-          <p className="mt-3 text-lg text-emerald-50">
-            Bulk pricing, faster fulfillment, and dedicated support — designed for Christmas-light installers,
-            event lighting companies, and landscaping crews delivering stunning results across Canada.
-          </p>
+    <>
+      <PageHero photo="track-residential" eyebrow="For pros & municipalities" title="Sell permanent lighting. Buy it at installer pricing." intro="Christmas-light crews, landscapers, electricians and property managers across Canada fit our 12V track-and-puck system. Apply for the program and we confirm your tier within one business day." crumbs={[{ label: "Installer program" }]} />
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <div className="grid gap-5 md:grid-cols-3">
+            {BENEFITS.map(([t, b]) => (
+              <div key={t} className="card p-6">
+                <h2 className="font-display text-xl">{t}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-soft)]">{b}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-5xl px-4 py-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          <Benefit
-            title="Exclusive bulk discounts"
-            body="Lower per-unit pricing on C9 bulbs, light strands, clips, connectors, and complete LED housing packages."
-          />
-          <Benefit
-            title="Free shipping on qualifying orders"
-            body="Free Canada-wide shipping over $500 — and tier-locked discounts on smaller restock orders."
-          />
-          <Benefit
-            title="Priority order processing"
-            body="Faster handling and dedicated support during peak install season (October–December)."
-          />
-          <Benefit
-            title="Reliable, tested gear"
-            body="Five-year warranty against manufacturing defects on all LED systems so your installs hold up."
-          />
+      <section className="bg-[var(--color-surface)]">
+        <div className="shell section grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+          <div>
+            <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Apply</p>
+            <h2 className="font-display h2-fluid mt-5">Tell us about your business.</h2>
+            <p className="mt-4 text-[var(--color-text-soft)]">We review every application by hand and email you within one business day to confirm your tier and set up your account.</p>
+          </div>
+          <div>
+            <InstallerApplicationForm tierSlug="installer" />
+          </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-8">
-        <h2 className="text-2xl font-semibold tracking-tight">Apply now</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Fill out the form. We&rsquo;ll review your application and reach out within 1 business day to confirm
-          your installer tier.
-        </p>
-        <InstallerApplicationForm tierSlug="installer" />
-      </section>
-    </div>
-  );
-}
-
-function Benefit({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-lg border border-slate-200 bg-white p-5">
-      <h3 className="text-base font-semibold text-[var(--color-accent)]">{title}</h3>
-      <p className="mt-1 text-sm text-slate-600">{body}</p>
-    </div>
+    </>
   );
 }

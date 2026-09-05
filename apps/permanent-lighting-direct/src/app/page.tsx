@@ -1,55 +1,56 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
-import { Hero } from "@/components/sections/hero";
-import { TrustStrip } from "@/components/sections/trust-strip";
-import { DiyKitFeature } from "@/components/sections/diy-kit-feature";
-import { ThreeStep } from "@/components/sections/three-step";
-import { OccasionGallery } from "@/components/sections/occasion-gallery";
-import { ComparePricing } from "@/components/sections/compare-pricing";
-import { CustomerReviews } from "@/components/sections/customer-reviews";
-import { SpecCallouts } from "@/components/sections/spec-callouts";
-import { CtaBand } from "@/components/sections/cta-band";
+import { Hero, TrustStrip, KitBand, WhatsInTheBox, Steps, Occasions, CompareBand, Specs, Reviews, GuidesPreview, FaqPreview, CtaBand, HOME_FAQ } from "@/components/sections/home-sections";
 import { listProducts } from "@/lib/catalog";
+import { SITE_URL } from "@/lib/utils";
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const products = await listProducts({ limit: 16 });
+  const products = await listProducts();
+  const parts = products.filter((p) => !p.slug.startsWith("led-housing-package"));
+  const featuredSlugs = ["12v-led-puck-lights-10-pack", "aluminum-track-12v-led-lights-2-pack", "2-channel-12v-led-controller", "12v-150w-power-supply"];
+  const bestSellers = featuredSlugs.map((s) => parts.find((p) => p.slug === s)).filter(Boolean) as typeof parts;
+  const fill = parts.filter((p) => !bestSellers.includes(p)).slice(0, 4 - bestSellers.length);
 
-  const housingPackages = products
-    .filter((p) => p.slug.startsWith("led-housing-package-"))
-    .sort((a, b) => {
-      const n = (s: string) => parseInt(s.replace(/[^0-9]/g, ""), 10) || 0;
-      return n(a.slug) - n(b.slug);
-    });
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: HOME_FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }))
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Hero />
       <TrustStrip />
-      <DiyKitFeature housingPackages={housingPackages.slice(0, 4)} />
-      <ThreeStep />
-      <OccasionGallery />
-      <ComparePricing />
-      <SpecCallouts />
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <p className="eyebrow text-[var(--color-brand)]">Pieces & parts</p>
-            <h2 className="font-display mt-2 text-3xl md:text-4xl">Best sellers</h2>
+      <KitBand />
+      <WhatsInTheBox />
+      <Steps />
+      <Occasions />
+      <CompareBand />
+      <Specs />
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Parts & add-ons</p>
+              <h2 className="font-display h2-fluid mt-5">Extend, repair or build your own.</h2>
+            </div>
+            <Link href="/shop" className="btn-secondary">Shop all parts</Link>
           </div>
-          <Link href="/shop" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
-            See all products →
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {products.slice(0, 4).map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {[...bestSellers, ...fill].map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
         </div>
       </section>
-      <CustomerReviews />
+      <Reviews />
+      <GuidesPreview />
+      <FaqPreview />
       <CtaBand />
+      <p className="sr-only">{`Permanent Lighting Direct sells DIY permanent LED roofline lighting kits and 12V parts across Canada from London, Ontario. Website: ${SITE_URL}`}</p>
     </>
   );
 }

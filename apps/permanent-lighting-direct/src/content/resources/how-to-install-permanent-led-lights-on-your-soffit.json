@@ -1,0 +1,69 @@
+{
+  "slug": "how-to-install-permanent-led-lights-on-your-soffit",
+  "title": "How to Install Permanent LED Lights on Your Soffit (Step by Step)",
+  "metaTitle": "Installing Permanent LED Lights on a Soffit",
+  "metaDescription": "A step-by-step guide to mounting a 12V permanent LED lighting kit on your soffit or fascia, from tools and layout to wiring, power and the first test.",
+  "category": "How-to",
+  "excerpt": "Mounting permanent LED track to a soffit or fascia is straightforward carpentry once the layout is planned. Here is the full process from tools to the first night's test.",
+  "readMinutes": 10,
+  "updated": "2026-09-04",
+  "heroAlt": "Close-up of black aluminum permanent LED lighting track being screwed into the fascia board under a soffit on a Canadian home",
+  "keyTakeaways": [
+    "The aluminum track mounts to the fascia board or the underside of the soffit with the screws included in the kit, one 42-inch piece at a time.",
+    "Pucks should face the same direction along the entire run, and every twist connector needs to be turned until it seats firmly, not just finger-tight.",
+    "The 150 W power supply and WiFi controller plug into an existing outdoor GFCI outlet, so no electrician is needed for a standard residential install.",
+    "Corners, gables and long spans are handled with extension connectors and T-connectors rather than bending or forcing the track.",
+    "Test every section with the app before you consider the job finished, since it is far easier to fix a loose connector before the ladder comes down."
+  ],
+  "body": [
+    { "type": "p", "text": "Installing a permanent LED lighting kit on your soffit or fascia is one of those projects that looks intimidating from the ground and turns out to be mostly patience and a cordless drill. The system is low voltage, the parts are designed to snap and twist together without soldering, and nothing about a standard residential install requires a licensed trade. This guide walks through the full process in the order you will actually do the work, from measuring and mounting through wiring, power, and the first night running the app." },
+    { "type": "h2", "text": "Before you start: what you should already have" },
+    { "type": "p", "text": "This guide assumes you have already measured your roofline and ordered the right kit size, from 50 ft up to 250 ft depending on the house. If you have not measured yet, our guide on measuring a roofline for permanent lighting walks through gables, corners and kit sizing in detail. You should also know where your nearest outdoor GFCI outlet is, since the power supply and controller need to reach it, and you should have decided on a track colour, black, white, wicker or brown, to match your fascia." },
+    { "type": "h2", "text": "Tools and conditions" },
+    { "type": "ul", "items": [
+      "An extension ladder rated for the height of the house, or scaffolding for two-storey sections, plus a helper to foot the ladder.",
+      "A cordless drill with a driver bit and a small pilot bit for pre-drilling on hardwood fascia.",
+      "A tape measure, pencil, and a level or chalk line to keep the run straight.",
+      "A hacksaw or fine-tooth mitre saw if you need to trim a track piece to fit a short section.",
+      "Exterior-rated silicone sealant for screw heads on wood fascia, and masonry anchors if any section is brick or stone.",
+      "A dry, mild day. Cold, wet or icy fascia is both harder to work with and harder to seal properly."
+    ] },
+    { "type": "h2", "text": "Step 1: Confirm what you are mounting into" },
+    { "type": "p", "text": "Most Ontario and Canadian homes have aluminum or vinyl fascia over a wood sub-fascia board, which takes screws well and is the easiest surface to work with. Brick or stone returns need masonry anchors instead of wood screws. If your soffit is vented aluminum with nothing solid behind it, mount the track to the fascia board at the edge instead, where there is wood to bite into. Walk the roofline before you climb anything and note which sections need which approach." },
+    { "type": "h3", "text": "Step 2: Start at the corner nearest your power source" },
+    { "type": "p", "text": "Begin the run at the corner of the house closest to your outdoor GFCI outlet and work outward from there. This keeps the low-voltage lead from the controller as short as possible and makes it easier to keep the whole run tidy. Hold the first 42-inch track piece against the fascia, tucked up under the drip edge or shingle overhang so it sits shaded and level, and mark your screw points before drilling." },
+    { "type": "h2", "text": "Step 3: Mount the track, one piece at a time" },
+    { "type": "p", "text": "Drive a screw through the track's mounting point at each end first, then add the middle screw once the piece is level. Check with a level or a taut chalk line before fully tightening, since a piece that goes in crooked will throw off every piece after it. Keep screws snug but not overtightened, since the aluminum track will dimple under too much torque. On wood fascia, a small dab of exterior sealant over each screw head keeps moisture from getting behind the board over the winter." },
+    { "type": "p", "text": "Butt each subsequent piece up against the one before it and keep all the pucks facing the same direction along the entire run, either straight down or angled slightly toward the street, whichever you decided on before starting. Consistency here matters more than the exact angle; a run where the pucks face different directions looks uneven once it is lit at night." },
+    { "type": "h3", "text": "Corners, gables and returns" },
+    { "type": "p", "text": "Do not try to bend the aluminum track around a corner. Instead, stop the track short of the corner and bridge the gap with an extension connector, choosing from the 1 ft, 5 ft, 10 ft or 20 ft lengths depending on the distance to cover. The 1 ft connector handles most tight corners, while the longer lengths carry the run across a garage door opening or from one gable to the next without lighting the space in between. On gable ends, mount the track along the rake of the roof so the pucks follow the slope, and join the two sides at the peak with an extension connector. If a section needs to be trimmed to fit, cut between pucks and well clear of the internal wiring, never through a puck or its leads." },
+    { "type": "h2", "text": "Step 4: Connect every joint properly" },
+    { "type": "p", "text": "Every track piece and every extension connector ends in a sealed twist connector. Line up the keyway on each half, push them together, and turn the outer collar until it seats firmly, not just until it feels snug. A connector that is only finger-tight looks fine on install day but lets moisture in over the first winter, and a dark section the following spring is almost always traced back to one loose twist connector. Where the layout branches, for example off the main eave toward a gable and back, use a T-connector to split one incoming line into two outgoing branches, and keep every joint tucked behind or above the track, out of direct weather and out of view from the street." },
+    { "type": "p", "text": "Pay attention to direction as you connect pieces. The controller sends its data down the line in one direction, so each piece has a defined input end and output end. Start every section at the end closest to the controller and build outward from there. A piece connected backwards simply will not light, which is an easy problem to spot during testing but an annoying one to fix once it is screwed to the fascia." },
+    { "type": "h2", "text": "Step 5: Mount the power supply and controller" },
+    { "type": "p", "text": "The 150 W power supply converts household 120 V down to the 12 V the track runs on, and the WiFi controller, which runs on WLED for full app control with 16 million colours plus a dedicated warm white channel, sits between the supply and the start of the track. Both plug into your existing outdoor outlet, which should already be GFCI protected as most exterior receptacles on Canadian homes are, and should have an in-use weatherproof cover to keep the connection dry while plugged in. Because this is a listed low-voltage device plugging into an existing receptacle rather than new house wiring, no electrical permit or electrician is required for a standard residential install, though it is always worth checking local rules for your municipality." },
+    { "type": "p", "text": "Mount the power supply and controller off the ground, somewhere with a little shelter from direct rain or snow, and within reasonable WiFi range of your router. Clip the low-voltage lead running from the controller up to the start of the track so it is not left hanging loose." },
+    { "type": "h2", "text": "Step 6: Add power injection on longer runs" },
+    { "type": "p", "text": "On a 12V system, voltage drops gradually along the length of the wire, which means pucks far from the power supply run slightly dimmer than pucks near it. The kit includes power-injection T-connectors and 20 ft power-injection cables to feed fresh 12V into the line partway along a long run, and the general guidance is to add an injection point roughly every 120 lights. Plan these injection points at a natural break in the layout, such as a corner or the base of a gable, so the extra cable stays short and hidden. Our companion guide on 12V power supplies and power injection covers sizing and placement for longer or branched layouts in more detail." },
+    { "type": "h2", "text": "Step 7: Test before you pack up the ladder" },
+    { "type": "p", "text": "Plug in the power supply, let the controller boot, and pair the app following its setup steps, which requires a 2.4 GHz WiFi network. Run a simple all-white test and walk the entire roofline to confirm every puck lights and every section holds. If a stretch is dark, the most likely cause is a twist connector that was not turned fully, or a piece connected backwards against the data flow. Fix it now while the ladder is still up, since a call-back to check a single connector is a bigger job once everything is tucked away for the season." },
+    { "type": "callout", "text": "Keep the box the kit shipped in until the whole run is tested. Spare fuses, extra connectors and colour-matched soffit screws are included, and it is easier to grab a spare part from the original packaging than to track one down mid-install." },
+    { "type": "h2", "text": "Safety notes worth repeating" },
+    { "type": "ul", "items": [
+      "Set the ladder on firm, level ground and maintain three points of contact; move the ladder rather than reaching sideways past your belt buckle.",
+      "Keep the ladder and every tool well clear of the overhead service drop where hydro enters the house.",
+      "Unplug the power supply before making or breaking any connection, even though the track side runs on 12V.",
+      "Route cords so they cannot be pinched in a door or window and are not a trip hazard on steps.",
+      "If two-storey height work is not something you are comfortable with, professional installers can complete the same kit; see the cost comparison in our DIY vs professional guide."
+    ] },
+    { "type": "p", "text": "Most single-storey fronts take a homeowner a single afternoon, and a two-storey home with a couple of gables and a garage return is a reasonable weekend project with a helper. Once the track is up and tested, the annual routine is opening the app in late fall to set a schedule, which is the entire point of going permanent in the first place. Full kits, spare track and individual connectors are available at /diy-kits and /shop." }
+  ],
+  "faq": [
+    { "q": "Can I install permanent LED lights on my soffit myself?", "a": "Yes. The system is designed for DIY installation, using screws to mount aluminum track and sealed twist connectors to link pieces together, with no soldering or licensed trade required for a standard install." },
+    { "q": "Do I mount the track on the soffit or the fascia?", "a": "Either can work depending on the house. Most installs go on the fascia board just under the drip edge, which gives solid wood behind the screws and keeps the pucks in a straight line. Mount to the soffit itself when the fascia is not accessible, and avoid screwing into vented aluminum soffit with nothing solid behind it." },
+    { "q": "How do I handle corners without bending the track?", "a": "Stop the track short of the corner and bridge the gap with an extension connector, choosing the 1 ft, 5 ft, 10 ft or 20 ft length depending on the distance. This keeps the aluminum track straight and avoids stress on the connectors." },
+    { "q": "Do I need an electrician to install the power supply and controller?", "a": "No, for a standard residential install. Both the 150 W power supply and the WiFi controller plug into an existing outdoor GFCI outlet, since they are listed low-voltage devices rather than new house wiring. Check local rules if you are unsure about your specific property." },
+    { "q": "What if a section of the track doesn't light up during testing?", "a": "The two most common causes are a twist connector that was not turned fully to seal, and a track piece connected backwards against the direction of the data signal. Check both before assuming a puck or piece is faulty." },
+    { "q": "How long does a typical soffit installation take?", "a": "A single-storey front usually takes a homeowner an afternoon. A two-storey home with gables and a garage return is a comfortable weekend project with a helper, mostly limited by ladder movement rather than the actual mounting work." }
+  ]
+}

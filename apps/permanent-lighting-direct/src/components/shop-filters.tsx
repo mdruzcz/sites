@@ -34,128 +34,53 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
   }
 
   return (
-    <aside className="space-y-6">
-      {/* Search within filters */}
+    <aside className="space-y-7 lg:sticky lg:top-[calc(var(--header-h)+2.5rem)] lg:self-start">
       <div>
-        <label className="eyebrow text-slate-500" htmlFor="filter-q">
-          Search in catalog
-        </label>
-        <input
-          id="filter-q"
-          type="search"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          onBlur={() => update({ q })}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") update({ q });
-          }}
-          placeholder="e.g. C9 bulb"
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        />
+        <label className="label" htmlFor="filter-q">Search the catalogue</label>
+        <input id="filter-q" type="search" value={q} onChange={(e) => setQ(e.target.value)} onBlur={() => update({ q })} onKeyDown={(e) => { if (e.key === "Enter") update({ q }); }} placeholder="e.g. controller" className="input" />
       </div>
-
-      {/* Sort */}
       <div>
-        <p className="eyebrow text-slate-500">Sort by</p>
-        <select
-          value={activeSort ?? "default"}
-          onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })}
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        >
+        <label className="label" htmlFor="filter-sort">Sort by</label>
+        <select id="filter-sort" value={activeSort ?? "default"} onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })} className="input">
           <option value="default">Featured</option>
           <option value="name">Name (A–Z)</option>
           <option value="price-asc">Price: low to high</option>
           <option value="price-desc">Price: high to low</option>
         </select>
       </div>
-
-      {/* Category */}
       <div>
-        <p className="eyebrow text-slate-500">Category</p>
-        <ul className="mt-2 space-y-1 text-sm">
-          <li>
-            <Filter
-              label="All categories"
-              count={categories.reduce((s, c) => s + c.count, 0)}
-              active={!activeCategory}
-              onClick={() => update({ category: undefined })}
-            />
-          </li>
+        <p className="label">Category</p>
+        <ul className="space-y-1 text-sm">
+          <li><Filter label="All categories" count={categories.reduce((s, c) => s + c.count, 0)} active={!activeCategory} onClick={() => update({ category: undefined })} /></li>
           {categories.map((c) => (
-            <li key={c.slug}>
-              <Filter
-                label={c.name}
-                count={c.count}
-                active={activeCategory === c.slug}
-                onClick={() => update({ category: c.slug })}
-              />
-            </li>
+            <li key={c.slug}><Filter label={c.name} count={c.count} active={activeCategory === c.slug} onClick={() => update({ category: c.slug })} /></li>
           ))}
         </ul>
       </div>
-
-      {/* Price */}
       <div>
-        <p className="eyebrow text-slate-500">Price (CAD)</p>
-        <ul className="mt-2 space-y-1 text-sm">
-          <li>
-            <Filter
-              label="Any price"
-              active={!activePrice}
-              onClick={() => update({ price: undefined })}
-            />
-          </li>
+        <p className="label">Price (CAD)</p>
+        <ul className="space-y-1 text-sm">
+          <li><Filter label="Any price" active={!activePrice} onClick={() => update({ price: undefined })} /></li>
           {PRICE_BUCKETS.map((b) => (
-            <li key={b.value}>
-              <Filter
-                label={b.label}
-                active={activePrice === b.value}
-                onClick={() => update({ price: b.value })}
-              />
-            </li>
+            <li key={b.value}><Filter label={b.label} active={activePrice === b.value} onClick={() => update({ price: b.value })} /></li>
           ))}
         </ul>
       </div>
-
       {(activeCategory || activePrice || activeSort || activeQ) && (
-        <Link
-          href="/shop"
-          className="block rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-center text-sm text-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]"
-        >
-          Clear all filters
-        </Link>
+        <Link href="/shop" className="btn-secondary btn-sm w-full">Clear all filters</Link>
       )}
-
-      <div className="rounded-lg bg-[var(--color-brand-soft)] p-3 text-xs text-[var(--color-brand-dark)]">
-        🎁 First order? Use code <span className="font-bold">FIRST10</span> at checkout for 10% off.
+      <div className="rounded-xl bg-[var(--color-accent-soft)] p-4 text-xs leading-relaxed text-[var(--color-text-soft)]">
+        Every part here is 12V and works with every kit. Need help choosing? <Link href="/contact-us" className="font-semibold text-[var(--color-accent-dark)] hover:underline">Ask us</Link>.
       </div>
     </aside>
   );
 }
 
-function Filter({
-  label,
-  count,
-  active,
-  onClick
-}: {
-  label: string;
-  count?: number;
-  active: boolean;
-  onClick: () => void;
-}) {
+function Filter({ label, count, active, onClick }: { label: string; count?: number; active: boolean; onClick: () => void }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left transition ${
-        active
-          ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]"
-          : "hover:bg-slate-50"
-      }`}
-    >
+    <button type="button" onClick={onClick} className={`flex min-h-[40px] w-full items-center justify-between rounded-lg px-2.5 text-left transition ${active ? "bg-[var(--color-ink)] font-semibold text-white" : "hover:bg-[var(--color-bg-warm)]"}`}>
       <span>{label}</span>
-      {count !== undefined && <span className="text-xs text-slate-400">{count}</span>}
+      {count !== undefined && <span className={`text-xs ${active ? "text-white/70" : "text-[var(--color-muted)]"}`}>{count}</span>}
     </button>
   );
 }

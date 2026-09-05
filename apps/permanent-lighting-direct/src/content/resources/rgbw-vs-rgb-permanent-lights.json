@@ -1,0 +1,151 @@
+{
+  "slug": "rgbw-vs-rgb-permanent-lights",
+  "title": "RGBW vs RGB Permanent Lights: Why the White Channel Matters",
+  "metaTitle": "RGBW vs RGB Permanent Lights Explained",
+  "metaDescription": "RGBW adds a true white diode that RGB-only permanent lights lack. Here is why that matters for warm white, colour accuracy and everyday roofline lighting.",
+  "category": "Buying guides",
+  "excerpt": "RGB and RGBW look the same in a product photo, but the difference shows up every night the lights are set to plain white. Here is what the extra white diode actually does and why it matters more than any other spec on a permanent lighting system.",
+  "readMinutes": 8,
+  "updated": "2026-09-04",
+  "heroAlt": "Close-up of an RGBW LED puck light in aluminum track showing the dedicated warm white diode alongside red, green and blue diodes",
+  "keyTakeaways": [
+    "RGB systems have no true white diode; they fake white by mixing red, green and blue at full power, which usually reads as a cool bluish or pinkish white rather than a warm white.",
+    "RGBW adds a fourth, dedicated white diode, so the system can produce an actual warm white the way a normal porch light or string light does, in addition to full colour.",
+    "Most permanent lighting is set to plain white far more often than it is set to colour, so the white channel is arguably the specification that matters most day to day.",
+    "RGBW pucks can still do everything an RGB puck does for colour scenes and effects; they simply add the white channel on top rather than giving anything up.",
+    "Every kit sold by Permanent Lighting Direct uses RGBW pucks with a dedicated warm white channel, not RGB-only hardware."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Scroll through permanent lighting listings and the spec sheets look nearly identical: low voltage, app controlled, millions of colours, weatherproof. The one line that actually separates a good system from a disappointing one is easy to miss: RGB or RGBW. It is a four-character difference that determines whether the lights look right on the roughly 350 nights a year most homeowners leave them on plain white, and it is worth understanding before buying anything."
+    },
+    {
+      "type": "h2",
+      "text": "What RGB actually means"
+    },
+    {
+      "type": "p",
+      "text": "RGB stands for red, green and blue, the three primary colours of light. An RGB LED puck contains three diodes, one of each colour, and every colour the light can produce, including white, is created by mixing those three at different intensities. This is how colour televisions and computer monitors have worked for decades, and it is a perfectly good way to produce vivid reds, blues, greens, purples and the rest of the colour wheel."
+    },
+    {
+      "type": "p",
+      "text": "The problem is white. To make white, an RGB system drives all three diodes near full power at once. The result is a light that is technically white in the sense that it looks colourless-ish, but it almost never looks like the warm white glow of a porch light, a string of incandescent bulbs, or a soft white LED bulb indoors. Depending on how the three diodes are balanced, RGB white tends to skew cool and slightly blue, or in some cheaper systems slightly pink or purple. Anyone who has seen a roofline lit with RGB white lights next to a home with true warm white lighting can usually spot the difference without being told which is which."
+    },
+    {
+      "type": "h2",
+      "text": "What RGBW adds"
+    },
+    {
+      "type": "p",
+      "text": "RGBW takes the same red, green and blue diodes and adds a fourth: a dedicated white diode, engineered specifically to produce a warm white on its own rather than as a byproduct of mixing colours. When an RGBW system is set to white, it is not asking three colour diodes to fake it, it is switching on a diode built for that exact job. The result is a warm, even white that looks like ordinary house lighting rather than a colour-mixing compromise."
+    },
+    {
+      "type": "p",
+      "text": "Every puck in a Permanent Lighting Direct kit is RGBW for exactly this reason. The controller included with our kits is WLED-based and offers 16 million colours for scenes and effects, the same colour range you would expect from any capable RGB system, plus that dedicated warm white channel sitting alongside it. You are not choosing between colour range and white quality; RGBW gives you both."
+    },
+    {
+      "type": "h3",
+      "text": "Why this matters more than it seems"
+    },
+    {
+      "type": "p",
+      "text": "Colour scenes get most of the attention in product demos and social media videos, reds and greens for the holidays, orange for a team win, a slow colour fade for a party. But most homeowners who install permanent lighting end up leaving it on a plain white setting on ordinary nights far more often than they run colour scenes, simply because that is what most people want their house to look like on a Tuesday in March. If that everyday white looks slightly off, the system feels like a compromise every single night it is used that way, even though the colour scenes look fine when they are used for an occasion."
+    },
+    {
+      "type": "callout",
+      "text": "A simple way to judge any permanent lighting system before buying: ask specifically what the everyday white setting looks like, not just how many colours the app offers. If a product cannot answer that clearly, it is very likely RGB-only."
+    },
+    {
+      "type": "h2",
+      "text": "How to tell RGB from RGBW when shopping"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Check the spec sheet or product description for the letters RGBW specifically; RGB alone, without the W, is a strong signal there is no dedicated white diode.",
+        "Look for language about a dedicated white channel or true white, which manufacturers of RGBW products tend to mention because it is a genuine selling point.",
+        "Watch a video of the product actually set to white rather than relying on marketing photos, which are often colour-graded or shot at an angle that hides a blue or pink tint.",
+        "Ask directly if the seller cannot answer, since it is a simple yes or no question about the hardware inside the puck."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Does RGBW cost more, and is it worth it"
+    },
+    {
+      "type": "p",
+      "text": "Adding a fourth diode to every puck does add some cost over a simpler three-diode RGB design, which is part of why RGB-only systems tend to show up at the lower end of the market. For a permanent fixture on the front of a house, though, the cost difference is small relative to the total project, and it buys the one quality difference that is visible every single night rather than only on the handful of nights a colour scene gets used. Most professional-install brands, and every kit we sell, use RGBW for this reason; RGB-only tends to show up mainly in lower-cost consumer strip lighting."
+    },
+    {
+      "type": "p",
+      "text": "Put another way, the extra diode is a small fraction of the total materials cost on a kit that already includes track, connectors, a controller and a power supply, but it is the one component decision that cannot be corrected later without replacing the pucks themselves. Choosing a track colour or a mounting height can be adjusted or lived with if the first choice is not quite right. An RGB-only puck stays RGB-only for the life of the install, so it is worth getting right at the time of purchase rather than treating it as a minor spec to skim past."
+    },
+    {
+      "type": "h2",
+      "text": "White temperature and warmth"
+    },
+    {
+      "type": "p",
+      "text": "A dedicated white diode also lets a system land on a specific, consistent colour temperature, typically a warm white in the range most homeowners associate with cozy exterior lighting, rather than whatever cool or neutral tone happens to fall out of mixing red, green and blue at full brightness. That consistency matters when you are trying to match the lighting to brick, siding or stonework that already has warm undertones, which is most homes. Pairing a warm, accurate white with the wider colour range for scenes is exactly what a WLED-based RGBW controller like the one in our kits is built to do, and it is covered in more detail in our guide on setting up the app at /how-it-works."
+    },
+    {
+      "type": "h2",
+      "text": "RGBWW and other variations you might see"
+    },
+    {
+      "type": "p",
+      "text": "Shopping around, you may also come across the term RGBWW, which adds a second white diode, typically a cool white alongside a warm white, giving even finer control over the exact white temperature. This is a further refinement on the same idea as RGBW rather than a different category, and it is more common on high-end indoor fixtures than on outdoor roofline lighting, where a single, well-chosen warm white diode already covers what most homeowners want from an exterior fixture. The important distinction to focus on when comparing permanent lighting products remains the simpler one: whether there is a dedicated white diode at all, RGBW or better, versus RGB-only systems that have none."
+    },
+    {
+      "type": "h2",
+      "text": "How the white channel affects everyday brightness"
+    },
+    {
+      "type": "p",
+      "text": "There is a secondary, less obvious benefit to a dedicated white diode: efficiency at the setting most homes actually use. An RGB system producing white has to run three separate diodes near full power simultaneously to approximate white, which uses more energy and generates more heat inside the puck than a single white diode delivering the same brightness. Over a 50,000-hour rated lifespan, running the puck primarily through its purpose-built white diode rather than constantly driving three colour diodes at once is easier on the components and is one of the quieter reasons RGBW systems tend to hold their brightness and colour accuracy longer in everyday use, on top of looking correct from the first night."
+    },
+    {
+      "type": "h2",
+      "text": "A simple test you can do at a showroom or on a neighbour's house"
+    },
+    {
+      "type": "p",
+      "text": "If you want to see the difference for yourself before deciding, find a permanent lighting display, either in a showroom, at a home show, or on a neighbour's house you know is RGBW, and set it to plain white next to any RGB-only product, a cheap consumer strip works for this comparison. Look at the two side by side, ideally in the evening rather than under bright daylight, and the difference is usually obvious within a few seconds: one reads as a clean, warm white close to a normal porch light, and the other reads slightly blue, purple or simply artificial in a way that is hard to describe until you have seen the comparison directly. It is the fastest way to confirm the specification actually matters before committing to a full roofline of one system or the other."
+    },
+    {
+      "type": "h2",
+      "text": "What this means for your roofline"
+    },
+    {
+      "type": "p",
+      "text": "If a permanent lighting system is going to spend most of its life on plain white, and for the great majority of homes it will, RGBW is not a nice-to-have upgrade, it is the specification that determines whether the everyday look of the house matches what was pictured before buying. Every kit in our lineup, from the 50 ft kit up to the 250 ft kit, uses RGBW pucks with that dedicated warm white channel built in, so there is no trade-off to weigh between colour range and a true white. Compare kit sizes and pricing at /shop or see the full parts list for a typical run at /diy-kits."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between RGB and RGBW permanent lights?",
+      "a": "RGB systems have three diodes, red, green and blue, and create white by mixing all three, which usually produces a cool bluish or pinkish white. RGBW adds a fourth, dedicated white diode built specifically to produce a true warm white, in addition to the same full colour range an RGB system offers."
+    },
+    {
+      "q": "Does RGBW give up any colour options compared to RGB?",
+      "a": "No. RGBW keeps the same red, green and blue diodes an RGB system uses for colour scenes and simply adds a fourth white diode on top. You get the full colour range plus a proper white, not one or the other."
+    },
+    {
+      "q": "Why does the white setting matter more than the colour settings?",
+      "a": "Most homeowners leave permanent lighting on a plain white setting on ordinary nights far more often than they use colour scenes, which are typically reserved for holidays or special occasions. A white that looks off is visible on the majority of nights the system is used, while colour quality only matters on the occasions colour is used."
+    },
+    {
+      "q": "Are all professional permanent lighting brands RGBW?",
+      "a": "Most professional-install brands use RGBW hardware because the white channel is a meaningful differentiator for everyday use. RGB-only systems tend to show up more often in lower-cost consumer strip lighting where price is the priority over white quality."
+    },
+    {
+      "q": "How can I tell if a product is RGB or RGBW before buying?",
+      "a": "Check the spec sheet for the letter W specifically, look for mention of a dedicated white channel or true white, and if possible watch video of the product actually set to plain white rather than relying on marketing photos, which can hide a colour tint."
+    },
+    {
+      "q": "Are the lights sold by Permanent Lighting Direct RGB or RGBW?",
+      "a": "All of our pucks are RGBW, with a dedicated warm white channel alongside the red, green and blue diodes, controlled through a WLED-based app offering 16 million colours plus that separate white channel."
+    }
+  ]
+}

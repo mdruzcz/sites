@@ -1,0 +1,214 @@
+{
+  "slug": "permanent-lighting-colour-ideas-for-every-holiday",
+  "title": "Permanent Lighting Colour Ideas for Every Holiday and Season",
+  "metaTitle": "Permanent Lighting Colour Ideas for Every Holiday",
+  "metaDescription": "Colour and preset ideas for a 12V permanent lighting system through the Canadian calendar, from Christmas and Canada Day to Halloween and everyday warm white.",
+  "category": "Inspiration",
+  "excerpt": "A permanent roofline system can look like a different house every month of the year. Here are colour combinations and app presets to build for every major Canadian holiday and season.",
+  "readMinutes": 8,
+  "updated": "2026-09-04",
+  "heroAlt": "Two-storey Canadian home with permanent LED roofline lighting glowing red and green for Christmas against a snowy front yard",
+  "keyTakeaways": [
+    "The 16-million-colour range and dedicated warm white channel on the WLED controller mean one installed system can serve every holiday on the calendar, not just December.",
+    "Save each seasonal look as a named preset so switching the whole house takes one tap rather than rebuilding a scene from scratch.",
+    "Warm white with occasional soft accents is the strongest year-round default for the months between major holidays.",
+    "Segments let you run different colours on different parts of the house at once, such as orange gables with white eaves for Halloween.",
+    "Build a rotation of a dozen or so presets over the first year and the system will have a look ready for nearly every occasion without extra planning."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "The most underused feature of a permanent lighting system is how much of the calendar it can actually cover. Because the RGBW pucks and WLED controller can produce any of 16 million colours plus a true warm white, a system installed for Christmas can just as easily mark Canada Day, Halloween, a birthday, or a Friday night watching the local team, all without touching a ladder again after the initial install. This guide runs through colour ideas for the occasions Canadian homeowners actually use, worth building into saved presets in the app the first week the system is up."
+    },
+    {
+      "type": "h2",
+      "text": "Winter holidays: Christmas and New Year's Eve"
+    },
+    {
+      "type": "h3",
+      "text": "Christmas"
+    },
+    {
+      "type": "p",
+      "text": "Classic red and green remains the most requested look, alternated puck to puck or in longer alternating blocks along the run. For a more upscale, less traditional look, warm white alone across the whole roofline reads as elegant and works well on brick or stone homes where bold colour can look busy. A third popular option splits the difference: warm white on the main eaves with red or green reserved for gables and accents, giving definition to the roofline shape without covering the whole house in colour. If you have zoned segments, try warm white on the body of the house with a slow-fading blue and white combination on a single feature gable for a subtler, wintry look distinct from the main red-and-green scene."
+    },
+    {
+      "type": "h3",
+      "text": "New Year's Eve"
+    },
+    {
+      "type": "p",
+      "text": "Gold and white paired with a slow shimmer or sparkle effect, if your controller's effect library includes one, makes for a natural New Year's look that also transitions cleanly out of the Christmas season without abruptly killing the festive mood on December 26th. Silver and blue is a cooler alternative that reads as more modern and pairs well with houses that ran an all-white Christmas scene, since it is a small step rather than a jarring switch."
+    },
+    {
+      "type": "h2",
+      "text": "Late winter and spring occasions"
+    },
+    {
+      "type": "h3",
+      "text": "Valentine's Day"
+    },
+    {
+      "type": "p",
+      "text": "Red and soft pink alternating along the run, at a lower brightness than the bold Christmas red, gives a warmer, more romantic tone appropriate for a single evening rather than a season-long display. This is a good example of a preset worth building even though it only gets used one or two nights a year, since the setup cost is a few minutes in the app rather than a trip to the store for a new set of lights."
+    },
+    {
+      "type": "h3",
+      "text": "St. Patrick's Day"
+    },
+    {
+      "type": "p",
+      "text": "Solid green, or green with white accents on alternating pucks, is a simple, high-impact look for March 17th. Homes that already ran green for Christmas can reuse the same colour value from that preset with brightness turned up slightly for a bolder daytime-into-evening display."
+    },
+    {
+      "type": "h3",
+      "text": "Easter and spring"
+    },
+    {
+      "type": "p",
+      "text": "Pastel combinations, soft yellow, light pink and light blue rotated across segments or cycled slowly with an effect, suit Easter weekend and the broader early-spring stretch better than the saturated colours used for winter holidays. Lower brightness settings help pastels read correctly, since RGBW pucks pushed to full brightness will wash a pastel mix toward white."
+    },
+    {
+      "type": "h2",
+      "text": "Summer occasions"
+    },
+    {
+      "type": "h3",
+      "text": "Canada Day"
+    },
+    {
+      "type": "p",
+      "text": "Red and white is the obvious and effective choice, either alternating puck to puck along the full run or blocked by segment, red on one side of the house and white on the other, then swapped partway through the evening for variety. This is one of the most popular non-Christmas presets among our customers, in part because it requires zero creative decisions and always looks appropriate for the occasion."
+    },
+    {
+      "type": "h3",
+      "text": "Independence Day (for cross-border households and visitors)"
+    },
+    {
+      "type": "p",
+      "text": "Red, white and blue in a rotating or alternating pattern works for July 4th for households marking both countries' holidays, or for properties near the border with cross-border family and guests. The same three-colour palette as Canada Day with blue added is a quick preset variation to build alongside it."
+    },
+    {
+      "type": "h2",
+      "text": "Fall, Halloween and Thanksgiving"
+    },
+    {
+      "type": "h3",
+      "text": "Halloween"
+    },
+    {
+      "type": "p",
+      "text": "Orange and purple is the strongest combination for Halloween, either alternated evenly or run as blocks with a slow colour-shift effect for a more animated, spookier feel. This is a good occasion to use segments if your run has them: try orange on the main eaves with purple reserved for a gable or porch accent, so the display has depth rather than one flat colour wash. A moving or pulsing effect at a slower speed setting tends to look more unsettling, in a good way for this holiday, than a fast strobe."
+    },
+    {
+      "type": "h3",
+      "text": "Thanksgiving and fall"
+    },
+    {
+      "type": "p",
+      "text": "Warm amber and deep orange, run steady without an effect, gives a harvest-season look appropriate for Canadian Thanksgiving in October and for the general autumn stretch leading into Halloween. It sits comfortably alongside pumpkins and mums on the porch and is a natural transition preset between the everyday warm white and the bolder orange and purple built for Halloween itself. Some households run this amber tone from mid-September right through to Halloween, effectively giving the whole fall season its own consistent look before switching to winter colours."
+    },
+    {
+      "type": "h2",
+      "text": "Remembrance Day and cultural observances"
+    },
+    {
+      "type": "h3",
+      "text": "Remembrance Day"
+    },
+    {
+      "type": "p",
+      "text": "Solid red, held steady with no effect or colour change, is the appropriate and widely recognized look for November 11th. Keep brightness moderate rather than bold for a more respectful tone than a Canada Day or Christmas display."
+    },
+    {
+      "type": "h3",
+      "text": "Diwali and other cultural and religious observances"
+    },
+    {
+      "type": "p",
+      "text": "Households marking Diwali often favour warm gold and amber tones with a gentle twinkle or shimmer effect, echoing the diyas and string lights traditionally used for the festival of lights. Because the system can produce any custom colour rather than a fixed palette, it adapts easily to whatever combination is meaningful for a given household's traditions, whether that is a specific gold tone, a particular blue, or a rotating multicolour scene, without needing to buy or store separate string lights for each occasion."
+    },
+    {
+      "type": "h2",
+      "text": "Everyday and personal occasions"
+    },
+    {
+      "type": "h3",
+      "text": "Sports and game nights"
+    },
+    {
+      "type": "p",
+      "text": "Team colours are an easy win for any household that follows a local team, whether that is Maple Leafs blue and white, a provincial junior team's colours, or whatever the kids play for. Building a preset per team, or even per major game night, is a low-effort way to get regular use out of the system between the calendar's fixed holidays, and it is the kind of thing that gets neighbours asking who installed the lights."
+    },
+    {
+      "type": "h3",
+      "text": "Birthdays and everyday celebrations"
+    },
+    {
+      "type": "p",
+      "text": "A birthday preset, built around whatever colour the birthday person likes, or a rotating multicolour effect at a festive brightness, turns an ordinary evening into something a bit more memorable for very little effort. Families with several kids sometimes build one preset per child so each birthday has its own established look rather than a new one improvised each year."
+    },
+    {
+      "type": "h3",
+      "text": "Back to school and graduation"
+    },
+    {
+      "type": "p",
+      "text": "A quick preset in a school's colours for the first day back in September, or a graduation colour scheme for a June ceremony, are small, low-effort ways to mark a family milestone that most households would otherwise skip because setting up temporary string lights for a single evening rarely feels worth the effort. Since the system is already installed and the colour change costs nothing but a few taps in the app, these smaller occasions become easy to acknowledge rather than skipped."
+    },
+    {
+      "type": "h2",
+      "text": "Everyday warm white: the most-used preset of all"
+    },
+    {
+      "type": "callout",
+      "text": "Despite all the seasonal options above, most homeowners report that a plain warm white, run on a sunset-to-bedtime schedule, is the preset actually in use on the majority of nights in a year. It provides genuine outdoor lighting for the porch and walkway, not just decoration, and it is the default worth setting up first, with the holiday colours layered in around it."
+    },
+    {
+      "type": "h2",
+      "text": "Building a seasonal rotation instead of one-off changes"
+    },
+    {
+      "type": "p",
+      "text": "Rather than treating each holiday as a separate decision, many households find it easier to think in terms of a seasonal rotation: warm white through most of winter and spring, amber through fall, red and white for Canada Day into midsummer, and orange and purple bracketing Halloween, with the specific one-night presets, Valentine's, St. Patrick's, birthdays, layered in briefly and then reverted to whichever seasonal base is currently running. This approach means there is always a sensible default look on the house between the days you actively choose something different, rather than an all-or-nothing choice between full holiday mode and lights off entirely."
+    },
+    {
+      "type": "h2",
+      "text": "Building your preset library"
+    },
+    {
+      "type": "p",
+      "text": "The practical way to get value out of all of this is to build the presets gradually rather than all at once. Start with warm white as your default, add Christmas and Canada Day since they are the two most requested looks, then fill in the rest of the calendar over your first year as each occasion comes around. Our /wled-controller-setup-guide-for-permanent-lights walks through exactly how presets, segments and schedules work in the app if you have not built one yet. Every colour combination described here is achievable on any kit size from our /shop, since the RGBW puck and controller are identical across all kit lengths from 50 ft to 250 ft."
+    },
+    {
+      "type": "p",
+      "text": "A dozen saved presets, built up over a season or two, turns a roofline lighting system from a Christmas decoration into something the whole household reaches for all year, and that ongoing use is what actually separates a permanent system from the seasonal alternative it replaced."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many different colours can the system actually produce?",
+      "a": "The RGBW pucks and WLED controller support 16 million colours, plus a dedicated warm white channel for a true white that looks different from an RGB-mixed white. In practice this covers every holiday and seasonal combination described above and far more than most households will ever use."
+    },
+    {
+      "q": "Can I run different colours on different parts of the house at the same time?",
+      "a": "Yes, if your run is set up with segments in the app. A common example is orange on the main eaves with purple reserved for a gable accent at Halloween, or red on one side of the house and white on the other for Canada Day."
+    },
+    {
+      "q": "What is the best everyday colour when there is no holiday or occasion?",
+      "a": "Warm white at a moderate brightness on a sunset-to-bedtime schedule is what most homeowners settle into as their default. It functions as real outdoor lighting for the porch and walkway rather than pure decoration, and it is worth setting up as your first preset."
+    },
+    {
+      "q": "How do I switch between saved colour presets?",
+      "a": "Once a preset is saved in the app, switching to it is a single tap, no rebuilding the colour or effect from scratch. Building out a preset for each major holiday the first year means every future occasion is one tap away rather than a fresh setup each time."
+    },
+    {
+      "q": "Do pastel colours like the ones suggested for Easter look right at full brightness?",
+      "a": "Not usually. Pastel combinations read best at a lower brightness setting, since pushing RGBW pucks to full output tends to wash a pastel mix toward plain white. Dial brightness down when building softer seasonal presets."
+    },
+    {
+      "q": "Will these colour ideas work on any kit size?",
+      "a": "Yes. Every kit from 50 ft up to 250 ft uses the same RGBW puck and the same WLED controller, so all of the colour combinations and presets described here work identically regardless of which kit size covers your roofline."
+    }
+  ]
+}
