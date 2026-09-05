@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero photo="install-technician" eyebrow="About" title="Lighting people in London, Ontario." intro="We put soffit track on houses for a living, and we box the same hardware for people who would rather do it themselves." crumbs={[{ label: "About" }]} />
+      <PageHero photo="home-install" eyebrow="About" title="Lighting people in London, Ontario." intro="We put soffit track on houses for a living, and we box the same hardware for people who would rather do it themselves." crumbs={[{ label: "About" }]} />
       <section className="bg-[var(--color-bg)]">
         <div className="shell section grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <article className="prose-clean max-w-[68ch] text-[var(--color-text-soft)]">

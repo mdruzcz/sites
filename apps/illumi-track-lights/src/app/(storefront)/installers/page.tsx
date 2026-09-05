@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function InstallersPage() {
   return (
     <>
-      <PageHero photo="install-technician" eyebrow="For homeowners" title="Rather hire a pro? We get it." intro="Installers across Canada use the same hardware that ships in our kits. Tell us where you are and we will connect you with one, so you get the same warranty and support either way." crumbs={[{ label: "Installers" }]} />
+      <PageHero photo="install-home-day" eyebrow="For homeowners" title="Rather hire a pro? We get it." intro="Installers across Canada use the same hardware that ships in our kits. Tell us where you are and we will connect you with one, so you get the same warranty and support either way." crumbs={[{ label: "Installers" }]} />
       <section className="bg-[var(--color-bg)]">
         <div className="shell section grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>

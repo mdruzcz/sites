@@ -90,7 +90,7 @@ export function MegaMenu() {
               </div>
             ))}
             <Link href="/installation" onClick={() => setOpen(false)} className="group relative hidden overflow-hidden rounded-2xl lg:block">
-              <Image src="/images/photos/install-technician.webp" alt="Illumi installer beside a truck and ladder" width={640} height={480} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+              <Image src="/images/photos/install-track-mounting.webp" alt="Installer fitting aluminum lighting track under a soffit" width={640} height={480} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
               <span className="photo-scrim-soft" aria-hidden />
               <span className="absolute inset-x-0 bottom-0 p-5">
                 <span className="eyebrow text-[var(--color-gold)]">Southwestern Ontario</span>

@@ -179,7 +179,7 @@ export function TwoWays() {
             <Link href="/diy-kits" className="btn-gold mt-6">Pick a kit</Link>
           </div>
           <div className="glass p-7">
-            <Photo name="install-technician" ratio="aspect-[16/9]" rounded="rounded-xl" sizes="(max-width: 768px) 100vw, 540px" />
+            <Photo name="install-eder" ratio="aspect-[16/9]" rounded="rounded-xl" sizes="(max-width: 768px) 100vw, 540px" />
             <h3 className="font-display mt-6 text-2xl">Installed by Illumi in Southwestern Ontario</h3>
             <p className="mt-3 text-white/75">Free on-site measurement, colour-matched track, sealed wiring and an app walkthrough before we leave. {INSTALL_CITIES.map((c) => c.city).slice(0, 5).join(", ")} and nearby. From {formatCad(kits[0].installedLow, 0)}.</p>
             <Link href="/installation" className="btn-ghost-light mt-6">Book a measurement</Link>

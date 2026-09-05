@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ShippingReturnsPage() {
   return (
     <>
-      <PageHero photo="install-technician" eyebrow="Shipping & returns" title="Out the door in two business days." crumbs={[{ label: "Shipping & returns" }]} compact />
+      <PageHero photo="soffit-lights-installed" eyebrow="Shipping & returns" title="Out the door in two business days." crumbs={[{ label: "Shipping & returns" }]} compact />
       <section className="bg-[var(--color-bg)]">
         <div className="shell section grid gap-10 lg:grid-cols-[1fr_320px]">
           <article className="prose-clean max-w-[72ch] text-[var(--color-text-soft)]">

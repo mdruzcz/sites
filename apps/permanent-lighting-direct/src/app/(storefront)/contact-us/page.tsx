@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PageHero photo="install-technician" eyebrow="Contact" title="Send us the house. We'll send back the kit." intro="Measurements, a photo, your soffit colour and postal code are all we need to recommend a size and quote shipping." crumbs={[{ label: "Contact" }]} compact />
+      <PageHero photo="install-track-mounting" eyebrow="Contact" title="Send us the house. We'll send back the kit." intro="Measurements, a photo, your soffit colour and postal code are all we need to recommend a size and quote shipping." crumbs={[{ label: "Contact" }]} compact />
       <section className="bg-[var(--color-bg)]">
         <div className="shell section grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <ContactForm />
