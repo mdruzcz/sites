@@ -1,0 +1,43 @@
+{
+  "reel": {
+    "src": "/videos/light-show-highlight-reel.mp4",
+    "poster": "/images/video/light-show-highlight-reel-poster.webp"
+  },
+  "clips": [
+    {
+      "src": "/videos/animated-pixel-light-show-mega-trees-music-synced-building-01.mp4",
+      "alt": "Animated pixel LED light show with mega trees, star toppers and snowflakes synced across a building facade at night",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/blue-pixel-christmas-light-show-cone-trees-01.mp4",
+      "alt": "Brilliant blue pixel Christmas light show with star-topped cone trees at a community event",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/symmetrical-blue-pixel-christmas-light-show-01.mp4",
+      "alt": "Symmetrical blue pixel Christmas light show with snowflake gable and star-topped cone trees",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/multicolor-pixel-christmas-light-show-cone-trees-01.mp4",
+      "alt": "Multicolour pixel Christmas light show with cone trees and snowflake on a community hall",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/blue-christmas-pixel-light-show-crowd-01.mp4",
+      "alt": "Crowd watching a blue pixel Christmas light show with lit cone trees on a snowy evening",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/pixel-mega-tree-christmas-light-show-01.mp4",
+      "alt": "Colour-changing pixel mega tree Christmas light show on a snowy town square platform",
+      "category": "light-show"
+    },
+    {
+      "src": "/videos/christmas-light-display-park-walkthrough-illuminated-trees-01.mp4",
+      "alt": "Nighttime walkthrough of an outdoor Christmas light display park with illuminated pixel trees and holiday character displays",
+      "category": "light-show"
+    }
+  ]
+}

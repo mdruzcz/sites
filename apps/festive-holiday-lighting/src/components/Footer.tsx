@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site, cities, services } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 import { PhoneIcon } from "./icons";
 
 export function Footer() {
@@ -12,7 +13,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Image src="/images/logo.png" alt="Festive Holiday Lighting" width={140} height={44} className="h-11 w-auto object-contain mb-5" />
             <p className="text-sm text-white/55 leading-relaxed mb-5">
-              Southern Ontario's most trusted holiday lighting company. Seasonal installs, permanent LED systems, and commercial programs — all insured, all guaranteed.
+              Southern Ontario's holiday lighting company. Classic Christmas light installs, permanent LED systems, and commercial programs — all insured, all guaranteed.
             </p>
             <a href={site.phoneHref} className="flex items-center gap-2 text-sm font-semibold text-[var(--gold-bright)] hover:text-white transition min-h-11">
               <PhoneIcon className="w-4 h-4" />
@@ -56,6 +57,7 @@ export function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
+                { label: "Gallery", href: "/gallery" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Contact", href: "/contact" },
               ].map((l) => (
@@ -65,7 +67,8 @@ export function Footer() {
               ))}
             </ul>
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Contact</h3>
-            <a href={`mailto:${site.email}`} className="text-sm text-white/65 hover:text-[var(--gold-bright)] transition block mb-2">{site.email}</a>
+            <a href={site.phoneHref} className="text-sm text-white/65 hover:text-[var(--gold-bright)] transition block mb-2">{site.phone}</a>
+            <Link href="/contact" className="text-sm text-white/65 hover:text-[var(--gold-bright)] transition block mb-2">Request a free quote</Link>
             <p className="text-xs text-white/40">Extended hours Nov–Jan</p>
           </div>
         </div>
@@ -74,6 +77,7 @@ export function Footer() {
           <p className="text-xs text-white/35">
             © {new Date().getFullYear()} Festive Holiday Lighting. All rights reserved.
           </p>
+          <AwardBadge />
           <div className="flex items-center gap-4">
             <span className="text-xs text-white/35">$5M Liability · WSIB Compliant · Family Owned</span>
           </div>

@@ -74,12 +74,12 @@ export function Hero() {
           </h1>
 
           <p className="text-lg lg:text-xl text-white/75 mb-4 leading-relaxed max-w-xl">
-            Professional Christmas light installation and year-round permanent LED systems.
+            Classic Christmas light installation and year-round permanent LED systems.
             We design, install, maintain, and store everything — you just enjoy the glow.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-9">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 border border-white/10">🎄 Seasonal Christmas Lights</span>
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 border border-white/10">🎄 Classic Christmas Lights</span>
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 border border-white/10">✨ Permanent LED Systems</span>
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 border border-white/10">🏠 Residential & Commercial</span>
           </div>

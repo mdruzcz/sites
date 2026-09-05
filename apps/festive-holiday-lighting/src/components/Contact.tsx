@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 import { PhoneIcon, MapPinIcon, CheckIcon } from "./icons";
 
 const serviceTypes = [
-  "Christmas Light Installation (Seasonal)",
+  "Classic Christmas Lights (Seasonal)",
   "Permanent Holiday Lighting",
   "Residential Lighting",
   "Commercial Lighting",
@@ -142,18 +142,6 @@ export function Contact({ cityName }: { cityName?: string }) {
                 </div>
               </a>
 
-              <a href={`mailto:${site.email}`} className="flex items-center gap-4 group min-h-11">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg, var(--gold-bright), var(--gold))" }}>
-                  <svg className="w-5 h-5 text-[#0A0A14]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider mb-0.5 text-white/45">Email</p>
-                  <p className="font-semibold text-white group-hover:text-[var(--gold-bright)] transition">{site.email}</p>
-                </div>
-              </a>
 
               <div className="flex items-center gap-4 min-h-11">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"

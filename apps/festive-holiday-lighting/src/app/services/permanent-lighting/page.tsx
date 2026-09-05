@@ -46,6 +46,8 @@ export default function PermanentLightingPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Permanent Outdoor LED Lighting",
+    serviceType: "Permanent RGBW LED roofline lighting installation",
+    url: "https://festiveholidaylighting.ca/services/permanent-lighting",
     provider: { "@type": "LocalBusiness", name: site.name, telephone: site.phone, url: site.url },
     areaServed: cities.map(c => ({ "@type": "City", name: c.name })),
     description: "Permanent RGBW LED lighting systems installed in home and business rooflines. App-controlled, weatherproof, lifetime warranty. Southern Ontario.",
@@ -54,6 +56,7 @@ export default function PermanentLightingPage() {
   return (
     <>
       <Script id="service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: site.url }, { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` }, { "@type": "ListItem", position: 3, name: "Permanent Lighting", item: `${site.url}/services/permanent-lighting` }] }) }} />
       <NavBar />
 
       {/* Hero */}
@@ -80,7 +83,7 @@ export default function PermanentLightingPage() {
             Celebrate Forever
           </h1>
           <p className="text-xl text-white/70 mb-8 leading-relaxed max-w-3xl">
-            Smart RGBW LED lights permanently installed in your roofline. Control every colour, pattern, and schedule from your phone — for Christmas, Halloween, birthdays, playoffs, or any occasion. One install. Lifetime of celebrations.
+            Smart RGBW LED lights permanently installed in your roofline. Control every colour, pattern, and schedule from your phone — for Christmas, Halloween, birthdays, playoffs, or any occasion. One install. Lifetime of celebrations. Prefer the traditional look each December? We do classic Christmas lights too.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white min-h-11 hover:scale-105 transition-transform"

@@ -11,9 +11,9 @@ import { ArrowRightIcon } from "@/components/icons";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Holiday Lighting Services | Seasonal & Permanent",
+  title: "Holiday Lighting Services: Classic & Permanent Lights",
   description:
-    "Full-service holiday lighting — Christmas light installation, permanent LED systems, commercial lighting, tree lighting, and interior decorating across Southern Ontario.",
+    "Two ways to light your home or business in Southern Ontario: classic seasonal Christmas light installation, or permanent app-controlled LED roofline systems. Plus commercial, municipal, tree and interior lighting.",
   alternates: { canonical: "https://festiveholidaylighting.ca/services" },
 };
 
@@ -35,7 +35,7 @@ export default function ServicesPage() {
               <span className="text-gradient-gold">Solutions</span>
             </h1>
             <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              From one-time seasonal Christmas installs to permanent year-round LED systems — we handle everything for homes and businesses across Southern Ontario.
+              Classic Christmas lights that go up each November, or permanent LED systems that stay up all year. Many clients do both. We handle everything for homes and businesses across Southern Ontario.
             </p>
           </div>
 

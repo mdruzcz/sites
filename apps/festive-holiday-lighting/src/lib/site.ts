@@ -4,7 +4,6 @@ export const site = {
   tagline: "Professional Holiday & Permanent Lighting",
   phone: "(289) 426-5764",
   phoneHref: "tel:+12894265764",
-  email: "info@festiveholidaylighting.ca",
   address: {
     city: "Hamilton",
     region: "ON",
@@ -183,12 +182,12 @@ export function getCityBySlug(slug: string): City | undefined {
 export const services = [
   {
     slug: "christmas-light-installation",
-    name: "Christmas Light Installation",
-    shortName: "Christmas Lights",
+    name: "Classic Christmas Lights",
+    shortName: "Classic Lights",
     icon: "🎄",
-    tagline: "Full-service seasonal installation, maintenance & takedown",
+    tagline: "Classic seasonal Christmas light installation, maintenance & takedown",
     description:
-      "We handle everything — custom design, professional installation, mid-season maintenance checks, post-holiday takedown, and organized storage. You enjoy the magic, we handle the work.",
+      "Traditional C9 rooflines, mini-light tree wraps and garland, installed every November and taken down in January. We design, install, maintain, remove and store everything.",
   },
   {
     slug: "permanent-lighting",

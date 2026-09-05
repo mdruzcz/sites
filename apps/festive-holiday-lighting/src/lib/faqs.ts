@@ -10,8 +10,8 @@ export const homeFaqs: FAQItem[] = [
     a: "Most residential installations are completed in a single day. Larger commercial or municipal projects may take 2-3 days. We'll give you a specific timeline during your free quote.",
   },
   {
-    q: "What's the difference between seasonal and permanent lighting?",
-    a: "Seasonal lighting is installed each November/December and removed in January — perfect for classic Christmas curb appeal. Permanent lighting is installed once and stays year-round: smart RGBW LEDs built into your roofline that you control with a phone app for any occasion. Many clients do both — permanent lights for year-round use plus a full seasonal program for Christmas.",
+    q: "What's the difference between classic and permanent lighting?",
+    a: "Classic lighting is installed each November/December and removed in January — traditional C9 bulbs, tree wraps and garland. Permanent lighting is installed once and stays year-round: smart RGBW LEDs built into your roofline that you control with a phone app for any occasion. Many clients do both — permanent lights for year-round use plus a full seasonal program for Christmas.",
   },
   {
     q: "Are your services insured?",

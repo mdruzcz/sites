@@ -7,9 +7,10 @@ import { site } from "@/lib/site";
 import { PhoneIcon } from "./icons";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Classic Lights", href: "/services/christmas-light-installation" },
   { label: "Permanent Lights", href: "/services/permanent-lighting" },
+  { label: "All Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },

@@ -14,9 +14,9 @@ import { CheckIcon, ArrowRightIcon } from "@/components/icons";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Christmas Light Installation Southern Ontario | Professional Seasonal Lighting",
+  title: "Classic Christmas Light Installation, Southern Ontario",
   description:
-    "Full-service Christmas light installation — we design, install, maintain, and store your seasonal display. Hamilton, Burlington, Oakville & across Southern Ontario. Free quote.",
+    "Classic Christmas lights installed, maintained, taken down and stored by Festive: C9 rooflines, tree wraps, garland and wreaths for homes and businesses in Hamilton, Burlington, Oakville and across Southern Ontario.",
   alternates: { canonical: "https://festiveholidaylighting.ca/services/christmas-light-installation" },
 };
 
@@ -33,7 +33,9 @@ export default function ChristmasLightInstallationPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Christmas Light Installation",
+    name: "Classic Christmas Light Installation",
+    serviceType: "Seasonal Christmas light installation",
+    url: "https://festiveholidaylighting.ca/services/christmas-light-installation",
     provider: { "@type": "LocalBusiness", name: site.name, telephone: site.phone, url: site.url },
     areaServed: cities.map(c => ({ "@type": "City", name: c.name })),
     description: "Full-service seasonal Christmas light installation including design, installation, maintenance, takedown, and storage for homes and businesses across Southern Ontario.",
@@ -42,6 +44,7 @@ export default function ChristmasLightInstallationPage() {
   return (
     <>
       <Script id="service-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <Script id="breadcrumb-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: site.url }, { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` }, { "@type": "ListItem", position: 3, name: "Classic Christmas Lights", item: `${site.url}/services/christmas-light-installation` }] }) }} />
       <NavBar />
 
       {/* Hero */}
@@ -53,18 +56,18 @@ export default function ChristmasLightInstallationPage() {
             <span>/</span>
             <Link href="/services" className="hover:text-white/60 transition">Services</Link>
             <span>/</span>
-            <span className="text-white/60">Christmas Light Installation</span>
+            <span className="text-white/60">Classic Christmas Lights</span>
           </nav>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6"
             style={{ backgroundColor: "rgba(201,168,76,0.12)", color: "var(--gold-bright)", border: "1px solid rgba(201,168,76,0.3)" }}>
-            🎄 Seasonal Service
+            🎄 Classic Lights · Seasonal Service
           </div>
           <h1 className="font-display text-4xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Professional Christmas Light Installation in{" "}
+            Classic Christmas Light Installation in{" "}
             <span className="text-gradient-gold">Southern Ontario</span>
           </h1>
           <p className="text-xl text-white/70 mb-8 leading-relaxed max-w-3xl">
-            We handle everything — custom design, professional installation, mid-season maintenance, takedown, and organized storage. You do absolutely nothing except enjoy the most beautiful Christmas display your home has ever had.
+            The traditional look: warm white or multicolour C9 bulbs along the roofline, wrapped trees, garland and wreaths. We design, install, maintain, take down and store it all. Want lights that stay up all year? See our permanent LED systems, or do both.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white min-h-11 hover:scale-105 transition-transform"
@@ -143,6 +146,21 @@ export default function ChristmasLightInstallationPage() {
       </section>
 
       <Testimonials />
+      <section className="py-14" style={{ backgroundColor: "var(--night)" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
+          <div className="p-7 rounded-2xl border" style={{ backgroundColor: "rgba(201,168,76,0.06)", borderColor: "rgba(201,168,76,0.25)" }}>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--gold-bright)" }}>Classic lights</p>
+            <h3 className="font-display text-xl font-bold text-white mb-2">Up in November, down in January</h3>
+            <p className="text-sm text-white/60">Traditional C9 bulbs, tree wraps and garland. Fully managed each season, nothing to store.</p>
+          </div>
+          <Link href="/services/permanent-lighting" className="p-7 rounded-2xl border block hover:bg-white/[0.04] transition" style={{ backgroundColor: "rgba(178,34,34,0.08)", borderColor: "rgba(178,34,34,0.3)" }}>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--crimson-bright)" }}>Permanent lights</p>
+            <h3 className="font-display text-xl font-bold text-white mb-2">Installed once, any colour all year</h3>
+            <p className="text-sm text-white/60">App-controlled RGBW LEDs hidden in the roofline. Christmas, Halloween, Canada Day, game day. See permanent lighting →</p>
+          </Link>
+        </div>
+      </section>
+
       <CtaBand heading="Ready to Have the Best-Looking Street on the Block?" sub="Book your free quote today — crews are limited and we book up fast every October." />
       <FAQ faqs={faqs} title="Christmas Light Installation FAQ" />
       <Contact />
