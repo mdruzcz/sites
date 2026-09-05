@@ -11,6 +11,7 @@ export const revalidate = 3600;
 export const dynamicParams = false;
 
 type Props = { params: Promise<{ slug: string }> };
+const withBrand = (t: string) => `${t.replace(/\s*\|\s*Restore My Deck\s*$/i, "").trim()} | Restore My Deck`;
 
 export function generateStaticParams() {
   return [...getServices(), ...getCities(), ...getGuides()].map((x) => ({ slug: x.slug }));
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const svc = getService(slug);
   if (svc) {
     return {
-      title: { absolute: `${svc.metaTitle} | Restore My Deck` },
+      title: { absolute: withBrand(svc.metaTitle) },
       description: svc.metaDescription,
       alternates: { canonical: url },
       openGraph: { title: svc.metaTitle, description: svc.metaDescription, url, siteName: site.name, type: "website", images: [{ url: photo(servicePhoto(slug)).image }] },
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCity(slug);
   if (city) {
     return {
-      title: { absolute: `${city.metaTitle} | Restore My Deck` },
+      title: { absolute: withBrand(city.metaTitle) },
       description: city.metaDescription,
       alternates: { canonical: url },
       openGraph: { title: city.metaTitle, description: city.metaDescription, url, siteName: site.name, type: "website", images: [{ url: photo(cityPhoto(slug)).image }] },
@@ -42,11 +43,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuide(slug);
   if (guide) {
     return {
-      title: guide.metaTitle,
+      title: { absolute: withBrand(guide.metaTitle) },
       description: guide.metaDescription,
       alternates: { canonical: url },
-      openGraph: { type: "article", title: guide.metaTitle, description: guide.metaDescription, url, images: [photo(guidePhoto(slug)).image], publishedTime: guide.updated, modifiedTime: guide.updated },
-      twitter: { card: "summary_large_image", title: guide.metaTitle, description: guide.metaDescription },
+      openGraph: { type: "article", title: { absolute: withBrand(guide.metaTitle) }, description: guide.metaDescription, url, images: [photo(guidePhoto(slug)).image], publishedTime: guide.updated, modifiedTime: guide.updated },
+      twitter: { card: "summary_large_image", title: { absolute: withBrand(guide.metaTitle) }, description: guide.metaDescription },
     };
   }
   return { title: "Not found" };
