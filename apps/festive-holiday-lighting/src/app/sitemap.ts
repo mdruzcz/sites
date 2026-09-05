@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { cities, services } from "@/lib/site";
+import { ARTICLES } from "@/lib/resources";
 
 const BASE = "https://festiveholidaylighting.ca";
 
@@ -14,7 +15,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
+
+  const guideRoutes: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
+    url: `${BASE}/resources/${a.slug}`,
+    lastModified: new Date(a.updated),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${BASE}/services/${s.slug}`,
@@ -30,5 +39,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...cityRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...cityRoutes, ...guideRoutes];
 }

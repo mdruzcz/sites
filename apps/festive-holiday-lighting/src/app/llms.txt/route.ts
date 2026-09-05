@@ -1,4 +1,5 @@
 import { site, cities, services } from "@/lib/site";
+import { ARTICLES } from "@/lib/resources";
 
 export const revalidate = 3600;
 
@@ -28,6 +29,10 @@ export function GET() {
     `- FAQ: ${site.url}/faq`,
     `- About: ${site.url}/about`,
     `- Contact / free quote: ${site.url}/contact`,
+    `- Guides: ${site.url}/resources`,
+    "",
+    "## Guides",
+    ...ARTICLES.map((a) => `- ${a.title}: ${site.url}/resources/${a.slug}`),
     "",
   ];
   return new Response(lines.join("\n"), { headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" } });

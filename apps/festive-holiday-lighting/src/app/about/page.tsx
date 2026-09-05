@@ -5,133 +5,51 @@ import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
 import { Contact } from "@/components/Contact";
 import { CtaBand } from "@/components/CtaBand";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { AwardBadge } from "@/components/award-badge";
 import { site } from "@/lib/site";
-import { CheckIcon } from "@/components/icons";
-
-export const revalidate = 3600;
+import { PICKS } from "@/lib/photos";
 
 export const metadata: Metadata = {
-  title: "About Festive Holiday Lighting | Cameron Blancher, Southern Ontario",
-  description:
-    "Meet Cameron Blancher — 10+ years of holiday lighting experience, award-winning displays, and Southern Ontario's most trusted holiday lighting company. Family-owned, fully insured.",
-  alternates: { canonical: "https://festiveholidaylighting.ca/about" },
+  title: "About Festive Holiday Lighting, Hamilton, Ontario",
+  description: "Festive Holiday Lighting is a family-owned Hamilton company installing classic Christmas lights and permanent LED systems across Southern Ontario for over ten years. Meet founder Cameron Blancher.",
+  alternates: { canonical: `${site.url}/about` },
 };
 
 export default function AboutPage() {
   return (
     <>
       <NavBar />
-
-      <section className="pt-32 pb-20 lg:pt-36" style={{ background: "linear-gradient(135deg, #040408 0%, #0F0A14 50%, #1A0A0A 100%)" }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-xs text-white/40 mb-6" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-white/60">Home</Link>
-            <span>/</span>
-            <span className="text-white/60">About Us</span>
-          </nav>
-          <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--gold-bright)" }}>
-            Our Story
-          </p>
-          <h1 className="font-display text-4xl lg:text-6xl font-extrabold text-white mb-6">
-            Meet{" "}
-            <span className="text-gradient-gold">Cameron Blancher</span>
-            <br />& Festive Holiday Lighting
-          </h1>
-          <p className="text-xl text-white/70 leading-relaxed">
-            A family-run business with over a decade of experience, an award-winning portfolio, and a simple promise: your holidays should be magical — and getting there should be completely stress-free.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--midnight)" }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-            <div>
-              <h2 className="font-display text-3xl font-extrabold text-white mb-5">A Decade of Illuminating Experience</h2>
-              <p className="text-lg text-white/65 leading-relaxed mb-5">
-                Cameron Blancher founded Festive Holiday Lighting over 10 years ago out of a genuine passion for the craft. What started as a love for transforming homes during the holiday season grew into one of Southern Ontario's most trusted holiday lighting companies.
-              </p>
-              <p className="text-lg text-white/65 leading-relaxed mb-5">
-                With hands-on expertise in high ladders, JLG and Genie boom trucks, and aerial lifts, Cameron has tackled projects of every scale — from charming bungalows to multi-building commercial campuses. His work has been recognized with awards for Christmas tree wrapping and display design.
-              </p>
-              <p className="text-lg text-white/65 leading-relaxed">
-                Today, Cameron leads every crew personally, maintaining the hands-on quality and attention to detail that has earned Festive Holiday Lighting its 5-star reputation across Southern Ontario.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="p-6 rounded-2xl border"
-                style={{ background: "linear-gradient(135deg, rgba(178,34,34,0.1), rgba(201,168,76,0.08))", borderColor: "rgba(201,168,76,0.2)" }}>
-                <h3 className="font-display font-bold text-white text-lg mb-4">By the Numbers</h3>
-                {[
-                  { number: "10+", label: "Years in business" },
-                  { number: "500+", label: "Homes & businesses lit" },
-                  { number: "5.0★", label: "Average client rating" },
-                  { number: "$5M", label: "Liability coverage" },
-                  { number: "10", label: "Cities served" },
-                ].map(s => (
-                  <div key={s.label} className="flex items-center justify-between py-2 border-b border-white/10 last:border-0">
-                    <span className="text-sm text-white/65">{s.label}</span>
-                    <span className="font-display font-bold text-white">{s.number}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-            {[
-              {
-                icon: "🏆",
-                title: "Award-Winning Displays",
-                body: "Cameron's clients have won awards for their Christmas tree wraps — a testament to the creativity and craftsmanship that goes into every Festive installation.",
-              },
-              {
-                icon: "🔩",
-                title: "Expert Equipment Operator",
-                body: "Certified to operate JLG and Genie boom trucks and boom lifts. No roofline is too high, no tree too large, no commercial property too complex.",
-              },
-              {
-                icon: "❤️",
-                title: "Family-Run Values",
-                body: "Every client is treated like a neighbour. Cameron leads every job personally and takes as much pride in your home's display as if it were his own.",
-              },
-              {
-                icon: "🛡️",
-                title: "Safety First, Always",
-                body: "WSIB compliant, $5M liability insured, and strict safety protocols on every project. Fully protected — for you and for our crew.",
-              },
-              {
-                icon: "💡",
-                title: "Passionate About the Craft",
-                body: "10+ years of refining technique, staying current with the latest LED technology, and pushing display design further every season.",
-              },
-              {
-                icon: "🌿",
-                title: "Energy-Efficient Systems",
-                body: "We use only commercial-grade LED products that use 80% less energy than incandescent lights — bright, beautiful, and better for your electricity bill.",
-              },
-            ].map(v => (
-              <div key={v.title} className="p-7 rounded-2xl border"
-                style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}>
-                <div className="text-3xl mb-4">{v.icon}</div>
-                <h3 className="font-display font-bold text-white text-base mb-2">{v.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed">{v.body}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-extrabold text-white mb-4">Ready to Work Together?</h2>
-            <p className="text-lg text-white/60 mb-8">Get your free, no-obligation quote today. Cameron personally reviews every request.</p>
-            <a href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white min-h-11 hover:scale-105 transition-transform"
-              style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))", boxShadow: "0 8px 32px rgba(178,34,34,0.4)" }}>
-              Get a Free Quote
-            </a>
+      <PageHero photo={PICKS.heroAbout} eyebrow="About us" title="A Hamilton crew that treats every roofline like their own." intro="Founded by Cameron Blancher, family owned, ten-plus years of lights across Southern Ontario." crumbs={[{ label: "About" }]} compact />
+      <section className="bg-[var(--snow)]">
+        <div className="shell section grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <article className="prose-clean max-w-[66ch]">
+            <h2>How it started</h2>
+            <p>Cameron hung his own lights for years before neighbours started asking who did them. The answer became Festive: a small Hamilton crew doing classic Christmas installs properly, with commercial-grade product, real design and a maintenance visit built into every job.</p>
+            <h2>What we do now</h2>
+            <p>Two service lines. Classic seasonal lighting, where we design, install, maintain, take down and store everything each year. And permanent LED roofline systems, installed once and controlled from your phone for every holiday. On the commercial side we light storefronts, plazas, hotels, municipal streetscapes and lobbies, with boom trucks for the tall work.</p>
+            <h2>How we work</h2>
+            <p>Every crew is WSIB compliant and covered by $5M liability insurance. Quotes are free, itemized and back within a day. We answer the phone ourselves. If a section goes dark mid-season, we come back.</p>
+            <div className="not-prose mt-6"><AwardBadge /></div>
+          </article>
+          <div className="grid grid-cols-2 gap-4">
+            <Photo name={PICKS.install1} ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
+            <Photo name={PICKS.heroClassic} ratio="aspect-[4/5]" rounded="rounded-2xl" className="mt-8" sizes="300px" />
+            <Photo name={PICKS.church} ratio="aspect-[4/5]" rounded="rounded-2xl" className="-mt-8" sizes="300px" />
+            <Photo name={PICKS.install2} ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
           </div>
         </div>
       </section>
-
+      <section className="bg-[var(--paper)]">
+        <div className="shell section grid gap-5 md:grid-cols-4">
+          {[["10+", "years lighting Southern Ontario"], ["$5M", "liability insurance on every job"], ["5.0", "star rating across 47+ reviews"], ["2026", "Service Excellence Award, Hamilton"]].map(([n, l]) => (
+            <div key={n} className="card p-6 text-center"><p className="font-display text-4xl text-[var(--candy)]">{n}</p><p className="mt-2 text-sm text-[var(--ink-soft)]">{l}</p></div>
+          ))}
+        </div>
+        <div className="shell pb-16"><div className="flex flex-wrap gap-3"><Link href="/services" className="btn-candy">See our services</Link><Link href="/gallery" className="btn-outline">Gallery</Link></div></div>
+      </section>
+      <CtaBand />
       <Contact />
       <Footer />
       <CallNowFab />

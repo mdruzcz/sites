@@ -1,96 +1,37 @@
 import { StarIcon } from "./icons";
 
 const testimonials = [
-  {
-    name: "Sarah M.",
-    location: "Ancaster, ON",
-    service: "Christmas Lighting",
-    quote: "Absolutely stunning! Cameron and his team transformed our home. We had neighbours knocking on our door asking for their number. The whole process was so easy — they showed up, did everything, and we just enjoyed the most beautiful Christmas lights we've ever had.",
-    stars: 5,
-  },
-  {
-    name: "David K.",
-    location: "Burlington, ON",
-    service: "Permanent Lighting",
-    quote: "We went with the permanent system and couldn't be happier. Christmas, Halloween, our daughter's birthday — we just open the app and change the colours. Best home upgrade we've done in years. The install team was incredibly professional and cleaned up perfectly.",
-    stars: 5,
-  },
-  {
-    name: "The Rossi Family",
-    location: "Hamilton, ON",
-    service: "Christmas Lighting",
-    quote: "This is our third year with Festive Holiday Lighting and we keep coming back. They always remember our preferences, arrive on time, and the display gets better every year. The mid-season check they do is such a nice touch — never had a single light go out.",
-    stars: 5,
-  },
-  {
-    name: "Mike T.",
-    location: "Oakville, ON",
-    service: "Commercial Lighting",
-    quote: "We hired Festive to light up our plaza for the holiday season. Foot traffic was noticeably up and we got so many compliments from tenants. The commercial team was professional, fast, and the lighting was exactly what we envisioned. Will absolutely book again.",
-    stars: 5,
-  },
-  {
-    name: "Jennifer & Paul W.",
-    location: "Mississauga, ON",
-    service: "Christmas Lighting",
-    quote: "I was nervous about hiring someone to put up lights — felt like something we should do ourselves. But wow, was I wrong. The design they came up with was 10x better than anything we'd done. The takedown and storage was the real seller — no more boxes of tangled lights!",
-    stars: 5,
-  },
+  { name: "Sarah M.", location: "Ancaster, ON", service: "Classic lights", quote: "Cameron and his team transformed our home. Neighbours knocked on the door asking for their number. They showed up, did everything, and we just enjoyed it." },
+  { name: "David K.", location: "Burlington, ON", service: "Permanent lights", quote: "Christmas, Halloween, our daughter's birthday. We open the app and change the colours. Best home upgrade we've done in years." },
+  { name: "The Rossi Family", location: "Hamilton, ON", service: "Classic lights", quote: "Third year with Festive. They remember our preferences, arrive on time, and the mid-season check means we've never had a single light out." },
+  { name: "Mike T.", location: "Oakville, ON", service: "Commercial", quote: "Foot traffic was noticeably up and tenants kept complimenting the plaza. Professional, fast, exactly what we envisioned." },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--night-deep)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--gold-bright)" }}>
-            What Clients Say
-          </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
-            Real Homes. Real Results.
-            <br />
-            <span className="text-gradient-gold">Real Happy Clients.</span>
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="p-7 rounded-2xl border flex flex-col"
-              style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              <div className="flex mb-4">
-                {Array.from({ length: t.stars }).map((_, i) => (
-                  <StarIcon key={i} className="w-4 h-4 text-[var(--gold-bright)]" filled />
-                ))}
-              </div>
-              <p className="text-sm text-white/70 leading-relaxed flex-1 mb-5 italic">"{t.quote}"</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-white/45">{t.location}</p>
-                </div>
-                <span
-                  className="px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider"
-                  style={{ backgroundColor: "rgba(201,168,76,0.12)", color: "var(--gold-bright)" }}
-                >
-                  {t.service}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div
-          className="mt-10 text-center py-6 px-4 rounded-2xl border"
-          style={{ borderColor: "rgba(201,168,76,0.15)", backgroundColor: "rgba(201,168,76,0.05)" }}
-        >
-          <div className="flex justify-center mb-2">
-            {[1,2,3,4,5].map(i => <StarIcon key={i} className="w-5 h-5 text-[var(--gold-bright)]" filled />)}
+    <section className="bg-[var(--snow)]">
+      <div className="shell section">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow-pill">What clients say</p>
+            <h2 className="font-display h2-fluid mt-4">Real homes. Real happy clients.</h2>
           </div>
-          <p className="text-lg font-bold text-white">5.0 Stars · 47+ Reviews</p>
-          <p className="text-sm text-white/55">Southern Ontario's most trusted holiday lighting company</p>
+          <div className="card flex items-center gap-3 px-5 py-3">
+            <span className="flex text-[var(--gold)]">{[1, 2, 3, 4, 5].map((i) => <StarIcon key={i} className="w-4 h-4" filled />)}</span>
+            <span className="text-sm"><span className="font-bold">5.0</span> · 47+ reviews</span>
+          </div>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {testimonials.map((t) => (
+            <figure key={t.name} className="card flex flex-col p-6">
+              <span className="flex text-[var(--gold)]">{[1, 2, 3, 4, 5].map((i) => <StarIcon key={i} className="w-4 h-4" filled />)}</span>
+              <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-[var(--ink-soft)]">“{t.quote}”</blockquote>
+              <figcaption className="mt-4 flex items-center justify-between text-xs">
+                <span><span className="block font-bold text-[var(--ink)]">{t.name}</span><span className="text-[var(--muted)]">{t.location}</span></span>
+                <span className="rounded-full bg-[var(--pine-soft)] px-2.5 py-1 font-bold uppercase tracking-wider text-[var(--pine-deep)]">{t.service}</span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

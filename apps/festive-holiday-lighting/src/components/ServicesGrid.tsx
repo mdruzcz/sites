@@ -1,68 +1,55 @@
 import Link from "next/link";
 import { services } from "@/lib/site";
+import { PICKS } from "@/lib/photos";
+import { Photo } from "./Photo";
 import { ArrowRightIcon } from "./icons";
 
+const SERVICE_PHOTO: Record<string, string> = {
+  "christmas-light-installation": PICKS.heroClassic,
+  "permanent-lighting": PICKS.heroPermanent,
+  "residential-holiday-lighting": PICKS.heroResidential,
+  "commercial-holiday-lighting": PICKS.heroCommercial,
+  "municipal-bia-lighting": PICKS.heroMunicipal,
+  "tree-lighting": PICKS.heroTree,
+  "interior-holiday-decorating": PICKS.heroInterior,
+};
+export const servicePhoto = (slug: string) => SERVICE_PHOTO[slug] ?? PICKS.heroHome;
+
 export function ServicesGrid() {
+  const [classic, permanent, ...rest] = services;
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--midnight)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--gold-bright)" }}>
-            What We Do
-          </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
-            Full-Service Holiday <span className="text-gradient-gold">Lighting Solutions</span>
-          </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            From one-time seasonal installs to permanent year-round systems — we handle it all for homes and businesses across Southern Ontario.
-          </p>
+    <section className="bg-[var(--snow)]">
+      <div className="shell section">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow-pill pine">Two ways to light your home</p>
+          <h2 className="font-display h2-fluid mt-4">Up for the season, or up for good.</h2>
+          <p className="lead mt-4 text-[var(--ink-soft)]">Most families pick one. Plenty do both: permanent lights for every day of the year, and a classic program for the full Christmas look.</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((svc) => (
-            <Link
-              key={svc.slug}
-              href={`/services/${svc.slug}`}
-              className="group relative rounded-2xl p-7 border transition-all hover:border-[var(--crimson)]/40 hover:bg-white/[0.03]"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.03)",
-                borderColor: "rgba(255,255,255,0.08)",
-              }}
-            >
-              <div className="text-3xl mb-4">{svc.icon}</div>
-              <h3 className="font-display text-lg font-bold text-white mb-2 group-hover:text-[var(--gold-bright)] transition">
-                {svc.name}
-              </h3>
-              <p className="text-sm text-white/55 mb-4 leading-relaxed">{svc.tagline}</p>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[var(--crimson-bright)] group-hover:text-[var(--gold-bright)] transition">
-                Learn more <ArrowRightIcon className="w-3.5 h-3.5" />
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {[classic, permanent].map((svc) => (
+            <Link key={svc.slug} href={`/services/${svc.slug}`} className="card card-lift group overflow-hidden">
+              <Photo name={servicePhoto(svc.slug)} ratio="aspect-[16/9]" sizes="(max-width: 768px) 100vw, 580px" className="transition duration-500 group-hover:scale-[1.03]" />
+              <div className="p-6 md:p-7">
+                <p className={`eyebrow-pill ${svc.slug === "permanent-lighting" ? "candy" : "pine"}`}>{svc.slug === "permanent-lighting" ? "Year-round" : "Seasonal"}</p>
+                <h3 className="font-display mt-3 text-2xl group-hover:text-[var(--candy)]">{svc.name}</h3>
+                <p className="mt-2 text-[var(--ink-soft)]">{svc.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 font-bold text-[var(--candy-deep)]">Learn more <ArrowRightIcon className="w-4 h-4" /></span>
               </div>
-
-              {/* Special badge for permanent lighting */}
-              {svc.slug === "permanent-lighting" && (
-                <span
-                  className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider"
-                  style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))", color: "#fff" }}
-                >
-                  Year-Round
-                </span>
-              )}
             </Link>
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105 min-h-11"
-            style={{
-              background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))",
-              boxShadow: "0 8px 32px rgba(178,34,34,0.4)",
-            }}
-          >
-            Get a Free Quote for Any Service
-            <ArrowRightIcon className="w-4 h-4" />
-          </a>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {rest.map((svc) => (
+            <Link key={svc.slug} href={`/services/${svc.slug}`} className="card card-lift group overflow-hidden">
+              <Photo name={servicePhoto(svc.slug)} ratio="aspect-[4/3]" sizes="(max-width: 640px) 100vw, 240px" className="transition duration-500 group-hover:scale-[1.04]" />
+              <div className="p-4">
+                <h3 className="font-display text-base leading-snug group-hover:text-[var(--candy)]">{svc.name}</h3>
+                <p className="mt-1 text-xs text-[var(--muted)]">{svc.tagline}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

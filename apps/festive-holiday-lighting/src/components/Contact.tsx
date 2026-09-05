@@ -106,87 +106,76 @@ export function Contact({ cityName }: { cityName?: string }) {
     }
   };
 
-  const inputClass = "w-full px-4 py-3 rounded-lg border text-sm outline-none focus:ring-2 focus:ring-[var(--crimson)] transition bg-white/5 border-white/15 text-white placeholder-white/40";
-  const labelClass = "block text-xs font-semibold uppercase tracking-wider mb-1.5 text-white/65";
+  const inputClass = "input";
+  const labelClass = "label";
 
   return (
     <section
       id="contact"
-      className="relative py-20 lg:py-28"
-      style={{ backgroundColor: "var(--night-deep)" }}
+      className="relative py-20 lg:py-28 bg-[var(--paper)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left column */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--crimson-bright)" }}>
-              Get In Touch
-            </p>
-            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-              Request Your{" "}
-              <span className="text-gradient-gold">Free Quote</span>
-            </h2>
-            <p className="text-lg text-white/65 mb-10 leading-relaxed">
+            <p className="eyebrow-pill candy">Get in touch</p>
+            <h2 className="font-display h2-fluid mt-4 mb-5">Request your <span className="text-candy">free quote</span></h2>
+            <p className="lead text-[var(--ink-soft)] mb-10">
               Ready to light up your home or business? Fill out the form and we'll be back in touch within 24 hours with your free, no-obligation quote. Attach a photo of your home or business and we can often rough in a quote before we even visit.
             </p>
 
             <div className="space-y-5 mb-8">
               <a href={site.phoneHref} className="flex items-center gap-4 group min-h-11">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[var(--candy)]">
                   <PhoneIcon className="text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider mb-0.5 text-white/45">Phone</p>
-                  <p className="font-semibold text-white group-hover:text-[var(--gold-bright)] transition">{site.phone}</p>
+                  <p className="text-xs uppercase tracking-wider mb-0.5 text-[var(--muted)]">Phone</p>
+                  <p className="font-bold text-[var(--ink)] group-hover:text-[var(--candy)] transition">{site.phone}</p>
                 </div>
               </a>
 
 
               <div className="flex items-center gap-4 min-h-11">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[var(--pine)]">
                   <MapPinIcon className="text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider mb-0.5 text-white/45">Service Area</p>
-                  <p className="font-semibold text-white">Hamilton · Burlington · Oakville · and more</p>
+                  <p className="text-xs uppercase tracking-wider mb-0.5 text-[var(--muted)]">Service area</p>
+                  <p className="font-bold text-[var(--ink)]">Hamilton · Burlington · Oakville · Niagara · and more</p>
                 </div>
               </div>
             </div>
 
-            <div className="p-5 rounded-xl border" style={{ borderColor: "rgba(201,168,76,0.2)", backgroundColor: "rgba(201,168,76,0.05)" }}>
-              <p className="font-semibold text-white mb-1">Hours of Operation</p>
-              <p className="text-sm text-white/65">Mon – Fri: 8:00 AM – 6:00 PM</p>
-              <p className="text-sm text-white/65">Extended hours during holiday season</p>
+            <div className="card p-5">
+              <p className="font-bold mb-1">Hours of operation</p>
+              <p className="text-sm text-[var(--ink-soft)]">Mon – Fri: 8:00 AM – 6:00 PM</p>
+              <p className="text-sm text-[var(--ink-soft)]">Extended hours during the holiday season</p>
             </div>
           </div>
 
           {/* Form */}
-          <div className="rounded-2xl p-8 shadow-2xl border"
-            style={{ backgroundColor: "rgba(20,10,10,0.7)", borderColor: "rgba(178,34,34,0.15)" }}>
+          <div className="card p-6 md:p-8">
             {status === "success" ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 crimson-glow"
-                  style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))" }}>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 bg-[var(--pine)]">
                   <CheckIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-display text-2xl font-extrabold text-white mb-2">Quote Request Sent!</h3>
-                <p className="text-sm text-white/65 mb-6 max-w-sm">
+                <h3 className="font-display text-2xl mb-2">Quote request sent</h3>
+                <p className="text-sm text-[var(--ink-soft)] mb-6 max-w-sm">
                   Thanks! Cameron and the team will be in touch within 24 hours with your free, no-obligation quote.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="px-6 py-2.5 rounded-full text-sm font-semibold text-white transition"
-                  style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))" }}
+                  className="btn-candy btn-sm"
                 >
                   Submit Another
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="font-display text-xl font-bold text-white mb-1">Tell us about your project</h3>
-                <p className="text-sm text-white/55 mb-4">We respond within 24 hours — usually same day.</p>
+                <h3 className="font-display text-xl mb-1">Tell us about your project</h3>
+                <p className="text-sm text-[var(--muted)] mb-4">We respond within 24 hours, usually the same day.</p>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -222,8 +211,8 @@ export function Contact({ cityName }: { cityName?: string }) {
                   <div>
                     <label className={labelClass}>Property Type *</label>
                     <select name="property_type" required value={form.property_type} onChange={handleChange} className={inputClass}>
-                      <option value="" className="bg-[#1A0A0A] text-white">Select…</option>
-                      {propertyTypes.map(p => <option key={p} value={p} className="bg-[#1A0A0A] text-white">{p}</option>)}
+                      <option value="">Select…</option>
+                      {propertyTypes.map(p => <option key={p} value={p}>{p}</option>)}
                     </select>
                   </div>
                   <div>
@@ -237,8 +226,8 @@ export function Contact({ cityName }: { cityName?: string }) {
                 <div>
                   <label className={labelClass}>Service Interested In *</label>
                   <select name="service" required value={form.service} onChange={handleChange} className={inputClass}>
-                    <option value="" className="bg-[#1A0A0A] text-white">Select a service…</option>
-                    {serviceTypes.map(s => <option key={s} value={s} className="bg-[#1A0A0A] text-white">{s}</option>)}
+                    <option value="">Select a service…</option>
+                    {serviceTypes.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
 
@@ -247,8 +236,7 @@ export function Contact({ cityName }: { cityName?: string }) {
                     Photos of your home/business <span className="opacity-50 normal-case font-normal">(optional · up to 5)</span>
                   </label>
                   <div
-                    className="rounded-lg border border-dashed p-4 cursor-pointer hover:border-[var(--crimson)]/60 transition"
-                    style={{ borderColor: "rgba(255,255,255,0.2)" }}
+                    className="rounded-xl border-2 border-dashed border-[var(--line-strong)] bg-[var(--snow)] p-4 cursor-pointer hover:border-[var(--candy)] transition"
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <input ref={fileInputRef} type="file" name="photos"
@@ -256,19 +244,19 @@ export function Contact({ cityName }: { cityName?: string }) {
                       multiple onChange={handleFileChange} className="hidden" />
                     {files.length === 0 ? (
                       <div className="text-center py-3">
-                        <svg className="w-7 h-7 mx-auto mb-2 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-7 h-7 mx-auto mb-2 text-[var(--muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <p className="text-sm text-white/70"><span className="font-semibold text-[var(--crimson-bright)]">Attach photos</span> — helps us quote faster</p>
-                        <p className="text-xs text-white/40 mt-1">JPG, PNG, WebP — max {MAX_FILE_SIZE_MB} MB each</p>
+                        <p className="text-sm text-[var(--ink-soft)]"><span className="font-bold text-[var(--candy)]">Attach photos</span> so we can quote faster</p>
+                        <p className="text-xs text-[var(--muted)] mt-1">JPG, PNG, WebP — max {MAX_FILE_SIZE_MB} MB each</p>
                       </div>
                     ) : (
                       <div className="space-y-2" onClick={e => e.stopPropagation()}>
                         {files.map((f, i) => (
-                          <div key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-md bg-white/5 px-3 py-2 text-sm">
-                            <span className="truncate text-white/80">{f.name}</span>
+                          <div key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-md bg-[var(--paper)] px-3 py-2 text-sm">
+                            <span className="truncate text-[var(--ink-soft)]">{f.name}</span>
                             <button type="button" onClick={() => removeFile(i)}
-                              className="text-white/50 hover:text-red-400 transition flex-shrink-0" aria-label={`Remove ${f.name}`}>
+                              className="text-[var(--muted)] hover:text-[var(--candy)] transition flex-shrink-0" aria-label={`Remove ${f.name}`}>
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                               </svg>
@@ -296,24 +284,21 @@ export function Contact({ cityName }: { cityName?: string }) {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                  <p className="text-sm text-[var(--candy-deep)] bg-[var(--candy-soft)] rounded-lg p-3">
                     {errorMsg || "Something went wrong. Please call us directly."}
                   </p>
                 )}
 
                 <Turnstile
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+                  options={{ theme: "light", size: "flexible" }}
                   onSuccess={setToken}
                 />
 
                 <button
                   type="submit"
                   disabled={status === "sending" || !token}
-                  className="w-full py-4 rounded-full font-semibold text-white transition-all hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed min-h-11 flex items-center justify-center gap-2"
-                  style={{
-                    background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))",
-                    boxShadow: "0 8px 32px rgba(178,34,34,0.4)",
-                  }}
+                  className="btn-candy w-full disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status === "sending" ? (
                     <>
@@ -325,7 +310,7 @@ export function Contact({ cityName }: { cityName?: string }) {
                     </>
                   ) : "Send My Free Quote Request"}
                 </button>
-                <p className="text-xs text-center text-white/45">No obligation. We respond within 24 hours.</p>
+                <p className="text-xs text-center text-[var(--muted)]">No obligation. We respond within 24 hours.</p>
               </form>
             )}
           </div>

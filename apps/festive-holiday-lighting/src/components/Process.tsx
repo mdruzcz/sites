@@ -1,84 +1,28 @@
 const steps = [
-  {
-    number: "01",
-    title: "Free Quote & Design",
-    body: "We talk with you about your vision, measure your home or business, and provide a detailed quote. No obligation, no pressure. Most quotes are ready within 24 hours.",
-  },
-  {
-    number: "02",
-    title: "Professional Installation",
-    body: "Our insured, WSIB-compliant crew arrives on schedule with all materials. We install safely and efficiently — most residential installs are done in a day.",
-  },
-  {
-    number: "03",
-    title: "Mid-Season Maintenance",
-    body: "We check your display mid-season to fix any outages or adjustments. Your lights stay bright and beautiful from the first switch-on to New Year's.",
-  },
-  {
-    number: "04",
-    title: "Takedown & Storage",
-    body: "After the season, we carefully remove and store everything — labelled and organized for next year. You do nothing except enjoy the holidays.",
-  },
+  { n: "1", title: "Free quote", body: "Send a photo of the house or book a quick site visit. You get a clear, itemized price within 24 hours." },
+  { n: "2", title: "Design", body: "We match bulb style, colour and coverage to your architecture. Roofline, trees, garland, wreaths, or all of it." },
+  { n: "3", title: "Install day", body: "Our insured crew arrives with everything. Most homes are done in one visit, usually while you are at work." },
+  { n: "4", title: "Enjoy, then we take it down", body: "Mid-season check included. After January 6 we remove, label and store it all for next year." },
 ];
 
 export function Process() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--midnight)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--gold-bright)" }}>
-            How It Works
-          </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
-            Simple Process,{" "}
-            <span className="text-gradient-gold">Stunning Results</span>
-          </h2>
-          <p className="text-lg text-white/60 max-w-xl mx-auto">
-            Four steps from first call to fully lit. We handle every detail so you can focus on the holidays.
-          </p>
+    <section className="bg-[var(--paper)]">
+      <div className="shell section">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow-pill candy">How it works</p>
+          <h2 className="font-display h2-fluid mt-4">Four steps. Zero ladders for you.</h2>
         </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connecting line (desktop) */}
-          <div
-            className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px"
-            style={{ background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent)" }}
-          />
-
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative text-center px-2">
-              <div
-                className="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center font-display text-xl font-extrabold relative z-10"
-                style={{
-                  background: i % 2 === 0
-                    ? "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))"
-                    : "linear-gradient(135deg, var(--gold-bright), var(--gold))",
-                  color: i % 2 === 0 ? "#fff" : "#0A0A14",
-                  boxShadow: i % 2 === 0
-                    ? "0 4px 24px rgba(178,34,34,0.5)"
-                    : "0 4px 24px rgba(201,168,76,0.4)",
-                }}
-              >
-                {step.number}
-              </div>
-              <h3 className="font-display font-bold text-white text-base mb-2">{step.title}</h3>
-              <p className="text-sm text-white/55 leading-relaxed">{step.body}</p>
-            </div>
+        <ol className="mt-10 grid gap-5 md:grid-cols-4">
+          {steps.map((s) => (
+            <li key={s.n} className="card relative p-6 pt-8">
+              <span className="font-display absolute -top-5 left-6 grid size-10 place-items-center rounded-full bg-[var(--candy)] text-lg text-white shadow-[var(--shadow-candy)]">{s.n}</span>
+              <h3 className="font-display text-lg">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{s.body}</p>
+            </li>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105 min-h-11"
-            style={{
-              background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))",
-              boxShadow: "0 8px 32px rgba(178,34,34,0.4)",
-            }}
-          >
-            Start with a Free Quote
-          </a>
-        </div>
+        </ol>
+        <div className="bulb-string mt-12" aria-hidden>{Array.from({ length: 15 }).map((_, i) => <span key={i} />)}</div>
       </div>
     </section>
   );

@@ -1,92 +1,38 @@
-import { site } from "@/lib/site";
-import { CheckIcon, ShieldIcon } from "./icons";
+import { PICKS } from "@/lib/photos";
+import { Photo } from "./Photo";
 
 const reasons = [
-  {
-    icon: "🛡️",
-    title: "No Risk — We Handle Everything",
-    body: "Forget tangled lights, icy ladders, and blown fuses. We design, install, maintain, and remove your seasonal display. You keep two feet on the ground.",
-  },
-  {
-    icon: "🏆",
-    title: "Award-Winning Displays",
-    body: "Cameron Blancher's customers have won awards for their Christmas tree wraps. When quality matters, experience matters — and we have 10+ years of it.",
-  },
-  {
-    icon: "🚛",
-    title: "Commercial-Grade Equipment",
-    body: "We use high ladders, JLG and Genie boom trucks, and boom lifts. No job is too tall, too complex, or too large for our fully equipped crews.",
-  },
-  {
-    icon: "📋",
-    title: "All Materials Supplied",
-    body: "We bring everything — lights, clips, extension cords, timers. You supply nothing. We install the highest-quality LED products that outlast anything from the hardware store.",
-  },
-  {
-    icon: "🔧",
-    title: "Mid-Season Maintenance",
-    body: "We check on your display mid-season to fix any outages. If a bulb or section goes dark, we're back on-site. Your lights stay bright from Remembrance Day to Epiphany.",
-  },
-  {
-    icon: "📦",
-    title: "Takedown & Organized Storage",
-    body: "After the holidays, we carefully take everything down and store it properly — labelled and ready for next year. No more tangled mess in the garage.",
-  },
+  { icon: "🎁", title: "We bring everything", body: "Commercial-grade LED lights, clips, cords and timers. You buy nothing and store nothing. It all comes back to our warehouse in January." },
+  { icon: "🔧", title: "Mid-season check included", body: "A crew visits every display partway through the season. If a section goes dark, we fix it, usually within two business days." },
+  { icon: "🚛", title: "Boom trucks for tall work", body: "JLG and Genie lifts for two-storey rooflines, big spruces and commercial buildings. No roofline is too high." },
+  { icon: "🛡️", title: "$5M insured, WSIB crews", body: "Every technician is covered on your property from the first ladder to the last box. Certificates on request for commercial and municipal work." },
+  { icon: "🏆", title: "Award-winning displays", body: "Ten-plus years of rooflines, tree wraps and storefronts across Southern Ontario, and a 2026 Service Excellence Award for Hamilton." },
+  { icon: "🏠", title: "Family owned, local", body: "Cameron Blancher answers the phone. Same crew year after year, and they remember how you like your lights." },
 ];
 
 export function WhyChoose() {
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: "var(--night-deep)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: "var(--crimson-bright)" }}>
-            Why Choose Festive
-          </p>
-          <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
-            The Smarter Way to{" "}
-            <span className="text-gradient-gold">Light Up the Holidays</span>
-          </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            {site.yearsExperience}+ years of experience, {site.googleRating}-star reviews, and a founder who treats every install like it's his own home.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map((r) => (
-            <div
-              key={r.title}
-              className="p-7 rounded-2xl border"
-              style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              <div className="text-3xl mb-4">{r.icon}</div>
-              <h3 className="font-display text-base font-bold text-white mb-2">{r.title}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{r.body}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Social proof strip */}
-        <div
-          className="mt-12 p-6 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-6"
-          style={{
-            background: "linear-gradient(135deg, rgba(178,34,34,0.1) 0%, rgba(201,168,76,0.08) 100%)",
-            borderColor: "rgba(201,168,76,0.2)",
-          }}
-        >
-          <div className="flex items-center gap-4">
-            <ShieldIcon className="w-10 h-10 text-[var(--gold-bright)] flex-shrink-0" />
-            <div>
-              <p className="font-display font-bold text-white text-lg">Fully Insured · WSIB Compliant · Family Owned</p>
-              <p className="text-sm text-white/60">Peace of mind on every project — Cameron Blancher leads every crew personally.</p>
+    <section className="bg-[var(--snow)]">
+      <div className="shell section">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-center">
+          <div>
+            <p className="eyebrow-pill">Why Festive</p>
+            <h2 className="font-display h2-fluid mt-4">Hire the crew that treats your house like their own.</h2>
+            <p className="lead mt-4 text-[var(--ink-soft)]">Cameron started Festive after one too many neighbours asked who did his lights. Ten years later the answer is a crew, two boom trucks and a warehouse full of well-labelled bins.</p>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <Photo name={PICKS.install1} ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="260px" />
+              <Photo name={PICKS.install2} ratio="aspect-[4/5]" rounded="rounded-2xl" className="mt-6" sizes="260px" />
             </div>
           </div>
-          <a
-            href="#contact"
-            className="flex-shrink-0 px-6 py-3 rounded-full font-semibold text-white text-sm transition-all hover:scale-105 min-h-11 flex items-center"
-            style={{ background: "linear-gradient(135deg, var(--crimson-bright), var(--crimson-deep))" }}
-          >
-            Book Your Install
-          </a>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {reasons.map((r) => (
+              <div key={r.title} className="card p-6">
+                <span className="grid size-11 place-items-center rounded-xl bg-[var(--paper)] text-xl">{r.icon}</span>
+                <h3 className="font-display mt-4 text-lg">{r.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{r.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

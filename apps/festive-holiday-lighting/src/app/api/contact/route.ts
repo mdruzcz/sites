@@ -123,7 +123,6 @@ export async function POST(req: NextRequest) {
 
   const errors: string[] = [];
   if (lead.first_name.length < 2) errors.push("First name is required.");
-  if (lead.last_name.length < 2) errors.push("Last name is required.");
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(lead.email)) errors.push("Valid email is required.");
   if (lead.phone.length < 7) errors.push("Phone is required.");
   if (!lead.service) errors.push("Please select a service.");
