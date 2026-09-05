@@ -1,71 +1,93 @@
 import Link from "next/link";
+import { Logo } from "@/components/logo";
+
+const COLS: { title: string; links: { label: string; href: string }[] }[] = [
+  {
+    title: "Shop",
+    links: [
+      { label: "Permanent lighting kits", href: "/diy-kits" },
+      { label: "Lights", href: "/product-category/lights" },
+      { label: "Controllers", href: "/product-category/controllers" },
+      { label: "Power supplies", href: "/product-category/power-supplies" },
+      { label: "Connectors & cables", href: "/product-category/connectors" },
+      { label: "Track & hardware", href: "/product-category/hardware" },
+      { label: "All products", href: "/shop" }
+    ]
+  },
+  {
+    title: "Learn",
+    links: [
+      { label: "How it works", href: "/how-it-works" },
+      { label: "Guides & how-tos", href: "/resources" },
+      { label: "Kit vs installed", href: "/compare" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "FAQ", href: "/faq" }
+    ]
+  },
+  {
+    title: "Support",
+    links: [
+      { label: "Contact us", href: "/contact-us" },
+      { label: "Track your order", href: "/track-order" },
+      { label: "Shipping & returns", href: "/shipping-returns" },
+      { label: "5-year warranty", href: "/warranty" },
+      { label: "Your account", href: "/account" }
+    ]
+  },
+  {
+    title: "Pros",
+    links: [
+      { label: "Professional installation", href: "/installation" },
+      { label: "Find an installer", href: "/installers" },
+      { label: "Installer program", href: "/professional-installer" },
+      { label: "About", href: "/about" }
+    ]
+  }
+];
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-[var(--color-border)] bg-[var(--color-brand-deep)] text-slate-300">
-      <div className="bg-[var(--color-brand)] py-3">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 text-center text-xs text-white md:grid-cols-4">
-          <span>🚚 Free shipping over $500</span>
-          <span>↩️ 30-day returns</span>
-          <span>🛡️ 5-year LED warranty</span>
-          <span>🍁 Ships from London, ON</span>
+    <footer className="mt-24 bg-[var(--color-ink)] text-white/80">
+      <div className="border-b border-white/10 bg-[var(--color-ink-deep)]">
+        <div className="shell grid grid-cols-2 gap-3 py-4 text-center text-xs text-white/80 md:grid-cols-4">
+          <span>12V RGBW, 16M colours</span>
+          <span>Free shipping over $500</span>
+          <span>5-year parts warranty</span>
+          <span>Ships from London, Ontario</span>
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-4">
+      <div className="shell grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
-          <h4 className="font-display text-xl font-bold text-white">
-            Illumi <span className="text-[var(--color-brand-bright)]">Track Lights</span>
-          </h4>
-          <p className="mt-3 text-sm leading-relaxed text-slate-300">
-            Smart soffit-mounted LED lighting systems &mdash; engineered for Canadian homes and shipped
-            direct from London, Ontario.
+          <Logo />
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+            Permanent LED soffit track lighting for Canadian homes: complete 12V kits and parts shipped from London,
+            Ontario, plus professional installation across Southwestern Ontario.
           </p>
-          <p className="mt-4 inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-[var(--color-peach)]">
-            🍁 Proudly Canadian · Ships from London, ON
-          </p>
+          <p className="mt-4 text-xs text-white/50">Canadian owned · CSA Class 2 low voltage · WLED app control</p>
         </div>
-        <div>
-          <h5 className="eyebrow text-white/80">Shop</h5>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/diy-kits" className="hover:text-white">Soffit Track Kits ★</Link></li>
-            <li><Link href="/shop" className="hover:text-white">All products</Link></li>
-            <li><Link href="/product-category/lights" className="hover:text-white">Lights</Link></li>
-            <li><Link href="/product-category/controllers" className="hover:text-white">Controllers</Link></li>
-            <li><Link href="/product-category/connectors" className="hover:text-white">Connectors</Link></li>
-            <li><Link href="/product-category/power-supplies" className="hover:text-white">Power supplies</Link></li>
-            <li><Link href="/product-category/hardware" className="hover:text-white">Hardware</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="eyebrow text-white/80">Resources</h5>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/how-it-works" className="hover:text-white">How they work</Link></li>
-            <li><Link href="/professional-installer" className="hover:text-white">Installer Program</Link></li>
-            <li><Link href="/installers" className="hover:text-white">Find an installer</Link></li>
-            <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
-            <li><Link href="/about" className="hover:text-white">About us</Link></li>
-          </ul>
-          <h5 className="eyebrow mt-6 text-white/80">Self-service</h5>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/track-order" className="hover:text-white">Track your order</Link></li>
-            <li><Link href="/account" className="hover:text-white">Your account</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h5 className="eyebrow text-white/80">Support</h5>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/shipping-returns" className="hover:text-white">Shipping & returns</Link></li>
-            <li><Link href="/warranty" className="hover:text-white">5-year warranty</Link></li>
-            <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
-            <li><Link href="/contact-us" className="hover:text-white">Contact</Link></li>
-            <li><Link href="/terms-of-service" className="hover:text-white">Terms</Link></li>
-            <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
-          </ul>
-        </div>
+        {COLS.map((col) => (
+          <div key={col.title}>
+            <h2 className="eyebrow text-[var(--color-gold)]">{col.title}</h2>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {col.links.map((l) => (
+                <li key={l.href + l.label}>
+                  <Link href={l.href} className="inline-block min-h-[28px] transition hover:text-white">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-      <div className="border-t border-white/10 py-5 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} Illumi Track Lights · Proudly Canadian · Shipping out of London, Ontario
+      <div className="border-t border-white/10">
+        <div className="shell flex flex-wrap items-center justify-between gap-3 py-5 text-xs text-white/50">
+          <p>© {new Date().getFullYear()} Illumi Track Lights · London, Ontario, Canada</p>
+          <p className="flex gap-4">
+            <Link href="/shipping-returns" className="hover:text-white">Shipping & returns</Link>
+            <Link href="/warranty" className="hover:text-white">Warranty</Link>
+            <Link href="/contact-us" className="hover:text-white">Contact</Link>
+          </p>
+        </div>
       </div>
     </footer>
   );

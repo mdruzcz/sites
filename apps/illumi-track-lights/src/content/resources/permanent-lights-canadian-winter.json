@@ -1,0 +1,174 @@
+{
+  "slug": "permanent-lights-canadian-winter",
+  "title": "Do Permanent Lights Survive Canadian Winters? A -40 °C Durability Guide",
+  "metaTitle": "Permanent Lights Winter Canada: -40 °C Guide",
+  "metaDescription": "Do permanent lights survive Canadian winters? An honest guide to IP68 waterproofing, cold-weather temperature ratings, LED lifespan and how quality track sheds snow.",
+  "category": "Guides",
+  "excerpt": "The number-one question Canadian homeowners ask before buying permanent outdoor lighting: will it survive winter? Here is an honest, technical answer covering waterproofing, temperature ratings, snow, ice and why build quality matters more than the sales pitch.",
+  "readMinutes": 8,
+  "updated": "2026-08-28",
+  "heroAlt": "Permanent LED soffit track lighting glowing warm white on a snow-covered Canadian home during a winter evening",
+  "isHowTo": false,
+  "keyTakeaways": [
+    "Quality permanent LED lighting is built for exactly this climate: IP68-rated pucks are sealed against water and ice, and the LEDs themselves run cold, so freezing temperatures are not the problem people expect.",
+    "Look for a components rated to at least -40 °C. Cheap systems that only spec -20 °C can crack, cloud over or fail during a real Canadian cold snap.",
+    "Aluminum track outperforms plastic channel: it will not become brittle in the cold, it sheds snow and meltwater, and it doubles as a heat sink that extends LED life.",
+    "At roughly 50,000 hours of rated life, a well-built system running a few hours a night lasts far beyond its 5-year warranty window.",
+    "The failure point in winter is almost never the LED. It is water intrusion at cheap connectors and poor installation. Buy sealed components and mount them correctly."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "If you live anywhere from Windsor to Thunder Bay, you have probably had the same thought while looking at permanent outdoor lighting: it looks great in the photos, but those photos were not taken in February. Will it actually survive a Canadian winter, or will you be staring at a row of dead or foggy diodes by spring? It is the single most common objection we hear, and it deserves a straight answer rather than a sales pitch."
+    },
+    {
+      "type": "p",
+      "text": "The short version: yes, quality permanent LED lighting is genuinely built for this climate, and cold is not the enemy most people assume it is. But that answer only holds if the components are properly rated and properly installed. Below is what actually matters, and what to watch out for, so you can tell a system that will last fifteen winters from one that will not last one."
+    },
+    {
+      "type": "h2",
+      "text": "Cold does not kill LEDs, heat does"
+    },
+    {
+      "type": "p",
+      "text": "This surprises almost everyone. LEDs are semiconductors, and semiconductors dislike heat, not cold. High operating temperature is the main driver of LED degradation and colour shift over time. In a Canadian winter, an LED puck running outdoors is being passively cooled by the very weather people worry about. In practice, cold air helps an LED run more efficiently and often slightly brighter."
+    },
+    {
+      "type": "p",
+      "text": "So the diode itself is not the fragile part. The parts that have to survive winter are everything around it: the sealing that keeps water out, the housing material that must not become brittle, the connectors that carry power, and the power supply tucked away in your garage or attic. Get those right and the cold is a non-issue. Get them wrong and it will not matter how good the LED chip is."
+    },
+    {
+      "type": "h2",
+      "text": "IP68: what waterproofing actually means"
+    },
+    {
+      "type": "p",
+      "text": "The rating you want on the light pucks is IP68. The two digits each mean something specific. The first digit (6) is the maximum score for protection against dust and solid particles: fully sealed, nothing gets in. The second digit (8) is the highest common rating for water, meaning the component is protected against continuous immersion beyond one metre. For a light mounted under your soffit, that is far more protection than it will ever need against rain, blowing snow and ice."
+    },
+    {
+      "type": "p",
+      "text": "Why does this matter so much in winter? Because the real killer of outdoor lighting is not cold air, it is the freeze-thaw cycle. Water finds its way into a poorly sealed housing or connector, then freezes, expands, and pries the seal apart a little more. Repeat that a few hundred times over a Canadian winter and a marginally sealed light fails. A genuinely IP68-sealed puck never lets the water in to begin with, so there is nothing to freeze and expand."
+    },
+    {
+      "type": "callout",
+      "text": "The weak link is rarely the light itself. It is the connections between lights. Look for sealed, gasketed connectors, not exposed crimps or splices. This is exactly where bargain systems cut costs, and exactly where they fail in year one."
+    },
+    {
+      "type": "h2",
+      "text": "Temperature ratings: -20 °C is not good enough"
+    },
+    {
+      "type": "p",
+      "text": "Every serious component in a lighting system carries an operating temperature range. This is where a lot of imported bargain products quietly fall short. A system rated to -20 °C sounds fine until you remember that most of Canada regularly drops below that, and the Prairies, northern Ontario and much of Quebec see -30 °C and colder with wind chill pushing lower. A light that is only rated to -20 °C is being asked to work outside its design envelope for weeks at a time."
+    },
+    {
+      "type": "p",
+      "text": "What you want is a system rated to at least -40 °C. That number is not marketing. At -40 °C, plastics that were not formulated for cold become brittle and crack, cheap potting compounds shrink and pull away from seals, and low-grade solder joints can fail under thermal stress. Components engineered and tested to -40 °C are using materials chosen specifically to stay flexible and sealed at extreme cold. Our LED housing kits are rated for exactly this, because we sell them to people in London, Winnipeg and everywhere colder."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Check the puck operating range: -40 °C to +60 °C or wider is what you want.",
+        "Check the controller and power supply range too. The controller often lives in an unheated attic or garage where it still sees deep cold.",
+        "Be sceptical of any listing that does not publish a low-temperature rating at all. Silence usually means the number is not flattering."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Aluminum track vs plastic channel"
+    },
+    {
+      "type": "p",
+      "text": "The track (or channel) that holds the LEDs against your soffit is a bigger deal than most buyers realise, and it is a common place to save a few dollars at the cost of longevity. There are two broad choices: extruded aluminum and plastic (usually PVC or PC)."
+    },
+    {
+      "type": "h3",
+      "text": "Why aluminum wins in the cold"
+    },
+    {
+      "type": "p",
+      "text": "Aluminum does not become brittle in winter. It holds its shape and its grip on the lights through every freeze-thaw cycle, and it will not yellow or crack from UV exposure over a decade of summers. Plastic channel, by contrast, can grow stiff and fragile in deep cold, and cheaper grades discolour and craze under years of Canadian sun. A cracked channel lets water pool and lets lights sag out of alignment."
+    },
+    {
+      "type": "p",
+      "text": "Aluminum also does something plastic cannot: it acts as a heat sink. Remember that LEDs age faster when hot. An aluminum track pulls waste heat away from the diodes during operation, which keeps them cooler and extends their working life. So the same material that survives winter also helps the lights last longer year-round. Our track comes in four soffit-matched colours so the extrusion disappears against your home, and it is the same aluminum whether you buy a complete kit or individual lengths from the parts catalogue."
+    },
+    {
+      "type": "h2",
+      "text": "How the track sheds snow and ice"
+    },
+    {
+      "type": "p",
+      "text": "A reasonable worry: if the lights sit in a channel under the soffit, does snow pile up and bury them? In practice, no, and the geometry is the reason. Track-mounted permanent lighting installs on the underside of the soffit or along the fascia, facing downward and outward. That orientation means snow does not accumulate on the lens the way it would on an upward-facing fixture. Meltwater and ice run off the smooth aluminum rather than sitting on the diodes."
+    },
+    {
+      "type": "p",
+      "text": "There is a small bonus, too. When the lights are on, the LEDs and the aluminum extrusion give off a trace of warmth. It is not a de-icing system and we would never oversell it as one, but it is enough to discourage ice from building directly on the fixture in many conditions. The combination of downward orientation, a low profile that tucks under the roofline, and a smooth shedding surface is why a properly installed track stays clear through winter with no intervention from you."
+    },
+    {
+      "type": "callout",
+      "text": "Snow on the roof above your lights is normal and harmless. The lights are protected under the soffit line. You never need to climb up and clear them, which is rather the whole point of a permanent system versus hanging temporary strings every November."
+    },
+    {
+      "type": "h2",
+      "text": "Lifespan: what 50,000 hours really buys you"
+    },
+    {
+      "type": "p",
+      "text": "Quality LED pucks are rated in the neighbourhood of 50,000 hours of life. That figure is easy to gloss over, so let us make it concrete. If you run your lights an average of five hours a night, every night of the year, 50,000 hours works out to more than 25 years of service. Run them only for holidays and the occasional evening accent and the calendar life stretches even further."
+    },
+    {
+      "type": "p",
+      "text": "That is why a reputable 5-year warranty is a floor, not a ceiling. The warranty protects you against manufacturing defects; the rated lifespan tells you the hardware is designed to outlive the warranty by decades. When you combine a 50,000-hour diode with an aluminum heat sink keeping it cool, real-world longevity tends to sit at the optimistic end of that range rather than the pessimistic one."
+    },
+    {
+      "type": "h2",
+      "text": "Why quality is the whole ballgame"
+    },
+    {
+      "type": "p",
+      "text": "Everything above points to the same conclusion: permanent lighting survives Canadian winters when it is built and installed properly, and fails when it is not. The technology is mature and proven. The variable is quality. A -40 °C-rated, IP68-sealed puck in an aluminum track, wired with gasketed connectors and a correctly sized power supply, is a genuinely durable system. The visually identical bargain version, rated to -20 °C with plastic channel and exposed connections, is a spring cleanup project waiting to happen."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "IP68 pucks, sealed against water and ice",
+        "Components rated to at least -40 °C",
+        "Aluminum track, not plastic channel",
+        "Gasketed, weather-sealed connectors between fixtures",
+        "A power supply and controller sized and mounted for the load",
+        "A real warranty from a seller you can actually reach"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "That checklist is exactly how we spec our systems. Our complete DIY LED Housing Packages, in sizes from 50 to 200 linear feet, ship with everything on that list matched to work together, so you are not gambling on mismatched parts. If you already have a system and just need a specific piece, the parts catalogue carries the same 12V RGBW pucks, aluminum track in four soffit colours, WiFi controllers, power supplies, sealed connectors and injection cables individually. Browse a complete kit at /diy-kits or pick up components at /shop. If you would rather not be on a ladder in the cold, we now install across Southwestern Ontario, including London, Woodstock and the Kitchener-Waterloo region: book a professional installation at /installation and we will spec, mount and commission the whole system for you."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do permanent lights really work at -40 °C?",
+      "a": "Yes, provided the components are rated for it. LEDs actually run more efficiently in the cold because they generate little heat and semiconductors prefer cool operating conditions. The parts that must survive extreme cold are the housing, seals and connectors, which is why we spec pucks and controllers rated to at least -40 °C. A system only rated to -20 °C is the one to avoid in most of Canada."
+    },
+    {
+      "q": "Will snow and ice damage the lights or block them?",
+      "a": "No. Track-mounted permanent lighting installs under the soffit facing downward and outward, so snow does not pile up on the lenses and meltwater runs off the smooth aluminum. IP68 sealing means no water gets inside to freeze and expand. You never need to climb up and clear them through winter."
+    },
+    {
+      "q": "What does IP68 mean and why does it matter in winter?",
+      "a": "IP68 is the top common waterproof rating: fully dust-tight and protected against continuous water immersion beyond one metre. In winter it matters because the real threat is the freeze-thaw cycle. Water that sneaks into a poorly sealed light freezes, expands and breaks the seal over time. A true IP68 puck never lets water in, so there is nothing to freeze."
+    },
+    {
+      "q": "How long do permanent LED lights last in a Canadian climate?",
+      "a": "Quality pucks are rated around 50,000 hours. At about five hours of use a night that is more than 25 years, and cold Canadian operating temperatures tend to help rather than hurt LED longevity. A reputable 5-year warranty covers defects, but the hardware is designed to run well beyond it."
+    },
+    {
+      "q": "Is aluminum track really better than plastic channel?",
+      "a": "For a winter climate, yes. Aluminum stays rigid and sealed through freeze-thaw cycles instead of becoming brittle and cracking, it will not yellow under UV, and it acts as a heat sink that keeps the LEDs cooler and extends their life. Plastic channel is cheaper up front and a common corner to cut, but it is a frequent failure point in cold climates."
+    },
+    {
+      "q": "Should I install it myself or hire a professional?",
+      "a": "Our DIY LED Housing Packages are designed for confident homeowners and ship as complete, matched kits, so self-installation is very doable if you are comfortable on a ladder and with basic low-voltage wiring. If you are in Southwestern Ontario (London, Woodstock, Kitchener-Waterloo) and would rather have it done right the first time, we offer professional installation and handle the full spec, mount and setup for you."
+    }
+  ]
+}

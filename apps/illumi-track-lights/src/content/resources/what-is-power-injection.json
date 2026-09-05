@@ -1,0 +1,157 @@
+{
+  "slug": "what-is-power-injection",
+  "title": "What Is Power Injection (and When Do You Need It)?",
+  "metaTitle": "LED Power Injection for Soffit Lighting Explained",
+  "metaDescription": "LED power injection for soffit lighting explained: what voltage drop is, when long 12V runs need a second power feed, and how to wire an injection cable.",
+  "category": "Parts & specs",
+  "excerpt": "Long runs of permanent LED soffit lighting can dim and shift colour toward the far end. Power injection fixes it. Here is what it is, why voltage drop causes it, and roughly at what footage it starts to matter.",
+  "readMinutes": 7,
+  "updated": "2026-08-28",
+  "heroAlt": "Diagram of a 12V RGBW LED soffit lighting run with a power supply at each end feeding power injection into the track",
+  "isHowTo": false,
+  "keyTakeaways": [
+    "Power injection means feeding 12V power into a second point on a long LED run so the far end gets the same voltage as the start.",
+    "Voltage drop is the cause: current travelling down thin conductors loses voltage, which shows up as dimming and a warm colour shift toward the end of the run.",
+    "As a rule of thumb, single-feed RGBW runs longer than roughly 40-60 linear feet usually benefit from injection; past about 75 ft it is effectively required.",
+    "Injection is simply an extra power feed wired in parallel, usually from the opposite end of the run or from a mid-point, using a power-injection cable.",
+    "Our DIY kits are pre-planned so you know exactly where injection is needed; individual parts are on the shop page if you are designing a custom layout."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "If you have shopped for permanent LED soffit lighting, you have probably seen the phrase \"power injection\" buried in a spec sheet or a forum thread and wondered whether it applies to you. It is one of the few genuinely technical parts of a track-lighting install, and it is also the part most kit-only sellers quietly avoid explaining, because their systems are sized to hide the problem rather than solve it. This guide walks through what power injection actually is, the physics behind why long runs need it, and a practical footage range so you can plan your own layout with confidence."
+    },
+    {
+      "type": "h2",
+      "text": "The short version"
+    },
+    {
+      "type": "p",
+      "text": "Power injection is the practice of feeding low-voltage DC power into a long LED run at more than one point, instead of relying on a single connection at one end. On a 12V RGBW system like ours, the pucks at the start of the run are electrically close to the power supply and receive close to a full 24 volts. The pucks at the far end are dozens of feet of thin copper away, and by the time the current reaches them the voltage has sagged. Injecting a second feed at or near the far end tops that voltage back up so the whole run looks uniform."
+    },
+    {
+      "type": "callout",
+      "text": "Quick gut check: if any single continuous run in your design is longer than about 50 linear feet, plan for power injection. Shorter than that on a 12V system and you can usually feed from one end and forget about it."
+    },
+    {
+      "type": "h2",
+      "text": "Why long runs dim: voltage drop explained"
+    },
+    {
+      "type": "p",
+      "text": "Every conductor has a small amount of electrical resistance. In a low-voltage lighting run, the current has to travel through the track's conductors and the connectors between pucks, and each foot of that path adds a little resistance. When current flows through resistance, some voltage is \"used up\" along the way. This is voltage drop, and it is a normal, unavoidable property of DC wiring, not a defect."
+    },
+    {
+      "type": "p",
+      "text": "Two things make voltage drop worse. The first is distance: the farther the current has to travel, the more resistance it passes through, so a 100-foot run drops far more voltage than a 20-foot run. The second is current draw: RGBW pucks running all four colour channels at full brightness pull more current than a dim, single-colour setting, and higher current through the same resistance means a bigger drop. That is why a run can look perfectly even at a soft warm-white setting but visibly fade toward the end when you crank it to full-brightness white."
+    },
+    {
+      "type": "h3",
+      "text": "What voltage drop looks like on the wall"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Gradual dimming from the feed end toward the far end of the run.",
+        "A subtle colour shift — because red, green, blue and white LEDs respond differently to a sagging voltage, the far end often drifts warmer or slightly off-colour compared to the start.",
+        "The effect getting worse at high-brightness or full-white scenes and nearly disappearing at low settings.",
+        "In severe cases, the last few feet of pucks visibly lagging or flickering when the controller changes scenes."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "None of this means the LEDs are faulty. It simply means the far end is being starved of voltage, and the fix is to deliver power closer to where it is needed."
+    },
+    {
+      "type": "h2",
+      "text": "Why 12V is already the easy mode"
+    },
+    {
+      "type": "p",
+      "text": "Our system runs at 12V rather than 12V, and that choice matters here. For a given brightness, a 12V system draws roughly half the current of a 12V one, and because voltage drop scales with current, a 12V run can go substantially farther before drop becomes visible. If you have read older DIY guides that insist on injecting every 15 to 20 feet, they were almost certainly written for 12V strip. On 12V, you get meaningfully more runway before injection enters the picture."
+    },
+    {
+      "type": "h2",
+      "text": "At what footage does injection actually matter?"
+    },
+    {
+      "type": "p",
+      "text": "There is no single magic number, because it depends on how bright you run the lights, how many pucks are in the string, and the total load on that circuit. But as defensible planning ranges for a 12V RGBW soffit run fed from one end:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Up to about 40 ft: a single end feed is almost always fine. No injection needed.",
+        "Roughly 40-60 ft: usually fine, but injection is cheap insurance if you run bright white scenes often or the run sits somewhere very visible.",
+        "Roughly 60-75 ft: plan for one injection point, typically at the far end.",
+        "Over 75 ft: treat injection as required, and very long perimeters may want power fed at both ends plus a mid-run injection."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "Total wattage matters too, not just length. A long run and a big pixel count can exceed what one power supply should push, so injection often goes hand in hand with adding a second power supply — not just a second cable."
+    },
+    {
+      "type": "h2",
+      "text": "How power injection is actually wired"
+    },
+    {
+      "type": "p",
+      "text": "The mechanics are simpler than the name suggests. Power injection is just a second power feed connected in parallel with the first. The data or control signal still flows continuously along the run through the pucks and connectors; you are only adding another path for the 12V power to reach the far pucks."
+    },
+    {
+      "type": "p",
+      "text": "In practice there are two common approaches. The most common on a soffit perimeter is to run a power-injection cable from your power supply (or a second supply) around or through the soffit to the opposite end of the run, and connect it there so power arrives from both directions. The second approach, used on very long single runs, is to inject at a mid-point so no puck is more than half the run away from a power source. Either way, you must keep polarity correct — positive to positive, negative to negative — across every feed, or the run will not light correctly."
+    },
+    {
+      "type": "p",
+      "text": "The parts involved are straightforward: a power-injection cable to carry 12V to the injection point, enough power-supply capacity to cover the total load (a single 60-300W supply may serve a whole run, or a large run may use two supplies), and, on some layouts, an amplifier if the control signal itself needs boosting over a long distance. If you are extending an existing kit, you can usually add an injection cable and, if the load has grown, a larger or additional power supply."
+    },
+    {
+      "type": "h3",
+      "text": "A note on power injection vs. signal amplification"
+    },
+    {
+      "type": "p",
+      "text": "These two are easy to confuse because both help long runs, but they solve different problems. Power injection fixes voltage drop — dimming and colour shift from a lack of power. A signal amplifier fixes control-signal degradation — where the data telling each puck what colour to be gets weak over distance, causing glitches or the far pucks ignoring the controller. Long, heavily loaded runs sometimes need both, but many soffit installs only ever need power injection."
+    },
+    {
+      "type": "h2",
+      "text": "How to avoid guessing entirely"
+    },
+    {
+      "type": "p",
+      "text": "The good news for most homeowners is that you do not have to calculate any of this by hand. Our DIY LED Housing Packages come sized as complete 50-200 linear-foot kits with the correct power supply and, where the length calls for it, the injection cable already included and marked in the layout plan. That means you install to the plan and the far end looks exactly like the near end. If you are designing a fully custom run from individual parts, that is where understanding the footage ranges above pays off, and our parts catalogue has each component listed separately so you can spec exactly what your perimeter needs."
+    },
+    {
+      "type": "p",
+      "text": "If you are buying a complete system, start with a pre-planned kit on our DIY kits page (/diy-kits) — injection is handled for you where your footage requires it. If you are building or extending a custom layout, the power-injection cables and 60-300W power supplies are on the shop page (/shop) alongside connectors, amplifiers and track. And if you would rather not wire any of it yourself, homeowners in London, Woodstock and the Kitchener-Waterloo region can book our professional installation (/installation) and we will size, inject and mount the whole run for you. Whichever route you take, planning power injection up front is the difference between a soffit line that glows evenly for years and one that fades away at the corner."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is power injection in LED soffit lighting?",
+      "a": "Power injection is feeding 12V power into a long LED run at a second point — usually the far end or a mid-point — so that voltage drop along the run does not leave the far pucks dim or colour-shifted. It is just an extra power feed wired in parallel with the main one."
+    },
+    {
+      "q": "At what length do I need power injection on a 12V run?",
+      "a": "As a rule of thumb, single-feed 12V RGBW runs up to about 40 ft are fine, 40-60 ft is a judgement call, 60-75 ft usually wants one injection point, and anything over 75 ft should be treated as requiring injection. Brightness and total load shift these numbers, so treat them as planning ranges, not hard limits."
+    },
+    {
+      "q": "What causes the far end of my LED run to look dimmer or a different colour?",
+      "a": "Voltage drop. Current loses voltage as it travels through the resistance of the track and connectors, so the far pucks receive less than a full 12V. Because the red, green, blue and white channels react differently to lower voltage, the far end often looks both dimmer and slightly warmer. Adding a power feed near that end corrects it."
+    },
+    {
+      "q": "Do I need a second power supply for power injection, or just a cable?",
+      "a": "It depends on total load. If your single power supply has enough spare capacity for the whole run, you can inject with just a power-injection cable running back to that supply. If the run's total wattage is near or over the supply's rating, you add a second power supply at the injection point as well."
+    },
+    {
+      "q": "Is power injection the same as a signal amplifier?",
+      "a": "No. Power injection fixes voltage drop, which shows up as dimming and colour shift. A signal amplifier boosts the control-data signal so the far pucks respond correctly to the controller. Long, heavily loaded runs can need both, but many soffit installs only ever need power injection."
+    },
+    {
+      "q": "Do your DIY kits include power injection?",
+      "a": "Yes, where the length calls for it. Our 50-200 linear-foot LED Housing Packages come with the correct power supply and, on longer kits, the injection cable already included and marked in the layout plan, so you install to the plan and the whole run lights evenly."
+    }
+  ]
+}

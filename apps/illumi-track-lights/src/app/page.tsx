@@ -1,59 +1,48 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
-import { Hero } from "@/components/sections/hero";
-import { Benefits } from "@/components/sections/benefits";
-import { KitFeature } from "@/components/sections/kit-feature";
-import { ThreeStep } from "@/components/sections/three-step";
-import { DayNight } from "@/components/sections/day-night";
-import { YearRound } from "@/components/sections/year-round";
-import { SmartControl } from "@/components/sections/smart-control";
-import { Security } from "@/components/sections/security";
-import { WhoItsFor } from "@/components/sections/who-its-for";
-import { ProductSpecs } from "@/components/sections/product-specs";
-import { Testimonials } from "@/components/sections/testimonials";
-import { CtaBand } from "@/components/sections/cta-band";
+import { Hero, TrustStrip, DayNight, KitBand, WhatsInTheBox, TwoWays, Occasions, Specs, Reviews, GuidesPreview, FaqPreview, CtaBand, HOME_FAQ } from "@/components/sections/home-sections";
 import { listProducts } from "@/lib/catalog";
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const products = await listProducts({ limit: 16 });
-  const housingPackages = products
-    .filter((p) => p.slug.startsWith("led-housing-package-"))
-    .sort((a, b) => {
-      const n = (s: string) => parseInt(s.replace(/[^0-9]/g, ""), 10) || 0;
-      return n(a.slug) - n(b.slug);
-    });
+  const products = await listProducts();
+  const parts = products.filter((p) => !p.slug.startsWith("led-housing-package"));
+  const featuredSlugs = ["aluminum-track-12v-led-lights-2-pack", "12v-led-puck-lights-10-pack", "2-channel-12v-led-controller", "12v-150w-power-supply"];
+  const best = featuredSlugs.map((s) => parts.find((p) => p.slug === s)).filter(Boolean) as typeof parts;
+  const fill = parts.filter((p) => !best.includes(p)).slice(0, 4 - best.length);
+  const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: HOME_FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Hero />
-      <Benefits />
+      <TrustStrip />
       <DayNight />
-      <KitFeature housingPackages={housingPackages.slice(0, 4)} />
-      <ThreeStep />
-      <SmartControl />
-      <Security />
-      <YearRound />
-      <WhoItsFor />
-      <ProductSpecs />
-      <Testimonials />
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <p className="eyebrow text-[var(--color-brand)]">Best sellers</p>
-            <h2 className="font-display mt-2 text-3xl md:text-4xl">Order what installers order</h2>
+      <KitBand />
+      <WhatsInTheBox />
+      <TwoWays />
+      <Occasions />
+      <Specs />
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Parts</p>
+              <h2 className="font-display h2-fluid mt-5">Order what the installers order.</h2>
+            </div>
+            <Link href="/shop" className="btn-secondary">Shop all parts</Link>
           </div>
-          <Link href="/shop" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
-            All products →
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {products.slice(0, 4).map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {[...best, ...fill].map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
         </div>
       </section>
+      <Reviews />
+      <GuidesPreview />
+      <FaqPreview />
       <CtaBand />
     </>
   );

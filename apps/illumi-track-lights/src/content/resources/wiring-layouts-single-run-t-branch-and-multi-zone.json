@@ -1,0 +1,161 @@
+{
+  "slug": "wiring-layouts-single-run-t-branch-and-multi-zone",
+  "title": "Wiring Layouts for Permanent Lights: Single Run, T-Branch and Multi-Zone",
+  "metaTitle": "Permanent LED Wiring Layouts: Run, T-Branch, Zone",
+  "metaDescription": "Compare single-run, T-branch and multi-zone wiring layouts for permanent LED soffit lighting, with a step-by-step process for laying out your own run.",
+  "category": "Parts & specs",
+  "excerpt": "Not every roofline wants the same wiring layout. A single run, a T-branch off a corner, and a multi-zone layout with several independent segments all use the same 12V parts, just arranged differently. Here is how to choose and lay one out.",
+  "readMinutes": 8,
+  "updated": "2026-09-04",
+  "heroAlt": "Diagram comparing single-run, T-branch and multi-zone wiring layouts for permanent LED soffit lighting track",
+  "isHowTo": true,
+  "keyTakeaways": [
+    "A single run is one continuous string of track fed from one point, best for simple, shorter elevations.",
+    "A T-branch splits a run into two directions from a single connector, useful at corners or where a driveway or door interrupts a straight soffit line.",
+    "A multi-zone layout uses several independently controllable segments on the same or separate controllers, best when different sections need different colours at the same time.",
+    "All three layouts use the same 12V pucks, aluminum track, connectors and WLED controller, with power injection needed roughly every 120 pucks per feed and a data amplifier roughly every 150-200 pucks.",
+    "Our 100 ft kit's T-connectors and power-injection T-connectors are built specifically to support corners and branches without any custom parts."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Every permanent lighting job eventually runs into the same question: does the track just follow the soffit line as one continuous run, or does it need to branch, split, or break into independent zones? The good news is that all three layout styles are built from the same parts. A 12V puck string, aluminum track, connectors, a WLED controller and 150W power supplies do not change between a simple bungalow and a sprawling two-storey with three rooflines. What changes is how those parts are arranged. This guide covers the three layout patterns you will actually use, when each one makes sense, and a step-by-step process for laying out your own run before you touch a drill."
+    },
+    {
+      "type": "h2",
+      "text": "Layout one: the single run"
+    },
+    {
+      "type": "p",
+      "text": "A single run is exactly what it sounds like: one continuous string of track and pucks, fed from a single power point, following the soffit or fascia line from one end to the other. It is the simplest layout to design, the simplest to install, and the simplest to troubleshoot, because there is only one path for power and data to follow."
+    },
+    {
+      "type": "p",
+      "text": "Single runs suit straightforward elevations: a bungalow front, a garage face, a straight stretch of fascia without significant corners. They also suit shorter footages, since a single run stays within a comfortable range for one power feed before injection becomes necessary. If your whole project is one uninterrupted stretch under roughly 120 pucks, a single run is usually the right call and the least amount of planning."
+    },
+    {
+      "type": "h2",
+      "text": "Layout two: the T-branch"
+    },
+    {
+      "type": "p",
+      "text": "Most houses are not one straight wall. They have corners, a garage that juts forward, a covered porch, or a driveway that splits the front elevation from a side elevation. A T-branch handles this by splitting a run into two directions from a single point using a T-connector, so one soffit run can feed both a straight continuation and a perpendicular branch without doubling back on wiring."
+    },
+    {
+      "type": "p",
+      "text": "T-branches are especially useful at outside corners where you want the two adjoining walls to read as one continuous lit line even though the track itself changes direction, and at any point where a single feed needs to serve two separate directions from the same power and data source. Our kits include standard T-connectors for data and power-injection T-connectors specifically for branch points that also need a power feed, so a T-branch does not require any custom-built parts."
+    },
+    {
+      "type": "h2",
+      "text": "Layout three: multi-zone"
+    },
+    {
+      "type": "p",
+      "text": "A multi-zone layout is the most flexible option and the one most homeowners eventually want once they see what a permanent system can do. Rather than one string treated as a single unit, the run (or several runs) is divided into independently controllable segments on the WLED controller, so the garage can run a different colour from the front elevation, or the peak can hold a static warm white while the lower soffit runs a colour-cycling effect for a party."
+    },
+    {
+      "type": "p",
+      "text": "Multi-zone layouts are physically built from the same single-run and T-branch techniques above; the difference is entirely in how the segments are mapped in WLED afterward, plus making sure the power and data planning was done with the eventual zone split in mind. Our resources page (/resources) covers zone and segment planning in more depth if you want to design a multi-zone layout from scratch."
+    },
+    {
+      "type": "callout",
+      "text": "You are not locked into one pattern for the whole house. Most real installs mix all three: a single run along a straight garage face, a T-branch at the corner into the front elevation, and the whole thing divided into two or three WLED zones once it is wired."
+    },
+    {
+      "type": "h2",
+      "text": "How to lay out a wiring run before you install"
+    },
+    {
+      "type": "steps",
+      "items": [
+        "Walk the roofline and sketch it. Draw the soffit or fascia line as seen from above, marking every corner, gable, garage face and interruption such as a vent or downspout.",
+        "Measure each straight section. Record the linear footage of every segment between corners so you can total the run and match it to a kit or parts list.",
+        "Mark your zones. Decide which sections should be independently controllable, following the zone-planning approach covered on our resources page, and note the boundary points on your sketch.",
+        "Choose single-run or T-branch at each corner. Where the line simply turns a corner and should read as one continuous run, plan a T-connector or a track corner piece; where two directions genuinely need separate control, plan a break instead.",
+        "Plan your power feed points. Identify where the power supply and controller will sit, and mark every point where the run will exceed roughly 120 pucks from that feed, since that is where a power-injection T-connector and cable belong.",
+        "Plan your amplifier point if needed. On runs approaching 150-200 pucks from the controller, mark where a data amplifier should sit to keep the signal clean to the far end.",
+        "Confirm your total puck and strand count against a kit. Add up the pucks needed for every section and compare against the 50-250 ft kit options, or the individual parts list on the shop page if you are building custom.",
+        "Do a dry layout before mounting. Lay the track and connectors out on the ground or a driveway in the same shape as your sketch and power it up briefly to confirm every branch and zone works as planned before you commit to screws."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Choosing connectors for the layout you draw"
+    },
+    {
+      "type": "p",
+      "text": "Once your sketch is done, the connector choice mostly falls out of it automatically. Straight sections between corners use standard track lengths and 1, 5, 10 or 20 ft extension connectors to bridge gaps such as a garage door opening or a downspout. Corners and branches use T-connectors, and any branch or corner that also needs a fresh power feed uses a power-injection T-connector with its 20 ft injection cable rather than a standard one. Every connection, whether straight, T-branch or injection point, should use colour-matched 5/8-inch soffit screws so the hardware disappears against black, white, wicker or brown track."
+    },
+    {
+      "type": "h2",
+      "text": "Common layout mistakes to avoid"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Treating every corner as a hard break in the run when a simple T-connector or corner piece would keep it as one continuous line.",
+        "Forgetting to plan power injection until after the track is mounted, which turns a five-minute planning step into a re-wiring job.",
+        "Designing zones without checking they fall on sensible physical boundaries, leaving a single zone straddling two power feeds unnecessarily.",
+        "Skipping the dry-layout test and finding a wiring mistake only after the track is screwed to the soffit."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "How roofline shape drives the choice between layouts"
+    },
+    {
+      "type": "p",
+      "text": "A simple way to decide between the three layouts before you even reach for a tape measure is to look at the shape of the roofline itself. A rectangular bungalow with a single unbroken soffit line almost always wants a single run, since there is nothing to branch and no obvious reason to split control. A home with a projecting garage, an L-shaped footprint, or a covered porch that steps forward from the main wall line almost always wants at least one T-branch, because the geometry itself creates a natural split point. A two-storey home with a distinct peak, a wraparound porch, or multiple rooflines at different heights is the strongest candidate for multi-zone control, because those architectural features already look different from each other in daylight and tend to look better lit differently after dark too."
+    },
+    {
+      "type": "p",
+      "text": "It helps to walk the exterior at dusk before finalizing a layout, since the way light and shadow actually fall on the house at the hour you will most often see it lit can reveal branch points and zone boundaries that are not obvious from a daytime photo or a satellite view."
+    },
+    {
+      "type": "h2",
+      "text": "Extending an existing run later"
+    },
+    {
+      "type": "p",
+      "text": "One advantage of planning single-run and T-branch wiring carefully the first time is that extending the system later becomes straightforward. If a future project adds a fence, a detached garage, or a new porch, the existing controller and power supply can often be extended with additional track, pucks and connectors rather than replaced outright, provided the original layout left some spare capacity on the power supply and did not already push the data signal to its practical limit. This is another reason to slightly oversize a power supply and to note your original puck count and injection points on the sketch you made during planning: a future extension is a much smaller job when you already know exactly how much headroom the existing run has left."
+    },
+    {
+      "type": "p",
+      "text": "If a planned extension will push a run well past its original injection or amplifier spacing, it is usually simpler to treat the new section as its own branch or zone with its own feed, rather than trying to stretch the original single feed further than it was designed to go."
+    },
+    {
+      "type": "h2",
+      "text": "Getting the layout right the first time"
+    },
+    {
+      "type": "p",
+      "text": "A well-planned wiring layout is what separates a permanent lighting system that looks intentional from one that looks like an afterthought. If you would rather sketch it with someone who has laid out hundreds of rooflines, our team can review your house and put together a single-run, T-branch or multi-zone plan as part of a free installation quote. DIY installers can find every connector type mentioned here, including standard and power-injection T-connectors, on the shop page (/shop), or start from a pre-planned kit on our DIY kits page (/diy-kits) that already accounts for typical corners and branch points at each length. And if the layout turns out more involved than expected once it is sketched, our installation page (/installation) covers professional installs across London, Woodstock and the wider Kitchener-Waterloo region."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is a T-branch in permanent LED lighting wiring?",
+      "a": "A T-branch is a point where a run splits into two directions from a single connector, using a T-connector for data or a power-injection T-connector when that branch also needs a fresh power feed. It is commonly used at outside corners and anywhere a single feed needs to serve two directions, such as a garage face and an adjoining wall."
+    },
+    {
+      "q": "How long can a single run be before it needs a T-branch or injection?",
+      "a": "A single run stays simplest under roughly 120 pucks fed from one point. Past that, plan a power-injection T-connector or a second feed point. Whether you also need a physical T-branch depends on the shape of the roofline, not the length, since a straight run of any length within power limits does not need a branch."
+    },
+    {
+      "q": "Can one wiring layout support multiple independently controlled zones?",
+      "a": "Yes. Single-run and T-branch wiring are the physical layer; multi-zone control is added afterward by mapping sections of the physical run to independent segments inside the WLED controller. The wiring does not need to change to support multiple zones as long as power and data were planned for the eventual split."
+    },
+    {
+      "q": "Do T-branches need a separate power supply?",
+      "a": "Not necessarily. A standard T-connector carries both power and data through the branch from the existing feed. A separate power supply or injection point is only needed if the branch pushes the total puck count on that feed past roughly 120 pucks, in which case a power-injection T-connector is used instead of a standard one."
+    },
+    {
+      "q": "What is the biggest wiring layout mistake DIY installers make?",
+      "a": "Not planning power injection and amplifier points before mounting the track. It is far easier to mark injection points on a paper sketch than to add them after the track and pucks are already screwed to the soffit, which is why we recommend a full sketch and puck count before any hardware goes up."
+    },
+    {
+      "q": "Should I do a dry layout before mounting the track?",
+      "a": "Yes. Laying the track and connectors out on the ground in the same shape as your plan and powering it briefly confirms every branch, injection point and zone works correctly before you commit to drilling into the soffit, and it takes only a few minutes."
+    }
+  ]
+}

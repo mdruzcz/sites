@@ -1,322 +1,204 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getServerSupabase } from "@/lib/supabase/server";
-import { getStore, primaryImage, type CatalogProduct } from "@/lib/catalog";
-import { DiyKitsConfigurator } from "@/components/diy-kits-configurator";
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+import { Photo } from "@/components/photo";
+import { PermanentLightsConfigurator } from "@/components/permanent-lights-configurator";
+import { listProducts, primaryImage } from "@/lib/catalog";
+import { kits, kitBom, kitColours, kitLightCount, kitTrackFeet, kitSaving, kitPerFoot, kitComponents, getKitByFeet } from "@/lib/kits";
 import { SITE_URL, formatCad } from "@/lib/utils";
 
 export const revalidate = 3600;
 
-export const metadata = {
-  title: "Permanent Lights — Aluminum-tracked RGBW LED housing packages",
+export const metadata: Metadata = {
+  title: "Soffit Track Lighting Kits, 50 to 250 ft | 12V RGBW",
   description:
-    "Complete permanent LED lighting kits — aluminum tracks, RGBW pucks, controller, power supply and connectors. Pick your linear footage from 50ft to 200ft. Free shipping over $500 in Canada.",
-  alternates: { canonical: `${SITE_URL}/diy-kits` }
+    "Complete soffit track lighting kits from $1,265: 12V RGBW pucks in aluminum track (black, white, wicker, brown), WiFi controller, power supplies and every connector. Ships from London, Ontario, free over $500.",
+  alternates: { canonical: `${SITE_URL}/diy-kits` },
+  openGraph: { title: "Soffit Track Lighting Kits, 50 to 250 ft | Illumi Track Lights", description: "Six complete 12V kits with app control, from $1,265. Ships from London, Ontario.", url: `${SITE_URL}/diy-kits`, images: ["/images/photos/home-blue-night.webp"] }
 };
 
-export default async function PermanentLightsPage() {
-  const store = await getStore();
-  const supabase = await getServerSupabase();
-
-  // Fetch the LED housing packages + the standalone tracks/pucks
-  const { data: housingData } = await supabase
-    .from("ecom_products")
-    .select(
-      "id, slug, name, short_description, long_description, status, ecom_variants(id, sku, name, price_cad, attribute_type, attribute_value, is_active), ecom_product_images(id, public_url, alt_text, sort_order, is_primary)"
-    )
-    .eq("store_id", store?.id ?? "")
-    .eq("status", "active")
-    .like("slug", "led-housing-package-%")
-    .order("name");
-
-  const packages = ((housingData ?? []) as unknown as CatalogProduct[]).sort((a, b) => {
-    const num = (s: string) => parseInt(s.replace(/[^0-9]/g, ""), 10) || 0;
-    return num(a.slug) - num(b.slug);
-  });
+export default async function KitsPage() {
+  const products = await listProducts();
+  const bySlug = new Map(products.map((p) => [p.slug, p]));
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Permanent LED Lighting Kits",
-    itemListElement: packages.map((p, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      url: `${SITE_URL}/product/${p.slug}`,
-      name: p.name
-    }))
+    itemListElement: kits.map((k, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/product/${k.slug}`, name: `Permanent Lighting Kit – ${k.feet} ft` }))
   };
+
+  const options = kits.map((k) => {
+    const p = bySlug.get(k.slug);
+    const variants = (p?.ecom_variants ?? []).filter((v) => v.is_active);
+    return {
+      slug: k.slug,
+      name: `${k.feet} ft kit`,
+      footage: k.feet,
+      price: k.price,
+      colors: kitColours.map((c) => c.label),
+      variantIds: Object.fromEntries(variants.map((v) => [(v as { attribute_value?: string | null }).attribute_value ?? "", v.id])),
+      image: p ? primaryImage(p)?.public_url ?? null : null,
+      photo: k.photo,
+      lights: kitLightCount(k),
+      trackFeet: kitTrackFeet(k),
+      suits: k.suits,
+      saving: kitSaving(k)
+    };
+  });
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <PageHero
+        photo="home-blue-night"
+        eyebrow="Soffit track kits"
+        title="Six soffit track kits. Nothing left to source."
+        intro="The exact 12V track-and-puck hardware our own crews install, boxed for your footage with the controller, power, connectors and colour-matched screws. Install it yourself, or have us do it in Southwestern Ontario."
+        crumbs={[{ label: "Kits" }]}
+      />
 
-      <Hero />
-      <ConfiguratorSection packages={packages} />
-      <WhatsIncluded />
-      <SmartControl />
-      <Specs />
-      <Warranty />
-      <InstallerCTA />
+      <section className="bg-[var(--color-surface)]">
+        <div className="shell section">
+          <div className="max-w-3xl">
+            <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Step 1 · Pick your footage</p>
+            <h2 className="font-display h2-fluid mt-5">Match the kit to your roofline.</h2>
+            <p className="lead mt-4 text-[var(--color-text-soft)]">Add up every edge you want lit. Round up: a few extra feet of track is cheap, a second order is not. Not sure? <Link href="/resources/how-to-measure-your-roofline-for-permanent-lighting" className="link-underline">Read the measuring guide</Link> or <Link href="/contact-us" className="link-underline">send us a sketch</Link>.</p>
+          </div>
+          <PermanentLightsConfigurator options={options} />
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section">
+          <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Side by side</p>
+          <h2 className="font-display h2-fluid mt-5">Every kit, every part.</h2>
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-[var(--color-border)] bg-white">
+            <table className="table-clean min-w-[860px]">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  {kits.map((k) => (
+                    <th key={k.slug} className="text-center">{k.feet} ft</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-[var(--color-accent-soft)]">
+                  <td className="font-semibold">Kit price</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center font-semibold">{formatCad(k.price, 2)}</td>)}
+                </tr>
+                <tr>
+                  <td>Per foot</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center">{formatCad(kitPerFoot(k), 2)}</td>)}
+                </tr>
+                <tr>
+                  <td>Lights (pucks)</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center">{kitLightCount(k)}</td>)}
+                </tr>
+                <tr>
+                  <td>Track supplied</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center">{kitTrackFeet(k)} ft</td>)}
+                </tr>
+                {kitComponents.map((c) => (
+                  <tr key={c.key}>
+                    <td>{c.name}</td>
+                    {kits.map((k) => <td key={k.slug} className="text-center">{k.bom[c.key] ? `×${k.bom[c.key]}` : "—"}</td>)}
+                  </tr>
+                ))}
+                <tr>
+                  <td>Installed by us, from</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center text-[var(--color-muted)]">{formatCad(k.installedLow, 2)}</td>)}
+                </tr>
+                <tr>
+                  <td className="font-semibold">You save by installing</td>
+                  {kits.map((k) => <td key={k.slug} className="text-center font-semibold text-[var(--color-accent-dark)]">{formatCad(kitSaving(k), 0)}</td>)}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-[var(--color-muted)]">Prices in CAD before tax. Track is 42-inch pieces, so supplied length slightly exceeds the nominal kit size.</p>
+        </div>
+      </section>
+
+      <section id="whats-included" className="bg-[var(--color-surface)]">
+        <div className="shell section">
+          <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Step 2 · What's in the box</p>
+          <h2 className="font-display h2-fluid mt-5">The parts, and what each one does.</h2>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {kitComponents.map((c) => (
+              <Link key={c.key} href={`/product/${c.productSlug}`} className="card card-lift group flex gap-4 p-4">
+                <span className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-xl border border-[var(--color-border)] bg-white">
+                  <Image src={c.image} alt={c.name} width={80} height={80} className="size-20 object-contain" />
+                </span>
+                <span>
+                  <span className="block font-semibold transition group-hover:text-[var(--color-accent-dark)]">{c.name}</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-[var(--color-text-soft)]">{c.blurb}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="smart-control" className="bg-[var(--color-ink)] text-white">
+        <div className="shell section grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="eyebrow eyebrow-rule text-[var(--color-gold)]">Step 3 · Smart control</p>
+            <h2 className="font-display h2-fluid mt-5">Every holiday, every colour, from your phone.</h2>
+            <p className="mt-4 text-white/75">The included WiFi controller runs WLED, the open lighting firmware used by installers worldwide. The free Android and iOS app handles colours, saved scenes, schedules, sunset triggers, zones and voice control through Alexa or Google Home. Scenes are stored on the controller, so a dusk-to-dawn routine keeps running even if your internet drops.</p>
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-white/85">
+              <li>16M colours + true warm white</li>
+              <li>Pre-built holiday scenes</li>
+              <li>Sunset and timer schedules</li>
+              <li>Zones per elevation</li>
+              <li>Alexa and Google Home</li>
+              <li>Works offline once set</li>
+            </ul>
+            <Link href="/resources/wled-controller-setup-guide-for-permanent-lights" className="btn-gold mt-8">Controller setup guide</Link>
+          </div>
+          <Photo name="home-blue-app-control" ratio="aspect-[4/3]" rounded="rounded-2xl" sizes="(max-width: 768px) 100vw, 560px" />
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-bg)]">
+        <div className="shell section grid gap-10 md:grid-cols-2 md:items-center">
+          <Photo name="detail-tracks" ratio="aspect-[4/3]" rounded="rounded-2xl" sizes="(max-width: 768px) 100vw, 560px" />
+          <div>
+            <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Track colours</p>
+            <h2 className="font-display h2-fluid mt-5">Match the soffit, disappear by day.</h2>
+            <p className="mt-4 text-[var(--color-text-soft)]">Black, white, wicker and brown cover almost every aluminum or vinyl soffit sold in Canada. The screws are colour-matched too. <Link href="/resources/choosing-a-track-colour-to-match-your-soffit" className="link-underline">Which colour is right for your trim?</Link></p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {kitColours.map((c) => (
+                <span key={c.key} className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-white px-3 py-1.5 text-sm">
+                  <span className="size-4 rounded-full border border-black/15" style={{ background: c.hex }} />
+                  {c.label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-surface)]">
+        <div className="shell section grid gap-8 md:grid-cols-3">
+          {[
+            ["5-year parts warranty", "We repair or replace any kit component that fails from a manufacturing defect within five years.", "/warranty", "Read the warranty"],
+            ["Free shipping over $500", "Every kit qualifies. Orders leave London, Ontario within two business days.", "/shipping-returns", "Shipping details"],
+            ["Prefer a pro?", "Our own crew installs across Southwestern Ontario, and partner installers cover the rest of Canada.", "/installation", "Professional installation"]
+          ].map(([t, b, h, l]) => (
+            <div key={t} className="card p-6">
+              <h3 className="font-display text-xl">{t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-soft)]">{b}</p>
+              <Link href={h} className="mt-4 inline-flex text-sm font-semibold text-[var(--color-accent-dark)] hover:underline">{l} →</Link>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
 
-function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-[var(--color-night)] text-white">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-night)] via-[#0f1e36] to-[var(--color-night)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-1/3 hidden gap-3 px-8 md:flex md:justify-between md:px-16">
-        {Array.from({ length: 22 }).map((_, i) => (
-          <span
-            key={i}
-            className={`twinkle twinkle-delay-${(i % 5) as 0 | 1 | 2 | 3 | 4} inline-block size-1.5 rounded-full bg-[var(--color-gold)]`}
-            style={{ boxShadow: "0 0 10px 2px rgba(212,175,55,0.55)" }}
-          />
-        ))}
-      </div>
-      <div className="relative mx-auto max-w-5xl px-4 py-20 text-center md:py-28">
-        <p className="eyebrow inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[var(--color-gold)]">
-          ★ Flagship — Permanent Lights
-        </p>
-        <h1 className="font-display mt-5 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-          Soffit-mounted LED lighting,<br />
-          <span className="text-[var(--color-gold)]">installed once.</span>
-        </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-300">
-          Discreet aluminum tracks, RGBW LED pucks, smart-app control, and the full hardware bundle —
-          delivered as a complete kit. Available in 50, 75, 100, 125, 150, 175 and 200 linear-foot sizes.
-        </p>
-        <p className="mt-6 text-xs uppercase tracking-wider text-slate-400">
-          5-year warranty · CSA Class 2 · IP68 weatherproof · −40°C tested
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
-  return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <div className="max-w-3xl">
-          <p className="eyebrow text-[var(--color-brand)]">Step 1 — Pick your kit</p>
-          <h2 className="font-display mt-2 text-3xl md:text-4xl">Match your home perimeter.</h2>
-          <p className="mt-3 text-slate-600">
-            Measure the rooflines, soffits or fascia you want to light. Pick the kit that covers it (a
-            little extra never hurts). Each kit includes lights, aluminum tracks, controller, power supply,
-            T-connectors, extension cables, screws, drill bit and fuses.
-          </p>
-        </div>
-
-        <DiyKitsConfigurator
-          options={packages.map((p) => {
-            const variants = (p.ecom_variants ?? []).filter((v) => v.is_active);
-            const minPrice = variants.length
-              ? Math.min(...variants.map((v) => Number(v.price_cad)))
-              : 0;
-            const colors = Array.from(
-              new Set(
-                variants
-                  .filter((v) => v.attribute_type?.toLowerCase() === "color")
-                  .map((v) => v.attribute_value ?? "")
-                  .filter(Boolean)
-              )
-            );
-            return {
-              slug: p.slug,
-              name: p.name,
-              footage: parseInt(p.slug.replace(/.*-(\d+).*/, "$1"), 10) || 0,
-              price: minPrice,
-              colors,
-              image: primaryImage(p)?.public_url ?? null,
-              firstVariantId:
-                variants.find((v) => v.attribute_value?.toLowerCase() === "white")?.id ??
-                variants[0]?.id ??
-                null
-            };
-          })}
-        />
-      </div>
-    </section>
-  );
-}
-
-function WhatsIncluded() {
-  return (
-    <section className="bg-[var(--color-bg)]">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <div className="max-w-3xl">
-          <p className="eyebrow text-[var(--color-brand)]">Step 2 — What&rsquo;s in the box</p>
-          <h2 className="font-display mt-2 text-3xl md:text-4xl">
-            Everything you need to install in one delivery.
-          </h2>
-          <p className="mt-3 text-slate-600">
-            Example for a 100&prime; kit. Larger kits scale proportionally.
-          </p>
-        </div>
-
-        <div className="mt-10 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
-          <ul className="divide-y divide-[var(--color-border)]">
-            {[
-              ["24V RGBW LED Lights", "160 ×", "5 lights per metre of track, individually addressable"],
-              ["Aluminum Tracks (1 m / 3.28 ft)", "31 ×", "5-hole pre-drilled, beige / black / brown / white"],
-              ["Box of color-matching screws", "1 ×", "5/8″ soffit screws (white/black to match track)"],
-              ["Controller", "1 ×", "WiFi-enabled, free Android & iOS app"],
-              ["300 W Power Supply (24V Controller)", "1 ×", "CSA Class 2"],
-              ["20 ft / 10 ft / 5 ft / 1 ft Connectors", "2 / 2 / 1 / 2", "Plug-and-play, waterproof"],
-              ["T-Connector for 2-run splits", "1 ×", "Branch around corners and second stories"],
-              ["T-power injection connectors", "2 ×", "Maintains brightness on long runs"],
-              ["20 ft Power INJ Extension Cable", "2 ×", "For runs over 120 lights"],
-              ["20 ft PWR INJ Cable for Controller", "1 ×", "Connects controller to first run"],
-              ["Robertson drill bit", "1 ×", "For the included soffit screws"],
-              ["7.5 amp controller fuses", "2 ×", "Spare protection"]
-            ].map(([part, qty, note]) => (
-              <li key={part} className="grid grid-cols-[1.5fr_auto_2fr] items-center gap-4 px-5 py-3 text-sm">
-                <span className="font-medium">{part}</span>
-                <span className="text-right font-mono text-xs text-[var(--color-brand)]">{qty}</span>
-                <span className="text-slate-500">{note}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function SmartControl() {
-  return (
-    <section className="bg-[var(--color-brand)] text-white">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="eyebrow text-[var(--color-gold)]">Step 3 — Smart control</p>
-            <h2 className="font-display mt-2 text-3xl md:text-4xl">
-              Every holiday, every color, from your phone.
-            </h2>
-            <p className="mt-4 text-emerald-50">
-              The included WiFi controller pairs with our free Android &amp; iOS app. Change colors,
-              schedule shows, dim sections, or trigger pre-built effects — from anywhere in the world.
-            </p>
-            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-emerald-50">
-              <li>✓ 16M colors (RGBW)</li>
-              <li>✓ Pre-built holiday scenes</li>
-              <li>✓ Schedule on/off + sunset triggers</li>
-              <li>✓ Dim per-section</li>
-              <li>✓ Voice control via Alexa / Google</li>
-              <li>✓ Remote access worldwide</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur">
-            <p className="font-display text-7xl text-[var(--color-gold)]">2850K</p>
-            <p className="text-sm uppercase tracking-wide text-emerald-100">to 6500K</p>
-            <p className="mt-2 text-xs text-emerald-200">Warm white → Daylight</p>
-            <div className="mt-6 grid grid-cols-6 gap-2">
-              {["#fff4d6", "#fffadc", "#ffffee", "#f3faff", "#e6f1ff", "#d8ebff"].map((c, i) => (
-                <div key={i} className="h-6 rounded" style={{ background: c }} />
-              ))}
-            </div>
-            <p className="mt-6 text-xs text-emerald-200">
-              Plus every RGB color in the wheel for holidays + events
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Specs() {
-  const specs = [
-    { value: "46", unit: "lumens", label: "Per puck at max brightness" },
-    { value: "0.3", unit: "W", label: "Per LED · ultra efficient" },
-    { value: "50k", unit: "hours", label: "20+ years typical use" },
-    { value: "−40°C", unit: "tested", label: "Built for Canadian winters" },
-    { value: "IP68", unit: "rated", label: "Underwater-grade weatherproofing" },
-    { value: "CSA", unit: "Class 2", label: "Low-voltage safety certified" }
-  ];
-  return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <p className="eyebrow text-[var(--color-brand)]">The specs</p>
-        <h2 className="font-display mt-2 text-3xl md:text-4xl">Built for serious lighting.</h2>
-        <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
-          {specs.map((s) => (
-            <div key={s.label}>
-              <p className="font-display text-4xl text-[var(--color-brand)]">
-                {s.value}
-                <span className="ml-1 text-sm font-medium uppercase tracking-wide text-slate-500">
-                  {s.unit}
-                </span>
-              </p>
-              <p className="mt-2 text-sm text-slate-600">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Warranty() {
-  return (
-    <section className="bg-[var(--color-bg)]">
-      <div className="mx-auto grid max-w-5xl gap-10 px-4 py-20 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="eyebrow text-[var(--color-brand)]">Backed by warranty</p>
-          <h2 className="font-display mt-2 text-3xl md:text-4xl">
-            5-year parts warranty.
-          </h2>
-          <p className="mt-3 text-slate-600">
-            We&rsquo;ll repair or replace any kit component that fails due to a manufacturing defect within
-            5 years of purchase. Warranty excludes damage from improper install, electrical surges, and
-            normal wear &mdash; standard stuff.
-          </p>
-          <Link
-            href="/warranty"
-            className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-brand)] hover:underline"
-          >
-            See the full warranty →
-          </Link>
-        </div>
-        <div className="rounded-2xl bg-white p-8 text-center shadow-sm border border-[var(--color-border)]">
-          <p className="font-display text-8xl text-[var(--color-brand)]">5</p>
-          <p className="eyebrow text-slate-500">years parts coverage</p>
-          <div className="mt-6 h-px bg-[var(--color-border)]" />
-          <p className="mt-6 text-sm text-slate-600">
-            Local Canadian support &mdash; we ship from London, ON and answer phones from London, ON.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function InstallerCTA() {
-  return (
-    <section className="bg-[var(--color-night)] text-white">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-5 px-4 py-20 text-center">
-        <p className="eyebrow text-[var(--color-gold)]">For pros &amp; municipalities</p>
-        <h2 className="font-display max-w-3xl text-3xl md:text-5xl">
-          Selling permanent lighting?<br />
-          <span className="text-[var(--color-gold)]">Get installer pricing.</span>
-        </h2>
-        <p className="max-w-xl text-slate-300">
-          Apply for the Pro Installer or Municipality program for tier pricing, priority fulfillment,
-          and net-30 invoicing on bulk orders.
-        </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-3">
-          <Link href="/professional-installer" className="btn-gold">
-            Apply as installer →
-          </Link>
-          <Link href=" /installers" className="btn-ghost-light">
-            Municipality program →
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const _formatCadUsed = formatCad; // keep formatter imported even if unused in this slice
-export const _ = _formatCadUsed;
+// keep helper referenced for the 100 ft example elsewhere
+export const _example = getKitByFeet(100) && kitBom(getKitByFeet(100)!).length;

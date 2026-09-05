@@ -1,0 +1,172 @@
+{
+  "slug": "choosing-led-power-supply-60w-150w-300w",
+  "title": "Choosing an LED Power Supply: 60W vs 150W vs 300W",
+  "metaTitle": "LED Power Supply Sizing: 60W vs 150W vs 300W",
+  "metaDescription": "How to size a 12V LED power supply for permanent soffit lighting. Compare the 60W, 150W and 300W by run length, puck count, headroom and power injection.",
+  "category": "Parts & specs",
+  "excerpt": "A plain-English guide to sizing the power supply for a permanent LED track lighting run — how watts relate to linear feet, why headroom matters, and when a big home needs two supplies plus power injection.",
+  "readMinutes": 7,
+  "updated": "2026-08-28",
+  "heroAlt": "12V LED power supplies in 60W, 150W and 300W sizes for permanent soffit track lighting",
+  "isHowTo": false,
+  "keyTakeaways": [
+    "Size by total wattage, not just linear feet: add up how many pucks you have and what each one draws at full white.",
+    "Leave roughly 20% headroom — pick a supply rated about 25% above your calculated peak load so it runs cool and lasts.",
+    "Rough starting points: 60W handles short runs and power-injection feeds, 150W suits most single homes, 300W covers large or two-storey homes.",
+    "Voltage drop — not wattage — is what dims the far end of a long run; that is what power injection solves.",
+    "Very large homes are usually better served by two supplies or one supply plus injection than by one oversized unit."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "The power supply is the least glamorous part of a permanent LED lighting system and the one most people get wrong. Undersize it and the far end of your run looks dim or shifts warm; oversize it and you have paid for capacity you will never use. This guide walks through how to pick between the three 12V supplies we stock — 60W, 150W and 300W — so the one you buy matches the run you are actually building."
+    },
+    {
+      "type": "h2",
+      "text": "The short answer"
+    },
+    {
+      "type": "p",
+      "text": "If you just want a starting point before reading the reasoning, here is the rule of thumb for a standard 12V RGBW puck system spaced about one puck per foot:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "60W — short accent runs up to roughly 40–50 linear feet, a detached garage, or as a dedicated power-injection feed on a bigger job.",
+        "150W — the workhorse for most single-family homes: comfortably runs the front and a return down one side, roughly 80–125 feet from one location.",
+        "300W — large footprints, long rooflines, or two-storey homes where you are pushing toward 150–200 feet from a single supply (paired with power injection)."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Those are safe defaults. To size it properly rather than guess, spend two minutes on the math below — it is simple addition."
+    },
+    {
+      "type": "h2",
+      "text": "Watts, not feet: how to actually size a supply"
+    },
+    {
+      "type": "p",
+      "text": "Linear feet is a convenient shorthand, but a power supply does not care about distance — it cares about total current draw. Two homes with the same 100 feet of track can pull very different wattage depending on puck spacing and how bright you run them. So the honest way to size is to work in watts."
+    },
+    {
+      "type": "p",
+      "text": "Every LED puck has a rated draw. On a typical 12V RGBW permanent light, a single puck pulls in the neighbourhood of 0.5 to 0.75 watts when all colour channels are on at full white — which is the worst case, and the number you should size for. Warm whites and single colours draw less, but you plan for the maximum. Check the spec on the exact puck you are buying, because this varies by product and is the single most important input to your calculation."
+    },
+    {
+      "type": "p",
+      "text": "From there the math is:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Count your pucks. At one puck per foot, a 100 ft run is roughly 100 pucks.",
+        "Multiply by watts per puck. 100 pucks at 0.6W each = 60W of actual load.",
+        "Add headroom. Never run a supply at 100%. Aim to load it to about 80% of its rating, so multiply your load by roughly 1.25.",
+        "60W load × 1.25 = 75W required → a 150W supply is the comfortable choice, not a 60W."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "The 80% rule: sizing a power supply to about 80% of its rated wattage keeps it running cooler, quieter and longer. A supply constantly pinned at its maximum runs hot and ages faster. When in doubt, size up one tier — the price difference is small next to the cost of a redo."
+    },
+    {
+      "type": "h2",
+      "text": "The three supplies compared"
+    },
+    {
+      "type": "h3",
+      "text": "12V 60W"
+    },
+    {
+      "type": "p",
+      "text": "The 60W supply (/product/24v-60w-power-supply) is the small-job and support-role unit. On its own it handles short runs — a single garage face, a porch, a shed, or an accent detail up to about 40–50 feet with headroom. Its more common job on a larger install is as a power-injection feed: a second, smaller supply that pushes fresh voltage into the far end of a long run so the colour and brightness stay even. If you are building a compact single-storey front, this may be all you need; on a big home, buy one or two of these alongside your main supply for injection."
+    },
+    {
+      "type": "h3",
+      "text": "12V 150W"
+    },
+    {
+      "type": "p",
+      "text": "The 150W supply (/product/24v-150w-power-supply) is what most homeowners actually want. Loaded to 80%, it delivers around 120W of usable power — enough for roughly 80 to 125 feet of typical RGBW track from a single feed point. It covers the majority of detached homes: a front elevation plus a wrap down one side. It is the default we build most 100 ft DIY kits (/diy-kits) around. If your calculated load lands between 60W and 120W, this is your supply."
+    },
+    {
+      "type": "h3",
+      "text": "12V 300W"
+    },
+    {
+      "type": "p",
+      "text": "The 300W supply (/product/24v-300w-power-supply) is for large and two-storey homes, long continuous rooflines, and runs approaching 150–200 feet. With about 240W usable at 80% load, it has the capacity for a substantial home from one location — but capacity is only half the story. Once a single run gets long, voltage drop becomes the limiting factor, not wattage, so a 300W supply almost always gets paired with power injection (more on that next). It is the backbone of our larger kits and the right call any time you are unsure whether 150W is enough."
+    },
+    {
+      "type": "h2",
+      "text": "Why voltage drop matters more than wattage"
+    },
+    {
+      "type": "p",
+      "text": "Here is the part the wattage math does not tell you. Even if a 300W supply has the raw capacity to power 200 feet of pucks, you often cannot feed all 200 feet from one end of the run. Low-voltage 12V power loses pressure over distance the same way water loses pressure over a long hose. Feed a long run from a single point and the pucks nearest the supply are full brightness while the pucks at the far end are dimmer and drift toward warm white. That is voltage drop, and it is a distance problem, not a wattage problem."
+    },
+    {
+      "type": "p",
+      "text": "The fix is power injection: instead of feeding voltage in at one end only, you also push it in at the far end or at a midpoint using a power-injection cable, often fed by a second 60W supply. This keeps voltage — and therefore brightness and colour — consistent across the whole run. As a practical rule, plan to inject power roughly every 50–75 feet on a 12V system."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Power injection fixes voltage drop — dim or colour-shifted pucks at the far end of a long run. Use power-injection cables and, if needed, a second small supply.",
+        "A signal amplifier fixes something different — it boosts the control signal so colour and effects stay in sync over very long distances. It does not add power.",
+        "Big runs frequently need both: enough total wattage, plus injection to keep voltage even end to end."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Big homes: one supply or several?"
+    },
+    {
+      "type": "p",
+      "text": "When a home pushes past what a single 300W supply comfortably delivers — or when the wiring geography makes one feed point awkward — the better approach is usually multiple supplies rather than one giant unit. Two 150W supplies feeding two zones can be cleaner than one 300W straining to reach both ends of the house, and it gives you redundancy: if one supply ever fails, only half the display goes dark. Splitting into zones also shortens each run, which naturally reduces voltage drop and the amount of injection you need."
+    },
+    {
+      "type": "p",
+      "text": "A common large-home layout: a 300W supply handling the main front-and-side run with injection at the far corner, plus a 60W supply for a separate garage or back elevation on its own short run. There is no single right answer — it comes down to your rooflines, where power is available, and how you want to zone the display."
+    },
+    {
+      "type": "h2",
+      "text": "Matching the supply to your kit"
+    },
+    {
+      "type": "p",
+      "text": "If you are buying one of our DIY kits (/diy-kits), the right supply is already matched to the housing length — a 50 ft package ships with a smaller supply, a 150–200 ft package with a 300W and injection hardware. Where sizing decisions come up is when you are building a custom run from individual parts (/shop), extending an existing system, or you have unusually tight or wide puck spacing. In those cases, do the wattage math, add your 20% headroom, and check whether your total run length calls for power injection."
+    },
+    {
+      "type": "p",
+      "text": "Not sure which tier your home lands in? Start with your total linear footage and puck count, and if it is close to a boundary, size up — the extra capacity costs little and runs cooler. You can compare all three supplies and the injection parts in the shop (/shop), or grab a complete matched kit (/diy-kits) and skip the calculation entirely. And if you are near London, Woodstock or Kitchener-Waterloo and would rather have it sized, wired and mounted for you, our team offers professional installation across Southwestern Ontario — book a quote through our installation page (/installers)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many feet of LED track can a 150W power supply run?",
+      "a": "For a typical 12V RGBW system at about one puck per foot, a 150W supply comfortably runs roughly 80 to 125 linear feet when loaded to around 80% of its rating. The exact figure depends on your puck's wattage at full white and your spacing, so always confirm with the math rather than the footage alone."
+    },
+    {
+      "q": "What size power supply do I need for my whole house?",
+      "a": "Count your total pucks, multiply by the watts each draws at full white, then add about 25% headroom. Most single-family homes land in the 150W range; large or two-storey homes with 150–200 feet of run typically need a 300W supply plus power injection, or two supplies split into zones."
+    },
+    {
+      "q": "Can I use one big power supply instead of two smaller ones?",
+      "a": "You can if it has the capacity, but on long runs a single feed point causes voltage drop — the far pucks dim and shift colour. Splitting into two zones, or feeding one supply with power injection at the far end, keeps brightness and colour even. Multiple supplies also add redundancy if one ever fails."
+    },
+    {
+      "q": "What is power injection and do I need it?",
+      "a": "Power injection means feeding voltage into a run at more than one point — usually the far end or a midpoint — using a power-injection cable, often with a second small 60W supply. It combats voltage drop on long runs. As a rule, plan to inject roughly every 50 to 75 feet on a 12V system."
+    },
+    {
+      "q": "Is watts or linear feet the right way to size a supply?",
+      "a": "Watts. Linear feet is only a shortcut that assumes standard spacing and brightness. Two 100 ft runs can draw very different power depending on puck spacing and how bright you run them, so add up your actual puck wattage and size the supply to about 80% of its rating."
+    },
+    {
+      "q": "Will a bigger power supply make my lights brighter?",
+      "a": "No. Brightness is set by the pucks and your controller, not by the supply's rating. A larger supply only provides more available capacity — useful for longer runs or headroom, but it will not push a given set of pucks past their rated output."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "_source": "Kit prices and bill of materials mirror holidaylightsdirect.ca / foreverlights.ca (Matt, 2026-09-04). All components are 12V.",
+  "trackPieceFeet": 3.5,
+  "lightsPerStrand": 5,
+  "colours": [
+    { "key": "black", "label": "Black", "hex": "#24262b" },
+    { "key": "white", "label": "White", "hex": "#f3f1ec" },
+    { "key": "wicker", "label": "Wicker", "hex": "#c9b58f" },
+    { "key": "brown", "label": "Brown", "hex": "#4b342a" }
+  ],
+  "components": [
+    { "key": "strand", "name": "12V RGBW 5-Light Puck Strand", "image": "/images/products/puck-lights.webp", "productSlug": "12v-led-puck-lights-10-pack", "blurb": "Five sealed RGBW puck lights on a moulded weatherproof lead. Each puck drops into the track and points down the face of the home." },
+    { "key": "track", "name": "Aluminum Track, 42\" 5-hole", "image": "/images/products/aluminum-track.webp", "productSlug": "aluminum-track-12v-led-lights-2-pack", "blurb": "Extruded aluminum channel, pre-drilled for five pucks. Hides the wire and sinks heat. Black, white, wicker or brown." },
+    { "key": "controller", "name": "WiFi Controller (WLED)", "image": "/images/products/controller-2ch.webp", "productSlug": "2-channel-12v-led-controller", "blurb": "Joins your 2.4 GHz WiFi and drives colours, scenes, schedules and zones from the free app. Scenes keep running offline." },
+    { "key": "powerSupply", "name": "12V 150 W Power Supply", "image": "/images/products/power-supply-150w.webp", "productSlug": "12v-150w-power-supply", "blurb": "Constant-voltage waterproof LED driver with a standard plug. Plugs into an existing GFCI receptacle." },
+    { "key": "conn1", "name": "1 ft Extension Connector", "image": "/images/products/connector-1ft.webp", "productSlug": "1-foot-connector-for-12-24v-led-lights", "blurb": "Short sealed jumper for corners and narrow breaks in the soffit." },
+    { "key": "conn5", "name": "5 ft Extension Connector", "image": "/images/products/connector-5ft.webp", "productSlug": "5-foot-connector-for-12-24v-led-lights", "blurb": "Mid-length jumper for gaps over a garage door or window bay." },
+    { "key": "conn10", "name": "10 ft Extension Connector", "image": "/images/products/connector-10ft.webp", "productSlug": "10-foot-connector-for-12-24v-led-lights", "blurb": "Crosses a wider unlit span without adding pucks." },
+    { "key": "conn20", "name": "20 ft Extension Connector", "image": "/images/products/connector-20ft.webp", "productSlug": "20-foot-connector-for-12-24v-led-lights", "blurb": "Reaches a separate elevation or carries the run back to the controller." },
+    { "key": "powerT", "name": "Power Injection T-Connector", "image": "/images/products/t-power-injection.webp", "productSlug": "t-power-injection-connector-for-12-24v-led", "blurb": "Feeds extra power mid-run so the far end stays as bright as the near end." },
+    { "key": "lightT", "name": "Light T-Connector", "image": "/images/products/t-connector.webp", "productSlug": "t-connector-for-12-24v-led-lights", "blurb": "Splits the light run so one controller output can branch left and right." },
+    { "key": "powerExt20", "name": "20 ft Power Injection Cable", "image": "/images/products/power-inj-extension-20ft.webp", "productSlug": "20ft-power-inj-extension-cable", "blurb": "Extends the run between a power supply and the injection point." },
+    { "key": "amplifier", "name": "Data Amplifier", "image": "/images/products/amplifier.webp", "productSlug": "amplifier-for-12v-led-lights", "blurb": "Re-boosts the control signal on long runs so the last pucks stay in sync." },
+    { "key": "screws", "name": "Colour-Matched Soffit Screws (100)", "image": "/images/products/screws-white.webp", "productSlug": "white-soffit-screws-5-8-100pk", "blurb": "5/8\" coloured-head screws that disappear against the track." }
+  ],
+  "kits": [
+    { "slug": "led-housing-package-50", "feet": 50, "price": 1265.0, "installedLow": 1665.0, "installedHigh": 1998.0, "photo": "home-blue-app-control", "suits": "A garage face, a front elevation, a porch or a small bungalow.", "bom": { "strand": 16, "track": 16, "powerSupply": 1, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 0, "conn20": 2, "powerT": 0, "lightT": 1, "powerExt20": 0, "amplifier": 0, "screws": 1 } },
+    { "slug": "led-housing-package-75", "feet": 75, "price": 1485.0, "installedLow": 1785.0, "installedHigh": 2142.0, "photo": "home-warm-white-twilight", "suits": "A small bungalow front and one side, or a wide single-storey elevation.", "bom": { "strand": 24, "track": 24, "powerSupply": 1, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 1, "conn20": 2, "powerT": 0, "lightT": 1, "powerExt20": 0, "amplifier": 0, "screws": 1 } },
+    { "slug": "led-housing-package-100", "feet": 100, "price": 1729.2, "installedLow": 2129.2, "installedHigh": 2555.04, "photo": "hero-blue-porch", "suits": "A typical bungalow or townhome front, or a storey-and-a-half front elevation.", "bom": { "strand": 31, "track": 31, "powerSupply": 2, "controller": 1, "conn1": 2, "conn5": 1, "conn10": 2, "conn20": 2, "powerT": 1, "lightT": 1, "powerExt20": 1, "amplifier": 1, "screws": 1 } },
+    { "slug": "led-housing-package-150", "feet": 150, "price": 2240.7, "installedLow": 2840.7, "installedHigh": 3408.84, "photo": "home-green-roofline", "suits": "A storey-and-a-half or mid-size home, front and partial sides.", "bom": { "strand": 45, "track": 45, "powerSupply": 2, "controller": 1, "conn1": 2, "conn5": 2, "conn10": 2, "conn20": 2, "powerT": 1, "lightT": 1, "powerExt20": 1, "amplifier": 1, "screws": 2 } },
+    { "slug": "led-housing-package-200", "feet": 200, "price": 2648.8, "installedLow": 3448.8, "installedHigh": 4138.56, "photo": "home-blue-night", "suits": "A two-storey detached home, front elevation plus both sides.", "bom": { "strand": 60, "track": 60, "powerSupply": 3, "controller": 1, "conn1": 4, "conn5": 4, "conn10": 3, "conn20": 3, "powerT": 2, "lightT": 2, "powerExt20": 2, "amplifier": 2, "screws": 2 } },
+    { "slug": "led-housing-package-250", "feet": 250, "price": 3157.0, "installedLow": 4157.0, "installedHigh": 4988.4, "photo": "home-warm-white-christmas", "suits": "A large or complex two-storey, multi-peak rooflines, or a house plus detached garage.", "bom": { "strand": 75, "track": 75, "powerSupply": 3, "controller": 1, "conn1": 5, "conn5": 5, "conn10": 3, "conn20": 4, "powerT": 2, "lightT": 2, "powerExt20": 2, "amplifier": 2, "screws": 2 } }
+  ]
+}

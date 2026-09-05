@@ -103,12 +103,11 @@ export async function getProduct(slug: string): Promise<CatalogProduct | null> {
   return (data as CatalogProduct) ?? null;
 }
 
+const usable = (i: { public_url: string | null }) => !!i.public_url && !/^https?:\/\/[^/]*illumitracklights\.ca/.test(i.public_url);
+
 export function primaryImage(product: Pick<CatalogProduct, "ecom_product_images">) {
-  return (
-    product.ecom_product_images.find((i) => i.is_primary) ??
-    product.ecom_product_images[0] ??
-    null
-  );
+  const imgs = product.ecom_product_images.filter(usable);
+  return imgs.find((i) => i.is_primary) ?? imgs[0] ?? null;
 }
 
 export function priceRange(product: Pick<CatalogProduct, "ecom_variants">) {

@@ -1,70 +1,61 @@
 import Link from "next/link";
-import Image from "next/image";
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+import { Photo } from "@/components/photo";
+import { photo, type PhotoKey } from "@/lib/photos";
+import { SITE_URL } from "@/lib/utils";
 
-export const metadata = {
-  title: "Gallery — Illumi Track Lights",
-  description: "Real Canadian homes with Illumi Track Lights installed. See the soffit-mounted LED systems by day and lit up at night."
+export const metadata: Metadata = {
+  title: "Gallery: Soffit Track Lighting on Real Homes",
+  description:
+    "Photos of Illumi soffit track lighting on real homes: warm white evenings, holiday colours, security white, and daytime shots that show how the colour-matched track disappears into the soffit.",
+  alternates: { canonical: `${SITE_URL}/gallery` },
+  openGraph: { title: "Gallery | Illumi Track Lights", description: "Real installs, day and night.", url: `${SITE_URL}/gallery`, images: ["/images/photos/hero-home-twilight.webp"] }
 };
 
-const SHOTS: Array<{ src: string; alt: string; tag: string; location: string }> = [
-  { src: "/images/showcase/install-banner.jpg", alt: "Modern home with Illumi tracks installed", tag: "100 ft kit", location: "London, ON" },
-  { src: "/images/showcase/install-home-1.jpg", alt: "Suburban home with soffit-mounted RGBW LEDs", tag: "150 ft kit", location: "Toronto, ON" },
-  { src: "/images/showcase/install-home-2.jpg", alt: "Custom-color permanent lighting at night", tag: "200 ft kit", location: "Calgary, AB" },
-  { src: "/images/showcase/security-house.webp", alt: "Home with security-white lighting mode", tag: "Security mode", location: "Halifax, NS" },
-  { src: "/images/showcase/day.webp", alt: "Tracks blending into the soffit during the day", tag: "Daytime", location: "Ottawa, ON" },
-  { src: "/images/showcase/night.webp", alt: "Same home lit up at night in colour", tag: "Nighttime", location: "Ottawa, ON" },
-  { src: "/images/showcase/four-seasons.webp", alt: "Seasonal lighting scenes from the same install", tag: "Year-round", location: "Vancouver, BC" },
-  { src: "/images/showcase/residential.webp", alt: "Residential property with Illumi tracks", tag: "Residential", location: "Winnipeg, MB" }
+const GROUPS: { title: string; blurb: string; keys: PhotoKey[] }[] = [
+  { title: "Day: the track disappears", blurb: "Colour-matched aluminum channel flush under the soffit. This is the part strip kits cannot do.", keys: ["home-day-hidden", "track-day", "soffit-lights-installed", "soffit-lights-day", "home-street", "install-home-day"] },
+  { title: "Warm white evenings", blurb: "A dedicated white diode gives a true warm white that reads as architectural lighting, not a Christmas display.", keys: ["hero-home-twilight", "scene-warm-white", "home-cottage", "home-warm-white-christmas", "detail-pucks", "soffit-lights-perm2"] },
+  { title: "Holiday and game day", blurb: "Saved scenes for every occasion, one tap in the app.", keys: ["scene-red", "scene-green", "scene-pink", "scene-rainbow", "home-purple", "home-craftsman-multicolour", "track-night", "home-side-elevation", "home-roofline-garage"] },
+  { title: "Blue and security white", blurb: "Cool tones for winter, and a bright white security mode on a sunset schedule.", keys: ["home-night-lit", "home-elevation-blue", "scene-blue", "scene-security", "home-teal-hot-tub", "home-residential"] },
+  { title: "Installation days", blurb: "Our crew in Southwestern Ontario, and DIYers across Canada.", keys: ["home-install", "banner-install", "install-wide", "detail-track-install", "install-track-mounting", "install-eder"] }
 ];
 
 export default function GalleryPage() {
+  const all = GROUPS.flatMap((g) => g.keys);
+  const jsonLd = { "@context": "https://schema.org", "@type": "ImageGallery", name: "Illumi Track Lights gallery", url: `${SITE_URL}/gallery`, image: all.map((k) => ({ "@type": "ImageObject", contentUrl: `${SITE_URL}${photo(k).src}`, description: photo(k).alt })) };
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16">
-      <p className="eyebrow text-[var(--color-brand)]">Project gallery</p>
-      <h1 className="font-display mt-2 text-4xl tracking-tight md:text-5xl">
-        Real homes, <span className="gradient-text">real installs</span>.
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg text-slate-600">
-        See how customers across Canada are using Illumi Track Lights to transform their homes &mdash;
-        every holiday, every season, every night of the year.
-      </p>
-
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {SHOTS.map((s, i) => (
-          <figure
-            key={i}
-            className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={s.src}
-                alt={s.alt}
-                fill
-                className="object-cover transition group-hover:scale-105"
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              />
-              <span className="absolute left-3 top-3 rounded-full bg-[var(--color-brand)] px-3 py-1 text-xs font-semibold text-white">
-                {s.tag}
-              </span>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <PageHero photo="hero-home-twilight" eyebrow="Gallery" title="Real homes, day and night." intro="Every photo uses the 12V track-and-puck hardware that ships in our kits and goes up on our installs." crumbs={[{ label: "Gallery" }]} />
+      {GROUPS.map((g, gi) => (
+        <section key={g.title} className={gi % 2 ? "bg-[var(--color-bg-warm)]" : "bg-[var(--color-bg)]"}>
+          <div className="shell section">
+            <div className="max-w-2xl">
+              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">{g.title}</p>
+              <p className="mt-5 text-[var(--color-text-soft)]">{g.blurb}</p>
             </div>
-            <figcaption className="flex items-center justify-between gap-2 border-t border-[var(--color-border)] px-4 py-3 text-sm">
-              <span className="text-slate-700">{s.location}</span>
-              <span className="text-xs text-slate-500">Customer install</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <div className="mt-12 rounded-2xl border border-[var(--color-border)] bg-white p-6 md:flex md:items-center md:justify-between md:gap-6">
-        <div>
-          <h2 className="font-display text-2xl">Got a great install photo?</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Email us at <a className="text-[var(--color-brand)] underline" href="mailto:service@masterdecker.com">service@masterdecker.com</a>{" "}
-            and we&rsquo;ll feature your install (with credit) and send you a 15% off code on your next order.
-          </p>
+            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+              {g.keys.map((k, i) => (
+                <figure key={k} className={`group overflow-hidden rounded-2xl ${i === 0 ? "col-span-2" : ""}`}>
+                  <Photo name={k} ratio={i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"} sizes="(max-width: 768px) 100vw, 600px" className="transition duration-500 group-hover:scale-[1.03]" />
+                  <figcaption className="sr-only">{photo(k).alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+      <section className="bg-[var(--color-ink)] text-white">
+        <div className="shell section-lg text-center">
+          <p className="eyebrow text-[var(--color-gold)]">Your house next</p>
+          <h2 className="font-display h2-fluid mx-auto mt-5 max-w-2xl">Send us a photo and we will tell you the kit size.</h2>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/contact-us" className="btn-primary">Send a photo</Link>
+            <Link href="/diy-kits" className="btn-ghost-light">Shop kits</Link>
+          </div>
         </div>
-        <Link href="/diy-kits" className="btn-primary mt-5 inline-flex md:mt-0">Pick your own kit →</Link>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

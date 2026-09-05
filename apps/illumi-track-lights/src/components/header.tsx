@@ -1,69 +1,64 @@
 import Link from "next/link";
-import Image from "next/image";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { CartBadge } from "@/components/cart-badge";
 import { MegaMenu } from "@/components/mega-menu";
-import { SearchTrigger } from "@/components/search-trigger";
+import { HeaderSearch } from "@/components/header-search";
+import { MobileNav } from "@/components/mobile-nav";
+import { Logo } from "@/components/logo";
+import { getStore } from "@/lib/catalog";
 
-export function Header() {
-  // Logo dropped in from the scrape — kept the original Illumi mark.
-  const logoFsPath = join(process.cwd(), "public", "images", "logo.jpg");
-  const hasLogo = existsSync(logoFsPath);
+const NAV = [
+  { label: "Kits", href: "/diy-kits" },
+  { label: "Installation", href: "/installation" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Guides", href: "/resources" }
+];
 
+export async function Header() {
+  const store = await getStore();
+  const storeId = store?.id ?? "";
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-white/95 backdrop-blur">
-      <div className="bg-gradient-to-r from-[var(--color-brand-deep)] via-[var(--color-brand)] to-[var(--color-brand-deep)] px-4 py-1.5 text-center text-[11px] tracking-wide text-white">
-        <span className="font-semibold text-[var(--color-peach)]">⚡ ILLUMI10</span>
-        <span className="mx-2 text-white/40">·</span>
-        <span>10% off your first order</span>
-        <span className="mx-2 text-white/40">·</span>
-        <span className="font-semibold text-[var(--color-peach)]">🚚 Free shipping over $500</span>
-        <span className="mx-2 hidden text-white/40 sm:inline">·</span>
-        <span className="hidden sm:inline">Shipping from London, Ontario</span>
+    <header className="sticky top-0 z-30 bg-[var(--color-ink)] text-white shadow-[0_1px_0_rgba(255,255,255,0.06)]">
+      <div className="hidden border-b border-white/10 bg-[var(--color-ink-deep)] text-[11px] tracking-wide text-white/75 md:block">
+        <div className="shell flex h-8 items-center justify-between">
+          <p>
+            <span className="font-semibold text-[var(--color-accent-bright)]">Free shipping</span> across Canada over $500 · Ships from London, Ontario
+          </p>
+          <p className="flex gap-5">
+            <Link href="/installers" className="hover:text-white">Find an installer</Link>
+            <Link href="/warranty" className="hover:text-white">5-year warranty</Link>
+            <Link href="/track-order" className="hover:text-white">Track order</Link>
+            <Link href="/contact-us" className="hover:text-white">Contact</Link>
+          </p>
+        </div>
       </div>
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" aria-label="Illumi Track Lights home" className="flex items-center gap-3">
-          {hasLogo ? (
-            <>
-              <Image
-                src="/images/logo.jpg"
-                alt="Illumi Track Lights"
-                width={56}
-                height={56}
-                priority
-                className="size-12 rounded-md object-cover md:size-14"
-              />
-              <span className="font-display hidden text-lg font-bold tracking-tight text-[var(--color-brand-deep)] sm:inline md:text-xl">
-                Illumi <span className="gradient-text">Track Lights</span>
-              </span>
-            </>
-          ) : (
-            <span className="font-display text-xl font-bold tracking-tight text-[var(--color-brand-deep)] md:text-2xl">
-              Illumi <span className="gradient-text">Track Lights</span>
-            </span>
-          )}
+
+      <div className="shell relative flex h-[var(--header-h)] items-center gap-4 lg:gap-6">
+        <Link href="/" aria-label="Illumi Track Lights home" className="flex shrink-0 items-center">
+          <Logo />
         </Link>
 
-        <nav className="hidden gap-7 text-sm font-medium md:flex" aria-label="Primary">
-          <Link href="/diy-kits" className="font-semibold text-[var(--color-brand)] hover:opacity-80">
-            Soffit Track Kits
-          </Link>
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+          <Link href="/diy-kits" className="nav-link">Kits</Link>
           <MegaMenu />
-          <Link href="/how-it-works" className="hover:text-[var(--color-brand)]">How They Work</Link>
-          <Link href="/installers" className="hover:text-[var(--color-brand)]">Installers</Link>
-          <Link href="/faq" className="hover:text-[var(--color-brand)]">FAQ</Link>
+          {NAV.slice(1).map((l) => (
+            <Link key={l.href} href={l.href} className="nav-link">{l.label}</Link>
+          ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <SearchTrigger />
+        <div className="hidden min-w-0 flex-1 lg:block lg:max-w-sm xl:max-w-md">
+          <HeaderSearch variant="bar" storeId={storeId} />
+        </div>
+
+        <div className="ml-auto flex items-center gap-2">
           <Link
             href="/account"
-            className="hidden rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-[var(--color-brand)] hover:text-[var(--color-brand)] md:inline-flex"
+            className="hidden h-11 items-center rounded-full border border-white/15 bg-white/10 px-4 text-sm font-medium text-white transition hover:bg-white/20 lg:inline-flex"
           >
             Account
           </Link>
           <CartBadge />
+          <MobileNav storeId={storeId} />
         </div>
       </div>
     </header>
