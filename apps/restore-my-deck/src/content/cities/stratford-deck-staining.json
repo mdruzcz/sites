@@ -1,0 +1,36 @@
+{
+  "slug": "stratford-deck-staining",
+  "city": "Stratford",
+  "region": "ON",
+  "metaTitle": "Deck Staining in Stratford, ON | Restore My Deck",
+  "metaDescription": "Restore My Deck brush-applies oil-based stain on Stratford decks, keeping heritage streets and Airbnb-ready properties looking their best.",
+  "h1": "Deck Staining for Stratford's Heritage Streets and Visitor Season",
+  "intro": "Stratford draws theatre visitors from spring through fall, and a lot of homes here work harder as short-term rentals or well-kept heritage properties than a typical Southwestern Ontario town. That changes how homeowners think about their deck.",
+  "neighbourhoods": ["Avon Park", "Old Stratford", "Romeo", "Shakespeare", "Sebringville", "St. Marys"],
+  "localFact": "Because Stratford's tourism season runs roughly April through October, homeowners with short-term rental properties near the theatre district often need deck work completed in early spring, before the visitor calendar fills their property with guests.",
+  "body": [
+    {"type": "h2", "text": "A town built around its visitor season"},
+    {"type": "p", "text": "Stratford's identity is tied closely to its festival season, and that has a real effect on deck timing here that we do not see in every city we serve. Homeowners in Old Stratford and Avon Park who list their properties as short-term rentals often want deck staining finished before the theatre season ramps up in spring, since a tired, greyed deck shows up in listing photos and can affect bookings. We prioritize early-season scheduling for these properties when asked."},
+    {"type": "h2", "text": "Heritage character in Old Stratford and Avon Park"},
+    {"type": "p", "text": "Old Stratford and Avon Park have some of the town's oldest and most architecturally distinct homes, many with decks or porches that were clearly built to complement a Victorian or early 20th-century aesthetic rather than a purely functional backyard structure. On these properties we lean toward semi-transparent stains that let the existing wood grain and any decorative trim detail continue to show, rather than a heavier solid stain that would flatten the character of an older build."},
+    {"type": "h2", "text": "Rural hamlets: Shakespeare, Sebringville and Romeo"},
+    {"type": "p", "text": "Shakespeare, Sebringville and Romeo are smaller communities around Stratford's edges with a more rural feel, larger lots, and often older farmhouse-style decks or fencing that has weathered without much attention for years. Projects in these areas frequently start with a more involved cleaning stage to deal with years of dirt, algae and sometimes light rot before we can move to sanding and staining, and we always flag any structural repair needed before applying finish."},
+    {"type": "h2", "text": "St. Marys and its limestone character"},
+    {"type": "p", "text": "St. Marys shares some of the same heritage character as Stratford itself, with limestone buildings and older wood structures throughout the town. As in Old Stratford, we tend to recommend finishes that preserve the natural look of the wood on these properties rather than covering it with an opaque coating, keeping the deck or fence in step with the surrounding architecture."},
+    {"type": "callout", "text": "A short-term rental host in Avon Park asked for an early April staining appointment specifically to have the deck ready for opening-week theatre guests. We scheduled it as one of the first jobs of the season to make that timeline work."},
+    {"type": "h2", "text": "What to plan for in Stratford"},
+    {"type": "ul", "items": ["Short-term rental properties: book early spring, ahead of festival season demand", "Heritage homes in Old Stratford and Avon Park: semi-transparent stain preserves character detail", "Rural hamlets like Shakespeare and Sebringville: expect more cleaning and possible repair before staining", "St. Marys heritage properties: finishes chosen to complement the town's limestone character"]},
+    {"type": "h2", "text": "Fencing for privacy on tighter heritage lots"},
+    {"type": "p", "text": "Lot sizes in Old Stratford and Avon Park tend to be smaller than in the surrounding rural hamlets, and homeowners here often add privacy fencing to shield decks and patios from close neighbours in a way that a larger rural property does not need. These fences typically use cedar to match the warmth of the surrounding heritage architecture, and we apply the same soft-wash cleaning and brush-applied semi-transparent staining approach we use on the decks themselves, so the fence and deck read as one cohesive finish rather than two mismatched projects. On rural properties out toward Sebringville, fencing is more often functional, marking property lines or containing animals, and we stain those with more durable semi-solid products suited to less frequent maintenance."},
+    {"type": "p", "text": "We also hear from homeowners around Romeo who split their time between Stratford and a rural property, and scheduling for these clients often means coordinating around whichever address they are actually staying at during the work. It is a small logistical detail, but one that comes up often enough in this part of our service area that we plan for it rather than treating every booking as a single fixed-address job."},
+    {"type": "p", "text": "See /deck-staining and /deck-repair-and-maintenance for more on how we approach each property, or send photos through /contact-us for a free quote timed around your season."}
+  ],
+  "faqs": [
+    {"q": "Can you complete a deck staining project before the theatre season starts?", "a": "Yes, we regularly prioritize early spring scheduling for Stratford properties, especially short-term rentals that need to look their best for visitor season."},
+    {"q": "Will staining change the character of my heritage home's deck in Old Stratford?", "a": "Not if we use a semi-transparent stain, which lets the natural wood grain and any trim detail continue to show rather than flattening it with an opaque finish."},
+    {"q": "My property in Shakespeare has an old farmhouse deck that has not been maintained in years. Can it be restored?", "a": "In most cases yes, though it usually needs a more thorough cleaning stage and sometimes minor repair before staining. We assess this from photos or on-site before quoting."},
+    {"q": "Do you serve St. Marys as well as Stratford proper?", "a": "Yes, St. Marys is part of our Stratford-area coverage."},
+    {"q": "What areas around Stratford do you cover?", "a": "Avon Park, Old Stratford, Romeo, Shakespeare, Sebringville and St. Marys, along with the town of Stratford itself."}
+  ],
+  "nearby": ["woodstock-deck-staining", "kitchener-deck-fence-staining", "fergus-deck-staining"]
+}

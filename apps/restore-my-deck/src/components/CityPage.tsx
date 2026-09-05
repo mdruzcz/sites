@@ -1,143 +1,95 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import QuoteForm from "@/components/QuoteForm";
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
+import Script from "next/script";
+import { Contact } from "./Contact";
+import { CtaBand } from "./CtaBand";
+import { FAQ } from "./FAQ";
+import { PageHero } from "./PageHero";
+import { Photo } from "./Photo";
+import { ArticleBody } from "./ArticleBody";
+import { PricingBand } from "./PricingBand";
+import { BeforeAfterSection } from "./BeforeAfterSection";
+import { CheckIcon, MapPinIcon } from "./icons";
 import { site } from "@/lib/site";
-import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
+import { getCoreServices, getCities, getCity, cityPhoto, servicePhoto, type CityContent } from "@/lib/content";
+import { PICKS } from "@/lib/photos";
 
-interface CityPageProps {
-  city: string;
-  region: string;
-  slug: string;
-  intro: string;
-  localDetail: string;
-}
-
-export function generateCityMetadata(city: string, region: string, slug: string): Metadata {
-  return {
-    title: `Deck & Fence Staining in ${city}, ${region} | Restore My Deck`,
-    description: `Professional deck and fence restoration, staining, cleaning and repair in ${city}, ${region}. Brush-applied oil-based stain. Free quotes from Restore My Deck.`,
-    openGraph: {
-      title: `Deck & Fence Staining in ${city} | Restore My Deck`,
-      description: `Expert deck and fence restoration in ${city}, ${region}. Free quotes, eco-friendly products, most projects done in 2 days.`,
-      url: `${site.url}/${slug}`,
-    },
-  };
-}
-
-export default function CityPageTemplate({ city, region, slug, intro, localDetail }: CityPageProps) {
-  const faqs = [
-    { q: `Do you serve ${city}, ${region}?`, a: `Yes — ${city} is one of our primary service areas. We regularly work on decks and fences throughout ${city} and surrounding neighbourhoods.` },
-    { q: "How long does deck staining take?", a: "Most projects are completed in about 2 days including drying time. Larger projects may take 3 days." },
-    { q: "Do you provide free quotes?", a: "Yes — all quotes are free and come with no obligation. Send us photos of your deck or fence for the fastest response." },
-    { q: "What stain do you use?", a: "We use premium oil-based stains — Ready Seal and Penofin Verde. Both are VOC compliant, eco-friendly and never peel." },
+export function CityPage({ c }: { c: CityContent }) {
+  const services = getCoreServices();
+  const url = `${site.url}/${c.slug}`;
+  const nearby = c.nearby.map(getCity).filter(Boolean) as CityContent[];
+  const ld = [
+    { "@context": "https://schema.org", "@type": "Service", name: `Deck & Fence Staining in ${c.city}`, serviceType: "Deck and fence restoration and staining", url, provider: { "@id": `${site.url}/#organization` }, areaServed: { "@type": "City", name: `${c.city}, Ontario` }, description: c.metaDescription, hasOfferCatalog: { "@type": "OfferCatalog", name: `Deck and fence services in ${c.city}`, itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.title, url: `${site.url}/${s.slug}` } })) } },
+    { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ];
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema("Deck & Fence Staining", `Professional deck and fence restoration and staining in ${city}, ${region}.`, city)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Service Areas", href: "/service-areas" }, { name: city, href: `/${slug}` }])) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
+      <Script id={`city-${c.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <PageHero photo={cityPhoto(c.slug)} photoAlt={`Deck restored and stained by Restore My Deck in ${c.city}, Ontario`} eyebrow={`Serving ${c.city}, ${c.region}`} title={c.h1} intro={c.intro} crumbs={[{ label: "Service areas", href: "/service-areas" }, { label: c.city }]} formCity={c.city} />
 
-      <PageHero
-        eyebrow={`${city}, ${region}`}
-        title={`Professional Deck & Fence Staining in ${city}, ${region}`}
-        subtitle={intro}
-      >
-        <div className="flex flex-wrap gap-4 mt-6">
-          <Link href="/contact-us" className="btn btn-accent">Get a Free Quote</Link>
-          <a href={site.phoneHref} className="btn btn-white text-[var(--dark)]">Call {site.phone}</a>
-        </div>
-      </PageHero>
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 space-y-8">
-            {/* Services in city */}
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Our Services in {city}</h2>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {site.services.map((s) => (
-                  <Link key={s.href} href={s.href} className="flex items-center gap-2 p-3 bg-white rounded-lg border border-gray-100 shadow-sm hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all text-sm font-medium group">
-                    <span className="w-2 h-2 rounded-full bg-[var(--accent)] flex-shrink-0" />
-                    {s.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Local detail */}
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Deck Restoration in {city}</h2>
-              <p className="text-gray-600 leading-relaxed">{localDetail}</p>
-            </div>
-
-            {/* Why us */}
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Why {city} Homeowners Choose Us</h2>
-              <ul className="space-y-3">
-                {[
-                  "Brush-applied stain — not sprayed — for deeper penetration",
-                  "80-grit buff sanding before every stain application",
-                  "Ready Seal & Penofin Verde — premium oil-based, VOC compliant",
-                  "Most projects completed in 2 days including drying time",
-                  "Transparent pricing — no hidden fees",
-                  "Free no-obligation quotes",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-700 text-sm">
-                    <span className="mt-0.5 w-5 h-5 rounded-full bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Pricing */}
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">Pricing in {city}</h2>
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  { service: "Power Washing", price: "$800–$1,200" },
-                  { service: "Staining / Painting", price: "$950–$1,350" },
-                  { service: "Repair / Rebuild", price: "Custom Quote" },
-                ].map((p) => (
-                  <div key={p.service} className="bg-white rounded-xl p-4 shadow-sm text-center border border-gray-100">
-                    <p className="text-sm font-semibold text-gray-700 mb-1">{p.service}</p>
-                    <p className="text-lg font-extrabold text-[var(--accent)]">{p.price}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* FAQs */}
-            <div>
-              <h2 className="text-2xl font-bold text-[var(--dark)] mb-4">FAQs — {city}</h2>
-              <div className="space-y-3">
-                {faqs.map((f) => (
-                  <div key={f.q} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                    <h3 className="font-bold text-[var(--dark)] mb-1 text-sm">{f.q}</h3>
-                    <p className="text-gray-600 text-sm">{f.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
+      <section className="bg-[var(--paper)]">
+        <div className="shell section grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div>
-            <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
-              <div className="bg-[var(--accent)] -mx-6 -mt-6 px-6 py-4 rounded-t-2xl mb-6">
-                <h3 className="text-lg font-bold text-white text-center">Get a Free Quote in {city}</h3>
-              </div>
-              <QuoteForm />
+            <p className="eyebrow-pill moss">Local crew</p>
+            <h2 className="font-display h2-fluid mt-4">Deck and fence restoration in {c.city}</h2>
+            <p className="card mt-6 border-[var(--gold)] bg-[var(--gold-soft)] p-5 text-sm">{c.localFact}</p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {["Free quote from your photos", "Eco-friendly, plant-safe cleaning", "80-grit buff sand before staining", "Brush-applied oil-based stain", "Most projects done in 2 days", "Repairs handled before finishing"].map((f) => (
+                <li key={f} className="flex items-start gap-2.5 text-sm text-[var(--ink-soft)]"><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[var(--moss)] text-white"><CheckIcon className="w-3 h-3" /></span>{f}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-display text-xl">Neighbourhoods and nearby</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {c.neighbourhoods.map((n) => (
+                <span key={n} className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line-strong)] bg-white px-3.5 py-2 text-sm font-semibold"><MapPinIcon className="w-3.5 h-3.5 text-[var(--accent)]" />{n}</span>
+              ))}
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <Photo name={PICKS.stairs} ratio="aspect-[4/3]" rounded="rounded-2xl" sizes="260px" />
+              <Photo name={PICKS.fenceCedar} ratio="aspect-[4/3]" rounded="rounded-2xl" sizes="260px" />
             </div>
           </div>
         </div>
       </section>
 
-      <CtaBand title={`Restore Your Deck in ${city}`} />
+      <article className="bg-white">
+        <div className="shell section">
+          <div className="mx-auto max-w-[72ch]"><ArticleBody blocks={c.body} /></div>
+        </div>
+      </article>
+
+      <section className="bg-[var(--cream)]">
+        <div className="shell section">
+          <div className="mx-auto max-w-2xl text-center"><p className="eyebrow-pill">Services in {c.city}</p><h2 className="font-display h2-fluid mt-4">Everything we do, right here.</h2></div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {services.slice(0, 8).map((s) => (
+              <Link key={s.slug} href={`/${s.slug}`} className="card card-lift group overflow-hidden">
+                <Photo name={servicePhoto(s.slug)} ratio="aspect-[4/3]" sizes="(max-width: 640px) 100vw, 280px" />
+                <div className="p-4"><h3 className="font-display text-base leading-snug group-hover:text-[var(--accent-deep)]">{s.title} in {c.city}</h3></div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <BeforeAfterSection />
+      <PricingBand city={c.city} />
+      <CtaBand heading={`Bring your ${c.city} deck back this season.`} />
+      <FAQ faqs={c.faqs} title={`${c.city} questions`} />
+      {nearby.length > 0 && (
+        <section className="bg-[var(--moss-soft)]">
+          <div className="shell py-10">
+            <p className="eyebrow text-[var(--muted)]">Nearby areas we serve</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {getCities().filter((x) => x.slug !== c.slug).map((x) => (
+                <Link key={x.slug} href={`/${x.slug}`} className="rounded-full border border-[var(--line-strong)] bg-white px-4 py-2 text-sm font-semibold transition hover:border-[var(--moss)] hover:text-[var(--moss-deep)]">{x.city}</Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      <Contact cityName={c.city} />
     </>
   );
 }

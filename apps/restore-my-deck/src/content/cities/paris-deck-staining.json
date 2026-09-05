@@ -1,0 +1,36 @@
+{
+  "slug": "paris-deck-staining",
+  "city": "Paris",
+  "region": "ON",
+  "metaTitle": "Deck Staining in Paris, ON | Restore My Deck",
+  "metaDescription": "Restore My Deck brush-applies oil-based stain in Paris, ON and Brant County, matching wood finishes to the town's cobblestone heritage character.",
+  "h1": "Deck Staining in Paris, Ontario and Surrounding Brant County",
+  "intro": "Paris is often called one of the prettiest towns in Canada for its cobblestone architecture, and homeowners here tend to care a great deal about how a deck or fence looks against that heritage backdrop, not just how well it holds up.",
+  "neighbourhoods": ["Brant County", "St. George", "Burford", "West Brant", "Glen Morris"],
+  "localFact": "Paris sits at the meeting point of the Grand and Nith rivers, and properties close to the downtown core carry more consistent moisture in their wood structures than homes further out in Brant County's drier rural stretches.",
+  "body": [
+    {"type": "h2", "text": "Cobblestone character shapes the finish choice"},
+    {"type": "p", "text": "Paris's downtown is known for its distinctive cobblestone buildings, and that heritage character extends to how homeowners here think about their outdoor wood. We find people in Paris are more likely than in other towns to ask specifically for a finish that lets the natural wood grain show through, since a heavy solid stain can look out of place next to a cobblestone or stone-accented home. Semi-transparent and semi-solid oil-based stains are our most common recommendation in the downtown core for exactly this reason."},
+    {"type": "h2", "text": "River confluence and moisture"},
+    {"type": "p", "text": "Paris sits where the Grand and Nith rivers meet, and properties close to that confluence tend to carry more ambient humidity in their wood structures than homes further out toward Burford or St. George. This affects both how long a deck takes to dry fully before staining and how often mildew tends to reappear on shaded, riverside decks. We build in extra drying time on downtown Paris properties rather than rushing the schedule."},
+    {"type": "h2", "text": "West Brant's newer growth"},
+    {"type": "p", "text": "West Brant represents newer residential growth spilling over from neighbouring Brantford, and decks here are typically much younger than the heritage homes downtown, usually original pressure-treated construction that has not yet had a full restoration. These projects tend to move faster since there is less variability in wood condition and no old paint or mismatched prior finishes to deal with."},
+    {"type": "h2", "text": "Rural Brant County: St. George, Burford and Glen Morris"},
+    {"type": "p", "text": "St. George, Burford and Glen Morris all sit in the more rural stretches of Brant County, with larger properties and, in many cases, older farmhouse-style decks and longer fence runs than a typical in-town lot. Glen Morris in particular sits along the Grand River as well, so it shares some of downtown Paris's moisture considerations despite being a smaller village. Projects in these areas often involve more square footage of deck or fence per job than downtown Paris properties."},
+    {"type": "callout", "text": "A heritage-district property in downtown Paris specifically asked for a stain that would not obscure the wood grain against their stone exterior. A semi-transparent oil-based stain gave the protection they needed while keeping the natural look they wanted."},
+    {"type": "h2", "text": "Timing a project in Paris"},
+    {"type": "p", "text": "Spring and early summer bookings dominate in West Brant, where newer decks are getting their first proper restoration ahead of the season. Downtown heritage properties and the rural hamlets tend to book more evenly across spring and fall, often driven less by a hard deadline and more by simply wanting the work done before the wood shows visible wear."},
+    {"type": "ul", "items": ["Downtown Paris heritage homes: semi-transparent stain preserves the wood grain against stone architecture", "Riverside properties near the confluence: allow extra drying time before staining", "West Brant: newer builder-grade decks, typically simpler first restorations", "St. George, Burford and Glen Morris: larger rural properties with more square footage per project"]},
+    {"type": "h2", "text": "Sealing services alongside staining"},
+    {"type": "p", "text": "Some Paris properties, particularly older decks near the downtown core, benefit from a dedicated sealing pass on top of a standard stain, especially where the wood has been exposed to years of river-adjacent humidity without much protection. A quality oil-based stain like the products we use already includes a built-in sealer, but on older, more porous wood we sometimes recommend an additional maintenance coat sooner than the typical two-to-four-year cycle to keep moisture from working its way back into the grain. This comes up more often in downtown Paris and Glen Morris than it does in the drier, newer construction of West Brant, where the wood simply has not had the same years of exposure."},
+    {"type": "p", "text": "See /deck-staining and /sealing-services for more on our approach, or send photos of your property through /contact-us for a free quote."}
+  ],
+  "faqs": [
+    {"q": "Will staining my deck clash with my home's cobblestone exterior in downtown Paris?", "a": "Not if we use a semi-transparent or semi-solid stain, which lets the wood grain show through and tends to complement stone architecture rather than compete with it."},
+    {"q": "Does being close to the river in Paris affect how my deck should be maintained?", "a": "Yes, properties near the Grand and Nith confluence tend to hold more moisture, so we allow extra drying time and expect mildew to reappear a bit faster on shaded riverside decks."},
+    {"q": "Are decks in West Brant different from ones in downtown Paris?", "a": "Generally yes. West Brant decks tend to be newer builder-grade construction, while downtown Paris often has older, heritage-adjacent decks that need a more tailored finish."},
+    {"q": "Do you serve rural Brant County, including Glen Morris and St. George?", "a": "Yes, we cover all of Brant County, including St. George, Burford, Glen Morris and West Brant along with Paris itself."},
+    {"q": "What areas do you cover around Paris?", "a": "Paris, West Brant, St. George, Burford, Glen Morris and the surrounding Brant County area."}
+  ],
+  "nearby": ["cambridge-deck-staining", "hamilton-deck-fence-staining", "woodstock-deck-staining"]
+}

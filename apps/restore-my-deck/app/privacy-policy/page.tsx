@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl prose prose-gray">
+    <div className="shell prose max-w-3xl pt-32 pb-16">
       <h1>Privacy Policy</h1>
       <p>Last updated: January 1, 2024</p>
       <p>{site.name} (&quot;we&quot;, &quot;us&quot;) is committed to protecting your privacy. This policy explains how we collect, use and protect your personal information.</p>

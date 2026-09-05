@@ -1,85 +1,54 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
+import Script from "next/script";
+import { Contact } from "@/components/Contact";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { getGuides, guidePhoto } from "@/lib/content";
+import { PICKS } from "@/lib/photos";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "Helpful Tips | Deck & Fence Restoration Advice",
-  description: "Expert deck and fence restoration tips, guides and advice from the professionals at Restore My Deck in Kitchener-Waterloo. Learn how to protect and extend the life of your outdoor wood.",
-  openGraph: { title: "Helpful Tips | Restore My Deck", url: `${site.url}/blog` },
+  title: "Deck & Fence Care Guides: Staining, Costs, Timing, Maintenance",
+  description: "Helpful tips from Restore My Deck: how much deck staining costs, when to restain, oil vs water-based stain, cedar vs pressure-treated, prep, cleaning, maintenance and fence staining vs painting.",
+  alternates: { canonical: `${site.url}/blog` },
 };
 
-const posts = [
-  {
-    title: "How to Save Money – Restore, Don't Replace!",
-    slug: "/how-to-save-money-restore-dont-replace",
-    excerpt: "Replacing a deck costs thousands of dollars. A professional restoration can bring your old deck back to life for a fraction of the price.",
-    date: "January 2024",
-  },
-  {
-    title: "How to Prepare Your Deck for Staining: A Step-by-Step Guide",
-    slug: "/how-to-prepare-your-deck-for-staining",
-    excerpt: "Proper preparation is the most important factor in a long-lasting deck stain. Learn the exact steps professionals use before applying any finish.",
-    date: "February 2024",
-  },
-  {
-    title: "Oil-Based vs. Water-Based Deck Stain: Which Is Right for Your Deck?",
-    slug: "/oil-based-vs-water-based-deck-stain",
-    excerpt: "The stain you choose matters as much as how you apply it. We break down the key differences and explain why we recommend oil-based stains for Ontario decks.",
-    date: "March 2024",
-  },
-  {
-    title: "How Often Should You Restain Your Deck? A Practical Guide",
-    slug: "/how-often-should-you-restain-your-deck",
-    excerpt: "Ontario's climate is tough on wood. Learn the warning signs that tell you it's time to restain — before the damage goes deeper.",
-    date: "April 2024",
-  },
-  {
-    title: "5 Warning Signs Your Deck Needs Professional Restoration",
-    slug: "/5-signs-your-deck-needs-restoration",
-    excerpt: "Graying wood, peeling stain and soft boards are your deck's way of asking for help. Catch these signs early and avoid a costly rebuild.",
-    date: "May 2024",
-  },
-  {
-    title: "Pressure Washing vs. Soft Washing Your Deck: What's the Difference?",
-    slug: "/pressure-washing-vs-soft-washing-deck",
-    excerpt: "High pressure can damage wood fibres if used incorrectly. Learn the difference between pressure washing and soft washing — and when to use each.",
-    date: "June 2024",
-  },
-];
+const ORDER = ["Costs", "Maintenance", "Stains", "Process", "Fences"];
 
 export default function BlogPage() {
+  const guides = getGuides();
+  const groups = ORDER.map((category) => ({ category, items: guides.filter((g) => g.category === category) })).filter((g) => g.items.length);
+  const listLd = { "@context": "https://schema.org", "@type": "ItemList", name: "Restore My Deck guides", itemListElement: guides.map((a, i) => ({ "@type": "ListItem", position: i + 1, name: a.title, url: `${site.url}/${a.slug}` })) };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Helpful Tips", href: "/blog" }])) }} />
-
-      <PageHero
-        title="Helpful Tips"
-        subtitle="Expert deck and fence restoration advice from the team at Restore My Deck."
-        center
-      />
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-6">
-            {posts.map((post) => (
-              <Link key={post.slug} href={post.slug} className="card p-6 flex flex-col sm:flex-row gap-4 group">
-                <div className="flex-1">
-                  <p className="text-xs text-gray-500 mb-2">{post.date}</p>
-                  <h2 className="text-xl font-bold text-[var(--dark)] group-hover:text-[var(--accent)] transition-colors mb-2">{post.title}</h2>
-                  <p className="text-gray-600 text-sm leading-relaxed">{post.excerpt}</p>
-                  <span className="mt-4 inline-flex items-center text-[var(--accent)] text-sm font-semibold gap-1">Read more →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+      <Script id="guides-list" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listLd) }} />
+      <PageHero photo={PICKS.heroBlog} eyebrow="Helpful tips" title="Deck care, explained by the people who do it." intro="What staining costs, when to do it, which stain suits your wood and how to keep a finished deck looking good between visits." crumbs={[{ label: "Helpful tips" }]} form={false} compact />
+      <section className="bg-[var(--paper)]">
+        <div className="shell section space-y-14">
+          {groups.map((g) => (
+            <div key={g.category}>
+              <div className="flex items-end justify-between gap-4"><p className="eyebrow-pill">{g.category}</p><p className="text-sm text-[var(--muted)]">{g.items.length} {g.items.length === 1 ? "guide" : "guides"}</p></div>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {g.items.map((a) => (
+                  <Link key={a.slug} href={`/${a.slug}`} className="card card-lift group flex flex-col overflow-hidden">
+                    <Photo name={guidePhoto(a.slug)} alt={a.heroAlt} ratio="aspect-[16/9]" sizes="(max-width: 640px) 100vw, 380px" />
+                    <div className="flex flex-1 flex-col p-5">
+                      <p className="text-xs text-[var(--muted)]">{a.readMinutes} min read</p>
+                      <h2 className="font-display mt-2 text-xl leading-snug group-hover:text-[var(--accent-deep)]">{a.title}</h2>
+                      <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{a.excerpt}</p>
+                      <span className="mt-4 text-sm font-bold text-[var(--accent-deep)]">Read the guide →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
-
-      <CtaBand />
+      <Contact />
     </>
   );
 }

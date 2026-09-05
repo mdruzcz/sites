@@ -1,63 +1,66 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Image from "next/image";
-import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
+import { Contact } from "@/components/Contact";
+import { CtaBand } from "@/components/CtaBand";
+import { PageHero } from "@/components/PageHero";
+import { BeforeAfterPair } from "@/components/BeforeAfterSection";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { ALL_PHOTOS, BEFORE_AFTER, PICKS, photo } from "@/lib/photos";
 
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "Projects | Deck & Fence Restoration Gallery",
-  description: "Browse completed deck and fence restoration, staining and cleaning projects by Restore My Deck in Kitchener-Waterloo, Guelph, Cambridge, Hamilton and area.",
-  openGraph: { title: "Projects | Restore My Deck", url: `${site.url}/projects` },
+  title: "Projects: Deck & Fence Before and After, Kitchener-Waterloo",
+  description: "Before and after photos of decks and fences restored, cleaned and stained by Restore My Deck across Kitchener, Waterloo, Cambridge, Guelph and Southwestern Ontario.",
+  alternates: { canonical: `${site.url}/projects` },
 };
 
-const projects = [
-  { img: "/images/project-1.jpg", alt: "Cedar deck restoration in Kitchener before and after", title: "Cedar Deck Restoration", city: "Kitchener" },
-  { img: "/images/project-2.jpg", alt: "Pressure washed and stained fence in Waterloo", title: "Fence Staining", city: "Waterloo" },
-  { img: "/images/project-3.jpg", alt: "Full deck restoration with oil stain in Cambridge", title: "Full Deck Restoration", city: "Cambridge" },
-  { img: "/images/project-4.jpg", alt: "Deck repair and staining in Guelph", title: "Deck Repair & Staining", city: "Guelph" },
-  { img: "/images/project-5.jpg", alt: "Weathered deck cleaning and restoration in Hamilton", title: "Deck Cleaning & Restoration", city: "Hamilton" },
-  { img: "/images/project-6.jpg", alt: "Fence cleaning and painting in Stratford", title: "Fence Cleaning & Painting", city: "Stratford" },
+const GROUPS: { key: string; title: string; blurb: string }[] = [
+  { key: "staining", title: "Stained decks", blurb: "Brush-applied Ready Seal and Penofin Verde on cedar and pressure-treated decks." },
+  { key: "restoration", title: "Full restorations", blurb: "Cleaned, repaired, sanded and stained over two days." },
+  { key: "fence", title: "Fences", blurb: "Privacy fences and screens cleaned and stained to match the deck." },
+  { key: "cleaning", title: "Cleaning and prep", blurb: "Grey wood after washing, ready for sanding and stain." },
+  { key: "process", title: "On the job", blurb: "Washing, sanding and brushing in progress." },
 ];
 
 export default function ProjectsPage() {
+  const ld = { "@context": "https://schema.org", "@type": "ImageGallery", "@id": `${site.url}/projects#gallery`, name: "Restore My Deck projects", url: `${site.url}/projects`, image: ALL_PHOTOS.map((g) => ({ "@type": "ImageObject", contentUrl: `${site.url}${g.image}`, caption: g.alt })) };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Projects", href: "/projects" }])) }} />
-
-      <PageHero
-        title="Our Projects"
-        subtitle="Real results from real decks and fences across Kitchener-Waterloo and surrounding areas."
-        image="/images/deck-before-after.jpg"
-        imageAlt="Deck restoration before and after results by Restore My Deck"
-        center
-      />
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p) => (
-              <div key={p.title + p.city} className="card overflow-hidden group">
-                <div className="relative aspect-[4/3]">
-                  <Image src={p.img} alt={p.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width:640px) 100vw,(max-width:1024px) 50vw, 33vw" />
-                </div>
-                <div className="p-4">
-                  <p className="text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">{p.city}</p>
-                  <h2 className="text-lg font-bold text-[var(--dark)] mt-1">{p.title}</h2>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Ready to see what we can do for your deck or fence? Get a free quote today.</p>
-            <Link href="/contact-us" className="btn btn-accent">Request a Free Quote</Link>
+      <Script id="gallery-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <PageHero photo={PICKS.heroProjects} eyebrow="Projects" title="Real decks, real before and afters." intro="Fifty-plus decks and fences from around Kitchener-Waterloo, Cambridge, Guelph and Hamilton. Not stock photos." crumbs={[{ label: "Projects" }]} compact />
+      <section className="bg-white">
+        <div className="shell section">
+          <div className="max-w-2xl"><p className="eyebrow-pill moss">Before &amp; after</p><h2 className="font-display h2-fluid mt-4">Same boards, two days later.</h2></div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {BEFORE_AFTER.map((p) => <BeforeAfterPair key={p.before} before={photo(p.before)} after={photo(p.after)} title={p.title} city={p.city} />)}
           </div>
         </div>
       </section>
-
-      <CtaBand title="Your Deck Could Look Like This" />
+      {GROUPS.map((g, gi) => {
+        const items = ALL_PHOTOS.filter((p) => p.category === g.key);
+        if (!items.length) return null;
+        return (
+          <section key={g.key} className={gi % 2 ? "bg-white" : "bg-[var(--paper)]"}>
+            <div className="shell section">
+              <div className="max-w-2xl"><p className="eyebrow-pill">{g.title}</p><p className="mt-4 text-[var(--ink-soft)]">{g.blurb}</p></div>
+              <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+                {items.map((p, i) => (
+                  <figure key={p.image} className={`group overflow-hidden rounded-2xl ${i === 0 ? "col-span-2" : ""}`}>
+                    <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
+                      <Image src={p.image} alt={p.alt} fill placeholder="blur" blurDataURL={p.blurDataURL} sizes="(max-width:768px) 100vw, 400px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <figcaption className="sr-only">{p.alt}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+      <CtaBand heading="Want your deck in the next before and after?" />
+      <Contact />
     </>
   );
 }

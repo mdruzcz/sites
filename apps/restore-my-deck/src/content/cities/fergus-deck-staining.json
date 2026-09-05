@@ -1,0 +1,37 @@
+{
+  "slug": "fergus-deck-staining",
+  "city": "Fergus",
+  "region": "ON",
+  "metaTitle": "Deck Staining in Fergus, ON | Restore My Deck",
+  "metaDescription": "Restore My Deck brush-applies oil-based stain across Fergus, Elora and Belwood Lake, keeping stone-town character homes and cottages protected.",
+  "h1": "Deck Staining for Fergus, Elora and the Belwood Lake Cottages",
+  "intro": "Fergus and its neighbour Elora are known for their stone architecture, but the wood decks and fences attached to those historic buildings still need the same protection as anywhere else, and lakeside properties near Belwood have their own moisture challenges on top of that.",
+  "neighbourhoods": ["Elora", "Belwood", "Centre Wellington", "Salem", "Arthur"],
+  "localFact": "Belwood Lake properties see a heavier dose of moisture off the water than in-town Fergus decks, and cottages there often have dock-adjacent structures that call for the same soft-wash and oil-based staining approach as a deck, just on a shorter maintenance cycle.",
+  "body": [
+    {"type": "h2", "text": "Stone town, wood decks"},
+    {"type": "p", "text": "Fergus and Elora are both known for their limestone buildings, and homeowners in these towns often want their deck or fence to complement that stonework rather than compete with it visually. We hear this frequently enough in Fergus and Elora that it shapes our recommendations: a natural-looking semi-transparent stain tends to sit better against a stone facade than a bold solid colour, letting the wood grain read as a warm complement to the surrounding masonry rather than a mismatched addition."},
+    {"type": "h2", "text": "Belwood Lake's cottage rhythm"},
+    {"type": "p", "text": "Belwood, sitting along Belwood Lake, has a noticeably different property type than in-town Fergus: cottages and lakeside homes used seasonally or as weekend retreats, often with decks that see heavier moisture exposure from the water and less consistent year-round attention than a primary residence would get. We generally recommend a shorter restaining interval for these properties, since the combination of lake humidity and lighter day-to-day maintenance means the finish wears faster than an in-town deck."},
+    {"type": "h2", "text": "Centre Wellington's rural stretch"},
+    {"type": "p", "text": "Centre Wellington covers a lot of the rural land surrounding Fergus and Elora, and properties out here tend to have larger lots with bigger decks and longer fence lines than in-town homes. We factor the additional scale into scheduling, since a rural Centre Wellington property with a wraparound deck and a full perimeter fence is simply a bigger job than a standard in-town deck, even when the wood condition itself is similar."},
+    {"type": "h2", "text": "Salem and Arthur's smaller-town character"},
+    {"type": "p", "text": "Salem and Arthur are smaller communities within our Fergus service area, each with their own mix of older village homes and newer construction on the outskirts. As in Fergus proper, older homes here often have decks that were added well after original construction, so we check the actual wood type and age on-site rather than assuming a standard timeline based on the house alone."},
+    {"type": "callout", "text": "A Belwood cottage deck close to the water needed restaining after only two years rather than the typical three to four, due to consistently higher humidity off the lake. We adjusted the owner's maintenance schedule accordingly for future seasons."},
+    {"type": "h2", "text": "Working around Fergus and Elora's tourist season"},
+    {"type": "p", "text": "Elora in particular draws steady tourist traffic through the warmer months for its gorge and downtown shops, and homeowners in the core sometimes prefer to schedule deck work outside peak visitor weekends to avoid disruption. We can work around this when asked, similar to how we handle scheduling for tourism-driven properties in other towns we serve."},
+    {"type": "ul", "items": ["Fergus and Elora stone-town homes: semi-transparent stain complements the existing masonry", "Belwood Lake cottages: plan for a shorter restaining interval due to lake humidity", "Centre Wellington rural properties: larger decks and fence runs affect project timeline", "Salem and Arthur: assess deck age individually rather than assuming it matches the house"]},
+    {"type": "h2", "text": "Preparing wood before it ever touches stain"},
+    {"type": "p", "text": "Because so many Fergus and Elora homeowners care about the finished look matching their stone architecture, we put extra attention into the sanding stage before any stain goes down in this area. A rushed sand job leaves fibres raised unevenly, which can make a semi-transparent stain absorb inconsistently and look blotchy against a clean stone facade in a way it might not against a more forgiving vinyl-sided home elsewhere. We buff sand with 80-grit paper across the full deck or fence surface rather than spot-sanding only the roughest areas, since an even surface is what makes a lighter, more natural stain finish look intentional rather than patchy once it is applied."},
+    {"type": "p", "text": "This same attention carries through to fences in Salem and Arthur, where older board fences bordering village lots often have decades of weathering to work through before a new stain will hold evenly. We treat the sanding stage there with the same care as a Fergus or Elora deck, since the goal on every property in this area is a finish that looks deliberate rather than simply repaired."},
+    {"type": "p", "text": "See /deck-staining and /fence-staining for our full process, or send photos of your property through /contact-us for a free quote."}
+  ],
+  "faqs": [
+    {"q": "Does a stone home in Fergus or Elora need a different stain colour than a typical wood-sided house?", "a": "Not a different product, but we often recommend a natural semi-transparent stain that complements limestone or fieldstone exteriors rather than a bold solid colour."},
+    {"q": "My cottage on Belwood Lake seems to need restaining more often than a friend's deck in town. Is that normal?", "a": "Yes, lakeside properties tend to see more humidity exposure and often less frequent day-to-day maintenance, so a shorter restaining interval usually makes sense."},
+    {"q": "Do you serve rural properties out in Centre Wellington, or just Fergus itself?", "a": "We cover all of Centre Wellington, including rural properties, along with Fergus, Elora, Belwood, Salem and Arthur."},
+    {"q": "Can you schedule around Elora's busy tourist weekends?", "a": "Yes, we can plan around peak visitor times if that matters for your property, similar to how we handle other tourism-driven towns we serve."},
+    {"q": "What areas do you cover around Fergus?", "a": "Fergus, Elora, Belwood, Centre Wellington, Salem and Arthur."}
+  ],
+  "nearby": ["guelph-deck-fence-staining", "waterloo-deck-fence-staining", "kitchener-deck-fence-staining"]
+}

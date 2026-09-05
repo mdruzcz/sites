@@ -1,79 +1,54 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
+import { Contact } from "@/components/Contact";
+import { CtaBand } from "@/components/CtaBand";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { AwardBadge } from "@/components/award-badge";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { PICKS } from "@/lib/photos";
 
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "About Us | Expert Deck & Fence Restoration",
-  description: "Learn about Restore My Deck — founded by Cameron with over a decade of experience in professional wood restoration, eco-friendly products and brush-applied staining in Kitchener-Waterloo.",
-  openGraph: { title: "About Us | Restore My Deck", description: "Over a decade of deck and fence restoration expertise in Kitchener-Waterloo and surrounding areas.", url: `${site.url}/about-us` },
+  title: "About Restore My Deck, Kitchener, Ontario",
+  description: "Restore My Deck is a Kitchener wood-restoration company founded by Cameron. Eco-friendly cleaning, 80-grit sanding and brush-applied oil-based stain for decks and fences across Southwestern Ontario.",
+  alternates: { canonical: `${site.url}/about-us` },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "About Us", href: "/about-us" }])) }} />
-
-      <PageHero
-        eyebrow="Our Story"
-        title="About Restore My Deck"
-        subtitle="Over a decade of combined experience in deck and fence restoration, built on better products and better techniques."
-        center
-      />
-
-      {/* Story */}
-      <section className="section bg-white">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-            <Image src="/images/deck-staining-pro.jpg" alt="Professional deck staining in Kitchener-Waterloo" fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />
-          </div>
-          <div>
-            <h2 className="text-3xl font-extrabold text-[var(--dark)] font-[var(--font-montserrat)]">Started From Scratch, Built on Quality</h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">Restore My Deck was founded by Cameron, who started pressure washing in his early 20s. After working at another wood restoration company, he identified better detergents, better techniques and a better way to serve customers. That&apos;s what led him to start Restore My Deck.</p>
-            <p className="mt-4 text-gray-600 leading-relaxed">We collaborate with other leading wood restoration companies to stay at the forefront of the industry. Our mission is to deliver top-tier services with eco-friendly practices, transparent pricing and a commitment to customer satisfaction.</p>
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              {[
-                { stat: "10+", label: "Years Experience" },
-                { stat: "2 Days", label: "Avg. Completion Time" },
-                { stat: "100%", label: "Eco-Friendly Products" },
-                { stat: "Free", label: "No-Obligation Quotes" },
-              ].map((s) => (
-                <div key={s.label} className="bg-orange-50 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-extrabold text-[var(--accent)]">{s.stat}</div>
-                  <div className="text-sm text-gray-600 mt-1">{s.label}</div>
-                </div>
-              ))}
-            </div>
-            <Link href="/contact-us" className="btn btn-accent mt-8">Get a Free Quote</Link>
+      <PageHero photo={PICKS.heroAbout} photoAlt="Restore My Deck technician hand-sanding a deck railing before staining" eyebrow="About us" title="Craftsmen who would rather restore your deck than sell you a new one." intro="Founded by Cameron in Kitchener. A decade of pressure washing, sanding and brushing stain into Southwestern Ontario wood." crumbs={[{ label: "About" }]} compact />
+      <section className="bg-[var(--paper)]">
+        <div className="shell section grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <article className="prose-clean max-w-[66ch]">
+            <h2>How it started</h2>
+            <p>Cameron got into wood restoration in his early twenties, starting with pressure washing. He moved on to a deck staining crew, learned what worked and what did not, and kept running into the same frustration: cheap detergents, sprayed stain and rushed prep that looked fine in July and peeled by the following spring.</p>
+            <h2>Why Restore My Deck exists</h2>
+            <p>The company was built around doing the slow parts properly. Plant-safe cleaners instead of bleach. An 80-grit buff sand after every wash so the grain lies down and the stain absorbs evenly. Penetrating oil-based stains from Ready Seal and Penofin Verde, brushed in by hand rather than sprayed on top. It takes longer, and the finish lasts longer.</p>
+            <h2>How we work now</h2>
+            <p>A small, hand-picked crew with more than a decade of combined experience. We trade notes with other restoration companies we respect, keep testing products, and still finish most decks in about two days. Quotes are free, usually from photos, and we answer the phone ourselves.</p>
+            <div className="not-prose mt-6"><AwardBadge /></div>
+          </article>
+          <div className="grid grid-cols-2 gap-4">
+            <Photo name={PICKS.heroSanding} ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
+            <Photo name={PICKS.heroStaining} ratio="aspect-[4/5]" rounded="rounded-2xl" className="mt-8" sizes="300px" />
+            <Photo name={PICKS.closeupWash} ratio="aspect-[4/5]" rounded="rounded-2xl" className="-mt-8" sizes="300px" />
+            <Photo name={PICKS.pergola} ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
           </div>
         </div>
       </section>
-
-      {/* Values */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-extrabold text-center text-[var(--dark)] font-[var(--font-montserrat)] mb-10">What We Stand For</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { icon: "🌿", title: "Eco-Friendly", desc: "VOC-compliant products including Ready Seal and Penofin Verde. Safe for your family, pets and the environment." },
-              { icon: "🖌️", title: "Expert Technique", desc: "Brush-applied stain with 80-grit sanding. No shortcuts — just results that last 2–4 years." },
-              { icon: "🤝", title: "Honest Pricing", desc: "No hidden fees, no upsells. You get a clear quote before any work begins." },
-            ].map((v) => (
-              <div key={v.title} className="card p-6 text-center">
-                <div className="text-4xl mb-3">{v.icon}</div>
-                <h3 className="text-lg font-bold text-[var(--dark)] mb-2">{v.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
+      <section className="bg-white">
+        <div className="shell section grid gap-5 md:grid-cols-4">
+          {[["10+", "years restoring wood"], ["2 days", "for most projects, drying included"], ["100%", "brush-applied, never sprayed"], ["Eco", "plant-safe, VOC-compliant products"]].map(([n, l]) => (
+            <div key={l} className="card p-6 text-center"><p className="font-display text-4xl text-[var(--accent-deep)]">{n}</p><p className="mt-2 text-sm text-[var(--ink-soft)]">{l}</p></div>
+          ))}
         </div>
+        <div className="shell pb-16"><div className="flex flex-wrap gap-3"><Link href="/services" className="btn-accent">See our services</Link><Link href="/projects" className="btn-outline">Before &amp; after</Link></div></div>
       </section>
-
-      <CtaBand title="Restore Your Deck Without Replacement" />
+      <CtaBand />
+      <Contact />
     </>
   );
 }

@@ -1,16 +1,30 @@
 export const site = {
   name: "Restore My Deck",
-  tagline: "Restore Your Wood Without Replacement!",
+  shortName: "Restore My Deck",
+  tagline: "Restore Your Wood Without Replacement",
   phone: "226.476.2055",
   phoneHref: "tel:+12264762055",
   email: "service@restoremydeck.ca",
+  emailHref: "mailto:service@restoremydeck.ca",
   url: "https://restoremydeck.ca",
+  founder: "Cameron",
   address: {
     city: "Kitchener",
     region: "ON",
     country: "CA",
   },
   hours: "Mon–Fri 8:00 AM – 5:00 PM",
+  hoursShort: "Mon–Fri 8–5",
+  responseTime: "24 hours",
+  yearsExperience: 10,
+  trustBadges: [
+    { label: "Brush-Applied Stain", value: "Never sprayed, deeper penetration" },
+    { label: "Oil-Based Stains", value: "Ready Seal & Penofin Verde" },
+    { label: "2-Day Projects", value: "Most jobs incl. drying time" },
+    { label: "10+ Years", value: "Family run, Kitchener based" },
+  ],
+  description:
+    "Restore My Deck restores decks and fences across Kitchener-Waterloo, Cambridge, Guelph, Hamilton and Southwestern Ontario with eco-friendly cleaning, 80-grit sanding and brush-applied oil-based stain. Most projects finished in two days.",
   services: [
     { name: "Deck Restoration", href: "/deck-restoration" },
     { name: "Deck Staining", href: "/deck-staining" },
@@ -34,8 +48,11 @@ export const site = {
     { name: "Woodstock", href: "/woodstock-deck-staining" },
     { name: "Fergus", href: "/fergus-deck-staining" },
     { name: "Paris", href: "/paris-deck-staining" },
-    { name: "Brantford", href: "/service-areas" },
-    { name: "Elmira", href: "/service-areas" },
-    { name: "St. Jacobs", href: "/service-areas" },
   ],
-};
+  extraAreas: ["Brantford", "Elmira", "St. Jacobs", "New Hamburg", "Elora", "Ayr"],
+  pricing: [
+    { service: "Power washing / fence cleaning", price: "$800–$1,200", note: "Based on square footage" },
+    { service: "Staining / painting", price: "$950–$1,350", note: "Includes cleaning, sanding and prep" },
+    { service: "Repair / rebuilding", price: "Custom quote", note: "Based on scope after assessment" },
+  ],
+} as const;

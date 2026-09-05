@@ -1,0 +1,37 @@
+{
+  "slug": "woodstock-deck-staining",
+  "city": "Woodstock",
+  "region": "ON",
+  "metaTitle": "Deck Staining in Woodstock, ON | Restore My Deck",
+  "metaDescription": "Restore My Deck serves Woodstock and Oxford County with brush-applied oil-based deck staining suited to town lots and larger rural properties alike.",
+  "h1": "Deck Staining for Woodstock and the Surrounding Oxford County Area",
+  "intro": "Woodstock sits in the middle of Oxford County's dairy and agricultural belt, and the properties we work on here range from tight in-town lots to sprawling rural acreages with a very different scale of deck and fence.",
+  "neighbourhoods": ["Sally Creek", "North Woodstock", "Eastdale", "Oxford Heights", "Ingersoll", "Tillsonburg"],
+  "localFact": "Sally Creek's golf-course community was built primarily in the 2000s and 2010s, so its decks tend to be original construction with builder-grade railings, unlike the older in-town lots around North Woodstock and Eastdale.",
+  "body": [
+    {"type": "h2", "text": "Town lots versus golf-course living"},
+    {"type": "p", "text": "Sally Creek is one of the more distinct pockets in our Woodstock service area, built around a golf course with larger, newer homes and decks designed for entertaining and viewing the fairways. These decks are usually still original builder construction, and the work often centres on a first proper restoration once the pressure-treated lumber has had a decade or so of sun exposure. North Woodstock and Eastdale, closer to the town's older core, have a mix of post-war and mid-century homes with decks that have typically already been through at least one prior stain or paint job, so the prep stage looks different from house to house."},
+    {"type": "h2", "text": "Oxford Heights and the town's newer edge"},
+    {"type": "p", "text": "Oxford Heights represents some of Woodstock's more recent residential growth, and like Sally Creek, most decks there are relatively young original construction. We tend to see fewer surprises in this part of town during the initial cleaning stage, since there is rarely old paint or mismatched prior finishes to strip before sanding and staining."},
+    {"type": "h2", "text": "Serving Ingersoll and Tillsonburg"},
+    {"type": "p", "text": "Ingersoll and Tillsonburg round out our Oxford County coverage, and both towns have their own mix of established neighbourhoods and newer subdivisions. Properties here often have more generous lot sizes than in-town Woodstock, which can mean larger decks or longer fence runs, particularly on properties bordering farmland where a solid or semi-solid fence stain also has to hold up against more dust and debris carried on the wind from surrounding fields."},
+    {"type": "h2", "text": "Agricultural dust and rural exposure"},
+    {"type": "p", "text": "Oxford County's agricultural character means properties on the outskirts of Woodstock, Ingersoll and Tillsonburg deal with more airborne dust and pollen than a purely urban lot, which settles into deck boards and fence pickets between cleanings. We factor this into our cleaning approach on rural-adjacent properties, since a standard light rinse often is not enough to fully lift the buildup before sanding."},
+    {"type": "callout", "text": "A property just outside Tillsonburg bordering farmland needed an extra pass during the cleaning stage to remove dust embedded in the fence grain before staining would properly penetrate. The finished result held up well through the following growing season."},
+    {"type": "h2", "text": "Planning around Woodstock's seasons"},
+    {"type": "p", "text": "Spring remains the busiest booking period across Oxford County, particularly for newer subdivisions like Sally Creek and Oxford Heights where homeowners want their decks ready for entertaining season. Rural and farm-adjacent properties around Ingersoll and Tillsonburg sometimes book later in the year, timed around harvest activity that can otherwise interfere with outdoor project scheduling."},
+    {"type": "ul", "items": ["Sally Creek and Oxford Heights: newer builder-grade decks, typically simpler first restorations", "North Woodstock and Eastdale: expect prior stain or paint layers to assess", "Ingersoll and Tillsonburg: larger lots and longer fence runs common", "Farm-adjacent properties: extra cleaning pass often needed for embedded dust"]},
+    {"type": "h2", "text": "Fence work on larger Oxford County lots"},
+    {"type": "p", "text": "Fencing projects in and around Woodstock scale up quickly once you move outside the town core. A standard in-town lot in Eastdale might need a single backyard run of board-on-board cedar fencing, while a property bordering farmland near Ingersoll or Tillsonburg can involve several hundred linear feet marking a property boundary. We quote these projects by actual footage and condition rather than a flat rate, and on longer rural runs we often recommend solid or semi-solid stain, since it holds up better than a lighter transparent finish against sustained wind, dust and less frequent maintenance attention than an in-town fence typically gets."},
+    {"type": "p", "text": "Whichever part of Oxford County you are in, our four-step process stays the same: a thorough clean suited to the property's conditions, any needed repair, buff sanding to 80 grit, and a brush-applied oil-based stain that penetrates rather than sitting on the surface the way a sprayed coat would. That consistency is what lets us move confidently between a small Sally Creek deck and a long farm-adjacent fence run near Tillsonburg without treating either as an afterthought."},
+    {"type": "p", "text": "See /deck-staining and /pressure-washing-services for details on our approach, or send photos through /contact-us for a free quote."}
+  ],
+  "faqs": [
+    {"q": "Are decks in Sally Creek typically original, or do they usually need major repair first?", "a": "Most Sally Creek decks are still original builder construction from the 2000s or 2010s, so they usually just need a proper first restoration rather than repair."},
+    {"q": "Does living near farmland outside Woodstock or Tillsonburg affect deck maintenance?", "a": "Yes, properties bordering farmland tend to collect more airborne dust and debris, which we account for with a more thorough cleaning pass before staining."},
+    {"q": "Do you serve Ingersoll and Tillsonburg, or just Woodstock itself?", "a": "We serve all of Oxford County, including Ingersoll and Tillsonburg alongside Woodstock."},
+    {"q": "My deck in North Woodstock has been painted before. Can you still stain it?", "a": "In most cases yes, though removing old paint takes extra prep time compared to a deck that has only ever been stained."},
+    {"q": "What areas of Oxford County do you cover from Woodstock?", "a": "Sally Creek, North Woodstock, Eastdale, Oxford Heights, Ingersoll and Tillsonburg."}
+  ],
+  "nearby": ["stratford-deck-staining", "paris-deck-staining", "kitchener-deck-fence-staining"]
+}

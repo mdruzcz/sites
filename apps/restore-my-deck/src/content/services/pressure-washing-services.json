@@ -1,0 +1,60 @@
+{
+  "slug": "pressure-washing-services",
+  "title": "Pressure Washing Services",
+  "category": "pressure-washing",
+  "metaTitle": "Pressure Washing Services in Kitchener-Waterloo, ON",
+  "metaDescription": "Restore My Deck's pressure washing covers deck power washing, deck cleaning and fence cleaning across Kitchener-Waterloo, using eco-friendly methods.",
+  "eyebrow": "Pressure washing",
+  "h1": "Pressure Washing That Restores Decks and Fences Without Damaging Them",
+  "intro": "Pressure washing is where most restoration projects start, and it is also where a lot of DIY jobs go wrong. Restore My Deck adjusts pressure and technique to your wood, whether we are cleaning a deck, washing away old finish, or working along a fence line.",
+  "excerpt": "Deck and fence cleaning, deck power washing and pre-stain prep, all done with pressure tailored to the wood so nothing gets gouged or damaged.",
+  "keyPoints": [
+    "Covers deck cleaning, deck power washing and fence cleaning",
+    "Pressure adjusted to wood type and condition, never one setting for everything",
+    "Eco-friendly, plant-safe cleaning solutions",
+    "The essential first step before any staining or painting",
+    "Experienced technicians who work with wood daily, not just concrete",
+    "Free, no-obligation quotes"
+  ],
+  "included": [
+    {"title": "On-site assessment", "body": "We look at the surface, its material and its condition before setting pressure and choosing a cleaning solution."},
+    {"title": "Deck cleaning", "body": "Routine cleaning that removes surface dirt, pollen and mildew build-up between staining cycles. See /deck-cleaning."},
+    {"title": "Deck power washing", "body": "A deeper clean for decks that need old finish stripped or heavier grime removed before restoration. See /deck-power-washing."},
+    {"title": "Fence cleaning", "body": "The same careful, material-adjusted approach applied to wood, vinyl and composite fences, including shared boundary fences. See /fence-cleaning."},
+    {"title": "Eco-friendly solutions", "body": "Every job uses plant-safe, VOC-compliant cleaning agents that are gentle on landscaping and safe once rinsed and dry."},
+    {"title": "Final rinse and inspection", "body": "We finish with a thorough rinse and walk the surface with you to confirm it is fully clean and ready for the next step."}
+  ],
+  "body": [
+    {"type": "h2", "text": "Why Pressure Washing Is the First Step in Almost Every Job"},
+    {"type": "p", "text": "Nearly every restoration project we run in Kitchener-Waterloo begins with pressure washing, because staining, sealing or painting over a dirty surface is a losing proposition. Grime, mildew, pollen and old failing finish all block a new coating from penetrating the wood properly, which is why we treat this stage as foundational rather than optional. Restore My Deck's pressure washing umbrella covers three related but distinct services: /deck-cleaning for routine upkeep, /deck-power-washing for deeper strips and heavier build-up, and /fence-cleaning for wood, vinyl and composite fence lines, including shared property-line fences."},
+    {"type": "h2", "text": "Deck Cleaning vs Deck Power Washing"},
+    {"type": "p", "text": "These two get used interchangeably by a lot of homeowners, but they are not quite the same job. Deck cleaning is the lighter of the two, aimed at removing surface dirt, pollen and light mildew build-up on a deck that is otherwise in good condition, typically as maintenance between staining cycles. Deck power washing goes further, using controlled higher pressure to strip old, failing stain or heavier grime and mould before a full restaining or restoration. We decide which approach a given deck needs after seeing it in person, since applying power-washing pressure to a deck that only needs a light clean can raise the wood grain unnecessarily."},
+    {"type": "ul", "items": [
+      "Deck cleaning: light maintenance clean between stain cycles, lower pressure",
+      "Deck power washing: deeper clean or old-finish strip before restaining, higher controlled pressure",
+      "Fence cleaning: material-specific approach for wood, vinyl and composite, including one-side-only jobs"
+    ]},
+    {"type": "h2", "text": "Why Pressure Settings Are Never One-Size-Fits-All"},
+    {"type": "p", "text": "The single biggest difference between a professional pressure washing job and a rented machine from the hardware store is pressure control. Cedar, pressure-treated lumber, vinyl fencing and composite decking all respond differently to water pressure, and using the wrong setting on any of them can gouge fibres, strip vinyl of its finish, or drive water into seams where it does not belong. We adjust nozzle, distance and pressure to the specific material and its condition every time, which is also why we can safely clean decks and fences that are already showing some age or softness without making the problem worse."},
+    {"type": "h2", "text": "Eco-Friendly Cleaning for Yards That Are Actually Used"},
+    {"type": "p", "text": "Most of the decks and fences we clean sit in yards with gardens, pets and kids using the space the same week we finish. Our cleaning solutions are plant-safe and VOC-compliant, chosen specifically so runoff does not harm landscaping or leave residue that is unsafe once the surface dries. We also take care to protect nearby garden beds and rinse thoroughly before wrapping up any job."},
+    {"type": "h2", "text": "Getting Ready for Staining or Painting"},
+    {"type": "p", "text": "If pressure washing is prep work for a bigger project, we schedule it that way. Once a deck or fence is clean and has had time to dry, it is ready for /sealing-services, whether that means staining a deck through /deck-staining, sealing it through /deck-sealing, or moving on to /fence-staining or /fence-painting. Booking the clean and the finish together, rather than as two separate calls weeks apart, usually keeps the whole project moving faster and gets better results, since the wood has not had time to collect new dust or pollen between steps."},
+    {"type": "callout", "text": "Not sure whether your deck needs a light clean, a deeper power wash, or a full restoration. Send photos through /contact-us and we will tell you honestly what it needs before quoting anything."},
+    {"type": "h2", "text": "What We Look for During an Assessment"},
+    {"type": "p", "text": "Before we start any machine, we walk the deck or fence and note the wood type, its age, how much finish is left on it, and whether there are soft spots, mildew concentrations or areas with heavier build-up than the rest of the surface. That assessment shapes everything that follows, from pressure setting to which cleaning solution we mix and how long we let it dwell before rinsing. It also tells us whether what looked like a simple cleaning job over the phone is actually closer to a full deck power washing job, or in some cases whether it points toward structural issues better suited to /deck-repair-and-maintenance or /deck-rebuilding rather than a cosmetic clean."},
+    {"type": "h2", "text": "How Often to Book Pressure Washing"},
+    {"type": "p", "text": "We generally recommend an annual clean for decks and fences in this region, given how much pollen, tree debris and humidity Southwestern Ontario summers produce. A yearly wash keeps mildew from taking hold and extends the life of whatever stain or paint is already on the surface, which can push out how often a full restaining is needed."},
+    {"type": "h2", "text": "Booking Pressure Washing"},
+    {"type": "p", "text": "Restore My Deck provides pressure washing across Kitchener, Waterloo, Cambridge, Guelph, Hamilton, Stratford, Woodstock, Fergus, Paris, Brantford and the surrounding area. Reach out through /contact-us or call 226.476.2055, Monday to Friday, 8 AM to 5 PM, for a free quote."}
+  ],
+  "faqs": [
+    {"q": "What is the difference between deck cleaning and deck power washing?", "a": "Deck cleaning is a lighter maintenance clean for a deck in good condition, while deck power washing uses higher controlled pressure to strip old finish or heavier grime before a full restaining."},
+    {"q": "How often should I have my deck or fence pressure washed?", "a": "We recommend an annual clean for most decks and fences in the Kitchener-Waterloo area, given the pollen, tree debris and humidity typical of our summers."},
+    {"q": "Can pressure washing damage my deck or fence?", "a": "It can if the pressure and technique are wrong for the material, which is why we adjust settings to the wood type and condition on every job rather than using one setting for everything."},
+    {"q": "Is pressure washing necessary before staining or painting?", "a": "Yes. Stain or paint applied over a dirty or weathered surface will not adhere properly and typically fails within a season, so cleaning is the first step in every finishing project."},
+    {"q": "Do you clean all types of fences, not just wood?", "a": "Yes, we clean wood, vinyl and composite fences, adjusting pressure and cleaning solution to each material."},
+    {"q": "How long does a pressure washing session take?", "a": "It depends on the size and condition of the deck or fence, but most jobs are completed in a few hours, with additional drying time before any staining or painting begins."}
+  ],
+  "related": ["deck-power-washing", "deck-cleaning", "fence-cleaning"]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "guelph-deck-fence-staining",
+  "city": "Guelph",
+  "region": "ON",
+  "metaTitle": "Deck & Fence Staining Guelph ON | Restore My Deck",
+  "metaDescription": "From shaded Old University streets to sunny Westminster Woods lots, Restore My Deck brush-applies oil-based stain across Guelph, ON.",
+  "h1": "Deck and Fence Staining Across the Royal City",
+  "intro": "Guelph's older neighbourhoods sit under some of the region's heaviest tree canopy, while its newer south-end subdivisions are wide open to the sun. Restore My Deck adjusts its approach depending on which side of the city we are working in.",
+  "neighbourhoods": ["Old University", "Exhibition Park", "Kortright Hills", "Westminster Woods", "Clairfields", "The Ward", "Pineridge"],
+  "localFact": "Guelph's limestone-heavy older homes near Exhibition Park and The Ward were often built with decks added decades later, meaning the deck framing is frequently a different age and wood type than the house itself.",
+  "body": [
+    {"type": "h2", "text": "Shade in the north, sun in the south"},
+    {"type": "p", "text": "Old University and Exhibition Park have some of the most established tree cover in Guelph, with large maples and oaks that have grown for generations and now shade backyard decks for much of the day. That shade keeps the wood cooler but also traps moisture, and we see more consistent mildew and algae growth on decks in these areas than almost anywhere else on our service map. Head south to Kortright Hills, Westminster Woods and Clairfields and the picture flips: these are newer subdivisions with young landscaping, so decks sit in near-constant direct sun and dry out, grey, and check faster without a protective stain."},
+    {"type": "h2", "text": "The Ward's mixed-age wood structures"},
+    {"type": "p", "text": "The Ward is one of Guelph's older, historically working-class neighbourhoods, and its housing stock reflects a long build-out period with additions and updates layered on over many decades. Decks here are often not original to the house, built years or even generations later, sometimes using different lumber than what is common today. Before staining in The Ward, we pay close attention to matching the cleaning and sanding approach to the actual condition of the wood rather than assuming a standard age or type."},
+    {"type": "h2", "text": "Newer growth in Clairfields and Pineridge"},
+    {"type": "p", "text": "Clairfields and Pineridge have seen steady development over the past decade, and most decks there are original pressure-treated construction that has not yet had a full restoration. These are generally the most straightforward Guelph projects: a thorough clean to remove construction dust and early UV greying, a light sand, and a brush-applied semi-transparent or semi-solid stain depending on how much sun the deck gets."},
+    {"type": "h2", "text": "Fences around Guelph's university core"},
+    {"type": "p", "text": "With the University of Guelph nearby, streets around Old University and parts of Exhibition Park have a mix of owner-occupied character homes and student rentals, and fence conditions vary widely as a result. We see everything from well-maintained cedar privacy fencing to older, neglected board fences that have not been cleaned in years. A soft wash followed by a brush-applied stain usually restores even heavily weathered fencing in this area without needing full replacement."},
+    {"type": "callout", "text": "On a Kortright Hills project, a two-year-old builder deck was already showing early greying from constant afternoon sun. A single clean-and-stain cycle with semi-solid oil-based stain addressed it before any real damage had set in."},
+    {"type": "h2", "text": "Seasonal notes for Guelph homeowners"},
+    {"type": "p", "text": "Spring bookings in Guelph tend to concentrate around the newer south-end subdivisions, where homeowners want their young decks protected before their first full summer of use. Fall bookings are more common in the shaded, older north-end streets, where owners are often reacting to visible mildew from a wet summer rather than planning ahead for sun damage."},
+    {"type": "ul", "items": ["Old University and Exhibition Park: expect more frequent mildew treatment due to shade", "Kortright Hills, Westminster Woods, Clairfields: prioritize UV protection with semi-solid stain", "The Ward: assess wood age and type carefully before choosing a cleaning method", "Pineridge: straightforward builder-grade decks, ideal for a first-time restoration"]},
+    {"type": "h2", "text": "Repair needs vary by neighbourhood age"},
+    {"type": "p", "text": "Structural repair needs in Guelph tend to track directly with a neighbourhood's age. In The Ward and parts of Old University, where decks are often additions built well after the original home, we more frequently find loose railings, softened posts, or boards that have cupped from years of shade and moisture. In Clairfields, Pineridge and Westminster Woods, where most decks are still original builder construction under fifteen years old, repair needs are minor or nonexistent, and the work is almost entirely cleaning, sanding and staining. When repair is needed, we handle it through /deck-repair-and-maintenance before any finish goes down, since staining over a compromised board only hides the problem rather than solving it."},
+    {"type": "p", "text": "See /deck-cleaning and /deck-sealing for more on our process, or visit /contact-us to send photos and get a free quote."}
+  ],
+  "faqs": [
+    {"q": "Why does my deck near Old University get mildew every year even though I clean it?", "a": "The mature tree canopy in that part of Guelph keeps decks shaded and damp for much of the day, so mildew tends to return faster than on a sun-exposed deck. Staining after a proper clean gives it better ongoing protection."},
+    {"q": "My deck in Kortright Hills is only a couple of years old. Does it really need staining already?", "a": "New builder-grade decks in full-sun subdivisions can start greying within the first year or two, so an early first stain often protects the wood better than waiting."},
+    {"q": "Is deck age harder to judge in older Guelph neighbourhoods like The Ward?", "a": "Yes, decks in older parts of Guelph are frequently additions built well after the house, sometimes with different lumber, so we assess each one individually rather than assuming a standard age."},
+    {"q": "Do you handle fence staining for rental properties near the university?", "a": "Yes, we regularly restore fencing on rental properties around the university core, including fences that have gone years without maintenance."},
+    {"q": "Which Guelph neighbourhoods do you cover?", "a": "All of Guelph, including Old University, Exhibition Park, Kortright Hills, Westminster Woods, Clairfields, The Ward and Pineridge."}
+  ],
+  "nearby": ["kitchener-deck-fence-staining", "waterloo-deck-fence-staining", "fergus-deck-staining"]
+}

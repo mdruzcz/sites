@@ -1,18 +1,20 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
+import { PICKS } from "@/lib/photos";
+import { Photo } from "./Photo";
+import { PhoneIcon } from "./icons";
 
-export default function CtaBand({ title = "Ready to Restore Your Deck?" }: { title?: string }) {
+export function CtaBand({ heading = "Ready to see your deck the way it used to look?", sub = "Free quote within 24 hours. Send a few photos and we can usually price it without a visit.", photo = PICKS.heroProjects }: { heading?: string; sub?: string; photo?: string }) {
   return (
-    <section className="bg-[var(--accent)] py-14 px-4">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-        <div>
-          <h2 className="text-3xl font-extrabold text-white">{title}</h2>
-          <p className="mt-2 text-white/90 text-lg">Most projects completed in just 2 days including drying time.</p>
+    <section className="relative isolate overflow-hidden bg-[var(--ink)] text-white">
+      <Photo name={photo} ratio="absolute inset-0" sizes="100vw" scrim="soft" className="!absolute" />
+      <div className="shell relative py-20 text-center md:py-28">
+        <h2 className="font-display h2-fluid mx-auto max-w-3xl text-white">{heading}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-white/85">{sub}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="#contact" className="btn-accent">Get my free quote</a>
+          <a href={site.phoneHref} className="btn-white"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
         </div>
-        <div className="flex gap-3 flex-wrap justify-center">
-          <Link href="/contact-us" className="btn btn-white text-[var(--dark)] font-bold">Get a Free Quote</Link>
-          <a href={site.phoneHref} className="btn btn-dark">Call {site.phone}</a>
-        </div>
+        <p className="mt-6 text-xs text-white/70">Eco-friendly products · Brush-applied stain · Most projects done in 2 days</p>
       </div>
     </section>
   );

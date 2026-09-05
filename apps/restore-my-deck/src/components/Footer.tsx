@@ -1,61 +1,51 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { AwardBadge } from "@/components/award-badge";
+import { PhoneIcon, MailIcon } from "./icons";
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+export function Footer() {
   return (
-    <footer className="bg-[var(--dark)] text-white">
-      {/* Main footer */}
-      <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Brand */}
-        <div>
-          <Image src="/images/logo.png" alt="Restore My Deck logo" width={160} height={50} className="h-12 w-auto object-contain brightness-0 invert mb-4" />
-          <p className="text-gray-400 text-sm leading-relaxed">Professional deck and fence restoration serving Kitchener-Waterloo, Guelph, Hamilton and surrounding areas.</p>
-          <p className="mt-4 text-sm text-gray-400">{site.hours}</p>
+    <footer className="border-t border-[var(--line)] bg-[var(--cream)]">
+      <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-2">
+          <Image src="/images/logo.png" alt="Restore My Deck" width={522} height={223} className="h-12 w-auto" />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--ink-soft)]">Deck and fence restoration, cleaning, staining and repair across Kitchener-Waterloo, Cambridge, Guelph, Hamilton and Southwestern Ontario. Eco-friendly products, brush-applied oil-based stain, most projects done in two days.</p>
+          <a href={site.phoneHref} className="btn-accent btn-sm mt-5"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
+          <a href={site.emailHref} className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-soft)] hover:text-[var(--accent-deep)]"><MailIcon className="w-4 h-4" />{site.email}</a>
+          <p className="mt-2 text-xs text-[var(--muted)]">{site.hours}</p>
+          <div className="mt-5"><AwardBadge /></div>
         </div>
-
-        {/* Contact */}
         <div>
-          <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
-            <li><a href={site.phoneHref} className="hover:text-[var(--accent)] transition-colors">{site.phone}</a></li>
-            <li><a href={`mailto:${site.email}`} className="hover:text-[var(--accent)] transition-colors">{site.email}</a></li>
-            <li>Kitchener-Waterloo Region, ON</li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">Our Services</h3>
-          <ul className="space-y-1 text-sm">
-            {site.services.slice(0, 7).map((s) => (
-              <li key={s.href}><Link href={s.href} className="text-gray-400 hover:text-[var(--accent)] transition-colors">{s.name}</Link></li>
+          <h3 className="eyebrow text-[var(--muted)]">Services</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {site.services.map((s) => (
+              <li key={s.href}><Link href={s.href} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{s.name}</Link></li>
             ))}
           </ul>
         </div>
-
-        {/* Service Areas */}
         <div>
-          <h3 className="font-bold text-lg mb-4">Service Areas</h3>
-          <ul className="space-y-1 text-sm">
-            {site.serviceAreas.slice(0, 9).map((a) => (
-              <li key={a.name}><Link href={a.href} className="text-gray-400 hover:text-[var(--accent)] transition-colors">{a.name}</Link></li>
+          <h3 className="eyebrow text-[var(--muted)]">Service areas</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {site.serviceAreas.map((c) => (
+              <li key={c.href}><Link href={c.href} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{c.name}</Link></li>
+            ))}
+            <li className="text-xs text-[var(--muted)]">{site.extraAreas.join(" · ")}</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Company</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {[["Helpful tips", "/blog"], ["Projects", "/projects"], ["About us", "/about-us"], ["Free quote", "/contact-us"], ["Privacy policy", "/privacy-policy"], ["Terms of service", "/terms-of-service"]].map(([l, h]) => (
+              <li key={h}><Link href={h} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{l}</Link></li>
             ))}
           </ul>
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-white/10 py-4 px-4 text-center text-xs text-gray-500">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <p>&copy; {year} {site.name}. All rights reserved. &nbsp;|&nbsp;
-            <Link href="/privacy-policy" className="hover:text-[var(--accent)] transition-colors">Privacy Policy</Link>
-            &nbsp;|&nbsp;
-            <Link href="/terms-of-service" className="hover:text-[var(--accent)] transition-colors">Terms of Service</Link>
-          </p>
-          <AwardBadge />
+      <div className="border-t border-[var(--line)]">
+        <div className="shell flex flex-col items-center justify-between gap-3 py-5 text-xs text-[var(--muted)] sm:flex-row">
+          <p>© {new Date().getFullYear()} Restore My Deck · Kitchener, Ontario</p>
+          <p>Eco-friendly products · Brush-applied stain · Free quotes</p>
         </div>
       </div>
     </footer>

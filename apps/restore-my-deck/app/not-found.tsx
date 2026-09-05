@@ -1,15 +1,18 @@
 import Link from "next/link";
+import { PageHero } from "@/components/PageHero";
+import { PICKS } from "@/lib/photos";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-20">
-      <div className="text-6xl font-extrabold text-[var(--accent)] mb-4">404</div>
-      <h1 className="text-2xl font-bold text-[var(--dark)] mb-3">Page Not Found</h1>
-      <p className="text-gray-600 mb-8 max-w-md">The page you&apos;re looking for doesn&apos;t exist. Let&apos;s get you back on track.</p>
-      <div className="flex gap-3 flex-wrap justify-center">
-        <Link href="/" className="btn btn-accent">Back to Home</Link>
-        <Link href="/contact-us" className="btn btn-outline">Contact Us</Link>
-      </div>
-    </div>
+    <>
+      <PageHero photo={PICKS.heroServices} eyebrow="404" title="That board is missing." intro="The link may be old, or the page moved. Head back home or pick a service below." crumbs={[{ label: "Not found" }]} compact form={false} />
+      <section className="bg-[var(--paper)]">
+        <div className="shell section flex flex-wrap gap-3">
+          <Link href="/" className="btn-accent">Back to home</Link>
+          <Link href="/services" className="btn-outline">Our services</Link>
+          <Link href="/contact-us" className="btn-outline">Get a free quote</Link>
+        </div>
+      </section>
+    </>
   );
 }

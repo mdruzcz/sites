@@ -1,92 +1,62 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
-import PageHero from "@/components/PageHero";
+import { Contact } from "@/components/Contact";
+import { CtaBand } from "@/components/CtaBand";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { PricingBand } from "@/components/PricingBand";
+import { ArrowRightIcon } from "@/components/icons";
+import { getServices, servicePhoto } from "@/lib/content";
+import { PICKS } from "@/lib/photos";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "Services | Deck & Fence Restoration, Staining & Repair",
-  description: "Explore all Restore My Deck services — deck restoration, staining, cleaning, power washing, sealing, sanding, repair, rebuilding, fence staining and painting in Kitchener-Waterloo.",
-  openGraph: { title: "Services | Restore My Deck", url: `${site.url}/services` },
+  title: "Deck & Fence Services: Cleaning, Staining, Repair, Rebuilding",
+  description: "Every deck and fence service Restore My Deck offers across Kitchener-Waterloo and Southwestern Ontario: power washing, cleaning, sanding, sealing, staining, painting, repair and rebuilding.",
+  alternates: { canonical: `${site.url}/services` },
 };
 
-const categories = [
-  {
-    title: "Pressure Washing Services",
-    href: "/pressure-washing-services",
-    desc: "Deep cleaning for decks and fences to remove mold, algae and weathered wood fibres.",
-    services: [
-      { name: "Deck Restoration", href: "/deck-restoration" },
-      { name: "Deck Cleaning", href: "/deck-cleaning" },
-      { name: "Deck Power Washing", href: "/deck-power-washing" },
-      { name: "Fence Cleaning", href: "/fence-cleaning" },
-    ],
-  },
-  {
-    title: "Sealing Services",
-    href: "/sealing-services",
-    desc: "Staining, sealing, sanding and painting to protect and beautify your wood.",
-    services: [
-      { name: "Deck Staining", href: "/deck-staining" },
-      { name: "Deck Sealing", href: "/deck-sealing" },
-      { name: "Deck Sanding", href: "/deck-sanding" },
-      { name: "Fence Staining", href: "/fence-staining" },
-      { name: "Fence Painting", href: "/fence-painting" },
-    ],
-  },
-  {
-    title: "Deck Repair & Maintenance",
-    href: "/deck-repair-and-maintenance",
-    desc: "Fix loose boards, rot, unstable railings and structural damage.",
-    services: [
-      { name: "Deck Repair & Maintenance", href: "/deck-repair-and-maintenance" },
-    ],
-  },
-  {
-    title: "Deck Rebuilding",
-    href: "/deck-rebuilding",
-    desc: "Complete teardown and rebuild with custom sizing, layouts and features.",
-    services: [
-      { name: "Deck Rebuilding", href: "/deck-rebuilding" },
-    ],
-  },
+const GROUPS: { key: "pressure-washing" | "sealing" | "repair"; title: string; blurb: string; hub?: string }[] = [
+  { key: "pressure-washing", title: "Cleaning and power washing", blurb: "Eco-friendly detergents and the right pressure for the wood. The first step of every restoration.", hub: "pressure-washing-services" },
+  { key: "sealing", title: "Staining, sealing and painting", blurb: "80-grit sand, then brush-applied oil-based stain or paint that soaks in and lasts.", hub: "sealing-services" },
+  { key: "repair", title: "Repair, restoration and rebuilding", blurb: "Loose boards, soft spots and railings fixed, or a full rebuild when the structure is past saving." },
 ];
 
 export default function ServicesPage() {
+  const services = getServices();
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }])) }} />
-
-      <PageHero
-        title="Our Services"
-        subtitle="From a basic power wash to a full deck rebuild — we offer a complete range of professional wood restoration services."
-        center
-      />
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4 space-y-12">
-          {categories.map((cat) => (
-            <div key={cat.href} className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="bg-[var(--dark)] p-6 md:p-8">
-                <Link href={cat.href} className="text-xl font-bold text-white hover:text-[var(--accent)] transition-colors">{cat.title}</Link>
-                <p className="mt-2 text-gray-400 text-sm">{cat.desc}</p>
+      <PageHero photo={PICKS.heroServices} eyebrow="All services" title="Every deck and fence service, one crew." intro="From a quick power wash to a full teardown and rebuild. Most restorations run clean, repair, sand and stain over two days." crumbs={[{ label: "Services" }]} compact />
+      {GROUPS.map((g, gi) => {
+        const items = services.filter((s) => s.category === g.key && s.slug !== g.hub);
+        return (
+          <section key={g.key} className={gi % 2 ? "bg-white" : "bg-[var(--paper)]"}>
+            <div className="shell section">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div className="max-w-2xl"><p className="eyebrow-pill">{g.title}</p><p className="mt-4 text-[var(--ink-soft)]">{g.blurb}</p></div>
+                {g.hub && <Link href={`/${g.hub}`} className="btn-outline btn-sm">About {g.title.toLowerCase()}</Link>}
               </div>
-              <div className="p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {cat.services.map((s) => (
-                  <Link key={s.href} href={s.href} className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-100 hover:border-[var(--accent)] hover:text-[var(--accent)] font-medium transition-all group">
-                    <span className="w-2 h-2 rounded-full bg-[var(--accent)] group-hover:scale-110 transition-transform" />
-                    {s.name}
+              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((svc) => (
+                  <Link key={svc.slug} href={`/${svc.slug}`} className="card card-lift group flex flex-col overflow-hidden">
+                    <Photo name={servicePhoto(svc.slug)} ratio="aspect-[16/10]" sizes="(max-width: 640px) 100vw, 380px" />
+                    <div className="flex flex-1 flex-col p-6">
+                      <h2 className="font-display text-xl group-hover:text-[var(--accent-deep)]">{svc.title}</h2>
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--ink-soft)]">{svc.excerpt}</p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[var(--accent-deep)]">Learn more <ArrowRightIcon className="w-4 h-4" /></span>
+                    </div>
                   </Link>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
+          </section>
+        );
+      })}
+      <PricingBand />
       <CtaBand />
+      <Contact />
     </>
   );
 }

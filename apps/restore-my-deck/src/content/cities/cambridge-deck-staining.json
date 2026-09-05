@@ -1,0 +1,36 @@
+{
+  "slug": "cambridge-deck-staining",
+  "city": "Cambridge",
+  "region": "ON",
+  "metaTitle": "Deck Staining in Cambridge, ON | Restore My Deck",
+  "metaDescription": "Restore My Deck brush-applies oil-based stain on decks across Galt, Preston, Hespeler and Blair, tailored to Cambridge's older housing stock.",
+  "h1": "Deck Staining Built Around Cambridge's Three Town Cores",
+  "intro": "Cambridge was formed from three separate towns, and each one still has its own character. That history is part of what makes deck work here different from a single, uniform suburb.",
+  "neighbourhoods": ["Galt", "Preston", "Hespeler", "West Galt", "Blair", "Clemens Mill"],
+  "localFact": "Galt's downtown core sits close to the Grand River, and properties within a few blocks of the water tend to carry noticeably more humidity in their wood structures than decks up in Clemens Mill, which affects both drying time and how often mildew reappears.",
+  "body": [
+    {"type": "h2", "text": "Three towns, three deck personalities"},
+    {"type": "p", "text": "Galt's older streets, many close to the Grand River, have some of the oldest homes in Cambridge, and the decks attached to them are often additions built decades after the original house, sometimes in stages. Preston and Hespeler have their own historic mill-town cores but also a wide band of mid-century and 1970s-80s housing further out, with decks that have usually been restained multiple times over the years by different owners with different products. Clemens Mill, on the other hand, is one of Cambridge's newer areas, with more consistent builder-grade pressure-treated decks that are simpler to assess because they have not been through as many layers of prior finish."},
+    {"type": "h2", "text": "River proximity and humidity"},
+    {"type": "p", "text": "Properties in Galt and parts of Preston that sit close to the Grand River tend to hold more ambient moisture than homes further from the water, which we factor into drying time estimates and how aggressively we recommend cleaning before staining. A deck that looks dry on the surface can still have damp fibres underneath in these areas, so we do not rush the sanding and staining stages on riverside properties even when the weather forecast looks ideal."},
+    {"type": "h2", "text": "Blair's heritage character"},
+    {"type": "p", "text": "Blair is one of the smaller, older hamlets absorbed into Cambridge, with a distinct heritage feel and older wood fencing and decking that often needs careful handling to avoid damaging original material that homeowners want to preserve rather than replace. We use lower-pressure soft washing on these older structures and lean on hand-sanding in tight spots rather than aggressive mechanical sanding that could remove too much of the original wood surface."},
+    {"type": "h2", "text": "West Galt and Hespeler's mixed building stock"},
+    {"type": "p", "text": "West Galt and Hespeler have a mix of century homes, post-war bungalows and newer infill, so we regularly quote projects on the same street that range from a small deck needing a light refresh to a larger structure needing repair and rebuilding before staining even begins. This mix means every Cambridge quote is genuinely assessed on-site or from photos rather than treated as one standard package."},
+    {"type": "callout", "text": "A recent Hespeler project involved a deck that had been painted rather than stained by a previous owner. Stripping old paint before sanding and applying a solid oil-based stain took longer than a typical restain, but gave the homeowner a finish that will hold up far better going forward."},
+    {"type": "h2", "text": "Planning your project around Cambridge's calendar"},
+    {"type": "p", "text": "Spring and early summer are the busiest times for deck staining across Cambridge, particularly in Clemens Mill where most decks are still relatively young and homeowners want to keep them looking that way. Older properties in Galt and Blair often book in the fall instead, timing the work to protect the wood before winter rather than for a summer patio deadline."},
+    {"type": "ul", "items": ["Riverside properties in Galt: expect longer drying windows due to ambient humidity", "Blair heritage decks and fences: gentler soft-wash cleaning to protect original wood", "Clemens Mill builder-grade decks: straightforward clean, sand and stain with less prep", "Hespeler and West Galt older homes: assess for prior paint or mixed finishes before quoting"]},
+    {"type": "h2", "text": "A recent Preston project"},
+    {"type": "p", "text": "A homeowner in Preston reached out after noticing dark streaking on a deck that had been cleaned but not restained in close to six years. Because the property sits within a few streets of the river, the wood held more moisture than expected even after several dry days, so we adjusted the drying window between power washing and sanding rather than sticking to a fixed timeline. Once fully dry, the deck took 80-grit sanding and a semi-transparent stain evenly, and the finished result addressed both the visual staining and the underlying moisture issue that caused it. That kind of adjustment based on a property's actual conditions, rather than a generic schedule, is typical of how we approach Cambridge jobs given how much the town's geography varies block to block."},
+    {"type": "p", "text": "Learn more about our process at /deck-staining and /deck-cleaning, or send photos through /contact-us for a free quote suited to your part of Cambridge."}
+  ],
+  "faqs": [
+    {"q": "Does living near the Grand River in Galt change how my deck should be maintained?", "a": "Yes, riverside properties tend to hold more moisture, so we allow extra drying time and recommend not skipping a maintenance clean even in years you are not restaining."},
+    {"q": "My deck in Blair is quite old. Can it still be restored instead of replaced?", "a": "Often yes. We use soft washing and careful hand-sanding on older heritage-area wood to avoid unnecessary damage, and only recommend rebuilding when the structure itself is compromised."},
+    {"q": "Can you remove old paint from a deck in Hespeler before staining?", "a": "Yes, though it adds time to the project. Stripping old paint properly before sanding and staining gives a much longer-lasting result than staining over it."},
+    {"q": "Are Clemens Mill decks easier to quote than older Cambridge homes?", "a": "Generally yes, since most are original builder-grade construction without multiple layers of prior finish to work around."},
+    {"q": "What parts of Cambridge do you serve?", "a": "All of Cambridge, including Galt, Preston, Hespeler, West Galt, Blair and Clemens Mill."}
+  ],
+  "nearby": ["kitchener-deck-fence-staining", "waterloo-deck-fence-staining", "paris-deck-staining"]
+}
