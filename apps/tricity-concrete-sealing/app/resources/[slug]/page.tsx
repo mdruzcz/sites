@@ -75,7 +75,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
               <p className="eyebrow-pill">Free quote</p>
               <h2 className="font-display mt-4 text-2xl md:text-3xl">Want us to just handle it?</h2>
               <p className="mt-3 text-[var(--ink-soft)]">Free site assessment, finish samples in hand, written quote with a {site.warrantyYears}-year warranty.</p>
-              <div className="mt-6 flex flex-wrap justify-center gap-3"><a href="#contact" className="btn-accent">Request a quote</a><a href={site.phoneHref} className="btn-outline">{site.phone}</a></div>
+              <div className="mt-6 flex flex-wrap justify-center gap-3"><a href="#contact" className="btn-accent">Request a quote</a><a href={site.emailHref} className="btn-outline">{site.email}</a></div>
             </div>
           </div>
           {related.length > 0 && (

@@ -4,7 +4,7 @@ import { useState, useRef, type FormEvent } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
 import { SERVICE_OPTIONS, FINISH_OPTIONS } from "./HeroQuoteForm";
-import { PhoneIcon, MapPinIcon, CheckIcon, ClockIcon, MailIcon } from "./icons";
+import { MapPinIcon, CheckIcon, ClockIcon, MailIcon } from "./icons";
 
 export function Contact({ cityName, service }: { cityName?: string; service?: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -66,15 +66,8 @@ export function Contact({ cityName, service }: { cityName?: string; service?: st
             Tell us about the surface and we will be back within {site.responseTime} to book a free site assessment. Photos help: send a couple of shots of the driveway or patio and we can often quote from those.
           </p>
           <div className="mb-8 space-y-5">
-            <a href={site.phoneHref} className="group flex min-h-11 items-center gap-4">
-              <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--accent)]"><PhoneIcon className="text-white" /></div>
-              <div>
-                <p className="mb-0.5 text-xs uppercase tracking-wider text-[var(--muted)]">Phone · call or text</p>
-                <p className="font-bold text-[var(--ink)] transition group-hover:text-[var(--accent-deep)]">{site.phone}</p>
-              </div>
-            </a>
             <a href={site.emailHref} className="group flex min-h-11 items-center gap-4">
-              <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--navy)]"><MailIcon className="text-white" /></div>
+              <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-[var(--accent)]"><MailIcon className="text-white" /></div>
               <div>
                 <p className="mb-0.5 text-xs uppercase tracking-wider text-[var(--muted)]">Email</p>
                 <p className="font-bold text-[var(--ink)] transition group-hover:text-[var(--accent-deep)]">{site.email}</p>

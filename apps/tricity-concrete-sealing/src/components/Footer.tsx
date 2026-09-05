@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { cities } from "@/lib/cities";
 import { getServices } from "@/lib/content";
 import { AwardBadge } from "@/components/award-badge";
-import { PhoneIcon, MailIcon } from "./icons";
+import { MailIcon } from "./icons";
 
 export function Footer() {
   const services = getServices();
@@ -14,8 +14,7 @@ export function Footer() {
         <div className="lg:col-span-2">
           <Image src="/images/logo.png" alt="TriCity Concrete Sealing" width={365} height={101} className="h-12 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--ink-soft)]">Professional concrete sealing across London, Woodstock, Brantford and Southwestern Ontario. High-quality solvent-based sealers in matte, semi-gloss or gloss, backed by a {site.warrantyYears}-year workmanship warranty.</p>
-          <a href={site.phoneHref} className="btn-accent btn-sm mt-5"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
-          <a href={site.emailHref} className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-soft)] hover:text-[var(--accent-deep)]"><MailIcon className="w-4 h-4" />{site.email}</a>
+          <a href={site.emailHref} className="btn-accent btn-sm mt-5"><MailIcon className="w-4 h-4" />{site.email}</a>
           <p className="mt-2 text-xs text-[var(--muted)]">{site.hours}</p>
           <div className="mt-5"><AwardBadge /></div>
         </div>

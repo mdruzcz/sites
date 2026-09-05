@@ -11,7 +11,7 @@ export function GET() {
   const lines = [
     "# TriCity Concrete Sealing",
     "",
-    `> Professional concrete sealing company based in London, Ontario, serving Southwestern Ontario (London, Woodstock, Brantford, St. Thomas, Stratford, Ingersoll, Tillsonburg, St. Marys, Aylmer, Simcoe and 20+ communities). ${site.yearsExperience}+ years, ${site.stats.projectsCompleted}+ projects, fully insured, free site assessment, written ${site.warrantyYears}-year workmanship warranty. Uses HIGH-QUALITY SOLVENT-BASED acrylic sealers only (deeper penetration, stronger colour enhancement, seamless recoats, better salt/UV/hot-tire resistance) in three finishes: Matte, Semi-Gloss and Gloss. Non-slip additive available. Phone ${site.phone}. Email ${site.email}. Quotes through the website form or by phone, answered within ${site.responseTime}.`,
+    `> Professional concrete sealing company based in London, Ontario, serving Southwestern Ontario (London, Woodstock, Brantford, St. Thomas, Stratford, Ingersoll, Tillsonburg, St. Marys, Aylmer, Simcoe and 20+ communities). ${site.yearsExperience}+ years, ${site.stats.projectsCompleted}+ projects, fully insured, free site assessment, written ${site.warrantyYears}-year workmanship warranty. Uses HIGH-QUALITY SOLVENT-BASED acrylic sealers only (deeper penetration, stronger colour enhancement, seamless recoats, better salt/UV/hot-tire resistance) in three finishes: Matte, Semi-Gloss and Gloss. Non-slip additive available. Email ${site.email}. Quotes through the website form or by phone, answered within ${site.responseTime}.`,
     "",
     "## Services",
     ...servicesData.map((s) => `- ${s.title}: ${s.shortDescription} ${site.url}/services/${s.slug}`),

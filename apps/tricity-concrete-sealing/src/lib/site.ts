@@ -1,8 +1,6 @@
 export const site = {
   name: "TriCity Concrete Sealing",
   shortName: "TriCity",
-  phone: "(519) 902-0000",
-  phoneHref: "tel:+15199020000",
   email: "service@tricityconcretesealing.ca",
   emailHref: "mailto:service@tricityconcretesealing.ca",
   address: {

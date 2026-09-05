@@ -32,7 +32,7 @@ export async function POST(req: Request) {
       return Response.json({ error: "Security check failed. Please try again." }, { status: 400 });
     }
   } catch {
-    return Response.json({ error: "Security check unavailable. Please call us." }, { status: 400 });
+    return Response.json({ error: "Security check unavailable. Please email us." }, { status: 400 });
   }
 
   const payload = {
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
   }
 
   if (!emailed && !stored) {
-    return Response.json({ error: "We couldn't send your request. Please call us." }, { status: 502 });
+    return Response.json({ error: "We couldn't send your request. Please email us." }, { status: 502 });
   }
   return Response.json({ ok: true, emailed, stored });
 }

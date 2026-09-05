@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { PhoneIcon } from "./icons";
+import { MailIcon } from "./icons";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -64,10 +64,7 @@ export function NavBar() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <a href={site.phoneHref} className="btn-outline btn-sm whitespace-nowrap" aria-label={`Call ${site.phone}`}>
-              <PhoneIcon className="w-4 h-4" />
-              <span className="hidden xl:inline">{site.phone}</span>
-            </a>
+            <a href={site.emailHref} className="btn-outline btn-sm whitespace-nowrap"><MailIcon className="w-4 h-4" /><span className="hidden xl:inline">Email us</span></a>
             <a href="#contact" className="btn-accent btn-sm whitespace-nowrap">Free Quote</a>
           </div>
 
@@ -90,7 +87,7 @@ export function NavBar() {
               </Link>
             ))}
             <a href="#contact" onClick={() => setOpen(false)} className="btn-accent mt-6">Get a free quote</a>
-            <a href={site.phoneHref} className="btn-outline mt-2"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
+            <a href={site.emailHref} className="btn-outline mt-2"><MailIcon className="w-4 h-4" />{site.email}</a>
           </div>
         </div>,
         document.body

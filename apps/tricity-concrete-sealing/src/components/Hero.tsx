@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 import { PICKS } from "@/lib/photos";
 import { Photo } from "./Photo";
 import { HeroQuoteForm } from "./HeroQuoteForm";
-import { PhoneIcon, CheckIcon } from "./icons";
+import { CheckIcon } from "./icons";
 
 export function Hero() {
   return (
@@ -21,7 +21,7 @@ export function Hero() {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/finishes" className="btn-white">Compare finishes</Link>
             <Link href="/gallery" className="btn-white">Before &amp; after</Link>
-            <a href={site.phoneHref} className="btn-accent"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
+            <a href="#contact" className="btn-accent">Get a free quote</a>
           </div>
           <ul className="mt-8 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
             {site.trustBadges.map((b) => (

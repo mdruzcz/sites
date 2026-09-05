@@ -11,8 +11,8 @@ export function FAQ({ faqs = homeFaqs, title = "Questions people ask before book
         <div>
           <p className="eyebrow-pill">FAQ</p>
           <h2 className="font-display h2-fluid mt-4">{title}</h2>
-          <p className="mt-4 text-[var(--ink-soft)]">Still wondering about something? Call us, or use the form and we will get back to you within {site.responseTime}.</p>
-          <a href={site.phoneHref} className="btn-outline mt-6">Call {site.phone}</a>
+          <p className="mt-4 text-[var(--ink-soft)]">Still wondering about something? Email us, or use the form and we will get back to you within {site.responseTime}.</p>
+          <a href={site.emailHref} className="btn-outline mt-6">{site.email}</a>
         </div>
         <div className="space-y-3">
           {faqs.map((f) => (

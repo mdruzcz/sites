@@ -58,13 +58,13 @@ export function HeroQuoteForm({ city, service, compact = false }: { city?: strin
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(data.error || "Something went wrong. Please call us.");
+        setError(data.error || "Something went wrong. Please email us.");
         setStatus("error");
         return;
       }
       setStatus("success");
     } catch {
-      setError("Network error. Please call us.");
+      setError("Network error. Please email us.");
       setStatus("error");
     }
   }

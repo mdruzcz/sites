@@ -52,7 +52,7 @@ export function PageHero({ photo, photoAlt, eyebrow, title, intro, crumbs = [], 
           {intro && <p className="lead mt-5 max-w-xl text-white/85">{intro}</p>}
           <div className="mt-7 flex flex-wrap gap-3">
             <a href="#contact" className="btn-accent lg:hidden">Get a free quote</a>
-            <a href={site.phoneHref} className="btn-white">{site.phone}</a>
+            <a href={site.emailHref} className="btn-white">Email {site.email}</a>
           </div>
         </div>
         {form && (

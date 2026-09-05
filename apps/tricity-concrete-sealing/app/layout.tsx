@@ -53,10 +53,9 @@ const siteGraph = {
       name: site.name,
       url: site.url,
       logo: { "@type": "ImageObject", url: `${site.url}/images/logo.png` },
-      telephone: "+1-519-902-0000",
       email: site.email,
       areaServed: { "@type": "AdministrativeArea", name: "Southwestern Ontario" },
-      contactPoint: { "@type": "ContactPoint", telephone: "+1-519-902-0000", email: site.email, contactType: "customer service", areaServed: "CA", availableLanguage: "English" },
+      contactPoint: { "@type": "ContactPoint", email: site.email, contactType: "customer service", areaServed: "CA", availableLanguage: "English" },
     },
     {
       "@type": "WebSite",
