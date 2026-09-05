@@ -41,15 +41,15 @@
     "alt": "Clean, safely sealed concrete walkway with slip-resistant finish in St. Thomas, Ontario",
     "icon": "🚶",
     "benefits": ["Slip-resistant finish", "Prevents cracking & heaving", "Easy to clean", "Improves curb appeal"],
-    "featured": true
+    "featured": false
   },
   {
     "slug": "exposed-aggregate-sealing",
     "title": "Exposed Aggregate Sealing",
     "shortDescription": "Restore and protect your exposed aggregate concrete with a sealer that enhances the natural stone colours and keeps them locked in.",
     "description": "Exposed aggregate concrete has a beautiful textured look — but without sealing, those embedded stones lose their colour and the concrete becomes vulnerable to spalling and staining. Our exposed aggregate sealing service uses a high-solids, penetrating sealer that saturates the stone and concrete matrix, bringing out the natural colours and providing durable protection from the elements.",
-    "image": "/images/Extreme-Durability-TriCity-Concrete-Sealing.jpg",
-    "alt": "Sealed exposed aggregate concrete driveway with enhanced stone colours in Stratford, Ontario",
+    "image": "/images/exposed-aggregate-concrete-sealed.jpg",
+    "alt": "Close-up of sealed exposed aggregate concrete surface showing enhanced natural stone colours and texture",
     "icon": "🪨",
     "benefits": ["Enhances stone colours", "Prevents staining between stones", "Extends surface life", "Easy-to-clean texture"],
     "featured": false

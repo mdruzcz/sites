@@ -25,7 +25,7 @@ export default function TermsPage() {
 
           <div>
             <h2 className="font-bold text-[var(--navy)] text-xl mb-3">Warranty</h2>
-            <p>Our {site.warrantyYears}-year written warranty covers defects in sealer application and materials under normal use conditions. Full warranty terms are available on our <a href="/warranty" className="text-[var(--accent)] hover:underline">Warranty page</a>.</p>
+            <p>Our workmanship warranty covers defects in sealer application and materials under normal use conditions. Full warranty terms are available on our <a href="/warranty" className="text-[var(--accent)] hover:underline">Warranty page</a>.</p>
           </div>
 
           <div>

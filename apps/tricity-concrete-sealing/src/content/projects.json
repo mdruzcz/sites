@@ -27,21 +27,21 @@
     "featured": true
   },
   {
-    "slug": "st-thomas-walkway",
-    "title": "Front Walkway Restoration",
-    "city": "St. Thomas",
-    "service": "walkway-sealing",
-    "image": "/images/result_Walkway-Sealing-TriCity-Concrete-Sealing.jpg",
-    "alt": "Restored and sealed concrete walkway by TriCity Concrete Sealing in St. Thomas, Ontario",
-    "featured": true
-  },
-  {
     "slug": "stratford-exposed-aggregate",
     "title": "Exposed Aggregate Driveway",
     "city": "Stratford",
     "service": "exposed-aggregate-sealing",
-    "image": "/images/Extreme-Durability-TriCity-Concrete-Sealing.jpg",
-    "alt": "Sealed exposed aggregate concrete driveway by TriCity Concrete Sealing in Stratford, Ontario",
+    "image": "/images/exposed-aggregate-concrete-sealed.jpg",
+    "alt": "Sealed exposed aggregate concrete surface showing enhanced natural stone colours in Stratford, Ontario",
+    "featured": true
+  },
+  {
+    "slug": "london-fresh-stamped-seal",
+    "title": "Fresh Stamped Patio Seal",
+    "city": "London",
+    "service": "stamped-concrete-sealing",
+    "image": "/images/Global-Remote-Access-TriCity-Concrete-Sealing.jpg",
+    "alt": "Freshly sealed stamped concrete patio in London, Ontario by TriCity Concrete Sealing",
     "featured": true
   },
   {
@@ -60,6 +60,15 @@
     "service": "driveway-sealing",
     "image": "/images/result_Restore-Your-Concretes-Beauty-with-TriCity-TriCity-Concrete-Sealing.jpg",
     "alt": "Concrete restoration and sealing by TriCity in Ingersoll, Ontario",
+    "featured": false
+  },
+  {
+    "slug": "st-thomas-walkway",
+    "title": "Front Walkway Restoration",
+    "city": "St. Thomas",
+    "service": "walkway-sealing",
+    "image": "/images/result_Walkway-Sealing-TriCity-Concrete-Sealing.jpg",
+    "alt": "Restored and sealed concrete walkway by TriCity Concrete Sealing in St. Thomas, Ontario",
     "featured": false
   }
 ]

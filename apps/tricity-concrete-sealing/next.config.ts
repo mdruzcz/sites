@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
       { source: "/concrete-sealing-faq", destination: "/faq", permanent: true },
       { source: "/concrete-sealing-faq/", destination: "/faq", permanent: true },
       { source: "/concrete-sealing-warranty-information", destination: "/warranty", permanent: true },
-      { source: "/service-areas", destination: "/service-areas", permanent: false },
     ];
   },
 };

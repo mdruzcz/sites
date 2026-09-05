@@ -1,33 +1,24 @@
 import { site } from "@/lib/site";
+import { StarIcon, ShieldIcon } from "./icons";
+import { AwardBadge } from "./award-badge";
 
 export function TrustBar() {
-  const stats = [
-    { value: `${site.stats.projectsCompleted}+`, label: "Projects Sealed" },
-    { value: `${site.yearsExperience}+`, label: "Years Experience" },
-    { value: "4.9 / 5", label: "Google Rating" },
-    { value: `${site.warrantyYears}-Year`, label: "Written Warranty" },
-  ];
-
   return (
-    <section className="bg-[var(--accent)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-center text-center ${
-                i < stats.length - 1 ? "lg:border-r lg:border-white/25" : ""
-              }`}
-            >
-              <p className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-none">
-                {stat.value}
-              </p>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-white/80 mt-2">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+    <section className="border-b border-[var(--line)] bg-white">
+      <div className="shell flex flex-wrap items-center justify-center gap-x-8 gap-y-4 py-5 text-sm text-[var(--ink-soft)]">
+        <span className="flex items-center gap-2">
+          <span className="flex text-[var(--gold)]">{[1, 2, 3, 4, 5].map((i) => <StarIcon key={i} className="w-4 h-4" filled />)}</span>
+          <span className="font-bold text-[var(--ink)]">{site.googleRating}</span>
+          <span className="text-[var(--muted)]">Google rating</span>
+        </span>
+        <span className="hidden h-5 w-px bg-[var(--line)] sm:block" />
+        <span className="flex items-center gap-2"><ShieldIcon className="w-4 h-4 text-[var(--moss)]" />{site.warrantyYears}-year workmanship warranty</span>
+        <span className="hidden h-5 w-px bg-[var(--line)] sm:block" />
+        <span>{site.stats.projectsCompleted}+ projects sealed</span>
+        <span className="hidden h-5 w-px bg-[var(--line)] sm:block" />
+        <span>Solvent-based · matte, semi-gloss or gloss</span>
+        <span className="hidden h-5 w-px bg-[var(--line)] lg:block" />
+        <AwardBadge style={{ padding: "6px 12px 6px 8px", gap: "8px" }} />
       </div>
     </section>
   );

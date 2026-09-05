@@ -1,120 +1,56 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/lib/site";
-import { getServices, getServiceAreas } from "@/lib/content";
+import { cities } from "@/lib/cities";
+import { getServices } from "@/lib/content";
+import { AwardBadge } from "@/components/award-badge";
+import { PhoneIcon, MailIcon } from "./icons";
 
 export function Footer() {
   const services = getServices();
-  const areas = getServiceAreas();
-
   return (
-    <footer className="bg-[var(--navy)] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <Image
-              src="/images/Logo-1-e1721313045424-394x132.png"
-              alt="TriCity Concrete Sealing logo"
-              width={157}
-              height={53}
-              className="h-10 w-auto mb-4 brightness-0 invert"
-            />
-            <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Professional concrete sealing across Southwestern Ontario. Driveways, patios, stamped concrete, walkways — protected by our {site.warrantyYears}-year written warranty.
-            </p>
-            <a
-              href={site.emailHref}
-              className="text-[var(--accent)] text-sm font-semibold hover:underline"
-            >
-              {site.email}
-            </a>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-[var(--accent)]">Services</h4>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="text-white/60 text-sm hover:text-white transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-[var(--accent)]">Service Areas</h4>
-            <ul className="space-y-2">
-              {areas.cities.slice(0, 7).map((city) => (
-                <li key={city.slug}>
-                  <Link
-                    href={`/service-areas/${city.slug}`}
-                    className="text-white/60 text-sm hover:text-white transition-colors"
-                  >
-                    {city.name}, ON
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-3">
-              <Link href="/service-areas" className="text-[var(--accent)] text-xs font-semibold hover:underline">
-                View all areas →
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-[var(--accent)]">Company</h4>
-            <ul className="space-y-2 mb-6">
-              <li><Link href="/about" className="text-white/60 text-sm hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/faq" className="text-white/60 text-sm hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link href="/warranty" className="text-white/60 text-sm hover:text-white transition-colors">Warranty Information</Link></li>
-              <li><Link href="/contact" className="text-white/60 text-sm hover:text-white transition-colors">Contact Us</Link></li>
-            </ul>
-            <div className="space-y-2 text-sm text-white/60">
-              <div className="flex items-start gap-2">
-                <ClockIcon className="w-4 h-4 text-[var(--accent)] mt-0.5 shrink-0" />
-                <span>{site.hours}</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <PinIcon className="w-4 h-4 text-[var(--accent)] mt-0.5 shrink-0" />
-                <span>London, ON — Southwestern Ontario</span>
-              </div>
-            </div>
-          </div>
+    <footer className="border-t border-[var(--line)] bg-white">
+      <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-2">
+          <Image src="/images/logo.png" alt="TriCity Concrete Sealing" width={365} height={101} className="h-12 w-auto" />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--ink-soft)]">Professional concrete sealing across London, Woodstock, Brantford and Southwestern Ontario. High-quality solvent-based sealers in matte, semi-gloss or gloss, backed by a {site.warrantyYears}-year workmanship warranty.</p>
+          <a href={site.phoneHref} className="btn-accent btn-sm mt-5"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
+          <a href={site.emailHref} className="mt-3 flex items-center gap-2 text-sm text-[var(--ink-soft)] hover:text-[var(--accent-deep)]"><MailIcon className="w-4 h-4" />{site.email}</a>
+          <p className="mt-2 text-xs text-[var(--muted)]">{site.hours}</p>
+          <div className="mt-5"><AwardBadge /></div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/40">
-            <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/warranty" className="hover:text-white transition-colors">Warranty</Link>
-            </div>
-          </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Services</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {services.map((s) => (
+              <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{s.title}</Link></li>
+            ))}
+            <li><Link href="/finishes" className="font-semibold text-[var(--ink)] hover:text-[var(--accent-deep)]">Matte · Semi-Gloss · Gloss</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Service areas</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {cities.map((c) => (
+              <li key={c.slug}><Link href={`/service-areas/${c.slug}`} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{c.name}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="eyebrow text-[var(--muted)]">Company</h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {[["Guides & tips", "/resources"], ["Before & after", "/gallery"], ["Warranty", "/warranty"], ["About us", "/about"], ["FAQ", "/faq"], ["Free quote", "/contact"], ["Privacy policy", "/privacy-policy"], ["Terms of service", "/terms-of-service"]].map(([l, h]) => (
+              <li key={h}><Link href={h} className="text-[var(--ink-soft)] hover:text-[var(--accent-deep)]">{l}</Link></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-[var(--line)]">
+        <div className="shell flex flex-col items-center justify-between gap-3 py-5 text-xs text-[var(--muted)] sm:flex-row">
+          <p>© {new Date().getFullYear()} TriCity Concrete Sealing · London, Ontario</p>
+          <p>Fully insured · {site.warrantyYears}-year workmanship warranty · {site.yearsExperience}+ years</p>
         </div>
       </div>
     </footer>
-  );
-}
-
-function ClockIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  );
-}
-
-function PinIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
   );
 }

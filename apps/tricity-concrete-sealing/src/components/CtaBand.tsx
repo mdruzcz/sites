@@ -1,36 +1,21 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
+import { PICKS } from "@/lib/photos";
+import { Photo } from "./Photo";
+import { PhoneIcon } from "./icons";
 
-export function CtaBand() {
+export function CtaBand({ heading = "Ready to protect your concrete?", sub = "Free site assessment and written quote. Spring and fall book up fast across Southwestern Ontario.", photo = PICKS.gloss }: { heading?: string; sub?: string; photo?: string }) {
   return (
-    <section className="bg-[var(--navy)] py-14 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="eyebrow justify-center !text-[var(--accent)]">Get Started Today</p>
-        <h2 className="h-display text-3xl sm:text-4xl text-white mb-4">
-          Ready to Protect Your Concrete?
-        </h2>
-        <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-          Get a free, no-obligation quote. We respond within {site.responseTime} and back every job with our{" "}
-          <span className="text-[var(--accent)] font-semibold">{site.warrantyYears}-year written warranty</span>.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/contact" className="btn btn-primary text-base px-8 py-4">
-            Get a Free Quote
-            <ArrowIcon />
-          </Link>
-          <a href={site.emailHref} className="btn btn-ghost text-base px-8 py-4">
-            Email Us Directly
-          </a>
+    <section className="relative isolate overflow-hidden bg-[var(--ink)] text-white">
+      <Photo name={photo} ratio="absolute inset-0" sizes="100vw" scrim="soft" className="!absolute" />
+      <div className="shell relative py-20 text-center md:py-28">
+        <h2 className="font-display h2-fluid mx-auto max-w-3xl text-white">{heading}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-white/85">{sub}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="#contact" className="btn-accent">Get my free quote</a>
+          <a href={site.phoneHref} className="btn-white"><PhoneIcon className="w-4 h-4" />{site.phone}</a>
         </div>
+        <p className="mt-6 text-xs text-white/70">Fully insured · {site.warrantyYears}-year workmanship warranty · Solvent-based sealers · {site.yearsExperience}+ years</p>
       </div>
     </section>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-    </svg>
   );
 }
