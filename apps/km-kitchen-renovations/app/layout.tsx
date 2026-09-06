@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="891e1df2-7ae2-4754-bb8c-903e6516f747" strategy="afterInteractive" />
       </body>
     </html>
   );

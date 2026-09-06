@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -59,7 +60,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+      <body>{children}        <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="f7228acc-1776-4c21-b179-b3371c626f90" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

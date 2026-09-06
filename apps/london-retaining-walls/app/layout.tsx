@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CallNowFab />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="0a0ce21b-74ac-4591-9872-c26015c09df8" strategy="afterInteractive" />
       </body>
     </html>
   );

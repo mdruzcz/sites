@@ -33,8 +33,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#0b1220" };
 
-const UMAMI_ID = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
-
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -79,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <MiniCartDrawer />
         </UIProvider>
-        {UMAMI_ID && <Script src="https://analytics.masterdecker.com/script.js" data-website-id={UMAMI_ID} strategy="afterInteractive" defer />}
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="19f0f503-8b87-401e-8dd9-916ae1bd08c0" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-CA" className={inter.variable}>
-      <body>{children}</body>
+      <body>{children}        <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="be3a15d8-7fc6-43b8-ae74-fd95e6e46864" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

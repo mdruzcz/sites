@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="ada30e17-7c80-4e26-9559-12b9dd0735cd" strategy="afterInteractive" />
       </body>
     </html>
   );

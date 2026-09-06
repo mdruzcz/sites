@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -71,6 +72,7 @@ export default function RootLayout({
           <Footer />
           <FloatingCall />
         </CartProvider>
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="040d3789-86d8-45b1-b874-d9e3683aa675" strategy="afterInteractive" />
       </body>
     </html>
   );

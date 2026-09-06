@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter, Fredoka } from "next/font/google";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="0df19ea8-11d1-46a7-ab5e-d488dfdca9be" strategy="afterInteractive" />
       </body>
     </html>
   );

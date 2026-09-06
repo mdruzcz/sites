@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -59,7 +60,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+      <body>{children}        <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="56661b4f-edc7-4ff3-aa5d-05cdb7e08d3c" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

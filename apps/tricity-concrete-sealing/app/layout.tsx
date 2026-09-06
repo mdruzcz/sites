@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/NavBar";
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="a7c8aa35-26a4-4b36-99fb-2c0b93e19430" strategy="afterInteractive" />
       </body>
     </html>
   );

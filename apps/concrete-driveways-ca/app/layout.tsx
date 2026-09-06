@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -55,6 +56,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="76444089-333e-4953-a4f3-ed5c3e2580a4" strategy="afterInteractive" />
       </body>
     </html>
   );

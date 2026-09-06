@@ -61,6 +61,7 @@ const NAV: Array<{
   {
     section: "Operations",
     items: [
+      { href: "/traffic", label: "Site Traffic" },
       { href: "/stores", label: "Stores" },
       { href: "/settings", label: "Settings" }
     ]

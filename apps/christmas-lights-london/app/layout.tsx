@@ -56,8 +56,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
-        {/* Umami Analytics — add websiteId once registered at analytics.masterdecker.com */}
-        {/* <Script async src="https://analytics.masterdecker.com/script.js" data-website-id="REPLACE_WITH_UMAMI_ID" strategy="afterInteractive" /> */}
         <Script
           id="ld-org"
           type="application/ld+json"
@@ -78,6 +76,7 @@ export default function RootLayout({
             }),
           }}
         />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="e5f8be90-0f58-484e-bc63-d32717cc9e8d" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -67,12 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
-        <Script
-          defer
-          src="https://analytics.masterdecker.com/script.js"
-          data-website-id="PLACEHOLDER-UMAMI-ID"
-          strategy="afterInteractive"
-        />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="7f450354-3584-463b-bd65-210fc673f921" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <PredictiveSearch />
           <OfferPopup />
         </UIProvider>
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="0badf905-ccca-45e8-a313-8e1a64f36a1f" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { UIProvider } from "@/components/ui-context";
@@ -70,6 +71,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </svg>
           </a>
         </UIProvider>
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="2454ee88-c0a6-43ac-a1ac-e38c611cebd3" strategy="afterInteractive" />
       </body>
     </html>
   );

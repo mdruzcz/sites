@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }} />
         {children}
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="a858656a-389a-4213-88cd-049cc35d091f" strategy="afterInteractive" />
       </body>
     </html>
   );

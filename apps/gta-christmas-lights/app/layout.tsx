@@ -86,6 +86,7 @@ export default function RootLayout({
             }),
           }}
         />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="4d9ab2cc-da80-4aca-9375-847e937dc5ad" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -45,6 +46,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingEmailButton />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="e7b77dbb-cf35-423c-b911-53f13bb5618a" strategy="afterInteractive" />
       </body>
     </html>
   );

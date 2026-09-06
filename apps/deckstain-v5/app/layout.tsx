@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <MobileCta />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="3d709661-e87a-4717-80e6-b782d67a483a" strategy="afterInteractive" />
       </body>
     </html>
   );

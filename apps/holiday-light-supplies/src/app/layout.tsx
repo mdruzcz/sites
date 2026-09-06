@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Poppins, Lora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <PredictiveSearch />
           <OfferPopup />
         </UIProvider>
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="44716b8c-e317-4311-ab02-280bc2d48a70" strategy="afterInteractive" />
       </body>
     </html>
   );

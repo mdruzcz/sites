@@ -98,6 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CallNowFab />
+              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="14857495-fdfc-4f18-800c-93ef5a0e0061" strategy="afterInteractive" />
       </body>
     </html>
   );
