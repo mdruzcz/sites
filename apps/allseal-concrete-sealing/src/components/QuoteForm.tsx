@@ -1,151 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, type FormEvent } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { site } from "@/lib/site";
-import { getServices } from "@/lib/content";
+import { CheckIcon } from "./icons";
 
-export function QuoteForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+export const SERVICE_OPTIONS = ["Driveway Sealing", "Patio & Deck Sealing", "Stamped Concrete Sealing", "Decorative Concrete Sealing", "Walkway & Path Sealing", "Pool Deck Sealing", "Garage Floor Sealing", "Not sure yet"];
+export const SHEEN_OPTIONS = ["High Gloss", "Semi-Gloss", "Matte", "Help me choose"];
+
+export function QuoteForm({ city, service, light = false, compact = false }: { city?: string; service?: string; light?: boolean; compact?: boolean }) {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [error, setError] = useState("");
   const [token, setToken] = useState<string | null>(null);
-  const services = getServices();
+  const [engaged, setEngaged] = useState(false);
+  const okRef = useRef<HTMLDivElement>(null);
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const captcha = !!siteKey && !siteKey.startsWith("1x000");
+  const input = light ? "input-light" : "input";
+  const label = light ? "label label-light" : "label";
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!token) { setStatus("error"); return; }
-    setStatus("sending");
-
-    const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
-    data.token = token;
-
+    const f = new FormData(e.currentTarget);
+    if (String(f.get("website") ?? "").trim()) { setStatus("success"); return; }
+    if (captcha && !token) { setError("Please complete the security check."); setStatus("error"); return; }
+    setStatus("sending"); setError("");
+    const sheen = String(f.get("sheen") ?? "");
+    const message = [sheen ? `Preferred finish: ${sheen}.` : "", String(f.get("message") ?? "")].filter(Boolean).join(" ");
     try {
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setStatus("sent");
-        form.reset();
-        (window as any).umami?.track("form-submission", { type: "quote" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+      const res = await fetch("/api/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: f.get("name"), phone: f.get("phone"), email: f.get("email"), address: f.get("address"), service: f.get("service"), message, token: token ?? "" }) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) { setError(data.error || "Something went wrong. Please call us."); setStatus("error"); return; }
+      setStatus("success");
+      setTimeout(() => okRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+    } catch { setError("Network error. Please call us."); setStatus("error"); }
   }
 
-  if (status === "sent") {
+  if (status === "success") {
     return (
-      <div className="card p-8 text-center">
-        <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-green-700 mb-2">Quote Request Sent!</h3>
-        <p className="text-slate-600">
-          We&apos;ll get back to you within 24 hours. For immediate assistance, call{" "}
-          <a href={site.phoneHref} className="text-[var(--accent)] font-semibold">
-            {site.phone}
-          </a>
-        </p>
+      <div ref={okRef} className={`rounded-lg p-8 text-center ${light ? "card" : "card-dark"}`}>
+        <div className="mx-auto grid size-14 place-items-center rounded-full bg-[var(--moss)] text-white"><CheckIcon className="w-7 h-7" /></div>
+        <h3 className={`font-display mt-4 text-2xl ${light ? "" : "text-white"}`}>Request received</h3>
+        <p className={`mt-2 text-sm ${light ? "text-[var(--ink-soft)]" : "text-white/70"}`}>We reply within one business day to book your free inspection.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card p-6 sm:p-8 space-y-4">
-      <h3 className="text-xl font-bold mb-2">Get a Free Quote</h3>
-
-      {/* Honeypot */}
-      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Name *</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone *</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            required
-            className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
-          />
-        </div>
+    <form onSubmit={onSubmit} onFocus={() => setEngaged(true)} className="grid gap-3">
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+      <div className={`grid gap-3 ${compact ? "" : "sm:grid-cols-2"}`}>
+        <div><label className={label} htmlFor="q-name">Name *</label><input id="q-name" name="name" required autoComplete="name" className={input} placeholder="Jane Smith" /></div>
+        <div><label className={label} htmlFor="q-phone">Phone *</label><input id="q-phone" name="phone" type="tel" inputMode="tel" required autoComplete="tel" className={input} placeholder="(519) 000-0000" /></div>
       </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email *</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
-        />
+      <div className={`grid gap-3 ${compact ? "" : "sm:grid-cols-2"}`}>
+        <div><label className={label} htmlFor="q-email">Email *</label><input id="q-email" name="email" type="email" required autoComplete="email" className={input} placeholder="jane@email.com" /></div>
+        <div><label className={label} htmlFor="q-address">City / address</label><input id="q-address" name="address" autoComplete="street-address" defaultValue={city ?? ""} className={input} placeholder="Woodstock" /></div>
       </div>
-
-      <div>
-        <label htmlFor="address" className="block text-sm font-medium text-slate-700 mb-1">Address</label>
-        <input
-          id="address"
-          name="address"
-          type="text"
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
-        />
+      <div className={`grid gap-3 ${compact ? "" : "sm:grid-cols-2"}`}>
+        <div><label className={label} htmlFor="q-service">Surface *</label><select id="q-service" name="service" required defaultValue={service ?? ""} className={input}><option value="" disabled>Select…</option>{SERVICE_OPTIONS.map((s) => <option key={s} value={s}>{s}</option>)}</select></div>
+        <div><label className={label} htmlFor="q-sheen">Finish</label><select id="q-sheen" name="sheen" defaultValue="" className={input}><option value="">High gloss, semi-gloss or matte?</option>{SHEEN_OPTIONS.map((s) => <option key={s} value={s}>{s}</option>)}</select></div>
       </div>
-
-      <div>
-        <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-1">Service *</label>
-        <select
-          id="service"
-          name="service"
-          required
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
-        >
-          <option value="">Select a service...</option>
-          {services.map((s) => (
-            <option key={s.slug} value={s.title}>{s.title}</option>
-          ))}
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows={3}
-          className="w-full rounded-lg border border-[var(--border)] px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-y"
-        />
-      </div>
-
-      <Turnstile
-        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
-        onSuccess={setToken}
-      />
-
-      <button
-        type="submit"
-        disabled={status === "sending" || !token}
-        className="btn btn-primary w-full disabled:opacity-50"
-      >
-        {status === "sending" ? "Sending..." : "Request Free Quote"}
-      </button>
-
-      {status === "error" && (
-        <p className="text-red-600 text-sm text-center">
-          Something went wrong. Please try again or call {site.phone}.
-        </p>
-      )}
+      {!compact && <div><label className={label} htmlFor="q-message">Details</label><textarea id="q-message" name="message" rows={3} className={`${input} resize-none`} placeholder="Approximate size, stamped or broom finish, sealed before, timing…" /></div>}
+      {captcha && engaged && <Turnstile siteKey={siteKey!} onSuccess={setToken} onExpire={() => setToken(null)} options={{ theme: light ? "light" : "dark", size: "flexible" }} />}
+      {status === "error" && <p className="rounded bg-[var(--orange-soft)] px-4 py-2.5 text-sm text-[var(--orange-deep)]">{error}</p>}
+      <button type="submit" disabled={status === "sending"} className="btn-orange w-full disabled:opacity-60">{status === "sending" ? "Sending…" : "Request my free quote"}</button>
+      <p className={`text-center text-xs ${light ? "text-[var(--muted)]" : "text-white/50"}`}>Free inspection · No obligation · Reply within one business day</p>
     </form>
   );
 }

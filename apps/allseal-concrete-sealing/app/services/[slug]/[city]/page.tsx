@@ -1,165 +1,33 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ServiceCityPage } from "@/components/ServiceCityPage";
+import { getServices, getCities, getService, getCity, servicePhoto } from "@/lib/content";
+import { photo } from "@/lib/photos";
 import { site } from "@/lib/site";
-import { getServices, getServiceBySlug, getServiceAreas, getCityBySlug } from "@/lib/content";
-import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
-import { QuoteForm } from "@/components/QuoteForm";
-import { CtaBand } from "@/components/CtaBand";
 
 export const revalidate = 3600;
+export const dynamicParams = false;
+type Props = { params: Promise<{ slug: string; city: string }> };
 
 export function generateStaticParams() {
-  const services = getServices();
-  const areas = getServiceAreas();
-  return services.flatMap((service) =>
-    areas.cities.map((city) => ({
-      slug: service.slug,
-      city: city.slug,
-    }))
-  );
+  return getServices().flatMap((s) => getCities().map((c) => ({ slug: s.slug, city: c.slug })));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string; city: string }>;
-}): Promise<Metadata> {
-  const { slug, city: citySlug } = await params;
-  const service = getServiceBySlug(slug);
-  const city = getCityBySlug(citySlug);
-  if (!service || !city) return {};
-
-  const title = `${service.title} in ${city.name}, ${getServiceAreas().region}`;
-  const description = `Professional ${service.title.toLowerCase()} in ${city.name}. ${service.shortDescription} Call ${site.phone} for a free quote.`;
-
-  return {
-    title,
-    description,
-    openGraph: { title, description },
-  };
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug, city } = await params;
+  const s = getService(slug);
+  const c = getCity(city);
+  if (!s || !c) return { title: "Not found" };
+  const url = `${site.url}/services/${slug}/${city}`;
+  const title = `${s.title} ${c.city} ON | All-Seal Concrete Sealing`;
+  const description = `${s.title} in ${c.city}, ${c.region}. Premium sealers in high gloss, semi-gloss or matte, anti-slip available, free on-site inspection. Protect. Preserve. Seal.`;
+  return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, siteName: site.name, type: "website", images: [{ url: photo(servicePhoto(slug)).image }] }, twitter: { card: "summary_large_image", title, description } };
 }
 
-export default async function ServiceCityPage({
-  params,
-}: {
-  params: Promise<{ slug: string; city: string }>;
-}) {
-  const { slug, city: citySlug } = await params;
-  const service = getServiceBySlug(slug);
-  const city = getCityBySlug(citySlug);
-  if (!service || !city) notFound();
-
-  const areas = getServiceAreas();
-  const schema = serviceSchema(service, city.name);
-  const breadcrumbs = breadcrumbSchema([
-    { name: "Home", url: site.url },
-    { name: "Services", url: `${site.url}/services` },
-    { name: service.title, url: `${site.url}/services/${service.slug}` },
-    { name: city.name, url: `${site.url}/services/${service.slug}/${city.slug}` },
-  ]);
-
-  const otherCities = areas.cities.filter((c) => c.slug !== city.slug);
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
-      />
-
-      <section className="bg-navy py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-slate-400 mb-4">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <span className="mx-2">/</span>
-            <Link href="/services" className="hover:text-white">Services</Link>
-            <span className="mx-2">/</span>
-            <Link href={`/services/${service.slug}`} className="hover:text-white">{service.title}</Link>
-            <span className="mx-2">/</span>
-            <span className="text-white">{city.name}</span>
-          </nav>
-          <h1 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
-            {service.title} in {city.name}, {areas.region}
-          </h1>
-          <p className="text-xl text-slate-300 max-w-3xl">
-            Professional {service.title.toLowerCase()} services in {city.name} and surrounding areas.
-            Protect your concrete with premium sealers from {site.name}.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <div className="prose prose-lg text-slate-600 space-y-4">
-                <p>{city.description}</p>
-                <p>{service.fullDescription}</p>
-              </div>
-
-              <div className="mt-8">
-                <h2 className="font-bold text-xl mb-4">
-                  Why Choose {site.name} in {city.name}?
-                </h2>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-slate-700">{feature}</span>
-                    </li>
-                  ))}
-                  <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-slate-700">Local team serving {city.name} and surrounding communities</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mt-12">
-                <h2 className="font-bold text-xl mb-4">
-                  Also Serving Nearby Communities
-                </h2>
-                <div className="flex flex-wrap gap-2">
-                  {otherCities.map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`/services/${service.slug}/${c.slug}`}
-                      className="text-sm bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full hover:bg-orange-100 transition-colors"
-                    >
-                      {service.title} in {c.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 p-6 bg-[var(--surface)] rounded-xl">
-                <h3 className="font-bold text-lg mb-2">Ready to get started?</h3>
-                <p className="text-slate-600 mb-4">
-                  Call us today for a free inspection and quote on {service.title.toLowerCase()} in {city.name}.
-                </p>
-                <a href={site.phoneHref} className="btn btn-phone">
-                  Call {site.phone}
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <QuoteForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CtaBand />
-    </>
-  );
+export default async function Page({ params }: Props) {
+  const { slug, city } = await params;
+  const s = getService(slug);
+  const c = getCity(city);
+  if (!s || !c) notFound();
+  return <ServiceCityPage s={s} c={c} />;
 }

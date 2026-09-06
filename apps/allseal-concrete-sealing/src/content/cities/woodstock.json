@@ -1,0 +1,39 @@
+{
+  "slug": "woodstock",
+  "city": "Woodstock",
+  "region": "Oxford County",
+  "metaTitle": "Concrete Sealing Woodstock ON | Driveways & Patios",
+  "metaDescription": "All-Seal Concrete Sealing is based right in Woodstock, Ontario. Free on-site inspections and quotes for driveway, patio, garage and pool deck sealing.",
+  "h1": "Concrete Sealing in Woodstock, Ontario",
+  "intro": "Woodstock is home base for All-Seal Concrete Sealing, so you are never waiting on a crew that has to drive in from out of town. From Sally Creek's newer poured driveways to the older slabs downtown, we know the concrete in this city because we walk past most of it every week.",
+  "neighbourhoods": ["Sally Creek", "North Woodstock", "Eastdale", "Oxford Heights", "Southside", "Ingersoll", "Tillsonburg", "Innerkip"],
+  "localFact": "Oxford County's snowbelt-adjacent winters mean Woodstock driveways see more freeze-thaw cycles in a typical January than most Golden Horseshoe cities, which is exactly the condition sealer is built to survive.",
+  "body": [
+    {"type":"h2","text":"Working out of Woodstock means fewer surprises"},
+    {"type":"p","text":"Because All-Seal is headquartered in Woodstock, an on-site inspection here usually happens within a day or two of your call, not a week. We have sealed driveways in nearly every subdivision the city has built since the early 2000s, and we still get repeat calls from customers whose garage floors we did five or six years ago and who are now ready to reseal a patio. That local density means our estimates account for Woodstock-specific conditions, not a generic average pulled from a different market."},
+    {"type":"h2","text":"Sally Creek versus the older core"},
+    {"type":"p","text":"Sally Creek and the newer streets on the north and east sides of Woodstock have mostly poured driveways and patios installed in the last 10 to 15 years, often still under or just past their original builder-grade sealer. Those slabs are usually in good structural shape and are the easiest to protect well, since a fresh coat of acrylic sealer over sound concrete gives the longest service life. Closer to downtown and through Eastdale and Oxford Heights, the concrete tends to be older, sometimes 25 to 40 years old, with visible surface wear, hairline cracking and in some cases a previous sealer that has worn thin or gone patchy. On those jobs we start by assessing the old coating and stripping it where it is failing, then repair joints and cracks before anything goes down."},
+    {"type":"h2","text":"What gets sealed most often here"},
+    {"type":"ul","items":[
+      "Driveway sealing is the most requested service in Woodstock, largely because so many homes here run a single or double-wide poured driveway with no interlock",
+      "Garage floor sealing is popular with buyers who have just moved into a Sally Creek or Southside build and want to protect the slab before it ever sees a winter",
+      "Patio sealing picks up every spring as backyard entertaining season approaches",
+      "Pool deck sealing is more common on the larger lots in North Woodstock and the rural edges toward Innerkip"
+    ]},
+    {"type":"h2","text":"Climate and salt exposure"},
+    {"type":"p","text":"Woodstock sits far enough inland that winters run cold and steady rather than the freeze-thaw whiplash you get closer to Lake Erie, but that steadiness comes with its own toll: heavy, prolonged salt use on driveways and walkways from December through March. Road salt tracked in from Highway 401 and Dundas Street is one of the most common causes of surface scaling we see on unsealed Woodstock driveways, and it is one of the easiest problems to prevent. A properly applied sealer blocks salt and moisture from penetrating the surface, which is the main defence against spalling once the spring thaw sets in."},
+    {"type":"h2","text":"Best time to book"},
+    {"type":"p","text":"Late spring through early fall is the ideal window for concrete sealing in Woodstock, once daytime temperatures are reliably warm enough for the sealer to cure properly and before the first frost risk in October. We do book up during the peak months of June and July, so property owners who want their driveway or patio done before a fall barbecue or before winter salt season starts should plan to call in spring."},
+    {"type":"h2","text":"A recent Woodstock job"},
+    {"type":"p","text":"One recent project involved a stamped concrete patio in Southside that had never been sealed since it was poured eight years earlier. The colour had faded unevenly and the surface had gone slightly chalky in the sun. We pressure washed the patio, repaired two hairline cracks near the step, and applied a Semi-Gloss sealer that brought the original stamped pattern and colour back into sharp contrast without looking artificially glossy. That is a common outcome on stamped work in this city, where a lot of patios were poured in the 2015 to 2018 building wave and are now due for their first reseal."},
+    {"type":"callout","text":"Being based in Woodstock means we can usually schedule your free inspection faster here than in any other city we serve. Call 519-266-6796 or request a quote through the contact page."}
+  ],
+  "faqs": [
+    {"q": "Do you actually operate out of Woodstock, or is this a service area listing?", "a": "All-Seal Concrete Sealing is based in Woodstock, so this is our home city. Scheduling here is typically faster than in the surrounding towns we serve."},
+    {"q": "How much does driveway sealing cost in Woodstock?", "a": "Every quote is prepared after a free on-site inspection specific to your driveway's size, condition and surface type, so we do not quote prices without seeing the concrete first."},
+    {"q": "My Sally Creek driveway is only a few years old. Does it need sealing yet?", "a": "Many newer Woodstock driveways carry a builder-applied sealer that starts wearing thin after two to five years depending on traffic and sun exposure, so it is worth a free inspection to check."},
+    {"q": "Can you reseal a patio that already has old, peeling sealer on it?", "a": "Yes. We assess the condition of the existing coating and strip it where it is failing before cleaning, repairing and applying new sealer."},
+    {"q": "What time of year do you recommend sealing in Woodstock?", "a": "Late spring through early fall gives the most reliable curing conditions, and booking early avoids the summer scheduling rush."}
+  ],
+  "nearby": ["st-thomas", "brantford", "cambridge"]
+}

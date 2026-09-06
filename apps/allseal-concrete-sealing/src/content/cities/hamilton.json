@@ -1,0 +1,42 @@
+{
+  "slug": "hamilton",
+  "city": "Hamilton",
+  "region": "Hamilton",
+  "metaTitle": "Concrete Sealing Hamilton ON | Driveways & Patios",
+  "metaDescription": "All-Seal Concrete Sealing protects Hamilton driveways, patios and pool decks from escarpment salt and freeze-thaw damage. Free quote and inspection.",
+  "h1": "Concrete Sealing in Hamilton, Ontario",
+  "intro": "Hamilton's geography, split between the lower city, the escarpment communities and the Mountain, means concrete here deals with more grade, more salt and more freeze-thaw variation than almost anywhere else All-Seal works. We adjust our approach neighbourhood by neighbourhood.",
+  "neighbourhoods": ["Ancaster", "Dundas", "Stoney Creek", "Waterdown", "the Mountain", "Binbrook", "Westdale"],
+  "localFact": "Hamilton's escarpment topography means many driveways are built on a slope, which concentrates runoff and salt brine at the base of the driveway near the garage door in a way flatter cities rarely see.",
+  "body": [
+    {"type":"h2","text":"A city defined by its escarpment"},
+    {"type":"p","text":"Hamilton is unlike the other cities All-Seal serves because so much of it sits on or around the Niagara Escarpment. Neighbourhoods on the Mountain and along the escarpment brow in Ancaster and Dundas often have sloped driveways, which changes how water and salt move across the concrete. Runoff concentrates at the low point of a sloped driveway, usually right at the garage door, and that is consistently where we see the earliest signs of surface scaling on unsealed concrete in this city."},
+    {"type":"h2","text":"Ancaster and Dundas: older stone-adjacent housing stock"},
+    {"type":"p","text":"Ancaster and Dundas have some of the oldest and most established housing stock in the Hamilton area, with many properties built decades before modern concrete mix standards and control joint spacing. Driveways and walkways here often show more cracking and settling than newer suburbs, and a number of them have never been sealed at all. These are typically the most involved jobs we take on in Hamilton, requiring more thorough crack and joint repair before a sealer can go down properly."},
+    {"type":"h2","text":"Stoney Creek and Waterdown: newer growth, similar salt problem"},
+    {"type":"p","text":"Stoney Creek and Waterdown have grown substantially over the past 15 years, and their driveways tend to be structurally newer and in better shape than the older escarpment communities. That does not make them immune to salt damage, though. Both areas see heavy winter road salt use, and newer concrete that has never been sealed is just as vulnerable to scaling as older concrete once winter sets in. The difference is that these jobs are usually straightforward clean-and-seal work rather than repair-heavy projects."},
+    {"type":"h2","text":"Why pool decks come up often on the Mountain and in Binbrook"},
+    {"type":"p","text":"Larger lots on the Mountain and in Binbrook tend to have in-ground pools with poured concrete decks, and pool deck sealing is one of the more frequent requests we get from those areas. Anti-slip additive is standard practice around a pool, and it works with any of our three sheen options without changing the intended look of the deck."},
+    {"type":"ul","items":[
+      "Driveway sealing on sloped lots throughout Ancaster and the Mountain, where runoff concentration matters",
+      "Crack and joint repair ahead of sealing on older Dundas and Westdale properties",
+      "Pool deck sealing with anti-slip additive in Binbrook and larger Mountain lots",
+      "Garage floor sealing for newer builds in Stoney Creek and Waterdown"
+    ]},
+    {"type":"h2","text":"Westdale's mature streetscape"},
+    {"type":"p","text":"Westdale's tree-lined streets and older homes near McMaster mean a lot of shaded concrete that dries more slowly after rain and holds moisture longer than driveways in full sun elsewhere in the city. That extra moisture retention is a factor in mildew staining and surface deterioration on unsealed concrete, and it is something we account for when scheduling the drying window before sealing a Westdale property."},
+    {"type":"h2","text":"Booking around Hamilton's weather"},
+    {"type":"p","text":"Given the escarpment's effect on local weather patterns, Hamilton can see slightly more variable spring conditions than flatter inland cities. We recommend booking from late May through September for the most consistent curing conditions, with earlier booking advised for sloped Ancaster and Mountain driveways where salt damage tends to appear soonest each winter."},
+    {"type":"h2","text":"A recent job near the Mountain brow"},
+    {"type":"p","text":"A recent inspection near the Mountain brow involved a sloped driveway where the homeowner had noticed a dark, pitted patch forming right where the driveway met the garage apron every winter for the past several years. That is a textbook example of salt brine pooling at the low point of a graded driveway. We repaired the pitted section, cleaned the full driveway, and applied an acrylic sealer with particular attention to full coverage at that low point, since an inconsistent application there would have left the same vulnerable spot exposed for another winter."},
+    {"type":"callout","text":"All-Seal serves the full Hamilton area including Ancaster, Dundas, Stoney Creek and Waterdown. Call 519-266-6796 for a free on-site inspection."}
+  ],
+  "faqs": [
+    {"q": "Does a sloped driveway need different sealing than a flat one?", "a": "The sealer application itself is similar, but sloped Hamilton driveways tend to concentrate salt and runoff near the garage door, so that section often shows wear first and deserves close inspection."},
+    {"q": "Are older Ancaster and Dundas driveways harder to seal?", "a": "They often need more crack and joint repair before sealing due to their age, but the sealing process itself is the same once the surface is prepared."},
+    {"q": "Is anti-slip sealer available for pool decks on the Mountain?", "a": "Yes, we recommend anti-slip additive on nearly every pool deck we quote, and it works with any of our three sheen options."},
+    {"q": "Do you serve Waterdown and Stoney Creek separately, or just central Hamilton?", "a": "We serve the entire Hamilton area including Ancaster, Dundas, Stoney Creek, Waterdown, the Mountain and Binbrook."},
+    {"q": "Why does my shaded Westdale driveway seem to deteriorate faster than my neighbour's?", "a": "Shaded concrete dries more slowly after rain and retains moisture longer, which can accelerate surface wear and mildew staining if the concrete is unsealed."}
+  ],
+  "nearby": ["brantford", "cambridge", "kitchener-waterloo"]
+}

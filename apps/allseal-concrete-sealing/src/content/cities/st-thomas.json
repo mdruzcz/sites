@@ -1,0 +1,40 @@
+{
+  "slug": "st-thomas",
+  "city": "St. Thomas",
+  "region": "Elgin County",
+  "metaTitle": "Concrete Sealing St. Thomas ON | Driveways & Patios",
+  "metaDescription": "All-Seal Concrete Sealing serves St. Thomas and Elgin County with free on-site inspections for driveway, patio, walkway and pool deck sealing.",
+  "h1": "Concrete Sealing in St. Thomas, Ontario",
+  "intro": "St. Thomas sits close enough to Lake Erie that its concrete takes a different kind of beating than inland towns, with lake-effect moisture and Port Stanley's humid summers both playing a role. All-Seal brings the same free inspection and honest assessment to every St. Thomas driveway, patio and walkway we look at.",
+  "neighbourhoods": ["Lynhurst", "Mitchell Hepburn", "Southgate", "Dalewood", "Port Stanley", "Belmont", "Aylmer"],
+  "localFact": "St. Thomas's elevation and proximity to the Lake Erie shoreline mean concrete here experiences more humid, muggy stretches in July and August than towns further inland, which affects how long a sealer takes to cure properly before rain.",
+  "body": [
+    {"type":"h2","text":"A city split between rail-era streets and newer growth"},
+    {"type":"p","text":"St. Thomas has an unusual mix of concrete ages for its size. The older grid around the downtown core and neighbourhoods like Southgate has driveways and walkways poured decades ago, some with visible aggregate exposure and surface pitting from years of freeze-thaw without protection. Meanwhile Lynhurst and Dalewood have seen steady newer construction over the past 15 years, with wider double driveways and larger poured patios that are structurally sound but often still unsealed since the builder's original coating wore off. All-Seal treats these very differently: the older slabs usually need crack and joint repair before sealing, while the newer ones are typically a straightforward clean-and-seal."},
+    {"type":"h2","text":"Port Stanley and the lakeside effect"},
+    {"type":"p","text":"Properties closer to Port Stanley and the lakeshore deal with higher ambient humidity and salt-laden air in addition to winter road salt, which is a double exposure most inland St. Thomas homes do not face. Pool decks around Port Stanley cottages and lakeside homes are a common request, and we recommend the anti-slip additive on virtually all of them given how often bare feet and wet concrete meet around a pool in that area. The additive works with any of our three sheens and does not change the overall look of the finish."},
+    {"type":"h2","text":"Why walkway sealing comes up so often here"},
+    {"type":"p","text":"St. Thomas has more standalone concrete walkways connecting driveways to front doors than some of the newer subdivisions we serve elsewhere, a legacy of its older street grid where garages are often detached or set back. These walkways see constant foot traffic and, in winter, the bulk of the salt that gets tracked toward the house. Sealing a walkway is a smaller job than a driveway but the payoff against salt scaling is just as real, and it is one of the more cost-effective services we offer in this city."},
+    {"type":"ul","items":[
+      "Driveway sealing across Lynhurst and Southgate, mostly clean-and-seal on structurally sound slabs",
+      "Walkway sealing throughout the older downtown grid",
+      "Pool deck sealing with anti-slip additive near Port Stanley",
+      "Garage floor sealing for newer builds in Dalewood and Mitchell Hepburn"
+    ]},
+    {"type":"h2","text":"Handling concrete that already has a failing coating"},
+    {"type":"p","text":"A fair number of the St. Thomas driveways we quote already have an old sealer on them, applied either by a previous owner or a past contractor, and it is peeling, whitening or flaking in patches. Before we apply anything new we assess how much of that old coating is still bonded to the concrete. Sound sections can sometimes be sealed over, but anywhere the coating is lifting has to be stripped first, or the new sealer will trap moisture underneath and fail the same way within a season or two."},
+    {"type":"h2","text":"Timing your project around Elgin County weather"},
+    {"type":"p","text":"We recommend booking St. Thomas jobs for late spring or early fall, avoiding the peak humidity of mid-summer when curing times run longer and avoiding the first frost risk that tends to arrive slightly earlier here than in Brantford or Cambridge given the lake's influence on autumn temperature swings."},
+    {"type":"h2","text":"A recent example near the downtown grid"},
+    {"type":"p","text":"A recent job in the older downtown grid involved a driveway and adjoining walkway that had never been sealed in the more than 30 years since the home was built. Years of exposed aggregate wear had left the surface rough and increasingly porous, and the homeowner reported noticeable staining every winter from tracked-in salt slush. We pressure washed both surfaces, repaired several hairline cracks along the driveway's original control joints, and applied a Matte acrylic sealer that preserved the aggregate's natural texture while giving it meaningfully better resistance to salt and moisture going into the next winter."},
+    {"type":"callout","text":"Free on-site inspections are available anywhere in St. Thomas and Elgin County, including Belmont and Aylmer. Call 519-266-6796 to book yours."}
+  ],
+  "faqs": [
+    {"q": "Do you travel out to Port Stanley and Aylmer, or just St. Thomas proper?", "a": "Yes, we serve all of St. Thomas and the surrounding Elgin County communities including Port Stanley, Belmont and Aylmer."},
+    {"q": "Does lake humidity affect how sealer cures in St. Thomas?", "a": "Higher humidity near the lakeshore can extend cure time, which is why we plan applications around dry weather windows and avoid the muggiest stretches of summer where possible."},
+    {"q": "Is anti-slip sealer worth it for a Port Stanley pool deck?", "a": "We recommend it on almost every pool deck we quote, since wet concrete and bare feet are a constant combination around a pool, and the additive works with any sheen."},
+    {"q": "My St. Thomas driveway has an old peeling sealer on it. Can you fix that?", "a": "Yes, we inspect the existing coating and strip any sections that are failing before cleaning, repairing and applying fresh sealer."},
+    {"q": "Do you seal standalone walkways separately from a driveway job?", "a": "Yes, walkway sealing is a common standalone request in St. Thomas given how many homes here have a separate walkway from a detached or set-back garage."}
+  ],
+  "nearby": ["brantford", "woodstock", "hamilton"]
+}

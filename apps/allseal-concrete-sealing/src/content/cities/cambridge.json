@@ -1,0 +1,42 @@
+{
+  "slug": "cambridge",
+  "city": "Cambridge",
+  "region": "Waterloo Region",
+  "metaTitle": "Concrete Sealing Cambridge ON | Driveways & Patios",
+  "metaDescription": "All-Seal Concrete Sealing serves Cambridge, from Galt to Hespeler, with driveway and patio sealing. Free on-site inspection and honest quotes.",
+  "h1": "Concrete Sealing in Cambridge, Ontario",
+  "intro": "Cambridge was formed by merging three distinct towns, and that history is still visible in its concrete today. Galt's older stone-and-brick streets, Preston's mixed-era housing and Hespeler's newer growth each call for a slightly different approach, which is exactly how All-Seal quotes them.",
+  "neighbourhoods": ["Galt", "Preston", "Hespeler", "West Galt", "Blair", "Clemens Mill"],
+  "localFact": "Cambridge sits at the confluence of the Grand and Speed rivers, and low-lying streets in old Galt and Preston near the water table deal with more persistent ground moisture than the elevated newer subdivisions in Clemens Mill.",
+  "body": [
+    {"type":"h2","text":"Three towns, three concrete stories"},
+    {"type":"p","text":"Cambridge's amalgamated history means it does not have one uniform concrete profile the way a single-era subdivision city might. Galt and West Galt, the oldest part of the city, have driveways and walkways poured well before modern joint spacing and mix standards, many of which have never been sealed. Preston sits in between, with a mix of mid-century homes and infill development. Hespeler and Clemens Mill are considerably newer, with driveways and patios that are structurally sound but often still on their original, thinning builder coating."},
+    {"type":"h2","text":"Why Galt driveways need more prep work"},
+    {"type":"p","text":"Old Galt's concrete is frequently the most repair-intensive work we take on in Cambridge. Decades of exposure without sealing has left many driveways with surface pitting, hairline cracking along old control joints, and in some cases full sections that have spalled. Before sealing any of these, we clean thoroughly, repair cracks and joints, and let the concrete dry fully. The payoff on these older Galt slabs is often the most visually dramatic, since darkened, weathered concrete regains noticeable colour and definition once a fresh sealer goes down."},
+    {"type":"h2","text":"River-adjacent moisture in Preston and old Galt"},
+    {"type":"p","text":"Properties near the Grand and Speed rivers in Preston and parts of Galt deal with a higher water table and more persistent ground moisture than Cambridge's newer, higher-elevation subdivisions. That moisture works into unsealed concrete more easily and shows up as discoloration, efflorescence and mildew staining on patios and walkways that have gone years without protection. A properly applied sealer significantly reduces how much moisture the concrete absorbs, which is one of the more noticeable improvements homeowners in these areas report."},
+    {"type":"h2","text":"Hespeler and Clemens Mill: newer builds, same salt exposure"},
+    {"type":"p","text":"Hespeler and Clemens Mill have grown steadily since the 2000s, and while their concrete is younger and in better structural shape than Galt's, it is not exempt from Cambridge's harsh winter salt use. We regularly quote driveway and garage floor sealing in these areas as a preventative measure rather than a repair job, protecting concrete before scaling and surface damage start rather than after."},
+    {"type":"ul","items":[
+      "Crack and joint repair followed by sealing on older Galt and West Galt driveways",
+      "Patio and walkway sealing in Preston, with attention to moisture from the nearby rivers",
+      "Preventative driveway and garage floor sealing in Hespeler and Clemens Mill",
+      "Decorative concrete sealing on the higher-end infill builds appearing across all three former towns"
+    ]},
+    {"type":"h2","text":"Blair's rural-edge lots"},
+    {"type":"p","text":"Blair's larger, more rural-feeling lots often include longer driveways and, in some cases, poured patios or walkways connecting outbuildings. These properties are quoted individually given the larger surface areas involved, but the underlying sealing process, cleaning, repair, drying and sealer application, is the same as anywhere else in Cambridge."},
+    {"type":"h2","text":"Best time to book in Cambridge"},
+    {"type":"p","text":"We recommend late spring through early fall for Cambridge projects, with early booking especially worthwhile for old Galt properties given how much crack and joint repair those jobs typically require compared with the newer Hespeler and Clemens Mill work."},
+    {"type":"h2","text":"A recent Preston job"},
+    {"type":"p","text":"A recent Preston project involved a backyard patio close enough to the Speed River that the homeowner had noticed persistent dark staining along the shaded edge every spring for several years. After pressure washing revealed the concrete underneath was in solid structural condition, we applied a penetrating sealer chosen specifically to resist the moisture wicking up from the damp soil beneath, rather than one of the film-forming acrylic options that can trap moisture against concrete already dealing with a high water table. The staining did not return the following spring, which is the kind of result we look for whenever ground moisture rather than surface wear is the main concern."},
+    {"type":"callout","text":"All-Seal serves all of Cambridge, from Galt and Preston to Hespeler and Blair. Call 519-266-6796 for a free on-site inspection."}
+  ],
+  "faqs": [
+    {"q": "Why do old Galt driveways need more repair before sealing?", "a": "Much of Galt's concrete was poured decades ago before modern joint spacing and mix standards, so it commonly has cracking and surface pitting that needs repair before a sealer can be applied properly."},
+    {"q": "Does living near the Grand or Speed River affect my concrete?", "a": "Properties in low-lying parts of Preston and old Galt near the rivers deal with more persistent ground moisture, which can lead to discoloration and mildew staining on unsealed concrete."},
+    {"q": "Is sealing worthwhile on a newer Hespeler driveway?", "a": "Yes, newer concrete is not exempt from Cambridge's heavy winter salt use, and sealing it preventatively before damage starts is generally more cost-effective than repairing scaling later."},
+    {"q": "Do you quote larger rural-style lots in Blair differently?", "a": "Pricing reflects the larger surface areas typical of Blair properties, but the sealing process itself is the same as anywhere else we work."},
+    {"q": "Do you serve all three of Galt, Preston and Hespeler?", "a": "Yes, All-Seal serves the entire city of Cambridge, including Galt, West Galt, Preston, Hespeler, Blair and Clemens Mill."}
+  ],
+  "nearby": ["kitchener-waterloo", "hamilton", "brantford"]
+}
