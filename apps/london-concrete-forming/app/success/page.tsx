@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://londonconcreteforming.ca/success" },
   title: "Thank You",
   description: "Thank you for contacting London Concrete Forming. We have received your quote request and will be in touch within 1 business day.",
   robots: { index: false, follow: false },

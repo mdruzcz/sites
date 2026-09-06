@@ -1,0 +1,84 @@
+{
+  "slug": "concrete-finishes",
+  "metaTitle": "Concrete Finishes London Ontario | How Each One Is Done",
+  "metaDescription": "Compare broom, exposed aggregate, smooth trowel, stamped, and coloured concrete finishes in London, Ontario, and which one suits your driveway or patio.",
+  "sectionTitle": "How each concrete finish is actually done, and where it fits best",
+  "intro": "The finish is the last step of a concrete pour, but choosing the right one depends on where it will be used and how it needs to perform through a London winter. Here is the process behind each finish and the tradeoffs between them.",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Broom finish: the process"
+    },
+    {
+      "type": "p",
+      "text": "After the concrete is poured and floated to a level surface, a stiff-bristled broom is dragged across it in a single, consistent direction while the surface is still workable, creating fine parallel grooves. Timing matters - too early and the grooves collapse, too late and the broom cannot bite into the surface at all. This is why broom finishing is done immediately after floating rather than as a separate visit. It remains the standard choice for /concrete-driveways because the texture provides the best traction of any finish in wet or icy conditions."
+    },
+    {
+      "type": "h2",
+      "text": "Exposed aggregate: the process"
+    },
+    {
+      "type": "p",
+      "text": "Decorative stone, pebbles, or coloured glass are either mixed into the concrete or seeded onto the surface right after the pour. Once the concrete has set enough to hold the aggregate in place but is still relatively fresh, the surface is sprayed and lightly brushed to wash away the top layer of cement paste, revealing the stone underneath. Getting the timing right is a skilled step - washing too early pulls stones loose, too late and the paste has hardened and will not wash off. This finish suits /concrete-patios and pool surrounds where its natural look and strong slip resistance are most valuable."
+    },
+    {
+      "type": "h2",
+      "text": "Smooth trowel: the process"
+    },
+    {
+      "type": "p",
+      "text": "A steel trowel is worked over the surface in multiple passes as the concrete cures, closing the surface pores and producing a flat, dense finish. Smooth trowel is rarely used outdoors on driveways or main walkways in this climate because a smooth surface becomes noticeably slippery when wet or icy - it is better suited to covered patios, garage floors, or basement slabs where exposure to rain and snow is limited."
+    },
+    {
+      "type": "h2",
+      "text": "Stamped concrete: the process"
+    },
+    {
+      "type": "p",
+      "text": "Colour hardener is broadcast onto the freshly poured surface and floated in, a release agent is applied to prevent sticking, and textured stamp mats are pressed into the concrete while it is still soft enough to take an impression but firm enough to hold the pattern's depth. This has to happen within a fairly narrow window after the pour, which is why stamped work needs an experienced crew that can read the concrete's set time accurately. See /concrete-stamps for the full pattern range and /stamped-concrete-driveway for driveway-specific guidance."
+    },
+    {
+      "type": "h2",
+      "text": "Coloured concrete: integral colour, acid stain, and colour hardener"
+    },
+    {
+      "type": "p",
+      "text": "Colour can be added three ways, and they are not interchangeable. Integral colour is mixed into the concrete before the pour and runs through the full depth of the slab, so it does not wear off even if the surface abrades over decades. Colour hardener is broadcast onto the surface before finishing and produces a more saturated, denser-surfaced result, commonly paired with stamped work. Acid stain is applied after the concrete has cured and reacts chemically with the surface to create a mottled, variegated look - it cannot be applied evenly to fresh concrete and is typically used to refresh or customize an existing slab rather than a brand-new pour."
+    },
+    {
+      "type": "h2",
+      "text": "Matching a finish to the application"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Driveways: broom finish for traction, or stamped for a decorative upgrade (see /stamped-concrete-driveway)",
+        "Patios: exposed aggregate or stamped for appearance, broom on step treads for safety",
+        "Shed and garage pads: broom finish is standard for simplicity and traction (see /concrete-shed-pad-installer)",
+        "Retaining wall faces: smooth or board-formed texture, sometimes coloured to match the house (see /concrete-retaining-walls)"
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "Not sure which finish is right for your project? Call London Concrete Forming at 519-914-1901 and we will walk through samples during your free estimate."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Can two finishes be combined on the same project?",
+      "a": "Yes, this is common - for example, a stamped patio with broom-finished steps for safety, or exposed aggregate borders around a smooth centre panel."
+    },
+    {
+      "q": "Which finish needs the least ongoing maintenance?",
+      "a": "A plain broom finish needs the least maintenance since it has no sealer dependent on colour retention, though all exterior concrete benefits from periodic sealing to protect against road salt and freeze-thaw exposure."
+    },
+    {
+      "q": "Can an existing plain concrete surface be upgraded with a decorative finish later?",
+      "a": "Acid staining and some overlay products can update an existing slab's appearance, but true exposed aggregate or stamped texture can only be created during the original pour, since both depend on working the surface while the concrete is still fresh."
+    },
+    {
+      "q": "Does a darker colour hardener make concrete hotter underfoot in summer?",
+      "a": "Yes, darker colours absorb more heat, which is worth considering for a pool deck or patio where bare feet will be on the surface - lighter colour hardener tones stay noticeably cooler in direct sun."
+    }
+  ]
+}

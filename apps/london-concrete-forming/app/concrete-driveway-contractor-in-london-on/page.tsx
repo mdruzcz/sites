@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Driveways in London, ON",
-  description: "Professional concrete driveway installation in London, Ontario. Natural, stamped & coloured options. 0–6/sq.ft. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Driveways in London, ON", description: "Expert concrete driveway installation in London, Ontario." },
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-driveway-contractor-in-london-on" },
+  title: "Concrete Driveway Contractor in London, ON",
+  description: "Concrete driveway installation and replacement across London, Ontario neighbourhoods. Free on-site estimates, written quotes in 1 business day. Call 519-914-1901.",
+  openGraph: { title: "Concrete Driveway Contractor in London, ON", description: "Concrete driveway installation and replacement across London, Ontario neighbourhoods. Free on-site estimates, written quotes in 1 business day. Call 519-914-1901." },
 };
 
 export default function Page() {
@@ -23,11 +25,12 @@ export default function Page() {
       <section className="bg-[#333333] py-20">
         <div className="container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">London, Ontario</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Driveways in London, ON</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Driveway Contractor Serving London, Ontario</h1>
           <p className="text-slate-300 text-xl mb-8">Professional Driveway Installation &amp; Replacement</p>
           <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
         </div>
       </section>
+      <Expansion slug="concrete-driveway-contractor-in-london-on" />
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

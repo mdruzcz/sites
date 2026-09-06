@@ -4,38 +4,40 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in Stratford, ON â€” Driveways & Patios",
-  description: "Expert concrete contractor serving Stratford, Ontario. Driveways, patios, stamped concrete, retaining walls & more. 20+ years experience. Free quotes â€” 519-914-1901.",
+  alternates: { canonical: "https://londonconcreteforming.ca/stratford-concrete-contractor" },
+  title: "Concrete Contractor in Stratford, ON | Perth County",
+  description: "Concrete driveways and patios for Stratford's heritage homes near the Avon River, with festival-season scheduling. Free estimates, call 519-914-1901.",
   openGraph: {
-    title: "Concrete Contractor in Stratford, ON",
-    description: "Professional concrete services in Stratford, Ontario. Driveways, patios, retaining walls & stamped concrete from London Concrete Forming.",
+    title: "Concrete Contractor in Stratford, ON | Perth County",
+    description: "Concrete driveways and patios for Stratford's heritage homes near the Avon River, with festival-season scheduling. Free estimates, call 519-914-1901.",
   },
 };
 
 const services = [
-  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "ðŸš—" },
-  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs â€” plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
-  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "ðŸ§±" },
-  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "ðŸŽ¨" },
-  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "ðŸ”¨" },
-  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "ðŸ—ï¸" },
+  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "🚗" },
+  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs — plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
+  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "🧱" },
+  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "🎨" },
+  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "🔨" },
+  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "🏗️" },
 ];
 
 const faqItems = [
-  { question: "Do you serve Stratford, Ontario?", answer: "Yes â€” Stratford is within our regular service area. London Concrete Forming serves Perth County homeowners with no additional travel fees for most projects." },
+  { question: "Do you serve Stratford, Ontario?", answer: "Yes — Stratford is within our regular service area. London Concrete Forming serves Perth County homeowners with no additional travel fees for most projects." },
   { question: "What concrete services do you offer in Stratford?", answer: "We offer the full range: new driveways, patio installation, retaining walls, concrete removal, shed pads, and stamped concrete patterns in 50+ designs." },
-  { question: "How long does it take to get a quote in Stratford?", answer: "We typically schedule free on-site estimates within 2â€“5 business days of your inquiry. Call 519-914-1901 or fill out the form below and we will be in touch quickly." },
+  { question: "How long does it take to get a quote in Stratford?", answer: "We typically schedule free on-site estimates within 2–5 business days of your inquiry. Call 519-914-1901 or fill out the form below and we will be in touch quickly." },
   { question: "What is the best concrete finish for a Stratford home?", answer: "Broom finish is the most popular and practical for Ontario driveways. For patios and feature areas, stamped concrete in ashlar slate or cobblestone patterns is very popular in Stratford. We bring sample boards to every consultation." },
 ];
 
 export default function StratfordPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Contractor in Stratford, ON", description: "Professional concrete services in Stratford, Ontario â€” driveways, patios, retaining walls, and more.", url: site.url + "/stratford-concrete-contractor", city: "Stratford" }),
+    serviceSchema({ name: "Concrete Contractor in Stratford, ON", description: "Professional concrete services in Stratford, Ontario — driveways, patios, retaining walls, and more.", url: site.url + "/stratford-concrete-contractor", city: "Stratford" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: site.url + "/service-areas" }, { name: "Stratford", url: site.url + "/stratford-concrete-contractor" }]),
     faqSchema(faqItems),
   ];
@@ -52,7 +54,7 @@ export default function StratfordPage() {
         <div className="relative container-custom max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Stratford, Ontario</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Concrete Contractor in Stratford, ON</h1>
-          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete â€” 20+ years of experience serving Stratford and Perth County.</p>
+          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete — 20+ years of experience serving Stratford and Perth County.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -100,7 +102,7 @@ export default function StratfordPage() {
                 {[
                   { title: "Perth County Experience", desc: "We have completed dozens of projects in Stratford and surrounding Perth County. We know the local soil types and building practices." },
                   { title: "No Travel Fees", desc: "Stratford falls within our standard service radius. You receive the same transparent pricing and no added travel costs." },
-                  { title: "32 MPa Concrete Standard", desc: "We always use minimum 32 MPa concrete â€” engineered for Ontario's freeze-thaw cycle and heavy vehicle traffic." },
+                  { title: "32 MPa Concrete Standard", desc: "We always use minimum 32 MPa concrete — engineered for Ontario's freeze-thaw cycle and heavy vehicle traffic." },
                   { title: "Start-to-Finish Coordination", desc: "One crew handles excavation, forming, pouring, and finishing. No subcontractors, no handoffs, no missed communications." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
@@ -143,6 +145,7 @@ export default function StratfordPage() {
       </section>
 
       {/* Form */}
+      <Expansion slug="stratford-concrete-contractor" />
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -152,7 +155,7 @@ export default function StratfordPage() {
               <p className="text-slate-600 mb-4">Or call <a href={site.phoneHref} className="text-[#F7931E] font-semibold hover:underline">{site.phone}</a></p>
               <div className="bg-[#f8fafc] rounded-xl p-5">
                 <ul className="space-y-2 text-sm text-slate-600">
-                  {["Free on-site estimate within 2â€“5 business days", "Detailed written quote with itemized breakdown", "No travel fees for Stratford projects", "No obligation after the estimate"].map((i) => (
+                  {["Free on-site estimate within 2–5 business days", "Detailed written quote with itemized breakdown", "No travel fees for Stratford projects", "No obligation after the estimate"].map((i) => (
                     <li key={i} className="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#F7931E] flex-shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
                       {i}

@@ -1,0 +1,100 @@
+{
+  "slug": "about-us",
+  "metaTitle": "About London Concrete Forming | 20+ Years, 500+ Projects",
+  "metaDescription": "Meet London Concrete Forming, a family-run concrete contractor with 20+ years of combined experience and 500+ completed projects across London, Ontario.",
+  "sectionTitle": "Who does the work: our team, process, and service area",
+  "intro": "London Concrete Forming was built on a simple idea: give London homeowners a concrete contractor who explains the process, prices fairly, and finishes the job the way it was quoted. Here is more detail on how we operate.",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Our experience"
+    },
+    {
+      "type": "p",
+      "text": "Between our crew, we bring 20+ years of combined experience pouring concrete in London and the surrounding towns, and we have completed 500+ residential projects - everything from single driveway replacements to full backyard patio and retaining wall packages. That volume matters because London's clay-heavy soil and freeze-thaw winters punish shortcuts. A crew that has poured hundreds of driveways here knows which base depths and joint spacing actually hold up over a decade, not just through the first winter."
+    },
+    {
+      "type": "h2",
+      "text": "What we value on every job"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Straight answers at the estimate stage - what the job needs, what it costs, and what could change the price.",
+        "Proper base preparation every time, even when it is not visible in the finished surface.",
+        "Clean job sites - forms, tools, and excess material are removed promptly, and old concrete is hauled away as part of the quote when removal is involved.",
+        "Realistic timelines - we tell you the actual cure schedule (24-48 hours to walking strength, 7 days before vehicles, 28 days to full strength) instead of rushing you back onto a new surface early.",
+        "Local knowledge - our crews already know the grading expectations and frost depth for London (roughly 1.2 metres) rather than applying a generic approach."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Our process from first call to finished pour"
+    },
+    {
+      "type": "p",
+      "text": "Every project starts with a call or a form submission through /contact-us. We schedule a free on-site estimate within 2-5 business days, walk the property with you, and discuss the finish options that make sense - broom, exposed aggregate, smooth trowel, stamped, or coloured (see /concrete-finishes for the full breakdown). You will have a written quote within 1 business day of that visit. Once you approve the quote, we schedule excavation and forming, followed by the pour and finish, with a typical residential driveway or patio taking 2-3 days from start to finish before the cure period begins."
+    },
+    {
+      "type": "h2",
+      "text": "What every London Concrete Forming quote includes"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Excavation to proper subgrade depth and disposal of removed material where applicable (see /concrete-removal-services for standalone removal jobs)",
+        "Compacted granular base sized for the application",
+        "Reinforcement - wire mesh or rebar depending on whether it is a driveway, patio, pad, or retaining wall",
+        "Forming to the agreed dimensions, slope, and drainage direction",
+        "The pour itself and your chosen finish",
+        "A written timeline including cure period before use"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "How we communicate during a project"
+    },
+    {
+      "type": "p",
+      "text": "We know a concrete pour disrupts your driveway, yard, or access to your home for a few days, so we keep communication direct. You get a phone call the day before excavation starts to confirm timing, and again before the pour itself if weather requires a schedule change - concrete pours are sensitive to rain and temperature, so we would rather move a date by a day than pour under poor conditions that compromise the finish. If your project involves the City of London for permits or grading approval, we handle that coordination and let you know what, if anything, we need from you."
+    },
+    {
+      "type": "h2",
+      "text": "Why we specialize rather than generalize"
+    },
+    {
+      "type": "p",
+      "text": "Some contractors in the region offer concrete alongside landscaping, fencing, and general contracting. We focus specifically on concrete - driveways, patios, poured retaining walls, stamped work, pads, and removal - because that focus is what lets a crew develop real judgment about how London's soil, frost line, and winters behave under a slab over the long term. That is also why we keep our own in-house stamp collection (see /concrete-stamps) rather than renting equipment job by job, and why we handle removal ourselves (/concrete-removal-services) instead of subcontracting demolition to a separate crew.",
+    },
+    {
+      "type": "h2",
+      "text": "Where we work"
+    },
+    {
+      "type": "p",
+      "text": "London is home base, and we work throughout the city's neighbourhoods - Byron, Oakridge, Masonville, Westmount, Old North, Lambeth, Summerside, Hyde Park, White Oaks, and Wortley Village among them. We also serve St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley for full concrete services, and Ingersoll, Tillsonburg, and Aylmer for driveway work. There are no travel fees anywhere in that service area - full details at /service-areas."
+    },
+    {
+      "type": "callout",
+      "text": "Have a project in mind? Call London Concrete Forming at 519-914-1901, email service@londonconcreteforming.ca, or visit /contact-us for a free quote."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is London Concrete Forming licensed and insured?",
+      "a": "Yes, we carry full liability coverage on every job we take on, and we can provide documentation on request before work begins."
+    },
+    {
+      "q": "Do you subcontract the work or use your own crew?",
+      "a": "Our own crew handles excavation, forming, pouring, and finishing on every project, which is part of how we keep quality consistent across 500+ completed jobs."
+    },
+    {
+      "q": "What are your hours if I need to reach someone?",
+      "a": "We are available Monday through Saturday, 8 AM to 6 PM, by phone at 519-914-1901 or by email at service@londonconcreteforming.ca."
+    },
+    {
+      "q": "Do you offer any kind of workmanship guarantee?",
+      "a": "We stand behind our forming, reinforcement, and finish work, and we discuss the specifics of coverage for your project during the estimate so there is no ambiguity before you approve the quote."
+    }
+  ]
+}

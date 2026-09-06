@@ -3,16 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about London Concrete Forming — London, Ontario's trusted concrete contractor with 20+ years of experience in driveways, patios, and retaining walls.",
+  alternates: { canonical: "https://londonconcreteforming.ca/about-us" },
+  title: "About London Concrete Forming | 20+ Years, 500+ Projects",
+  description: "Meet London Concrete Forming, a family-run concrete contractor with 20+ years of combined experience and 500+ completed projects across London, Ontario.",
   openGraph: {
-    title: "About Us",
-    description: "Over 20 years of experience helping London homeowners with quality concrete driveways, patios, and more.",
+    title: "About London Concrete Forming | 20+ Years, 500+ Projects",
+    description: "Meet London Concrete Forming, a family-run concrete contractor with 20+ years of combined experience and 500+ completed projects across London, Ontario.",
   },
 };
 
@@ -99,6 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact form */}
+      <Expansion slug="about-us" />
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-10">

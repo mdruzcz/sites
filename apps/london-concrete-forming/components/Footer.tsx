@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { AwardBadge } from "@/components/award-badge";
 
 function LcfLogo() {
   return (
@@ -116,6 +117,9 @@ export default function Footer() {
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
           </div>
+        </div>
+        <div className="container-custom pb-5 flex justify-center">
+          <AwardBadge />
         </div>
       </div>
     </footer>

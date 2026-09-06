@@ -4,38 +4,40 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Contractor in Sarnia, ON â€” Driveways & Patios",
-  description: "Expert concrete contractor serving Sarnia, Ontario. Driveways, patios, stamped concrete, retaining walls & more. 20+ years experience. Free quotes â€” 519-914-1901.",
+  alternates: { canonical: "https://londonconcreteforming.ca/sarnia-concrete-contractor" },
+  title: "Concrete Contractor in Sarnia, ON | Lambton County",
+  description: "Concrete driveways and patios built for Sarnia's lake-effect climate and sandy soils. Serving Bright's Grove and Point Edward. Free estimates, 519-914-1901.",
   openGraph: {
-    title: "Concrete Contractor in Sarnia, ON",
-    description: "Professional concrete services in Sarnia and Lambton County. Driveways, patios, retaining walls & stamped concrete from London Concrete Forming.",
+    title: "Concrete Contractor in Sarnia, ON | Lambton County",
+    description: "Concrete driveways and patios built for Sarnia's lake-effect climate and sandy soils. Serving Bright's Grove and Point Edward. Free estimates, 519-914-1901.",
   },
 };
 
 const services = [
-  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "ðŸš—" },
-  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs â€” plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
-  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "ðŸ§±" },
-  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "ðŸŽ¨" },
-  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "ðŸ”¨" },
-  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "ðŸ—ï¸" },
+  { name: "Concrete Driveways", href: "/concrete-driveways", desc: "New driveway installation, replacement, and widening. Standard and stamped options available.", icon: "🚗" },
+  { name: "Concrete Patios", href: "/concrete-patios", desc: "Custom patio slabs — plain, exposed aggregate, stamped, or coloured to match your home.", icon: "â˜€ï¸" },
+  { name: "Retaining Walls", href: "/concrete-retaining-walls", desc: "Poured concrete retaining walls for erosion control, terracing, and usable yard space.", icon: "🧱" },
+  { name: "Stamped Concrete", href: "/stamped-concrete-driveway", desc: "Cobblestone, slate, brick, and 50+ more patterns for driveways and patios.", icon: "🎨" },
+  { name: "Concrete Removal", href: "/concrete-removal-services", desc: "Old concrete broken out, hauled away, and site left clean and ready for the new pour.", icon: "🔨" },
+  { name: "Shed & Equipment Pads", href: "/concrete-shed-pad-installer", desc: "Properly graded and reinforced pads for sheds, garages, hot tubs, and equipment.", icon: "🏗️" },
 ];
 
 const faqItems = [
-  { question: "Do you serve Sarnia, Ontario?", answer: "Yes â€” Sarnia and Lambton County are within our service territory. London Concrete Forming completes projects in Sarnia regularly. Note that for Sarnia projects, we may include a modest travel supplement which will be clearly disclosed in your written quote." },
+  { question: "Do you serve Sarnia, Ontario?", answer: "Yes — Sarnia and Lambton County are within our service territory. London Concrete Forming completes projects in Sarnia regularly. Note that for Sarnia projects, we may include a modest travel supplement which will be clearly disclosed in your written quote." },
   { question: "What concrete services do you offer in Sarnia?", answer: "We offer the full range: new driveways, patio installation, retaining walls, concrete removal, shed and equipment pads, and stamped concrete in 50+ patterns." },
-  { question: "How long does a concrete driveway installation take in Sarnia?", answer: "A standard residential driveway takes 2â€“3 days: Day 1 for excavation and forming, Day 2 for the concrete pour and finish, followed by 7 days of cure time before vehicle traffic." },
-  { question: "What is the cost of a concrete driveway in Sarnia?", answer: "Standard concrete driveways run $10â€“$16 per square foot installed in the Sarnia area, including excavation, gravel base, rebar, forming, pour, and broom finish. Stamped and coloured options are priced separately. Get a free exact quote for your project." },
+  { question: "How long does a concrete driveway installation take in Sarnia?", answer: "A standard residential driveway takes 2–3 days: Day 1 for excavation and forming, Day 2 for the concrete pour and finish, followed by 7 days of cure time before vehicle traffic." },
+  { question: "What is the cost of a concrete driveway in Sarnia?", answer: "Standard concrete driveways run $10–$16 per square foot installed in the Sarnia area, including excavation, gravel base, rebar, forming, pour, and broom finish. Stamped and coloured options are priced separately. Get a free exact quote for your project." },
 ];
 
 export default function SarniaPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Contractor in Sarnia, ON", description: "Professional concrete services in Sarnia, Ontario â€” driveways, patios, retaining walls, and more.", url: site.url + "/sarnia-concrete-contractor", city: "Sarnia" }),
+    serviceSchema({ name: "Concrete Contractor in Sarnia, ON", description: "Professional concrete services in Sarnia, Ontario — driveways, patios, retaining walls, and more.", url: site.url + "/sarnia-concrete-contractor", city: "Sarnia" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: site.url + "/service-areas" }, { name: "Sarnia", url: site.url + "/sarnia-concrete-contractor" }]),
     faqSchema(faqItems),
   ];
@@ -52,7 +54,7 @@ export default function SarniaPage() {
         <div className="relative container-custom max-w-4xl mx-auto text-center">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Sarnia, Ontario</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Your Concrete Contractor in Sarnia, ON</h1>
-          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete â€” 20+ years of experience serving Sarnia and Lambton County.</p>
+          <p className="text-slate-300 text-xl mb-8">Driveways, patios, retaining walls &amp; stamped concrete — 20+ years of experience serving Sarnia and Lambton County.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -64,7 +66,7 @@ export default function SarniaPage() {
       <section className="bg-[#F7931E] py-8">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
-            {[{ v: "20+", l: "Years Experience" }, { v: "500+", l: "Projects Completed" }, { v: "Free", l: "On-Site Estimates" }, { v: "$10â€“$16", l: "Per Sq.Ft." }].map((s) => (
+            {[{ v: "20+", l: "Years Experience" }, { v: "500+", l: "Projects Completed" }, { v: "Free", l: "On-Site Estimates" }, { v: "$10–$16", l: "Per Sq.Ft." }].map((s) => (
               <div key={s.l}><p className="text-3xl font-extrabold">{s.v}</p><p className="text-sm font-medium opacity-90">{s.l}</p></div>
             ))}
           </div>
@@ -99,7 +101,7 @@ export default function SarniaPage() {
               <div className="space-y-4">
                 {[
                   { title: "20 Years Across Southwestern Ontario", desc: "Our team has completed hundreds of projects across the region. We bring that experience and quality to every Sarnia project." },
-                  { title: "32 MPa Concrete â€” Always", desc: "We never compromise on mix strength. Higher-grade concrete resists Sarnia's humid climate and freeze-thaw demands better than minimum-spec mixes." },
+                  { title: "32 MPa Concrete — Always", desc: "We never compromise on mix strength. Higher-grade concrete resists Sarnia's humid climate and freeze-thaw demands better than minimum-spec mixes." },
                   { title: "Transparent, Written Quotes", desc: "You receive a detailed written quote before any work begins. No verbal agreements, no price increases after the fact." },
                   { title: "Full Project Coordination", desc: "One team handles everything from excavation to the final seal. No juggling multiple contractors." },
                 ].map((item) => (
@@ -143,6 +145,7 @@ export default function SarniaPage() {
       </section>
 
       {/* Form */}
+      <Expansion slug="sarnia-concrete-contractor" />
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -152,7 +155,7 @@ export default function SarniaPage() {
               <p className="text-slate-600 mb-4">Or call <a href={site.phoneHref} className="text-[#F7931E] font-semibold hover:underline">{site.phone}</a></p>
               <div className="bg-[#f8fafc] rounded-xl p-5">
                 <ul className="space-y-2 text-sm text-slate-600">
-                  {["Free on-site estimate at no charge", "Detailed written quote â€” no surprises", "Experienced crew, quality materials", "No obligation after your estimate"].map((i) => (
+                  {["Free on-site estimate at no charge", "Detailed written quote — no surprises", "Experienced crew, quality materials", "No obligation after your estimate"].map((i) => (
                     <li key={i} className="flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#F7931E] flex-shrink-0" aria-hidden="true"><path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" /></svg>
                       {i}

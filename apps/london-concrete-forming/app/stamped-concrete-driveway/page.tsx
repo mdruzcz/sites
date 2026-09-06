@@ -4,23 +4,25 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Stamped Concrete Driveway Installation London Ontario",
-  description: "Transform your home with a stamped concrete driveway in London, Ontario. Cobblestone, slate, brick & more. 20+ years experience. Free quotes â€” 519-914-1901.",
+  alternates: { canonical: "https://londonconcreteforming.ca/stamped-concrete-driveway" },
+  title: "Stamped Concrete Driveway London Ontario | Patterns & Cost",
+  description: "Stamped concrete driveways in London, Ontario: patterns, colour hardener, sealing schedule, and how the finish holds up to freeze-thaw winters. Free quotes.",
   openGraph: {
-    title: "Stamped Concrete Driveway Installation in London, Ontario",
-    description: "Beautiful stamped concrete driveways in London, Ontario. 50+ patterns, custom colours. London Concrete Forming â€” 20+ years experience.",
+    title: "Stamped Concrete Driveway London Ontario | Patterns & Cost",
+    description: "Stamped concrete driveways in London, Ontario: patterns, colour hardener, sealing schedule, and how the finish holds up to freeze-thaw winters. Free quotes.",
     images: [{ url: "/images/stamped-cobblestone-driveway.jpg", alt: "Stamped concrete driveway installation in London, Ontario" }],
   },
 };
 
 const faqItems = [
-  { question: "How much does a stamped concrete driveway cost in London, Ontario?", answer: "Stamped concrete driveways in London typically cost $15â€“$25 per square foot installed, depending on the pattern complexity, colour choices, and size. A typical two-car driveway (500â€“700 sq.ft.) runs $8,000â€“$17,000 installed." },
-  { question: "How long does a stamped concrete driveway last?", answer: "With proper installation and regular resealing every 2â€“3 years, a stamped concrete driveway lasts 25â€“35+ years in Ontario's climate. The concrete itself is highly durable â€” it is primarily the sealer that needs maintenance." },
+  { question: "How much does a stamped concrete driveway cost in London, Ontario?", answer: "Stamped concrete driveways in London typically cost $15–$25 per square foot installed, depending on the pattern complexity, colour choices, and size. A typical two-car driveway (500–700 sq.ft.) runs $8,000–$17,000 installed." },
+  { question: "How long does a stamped concrete driveway last?", answer: "With proper installation and regular resealing every 2–3 years, a stamped concrete driveway lasts 25–35+ years in Ontario's climate. The concrete itself is highly durable — it is primarily the sealer that needs maintenance." },
   { question: "What is the best stamped pattern for a driveway?", answer: "Cobblestone and ashlar slate are the most popular driveway patterns because they provide a natural, premium look that complements most home styles. We bring sample boards to your consultation to help you decide." },
   { question: "Is stamped concrete slippery in the winter?", answer: "We always apply a non-slip additive to the sealer on driveways. The texture from the stamp pattern provides more grip than a smooth surface. We recommend sand over road salt to preserve the sealer." },
   { question: "Can I add stamped concrete beside my existing concrete?", answer: "Yes, in many cases we can add stamped concrete to complement existing concrete. We will assess your existing slab during the free consultation and advise on the best approach." },
@@ -63,13 +65,13 @@ export default function StampedConcreteDrivewayPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-extrabold text-[#333333] mb-5">Why Choose Stamped Concrete for Your Driveway?</h2>
-              <p className="text-slate-600 leading-relaxed mb-6">Stamped concrete gives you the premium look of cobblestone, slate, or brick at roughly half the cost of natural materials â€” without the joint maintenance and weed problems that come with pavers. It is poured as one continuous slab, so there are no shifting stones, no sinking sections, and no weeds growing through the cracks.</p>
+              <p className="text-slate-600 leading-relaxed mb-6">Stamped concrete gives you the premium look of cobblestone, slate, or brick at roughly half the cost of natural materials — without the joint maintenance and weed problems that come with pavers. It is poured as one continuous slab, so there are no shifting stones, no sinking sections, and no weeds growing through the cracks.</p>
               <div className="space-y-4">
                 {[
-                  { title: "Half the Cost of Natural Pavers", desc: "Get the cobblestone or slate look at $15â€“$25/sqft versus $30â€“$60+ for natural stone installation." },
-                  { title: "No Weeds or Shifting", desc: "One continuous concrete slab â€” no joints for weeds, no individual pavers to sink or shift." },
-                  { title: "50+ Patterns Available", desc: "From cobblestone and slate to brick and wood grain â€” a pattern for every home style." },
-                  { title: "Holds Value for Decades", desc: "With regular resealing, stamped concrete maintains its beauty for 25â€“35 years with minimal upkeep." },
+                  { title: "Half the Cost of Natural Pavers", desc: "Get the cobblestone or slate look at $15–$25/sqft versus $30–$60+ for natural stone installation." },
+                  { title: "No Weeds or Shifting", desc: "One continuous concrete slab — no joints for weeds, no individual pavers to sink or shift." },
+                  { title: "50+ Patterns Available", desc: "From cobblestone and slate to brick and wood grain — a pattern for every home style." },
+                  { title: "Holds Value for Decades", desc: "With regular resealing, stamped concrete maintains its beauty for 25–35 years with minimal upkeep." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <div className="w-8 h-8 rounded-lg bg-[#F7931E] flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -118,7 +120,7 @@ export default function StampedConcreteDrivewayPage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/concrete-stamps" className="btn btn-outline text-sm">View Full Pattern Gallery â†’</Link>
+            <Link href="/concrete-stamps" className="btn btn-outline text-sm">View Full Pattern Gallery →</Link>
           </div>
         </div>
       </section>
@@ -152,9 +154,9 @@ export default function StampedConcreteDrivewayPage() {
           <div className="bg-[#333333] rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-extrabold text-white mb-6">Stamped Concrete Driveway Cost Guide</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-sm">
-              <div className="bg-white/10 rounded-xl p-4"><p className="text-slate-300 mb-1">Simple Pattern</p><p className="text-[#F7931E] font-extrabold text-2xl">$15â€“$18</p><p className="text-slate-400">per sq.ft.</p></div>
-              <div className="bg-white/10 rounded-xl p-4 border-2 border-[#F7931E]"><p className="text-slate-300 mb-1">Popular Choice</p><p className="text-[#F7931E] font-extrabold text-2xl">$18â€“$22</p><p className="text-slate-400">per sq.ft.</p></div>
-              <div className="bg-white/10 rounded-xl p-4"><p className="text-slate-300 mb-1">Custom w/ Borders</p><p className="text-[#F7931E] font-extrabold text-2xl">$22â€“$25</p><p className="text-slate-400">per sq.ft.</p></div>
+              <div className="bg-white/10 rounded-xl p-4"><p className="text-slate-300 mb-1">Simple Pattern</p><p className="text-[#F7931E] font-extrabold text-2xl">$15–$18</p><p className="text-slate-400">per sq.ft.</p></div>
+              <div className="bg-white/10 rounded-xl p-4 border-2 border-[#F7931E]"><p className="text-slate-300 mb-1">Popular Choice</p><p className="text-[#F7931E] font-extrabold text-2xl">$18–$22</p><p className="text-slate-400">per sq.ft.</p></div>
+              <div className="bg-white/10 rounded-xl p-4"><p className="text-slate-300 mb-1">Custom w/ Borders</p><p className="text-[#F7931E] font-extrabold text-2xl">$22–$25</p><p className="text-slate-400">per sq.ft.</p></div>
             </div>
             <Link href="/contact-us" className="btn btn-primary text-base">Get Your Free Estimate</Link>
           </div>
@@ -170,6 +172,7 @@ export default function StampedConcreteDrivewayPage() {
       </section>
 
       {/* Form */}
+      <Expansion slug="stamped-concrete-driveway" />
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-8">

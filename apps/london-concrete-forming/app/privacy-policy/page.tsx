@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://londonconcreteforming.ca/privacy-policy" },
   title: "Privacy Policy",
   description: "London Concrete Forming privacy policy — how we collect, use, and protect your personal information.",
 };

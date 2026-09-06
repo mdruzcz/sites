@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://londonconcreteforming.ca/blog" },
   title: "Blog",
   description: "Read the London Concrete Forming blog for tips, guides, and insights on concrete driveways, patios, stamped concrete, and more in London, Ontario.",
   openGraph: { title: "Blog", description: "Concrete tips, guides, and insights from London Concrete Forming." },

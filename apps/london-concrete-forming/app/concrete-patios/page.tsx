@@ -4,14 +4,16 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Expert Concrete Patio Contractor",
-  description: "Professional concrete patio installation in London, Ontario. Stamped, coloured, and custom finishes. Call 519-914-1901 for a free quote.",
-  openGraph: { title: "Expert Concrete Patio Contractor", description: "Professional concrete patio installation in London, Ontario. Stamped, coloured, and custom finishes." },
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-patios" },
+  title: "Concrete Patios London Ontario | Design, Drainage & Finish",
+  description: "Concrete patio installation in London, Ontario with proper drainage away from your foundation, stamped and coloured finishes, and matching steps. Free quotes.",
+  openGraph: { title: "Concrete Patios London Ontario | Design, Drainage & Finish", description: "Concrete patio installation in London, Ontario with proper drainage away from your foundation, stamped and coloured finishes, and matching steps. Free quotes." },
 };
 
 const faqItems = [
@@ -69,6 +71,7 @@ export default function ConcretePatiosPage() {
         </div>
       </section>
 
+      <Expansion slug="concrete-patios" />
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-8"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Get a Free Patio Quote</h2></div>

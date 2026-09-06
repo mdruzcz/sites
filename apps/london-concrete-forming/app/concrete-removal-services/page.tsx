@@ -4,22 +4,24 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Removal Services in London, St. Thomas & Woodstock",
-  description: "Professional concrete demolition and removal in London, Ontario. Old driveways, patios, slabs, steps removed fast & cleanly. Free quotes â€” 519-914-1901.",
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-removal-services" },
+  title: "Concrete Removal London Ontario | Breakout & Disposal",
+  description: "Concrete removal and disposal in London, Ontario for old driveways, patios, and slabs, with base grading ready for a new pour. Same-day cleanup, free quotes.",
   openGraph: {
-    title: "Concrete Removal Services in London, St. Thomas & Woodstock",
-    description: "Fast, clean concrete demolition and removal in London, Ontario. Old driveways, patios, and slabs removed with same-day cleanup.",
+    title: "Concrete Removal London Ontario | Breakout & Disposal",
+    description: "Concrete removal and disposal in London, Ontario for old driveways, patios, and slabs, with base grading ready for a new pour. Same-day cleanup, free quotes.",
   },
 };
 
 const faqItems = [
-  { question: "How much does concrete removal cost in London, Ontario?", answer: "Concrete removal typically costs $3â€“$6 per square foot depending on thickness, reinforcement, and site access. A typical driveway (400 sq.ft.) runs $1,200â€“$2,400 for demolition, removal, and disposal. We provide free on-site estimates." },
-  { question: "Do you haul away the old concrete?", answer: "Yes â€” full removal and disposal is included in every quote. We bring a bin or truck, break out the concrete, load it, and leave your site clean and graded ready for the new pour." },
+  { question: "How much does concrete removal cost in London, Ontario?", answer: "Concrete removal typically costs $3–$6 per square foot depending on thickness, reinforcement, and site access. A typical driveway (400 sq.ft.) runs $1,200–$2,400 for demolition, removal, and disposal. We provide free on-site estimates." },
+  { question: "Do you haul away the old concrete?", answer: "Yes — full removal and disposal is included in every quote. We bring a bin or truck, break out the concrete, load it, and leave your site clean and graded ready for the new pour." },
   { question: "How long does concrete removal take?", answer: "Most residential concrete removal projects (driveways, patios, walkways) are completed in a single day. Larger projects or those with heavy reinforcement may take 2 days. We will give you a timeline during your free estimate." },
   { question: "Can you remove concrete next to my house without damaging it?", answer: "Yes. We use hydraulic breakers and hand tools when working near foundations, walls, or landscaping to protect adjacent structures. Our crews are experienced at precision demolition in tight spaces." },
   { question: "Do I need a permit for concrete removal?", answer: "In most cases, no permit is required for removing a driveway, patio, or walkway. If you are replacing a driveway that was installed before current setback requirements, a permit may be needed for the new installation. We will advise you during your consultation." },
@@ -48,7 +50,7 @@ export default function ConcreteRemovalPage() {
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Concrete Removal</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Removal Services in London, St. Thomas &amp; Woodstock</h1>
-          <p className="text-slate-300 text-xl mb-6">Old driveway, cracked patio, deteriorating walkway â€” we demolish it, haul it away, and leave your site clean.</p>
+          <p className="text-slate-300 text-xl mb-6">Old driveway, cracked patio, deteriorating walkway — we demolish it, haul it away, and leave your site clean.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Removal Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -61,7 +63,7 @@ export default function ConcreteRemovalPage() {
         <div className="container-custom">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-[#333333] mb-3">What We Remove</h2>
-            <p className="text-slate-600 max-w-xl mx-auto">From cracked driveways to old basement slabs â€” if it is concrete, we can remove it.</p>
+            <p className="text-slate-600 max-w-xl mx-auto">From cracked driveways to old basement slabs — if it is concrete, we can remove it.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
@@ -93,9 +95,9 @@ export default function ConcreteRemovalPage() {
               <div className="space-y-5">
                 {[
                   { step: "1", title: "Free On-Site Assessment", desc: "We visit your property to measure, assess the thickness and reinforcement of the existing concrete, and identify any site challenges. You receive a detailed written quote with no hidden fees." },
-                  { step: "2", title: "Equipment Setup", desc: "We bring the right equipment for your project â€” from mini skid steers for large areas to hand tools for tight spaces near foundations or landscaping." },
+                  { step: "2", title: "Equipment Setup", desc: "We bring the right equipment for your project — from mini skid steers for large areas to hand tools for tight spaces near foundations or landscaping." },
                   { step: "3", title: "Demolition", desc: "Hydraulic breakers or jackhammers break the concrete into manageable pieces. We work carefully near structures, utilities, and landscaping to avoid damage." },
-                  { step: "4", title: "Load & Haul", desc: "All broken concrete is loaded into our truck or bin and hauled to a recycling facility. Concrete is 100% recyclable â€” it is crushed and reused as road base." },
+                  { step: "4", title: "Load & Haul", desc: "All broken concrete is loaded into our truck or bin and hauled to a recycling facility. Concrete is 100% recyclable — it is crushed and reused as road base." },
                   { step: "5", title: "Cleanup & Grade", desc: "The excavation area is cleaned of remaining debris, and the ground is roughly graded and levelled, ready for your new concrete installation." },
                 ].map((step) => (
                   <div key={step.step} className="flex gap-4">
@@ -127,9 +129,9 @@ export default function ConcreteRemovalPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { title: "Extensive Cracking", desc: "Hairline cracks are normal, but large or spreading cracks indicate structural failure. Patching only delays the inevitable â€” full replacement is more cost-effective." },
+              { title: "Extensive Cracking", desc: "Hairline cracks are normal, but large or spreading cracks indicate structural failure. Patching only delays the inevitable — full replacement is more cost-effective." },
               { title: "Sunken or Heaved Sections", desc: "Frost heave and soil settlement cause sections to rise or sink. Tripping hazards and drainage problems result. Replacement with proper base prep solves the root cause." },
-              { title: "Surface Scaling & Spalling", desc: "Repeated freeze-thaw cycles cause the surface to flake and pit. Once scaling starts, it accelerates. Resurfacing only lasts a few years â€” removal and replacement is the permanent fix." },
+              { title: "Surface Scaling & Spalling", desc: "Repeated freeze-thaw cycles cause the surface to flake and pit. Once scaling starts, it accelerates. Resurfacing only lasts a few years — removal and replacement is the permanent fix." },
               { title: "Age Over 30 Years", desc: "Concrete has a lifespan. Concrete installed more than 30 years ago is likely at or past its structural service life and should be evaluated for replacement." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 p-5 bg-[#f8fafc] rounded-xl">
@@ -155,10 +157,10 @@ export default function ConcreteRemovalPage() {
                 <h2 className="text-3xl font-extrabold text-white mb-4">Removal Cost Guide</h2>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
-                    <span>Standard residential removal</span><span className="text-[#F7931E] font-bold">$3â€“$5/sqft</span>
+                    <span>Standard residential removal</span><span className="text-[#F7931E] font-bold">$3–$5/sqft</span>
                   </div>
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
-                    <span>Heavy reinforced concrete</span><span className="text-[#F7931E] font-bold">$5â€“$8/sqft</span>
+                    <span>Heavy reinforced concrete</span><span className="text-[#F7931E] font-bold">$5–$8/sqft</span>
                   </div>
                   <div className="flex justify-between text-slate-300 border-b border-slate-600 pb-2">
                     <span>Removal + new installation</span><span className="text-[#F7931E] font-bold">Best value bundle</span>
@@ -185,6 +187,7 @@ export default function ConcreteRemovalPage() {
       </section>
 
       {/* Form */}
+      <Expansion slug="concrete-removal-services" />
       <section className="section bg-[#f8fafc]">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-8">

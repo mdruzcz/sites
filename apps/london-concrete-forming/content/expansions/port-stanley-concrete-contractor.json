@@ -1,0 +1,33 @@
+{
+  "slug": "port-stanley-concrete-contractor",
+  "metaTitle": "Concrete Contractor in Port Stanley, ON | Lake Erie",
+  "metaDescription": "Concrete driveways and patios built for Port Stanley cottages and lakeside homes near Kettle Creek. Seasonal scheduling available. Free estimates, 519-914-1901.",
+  "sectionTitle": "Concrete work for Port Stanley's cottages and lakeside homes",
+  "intro": "Port Stanley is one of the smallest communities we serve, but its mix of full-time residents, seasonal cottage owners and lakefront properties along Lake Erie and Kettle Creek makes almost every project here a little different from a standard in-town driveway.",
+  "blocks": [
+    { "type": "h2", "text": "Sand, wind and a shifting shoreline" },
+    { "type": "p", "text": "Port Stanley's location on Lake Erie means many properties sit on sandier soil than the clay that dominates most of our service area, particularly closer to the beach and the mouth of Kettle Creek. Sandy soil drains quickly, which helps prevent standing water under a slab, but it also settles and shifts more under wind-driven erosion than clay does. For properties within a block or two of the shoreline, we pay close attention to compaction depth and base material selection so the slab has something stable to rest on even as the surrounding sand naturally moves over the seasons." },
+    { "type": "p", "text": "Wind exposure along the lakefront also affects the pour itself. On breezy days, which are common along this stretch of Lake Erie, we adjust timing and finishing technique to prevent the surface from drying and cracking too quickly during the pour — a detail that matters more here than on an inland job in London or Woodstock." },
+    { "type": "h2", "text": "Seasonal cottages vs. year-round Port Stanley homes" },
+    { "type": "p", "text": "A meaningful share of our Port Stanley work is for seasonal cottage owners who aren't on-site full time. We coordinate these projects around a homeowner's spring opening or fall close-up schedule, and we're used to arranging site access, deposits and sign-off with an owner who may only be reachable by phone or email between visits. Year-round Port Stanley residents, by contrast, tend to be closer to the village core on smaller, more established lots where access and timing are more straightforward." },
+    { "type": "p", "text": "For cottage driveways specifically, we often see gravel or older, thin concrete surfaces being upgraded for the first time in decades. These projects usually start from scratch rather than as a like-for-like replacement, which gives us more flexibility to correct drainage and grading issues that were never addressed on the original build." },
+    { "type": "h3", "text": "Kettle Creek and drainage planning" },
+    { "type": "p", "text": "Properties near Kettle Creek, which runs through the heart of Port Stanley before reaching Lake Erie, need extra attention to drainage planning. Water table levels here run higher than in inland communities, and a driveway or patio poured without accounting for that can end up with water pooling against the slab edge after heavy rain. We check the site's natural drainage pattern during the estimate and grade every pour to move water away from the home and toward existing drainage routes rather than trapping it near the foundation." },
+    { "type": "callout", "text": "Not sure what finish holds up best near the lake? Our /concrete-finishes page covers broom, exposed aggregate and stamped options and how each performs in higher-moisture environments like Port Stanley." },
+    { "type": "h2", "text": "Choosing a finish for a Lake Erie property" },
+    { "type": "ul", "items": [
+      "Broom finish — the most practical, cost-effective option for cottage driveways and everyday traction near sand and water",
+      "Exposed aggregate — a popular upgrade for Port Stanley patios, giving a natural stone look that resists staining from lake sand and salt",
+      "Stamped concrete — used on higher-end lakefront properties for patios and pool surrounds where appearance matters as much as durability",
+      "Coloured and sealed finishes — recommended for any Port Stanley project given the added moisture exposure this close to the lake"
+    ] },
+    { "type": "h2", "text": "Access and timing around Port Stanley's seasonal traffic" },
+    { "type": "p", "text": "Port Stanley's village core sees a significant increase in visitor traffic during summer weekends, which can affect equipment access on some streets. We plan concrete truck routing and delivery timing around this seasonal congestion, and for cottage clients we're happy to schedule pours during shoulder-season weeks when the village is quieter and site access is easier." }
+  ],
+  "faqs": [
+    { "q": "Can you schedule a Port Stanley project around my cottage's seasonal opening?", "a": "Yes, we regularly coordinate Port Stanley projects around spring opening and fall close-up schedules for seasonal property owners, including arranging access and sign-off remotely when needed." },
+    { "q": "Does sandy soil near the lake affect how long a driveway lasts?", "a": "Sandy soil itself isn't a problem as long as the base is compacted correctly for that soil type. We adjust our base preparation specifically for Port Stanley's sandier ground rather than using our standard clay-soil approach, which is what keeps these driveways stable over time." },
+    { "q": "What is the best patio finish for a property near Kettle Creek?", "a": "Exposed aggregate and sealed broom finishes both perform well in Port Stanley's higher-moisture environment. We walk through the trade-offs of each during your on-site estimate based on your property's specific exposure to sand, wind and water." },
+    { "q": "Is there a busy season to avoid for scheduling concrete work in Port Stanley?", "a": "Summer weekends bring heavy visitor traffic to the village, which can complicate equipment access on some streets. We often recommend shoulder-season scheduling for the smoothest access, especially for cottage properties." }
+  ]
+}

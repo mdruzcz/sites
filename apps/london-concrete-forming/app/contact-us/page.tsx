@@ -6,6 +6,7 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://londonconcreteforming.ca/contact-us" },
   title: "Contact Us",
   description: "Contact London Concrete Forming for a free concrete quote in London, Ontario. Call 519-914-1901 or fill out our online form. We respond within 1 business day.",
   openGraph: {

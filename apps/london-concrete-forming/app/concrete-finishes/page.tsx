@@ -4,16 +4,18 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Finishes â€” Broom, Exposed Aggregate, Stamped & More",
-  description: "Explore every concrete finish in London, Ontario â€” broom, exposed aggregate, polished, coloured & stamped. Expert installation by LCF. Free quotes.",
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-finishes" },
+  title: "Concrete Finishes London Ontario | How Each One Is Done",
+  description: "Compare broom, exposed aggregate, smooth trowel, stamped, and coloured concrete finishes in London, Ontario, and which one suits your driveway or patio.",
   openGraph: {
-    title: "Concrete Finishes â€” Broom, Exposed Aggregate, Stamped & More",
-    description: "See all concrete finish options from London Concrete Forming â€” the region's most trusted concrete contractor.",
+    title: "Concrete Finishes London Ontario | How Each One Is Done",
+    description: "Compare broom, exposed aggregate, smooth trowel, stamped, and coloured concrete finishes in London, Ontario, and which one suits your driveway or patio.",
     images: [{ url: "/images/drive.jpg", alt: "Concrete finishes by London Concrete Forming" }],
   },
 };
@@ -25,7 +27,7 @@ const finishes = [
     benefits: ["Best traction for driveways & walkways", "Ontario winter-safe surface", "Most affordable finish option", "Ages beautifully over decades"],
     image: "/images/broomfinish.png",
     imageAlt: "Broom finish concrete driveway installed in London, Ontario by London Concrete Forming",
-    priceNote: "$10â€“$14 / sq.ft. installed",
+    priceNote: "$10–$14 / sq.ft. installed",
   },
   {
     name: "Exposed Aggregate",
@@ -33,15 +35,15 @@ const finishes = [
     benefits: ["Natural stone aesthetic", "Highly slip-resistant texture", "Hides dirt and staining well", "Wide colour & stone selection"],
     image: "/images/PXL_20230718_125644595.jpg",
     imageAlt: "Exposed aggregate concrete patio with river stone finish in London, Ontario",
-    priceNote: "$13â€“$18 / sq.ft. installed",
+    priceNote: "$13–$18 / sq.ft. installed",
   },
   {
     name: "Stamped Concrete",
-    description: "Rubber stamps are pressed into freshly poured concrete to mimic the look of brick, slate, cobblestone, wood, or natural stone â€” at a fraction of the cost. Integral colour, colour hardeners, and release agents create realistic depth and texture. Perfect for patios, pool decks, and feature driveways.",
+    description: "Rubber stamps are pressed into freshly poured concrete to mimic the look of brick, slate, cobblestone, wood, or natural stone — at a fraction of the cost. Integral colour, colour hardeners, and release agents create realistic depth and texture. Perfect for patios, pool decks, and feature driveways.",
     benefits: ["Looks like stone or brick at lower cost", "Available in 50+ patterns", "Custom colour combinations", "Low long-term maintenance"],
     image: "/images/stampedfinish.jpg",
     imageAlt: "Stamped concrete patio with cobblestone pattern installed in London, Ontario",
-    priceNote: "$15â€“$25 / sq.ft. installed",
+    priceNote: "$15–$25 / sq.ft. installed",
   },
   {
     name: "Polished Concrete",
@@ -49,15 +51,15 @@ const finishes = [
     benefits: ["High-gloss professional look", "Extremely durable surface", "Dust-resistant & easy to clean", "Ideal for garages & basements"],
     image: "/images/drive.jpg",
     imageAlt: "Polished concrete garage floor with high-gloss finish in London, Ontario",
-    priceNote: "$5â€“$10 / sq.ft. (grind & seal)",
+    priceNote: "$5–$10 / sq.ft. (grind & seal)",
   },
   {
     name: "Coloured Concrete",
-    description: "Integral colour pigments are mixed directly into the concrete before pouring, creating uniform colour throughout the slab. Unlike surface stains, the colour will not peel or fade from traffic. Available in dozens of shades â€” warm tones, cool greys, and custom mixes â€” to match your home perfectly.",
+    description: "Integral colour pigments are mixed directly into the concrete before pouring, creating uniform colour throughout the slab. Unlike surface stains, the colour will not peel or fade from traffic. Available in dozens of shades — warm tones, cool greys, and custom mixes — to match your home perfectly.",
     benefits: ["Colour goes all the way through", "Won't peel, chip, or flake", "50+ colour choices available", "Works with any surface finish"],
     image: "/images/Colours2.jpg",
     imageAlt: "Coloured concrete driveway in warm charcoal tone in London, Ontario",
-    priceNote: "+$2â€“$4 / sq.ft. added to any finish",
+    priceNote: "+$2–$4 / sq.ft. added to any finish",
   },
   {
     name: "Smooth / Hand-Trowelled",
@@ -65,20 +67,20 @@ const finishes = [
     benefits: ["Clean modern aesthetic", "Dense, hard-wearing surface", "Easy to clean & maintain", "Great for interior slabs"],
     image: "/images/IMG-20231218-WA0005.jpg",
     imageAlt: "Smooth hand-trowelled concrete garage slab in London, Ontario",
-    priceNote: "$10â€“$14 / sq.ft. installed",
+    priceNote: "$10–$14 / sq.ft. installed",
   },
 ];
 
 const faqItems = [
   { question: "Which concrete finish is best for a driveway in Ontario?", answer: "Broom finish is the most popular for driveways because of its natural traction in wet and icy conditions. Stamped concrete and exposed aggregate are great upgrades that look beautiful while still providing a slip-resistant surface." },
   { question: "How do I choose between broom finish and exposed aggregate?", answer: "Broom finish is the more economical option and provides excellent grip. Exposed aggregate adds a decorative stone texture that many homeowners prefer for curb appeal. Both are equally durable. Your choice usually comes down to budget and aesthetic preference." },
-  { question: "Can I add colour to any concrete finish?", answer: "Yes â€” integral colour pigments can be added to any finish type. Colour hardeners and acid stains can also be applied after the pour. We will show you colour samples during your consultation." },
-  { question: "What is the most durable concrete finish?", answer: "All properly installed concrete finishes are extremely durable. Polished and trowelled finishes are the densest and most abrasion-resistant. Stamped concrete requires periodic resealing every 2â€“3 years to maintain its appearance." },
+  { question: "Can I add colour to any concrete finish?", answer: "Yes — integral colour pigments can be added to any finish type. Colour hardeners and acid stains can also be applied after the pour. We will show you colour samples during your consultation." },
+  { question: "What is the most durable concrete finish?", answer: "All properly installed concrete finishes are extremely durable. Polished and trowelled finishes are the densest and most abrasion-resistant. Stamped concrete requires periodic resealing every 2–3 years to maintain its appearance." },
 ];
 
 export default function ConcreteFinishesPage() {
   const jsonLd = [
-    serviceSchema({ name: "Concrete Finishes", description: "All concrete finish options â€” broom, exposed aggregate, stamped, polished, coloured â€” in London, Ontario.", url: site.url + "/concrete-finishes" }),
+    serviceSchema({ name: "Concrete Finishes", description: "All concrete finish options — broom, exposed aggregate, stamped, polished, coloured — in London, Ontario.", url: site.url + "/concrete-finishes" }),
     breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Concrete Finishes", url: site.url + "/concrete-finishes" }]),
     faqSchema(faqItems),
   ];
@@ -99,7 +101,7 @@ export default function ConcreteFinishesPage() {
         <div className="relative container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Concrete Finishes</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Every Concrete Finish, Expertly Applied</h1>
-          <p className="text-slate-300 text-xl mb-8">Broom, exposed aggregate, stamped, polished, and coloured â€” we do them all in London and surrounding area.</p>
+          <p className="text-slate-300 text-xl mb-8">Broom, exposed aggregate, stamped, polished, and coloured — we do them all in London and surrounding area.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Finish Quote</Link>
             <a href={site.phoneHref} className="btn btn-white text-base text-[#333333]">Call {site.phone}</a>
@@ -111,7 +113,7 @@ export default function ConcreteFinishesPage() {
       <section className="section bg-white">
         <div className="container-custom max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-[#333333] mb-5">The Right Finish Makes All the Difference</h2>
-          <p className="text-slate-600 leading-relaxed text-lg mb-4">Concrete is one of the most versatile building materials available. The right surface finish dramatically affects curb appeal, safety, maintenance requirements, and longevity. London Concrete Forming has applied every finish type for over 20 years â€” we will help you choose the right one for your project and budget.</p>
+          <p className="text-slate-600 leading-relaxed text-lg mb-4">Concrete is one of the most versatile building materials available. The right surface finish dramatically affects curb appeal, safety, maintenance requirements, and longevity. London Concrete Forming has applied every finish type for over 20 years — we will help you choose the right one for your project and budget.</p>
           <p className="text-slate-600 leading-relaxed">Every finish listed below is available across London, St. Thomas, Woodstock, Stratford, Sarnia, Chatham, and Port Stanley.</p>
         </div>
       </section>
@@ -164,12 +166,12 @@ export default function ConcreteFinishesPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Broom</td><td className="px-4 py-3 text-slate-600">Driveways, walkways</td><td className="px-4 py-3 text-green-600 font-medium">Excellent</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$10â€“$14/sqft</td></tr>
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Exposed Aggregate</td><td className="px-4 py-3 text-slate-600">Patios, pool decks</td><td className="px-4 py-3 text-green-600 font-medium">Excellent</td><td className="px-4 py-3 text-slate-600">Low</td><td className="px-4 py-3 text-slate-600">$13â€“$18/sqft</td></tr>
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Stamped</td><td className="px-4 py-3 text-slate-600">Patios, feature driveways</td><td className="px-4 py-3 text-yellow-600 font-medium">Good</td><td className="px-4 py-3 text-slate-600">Reseal every 2â€“3 yrs</td><td className="px-4 py-3 text-slate-600">$15â€“$25/sqft</td></tr>
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Polished</td><td className="px-4 py-3 text-slate-600">Garages, interiors</td><td className="px-4 py-3 text-yellow-600 font-medium">Moderate</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$5â€“$10/sqft</td></tr>
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Coloured</td><td className="px-4 py-3 text-slate-600">Add to any finish</td><td className="px-4 py-3 text-slate-600">Varies</td><td className="px-4 py-3 text-slate-600">Low</td><td className="px-4 py-3 text-slate-600">+$2â€“$4/sqft</td></tr>
-                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Smooth / Trowelled</td><td className="px-4 py-3 text-slate-600">Slabs, interiors</td><td className="px-4 py-3 text-yellow-600 font-medium">Moderate</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$10â€“$14/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Broom</td><td className="px-4 py-3 text-slate-600">Driveways, walkways</td><td className="px-4 py-3 text-green-600 font-medium">Excellent</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$10–$14/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Exposed Aggregate</td><td className="px-4 py-3 text-slate-600">Patios, pool decks</td><td className="px-4 py-3 text-green-600 font-medium">Excellent</td><td className="px-4 py-3 text-slate-600">Low</td><td className="px-4 py-3 text-slate-600">$13–$18/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Stamped</td><td className="px-4 py-3 text-slate-600">Patios, feature driveways</td><td className="px-4 py-3 text-yellow-600 font-medium">Good</td><td className="px-4 py-3 text-slate-600">Reseal every 2–3 yrs</td><td className="px-4 py-3 text-slate-600">$15–$25/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Polished</td><td className="px-4 py-3 text-slate-600">Garages, interiors</td><td className="px-4 py-3 text-yellow-600 font-medium">Moderate</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$5–$10/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Coloured</td><td className="px-4 py-3 text-slate-600">Add to any finish</td><td className="px-4 py-3 text-slate-600">Varies</td><td className="px-4 py-3 text-slate-600">Low</td><td className="px-4 py-3 text-slate-600">+$2–$4/sqft</td></tr>
+                <tr className="hover:bg-slate-50"><td className="px-4 py-3 font-medium text-[#333333]">Smooth / Trowelled</td><td className="px-4 py-3 text-slate-600">Slabs, interiors</td><td className="px-4 py-3 text-yellow-600 font-medium">Moderate</td><td className="px-4 py-3 text-slate-600">Very Low</td><td className="px-4 py-3 text-slate-600">$10–$14/sqft</td></tr>
               </tbody>
             </table>
           </div>
@@ -185,6 +187,7 @@ export default function ConcreteFinishesPage() {
       </section>
 
       {/* Form */}
+      <Expansion slug="concrete-finishes" />
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-8">

@@ -4,16 +4,18 @@ import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Professional Concrete Driveway Installation",
-  description: "Expert concrete driveway installation in London, ON. Natural, coloured, stamped & broomed options. $10–$16/sq.ft. Free estimates — call 519-914-1901.",
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-driveways" },
+  title: "Concrete Driveways London Ontario | Base Prep & Pricing",
+  description: "Concrete driveway installation in London, Ontario with proper base depth, reinforcement, and drainage for our clay soil. Free quotes at 519-914-1901.",
   openGraph: {
-    title: "Professional Concrete Driveway Installation",
-    description: "Expert concrete driveway contractor in London, Ontario. Natural, coloured, stamped & broomed options.",
+    title: "Concrete Driveways London Ontario | Base Prep & Pricing",
+    description: "Concrete driveway installation in London, Ontario with proper base depth, reinforcement, and drainage for our clay soil. Free quotes at 519-914-1901.",
     images: [{ url: "/images/Long-Concrete-Driveway.jpg", alt: "Concrete driveway installation in London, Ontario" }],
   },
 };
@@ -118,6 +120,7 @@ export default function ConcreteDrivewaysPage() {
         </div>
       </section>
 
+      <Expansion slug="concrete-driveways" />
       <section className="section bg-white">
         <div className="container-custom max-w-2xl mx-auto">
           <div className="text-center mb-10"><h2 className="text-3xl font-extrabold text-[#333333] mb-3">Get a Free Driveway Quote</h2><p className="text-slate-600">We serve London, St. Thomas, Woodstock, and surrounding area.</p></div>

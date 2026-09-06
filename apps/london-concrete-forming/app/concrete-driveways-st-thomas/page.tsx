@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { site } from "@/lib/site";
+import { Expansion } from "@/components/Expansion";
 import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Concrete Driveways in St. Thomas, ON",
-  description: "Professional concrete driveway installation in St. Thomas, Ontario. Natural, stamped & coloured options. 0–6/sq.ft. Free quotes — 519-914-1901.",
-  openGraph: { title: "Concrete Driveways in St. Thomas, ON", description: "Expert concrete driveway installation in St. Thomas, Ontario." },
+  alternates: { canonical: "https://londonconcreteforming.ca/concrete-driveways-st-thomas" },
+  title: "Concrete Driveways St. Thomas ON | Widening & Replace",
+  description: "Widen or replace a narrow older concrete driveway in St. Thomas, Ontario. Free on-site estimates from London Concrete Forming, 519-914-1901.",
+  openGraph: { title: "Concrete Driveways St. Thomas ON | Widening & Replace", description: "Widen or replace a narrow older concrete driveway in St. Thomas, Ontario. Free on-site estimates from London Concrete Forming, 519-914-1901." },
 };
 
 export default function Page() {
@@ -23,11 +25,12 @@ export default function Page() {
       <section className="bg-[#333333] py-20">
         <div className="container-custom text-center max-w-4xl mx-auto">
           <span className="inline-block bg-[#F7931E] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">St. Thomas, Ontario</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Driveways in St. Thomas, ON</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Concrete Driveways in St. Thomas, Ontario: Widening Older Driveways</h1>
           <p className="text-slate-300 text-xl mb-8">Professional Driveway Installation &amp; Replacement</p>
           <Link href="/contact-us" className="btn btn-primary text-base">Get a Free Quote</Link>
         </div>
       </section>
+      <Expansion slug="concrete-driveways-st-thomas" />
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
