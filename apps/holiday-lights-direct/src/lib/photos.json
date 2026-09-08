@@ -1,0 +1,163 @@
+{
+  "hero-warm-white-home": {
+    "src": "/images/photos/hero-warm-white-home.webp",
+    "alt": "Two-storey home at twilight outlined in warm-white permanent LED track lighting along the roofline",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoMAAkAA4BaJbACdAChfQZYIAD+zGaamlcZtxmhBq8CinpnE0Tp5F17YQvFejz2/2FLO3YSLfrfsnVxi4iOs6HhwROu5J1EEAAAAA=="
+  },
+  "home-christmas-warm-white": {
+    "src": "/images/photos/home-christmas-warm-white.webp",
+    "alt": "Permanent LED roofline lighting set to warm white for Christmas on a brick home",
+    "width": 2200,
+    "height": 1590,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAkAA4BaJQBOgCHwhG4CsAAA/vfFikBUZPGV1y5EV3Ee4jqI1jD7zXIlgUDwUrU/W/0AAAA="
+  },
+  "home-green-roofline": {
+    "src": "/images/photos/home-green-roofline.webp",
+    "alt": "Aluminum-tracked LED lights glowing green along a home's soffit and rooflines at night",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoMAAkAA4BaJZQC7AEPDH8gfgAA/vXxoy96FBh8SHIkpLfV0391gutCJebxwQHe9ETAAAAA"
+  },
+  "home-red-canada-day": {
+    "src": "/images/photos/home-red-canada-day.webp",
+    "alt": "Permanent LED house lights set to red and white for Canada Day",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAkAA4BaJZQCdADdiSDgAAD+9vOPPPfskNVa9hPjReMfTbnK8824RcXyQNFczTWMI5jHlJ4oAA=="
+  },
+  "home-pink-magenta": {
+    "src": "/images/photos/home-pink-magenta.webp",
+    "alt": "Track-mounted RGBW LED lights washing a house facade in pink and magenta",
+    "width": 2200,
+    "height": 2933,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoMABAAA4BaJbACdAEPDxJs56fiAAD+8Q02i7TsLFLcBTzMesw4wQTfnvYRb6TpM+cJdh/k9nw27t45vrcE9CoPRw+155cgAAA="
+  },
+  "home-rainbow": {
+    "src": "/images/photos/home-rainbow.webp",
+    "alt": "Multicolour rainbow scene running across a home's permanent LED roofline track",
+    "width": 2200,
+    "height": 2933,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoMABAAA4BaJYwC7IExGBb3z1i2LAD++Q5U216iaI6xQp+WGkvsNZQ8A++5qbTYNDAuMwGadYkD7x42+NNK4SIAAAA="
+  },
+  "home-blue-app-control": {
+    "src": "/images/photos/home-blue-app-control.webp",
+    "alt": "Wide home elevation lit in blue by app-controlled permanent LED track lighting",
+    "width": 2200,
+    "height": 1132,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAYAA4BaJaACdEf/gYf1OoAA/rxmEUsUpYvEImx2bRwjYG3Xk2kp2iAfL0J6AUIb3Lh2atIi0JuttN0MXpBsfGJxoAAA"
+  },
+  "home-teal-backyard": {
+    "src": "/images/photos/home-teal-backyard.webp",
+    "alt": "Backyard and hot tub area lit in teal by permanent LED lighting",
+    "width": 2200,
+    "height": 2933,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQAgCdASoMABAAA4BaJbACdLoBJgALTMa0ZVkcAAD+7y8GLFZvvaDN2mpwFQCZeEtyh3HGOEO7KTvPJRqol+arN7CRilWsjYcOjv8wxuIe8ldR2TBwMeM1/I6P+pn+zaQrkfoK8aAAAA=="
+  },
+  "home-cottage-evening": {
+    "src": "/images/photos/home-cottage-evening.webp",
+    "alt": "Cottage lit in the evening with warm permanent LED lighting along the eaves",
+    "width": 1536,
+    "height": 2048,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoMABAAA4BaJbACdADc5tVytiAA/uWOzSPA8Gs6Eqbu84G0fNWGkGLMkhJqswgb7FrmAR98nzl7CShYtFffjlVn/Gjj37dIsXocp5gVuxJZUAAA"
+  },
+  "detail-led-pucks": {
+    "src": "/images/photos/detail-led-pucks.webp",
+    "alt": "Close-up of 24V RGBW LED pucks seated in an aluminum mounting track",
+    "width": 2200,
+    "height": 1650,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoMAAkAA4BaJQBOgBwijQEAAP72i14gG01UszY34cJ5swvtNcuLsxqqs75GOJcRLmMX2t/sijLLDYgA"
+  },
+  "detail-track-mounting": {
+    "src": "/images/photos/detail-track-mounting.webp",
+    "alt": "Installer fastening aluminum LED track into a soffit with white screws",
+    "width": 1024,
+    "height": 683,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAgAA4BaJZACdADc+azaHwAA/t2BWuwpDVKoRGPge9CpEMdusOLlJ6a+ETyvFFGP10HMVRUZZgAA"
+  },
+  "track-daytime-discreet": {
+    "src": "/images/photos/track-daytime-discreet.webp",
+    "alt": "Daytime view of a home where the aluminum LED track blends into the soffit line",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoMAAgAA4BaJQBOgCHmoHMAAP7tsU3v9/8IH+OPe616NV/AtTEBwonP/v6GgvdwgEGrqrsTU8YQiAAA"
+  },
+  "track-night-glow": {
+    "src": "/images/photos/track-night-glow.webp",
+    "alt": "The same roofline at night glowing with warm-white permanent LED lights",
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAgAA4BaJagCdDBAAXBxQxAAAP70oCTNF8oHvSY0CN+YTbaSStiXWRuM0VFHFNUOYFDq7SkJ2VlAlzdkenLWa6Skw2velAA="
+  },
+  "home-daytime-hidden": {
+    "src": "/images/photos/home-daytime-hidden.webp",
+    "alt": "Permanent LED track tucked under the soffit and nearly invisible in daylight",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJZQCdAD0sRIRVeAA/ugAVEaPmCWPgr7rTukVdsR6Q3nUrPxJf5xsWCx/YJjlk97kJweYqF37xgAA"
+  },
+  "home-nighttime-lit": {
+    "src": "/images/photos/home-nighttime-lit.webp",
+    "alt": "Home fully outlined at night by permanent LED roofline lighting",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoMAAgAA4BaJbACdAENz5srwAD+9J1Gaj3bDTgqjqskUKlqh9T2qd4hXVF+RMURWP8PAVY2Av/RWKsYvPD92adAAAA="
+  },
+  "home-side-elevation": {
+    "src": "/images/photos/home-side-elevation.webp",
+    "alt": "Side elevation of a house with continuous permanent LED lighting along every roofline",
+    "width": 2200,
+    "height": 990,
+    "blurDataURL": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoMAAUAA4BaJaACdAEfUmq+EgAAzgy3upBwcTHC3qCC5FgUJ/xp1fcOe9CdkGm0u4AAAA=="
+  },
+  "home-install-1": {
+    "src": "/images/photos/home-install-1.webp",
+    "alt": "Completed permanent LED lighting install on a two-storey suburban home",
+    "width": 1800,
+    "height": 1190,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJaACdAD0THdgGwAA/vGo96i4gBk4RGsdVIklk9yQcO7bbNVSJ9yaq4yBmC0yccEwa1hpE566AAAA"
+  },
+  "home-example-3": {
+    "src": "/images/photos/home-example-3.webp",
+    "alt": "Modern home with warm permanent LED accent lighting along the roof and garage",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAwAgCdASoMAAgAA4BaJZQCsAEPS/46jwfsAAD+8RYLaMBAjfbbMuPitxPWA6NUzDQin+PpxjY3g51IAAA="
+  },
+  "track-security-white": {
+    "src": "/images/photos/track-security-white.webp",
+    "alt": "Bright daylight-white permanent LED lighting used as security lighting on a home",
+    "width": 1518,
+    "height": 949,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoMAAgAA4BaJYwCdAELVnayMJAAAP7zNbLiUeLilm+qO0bZeu2rwJJUANweH1SV6oFn7UPTJzZA3eqKwmRwAA=="
+  },
+  "install-banner": {
+    "src": "/images/photos/install-banner.webp",
+    "alt": "Wide view of a completed permanent LED lighting install running the full width of a home",
+    "width": 2000,
+    "height": 1102,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAcAA4BaJagCdAD0sKhBAAAA/vS2b+7mv2MOZMjFAsEdWBAkQucj9fQaUVQIKKJRFwqvTsMg9NVOuhflYKqRGTV6fT0tkDBj9rAA"
+  },
+  "home-wide-elevation": {
+    "src": "/images/photos/home-wide-elevation.webp",
+    "alt": "Wide building elevation lit end to end with permanent LED track lighting at night",
+    "width": 2200,
+    "height": 1308,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwAgCdASoMAAcAA4BaJYgCdEf/gehTTBcpAAD+72qWHEO372kTjrZo9ce9VR+tJwRKB3Krtapegrh7cbXHjZU+l5agmmO9t4AAAA=="
+  },
+  "track-residential": {
+    "src": "/images/photos/track-residential.webp",
+    "alt": "Residential street view of a home fitted with permanent LED track lighting",
+    "width": 1000,
+    "height": 872,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAoAA4BaJZgCdADcqV4TAYAA/vNMoV3HDxbQN0qZsVlXflDwmu7pkyhtzERBfuxdtX4+VVgt3FH0ar7QG56xLc6vkSXHQaWLawAA"
+  },
+  "home-header-wide": {
+    "src": "/images/photos/home-header-wide.webp",
+    "alt": "Home exterior lit with warm permanent LED lighting along the roofline and garage",
+    "width": 2200,
+    "height": 1467,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoMAAgAA4BaJbACdAELKVU+EAD+7tfPNTg8mcyHDxBc/pAYJmhK53EJJh1v2y8gqLGTIpNqCbTfj4etzTh88SMKe/9vDpg9A2H5R1ZwAAA="
+  }
+}

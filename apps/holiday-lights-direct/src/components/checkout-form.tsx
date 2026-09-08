@@ -1,8 +1,11 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Turnstile } from "@marsidev/react-turnstile";
 import type { Cart } from "@/lib/cart";
+import { submitShippingInquiry } from "@/lib/actions/inquiry";
 
 const PROVINCES = [
   ["AB", "Alberta"],
@@ -21,85 +24,86 @@ const PROVINCES = [
 ] as const;
 
 export function CheckoutForm({ cart }: { cart: Cart }) {
+  const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
-  const [postal, setPostal] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
   const [province, setProvince] = useState("ON");
+  const [postal, setPostal] = useState("");
+  const [notes, setNotes] = useState("");
+  const turnstileToken = useRef<string | null>(null);
 
-  function startCheckout() {
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  function sendInquiry() {
     setError(null);
     startTransition(async () => {
-      const res = await fetch("/api/stripe/checkout", { method: "POST" });
-      const json = (await res.json()) as { url?: string; error?: string };
-      if (json.url) window.location.href = json.url;
-      else setError(json.error ?? "Could not start checkout");
+      try {
+        await submitShippingInquiry({
+          name,
+          email,
+          phone,
+          address,
+          city,
+          province,
+          postal,
+          notes: notes || null,
+          discount_code: null,
+          turnstile_token: turnstileToken.current
+        });
+        router.push("/checkout/success");
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Could not send your request. Please try again.");
+      }
     });
   }
 
   return (
     <div className="space-y-6">
-      {/* Express payments */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
-        <p className="eyebrow text-slate-500">Express checkout</p>
-        <p className="mt-1 text-xs text-slate-500">
-          Skip the form &mdash; use a saved card from Apple Pay, Google Pay or your browser.
-        </p>
-        <div className="mt-3 grid grid-cols-3 gap-2">
-          <ExpressButton label="Apple Pay" emoji="" />
-          <ExpressButton label="Google Pay" emoji="G" />
-          <ExpressButton label="Link" emoji="↗" />
-        </div>
-        <p className="mt-3 text-center text-[11px] text-slate-400">
-          OR fill in the form below to pay by credit / debit card
+      {/* How it works */}
+      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-brand-soft)] p-5">
+        <h2 className="font-display text-xl text-[var(--color-brand-dark)]">
+          How ordering works — no payment online
+        </h2>
+        <p className="mt-2 text-sm text-slate-700">
+          Send us your order and delivery address below. We&rsquo;ll reply by email,{" "}
+          <strong>usually within one business day</strong>, with your shipping cost and delivery
+          timeline. Once you approve the quote, we arrange payment and ship your lights.
         </p>
       </section>
 
       {/* Contact */}
       <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
-        <div className="flex items-center justify-between">
-          <h2 className="font-display text-xl">1 · Contact</h2>
-          <Link href="/account" className="text-xs text-[var(--color-brand)] hover:underline">
-            Already have an account? Sign in
-          </Link>
-        </div>
+        <h2 className="font-display text-xl">1 · Contact</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Input label="Email" name="email" type="email" autoComplete="email" required />
-          <Input label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
+          <Input label="Full name" name="name" autoComplete="name" required value={name} onChange={(e) => setName(e.target.value)} />
+          <Input label="Email" name="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="md:col-span-2" />
         </div>
-        <label className="mt-3 flex items-start gap-2 text-xs text-slate-600">
-          <input type="checkbox" name="marketing_opt_in" defaultChecked />
-          <span>Email me about new products and seasonal restocks (you can unsubscribe anytime)</span>
-        </label>
       </section>
 
-      {/* Shipping */}
+      {/* Delivery address */}
       <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
-        <h2 className="font-display text-xl">2 · Shipping address</h2>
+        <h2 className="font-display text-xl">2 · Delivery address</h2>
+        <p className="mt-1 text-xs text-slate-500">
+          Shipping is quoted per order from London, ON — your full address lets us give you an
+          accurate cost and timeline.
+        </p>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Input label="First name" name="first_name" autoComplete="given-name" required />
-          <Input label="Last name" name="last_name" autoComplete="family-name" required />
-        </div>
-        <Input
-          label="Company (optional)"
-          name="company"
-          autoComplete="organization"
-          className="mt-3"
-        />
-        <Input
-          label="Street address"
-          name="line1"
-          autoComplete="address-line1"
-          required
-          className="mt-3"
-        />
-        <Input
-          label="Apartment, suite, etc. (optional)"
-          name="line2"
-          autoComplete="address-line2"
-          className="mt-3"
-        />
-        <div className="mt-3 grid gap-3 md:grid-cols-3">
-          <Input label="City" name="city" autoComplete="address-level2" required />
+          <Input
+            label="Street address"
+            name="address"
+            autoComplete="street-address"
+            required
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="md:col-span-2"
+          />
+          <Input label="City / town" name="city" autoComplete="address-level2" required value={city} onChange={(e) => setCity(e.target.value)} />
           <label className="block">
             <span className="text-xs font-medium text-slate-600">Province</span>
             <select
@@ -108,9 +112,9 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
               onChange={(e) => setProvince(e.target.value)}
               className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
             >
-              {PROVINCES.map(([code, name]) => (
+              {PROVINCES.map(([code, provinceName]) => (
                 <option key={code} value={code}>
-                  {name}
+                  {provinceName}
                 </option>
               ))}
             </select>
@@ -119,6 +123,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             label="Postal code"
             name="postal_code"
             autoComplete="postal-code"
+            inputMode="text"
             required
             value={postal}
             onChange={(e) => setPostal(e.target.value.toUpperCase())}
@@ -126,57 +131,45 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d"
           />
         </div>
-        <p className="mt-2 text-xs text-slate-500">
-          🇨🇦 We ship anywhere in Canada from London, Ontario.
-        </p>
+        <label className="mt-3 block">
+          <span className="text-xs font-medium text-slate-600">Notes (optional)</span>
+          <textarea
+            name="notes"
+            rows={3}
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="Delivery instructions, timing, questions…"
+            className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+          />
+        </label>
       </section>
 
-      {/* Payment */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
-        <h2 className="font-display text-xl">3 · Payment</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Click <strong>Complete order</strong> below to finish payment securely on Stripe. We never see or
-          store your card details.
-        </p>
-        <div className="mt-4 flex items-center gap-2 rounded-md bg-[var(--color-brand-soft)] px-3 py-2 text-xs text-[var(--color-brand)]">
-          <span>🔒</span>
-          <span>256-bit SSL · Stripe-encrypted · PCI-DSS Level 1</span>
-        </div>
-      </section>
+      {turnstileSiteKey && !turnstileSiteKey.startsWith("1x000") && (
+        <Turnstile
+          siteKey={turnstileSiteKey}
+          onSuccess={(token) => {
+            turnstileToken.current = token;
+          }}
+        />
+      )}
 
       <button
         type="button"
-        onClick={startCheckout}
+        onClick={sendInquiry}
         disabled={pending || cart.items.length === 0}
         className="btn-primary w-full justify-center text-base disabled:opacity-50"
       >
-        {pending ? "Redirecting to Stripe…" : "Complete order →"}
+        {pending ? "Sending your request…" : "Request shipping quote →"}
       </button>
 
-      {error && (
-        <p className="rounded-md bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p>
-      )}
+      {error && <p className="rounded-md bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p>}
 
       <p className="text-center text-xs text-slate-400">
-        By placing your order you agree to our{" "}
-        <Link href="/terms-of-service" className="underline">terms of service</Link> and{" "}
-        <Link href="/privacy" className="underline">privacy policy</Link>. Returns within 30 days &middot;
-        5-year warranty on all LED products.
+        No payment is taken online and requesting a quote doesn&rsquo;t commit you to anything. By
+        sending your request you agree to our{" "}
+        <Link href="/privacy" className="underline">privacy policy</Link>.
       </p>
     </div>
-  );
-}
-
-function ExpressButton({ label, emoji }: { label: string; emoji: string }) {
-  return (
-    <button
-      type="button"
-      disabled
-      title="Express payments unlock once Stripe is configured in production."
-      className="rounded-md border border-[var(--color-border)] bg-[var(--color-night)] py-3 text-sm font-semibold text-white opacity-90 disabled:cursor-not-allowed"
-    >
-      <span className="mr-1">{emoji}</span> {label}
-    </button>
   );
 }
 

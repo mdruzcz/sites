@@ -1,0 +1,175 @@
+{
+  "slug": "spt-1-vs-spt-2-wire-which-do-you-need",
+  "title": "SPT-1 vs SPT-2 Wire: Which Do You Need for Christmas Light Runs?",
+  "metaTitle": "SPT-1 vs SPT-2 Wire Guide | Holiday Lights Direct",
+  "metaDescription": "SPT-1 vs SPT-2 Christmas light wire explained for Canadian installers: insulation thickness, amp headroom, matching plugs, cold-weather flex and spool sizes.",
+  "category": "Buying guides",
+  "excerpt": "What the SPT-1 and SPT-2 designations actually mean, why the difference is in the jacket rather than the copper, why professional crews standardise on SPT-2 for C9 runs, and how to choose spool length and colour for your roofline.",
+  "readMinutes": 8,
+  "updated": "2026-09-04",
+  "heroAlt": "Spools of green, white and black SPT-2 18 AWG wire beside SPT-2 vampire plugs on an installer's workbench, ready for custom C9 Christmas light runs in Ontario",
+  "keyTakeaways": [
+    "SPT-1 and SPT-2 are usually the same 18 AWG copper; the difference is the thickness of the insulation jacket, and SPT-2 is the thicker, more robust of the two.",
+    "The thicker jacket gives SPT-2 a higher current rating and far better resistance to nicks from shingle edges, clips and ladders over repeated seasons.",
+    "Vampire plugs are made for one jacket thickness or the other. SPT-2 plugs belong on SPT-2 wire, and mixing them produces loose, unsafe connections.",
+    "Professional crews standardise on SPT-2 for C9 runs so every spool, socket line and plug in the trailer fits together and carries the same rating.",
+    "Choose spool length by adding up the unlit sections of your layout, and choose wire colour by the surface the cord lies on in daylight."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Walk into any installer's trailer in November and you will find spools of flat two-conductor wire, and nearly all of it will be stamped SPT-2. Homeowners shopping online see SPT-1 listed for less and reasonably wonder whether the difference matters. This guide explains what the two designations mean, where each one belongs, and why Holiday Lights Direct stocks SPT-2 18 AWG wire, SPT-2 socket lines and SPT-2 plugs for custom C9 runs shipped across Canada from London, Ontario."
+    },
+    {
+      "type": "h2",
+      "text": "What SPT wire actually is"
+    },
+    {
+      "type": "p",
+      "text": "SPT is the designation for the flat, two-conductor lamp cord that most people call zip cord. The two insulated conductors sit side by side with a thin web of insulation between them, which is what lets you split the end with your fingers and why quick-connect plugs can pierce it without any stripping. In holiday lighting it is used two ways: as empty socket wire, where C7 or C9 sockets are moulded onto the cord at a fixed spacing, and as plain wire for the lead from the outlet to the first socket, the jumpers between sections, and the unlit stretch across a garage door or a picture window."
+    },
+    {
+      "type": "h2",
+      "text": "The difference is the jacket, not the copper"
+    },
+    {
+      "type": "p",
+      "text": "SPT-1 and SPT-2 are usually made with the same conductor size. In the Christmas lighting trade that is almost always 18 AWG, and the plain wire spools Holiday Lights Direct sells are 18 AWG SPT-2. What changes between the two designations is the thickness of the insulation around each conductor. SPT-1 has a thinner jacket. SPT-2 has a noticeably thicker one, which you can feel the moment you hold the two side by side: SPT-2 is chunkier, heavier per foot and a little stiffer at room temperature."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "SPT-1: 18 AWG conductors with a thin insulation jacket. Lighter, cheaper and easier to hide, but with less protection against abrasion and less margin in the current rating.",
+        "SPT-2: 18 AWG conductors with a thicker insulation jacket. Heavier and more robust, with a higher rated current and better resistance to nicks from shingle edges, clip jaws and ladder rails.",
+        "Both are flat, parallel two-conductor cord with a split web, so both accept pierce-style vampire plugs, but only plugs made for their own jacket thickness."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Amperage headroom on a roofline"
+    },
+    {
+      "type": "p",
+      "text": "The thicker insulation is what earns SPT-2 its higher rating. In the trade, SPT-2 18 AWG is commonly rated at 10 amps, while SPT-1 of the same gauge is usually rated lower. Always confirm against the rating printed on the wire itself and on the plug packaging, because those numbers are set by the manufacturer and the listing agency, not by the store. On a 120 volt circuit, 10 amps works out to 1,200 watts of connected load, and good practice is to run well under that, both to leave headroom for cold, damp connections and because the plug on the end of the run has its own rating, which may be lower than the wire."
+    },
+    {
+      "type": "p",
+      "text": "With LED C9 bulbs the wire rating is rarely the limiting factor. Faceted LED C9s draw a small fraction of what an incandescent does, so even several hundred bulbs on one run stay far below what the wire can carry, and the real constraint becomes the breaker feeding the outlet and how many runs you have plugged into it. Where the rating suddenly matters is on incandescent lines. An old-style incandescent C9 is commonly rated around 7 watts, so a hundred of them on one cord already sit near 700 watts, and a second string plugged into the end of the first pushes the load past what a thin jacket was designed for. If there is any chance a line will ever carry incandescent bulbs, the thicker wire is the safe default."
+    },
+    {
+      "type": "callout",
+      "text": "Rule of thumb: total the watts of every bulb on the run, divide by 120 to get amps, and keep the result comfortably under the lowest rating in the chain, whether that is the wire, the plug or the extension cord feeding it."
+    },
+    {
+      "type": "h2",
+      "text": "Why installers standardise on SPT-2 for C9 runs"
+    },
+    {
+      "type": "p",
+      "text": "Ask a professional crew why they only stock one type and the answer is usually about simplicity as much as safety. When every spool of wire, every empty socket line and every plug in the trailer is SPT-2, nothing gets mismatched at dusk on a cold roof. There is one plug to buy, one wire to cut and one rating to remember. The pro-installer and municipality programs at Holiday Lights Direct are built around that single standard for the same reason."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Durability across seasons: a roofline run is pulled tight over shingle edges, pinched in clips, and coiled and uncoiled every year. The thicker jacket shrugs off the small nicks that would expose copper on a thin one.",
+        "Load safety: SPT-2 gives margin for incandescent retrofits, customer-added strings and long daisy chains without re-engineering the layout.",
+        "Plug security: the heavier jacket gives vampire plug teeth more material to bite into, so the connection stays tight after a season of wind and thermal movement.",
+        "Commercial and municipal work: parapet runs, tree wraps in public spaces and anything a property manager will inspect are expected to be done with the heavier wire."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Plugs must match the wire"
+    },
+    {
+      "type": "p",
+      "text": "This is the point that trips up more first-time builders than anything else. Vampire plugs, the quick-connect male and female ends that pierce the cord instead of requiring stripped wire, are made in SPT-1 and SPT-2 versions. The channel inside the plug is sized to the jacket thickness. Put an SPT-2 plug on SPT-1 wire and the cord rattles in the channel: the teeth may not seat fully, the strain relief does not grip and the connection can work loose or arc. Force SPT-1 plugs onto SPT-2 wire and the cover either will not close or crushes the insulation as you clamp it down."
+    },
+    {
+      "type": "p",
+      "text": "Holiday Lights Direct sells SPT-2 male and female vampire plugs to match its SPT-2 wire and empty socket spools, and the plugs carry a one-year warranty. If you already own a box of plugs from another supplier, check the moulded marking on the plug body before you cut a single length of wire. The same rule applies to the empty socket wire: the plug you fit to the end of a C7 or C9 socket line has to match the cord that line is made on."
+    },
+    {
+      "type": "h2",
+      "text": "Cold-weather flexibility"
+    },
+    {
+      "type": "p",
+      "text": "Canadian installs happen in October and November on the way up and in January on the way down, and the wire has to cooperate in both. Every thermoplastic jacket stiffens as the temperature drops, and the thicker jacket on SPT-2 makes it stiffer than SPT-1 at the same temperature. On a roof that is mostly an advantage: a heavier cord stays where you laid it, resists twisting in a clip and does not flap against the fascia. The habits that matter more than the wire type are keeping spools in a warm cab or garage until you are ready to run them, pulling the cord straight off the spool rather than yanking loops, and taking lines down on milder January days, when neither the jacket nor the shingles are at their most brittle."
+    },
+    {
+      "type": "h2",
+      "text": "250 ft or 500 ft spool?"
+    },
+    {
+      "type": "p",
+      "text": "Plain SPT-2 wire from Holiday Lights Direct comes in 250 ft and 500 ft spools. Plain wire covers the section between the outlet and the first bulb, the jumpers around windows, doors and garage bays where you do not want lit sockets, and the drops from a roofline down to a ground-level plug. On most homes that adds up to far less than the socket wire, so sketch where the unlit sections fall and add them up before you choose a spool."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "250 ft suits a single home, or a homeowner building a few custom runs, with enough left over for spares and next year's additions.",
+        "500 ft is the installer size. For more than a handful of houses, a commercial parapet or a large tree wrap, the larger spool means fewer partial spools in the trailer and fewer mid-season store runs.",
+        "Buy the socket wire and the plain wire in the same colour and the same SPT type, so any plug in the box fits any cut end.",
+        "Orders over the free shipping threshold ship free anywhere in Canada from London, Ontario, so a second spool on the same order is often cheaper than a separate order later. See the product page for pricing."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Choosing wire colour by mounting surface"
+    },
+    {
+      "type": "p",
+      "text": "SPT-2 plain wire is available in white, black and green, and the C7/C9 empty socket wire in green or white. Colour is about making the cord disappear in daylight, because at night only the bulbs show."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "White: white or light-coloured eaves, fascia and soffit, vinyl siding and light trim, and anywhere the run crosses a white garage door frame or window casing.",
+        "Green: shingle rooflines, hedges and shrubs, tree trunks and branches, and grassy ground runs to stakes along a walkway. Green is the general-purpose choice most crews reach for first.",
+        "Black: dark shingles, black gutters and fascia, dark brick, and commercial parapets with dark cap flashing. Black also hides best at dusk when the bulbs are on but the sky is not yet fully dark.",
+        "Where the run changes surface, for example a green socket line along the shingles that drops down white fascia to the outlet, join a jumper of the matching colour with a male and female plug pair rather than accepting a contrasting cord."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "A quick decision checklist"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "You are building C9 or C7 runs that will be reused for years: SPT-2.",
+        "There is any chance incandescent bulbs or extra strings will go on the line: SPT-2.",
+        "You are installing for customers or a municipality: SPT-2, the trade standard.",
+        "You already own SPT-1 plugs: buy SPT-1 wire to match, or replace the plugs and move to SPT-2. Do not mix the two.",
+        "Choose the spool length by adding up the unlit sections and rounding up. Choose the colour by the surface the cord lies on in daylight."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For most people the honest answer is that SPT-2 is the only wire worth stocking for C9 work. It is what the plugs and socket lines are built around, it carries a comfortable margin for any bulb you are likely to fit, and it survives Canadian winters on the roof. Browse the SPT-2 spools, empty socket wire and matching vampire plugs on Holiday Lights Direct, and if you are outfitting a crew, ask about the pro-installer and municipality programs before you order in bulk."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I use SPT-1 plugs on SPT-2 wire?",
+      "a": "No. The channel inside a vampire plug is sized to a specific jacket thickness. SPT-1 plugs will not close properly over SPT-2 wire, and SPT-2 plugs sit loose on SPT-1 wire, so the teeth may not seat and the strain relief will not grip. Match the plug marking to the wire marking every time."
+    },
+    {
+      "q": "Is SPT-2 wire rated for more amps than SPT-1?",
+      "a": "Generally yes. SPT-2 18 AWG is commonly rated at 10 amps, while SPT-1 of the same gauge is usually rated lower because of its thinner insulation. Confirm the figure printed on the wire and on the plug packaging, and keep your total load comfortably under the lowest rating in the chain."
+    },
+    {
+      "q": "Does SPT-2 get too stiff in Canadian winter temperatures?",
+      "a": "It stiffens like any thermoplastic cord, and being thicker it is stiffer than SPT-1 at the same temperature, but on a roof that weight helps the run stay put. Keep spools warm until you use them, pull the cord straight off the spool, and take lines down on milder days rather than the coldest ones."
+    },
+    {
+      "q": "Which colour of SPT-2 wire should I buy for a roofline?",
+      "a": "Match the surface the cord lies on in daylight: green for shingles, shrubs and trees; white for light fascia, soffit and vinyl; black for dark shingles, dark fascia and commercial parapets. Use a short jumper of a different colour where the run crosses a contrasting surface."
+    },
+    {
+      "q": "What size spool of plain SPT-2 wire do I need for one house?",
+      "a": "Plain wire only covers the unlit sections: the lead from the outlet, jumpers around windows and garage doors, and drops to ground level. For a single home a 250 ft spool usually leaves plenty for spares. Installers doing multiple properties should buy the 500 ft spool."
+    }
+  ]
+}

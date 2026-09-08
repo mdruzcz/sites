@@ -40,8 +40,6 @@ export function MiniCartDrawer() {
   if (!miniCartOpen) return null;
 
   const subtotal = cart?.subtotal_cad ?? 0;
-  const remaining = Math.max(0, 500 - subtotal);
-  const progress = Math.min(100, (subtotal / 500) * 100);
 
   function setQty(lineId: string, qty: number) {
     startTransition(async () => {
@@ -87,23 +85,11 @@ export function MiniCartDrawer() {
           </button>
         </div>
 
-        {/* Free shipping bar */}
+        {/* No-payment reassurance */}
         <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3">
-          {remaining > 0 ? (
-            <p className="text-sm text-[var(--color-brand-dark)]">
-              <span className="font-semibold">Add {formatCad(remaining)}</span> for FREE Canada shipping
-            </p>
-          ) : (
-            <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-success)]">
-              ✓ You&rsquo;ve unlocked free shipping
-            </p>
-          )}
-          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white">
-            <div
-              className="h-full bg-[var(--color-brand)] transition-all"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+          <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-success)]">
+            ✓ No payment taken online — we&rsquo;ll email your shipping cost
+          </p>
         </div>
 
         {/* Items */}
@@ -131,15 +117,13 @@ export function MiniCartDrawer() {
               {cart.items.map((l) => (
                 <li key={l.id} className="flex gap-3">
                   <div className="size-16 shrink-0 overflow-hidden rounded-md bg-slate-50">
-                    {l.image_url && (
-                      <Image
-                        src={l.image_url}
-                        alt={l.product_name}
-                        width={80}
-                        height={80}
-                        className="h-full w-full object-contain"
-                      />
-                    )}
+                    <Image
+                      src={l.image_url || "/images/products/placeholder.webp"}
+                      alt={l.product_name}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
                   <div className="flex-1 text-sm">
                     <Link
@@ -198,14 +182,14 @@ export function MiniCartDrawer() {
               </span>
             </div>
             <p className="mt-1 text-right text-xs text-slate-500">
-              Shipping &amp; tax calculated at checkout
+              Shipping &amp; tax quoted by email
             </p>
             <Link
               href="/checkout"
               onClick={closeMiniCart}
               className="btn-primary mt-4 w-full justify-center"
             >
-              Checkout →
+              Request a shipping quote →
             </Link>
             <Link
               href="/cart"
@@ -215,9 +199,9 @@ export function MiniCartDrawer() {
               View full cart page
             </Link>
             <div className="mt-3 flex items-center justify-center gap-3 text-[10px] text-slate-400">
-              <span>🔒 SSL</span>
+              <span>✉️ Quote by email</span>
               <span>·</span>
-              <span>Stripe-secured</span>
+              <span>No payment online</span>
               <span>·</span>
               <span>30-day returns</span>
             </div>

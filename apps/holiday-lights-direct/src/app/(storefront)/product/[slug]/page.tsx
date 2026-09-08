@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getProduct, listProducts, primaryImage, type CatalogProduct } from "@/lib/catalog";
+import { RichText } from "@/components/rich-text";
+import { getProduct, primaryImage } from "@/lib/catalog";
+import { relatedProducts } from "@/lib/related";
 import { ProductPurchase } from "@/components/product-purchase";
 import { ProductCard } from "@/components/product-card";
 import { SITE_URL, formatCad } from "@/lib/utils";
@@ -12,13 +14,28 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+
+/**
+ * Catalog copy is often a single short line. Meta descriptions under roughly 110
+ * characters get truncated or rewritten by Google, so top them up with the
+ * shipping and stock facts every product on this store shares.
+ */
+function metaDescription(base: string | null | undefined, name: string): string {
+  const lead = (base ?? `${name} from Holiday Lights Direct.`).trim().replace(/\s+/g, " ");
+  const tail = " Installer-grade, in stock and shipped from London, Ontario. Free Canadian shipping over $500.";
+  if (lead.length >= 110) return lead.slice(0, 165);
+  return (lead.endsWith(".") ? lead + tail : lead + "." + tail).slice(0, 165);
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const product = await getProduct(slug);
   if (!product) return { title: "Product not found" };
   return {
-    title: product.meta_title ?? product.name,
-    description: product.meta_description ?? product.short_description ?? undefined,
+    // Titles run through the layout template (" | Holiday Lights Direct", 24
+    // chars), so keep the page half short enough that the pair fits in a SERP.
+    title: (product.meta_title ?? product.name).slice(0, 36).trim(),
+    description: metaDescription(product.meta_description ?? product.short_description, product.name),
     alternates: { canonical: `${SITE_URL}/product/${product.slug}` },
     openGraph: {
       title: product.name,
@@ -39,8 +56,10 @@ export default async function ProductPage({ params }: PageProps) {
   const min = prices.length ? Math.min(...prices) : 0;
   const max = prices.length ? Math.max(...prices) : 0;
 
-  // "Often bought with" rail — naive: 4 other products from the same store
-  const others = (await listProducts({ limit: 8 })).filter((p) => p.id !== product.id).slice(0, 4) as CatalogProduct[];
+  // "Often bought together": rule-based companions (C9 bulbs pair with the
+  // socket spool, male/female plugs, SPT-2 wire and clips), filled from the
+  // same category when a rule leaves gaps.
+  const others = await relatedProducts(product, 5);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,18 +91,14 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="mt-4 grid gap-10 lg:grid-cols-2">
         <div>
           <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
-            {img?.public_url ? (
-              <Image
-                src={img.public_url}
-                alt={img.alt_text}
-                width={1000}
-                height={1000}
-                className="aspect-square w-full object-contain"
-                priority
-              />
-            ) : (
-              <div className="grid aspect-square place-items-center text-slate-400">No image</div>
-            )}
+            <Image
+              src={img?.public_url || "/images/products/placeholder.webp"}
+              alt={img?.alt_text || product.name}
+              width={1000}
+              height={1000}
+              className="aspect-square w-full object-contain"
+              priority
+            />
           </div>
           {product.ecom_product_images.length > 1 && (
             <div className="mt-3 grid grid-cols-5 gap-2">
@@ -92,15 +107,13 @@ export default async function ProductPage({ params }: PageProps) {
                   key={i.id}
                   className="aspect-square overflow-hidden rounded-lg border border-[var(--color-border)] bg-white"
                 >
-                  {i.public_url && (
-                    <Image
-                      src={i.public_url}
-                      alt={i.alt_text}
-                      width={160}
-                      height={160}
-                      className="h-full w-full object-contain"
-                    />
-                  )}
+                  <Image
+                    src={i.public_url || "/images/products/placeholder.webp"}
+                    alt={i.alt_text || product.name}
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -149,8 +162,8 @@ export default async function ProductPage({ params }: PageProps) {
           </ul>
 
           {product.long_description && (
-            <article className="prose-clean mt-10 max-w-none whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
-              {product.long_description}
+            <article className="mt-12 max-w-none border-t border-[var(--color-border)] pt-10 text-[0.9375rem]">
+              <RichText text={product.long_description} />
             </article>
           )}
         </div>
@@ -161,7 +174,7 @@ export default async function ProductPage({ params }: PageProps) {
         <section className="mt-20">
           <p className="eyebrow text-[var(--color-brand)]">Pairs well with</p>
           <h2 className="font-display mt-2 text-2xl md:text-3xl">Often bought together</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
             {others.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

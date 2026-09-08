@@ -111,6 +111,19 @@ export function primaryImage(product: Pick<CatalogProduct, "ecom_product_images"
   );
 }
 
+/**
+ * The primary image URL for a product, always falling back to the branded
+ * placeholder so a product without photography still renders a real image
+ * rather than a broken/empty box.
+ */
+export function primaryImageUrl(product: Pick<CatalogProduct, "ecom_product_images">) {
+  return (
+    product.ecom_product_images?.find((i) => i.is_primary)?.public_url ??
+    product.ecom_product_images?.[0]?.public_url ??
+    "/images/products/placeholder.webp"
+  );
+}
+
 export function priceRange(product: Pick<CatalogProduct, "ecom_variants">) {
   const prices = (product.ecom_variants ?? [])
     .filter((v) => v.is_active)
