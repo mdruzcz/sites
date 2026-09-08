@@ -3,6 +3,7 @@ import { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { pushConversion } from '@/lib/gtm';
 import { site, phoneHref } from '@/lib/site-config';
+import { useCaptchaWatchdog, useEngageOnVisible, CaptchaFallback } from '@/components/captcha-gate';
 
 // Turnstile (and its ~100KB Cloudflare script) is only loaded once the visitor
 // actually starts filling in the form. Keeps it off the critical path.
@@ -16,10 +17,13 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
   const [status, setStatus] = useState<Status>('idle');
   const [engaged, setEngaged] = useState(false);
   const [token, setToken] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+  const captcha = useCaptchaWatchdog(engaged, token);
   const [interest, setInterest] = useState<string>('');
   const [errorMsg, setErrorMsg] = useState('');
   const successRef = useRef<HTMLDivElement>(null);
   const engage = useCallback(() => setEngaged(true), []);
+  useEngageOnVisible(formRef, engaged, engage);
 
   const dark = tone === 'dark';
   const input = `input ${dark ? 'input-dark' : ''}`;
@@ -79,7 +83,7 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" onFocusCapture={engage} noValidate={false}>
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4" onFocusCapture={engage} noValidate={false}>
       {/* Honeypot */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="form-website">Website</label>
@@ -150,11 +154,13 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
         <Turnstile
           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
           onSuccess={setToken}
-          onError={() => setToken('')}
+          onError={() => { setToken(''); captcha.markFailed(); }}
           onExpire={() => setToken('')}
           options={{ theme: dark ? 'dark' : 'light', retry: 'auto', size: 'flexible' }}
         />
       )}
+
+      {engaged && !token && captcha.failed && <CaptchaFallback dark={dark} />}
 
       {status === 'error' && (
         <p className="text-sm rounded-xl px-4 py-3 bg-dot-red/10 text-dot-red" role="alert">
@@ -174,7 +180,7 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
             <span className="w-4 h-4 rounded-full border-2 border-ink/30 border-t-ink animate-spin" aria-hidden="true" />
             Sending…
           </>
-        ) : engaged && !token ? 'Checking you’re human…' : 'Get My Free Quote'}
+        ) : engaged && !token ? (captcha.failed ? 'Spam check unavailable' : 'Checking you’re human…') : 'Get My Free Quote'}
       </button>
 
       <p className={`text-xs text-center ${dark ? 'text-white/50' : 'text-muted'}`}>

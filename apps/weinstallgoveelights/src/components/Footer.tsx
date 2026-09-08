@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { AwardBadge } from "@/components/award-badge";
 
 export default function Footer() {
   return (
@@ -66,6 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-[#1E1E42] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <AwardBadge />
           <p>© {new Date().getFullYear()} We Install Govee Lights. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>

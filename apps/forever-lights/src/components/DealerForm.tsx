@@ -3,6 +3,7 @@ import { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { pushConversion } from '@/lib/gtm';
 import { site, phoneHref } from '@/lib/site-config';
+import { useCaptchaWatchdog, useEngageOnVisible, CaptchaFallback } from '@/components/captcha-gate';
 
 const Turnstile = dynamic(() => import('@marsidev/react-turnstile').then(m => m.Turnstile), { ssr: false });
 
@@ -14,9 +15,12 @@ export function DealerForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [engaged, setEngaged] = useState(false);
   const [token, setToken] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+  const captcha = useCaptchaWatchdog(engaged, token);
   const [type, setType] = useState('');
   const successRef = useRef<HTMLDivElement>(null);
   const engage = useCallback(() => setEngaged(true), []);
+  useEngageOnVisible(formRef, engaged, engage);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -76,7 +80,7 @@ export function DealerForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" onFocusCapture={engage}>
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4" onFocusCapture={engage}>
       <div className="hidden" aria-hidden="true">
         <label htmlFor="dealer-website">Website</label>
         <input id="dealer-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
@@ -149,11 +153,13 @@ export function DealerForm() {
         <Turnstile
           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
           onSuccess={setToken}
-          onError={() => setToken('')}
+          onError={() => { setToken(''); captcha.markFailed(); }}
           onExpire={() => setToken('')}
           options={{ theme: 'light', retry: 'auto', size: 'flexible' }}
         />
       )}
+
+      {engaged && !token && captcha.failed && <CaptchaFallback dark={false} />}
 
       {status === 'error' && (
         <p className="text-sm rounded-xl px-4 py-3 bg-dot-red/10 text-dot-red" role="alert">
@@ -167,7 +173,7 @@ export function DealerForm() {
         className="btn btn-primary btn-lg w-full disabled:opacity-60 disabled:cursor-not-allowed"
         aria-busy={status === 'loading'}
       >
-        {status === 'loading' ? 'Sending…' : engaged && !token ? 'Checking you’re human…' : 'Apply to become a dealer'}
+        {status === 'loading' ? 'Sending…' : engaged && !token ? (captcha.failed ? 'Spam check unavailable' : 'Checking you’re human…') : 'Apply to become a dealer'}
       </button>
       <p className="text-xs text-center text-muted">No franchise fee to apply · We reply within two business days · Your details stay private</p>
     </form>

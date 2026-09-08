@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Verify Turnstile
-    const verifyRes = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT!, {
+    const verifyRes = await fetch((process.env.TURNSTILE_VERIFY_ENDPOINT ?? 'https://turnstile.masterdecker.com'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token, hostname: 'londonconcretesealing.ca' }),
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'noreply@londonconcretesealing.ca',
       to: process.env.CONTACT_TO_EMAIL!,
-      subject: `New Contact Form Submission — London Concrete Sealing`,
+      subject: `New Contact Form Submission - London Concrete Sealing`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName || ''}</p>

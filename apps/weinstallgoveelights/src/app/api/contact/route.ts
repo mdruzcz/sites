@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   if (honeypot) return NextResponse.json({ ok: true });
 
   // Verify Turnstile
-  const verifyRes = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT!, {
+  const verifyRes = await fetch((process.env.TURNSTILE_VERIFY_ENDPOINT ?? 'https://turnstile.masterdecker.com'), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ token, hostname }),
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
   await resend.emails.send({
     from: process.env.CONTACT_FROM_EMAIL!,
     to: process.env.CONTACT_TO_EMAIL!,
-    subject: `New Govee Quote Request from ${firstName} ${lastName} — ${city}`,
+    subject: `New Govee Quote Request from ${firstName} ${lastName} - ${city}`,
     html: `
       <h2>New Quote Request — We Install Govee Lights</h2>
       <p><strong>Name:</strong> ${firstName} ${lastName}</p>

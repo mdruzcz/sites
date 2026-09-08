@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
 
   // Turnstile verification — fail closed.
   try {
-    const verifyRes = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT!, {
+    const verifyRes = await fetch((process.env.TURNSTILE_VERIFY_ENDPOINT ?? 'https://turnstile.masterdecker.com'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token, hostname: HOSTNAME }),
