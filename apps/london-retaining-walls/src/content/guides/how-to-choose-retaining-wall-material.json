@@ -1,0 +1,134 @@
+{
+  "slug": "how-to-choose-retaining-wall-material",
+  "metaTitle": "How to Choose Retaining Wall Material",
+  "metaDescription": "Compare block, poured concrete, timber and natural stone retaining walls to find the right material for your height, budget and soil in Ontario.",
+  "h1": "How to Choose the Right Retaining Wall Material",
+  "intro": "Wall height, what the wall is holding back, and your budget narrow the choice fast. Here is how we walk a homeowner through it on a site visit.",
+  "category": "Materials",
+  "readMinutes": 9,
+  "summary": "A practical walkthrough of block, concrete, timber and natural stone retaining walls, matched to height, soil and budget for Ontario properties.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "mixed",
+  "sections": [
+    {
+      "heading": "Start with what the wall actually has to hold back",
+      "blocks": [
+        { "type": "p", "text": "Before colour or texture, the real question is what load the wall carries. A wall holding back a flat garden bed faces very different pressure than one supporting a driveway, a patio, or the corner of a house." },
+        { "type": "ul", "items": [
+          "A simple grade change or garden terrace under 3 feet, low load",
+          "A yard slope up to about 4 feet, moderate load",
+          "A wall below a driveway, structure or heavy vehicle traffic above it, high load regardless of height",
+          "Anything over 1 metre, which usually needs engineering no matter the material"
+        ] },
+        { "type": "p", "text": "Once you know the load, the material list gets shorter fast. See /retaining-wall-height-limits-and-engineering for where engineering becomes mandatory." },
+        { "type": "p", "text": "It also helps to think about how long you plan to own the property, how much upkeep you actually want to do, and whether the wall needs to blend into an existing landscape style or is the anchor feature for a new one. These are not engineering questions, but they narrow the shortlist just as much as load does." }
+      ]
+    },
+    {
+      "heading": "Interlocking segmental block",
+      "blocks": [
+        { "type": "p", "text": "Systems like Permacon, Allan Block, Unilock and Oaks are the most common choice for residential walls across London, St. Thomas, Strathroy and the surrounding towns. They stack dry, interlock mechanically, and come in enough colours and textures to match most homes." },
+        { "type": "ul", "items": [
+          "Good for walls up to about 5 feet, taller with geogrid",
+          "Faster installation than poured concrete",
+          "Handles curves and angled property lines well",
+          "Typically $200 to $350 per linear foot installed"
+        ] },
+        { "type": "p", "text": "Full detail is on /block-retaining-walls." }
+      ]
+    },
+    {
+      "heading": "How block, concrete and timber compare on installation time",
+      "blocks": [
+        { "type": "p", "text": "For a homeowner planning around a summer or a landscaping project, installation speed matters as much as the finished product. Interlocking block generally moves fastest since units stack dry without curing time, a standard residential wall often completes in days rather than weeks once excavation starts." },
+        { "type": "p", "text": "Poured concrete takes longer end to end because formwork has to be built, the pour has to cure before forms come off and backfill can begin, and parging or finishing is a separate step after that. Timber falls in between, faster than concrete but sometimes slower than block on sites with difficult access since individual timbers are set and fastened one at a time." }
+      ]
+    },
+    {
+      "heading": "Poured concrete",
+      "blocks": [
+        { "type": "p", "text": "Formed and parged concrete is the strongest option and the right call when a wall is holding back a driveway, a structure, or a slope with heavy surcharge load above it. It is a monolithic pour with no joints to shift." },
+        { "type": "ul", "items": [
+          "Best for tall walls and heavy loads",
+          "Longest lifespan of the common wall types",
+          "Requires formwork and curing time before backfill",
+          "Custom quoted, generally the highest cost per foot"
+        ] },
+        { "type": "p", "text": "More at /concrete-retaining-walls." }
+      ]
+    },
+    {
+      "heading": "Pressure-treated timber",
+      "blocks": [
+        { "type": "p", "text": "Timber and 6x6 tie walls with deadman anchors are usually the most economical way to handle a lower grade change, and they give a natural look that suits mature landscaping." },
+        { "type": "ul", "items": [
+          "Best kept under 4 feet",
+          "Lowest upfront cost of the main wall types",
+          "Needs deadman tiebacks for lateral strength",
+          "Needs staining every 2 to 4 years to reach a full lifespan"
+        ] },
+        { "type": "callout", "text": "Timber trades a lower upfront cost for more upkeep and a shorter lifespan than block or concrete, see /how-long-do-retaining-walls-last for the numbers." },
+        { "type": "p", "text": "Full detail at /wood-and-timber-retaining-walls, and staining specifics at /tips-on-how-to-stain-your-wooden-retaining-wall." }
+      ]
+    },
+    {
+      "heading": "Natural stone and armour stone",
+      "blocks": [
+        { "type": "p", "text": "Armour stone and natural stone walls give the heaviest, most rugged look and work well on rural and larger properties around Aylmer, Lucan, Dorchester and Delaware where a formal block face would look out of place." },
+        { "type": "ul", "items": [
+          "Very heavy units resist movement on their own weight",
+          "Suits large lots and sloped, natural landscapes",
+          "Priced per project depending on stone size and source",
+          "Less precise fit than block, more forgiving of small grade irregularities"
+        ] },
+        { "type": "p", "text": "See /natural-stone-retaining-walls for how we source and set stone." }
+      ]
+    },
+    {
+      "heading": "A quick decision guide",
+      "blocks": [
+        { "type": "steps", "items": [
+          { "title": "Wall over 5 feet, or holding a driveway", "text": "Poured concrete." },
+          { "title": "Residential wall 2 to 5 feet, want colour or curve options", "text": "Interlocking block." },
+          { "title": "Garden terrace or raised bed under 3 to 4 feet", "text": "Timber, or block for less upkeep." },
+          { "title": "Large rural lot or a natural, informal look", "text": "Armour stone or natural stone." },
+          { "title": "Wall over 1 metre in any material", "text": "Budget for engineering and a permit, see /do-i-need-a-permit-for-a-retaining-wall-in-ontario." }
+        ] },
+        { "type": "p", "text": "Compare timber and block head to head at /timber-vs-block-retaining-walls if those are your two finalists." }
+      ]
+    },
+    {
+      "heading": "What tips the decision on clay soil",
+      "blocks": [
+        { "type": "p", "text": "Heavy clay is common across the London and Middlesex County area, and it holds water longer than sandy or loam soil. On clay sites we lean harder on drainage design regardless of material, and we sometimes recommend block over timber because block tolerates minor base movement better than a fastened timber structure." },
+        { "type": "p", "text": "Read /building-a-retaining-wall-on-clay-soil for how we adjust the base and drainage plan on these lots." }
+      ]
+    },
+    {
+      "heading": "Getting a second opinion before you commit",
+      "blocks": [
+        { "type": "p", "text": "Material decisions get made from photos and general advice more often than they should, and a plan that ignores your actual soil, access and load can lead to the wrong material even when every individual fact used to make the decision was correct. A short site visit resolves this quickly. We measure the slope, check soil conditions, note what sits above and below the proposed wall, and give a straight recommendation, including telling you when a cheaper material genuinely is the right call rather than steering every project toward the highest-margin option." }
+      ]
+    },
+    {
+      "heading": "Questions worth answering before your site visit",
+      "blocks": [
+        { "type": "p", "text": "Coming prepared with a few answers speeds up the recommendation and helps you evaluate it against your own priorities." },
+        { "type": "steps", "items": [
+          { "title": "What sits directly above the wall", "text": "A lawn, a garden bed, a driveway or a deck all load the wall differently, and this changes the material shortlist fast." },
+          { "title": "How long do you plan to stay in the home", "text": "A shorter horizon can make timber's lower upfront cost more attractive, a longer one often favours block or concrete." },
+          { "title": "How much upkeep are you realistically willing to do", "text": "Be honest, a wall that needs staining every few years only performs as advertised if that staining actually happens." },
+          { "title": "What look fits the rest of your landscaping", "text": "Natural stone suits a rustic yard, block suits a more structured one, and matching the wall to what already exists avoids a mismatched result." }
+        ] }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Which material lasts the longest?", "a": "Poured concrete, typically 50 to 100 years with proper drainage. Interlocking block is close behind at 40 to 50 years, and timber is the shortest at 20 to 40 years depending on maintenance." },
+    { "q": "Is block strong enough for a tall wall?", "a": "Yes with geogrid reinforcement tied back into the compacted soil behind it. Without geogrid, tall block walls are prone to the face rotating outward over time." },
+    { "q": "Can I mix materials on one property?", "a": "Yes, it is common to use block for a main retaining wall and timber for a lower garden terrace elsewhere on the same lot, matched to each wall's load and budget." },
+    { "q": "Does material choice affect the permit process?", "a": "The height and load matter more than the material for permit and engineering requirements, though a concrete wall's engineering drawings tend to be more involved than a comparable block wall." },
+    { "q": "What if I cannot decide?", "a": "We walk the site, look at the load, soil and your budget, and give you an honest recommendation before you commit to anything. Call 519-914-1908 or visit /contact-us." }
+  ],
+  "cta": "Not sure which material fits your yard, call 519-914-1908 for a free site assessment."
+}

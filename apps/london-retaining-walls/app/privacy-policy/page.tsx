@@ -3,13 +3,15 @@ import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy for London Retaining Walls.",
+  title: "Privacy Policy | London Retaining Walls",
+  description: "How London Retaining Walls collects, uses and protects the personal information you send us through quote requests and site analytics.",
+  alternates: { canonical: `${site.url}/privacy-policy` },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl prose prose-gray">
+    <div className="container-x max-w-3xl py-16 prose-lrw [&_h1]:display [&_h1]:text-4xl [&_h1]:mb-6 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:mt-8 [&_h2]:mb-3 [&_a]:text-accent-2 [&_a]:underline">
       <h1>Privacy Policy</h1>
       <p>Last updated: January 1, 2024</p>
       <p>{site.name} (&quot;we&quot;, &quot;us&quot;) is committed to protecting your privacy. This policy explains how we collect, use and protect your personal information.</p>

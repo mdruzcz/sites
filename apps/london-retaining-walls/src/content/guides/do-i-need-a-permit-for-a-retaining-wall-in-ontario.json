@@ -1,0 +1,113 @@
+{
+  "slug": "do-i-need-a-permit-for-a-retaining-wall-in-ontario",
+  "metaTitle": "Do I Need a Permit for a Retaining Wall?",
+  "metaDescription": "Ontario retaining wall permit rules explained, the 1 metre height threshold, when engineering is required, and how the process actually works.",
+  "h1": "Do You Need a Permit for a Retaining Wall in Ontario",
+  "intro": "The short answer is height. Most Ontario municipalities require a permit once a retaining wall passes about 1 metre, and often want engineering to go with it.",
+  "category": "Permits",
+  "readMinutes": 8,
+  "summary": "When Ontario retaining walls require a building permit and engineering, how the 1 metre threshold is measured, and how the permit process runs.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "segmental-block",
+  "sections": [
+    {
+      "heading": "The general rule: 1 metre is the trigger",
+      "blocks": [
+        { "type": "p", "text": "Across most Southwestern Ontario municipalities, a retaining wall over roughly 1 metre, about 3 feet 3 inches, generally requires a building permit under the Ontario Building Code. Below that height, many municipalities do not require a permit, though local rules vary and some properties have additional conditions." },
+        { "type": "callout", "text": "Height is usually measured from the bottom of the footing to the top of the wall, not just the exposed face, so a wall can trigger the threshold sooner than it looks from the yard side." }
+      ]
+    },
+    {
+      "heading": "Why the threshold exists",
+      "blocks": [
+        { "type": "p", "text": "A wall over 1 metre is retaining enough soil weight, and potentially enough water pressure, that a design failure has real consequences: property damage, erosion onto a neighbouring lot, or in worst cases a collapse. The permit and engineering requirement exists to confirm the wall is sized correctly for the load before it goes in the ground, not after." },
+        { "type": "p", "text": "It is a common misconception that permits are only about paperwork or municipal revenue. In practice, the review catches design issues before construction: an undersized footing, missing geogrid on a tall block wall, or drainage that was not accounted for at all. Homeowners rarely see that review happen, but it is the reason a permitted wall has a documented paper trail confirming it was engineered for its actual site conditions." }
+      ]
+    },
+    {
+      "heading": "When engineering is required, not just a permit",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Walls over roughly 1 metre in most jurisdictions",
+          "Walls holding back a driveway, structure, or other significant surcharge load, regardless of height",
+          "Tiered or terraced wall systems where the combined height matters",
+          "Walls near a property line where a failure could affect a neighbour"
+        ] },
+        { "type": "p", "text": "Engineering means a stamped drawing showing the wall's design, reinforcement and drainage, sized for your site's specific soil and load conditions. More on how height changes the engineering scope at /retaining-wall-height-limits-and-engineering." }
+      ]
+    },
+    {
+      "heading": "How the process actually runs",
+      "blocks": [
+        { "type": "steps", "items": [
+          { "title": "Site visit and measurement", "text": "We assess the actual height, soil and what the wall retains before determining whether a permit applies." },
+          { "title": "Engineering, if required", "text": "We work with an engineer to produce stamped drawings sized to your wall's height and load." },
+          { "title": "Permit application", "text": "We submit the application to your municipality, using the engineered drawings where applicable." },
+          { "title": "Inspections", "text": "The municipality typically inspects at key stages, often the base and drainage before backfill, and a final inspection." },
+          { "title": "Construction to the approved plan", "text": "We build to the stamped drawings, not a modified version, so the final wall matches what was approved." }
+        ] },
+        { "type": "p", "text": "We handle this process for our clients rather than leaving it to the homeowner to navigate alone." }
+      ]
+    },
+    {
+      "heading": "Costs to expect",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Permit fees: typically a few hundred dollars, varying by municipality",
+          "Engineering: typically in the low thousands depending on wall height and complexity",
+          "Both are factored into a written quote before work starts, see /retaining-wall-cost-guide-ontario for full pricing"
+        ] }
+      ]
+    },
+    {
+      "heading": "Municipality-specific notes across our service area",
+      "blocks": [
+        { "type": "p", "text": "Requirements are broadly consistent under the Ontario Building Code, but the application process and any local zoning overlays differ by municipality." },
+        { "type": "ul", "items": [
+          "City of London and City of St. Thomas handle permits through their own building departments",
+          "Municipality of Strathroy-Caradoc covers Strathroy and Mount Brydges",
+          "Municipality of Middlesex Centre covers Ilderton, Komoka and Delaware",
+          "Municipality of Thames Centre covers Dorchester",
+          "Township of Lucan Biddulph covers Lucan",
+          "Town of Aylmer and City of Brantford handle their own applications"
+        ] },
+        { "type": "p", "text": "City-specific pages such as /st-thomas-retaining-wall-contractor and /brantford-retaining-wall-contractor cover local conditions in more detail." }
+      ]
+    },
+    {
+      "heading": "What happens if you build without a required permit",
+      "blocks": [
+        { "type": "p", "text": "An unpermitted wall over the threshold can be flagged during a future property sale, a neighbour dispute, or a municipal inspection for an unrelated reason, and the municipality can require it be brought up to code or removed. It also complicates insurance if the wall ever fails. Building it right the first time, with a permit where required, avoids all of that." }
+      ]
+    },
+    {
+      "heading": "How we scope a permit and engineering into your timeline",
+      "blocks": [
+        { "type": "p", "text": "We tell you at the first site visit whether your project is likely to need a permit, based on the actual measured height from footing to top, not just a visual estimate. If engineering is needed, we build the engineer's drawing timeline into your overall project schedule upfront, rather than treating it as a delay that surfaces partway through planning." },
+        { "type": "p", "text": "For a wall on a property line, near a neighbour's structure, or with unusual grading, we also flag any additional review your specific municipality might require, so there are no surprises once the application is in." }
+      ]
+    },
+    {
+      "heading": "Retroactive permits for existing unpermitted walls",
+      "blocks": [
+        { "type": "p", "text": "If you have inherited a wall that was built without a permit, whether by a previous owner or an earlier project on your own property, you are not necessarily stuck. Many municipalities allow a retroactive permit application for existing structures, sometimes requiring an engineer to assess and certify the existing wall rather than redesigning from scratch." },
+        { "type": "p", "text": "This is worth pursuing before a sale rather than after an inspector flags it, since a resolved permit history is a straightforward fact to present to a buyer, while an open compliance question tends to invite a bigger price discount than the actual cost of fixing it. See /retaining-walls-and-property-value for how this plays out at resale." }
+      ]
+    },
+    {
+      "heading": "Zoning and setback rules beyond the building permit",
+      "blocks": [
+        { "type": "p", "text": "A building permit covers the structural side, but some properties have additional zoning considerations for a retaining wall, particularly near a property line, a municipal right of way, or a regulated watercourse setback near the Thames or another waterway. These are worth clarifying at the same time as the building permit rather than as a separate step, since a wall built too close to a boundary can trigger a variance requirement even if the structure itself is sound." },
+        { "type": "p", "text": "We flag these considerations during the site visit for any property where they are likely to apply, so the permit application accounts for them from the start." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "How exactly is retaining wall height measured for the permit threshold?", "a": "Typically from the bottom of the wall's footing to the top of the finished wall, not just the visible exposed face, so grading on the low side can push a wall over the threshold sooner than expected." },
+    { "q": "Do I need a permit for a short garden wall under 1 metre?", "a": "In most cases no, but always confirm with your specific municipality, and note that a wall holding back a driveway or structure can require engineering even under that height." },
+    { "q": "Who applies for the permit, me or the contractor?", "a": "We handle the permit application and engineering coordination as part of the project, so you are not navigating municipal paperwork on your own." },
+    { "q": "How long does the permit process take?", "a": "It varies by municipality and season, but we build the timeline into your project schedule from the start so there are no surprises." },
+    { "q": "Does a tiered wall system avoid the permit by keeping each tier under 1 metre?", "a": "Not necessarily. Municipalities generally look at the combined retained height and setback between tiers, so tiering is a legitimate design tool but not an automatic way around the threshold." }
+  ],
+  "cta": "Not sure if your wall needs a permit, call 519-914-1908 and we will tell you straight."
+}

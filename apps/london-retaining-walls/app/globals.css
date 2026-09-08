@@ -1,45 +1,65 @@
 @import "tailwindcss";
+@source "../app";
+@source "../src";
 
 :root {
-  --accent: #F89D2B;
-  --accent-hover: #E08920;
-  --dark: #1C2833;
-  --dark-mid: #334155;
+  --paper: #f5f1ea;
+  --paper-2: #ebe4d8;
+  --paper-3: #ddd3c2;
+  --ink: #1a1d21;
+  --ink-2: #363b42;
+  --stone: #7d7568;
+  --stone-2: #b3a996;
+  --accent: #f08a24;
+  --accent-2: #d9760f;
+  --accent-soft: #fde8d2;
+  --moss: #3f5a45;
+  --line: rgba(26, 29, 33, 0.12);
 }
 
 @theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-stone: var(--stone);
+  --color-stone-2: var(--stone-2);
   --color-accent: var(--accent);
-  --color-dark: var(--dark);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-moss: var(--moss);
+  --font-display: var(--font-archivo), "Archivo", "Arial Narrow", sans-serif;
+  --font-body: var(--font-source), "Source Sans 3", system-ui, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--paper); color: var(--ink); }
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
 
-body { font-family: var(--font-roboto), system-ui, sans-serif; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins), system-ui, sans-serif;
-}
-
-.btn {
-  @apply inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 px-6 py-3 text-sm min-h-[44px] uppercase tracking-wide;
-}
-.btn-accent {
-  @apply bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white shadow-md hover:shadow-lg;
-}
-.btn-dark {
-  @apply bg-[var(--dark)] hover:bg-[var(--dark-mid)] text-white shadow-md hover:shadow-lg;
-}
-.btn-outline {
-  @apply border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white;
-}
-.btn-white {
-  @apply bg-white text-[var(--dark)] hover:bg-gray-100 shadow-md;
-}
-
-.section {
-  @apply py-16 md:py-24;
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-16 md:py-24; }
+  .kicker { @apply inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.22em] text-accent-2; }
+  .kicker::before { content: ""; @apply inline-block h-[2px] w-6 bg-accent; }
+  .display { @apply font-display font-extrabold uppercase leading-[0.95] tracking-tight; }
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2 px-6 py-3 font-display text-[13px] font-bold uppercase tracking-[0.12em] transition-all duration-200; }
+  .btn-accent { @apply bg-accent text-ink shadow-[inset_0_-3px_0_rgba(0,0,0,0.18)] hover:bg-accent-2 hover:text-white; }
+  .btn-ink { @apply bg-ink text-paper shadow-[inset_0_-3px_0_rgba(255,255,255,0.15)] hover:bg-ink-2; }
+  .btn-outline { @apply border-2 border-ink text-ink hover:bg-ink hover:text-paper; }
+  .btn-paper { @apply bg-paper text-ink hover:bg-white; }
+  /* stacked-course motif used on dividers and card headers */
+  .courses { background-image: repeating-linear-gradient(0deg, transparent 0 11px, rgba(26, 29, 33, 0.07) 11px 13px); }
+  .courses-dark { background-image: repeating-linear-gradient(0deg, transparent 0 11px, rgba(255, 255, 255, 0.07) 11px 13px); }
+  .rule { @apply h-px w-full bg-[var(--line)]; }
+  .card { @apply border border-[var(--line)] bg-white; }
+  .tag { @apply inline-block border border-[var(--line)] bg-paper px-2 py-0.5 font-display text-[11px] font-semibold uppercase tracking-[0.14em] text-stone; }
+  .prose-lrw p { @apply mb-4 text-[17px] leading-[1.7] text-ink-2; }
+  .prose-lrw a { @apply font-semibold text-accent-2 underline decoration-accent/50 underline-offset-4 hover:text-ink; }
 }
 
-.card {
-  @apply bg-white rounded shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
-}
+.shimmer { background: linear-gradient(90deg, var(--paper-2) 25%, var(--paper-3) 50%, var(--paper-2) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+details.faq > summary { list-style: none; }
+details.faq > summary::-webkit-details-marker { display: none; }

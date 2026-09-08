@@ -1,0 +1,119 @@
+{
+  "slug": "block-retaining-walls/st-thomas",
+  "metaTitle": "Block Retaining Walls in St. Thomas, ON",
+  "metaDescription": "Interlocking block retaining walls for St. Thomas homes and driveways, Permacon and Allan Block systems, engineered drainage. Free written quotes.",
+  "h1": "Block Retaining Walls in St. Thomas, Ontario",
+  "intro": "Most of the block walls we build in St. Thomas run along a driveway edge or a rear lot line in a newer subdivision, straight runs where a consistent, engineered product matters most.",
+  "sections": [
+    {
+      "heading": "Straight Runs on Newer St. Thomas Lots",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "New development in St. Thomas tends to produce straight, defined lot lines with a clear elevation change between properties. That is a good match for interlocking block, which installs quickly and consistently along a defined run."
+        },
+        {
+          "type": "p",
+          "text": "For driveway retaining walls, where the wall holds up the weight of vehicles above as well as the soil, we typically step up to Allan Block or add geogrid reinforcement rather than using a lighter garden-wall product."
+        }
+      ]
+    },
+    {
+      "heading": "What Goes Into the Wall",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Excavation",
+              "text": "Dig to design depth and remove any loose or organic fill that won't compact properly."
+            },
+            {
+              "title": "Base",
+              "text": "Compacted granular base, levelled so the first course sits true."
+            },
+            {
+              "title": "Drainage",
+              "text": "Weeping tile and drainage stone behind the block, tied to a discharge point."
+            },
+            {
+              "title": "Block and geogrid",
+              "text": "Courses built with proper batter, geogrid layers added at intervals on taller sections."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Product Options",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We install Permacon and Allan Block most often in St. Thomas, along with Unilock and Oaks where a specific colour or texture is requested. All are engineered systems suited to Ontario freeze-thaw cycles when installed with proper drainage."
+        }
+      ]
+    },
+    {
+      "heading": "Permit Process With the City of St. Thomas",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Walls over about one metre require a City of St. Thomas building permit. We prepare and submit the application, and arrange engineering drawings for driveway walls or anything approaching the two metre threshold."
+        }
+      ]
+    },
+    {
+      "heading": "Block for New Build Warranty Considerations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Some St. Thomas subdivisions have builder grading warranties tied to the original lot survey. We confirm the wall location against that grading plan where one exists, so the retaining wall doesn't conflict with builder warranty terms."
+        },
+        {
+          "type": "p",
+          "text": "For homeowners weighing overall project cost before committing, /retaining-wall-cost-guide-ontario has current per-foot ranges for block versus other materials."
+        }
+      ]
+    },
+    {
+      "heading": "Geogrid Reinforcement Explained",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Geogrid is a synthetic mesh layered into the compacted backfill behind taller block walls. It ties the wall into the soil mass behind it, significantly increasing the height a block wall can safely retain."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is block strong enough for a driveway retaining wall?",
+      "a": "Yes, when built with Allan Block or a similarly engineered system and reinforced with geogrid. We size the reinforcement to the load the wall will carry."
+    },
+    {
+      "q": "How long does a block wall take to install in St. Thomas?",
+      "a": "A typical run takes two to four days from excavation to finished backfill, depending on length and height."
+    },
+    {
+      "q": "Can you match block colour to my house?",
+      "a": "Permacon and Unilock both offer a range of colours and textures, and we can bring samples to the site visit."
+    },
+    {
+      "q": "What's the difference between block and /concrete-retaining-walls for a driveway?",
+      "a": "Block is faster and less expensive up to a point, but very tall or heavily loaded driveway walls often perform better in poured concrete. We'll recommend based on the specific load."
+    },
+    {
+      "q": "Will a block wall affect my new home's builder warranty?",
+      "a": "It shouldn't, provided the wall doesn't interfere with the original lot grading plan. We check this during the site visit on new-build properties."
+    },
+    {
+      "q": "What is geogrid and when is it used?",
+      "a": "Geogrid is reinforcement mesh built into the backfill behind taller block walls, extending how high the wall can safely go."
+    }
+  ],
+  "cta": "Request a free block wall quote for your St. Thomas property.",
+  "service": "block-retaining-walls",
+  "city": "st-thomas",
+  "region": "ON",
+  "photoMaterial": "segmental-block"
+}

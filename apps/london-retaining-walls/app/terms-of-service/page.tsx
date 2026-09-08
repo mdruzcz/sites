@@ -3,13 +3,15 @@ import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms of service for London Retaining Walls.",
+  title: "Terms of Service | London Retaining Walls",
+  description: "Terms of service for using the London Retaining Walls website and requesting quotes for retaining wall installation and repair in Ontario.",
+  alternates: { canonical: `${site.url}/terms-of-service` },
+  robots: { index: false, follow: true },
 };
 
 export default function TermsPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl prose prose-gray">
+    <div className="container-x max-w-3xl py-16 prose-lrw [&_h1]:display [&_h1]:text-4xl [&_h1]:mb-6 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:mt-8 [&_h2]:mb-3 [&_a]:text-accent-2 [&_a]:underline">
       <h1>Terms of Service</h1>
       <p>Last updated: January 1, 2024</p>
       <p>By accessing this website you agree to these terms. {site.name} reserves the right to modify these terms at any time.</p>

@@ -1,87 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import CtaBand from "@/components/CtaBand";
+import { Process, WhyUs } from "@/components/Sections";
+import { JsonLd, breadcrumbSchema } from "@/lib/jsonld";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { PICKS, SERVICE_HERO } from "@/lib/photos";
+import { getServices } from "@/lib/content";
 
 export const revalidate = 3600;
-export const metadata: Metadata = {
-  title: "Services | Retaining Wall Installation, Repair & All Wall Types",
-  description: "Explore all London Retaining Walls services — retaining wall installation, concrete walls, block walls, wood and timber walls, and retaining wall repair in London and Southwestern Ontario.",
-  openGraph: { title: "Services | London Retaining Walls", url: `${site.url}/services` },
-};
-
-const services = [
-  {
-    name: "Retaining Wall Installation",
-    href: "/retaining-wall-installation",
-    icon: "🏗️",
-    desc: "Complete retaining wall installation from site assessment and design through to construction and drainage. We handle all wall types and project sizes.",
-  },
-  {
-    name: "Concrete Retaining Walls",
-    href: "/concrete-retaining-walls",
-    icon: "🧱",
-    desc: "Poured concrete and precast concrete panel walls. The most durable retaining wall option — ideal for taller walls, heavy loads, and commercial applications.",
-  },
-  {
-    name: "Block Retaining Walls",
-    href: "/block-retaining-walls",
-    icon: "⬛",
-    desc: "Permacon, Allan Block and similar interlocking block systems. Versatile, attractive, and Ontario Building Code compliant for residential and commercial use.",
-  },
-  {
-    name: "Wood & Timber Retaining Walls",
-    href: "/wood-and-timber-retaining-walls",
-    icon: "🪵",
-    desc: "Pressure-treated lumber and hardwood timber retaining walls. Natural look that blends beautifully with landscaping — perfect for garden terraces and sloped yards.",
-  },
-  {
-    name: "Retaining Wall Repair",
-    href: "/retaining-wall-repair",
-    icon: "🔧",
-    desc: "Bowing walls, drainage failures, cracking and settlement. We diagnose the root cause and provide a permanent fix — not just a temporary patch.",
-  },
-];
+const TITLE = "Retaining Wall Services in London, Ontario | Block & Timber";
+const DESC = "Retaining wall installation, repair and terracing in London, Ontario. Interlocking block, poured concrete, timber and natural stone walls, drainage built in.";
+export const metadata: Metadata = { title: TITLE, description: DESC, alternates: { canonical: `${site.url}/services` }, openGraph: { title: TITLE, description: DESC, url: `${site.url}/services`, images: [{ url: PICKS.services.image, alt: PICKS.services.alt }] }, twitter: { card: "summary_large_image", title: TITLE, description: DESC } };
 
 export default function ServicesPage() {
+  const services = getServices();
+  const itemList = { "@context": "https://schema.org", "@type": "ItemList", itemListElement: services.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s.shortName, url: `${site.url}/${s.slug}` })) };
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }])) }} />
-
-      <PageHero
-        title="Our Services"
-        subtitle="From a simple garden terrace to a large commercial retaining system — we offer a complete range of professional retaining wall services across London and Southwestern Ontario."
-        center
-      />
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.map((s) => (
-              <Link key={s.href} href={s.href} className="card p-8 group hover:border-[var(--accent)] border-2 border-transparent transition-colors flex gap-5 items-start">
-                <div className="text-4xl flex-shrink-0">{s.icon}</div>
-                <div>
-                  <h2 className="text-xl font-bold text-[var(--dark)] group-hover:text-[var(--accent)] transition-colors mb-2">{s.name}</h2>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-                  <span className="mt-4 inline-flex items-center text-[var(--accent)] text-sm font-semibold gap-1">Learn more →</span>
+      <JsonLd data={itemList} />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Services", href: "/services" }])} />
+      <PageHero photo={PICKS.services} kicker="Services" title="Retaining wall services in London and Southwestern Ontario" intro="Seven ways we solve a grade problem. Pick the one that fits, or let Kyle recommend it on the site visit." crumbs={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
+      <section className="section bg-paper">
+        <div className="container-x grid gap-6 md:grid-cols-2">
+          {services.map((s) => {
+            const p = SERVICE_HERO[s.slug];
+            return (
+              <Link key={s.slug} href={`/${s.slug}`} className="group card grid overflow-hidden sm:grid-cols-[200px_1fr]">
+                <div className="relative aspect-[4/3] sm:aspect-auto"><Image src={p.image} alt={p.alt} fill sizes="(max-width:640px) 100vw, 200px" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover transition duration-500 group-hover:scale-[1.03]" /></div>
+                <div className="p-5">
+                  <h2 className="font-display text-xl font-extrabold uppercase tracking-tight group-hover:text-accent-2">{s.h1}</h2>
+                  <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{s.cardBlurb}</p>
+                  <ul className="mt-3 flex flex-wrap gap-1.5">{s.bestFor.slice(0, 3).map((b) => <li key={b} className="tag">{b}</li>)}</ul>
+                  <p className="mt-3 text-[13px] text-stone">{s.priceNote}</p>
                 </div>
               </Link>
-            ))}
-          </div>
-
-          <div className="mt-12 bg-white rounded-2xl p-8 shadow-sm text-center border-2 border-[var(--accent)]">
-            <h2 className="text-2xl font-bold text-[var(--dark)] mb-3">Not Sure Which Wall Type You Need?</h2>
-            <p className="text-gray-600 mb-6 max-w-xl mx-auto">Every site is different. The right wall depends on your soil conditions, the height of the grade change, drainage requirements and aesthetic goals. Contact us for a free site assessment and recommendation.</p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link href="/contact-us" className="btn btn-accent">Get a Free Assessment</Link>
-              <a href={site.phoneHref} className="btn btn-dark">Call {site.phone}</a>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </section>
-
+      <Process />
+      <WhyUs />
       <CtaBand />
     </>
   );

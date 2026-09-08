@@ -1,0 +1,119 @@
+{
+  "slug": "retaining-wall-installation/woodstock",
+  "metaTitle": "Retaining Wall Installation in Woodstock, ON",
+  "metaDescription": "Retaining wall installation for Woodstock and Oxford County properties, engineered for local soil and Ontario winters. Free quotes and permit handling.",
+  "h1": "Retaining Wall Installation in Woodstock, Ontario",
+  "intro": "Oxford County properties around Woodstock mix sandy loam with pockets of heavier clay, sometimes on the same lot. Getting the drainage design right for that mix is most of the job.",
+  "sections": [
+    {
+      "heading": "Reading a Woodstock or Oxford County Site",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Sandy loam drains fast, which sounds like an advantage but can mean soil washes out from under a wall footing if the base isn't compacted properly. Clay pockets nearby hold water and push against the wall face if drainage stone isn't continuous behind it."
+        },
+        {
+          "type": "p",
+          "text": "We test the soil by hand during the site visit rather than assuming one soil type for the whole property, which is common on rural Oxford County lots near Ingersoll and Tillsonburg roads."
+        }
+      ]
+    },
+    {
+      "heading": "Installation Steps",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Assessment",
+              "text": "We check soil type at multiple points along the wall run, not just at one end."
+            },
+            {
+              "title": "Base preparation",
+              "text": "Excavation to design depth and a compacted gravel base, deeper where sandy soil needs extra confinement."
+            },
+            {
+              "title": "Drainage",
+              "text": "Weeping tile and drainage stone the full length of the wall, tied into an outlet away from the foundation."
+            },
+            {
+              "title": "Construction and backfill",
+              "text": "Wall built to spec with proper batter, then backfilled and compacted in lifts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Permits and the City of Woodstock",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The City of Woodstock follows the Ontario Building Code threshold of roughly one metre before a permit is required. We manage that application and bring in an engineer for taller or heavily loaded walls, including driveway-adjacent walls."
+        }
+      ]
+    },
+    {
+      "heading": "Materials and Pricing",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Most Woodstock jobs use /block-retaining-walls for backyard grade changes, with /concrete-retaining-walls reserved for driveway or commercial applications. Block runs $200 to $350 per linear foot; concrete is quoted per project."
+        }
+      ]
+    },
+    {
+      "heading": "Working Around Existing Utilities",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Woodstock properties, especially older ones, sometimes have utility lines or septic components near a planned wall location. We call for locates before excavation begins and adjust the wall design if needed to maintain required clearances."
+        },
+        {
+          "type": "p",
+          "text": "If your project also involves managing water from a downspout or sump pump discharge, /retaining-wall-drainage-explained covers how those sources factor into the overall drainage plan."
+        }
+      ]
+    },
+    {
+      "heading": "Working Around Seasonal Ground Conditions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Spring thaw can leave parts of an Oxford County property too soft to excavate properly. We monitor ground conditions and schedule installation for when the base can be compacted properly, rather than rushing a wet-season build."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does the sandy soil around Woodstock cause problems for retaining walls?",
+      "a": "It can, if the base isn't compacted deep enough or drainage stone doesn't run the full wall length. We adjust the base design for sandy sections rather than using one spec everywhere."
+    },
+    {
+      "q": "Do you serve rural Oxford County, not just Woodstock proper?",
+      "a": "Yes, including properties toward Ingersoll and Tillsonburg. Rural sites often need longer wall runs for gradual slopes."
+    },
+    {
+      "q": "What is the typical timeline for a Woodstock wall?",
+      "a": "Two to five days for a standard residential wall once excavation begins, depending on wall type and access."
+    },
+    {
+      "q": "Is a permit needed for a Woodstock retaining wall?",
+      "a": "Yes, if it's over about one metre. The City of Woodstock permit process is part of what we handle for you."
+    },
+    {
+      "q": "Do you handle utility locates before digging?",
+      "a": "Yes, locates are arranged before any excavation starts, standard on every installation regardless of location."
+    },
+    {
+      "q": "Do you install retaining walls year-round in Woodstock?",
+      "a": "Mostly spring through fall. Ground conditions during spring thaw and deep winter can affect base compaction, so we schedule around that."
+    }
+  ],
+  "cta": "Get a free written quote for your Woodstock retaining wall project.",
+  "service": "retaining-wall-installation",
+  "city": "woodstock",
+  "region": "ON",
+  "photoMaterial": "mixed"
+}

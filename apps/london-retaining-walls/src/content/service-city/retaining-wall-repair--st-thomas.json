@@ -1,0 +1,111 @@
+{
+  "slug": "retaining-wall-repair/st-thomas",
+  "metaTitle": "Retaining Wall Repair in St. Thomas, ON",
+  "metaDescription": "Retaining wall repair in St. Thomas, Ontario for drainage failure, cracking and settlement. Free assessment and written quote before any work.",
+  "h1": "Retaining Wall Repair in St. Thomas, Ontario",
+  "intro": "Newer St. Thomas subdivision walls fail differently than older ones do, usually settlement or drainage problems from fill soil that wasn't compacted properly during the original build, not age.",
+  "sections": [
+    {
+      "heading": "Common Failure Patterns on Newer St. Thomas Walls",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "When a subdivision wall was built quickly during development, backfill compaction and drainage are the corners most often cut. That shows up a few years later as settlement, diagonal cracking, or water pooling behind the wall after rain."
+        },
+        {
+          "type": "p",
+          "text": "On rural St. Thomas area properties, we more often see erosion at the wall base from surface water that was never properly directed away."
+        }
+      ]
+    },
+    {
+      "heading": "How We Diagnose the Problem",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Check for bowing or leaning out of plumb",
+            "Inspect crack patterns, horizontal cracks are the most serious",
+            "Look for blocked, missing or undersized drainage outlets",
+            "Check for soil erosion or voids at the wall base"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fixing the Root Cause First",
+      "blocks": [
+        {
+          "type": "callout",
+          "text": "A repaired wall that still lacks proper drainage will fail again. Every repair we do addresses drainage before we touch the visible damage."
+        }
+      ]
+    },
+    {
+      "heading": "Repair Costs and Process",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Minor drainage corrections run $500 to $2,000. Larger repairs involving partial rebuilding range from $3,000 to $15,000 or more. Every repair starts with a free site assessment and a detailed written quote."
+        }
+      ]
+    },
+    {
+      "heading": "Repairing Walls Under Warranty vs Out of Warranty",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If your St. Thomas home is still under a builder's structural warranty, a failing retaining wall may fall under that coverage depending on cause and timeline. We can provide documentation of our assessment to support a warranty claim where applicable."
+        },
+        {
+          "type": "p",
+          "text": "For general guidance on what failure looks like before it gets serious, see /signs-your-retaining-wall-is-failing."
+        }
+      ]
+    },
+    {
+      "heading": "Documenting the Repair for Future Reference",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "After completing a repair, we can provide photos and a summary of the work done, useful if you sell the home later or need it for insurance or warranty documentation."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "My St. Thomas subdivision wall is only a few years old and already cracking. Why?",
+      "a": "It's often a sign of inadequate compaction or missing drainage from the original construction. We assess the specific cause before recommending a fix."
+    },
+    {
+      "q": "Is it worth repairing a wall on a newer home, or should it be replaced?",
+      "a": "We only recommend replacement when repair genuinely won't hold. Many newer-wall problems are drainage-related and fixable without a full rebuild."
+    },
+    {
+      "q": "What are the warning signs I should watch for?",
+      "a": "Bowing, horizontal cracks, water pooling at the wall base, and blocked drainage outlets are the main ones. See /signs-your-retaining-wall-is-failing for the full list."
+    },
+    {
+      "q": "Do you provide a written quote before starting repair work?",
+      "a": "Yes, always, with no surprise charges once work begins."
+    },
+    {
+      "q": "Could my wall repair be covered under a builder's warranty?",
+      "a": "Possibly, depending on the home's age and the cause of failure. We can document our assessment findings to support a warranty claim if relevant."
+    },
+    {
+      "q": "Will I get documentation of the completed repair?",
+      "a": "Yes, we can provide photos and a summary of the work, useful for future reference or if you sell the property."
+    },
+    {
+      "q": "What if the original wall installer is no longer in business?",
+      "a": "That's common, and it doesn't affect our ability to assess and repair the wall. We evaluate the existing structure on its own merits and design a repair around what we find on site, regardless of who built it originally."
+    }
+  ],
+  "cta": "Get a free retaining wall repair assessment for your St. Thomas property.",
+  "service": "retaining-wall-repair",
+  "city": "st-thomas",
+  "region": "ON",
+  "photoMaterial": "repair"
+}

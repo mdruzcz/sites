@@ -1,0 +1,110 @@
+{
+  "slug": "retaining-wall-repair/london",
+  "metaTitle": "Retaining Wall Repair in London, ON",
+  "metaDescription": "Retaining wall repair in London, Ontario for bowing, cracking and drainage failure. Free assessment, root-cause fix, Ontario Building Code compliant.",
+  "h1": "Retaining Wall Repair in London, Ontario",
+  "intro": "A surprising number of the failing walls we see in older London neighbourhoods were never built with drainage behind them in the first place. Clay soil and decades of freeze-thaw eventually find that weakness.",
+  "sections": [
+    {
+      "heading": "Why Older London Walls Fail",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Walls built in London 20 or 30 years ago, especially in established neighbourhoods like Westmount and Argyle, often predate current drainage standards. Without weeping tile and drainage stone, water builds up behind the wall every wet season and pushes harder each freeze-thaw cycle."
+        },
+        {
+          "type": "p",
+          "text": "See /signs-your-retaining-wall-is-failing for the specific warning signs, but bowing, horizontal cracks and pooling water at the base are the ones we see most often on London repair calls."
+        }
+      ]
+    },
+    {
+      "heading": "Our Repair Process",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Free assessment",
+              "text": "Kyle visits the site, identifies the root cause, and determines whether repair or partial rebuild is the right approach."
+            },
+            {
+              "title": "Written quote",
+              "text": "A detailed, itemized quote covering scope, materials and cost, no surprise charges."
+            },
+            {
+              "title": "Fix the root cause",
+              "text": "Drainage is corrected before any visible damage is repaired, since repairing a symptom without fixing drainage just delays the next failure."
+            },
+            {
+              "title": "Structural repair",
+              "text": "Depending on damage, this may mean partial dismantling and rebuilding, adding geogrid, or replacing failed sections."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What a London Repair Typically Costs",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Minor drainage corrections can run $500 to $2,000. Partial reconstruction or major repairs range from $3,000 to $15,000 or more, depending on wall length and extent of damage. Assessments are always free."
+        }
+      ]
+    },
+    {
+      "heading": "When Repair Isn't Enough",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Occasionally a London wall has moved too far, or the original construction was fundamentally undersized for the load, and a full rebuild is genuinely the safer and more cost-effective path. We only recommend that when repair truly won't hold."
+        },
+        {
+          "type": "p",
+          "text": "If you're not sure whether what you're seeing is serious, /signs-your-retaining-wall-is-failing walks through how to tell the difference."
+        }
+      ]
+    },
+    {
+      "heading": "What Happens During the Free Assessment",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Kyle inspects the wall's plumb, checks drainage outlets, looks at crack patterns, and reviews the surrounding grading before recommending a course of action. You'll get a clear explanation of the cause, not just a repair quote."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "My London backyard wall is leaning outward. Is that dangerous?",
+      "a": "It can be, particularly if it's a taller wall or sits near a structure. A wall visibly moving out of plumb should be assessed as soon as possible."
+    },
+    {
+      "q": "Can a bowing wall be repaired without a full rebuild?",
+      "a": "Sometimes, if the movement is minor and drainage is corrected. A wall that has moved more than about two inches out of plumb usually needs partial or full reconstruction."
+    },
+    {
+      "q": "What causes retaining walls to fail in London specifically?",
+      "a": "Clay soil holding water behind the wall is the most common cause locally, combined with freeze-thaw cycling that pushes on the structure every winter."
+    },
+    {
+      "q": "How much does retaining wall repair cost in London?",
+      "a": "Minor fixes run $500 to $2,000; major repairs $3,000 to $15,000 or more. We provide a free written quote before any work begins."
+    },
+    {
+      "q": "How do you decide between repair and full replacement?",
+      "a": "It comes down to how far the wall has moved and whether the underlying structure is sound. We explain that assessment clearly as part of the free quote."
+    },
+    {
+      "q": "What exactly happens during a free wall assessment?",
+      "a": "Kyle inspects plumb, drainage, cracking and surrounding grading, then explains the likely cause before providing a written repair quote."
+    }
+  ],
+  "cta": "Book a free retaining wall assessment for your London property.",
+  "service": "retaining-wall-repair",
+  "city": "london",
+  "region": "ON",
+  "photoMaterial": "repair"
+}

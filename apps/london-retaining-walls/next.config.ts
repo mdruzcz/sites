@@ -1,11 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    formats: ["image/avif", "image/webp"],
-  },
+  images: { formats: ["image/avif", "image/webp"] },
   async redirects() {
     return [
+      // Canonical host: www → apex
+      { source: "/:path*", has: [{ type: "host", value: "www.londonretainingwalls.ca" }], destination: "https://londonretainingwalls.ca/:path*", permanent: true },
+      // Old blog hub
+      { source: "/blog", destination: "/resources", permanent: true },
+      { source: "/blog/:slug", destination: "/:slug", permanent: true },
+      // Legacy WordPress URLs
       { source: "/retainingwallservices", destination: "/services", permanent: true },
       { source: "/woodstock-contractor", destination: "/woodstock-retaining-wall-contractor", permanent: true },
       { source: "/londons-top-retaining-wall-contractor", destination: "/london-retaining-wall-contractor", permanent: true },
@@ -19,6 +23,8 @@ const nextConfig: NextConfig = {
       { source: "/ildertons-top-retaining-wall-contractor", destination: "/ilderton-retaining-wall-contractor", permanent: true },
       { source: "/komokas-top-retaining-wall-contractor", destination: "/komoka-retaining-wall-contractor", permanent: true },
       { source: "/mount-bridgess-top-retaining-wall-contractor", destination: "/mount-brydges-retaining-wall-contractor", permanent: true },
+      { source: "/my-account/:path*", destination: "/", permanent: true },
+      { source: "/wp-content/:path*", destination: "/gallery", permanent: true },
     ];
   },
 };

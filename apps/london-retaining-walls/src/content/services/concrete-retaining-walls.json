@@ -1,0 +1,156 @@
+{
+  "slug": "concrete-retaining-walls",
+  "metaTitle": "Concrete Retaining Walls | London Retaining Walls",
+  "metaDescription": "Poured concrete retaining walls for tall or heavily loaded sites in London and Southwestern Ontario. Engineered, formed and finished for 50 plus year service.",
+  "h1": "Poured Concrete Retaining Walls",
+  "intro": "When a wall is tall, carries a driveway above it, or has to sit tight to a property line, poured concrete is usually the right structural answer. It is the most durable material we build with and the one we recommend least often, only when the site actually calls for it.",
+  "shortName": "Concrete Walls",
+  "cardBlurb": "Formed and poured concrete retaining walls for taller, heavily loaded or tight-clearance sites.",
+  "photoMaterial": "poured-concrete",
+  "bestFor": [
+    "Walls taller than about 4 to 5 feet",
+    "Walls carrying a driveway or structure above them",
+    "Tight property lines needing precise formwork",
+    "Commercial and long-service-life applications"
+  ],
+  "priceNote": "Poured concrete is custom quoted per project because forming, reinforcement and access vary widely, and it is typically the highest cost per linear foot of the wall systems we build.",
+  "relatedGuides": [
+    "retaining-wall-height-limits-and-engineering",
+    "how-long-do-retaining-walls-last",
+    "retaining-wall-cost-guide-ontario"
+  ],
+  "sections": [
+    {
+      "heading": "Why Concrete for a Retaining Wall",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A poured concrete wall is a single monolithic structure, formed and cast on site, with reinforcing steel placed before the pour. There are no joints between units, no reliance on interlocking geometry, and no upper limit on height the way there is with unreinforced gravity systems."
+        },
+        {
+          "type": "p",
+          "text": "That makes concrete the default choice once a wall gets tall enough, or carries enough load, that a gravity system like block would need an impractical amount of geogrid and backfill excavation to work. It is also the material we use most often for driveway retaining walls, where the surcharge load above the wall is significant and constant."
+        }
+      ]
+    },
+    {
+      "heading": "When Concrete Is the Right Call and When It Is Not",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We do not default to concrete just because it is the strongest option. For a garden terrace or a modest grade change under four feet, block on /block-retaining-walls or timber on /wood-and-timber-retaining-walls will do the job for less money and look better in that setting."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "The wall exceeds roughly four to five feet in height",
+            "A driveway, parking area or structure sits directly above the wall",
+            "The site has very little room to batter the wall back, common on older London lots",
+            "It is a commercial application with a longer required service life",
+            "The soil behind the wall is heavy clay that holds water and needs a wall that will not be pushed by hydrostatic pressure"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Poured Concrete vs. Precast Panels",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Poured, formed concrete gives maximum strength, allows custom curves and heights, and creates a continuous structure with no joints that could open up over time. It is the right choice for tall or heavily loaded walls and is what we build most often."
+        },
+        {
+          "type": "p",
+          "text": "Precast concrete panels are manufactured off site and set into place, which speeds up installation and gives consistent quality, particularly for long, straight runs. They can be a more economical option for mid-height commercial walls where the site allows panel delivery and setting equipment."
+        }
+      ]
+    },
+    {
+      "heading": "How We Build a Poured Concrete Wall",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Engineering and permit",
+              "text": "Given the height and loads involved, concrete walls almost always require an engineer's design and a building permit, which we coordinate on your behalf."
+            },
+            {
+              "title": "Excavation and footing",
+              "text": "We excavate below frost depth and pour a reinforced footing sized to the engineered design, giving the wall a stable, code-compliant foundation."
+            },
+            {
+              "title": "Drainage before forming",
+              "text": "Weeping tile, drainage stone and filter fabric are installed against the back of the wall location before backfilling begins."
+            },
+            {
+              "title": "Formwork and reinforcement",
+              "text": "Forms are built to the specified thickness and batter, and reinforcing steel is placed exactly to the engineer's spacing before any concrete is ordered."
+            },
+            {
+              "title": "Pour and cure",
+              "text": "Concrete is poured in a controlled sequence and given proper cure time before forms are stripped, which protects the finished strength of the wall."
+            },
+            {
+              "title": "Finish and backfill",
+              "text": "We parge or finish the exposed face as specified, then backfill and compact in lifts once the concrete has reached adequate strength."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Height, Engineering and the Ontario Building Code",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Concrete retaining walls can be engineered to virtually any height. In Ontario, walls over roughly one metre require a building permit, and walls over about two metres typically require an engineer's stamp regardless of material, though tall concrete walls are engineered as a matter of course given the loads involved."
+        },
+        {
+          "type": "p",
+          "text": "We work with engineers on every project that needs one and manage the permit application from start to finish, which is covered in more detail on /do-i-need-a-permit-for-a-retaining-wall-in-ontario."
+        }
+      ]
+    },
+    {
+      "heading": "Lifespan and Cost Considerations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A properly built concrete retaining wall with good drainage typically lasts 50 to 100 years, well beyond block or timber systems. It also needs the least ongoing maintenance of any wall material once it is finished."
+        },
+        {
+          "type": "p",
+          "text": "Concrete costs more upfront than block or wood, largely due to formwork, steel and the engineering that usually accompanies it. Because it lasts so much longer and requires so little upkeep, it is often the lowest lifetime cost option for tall walls, even though the installed price is higher."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is the difference between poured concrete and precast panels?",
+      "a": "Poured concrete is formed and cast on site into one continuous structure with maximum strength. Precast panels are manufactured off site and installed in sections, which is faster but generally better suited to straight, mid-height runs."
+    },
+    {
+      "q": "How tall can a concrete retaining wall be?",
+      "a": "Concrete can be engineered to virtually any height with the right footing and reinforcement. Walls over roughly one metre need a permit in Ontario, and walls over about two metres typically require an engineer's stamp."
+    },
+    {
+      "q": "How long does a concrete retaining wall last?",
+      "a": "With proper drainage and construction, expect 50 to 100 years of service. Concrete handles Ontario's freeze-thaw cycling better than any other retaining wall material we build with."
+    },
+    {
+      "q": "Is concrete always the most expensive option?",
+      "a": "It typically has the highest upfront installed cost, but its lifetime cost is often lower than block or timber for taller walls because it needs almost no maintenance and simply lasts longer."
+    },
+    {
+      "q": "Do all concrete retaining walls need an engineer?",
+      "a": "Not every one, but most do given the heights and loads where concrete gets specified. We involve an engineer whenever the wall height, surcharge load or site conditions call for a stamped design."
+    },
+    {
+      "q": "Can a poured concrete wall be curved?",
+      "a": "Yes, formwork can be built to a curve, though it adds labour and cost compared to a straight run. If a gentle curve is mainly for appearance rather than structural need, block on /block-retaining-walls may be more economical."
+    }
+  ],
+  "cta": "Request a site visit and a free written quote for your concrete retaining wall project."
+}

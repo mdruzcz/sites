@@ -1,0 +1,104 @@
+{
+  "slug": "retaining-wall-drainage-explained",
+  "metaTitle": "Retaining Wall Drainage Explained",
+  "metaDescription": "How weeping tile, drainage stone and filter fabric work behind a retaining wall, and why drainage decides whether your wall lasts decades.",
+  "h1": "How Retaining Wall Drainage Actually Works",
+  "intro": "Water pressure, not soil weight, is what breaks most retaining walls. Here is what a proper drainage system behind the wall looks like and why every layer matters.",
+  "category": "Design",
+  "readMinutes": 9,
+  "summary": "A breakdown of the drainage stone, weeping tile and filter fabric behind every wall we build, and why skipping any layer shortens a wall's life.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "segmental-block",
+  "sections": [
+    {
+      "heading": "Why drainage matters more than the wall face itself",
+      "blocks": [
+        { "type": "p", "text": "A retaining wall is engineered to hold back soil weight, but soil weight is predictable. Water is not. When water builds up behind a wall faster than it can escape, it adds hydrostatic pressure on top of the soil load the wall was designed for, and that extra pressure is the leading cause of bowing, leaning and outright failure." },
+        { "type": "callout", "text": "Most wall failures we get called to assess trace back to blocked or missing drainage, not a material or design flaw." },
+        { "type": "p", "text": "Hydrostatic pressure is easy to underestimate because water is light compared to soil. But water trapped in a confined space behind a wall pushes with force in every direction, including horizontally against the wall face, and it does not compress the way soil does under its own weight. A wall sized correctly for dry soil can still fail if water is allowed to accumulate behind it." }
+      ]
+    },
+    {
+      "heading": "The layers behind a properly built wall",
+      "blocks": [
+        { "type": "steps", "items": [
+          { "title": "Compacted granular base", "text": "The footing everything sits on, compacted in lifts so it does not settle unevenly under the wall's weight." },
+          { "title": "Drainage stone backfill", "text": "Clean, angular crushed stone placed directly behind the wall, typically 12 to 24 inches deep depending on wall height, giving water a fast path to escape instead of soaking into the retained soil." },
+          { "title": "Filter fabric", "text": "A geotextile layer between the drainage stone and the native soil that lets water through while keeping fine soil particles from migrating into the stone and clogging it over time." },
+          { "title": "Perforated weeping tile", "text": "A pipe laid at the base of the drainage stone, sloped to daylight or a drainage outlet, that collects water and carries it away from the wall entirely." },
+          { "title": "Geogrid, on taller walls", "text": "Horizontal reinforcement layers tied into the wall and extending back into the compacted fill, resisting the outward rotation that tall walls are prone to without it." }
+        ] }
+      ]
+    },
+    {
+      "heading": "How much drainage stone a wall actually needs",
+      "blocks": [
+        { "type": "p", "text": "Drainage stone depth generally runs 12 inches for a low garden wall up to 24 inches or more behind a taller block or concrete wall, and the drainage zone should extend the full height of the wall, not stop partway up." },
+        { "type": "ul", "items": [
+          "Under 3 feet: roughly 12 inches of drainage stone is typical",
+          "3 to 5 feet: roughly 18 inches is common, often paired with geogrid",
+          "Over 5 feet: 24 inches or more, sized to the engineered design"
+        ] },
+        { "type": "p", "text": "See /retaining-wall-height-limits-and-engineering for how height changes the whole design, not just the drainage." }
+      ]
+    },
+    {
+      "heading": "Where the water actually goes",
+      "blocks": [
+        { "type": "p", "text": "Weeping tile is only useful if it has somewhere to send the water. It should daylight to open air at a lower point on the property, tie into a drainage outlet or catch basin, or in some cases connect to a sump system. A weeping tile that dead-ends or was never properly sloped will fill up and stop protecting the wall, even though it looks correct from above." },
+        { "type": "p", "text": "This is one of the reasons a site visit matters more than a generic plan, the outlet point has to match your property's actual grade." }
+      ]
+    },
+    {
+      "heading": "Why clay soil raises the stakes",
+      "blocks": [
+        { "type": "p", "text": "Clay, common across London and Middlesex County, holds water far longer than sandy soil and swells when saturated. Behind a wall built on clay, drainage stone and weeping tile are not optional extras, they are what keeps the retained clay from turning into a saturated mass pushing on the wall face after every rain. See /building-a-retaining-wall-on-clay-soil for how we adjust base and drainage design on these lots." }
+      ]
+    },
+    {
+      "heading": "Maintaining the drainage system after the wall is built",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Check weep holes and outlets twice a year, spring and fall, and clear debris",
+          "Watch for efflorescence, the white mineral deposits that suggest water is moving through the wall",
+          "Watch for soil eroding at the base, a sign drainage stone may be clogged or filter fabric compromised",
+          "After heavy rain, confirm outlets are actually running, not just present"
+        ] },
+        { "type": "p", "text": "Full seasonal checklist at /retaining-wall-maintenance-tips." }
+      ]
+    },
+    {
+      "heading": "Drainage differences between wall materials",
+      "blocks": [
+        { "type": "p", "text": "The core drainage principles, stone, fabric and weeping tile, apply to every wall type, but the details shift with the material." },
+        { "type": "ul", "items": [
+          "Block walls rely on drainage stone filling the hollow cores and cavities behind the units, giving water a clear path down to the weeping tile",
+          "Poured concrete walls typically use drainage board or a dedicated stone chimney against the back face since there are no cavities in a solid pour",
+          "Timber walls need drainage stone behind the boards, and drainage is especially important here since standing water accelerates wood decay on top of adding pressure",
+          "Natural stone and armour stone walls, being large permeable units, often need less engineered drainage stone but still require a weeping tile at the base in most designs"
+        ] }
+      ]
+    },
+    {
+      "heading": "What to ask a contractor about drainage before you hire",
+      "blocks": [
+        { "type": "p", "text": "Drainage is the part of a wall you cannot see once it is backfilled, which makes it the easiest thing for a lower quote to quietly skip. Ask what depth of drainage stone is included, whether filter fabric separates the stone from native soil, and where the weeping tile actually outlets on your property. A contractor who cannot answer specifically is likely not building it to spec." }
+      ]
+    },
+    {
+      "heading": "How drainage design changes on a repair versus a new build",
+      "blocks": [
+        { "type": "p", "text": "When we are called to repair a wall that has moved or bowed, drainage is almost always part of the fix, not just the original problem. A repair scope typically includes excavating behind the affected section to expose and correct the drainage stone, weeping tile and fabric, rather than simply resetting the visible blocks or timbers and hoping the underlying cause does not recur." },
+        { "type": "p", "text": "This is why a repair quote for a wall with a drainage-related failure often costs more than homeowners initially expect, the visible damage is only part of what needs to be corrected. See /retaining-wall-repair for how we scope this kind of work." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Can a retaining wall be built without weeping tile?", "a": "Very short walls under about 2 feet with excellent natural drainage sometimes get by, but for anything taller we consider weeping tile essential, not optional, given Ontario's rainfall and clay soils." },
+    { "q": "How do I know if my existing wall has proper drainage?", "a": "Look for pipe outlets or gaps at the base of the wall. If you cannot find any and the wall is more than a couple of feet tall, it is worth having it assessed." },
+    { "q": "Does drainage stone need to be a specific type of stone?", "a": "Yes, clean angular crushed stone free of fines drains far better than rounded gravel or stone with soil mixed in, which compacts and loses its drainage capacity." },
+    { "q": "Can I add drainage to an existing wall that does not have it?", "a": "In some cases yes, depending on access and the wall type, though it often means partial excavation behind the wall. A free assessment can tell you what is realistic for your specific wall." },
+    { "q": "Does every wall need filter fabric?", "a": "We use it on essentially every wall we build, it is inexpensive relative to the wall and prevents the drainage stone from clogging with fine soil particles over time." }
+  ],
+  "cta": "Wondering if your wall has real drainage behind it, call 519-914-1908 for a free assessment."
+}

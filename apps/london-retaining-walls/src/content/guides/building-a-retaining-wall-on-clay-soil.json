@@ -1,0 +1,102 @@
+{
+  "slug": "building-a-retaining-wall-on-clay-soil",
+  "metaTitle": "Building a Retaining Wall on Clay Soil",
+  "metaDescription": "How London area clay soil affects retaining wall design, and the base, drainage and material adjustments that keep clay-built walls standing.",
+  "h1": "Building a Retaining Wall on Clay Soil",
+  "intro": "Clay is the default soil across much of London and Middlesex County, and it behaves very differently under a wall than sand or loam. Here is how we build for it.",
+  "category": "Design",
+  "readMinutes": 8,
+  "summary": "How heavy clay soil around London changes retaining wall base, drainage and material decisions, and what happens when a wall is built without those adjustments.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "segmental-block",
+  "sections": [
+    {
+      "heading": "Why clay soil is a different problem than sand or loam",
+      "blocks": [
+        { "type": "p", "text": "Clay particles are extremely fine, which means clay holds water far longer than sandy or loam soil and drains poorly on its own. Saturated clay also expands, and dry clay shrinks, so a wall built into clay experiences seasonal movement in the soil around it that a sandier site simply does not." },
+        { "type": "callout", "text": "The heavy clay common around London and Middlesex County is the reason drainage design matters even more here than in lighter soil regions of the province." },
+        { "type": "p", "text": "This is not unique to any one neighbourhood, it is the underlying soil type across most of the region once you get below the topsoil layer. It shows up whether you are dealing with a mature lot with established landscaping or a newly graded subdivision yard, and it affects design decisions for every wall type, not just one." }
+      ]
+    },
+    {
+      "heading": "How clay changes hydrostatic pressure behind a wall",
+      "blocks": [
+        { "type": "p", "text": "Because clay drains slowly, water from rain or snowmelt tends to pool against the back of a wall rather than percolating away. Without generous drainage stone and a well-placed weeping tile, that trapped water adds hydrostatic pressure on top of the clay's own weight, which is a heavier combined load than the wall's soil-only design was meant to resist." },
+        { "type": "p", "text": "See /retaining-wall-drainage-explained for the full drainage system every wall we build relies on." }
+      ]
+    },
+    {
+      "heading": "Base preparation adjustments on clay",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Excavating a wider drainage zone behind the wall than a sandy site would need",
+          "Compacting the granular base in careful lifts, since clay subgrade is more prone to soft spots if disturbed when wet",
+          "Sometimes over-excavating a soft or saturated pocket and replacing it with compacted granular material before the base goes in",
+          "Timing excavation around weather, working wet clay compacts poorly and can create hidden voids"
+        ] }
+      ]
+    },
+    {
+      "heading": "Freeze-thaw movement in Ontario clay",
+      "blocks": [
+        { "type": "p", "text": "Southwestern Ontario sees repeated freeze-thaw cycling through winter and spring, and saturated clay is especially prone to frost heave, expanding as it freezes and settling as it thaws. A wall's footing needs to sit below the expected frost depth, and drainage that keeps clay from staying saturated through winter reduces how much heave the wall has to resist year after year." }
+      ]
+    },
+    {
+      "heading": "How material choice interacts with clay",
+      "blocks": [
+        { "type": "p", "text": "Interlocking block tends to tolerate minor base movement better than a fastened timber structure, since individual units can shift very slightly without the whole assembly losing integrity. On heavy clay sites we often lean toward block or poured concrete for anything beyond a low garden terrace, and reserve timber for shorter walls where movement risk is lower." },
+        { "type": "p", "text": "Compare the two directly at /timber-vs-block-retaining-walls." }
+      ]
+    },
+    {
+      "heading": "Where this shows up most across our service area",
+      "blocks": [
+        { "type": "p", "text": "Heavy clay is the default condition across London, and it shows up consistently in older sloped neighbourhoods like Byron and Oakridge, in river-valley terrain near the Thames, and in newer subdivision grading in St. Thomas, Ilderton, Komoka and Strathroy where topsoil was often stripped during construction, exposing clay subsoil close to the surface." },
+        { "type": "p", "text": "City-specific pages such as /london-retaining-wall-contractor and /strathroy-retaining-wall-contractor cover local grading patterns in more detail." }
+      ]
+    },
+    {
+      "heading": "What a wall failure caused by clay actually looks like",
+      "blocks": [
+        { "type": "p", "text": "Walls built on clay without adequate drainage often fail differently than walls on other soils, showing gradual leaning tied to wet seasons rather than a single dramatic event. Homeowners sometimes notice the wall looks worse after a wet spring and better in a dry summer, which is a strong sign that saturated clay pressure, not a one-time defect, is the cause." },
+        { "type": "p", "text": "See /signs-your-retaining-wall-is-failing for how to read those warning signs." }
+      ]
+    },
+    {
+      "heading": "How we test and design for clay on your specific lot",
+      "blocks": [
+        { "type": "p", "text": "Clay behaves differently even lot to lot depending on depth to bedrock, how the land was originally graded, and whether topsoil was stripped or preserved during subdivision development. Rather than assume a generic clay design, we dig a test hole or two at the proposed wall location, look at how the soil holds together and how quickly water drains from the hole, and size the drainage zone and base to what we actually find, not a textbook average." },
+        { "type": "p", "text": "This is also where we decide whether a section needs subgrade replacement before the granular base goes in, which matters more for cost accuracy than any other single factor on a clay site. See /retaining-wall-cost-guide-ontario for how that gets reflected in a quote." }
+      ]
+    },
+    {
+      "heading": "Common mistakes we see on clay sites built by others",
+      "blocks": [
+        { "type": "p", "text": "When we get called to assess a struggling wall on a clay lot, a handful of construction shortcuts show up again and again, and knowing them helps you evaluate a contractor's plan before work starts." },
+        { "type": "ul", "items": [
+          "Standard drainage stone depth used regardless of soil type, when clay sites generally call for more, not the same amount as a sandy lot",
+          "Weeping tile installed without enough slope to actually drain, which lets water pool in the pipe rather than carry it away",
+          "Base compaction rushed or skipped after a rain, compacting wet clay traps moisture under the wall rather than removing it",
+          "Filter fabric omitted to save cost, letting fine clay particles migrate into and eventually clog the drainage stone within a few years"
+        ] },
+        { "type": "callout", "text": "On clay, a wall built to a generic specification rather than the site's actual soil conditions is one of the most common causes of early failure we assess." },
+        { "type": "p", "text": "Asking a contractor directly how their design changes for clay versus sandy soil is a fair question, and a specific answer is a good sign they are actually adjusting the plan rather than applying the same approach everywhere." }
+      ]
+    },
+    {
+      "heading": "Clay soil and the timing of construction",
+      "blocks": [
+        { "type": "p", "text": "Working clay in the wrong conditions creates problems that are hard to correct later. Excavating and compacting wet clay after a spring rain can trap moisture under the base rather than remove it, and compaction achieved on saturated clay rarely holds once the soil dries and shrinks. We plan clay excavations around dry stretches where possible, and where the calendar does not allow for that flexibility, we adjust the base design to account for it rather than proceeding on a poor foundation." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Does clay soil mean I cannot build a retaining wall on my property?", "a": "No, clay is buildable, it is simply the default condition across most of our service area and we design for it on essentially every project. It changes the drainage and base plan, not whether a wall is possible." },
+    { "q": "Does building on clay cost more?", "a": "It can add some cost due to a wider drainage zone or occasional subgrade replacement, though the difference is usually modest compared to the cost of a wall that fails early from inadequate drainage." },
+    { "q": "How do I know if my lot has heavy clay?", "a": "Dig a shallow test hole after a dry stretch, if the soil is dense, sticky when wet and holds a shape when squeezed, it is clay. We also assess soil during every site visit." },
+    { "q": "Is timber a bad choice on clay soil?", "a": "Not necessarily for shorter walls, but for anything beyond a low garden terrace, block or concrete generally tolerate the seasonal soil movement clay produces better than a fastened timber structure." },
+    { "q": "Can an existing wall on clay be retrofitted with better drainage?", "a": "In many cases yes, depending on access and the wall type, though it often means partial excavation behind the wall. A free assessment tells you what is practical for your specific situation." }
+  ],
+  "cta": "Building on clay in the London area, call 519-914-1908 for a free site assessment."
+}

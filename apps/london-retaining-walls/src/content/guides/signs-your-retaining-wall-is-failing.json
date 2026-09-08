@@ -1,0 +1,111 @@
+{
+  "slug": "signs-your-retaining-wall-is-failing",
+  "metaTitle": "Signs Your Retaining Wall Is Failing",
+  "metaDescription": "The warning signs of a failing retaining wall in Ontario, from bowing and cracks to drainage problems, and how urgent each one really is.",
+  "h1": "Signs Your Retaining Wall Is Failing",
+  "intro": "Not every crack or crooked block means disaster, but some signs mean call today, not this fall. Here is how to tell the difference.",
+  "category": "Repair",
+  "readMinutes": 8,
+  "summary": "How to read the warning signs of a failing retaining wall, from cosmetic cracking to urgent bowing, and what each one means for your timeline.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "repair",
+  "sections": [
+    {
+      "heading": "Bowing or leaning outward: act now",
+      "blocks": [
+        { "type": "p", "text": "A wall that visibly bulges or leans has already lost some of its structural margin. This is soil and water pressure exceeding what the wall was designed to resist, and it does not reverse itself. The rate of progression varies, but a leaning wall should be assessed promptly rather than monitored for a season." },
+        { "type": "callout", "text": "A leaning wall you are watching get worse over weeks or months is not a wait-and-see situation, it is a call-now situation." },
+        { "type": "p", "text": "A useful test is to check the wall against a fixed reference point, a fence line, a straight edge of a nearby patio, or even a string line pulled taut along the top. If you can measure a growing gap between the wall and that reference over a few weeks, the wall is actively moving rather than settled into a stable, if imperfect, position." }
+      ]
+    },
+    {
+      "heading": "Horizontal cracks: the most serious crack type",
+      "blocks": [
+        { "type": "p", "text": "Vertical hairline cracks in concrete are common and generally not urgent. Horizontal cracks are different, they typically indicate lateral pressure bending the wall across its width, which is a sign the wall is being pushed harder than it was built to handle." },
+        { "type": "ul", "items": [
+          "Horizontal cracks in poured concrete: assess promptly",
+          "Cracks wider than 6 millimetres or visibly growing: assess promptly",
+          "Fine vertical hairline cracks under 6 millimetres: monitor, usually not urgent"
+        ] }
+      ]
+    },
+    {
+      "heading": "Soil erosion at or behind the wall",
+      "blocks": [
+        { "type": "p", "text": "If soil is visibly escaping through block joints, at the base of the wall, or from behind the top edge, drainage is not doing its job and the structural fill the wall depends on is being lost. This is a moderate urgency sign, address it before it becomes a movement problem. See /retaining-wall-drainage-explained for what should be happening back there instead." }
+      ]
+    },
+    {
+      "heading": "Drainage outlets that stopped running",
+      "blocks": [
+        { "type": "p", "text": "If your wall's weep holes or drainage pipe used to run water during rain and now stay dry, something is blocked, whether by sediment, roots, or a crushed pipe. This lets hydrostatic pressure build behind the wall, and it is worth clearing or investigating before the next heavy rain, not after." }
+      ]
+    },
+    {
+      "heading": "Shifted blocks or gaps opening up",
+      "blocks": [
+        { "type": "p", "text": "One or two blocks slightly out of alignment can sometimes be a minor, isolated settlement issue. Multiple blocks shifted, or new gaps opening between courses, suggests a broader base or drainage problem underneath and is worth a full assessment rather than resetting the visible blocks alone." },
+        { "type": "steps", "items": [
+          { "title": "One block, minor shift", "text": "Low urgency, worth noting and monitoring." },
+          { "title": "Several blocks or a growing gap", "text": "Moderate to high urgency, get it assessed." },
+          { "title": "A whole section visibly out of line", "text": "High urgency, treat like active failure." }
+        ] }
+      ]
+    },
+    {
+      "heading": "What is normal versus what is not, by material",
+      "blocks": [
+        { "type": "p", "text": "Concrete: fine surface hairline cracks and mild efflorescence are normal aging, horizontal cracks and spalling that exposes rebar are not." },
+        { "type": "p", "text": "Interlocking block: very slight settlement in the first year or two after installation is common as the base fully compacts, ongoing progressive movement years later is not." },
+        { "type": "p", "text": "Timber: greying and minor surface checking are cosmetic weathering, soft spots that give under a screwdriver and visible rot at post bases are structural." }
+      ]
+    },
+    {
+      "heading": "Why acting early saves money",
+      "blocks": [
+        { "type": "p", "text": "A wall caught at the drainage-blocked or minor-shift stage is often a targeted repair, clear the outlets, reset a section, add missing drainage stone. A wall left until it is actively bowing or has multiple failed sections usually means a partial or full rebuild, at several times the cost of the earlier fix." },
+        { "type": "p", "text": "See /retaining-wall-repair for how we scope repairs versus rebuilds, and /how-long-do-retaining-walls-last for what a properly maintained wall's lifespan should look like." }
+      ]
+    },
+    {
+      "heading": "What we check during a failing-wall assessment",
+      "blocks": [
+        { "type": "p", "text": "A free assessment is not a quick glance from the driveway. We walk the full length of the wall, check drainage outlets for actual flow, look at the pattern of any cracking or movement, and consider what sits above and below the wall that might be contributing load." },
+        { "type": "steps", "items": [
+          { "title": "Visual survey", "text": "Walking the full wall length checking for lean, cracking, gaps and shifted units." },
+          { "title": "Drainage check", "text": "Confirming outlets exist, are clear, and are actually functioning as designed." },
+          { "title": "Cause assessment", "text": "Identifying whether the root cause is drainage, base settlement, root intrusion or undersized original design." },
+          { "title": "Recommendation", "text": "A clear written recommendation, targeted repair, section rebuild, or full rebuild, with reasoning you can understand." }
+        ] }
+      ]
+    },
+    {
+      "heading": "What not to do while you wait for an assessment",
+      "blocks": [
+        { "type": "p", "text": "It is tempting to try a quick fix while waiting to have a wall looked at, but a few common instincts can make things worse rather than better." },
+        { "type": "ul", "items": [
+          "Do not pile extra soil or mulch against a leaning wall to try to disguise the problem, added weight can accelerate movement",
+          "Do not remove drainage stone or dig behind the wall yourself without knowing what is causing the issue",
+          "Do not simply reset a shifted block without understanding whether the base underneath has settled",
+          "Do avoid parking vehicles or storing heavy equipment near a wall showing signs of movement"
+        ] },
+        { "type": "p", "text": "The safest step is a call for a free assessment before attempting any DIY fix, since the right repair depends entirely on identifying the actual cause first." }
+      ]
+    },
+    {
+      "heading": "How urgency differs between a garden wall and a structural wall",
+      "blocks": [
+        { "type": "p", "text": "The same visible sign can carry different weight depending on what the wall is holding back. A leaning 2 foot garden wall bordering a flower bed is a lower stakes situation than a leaning wall below a driveway or supporting the grade near a foundation, where a failure risks damage to a structure or vehicle rather than just landscaping. We factor in what a wall retains, not just its height, when advising how quickly to act." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Is a small crack in my block wall an emergency?", "a": "Usually not. A single fine crack or a slightly uneven joint is common wear. It becomes a priority when the crack is horizontal, growing, or paired with visible leaning." },
+    { "q": "Can a leaning wall be pushed back into place?", "a": "Sometimes a section can be reset if caught early and the base is still sound, but a wall that has leaned significantly usually needs to be rebuilt from the base up to correct properly." },
+    { "q": "Why does my wall look fine but keep losing soil behind it?", "a": "This usually points to a drainage or filter fabric failure letting fine soil wash into or through the drainage stone, even while the visible wall face still looks intact." },
+    { "q": "How urgent is efflorescence, the white staining on my wall?", "a": "On its own it is mostly cosmetic, but it is worth confirming drainage outlets are clear since it indicates water moving through the wall." },
+    { "q": "Should I get a wall inspected even if I do not see obvious problems?", "a": "If your wall is older, was built without visible drainage outlets, or you are simply not sure of its history, a free assessment is worth the hour it takes." },
+    { "q": "What should I do first if I see a serious sign?", "a": "Call for a free assessment before doing any DIY fix. Resetting a block or patching a crack without understanding the underlying cause often wastes effort or masks a bigger problem." }
+  ],
+  "cta": "Seeing one of these signs, call 519-914-1908 for a free assessment before it gets worse."
+}

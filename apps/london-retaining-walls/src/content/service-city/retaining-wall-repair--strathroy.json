@@ -1,0 +1,115 @@
+{
+  "slug": "retaining-wall-repair/strathroy",
+  "metaTitle": "Retaining Wall Repair in Strathroy, ON",
+  "metaDescription": "Retaining wall repair for Strathroy subdivision and rural properties, settlement and drainage fixed permanently. Free assessment, written quote.",
+  "h1": "Retaining Wall Repair in Strathroy, Ontario",
+  "intro": "Settlement is the most common repair issue we see on Strathroy's newer subdivision walls, usually a sign the original backfill wasn't compacted in proper lifts during construction.",
+  "sections": [
+    {
+      "heading": "Settlement on Newer Strathroy Walls",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "When backfill behind a wall is dumped in all at once instead of compacted in lifts, it settles unevenly over the following years. That shows up as a dip behind the wall, a wall leaning slightly, or gaps opening between wall units."
+        },
+        {
+          "type": "p",
+          "text": "On rural Strathroy-Caradoc properties, erosion at the base of an older timber or stone wall is the more common call, usually from surface water that was never properly redirected."
+        }
+      ]
+    },
+    {
+      "heading": "Diagnosing the Real Problem",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Check whether the wall is bowing, leaning, or just showing surface settlement behind it",
+            "Inspect for horizontal cracking, which signals lateral pressure exceeding wall capacity",
+            "Confirm whether drainage outlets are present, clear, and functioning",
+            "Look for erosion or voids under the wall base"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Repairing It Properly",
+      "blocks": [
+        {
+          "type": "callout",
+          "text": "We fix the drainage and compaction problem first, then repair the visible damage. Skipping that order means the repair fails again within a few years."
+        }
+      ]
+    },
+    {
+      "heading": "Repair Cost Ranges",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Minor drainage fixes typically run $500 to $2,000. More significant repairs involving partial reconstruction range from $3,000 to $15,000 or more. Assessments and written quotes are always free."
+        }
+      ]
+    },
+    {
+      "heading": "Repair Timing and Seasonal Factors",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Repair work near Strathroy is generally easier to schedule in spring through fall, when ground conditions allow for excavation. If a wall is showing serious warning signs in winter, we can still assess it and plan for early-season work."
+        },
+        {
+          "type": "p",
+          "text": "For the specific signs worth watching for while you wait, see /signs-your-retaining-wall-is-failing."
+        }
+      ]
+    },
+    {
+      "heading": "Repair Scope for Larger Rural Walls",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Longer rural retaining walls near Strathroy sometimes only need repair along one affected section rather than the full length. We identify the specific problem area during assessment rather than assuming the whole wall needs work."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "My new subdivision wall in Strathroy already has a gap behind it. Is that normal?",
+      "a": "No, it usually indicates the backfill wasn't compacted properly during original construction. It's worth a free assessment before it gets worse."
+    },
+    {
+      "q": "Do you repair walls on rural Strathroy-Caradoc properties?",
+      "a": "Yes, including timber and stone walls affected by erosion or drainage issues on rural and acreage properties."
+    },
+    {
+      "q": "How do I know if my wall needs repair or just monitoring?",
+      "a": "Minor vertical cracking from normal settling can often just be monitored. Bowing, horizontal cracks, and pooling water need prompt attention. See /signs-your-retaining-wall-is-failing."
+    },
+    {
+      "q": "Will you give me a written quote before starting repair work?",
+      "a": "Always, with a clear scope of work and no surprise charges."
+    },
+    {
+      "q": "Can retaining wall repairs be done in winter?",
+      "a": "Assessment can happen any time, but excavation-based repair work is typically scheduled for spring through fall when ground conditions allow it."
+    },
+    {
+      "q": "Does the whole wall need to be repaired, or just the damaged section?",
+      "a": "Often just the affected section. We identify the specific problem area during the free assessment rather than assuming a full rebuild is needed."
+    },
+    {
+      "q": "Can you repair a wall built by a different contractor?",
+      "a": "Yes, most of our repair calls are for walls we didn't originally build. We assess the existing structure, materials and drainage on their own merits before recommending a repair approach."
+    },
+    {
+      "q": "Do you repair walls that were originally self-built rather than professionally installed?",
+      "a": "Yes, we assess owner-built walls the same way as professionally installed ones, focusing on the current condition and cause of failure rather than who built it originally."
+    }
+  ],
+  "cta": "Get a free retaining wall repair assessment for your Strathroy property.",
+  "service": "retaining-wall-repair",
+  "city": "strathroy",
+  "region": "ON",
+  "photoMaterial": "repair"
+}

@@ -1,62 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CtaBand from "@/components/CtaBand";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import CtaBand from "@/components/CtaBand";
+import { WallTypes } from "@/components/Sections";
+import { JsonLd, breadcrumbSchema } from "@/lib/jsonld";
 import { site } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { PICKS, cityPhoto } from "@/lib/photos";
+import { getCities } from "@/lib/content";
 
 export const revalidate = 3600;
-export const metadata: Metadata = {
-  title: "Service Areas | Retaining Wall Contractor in Southwestern Ontario",
-  description: "London Retaining Walls serves London, Woodstock, Brantford, St. Thomas, Strathroy, Dorchester, Aylmer, Ilderton, Komoka, Mount Brydges, Lucan, Delaware and surrounding areas.",
-  openGraph: { title: "Service Areas | London Retaining Walls", url: `${site.url}/service-areas` },
-};
-
-const cities = [
-  { name: "London", href: "/london-retaining-wall-contractor", desc: "Professional retaining wall installation and repair in London, ON." },
-  { name: "Woodstock", href: "/woodstock-retaining-wall-contractor", desc: "Retaining wall contractor serving Woodstock and Oxford County." },
-  { name: "Brantford", href: "/brantford-retaining-wall-contractor", desc: "Concrete, block and wood retaining walls in Brantford, ON." },
-  { name: "St. Thomas", href: "/st-thomas-retaining-wall-contractor", desc: "Retaining wall installation and repair in St. Thomas, ON." },
-  { name: "Strathroy", href: "/strathroy-retaining-wall-contractor", desc: "Retaining wall services in Strathroy and Middlesex County." },
-  { name: "Dorchester", href: "/dorchester-retaining-wall-contractor", desc: "Professional retaining walls in Dorchester, ON." },
-  { name: "Aylmer", href: "/aylmer-retaining-wall-contractor", desc: "Retaining wall installation and repair in Aylmer, ON." },
-  { name: "Ilderton", href: "/ilderton-retaining-wall-contractor", desc: "Retaining wall contractor serving Ilderton and Middlesex Centre." },
-  { name: "Komoka", href: "/komoka-retaining-wall-contractor", desc: "Retaining wall installation in Komoka, ON." },
-  { name: "Mount Brydges", href: "/mount-brydges-retaining-wall-contractor", desc: "Professional retaining walls in Mount Brydges, ON." },
-  { name: "Lucan", href: "/lucan-retaining-wall-contractor", desc: "Retaining wall services in Lucan and Biddulph Township." },
-  { name: "Delaware", href: "/delaware-retaining-wall-contractor", desc: "Retaining wall installation and repair in Delaware, ON." },
-];
+const TITLE = "Retaining Wall Contractor Service Areas | SW Ontario";
+const DESC = "Retaining wall installation and repair in London, St. Thomas, Woodstock, Strathroy, Brantford and nine more Southwestern Ontario communities. Free site visits.";
+export const metadata: Metadata = { title: TITLE, description: DESC, alternates: { canonical: `${site.url}/service-areas` }, openGraph: { title: TITLE, description: DESC, url: `${site.url}/service-areas`, images: [{ url: PICKS.areas.image, alt: PICKS.areas.alt }] }, twitter: { card: "summary_large_image", title: TITLE, description: DESC } };
 
 export default function ServiceAreasPage() {
+  const cities = getCities();
+  const ordered = site.cities.map((c) => ({ c, page: cities.find((p) => p.slug === c.route)!, idx: cities.findIndex((p) => p.slug === c.route) })).filter((x) => x.page);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Service Areas", href: "/service-areas" }])) }} />
-
-      <PageHero
-        title="Service Areas"
-        subtitle="London Retaining Walls proudly serves communities across Southwestern Ontario — from London to Woodstock, Brantford, St. Thomas and all surrounding communities."
-        center
-      />
-
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cities.map((city) => (
-              <Link key={city.name} href={city.href} className="card p-6 group hover:border-[var(--accent)] border-2 border-transparent transition-colors">
-                <h2 className="text-xl font-bold text-[var(--dark)] group-hover:text-[var(--accent)] transition-colors mb-2">{city.name}</h2>
-                <p className="text-gray-600 text-sm">{city.desc}</p>
-                <span className="mt-4 inline-flex items-center text-[var(--accent)] text-sm font-semibold">Learn more →</span>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Service areas", href: "/service-areas" }])} />
+      <PageHero photo={PICKS.areas} kicker="Service areas" title="Where we build retaining walls" intro="Based in London and working within about 40 minutes in every direction, from Lucan down to Aylmer and Strathroy across to Woodstock and Brantford." crumbs={[{ name: "Home", href: "/" }, { name: "Service areas", href: "/service-areas" }]} />
+      <section className="section bg-paper">
+        <div className="container-x grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {ordered.map(({ c, page, idx }) => {
+            const p = cityPhoto(idx);
+            return (
+              <Link key={c.slug} href={`/${c.route}`} className="group card flex flex-col overflow-hidden">
+                <div className="relative aspect-[16/9]"><Image src={p.image} alt={`Retaining wall work near ${c.name}, Ontario`} fill sizes="(max-width:640px) 100vw, 33vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover transition duration-500 group-hover:scale-[1.03]" /></div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="kicker">{page.county}</p>
+                  <h2 className="mt-2 font-display text-2xl font-extrabold uppercase tracking-tight group-hover:text-accent-2">{c.name}</h2>
+                  <p className="mt-2 flex-1 text-[15px] leading-relaxed text-ink-2">{page.terrainNote}</p>
+                  <p className="mt-3 text-[13px] text-stone">{page.areas.slice(0, 4).join(" · ")}</p>
+                </div>
               </Link>
-            ))}
-          </div>
-          <div className="mt-12 bg-white rounded-2xl p-8 shadow-sm text-center">
-            <h2 className="text-2xl font-bold text-[var(--dark)] mb-3">Don&apos;t See Your City?</h2>
-            <p className="text-gray-600 mb-6">We serve many more communities across Southwestern Ontario. Contact us to confirm we serve your area — chances are we do!</p>
-            <Link href="/contact-us" className="btn btn-accent">Check Your Area</Link>
-          </div>
+            );
+          })}
         </div>
       </section>
-
+      <WallTypes />
       <CtaBand />
     </>
   );

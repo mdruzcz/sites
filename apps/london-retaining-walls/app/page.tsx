@@ -3,317 +3,147 @@ import Image from "next/image";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import CtaBand from "@/components/CtaBand";
+import { VideoLoop } from "@/components/VideoLoop";
+import { WallTypes, Process, RepairSigns, Testimonials, WhyUs, AreasBand } from "@/components/Sections";
+import { PhotoGrid } from "@/components/PhotoGrid";
+import { FaqList } from "@/components/ArticleBody";
+import { JsonLd, faqSchema } from "@/lib/jsonld";
 import { site } from "@/lib/site";
-import { faqSchema } from "@/lib/jsonld";
+import { PICKS, finished, gallery } from "@/lib/photos";
+import { getGuides } from "@/lib/content";
 
 export const revalidate = 3600;
 
+const TITLE = "London Retaining Walls | Retaining Wall Contractor London ON";
+const DESC = "Owner-led retaining wall contractor in London, Ontario. Block, concrete, timber and stone walls built with real drainage, permits handled. Free written quotes.";
+
 export const metadata: Metadata = {
-  title: "London Retaining Walls | Professional Installation & Repair in London, ON",
-  description: "Professional retaining wall installation and repair in London, Ontario. Concrete, block and wood retaining walls. 8+ years experience. Ontario Building Code compliant. Free quotes.",
-  openGraph: {
-    title: "London Retaining Walls | Professional Installation & Repair",
-    description: "Expert retaining wall installation in London, Ontario. Concrete, block, and wood walls. Free quotes. Ontario Building Code compliant.",
-    url: site.url,
-    images: [{ url: "/images/hero-retaining-wall.jpg", width: 1200, height: 630, alt: "Professional retaining wall installation in London, Ontario" }],
-  },
+  title: TITLE,
+  description: DESC,
+  alternates: { canonical: site.url },
+  openGraph: { title: TITLE, description: DESC, url: site.url, type: "website", images: [{ url: PICKS.home.image, width: PICKS.home.width, height: PICKS.home.height, alt: PICKS.home.alt }] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: [PICKS.home.image] },
 };
 
 const faqs = [
-  { q: "What are the benefits of choosing Block Retaining Walls?", a: "Block retaining walls are a versatile choice for both residential and commercial properties in Ontario. Complying with the Ontario Building Code, these walls offer a wide range of design options, are great for preventing soil erosion, and can be customized to fit various shapes and heights. They're ideal for creating terraced landscapes, elevated planters, and garden beds." },
-  { q: "How durable are Concrete Retaining Walls compared to other types?", a: "Concrete retaining walls are among the most durable types. Known for their strength and resilience, they provide long-lasting stability ideal for retaining steep slopes and creating level surfaces on uneven terrains. Custom formed to suit your landscape, they comply with the Ontario Building Code and are a reliable choice for any setting." },
-  { q: "Can Wood & Timber Retaining Walls withstand Ontario's climate?", a: "Yes. Treated lumber or hardwoods used in these walls are chosen for their durability and compatibility with Ontario's climate. Regular maintenance is key to protect against decay and ensure longevity. A properly treated and drained wood wall can last 20–40 years." },
-  { q: "What are common signs that indicate a need for Retaining Wall Repair?", a: "Signs your retaining wall needs repair include visible cracks, shifts in the wall, or any noticeable damage. Over time, soil movement, water pressure, and natural wear can compromise the wall's integrity. Timely repairs are crucial to maintain its effectiveness in soil erosion prevention and landscape support." },
-  { q: "How do you ensure compliance with the Ontario Building Code?", a: "At London Retaining Walls, we prioritize compliance with the Ontario Building Code in all our projects. Our team ensures that each retaining wall — whether block, concrete, or wood — is engineered and constructed according to the code's standards, ensuring safety and durability." },
+  { q: "How much does a retaining wall cost in London, Ontario?", a: "Most residential walls land between $200 and $350 per linear foot installed for interlocking block, with timber usually coming in lower and poured concrete higher. Height, access for the excavator, soil conditions and drainage needs move the number. Every quote we give is written and broken out by line so you can see where the money goes." },
+  { q: "Do I need a permit for a retaining wall in Ontario?", a: "Generally yes once the wall is over 1 metre high, and often when it supports a driveway, structure or a surcharge from a neighbouring property. Rules vary by municipality. We check with the city or township for you and arrange engineering when it is required." },
+  { q: "Which retaining wall material lasts longest?", a: "Properly drained poured concrete and interlocking block walls routinely last 40 to 80 years in Ontario. Pressure-treated timber walls typically give 20 to 30 years. Drainage matters more than material: a block wall with no weeping tile can fail in 5 years while a well-built timber wall outlives it." },
+  { q: "Can you repair a leaning retaining wall or does it need to be rebuilt?", a: "Minor lean with a sound base can sometimes be corrected by relieving water pressure and adding drainage. A wall that has bulged, stepped apart or rotated at the base is almost always cheaper and safer to rebuild correctly. Kyle will tell you honestly which case you have during the free site visit." },
+  { q: "How long does it take to build a retaining wall?", a: "A typical residential wall of 30 to 60 feet is finished in two to four working days including excavation, base, drainage and backfill. Larger tiered systems and engineered walls run one to two weeks. We give you a schedule with the quote." },
+  { q: "Where do you build retaining walls?", a: "London and everywhere within about 40 minutes: St. Thomas, Woodstock, Strathroy, Dorchester, Aylmer, Ilderton, Komoka, Mount Brydges, Lucan, Delaware and Brantford, plus the rural properties in between." },
 ];
 
-const services = [
-  {
-    name: "Block Retaining Walls",
-    href: "/block-retaining-walls",
-    img: "/images/long-lasting-walls.png",
-    imgAlt: "Gray concrete block retaining wall installation by London Retaining Walls",
-    desc: "Block retaining walls are engineered structures built with interlocking concrete blocks. These walls serve both functional and aesthetic purposes, preventing soil erosion and creating visually appealing terraced landscapes.",
-  },
-  {
-    name: "Concrete Retaining Walls",
-    href: "/concrete-retaining-walls",
-    img: "/images/service-concrete.jpg",
-    imgAlt: "Concrete retaining wall forming and installation in London, Ontario",
-    desc: "Concrete retaining walls are sturdy structures designed to hold back soil and prevent erosion. Known for their durability, concrete walls provide long-lasting stability in various landscapes.",
-  },
-  {
-    name: "Wood & Timber Retaining Walls",
-    href: "/wood-and-timber-retaining-walls",
-    img: "/images/service-wood.jpg",
-    imgAlt: "Wood and timber retaining wall with deck installation in London, Ontario",
-    desc: "Wood and timber retaining walls bring a natural and warm aesthetic to outdoor spaces. Crafted from treated lumber or hardwood, these walls blend seamlessly with the environment.",
-  },
-  {
-    name: "Retaining Wall Repair",
-    href: "/retaining-wall-repair",
-    img: "/images/service-repair.jpg",
-    imgAlt: "Professional retaining wall repair and restoration service",
-    desc: "Retaining wall repair involves addressing cracks, shifts, or damage to existing retaining structures. Timely repair is crucial to prevent further damage and maintain structural effectiveness.",
-  },
-];
-
-const differentiators = [
-  { title: "Experience", desc: "Over 8 years of dedicated experience installing retaining walls across Southwestern Ontario. We bring expertise and genuine care to every project." },
-  { title: "Craftsmanship", desc: "From pre-job planning to final walk-throughs, we never compromise on quality. Our commitment is unwavering — durability, aesthetics, and overall excellence." },
-  { title: "Expertise", desc: "Whether it's a minor backyard repair or a large commercial installation, each project gets dedicated attention and a committed foreman overseeing progress." },
-  { title: "Accountability", desc: "We hold ourselves accountable to exceed your expectations. Final payment is only accepted when we've surpassed your satisfaction levels." },
-  { title: "Great Communication", desc: "Available every weekday from 7 AM to 5 PM to coordinate, facilitate scheduling, and promptly address any inquiries." },
-  { title: "Attention to Detail", desc: "We guarantee the most comprehensive on-site consultations, with each estimate meticulously reviewed by our owner." },
-];
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "London Retaining Walls project reel",
+  description: "Block, concrete and timber retaining walls built by London Retaining Walls across London and Southwestern Ontario.",
+  thumbnailUrl: `${site.url}/images/video/retaining-walls-reel-poster.webp`,
+  contentUrl: `${site.url}/videos/retaining-walls-reel.mp4`,
+  uploadDate: "2026-08-25",
+};
 
 export default function HomePage() {
+  const recent = finished(["segmental-block", "timber", "poured-concrete", "natural-stone"], 6, [PICKS.home, PICKS.homeTerrace, PICKS.block, PICKS.concrete, PICKS.timber, PICKS.stone, PICKS.terrace]);
+  const guides = getGuides().slice(0, 4);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }} />
+      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={videoSchema} />
 
-      {/* ─── HERO — split layout matching source ─── */}
-      <section className="relative min-h-[560px] flex items-center bg-[var(--dark)]">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-retaining-wall.jpg"
-            alt="Professional retaining wall installation in London, Ontario"
-            fill
-            className="object-cover opacity-40"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
-        </div>
-
-        <div className="relative z-10 w-full container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-10 items-center">
-          {/* Left: headline */}
+      {/* Hero */}
+      <section className="relative isolate overflow-hidden bg-ink text-paper">
+        <Image src={PICKS.home.image} alt={PICKS.home.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={PICKS.home.blurDataURL} className="object-cover object-[70%_center]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" aria-hidden />
+        <div className="container-x relative grid gap-10 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr] lg:items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white uppercase tracking-wide leading-tight font-[family-name:var(--font-poppins)]">
-              PROFESSIONAL<br />RETAINING WALL<br />CONTRACTOR
+            <p className="kicker text-accent">Owner-led · London, Ontario · {site.yearsLabel} years</p>
+            <h1 className="display mt-4 text-[44px] leading-[0.92] sm:text-6xl lg:text-[76px]">
+              Retaining walls<br />built for clay,<br /><span className="text-accent">frost and slopes.</span>
             </h1>
-            <p className="mt-5 text-white/80 text-base md:text-lg leading-relaxed">
-              Your Trusted Retaining Wall Contractor serving London, St. Thomas, Woodstock, Kitchener, and Hamilton |{" "}
-              <strong className="text-white">Free Estimate within 24 hours</strong>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/85 md:text-xl">
+              Interlocking block, poured concrete, timber and natural stone walls across London and Southwestern Ontario. Every wall gets a compacted base, weeping tile and filter fabric. That is why ours stay straight.
             </p>
-            <div className="flex flex-wrap gap-4 mt-7">
-              <Link href="#services" className="btn btn-accent text-base px-8 py-3">
-                SEE OUR SERVICES →
-              </Link>
-              <a href={site.phoneHref} className="btn btn-white text-base px-8 py-3 text-[var(--dark)]">
-                Call {site.phone}
-              </a>
+            <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[14px] font-semibold text-paper/80">
+              {["Free written quotes", "Permits and engineering handled", "Repairs of walls others built"].map((t) => <li key={t} className="flex items-center gap-2"><span className="h-2 w-2 bg-accent" aria-hidden />{t}</li>)}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#quote" className="btn btn-accent">Request a free quote</a>
+              <a href={site.phoneHref} className="btn btn-paper">Call {site.phone}</a>
             </div>
           </div>
-
-          {/* Right: inline contact form card */}
-          <div className="bg-white rounded shadow-2xl overflow-hidden lg:max-w-md w-full mx-auto">
-            <div className="bg-[var(--accent)] px-6 py-4">
-              <h2 className="text-lg font-bold text-white text-center uppercase tracking-wide font-[family-name:var(--font-poppins)]">
-                CONTACT US
-              </h2>
-            </div>
-            <div className="p-6">
-              <QuoteForm compact />
-            </div>
+          <div id="quote" className="scroll-mt-24 border border-white/10 bg-paper p-5 text-ink shadow-2xl md:p-6">
+            <p className="font-display text-xl font-extrabold uppercase tracking-tight">Get your free quote</p>
+            <p className="mt-1 text-[14px] text-stone">Kyle replies within one business day and books a site visit.</p>
+            <div className="mt-4"><QuoteForm compact source="home-hero" /></div>
           </div>
         </div>
       </section>
 
-      {/* ─── ORANGE INTRO BANNER ─── */}
-      <section className="bg-[var(--accent)] py-14 px-4">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-8 items-center">
+      <AreasBand />
+      <WallTypes />
+
+      {/* Reel + intro */}
+      <section className="section bg-paper">
+        <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wide leading-tight font-[family-name:var(--font-poppins)]">
-              DURABLE RETAINING WALLS<br />FROM START TO FINISH
-            </h2>
-          </div>
-          <div>
-            <p className="text-white/90 leading-relaxed mb-6">
-              London Retaining Walls is a company led by Kyle with over 8 years of experience installing retaining walls. We install wood, timber, concrete block, and concrete retaining walls across South-Western Ontario. As retaining wall builders, we can help both residential and commercial customers — standard and engineer walls, tight spaces, Permacon blocks, retention walls and more.
-            </p>
-            <Link href="/about-us" className="btn btn-dark">READ MORE ABOUT US</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── OUR SERVICES ─── */}
-      <section id="services" className="section bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide font-[family-name:var(--font-poppins)]">
-              Our Services
-            </h2>
-            <p className="mt-3 text-gray-500 max-w-xl mx-auto">We can help with various retaining wall styles. All of these will comply with the Ontario Building Code.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((s) => (
-              <div key={s.href} className="card border border-gray-100 flex flex-col">
-                <div className="relative h-48 overflow-hidden">
-                  <Image src={s.img} alt={s.imgAlt} fill className="object-cover" sizes="(max-width:640px) 100vw,(max-width:1024px) 50vw,25vw" />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">{s.name}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{s.desc}</p>
-                  <Link href={s.href} className="text-[var(--accent)] text-sm font-semibold hover:underline">
-                    Read More →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIAL ─── */}
-      <section className="bg-gray-50 py-12 px-4">
-        <div className="container mx-auto max-w-3xl text-center">
-          <blockquote className="text-xl md:text-2xl italic text-[var(--dark)] leading-relaxed">
-            &ldquo;No other landscape contractor wanted to repair our retaining wall in Byron. This company stepped up and rebuilt our leaning wood retaining wall in three days. I recommend them.&rdquo;
-          </blockquote>
-          <p className="mt-4 text-sm font-semibold text-[var(--accent)] uppercase tracking-wider">— Sandra Rudy</p>
-        </div>
-      </section>
-
-      {/* ─── RESIDENTIAL & COMMERCIAL ─── */}
-      <section className="section bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-10 font-[family-name:var(--font-poppins)]">
-            Installing Residential and Commercial Retaining Walls
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded p-8 border border-gray-100">
-                <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Residential</h3>
-                <p className="text-gray-600 leading-relaxed">Transform your home&rsquo;s landscape with our custom-designed residential retaining walls. Perfect for controlling soil erosion, creating terraced gardens, and enhancing outdoor living spaces, our retaining walls combine functionality with aesthetic appeal. Choose from a variety of materials like block, concrete, or wood to perfectly match your home&rsquo;s style.</p>
-              </div>
-              <div className="bg-gray-50 rounded p-8 border border-gray-100">
-                <h3 className="text-xl font-bold text-[var(--dark)] mb-3 font-[family-name:var(--font-poppins)]">Commercial</h3>
-                <p className="text-gray-600 leading-relaxed">Elevate your commercial property with our durable and efficient commercial retaining wall services. Ideal for supporting sloped terrains, enhancing property aesthetics, and ensuring landscape stability. We specialize in large-scale projects, offering solutions that are both code-compliant and tailored to the unique needs of your business landscape.</p>
-              </div>
+            <p className="kicker">London Retaining Walls</p>
+            <h2 className="display mt-3 text-3xl md:text-4xl">The retaining wall contractor London homeowners call when the wall has to hold</h2>
+            <div className="prose-lrw mt-5">
+              <p>Kyle started London Retaining Walls after years of watching walls fail for the same three reasons: no compacted base, no drainage, and the wrong material for the load. Eight years and hundreds of walls later, the fix is still the same. Dig deeper than the frost line, put clear stone and weeping tile behind the wall, and compact the backfill in lifts.</p>
+              <p>We build residential and commercial walls from a two-course garden bed to engineered walls holding up a driveway, and we are one of the few crews in the area that will take on <Link href="/retaining-wall-repair">repairing a wall someone else built</Link>. Read more <Link href="/about-us">about us</Link>, or browse the <Link href="/gallery">project gallery</Link>.</p>
             </div>
-            <div className="relative h-80 md:h-full min-h-[400px] rounded overflow-hidden">
-              <Image
-                src="/images/residential-commercial.png"
-                alt="Residential and commercial retaining wall installations by London Retaining Walls"
-                fill
-                className="object-cover"
-                sizes="(max-width:768px) 100vw,50vw"
-              />
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              {[["8+", "years building walls"], ["7", "wall types and services"], ["12", "towns served"]].map(([n, l]) => (
+                <div key={l} className="border border-[var(--line)] bg-white p-4"><p className="font-display text-3xl font-extrabold text-accent-2">{n}</p><p className="text-[13px] text-ink-2">{l}</p></div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ─── BUILDING LONG LASTING RETAINING WALLS ─── */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded overflow-hidden h-80 lg:h-[480px]">
-              <Image
-                src="/images/long-lasting-walls.png"
-                alt="Long-lasting block retaining wall with garden landscaping in London, Ontario"
-                fill
-                className="object-cover"
-                sizes="(max-width:1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide leading-tight mb-4 font-[family-name:var(--font-poppins)]">
-                Building Long Lasting Retaining Walls
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                We specialize in tailored designs and installations, offering expertise in various landscaping retaining walls:
-              </p>
-              <ul className="space-y-5">
-                {[
-                  { name: "Cantilevered Retaining Walls", desc: "A sleek option that optimizes materials, focusing on meticulous design and construction. Characterized by a thin wall, it extends into the backfill (heel) and forward beneath the soil (toe), showcasing a blend of efficiency and attention to detail." },
-                  { name: "Gravity Retaining Walls", desc: "A fundamental design leveraging the wall's mass and weight to secure the soil. Suited for various materials and finishes, shorter walls may not require additional reinforcement, while stability is enhanced through a small trench in most cases." },
-                  { name: "Anchored Retaining Walls", desc: "Versatile and adaptable, this design employs cables or strips to anchor the wall to the earth. Compatible with any material or style, anchored retaining walls provide a robust solution for diverse landscaping needs." },
-                ].map((w) => (
-                  <li key={w.name} className="flex gap-4 items-start">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[var(--accent)] flex items-center justify-center mt-0.5">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <div>
-                      <strong className="text-[var(--dark)] font-bold">{w.name}:</strong>{" "}
-                      <span className="text-gray-600">{w.desc}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-gray-500 text-sm">During your consultation, our experts assess soil conditions, property specifics, and your unique requirements to determine the most suitable retaining wall type.</p>
-            </div>
+          <div className="relative overflow-hidden border border-[var(--line)] bg-black">
+            <VideoLoop src="/videos/retaining-walls-reel.mp4" poster="/images/video/retaining-walls-reel-poster.webp" className="aspect-video w-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* ─── DIFFERENTIATORS ─── */}
-      <section className="section bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-4 font-[family-name:var(--font-poppins)]">
-            Find Out the Difference<br />London Retaining Walls Makes
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {differentiators.map((d) => (
-              <div key={d.title} className="p-6 bg-gray-50 rounded border border-gray-100">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent)] flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="font-bold text-[var(--dark)] mb-2 font-[family-name:var(--font-poppins)]">{d.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{d.desc}</p>
-              </div>
+      <Process />
+      <RepairSigns />
+      <Testimonials />
+      <WhyUs />
+
+      {/* Recent work */}
+      <section className="section bg-paper-2">
+        <div className="container-x">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div><p className="kicker">Recent work</p><h2 className="display mt-3 text-3xl md:text-4xl">Straight from the crew's camera roll</h2></div>
+            <Link href="/gallery" className="btn btn-outline">All {gallery.length} project photos</Link>
+          </div>
+          <div className="mt-10"><PhotoGrid photos={recent} /></div>
+        </div>
+      </section>
+
+      {/* Guides */}
+      <section className="section bg-paper">
+        <div className="container-x">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div><p className="kicker">Guides</p><h2 className="display mt-3 text-3xl md:text-4xl">Read this before you get three quotes</h2></div>
+            <Link href="/resources" className="btn btn-outline">All guides</Link>
+          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {guides.map((g) => (
+              <li key={g.slug} className="flex flex-col border border-[var(--line)] bg-white p-5">
+                <p className="tag">{g.category}</p>
+                <Link href={`/${g.slug}`} className="mt-3 font-display text-lg font-bold leading-snug hover:text-accent-2">{g.h1}</Link>
+                <p className="mt-2 flex-1 text-[14px] text-ink-2">{g.summary}</p>
+                <p className="mt-3 text-[12px] text-stone">{g.readMinutes} min read</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* ─── SERVICE AREAS ─── */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-2 font-[family-name:var(--font-poppins)]">
-            Our Service Areas
-          </h2>
-          <p className="text-center text-gray-500 mb-8">Located in London, but we service all of Southwestern Ontario:</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
-            {site.serviceAreas.map((area) => (
-              <Link
-                key={area.name}
-                href={area.href}
-                className="px-4 py-2 text-center rounded border border-gray-200 text-gray-700 hover:border-[var(--accent)] hover:text-[var(--accent)] font-medium text-sm transition-colors bg-white"
-              >
-                {area.name}
-              </Link>
-            ))}
-          </div>
-          <p className="text-center mt-6 text-sm text-gray-500">Outside these areas? <Link href="/contact-us" className="text-[var(--accent)] font-semibold hover:underline">Contact us to see if we can help today</Link></p>
-        </div>
-      </section>
-
-      {/* ─── FAQ ─── */}
-      <section className="section bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--dark)] uppercase tracking-wide text-center mb-10 font-[family-name:var(--font-poppins)]">
-            FAQS
-          </h2>
-          <div className="space-y-2">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded border border-gray-200 overflow-hidden">
-                <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer bg-gray-50 hover:bg-gray-100 list-none [&::-webkit-details-marker]:hidden">
-                  <h3 className="font-bold text-[var(--dark)] font-[family-name:var(--font-poppins)]">{faq.q}</h3>
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[var(--accent)] flex items-center justify-center text-white font-bold text-lg leading-none transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <div className="px-6 py-4 bg-white border-t border-gray-100">
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
+      <section className="border-t border-[var(--line)] bg-white">
+        <div className="container-x max-w-4xl py-16"><FaqList faqs={faqs} title="Retaining wall questions, answered plainly" /></div>
       </section>
 
       <CtaBand />

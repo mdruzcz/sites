@@ -1,0 +1,105 @@
+{
+  "slug": "timber-vs-block-retaining-walls",
+  "metaTitle": "Timber vs Block Retaining Walls",
+  "metaDescription": "Compare timber and interlocking block retaining walls on cost, lifespan, maintenance and appearance to choose the right one for your Ontario yard.",
+  "h1": "Timber vs Block Retaining Walls: Which Fits Your Yard",
+  "intro": "These are the two most common residential wall types we build, and homeowners usually narrow their decision to these two before calling. Here is how they actually compare.",
+  "category": "Materials",
+  "readMinutes": 8,
+  "summary": "A side by side comparison of timber and interlocking block retaining walls on upfront cost, lifespan, maintenance, appearance and height limits.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "mixed",
+  "sections": [
+    {
+      "heading": "Upfront cost",
+      "blocks": [
+        { "type": "p", "text": "Timber is generally the lower upfront cost, roughly $110 to $210 per linear foot installed for a typical 3 to 4 foot wall. Interlocking block runs roughly $200 to $350 per linear foot for the same height. The gap narrows somewhat on taller walls, since both need more base and drainage work as height increases." },
+        { "type": "p", "text": "Full pricing detail across all wall types is at /retaining-wall-cost-guide-ontario." }
+      ]
+    },
+    {
+      "heading": "What drives the price gap between them",
+      "blocks": [
+        { "type": "p", "text": "The cost difference comes down to material unit price and installation speed rather than any shortcut on either side. Block units and the geogrid that often accompanies taller block walls cost more per linear foot than dimensional timber, and setting individual block courses with proper alignment takes methodical labour even though it moves quickly overall. Timber's lower material cost is partly offset on some sites by the extra labour of hand-placing deadman anchors correctly, which is why the price gap is not as wide as raw material cost alone would suggest." }
+      ]
+    },
+    {
+      "heading": "Lifespan",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Timber: 20 to 40 years depending on wood grade, drainage and how consistently it is stained",
+          "Block: 40 to 50 years with proper base preparation and drainage, largely maintenance-free"
+        ] },
+        { "type": "callout", "text": "Over a 40 year horizon, block's higher upfront cost is often offset by not needing periodic staining or facing an earlier rebuild." },
+        { "type": "p", "text": "See /how-long-do-retaining-walls-last for the full breakdown by material." },
+        { "type": "p", "text": "The lifespan gap comes down to what each material is fundamentally doing over time. Wood is an organic material that degrades from moisture, UV and biological activity no matter how well it is protected, it is being slowed down, not stopped. Concrete block is inorganic and, aside from freeze-thaw surface effects, does not degrade the same way, it fails from movement or drainage problems rather than material breakdown." }
+      ]
+    },
+    {
+      "heading": "Ongoing maintenance",
+      "blocks": [
+        { "type": "p", "text": "This is where the two diverge most. Block needs little beyond checking drainage outlets and watching for movement. Timber is a living material and needs active upkeep to hit its full lifespan." },
+        { "type": "ul", "items": [
+          "Timber: re-stain every 2 to 4 years, check hardware annually, probe for rot periodically",
+          "Block: annual visual check for movement, drainage outlet check twice a year, otherwise low maintenance"
+        ] },
+        { "type": "p", "text": "Staining specifics at /tips-on-how-to-stain-your-wooden-retaining-wall." }
+      ]
+    },
+    {
+      "heading": "Height limits and structural performance",
+      "blocks": [
+        { "type": "p", "text": "Timber walls with deadman tiebacks perform well up to about 4 feet. Beyond that, the lateral load gets harder to manage with a fastened timber structure. Block walls handle greater height more readily, especially with geogrid reinforcement, and are the more common choice once a wall approaches or exceeds the 1 metre permit threshold." },
+        { "type": "p", "text": "More at /retaining-wall-height-limits-and-engineering." }
+      ]
+    },
+    {
+      "heading": "Appearance and design flexibility",
+      "blocks": [
+        { "type": "p", "text": "Timber gives a natural, warm look that suits mature landscaping and garden terraces. Block comes in a wider range of colours and textures and can follow curves and angles more precisely than a timber structure, which is built from straight runs." }
+      ]
+    },
+    {
+      "heading": "Site access and installation",
+      "blocks": [
+        { "type": "p", "text": "Timber can be an easier build on sites with limited equipment access, since individual timbers are more manageable to bring in by hand than pallets of block. On open, accessible lots this advantage matters less, and block installs faster overall once equipment can reach the site." }
+      ]
+    },
+    {
+      "heading": "Repair and rebuild considerations",
+      "blocks": [
+        { "type": "p", "text": "When a timber wall fails, it is often a whole-section or whole-wall issue, since the boards and posts work together as a fastened assembly and localized rot or a failed deadman anchor tends to compromise the section around it. Block walls can more often be repaired section by section, resetting a few courses without touching the rest of the wall, because each unit interlocks independently rather than relying on fasteners tying the whole run together." },
+        { "type": "p", "text": "This is a practical consideration if budget is tight now but you expect to maintain the wall over decades, block's ability to be repaired incrementally can be worth factoring in alongside the lifespan numbers above. See /retaining-wall-repair for how we approach each material differently." }
+      ]
+    },
+    {
+      "heading": "Which one fits Southwestern Ontario properties",
+      "blocks": [
+        { "type": "p", "text": "On the clay-heavy soils common around London and Middlesex County, we lean toward block for anything beyond a low garden terrace, since block tolerates minor base movement over time better than a fastened timber structure, and its lower maintenance suits homeowners who do not want a recurring staining task. Timber remains a strong choice for lower garden walls, raised beds, and budget-conscious projects under about 3 to 4 feet." },
+        { "type": "p", "text": "See /building-a-retaining-wall-on-clay-soil for more on how soil type factors into material choice." }
+      ]
+    },
+    {
+      "heading": "A real-world example of how the decision plays out",
+      "blocks": [
+        { "type": "p", "text": "A typical scenario we see: a backyard grade change of about 3 feet separating a lawn from a raised patio area, on a lot with clay subsoil. A homeowner comparing timber and block here is really weighing a lower cost and natural look against long-term upkeep and a longer service life." },
+        { "type": "p", "text": "If the wall borders a play area or a patio used daily, we often steer toward block, since its lower maintenance means one less thing to track, and its longer lifespan means it is less likely to need attention while the space is in heavy use. If it is a lower-traffic garden terrace at the back of the property, timber's cost savings and natural look can be the better trade-off, especially if the homeowner already maintains other wood features on the property and staining fits into an existing routine." }
+      ]
+    },
+    {
+      "heading": "Neither material is automatically the wrong answer",
+      "blocks": [
+        { "type": "p", "text": "It is easy to read a comparison like this and assume block always wins on paper. In practice, plenty of well-built timber walls across our service area have held up beautifully for 20 years and more, simply because they were built with proper deadman anchors and drainage, and the owner kept up with staining. The material comparison matters, but construction quality and follow-through on maintenance decide the real-world outcome more than the material label on its own." },
+        { "type": "p", "text": "The honest advice we give most homeowners is to pick the material that matches how much upkeep they actually want to commit to, then insist on proper base and drainage regardless of which one they choose. A well-built wall in either material will outperform a poorly built wall in the other every time." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Which costs less over 20 years, timber or block?", "a": "Timber has a lower upfront cost, but factoring in re-staining every 2 to 4 years and a shorter lifespan, block often costs about the same or less per year of service once you look past the initial price." },
+    { "q": "Can timber walls be built as tall as block walls?", "a": "Not comfortably. Timber is generally best kept under 4 feet, while block, especially with geogrid, handles greater heights more reliably." },
+    { "q": "Does timber look better than block?", "a": "It is a matter of taste. Timber gives a natural, rustic look, block offers more colour and texture options and a cleaner, more architectural line." },
+    { "q": "Is one material better for clay soil than the other?", "a": "Block generally tolerates minor base settlement in clay soils better than a fastened timber structure, which is one reason we lean toward block for larger walls in this area." },
+    { "q": "Can I combine timber and block on the same property?", "a": "Yes, it is common to use block for a main retaining wall and timber for a smaller garden terrace elsewhere on the same lot." }
+  ],
+  "cta": "Weighing timber against block for your yard, call 519-914-1908 for an honest recommendation."
+}

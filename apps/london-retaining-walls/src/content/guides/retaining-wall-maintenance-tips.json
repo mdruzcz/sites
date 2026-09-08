@@ -1,0 +1,135 @@
+{
+  "slug": "retaining-wall-maintenance-tips",
+  "metaTitle": "Retaining Wall Maintenance Tips",
+  "metaDescription": "A seasonal maintenance checklist for Ontario retaining walls covering drainage, vegetation, movement and when to call a professional.",
+  "h1": "Retaining Wall Maintenance: A Seasonal Checklist",
+  "intro": "Most retaining wall maintenance takes a few hours a year and costs almost nothing. Skipping it is what turns a small fix into a rebuild.",
+  "category": "Maintenance",
+  "readMinutes": 8,
+  "summary": "A twice-yearly retaining wall maintenance checklist covering drainage outlets, movement, vegetation and when a problem needs a professional.",
+  "publishedDate": "2026-09-08",
+  "photoMaterial": "mixed",
+  "sections": [
+    {
+      "heading": "Twice a year: clear the drainage outlets",
+      "blocks": [
+        { "type": "p", "text": "This is the single most important task for any wall type. Weeping tile and weep holes let water escape from behind the wall. If they clog, hydrostatic pressure builds behind the wall and that pressure is the leading cause of failure across every material we build." },
+        { "type": "steps", "items": [
+          { "title": "Spring", "text": "Check every outlet after the snow is gone and clear any sediment or debris left by winter runoff." },
+          { "title": "Fall", "text": "Clear leaves and debris before freeze-up so outlets are running clean going into winter." }
+        ] },
+        { "type": "p", "text": "If you cannot locate your drainage outlets, look for small pipe ends or gaps between blocks near the base of the wall. See /retaining-wall-drainage-explained for how the system is laid out behind the wall face." },
+        { "type": "p", "text": "A garden trowel or gloved hand is usually enough to clear an outlet of leaves, mulch or built-up sediment. If water does not begin trickling out within a few minutes of a hose test at the top of the wall, the blockage may be deeper in the pipe than you can reach, which is worth flagging for a professional look rather than digging blindly." }
+      ]
+    },
+    {
+      "heading": "Once a year: walk the wall and look for movement",
+      "blocks": [
+        { "type": "ul", "items": [
+          "Any section leaning or bowing outward",
+          "Blocks or timbers shifted out of alignment",
+          "New gaps opening between blocks or boards",
+          "Settlement at the base or at either end of the wall"
+        ] },
+        { "type": "callout", "text": "Movement caught early is usually a low-cost fix. The same movement left for a few years often means a rebuild." },
+        { "type": "p", "text": "If you spot any of these, read /signs-your-retaining-wall-is-failing before deciding whether it is urgent." }
+      ]
+    },
+    {
+      "heading": "Manage vegetation near the wall",
+      "blocks": [
+        { "type": "p", "text": "Roots are one of the most destructive forces a wall faces, and it is a slow, invisible problem until it is not." },
+        { "type": "ul", "items": [
+          "Keep large trees at least 3 to 5 metres back from the wall",
+          "Trim grass and groundcover at the base so you can actually see the wall face",
+          "Remove woody growth in wall joints before roots establish",
+          "Be cautious with climbing vines, roots can work into cracks over years"
+        ] }
+      ]
+    },
+    {
+      "heading": "Watch for erosion behind or under the wall",
+      "blocks": [
+        { "type": "p", "text": "Soil escaping through block joints or from beneath the wall is a drainage symptom, not a cosmetic issue. That soil is the structural fill the wall depends on, and losing it undermines the wall from behind where you cannot see it happening." },
+        { "type": "p", "text": "Have the drainage inspected as soon as you notice erosion rather than waiting for a visible sign in the wall itself." }
+      ]
+    },
+    {
+      "heading": "Material-specific care",
+      "blocks": [
+        { "type": "p", "text": "Concrete and block walls need little beyond the drainage and inspection tasks above, but watch for a few specific things." },
+        { "type": "ul", "items": [
+          "Efflorescence, the white mineral deposits on concrete or block, usually harmless but worth monitoring as a sign water is moving through the wall",
+          "Cracks wider than 6 millimetres, horizontal cracks, or any crack that is visibly growing should be assessed",
+          "Spalled or chipped block faces from freeze-thaw cycling, mostly cosmetic but replace badly spalled units"
+        ] },
+        { "type": "p", "text": "Timber walls need active care because wood degrades over time in a way block and concrete do not." },
+        { "type": "ul", "items": [
+          "Stain and seal every 2 to 4 years, full detail at /tips-on-how-to-stain-your-wooden-retaining-wall",
+          "Check hardware annually and replace any rusted fasteners",
+          "Probe suspect boards with a screwdriver, soft spots mean rot",
+          "Keep cut ends sealed, end grain absorbs moisture fastest"
+        ] }
+      ]
+    },
+    {
+      "heading": "After a heavy rain event",
+      "blocks": [
+        { "type": "p", "text": "Ontario gets sharp spring downpours, and a wall's drainage design gets its real test during and right after one. Walk the wall within a day or two of a heavy rain and check that outlets are running freely, there is no new slumping at the base, and no fresh cracking has appeared." }
+      ]
+    },
+    {
+      "heading": "When maintenance is not enough",
+      "blocks": [
+        { "type": "p", "text": "Some signs mean the wall needs a professional look, not more upkeep." },
+        { "type": "ul", "items": [
+          "Any visible bowing or leaning",
+          "Horizontal cracks in concrete or between courses",
+          "Significant soil loss behind or beneath the wall",
+          "Multiple blocks shifted out of alignment",
+          "Drainage that used to work and has stopped"
+        ] },
+        { "type": "p", "text": "A free assessment tells you whether it is a small repair or something bigger, see /retaining-wall-repair for how we handle each." }
+      ]
+    },
+    {
+      "heading": "Building a simple maintenance record for your wall",
+      "blocks": [
+        { "type": "p", "text": "Keeping a short note each spring and fall, even just a few photos and a sentence or two, makes it far easier to spot slow changes that are invisible on any single visit. A block that has shifted a centimetre over three years is hard to notice looking at the wall today, but obvious when you compare a photo from three springs ago." },
+        { "type": "ul", "items": [
+          "Take a few photos from the same spot each spring and fall",
+          "Note the date you last cleared drainage outlets",
+          "Note any repairs, staining, or professional assessments and when they happened",
+          "Keep this with your other home maintenance records, it is useful at resale too, see /retaining-walls-and-property-value"
+        ] }
+      ]
+    },
+    {
+      "heading": "A seasonal cadence you can actually stick to",
+      "blocks": [
+        { "type": "p", "text": "Most homeowners abandon a maintenance routine not because it is difficult, but because it is not tied to anything memorable. Anchoring wall checks to tasks you already do seasonally makes them far more likely to happen." },
+        { "type": "steps", "items": [
+          { "title": "Spring", "text": "Pair the drainage outlet check with your usual spring yard cleanup, once the snow is gone and before mulching." },
+          { "title": "Summer", "text": "A quick walk-along check after any unusually heavy rain, this is when new movement or drainage failure shows up first." },
+          { "title": "Fall", "text": "Clear outlets again before leaves and debris pile up for winter, alongside raking and gutter cleaning." },
+          { "title": "Every 2 to 4 years, for timber walls only", "text": "Schedule a re-staining pass, see /tips-on-how-to-stain-your-wooden-retaining-wall for the process." }
+        ] }
+      ]
+    },
+    {
+      "heading": "Maintenance costs less than people expect",
+      "blocks": [
+        { "type": "p", "text": "Homeowners sometimes put off wall maintenance because they assume it means hiring a contractor for an ongoing service. In reality the drainage checks, visual inspection and vegetation management above cost nothing beyond your own time. The only recurring paid cost is staining for a timber wall every 2 to 4 years, and even that is a modest expense compared to the cost of a rebuild caused by years of neglect." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "How much time does retaining wall maintenance actually take?", "a": "For most residential walls, an hour or two twice a year covers drainage checks and a visual inspection. Timber walls add the staining task every 2 to 4 years." },
+    { "q": "Can I pressure wash my block or concrete wall?", "a": "A low setting works fine for surface dirt, but avoid high pressure directly into joints, which can wash out fine base material and open drainage gaps." },
+    { "q": "Is efflorescence something I need to fix?", "a": "The white staining itself is usually cosmetic, but it signals water moving through the wall, so it is worth confirming your drainage outlets are clear." },
+    { "q": "How do I know if a crack is serious?", "a": "Hairline vertical cracks in concrete are common and normal. Horizontal cracks, or any crack over 6 millimetres wide or visibly growing, should be assessed by a professional." },
+    { "q": "What is the most common maintenance mistake homeowners make?", "a": "Letting drainage outlets clog with leaves and sediment. It is the easiest thing to check and the most common cause of preventable failure." },
+    { "q": "Do you offer maintenance visits or only new builds?", "a": "We offer free assessments for existing walls, whether we built them or not, and can tell you what maintenance or repair is worth doing. Call 519-914-1908." }
+  ],
+  "cta": "Concerned about a wall you already have, call 519-914-1908 for a free assessment."
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "terraced-retaining-walls/woodstock",
+  "metaTitle": "Terraced Retaining Walls in Woodstock, ON",
+  "metaDescription": "Multi-level terraced retaining walls for hillside Woodstock properties, engineered setback and drainage per tier. Free written quotes.",
+  "h1": "Terraced Retaining Walls in Woodstock, Ontario",
+  "intro": "A handful of Woodstock properties sit on genuinely hillside lots, where a single retaining wall would need to be tall enough to raise real engineering and budget questions. Terracing spreads that grade change across several shorter walls instead.",
+  "sections": [
+    {
+      "heading": "Hillside Lots Around Woodstock",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Where a Woodstock lot has a steep drop, often toward a rear property line or a ravine edge, terracing lets us break that drop into two or three shorter walls rather than one wall tall enough to require heavy engineering and a large excavation footprint."
+        },
+        {
+          "type": "p",
+          "text": "Each tier can also be finished differently, a lawn area up top, a garden terrace in the middle, and a patio at the bottom, for example."
+        }
+      ]
+    },
+    {
+      "heading": "How We Plan the Tiers",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "title": "Slope survey",
+              "text": "Total grade change measured and mapped across the property."
+            },
+            {
+              "title": "Tier heights and setback",
+              "text": "Each wall's height and the setback distance from the wall above calculated to keep loads within design limits."
+            },
+            {
+              "title": "Material selection",
+              "text": "Block, timber or stone chosen per tier based on height and appearance goals for that level."
+            },
+            {
+              "title": "Sequenced construction",
+              "text": "Lower tiers built and backfilled first, followed by each level above in order."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Drainage on a Multi-Tier System",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Each wall gets its own drainage stone and weeping tile. On Oxford County's mixed soil, that individual attention matters more than on a uniform soil site, since drainage needs can differ from one tier to the next."
+        }
+      ]
+    },
+    {
+      "heading": "Permits Through the City of Woodstock",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The City of Woodstock reviews permits by wall height, and a terraced design is typically submitted as a coordinated system. We manage the full application."
+        }
+      ]
+    },
+    {
+      "heading": "Terracing Timeline Expectations",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A two or three tier terraced project in the Woodstock area typically takes one to two weeks from excavation to finished backfill, longer than a single wall because each tier is built and backfilled in sequence before the next begins."
+        },
+        {
+          "type": "p",
+          "text": "For general project cost context across wall types, /retaining-wall-cost-guide-ontario is worth reviewing before your site visit."
+        }
+      ]
+    },
+    {
+      "heading": "Irrigation and Drainage Between Tiers",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Each terrace level can be planned with its own drainage or irrigation needs in mind, particularly if a lower tier will be garden space that needs different watering than a patio tier above it."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is my Woodstock property a good candidate for terracing instead of one wall?",
+      "a": "If the total grade change is significant, generally more than about six feet, terracing is often safer and more cost-effective than a single tall wall."
+    },
+    {
+      "q": "Can different materials be used on different tiers?",
+      "a": "Yes, we sometimes use block for a lower structural tier and timber or stone for an upper garden tier, based on load and appearance."
+    },
+    {
+      "q": "How long does a multi-tier terraced project take?",
+      "a": "Longer than a single wall, since tiers are built in sequence. Timeline depends on the number of tiers and total wall length."
+    },
+    {
+      "q": "Does terracing cost more than one tall wall overall?",
+      "a": "It depends on the total height involved, but terracing is often more cost-effective than the engineering and reinforcement a single very tall wall would need."
+    },
+    {
+      "q": "How much longer does a terraced project take compared to one wall?",
+      "a": "Typically one to two weeks total, since each tier must be built and backfilled before construction starts on the tier above it."
+    },
+    {
+      "q": "Can each terrace level have different drainage or irrigation needs?",
+      "a": "Yes, we can design drainage and account for irrigation separately per tier, especially where garden and hardscape levels sit side by side."
+    }
+  ],
+  "cta": "Get a free terraced retaining wall consultation for your Woodstock hillside property.",
+  "service": "terraced-retaining-walls",
+  "city": "woodstock",
+  "region": "ON",
+  "photoMaterial": "mixed"
+}

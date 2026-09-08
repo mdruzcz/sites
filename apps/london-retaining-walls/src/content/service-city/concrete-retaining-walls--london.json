@@ -1,0 +1,109 @@
+{
+  "slug": "concrete-retaining-walls/london",
+  "metaTitle": "Concrete Retaining Walls in London, ON",
+  "metaDescription": "Poured and precast concrete retaining walls in London, Ontario for tall walls and heavy loads. Engineered drainage, Ontario Building Code compliant.",
+  "h1": "Concrete Retaining Walls in London, Ontario",
+  "intro": "Steep lots backing onto the Thames River valley in south and west London sometimes need more wall than block or timber can safely provide. That's where poured concrete comes in.",
+  "sections": [
+    {
+      "heading": "When a London Property Needs Concrete",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "River valley lots in London can have grade changes of six feet or more from the house to the rear property line. At that height, the soil pressure against the wall is significant, and concrete's monolithic structure handles it better than a jointed system."
+        },
+        {
+          "type": "p",
+          "text": "Concrete is also the right call when a wall is supporting a driveway, a pool deck, or anything with a surcharge load sitting above it."
+        }
+      ]
+    },
+    {
+      "heading": "Poured vs Precast for London Homes",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Poured concrete: maximum strength, custom shapes, no joints, best for tall or heavily loaded walls",
+            "Precast panels: faster to install, consistent finish, economical for mid-height straight runs"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Freeze-Thaw and London's Clay",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "London's clay-heavy soil holds moisture through the winter, and that moisture freezes and expands against whatever is holding it back. Concrete resists that cycling better than most materials, which is a major reason we recommend it for taller river valley walls. Full weeping tile and drainage stone still go in behind every wall, concrete included."
+        }
+      ]
+    },
+    {
+      "heading": "Permits and Engineering",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The City of London requires a permit above roughly one metre, and taller concrete walls typically need an engineer's stamp. We coordinate both as part of the project, so you are not left chasing paperwork."
+        }
+      ]
+    },
+    {
+      "heading": "Finishing Options for a Concrete Wall",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A poured concrete wall doesn't have to look like raw concrete. Parging, integral colour, or a stone veneer face are common finishing options for London homeowners who want the strength of concrete with a softer appearance."
+        },
+        {
+          "type": "p",
+          "text": "For a full breakdown of how concrete stacks up against block and wood, see /how-to-choose-retaining-wall-material."
+        }
+      ]
+    },
+    {
+      "heading": "Curing Time Before Backfill",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Poured concrete needs to cure to sufficient strength before backfilling begins, typically several days depending on temperature and mix design. Rushing this step risks cracking or bowing the wall before it has reached full strength."
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How tall can a concrete retaining wall be in London?",
+      "a": "With proper engineering, virtually any height. Walls over about two metres will need an engineer's stamp, which we arrange."
+    },
+    {
+      "q": "Is concrete overkill for a normal backyard grade change?",
+      "a": "For a modest 2 to 3 foot change, /block-retaining-walls is usually more cost-effective. Concrete earns its cost on taller or heavily loaded walls."
+    },
+    {
+      "q": "How long does a poured concrete wall last?",
+      "a": "Typically 50 to 100 years with good drainage, which makes it the lowest lifetime-cost option for large walls even though it costs more upfront."
+    },
+    {
+      "q": "Do you pour concrete year-round in London?",
+      "a": "Weather affects scheduling, particularly in winter. We plan pours around temperature and site conditions to protect the concrete cure."
+    },
+    {
+      "q": "Can a concrete wall be finished to match my house?",
+      "a": "Yes, through parging, colour additives, or a stone veneer applied to the finished concrete face."
+    },
+    {
+      "q": "How long before a concrete wall can be backfilled?",
+      "a": "Typically several days after pouring, depending on weather and concrete mix. We follow proper cure time before backfilling to protect the wall's strength."
+    },
+    {
+      "q": "What's involved if a concrete wall ever needs a repair down the road?",
+      "a": "Concrete rarely needs repair when properly built and drained, but hairline surface cracking can sometimes appear over decades. We assess whether it's cosmetic or structural, and most surface issues can be patched without touching the wall's core strength."
+    }
+  ],
+  "cta": "Get a free consultation for a concrete retaining wall on your London property.",
+  "service": "concrete-retaining-walls",
+  "city": "london",
+  "region": "ON",
+  "photoMaterial": "poured-concrete"
+}
