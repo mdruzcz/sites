@@ -1,0 +1,87 @@
+{
+  "slug": "how-to-read-a-contractor-quote",
+  "metaTitle": "How to Read a Contractor Quote",
+  "metaDescription": "Learn how to read contractor quote line items, allowances, exclusions and change orders so you can compare multiple quotes apples-to-apples before choosing.",
+  "h1": "How to Read a Contractor Quote Without Getting Fooled by the Bottom Line",
+  "category": "Money",
+  "readMinutes": 8,
+  "summary": "How to read line items, allowances and exclusions so quotes can be compared fairly.",
+  "publishedDate": "2026-09-08",
+  "intro": "Three contractors can walk the same job and hand back three numbers that look nothing alike, and the lowest one is not automatically the cheapest once the work is finished. The gap almost always lives in what each quote includes, excludes, or quietly assumes. This guide breaks down what to look for so you can compare quotes on the same terms instead of just comparing totals.",
+  "sections": [
+    {
+      "heading": "A quote is not a price, it is a description of scope",
+      "blocks": [
+        {"type":"p","text":"The single biggest mistake homeowners make is treating a quote as a number to compare rather than a description to read. A one-page quote that says \"deck rebuild, $14,000\" and a three-page quote that says \"deck rebuild, $16,500\" with material specs, footing depth, fastener type and a demolition line are not comparable documents, even though they describe the same project. The shorter one is not simpler, it is just less specific, and that gap in specificity is where cost overruns hide."},
+        {"type":"p","text":"Before comparing prices at all, check whether each quote covers the same footprint, the same materials, and the same finish level. A quote that is a thousand dollars lower but specifies pressure-treated lumber where another specifies composite decking is not actually the cheaper option, it is a different project."}
+      ]
+    },
+    {
+      "heading": "Line items tell you where the money is going",
+      "blocks": [
+        {"type":"p","text":"A detailed quote breaks the job into components, labour, materials, permits, disposal, equipment rental, so you can see where the total comes from. This matters for two reasons. First, it lets you compare specific pieces across quotes, for example whether one contractor is pricing footings deeper than another. Second, it gives you a basis for negotiating changes later without renegotiating the whole contract."},
+        {"type":"ul","items":[
+          "Labour and materials should ideally be separated, or at least clearly described together per section of work.",
+          "Site preparation, demolition and disposal (dumpster or landfill fees) are commonly left out of a lump-sum number, so check whether they are included.",
+          "Permit fees may or may not be included in the quoted price, and the contractor may expect you to pay them directly to the municipality.",
+          "Equipment rental for specialty work, like an excavator for a retaining wall footing, is sometimes billed separately."
+        ]},
+        {"type":"callout","text":"If a quote gives you only a single lump sum with no breakdown, it is reasonable to ask for one. A contractor confident in their pricing should be able to explain roughly how the total was built."}
+      ]
+    },
+    {
+      "heading": "Allowances: read the fine print, not just the number",
+      "blocks": [
+        {"type":"p","text":"An allowance is a placeholder budget built into the quote for a category the contractor has not fully priced yet, often because you have not picked a specific product. A common example is a $2,000 allowance for tile, or a $1,500 allowance for light fixtures. Allowances are normal and not a red flag on their own, but they are also the single most common place quotes quietly diverge from final invoices."},
+        {"type":"steps","items":[
+          {"title":"Ask what the allowance is based on","text":"Find out whether it reflects builder-grade, mid-range or premium product pricing, since the same dollar figure can mean very different quality levels."},
+          {"title":"Ask what happens if you go over","text":"Confirm whether exceeding an allowance is billed at cost, at cost plus a markup, or triggers a change order, and get that answer in writing."},
+          {"title":"Compare allowances between quotes, not just totals","text":"A lower total quote with an unrealistically low allowance for flooring or fixtures can end up costing more once you pick anything above the cheapest option available."}
+        ]}
+      ]
+    },
+    {
+      "heading": "Exclusions matter as much as inclusions",
+      "blocks": [
+        {"type":"p","text":"Every quote should list what it does not cover, and a good one will do this explicitly rather than leaving it to be discovered mid-project. Common exclusions include unexpected conditions found once work starts, such as rotten framing behind siding, unstable soil under a planned retaining wall, or old wiring that does not meet current code once a wall is opened up."},
+        {"type":"ul","items":[
+          "Ask directly what is not included in the price, even if the quote does not list exclusions on its own.",
+          "Ask how unexpected conditions are handled, both in terms of process and pricing.",
+          "Ask whether landscaping restoration, such as regrading or reseeding after excavation work, is included or considered separate.",
+          "For exterior work, ask whether cleanup and haul-away of old materials is part of the quoted price."
+        ]}
+      ]
+    },
+    {
+      "heading": "Change orders: get the process in writing before you need it",
+      "blocks": [
+        {"type":"p","text":"A change order is a documented adjustment to the original scope or price, and on almost every renovation of any size, at least one comes up. The problem is not that change orders happen, it is that homeowners often agree to them verbally in the moment and then have no record of what was actually approved or at what price."},
+        {"type":"p","text":"Before work starts, ask how the contractor handles change orders. A clear process usually means any change in scope, whether it adds or removes cost, gets written down with a price and a signature before the work proceeds, not billed after the fact as a surprise line on the final invoice."}
+      ]
+    },
+    {
+      "heading": "Comparing quotes apples-to-apples",
+      "blocks": [
+        {"type":"p","text":"Once you have two or three quotes in hand, the most useful exercise is building a simple side-by-side list of scope, materials, allowances and exclusions rather than just looking at the bottom line. If one contractor's number seems unusually low, ask specifically what is different about their scope before assuming they are simply cheaper. It could be a lower material spec, a smaller allowance, or work they plan to exclude and bill separately later. For more on what should happen before any of these numbers get finalized, see /resources/how-to-vet-a-contractor-in-ontario, which covers the licensing and insurance checks worth doing alongside price comparisons."}
+      ]
+    }
+  ],
+  "checklist": [
+    "Confirm each quote covers the same materials and finish level, not just the same job title",
+    "Ask for a line-item breakdown if you are given only a lump sum",
+    "Check whether permit fees are included in the quoted price",
+    "Check whether demolition, disposal and site cleanup are included",
+    "Ask what quality level each allowance is based on",
+    "Ask what happens, in writing, if an allowance is exceeded",
+    "Ask how unexpected conditions found during the work are priced",
+    "Get the change order process in writing before work starts",
+    "Build a side-by-side comparison of scope across all quotes before deciding"
+  ],
+  "faq": [
+    {"q":"Why do contractor quotes for the same project vary so much?","a":"Differences usually come from scope and material specification, not just markup. One contractor may include demolition, disposal and a generous allowance, while another prices a bare minimum version of the same job, which produces a lower number that is not really comparable."},
+    {"q":"What is an allowance in a contractor quote?","a":"An allowance is a placeholder budget for a category, such as flooring or fixtures, that has not been fully specified yet. It is normal, but ask what quality level it assumes and what happens if you choose something that costs more."},
+    {"q":"Should I always go with the lowest quote?","a":"Not automatically. Compare what each quote actually includes first. A lower number with a smaller allowance, fewer inclusions, or a lower material spec can end up costing the same or more once the project is finished."},
+    {"q":"What is a change order and why does it matter?","a":"A change order documents a change in scope or price after the original contract is signed. Ask how your contractor handles these before work starts, so any changes are written down and priced in advance rather than surfacing as a surprise on the final bill."}
+  ],
+  "relatedCategories": ["deck-building", "retaining-walls", "kitchen-remodeling"]
+}

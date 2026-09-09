@@ -16,6 +16,13 @@ export type Category = {
 
 export type AwardTier = "winner" | "finalist" | "honourable";
 
+export type Review = {
+  author: string;
+  location: string | null;
+  text: string;
+  rating: number;
+};
+
 export type Winner = {
   id: string;
   year: number;
@@ -35,6 +42,8 @@ export type Winner = {
   service_areas: string[];
   established_year: number | null;
   award_tier: AwardTier;
+  reviews: Review[];
+  gallery: string[];
   is_published: boolean;
   created_at: string;
   updated_at: string;

@@ -4,11 +4,13 @@ import type { Metadata } from "next";
 import { getServerSupabase } from "@/lib/supabase/server";
 import type { City, Category, WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
+import { WinnerLogo, WinnerThumb, StarRating } from "@/components/winner-media";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Search Winners",
+  title: { absolute: "Search 2026 Winners | Service Excellence Awards" },
+  alternates: { canonical: "/winners" },
   description:
     "Find award-winning home renovation and service contractors in Ontario. Browse by city, category and year.",
 };
@@ -125,17 +127,22 @@ export default async function WinnersPage({ searchParams }: { searchParams: Sear
               <li key={w.id}>
                 <Link
                   href={`/winners/${w.city.slug}/${w.category.slug}/${w.slug}`}
-                  className="grid grid-cols-1 gap-2 py-6 transition-colors hover:bg-stone-50/60 md:grid-cols-[1fr_auto] md:items-center md:gap-8"
+                  className="grid grid-cols-[auto_1fr] gap-4 py-6 transition-colors hover:bg-stone-50/60 md:grid-cols-[auto_auto_1fr_auto] md:items-center md:gap-6"
                 >
+                  <WinnerThumb name={w.business_name} photoUrl={w.photo_url} categorySlug={w.category.slug} aspect="aspect-[4/3]" className="hidden w-40 rounded-md md:block" />
+                  <WinnerLogo name={w.business_name} logoUrl={w.logo_url} size="h-14 w-14" className="border border-stone-200 bg-white p-1" />
                   <div>
                     <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
                       <span>★ {w.award_tier === "winner" ? "Winner" : w.award_tier}</span>
                       <span className="text-stone-400">{w.year}</span>
+                      {Array.isArray(w.reviews) && w.reviews.length > 0 && (
+                        <StarRating rating={5} className="ml-1" />
+                      )}
                     </div>
                     <p className="mt-1 font-serif text-2xl tracking-tight text-stone-900">{w.business_name}</p>
                     {w.tagline && <p className="mt-1 text-sm text-stone-600">{w.tagline}</p>}
                   </div>
-                  <div className="text-sm text-stone-600 md:text-right">
+                  <div className="col-span-2 text-sm text-stone-600 md:col-span-1 md:text-right">
                     <div>{w.category.name}</div>
                     <div className="text-stone-500">{w.city.name}, {w.city.province}</div>
                   </div>

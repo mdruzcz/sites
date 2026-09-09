@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getServerSupabase } from "@/lib/supabase/server";
 import type { City, Category, WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
+import { WinnerLogo } from "@/components/winner-media";
 
 export const revalidate = 60;
 
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!data) return { title: "City not found" };
   const c = data as City;
   return {
-    title: `${c.name} ${CURRENT_YEAR} Winners`,
+    title: { absolute: `${c.name} ${CURRENT_YEAR} Winners | Service Excellence Awards` },
     description: `${CURRENT_YEAR} Service Excellence Awards winners in ${c.name}, ${c.province}. Find the best home renovation and service contractors in ${c.name}.`,
     alternates: { canonical: `/winners/${c.slug}` },
   };
@@ -75,7 +76,10 @@ export default async function CityWinnersPage({ params }: { params: Params }) {
                   <div className="text-[10px] uppercase tracking-[0.22em] text-stone-500">{cat.name}</div>
                   {winner ? (
                     <>
-                      <div className="font-serif text-lg leading-tight text-stone-900">{winner.business_name}</div>
+                      <div className="flex items-center gap-2">
+                        <WinnerLogo name={winner.business_name} logoUrl={winner.logo_url} size="h-9 w-9" className="border border-stone-200" />
+                        <div className="font-serif text-lg leading-tight text-stone-900">{winner.business_name}</div>
+                      </div>
                       <div className="mt-auto pt-2 text-xs uppercase tracking-[0.2em] text-[var(--gold)]">
                         ★ {CURRENT_YEAR} Winner →
                       </div>

@@ -1,0 +1,89 @@
+{
+  "slug": "deposits-payment-schedules-and-contracts",
+  "metaTitle": "Deposits, Payment Schedules and Contracts",
+  "metaDescription": "What Ontario homeowners should know about deposit norms, staged payment schedules and consumer protection rules before signing a contractor contract.",
+  "h1": "Deposits, Payment Schedules and Contracts: What Ontario Homeowners Should Know",
+  "category": "Money",
+  "readMinutes": 9,
+  "summary": "Deposit norms, staged payment schedules and basic Ontario consumer protection rules explained.",
+  "publishedDate": "2026-09-08",
+  "intro": "How and when you pay a contractor matters almost as much as who you hire. A reasonable deposit and a payment schedule tied to real progress protect both sides. A demand for full payment up front, or a schedule that races ahead of the actual work, protects only the contractor. This guide covers the basics of how payment should typically be structured on a residential project in Ontario.",
+  "sections": [
+    {
+      "heading": "The general rule: never pay in full up front",
+      "blocks": [
+        {"type":"p","text":"This is the single most important rule in this guide, and it is worth stating plainly. A contractor who asks for full payment before any work begins is asking you to absorb all of the risk in the relationship. If the job goes poorly, is left unfinished, or the company disappears, you have already handed over your only real leverage. Reputable contractors do not need to ask for this, because a staged schedule tied to progress protects their cash flow just as well while keeping the arrangement fair."},
+        {"type":"callout","text":"A request for full payment up front, especially from a contractor you found through a cold call or a door-to-door pitch, is one of the clearest warning signs in residential contracting. Treat it as a reason to walk away, not a detail to negotiate."}
+      ]
+    },
+    {
+      "heading": "What a reasonable deposit looks like",
+      "blocks": [
+        {"type":"p","text":"Deposits exist for a legitimate reason. They let a contractor order materials, schedule crews and commit to your project instead of someone else's. A reasonable deposit is usually a modest percentage of the total contract value, often enough to cover initial material costs, not the bulk of the job. Exactly what counts as reasonable can vary by project size and by what materials need to be ordered up front, so ask the contractor to explain what the deposit is specifically covering rather than accepting a round number without context."},
+        {"type":"ul","items":[
+          "Ask what the deposit pays for specifically, such as materials that need to be special-ordered.",
+          "Be more cautious of a large deposit on a large project, since the dollar exposure is higher even if the percentage looks similar.",
+          "A deposit should be described in the written contract, not just requested verbally or over text.",
+          "Pay deposits by a traceable method, cheque or e-transfer with a clear record, rather than cash."
+        ]}
+      ]
+    },
+    {
+      "heading": "Staged payments tied to milestones, not the calendar",
+      "blocks": [
+        {"type":"p","text":"Beyond the deposit, the rest of the contract price should be broken into stages tied to completed, verifiable work, not simply spread evenly across the calendar. A payment schedule tied to milestones means you are always paying for work you can see, which keeps the incentives aligned for both sides."},
+        {"type":"steps","items":[
+          {"title":"Deposit at signing","text":"Covers initial materials and secures your spot in the schedule."},
+          {"title":"Progress payment at a defined milestone","text":"For example, once framing or footings are complete and pass any required inspection, not simply after a set number of days have passed."},
+          {"title":"Progress payment at a second milestone","text":"For example, once major materials are installed, such as decking, siding or cabinetry, and before finishing details."},
+          {"title":"Final payment on completion","text":"Paid once the work is finished, inspected if applicable, and you have had a chance to walk through it. This is also the natural point to apply any holdback."}
+        ]},
+        {"type":"p","text":"A schedule with only two payments, deposit and final, can work for smaller jobs. For anything running several weeks or longer, more stages give both sides a clearer picture of where things stand and reduce the size of any single payment that is exposed if something goes wrong partway through."}
+      ]
+    },
+    {
+      "heading": "Holdbacks: what they are and when they apply",
+      "blocks": [
+        {"type":"p","text":"A holdback is a portion of the final payment withheld for a period after substantial completion, giving you time to confirm the work holds up and giving subtrades and suppliers a window to file a claim if they were not paid by the general contractor. Construction lien holdback rules in Ontario apply in certain circumstances and are more relevant on larger projects, particularly ones involving multiple subcontractors or larger dollar values, than on a small repair job. If your project is significant in scope or cost, it is worth asking your contractor directly how they handle holdbacks and, if the amounts involved are large, confirming your understanding with a lawyer rather than relying on general guidance."},
+        {"type":"p","text":"Practically, even outside of formal lien holdback rules, it is reasonable for a homeowner to hold back a final portion of payment, often in the range of ten percent, until any deficiencies identified during a walkthrough are fixed. This should be agreed to in the contract up front rather than announced as a surprise at the end."}
+      ]
+    },
+    {
+      "heading": "Ontario's Consumer Protection Act and the cooling-off period",
+      "blocks": [
+        {"type":"p","text":"Ontario's Consumer Protection Act includes rules that apply specifically to contracts signed away from the seller's regular place of business, commonly called direct sales or door-to-door contracts. If a contractor signs you up at your kitchen table after an unsolicited knock on the door, rather than at their office or showroom, that contract may fall under these direct sales rules, which generally include a cooling-off period, often ten days, during which you can cancel without penalty."},
+        {"type":"ul","items":[
+          "This cooling-off protection generally applies to direct sales contracts, not contracts you initiate yourself by visiting a contractor's office or calling them after researching options.",
+          "If a contract is covered, cancellation rights and the process for exercising them are supposed to be disclosed to you in writing at the time of signing.",
+          "If in doubt about whether a specific contract qualifies, Ontario's Ministry of Public and Business Service Delivery publishes consumer protection guidance that can clarify how these rules apply to your situation."
+        ]},
+        {"type":"callout","text":"High-pressure, same-day-signature sales tactics, common in furnace, HVAC and some exterior renovation sales, are exactly the situation this cooling-off period was designed for. If you feel rushed into signing, that feeling is itself useful information."}
+      ]
+    },
+    {
+      "heading": "Put the whole schedule in the written contract",
+      "blocks": [
+        {"type":"p","text":"None of this matters if it only exists as a verbal understanding. The deposit amount, the milestone schedule, the holdback terms and the total contract price should all appear in a single written contract signed before any money changes hands. If you are also comparing multiple quotes at this stage, it is worth reading /resources/how-to-read-a-contractor-quote alongside this guide, since a clear payment schedule and a clear scope tend to come from the same well-run companies."}
+      ]
+    }
+  ],
+  "checklist": [
+    "Never agree to pay the full contract price up front",
+    "Confirm the deposit amount and what it specifically covers",
+    "Pay deposits by a traceable method, not cash",
+    "Get a written payment schedule tied to completed milestones, not calendar dates",
+    "Ask how the contractor handles holdbacks on larger projects",
+    "Withhold a final portion of payment until deficiencies are fixed",
+    "Check whether your contract was signed away from the contractor's place of business",
+    "If it was, confirm your cancellation rights under the cooling-off period",
+    "Make sure the full payment schedule appears in the written contract, not a verbal agreement",
+    "Keep records of every payment made, including dates and method"
+  ],
+  "faq": [
+    {"q":"How much of a deposit is reasonable for a home renovation project?","a":"There is no single fixed percentage, but a reasonable deposit is a modest portion of the total price, generally enough to cover initial material orders rather than most of the job. Ask what specifically the deposit is paying for before agreeing to a number."},
+    {"q":"Is it ever okay to pay a contractor in full before work starts?","a":"Generally no. Paying in full up front removes your leverage if the work is delayed, unfinished or unsatisfactory. A staged schedule tied to completed milestones protects both sides and is standard practice among reputable contractors."},
+    {"q":"What is a holdback and do I need one?","a":"A holdback is a portion of final payment withheld for a period after substantial completion, partly tied to Ontario's construction lien rules on larger projects and partly a practical safeguard on any project, letting you confirm the work holds up before paying the final balance."},
+    {"q":"What is the cooling-off period under Ontario's Consumer Protection Act?","a":"For contracts signed away from a seller's regular place of business, such as a door-to-door sale, Ontario consumer protection rules generally provide a cancellation window, often ten days, during which you can cancel without penalty. It typically does not apply if you initiated the contact yourself."}
+  ],
+  "relatedCategories": ["deck-building", "kitchen-remodeling", "roofing"]
+}

@@ -1,5 +1,6 @@
 import { getServerSupabase } from "@/lib/supabase/server";
 import { CURRENT_YEAR } from "@/lib/types";
+import { getGuides } from "@/lib/content";
 
 export const revalidate = 3600;
 
@@ -31,13 +32,17 @@ export async function GET() {
   const lines: string[] = [];
   lines.push("# Service Excellence Awards Canada");
   lines.push("");
-  lines.push(`> ${CURRENT_YEAR} editorial recognition program identifying the best home renovation and service contractors across Ontario, Canada. One winner per category, per city, per year. Independent — contractors do not pay to be listed.`);
+  lines.push(`> ${CURRENT_YEAR} curated recognition program highlighting trusted home renovation and service contractors across Ontario, Canada. One business is highlighted per category, per city, per year, with verified contact details and an editorial profile.`);
   lines.push("");
   lines.push("## Key pages");
   lines.push(`- [Home](${base}/): Program overview and recent winners`);
   lines.push(`- [Search winners](${base}/winners): Filter by city, category, year`);
   lines.push(`- [About / Methodology](${base}/about): How winners are selected`);
   lines.push(`- [Why awards matter](${base}/why-awards-matter): Why the recognition exists`);
+  lines.push(`- [Homeowner guides](${base}/resources): Vetting contractors, quotes, deposits, permits, hiring by trade`);
+  lines.push("");
+  lines.push("## Homeowner guides");
+  for (const g of getGuides()) lines.push(`- [${g.h1}](${base}/resources/${g.slug}): ${g.summary}`);
   lines.push(`- [Request consideration](${base}/nominate): How contractors can be nominated`);
   lines.push("");
   lines.push("## Cities covered (Ontario)");

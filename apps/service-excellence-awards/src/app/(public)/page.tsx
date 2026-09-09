@@ -3,16 +3,19 @@ import Link from "next/link";
 import { getServerSupabase } from "@/lib/supabase/server";
 import type { City, Category, WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
+import { WinnerThumb, WinnerLogo } from "@/components/winner-media";
+import { getGuides } from "@/lib/content";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  description: "Ontario's recognised home-service contractors, one per category per city, with photos, strengths, considerations and homeowner hiring guides.",
 };
 
 export const revalidate = 60;
 
 export default async function HomePage() {
   const supabase = await getServerSupabase();
-  const [citiesRes, categoriesRes, recentRes, countsRes] = await Promise.all([
+  const [citiesRes, categoriesRes, featuredRes, logoRes, countsRes] = await Promise.all([
     supabase.from("sea_cities").select("*").order("sort_order"),
     supabase.from("sea_categories").select("*").order("sort_order"),
     supabase
@@ -20,14 +23,27 @@ export default async function HomePage() {
       .select("*, city:sea_cities(*), category:sea_categories(*)")
       .eq("year", CURRENT_YEAR)
       .eq("is_published", true)
+      .not("photo_url", "is", null)
       .order("created_at", { ascending: false })
       .limit(6),
+    supabase
+      .from("sea_winners")
+      .select("business_name, slug, logo_url, city:sea_cities(slug), category:sea_categories(slug)")
+      .eq("year", CURRENT_YEAR)
+      .eq("is_published", true)
+      .not("logo_url", "is", null)
+      .limit(18),
     supabase.from("sea_winners").select("id", { count: "exact", head: true }).eq("year", CURRENT_YEAR).eq("is_published", true),
   ]);
   const cities = (citiesRes.data ?? []) as City[];
   const categories = (categoriesRes.data ?? []) as Category[];
-  const recent = (recentRes.data ?? []) as WinnerWithRefs[];
+  const recent = (featuredRes.data ?? []) as WinnerWithRefs[];
+  const logoWinners = (logoRes.data ?? []) as unknown as {
+    business_name: string; slug: string; logo_url: string | null;
+    city: { slug: string }; category: { slug: string };
+  }[];
   const winnerCount = countsRes.count ?? 0;
+  const guides = getGuides().slice(0, 6);
 
   return (
     <>
@@ -45,9 +61,9 @@ export default async function HomePage() {
             recognised on merit.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-stone-600 sm:text-lg">
-            An independent, editorial program that identifies and honours the best concrete, deck,
-            roofing, kitchen and renovation specialists across Ontario — backed by service-record
-            review, customer reputation and verified workmanship.
+            A curated recognition program that identifies and celebrates outstanding concrete, deck,
+            lighting, kitchen and renovation specialists across Ontario — selected for service record,
+            customer reputation and verified workmanship.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
@@ -72,6 +88,31 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Winner logo strip */}
+      {logoWinners.length > 0 && (
+        <section className="border-b border-stone-200 bg-stone-50/60">
+          <div className="mx-auto w-full max-w-6xl px-6 py-8">
+            <p className="text-center text-[11px] uppercase tracking-[0.22em] text-stone-500">
+              Among the {winnerCount} businesses recognised in {CURRENT_YEAR}
+            </p>
+            <ul className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              {logoWinners.map((w) => (
+                <li key={w.slug}>
+                  <Link
+                    href={`/winners/${w.city.slug}/${w.category.slug}/${w.slug}`}
+                    title={w.business_name}
+                    className="flex items-center gap-2 rounded-full border border-stone-200 bg-white py-1.5 pl-1.5 pr-4 transition-colors hover:border-[var(--gold)]"
+                  >
+                    <WinnerLogo name={w.business_name} logoUrl={w.logo_url} size="h-8 w-8" />
+                    <span className="text-xs text-stone-700">{w.business_name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Search by city + category teaser */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20">
@@ -124,20 +165,25 @@ export default async function HomePage() {
                 View all →
               </Link>
             </div>
-            <ul className="mt-10 grid gap-px overflow-hidden rounded-lg border border-stone-200 bg-stone-200 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {recent.map((w) => (
-                <li key={w.id} className="bg-white">
-                  <Link
-                    href={`/winners/${w.city.slug}/${w.category.slug}/${w.slug}`}
-                    className="flex h-full flex-col gap-3 p-6 transition-colors hover:bg-stone-50"
-                  >
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[var(--gold)]">
-                      <span>★ Winner</span>
-                      <span className="text-stone-400">{w.year}</span>
+                <li key={w.id} className="overflow-hidden rounded-lg border border-stone-200 bg-white transition-shadow hover:shadow-md">
+                  <Link href={`/winners/${w.city.slug}/${w.category.slug}/${w.slug}`} className="flex h-full flex-col">
+                    <div className="relative">
+                      <WinnerThumb name={w.business_name} photoUrl={w.photo_url} categorySlug={w.category.slug} aspect="aspect-[16/10]" />
+                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-stone-900/85 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-[var(--gold-soft)] backdrop-blur">
+                        ★ {w.year} Winner
+                      </span>
                     </div>
-                    <h3 className="font-serif text-xl tracking-tight text-stone-900">{w.business_name}</h3>
-                    <p className="text-sm text-stone-600">{w.category.name} · {w.city.name}, {w.city.province}</p>
-                    {w.tagline && <p className="mt-auto pt-3 text-sm text-stone-700">{w.tagline}</p>}
+                    <div className="flex flex-1 flex-col gap-2 p-5">
+                      <div className="flex items-center gap-2">
+                        <WinnerLogo name={w.business_name} logoUrl={w.logo_url} size="h-9 w-9" className="border border-stone-200" />
+                        <h3 className="font-serif text-lg leading-tight tracking-tight text-stone-900">{w.business_name}</h3>
+                      </div>
+                      <p className="text-sm text-stone-600">{w.category.name} · {w.city.name}, {w.city.province}</p>
+                      {w.tagline && <p className="mt-auto pt-2 text-sm text-stone-700">{w.tagline}</p>}
+                      <span className="pt-2 text-xs uppercase tracking-[0.18em] text-[var(--gold)]">View profile →</span>
+                    </div>
                   </Link>
                 </li>
               ))}
@@ -155,8 +201,8 @@ export default async function HomePage() {
           </div>
           <div className="grid gap-8 md:col-span-7 md:grid-cols-2">
             {[
-              { t: "Independent review", d: "Contractors do not pay to be listed or to win. Recognition is based on service record, customer reputation and workmanship review." },
-              { t: "One per category", d: "Only one Service Excellence Award is granted per category, per city, per year — making it a meaningful signal, not a participation badge." },
+              { t: "Reputation-led selection", d: "Recognition is based on service record, customer reputation and workmanship reviewed across the region — not on advertising spend." },
+              { t: "One per category", d: "Only one Service Excellence Award is highlighted per category, per city, per year — making it a meaningful signal, not a participation badge." },
               { t: "Verified contact info", d: "Every winner profile includes verified contact information, service areas, and a written description of what they do best." },
               { t: "Built for discovery", d: "We index winners so homeowners — and AI assistants helping them — can find a trustworthy contractor near them in seconds." },
             ].map((p) => (
@@ -170,13 +216,38 @@ export default async function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-stone-200 bg-stone-900 text-stone-100">
+            {guides.length > 0 && (
+        <section className="border-y border-stone-200 bg-stone-50/40">
+          <div className="mx-auto w-full max-w-6xl px-6 py-20">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Homeowner guides</p>
+                <h2 className="mt-3 font-serif text-4xl tracking-tight">Know what good looks like before you sign.</h2>
+              </div>
+              <Link href="/resources" className="text-sm font-medium text-stone-700 hover:text-[var(--gold)]">All guides →</Link>
+            </div>
+            <ul className="mt-10 grid gap-5 md:grid-cols-3">
+              {guides.map((g) => (
+                <li key={g.slug}>
+                  <Link href={`/resources/${g.slug}`} className="group flex h-full flex-col rounded-lg border border-stone-200 bg-white p-6 transition hover:border-[var(--gold)]">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">{g.category} · {g.readMinutes} min</p>
+                    <h3 className="mt-3 font-serif text-2xl leading-tight group-hover:text-[var(--gold)]">{g.h1}</h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-stone-600">{g.summary}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+<section className="border-t border-stone-200 bg-stone-900 text-stone-100">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6 py-20 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-stone-400">For contractors</p>
             <h2 className="mt-2 font-serif text-4xl tracking-tight">Think you should be a {CURRENT_YEAR} winner?</h2>
             <p className="mt-3 max-w-xl text-stone-300">
-              Submit your business for editorial review. We don't charge submission or listing fees.
+              Submit your business to be considered for recognition. There's no fee to be reviewed or listed.
             </p>
           </div>
           <Link

@@ -1,0 +1,86 @@
+{
+  "slug": "kitchen-renovation-planning-guide",
+  "metaTitle": "Planning a Kitchen Renovation: A Practical Guide",
+  "metaDescription": "RTA vs semi-custom vs custom cabinets, realistic timelines, why rough-in comes before cabinets, and budgeting for the unexpected in an Ontario kitchen reno.",
+  "h1": "How to Plan a Kitchen Renovation",
+  "category": "Trades",
+  "readMinutes": 9,
+  "summary": "Cabinet options, realistic timelines, trade sequencing, and budgeting for surprises before you start an Ontario kitchen renovation.",
+  "publishedDate": "2026-09-08",
+  "intro": "A kitchen renovation touches more trades than almost any other home project, electrical, plumbing, carpentry, and flooring, all landing in one relatively small room. The projects that go smoothly are the ones where cabinets, timeline, trade sequencing, and budget were planned out before a wall was opened. This guide covers the three main cabinet tiers, a realistic timeline, why rough-in has to happen before cabinets go in, and how to budget so a surprise behind the wall does not derail the project.",
+  "sections": [
+    {
+      "heading": "RTA, semi-custom, and custom cabinets",
+      "blocks": [
+        {"type": "p", "text": "Ready to assemble cabinets, usually called RTA, are shipped flat packed and assembled by the homeowner or installer on site. They are the most budget friendly option by a wide margin, and modern RTA lines have improved considerably in construction quality, with plywood boxes and soft close hardware now common even at lower price points. The tradeoff is limited size flexibility, since RTA comes in fixed width increments, which can leave awkward filler gaps in a kitchen with unusual dimensions."},
+        {"type": "p", "text": "Semi-custom cabinets sit in the middle, built to order from a manufacturer with a wide range of sizes, finishes, and modification options such as extra depth or added storage inserts, but still built on a factory line rather than by hand for your kitchen alone. This is where most mid range renovations land, offering real flexibility without the lead time or cost of a fully custom build."},
+        {"type": "p", "text": "Custom cabinets are built specifically for your kitchen's exact dimensions by a local cabinet maker or millwork shop, allowing for irregular spaces or a design vision off the shelf sizing cannot accommodate. They cost considerably more and take longer to build, but are the only option when a kitchen has genuinely non standard dimensions or built in features no manufacturer catalogue offers."},
+        {"type": "ul", "items": [
+          "RTA: lowest cost, fastest to obtain, fixed sizing, best for straightforward layouts on a tighter budget",
+          "Semi-custom: mid range cost, wide size and finish options, several week lead time, the most common choice",
+          "Custom: highest cost, built to exact dimensions, longest lead time, best for irregular spaces or unique designs"
+        ]},
+        {"type": "p", "text": "Whichever tier you choose, ask about box construction, plywood versus particleboard, drawer glide quality, and door finish warranty, since these details affect how the cabinets hold up over years of daily use far more than the tier label alone."}
+      ]
+    },
+    {
+      "heading": "Realistic renovation timelines",
+      "blocks": [
+        {"type": "p", "text": "Homeowners planning their first kitchen renovation are often surprised by how much of the timeline is spent waiting rather than working. Cabinet lead times alone, particularly for semi-custom and custom orders, can run several weeks to a couple of months depending on manufacturer and season, and ordering typically needs to start well before demolition so cabinets arrive as the space is ready, not sitting in a garage or leaving a gutted kitchen waiting on a backorder."},
+        {"type": "p", "text": "Once demolition and rough-in begin, a full gut renovation with new electrical, plumbing, drywall, flooring, and cabinets can run several weeks to a couple of months of active on site work, depending on scope and whether structural changes are involved. A simpler refresh, refacing cabinets with new countertops and backsplash and no plumbing or electrical changes, moves considerably faster."},
+        {"type": "callout", "text": "Build in buffer time around inspections and material deliveries. Permit inspections can add days depending on your municipality's current volume, worth asking about when you apply."},
+        {"type": "p", "text": "Ask your contractor for a written schedule showing the sequence of trades and expected start dates for each phase, and how cabinet delivery is coordinated with the rest. A contractor who cannot give a reasonably specific answer has likely not managed many full kitchen projects."}
+      ]
+    },
+    {
+      "heading": "Why electrical and plumbing rough-in comes before cabinets",
+      "blocks": [
+        {"type": "p", "text": "The sequencing of trades in a kitchen renovation is not arbitrary, it follows the physical reality of what needs to happen behind the walls before the finished surfaces go on top. Electrical rough-in, running new circuits for appliances, under cabinet lighting, and additional outlets required by code, needs to happen while the walls are still open, along with any plumbing changes such as relocating a sink or adding a second prep sink. Once cabinets are installed and countertops are set, moving a plumbing line or adding a circuit becomes vastly more disruptive and expensive, sometimes requiring cabinets to be pulled back out entirely."},
+        {"type": "p", "text": "The typical sequence runs roughly as follows: demolition first, then any structural work such as removing or reinforcing a wall, followed by electrical and plumbing rough-in while the framing is still exposed, then any required inspections, then drywall and paint, then flooring, then cabinet installation, then countertop templating and installation, and finally backsplash, fixtures, and appliance hookup. Deviating from this order, particularly installing flooring before cabinets in a way that does not account for cabinet toe kick clearance, or setting cabinets before rough-in is complete, is one of the most common causes of costly rework."},
+        {"type": "steps", "items": [
+          {"title": "Demolition and structural changes", "text": "Remove existing finishes and make any structural adjustments, such as opening a wall, before rough-in trades begin."},
+          {"title": "Electrical and plumbing rough-in", "text": "Run new circuits, relocate or add plumbing lines, and complete any gas work for a range, all while framing is exposed and accessible."},
+          {"title": "Inspections", "text": "Have rough-in work inspected and signed off before it gets covered by drywall, since opening a finished wall to fix a failed inspection is far more disruptive."},
+          {"title": "Drywall, paint, and flooring", "text": "Close up the walls, paint, and install flooring, coordinating flooring height with the planned cabinet toe kick clearance."},
+          {"title": "Cabinet installation and countertop templating", "text": "Install cabinets once the room is fully finished around them, then template for countertops, which are typically fabricated after cabinets are set."},
+          {"title": "Final fixtures and appliance hookup", "text": "Install backsplash, connect plumbing fixtures and appliances, and complete final electrical connections and testing."}
+        ]}
+      ]
+    },
+    {
+      "heading": "Budgeting for the unexpected",
+      "blocks": [
+        {"type": "p", "text": "Almost every kitchen renovation that involves opening walls or floors uncovers something the original quote could not have accounted for, outdated wiring that does not meet current code, plumbing that needs more extensive rework than expected, subfloor damage from a long standing slow leak, or a structural element that was not visible until demolition. This is not a sign of a bad contractor, it is simply the nature of working inside walls that have not been opened in decades, and it is why setting aside a contingency fund is one of the single most valuable things a homeowner can do before starting."},
+        {"type": "p", "text": "A common approach is to set aside an additional percentage of the total renovation budget, often somewhere in the range of ten to twenty percent depending on the age of the home and how much of the project involves opening up existing walls and floors, specifically as a contingency that is not allocated to any planned line item. If it goes unused, that is a good outcome, but if it is not there when a genuine surprise shows up, the alternative is often a stalled project or a rushed, lower quality fix chosen only because it is the cheapest way to keep moving."},
+        {"type": "p", "text": "Beyond the contingency for surprises, budget separately for the choices that are easy to underestimate going in: permit fees, which vary by municipality, temporary kitchen arrangements if you will be without a functioning kitchen for an extended stretch, appliance delivery and installation if not included in your contractor's scope, and finishing touches like hardware, lighting fixtures, and window treatments that often get left out of the initial cabinet and countertop budget entirely."},
+        {"type": "ul", "items": [
+          "Set aside a contingency fund, commonly discussed as ten to twenty percent of the total budget, for surprises found once walls are opened",
+          "Get a written allowance for electrical and plumbing work, since exact scope often is not clear until demolition",
+          "Budget separately for permit fees, which your municipality can confirm",
+          "Plan and budget for a temporary kitchen setup if the renovation will take more than a few weeks",
+          "Confirm whether appliance delivery, hookup, and disposal of old appliances are included in your contractor's quote"
+        ]},
+        {"type": "p", "text": "For more on sequencing trades and comparing contractor quotes across other renovation types, browse the full library at /resources, and consider checking /winners for contractors recognized for reliable project management on multi trade jobs like a kitchen renovation."}
+      ]
+    }
+  ],
+  "checklist": [
+    "Decide on RTA, semi-custom, or custom cabinets based on your layout complexity and timeline",
+    "Order cabinets early enough that lead time does not leave your kitchen gutted and waiting",
+    "Get a written schedule showing the sequence of trades and expected start dates for each phase",
+    "Confirm electrical and plumbing rough-in is scheduled before drywall, flooring, and cabinet installation",
+    "Ask when inspections will be scheduled and build buffer time into your timeline around them",
+    "Set aside a contingency fund for surprises found once walls or floors are opened",
+    "Get a written allowance for electrical and plumbing work rather than a vague lump sum",
+    "Budget separately for permit fees, appliance hookup, and a temporary kitchen setup if needed",
+    "Confirm who is responsible for disposal of old cabinets, countertops, and appliances",
+    "Ask your contractor how flooring height and cabinet toe kick clearance will be coordinated"
+  ],
+  "faq": [
+    {"q": "How long does a full kitchen renovation actually take?", "a": "Active on site work for a full gut renovation, new electrical, plumbing, flooring, and cabinets, often runs several weeks to a couple of months depending on scope, but cabinet lead times before work even starts can add several more weeks, so plan the overall project timeline well in advance."},
+    {"q": "Are semi-custom cabinets worth the extra cost over RTA?", "a": "For kitchens with standard dimensions and a tight budget, RTA cabinets can work well and modern lines have improved in quality. Semi-custom is worth the added cost when you need more size flexibility or finish options without the lead time and expense of a fully custom build."},
+    {"q": "Why can't cabinets go in before the electrical work is finished?", "a": "Electrical and plumbing rough-in needs to happen while walls are open so wiring and pipes can be run to the right locations. Installing cabinets first means any later change to wiring or plumbing behind them requires pulling cabinets back out, which is far more disruptive and costly."},
+    {"q": "How much should I set aside for unexpected costs?", "a": "Many homeowners set aside a contingency, often discussed in the range of ten to twenty percent of the total budget, specifically for issues uncovered once walls or floors are opened, such as outdated wiring or subfloor damage. This is separate from your planned budget for cabinets, countertops, and finishes."}
+  ],
+  "relatedCategories": ["kitchen-remodeling", "interior-renovations", "electrical"]
+}

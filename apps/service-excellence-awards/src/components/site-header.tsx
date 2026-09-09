@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/winners", label: "Search Winners" },
+  { href: "/resources", label: "Homeowner Guides" },
   { href: "/about", label: "About" },
   { href: "/why-awards-matter", label: "Why Awards Matter" },
   { href: "/nominate", label: "Request Consideration" },

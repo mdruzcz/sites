@@ -1,0 +1,27 @@
+{
+  "slug": "heating-cooling",
+  "metaTitle": "Heating and Cooling Contractors in Ontario: A Guide",
+  "metaDescription": "How to choose a furnace, air conditioning or heat pump contractor in Ontario, including TSSA licensing, proper sizing, realistic costs and red flags.",
+  "intro": "Furnace, air conditioning, heat pump and ductless work all involve gas or electrical connections that are regulated in Ontario, so licensing and permits matter as much as equipment choice. A qualified contractor should size the system to your home rather than simply matching what was there before.",
+  "whatToLookFor": [
+    "TSSA registration for any contractor doing gas furnace work",
+    "A licensed technician for refrigerant and electrical connections",
+    "A proper load calculation instead of guessing equipment size from the old unit",
+    "Clear explanation of efficiency ratings and expected energy savings",
+    "Manufacturer warranty registration completed after installation"
+  ],
+  "typicalCostNotes": "Heating and cooling costs vary with equipment type, efficiency tier and how much ductwork or electrical upgrading the job needs, so a furnace swap typically costs less than adding a heat pump or a full ductless system. Rebate programs can offset some cost but change over time, so confirm current eligibility rather than relying on last year's figures. Ask for pricing broken out by equipment, labour and any electrical work.",
+  "questionsToAsk": [
+    "Are you TSSA registered for gas work on this job?",
+    "Have you done a load calculation, or are you matching the old unit?",
+    "What efficiency rating is this equipment, and what's the expected impact?",
+    "Are there rebates we currently qualify for, and who applies for them?",
+    "What does the manufacturer and labour warranty each cover?"
+  ],
+  "redFlags": [
+    "No TSSA registration for gas furnace or boiler work",
+    "Sizing equipment without measuring the home or doing a load calculation",
+    "Pressure to buy a larger system than your home actually needs"
+  ],
+  "relatedGuides": ["how-to-vet-a-contractor-in-ontario", "how-to-read-a-contractor-quote", "contractor-red-flags"]
+}

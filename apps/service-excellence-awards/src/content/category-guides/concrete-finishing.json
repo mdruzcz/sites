@@ -1,0 +1,27 @@
+{
+  "slug": "concrete-finishing",
+  "metaTitle": "Concrete Finishing & Pouring in Ontario",
+  "metaDescription": "A guide to hiring a concrete contractor for driveways, patios and walkways in Ontario, covering control joints, curing time and freeze-thaw risk.",
+  "intro": "Concrete looks simple once it is poured, but the quality is set long before the truck arrives, in the base preparation, reinforcement and where the control joints get cut. Ontario's freeze-thaw cycles are unforgiving on flatwork that skips these steps, which is why cracking and heaving are the most common complaints homeowners raise.",
+  "whatToLookFor": [
+    "A clear plan for gravel base depth and compaction before pouring",
+    "Correct placement of control joints to manage cracking from freeze-thaw movement",
+    "Use of rebar or wire mesh reinforcement appropriate to the slab's use",
+    "Realistic curing time before the surface takes foot or vehicle traffic",
+    "Experience with the specific finish you want, broom, stamped or exposed aggregate"
+  ],
+  "typicalCostNotes": "Price generally scales with square footage, slab thickness, reinforcement and finish, so a basic broom-finished walkway typically costs less per square foot than a stamped or coloured driveway. Site access, how much old concrete or excavation removal is needed, and the depth of the gravel base can also move the price, so a same-day flat quote without a site visit deserves a second look.",
+  "questionsToAsk": [
+    "What is the gravel base depth and compaction method before pouring?",
+    "Where will control joints be placed, and how deep will they be cut?",
+    "Is rebar or mesh reinforcement included, and is it sized for this slab's use?",
+    "How long before the surface can handle foot traffic, then vehicle traffic?",
+    "What is the plan if it rains or temperatures drop right after the pour?"
+  ],
+  "redFlags": [
+    "No mention of control joints or a plan to place them after cracks appear",
+    "Skips gravel base compaction to pour directly on undisturbed soil",
+    "Pushes to pour in freezing or near-freezing conditions without protection"
+  ],
+  "relatedGuides": ["hiring-a-concrete-contractor-guide", "how-to-read-a-contractor-quote", "do-you-need-a-building-permit-ontario"]
+}

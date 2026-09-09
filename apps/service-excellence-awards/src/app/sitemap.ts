@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getServerSupabase } from "@/lib/supabase/server";
+import { getGuides } from "@/lib/content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://serviceexcellenceawards.ca";
@@ -18,6 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/why-awards-matter`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/nominate`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...getGuides().map((g) => ({ url: `${base}/resources/${g.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 })),
   ];
 
   const cityUrls = (citiesRes.data ?? []).map((c) => ({
@@ -43,15 +46,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
-  // Generate city × category combination URLs (16 × 10 = 160) — these are valid pages
-  const categoryUrls = (categoriesRes.data ?? []).flatMap((cat) =>
-    (citiesRes.data ?? []).map((city) => ({
-      url: `${base}/winners/${city.slug}/${cat.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    }))
-  );
+  // Only city × category pages that actually name a winner; empty combos are noindex placeholders.
+  const filled = new Set(winners.filter((w) => w.city && w.category).map((w) => `${w.city!.slug}/${w.category!.slug}`));
+  const categoryUrls = [...filled].map((key) => ({
+    url: `${base}/winners/${key}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
   return [...staticUrls, ...cityUrls, ...categoryUrls, ...winnerUrls];
 }

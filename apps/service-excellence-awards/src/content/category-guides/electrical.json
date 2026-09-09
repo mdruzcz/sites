@@ -1,0 +1,27 @@
+{
+  "slug": "electrical",
+  "metaTitle": "Electrical Contractors in Ontario: A Buyer's Guide",
+  "metaDescription": "What to know before hiring an electrician in Ontario, including ESA licensing and permits, panel upgrades, EV chargers, costs and red flags to avoid.",
+  "intro": "Electrical work in Ontario homes must meet Electrical Safety Authority requirements, and most jobs need a permit pulled by a licensed electrical contractor. Panel upgrades, rewiring and EV charger installs all carry real safety stakes if done by unlicensed labour.",
+  "whatToLookFor": [
+    "A Licensed Electrical Contractor registered with the ESA",
+    "An ESA permit pulled and inspection scheduled for the scope of work",
+    "Experience with your specific job type, such as panel upgrades or EV chargers",
+    "Clear labelling and documentation of any panel or circuit changes",
+    "Written confirmation of what inspection and sign-off will look like"
+  ],
+  "typicalCostNotes": "Electrical costs range widely by scope, a simple outlet or fixture swap costs far less than a full panel upgrade or a whole-home rewire, and older homes with knob-and-tube or aluminum wiring often add cost once walls are opened. EV charger installs depend heavily on how far the panel is from the parking spot and whether the panel has capacity, and trenching for an underground run can add meaningfully to the total. Confirm whether the ESA permit fee is included in the quote.",
+  "questionsToAsk": [
+    "Are you a Licensed Electrical Contractor registered with the ESA?",
+    "Will an ESA permit be pulled for this work?",
+    "Does our panel have capacity for this, or does it need upgrading?",
+    "What happens if you find knob-and-tube or aluminum wiring?",
+    "Who schedules the ESA inspection, and when does that happen?"
+  ],
+  "redFlags": [
+    "No ESA licence number provided when asked",
+    "Willingness to skip the permit for a discounted cash price",
+    "No mention of an inspection after the work is done"
+  ],
+  "relatedGuides": ["how-to-vet-a-contractor-in-ontario", "contractor-red-flags", "do-you-need-a-building-permit-ontario"]
+}

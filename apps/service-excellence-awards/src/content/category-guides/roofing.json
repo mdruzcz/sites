@@ -1,0 +1,27 @@
+{
+  "slug": "roofing",
+  "metaTitle": "Roofing Replacement & Repair in Ontario",
+  "metaDescription": "What to check before hiring a roofer in Ontario, including WSIB coverage, fall protection, ice-and-water shield and realistic 2026 cost ranges.",
+  "intro": "A roof replacement is one of the more safety-sensitive jobs a homeowner will hire for, and proof of WSIB coverage and fall protection is not optional paperwork, it is what protects the household if a worker is hurt on the property. Ontario's winters also make ice-and-water shield along eaves and valleys a real requirement, not an upsell.",
+  "whatToLookFor": [
+    "Valid WSIB clearance certificate and visible fall protection on site",
+    "Ice-and-water shield installed along eaves, valleys and roof penetrations",
+    "Experience with your specific roof system, asphalt shingle, metal or flat membrane",
+    "A tear-off and disposal plan rather than layering new shingles over old",
+    "Manufacturer certification if the shingle brand's enhanced warranty matters to you"
+  ],
+  "typicalCostNotes": "Cost is driven mainly by roof size, pitch, the number of layers being removed and the material chosen, so a standard asphalt shingle re-roof typically costs less than a standing-seam metal roof or a complex flat membrane system. Steep pitches, multiple valleys and difficult access can also raise labour costs, so ask for a breakdown of tear-off, materials and disposal separately.",
+  "questionsToAsk": [
+    "Can you provide a current WSIB clearance certificate for this job?",
+    "What fall protection will your crew use on my roof?",
+    "Is ice-and-water shield included along the eaves and valleys?",
+    "Are you tearing off the old roof completely, or layering over it?",
+    "What is the manufacturer's material warranty versus your labour warranty?"
+  ],
+  "redFlags": [
+    "Cannot produce a WSIB clearance certificate or dismisses the question",
+    "Crew working the roof with no visible fall protection",
+    "Suggests layering new shingles over old to save time or cost"
+  ],
+  "relatedGuides": ["hiring-a-roofer-guide", "how-to-vet-a-contractor-in-ontario", "do-you-need-a-building-permit-ontario"]
+}

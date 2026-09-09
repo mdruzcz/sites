@@ -7,7 +7,7 @@ import { TrackFormSubmission } from "@/components/TrackFormSubmission";
 export const metadata: Metadata = {
   title: "Request Consideration",
   description:
-    "Submit a contractor for consideration in the Service Excellence Awards. No fee, no pay-to-win.",
+    "Submit a contractor for consideration in the Service Excellence Awards. There's no fee to be reviewed.",
   alternates: { canonical: "/nominate" },
 };
 

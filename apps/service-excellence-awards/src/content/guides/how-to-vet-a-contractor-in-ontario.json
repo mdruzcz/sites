@@ -1,0 +1,89 @@
+{
+  "slug": "how-to-vet-a-contractor-in-ontario",
+  "metaTitle": "How to Vet a Contractor in Ontario",
+  "metaDescription": "A practical checklist for checking licences, WSIB clearance, insurance and references before you hire an Ontario home service contractor for any project.",
+  "h1": "How to Vet a Contractor in Ontario Before You Sign Anything",
+  "category": "Hiring",
+  "readMinutes": 8,
+  "summary": "What to check before hiring: licences, WSIB clearance, liability insurance, references and permits.",
+  "publishedDate": "2026-09-08",
+  "intro": "Most homeowners pick a contractor based on a quote and a gut feeling, and most of the time that works out fine. But when it does not, the difference is usually a missing piece of paperwork nobody bothered to ask for. This guide walks through the handful of documents and checks that actually protect you, in the order most homeowners should ask for them.",
+  "sections": [
+    {
+      "heading": "Start with licensing, not price",
+      "blocks": [
+        {"type":"p","text":"Ontario does not require a single province-wide licence for general contractors the way it does for some trades, which surprises a lot of homeowners. Whether a licence is legally required depends on the work and the municipality. Some cities license general contractors or renovators directly. Certain trades are regulated no matter where you live in the province, and it is worth knowing which ones before you start calling around."},
+        {"type":"ul","items":[
+          "Electrical work must be performed by a Licensed Electrical Contractor and, in most cases, inspected or notified through the Electrical Safety Authority (ESA).",
+          "Gas fitting, furnace installs and other HVAC work involving fuel-burning equipment fall under the Technical Standards and Safety Authority (TSSA), which licenses gas technicians.",
+          "Plumbing, in many municipalities, requires a licensed plumber and a permit for anything beyond simple fixture swaps.",
+          "General contractors doing decks, fences, siding, concrete or renovation carpentry are often not individually licensed by the province, so your protection comes from insurance, WSIB and a solid contract instead."
+        ]},
+        {"type":"p","text":"If a company tells you electrical or gas work does not need ESA or TSSA involvement, treat that as a red flag rather than a convenience. Ask for the ESA notification number or the TSSA contractor registration number directly and note that you can verify both independently rather than taking their word for it."}
+      ]
+    },
+    {
+      "heading": "Ask for a WSIB clearance certificate every time",
+      "blocks": [
+        {"type":"p","text":"A WSIB clearance certificate confirms that a company is registered with the Workplace Safety and Insurance Board and that its account is in good standing. This matters more than most homeowners realize. If a worker is injured on your property and the contractor is not properly covered, liability can, in some circumstances, land on the homeowner. It is one of the few checks that takes two minutes and genuinely removes risk from your side of the table."},
+        {"type":"steps","items":[
+          {"title":"Ask for the certificate up front","text":"A legitimate contractor will provide a WSIB clearance certificate without hesitation, usually the same day you ask."},
+          {"title":"Verify it independently","text":"Do not just accept a PDF. Use the WSIB's own online clearance lookup to confirm the certificate is current, since coverage can lapse between jobs."},
+          {"title":"Re-check on longer projects","text":"For a multi-week renovation, ask for an updated certificate partway through if the original is getting close to its expiry date."}
+        ]},
+        {"type":"callout","text":"Some sole proprietors and small owner-operators are exempt from mandatory WSIB coverage in certain trades. If a contractor claims an exemption, ask them to explain which category applies and consider asking for optional WSIB coverage anyway, since it protects you either way."}
+      ]
+    },
+    {
+      "heading": "Confirm liability insurance, separately from WSIB",
+      "blocks": [
+        {"type":"p","text":"WSIB and liability insurance cover different things. WSIB protects workers who get hurt on the job. Commercial general liability insurance protects you if the contractor's work damages your home, a neighbour's property, or triggers a claim after the fact, for example a fence post that hits a gas line or a retaining wall that fails and damages a driveway."},
+        {"type":"ul","items":[
+          "Ask for a certificate of insurance naming the coverage amount, not just a verbal assurance that the company is insured.",
+          "A reasonable minimum for most residential jobs is commonly in the range of one to two million dollars in liability coverage, though larger structural or excavation work may warrant more.",
+          "Confirm the policy is current, since certificates can be issued once and never renewed.",
+          "If subcontractors will be on site, ask whether they carry their own insurance or are covered under the general contractor's policy."
+        ]}
+      ]
+    },
+    {
+      "heading": "Check references the right way",
+      "blocks": [
+        {"type":"p","text":"References that a contractor hands you are, understandably, going to be the happiest clients they have. That does not make them useless, but it means you should ask questions that go beyond \"were you satisfied.\""},
+        {"type":"ul","items":[
+          "Ask how the contractor handled a problem or delay, not just whether the finished product looked good.",
+          "Ask whether the final price matched the quoted price, and if not, why it changed.",
+          "Ask whether the crew showed up when scheduled and cleaned up the site each day.",
+          "If possible, ask for a reference from a job completed at least a year ago, since some issues (leaks, settling, staining) only show up after a season or two."
+        ]},
+        {"type":"p","text":"It is also worth checking a contractor's standing independently rather than relying only on the references they supply. Look at how they are reviewed publicly, whether they have a consistent business history, and whether their name shows up on this site's /winners list or has been put forward through /nominate, which can be one signal among several, not a substitute for your own checks."}
+      ]
+    },
+    {
+      "heading": "Permits are not optional paperwork",
+      "blocks": [
+        {"type":"p","text":"A contractor who avoids permits to save you time or money is shifting risk onto you, not doing you a favour. Unpermitted structural work can complicate a home sale, void certain insurance claims, and in some cases has to be opened up and redone to pass inspection later. Permit requirements vary by municipality, so the right approach is always to confirm with your local building department rather than assume based on a neighbour's project or something you read online."},
+        {"type":"callout","text":"A trustworthy contractor will usually tell you upfront which parts of your project need a permit and either pull it themselves or walk you through pulling it yourself. If they seem annoyed by the question, that is worth noting."}
+      ]
+    }
+  ],
+  "checklist": [
+    "Ask for and independently verify a current WSIB clearance certificate",
+    "Request a certificate of insurance showing liability coverage amount and expiry",
+    "Confirm ESA involvement for any electrical work",
+    "Confirm TSSA registration for any gas or fuel-burning equipment work",
+    "Call at least two references and ask about problems, not just outcomes",
+    "Confirm which parts of the project require a municipal permit",
+    "Get the company's full legal business name and HST number, not just a trade name",
+    "Check how long the company has operated under its current name",
+    "Ask who specifically will be on site day to day, crew or subcontractors",
+    "Get everything discussed in writing before any deposit changes hands"
+  ],
+  "faq": [
+    {"q":"Do all contractors in Ontario need a licence?","a":"Not universally. Certain trades, including electrical and gas work, are regulated provincially through the ESA and TSSA. General contracting is often governed at the municipal level instead, so check your specific city's requirements."},
+    {"q":"What is a WSIB clearance certificate and why does it matter?","a":"It confirms a contractor's WSIB account is active and in good standing. Without it, an injury on your property could create liability exposure for you as the homeowner, so it is worth verifying independently rather than taking a copy at face value."},
+    {"q":"How much liability insurance should a residential contractor carry?","a":"There is no single fixed number, but coverage in the range of one to two million dollars is common for typical residential projects. Larger or structural jobs may reasonably call for more, so ask what the contractor carries and confirm it with a certificate."},
+    {"q":"Is it worth hiring a contractor who has won or been nominated for a local award?","a":"It can be a useful signal alongside your own checks. Recognition through directories like /winners or nominations submitted via /nominate reflects reputation and community standing, but it should complement, not replace, licence, insurance and reference checks."}
+  ],
+  "relatedCategories": ["deck-building", "retaining-walls", "electrical"]
+}

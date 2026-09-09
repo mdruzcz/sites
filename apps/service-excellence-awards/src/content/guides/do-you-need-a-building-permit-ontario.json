@@ -1,0 +1,94 @@
+{
+  "slug": "do-you-need-a-building-permit-ontario",
+  "metaTitle": "Do You Need a Building Permit in Ontario",
+  "metaDescription": "A plain-language look at when decks, retaining walls, basements and structural work typically need a building permit in Ontario, and how to check.",
+  "h1": "Do You Need a Building Permit in Ontario? A Plain-Language Guide",
+  "category": "Permits",
+  "readMinutes": 8,
+  "summary": "When decks, retaining walls, basement work and structural changes typically need a permit, and how to confirm locally.",
+  "publishedDate": "2026-09-08",
+  "intro": "Permit rules in Ontario are set at the municipal level within a provincial framework, which means the honest answer to \"do I need a permit\" is almost always \"it depends where you live and exactly what you are building.\" That said, some categories of work trigger a permit requirement in the great majority of Ontario municipalities. This guide covers the most common ones so you know what questions to ask before work starts.",
+  "sections": [
+    {
+      "heading": "Why permits exist, beyond the paperwork",
+      "blocks": [
+        {"type":"p","text":"It is easy to think of a building permit as a fee and a delay, but its real function is a second set of eyes on work that, if done wrong, can be dangerous or expensive to fix. A permit process typically means a municipal inspector reviews the plans against the Ontario Building Code before work starts and checks the work at key stages as it progresses, footings before they are covered, framing before drywall goes up, and so on."},
+        {"type":"p","text":"Skipping a required permit does not just risk a fine. It can also mean a home inspector or buyer's lawyer flags unpermitted work during a future sale, in some cases an insurer treating a claim differently if unpermitted structural work is involved, and in the worst case, being ordered to open up finished work to prove it was built correctly."}
+      ]
+    },
+    {
+      "heading": "Decks: height and attachment usually decide it",
+      "blocks": [
+        {"type":"p","text":"Deck permit rules vary by municipality, and some jurisdictions exempt very low, freestanding decks from needing a permit at all. As a general pattern across much of Ontario, a permit is more likely to be required when a deck is attached to the house, built above a certain height off grade, or large enough to be considered a significant structure rather than a small platform. Always confirm the specific threshold with your local building department rather than assuming a number from another municipality applies to you."},
+        {"type":"ul","items":[
+          "Decks attached to the house, sharing structural connection through a ledger board, are more commonly regulated than freestanding platforms.",
+          "Height above grade is a common trigger point in many municipal bylaws, so a low patio-level deck may be treated differently than a raised deck off a walkout basement.",
+          "Even where a permit is not required, guard requirements under the Ontario Building Code still typically apply once a deck sits above a certain height above grade, generally requiring a guard around 900mm high on lower decks and closer to 1070mm on higher ones, so safety requirements can apply even to permit-exempt decks.",
+          "Footing depth requirements, tied to frost protection, apply regardless of permit status and are one of the most common things builders get wrong on unpermitted decks."
+        ]},
+        {"type":"callout","text":"A deck guard is not optional once you are above the applicable height threshold, permit or no permit. If a contractor proposes skipping a guard on a raised deck to save money or keep sightlines open, that is a safety code issue, not a style preference."}
+      ]
+    },
+    {
+      "heading": "Retaining walls: the one-metre rule of thumb",
+      "blocks": [
+        {"type":"p","text":"Retaining walls are one of the more commonly misunderstood permit categories, partly because small garden-height walls are genuinely exempt in most places, while taller ones are not. A widely cited general rule is that retaining walls over about one metre in height, roughly 3.3 feet, typically require a building permit, and depending on the municipality and site conditions, may also require engineered drawings from a professional engineer, particularly if the wall retains soil near a property line, a structure, or a slope."},
+        {"type":"ul","items":[
+          "Height is usually measured from the bottom of the footing to the top of the wall, not just the visible exposed face, which can push a wall over the threshold even if it looks shorter from the yard.",
+          "Walls that support a driveway, a deck, or sit close to a neighbouring foundation are more likely to require engineering even below the one-metre mark, because the consequences of failure are more serious.",
+          "Multiple shorter walls stepped up a slope (terracing) can sometimes still be treated as one structure for permit purposes depending on spacing, so do not assume terracing automatically avoids the requirement.",
+          "A failed, unpermitted retaining wall is one of the more expensive mistakes to inherit, since it can affect drainage, a neighbour's property, and the stability of anything built above it."
+        ]},
+        {"type":"p","text":"If your project includes any retaining wall work, this is a good example of where it is worth reading /resources/how-to-vet-a-contractor-in-ontario alongside this guide, since a contractor comfortable pulling permits and coordinating engineering when required is a good sign generally."}
+      ]
+    },
+    {
+      "heading": "Basement work: finishing versus structural changes",
+      "blocks": [
+        {"type":"p","text":"Finishing an existing, unfinished basement, framing, insulating, drywalling, adding a bathroom, almost always requires a permit in Ontario municipalities, in part because it typically involves a new bedroom egress window requirement, electrical and plumbing rough-in, and fire separation details that an inspector needs to confirm. Homeowners sometimes assume that because the work is \"inside\" and not visible from the street, it falls outside permit requirements. It generally does not."},
+        {"type":"ul","items":[
+          "Adding a bedroom in a basement typically triggers an egress window requirement, meaning a window large enough and low enough to serve as an emergency exit, which is a common area where existing basements fall short of current code.",
+          "A basement bathroom addition usually needs a permit due to the plumbing and drain work involved.",
+          "Underpinning or lowering a basement floor to gain ceiling height is structural work and virtually always requires a permit and, often, engineered drawings.",
+          "A basement apartment intended as a separate rental unit generally has additional requirements beyond a standard finished basement, including fire separation and a second means of egress."
+        ]}
+      ]
+    },
+    {
+      "heading": "Other structural work worth flagging",
+      "blocks": [
+        {"type":"p","text":"Beyond decks, retaining walls and basements, a few other categories commonly surprise homeowners by requiring a permit:"},
+        {"type":"steps","items":[
+          {"title":"Removing or altering a load-bearing wall","text":"Even a small opening cut into a load-bearing wall for a doorway or pass-through typically needs a permit and often an engineered beam calculation."},
+          {"title":"New or enlarged windows and doors","text":"Enlarging an opening in an exterior wall, not just swapping a window in an existing opening, can require a permit depending on the municipality."},
+          {"title":"Detached structures like sheds and garages","text":"Many municipalities exempt small sheds under a certain size but require a permit above that threshold, and detached garages are commonly regulated regardless of size."},
+          {"title":"Additions of any kind","text":"Any addition that increases a home's footprint or living area is almost always a permitted project, generally without exception."}
+        ]}
+      ]
+    },
+    {
+      "heading": "How to actually check",
+      "blocks": [
+        {"type":"p","text":"Because requirements genuinely differ by municipality, the only reliable way to confirm whether your specific project needs a permit is to contact your local building department directly, either by phone, through their website's permit lookup tools, or in person. Most Ontario municipalities publish permit guides for common residential projects online, and many building departments will answer a quick scope question before you formally apply. It costs nothing to ask, and asking before work starts is always cheaper than asking after an inspector flags it."}
+      ]
+    }
+  ],
+  "checklist": [
+    "Contact your municipal building department before assuming a project is permit-exempt",
+    "Ask specifically about height thresholds for decks in your municipality",
+    "Confirm guard requirements for any deck above the applicable height, permit or not",
+    "Measure retaining wall height from the footing base, not just the visible face",
+    "Ask whether engineered drawings are required for any retaining wall over about one metre",
+    "Assume basement finishing needs a permit, including egress window requirements for bedrooms",
+    "Confirm permit requirements before removing or altering any load-bearing wall",
+    "Check permit rules for sheds and detached garages above your municipality's size exemption",
+    "Keep copies of all permits and inspection sign-offs for your records and any future sale"
+  ],
+  "faq": [
+    {"q":"Do all decks in Ontario need a building permit?","a":"Not necessarily. Many municipalities exempt small, low, freestanding decks, but decks attached to the house or built above a certain height off grade commonly require a permit. Rules vary by municipality, so confirm directly with your local building department."},
+    {"q":"What height retaining wall requires a permit in Ontario?","a":"A commonly cited general threshold is about one metre, roughly 3.3 feet, above which a permit and sometimes engineered drawings are typically required. Measurement usually starts from the footing base, not the visible face, so check the exact rule with your municipality."},
+    {"q":"Does finishing a basement always require a permit?","a":"In almost all Ontario municipalities, yes. Basement finishing typically involves framing, electrical, plumbing and fire separation work that an inspector needs to review, and adding a bedroom usually triggers an egress window requirement."},
+    {"q":"What happens if I skip a required permit?","a":"Consequences can include fines, being ordered to open up finished work for inspection, complications during a future home sale, and potential issues with insurance claims tied to unpermitted structural work. It is generally far cheaper to confirm requirements before starting."}
+  ],
+  "relatedCategories": ["deck-building", "retaining-walls", "basement-finishing"]
+}

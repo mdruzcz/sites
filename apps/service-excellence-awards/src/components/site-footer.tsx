@@ -15,6 +15,7 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.18em] text-stone-500">Awards</h4>
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link href="/winners" className="hover:text-[var(--gold)]">Search Winners</Link></li>
+            <li><Link href="/resources" className="hover:text-[var(--gold)]">Homeowner Guides</Link></li>
             <li><Link href="/why-awards-matter" className="hover:text-[var(--gold)]">Why Awards Matter</Link></li>
             <li><Link href="/nominate" className="hover:text-[var(--gold)]">Request Consideration</Link></li>
           </ul>
@@ -40,7 +41,7 @@ export function SiteFooter() {
       <div className="border-t border-stone-200">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-stone-500 md:flex-row md:items-center md:justify-between">
           <span>© {year} Service Excellence Awards Canada. All rights reserved.</span>
-          <span>Independent recognition program · No pay-to-win.</span>
+          <span>Recognising Ontario's trusted home-service contractors.</span>
         </div>
       </div>
     </footer>
