@@ -1,0 +1,32 @@
+export const site = {
+  name: "Bright Event Lighting",
+  tagline: "Outdoor lighting and holiday decor for weddings, corporate events and Christmas parties.",
+  phone: "519-266-6796",
+  phoneHref: "tel:+15192666796",
+  email: "info@brighteventlighting.ca",
+  emailHref: "mailto:info@brighteventlighting.ca",
+  address: {
+    street: "London",
+    city: "London",
+    region: "ON",
+    postal: "N6A 1A1",
+    country: "CA",
+  },
+  addressLine: "London, ON",
+  hours: "Mon – Fri · 9 AM – 6 PM | Weekends by appointment",
+  geo: { latitude: 42.9849, longitude: -81.2453 },
+  priceRange: "$$",
+  yearsExperience: 5,
+  serviceAreas: ["London", "Kitchener", "Waterloo", "Guelph", "Stratford", "St. Thomas", "Woodstock"],
+  url: "https://brighteventlighting.ca",
+  googleRating: "5.0",
+  googleReviewCount: 12,
+  trustBadges: [
+    { label: "Google Reviews", value: "5.0/5 Stars" },
+    { label: "Wireless & DMX", value: "Professional Grade" },
+    { label: "Events Lit", value: "200+" },
+  ],
+  responseTime: "4 business hours",
+  description:
+    "Professional event lighting and holiday decor across London, Ontario and Southwestern Ontario. Uplighting, Edison string lights, tent lighting, cold sparks, indoor garlands and wreaths, and commercial and mall holiday decor for weddings, corporate events and Christmas parties.",
+} as const;

@@ -15,6 +15,7 @@
     { "path": "apps/holiday-lights-direct" },
     { "path": "apps/permanent-lighting-direct" },
     { "path": "apps/illumi-track-lights" },
-    { "path": "apps/woodstock-deck-fence" }
+    { "path": "apps/woodstock-deck-fence" },
+    { "path": "apps/bright-event-lighting" }
   ]
 }

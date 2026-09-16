@@ -1,0 +1,256 @@
+{
+  "note": "Pricing is a starting-at guide for our service area. Every quote is flat-rate and includes delivery, setup, a technician where listed, and teardown. HST extra.",
+  "groups": [
+    {
+      "slug": "weddings",
+      "title": "Wedding Packages",
+      "description": "Three ways to light a wedding, from golden and intimate to full production. Every package includes DMX scene control, setup before guests arrive and a quiet strike at the end of the night.",
+      "packages": [
+        {
+          "slug": "romantic-glow",
+          "name": "The Romantic Glow",
+          "price": 1195,
+          "priceLabel": "from $1,195",
+          "tagline": "Golden warmth that makes everyone look their best in photos.",
+          "idealFor": "Barn weddings, vineyard receptions, tent and backyard weddings, intimate gatherings",
+          "includes": [
+            "12 wireless amber or warm-white uplights",
+            "100 ft Edison string light canopy or perimeter run",
+            "DMX dimming scenes for dinner and first dance",
+            "On-site technician for the evening",
+            "Delivery, setup and 30-minute strike"
+          ],
+          "image": "/images/garden-wedding-string-lights-draped-arch.jpg",
+          "alt": "Garden wedding lit with warm string lights and uplighting, the look of the Romantic Glow package"
+        },
+        {
+          "slug": "modern-gala",
+          "name": "The Modern Gala",
+          "price": 1795,
+          "priceLabel": "from $1,795",
+          "tagline": "Magazine-worthy elegance that photographs beautifully.",
+          "idealFor": "Ballroom receptions, hotel venues, modern loft and gallery spaces",
+          "featured": true,
+          "includes": [
+            "16 wireless uplights in your wedding colours",
+            "10 pinspots on centrepieces and cake",
+            "Head table and stage wash lighting",
+            "Custom DMX scene programming, cocktails to dance floor",
+            "On-site technician all evening",
+            "Delivery, setup and strike"
+          ],
+          "image": "/images/clear-tent-string-lights-wedding-woodstock.jpg",
+          "alt": "Clear tent reception with criss-crossed string lights, the look of the Modern Gala package"
+        },
+        {
+          "slug": "epic-afterparty",
+          "name": "The Epic Afterparty",
+          "price": 2495,
+          "priceLabel": "from $2,495",
+          "tagline": "The moment your guests pull out their phones.",
+          "idealFor": "Grand entrances, first dances, late-night dance parties, New Year's Eve weddings",
+          "includes": [
+            "Everything in The Modern Gala",
+            "Pair of indoor-safe cold spark fountains, fired on cue",
+            "4 intelligent moving-head lights over the dance floor",
+            "Light haze for visible beams",
+            "Live-operated DMX light show for the reception",
+            "Full production technician"
+          ],
+          "image": "/images/tent-wedding-cocktail-hour-string-lights.jpg",
+          "alt": "Guests celebrating under string lights at a tented wedding, the look of the Epic Afterparty package"
+        }
+      ]
+    },
+    {
+      "slug": "corporate",
+      "title": "Corporate Event Packages",
+      "description": "Flat-rate lighting for galas, launches, fundraisers, conferences and staff socials. Insurance certificate, venue coordination and a technician on site are included.",
+      "packages": [
+        {
+          "slug": "brand-glow",
+          "name": "Brand Glow",
+          "price": 995,
+          "priceLabel": "from $995",
+          "tagline": "Your brand colours on every wall.",
+          "idealFor": "Client appreciation nights, product launches, holiday parties, open houses",
+          "includes": [
+            "16 wireless uplights matched to your brand colours",
+            "Entrance and bar accent lighting",
+            "Podium or presentation wash",
+            "Setup before doors, strike after close",
+            "Certificate of insurance for your venue"
+          ],
+          "image": "/images/corporate-lobby-tree-lit-garland.jpg",
+          "alt": "Corporate lobby lit for an event with a decorated tree and garland"
+        },
+        {
+          "slug": "gala-production",
+          "name": "Gala Production",
+          "price": 2295,
+          "priceLabel": "from $2,295",
+          "tagline": "Camera-ready from the red carpet to the awards.",
+          "idealFor": "Galas, fundraisers, awards nights, conferences with an evening reception",
+          "featured": true,
+          "includes": [
+            "24 wireless uplights in brand or theme colours",
+            "Stage, podium and panel wash for photo and video",
+            "12 pinspots on centrepieces and awards",
+            "Moving-head accents and optional cold sparks for reveals",
+            "Live DMX operation by an on-site technician",
+            "Venue and AV coordination, insurance certificate"
+          ],
+          "image": "/images/indoor-light-archway-tunnel.jpg",
+          "alt": "Walk-through tunnel of light arches in a commercial atrium, an example of gala production lighting"
+        },
+        {
+          "slug": "patio-social",
+          "name": "Patio Social",
+          "price": 1095,
+          "priceLabel": "from $1,095",
+          "tagline": "Summer socials and team events under Edison bulbs.",
+          "idealFor": "Staff appreciation, summer socials, outdoor client events, private parties",
+          "includes": [
+            "150 ft Edison string light canopy over patio or lawn",
+            "6 uplights on trees, fence line or tent poles",
+            "Pathway and entrance lighting",
+            "Setup the afternoon of, removal the next day",
+            "Weather-rated for rain"
+          ],
+          "image": "/images/backyard-bistro-lights-patio-table-evening.jpg",
+          "alt": "Long patio dinner table lit by bistro string lights at dusk, the look of the Patio Social package"
+        }
+      ]
+    },
+    {
+      "slug": "holiday",
+      "title": "Christmas & Holiday Party Packages",
+      "description": "Lighting and decor together, installed before your guests arrive. Choose a single-night party package or leave it up for the whole season.",
+      "packages": [
+        {
+          "slug": "festive-glow",
+          "name": "Festive Glow",
+          "price": 895,
+          "priceLabel": "from $895",
+          "tagline": "The room feels like December the second the doors open.",
+          "idealFor": "Office parties, restaurant private rooms, holiday parties at home",
+          "includes": [
+            "12 wireless uplights in warm-white, red, green or your colours",
+            "25 ft of pre-lit garland on the bar, mantel or railing",
+            "Oversized lit entrance wreath",
+            "Party-night install and next-day removal"
+          ],
+          "image": "/images/stone-fireplace-lit-garland-stockings.jpg",
+          "alt": "Stone fireplace with lit garland and stockings, the look of the Festive Glow package"
+        },
+        {
+          "slug": "winter-wonderland",
+          "name": "Winter Wonderland",
+          "price": 1995,
+          "priceLabel": "from $1,995",
+          "tagline": "Tree, garland, wreaths, lights and a countdown moment.",
+          "idealFor": "Corporate holiday parties, venue events, large home parties",
+          "featured": true,
+          "includes": [
+            "Fully decorated 9 to 12 ft tree in your palette",
+            "50 ft of pre-lit garland plus two feature wreaths",
+            "16 wireless uplights and Edison string light accents",
+            "Pair of cold spark fountains for the countdown or awards",
+            "On-site technician for the party",
+            "Install before doors, removal after"
+          ],
+          "image": "/images/corporate-office-blue-silver-christmas-tree.jpg",
+          "alt": "Blue and silver decorated corporate Christmas tree, the look of the Winter Wonderland package"
+        },
+        {
+          "slug": "season-long-decor",
+          "name": "Season-Long Decor",
+          "price": 1495,
+          "priceLabel": "from $1,495",
+          "tagline": "Installed in November, maintained, removed in January.",
+          "idealFor": "Offices, lobbies, restaurants, hotels, retirement residences",
+          "includes": [
+            "Decorated tree sized to your lobby or dining room",
+            "Garland and wreaths for entrances, desks and railings",
+            "Timer-controlled lighting",
+            "One mid-season touch-up visit",
+            "Storage of rented decor between seasons",
+            "January removal"
+          ],
+          "image": "/images/corporate-lobby-christmas-tree-and-wreath.jpg",
+          "alt": "Corporate lobby with a lit Christmas tree and entrance wreath, the look of the Season-Long Decor package"
+        }
+      ]
+    },
+    {
+      "slug": "commercial",
+      "title": "Commercial & Mall Holiday Decor",
+      "description": "Large-format displays are designed and quoted per property. These starting points show what typical projects include.",
+      "packages": [
+        {
+          "slug": "storefront",
+          "name": "Storefront & Restaurant",
+          "price": 1200,
+          "priceLabel": "from $1,200",
+          "tagline": "Roofline, entrance and window lighting that says open and festive.",
+          "idealFor": "Retail storefronts, restaurants, dealerships, small offices",
+          "includes": [
+            "Warm-white or colour C9 roofline lighting",
+            "Lit entrance wreath and garland",
+            "Wrapped trees or shrubs at the entrance",
+            "Timer, mid-season maintenance and January removal"
+          ],
+          "image": "/images/brewery-entrance-wrapped-trees.jpg",
+          "alt": "Brewery entrance with warm-white wrapped trees, an example of storefront holiday lighting"
+        },
+        {
+          "slug": "lobby-atrium",
+          "name": "Lobby & Atrium",
+          "price": 3500,
+          "priceLabel": "from $3,500",
+          "tagline": "A tree and decor scheme scaled to a commercial lobby.",
+          "idealFor": "Office towers, hotels, condo lobbies, hospitals",
+          "featured": true,
+          "includes": [
+            "12 to 20 ft decorated tree with commercial-grade lighting",
+            "Garland arches, wreaths and potted lit trees at entrances",
+            "Coordinated exterior entrance lighting",
+            "Overnight or off-hours install",
+            "Maintenance visits and January removal"
+          ],
+          "image": "/images/corporate-marble-atrium-christmas-tree.jpg",
+          "alt": "Decorated Christmas tree in a corporate marble atrium, an example of lobby and atrium holiday decor"
+        },
+        {
+          "slug": "mall-municipal",
+          "name": "Mall & Municipal",
+          "price": null,
+          "priceLabel": "Custom quote",
+          "tagline": "Giant trees, Santa sets and walk-through displays.",
+          "idealFor": "Shopping malls, plazas, BIAs, municipal squares, campuses",
+          "includes": [
+            "Atrium or plaza trees up to 30 ft",
+            "Santa photo sets, cabins, sleighs and lit sculptures",
+            "Walk-through light tunnels and arches",
+            "Exterior roofline, tree and pole lighting",
+            "Multi-year contracts with storage and refresh"
+          ],
+          "image": "/images/mall-santa-cabin-christmas-display.jpg",
+          "alt": "Santa's cabin photo set with lit trees in a shopping mall, an example of mall holiday decor"
+        }
+      ]
+    }
+  ],
+  "addOns": [
+    { "name": "Additional wireless uplights", "price": "$25 each" },
+    { "name": "Edison string lighting", "price": "$6 per ft, installed" },
+    { "name": "Pinspots", "price": "$20 each" },
+    { "name": "Cold spark fountains (pair, with operator)", "price": "from $495" },
+    { "name": "Custom monogram or logo gobo", "price": "from $195" },
+    { "name": "Tree wrapping", "price": "from $350 per tree" },
+    { "name": "Pre-lit garland", "price": "from $18 per ft" },
+    { "name": "Oversized lit wreath (48 in)", "price": "from $225" },
+    { "name": "Decorated tree, 7 to 9 ft", "price": "from $650" },
+    { "name": "Multi-day or seasonal extension", "price": "quoted per install" }
+  ]
+}

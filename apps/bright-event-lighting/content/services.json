@@ -1,0 +1,208 @@
+[
+  {
+    "slug": "uplighting",
+    "title": "Uplighting",
+    "menuTitle": "Uplighting",
+    "shortDescription": "Wireless LED uplights wash walls, pillars and tent poles in any colour you choose, turning a plain room into the room everyone photographs.",
+    "fullDescription": "Uplighting is the single biggest visual upgrade a venue can get for the money. We place slim, battery-powered LED fixtures at the base of walls, columns, drapery and tent poles so the light travels up the surface and paints the whole room in colour. Because every fixture is wireless and DMX-controlled, there are no cords across your floor and your technician can shift the look through the night: soft amber for dinner, your wedding colours for the reception, a deep blue and gold for a corporate gala, or festive reds and greens for a Christmas party. Uplights also make a dramatic difference outdoors, grazing stone walls, tree trunks and building facades after dark.",
+    "icon": "sparkles",
+    "image": "/images/garden-wedding-string-lights-draped-arch.jpg",
+    "features": [
+      "Wireless, battery-powered LED fixtures (no cords, no tripped breakers)",
+      "Any colour, including exact matches to your palette or brand",
+      "DMX scene control: dim, shift and fade through the evening",
+      "Indoor and IP65 outdoor-rated fixtures",
+      "Placed, programmed and struck by our crew"
+    ],
+    "goodFor": ["Wedding receptions", "Corporate galas and product launches", "Holiday parties", "Tent and outdoor venues"],
+    "startingAt": 395,
+    "unit": "10 uplights, delivered and set",
+    "faq": [
+      { "question": "How many uplights does my room need?", "answer": "A typical 100 to 150 guest reception hall looks great with 12 to 20 uplights spaced roughly every 8 to 10 feet along the walls. Tents and larger ballrooms need more. Tell us the venue and guest count and we will recommend a number." },
+      { "question": "Can you match our wedding colours or company brand?", "answer": "Yes. Our fixtures mix red, green, blue, amber and white LEDs, so we can dial in almost any hue. Send a swatch or a hex code and we will program it ahead of time." },
+      { "question": "Do the uplights get hot or need power outlets?", "answer": "No. They are LED and battery-powered, run 8 to 12 hours on a charge, and stay cool to the touch, which matters around drapery, florals and kids." }
+    ]
+  },
+  {
+    "slug": "edison-string-lighting",
+    "title": "Edison & Bistro String Lighting",
+    "menuTitle": "Edison String Lights",
+    "shortDescription": "Warm Edison bulb canopies, zig-zag runs over patios and tent ceilings that glow the moment the sun goes down.",
+    "fullDescription": "Nothing says 'evening event' like a canopy of warm Edison bulbs overhead. We design and hang commercial-grade string lighting in the pattern that suits your space: straight parallel runs for a long dinner table, a zig-zag or starburst over a dance floor, or a full grid under a clear-top tent so the lights reflect back at night. All of our string lighting is dimmable and weather-rated, hung on proper cable and hardware (never just draped over branches), and taken down by our crew when the event is over. It is our most requested service for backyard weddings, tent receptions, patio dinners and outdoor corporate socials.",
+    "icon": "lightbulb",
+    "image": "/images/backyard-edison-string-lights-dinner-party.jpg",
+    "features": [
+      "Commercial-grade, dimmable Edison and bistro bulbs",
+      "Straight run, zig-zag, starburst or full canopy patterns",
+      "Tent ceiling grids, tree-to-tree spans and pole-mounted runs",
+      "Weather-rated for rain and wind",
+      "Professional rigging on cable, not just draped bulbs"
+    ],
+    "goodFor": ["Backyard and tent weddings", "Patio dinners and cocktail hours", "Outdoor corporate socials", "Restaurant and venue patios"],
+    "startingAt": 895,
+    "unit": "100 ft canopy, installed",
+    "faq": [
+      { "question": "Do you need trees or poles to hang string lights from?", "answer": "Not necessarily. We bring weighted poles and can create a full canopy over an open lawn or parking area. If you have trees, a fence line or a building edge, even better." },
+      { "question": "Can the string lights stay up for several days?", "answer": "Yes. Multi-day and seasonal installs are common for venues and patios. Ask about our seasonal pricing if you want them up all summer." },
+      { "question": "Are Edison bulbs bright enough to eat by?", "answer": "At full brightness, yes. Most clients dim them to about 60 percent once dinner is done to get that golden, candle-like look." }
+    ]
+  },
+  {
+    "slug": "tent-lighting",
+    "title": "Tent & Outdoor Event Lighting",
+    "menuTitle": "Tent & Outdoor Lighting",
+    "shortDescription": "Complete lighting for tented and outdoor events: string light canopies, pole uplighting, pathway lights and perimeter runs.",
+    "fullDescription": "A tent is a blank canvas, and after dark it is a very dark one. Our tent and outdoor packages combine a string light canopy overhead with uplights on the tent poles, perimeter lights along the guy lines, and pathway lighting so guests can find the bar, the washrooms and the parking area safely. Everything is IP65 weather-rated and battery-powered where possible, so there are no generators humming and no extension cords across wet grass. We coordinate directly with your tent rental company on install timing and can be on site for the evening to adjust as the light changes.",
+    "icon": "tent",
+    "image": "/images/tent-string-light-canopy-wedding-reception.jpg",
+    "features": [
+      "String light canopy across the tent ceiling",
+      "Colour uplighting on tent poles and drapery",
+      "Pathway, entrance and washroom lighting",
+      "Perimeter and tree lighting around the tent",
+      "Coordinated with your tent rental company"
+    ],
+    "goodFor": ["Tent weddings", "Farm and vineyard events", "Outdoor corporate events", "Backyard celebrations"],
+    "startingAt": 1495,
+    "unit": "40 x 60 tent package",
+    "faq": [
+      { "question": "What if it rains?", "answer": "All of our outdoor fixtures are IP65 weather-rated. Rain is not a problem for the lights, and we install so that connections stay dry." },
+      { "question": "Do you need power at the site?", "answer": "For most tent packages, no. Uplights and pathway lights are battery-powered. String light canopies do need one standard outlet or a quiet inverter generator, which we can supply." }
+    ]
+  },
+  {
+    "slug": "cold-sparks-dance-floor",
+    "title": "Cold Sparks & Dance Floor Lighting",
+    "menuTitle": "Cold Sparks & Dance Floor",
+    "shortDescription": "Indoor-safe cold spark fountains, moving heads and haze that turn a first dance or grand entrance into the moment of the night.",
+    "fullDescription": "Cold spark machines create a shimmering 10-foot curtain of sparks with no flame, no heat and no smoke, so they are safe indoors and approved by most venues. Pair them with intelligent moving-head lights and light haze and your dance floor becomes a production: a dramatic first dance, a grand entrance, a product reveal or a countdown at a holiday party. Our technician runs the whole show live from a DMX console, reacting to the DJ and the crowd rather than pressing play on a preset.",
+    "icon": "flame",
+    "image": "/images/tent-wedding-cocktail-hour-string-lights.jpg",
+    "features": [
+      "Indoor-safe cold spark fountains (no flame, no heat)",
+      "Intelligent moving-head lights over the dance floor",
+      "Light haze for visible beams",
+      "Live-operated DMX light show",
+      "Coordinated cues with your DJ or MC"
+    ],
+    "goodFor": ["First dances and grand entrances", "Corporate reveals and awards", "New Year's and holiday party countdowns", "Late-night dance parties"],
+    "startingAt": 495,
+    "unit": "pair of cold spark machines with operator",
+    "faq": [
+      { "question": "Are cold sparks allowed indoors?", "answer": "Yes. The effect uses a non-flammable titanium powder and produces no heat that can ignite fabric or set off sprinklers. We confirm with your venue in advance and carry full liability insurance." },
+      { "question": "Can we time the sparks to a specific moment in a song?", "answer": "That is exactly how we run them. Give us the song and the moment, and your technician fires the cue live." }
+    ]
+  },
+  {
+    "slug": "pinspot-wash-lighting",
+    "title": "Pinspot & Wash Lighting",
+    "menuTitle": "Pinspot & Wash",
+    "shortDescription": "Precision pinspots on centrepieces and cakes plus soft wash lighting for head tables, stages and speakers.",
+    "fullDescription": "Pinspots are tight beams of light aimed at a single thing: a floral centrepiece, the cake, a sculpture, an award on a stage. In a dim room they make those details glow while everything around them stays soft, which is the look you see in editorial wedding and gala photography. Wash lighting does the opposite job, evenly lighting a head table, a stage or a podium so speakers look their best on camera. We combine the two for ballrooms, galas, fundraisers and any event where the details deserve to be seen.",
+    "icon": "zap",
+    "image": "/images/clear-tent-string-lights-wedding-woodstock.jpg",
+    "features": [
+      "Wireless LED pinspots for centrepieces and cakes",
+      "Soft, even wash for head tables and stages",
+      "Podium and speaker lighting for corporate events",
+      "Colour-temperature matched to your photographer's needs",
+      "DMX-controlled with the rest of the room"
+    ],
+    "goodFor": ["Ballroom receptions", "Galas and fundraisers", "Awards nights and conferences", "Cake and centrepiece showcase"],
+    "startingAt": 295,
+    "unit": "10 pinspots, set and aimed",
+    "faq": [
+      { "question": "Will pinspots blind guests sitting at the table?", "answer": "No. They are aimed steeply down onto the centrepiece from a distance and are dimmed to suit the room, so they light the flowers, not the faces." }
+    ]
+  },
+  {
+    "slug": "tree-and-landscape-lighting",
+    "title": "Tree Wrapping & Landscape Lighting",
+    "menuTitle": "Tree & Landscape Lighting",
+    "shortDescription": "Trees wrapped in mini lights, lit walkways and grazed stone walls that make outdoor venues glow after dark, for one night or a whole season.",
+    "fullDescription": "Wrapping trunks and branches in warm mini lights is the fastest way to turn a lawn, courtyard or venue entrance into something guests stop and photograph. We use commercial-grade LED strands, proper spacing and a lift for tall trees, so the result looks like a magazine spread rather than a tangle of extension cords. Add pathway lights, lit shrubs and uplights grazing stone or brick and you have an outdoor venue that works long after sunset. Landscape lighting is available for a single event or as a seasonal install for venues, restaurants and businesses.",
+    "icon": "trees",
+    "image": "/images/tree-wrap-fairy-lights-garden-path.jpg",
+    "features": [
+      "Trunk and branch wrapping in warm-white or colour mini lights",
+      "Lift-equipped crew for mature trees",
+      "Pathway, driveway and entrance lighting",
+      "Uplights on stone, brick and water features",
+      "Single-event or seasonal installs"
+    ],
+    "goodFor": ["Outdoor weddings", "Venue and restaurant patios", "Estate and vineyard events", "Seasonal commercial displays"],
+    "startingAt": 350,
+    "unit": "per wrapped tree, installed",
+    "faq": [
+      { "question": "Can you wrap trees on a venue we do not own?", "answer": "Yes, with the venue's permission. Many venues already work with us, and our clips and cable do no damage to bark or branches." }
+    ]
+  },
+  {
+    "slug": "indoor-garlands-wreaths",
+    "title": "Indoor Garlands, Wreaths & Trees",
+    "menuTitle": "Garlands, Wreaths & Trees",
+    "shortDescription": "Pre-lit garlands, oversized wreaths and fully decorated Christmas trees delivered, styled and removed for homes, offices and venues.",
+    "fullDescription": "For Christmas parties and holiday-season venues, we supply and install the indoor decor that makes the room: lush pre-lit garlands along mantels, staircases and bars, oversized wreaths for entrances and feature walls, and fully decorated trees from 7 to 20 feet in whatever palette suits the space. Everything arrives styled and lit, stays up for your party or the whole season, and is removed by our crew in January. It is a favourite for corporate lobbies, restaurants, holiday parties at home and wedding venues booking December dates.",
+    "icon": "wreath",
+    "image": "/images/living-room-christmas-tree-mantel-garland.jpg",
+    "features": [
+      "Pre-lit garlands for mantels, railings, bars and doorways",
+      "Oversized entrance and feature-wall wreaths",
+      "Decorated trees from 7 to 20 feet in your palette",
+      "Ribbon, ornament and floral styling included",
+      "Delivery, install, mid-season touch-up and January removal"
+    ],
+    "goodFor": ["Corporate lobbies and offices", "Holiday parties at home", "Restaurants and hotels", "December weddings"],
+    "startingAt": 450,
+    "unit": "mantel or entrance garland package",
+    "faq": [
+      { "question": "Do we keep the decor or is it a rental?", "answer": "Both options are available. Most commercial clients rent so the styling is fresh each year and storage is our problem, not theirs. Homeowners often purchase." },
+      { "question": "How early should we book holiday decor?", "answer": "Corporate installs book from September and the calendar fills by mid-October. Home party installs are usually available through early December." }
+    ]
+  },
+  {
+    "slug": "mall-holiday-decor",
+    "title": "Mall & Commercial Holiday Decor",
+    "menuTitle": "Mall & Commercial Decor",
+    "shortDescription": "Giant atrium trees, Santa sets, lit displays and storefront decor for shopping malls, plazas, office towers and municipalities.",
+    "fullDescription": "Large-format holiday decor is its own discipline: 20-foot atrium trees, Santa photo sets with cabins and sleighs, lit reindeer and walk-through light arches, plus roofline and tree lighting on the exterior. We design the display, supply the fixtures, install on your schedule (overnight where required), maintain it through the season and remove it in January. Our team has installed for shopping malls, office towers, plazas, hotels and municipal squares across Southwestern Ontario, and we carry the insurance and lift certification commercial properties require.",
+    "icon": "building",
+    "image": "/images/mall-atrium-giant-red-christmas-tree.jpg",
+    "features": [
+      "Giant atrium and plaza trees up to 30 feet",
+      "Santa photo sets, cabins, sleighs and lit sculptures",
+      "Walk-through light arches and tunnels",
+      "Exterior roofline, tree and entrance lighting",
+      "Design, install, maintenance and removal on one contract"
+    ],
+    "goodFor": ["Shopping malls and plazas", "Office towers and lobbies", "Hotels and restaurants", "Municipal squares and BIAs"],
+    "startingAt": 2500,
+    "unit": "storefront or lobby package; malls quoted per project",
+    "faq": [
+      { "question": "Can you install overnight or outside business hours?", "answer": "Yes. Most mall and office installs happen overnight or before opening so there is no disruption to tenants or shoppers." },
+      { "question": "Do you provide the decor or install ours?", "answer": "Either. We can design and supply a complete display, refresh and install decor you already own, or a mix of both." }
+    ]
+  },
+  {
+    "slug": "commercial-holiday-lighting",
+    "title": "Commercial Holiday Lighting",
+    "menuTitle": "Commercial Holiday Lighting",
+    "shortDescription": "Roofline lights, wrapped trees and lit entrances for businesses, venues, churches and estates, installed and maintained all season.",
+    "fullDescription": "Exterior holiday lighting tells customers you are open, festive and worth stopping for. We outline rooflines in warm-white or colour C9 bulbs, wrap trees and shrubs, light entrances and signage, and add features like giant cone trees or lit walkways where the property allows. Every install uses commercial-grade LEDs rated for Canadian winters, timers so the display runs itself, and one mid-season maintenance visit. Removal in January is included. Popular with restaurants, dealerships, churches, wedding venues, retirement residences and estate properties.",
+    "icon": "star",
+    "image": "/images/estate-venue-warm-white-lights-fountain.jpg",
+    "features": [
+      "Warm-white or colour C9 roofline lighting",
+      "Tree and shrub wrapping",
+      "Entrance, signage and walkway lighting",
+      "Timers, mid-season maintenance and January removal",
+      "Commercial-grade LEDs rated for winter"
+    ],
+    "goodFor": ["Restaurants and retail", "Wedding venues and estates", "Churches and community buildings", "Dealerships and offices"],
+    "startingAt": 1200,
+    "unit": "single-storey storefront roofline",
+    "faq": [
+      { "question": "When do commercial installs start?", "answer": "We begin installing in late October and aim to have every display lit by the third week of November. Book by early October to get your preferred dates." }
+    ]
+  }
+]

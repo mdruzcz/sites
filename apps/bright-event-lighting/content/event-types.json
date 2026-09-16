@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "weddings",
+    "title": "Wedding Lighting",
+    "menuTitle": "Weddings",
+    "eyebrow": "Weddings",
+    "headline": "Wedding Lighting That Makes the Whole Night Glow",
+    "shortDescription": "Uplighting, string light canopies, tent lighting and cold sparks for ceremonies and receptions across Southwestern Ontario.",
+    "intro": "Your venue looks beautiful at 2 PM. The question is what it looks like at 9 PM, when the sun is gone, dinner is over and your photographer is shooting the first dance under whatever the building has on the ceiling. Wedding lighting fixes that. We wash the walls in your colours, hang a canopy of Edison bulbs over the dance floor or tent, pinspot the centrepieces and cake, and, if you want the moment everyone films, fire cold sparks on cue during your first dance.",
+    "image": "/images/tent-string-light-canopy-wedding-reception.jpg",
+    "services": ["uplighting", "edison-string-lighting", "tent-lighting", "cold-sparks-dance-floor", "pinspot-wash-lighting", "tree-and-landscape-lighting"],
+    "packages": ["romantic-glow", "modern-gala", "epic-afterparty"],
+    "highlights": [
+      { "title": "Scenes, not a switch", "body": "Bright and social for cocktails, warm and low for dinner, a cinematic dip for the first dance, full colour for the party. Your technician runs it live." },
+      { "title": "Wireless everything", "body": "Battery uplights and pinspots mean no cords across the floor, no tripped breakers and nothing for guests to trip on." },
+      { "title": "Photographs beautifully", "body": "Directional, flattering light is what good wedding photography depends on. Your photographer will thank you." },
+      { "title": "We know the venues", "body": "From Bellamere and Delta Armouries to Langdon Hall and barn venues near St. Thomas, we have lit them and know the quirks." }
+    ],
+    "faq": [
+      { "question": "How far ahead should we book wedding lighting?", "answer": "Six to twelve months for Saturday dates between May and October. Off-season and weekday dates are usually available on shorter notice." },
+      { "question": "Do you work with our DJ and planner?", "answer": "Always. We coordinate cues, power and timing with your DJ, planner and venue coordinator before the day so nothing is a surprise." },
+      { "question": "Is travel included?", "answer": "Yes, across our service area from London to Kitchener-Waterloo, Guelph, Stratford, St. Thomas and Woodstock. Further afield is quoted per event." }
+    ]
+  },
+  {
+    "slug": "corporate-events",
+    "title": "Corporate Event Lighting",
+    "menuTitle": "Corporate Events",
+    "eyebrow": "Corporate & Galas",
+    "headline": "Corporate Event Lighting That Looks Like Your Brand",
+    "shortDescription": "Brand-colour uplighting, stage and podium wash, product-reveal effects and patio string lighting for galas, launches, fundraisers and staff events.",
+    "intro": "A corporate event has a job to do: impress clients, thank staff, raise money or launch something. Lighting is how the room says that before anyone speaks. We match uplighting to your brand colours, wash the stage and podium so speakers look sharp on camera, pinspot the awards and centrepieces, and hang Edison string lights over patios for summer socials. For reveals and countdowns, cold sparks and moving heads deliver the moment. Everything is quoted with one flat price and run by a technician who stays for the event.",
+    "image": "/images/backyard-bistro-lights-patio-table-evening.jpg",
+    "services": ["uplighting", "pinspot-wash-lighting", "cold-sparks-dance-floor", "edison-string-lighting", "tent-lighting", "indoor-garlands-wreaths"],
+    "packages": ["brand-glow", "gala-production", "patio-social"],
+    "highlights": [
+      { "title": "Brand-accurate colour", "body": "Send a hex code. Your uplights, gobos and wash will match it, so photos and video read as yours." },
+      { "title": "Camera-ready stages", "body": "Even, colour-correct wash on podiums and panels for livestreams, photographers and recap videos." },
+      { "title": "One invoice, one contact", "body": "Design, equipment, crew, insurance certificate and teardown on a single flat quote. No surprises for your finance team." },
+      { "title": "Venue coordination handled", "body": "We deal with load-in windows, power, rigging points and fire marshal questions so you do not have to." }
+    ],
+    "faq": [
+      { "question": "Can you provide a certificate of insurance for our venue?", "answer": "Yes. We carry commercial general liability and can name your venue or organization as additional insured on request." },
+      { "question": "Do you do multi-day conferences?", "answer": "Yes. Multi-day pricing is available for conferences, trade shows and festivals, with a technician on call or on site as required." },
+      { "question": "Can you light an outdoor staff party?", "body": "", "answer": "Yes. Edison string lights over a patio or lawn, uplit trees and a lit bar area are our most popular summer corporate package." }
+    ]
+  },
+  {
+    "slug": "holiday-parties",
+    "title": "Christmas & Holiday Party Lighting",
+    "menuTitle": "Christmas Parties",
+    "eyebrow": "Christmas & Holiday Parties",
+    "headline": "Christmas Party Lighting and Decor, Delivered and Styled",
+    "shortDescription": "Festive uplighting, lit garlands and wreaths, decorated trees, string lights and cold spark countdowns for office parties, venue events and holiday parties at home.",
+    "intro": "A holiday party should feel like walking into a snow globe, not a boardroom with a tree in the corner. We handle the whole transformation: warm-white or festive-colour uplighting, pre-lit garlands on the bar, railings and mantel, an oversized wreath at the entrance, a fully decorated tree in your palette, and Edison string lights overhead if the room needs warmth. For the big moment, cold sparks on the countdown or when the awards go out. We install before your guests arrive and remove everything after, or leave the decor up through the season.",
+    "image": "/images/holiday-party-living-room-tree-and-garland.jpg",
+    "services": ["indoor-garlands-wreaths", "uplighting", "edison-string-lighting", "cold-sparks-dance-floor", "commercial-holiday-lighting", "mall-holiday-decor"],
+    "packages": ["festive-glow", "winter-wonderland", "season-long-decor"],
+    "highlights": [
+      { "title": "Decor plus lighting, one crew", "body": "Garlands, wreaths, trees and lighting from the same team, so the styling and the light are designed together." },
+      { "title": "One night or all season", "body": "Party-night installs are removed the next day. Seasonal installs stay lit until January with a mid-season touch-up." },
+      { "title": "Homes welcome", "body": "Hosting the family or the team at home? We do residential party installs too, mantel to front door." },
+      { "title": "Commercial-grade, fire-safe", "body": "LED garlands and trees stay cool, and cold sparks produce no flame, so venues and fire codes are satisfied." }
+    ],
+    "faq": [
+      { "question": "How early do we need to book a December party?", "answer": "By mid-October for corporate parties on popular Thursday to Saturday dates in December. Home parties are usually available on two to three weeks' notice." },
+      { "question": "Can you decorate a rented venue or restaurant private room?", "answer": "Yes, with the venue's permission, which we help arrange. Everything we install is freestanding or clip-mounted, so nothing is damaged." }
+    ]
+  },
+  {
+    "slug": "private-parties",
+    "title": "Backyard & Private Party Lighting",
+    "menuTitle": "Backyard & Private Parties",
+    "eyebrow": "Backyard & Private Parties",
+    "headline": "Backyard Party Lighting for Milestones Worth Celebrating",
+    "shortDescription": "Edison string lights, uplit trees and tent lighting for birthdays, anniversaries, engagement parties, graduations and summer socials at home.",
+    "intro": "Big birthdays, anniversaries, engagement parties, graduations, retirement sendoffs: the ones you host at home deserve better than a couple of tiki torches. We hang Edison string lights over the patio or lawn, wrap the trees, uplight the fence line or the tent, and add pathway lights so guests can get around after dark. Setup happens the afternoon of your party and everything comes down the next day, or stays up for the summer if you fall in love with it.",
+    "image": "/images/backyard-edison-string-lights-dinner-party.jpg",
+    "services": ["edison-string-lighting", "uplighting", "tree-and-landscape-lighting", "tent-lighting", "cold-sparks-dance-floor"],
+    "packages": ["patio-social", "romantic-glow"],
+    "highlights": [
+      { "title": "Next-day takedown", "body": "We come back the following day to remove everything, or leave it up seasonally for a small monthly rate." },
+      { "title": "No power? No problem", "body": "Uplights and pathway lights are battery-powered. String lights need one outdoor outlet." },
+      { "title": "Rain-ready", "body": "Everything we hang outdoors is weather-rated. If the forecast turns, we can move lights under the tent or porch." }
+    ],
+    "faq": [
+      { "question": "What does a typical backyard package cost?", "answer": "Most backyard parties land between $900 and $2,000 depending on the size of the string light canopy and how many trees or features you want lit." }
+    ]
+  }
+]

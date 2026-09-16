@@ -1,0 +1,48 @@
+{
+  "primaryCity": "London",
+  "region": "ON",
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "description": "As our home base, London is where we do our best work. From the grand halls at Delta Armouries to the vineyard elegance of Bellamere Winery, we know every venue's quirks and how to light them perfectly.",
+      "venues": ["Delta Armouries", "Bellamere Winery", "Western Fair District", "Museum London", "Windermere Manor"],
+      "focus": "Full-service lighting for London's premier wedding venues"
+    },
+    {
+      "slug": "kitchener-waterloo",
+      "name": "Kitchener-Waterloo",
+      "description": "The tri-cities are home to some of Ontario's most stunning event spaces. We bring professional-grade lighting to venues like Langdon Hall and Victoria Park Pavilion, transforming already beautiful spaces into something extraordinary.",
+      "venues": ["Langdon Hall", "Victoria Park Pavilion", "Hacienda Sarria", "Whistle Bear Golf Club"],
+      "focus": "Elegant lighting for KW's upscale venue scene"
+    },
+    {
+      "slug": "guelph",
+      "name": "Guelph",
+      "description": "Guelph's blend of heritage charm and modern elegance makes it a dream to light. Whether it's the riverside beauty of River Run Centre or the manicured grounds of Cutten Fields, our lighting elevates every celebration.",
+      "venues": ["Cutten Fields", "River Run Centre", "Guelph Country Club", "The Arboretum"],
+      "focus": "Heritage and garden venue lighting specialists"
+    },
+    {
+      "slug": "stratford",
+      "name": "Stratford",
+      "description": "Known for its theatre heritage, Stratford demands lighting that tells a story. We bring dramatic, stage-quality lighting to venues like Revival House and the Stratford Country Club — because your wedding deserves a standing ovation.",
+      "venues": ["Revival House", "Stratford Country Club", "The Bruce Hotel", "Arden Park Hotel"],
+      "focus": "Theatrical, story-driven lighting for Stratford's cultural venues"
+    },
+    {
+      "slug": "st-thomas",
+      "name": "St. Thomas",
+      "description": "St. Thomas is the heart of the boutique barn and farm wedding scene. Rustic beams, open fields, and starlit skies — we add the warm glow that turns a beautiful barn into a magical one.",
+      "venues": ["Barn venues", "Farm properties", "The Iron Horse Festival grounds"],
+      "focus": "Rustic barn and farm wedding lighting"
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "description": "Woodstock's charming small-town feel and countryside venues are perfect for intimate celebrations. Our lighting packages are sized right for Woodstock — big on impact, scaled to fit.",
+      "venues": ["Elm Hurst Inn & Spa", "Craigowan Golf Club", "Local barn venues"],
+      "focus": "Intimate and boutique wedding lighting"
+    }
+  ]
+}

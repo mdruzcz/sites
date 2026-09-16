@@ -1,0 +1,66 @@
+[
+  {
+    "author": "Sarah & James M.",
+    "quote": "We almost didn't book lighting — then we saw what Bright Event did at our friend's wedding. Our barn went from charming to absolutely magical. The photos speak for themselves.",
+    "rating": 5,
+    "service": "weddings",
+    "venue": "Barn venue, St. Thomas",
+    "featured": true
+  },
+  {
+    "author": "Priya & Raj K.",
+    "quote": "The cold sparks during our first dance were the highlight of the entire night. Every single guest was on their feet filming. Worth every penny.",
+    "rating": 5,
+    "service": "weddings",
+    "venue": "Delta Armouries, London",
+    "featured": true
+  },
+  {
+    "author": "Emily & Connor T.",
+    "quote": "We wanted our reception to feel like a magazine shoot. The pinspot lighting on our centerpieces was stunning — our photographer said it was the best-lit wedding she'd ever shot.",
+    "rating": 5,
+    "service": "weddings",
+    "venue": "Langdon Hall, Kitchener",
+    "featured": true
+  },
+  {
+    "author": "Jessica & Mark D.",
+    "quote": "Having a technician there who could dim the lights for our first dance and then crank it up for the party made such a difference. You can't get that with a DIY setup.",
+    "rating": 5,
+    "service": "weddings",
+    "venue": "Bellamere Winery, London",
+    "featured": true
+  },
+  {
+    "author": "Lauren & Dave S.",
+    "quote": "Our outdoor reception looked incredible after dark. The string lights and uplighting transformed the tent into something out of a movie.",
+    "rating": 5,
+    "service": "weddings",
+    "venue": "Tent wedding, Woodstock",
+    "featured": true
+  },
+  {
+    "author": "Michelle R., Office Manager",
+    "quote": "They had our lobby tree, garland and wreaths installed overnight before our holiday party and it looked better than anything we'd done in-house. Took it all away in January without us lifting a finger.",
+    "rating": 5,
+    "service": "holiday-parties",
+    "venue": "Corporate office, London",
+    "featured": true
+  },
+  {
+    "author": "Dan P., Events Coordinator",
+    "quote": "Uplighting matched our brand colour exactly and the stage wash made our speakers look sharp on the livestream. One invoice, one contact, zero stress.",
+    "rating": 5,
+    "service": "corporate-events",
+    "venue": "Gala, Kitchener-Waterloo",
+    "featured": true
+  },
+  {
+    "author": "Karen & Steve W.",
+    "quote": "Edison lights over the whole backyard for my dad's 70th. Setup was done by 4 and gone the next morning. Everyone asked who did it.",
+    "rating": 5,
+    "service": "private-parties",
+    "venue": "Backyard party, London",
+    "featured": false
+  }
+]
