@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const PhoneIcon = () => (
   <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,6 +40,7 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [token, setToken] = useState<string | null>(null);
   const loadedAt = useRef<number>(Date.now());
   const successRef = useRef<HTMLDivElement>(null);
 
@@ -57,16 +59,10 @@ export default function ContactForm() {
     setErrorMsg("");
 
     try {
-      let recaptchaToken = "";
-      if (typeof window !== "undefined" && (window as any).grecaptcha) {
-        const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-        if (siteKey) recaptchaToken = await (window as any).grecaptcha.execute(siteKey, { action: "contact" });
-      }
-
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, _loaded: loadedAt.current, recaptchaToken }),
+        body: JSON.stringify({ ...form, _loaded: loadedAt.current, token }),
       });
 
       const data = await res.json();
@@ -213,6 +209,14 @@ export default function ContactForm() {
               <p className="text-sm rounded-xl px-4 py-3" style={{ background: "rgba(239,68,68,0.1)", color: "#F87171" }}>{errorMsg}</p>
             )}
 
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
+              options={{ theme: "dark" }}
+              onSuccess={setToken}
+              onExpire={() => setToken(null)}
+              onError={() => setToken(null)}
+            />
+
             <button type="submit" disabled={status === "sending"}
               className="w-full py-4 rounded-full font-bold text-base transition-all hover:opacity-90 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed"
               style={{ background: "var(--gold)", color: "#0A0F1E" }}>
@@ -220,7 +224,7 @@ export default function ContactForm() {
             </button>
 
             <p className="text-xs text-center" style={{ color: "var(--cream-muted)" }}>
-              Protected by reCAPTCHA. Your info is kept private and never shared.
+              Protected by Cloudflare Turnstile. Your info is kept private and never shared.
             </p>
           </form>
         )}

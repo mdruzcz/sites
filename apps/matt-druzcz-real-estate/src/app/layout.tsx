@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { Analytics } from "@sites/ui/analytics";
 import Navbar from "@/components/Navbar";
@@ -86,7 +85,6 @@ const jsonLd = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
@@ -100,12 +98,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <FloatingCallBtn />
-        {recaptchaSiteKey && (
-          <Script
-            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
-            strategy="lazyOnload"
-          />
-        )}
         <Analytics websiteId="20a80e2f-23f5-4e07-845c-76cb178b5cce" />
       </body>
     </html>
