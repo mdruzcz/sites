@@ -6,6 +6,8 @@ import type { WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
 import { WinnerThumb, WinnerLogo, StarRating } from "@/components/winner-media";
 import { AwardSeal } from "@/components/award-seal";
+import { PhotoGallery } from "@/components/photo-gallery";
+import { withMedia } from "@/lib/winner-media";
 import { getProfile, getCategoryGuide, getGuide, mapsSearchUrl } from "@/lib/content";
 import { Bullets, FaqList, FaqJsonLd, linkify } from "@/components/editorial";
 
@@ -21,7 +23,7 @@ async function loadWinner(slug: string): Promise<WinnerWithRefs | null> {
     .eq("slug", slug)
     .eq("is_published", true)
     .maybeSingle();
-  return (data as WinnerWithRefs | null) ?? null;
+  return data ? withMedia(data as WinnerWithRefs) : null;
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -65,7 +67,7 @@ export default async function WinnerProfilePage({ params }: { params: Params }) 
     .eq("is_published", true)
     .neq("id", w.id)
     .limit(4);
-  const peers = (peersData ?? []) as unknown as { business_name: string; slug: string; tagline: string | null; photo_url: string | null; logo_url: string | null; city: { name: string; slug: string }; category: { slug: string } }[];
+  const peers = ((peersData ?? []) as unknown as { business_name: string; slug: string; tagline: string | null; photo_url: string | null; logo_url: string | null; city: { name: string; slug: string }; category: { slug: string } }[]).map(withMedia);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -142,25 +144,7 @@ export default async function WinnerProfilePage({ params }: { params: Params }) 
         {/* Photo gallery */}
         {photos.length > 0 && (
           <section className="mt-10" aria-label="Photos">
-            <div className={`grid gap-3 ${photos.length >= 3 ? "md:grid-cols-[2fr_1fr]" : "md:grid-cols-2"}`}>
-              <WinnerThumb name={w.business_name} photoUrl={photos[0]} categorySlug={w.category.slug} aspect="aspect-[16/10] md:aspect-auto md:h-full" className="rounded-lg" />
-              {photos.length > 1 && (
-                <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
-                  {photos.slice(1, 3).map((g, i) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img key={g} src={g} alt={`${w.business_name} ${w.category.name.toLowerCase()} project ${i + 2} in ${w.city.name}, ${w.city.province}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />
-                  ))}
-                </div>
-              )}
-            </div>
-            {photos.length > 3 && (
-              <div className="mt-3 grid grid-cols-3 gap-3">
-                {photos.slice(3, 6).map((g, i) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={g} src={g} alt={`${w.business_name} ${w.category.name.toLowerCase()} project ${i + 4} in ${w.city.name}, ${w.city.province}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />
-                ))}
-              </div>
-            )}
+            <PhotoGallery photos={photos} name={w.business_name} context={`${w.category.name.toLowerCase()} project in ${w.city.name}, ${w.city.province}`} />
           </section>
         )}
 

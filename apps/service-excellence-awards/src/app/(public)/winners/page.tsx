@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getServerSupabase } from "@/lib/supabase/server";
-import type { City, Category, WinnerWithRefs } from "@/lib/types";
 import { CURRENT_YEAR } from "@/lib/types";
 import { WinnerLogo, WinnerThumb, StarRating } from "@/components/winner-media";
+import { WinnerSearch } from "@/components/winner-search";
+import { getWinnerIndex, scoreWinner } from "@/lib/search-index";
 
 export const revalidate = 60;
 
@@ -12,139 +11,135 @@ export const metadata: Metadata = {
   title: { absolute: "Search 2026 Winners | Service Excellence Awards" },
   alternates: { canonical: "/winners" },
   description:
-    "Find award-winning home renovation and service contractors in Ontario. Browse by city, category and year.",
+    "Look up award-winning home renovation and service contractors in Ontario by trade, town or business name. One recognised winner per category per city.",
 };
 
-type SearchParams = Promise<{ q?: string; city?: string; category?: string; year?: string }>;
+type SearchParams = Promise<{ q?: string; city?: string; category?: string }>;
+
+const chip = (active: boolean) =>
+  `inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+    active ? "border-stone-900 bg-stone-900 text-white" : "border-stone-200 bg-white text-stone-700 hover:border-[var(--gold)] hover:text-[var(--gold)]"
+  }`;
+
+function hrefWith(base: { q?: string; city?: string; category?: string }, patch: Partial<{ q: string; city: string; category: string }>) {
+  const p = new URLSearchParams();
+  const merged = { ...base, ...patch };
+  if (merged.q) p.set("q", merged.q);
+  if (merged.city) p.set("city", merged.city);
+  if (merged.category) p.set("category", merged.category);
+  const s = p.toString();
+  return s ? `/winners?${s}` : "/winners";
+}
 
 export default async function WinnersPage({ searchParams }: { searchParams: SearchParams }) {
   const sp = await searchParams;
-  const supabase = await getServerSupabase();
+  const q = sp.q?.trim() ?? "";
+  const index = await getWinnerIndex();
+  const { cities, categories } = index;
 
-  const [citiesRes, categoriesRes] = await Promise.all([
-    supabase.from("sea_cities").select("*").order("sort_order"),
-    supabase.from("sea_categories").select("*").order("sort_order"),
-  ]);
-  const cities = (citiesRes.data ?? []) as City[];
-  const categories = (categoriesRes.data ?? []) as Category[];
-  const yearNum = sp.year ? parseInt(sp.year, 10) : CURRENT_YEAR;
-  if (Number.isNaN(yearNum)) notFound();
+  const cityRow = sp.city ? cities.find((c) => c.slug === sp.city) : undefined;
+  const catRow = sp.category ? categories.find((c) => c.slug === sp.category) : undefined;
 
-  let query = supabase
-    .from("sea_winners")
-    .select("*, city:sea_cities(*), category:sea_categories(*)")
-    .eq("year", yearNum)
-    .eq("is_published", true)
-    .order("business_name", { ascending: true });
+  const results = index.winners
+    .filter((w) => (!cityRow || w.citySlug === cityRow.slug) && (!catRow || w.categorySlug === catRow.slug))
+    .map((w) => ({ w, s: q ? scoreWinner(w, q) : 1 }))
+    .filter((x) => x.s > 0)
+    .sort((a, b) => b.s - a.s || a.w.name.localeCompare(b.w.name))
+    .map((x) => x.w);
 
-  if (sp.city) {
-    const cityRow = cities.find((c) => c.slug === sp.city);
-    if (cityRow) query = query.eq("city_id", cityRow.id);
+  // Facet counts respect the other active filters so chips never lead to an empty page.
+  const base = index.winners.filter((w) => (q ? scoreWinner(w, q) > 0 : true));
+  const catCounts = new Map<string, number>();
+  const cityCounts = new Map<string, number>();
+  for (const w of base) {
+    if (!cityRow || w.citySlug === cityRow.slug) catCounts.set(w.categorySlug, (catCounts.get(w.categorySlug) ?? 0) + 1);
+    if (!catRow || w.categorySlug === catRow.slug) cityCounts.set(w.citySlug, (cityCounts.get(w.citySlug) ?? 0) + 1);
   }
-  if (sp.category) {
-    const catRow = categories.find((c) => c.slug === sp.category);
-    if (catRow) query = query.eq("category_id", catRow.id);
-  }
-  if (sp.q && sp.q.trim().length > 0) {
-    query = query.ilike("business_name", `%${sp.q.trim()}%`);
-  }
+  const filtered = !!(q || cityRow || catRow);
+  const current = { q: q || undefined, city: cityRow?.slug, category: catRow?.slug };
 
-  const { data } = await query;
-  const winners = (data ?? []) as WinnerWithRefs[];
+  const heading = catRow && cityRow
+    ? `${catRow.name} in ${cityRow.name}`
+    : catRow ? `${catRow.name} winners` : cityRow ? `${cityRow.name} winners` : q ? `Results for “${q}”` : `All ${CURRENT_YEAR} winners`;
 
   return (
     <>
       <section className="border-b border-stone-200 bg-stone-50/40">
-        <div className="mx-auto w-full max-w-6xl px-6 pt-16 pb-12">
-          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Recognition Program · {yearNum}</p>
-          <h1 className="mt-3 font-serif text-5xl tracking-tight text-stone-900">Search Winners</h1>
+        <div className="mx-auto w-full max-w-6xl px-6 pt-14 pb-10">
+          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Recognition Program · {CURRENT_YEAR}</p>
+          <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl">Find a recognised contractor</h1>
           <p className="mt-3 max-w-2xl text-stone-600">
-            Filter by city, category, or business name. Every winner has been reviewed for service record,
-            reputation and workmanship.
+            Type a trade, a town or a business name. Every listing was reviewed for service record, reputation and workmanship.
           </p>
-          <form className="mt-8 grid gap-3 md:grid-cols-[1fr_auto_auto_auto]">
-            <input
-              type="search"
-              name="q"
-              defaultValue={sp.q ?? ""}
-              placeholder="Search by business name…"
-              className="h-11 rounded-md border border-stone-300 bg-white px-4 text-sm focus:border-[var(--gold)] focus:outline-none"
-            />
-            <select
-              name="city"
-              defaultValue={sp.city ?? ""}
-              className="h-11 rounded-md border border-stone-300 bg-white px-3 text-sm focus:border-[var(--gold)] focus:outline-none"
-            >
-              <option value="">All cities</option>
-              {cities.map((c) => (
-                <option key={c.id} value={c.slug}>{c.name}</option>
+          <WinnerSearch index={index} variant="hero" initialQuery={q} className="mt-7 max-w-3xl" />
+
+          <div className="mt-7 space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-[11px] uppercase tracking-[0.18em] text-stone-500">Trade</span>
+              <Link href={hrefWith(current, { category: "" })} className={chip(!catRow)}>All</Link>
+              {categories.filter((c) => (catCounts.get(c.slug) ?? 0) > 0 || c.slug === catRow?.slug).map((c) => (
+                <Link key={c.slug} href={hrefWith(current, { category: c.slug === catRow?.slug ? "" : c.slug })} className={chip(c.slug === catRow?.slug)}>
+                  {c.name}<span className="text-[11px] opacity-60">{catCounts.get(c.slug) ?? 0}</span>
+                </Link>
               ))}
-            </select>
-            <select
-              name="category"
-              defaultValue={sp.category ?? ""}
-              className="h-11 rounded-md border border-stone-300 bg-white px-3 text-sm focus:border-[var(--gold)] focus:outline-none"
-            >
-              <option value="">All categories</option>
-              {categories.map((c) => (
-                <option key={c.id} value={c.slug}>{c.name}</option>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-[11px] uppercase tracking-[0.18em] text-stone-500">City</span>
+              <Link href={hrefWith(current, { city: "" })} className={chip(!cityRow)}>All</Link>
+              {cities.filter((c) => (cityCounts.get(c.slug) ?? 0) > 0 || c.slug === cityRow?.slug).map((c) => (
+                <Link key={c.slug} href={hrefWith(current, { city: c.slug === cityRow?.slug ? "" : c.slug })} className={chip(c.slug === cityRow?.slug)}>
+                  {c.name}<span className="text-[11px] opacity-60">{cityCounts.get(c.slug) ?? 0}</span>
+                </Link>
               ))}
-            </select>
-            <button
-              type="submit"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-stone-900 px-6 text-sm font-medium text-white hover:bg-stone-700"
-            >
-              Search
-            </button>
-          </form>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="flex items-baseline justify-between">
-          <p className="text-sm text-stone-600">{winners.length} {winners.length === 1 ? "winner" : "winners"} found</p>
-          {(sp.q || sp.city || sp.category) && (
-            <Link href="/winners" className="text-sm text-stone-600 hover:text-[var(--gold)]">Clear filters</Link>
-          )}
+      <section className="mx-auto w-full max-w-6xl px-6 py-10">
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 className="font-serif text-2xl tracking-tight">{heading}</h2>
+          <p className="text-sm text-stone-600">
+            {results.length} {results.length === 1 ? "winner" : "winners"}
+            {filtered && <> · <Link href="/winners" className="text-stone-700 underline-offset-2 hover:text-[var(--gold)] hover:underline">Clear filters</Link></>}
+          </p>
         </div>
 
-        {winners.length === 0 ? (
-          <div className="mt-10 rounded-lg border border-stone-200 bg-stone-50/50 p-10 text-center">
-            <p className="font-serif text-2xl text-stone-800">No winners match those filters yet.</p>
+        {results.length === 0 ? (
+          <div className="mt-8 rounded-xl border border-stone-200 bg-stone-50/50 p-10 text-center">
+            <p className="font-serif text-2xl text-stone-800">No winners match that yet.</p>
             <p className="mt-2 text-sm text-stone-600">
-              The {yearNum} program is being judged on a rolling basis. Know a contractor who deserves to be here?
+              Try a broader trade or a nearby city. The {CURRENT_YEAR} program is judged on a rolling basis, so check back.
             </p>
-            <Link
-              href="/nominate"
-              className="mt-6 inline-flex h-10 items-center rounded-full border border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-[var(--gold)] hover:text-[var(--gold)]"
-            >
-              Submit a business
-            </Link>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/winners" className="inline-flex h-10 items-center rounded-full bg-stone-900 px-5 text-sm font-medium text-white hover:bg-stone-700">Browse all winners</Link>
+              <Link href="/nominate" className="inline-flex h-10 items-center rounded-full border border-stone-300 bg-white px-5 text-sm font-medium text-stone-800 hover:border-[var(--gold)] hover:text-[var(--gold)]">Submit a business</Link>
+            </div>
           </div>
         ) : (
-          <ul className="mt-8 divide-y divide-stone-200 border-y border-stone-200">
-            {winners.map((w) => (
-              <li key={w.id}>
-                <Link
-                  href={`/winners/${w.city.slug}/${w.category.slug}/${w.slug}`}
-                  className="grid grid-cols-[auto_1fr] gap-4 py-6 transition-colors hover:bg-stone-50/60 md:grid-cols-[auto_auto_1fr_auto] md:items-center md:gap-6"
-                >
-                  <WinnerThumb name={w.business_name} photoUrl={w.photo_url} categorySlug={w.category.slug} aspect="aspect-[4/3]" className="hidden w-40 rounded-md md:block" />
-                  <WinnerLogo name={w.business_name} logoUrl={w.logo_url} size="h-14 w-14" className="border border-stone-200 bg-white p-1" />
-                  <div>
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
-                      <span>★ {w.award_tier === "winner" ? "Winner" : w.award_tier}</span>
-                      <span className="text-stone-400">{w.year}</span>
-                      {Array.isArray(w.reviews) && w.reviews.length > 0 && (
-                        <StarRating rating={5} className="ml-1" />
-                      )}
-                    </div>
-                    <p className="mt-1 font-serif text-2xl tracking-tight text-stone-900">{w.business_name}</p>
-                    {w.tagline && <p className="mt-1 text-sm text-stone-600">{w.tagline}</p>}
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {results.map((w) => (
+              <li key={w.slug} className="overflow-hidden rounded-xl border border-stone-200 bg-white transition-shadow hover:shadow-md">
+                <Link href={w.href} className="flex h-full flex-col">
+                  <div className="relative">
+                    <WinnerThumb name={w.name} photoUrl={w.photo} categorySlug={w.categorySlug} aspect="aspect-[16/10]" sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw" />
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-stone-900/85 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-[var(--gold-soft)] backdrop-blur">
+                      ★ {w.tier === "winner" ? `${w.year} Winner` : w.tier}
+                    </span>
                   </div>
-                  <div className="col-span-2 text-sm text-stone-600 md:col-span-1 md:text-right">
-                    <div>{w.category.name}</div>
-                    <div className="text-stone-500">{w.city.name}, {w.city.province}</div>
+                  <div className="flex flex-1 flex-col gap-2 p-5">
+                    <div className="flex items-center gap-3">
+                      <WinnerLogo name={w.name} logoUrl={w.logo} size="h-10 w-10" className="border border-stone-200 p-0.5" />
+                      <div className="min-w-0">
+                        <h3 className="font-serif text-lg leading-tight tracking-tight text-stone-900">{w.name}</h3>
+                        <p className="mt-0.5 text-xs text-stone-500">{w.category} · {w.city}, {w.province}</p>
+                      </div>
+                    </div>
+                    {w.tagline && <p className="text-sm text-stone-700">{w.tagline}</p>}
+                    <div className="mt-auto flex items-center justify-between pt-3">
+                      {w.reviews > 0 ? <StarRating rating={5} /> : <span />}
+                      <span className="text-xs uppercase tracking-[0.18em] text-[var(--gold)]">View profile →</span>
+                    </div>
                   </div>
                 </Link>
               </li>

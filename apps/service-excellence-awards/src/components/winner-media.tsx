@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 
 // Deterministic, restrained accent per category so image-less winners still
 // read as intentional design rather than broken images.
@@ -34,6 +35,8 @@ export function initials(name: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
+const isLocal = (src: string) => src.startsWith("/");
+
 /** Photo thumbnail with a designed monogram fallback when no photo exists. */
 export function WinnerThumb({
   name,
@@ -41,32 +44,36 @@ export function WinnerThumb({
   categorySlug,
   className = "",
   aspect = "aspect-[4/3]",
+  sizes = "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw",
+  priority = false,
+  alt,
 }: {
   name: string;
   photoUrl?: string | null;
   categorySlug?: string;
   className?: string;
   aspect?: string;
+  sizes?: string;
+  priority?: boolean;
+  alt?: string;
 }) {
+  const altText = alt ?? `${name} — 2026 Service Excellence Award winner`;
   if (photoUrl) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={photoUrl}
-        alt={`${name} — 2026 Service Excellence Award winner`}
-        loading="lazy"
-        className={`${aspect} w-full object-cover ${className}`}
-      />
+      <div className={`relative overflow-hidden bg-stone-100 ${aspect} w-full ${className}`}>
+        {isLocal(photoUrl) ? (
+          <Image src={photoUrl} alt={altText} fill sizes={sizes} priority={priority} className="object-cover" />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={photoUrl} alt={altText} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        )}
+      </div>
     );
   }
   const [a, b] = tint(categorySlug);
   const style: CSSProperties = { background: `linear-gradient(135deg, ${a}, ${b})` };
   return (
-    <div
-      aria-hidden
-      style={style}
-      className={`${aspect} w-full ${className} grid place-items-center`}
-    >
+    <div aria-hidden style={style} className={`${aspect} w-full ${className} grid place-items-center`}>
       <span className="font-serif text-4xl tracking-tight text-white/90">{initials(name)}</span>
     </div>
   );
@@ -86,19 +93,20 @@ export function WinnerLogo({
 }) {
   if (logoUrl) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={logoUrl}
-        alt={`${name} logo`}
-        loading="lazy"
-        className={`${size} ${className} rounded-md object-contain bg-white`}
-      />
+      <span className={`relative block shrink-0 overflow-hidden rounded-md bg-white ${size} ${className}`}>
+        {isLocal(logoUrl) && !logoUrl.endsWith(".svg") ? (
+          <Image src={logoUrl} alt={`${name} logo`} fill sizes="96px" className="object-contain" />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={logoUrl} alt={`${name} logo`} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
+        )}
+      </span>
     );
   }
   return (
     <span
       aria-hidden
-      className={`${size} ${className} grid place-items-center rounded-md border border-stone-200 bg-[var(--gold-soft)] font-serif text-sm text-[var(--gold)]`}
+      className={`${size} ${className} grid shrink-0 place-items-center rounded-md border border-stone-200 bg-[var(--gold-soft)] font-serif text-sm text-[var(--gold)]`}
     >
       {initials(name)}
     </span>

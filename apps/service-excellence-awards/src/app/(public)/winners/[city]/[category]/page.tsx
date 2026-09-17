@@ -7,6 +7,7 @@ import { CURRENT_YEAR } from "@/lib/types";
 import { WinnerThumb, WinnerLogo } from "@/components/winner-media";
 import { getCategoryGuide, getGuide } from "@/lib/content";
 import { Bullets, linkify } from "@/components/editorial";
+import { withMedia } from "@/lib/winner-media";
 
 export const revalidate = 60;
 
@@ -54,7 +55,7 @@ export default async function CityCategoryPage({ params }: { params: Params }) {
     .eq("category_id", cat.id)
     .eq("is_published", true)
     .order("year", { ascending: false });
-  const winners = (winnersRes.data ?? []) as WinnerWithRefs[];
+  const winners = ((winnersRes.data ?? []) as WinnerWithRefs[]).map(withMedia);
   const current = winners.find((w) => w.year === CURRENT_YEAR && w.award_tier === "winner");
   const guide = getCategoryGuide(cat.slug);
   const guides = (guide?.relatedGuides ?? []).map(getGuide).filter((x): x is NonNullable<typeof x> => !!x);
