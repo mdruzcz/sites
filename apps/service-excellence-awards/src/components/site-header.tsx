@@ -6,7 +6,7 @@ const links = [
   { href: "/winners", label: "Winners" },
   { href: "/resources", label: "Homeowner Guides" },
   { href: "/about", label: "About" },
-  { href: "/why-awards-matter", label: "Why Awards Matter" },
+  { href: "/why-awards-matter", label: "Why It Matters" },
 ];
 
 export function SiteHeader({ index }: { index: WinnerIndex | null }) {
@@ -24,20 +24,20 @@ export function SiteHeader({ index }: { index: WinnerIndex | null }) {
         </Link>
 
         {index && (
-          <div className="hidden flex-1 justify-center lg:flex">
-            <WinnerSearch index={index} variant="compact" placeholder="Look up a trade, town or business…" className="w-full max-w-sm" />
+          <div className="hidden min-w-0 flex-1 justify-center lg:flex">
+            <WinnerSearch index={index} variant="compact" placeholder="Look up a trade, town or business…" className="w-full max-w-xs" />
           </div>
         )}
 
-        <nav className="ml-auto hidden items-center gap-6 md:flex">
+        <nav className="ml-auto hidden shrink-0 items-center gap-7 md:flex">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-sm text-stone-700 transition-colors hover:text-stone-900">
+            <Link key={l.href} href={l.href} className="whitespace-nowrap text-sm text-stone-700 transition-colors hover:text-stone-900">
               {l.label}
             </Link>
           ))}
           <Link
             href="/nominate"
-            className="inline-flex h-9 items-center rounded-full bg-stone-900 px-4 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-stone-700"
+            className="inline-flex h-9 shrink-0 items-center whitespace-nowrap rounded-full bg-stone-900 px-4 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-stone-700"
           >
             Submit a Business
           </Link>

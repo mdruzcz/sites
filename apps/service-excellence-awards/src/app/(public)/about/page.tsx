@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { getServerSupabase } from "@/lib/supabase/server";
-import { CURRENT_YEAR } from "@/lib/types";
+import { getWinnerIndex } from "@/lib/search-index";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,15 +11,8 @@ export const metadata: Metadata = {
 export const revalidate = 300;
 
 export default async function AboutPage() {
-  const supabase = await getServerSupabase();
-  const { data } = await supabase
-    .from("sea_winners")
-    .select("slug, photo_url")
-    .eq("year", CURRENT_YEAR)
-    .eq("is_published", true)
-    .not("photo_url", "is", null)
-    .limit(6);
-  const montage = (data ?? []) as { slug: string; photo_url: string }[];
+  const { winners } = await getWinnerIndex();
+  const montage = winners.filter((w) => w.photo).slice(0, 6).map((w) => ({ slug: w.slug, photo_url: w.photo!, name: w.name, category: w.category }));
 
   return (
     <article className="mx-auto w-full max-w-3xl px-6 pt-16 pb-20">
@@ -34,7 +26,7 @@ export default async function AboutPage() {
             <img
               key={m.slug}
               src={m.photo_url}
-              alt="Work by a Service Excellence Award winning contractor in Ontario"
+              alt={`${m.name} — ${m.category} work by a Service Excellence Award winner in Ontario`}
               loading="lazy"
               className="aspect-[4/3] w-full rounded-md object-cover"
             />
