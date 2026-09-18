@@ -30,6 +30,14 @@ export const site = {
     { name: "London Concrete Sealing", url: "https://londonconcretesealing.ca/" },
     { name: "London Christmas Lights", url: "https://masterdecker.com/" },
   ],
+  // Early-bird offer shown site-wide. Edit here to change the discount or deadline.
+  earlyBird: {
+    discount: "10%",
+    deadline: "October 15",
+    headline: "Early Bird: book by October 15 and save 10% on your install.",
+    short: "Book by Oct 15, save 10%",
+    terms: "Applies to new residential and commercial installs booked and confirmed by October 15. Not combinable with other offers.",
+  },
   stats: [
     { number: "740", label: "Houses Decorated" },
     { number: "921", label: "Decorated Christmas Trees (Residential)" },

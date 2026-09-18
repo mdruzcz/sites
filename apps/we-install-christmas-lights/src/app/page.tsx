@@ -68,6 +68,18 @@ export default function HomePage() {
       {/* Hero: photo + quote form */}
       <section className="relative isolate overflow-hidden bg-[color:var(--ink-strong)] text-white">
         {heroPhoto && <Image src={heroPhoto.src} alt={heroPhoto.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={heroPhoto.blurDataURL} className="object-cover opacity-60" />}
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-70 motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroPhoto?.src}
+          aria-hidden="true"
+        >
+          <source src="/videos/warm-white-roofline-christmas-lights-large-home-wrapped-trees-01.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#022B1A]/90 via-[#022B1A]/70 to-[#022B1A]/25" aria-hidden />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">
           <div>
@@ -85,6 +97,9 @@ export default function HomePage() {
               <span>Fully insured · WSIB</span>
               <span>Installed in as little as 1 day</span>
             </div>
+            <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-red)] px-4 py-1.5 text-sm font-bold text-white shadow-lg">
+              <span aria-hidden>🎁</span> {site.earlyBird.headline}
+            </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#quote" className="btn btn-red lg:hidden">Get a Free Quote</a>
               <Link href="/commercial-christmas-lighting" className="btn btn-outline-white">Commercial lighting →</Link>
@@ -112,7 +127,7 @@ export default function HomePage() {
                 Property managers hire us because nobody on their team has to touch a ladder. We design from a site visit, install with our own lifts outside business hours, fix any fault at no charge, then remove and store everything in January. One contractor, one invoice, multi-year pricing available.
               </p>
               <div className="mt-6">
-                <CheckList columns={2} items={["Building outlines and rooflines", "Tree wraps and lit cone trees", "Giant indoor and outdoor trees", "Lobby, atrium and entrance décor", "Insured, WSIB-compliant crews", "Multi-property programs"]} />
+                <CheckList dark columns={2} items={["Building outlines and rooflines", "Tree wraps and lit cone trees", "Giant indoor and outdoor trees", "Lobby, atrium and entrance décor", "Insured, WSIB-compliant crews", "Multi-property programs"]} />
               </div>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link href="/commercial-christmas-lighting" className="btn btn-red">See commercial services</Link>

@@ -97,12 +97,12 @@ export function SectionList({ sections }: { sections: Section[] }) {
   );
 }
 
-export function CheckList({ items, columns = 2 }: { items: string[]; columns?: 1 | 2 | 3 }) {
+export function CheckList({ items, columns = 2, dark = false }: { items: string[]; columns?: 1 | 2 | 3; dark?: boolean }) {
   const cols = columns === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : columns === 2 ? "sm:grid-cols-2" : "";
   return (
     <ul className={`grid gap-2.5 ${cols}`}>
       {items.map((it) => (
-        <li key={it} className="flex items-start gap-2.5 text-[15px] text-[color:var(--ink-strong)]">
+        <li key={it} className={`flex items-start gap-2.5 text-[15px] ${dark ? "text-white/90" : "text-[color:var(--ink-strong)]"}`}>
           <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color:var(--brand-red)] text-white"><CheckIcon className="h-3 w-3" /></span>
           {it}
         </li>
@@ -192,7 +192,7 @@ export function CtaBand({ type = "Residential" }: { type?: "Residential" | "Comm
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <h2 className="heading-display text-3xl text-white sm:text-4xl">{type === "Commercial" ? "Book your property before the calendar fills." : "Installs book up by mid-November."}</h2>
-          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."}</p>
+          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} <strong>{site.earlyBird.headline}</strong></p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <a href="#quote" className="btn btn-outline-white">Get a Free Quote</a>

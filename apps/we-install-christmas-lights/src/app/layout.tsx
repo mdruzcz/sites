@@ -98,6 +98,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        <div className="bg-[color:var(--brand-red)] px-4 py-2 text-center text-sm font-semibold text-white">
+          <a href="/contact-us" className="hover:underline">{site.earlyBird.headline} Get a free quote →</a>
+        </div>
         <NavBar />
         <main>{children}</main>
         <Footer />

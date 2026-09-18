@@ -194,7 +194,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
         <button type="submit" disabled={status === "submitting"} className="btn btn-red w-full min-h-[48px] disabled:opacity-60">
           {status === "submitting" ? "Sending…" : type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote"}
         </button>
-        <p className="text-center text-xs text-[color:var(--ink-soft)]">Fully insured · 5.0★ Google rating · Since 2016</p>
+        <p className="text-center text-xs text-[color:var(--ink-soft)]">{site.earlyBird.short} · Fully insured · 5.0★ Google rating</p>
       </form>
     </div>
   );
