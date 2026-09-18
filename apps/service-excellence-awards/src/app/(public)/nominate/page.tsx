@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NominateCaptcha } from "@/components/nominate-captcha";
 import { getServerSupabase } from "@/lib/supabase/server";
 import { submitNomination } from "./actions";
 import type { City, Category } from "@/lib/types";
@@ -43,11 +44,12 @@ export default async function NominatePage({ searchParams }: { searchParams: Sea
       )}
       {sp.error && (
         <div className="mt-8 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-900">
-          We couldn't save that submission. {sp.error === "missing_business" ? "Please enter the business name." : sp.error}
+          We couldn't save that submission. {sp.error === "missing_business" ? "Please enter the business name." : sp.error === "captcha" ? "The security check did not complete. Please try again." : sp.error}
         </div>
       )}
 
       <form action={submitNomination} className="mt-10 grid gap-6">
+        <div className="absolute left-[-9999px] top-0" aria-hidden="true"><input type="text" name="company_url" tabIndex={-1} autoComplete="off" /></div>
         <Field label="Business name" required>
           <input name="business_name" required className={inputCls} />
         </Field>
@@ -86,6 +88,7 @@ export default async function NominatePage({ searchParams }: { searchParams: Sea
         <Field label="Why does this contractor stand out?">
           <textarea name="message" rows={5} className={`${inputCls} h-auto py-3`} placeholder="Tell us about a recent project, what they did well, and why they deserve recognition." />
         </Field>
+        <NominateCaptcha />
         <button
           type="submit"
           className="inline-flex h-12 items-center justify-center rounded-full bg-stone-900 px-7 text-sm font-medium text-white transition-colors hover:bg-stone-700"
