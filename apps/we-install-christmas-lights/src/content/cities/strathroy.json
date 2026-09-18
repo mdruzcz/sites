@@ -1,0 +1,52 @@
+{
+  "slug": "strathroy",
+  "name": "Strathroy",
+  "displayName": "Strathroy, Ontario",
+  "metaTitle": "Christmas Light Installation in Strathroy, Ontario",
+  "metaDescription": "Christmas light installation in Strathroy, Ontario. Custom roofline design, 1-day install, mid-season maintenance and takedown. Free quote: (519) 266-6796.",
+  "h1": "Christmas Light Installation in Strathroy, Ontario",
+  "heroIntro": "About 25 minutes west of our London base on Highway 402, Strathroy gets the same full-service program with a regular weekly route through town.",
+  "intro": [
+    "Strathroy sits just off Highway 402 in Middlesex County, close enough to London that it's a standing stop on our seasonal route rather than a special trip. Homes here range from the older streets near downtown, close to Frank Street and Metcalfe Street, with mature trees and modest rooflines, out to the newer subdivisions on the west end where two-storey houses have taller peaks and more open front yards. Both styles suit the same all-inclusive program: custom design, professional-grade LED lighting cut to fit the roofline, and installation handled in as little as a day.",
+    "Strathroy's small-town layout means shorter setup time between stops than a scattered rural route, which helps keep scheduling tight through late fall. The program itself works exactly as it does in London: mid-season maintenance if a strand or bulb fails, takedown in January once the season wraps, and optional storage from $100 so the totes don't sit in your garage until next October. Booking early is still the best move, since Strathroy's calendar slots fill alongside the rest of our western route through Middlesex County."
+  ],
+  "neighbourhoods": ["Downtown Strathroy", "West Strathroy", "East Strathroy", "Alexandra Park area", "Second Street corridor", "Frank Street area", "Caradoc Sand Plains", "Mount Brydges (nearby)", "Melbourne (nearby)"],
+  "sections": [
+    {
+      "heading": "Homes in Strathroy: what we typically light",
+      "text": "The older housing stock near downtown Strathroy, close to Frank Street and Metcalfe Street, tends to be modest two-storeys and character homes with straightforward rooflines and mature street trees, which work well with a clean C9 outline plus a wrapped tree near the front walk. West Strathroy's newer subdivisions have larger, steeper-peaked two-storey homes with bigger front yards, giving more room for shrub lighting along the foundation bed in addition to the roofline. East Strathroy sits closer to the older grid pattern and generally mirrors downtown in scale. Detached garages are common across town and often get folded into the same design so the whole property reads as one finished display rather than a house with a bare garage beside it."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Strathroy",
+      "text": "Strathroy sits in open farmland west of London, which means wind off the surrounding fields tends to arrive earlier in the season and stronger than it does in the city once the leaves come down. Our crew factors that into anchoring and lift positioning on taller rooflines. Installs run on the same October through early-December window as everywhere else in our service area, and because Strathroy is a regular stop rather than a special trip, we can usually offer flexible dates within that window. Booking by mid-November keeps you ahead of the season's busiest stretch."
+    },
+    {
+      "heading": "Why Strathroy homeowners choose us",
+      "text": "Strathroy doesn't have a local company running bucket trucks and aerial lifts for holiday lighting, so residents have historically been stuck on a ladder or without tall-roofline options altogether. We've been serving Strathroy homeowners since 2018, and pricing stays the same as it would for a comparable London home since it sits along our regular route. The full program, design through takedown, applies exactly as it does in the city, and the 96% year-over-year rebook rate we see fleet-wide shows up here too, often as entire streets going up together each fall."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Strathroy",
+    "text": "Strathroy's downtown business district along Frank Street and Metcalfe Street is compact and walkable, which makes tidy roofline outlines and a lit entrance tree the right scale for most storefronts. The plazas and retail near Second Street, close to the Highway 402 interchange, tend to want a bigger, more visible display since traffic moves faster and sightlines are longer. Medical and professional office buildings scattered through town often ask for a simple wreath and entrance lighting rather than a full outline. Middlesex County offices and community facilities based in Strathroy also book seasonal décor most years. As with any commercial job, we start with a site visit or photos and plans, then quote design, installation, maintenance, removal and storage as one package, with multi-year programs available for repeat clients.",
+    "examples": ["Storefronts on Frank Street and Metcalfe Street", "Retail plazas near the 402 interchange", "Medical and professional office buildings", "Middlesex County municipal facilities", "Second Street commercial strip"]
+  },
+  "faq": [
+    {
+      "q": "Do I need a permit for holiday lighting on my Strathroy home?",
+      "a": "No, a standard residential lighting display on a single-family home in Strathroy does not need a municipal permit. If your property is part of a condo or townhome association, we'd recommend checking with the board first, and we're glad to coordinate that approval as part of putting your quote together."
+    },
+    {
+      "q": "How does open farmland wind around Strathroy affect installation?",
+      "a": "Strathroy sits in more exposed, open country than London, so wind builds earlier and stronger once trees are bare in the fall. We use sturdier anchoring and property-safe clips suited to that exposure, and we schedule around the forecast so a crew isn't working a tall roofline during a wind warning."
+    },
+    {
+      "q": "What does Christmas light installation typically cost for a Strathroy home?",
+      "a": "Most Strathroy two-storeys land in the Festive range, roughly $1,400 to $2,000, once roofline length and any trees or shrubs are included. Smaller bungalows and character homes near downtown can sit closer to the Classic package starting at $700. We confirm exact pricing after seeing your roofline and yard, since every quote is custom."
+    },
+    {
+      "q": "Can you handle the tall trees on some of the older downtown properties?",
+      "a": "Yes, our bucket trucks and aerial lifts reach the mature trees found on many of the older lots near downtown Strathroy. We can wrap a trunk and lower canopy, light a single feature tree, or focus on the branches closest to the house, and any of these can be added to any residential package during your free quote."
+    }
+  ],
+  "nearby": ["london-ontario", "london-surrounding-areas", "st-thomas", "ingersoll"]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "hamilton",
+  "name": "Hamilton",
+  "displayName": "Hamilton, Ontario",
+  "metaTitle": "Christmas Light Installation Services in Hamilton, ON",
+  "metaDescription": "Christmas light installation in Hamilton, Ontario from Westdale to Waterdown. Custom roofline lighting, insured WSIB crews. Free quote within 24 hours.",
+  "h1": "Christmas Light Installation in Hamilton",
+  "heroIntro": "Our Hamilton crew covers Westdale's tree-lined streets, Dundas Valley homes, and the newer builds out toward Stoney Creek and Waterdown.",
+  "intro": [
+    "Hamilton is a city of distinct neighbourhoods split by the Niagara Escarpment, from the older brick homes of Westdale and Durand on the lower city to the newer subdivisions on the Mountain and out toward Stoney Creek and Waterdown. Dundas, tucked against the escarpment on the west side, keeps its own small-town main street feel, while Waterdown has grown quickly with new construction over the past decade. That range, century homes to brand-new builds, is part of why every Hamilton quote we give is custom to the specific house and street.",
+    "The same all-inclusive program that has decorated hundreds of homes across South-Western Ontario since 2016 comes to Hamilton too: a custom roofline, tree, and shrub design, commercial-grade LED lighting supplied by us, installation in as little as one day, mid-season maintenance, and takedown in January. Property-safe clips protect your fascia and trim rather than staples or nails, and CSA-rated cords and timers run every display. If you'd rather skip storing bins of lights all year, ask about our optional off-season storage program."
+  ],
+  "neighbourhoods": [
+    "Westdale",
+    "Durand",
+    "Dundas",
+    "Stoney Creek",
+    "Waterdown",
+    "Ancaster",
+    "Kirkendall",
+    "Locke Street",
+    "Stinson",
+    "Crown Point"
+  ],
+  "sections": [
+    {
+      "heading": "Homes in Hamilton: what we typically light",
+      "text": "Westdale and Durand's older brick two-storeys, many with steep peaked roofs and mature trees, usually suit a warm white C9 roofline with a wrapped front tree to match the character of the street. Dundas homes near the escarpment often add lit shrub beds along the front garden, taking advantage of the deeper lots common in that area. Out in Stoney Creek and Waterdown, newer subdivision homes tend toward a clean roofline outline with mini lights on younger trees, since those properties haven't had decades to grow mature landscaping yet. Hillside properties near the Mountain brow, where roof access is trickier, are exactly where our bucket truck and aerial lift earn their keep."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Hamilton",
+      "text": "Our crews reach Hamilton from London in a little over an hour along Highway 401 and the 403, and we run Hamilton, Ancaster, and Burlington installs on connected routes through the season. The Niagara Escarpment creates its own microclimate, with the Mountain often colder and windier than the lower city, and wind off the escarpment can make ladder work on exposed rooflines slower on a given day. We recommend booking by mid-November so your install lands before ice sets in on rooflines and eavestroughs. Lights can go up unlit early and be switched on whenever you're ready to see them."
+    },
+    {
+      "heading": "Why Hamilton homeowners choose us",
+      "text": "From a century home in Westdale to a new build in Waterdown, every Hamilton quote is custom, and every job includes mid-season maintenance if a bulb, strand, or timer ever fails. We're fully insured and WSIB-compliant, which matters on the steeper rooflines and escarpment-facing homes found across Hamilton's older neighbourhoods. Ninety-six percent of our customers rebook the following year, and our bucket truck and aerial lift make tall Mountain-brow homes and mature-tree properties in Dundas straightforward jobs rather than risky ones. Optional storage means your lights come back to our facility, not your garage, once the season ends."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Hamilton",
+    "text": "Hamilton's commercial core spans a lot of ground, from the shops on Locke Street South and Ottawa Street to the International Village downtown, and we decorate storefronts, restaurants, and office buildings across all of them with tree wraps, building-outline lighting, and window displays. Waterdown's Dundas Street East business strip and Dundas's own King Street shops get the same treatment on a smaller scale. We also work with plazas and office parks near Eastgate Square and Stoney Creek, hotels along the 403, and banks and medical buildings throughout the Mountain. Every commercial job is custom-quoted after a site visit or from your photos and plans, then installed after hours, maintained, and removed under a multi-year program if that's what you'd prefer.",
+    "examples": [
+      "Locke Street South storefronts",
+      "Ottawa Street retail strip",
+      "International Village downtown offices",
+      "Waterdown Dundas Street businesses",
+      "Eastgate Square area plazas"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Can you light homes on the Hamilton Mountain with steep or hard-to-reach rooflines?",
+      "a": "Yes. Our bucket truck and aerial lift are built for exactly this kind of job, whether that's a steep peak on the Mountain or a tall century home in Westdale or Durand. We assess the roofline before quoting so the design fits the height and pitch safely, without anyone working from an extension ladder on a roof that isn't easy to reach."
+    },
+    {
+      "q": "Do you serve Dundas and Waterdown as part of Hamilton, or are those separate quotes?",
+      "a": "Both are part of our Hamilton service area and get the same all-inclusive program: custom design, supply, installation, mid-season maintenance, and January takedown. We schedule Dundas and Waterdown alongside the rest of our Hamilton, Ancaster, and Burlington route, so there's no separate travel charge just for being on the outskirts of the city."
+    },
+    {
+      "q": "How does wind off the Niagara Escarpment affect scheduling?",
+      "a": "The Mountain and escarpment-facing properties can see stronger wind than the lower city on a given day, which can slow ladder and lift work. We build that into our route planning and will move a windy day's install rather than rush it, which is part of why we recommend booking by mid-November so there's flexibility left in the schedule."
+    },
+    {
+      "q": "Do you decorate storefronts on Locke Street or Ottawa Street?",
+      "a": "Yes, both are part of our commercial program in Hamilton. We've designed tree wraps and storefront lighting for retail strips like Locke Street South and Ottawa Street, and we handle the site visit, installation, in-season maintenance, and removal so business owners don't have to manage any of it themselves once the design is approved."
+    }
+  ],
+  "nearby": ["ancaster", "burlington", "oakville", "cambridge"]
+}

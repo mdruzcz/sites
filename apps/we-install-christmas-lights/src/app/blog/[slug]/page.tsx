@@ -128,7 +128,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = POSTS[slug];
   if (!post) return {};
   return {
-    title: `${post.title} | We Install Christmas Lights Blog`,
+    title: { absolute: post.title.length <= 60 ? post.title : post.title.slice(0, 57).replace(/\s+\S*$/, "") + "…" },
     description: post.intro,
     alternates: { canonical: `${site.url}/blog/${slug}` },
   };

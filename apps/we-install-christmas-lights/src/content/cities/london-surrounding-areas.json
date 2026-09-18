@@ -1,0 +1,52 @@
+{
+  "slug": "london-surrounding-areas",
+  "name": "London Surrounding Areas",
+  "displayName": "The Towns Around London, Ontario",
+  "metaTitle": "Christmas Light Installation Near London, Ontario Towns",
+  "metaDescription": "Christmas light installation in the towns around London: Ilderton, Lucan, Komoka, Dorchester and more. Same 1-day install, no travel surcharge, free quote.",
+  "h1": "Christmas Light Installation Around London, Ontario",
+  "heroIntro": "From Ilderton in the north to Dorchester in the east, we cover every town within about 45 minutes of our London base with the same all-inclusive program.",
+  "intro": [
+    "Not every one of our customers lives inside the city limits, and that's fine, our route already runs through Middlesex County most weeks. We regularly work in Ilderton, Komoka, Kilworth and Delaware to the west and north, Thorndale and Dorchester to the east, and Lucan, Belmont, Mount Brydges and Arva scattered around the perimeter. The properties look different from a typical city lot: bigger yards, longer rooflines, detached garages and outbuildings, and in some cases a laneway running well back from the road. That changes the shape of the quote more than the process, we still design around your roofline, trees and shrubs the same way we would in London.",
+    "Because these towns sit along our regular routes rather than being a special trip, pricing stays the same as it does in London, no travel surcharge folded in for a normal-sized property. What does change slightly is scheduling: rural stops take a little more time to set up a lift safely on an uneven yard, so we plan fewer stops per day out here than on a tight city block. The same all-inclusive program applies everywhere, custom design, professional-grade LED lighting, installation in as little as a day, mid-season maintenance, and January takedown, with optional storage after the season ends."
+  ],
+  "neighbourhoods": ["Thorndale", "Ilderton", "Lucan", "Komoka", "Mount Brydges", "Dorchester", "Belmont", "Arva", "Kilworth", "Delaware"],
+  "sections": [
+    {
+      "heading": "Homes in these towns: what we typically light",
+      "text": "Properties out here tend to sit on bigger lots than a typical London subdivision, which usually means more roofline to work with and often a detached garage or workshop that gets included in the design alongside the main house. In Ilderton, Komoka and Kilworth we regularly light long driveways lined with mature trees, wrapping trunks or lower branches rather than just the house itself. In the more built-up small-town streets of Thorndale, Dorchester and Belmont, homes sit closer together and the look is more similar to a city block, with roofline outlines and a lit shrub bed doing most of the work. Farmhouses with deep-set rooflines and steep older gables are common throughout the area and take a full outline especially well."
+    },
+    {
+      "heading": "Timing, weather and scheduling in rural Middlesex County",
+      "text": "Open, exposed properties near Ilderton and Komoka catch more wind once the trees are bare, which factors into how we anchor lights and where we position a lift on a soft or uneven yard. Long gravel laneways and detached structures also mean a rural stop takes a bit more setup time than a city driveway. We build fewer stops into each day's route out here so nothing feels rushed, and we recommend booking by early November since rural routes have less flexibility to squeeze in a late addition once the calendar fills."
+    },
+    {
+      "heading": "Why homeowners in these towns choose us",
+      "text": "Most of these towns don't have a local installer running bucket trucks and aerial lifts, so residents either do it themselves off a ladder or go without. We're already driving through the area most weeks servicing London, so a Lucan or Dorchester property fits naturally into the schedule at the same price as a comparable London home. Maintenance visits are grouped efficiently by area rather than dispatched one at a time, and the same storage option, from $100 a season, applies here as it does anywhere else we work."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting around London",
+    "text": "Small-town main streets have their own character, and we quote around it. The shops along Lucan's Main Street and Dorchester's small retail strip get tidy roofline outlines and a wrapped tree or two near the entrance, while the growing commercial cluster near Komoka's Gideon Drive gets a slightly larger treatment as new plazas fill in. Township offices and community halls in Middlesex Centre and Thames Centre often want a simple, dignified display, an outlined entrance and a lit tree, rather than anything flashy. Churches are common gathering points in these towns and frequently book wreaths and an exterior tree wrap for the season. Everything is quoted from a site visit or photos, with multi-year programs available for repeat community installs.",
+    "examples": ["Main Street shops in Lucan", "Retail strips in Dorchester and Thorndale", "Township and municipal offices", "Churches and community halls", "New plazas near Komoka's Gideon Drive"]
+  },
+  "faq": [
+    {
+      "q": "Do you charge extra to travel to towns like Lucan, Ilderton or Dorchester?",
+      "a": "No. These towns fall inside our normal service area since our routes already pass through Middlesex County servicing London, so pricing for a comparable home stays the same. Properties well outside that regular radius, or unusually remote acreages, are quoted case by case once we know the location and roofline."
+    },
+    {
+      "q": "Is wind more of an issue on open rural properties?",
+      "a": "Yes, exposed properties near Ilderton, Komoka and Kilworth catch noticeably more wind once the trees lose their leaves than a sheltered city lot does. We use sturdier anchoring and property-safe clips built for that exposure, and we keep an eye on the forecast so a lift isn't positioned on a yard during a wind advisory."
+    },
+    {
+      "q": "How much does installation cost for a typical property in these towns?",
+      "a": "Rural and small-town properties often have longer rooflines and a detached garage or outbuilding, which tends to push pricing toward the Festive or Griswold range, roughly $1,400 to $2,800. A smaller in-town home on a standard lot can land closer to the Classic package at $700. Every quote reflects the actual roofline and yard, not a flat rate."
+    },
+    {
+      "q": "Can you light mature trees along a farm laneway or long driveway?",
+      "a": "Yes, our bucket trucks and aerial lifts reach large trees common along the laneways in Ilderton, Komoka and the surrounding countryside. Trunk wraps, canopy lighting or a single lit feature tree can be added to any package, and we'll walk the laneway with you during the quote to plan placement around soft ground or gravel."
+    }
+  ],
+  "nearby": ["london-ontario", "strathroy", "ingersoll", "st-thomas"]
+}

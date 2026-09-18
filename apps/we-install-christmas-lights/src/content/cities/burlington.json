@@ -1,0 +1,69 @@
+{
+  "slug": "burlington",
+  "name": "Burlington",
+  "displayName": "Burlington, Ontario",
+  "metaTitle": "Christmas Light Installation Services in Burlington, ON",
+  "metaDescription": "Christmas light installation in Burlington, Ontario from Roseland to Millcroft. Custom roofline design, insured WSIB crews, free quotes within 24 hours.",
+  "h1": "Christmas Light Installation in Burlington",
+  "heroIntro": "Our Burlington crew covers the lakefront homes of Roseland, the newer builds in Millcroft, and the older streets of Aldershot.",
+  "intro": [
+    "Burlington runs along the Lake Ontario shoreline from Aldershot in the west to Headon Forest and Alton Village in the east, and its housing changes as you move away from the lake. Roseland and the older lakefront streets have larger, established properties with mature trees, Aldershot mixes older bungalows with newer infill, and neighbourhoods like Millcroft, Tyandaga, and Headon Forest are newer subdivisions built out over the last few decades. That range of lot sizes and home ages is why every Burlington quote starts with a look at the actual property, not a template.",
+    "Our all-inclusive program serves Burlington the same way it serves every city on our route: a custom design for your roofline, trees, and shrubs, commercial-grade LED lighting that we supply, installation in as little as one day, mid-season maintenance, and takedown in January. Property-safe clips protect fascia and trim instead of staples or nails, and every display runs on CSA-rated cords and timers. Optional off-season storage is available if you'd rather not find garage space for bins of lights every year."
+  ],
+  "neighbourhoods": [
+    "Roseland",
+    "Aldershot",
+    "Tyandaga",
+    "Millcroft",
+    "Alton Village",
+    "Headon Forest",
+    "Shoreacres",
+    "LaSalle",
+    "Brant Hills",
+    "Orchard"
+  ],
+  "sections": [
+    {
+      "heading": "Homes in Burlington: what we typically light",
+      "text": "Roseland's larger lakefront-area properties, many with mature trees and long roof peaks, usually suit a warm white C9 roofline paired with a wrapped tree or two along the driveway. Aldershot's mix of older bungalows and newer infill often calls for a simpler roofline package, since lot sizes there tend to be smaller and closer together. In Millcroft, Tyandaga, and Headon Forest, newer two-storey homes on standard subdivision lots typically get a clean roofline outline with mini lights on younger ornamental trees, since those trees are still filling in. Homes near the escarpment edge in Tyandaga sometimes need our bucket truck for steeper roof pitches that aren't safe to reach by ladder."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Burlington",
+      "text": "Burlington sits about an hour and a quarter from our London base along the 403 and QEW, and we typically run Burlington alongside Hamilton and Oakville dates on the same trip. Being right on Lake Ontario, Burlington can see lake-effect cloud and quick-moving squalls roll in off the water later into the fall than inland cities do, and wind along the waterfront can slow ladder work on lakefront properties on a given day. We recommend booking by mid-November, ahead of the season's first hard freeze. Lights can be installed unlit early and switched on whenever you like once you're ready."
+    },
+    {
+      "heading": "Why Burlington homeowners choose us",
+      "text": "Whether you're on a mature lakefront lot in Roseland or a newer property in Millcroft, we build a custom plan around your specific roofline and landscaping rather than a standard package. We're fully insured and WSIB-compliant, which matters on the taller rooflines and escarpment-edge homes found in Tyandaga. Mid-season maintenance is included, so anything that comes loose in a lake-effect windstorm gets fixed at no extra cost. Ninety-six percent of our customers have us back the following year, and optional storage means your lights come back to our facility instead of taking up space in your garage."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Burlington",
+    "text": "Downtown Burlington's Brant Street strip, with its restaurants and shops running toward the waterfront, gets wrapped street trees and storefront lighting that plays well against the lakefront setting, and we work with businesses there directly on that kind of display. Burlington Mall and the surrounding Guelph Line and Appleby Line retail corridors are another focus, along with office buildings and medical clinics near the Walkers Line and Appleby Line interchanges off the QEW. Hotels serving the waterfront and the QEW corridor, banks, and property managers overseeing multi-tenant plazas across Burlington round out our commercial client base, with every job custom-quoted from a site visit or your photos and plans before installation begins.",
+    "examples": [
+      "Downtown Burlington Brant Street",
+      "Burlington Mall retail corridor",
+      "Appleby Line office buildings",
+      "QEW-corridor hotels",
+      "Multi-tenant plaza portfolios"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do lakefront properties in Roseland need anything different from inland homes?",
+      "a": "Often just a bit more scale. Roseland's larger lots and mature trees give us more to work with, so we'll usually suggest a wrapped tree or two alongside the roofline. Wind off the lake can also affect scheduling on a given day, which we account for in our route planning so your install day doesn't get rushed or cut short."
+    },
+    {
+      "q": "Can you light homes on the escarpment edge in Tyandaga?",
+      "a": "Yes. Steeper roof pitches near the escarpment edge in Tyandaga are a common reason we bring the bucket truck or aerial lift instead of an extension ladder. We look at the roofline before quoting so the plan accounts for the pitch and height safely, and our WSIB-compliant crew is trained for exactly that kind of property."
+    },
+    {
+      "q": "Do you decorate storefronts on Brant Street downtown?",
+      "a": "Yes. Downtown Burlington's Brant Street is part of our commercial program, and we design tree wraps and storefront lighting that suits the waterfront setting. We handle the site visit, after-hours installation if needed, in-season maintenance, and removal at the end of the season, all under one point of contact for the business owner."
+    },
+    {
+      "q": "How early should we book to avoid missing early-December installation?",
+      "a": "Book by mid-November if you can. Our installation season runs from early October through the first week of December, and Burlington dates are usually scheduled with Hamilton and Oakville on the same route. Earlier bookings get first choice of dates and more flexibility if weather pushes a scheduled install back a day or two."
+    }
+  ],
+  "nearby": ["hamilton", "oakville", "ancaster", "milton"]
+}

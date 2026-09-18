@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "About Us | We Install Christmas Lights London Ontario",
+  title: "About Us",
   description:
     "Meet the family behind We Install Christmas Lights — South-Western Ontario's most-trusted holiday lighting team. Custom designs, 96% return rate, 5-star reviews.",
   alternates: { canonical: `${site.url}/about-us` },

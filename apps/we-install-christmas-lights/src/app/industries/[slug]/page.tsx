@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import Link from "next/link";
-import Image from "next/image";
 import { industries, getIndustryBySlug, site } from "@/lib/site";
-import { ContactForm } from "@/components/ContactForm";
+import { getIndustryContent, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
+import { pageTitle } from "@/lib/seo";
+import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs } from "@/components/PageBlocks";
 
 export const revalidate = 3600;
 
@@ -14,100 +14,116 @@ export async function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> };
 
+const PHOTO_CATS: Record<string, string[]> = {
+  "christmas-decorator-for-malls": ["commercial-mall", "commercial-indoor"],
+  "christmas-decorators-for-office-lobbies": ["commercial-indoor"],
+  "christmas-decorators-for-hotels": ["commercial-indoor", "commercial-exterior"],
+  "christmas-decorators-for-special-events": ["light-show", "commercial-exterior"],
+  "christmas-decorators-for-production-sets": ["light-show", "commercial-indoor"],
+  "christmas-decorators-for-municipalities": ["commercial-exterior", "light-show"],
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
+  const c = getIndustryContent(slug);
   if (!industry) return {};
+  const title = pageTitle(c?.metaTitle ?? industry.name);
+  const description = c?.metaDescription ?? industry.description;
+  const url = `${site.url}/industries/${industry.slug}`;
+  const hero = pickPhotos(PHOTO_CATS[slug] ?? ["commercial-exterior"], 1, slug)[0];
   return {
-    title: `${industry.name} | Commercial Holiday Decorating`,
-    description: industry.description,
-    alternates: { canonical: `${site.url}/industries/${industry.slug}` },
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: "website", images: [{ url: hero?.src ?? "/images/og-default.jpg", alt: hero?.alt }] },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
 export default async function IndustryPage({ params }: Props) {
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
-  if (!industry) notFound();
+  const c = getIndustryContent(slug);
+  if (!industry || !c) notFound();
+
+  const cats = PHOTO_CATS[slug] ?? ["commercial-exterior"];
+  const heroPhoto = pickPhotos(cats, 1, slug)[0] ?? null;
+  const photos = pickPhotos([...cats, "install-action"], 5, slug + "-grid").filter((p) => p.file !== heroPhoto?.file);
+  const url = `${site.url}/industries/${industry.slug}`;
+  const others = industries.filter((i) => i.slug !== slug).slice(0, 12);
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: industry.name,
-    provider: { "@type": "LocalBusiness", name: site.name, telephone: site.phone, url: site.url },
-    description: industry.description,
+    "@id": `${url}#service`,
+    name: c.name,
+    serviceType: "Commercial Christmas decorating and lighting",
+    audience: { "@type": "BusinessAudience", name: c.shortName },
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: ["London", "Kitchener-Waterloo", "Hamilton", "Mississauga", "Greater Toronto Area", "South-Western Ontario"].map((n) => ({ "@type": "Place", name: n })),
+    description: c.metaDescription,
+    url,
   };
 
   return (
     <>
-      <Script id={`industry-schema-${industry.slug}`} type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script id={`industry-schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script id={`crumbs-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: "Commercial", path: "/commercial-christmas-lighting" }, { name: c.shortName }])) }} />
 
-      <section className="bg-[color:var(--bg-soft)] border-b border-[color:var(--border)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          <p className="eyebrow">Commercial Holiday Décor</p>
-          <h1 className="heading-display text-3xl sm:text-5xl mt-3 max-w-3xl">{industry.name}</h1>
-          <p className="mt-5 max-w-2xl text-lg text-[color:var(--ink-soft)]">{industry.tagline}</p>
-          <div className="mt-7 flex flex-col sm:flex-row gap-3">
-            <Link href="/contact-us" className="btn btn-red">Get a Free Quote</Link>
-            <Link href={site.phoneHref} className="btn btn-outline-green">Call {site.phone}</Link>
-          </div>
-        </div>
-      </section>
+      <PhotoHero eyebrow="Commercial Christmas decorating" h1={c.h1} intro={c.heroIntro} photo={heroPhoto} formType="Commercial" source={`industry:${slug}`} ctaLabel="Request a Commercial Quote" />
+      <TrustBar />
 
       <section className="section">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10">
-          <div className="lg:col-span-3 prose text-[color:var(--ink-soft)] leading-relaxed">
-            <p className="text-lg">{industry.description}</p>
-            <h3 className="heading-display text-xl mt-8 text-[color:var(--brand-green)]">Why choose us</h3>
-            <ul>
-              <li>Hundreds of completed commercial holiday projects</li>
-              <li>Insured, WSIB-compliant crews</li>
-              <li>Custom designed to your space and brand</li>
-              <li>After-hours installs available</li>
-              <li>Multi-year and multi-location programs</li>
-            </ul>
-          </div>
-          <div className="lg:col-span-2">
-            <div className="relative h-64 lg:h-full rounded-2xl overflow-hidden">
-              <Image
-                src={industry.image ?? "/images/industry-default.jpg"}
-                alt={`${industry.name} — commercial holiday decorating example by We Install Christmas Lights`}
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Commercial", href: "/commercial-christmas-lighting" }, { name: c.shortName }]} />
+          <div className="mt-8 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="eyebrow">{c.shortName}</p>
+              <h2 className="heading-display mt-2 text-3xl">Holiday décor that works as hard as your property</h2>
+              <Prose paragraphs={c.intro} className="mt-5" />
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">What we install for {c.shortName.toLowerCase()}</h3>
+              <div className="mt-4"><CheckList items={c.whatWeInstall} /></div>
             </div>
+            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <div className="card p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">How it works</p>
+                <ol className="mt-4 space-y-3">
+                  {c.process.map((s, i) => (
+                    <li key={s} className="flex gap-3 text-[15px] text-[color:var(--ink-strong)]"><span className="heading-display text-[color:var(--brand-red)]">{i + 1}.</span>{s}</li>
+                  ))}
+                </ol>
+                <a href="#quote" className="btn btn-red mt-6 w-full">Request a site visit</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
+
+      <PhotoGrid photos={photos} title="Commercial installs by our crews" caption="Building outlines, tree wraps, lit cone trees, giant trees and lobby décor across Ontario." />
+
+      <section className="section">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <p className="eyebrow">Why it pays</p>
+          <div className="mt-4"><SectionList sections={c.whyItPays} /></div>
+        </div>
+      </section>
+
+      <FaqSection faqs={c.faq} title={`${c.shortName}: questions we get asked`} id={`faq-${slug}`} />
+      <QuoteSection type="Commercial" source={`industry:${slug}`} />
 
       <section className="section bg-[color:var(--bg-soft)]">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="eyebrow">Get a Quote</p>
-            <h2 className="heading-display text-3xl mt-3">{industry.name} — Get Started</h2>
-          </div>
-          <ContactForm />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-2xl text-center">Other industries we serve</h2>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            {industries.filter((i) => i.slug !== industry.slug).map((i) => (
-              <Link
-                key={i.slug}
-                href={`/industries/${i.slug}`}
-                className="px-4 py-1.5 rounded-full bg-white border border-[color:var(--border)] text-sm text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]"
-              >
-                {i.shortName}
-              </Link>
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-display text-2xl">Other property types we decorate</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {others.map((i) => (
+              <Link key={i.slug} href={`/industries/${i.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{i.shortName}</Link>
             ))}
           </div>
         </div>
       </section>
+      <CtaBand type="Commercial" />
     </>
   );
 }

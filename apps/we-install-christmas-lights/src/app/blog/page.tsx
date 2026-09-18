@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog | We Install Christmas Lights",
+  title: "Blog",
   description:
     "Tips, guides, and inspiration for professional Christmas light installation, holiday décor, and permanent outdoor lighting.",
   alternates: { canonical: `${site.url}/blog` },

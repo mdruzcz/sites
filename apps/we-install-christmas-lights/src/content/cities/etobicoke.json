@@ -1,0 +1,40 @@
+{
+  "slug": "etobicoke",
+  "name": "Etobicoke",
+  "displayName": "Etobicoke, Ontario",
+  "metaTitle": "Christmas Light Installation in Etobicoke, Toronto",
+  "metaDescription": "Christmas light installation in Etobicoke. Custom design for The Kingsway, Mimico, Humber Bay & more. 1-day install, full-season maintenance. Free quote.",
+  "h1": "Christmas Light Installation in Etobicoke",
+  "heroIntro": "Custom-cut Christmas lighting for Etobicoke's lakefront towers and Kingsway estates alike, installed by an insured crew in as little as a day.",
+  "intro": [
+    "Etobicoke stretches from the Lake Ontario shoreline at Humber Bay and Mimico up to Rexdale near Pearson Airport, and that range shows up in the housing stock: century estates with mature trees in The Kingsway, post-war bungalows in Long Branch and Alderwood, and condo towers along the Humber Bay waterfront. Our crews travel from London to design and install custom-cut roofline lighting for Etobicoke homes and buildings, with every job including free design, professional-grade LED lights we supply, and installation completed in as little as a day.",
+    "Because Etobicoke properties range so widely in size and setback from the street, we quote each home individually rather than offering a fixed package. A Kingsway estate with tall mature trees needs a different plan than a Markland Wood two-storey along the golf course or a townhome near Islington-City Centre West. Once your lights are installed, mid-season maintenance covers any bulb or strand issue at no additional cost, and we return in January for takedown, with optional storage from $100 a season if you'd rather not find room in the garage."
+  ],
+  "neighbourhoods": ["The Kingsway", "Mimico", "Humber Bay Shores", "Etobicoke Centre", "Markland Wood", "Islington-City Centre West", "Long Branch", "Alderwood", "Richview", "New Toronto"],
+  "sections": [
+    {
+      "heading": "Homes in Etobicoke: what we typically light",
+      "text": "The Kingsway has some of the largest, most established lots in Etobicoke, with tall mature trees and character homes that often need a bucket truck or aerial lift for tree wraps and higher rooflines. Markland Wood, built around its golf course, has larger two-storey homes with multiple roof peaks that suit a full roofline-plus-tree package, while Long Branch, Alderwood, and New Toronto have smaller post-war bungalows and two-storeys on tighter lots where a clean soffit outline paired with a lit shrub bed or small tree usually looks best. Condo towers and townhome complexes near Humber Bay Shores and Islington-City Centre West typically stick to entrance, balcony-safe, or lobby lighting arranged directly with the building's property manager."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Etobicoke",
+      "text": "Etobicoke's lakefront neighbourhoods, particularly Mimico and Humber Bay Shores, get stronger and more consistent wind off Lake Ontario than inland areas like Richview or Etobicoke Centre, which affects how we anchor larger tree wraps and longer light runs near the water. Installs run from early October through the first week of December, and Etobicoke jobs are scheduled alongside our Mississauga and Brampton stops on the same western GTA route. Because Etobicoke is a busy part of that route, homeowners who want a specific installation week, especially for larger Kingsway properties, should book by late summer or early fall before our schedule fills by mid-November."
+    },
+    {
+      "heading": "Why Etobicoke homeowners choose us",
+      "text": "Etobicoke's mix of century estates, post-war bungalows, and lakefront condo towers means no two quotes look the same, and homeowners appreciate that we design around the actual property instead of a standard package. We supply the lights, do the climbing, cover any bulb or strand issue during the season at no extra cost, and come back in January to take everything down and store it if you'd like. A 5.0 Google rating from more than 80 reviews and a 96% year-over-year rebooking rate reflect how many Etobicoke customers just call us again each fall instead of starting over."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Etobicoke",
+    "text": "Etobicoke's commercial holiday lighting work covers the Sherway Gardens retail area, The Queensway commercial strip, the Islington Avenue corridor, the Six Points and Etobicoke Centre redevelopment area, and the office and logistics buildings near Pearson Airport along Dixon Road and Attwell Drive. We install building outline and roofline lighting for retail plazas and office towers, lit cone trees and tree wraps for mall and plaza entrances, storefront lighting for shops along The Queensway and Islington Avenue, and lobby décor for corporate offices near the airport. Multi-year programs suit property managers overseeing several Etobicoke buildings, since the same design gets reinstalled every season without new planning. After-hours and overnight installs keep tenants and shoppers undisturbed, and every commercial quote starts with a site visit or a set of photos and plans.",
+    "examples": ["Sherway Gardens retail area", "The Queensway storefronts", "Islington Avenue office buildings", "Six Points and Etobicoke Centre plazas", "Airport-area logistics and office buildings"]
+  },
+  "faq": [
+    { "q": "Can you light the tall trees on Kingsway and Etobicoke estate lots?", "a": "Yes. Properties in The Kingsway and along parts of Markland Wood often have mature trees well beyond ladder reach. Our crews use bucket trucks and aerial lifts to wrap and light these trees safely, so a large, established lot doesn't have to skip tree lighting just because of its height or age." },
+    { "q": "Do you handle condo or building approval for towers near Humber Bay Shores?", "a": "Yes. Many condo towers and managed buildings along the Humber Bay waterfront have rules about balcony décor or lobby and entrance lighting. We can provide product specs or a lighting plan for your board or property manager to review before scheduling the install, so approval isn't a last-minute scramble." },
+    { "q": "How does wind near the lakeshore affect installation in Mimico or Humber Bay?", "a": "Wind off Lake Ontario is stronger in Mimico and Humber Bay Shores than in inland Etobicoke neighbourhoods, so we use CSA/UL-rated cords and secure, property-safe clips designed to hold up to that exposure, particularly on longer roofline runs and larger tree wraps near the water." },
+    { "q": "What's a typical price range for an Etobicoke home?", "a": "Smaller bungalows in areas like Long Branch or Alderwood often fall in our Classic package from $700 for roofline only. Larger two-storey and Kingsway estate homes with tree and shrub work typically land in the Festive to Griswold range, from $1,400 up to $2,800 and beyond, based on a custom quote." }
+  ],
+  "nearby": ["mississauga", "brampton", "oakville"]
+}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { StarIcon } from "./icons";
 
 const REVIEWS = [
@@ -50,14 +49,10 @@ export function Testimonials() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {REVIEWS.map((r) => (
             <article key={r.name} className="card overflow-hidden flex flex-col md:flex-row">
-              <div className="relative h-56 md:h-auto md:w-1/3 bg-[color:var(--bg-soft)]">
-                <Image
-                  src={r.image}
-                  alt={r.alt}
-                  fill
-                  sizes="(min-width: 768px) 16vw, 100vw"
-                  className="object-cover"
-                />
+              <div className="flex items-center justify-center bg-[color:var(--bg-soft)] px-6 py-6 md:w-28 md:py-0">
+                <span aria-hidden className="heading-display flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--brand-red)] text-xl text-white">
+                  {r.name.split(/\s+/).filter((w) => /^[A-Za-z]/.test(w)).slice(0, 2).map((w) => w[0].toUpperCase()).join("")}
+                </span>
               </div>
               <div className="p-6 flex-1">
                 <div className="flex text-[color:#F5A623] gap-0.5">

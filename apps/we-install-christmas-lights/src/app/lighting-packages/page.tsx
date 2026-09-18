@@ -6,7 +6,7 @@ import { CheckIcon } from "@/components/icons";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Christmas Lighting Packages & Cost Estimator | We Install Christmas Lights",
+  title: { absolute: "Christmas Lighting Packages & Pricing" },
   description:
     "Three all-inclusive Christmas lighting packages — Classic, Festive, and Griswold. Includes design, installation, maintenance, takedown, and storage.",
   alternates: { canonical: `${site.url}/lighting-packages` },

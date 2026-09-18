@@ -1,0 +1,52 @@
+{
+  "slug": "woodstock",
+  "name": "Woodstock",
+  "displayName": "Woodstock, Ontario",
+  "metaTitle": "Christmas Light Installation in Woodstock, Ontario",
+  "metaDescription": "Christmas light installation in Woodstock, Ontario. Custom roofline design for Oxford County homes, 1-day install, maintenance and takedown. Free quote.",
+  "h1": "Christmas Light Installation in Woodstock, Ontario",
+  "heroIntro": "The Oxford County seat, long known for its dairy heritage, gets custom roofline lighting from Old Sydenham's century homes to the newer Sally Creek streets.",
+  "intro": [
+    "Woodstock is the seat of Oxford County and grew up around agriculture and later manufacturing, and that mix still shows in the housing. The area known as Old Sydenham, close to downtown and Dundas Street, has some of the town's oldest and most detailed homes, tall two-storeys with dormers and gingerbread trim that hold a full roofline outline especially well. Northdale and the streets toward the north end have a more standard suburban mix of bungalows and two-storeys, while Sally Creek's newer golf-course community has larger homes on bigger lots with more open front yards, giving room for trees and shrubs alongside the roofline.",
+    "The all-inclusive program works the same way in Woodstock as everywhere else in our Oxford County route: a custom design based on your specific roofline, professional-grade LED lighting we supply and install, installation in as little as a day, mid-season maintenance if a strand or bulb ever fails, and takedown once the season ends in January. Optional storage from $100 a season keeps the totes out of your garage year-round. Woodstock's manufacturing base, including a major automotive assembly plant on the edge of town, has brought steady growth in newer subdivisions, and our crew has watched those neighbourhoods fill in over the past several seasons."
+  ],
+  "neighbourhoods": ["Old Sydenham", "Northdale", "Sally Creek", "South Woodstock", "Dundas Street area", "Pittock Lake area", "Ingersoll (nearby)", "Beachville (nearby)"],
+  "sections": [
+    {
+      "heading": "Homes in Woodstock: what we typically light",
+      "text": "Old Sydenham's character homes near downtown and Dundas Street tend to have the most architectural detail in town, steep gables, dormers, and decorative trim that all read well with a full C9 roofline outline plus a lit wreath at the entrance. Northdale and the more standard residential streets have a straightforward mix of bungalows and two-storeys, where a clean roofline and a lit shrub bed along the foundation usually cover it. Sally Creek's golf-course homes are larger and sit on bigger lots, often with a mature tree or two worth wrapping in addition to the roofline, which is where the Festive or Griswold package tends to fit best. Detached garages are common across Woodstock's larger lots and are typically folded into the same design."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Woodstock",
+      "text": "Woodstock sits in open Oxford County countryside between London and Kitchener, and wind tends to build earlier here once the fall foliage is down than it does in more sheltered city neighbourhoods. Our installs run from early October through the first week of December, and we monitor the forecast closely for Woodstock stops given that open exposure. Woodstock's steady growth around Sally Creek and the manufacturing sector has meant busier calendars in recent seasons, so booking by early to mid-November is the safer approach."
+    },
+    {
+      "heading": "Why Woodstock homeowners choose us",
+      "text": "Woodstock doesn't have a dedicated local holiday lighting company running bucket trucks and aerial lifts, so most homeowners here have either climbed a ladder themselves or skipped tall-roofline lighting entirely. Our crews already service Oxford County most weeks, so a Woodstock property fits into the schedule at the same price as a comparable home in London. Mid-season maintenance means a failed bulb or strand gets fixed without any climbing on your part, and the roughly 96% year-over-year rebook rate we see across our service area holds true in Woodstock's neighbourhoods too."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Woodstock",
+    "text": "Downtown Woodstock along Dundas Street has a historic, walkable main-street feel with a well-known central square, and storefronts there tend to want a tidy roofline outline paired with a wreath or lit garland to match that character. The retail and plaza strip further out along Dundas Street and near the Highway 401/403 interchange sees faster-moving traffic, so displays there are usually bigger and more visible from the road. Woodstock's manufacturing sector, including a major automotive assembly plant, brings office and support businesses that increasingly book seasonal décor for entrances and reception areas. Oxford County municipal buildings based in Woodstock also book seasonal displays most years, and churches around town regularly request exterior wreaths and a lit tree. Commercial work is quoted from a site visit or photos and plans, covering design through storage as one package.",
+    "examples": ["Storefronts along Dundas Street", "Plazas near the 401/403 interchange", "Office buildings tied to local manufacturing", "Oxford County municipal buildings", "Churches and community halls"]
+  },
+  "faq": [
+    {
+      "q": "Do I need a permit for holiday lighting on my Woodstock home?",
+      "a": "No, a typical residential display on a single-family home in Woodstock does not require a municipal permit. If you're in a townhome or condo-managed community, particularly around Sally Creek, checking with the board first is a good idea, and we can help coordinate that approval as part of your quote."
+    },
+    {
+      "q": "How does Woodstock's open countryside affect installation timing?",
+      "a": "Woodstock sits in fairly open Oxford County farmland, so wind and cooler temperatures tend to arrive a bit earlier here than in more sheltered areas closer to London. We factor that into anchoring and lift positioning, and we watch the forecast closely so a scheduled install doesn't run into unsafe roof conditions."
+    },
+    {
+      "q": "What's the typical cost for a Christmas light installation in Woodstock?",
+      "a": "Most Woodstock two-storey homes fall in the Festive range, roughly $1,400 to $2,000, depending on roofline length and whether trees or shrubs are included. Larger Sally Creek properties can move into the Griswold range near $2,800, while smaller bungalows in Northdale often start closer to the Classic package at $700. Every quote is confirmed after we see the home."
+    },
+    {
+      "q": "Can you light the mature trees on the older Old Sydenham properties?",
+      "a": "Yes, our bucket trucks and aerial lifts reach the larger mature trees common on Old Sydenham's older lots near downtown Woodstock. We can wrap a trunk and lower canopy or light a single feature tree, and this can be added to any residential or commercial package during your free quote."
+    }
+  ],
+  "nearby": ["ingersoll", "london-ontario", "kitchener", "cambridge"]
+}

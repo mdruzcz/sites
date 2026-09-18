@@ -1,0 +1,69 @@
+{
+  "slug": "waterloo",
+  "name": "Waterloo",
+  "displayName": "Waterloo, Ontario",
+  "metaTitle": "Christmas Light Installation Services in Waterloo, ON",
+  "metaDescription": "Christmas light installation in Waterloo, Ontario for Uptown character homes and Beechwood two-storeys. Custom roofline design, insured crews, free quotes.",
+  "h1": "Christmas Light Installation in Waterloo",
+  "heroIntro": "We install custom-cut Christmas lights on Uptown Waterloo character homes, Beechwood two-storeys, and the tree-lined streets near both universities.",
+  "intro": [
+    "Waterloo shares Waterloo Region with Kitchener, but its own character shows in the century homes near Uptown, the brick two-storeys of Beechwood and Lakeshore Village, and the student rental blocks around Wilfrid Laurier University and the University of Waterloo. Tech workers, students, and long-time families all want the same thing every December: a home that stands out on the drive through the neighbourhood without a weekend spent on a ladder in the cold.",
+    "We bring the same all-inclusive program to Waterloo that has decorated hundreds of homes across South-Western Ontario since 2016. Our crew designs a custom lighting plan for your roofline, trees, and shrubs, supplies commercial-grade LED lighting, installs it in as little as one day, checks on it mid-season, and takes it all down again in January. Property-safe clips mean no staples or nails in your fascia, and off-season storage is available so you never have to find garage space for totes of lights."
+  ],
+  "neighbourhoods": [
+    "Uptown Waterloo",
+    "Beechwood",
+    "Lakeshore Village",
+    "Westmount",
+    "Lincoln Heights",
+    "Colonial Acres",
+    "Columbia Forest",
+    "Laurelwood",
+    "Vista Hills",
+    "Eastbridge"
+  ],
+  "sections": [
+    {
+      "heading": "Homes in Waterloo: what we typically light",
+      "text": "Waterloo's housing stock ranges from century homes near Uptown to postwar bungalows in Lakeshore Village and newer two-storeys in Colonial Acres and Vista Hills. The older Uptown homes usually take warm white C9 bulbs along a peaked roofline, which suits their brick and gable detailing. In Beechwood and Westmount, we often add lit shrubs and a wrapped front tree to frame a longer driveway. Newer subdivisions near Columbia Forest and Laurelwood tend toward clean roofline outlines with mini lights on ornamental trees, since younger trees can't yet carry heavier C9 strands. Townhouse and condo clusters near the tech core get compact roofline and railing packages sized to smaller lots, and our aerial lift handles anything above what a homeowner could safely reach."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Waterloo",
+      "text": "Our crews travel to Waterloo from our London base, about ninety minutes up Highway 401 and Highway 8, and we build that drive into every route so install day stays on schedule. Waterloo Region sits in the path of lake-effect snow squalls that roll off Lake Huron through the Highway 7/8 corridor, which can bring a fast burst of snow with little warning in November. Because of that, we recommend booking by mid-November so your install lands before ladders and roofs get icy. Lights can go up unlit in early fall and be switched on whenever you're ready to flip them on."
+    },
+    {
+      "heading": "Why Waterloo homeowners choose us",
+      "text": "Between student rentals, family homes, and new subdivisions, no two Waterloo properties are decorated the same way, and every quote we give is custom to the house in front of us. Our program includes mid-season maintenance, so a bulb knocked loose or a strand that trips a breaker gets fixed at no charge. We're fully insured and WSIB-compliant, which matters to condo boards and landlords near the university corridor as much as it does to homeowners. Ninety-six percent of our customers rebook the following year, and optional storage means your lights come back out of our facility, not your garage."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Waterloo",
+    "text": "Waterloo's Uptown BIA along King Street and Erb Street sees heavy holiday foot traffic between the shops, restaurants, and Waterloo Town Square, and a lit storefront or wrapped street tree there gets noticed. We also work with the office and tech campuses along Northfield Drive and the University District, where a clean building-outline package or a lobby tree suits a corporate lobby better than a residential-style display. Retail plazas on Weber Street near Conestoga Mall, professional buildings along Columbia Street, and property managers overseeing multiple Waterloo addresses all use our commercial program: we design, supply, install after hours where needed, maintain through the season, then remove and store everything until next year under one multi-year contract.",
+    "examples": [
+      "Uptown Waterloo storefronts",
+      "Northfield Drive tech offices",
+      "Weber Street retail plazas",
+      "University District office buildings",
+      "Property management portfolios"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Do you install Christmas lights on rental properties near Wilfrid Laurier and the University of Waterloo?",
+      "a": "Yes. We work with landlords and property managers the same way we work with homeowners, whether that's a single rental near campus or several units in the same Waterloo neighbourhood. One quote can cover the whole portfolio, we can invoice a management company directly, and installation, mid-season maintenance, and January takedown are handled the same way regardless of who owns the property."
+    },
+    {
+      "q": "Can you light tall Uptown condo or townhouse buildings?",
+      "a": "We can, using our bucket truck and aerial lift for heights that aren't safe to reach by ladder. For condo and townhouse boards in Uptown Waterloo, we usually design a roofline or balcony-railing package that works within the building's rules, and we're fully insured and WSIB-compliant, which most boards and property managers require before approving any exterior work on the building."
+    },
+    {
+      "q": "How do you handle the snow squalls that come through Waterloo Region?",
+      "a": "We build weather buffers into our fall schedule specifically because of the lake-effect squalls that move through the Highway 7/8 corridor. If a squall is forecast for your install day, we reschedule rather than send a crew up in poor visibility, and booking by mid-November gives us the flexibility to shift dates around without pushing your install into December."
+    },
+    {
+      "q": "Do you decorate office campuses along Northfield Drive or the tech corridor?",
+      "a": "Yes, that's part of our commercial program. We've designed building-outline lighting and lobby décor for office and tech campuses in Waterloo, and we handle everything from a site visit through installation, mid-season maintenance, and removal, with after-hours installs available so daytime operations near Northfield Drive aren't disrupted at all by ladders or lift trucks."
+    }
+  ],
+  "nearby": ["kitchener", "cambridge", "guelph", "woodstock"]
+}

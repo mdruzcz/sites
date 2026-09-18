@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import { cities, getCityBySlug, site } from "@/lib/site";
-import { ContactForm } from "@/components/ContactForm";
-import { CheckIcon } from "@/components/icons";
+import { getCityContent, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
+import { pageTitle } from "@/lib/seo";
+import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs } from "@/components/PageBlocks";
+import { PackageGrid } from "@/components/PackageGrid";
+import { Testimonials } from "@/components/Testimonials";
 
 export const revalidate = 3600;
 
@@ -18,153 +20,139 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const city = getCityBySlug(slug);
+  const c = getCityContent(slug);
   if (!city) return {};
+  const title = pageTitle(c?.metaTitle ?? city.metaTitle);
+  const description = c?.metaDescription ?? city.metaDescription;
+  const url = `${site.url}/cities/${city.slug}`;
+  const hero = pickPhotos("residential-exterior", 1, slug)[0];
   return {
-    title: city.metaTitle,
-    description: city.metaDescription,
-    alternates: { canonical: `${site.url}/cities/${city.slug}` },
-    openGraph: {
-      title: city.metaTitle,
-      description: city.metaDescription,
-      url: `${site.url}/cities/${city.slug}`,
-      images: [{ url: "/images/og-default.jpg" }],
-    },
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: "website", images: [{ url: hero?.src ?? "/images/og-default.jpg", alt: hero?.alt }] },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
 export default async function CityPage({ params }: Props) {
   const { slug } = await params;
   const city = getCityBySlug(slug);
-  if (!city) notFound();
+  const c = getCityContent(slug);
+  if (!city || !c) notFound();
+
+  const heroPhoto = pickPhotos("residential-exterior", 1, slug)[0] ?? null;
+  const homePhotos = pickPhotos("residential-exterior", 5, slug + "-grid").filter((p) => p.file !== heroPhoto?.file);
+  const commercialPhotos = pickPhotos(["commercial-exterior", "commercial-indoor"], 4, slug + "-com");
+  const nearby = c.nearby.map(getCityBySlug).filter((x): x is NonNullable<typeof x> => !!x);
+  const url = `${site.url}/cities/${city.slug}`;
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Christmas Light Installation",
-    provider: {
-      "@type": "LocalBusiness",
-      name: site.name,
-      telephone: site.phone,
-      url: site.url,
-    },
-    areaServed: {
-      "@type": "City",
-      name: `${city.name}, ${city.region}`,
-    },
-    description: city.heroIntro,
+    "@id": `${url}#service`,
+    name: `Christmas Light Installation in ${c.name}`,
+    serviceType: "Christmas light installation",
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: { "@type": "City", name: `${c.name}, Ontario` },
+    description: c.metaDescription,
+    offers: { "@type": "Offer", priceCurrency: "CAD", price: "700", description: "Residential programs from $700; commercial custom-quoted" },
+    url,
   };
 
   return (
     <>
-      <Script
-        id={`service-schema-${city.slug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+      <script id={`service-schema-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script id={`crumbs-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: "Service Areas", path: "/service-areas" }, { name: c.name }])) }} />
 
-      {/* Hero */}
-      <section className="relative">
-        <div className="grid lg:grid-cols-2">
-          <div className="bg-[color:var(--brand-red)] text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-24 flex items-center">
-            <div className="max-w-xl">
-              <p className="text-white/85 text-xs font-bold uppercase tracking-[0.18em]">Service Area</p>
-              <h1 className="heading-display text-4xl sm:text-5xl mt-3 text-white">
-                Christmas Light<br />Installation in<br />{city.name}
-              </h1>
-              <p className="mt-5 text-lg text-white/95">{city.heroIntro}</p>
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                <Link href="/contact-us" className="btn btn-outline-white">Get a Free {city.name} Quote</Link>
-                <Link href={site.phoneHref} className="btn btn-green">Call {site.phone}</Link>
-              </div>
+      <PhotoHero eyebrow={`Christmas light installers serving ${c.displayName}`} h1={c.h1} intro={c.heroIntro} photo={heroPhoto} formCity={c.name === "London" ? "London" : c.name} source={`city:${slug}`} />
+      <TrustBar />
+
+      <section className="section">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Service Areas", href: "/service-areas" }, { name: c.name }]} />
+          <div className="mt-8 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="eyebrow">{c.displayName}</p>
+              <h2 className="heading-display mt-2 text-3xl">Holiday lighting done for you in {c.name}</h2>
+              <Prose paragraphs={c.intro} className="mt-5" />
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">Neighbourhoods we light in {c.name}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {c.neighbourhoods.map((n) => (
+                  <li key={n} className="rounded-full border border-[color:var(--border)] bg-white px-3 py-1 text-sm text-[color:var(--ink-strong)]">{n}</li>
+                ))}
+              </ul>
             </div>
-          </div>
-          <div className="relative h-72 sm:h-96 lg:min-h-[480px]">
-            <Image
-              src="/images/hero-house.jpg"
-              alt={`Christmas light installation in ${city.name}, Ontario — professional roofline and tree lighting by We Install Christmas Lights`}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              priority
-            />
+            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <div className="card p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">What every {c.name} program includes</p>
+                <div className="mt-4">
+                  <CheckList columns={1} items={["Free design and firm all-in quote", "Commercial-grade LED lights, supplied by us", "Custom-cut roofline, clips only (no staples)", "Mid-season maintenance at no charge", "January takedown and optional storage"]} />
+                </div>
+                <a href="#quote" className="btn btn-red mt-6 w-full">Get a {c.name} quote</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
+              </div>
+              <div className="rounded-2xl bg-[color:var(--bg-cream)] p-6 text-sm text-[color:var(--ink-soft)]">
+                <p className="font-bold text-[color:var(--ink-strong)]">Residential packages</p>
+                <p className="mt-2">Classic from $700 · Festive from $1,400 · Griswold from $2,800. <Link href="/lighting-packages" className="font-bold text-[color:var(--brand-red)] hover:underline">See what is included →</Link></p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* About city */}
-      <section className="section">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">{city.name}, {city.region}</p>
-          <h2 className="heading-display text-3xl mt-3">Local team. Local trust.</h2>
-          <p className="mt-4 text-lg text-[color:var(--ink-soft)] leading-relaxed">{city.description}</p>
-          <p className="mt-3 text-[color:var(--ink-soft)]">{city.localFact}</p>
+      <PhotoGrid photos={homePhotos} title={`Homes we light near ${c.name}`} caption="Real installs by our crews across South-Western Ontario and the GTA." />
 
-          <h3 className="heading-display text-xl mt-10 text-[color:var(--brand-green)]">Neighbourhoods we serve in {city.name}</h3>
-          <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm text-[color:var(--ink-strong)]">
-            {city.neighbourhoods.map((n) => (
-              <li key={n} className="flex items-center gap-2">
-                <CheckIcon className="w-3.5 h-3.5 text-[color:var(--brand-red)]" /> {n}
+      <section className="section">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <SectionList sections={c.sections} />
+        </div>
+      </section>
+
+      {/* Commercial */}
+      <section className="section bg-[color:var(--ink-strong)] text-white">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">For businesses and property managers</p>
+            <h2 className="heading-display mt-3 text-3xl text-white">{c.commercial.heading}</h2>
+            <p className="mt-4 text-[17px] leading-relaxed text-white/85">{c.commercial.text}</p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {c.commercial.examples.map((e) => <li key={e} className="rounded-full border border-white/25 px-3 py-1 text-sm text-white/90">{e}</li>)}
+            </ul>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link href="/commercial-christmas-lighting" className="btn btn-red">Commercial lighting services</Link>
+              <a href="#quote" className="btn btn-outline-white">Request a site visit</a>
+            </div>
+          </div>
+          <ul className="grid grid-cols-2 gap-3">
+            {commercialPhotos.map((p) => (
+              <li key={p.file} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 300px, 50vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" />
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Service highlights */}
+      <PackageGrid />
+      <Testimonials />
+      <FaqSection faqs={c.faq} title={`${c.name} Christmas lighting questions`} id={`faq-${slug}`} />
+      <QuoteSection city={c.name} source={`city:${slug}`} title={`Get your ${c.name} quote`} />
+
       <section className="section bg-[color:var(--bg-soft)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <p className="eyebrow">Our {city.name} Service</p>
-            <h2 className="heading-display text-3xl sm:text-4xl mt-3">Everything you need for a magical season</h2>
-          </div>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              "Free design and quote",
-              "Custom-cut roofline lighting",
-              "Tree, hedge, and yard décor",
-              "Professional-grade LED bulbs",
-              "Mid-season maintenance included",
-              "Takedown and secure storage",
-            ].map((f) => (
-              <div key={f} className="card p-5 flex items-start gap-3">
-                <span className="mt-0.5 w-6 h-6 rounded-full bg-[color:var(--brand-red)] text-white flex items-center justify-center shrink-0">
-                  <CheckIcon className="w-3.5 h-3.5" />
-                </span>
-                <span className="font-semibold text-[color:var(--ink-strong)]">{f}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact form */}
-      <section className="section">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="eyebrow">Free Quote — 24-Hour Response</p>
-            <h2 className="heading-display text-3xl mt-3">Tell us about your {city.name} home</h2>
-          </div>
-          <ContactForm />
-        </div>
-      </section>
-
-      {/* Other service areas */}
-      <section className="section bg-[color:var(--bg-cream)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-2xl text-center">More service areas</h2>
-          <div className="mt-6 flex flex-wrap gap-3 justify-center">
-            {cities.filter((c) => c.slug !== city.slug).map((c) => (
-              <Link
-                key={c.slug}
-                href={`/cities/${c.slug}`}
-                className="px-4 py-1.5 rounded-full bg-white border border-[color:var(--border)] text-sm text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]"
-              >
-                {c.name}
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-display text-2xl">Also serving near {c.name}</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {nearby.map((n) => (
+              <Link key={n.slug} href={`/cities/${n.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">
+                Christmas lights in {n.name}
               </Link>
             ))}
+            <Link href="/service-areas" className="rounded-full border border-dashed border-[color:var(--border)] px-4 py-2 text-sm text-[color:var(--ink-soft)] hover:text-[color:var(--brand-red)]">All service areas →</Link>
           </div>
         </div>
       </section>
+      <CtaBand />
     </>
   );
 }

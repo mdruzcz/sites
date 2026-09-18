@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import Link from "next/link";
-import Image from "next/image";
 import { services, getServiceBySlug, site } from "@/lib/site";
-import { ContactForm } from "@/components/ContactForm";
-import { CheckIcon } from "@/components/icons";
+import { getServiceContent, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
+import { pageTitle } from "@/lib/seo";
+import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs } from "@/components/PageBlocks";
+import { Testimonials } from "@/components/Testimonials";
 
 export const revalidate = 3600;
 
@@ -18,107 +18,109 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
+  const c = getServiceContent(slug);
   if (!service) return {};
+  const title = pageTitle(c?.metaTitle ?? service.name);
+  const description = c?.metaDescription ?? service.description;
+  const url = `${site.url}/services/${service.slug}`;
+  const commercial = service.category === "commercial";
+  const hero = pickPhotos(commercial ? "commercial-exterior" : "residential-exterior", 1, slug)[0];
   return {
-    title: `${service.name} | We Install Christmas Lights`,
-    description: service.description,
-    alternates: { canonical: `${site.url}/services/${service.slug}` },
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, type: "website", images: [{ url: hero?.src ?? "/images/og-default.jpg", alt: hero?.alt }] },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
-  if (!service) notFound();
+  const c = getServiceContent(slug);
+  if (!service || !c) notFound();
+
+  const commercial = service.category === "commercial";
+  const cats = commercial ? ["commercial-exterior", "commercial-indoor"] : slug.includes("takedown") || slug.includes("storage") ? ["install-action", "residential-exterior"] : ["residential-exterior"];
+  const heroPhoto = pickPhotos(cats, 1, slug)[0] ?? null;
+  const photos = pickPhotos([...cats, "install-action"], 5, slug + "-grid").filter((p) => p.file !== heroPhoto?.file);
+  const url = `${site.url}/services/${service.slug}`;
+  const related = services.filter((s) => s.slug !== slug && s.category === service.category).slice(0, 6);
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: service.name,
-    provider: { "@type": "LocalBusiness", name: site.name, telephone: site.phone, url: site.url },
-    description: service.description,
+    "@id": `${url}#service`,
+    name: c.name,
+    serviceType: c.name,
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: ["London", "Kitchener-Waterloo", "Hamilton", "Mississauga", "Greater Toronto Area", "South-Western Ontario"].map((n) => ({ "@type": "Place", name: n })),
+    description: c.metaDescription,
+    url,
   };
 
   return (
     <>
-      <Script id={`service-schema-${service.slug}`} type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script id={`service-schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script id={`crumbs-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: commercial ? "Commercial" : "Residential", path: commercial ? "/commercial-christmas-lighting" : "/residential-services" }, { name: service.shortName }])) }} />
 
-      <section className="relative">
-        <div className="grid lg:grid-cols-2">
-          <div className="bg-[color:var(--brand-red)] text-white px-6 sm:px-10 lg:px-16 py-14 lg:py-24 flex items-center">
-            <div className="max-w-xl">
-              <p className="text-white/85 text-xs font-bold uppercase tracking-[0.18em]">
-                {service.category === "commercial" ? "Commercial Service" : service.category === "residential" ? "Residential Service" : "Add-on Service"}
-              </p>
-              <h1 className="heading-display text-4xl sm:text-5xl mt-3 text-white">{service.name}</h1>
-              <p className="mt-5 text-lg text-white/95">{service.tagline}</p>
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                <Link href="/contact-us" className="btn btn-outline-white">Online Quote</Link>
-                <Link href={site.phoneHref} className="btn btn-green">Call {site.phone}</Link>
+      <PhotoHero eyebrow={commercial ? "Commercial service" : "Residential service"} h1={c.h1} intro={c.heroIntro} photo={heroPhoto} formType={commercial ? "Commercial" : "Residential"} source={`service:${slug}`} ctaLabel={commercial ? "Request a Commercial Quote" : "Get a Free Quote"} />
+      <TrustBar />
+
+      <section className="section">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: commercial ? "Commercial" : "Residential", href: commercial ? "/commercial-christmas-lighting" : "/residential-services" }, { name: service.shortName }]} />
+          <div className="mt-8 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="eyebrow">{service.shortName}</p>
+              <h2 className="heading-display mt-2 text-3xl">{service.tagline}</h2>
+              <Prose paragraphs={c.intro} className="mt-5" />
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">What is included</h3>
+              <div className="mt-4"><CheckList items={c.included} /></div>
+            </div>
+            <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
+              <div className="card p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Pricing</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--ink-strong)]">{c.pricing}</p>
+                <a href="#quote" className="btn btn-red mt-6 w-full">{commercial ? "Request a quote" : "Get my free quote"}</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
               </div>
+              {!commercial && (
+                <div className="rounded-2xl bg-[color:var(--bg-cream)] p-6 text-sm text-[color:var(--ink-soft)]">
+                  <p className="font-bold text-[color:var(--ink-strong)]">Compare packages</p>
+                  <p className="mt-2">Classic, Festive and Griswold, with everything supplied, installed, maintained and removed. <Link href="/lighting-packages" className="font-bold text-[color:var(--brand-red)] hover:underline">See packages →</Link></p>
+                </div>
+              )}
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <PhotoGrid photos={photos} title="Recent work" caption="Every photo is a real install by our crews." />
+
+      <section className="section">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <SectionList sections={c.sections} />
+        </div>
+      </section>
+
+      {!commercial && <Testimonials />}
+      <FaqSection faqs={c.faq} title={`${service.shortName}: common questions`} id={`faq-${slug}`} />
+      <QuoteSection type={commercial ? "Commercial" : "Residential"} source={`service:${slug}`} />
+
+      {related.length > 0 && (
+        <section className="section bg-[color:var(--bg-soft)]">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="heading-display text-2xl">Related services</h2>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {related.map((s) => (
+                <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{s.shortName}</Link>
+              ))}
             </div>
           </div>
-          <div className="relative h-72 sm:h-96 lg:min-h-[480px]">
-            <Image
-              src={service.image ?? "/images/hero-house.jpg"}
-              alt={`${service.name} by We Install Christmas Lights, London Ontario`}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">About this service</p>
-          <h2 className="heading-display text-3xl mt-3">{service.tagline}</h2>
-          <p className="mt-5 text-lg text-[color:var(--ink-soft)] leading-relaxed">{service.description}</p>
-
-          {service.features && service.features.length > 0 && (
-            <>
-              <h3 className="heading-display text-xl mt-10 text-[color:var(--brand-green)]">What&rsquo;s included</h3>
-              <ul className="mt-4 grid sm:grid-cols-2 gap-3">
-                {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3">
-                    <span className="w-6 h-6 rounded-full bg-[color:var(--brand-red)] text-white flex items-center justify-center shrink-0">
-                      <CheckIcon className="w-3.5 h-3.5" />
-                    </span>
-                    <span className="font-semibold text-[color:var(--ink-strong)]">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
-      </section>
-
-      <section className="section bg-[color:var(--bg-soft)]">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="eyebrow">Get a Quote</p>
-            <h2 className="heading-display text-3xl mt-3">Book {service.name} today</h2>
-          </div>
-          <ContactForm />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-2xl text-center">More services</h2>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.filter((s) => s.slug !== service.slug).slice(0, 6).map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="card p-5 hover:shadow-md">
-                <h3 className="heading-display text-base text-[color:var(--brand-green)]">{s.name}</h3>
-                <p className="mt-2 text-sm text-[color:var(--ink-soft)]">{s.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
+      <CtaBand type={commercial ? "Commercial" : "Residential"} />
     </>
   );
 }

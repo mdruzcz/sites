@@ -7,6 +7,7 @@ import { MenuIcon, CloseIcon, ChevronDown } from "./icons";
 import { site } from "@/lib/site";
 
 const COMMERCIAL_LINKS = [
+  { label: "Commercial Christmas Lighting (all services)", href: "/commercial-christmas-lighting" },
   { label: "Commercial Holiday Lighting", href: "/services/commercial-holiday-lighting-services" },
   { label: "Commercial Christmas Light Installation", href: "/services/commercial-christmas-light-installation" },
   { label: "Commercial Christmas Decorators", href: "/services/commercial-christmas-decorators" },
@@ -141,6 +142,10 @@ export function NavBar() {
             </li>
 
             <li>
+              <Link href="/gallery" className="hover:text-[color:var(--brand-red)] transition-colors">Gallery</Link>
+            </li>
+
+            <li>
               <Link href="/faq" className="hover:text-[color:var(--brand-red)] transition-colors">FAQ</Link>
             </li>
           </ul>
@@ -177,6 +182,7 @@ export function NavBar() {
               {CITIES.map((c) => (
                 <MobileLink key={c.href} href={c.href} onClick={() => setMobileOpen(false)}>{c.label}</MobileLink>
               ))}
+              <MobileLink href="/gallery" onClick={() => setMobileOpen(false)}>Gallery</MobileLink>
               <MobileLink href="/faq" onClick={() => setMobileOpen(false)}>FAQ</MobileLink>
               <MobileLink href="/contact-us" onClick={() => setMobileOpen(false)}>Contact Us</MobileLink>
               <li className="pt-3 flex flex-col gap-2 px-3">

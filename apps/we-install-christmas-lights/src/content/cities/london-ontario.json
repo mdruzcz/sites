@@ -1,0 +1,52 @@
+{
+  "slug": "london-ontario",
+  "name": "London",
+  "displayName": "London, Ontario",
+  "metaTitle": "Christmas Light Installation Services in London, Ontario",
+  "metaDescription": "Christmas light installation in London, Ontario from the crew based right here at 300 Marconi Gate. Custom design, 1-day install, free quotes: (519) 266-6796.",
+  "h1": "Christmas Light Installation in London, Ontario",
+  "heroIntro": "We're based at 300 Marconi Gate, so London homes get first pick of install dates and the fastest response if anything needs attention mid-season.",
+  "intro": [
+    "London is our home base. Our crews work out of 300 Marconi Gate, so London jobs never compete with drive time from another city, they're simply first on the route. Since 2016 we've decorated homes across nearly every part of the city, from the older brick two-storeys around Old North and Wortley Village to the newer streets pushing out toward Sunningdale and Lambeth. Being local means faster scheduling, a quicker fix if a strand goes dark in December, and a crew that already knows which blocks have mature trees and which have steep, tricky rooflines to work around.",
+    "Because London is our base city, we can usually offer a wider window of install dates here than in towns further out, including early-October slots for anyone who wants lights up but left dark until the day they choose to switch on. The all-inclusive program covers custom design, professional-grade LED lighting cut to fit your roofline, installation in as little as one day, mid-season maintenance, and takedown in January, with optional off-season storage. Whether it's a bungalow in Westmount or a two-storey near Sunningdale Golf Club, the process and the pricing structure stay consistent from the first quote through takedown."
+  ],
+  "neighbourhoods": ["Old North", "Old South", "Wortley Village", "Byron", "Masonville", "Hyde Park", "Sunningdale", "Lambeth", "Westmount", "Whitehills"],
+  "sections": [
+    {
+      "heading": "Homes in London: what we typically light",
+      "text": "London's housing stock is genuinely mixed, and that shapes every quote. The century homes around Old North and Old South tend to have steep gables, dormers and covered porches that take a clean C9 roofline outline beautifully, often paired with a lit wreath over the front door. Bungalows and side-splits in Westmount and Whitehills usually have simpler, lower rooflines, which makes them a good fit for the Classic package with shrub or hedge lighting added along the front bed. The larger two-storey homes going up in Sunningdale, Hyde Park and Lambeth have taller peaks, bigger footprints and more mature trees, which is where the Festive and Griswold packages tend to make the most visual sense, wrapping trees along the driveway in addition to the roofline."
+    },
+    {
+      "heading": "Timing, weather and scheduling in London",
+      "text": "Because our crews live here, London installs run continuously from early October through the first week of December rather than in scattered blocks. Lake-effect snow off Lake Huron can bring sudden squalls into the area by late November, and wind picks up noticeably once the leaves are down, both of which affect how comfortably a crew can work a tall roofline. We schedule around the forecast rather than push through it. Booking by mid-November is the safest bet to lock in a date before the calendar fills for the season."
+    },
+    {
+      "heading": "Why London homeowners choose us",
+      "text": "Being the home-base city means no travel charge folded into your quote and no waiting behind jobs in other towns. If a bulb or strand fails mid-season, our maintenance response here is typically same-day or next-day rather than slotted into a route days later. Roughly 96% of our customers rebook the following year, and in London that shows up as entire blocks in neighbourhoods like Byron and Masonville going up together season after season. Off-season storage from $100 means the totes never have to live in your garage."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in London",
+    "text": "London's commercial base is broad, and we quote it that way. Plazas and big-box centres along Wonderland Road and Fanshawe Park Road get roofline outlines and entrance features, while the office and retail cluster around Masonville Place and the medical buildings on Sunningdale get tree wraps and lobby décor for a warmer client-facing look. Downtown, around Dundas Place and Richmond Row, storefronts want tight, tidy outlines that read well at street level and survive foot traffic. Car dealerships along Wharncliffe Road and Oxford Street favour large lit displays visible from the road, and hotels near the Highway 401/402 interchange book multi-year programs so the same design goes up automatically every fall. All of it is quoted after a site visit or from photos and plans, with after-hours installation available.",
+    "examples": ["Plazas along Wonderland Road", "Office and medical buildings near Masonville", "Storefronts on Richmond Row and Dundas Place", "Dealership rows on Wharncliffe Road", "Hotels near the 401/402 interchange"]
+  },
+  "faq": [
+    {
+      "q": "Do I need a permit for Christmas lights on my London home?",
+      "a": "No, residential holiday lighting on a single-family home in London does not require a municipal permit. Commercial properties, plazas and buildings managed by a condo or property association may need sign-off from the property manager or board first, and we're happy to coordinate that approval directly as part of putting together your quote."
+    },
+    {
+      "q": "What happens if it snows or ices over before you can get to my roof?",
+      "a": "Our bucket trucks and aerial lifts handle light snow without issue, but heavy ice or high wind can make roof access unsafe for a day or two. We watch the forecast and reschedule proactively rather than risk a slip, then move your install to the next safe window, usually within a day or two."
+    },
+    {
+      "q": "How much does Christmas light installation cost for a typical London home?",
+      "a": "Most two-storey London homes in the 1,800 to 2,800 square foot range land in the Festive package, roughly $1,400 to $2,200, depending on roofline length and whether trees or shrubs are added. Smaller bungalows can start near the Classic package at $700. Every quote is custom, so pricing is confirmed after a look at your home."
+    },
+    {
+      "q": "Can you light the tall mature trees in older neighbourhoods like Old North?",
+      "a": "Yes. Bucket trucks and aerial lifts let us reach the large mature trees common in Old North, Old South and Byron, whether that's wrapping the trunk and lower canopy or focused lighting on a single feature tree. It can be added to any residential package and is priced during your free quote."
+    }
+  ],
+  "nearby": ["london-surrounding-areas", "strathroy", "st-thomas", "ingersoll"]
+}

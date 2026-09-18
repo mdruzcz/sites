@@ -1,0 +1,40 @@
+{
+  "slug": "milton",
+  "name": "Milton",
+  "displayName": "Milton, Ontario",
+  "metaTitle": "Christmas Light Installation in Milton, Halton Region",
+  "metaDescription": "Christmas light installation in Milton, Ontario. Custom design for new-build subdivisions, 1-day install, mid-season maintenance included. Free quote today.",
+  "h1": "Christmas Light Installation in Milton",
+  "heroIntro": "Custom-cut roofline lighting for Milton's fast-growing subdivisions, from Beaty to Ford, installed by an insured crew with bucket trucks for taller homes.",
+  "intro": [
+    "Milton has added more new subdivisions than almost any town in Halton Region over the past decade, and most of those homes have never had professional holiday lighting installed. Our team designs a custom lighting plan for your specific roofline, supplies the LED lights, and installs everything in as little as one day so you're not spending a weekend on a ladder. Because these neighbourhoods share a lot of similar home styles, we can move efficiently between houses on the same street or in the same phase of a subdivision.",
+    "Older parts of Milton, closer to downtown and the Niagara Escarpment, have a mix of established homes with mature trees and larger lots, which take a different design approach than a newer two-storey in Ford or Willmott. Whichever part of Milton you're in, the program is the same: free design and quote, professional-grade lights, mid-season maintenance if anything goes out, January takedown, and optional storage from $100 a season so you never have to find room for totes in the garage."
+  ],
+  "neighbourhoods": ["Beaty", "Coates", "Willmott", "Harrison", "Scott", "Dempsey", "Ford", "Old Milton", "Timberlea", "Bronte Meadows"],
+  "sections": [
+    {
+      "heading": "Homes in Milton: what we typically light",
+      "text": "Beaty, Coates, Willmott, and Ford are made up largely of newer two-storey brick and stone homes with steep gable rooflines, attached garages, and small front-yard trees or shrubs, which is a strong match for a roofline package with a lit tree or wreath at the entry. Harrison, Scott, and Dempsey have a similar new-build feel with denser street layouts and more townhome complexes, where a clean soffit outline reads well from the road without overwhelming a smaller lot. Old Milton and Timberlea, closer to downtown, include older detached homes with more mature landscaping, taller trees, and a bit more roof complexity, so those jobs usually add tree wraps or shrub lighting to the base roofline design."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Milton",
+      "text": "Milton sits at the base of the Niagara Escarpment, and the elevation change near Rattlesnake Point and the Escarpment can bring colder, windier conditions than nearby flatland towns, especially into November. We run installs from early October through the first week of December and group Milton dates with Georgetown and Oakville jobs on the same route through Halton Region. Because Milton's growth means demand keeps climbing every year, booking by late summer gives you the best shot at your preferred install week before our schedule fills by mid-November."
+    },
+    {
+      "heading": "Why Milton homeowners choose us",
+      "text": "New Milton subdivisions often mean new homeowners who haven't dealt with a holiday lighting company before, so we keep it simple: one quote covers design, supply, installation, mid-season fixes, and takedown. Because so many Milton streets share similar home styles, our crews know these rooflines well and can turn around installs quickly without sacrificing a clean, custom look. With a 5.0 Google rating and a 96% year-over-year rebooking rate, most Milton customers set up their lights once and then just call us again each fall."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Milton",
+    "text": "Milton's commercial holiday lighting work centres on the Derry Green Business Park, the retail strip along Steeles Avenue and Highway 25, Main Street in historic downtown Milton, and the office and industrial parks near Highway 401. We install building outline lighting for warehouses and office buildings in Derry Green, lit trees and entrance décor for retail plazas along Steeles, and storefront lighting for the independent shops around Main Street. Because Milton has grown so quickly, several of our commercial clients are property management companies overseeing multiple newer plazas or business parks, and we can run the same design across all of them on a multi-year program. After-hours and overnight installs keep retail and office tenants undisturbed, and every commercial job starts with a site visit or a set of photos and building plans.",
+    "examples": ["Derry Green Business Park buildings", "Steeles Avenue retail plazas", "Main Street storefronts", "Highway 401 industrial parks", "Multi-building property management sites"]
+  },
+  "faq": [
+    { "q": "Can you install lights on a brand-new Milton subdivision home?", "a": "Yes, and it's most of what we do in Milton. New homes are straightforward to design for since rooflines and garages are usually simple, and we can often complete several installs on the same street or phase in a single day, which keeps pricing efficient for newer neighbourhoods." },
+    { "q": "Do you decorate homes near the Niagara Escarpment where it's colder?", "a": "Yes. Homes near Rattlesnake Point and the higher ground on Milton's south side see stronger wind and colder temperatures earlier in the season than flatter parts of town. We use CSA/UL-rated cords and secure clips built for that exposure, and we factor the terrain and elevation into our install schedule and design." },
+    { "q": "How much does Christmas light installation cost for a typical Milton home?", "a": "Most Milton two-storey homes fall into our Classic package from $700 for roofline only, or the Festive package from $1,400 which adds trees, shrubs, and a wreath. Larger executive homes or corner lots with more landscaping usually land closer to $1,800 to $2,500, and every quote is custom to the property." },
+    { "q": "How early should Milton homeowners book given how fast the town is growing?", "a": "Book by late summer if you can. Milton's population growth means more homeowners requesting installs every year, and our western GTA schedule, which also covers Georgetown and Oakville on the same route, fills by mid-November, so earlier bookings get first pick of installation dates and design." }
+  ],
+  "nearby": ["oakville", "georgetown", "mississauga", "brampton"]
+}

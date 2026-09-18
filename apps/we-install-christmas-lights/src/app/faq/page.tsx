@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "FAQ — Christmas Light Installation Questions Answered",
+  title: { absolute: "Christmas Light Installation FAQ" },
   description:
     "Answers to the most-asked Christmas light installation questions: pricing, scheduling, takedown, storage, LED choices and more. London Ontario's #1 holiday lighting team.",
   alternates: { canonical: `${site.url}/faq` },
@@ -88,7 +87,7 @@ const FAQ_SCHEMA = {
 export default function FaqPage() {
   return (
     <>
-      <Script
+      <script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}

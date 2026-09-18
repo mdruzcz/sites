@@ -1,0 +1,52 @@
+{
+  "slug": "ingersoll",
+  "name": "Ingersoll",
+  "displayName": "Ingersoll, Ontario",
+  "metaTitle": "Christmas Light Installation in Ingersoll, Ontario",
+  "metaDescription": "Christmas light installation in Ingersoll, Ontario. Custom design, professional-grade LED lighting, 1-day install and free quotes. Call (519) 266-6796.",
+  "h1": "Christmas Light Installation in Ingersoll, Ontario",
+  "heroIntro": "This small Oxford County town along the Thames River gets the same all-inclusive holiday lighting program as our bigger service-area cities.",
+  "intro": [
+    "Ingersoll is a compact Oxford County town built along the Thames River, with a downtown core near King Street West and a mix of older character homes and newer subdivisions spreading out from there. Many of Ingersoll's streets date back to when the town grew around cheese production and later automotive manufacturing, and that history shows up in the housing: solid brick two-storeys close to downtown, simpler bungalows further out, and a handful of newer builds on the edges of town. Whatever the style, the same design approach applies, custom roofline lighting, tree wraps where it makes sense, and shrub lighting to fill in the front bed.",
+    "Because Ingersoll is a smaller town, our crew can usually move through it efficiently on the same day as nearby Woodstock stops, which helps keep scheduling flexible through the fall. The all-inclusive program is identical to what we offer everywhere else in Oxford County: professional-grade LED lighting cut to your roofline, installation in as little as a day, mid-season maintenance if a strand or bulb fails, and takedown in January. Optional storage from $100 a season means you're not finding space in the garage for totes every spring. Every quote is custom to the home."
+  ],
+  "neighbourhoods": ["Downtown Ingersoll", "Centreville", "King Street West area", "Victoria Park area", "Harris Street area", "Beachville (nearby)", "Salford (nearby)", "Thamesford (nearby)"],
+  "sections": [
+    {
+      "heading": "Homes in Ingersoll: what we typically light",
+      "text": "Ingersoll's older core, near downtown and King Street West, has a good number of solid brick two-storey homes with straightforward gable rooflines that take a clean C9 outline well, often with a lit wreath added over the front door. Streets around Centreville and Victoria Park tend toward smaller bungalows and side-splits, where a roofline outline plus a lit shrub bed does most of the visual work without needing much beyond that. The newer homes on the edges of town toward Harris Street have taller peaks and bigger front yards, giving more room to add a wrapped tree alongside the roofline. Detached garages are common on Ingersoll's larger lots and are usually included in the design so the property reads as one finished display."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Ingersoll",
+      "text": "Ingersoll sits in open Oxford County farmland, so wind tends to pick up earlier in the fall than it does closer to London, and our crews plan anchoring and lift positioning with that in mind. Installs run from early October through the first week of December, and because Ingersoll is a smaller stop, we often pair it with nearby Woodstock on the same route day, which keeps scheduling efficient. Booking by mid-November is still the safest way to guarantee a date before the season's busiest weeks fill up."
+    },
+    {
+      "heading": "Why Ingersoll homeowners choose us",
+      "text": "Ingersoll doesn't have its own dedicated holiday lighting company, so most homeowners here have either handled it themselves off a ladder or gone without tall-roofline options. Our crews already run bucket trucks and aerial lifts through Oxford County most weeks, so an Ingersoll property fits naturally into the schedule at the same price as a comparable home elsewhere in our service area. Mid-season maintenance means a failed strand gets fixed without you climbing anything, and the same 96% year-over-year rebook rate we see fleet-wide holds true here too."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Ingersoll",
+    "text": "Ingersoll's downtown business strip along King Street West is small and walkable, so storefronts there generally want a tidy roofline outline and a lit tree or wreath near the entrance rather than a large-scale display. The automotive manufacturing plant on the edge of town and the businesses that support it sometimes book seasonal décor for office entrances and reception areas, keeping things simple and professional rather than flashy. Churches and community halls around Ingersoll are regular clients for exterior wreaths and a lit tree each season. As with any commercial job, we quote from a site visit or photos and plans, covering design, installation, maintenance, removal and storage as one package, with multi-year programs available.",
+    "examples": ["Storefronts on King Street West", "Office entrances near the manufacturing plant", "Churches and community halls", "Small retail along Thames Street", "Municipal and community buildings"]
+  },
+  "faq": [
+    {
+      "q": "Do I need a permit for Christmas lights on my Ingersoll home?",
+      "a": "No, a standard residential display on a single-family home in Ingersoll does not require a municipal permit. If your property is part of a condo or townhome association, checking with the board first is a good idea, and we're happy to help coordinate that approval when we put together your quote."
+    },
+    {
+      "q": "How does Ingersoll's rural setting affect scheduling or weather?",
+      "a": "Ingersoll sits in open Oxford County farmland, so wind and cold arrive a bit earlier and stronger here than closer to London. We use sturdier anchoring suited to that exposure and watch the forecast closely, moving a scheduled install by a day or two if conditions on a tall roofline aren't safe."
+    },
+    {
+      "q": "What's the typical cost for holiday lighting on an Ingersoll home?",
+      "a": "Most Ingersoll two-storeys land in the Festive range, roughly $1,400 to $1,800, once roofline length and any trees or shrubs are added. Smaller bungalows near Centreville or Victoria Park often start closer to the Classic package at $700. Every price is confirmed after a look at your specific roofline and yard."
+    },
+    {
+      "q": "Can you light larger trees on older Ingersoll properties?",
+      "a": "Yes, our bucket trucks and aerial lifts reach the larger mature trees found on many of the older lots near downtown Ingersoll. We can wrap a trunk and lower canopy or feature a single tree, and this can be added to any residential package when your free quote is put together."
+    }
+  ],
+  "nearby": ["woodstock", "london-ontario", "strathroy", "st-thomas"]
+}

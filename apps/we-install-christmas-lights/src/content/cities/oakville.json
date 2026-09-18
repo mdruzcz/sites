@@ -1,0 +1,40 @@
+{
+  "slug": "oakville",
+  "name": "Oakville",
+  "displayName": "Oakville, Ontario",
+  "metaTitle": "Christmas Light Installation in Oakville, Halton Region",
+  "metaDescription": "Professional Christmas light installation in Oakville, Ontario. Custom roofline design, 1-day install, full-season maintenance. Free quote: (519) 266-6796.",
+  "h1": "Christmas Light Installation in Oakville",
+  "heroIntro": "Custom Christmas lighting for Oakville's lakefront estates, Glen Abbey two-storeys, and Kerr Village homes, installed by an insured crew in as little as one day.",
+  "intro": [
+    "Oakville sits along Lake Ontario in Halton Region, and its housing stretches from century homes near downtown to newer executive subdivisions further north. Our crews travel from London to design and install custom-cut roofline lighting, tree wraps, and shrub lighting for homeowners across Oakville who want a clean, professional result without climbing a ladder or untangling last year's strands. Every job includes free design, professional-grade LED lights supplied by us, and installation completed in as little as a day.",
+    "Because every Oakville property is different, we quote each job individually rather than offering a one-size package. A townhome in Uptown Core needs a different plan than a lakefront estate in Old Oakville, and our design process accounts for roof height, tree size, and how the home is seen from the street. Once installed, our mid-season maintenance covers any bulb or strand issue at no extra cost, and we return in January for takedown, with optional storage available afterward."
+  ],
+  "neighbourhoods": ["Old Oakville", "Bronte Village", "Glen Abbey", "Joshua Creek", "River Oaks", "Iroquois Ridge", "West Oak Trails", "Uptown Core", "Clearview", "Eastlake"],
+  "sections": [
+    {
+      "heading": "Homes in Oakville: what we typically light",
+      "text": "Old Oakville and Bronte Village have mature lakefront properties with tall, mature trees and steep, character rooflines that call for a bucket truck or aerial lift rather than a ladder. Glen Abbey, Joshua Creek, and River Oaks are dominated by two-storey executive homes with multiple roof peaks, three-car garages, and landscaped front entrances, which suit a full roofline-plus-tree package with a lit wreath on the garage or front door. In West Oak Trails and Uptown Core, newer stone-and-stucco builds and townhomes tend to have simpler rooflines, so a clean soffit outline paired with lit shrubs or a small ornamental tree often gives the best result for the budget."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Oakville",
+      "text": "Our crews are regularly working through Halton Region and the western GTA from early October through the first week of December, and Oakville bookings are grouped with nearby Burlington and Milton dates to keep scheduling efficient. Wind off Lake Ontario is noticeably stronger on shoreline streets in Old Oakville and Bronte than it is a few kilometres inland, so we use CSA/UL-rated cords and property-safe clips rated for that exposure. Because schedules fill by mid-November, homeowners who want a specific installation week should book by late summer or early fall."
+    },
+    {
+      "heading": "Why Oakville homeowners choose us",
+      "text": "Homeowners hire us once and then don't think about their lights again until they turn on: we supply the lights, design around your home's actual roofline, and handle maintenance if anything goes out mid-season at no extra charge. Our route through Halton Region on the same weeks each year means an Oakville job isn't a special trip, it's part of a standard circuit, which keeps scheduling and pricing predictable. Optional off-season storage from $100 means you're never digging through a garage full of tangled strands next November, and 96% of our customers rebook the following year."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Oakville",
+    "text": "We install commercial holiday lighting for businesses along Kerr Village, Downtown Oakville's Lakeshore Road strip, the Speers Road and Trafalgar Road commercial corridors, and office buildings near the QEW. Typical work includes building outline and roofline lighting for retail plazas, lit cone trees and tree wraps for parking lot entrances, and lobby or atrium décor for office buildings and medical centres. We also work with condo corporations and HOA-managed communities on coordinated lighting for shared entrances and clubhouse buildings. Installs can be scheduled after hours or overnight to avoid disrupting customers or tenants, and multi-year programs mean the same design gets reinstalled each season without you having to plan it again. Every commercial quote starts with a site visit or a set of photos and property plans.",
+    "examples": ["Retail plazas along Speers Road", "Kerr Village storefronts", "Office buildings near the QEW", "Condo corporation entrances", "Medical and professional buildings"]
+  },
+  "faq": [
+    { "q": "Do you handle condo and HOA approval requirements in Oakville?", "a": "Yes. Many Oakville condo corporations and HOA-managed communities have rules about exterior décor, timers, or shared entrance lighting. We can supply photos, a lighting plan, or product specs ahead of time if your board or property manager needs to sign off before we schedule the install." },
+    { "q": "Can you light the tall trees on older Oakville lots?", "a": "Yes. Many properties in Old Oakville, Bronte, and Glen Abbey have mature trees that are too tall for a ladder. Our crews use bucket trucks and aerial lifts to wrap and light trees safely at height, so nothing gets left unlit just because it's tall or the lot has grown in over the years." },
+    { "q": "How far in advance should I book for the holiday season?", "a": "Book by late summer or early fall if possible. Installs run from early October through the first week of December, and our Halton Region schedule, which also covers Burlington and Milton on the same route, fills by mid-November, so earlier requests get more flexibility on date and design." },
+    { "q": "What does a typical Oakville home spend on lighting?", "a": "Most Oakville homes land in our Festive package range, from $1,400, which covers roofline plus trees and shrubs with a wreath. Smaller homes or condos in roofline-only packages start around $700, while larger estate properties with extensive tree and shrub work often run closer to our Griswold tier at $2,800 and up." }
+  ],
+  "nearby": ["burlington", "milton", "mississauga", "hamilton"]
+}

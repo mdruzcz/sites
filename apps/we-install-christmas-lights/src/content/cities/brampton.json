@@ -1,0 +1,40 @@
+{
+  "slug": "brampton",
+  "name": "Brampton",
+  "displayName": "Brampton, Ontario",
+  "metaTitle": "Christmas Light Installation in Brampton, Peel Region",
+  "metaDescription": "Christmas light installation in Brampton, Ontario. Custom design for every neighbourhood, 1-day install, mid-season maintenance. Free quote: (519) 266-6796.",
+  "h1": "Christmas Light Installation in Brampton",
+  "heroIntro": "Custom Christmas lighting for Brampton, Peel Region's biggest city, from Heart Lake bungalows to Credit Valley estates, installed in as little as a day.",
+  "intro": [
+    "Brampton is one of the largest cities in our western GTA service area, and it covers a wide range of home styles, from established bungalows in Heart Lake and Bramalea to large executive homes in Credit Valley and Castlemore. Our crews travel from London on a regular route through Peel Region to design, supply, and install custom-cut roofline lighting, tree wraps, and shrub lighting for Brampton homeowners. Every job starts with a free design and quote, and installation is usually completed in a single day using professional-grade LED lights we supply.",
+    "Because Brampton's neighbourhoods were built across several different decades, roofline shapes and lot sizes vary a lot between, say, Heritage Heights and Fletcher's Meadow. We design each quote around the specific home rather than a generic package, accounting for garage placement, tree size, and how visible the display will be from the street. After installation, mid-season maintenance covers any bulb or strand issue at no extra cost, and we handle takedown in January, with optional off-season storage from $100 a season."
+  ],
+  "neighbourhoods": ["Heart Lake", "Bramalea", "Springdale", "Fletcher's Meadow", "Sandalwood", "Heritage Heights", "Mount Pleasant", "Credit Valley", "Castlemore", "Downtown Brampton"],
+  "sections": [
+    {
+      "heading": "Homes in Brampton: what we typically light",
+      "text": "Heart Lake and Bramalea are established neighbourhoods with brick bungalows and two-storeys from the 1970s and 80s, often with mature trees and shrubs already in place, which pair well with a roofline outline plus tree lighting. Mount Pleasant and Credit Valley have newer executive homes with larger footprints, multiple roof peaks, and sometimes turret-style features, so those jobs often include more detailed roofline work along with a lit wreath or tree at the entrance. Springdale, Fletcher's Meadow, and Sandalwood are dense newer subdivisions with brick-and-vinyl two-storeys on smaller lots, where a clean, well-fitted soffit outline usually gives the best visual result without overcrowding a compact front yard."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Brampton",
+      "text": "Brampton's size means our crews are often on-site across multiple neighbourhoods in the same week, and we schedule the city alongside nearby Mississauga and Georgetown stops on our western GTA route. Installs run from early October through the first week of December, with lights able to go up unlit and be turned on whenever the homeowner chooses. Because Brampton has a large number of newer subdivisions with growing demand for professional installation, our schedule for the city fills relatively early, so booking in late summer or early fall secures the best choice of dates."
+    },
+    {
+      "heading": "Why Brampton homeowners choose us",
+      "text": "Brampton homeowners deal with a wide range of home styles across the city, and our team's experience designing for everything from Heart Lake bungalows to Credit Valley estates means the plan actually fits the house, not a generic template. We handle the ladder work, the wiring, and the timers, and if anything goes out mid-season we fix it at no extra charge. With a 5.0 Google rating from more than 80 reviews and a 96% year-over-year rebooking rate, most Brampton customers treat their holiday lighting as a set-it-and-forget-it annual service rather than a fall chore."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Brampton",
+    "text": "Brampton's commercial lighting work covers the Downtown Brampton BIA along Main Street, retail centres like Bramalea City Centre and Trinity Common, the Steeles Avenue commercial corridor, and the industrial and office parks near Highway 7 and Airport Road. We install building outline and roofline lighting for retail plazas and office buildings, lit cone trees and giant commercial trees for mall entrances and courtyards, storefront and window lighting for the shops downtown, and garland or wreath décor for banks and professional offices. Given how much of Brampton is industrial and logistics space near the airport corridor, we also work with warehouse and distribution operations that want entrance or office-front lighting for staff and visiting clients. After-hours and overnight installs keep tenants and shoppers undisturbed, and every commercial job starts with a site visit or photos and plans.",
+    "examples": ["Downtown Brampton Main Street storefronts", "Bramalea City Centre and Trinity Common", "Steeles Avenue retail plazas", "Airport Road industrial and office parks", "Bank and professional office buildings"]
+  },
+  "faq": [
+    { "q": "Do you service every neighbourhood in Brampton, or just certain areas?", "a": "We service the full city, from established areas like Heart Lake and Bramalea to newer neighbourhoods like Credit Valley, Mount Pleasant, and Fletcher's Meadow. Because Brampton is large, we schedule installs by area so nearby homes get grouped into the same visit where possible, which keeps pricing efficient." },
+    { "q": "Can you match a lighting design across multiple properties, like a builder or investor owns?", "a": "Yes. If you own or manage several Brampton properties, we can apply the same lighting design and package across all of them and put them on the same multi-year schedule, which is common with property investors and small landlords managing more than one home in the city." },
+    { "q": "How soon do I need to book for a Brampton install?", "a": "Book by late summer or early fall for the best choice of date. Brampton is one of our busier western GTA cities, and our schedule for the city, along with Mississauga and Georgetown on the same route, tends to fill by mid-November each year." },
+    { "q": "What's a typical cost range for Brampton homes?", "a": "Established bungalows and smaller two-storeys usually fall in our Classic to Festive range, from $700 to $1,400. Larger executive homes in areas like Credit Valley or Castlemore, with more roofline and tree work, often run closer to $2,000 to $2,800, and every quote is custom." }
+  ],
+  "nearby": ["mississauga", "georgetown", "milton", "etobicoke"]
+}

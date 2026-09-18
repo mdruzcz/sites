@@ -1,0 +1,40 @@
+{
+  "slug": "georgetown",
+  "name": "Georgetown",
+  "displayName": "Georgetown, Ontario",
+  "metaTitle": "Christmas Light Installation in Georgetown, Halton Hills",
+  "metaDescription": "Christmas light installation in Georgetown, Ontario. Custom design for Halton Hills homes, 1-day install, full-season maintenance included. Free quote today.",
+  "h1": "Christmas Light Installation in Georgetown",
+  "heroIntro": "Custom Christmas lighting for Georgetown and Halton Hills, from downtown heritage homes to the newer streets of Georgetown South, done in a day.",
+  "intro": [
+    "Georgetown is part of Halton Hills, and the town's layout along the Credit River and the Niagara Escarpment gives it more topography and mature tree cover than many flatter GTA suburbs. Our crews travel from London to design and install custom-cut roofline lighting for Georgetown homes, whether that's a century home near Main Street with a steep hip roof or a newer two-storey in Georgetown South. Every job includes free design, professional-grade LED lights we supply, and installation that's usually finished within a single day.",
+    "Because Halton Hills includes semi-rural properties toward Norval, Limehouse, and Stewarttown as well as denser in-town streets, our design process starts by looking at the actual roofline, tree size, and driveway length before we quote. A long rural driveway or a heavily treed lot near Limehouse takes more planning than a compact in-town lot, but the program is the same everywhere we go in Halton Hills: design, install, mid-season maintenance if anything goes out, January takedown, and optional off-season storage."
+  ],
+  "neighbourhoods": ["Downtown Georgetown", "Georgetown South", "Georgetown North", "Delrex", "Park District", "Cedarvale", "Stewarttown", "Norval", "Limehouse", "Mountainview"],
+  "sections": [
+    {
+      "heading": "Homes in Georgetown: what we typically light",
+      "text": "Downtown Georgetown and the streets around Main Street have older century homes with steep, complex rooflines, dormers, and mature trees close to the house, which often calls for careful hand-clipping and a lift for the taller peaks and taller trees. Georgetown South and Georgetown North have newer subdivisions with more consistent two-storey brick homes and simpler rooflines, which suit a straightforward soffit outline paired with a lit shrub bed or small tree. Out toward Norval, Stewarttown, and Limehouse, larger semi-rural lots often have long driveways and mature tree lines, and homeowners there frequently add tree lighting or a lit archway at the driveway entrance to make the property visible from the road."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Georgetown",
+      "text": "Halton Hills sits on higher ground near the Niagara Escarpment, and Georgetown often sees an earlier first frost and colder overnight temperatures than towns closer to Lake Ontario. We run installs from early October through the first week of December, and we group Georgetown dates with nearby Milton and Brampton stops to keep the route efficient. Because our western GTA schedule fills by mid-November each year, Georgetown homeowners who want a specific week, especially for larger rural properties, should book by late summer or early fall."
+    },
+    {
+      "heading": "Why Georgetown homeowners choose us",
+      "text": "Georgetown's mix of heritage homes and newer subdivisions means every quote is genuinely custom, and homeowners appreciate that we design around the actual property rather than a standard package. We supply the lights, handle the climbing, fix any bulb or strand issue at no cost mid-season, and come back in January to take everything down. With a 5.0 Google rating from more than 80 reviews and a 96% year-over-year rebooking rate, most Georgetown customers stop thinking about their lights the moment we flip the switch."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Georgetown",
+    "text": "Georgetown's commercial holiday lighting work is centred on the Downtown Georgetown BIA along Main Street, the retail plazas near Georgetown Marketplace and Trafalgar Road, and the Mountainview Road commercial strip. We install storefront and window lighting for the independent shops downtown, building outline and entrance lighting for plazas and strip malls, and lit trees or garland for office and professional buildings near the Georgetown GO station. Because much of downtown Georgetown is a heritage streetscape, we're careful with mounting methods on older storefronts to avoid any damage to brick or trim. Multi-year programs let a BIA member or property manager set a design once and have it reinstalled every season, and every commercial quote starts with a site visit or photos and plans.",
+    "examples": ["Downtown Georgetown storefronts", "Georgetown Marketplace plazas", "Mountainview Road retail strip", "Professional office buildings near the GO station", "Heritage Main Street shopfronts"]
+  },
+  "faq": [
+    { "q": "Can you light the tall, mature trees on older Georgetown lots?", "a": "Yes. Many properties near downtown Georgetown, Limehouse, and Norval have tall, established trees that are far beyond ladder reach. Our crews use bucket trucks and aerial lifts to wrap and light those trees safely, so a mature property with decades-old growth doesn't have to skip tree lighting just because of its height." },
+    { "q": "Do you service rural properties around Halton Hills, not just in-town?", "a": "Yes. We regularly service semi-rural properties around Norval, Stewarttown, and Limehouse in addition to in-town Georgetown streets. Long driveways and larger lots take more planning, so we factor drive time, access, and the extra length of cord runs into the quote up front." },
+    { "q": "Will you damage the trim on my older Georgetown home?", "a": "No. We use property-safe clips instead of staples or nails, which matters especially on heritage trim and older siding found throughout downtown Georgetown and along Main Street. Lights are custom-cut to the roofline so nothing gets forced or pulled tight against fragile material." },
+    { "q": "What's a typical price range for a Georgetown home?", "a": "Most Georgetown homes fall between our Classic package at $700 for roofline only and our Festive package at $1,400 for roofline plus trees and shrubs. Larger rural properties with long tree lines or extensive landscaping can run closer to $2,000 to $2,800, since every quote reflects the actual property." }
+  ],
+  "nearby": ["milton", "brampton", "oakville"]
+}

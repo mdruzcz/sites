@@ -59,6 +59,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // www and apex both served 200 with no redirect, so Google saw two copies of every page.
+      { source: "/:path*", has: [{ type: "host", value: "www.weinstallchristmaslights.ca" }], destination: "https://weinstallchristmaslights.ca/:path*", permanent: true },
       ...CITY_REDIRECTS,
       ...SERVICE_REDIRECTS,
       ...INDUSTRY_REDIRECTS,

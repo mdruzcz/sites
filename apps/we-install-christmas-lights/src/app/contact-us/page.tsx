@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { QuoteForm } from "@/components/QuoteForm";
 import { site } from "@/lib/site";
 import { PhoneIcon, MailIcon, MapPinIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contact Us | We Install Christmas Lights London Ontario",
+  title: "Contact Us",
   description:
     "Get a free Christmas lighting quote within 24 hours. Call (519) 266-6796 or fill out our contact form. Serving London Ontario, GTA, and Waterloo Region.",
   alternates: { canonical: `${site.url}/contact-us` },
@@ -50,7 +50,7 @@ export default function ContactPage() {
             </div>
           </aside>
           <div className="lg:col-span-2">
-            <ContactForm />
+            <QuoteForm variant="full" />
           </div>
         </div>
       </section>

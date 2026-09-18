@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { Hero } from "@/components/Hero";
+import Link from "next/link";
+import Image from "next/image";
 import { Pitch } from "@/components/Pitch";
 import { PackageGrid } from "@/components/PackageGrid";
 import { Testimonials } from "@/components/Testimonials";
@@ -8,137 +8,193 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 import { TenReasons } from "@/components/TenReasons";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import Link from "next/link";
+import { VideoLoop } from "@/components/VideoLoop";
+import { QuoteForm } from "@/components/QuoteForm";
+import { TrustBar, PhotoGrid, CtaBand, CheckList } from "@/components/PageBlocks";
+import { site, cities, industries } from "@/lib/site";
+import { pickPhotos } from "@/lib/content";
+import videosData from "@/content/xmas-videos.json";
+import { StarIcon } from "@/components/icons";
 
 export const revalidate = 3600;
 
+type Clip = { src: string; alt: string; category: string };
+type Videos = { reel: { src: string; poster: string } | null; clips: Clip[] };
+const videos = videosData as Videos;
+
+const VIDEO_POSTER = "/images/xmas-gallery/condo-building-blue-warm-white-christmas-lights-night-01.jpg";
+const heroVideo = videos.reel ?? (videos.clips.length > 0 ? { src: videos.clips[0].src, poster: VIDEO_POSTER } : null);
+
+const VIDEO_SCHEMA = heroVideo && {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "We Install Christmas Lights — Commercial & Residential Christmas Light Installation",
+  description: "A Christmas light installation by We Install Christmas Lights: professional holiday lighting for homes and businesses across London Ontario, Kitchener-Waterloo, Hamilton and the GTA.",
+  thumbnailUrl: `${site.url}${heroVideo.poster}`,
+  contentUrl: `${site.url}${heroVideo.src}`,
+  uploadDate: "2026-08-25",
+};
+
+const TITLE = "Christmas Light Installation London ON & GTA";
+const DESC = "Professional Christmas light installation for homes and businesses across London Ontario, Kitchener-Waterloo, Hamilton and the GTA. Designed, installed, maintained and removed. Free 24-hour quote.";
+
 export const metadata: Metadata = {
-  title: "Professional Christmas Light Installation | We Install Christmas Lights",
-  description:
-    "Get expert Christmas light installation and holiday decorating services for homes and businesses across South-Western Ontario. Easy, custom holiday lighting in as little as 1 day.",
-  alternates: { canonical: "https://weinstallchristmaslights.ca" },
+  title: { absolute: TITLE },
+  description: DESC,
+  alternates: { canonical: site.url },
+  openGraph: { title: TITLE, description: DESC, url: site.url, type: "website", images: [{ url: "/images/og-default.jpg" }] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESC },
 };
 
 const FAQS = [
-  {
-    question: "Is there a cost for storing our decorations for next year?",
-    answer:
-      "Yes, we offer a convenient storage service starting at $100 to ensure your holiday decorations are safely stored and ready year after year — beautifully decorated homes for the holidays without the hassle of storing them yourself.",
-  },
-  {
-    question: "Will we need to hire an electrician?",
-    answer:
-      "In most cases hiring an electrician is not necessary for our home decoration packages. Our experienced team handles the electrical aspects of the installation. For more elaborate setups, additional power sources may be required and we can guide you through the process.",
-  },
-  {
-    question: "Are the lights and decorations you provide different from what I can buy locally?",
-    answer:
-      "Absolutely. All our Christmas lights and decorations are specifically manufactured to our high standards. Our lights feature longer-life bulbs and our greenery is lush and fuller. We use CSA and UL-rated outdoor extension cords and property-friendly installation accessories.",
-  },
-  {
-    question: "Can you install and store Christmas decorations that I have already purchased?",
-    answer:
-      "We can only provide warranty and guarantee workmanship on lights and decorations that we supply. We are unable to install or store decorations that are not part of our inventory.",
-  },
-  {
-    question: "How much does it cost to have our Christmas lights installed and taken down?",
-    answer:
-      "Since every home is unique, and each client has their own preferences, we offer customized solutions to fit every budget. Pricing for our home decoration projects is tailored to the specific property and your desired level of decoration.",
-  },
-  {
-    question: "How many homes have you decorated over the years, and what areas do you service?",
-    answer:
-      "We've adorned hundreds of homes in and around London Ontario, the Greater Toronto Area, and Waterloo Region with colorful and festive decorations for the holidays. See our service-areas page for a full list of cities.",
-  },
-  {
-    question: "Do we need to be present during the installation?",
-    answer:
-      "No. Our highly trained and efficient installation crew can complete the setup while you are away, ensuring a seamless and convenient experience for you.",
-  },
-  {
-    question: "What other decorations do you offer besides lights?",
-    answer:
-      "In addition to our stunning lights we offer lush wreaths, pre-lit garlands and various sizes of bows. If there are specific decorations you desire, we're happy to assist in sourcing them for you.",
-  },
-  {
-    question: "What type of lights do you use?",
-    answer:
-      "We use energy-efficient LED lights that emit a brilliant glow. Our selection includes traditional colors such as red, green, yellow, blue, and clear, allowing you to create the festive atmosphere you envision.",
-  },
-  {
-    question: "Which parts of my home can you decorate with lights?",
-    answer:
-      "We customize your lighting design specifically to your home. Our skilled team adorns windows, trees, hedges, bushes, and even the facias and ridges of your roof — transforming your entire property into a winter wonderland.",
-  },
-  {
-    question: "When do you take down the lights?",
-    answer:
-      "Our goal is a convenient and unobtrusive experience. We schedule the take-down once our team can safely access rooftops and trees considering the unpredictable Canadian winter weather. Simply unplug your timer when you decide you no longer want them illuminated.",
-  },
-  {
-    question: "How far in advance should we book your services?",
-    answer:
-      "Booking as early as possible is recommended since the Christmas decorating season is relatively short. Our schedule fills quickly, with availability becoming limited as early as mid-November. Contact us soon to secure your preferred time slot.",
-  },
+  { question: "How much does professional Christmas light installation cost?", answer: "Most homes land between $700 and $3,500 all-in. Classic roofline programs start at $700, Festive (roofline plus trees, shrubs and a wreath) from $1,400, and full-property Griswold programs from $2,800. Every quote is custom to your home and includes the lights, install, maintenance and takedown." },
+  { question: "Do you supply the lights?", answer: "Yes. We install only commercial-grade LED lighting that we supply and custom-cut to your roofline, which is how we can guarantee it all season. We cannot install or store lights you have bought elsewhere." },
+  { question: "How far in advance should I book?", answer: "As early as you can. Installs run from early October and the calendar is usually full by mid-November. We can install early and leave the display off until you want it on." },
+  { question: "What happens if a strand goes out?", answer: "Call or email and we fix it at no charge. Mid-season maintenance is included in every program, residential and commercial." },
+  { question: "When do the lights come down?", answer: "Takedowns run through January into early February, as soon as roofs and trees are safe to access. Unplug the timer whenever you are done with the display and we handle the rest, including storage if you want it." },
+  { question: "Do you work with businesses?", answer: "Yes. Plazas, offices, hotels, restaurants, dealerships, banks, malls, condo corporations, churches and municipalities. Commercial installs run after hours with insured, WSIB-compliant crews and are custom quoted from a site visit." },
 ];
 
-const FAQ_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.map((f) => ({
-    "@type": "Question",
-    name: f.question,
-    acceptedAnswer: { "@type": "Answer", text: f.answer },
-  })),
-};
-
 export default function HomePage() {
+  const heroPhoto = pickPhotos("residential-exterior", 1, "home-hero")[0] ?? null;
+  const homePhotos = pickPhotos("residential-exterior", 5, "home-grid").filter((p) => p.file !== heroPhoto?.file);
+  const commercialPhotos = pickPhotos(["commercial-exterior", "commercial-indoor"], 4, "home-commercial");
+  const featuredIndustries = industries.filter((i) => ["christmas-decorators-for-retail", "christmas-decorators-for-office-lobbies", "christmas-decorators-for-hotels", "christmas-decorators-for-car-dealerships", "christmas-decorator-for-malls", "christmas-decorators-for-hoas"].includes(i.slug));
+
   return (
     <>
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
-      />
+      {VIDEO_SCHEMA && <script id="video-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(VIDEO_SCHEMA) }} />}
 
-      <Hero />
+      {/* Hero: photo + quote form */}
+      <section className="relative isolate overflow-hidden bg-[color:var(--ink-strong)] text-white">
+        {heroPhoto && <Image src={heroPhoto.src} alt={heroPhoto.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={heroPhoto.blurDataURL} className="object-cover opacity-60" />}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#022B1A]/90 via-[#022B1A]/70 to-[#022B1A]/25" aria-hidden />
+        <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white/90">
+              <StarIcon className="h-3.5 w-3.5 text-[#FFD43B]" /> 2026 Service Excellence Award winner
+            </p>
+            <h1 className="heading-display mt-5 text-4xl leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+              Christmas Lights, Installed.<br />Homes and Businesses.
+            </h1>
+            <p className="mt-5 max-w-xl text-lg text-white/90 lg:text-xl">
+              Custom-designed, professionally installed, maintained all season and taken down in January. Serving London, Kitchener-Waterloo, Hamilton and the GTA since 2016.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
+              <span className="flex items-center gap-1.5"><StarIcon className="h-4 w-4 text-[#FFD43B]" /> 5.0 on Google · 80+ reviews</span>
+              <span>Fully insured · WSIB</span>
+              <span>Installed in as little as 1 day</span>
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="#quote" className="btn btn-red lg:hidden">Get a Free Quote</a>
+              <Link href="/commercial-christmas-lighting" className="btn btn-outline-white">Commercial lighting →</Link>
+              <a href={site.phoneHref} className="btn btn-green">Call {site.phone}</a>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <QuoteForm variant="hero" source="home-hero" heading="Get your free quote" subheading="Residential or commercial. Reply within 24 hours." />
+          </div>
+        </div>
+      </section>
+      <TrustBar />
+
       <Pitch />
       <PackageGrid />
+
+      {/* Commercial band */}
+      <section className="section bg-[color:var(--ink-strong)] text-white" id="commercial">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">Commercial Christmas lighting</p>
+              <h2 className="heading-display mt-3 text-3xl text-white sm:text-4xl">Plazas, offices, hotels, dealerships, malls. Lit after hours, maintained all season.</h2>
+              <p className="mt-4 text-[17px] leading-relaxed text-white/85">
+                Property managers hire us because nobody on their team has to touch a ladder. We design from a site visit, install with our own lifts outside business hours, fix any fault at no charge, then remove and store everything in January. One contractor, one invoice, multi-year pricing available.
+              </p>
+              <div className="mt-6">
+                <CheckList columns={2} items={["Building outlines and rooflines", "Tree wraps and lit cone trees", "Giant indoor and outdoor trees", "Lobby, atrium and entrance décor", "Insured, WSIB-compliant crews", "Multi-property programs"]} />
+              </div>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link href="/commercial-christmas-lighting" className="btn btn-red">See commercial services</Link>
+                <a href="#quote" className="btn btn-outline-white">Request a site visit</a>
+              </div>
+            </div>
+            <ul className="grid grid-cols-2 gap-3">
+              {commercialPhotos.map((p) => (
+                <li key={p.file} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                  <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 300px, 50vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <ul className="mt-10 flex flex-wrap gap-2">
+            {featuredIndustries.map((i) => (
+              <li key={i.slug}><Link href={`/industries/${i.slug}`} className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-sm text-white/90 hover:border-[color:var(--brand-red)] hover:text-white">{i.shortName}</Link></li>
+            ))}
+            <li><Link href="/commercial-christmas-lighting" className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white">All property types →</Link></li>
+          </ul>
+        </div>
+      </section>
+
+      <PhotoGrid photos={homePhotos} title="Homes we lit last season" caption="Roofline, trees, shrubs and entrances across South-Western Ontario and the GTA. Every photo is our own install." />
       <Testimonials />
       <ProcessSteps />
       <TenReasons />
       <ServicesGrid />
 
-      <section className="section bg-[color:var(--bg-cream)]">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <p className="eyebrow">Have a Question?</p>
-            <h2 className="heading-display text-3xl sm:text-4xl mt-3">
-              Christmas Light Installation FAQs
-            </h2>
+      {heroVideo && (
+        <section className="section bg-[color:var(--brand-green)] text-white">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">See our work</p>
+              <h2 className="heading-display mt-3 text-3xl text-white sm:text-4xl">Christmas light installations in motion</h2>
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+              <VideoLoop src={heroVideo.src} poster={heroVideo.poster} className="aspect-video w-full rounded-2xl object-cover" />
+            </div>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href="/gallery" className="btn btn-outline-white">View full gallery</Link>
+              <a href="#quote" className="btn btn-red">Get a free quote</a>
+            </div>
           </div>
-          <FAQAccordion faqs={FAQS} />
-          <div className="mt-10 text-center">
-            <Link href="/faq" className="btn btn-outline-green">See all FAQs</Link>
+        </section>
+      )}
+
+      {/* Service areas */}
+      <section className="section">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow">Service areas</p>
+              <h2 className="heading-display mt-2 text-3xl">From London to the GTA</h2>
+            </div>
+            <Link href="/service-areas" className="text-sm font-bold text-[color:var(--brand-green)] hover:text-[color:var(--brand-red)]">All areas →</Link>
           </div>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {cities.map((c) => (
+              <li key={c.slug}><Link href={`/cities/${c.slug}`} className="inline-block rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--ink-strong)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{c.name}</Link></li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Final CTA band */}
-      <section className="bg-[color:var(--brand-red)] text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
-          <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl text-white">
-            Ready for the Most Magical Season Yet?
-          </h2>
-          <p className="mt-4 text-white/90 max-w-2xl mx-auto">
-            Free quote within 24 hours. 5★ rated. London Ontario family-owned. We handle everything — design, install, maintenance, takedown, storage.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/contact-us" className="btn btn-outline-white">Get a Free Quote</Link>
-            <Link href="tel:+15192666796" className="btn btn-green">Call (519) 266-6796</Link>
+      {/* Quote */}
+      <section className="section bg-[color:var(--bg-cream)]" id="quote">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
+          <div>
+            <p className="eyebrow">Free quote · 24-hour reply</p>
+            <h2 className="heading-display mt-2 text-3xl sm:text-4xl">Tell us about your home or property</h2>
+            <p className="mt-4 text-[17px] leading-relaxed text-[color:var(--ink-soft)]">Pick residential or commercial, send the address and what you have in mind. You get a custom design and a firm all-in price, and we hold a date for you.</p>
+            <div className="mt-8">
+              <FAQAccordion faqs={FAQS} />
+              <Link href="/faq" className="mt-4 inline-block text-sm font-bold text-[color:var(--brand-green)] hover:text-[color:var(--brand-red)]">All questions answered →</Link>
+            </div>
           </div>
+          <QuoteForm variant="full" source="home-quote" />
         </div>
       </section>
+
+      <CtaBand />
     </>
   );
 }

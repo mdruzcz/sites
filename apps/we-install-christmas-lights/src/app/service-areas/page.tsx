@@ -5,7 +5,7 @@ import { cities, site } from "@/lib/site";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Service Areas — Christmas Light Installation Across South-Western Ontario",
+  title: { absolute: "Service Areas: Christmas Lights Across SW Ontario" },
   description:
     "We Install Christmas Lights serves London Ontario, the GTA, Waterloo Region, and beyond. Browse our full list of service areas.",
   alternates: { canonical: `${site.url}/service-areas` },

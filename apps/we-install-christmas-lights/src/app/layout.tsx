@@ -24,7 +24,7 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Professional Christmas Light Installation | We Install Christmas Lights",
+    default: "Christmas Light Installation London ON & GTA | We Install Christmas Lights",
     template: "%s | We Install Christmas Lights",
   },
   description:
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-CA" className={`${montserrat.variable} ${sourceSans.variable} antialiased`}>
       <body>
-        <Script
+        <script
           id="org-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -83,9 +83,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               areaServed: [
                 "London", "Strathroy", "Woodstock", "Waterloo", "St. Thomas", "Milton", "Oakville",
                 "Mississauga", "Cambridge", "Guelph", "Georgetown", "Etobicoke", "Burlington",
-                "Hamilton", "Ingersoll", "Kitchener", "Brampton", "Ancaster"
+                "Hamilton", "Ingersoll", "Kitchener", "Brampton", "Ancaster", "Middlesex County", "Elgin County", "Oxford County"
               ].map((n) => ({ "@type": "City", name: n })),
               sameAs: Object.values(site.social),
+              foundingDate: "2016",
+              award: "2026 Service Excellence Award, Best Holiday & Christmas Lighting (Mississauga)",
+              knowsAbout: ["Christmas light installation", "Commercial holiday lighting", "Permanent LED lighting", "Holiday decorating"],
+              openingHours: "Mo-Fr 08:00-18:00",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: site.googleRating,

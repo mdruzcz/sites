@@ -1,0 +1,52 @@
+{
+  "slug": "st-thomas",
+  "name": "St. Thomas",
+  "displayName": "St. Thomas, Ontario",
+  "metaTitle": "Christmas Light Installation in St. Thomas, Ontario",
+  "metaDescription": "Christmas light installation in St. Thomas, Ontario. Custom roofline design, 1-day install, insured and WSIB-compliant crews. Free quote: (519) 266-6796.",
+  "h1": "Christmas Light Installation in St. Thomas, Ontario",
+  "heroIntro": "Known as the Railway City, St. Thomas has been on our route since 2017, from the century homes near Talbot Street to the new builds off Wellington Road.",
+  "intro": [
+    "St. Thomas, Elgin County's seat and long known as the Railway City, has a genuine mix of housing that keeps our design work varied here. Around downtown and Talbot Street, older two-storey homes and character properties have detailed rooflines and covered porches that suit a full C9 outline. Out toward Lake Margaret, Lynhurst and the newer streets near Yarmouth Centre, homes tend to be larger with steeper peaks and more open yards, giving room for tree and shrub lighting alongside the roofline. Recent industrial growth on the edges of town has also brought newer subdivisions into the mix.",
+    "The all-inclusive program runs the same way in St. Thomas as it does everywhere in our service area: custom design based on your roofline and yard, professional-grade LED lighting supplied and installed by us, installation in as little as a day, mid-season maintenance if anything fails, and takedown in January. We've been working in St. Thomas since 2017, so our crew has a good sense of which streets have mature trees worth wrapping and which newer builds are still filling in their landscaping. Optional storage from $100 a season means you're not finding space for totes in the garage every spring."
+  ],
+  "neighbourhoods": ["Downtown St. Thomas", "Talbot Street area", "Lake Margaret", "Lynhurst", "Pinafore Park area", "Yarmouth Centre", "Southwold (nearby)", "Union (nearby)"],
+  "sections": [
+    {
+      "heading": "Homes in St. Thomas: what we typically light",
+      "text": "St. Thomas has a strong stock of older character homes near downtown and Talbot Street, many with the kind of ornate gables and trim that were common when the town was booming as a railway hub, and those details take a full roofline outline especially well. Lynhurst and the streets around Pinafore Park tend toward mid-century bungalows and side-splits, where a clean roofline plus a lit shrub bed along the front usually does the job. In Lake Margaret and the newer development near Yarmouth Centre, larger two-storey homes on bigger lots have more roofline and often a young tree or two that will fill in over the coming years, which is where we tend to recommend the Festive package to cover both the house and the yard."
+    },
+    {
+      "heading": "Timing, weather and scheduling in St. Thomas",
+      "text": "St. Thomas sits close enough to Lake Erie that late-fall weather can turn quickly, with wind and the occasional lake-effect squall arriving a bit earlier than it does further inland around London. Our installs run from early October through the first week of December, and we watch the forecast closely for St. Thomas stops given that lake influence. Because the town has grown quickly in recent years, calendar slots here have been filling earlier each season, so booking by early to mid-November is the safer bet."
+    },
+    {
+      "heading": "Why St. Thomas homeowners choose us",
+      "text": "St. Thomas families have trusted us since 2017, long enough that we've built a real sense of the town's streets and housing styles rather than treating it as an unfamiliar stop. Being insured and WSIB-compliant matters here as much as anywhere, especially on the older two-and-a-half storey homes downtown where roof access needs a proper aerial lift rather than a ladder. The same 96% year-over-year rebook rate we see across our service area holds true in St. Thomas, and mid-season maintenance means a failed strand gets fixed without you climbing anything."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in St. Thomas",
+    "text": "Downtown St. Thomas along Talbot Street has a walkable, historic main-street feel, and storefronts there typically want a tidy roofline outline with a wreath or lit garland over the entrance to match that character. The retail cluster near Elgin Mall and Wellington Road sees more vehicle traffic, so displays there tend to be larger and more visible from the road, including tree wraps and lit entrance features. St. Thomas has attracted significant new industrial and manufacturing investment in recent years, and the office and support businesses that come with that growth increasingly book seasonal décor for their buildings and parking areas. Churches and community organizations around town are also regular clients for exterior wreaths and a lit tree. All commercial work starts with a site visit or photos and plans, quoted as one package covering design through storage.",
+    "examples": ["Storefronts along Talbot Street", "Retail near Elgin Mall and Wellington Road", "Office buildings tied to new industrial growth", "Churches and community halls", "Plazas near the Highway 3 corridor"]
+  },
+  "faq": [
+    {
+      "q": "Does my St. Thomas home need a permit for holiday lights?",
+      "a": "No, a typical residential display on a single-family home in St. Thomas does not require a municipal permit. If you're in a townhome complex or condo-managed property, we'd suggest checking with the board first, and we can help coordinate that approval directly as part of putting together your free custom quote."
+    },
+    {
+      "q": "How does St. Thomas's lake-effect weather affect scheduling?",
+      "a": "Being closer to Lake Erie than London, St. Thomas can see wind and lake-effect flurries arrive a little earlier in the fall. Our crews track the forecast for each stop and will shift a St. Thomas install by a day or two if conditions make roof access unsafe, rather than pushing through poor weather."
+    },
+    {
+      "q": "What's the typical cost for Christmas light installation in St. Thomas?",
+      "a": "Most St. Thomas two-storey homes fall in the Festive range, roughly $1,400 to $2,200, depending on roofline length and whether trees or shrubs are included. Smaller bungalows near Lynhurst or Pinafore Park often start closer to the Classic package at $700. Every price is confirmed after a free custom quote."
+    },
+    {
+      "q": "Can you light large, older trees near downtown St. Thomas?",
+      "a": "Yes, our bucket trucks and aerial lifts handle the larger mature trees common on older lots near downtown and Talbot Street. We can wrap a trunk and canopy or feature a single tree, and this can be added to any residential or commercial package when we put together your quote."
+    }
+  ],
+  "nearby": ["london-ontario", "london-surrounding-areas", "strathroy", "ingersoll"]
+}

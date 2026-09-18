@@ -1,0 +1,40 @@
+{
+  "slug": "mississauga",
+  "name": "Mississauga",
+  "displayName": "Mississauga, Ontario",
+  "metaTitle": "Christmas Light Installation in Mississauga, Peel Region",
+  "metaDescription": "Christmas light installation in Mississauga, Ontario. Custom design from Port Credit to Meadowvale, 1-day install, full-season maintenance. Free quote today.",
+  "h1": "Christmas Light Installation in Mississauga",
+  "heroIntro": "Mississauga's 2026 Service Excellence Award winner for Best Holiday & Christmas Lighting, decorating homes from Port Credit to Meadowvale in as little as a day.",
+  "intro": [
+    "Mississauga is one of the biggest cities in our service area, and its housing ranges from lakefront character homes in Port Credit and Lorne Park to condo towers near City Centre and family subdivisions in Meadowvale and Churchill Meadows. Every Mississauga customer gets the same process: free custom design, professional-grade LED lights we supply, and installation completed in as little as one day, no matter which part of the city you're in.",
+    "Because Mississauga covers so much ground and so many housing types, our design approach changes street to street. A Streetsville Village heritage home needs different planning than an Erin Mills two-storey or a Clarkson bungalow, so every quote starts by looking at the actual property rather than applying a generic package. Once your lights are up, mid-season maintenance covers any bulb or strand issue at no extra charge, and we return in January for takedown, with optional off-season storage available afterward."
+  ],
+  "neighbourhoods": ["Port Credit", "Lorne Park", "Streetsville", "Erin Mills", "Meadowvale", "Clarkson", "Cooksville", "Applewood", "Lakeview", "Churchill Meadows", "City Centre"],
+  "sections": [
+    {
+      "heading": "Homes in Mississauga: what we typically light",
+      "text": "Port Credit and Lorne Park have some of the largest, most mature lots in the city, with lakefront character homes, tall trees, and long stretches of hedge that suit a full roofline, tree, and shrub package. Erin Mills, Meadowvale, and Churchill Meadows are dominated by two-storey executive homes on newer streets with fairly consistent rooflines and attached garages, which work well with a clean soffit outline and a lit tree or wreath at the entry. Streetsville and Cooksville mix older post-war bungalows with in-fill homes, so roof shapes vary more and we adjust the design per house, while condo and townhome complexes near City Centre and Applewood often stick to entrance and balcony-safe lighting arranged with the property manager."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Mississauga",
+      "text": "Mississauga's lakefront neighbourhoods, particularly Port Credit, Lorne Park, and Lakeview, get noticeably stronger wind off Lake Ontario than inland areas like Meadowvale or Churchill Meadows, which affects how we secure longer light runs and larger tree wraps. We run installs from early October through the first week of December across Peel Region and group Mississauga jobs with nearby Etobicoke and Brampton stops. Given how many homes we service in the city, our Mississauga schedule tends to fill earlier than smaller towns, so booking by late summer gives you the widest choice of installation date."
+    },
+    {
+      "heading": "Why Mississauga homeowners choose us",
+      "text": "Mississauga homeowners get a straightforward program: we design, supply, install, maintain, and remove everything, so you aren't buying lights, storing totes, or climbing onto a roof. Our large existing footprint across Mississauga neighbourhoods means efficient scheduling and consistent pricing whether you're in a Port Credit character home or a Meadowvale subdivision. A 5.0 Google rating from over 80 reviews and a 96% rebooking rate show that once Mississauga homeowners set their lighting up with us, they tend to keep it going every year."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Mississauga",
+    "text": "Mississauga's commercial lighting work spans Square One and the surrounding City Centre office towers, the Port Credit Village BIA, the Streetsville Village BIA, retail plazas along Hurontario Street, and the Airport Corporate Centre office parks near Pearson. We install building outline and roofline lighting for office towers and retail plazas, giant commercial Christmas trees and tree wraps for entrances and courtyards, lobby and atrium décor for corporate buildings, and storefront lighting for BIA members in Port Credit and Streetsville. Multi-year programs are common with property management companies overseeing several buildings around City Centre or the airport corridor, since it lets one design get reinstalled every season without a new plan each year. After-hours and overnight installs keep retail traffic and office tenants undisturbed, and every commercial quote starts with a site visit or photos and building plans.",
+    "examples": ["City Centre office towers near Square One", "Port Credit Village storefronts", "Streetsville Village BIA shops", "Hurontario Street retail plazas", "Airport Corporate Centre office parks"]
+  },
+  "faq": [
+    { "q": "How does scheduling work in a city as large as Mississauga?", "a": "We group installs by neighbourhood cluster, so homes in Port Credit and Lorne Park might be scheduled on a different day than Meadowvale or Churchill Meadows, keeping our crews efficient across the city. You'll get a date range when you book, and we confirm the specific day as your window approaches." },
+    { "q": "Do you coordinate with condo boards near Square One and City Centre?", "a": "Yes. Many condo towers and managed properties near City Centre have rules about balcony décor, exterior lighting, or shared entrance displays. We can provide product specs or a lighting plan for your board or property manager to review before we schedule anything on site." },
+    { "q": "Can you light large lakefront properties in Port Credit or Lorne Park?", "a": "Yes. These neighbourhoods often have mature trees, long hedges, and larger rooflines than average, and our crews use bucket trucks and aerial lifts to handle the height and scale safely, whether that's a full roofline and tree package or an extensive shrub display across a wide lot." },
+    { "q": "What does a typical Mississauga home spend on Christmas lights?", "a": "Given the range of home sizes across Mississauga, pricing spans from our Classic package at $700 for roofline only, through our Festive package from $1,400 for roofline plus trees and shrubs, up to larger estate-style properties in the $2,800-plus Griswold range, with every quote custom to the home." }
+  ],
+  "nearby": ["oakville", "brampton", "etobicoke", "milton"]
+}

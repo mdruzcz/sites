@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { FacebookIcon, InstagramIcon, PinterestIcon, YoutubeIcon, PhoneIcon, MailIcon, MapPinIcon } from "./icons";
+import { AwardBadge } from "@/components/award-badge";
 
 export function Footer() {
   return (
@@ -85,7 +86,8 @@ export function Footer() {
       </div>
 
       <div className="border-t border-[color:var(--border)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-[color:var(--ink-soft)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[color:var(--ink-soft)]">
+          <AwardBadge />
           <div>© {new Date().getFullYear()} We Install Christmas Lights. All rights reserved.</div>
           <div className="flex flex-wrap gap-4">
             <Link href="/disclaimer" className="hover:text-[color:var(--brand-red)]">Disclaimer</Link>
