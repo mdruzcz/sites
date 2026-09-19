@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["clsx", "tailwind-merge"],
   },
+  async redirects() {
+    return [{ source: "/visualizer", destination: "/planner", permanent: true }];
+  },
 };
 
 export default nextConfig;

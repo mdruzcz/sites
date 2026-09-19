@@ -167,8 +167,8 @@ export function CityPage({ city }: Props) {
           <Link href="/cabinets" className="btn-secondary">
             Browse the full catalog (58 SKUs) →
           </Link>
-          <Link href="/visualizer" className="btn-primary">
-            Build your kitchen with our visualizer
+          <Link href="/planner" className="btn-primary">
+            Design your kitchen in 3D
           </Link>
         </div>
       </section>

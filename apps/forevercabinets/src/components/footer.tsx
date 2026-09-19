@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Wordmark } from "./wordmark";
 import { CITIES } from "@/lib/cities";
 import { SITE } from "@/lib/utils";
+import { AwardBadge } from "@/components/award-badge";
 
 export function Footer() {
   return (
@@ -33,7 +34,7 @@ export function Footer() {
               Buying From Us
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/visualizer" className="hover:text-white">Kitchen Visualizer</Link></li>
+              <li><Link href="/planner" className="hover:text-white">Kitchen Planner</Link></li>
               <li><Link href="/our-kitchens" className="hover:text-white">Kitchens We&rsquo;ve Built</Link></li>
               <li><Link href="/service-area" className="hover:text-white">Service Area (SW Ontario)</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>
@@ -82,7 +83,10 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs opacity-60 md:flex-row md:justify-between">
+        <div className="mt-10 pt-6 border-t border-white/10 flex justify-center">
+          <AwardBadge />
+        </div>
+        <div className="mt-4 flex flex-col gap-2 text-xs opacity-60 md:flex-row md:justify-between">
           <p>© {new Date().getFullYear()} Forever Cabinets. All rights reserved.</p>
           <p>{SITE.shippingNote} · {SITE.leadTime} lead time · {SITE.returnsWindow}</p>
         </div>

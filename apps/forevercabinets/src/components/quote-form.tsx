@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
+import Link from "next/link";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useUI } from "./ui-context";
 import { submitQuote } from "@/lib/actions/quote";
+import { clearAttachment, readAttachment, type DesignAttachment } from "@/lib/planner/attach";
 
 declare global {
   interface Window {
@@ -16,8 +18,13 @@ export function QuoteForm() {
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
+  const [design, setDesign] = useState<DesignAttachment | null>(null);
 
   const turnstileKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  useEffect(() => {
+    setDesign(readAttachment());
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,6 +40,7 @@ export function QuoteForm() {
       notes: String(form.get("notes") || ""),
       turnstile_token: token || undefined,
       lines,
+      design: design ? { name: design.name, link: design.link, summary: design.summary, notes: design.notes } : undefined,
     };
     if (turnstileKey && !token) {
       setError("Please complete the captcha first.");
@@ -44,9 +52,11 @@ export function QuoteForm() {
           window.dataLayer.push({
             event: "quote_submitted",
             item_count: lines.length,
+            has_design: !!design,
           });
         }
         clear();
+        clearAttachment();
         await submitQuote(payload);
       } catch (err) {
         const msg = err instanceof Error ? err.message : "Something went wrong.";
@@ -57,6 +67,31 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {design && (
+        <div className="flex items-start gap-3 rounded-sm border border-[var(--color-brass)] bg-[var(--color-cream-warm)] p-3 text-sm">
+          <span aria-hidden="true">📐</span>
+          <div className="min-w-0 flex-1">
+            <p className="font-medium text-[var(--color-navy)]">Kitchen plan attached: {design.name}</p>
+            <p className="mt-0.5 text-[12px] text-[var(--color-ink-soft)]">{design.summary}</p>
+            <p className="mt-1 text-[12px]">
+              <Link href={design.link} className="underline underline-offset-2" target="_blank">
+                Open plan
+              </Link>
+              <span className="mx-2 text-[var(--color-line)]">|</span>
+              <button
+                type="button"
+                className="underline underline-offset-2"
+                onClick={() => {
+                  clearAttachment();
+                  setDesign(null);
+                }}
+              >
+                Remove
+              </button>
+            </p>
+          </div>
+        </div>
+      )}
       <div className="grid gap-4 sm:grid-cols-2">
         <Field name="name" label="Your name" required autoComplete="name" />
         <Field name="email" label="Email" type="email" required autoComplete="email" />

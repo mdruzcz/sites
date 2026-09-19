@@ -12,7 +12,7 @@ const NAV = [
   { href: TYPE_PATH.drawer, label: "Drawer" },
   { href: TYPE_PATH.wall, label: "Wall" },
   { href: TYPE_PATH.accessory, label: "Accessories" },
-  { href: "/visualizer", label: "Visualizer" },
+  { href: "/planner", label: "Kitchen Planner" },
   { href: "/our-cabinets", label: "Our Cabinets" },
 ];
 

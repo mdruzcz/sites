@@ -16,7 +16,18 @@ type SubmitInput = {
   notes?: string;
   turnstile_token?: string;
   lines: Array<{ sku: string; qty: number }>;
+  design?: { name: string; link: string; summary: string; notes: string[] };
 };
+
+function escapeHtml(s: string) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function designNotesText(d: NonNullable<SubmitInput["design"]>): string {
+  const lines = [`Kitchen planner design: ${d.name}`, `Open: ${d.link}`, d.summary];
+  if (d.notes?.length) lines.push("Design notes:", ...d.notes.map((n) => `- ${n}`));
+  return lines.join("\n");
+}
 
 async function verifyTurnstile(token: string | undefined): Promise<boolean> {
   if (!token) return process.env.NODE_ENV !== "production"; // dev mode — skip
@@ -62,6 +73,17 @@ export async function submitQuote(input: SubmitInput) {
 
   const subtotal = items.reduce((s, { line, cabinet }) => s + cabinet.price_cad * line.qty, 0);
 
+  const design =
+    input.design && typeof input.design.link === "string" && /^https?:\/\//.test(input.design.link)
+      ? {
+          name: String(input.design.name ?? "My kitchen").slice(0, 80),
+          link: input.design.link.slice(0, 6000),
+          summary: String(input.design.summary ?? "").slice(0, 1000),
+          notes: Array.isArray(input.design.notes) ? input.design.notes.map((n) => String(n).slice(0, 500)).slice(0, 50) : [],
+        }
+      : undefined;
+  const notesForDb = [input.notes?.trim(), design ? designNotesText(design) : ""].filter(Boolean).join("\n\n") || null;
+
   const supabase = createServerSupabase();
   const requestId = crypto.randomUUID();
   const { error: reqErr } = await supabase.from("fc_quote_requests").insert({
@@ -72,7 +94,7 @@ export async function submitQuote(input: SubmitInput) {
     postal_code: input.postal_code?.trim() || null,
     address: input.address?.trim() || null,
     referrer_site: input.referrer_site?.trim() || null,
-    notes: input.notes?.trim() || null,
+    notes: notesForDb,
     subtotal_cad: subtotal,
   });
 
@@ -106,7 +128,17 @@ export async function submitQuote(input: SubmitInput) {
       ${input.postal_code ? `<p style="margin:0 0 8px 0;">Postal code: ${input.postal_code}</p>` : ""}
       ${input.address ? `<p style="margin:0 0 8px 0;">Address: ${input.address}</p>` : ""}
       ${input.referrer_site ? `<p style="margin:0 0 8px 0;">Kitchen purchased from: ${input.referrer_site}</p>` : ""}
-      ${input.notes ? `<p style="margin:16px 0 8px 0;"><strong>Notes:</strong><br>${input.notes.replace(/\n/g, "<br>")}</p>` : ""}
+      ${input.notes ? `<p style="margin:16px 0 8px 0;"><strong>Notes:</strong><br>${escapeHtml(input.notes).replace(/\n/g, "<br>")}</p>` : ""}
+      ${
+        design
+          ? `<div style="margin:16px 0;padding:12px;border:1px solid #c5a059;background:#f5f0e6;">
+        <p style="margin:0 0 4px 0;"><strong>Kitchen planner design attached:</strong> ${escapeHtml(design.name)}</p>
+        <p style="margin:0 0 4px 0;font-size:13px;">${escapeHtml(design.summary)}</p>
+        <p style="margin:0 0 4px 0;"><a href="${escapeHtml(design.link)}">Open the design in the planner</a></p>
+        ${design.notes.length ? `<p style="margin:8px 0 0 0;font-size:13px;"><strong>Design notes:</strong></p><ul style="margin:4px 0 0 0;padding-left:18px;font-size:13px;">${design.notes.map((n) => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : ""}
+      </div>`
+          : ""
+      }
       <table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:14px;">
         <thead><tr style="background:#f0e7dc;text-align:left;">
           <th style="padding:8px 12px;">SKU</th>
@@ -141,6 +173,7 @@ export async function submitQuote(input: SubmitInput) {
           <tr><td colspan="2" style="padding:12px;text-align:right;font-weight:600;">Estimated subtotal</td><td style="padding:12px;text-align:right;font-weight:600;">${formatCad(subtotal)}</td></tr>
         </tbody>
       </table>
+      ${design ? `<p>Your kitchen plan <strong>${escapeHtml(design.name)}</strong> came through with the request — <a href="${escapeHtml(design.link)}">open it any time</a>.</p>` : ""}
       <p>Next we&rsquo;ll confirm stock, quote freight to your postal code, and send you a final total. No payment is needed yet.</p>
       <p style="margin-top:24px;">— ${SITE.name}<br><span style="color:#666;font-size:13px;">${SITE.email}</span></p>
     </div>`;

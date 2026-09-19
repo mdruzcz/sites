@@ -73,8 +73,8 @@ export function CatalogGrid({ cabinets, lockedType }: Props) {
         {filtered.length} {filtered.length === 1 ? "cabinet" : "cabinets"}
       </p>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((c) => (
-          <CabinetCard key={c.sku} cabinet={c} />
+        {filtered.map((c, i) => (
+          <CabinetCard key={c.sku} cabinet={c} priority={i < 3} />
         ))}
       </div>
     </>

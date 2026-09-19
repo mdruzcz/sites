@@ -5,9 +5,9 @@
     "name": "9\" Base Cabinet",
     "type": "base",
     "description": "9\" Base Cabinet",
-    "width_in": 9.0,
+    "width_in": 9,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 324,
     "features": [],
     "in_stock": true,
@@ -23,13 +23,14 @@
     "name": "12\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 12.0,
+    "width_in": 12,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 257,
     "features": [],
     "in_stock": true,
     "image_urls": [
+      "/images/cabinets/b12/1.webp",
       "/images/cabinets/b12/nelson-1.webp",
       "/images/cabinets/b12/nelson-2.webp"
     ]
@@ -40,9 +41,9 @@
     "name": "15\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 15.0,
+    "width_in": 15,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 302,
     "features": [],
     "in_stock": true,
@@ -58,9 +59,9 @@
     "name": "18\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 18.0,
+    "width_in": 18,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 313,
     "features": [],
     "in_stock": true,
@@ -76,9 +77,9 @@
     "name": "18\" Waste Basket Base",
     "type": "base",
     "description": "Waste Basket Cabinet",
-    "width_in": 18.0,
+    "width_in": 18,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 523,
     "features": [
       "waste-basket"
@@ -96,9 +97,9 @@
     "name": "21\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 21.0,
+    "width_in": 21,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 335,
     "features": [],
     "in_stock": true,
@@ -114,9 +115,9 @@
     "name": "24\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 24.0,
+    "width_in": 24,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 371,
     "features": [],
     "in_stock": true,
@@ -132,9 +133,9 @@
     "name": "24\" Base Easy Corner",
     "type": "base",
     "description": null,
-    "width_in": 24.0,
+    "width_in": 24,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 468,
     "features": [
       "corner"
@@ -152,9 +153,9 @@
     "name": "27\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 27.0,
+    "width_in": 27,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 397,
     "features": [],
     "in_stock": true,
@@ -170,9 +171,9 @@
     "name": "30\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 30.0,
+    "width_in": 30,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 419,
     "features": [],
     "in_stock": true,
@@ -188,9 +189,9 @@
     "name": "33\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 33.0,
+    "width_in": 33,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 461,
     "features": [],
     "in_stock": true,
@@ -206,9 +207,9 @@
     "name": "33\" Lazy Susan Base",
     "type": "base",
     "description": null,
-    "width_in": 33.0,
+    "width_in": 33,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 641,
     "features": [
       "lazy-susan"
@@ -226,9 +227,9 @@
     "name": "33\" Sink Base",
     "type": "base",
     "description": null,
-    "width_in": 33.0,
+    "width_in": 33,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 382,
     "features": [
       "sink"
@@ -246,9 +247,9 @@
     "name": "36\" Base Cabinet",
     "type": "base",
     "description": null,
-    "width_in": 36.0,
+    "width_in": 36,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 484,
     "features": [],
     "in_stock": true,
@@ -264,9 +265,9 @@
     "name": "36\" Lazy Susan Base",
     "type": "base",
     "description": null,
-    "width_in": 36.0,
+    "width_in": 36,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 714,
     "features": [
       "lazy-susan"
@@ -284,9 +285,9 @@
     "name": "36\" Sink Base",
     "type": "base",
     "description": null,
-    "width_in": 36.0,
+    "width_in": 36,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 413,
     "features": [
       "sink"
@@ -304,9 +305,9 @@
     "name": "42–45\" Blind Base Corner",
     "type": "base",
     "description": null,
-    "width_in": 42.0,
+    "width_in": 42,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 466,
     "features": [
       "corner"
@@ -324,9 +325,9 @@
     "name": "12\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 12.0,
+    "width_in": 12,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 397,
     "features": [
       "drawer"
@@ -344,9 +345,9 @@
     "name": "15\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 15.0,
+    "width_in": 15,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 420,
     "features": [
       "drawer"
@@ -364,9 +365,9 @@
     "name": "18\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 18.0,
+    "width_in": 18,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 443,
     "features": [
       "drawer"
@@ -384,9 +385,9 @@
     "name": "21\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 21.0,
+    "width_in": 21,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 467,
     "features": [
       "drawer"
@@ -404,9 +405,9 @@
     "name": "24\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 24.0,
+    "width_in": 24,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 510,
     "features": [
       "drawer"
@@ -424,9 +425,9 @@
     "name": "30\" Drawer Base",
     "type": "drawer",
     "description": null,
-    "width_in": 30.0,
+    "width_in": 30,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 575,
     "features": [
       "drawer"
@@ -444,13 +445,20 @@
     "name": "9\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 9.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 9,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 189,
     "features": [],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/w0936/1.jpg",
+      "/images/cabinets/w0936/2.jpg",
+      "/images/cabinets/w0936/3.jpg",
+      "/images/cabinets/w0936/4.jpg",
+      "/images/cabinets/w0936/5.jpg",
+      "/images/cabinets/w0936/6.jpg"
+    ]
   },
   {
     "sku": "W1236",
@@ -458,9 +466,9 @@
     "name": "12\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 12.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 12,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 224,
     "features": [],
     "in_stock": true,
@@ -476,9 +484,9 @@
     "name": "12\" × 36\" Wall End Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 12.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 12,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 378,
     "features": [],
     "in_stock": true,
@@ -494,9 +502,9 @@
     "name": "12\" × 36\" Glass Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 12.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 12,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 220,
     "features": [
       "glass-door"
@@ -514,9 +522,9 @@
     "name": "15\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 15.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 15,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 247,
     "features": [],
     "in_stock": true,
@@ -532,9 +540,9 @@
     "name": "15\" × 36\" Glass Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 15.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 15,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 241,
     "features": [
       "glass-door"
@@ -552,9 +560,9 @@
     "name": "18\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 18.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 18,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 268,
     "features": [],
     "in_stock": true,
@@ -570,9 +578,9 @@
     "name": "18\" × 36\" Glass Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 18.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 18,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 274,
     "features": [
       "glass-door"
@@ -590,9 +598,9 @@
     "name": "21\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 21.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 21,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 261,
     "features": [],
     "in_stock": true,
@@ -608,9 +616,9 @@
     "name": "24\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 24.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 24,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 302,
     "features": [],
     "in_stock": true,
@@ -626,9 +634,9 @@
     "name": "24\" × 36\" Wall Diagonal Corner",
     "type": "wall",
     "description": null,
-    "width_in": 24.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 24,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 439,
     "features": [
       "corner"
@@ -646,9 +654,9 @@
     "name": "24\" × 36\" Wall Diagonal Corner — Glass",
     "type": "wall",
     "description": null,
-    "width_in": 24.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 24,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 472,
     "features": [
       "corner",
@@ -667,18 +675,18 @@
     "name": "24\" × 90\" × 24\" Tall Pantry",
     "type": "wall",
     "description": null,
-    "width_in": 24.0,
-    "height_in": 90.0,
-    "depth_in": 24.0,
+    "width_in": 24,
+    "height_in": 90,
+    "depth_in": 24,
     "price_cad": 879,
     "features": [
       "tall"
     ],
     "in_stock": true,
     "image_urls": [
+      "/images/cabinets/wp249024/1.webp",
       "/images/cabinets/wp249024/nelson-1.jpg",
       "/images/cabinets/wp249024/nelson-2.jpg",
-      "/images/cabinets/wp249024/1.webp",
       "/images/cabinets/wp249024/2.webp",
       "/images/cabinets/wp249024/3.webp"
     ]
@@ -689,9 +697,9 @@
     "name": "27\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 27.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 27,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 321,
     "features": [],
     "in_stock": true,
@@ -707,9 +715,9 @@
     "name": "27\" × 36\" Wall Blind Corner",
     "type": "wall",
     "description": null,
-    "width_in": 27.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 27,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 284,
     "features": [
       "corner"
@@ -727,15 +735,16 @@
     "name": "27\" × 36\" Wall Microwave Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 27.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 27,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 285,
     "features": [
       "microwave"
     ],
     "in_stock": true,
     "image_urls": [
+      "/images/cabinets/wmc2736/rta-1.webp",
       "/images/cabinets/wmc2736/1.jpg",
       "/images/cabinets/wmc2736/2.jpg",
       "/images/cabinets/wmc2736/3.jpg"
@@ -747,16 +756,19 @@
     "name": "Under-Cabinet Stem Glass Holder",
     "type": "wall",
     "description": null,
-    "width_in": 30.0,
+    "width_in": 30,
     "height_in": 1.5,
-    "depth_in": 12.0,
+    "depth_in": 12,
     "price_cad": 51,
     "features": [
       "glass-door",
       "stemware"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/stem-glass-holder/1.jpg",
+      "/images/cabinets/stem-glass-holder/2.jpg"
+    ]
   },
   {
     "sku": "W3018",
@@ -764,13 +776,14 @@
     "name": "30\" × 18\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 30.0,
-    "height_in": 18.0,
-    "depth_in": 12.0,
+    "width_in": 30,
+    "height_in": 18,
+    "depth_in": 12,
     "price_cad": 271,
     "features": [],
     "in_stock": true,
     "image_urls": [
+      "/images/cabinets/w3018/rta-1.jpg",
       "/images/cabinets/w3018/1.jpg",
       "/images/cabinets/w3018/2.webp",
       "/images/cabinets/w3018/3.webp"
@@ -782,9 +795,9 @@
     "name": "30\" × 18\" Over-Fridge Wall (24\" depth)",
     "type": "wall",
     "description": null,
-    "width_in": 30.0,
-    "height_in": 18.0,
-    "depth_in": 24.0,
+    "width_in": 30,
+    "height_in": 18,
+    "depth_in": 24,
     "price_cad": 246,
     "features": [],
     "in_stock": true,
@@ -800,13 +813,14 @@
     "name": "30\" × 36\" Wall Cabinet",
     "type": "wall",
     "description": null,
-    "width_in": 30.0,
-    "height_in": 36.0,
-    "depth_in": 12.0,
+    "width_in": 30,
+    "height_in": 36,
+    "depth_in": 12,
     "price_cad": 333,
     "features": [],
     "in_stock": true,
     "image_urls": [
+      "/images/cabinets/w3036/rta-1.jpg",
       "/images/cabinets/w3036/1.jpg",
       "/images/cabinets/w3036/2.jpg",
       "/images/cabinets/w3036/3.jpg"
@@ -818,9 +832,9 @@
     "name": "30\" × 18\" Glass Wine Rack Wall",
     "type": "wall",
     "description": "Glass Wine Rack",
-    "width_in": 30.0,
-    "height_in": 18.0,
-    "depth_in": 12.0,
+    "width_in": 30,
+    "height_in": 18,
+    "depth_in": 12,
     "price_cad": 216,
     "features": [
       "wine-rack",
@@ -839,9 +853,9 @@
     "name": "36\" × 18\" Over-Fridge Wall (24\" depth)",
     "type": "wall",
     "description": null,
-    "width_in": 36.0,
-    "height_in": 18.0,
-    "depth_in": 24.0,
+    "width_in": 36,
+    "height_in": 18,
+    "depth_in": 24,
     "price_cad": 290,
     "features": [],
     "in_stock": true,
@@ -859,14 +873,18 @@
     "description": null,
     "width_in": 0.75,
     "height_in": 0.75,
-    "depth_in": 96.0,
+    "depth_in": 96,
     "price_cad": 33,
     "features": [
       "corner",
       "moulding"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/outside-corner-mouldin/1.webp",
+      "/images/cabinets/outside-corner-mouldin/2.webp",
+      "/images/cabinets/outside-corner-mouldin/3.webp"
+    ]
   },
   {
     "sku": "Scribe Moulding",
@@ -875,14 +893,18 @@
     "type": "accessory",
     "description": null,
     "width_in": 0.75,
-    "height_in": 96.0,
+    "height_in": 96,
     "depth_in": 0.25,
     "price_cad": 28,
     "features": [
       "moulding"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/scribe-moulding/1.png",
+      "/images/cabinets/scribe-moulding/2.webp",
+      "/images/cabinets/scribe-moulding/3.webp"
+    ]
   },
   {
     "sku": "Light Rail Molding",
@@ -891,14 +913,17 @@
     "type": "accessory",
     "description": null,
     "width_in": 1.375,
-    "height_in": 96.0,
-    "depth_in": 2.0,
+    "height_in": 96,
+    "depth_in": 2,
     "price_cad": 62,
     "features": [
       "moulding"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/light-rail-molding/1.png",
+      "/images/cabinets/light-rail-molding/2.webp"
+    ]
   },
   {
     "sku": "Corbel 8x12",
@@ -906,13 +931,15 @@
     "name": "Decorative Corbel — 8\" × 12\"",
     "type": "accessory",
     "description": null,
-    "width_in": 3.0,
-    "height_in": 12.0,
-    "depth_in": 8.0,
+    "width_in": 3,
+    "height_in": 12,
+    "depth_in": 8,
     "price_cad": 67,
     "features": [],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/corbel-8x12/1.png"
+    ]
   },
   {
     "sku": "DWP3",
@@ -920,15 +947,19 @@
     "name": "Dishwasher End Panel",
     "type": "accessory",
     "description": null,
-    "width_in": 3.0,
+    "width_in": 3,
     "height_in": 34.5,
-    "depth_in": 24.0,
+    "depth_in": 24,
     "price_cad": 100,
     "features": [
       "panel"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/dwp3/1.webp",
+      "/images/cabinets/dwp3/2.webp",
+      "/images/cabinets/dwp3/3.webp"
+    ]
   },
   {
     "sku": "WF 3*96",
@@ -936,15 +967,18 @@
     "name": "Filler Strip — 3\" × 96\"",
     "type": "accessory",
     "description": null,
-    "width_in": 3.0,
-    "height_in": 96.0,
+    "width_in": 3,
+    "height_in": 96,
     "depth_in": 0.75,
     "price_cad": 69,
     "features": [
       "filler"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/wf-3-96/1.png",
+      "/images/cabinets/wf-3-96/2.png"
+    ]
   },
   {
     "sku": "WF330",
@@ -952,15 +986,19 @@
     "name": "Filler Strip — 3\" × 30\"",
     "type": "accessory",
     "description": null,
-    "width_in": 3.0,
-    "height_in": 30.0,
+    "width_in": 3,
+    "height_in": 30,
     "depth_in": 0.75,
     "price_cad": 24,
     "features": [
       "filler"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/wf330/1.png",
+      "/images/cabinets/wf330/2.webp",
+      "/images/cabinets/wf330/3.webp"
+    ]
   },
   {
     "sku": "WF336",
@@ -968,15 +1006,19 @@
     "name": "Filler Strip — 3\" × 36\"",
     "type": "accessory",
     "description": null,
-    "width_in": 3.0,
-    "height_in": 36.0,
+    "width_in": 3,
+    "height_in": 36,
     "depth_in": 0.75,
     "price_cad": 23,
     "features": [
       "filler"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/wf336/1.png",
+      "/images/cabinets/wf336/2.webp",
+      "/images/cabinets/wf336/3.webp"
+    ]
   },
   {
     "sku": "TK8(5MM)",
@@ -985,14 +1027,18 @@
     "type": "accessory",
     "description": null,
     "width_in": 4.5,
-    "height_in": 96.0,
+    "height_in": 96,
     "depth_in": 0.25,
     "price_cad": 33,
     "features": [
       "toe-kick"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/tk8-5mm/1.png",
+      "/images/cabinets/tk8-5mm/2.webp",
+      "/images/cabinets/tk8-5mm/3.webp"
+    ]
   },
   {
     "sku": "SAMPLE-DOOR-WS",
@@ -1008,7 +1054,9 @@
       "sample"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/sample-door/1.jpg"
+    ]
   },
   {
     "sku": "RRP24 (12mm)",
@@ -1016,15 +1064,19 @@
     "name": "Refrigerator Return Panel — 24\" × 96\"",
     "type": "accessory",
     "description": null,
-    "width_in": 24.0,
-    "height_in": 96.0,
+    "width_in": 24,
+    "height_in": 96,
     "depth_in": 0.5,
     "price_cad": 174,
     "features": [
       "panel"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/rrp24-12mm/1.webp",
+      "/images/cabinets/rrp24-12mm/2.webp",
+      "/images/cabinets/rrp24-12mm/3.webp"
+    ]
   },
   {
     "sku": "48\"*96\"(5mm)",
@@ -1032,15 +1084,17 @@
     "name": "Cabinet End Panel — 48\" × 96\"",
     "type": "accessory",
     "description": null,
-    "width_in": 48.0,
-    "height_in": 96.0,
+    "width_in": 48,
+    "height_in": 96,
     "depth_in": 0.25,
     "price_cad": 176,
     "features": [
       "panel"
     ],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/48-96-5mm/1.png"
+    ]
   },
   {
     "sku": "Touch up Kit",
@@ -1054,6 +1108,8 @@
     "price_cad": 35,
     "features": [],
     "in_stock": true,
-    "image_urls": []
+    "image_urls": [
+      "/images/cabinets/touch-up-kit/1.webp"
+    ]
   }
 ]

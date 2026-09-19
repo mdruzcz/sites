@@ -7,7 +7,7 @@ import { DimensionDiagram } from "./dimension-diagram";
 import type { Cabinet } from "@/lib/catalog";
 import { formatCad, formatDim } from "@/lib/utils";
 
-export function CabinetCard({ cabinet }: { cabinet: Cabinet }) {
+export function CabinetCard({ cabinet, priority = false }: { cabinet: Cabinet; priority?: boolean }) {
   const { addItem } = useUI();
   const dims = [
     cabinet.width_in != null ? `W ${formatDim(cabinet.width_in)}` : null,
@@ -16,37 +16,47 @@ export function CabinetCard({ cabinet }: { cabinet: Cabinet }) {
   ]
     .filter(Boolean)
     .join("  ·  ");
+  const photo = cabinet.image_urls[0];
 
   return (
     <article className="group flex flex-col overflow-hidden border border-[var(--color-line)] bg-white transition-shadow hover:shadow-[0_4px_24px_rgba(13,27,42,0.08)]">
       <Link
         href={`/cabinets/${cabinet.slug}`}
-        className="relative block aspect-square overflow-hidden bg-[var(--color-sandstone-soft)]"
+        className="relative block aspect-square overflow-hidden bg-white"
         aria-label={`View ${cabinet.name}`}
       >
-        {/* Primary view: dimension diagram. Hover swaps to real photo when available. */}
-        <DimensionDiagram
-          width={cabinet.width_in}
-          height={cabinet.height_in}
-          depth={cabinet.depth_in}
-          type={cabinet.type}
-          className="h-full w-full transition-opacity duration-200 group-hover:opacity-0"
-        />
-        {cabinet.image_urls.length > 0 && (
-          <div className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        {photo ? (
+          <>
+            {/* Primary view: real product photo. Hover swaps to the dimension drawing. */}
             <Image
-              src={cabinet.image_urls[0]}
+              src={photo}
               alt={`${cabinet.name} — White Shaker cabinet, front view`}
               fill
-              className="object-contain"
+              priority={priority}
+              className="object-contain p-3 transition-opacity duration-200 group-hover:opacity-0"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
-          </div>
-        )}
-        {cabinet.image_urls.length > 0 && (
-          <span className="absolute bottom-2 right-2 rounded-sm bg-[var(--color-navy)]/85 px-2 py-0.5 text-[10px] uppercase tracking-widest text-white opacity-100 transition-opacity group-hover:opacity-0">
-            Hover for photo
-          </span>
+            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <DimensionDiagram
+                width={cabinet.width_in}
+                height={cabinet.height_in}
+                depth={cabinet.depth_in}
+                type={cabinet.type}
+                className="h-full w-full"
+              />
+            </div>
+            <span className="absolute bottom-2 right-2 rounded-sm bg-[var(--color-navy)]/85 px-2 py-0.5 text-[10px] uppercase tracking-widest text-white transition-opacity group-hover:opacity-0">
+              Hover for dimensions
+            </span>
+          </>
+        ) : (
+          <DimensionDiagram
+            width={cabinet.width_in}
+            height={cabinet.height_in}
+            depth={cabinet.depth_in}
+            type={cabinet.type}
+            className="h-full w-full"
+          />
         )}
       </Link>
 

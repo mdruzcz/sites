@@ -32,7 +32,7 @@ export default function OurKitchensPage() {
         <p className="mt-3 max-w-2xl text-[var(--color-ink-soft)]">
           {photos.length > 0
             ? `${photos.length} ${photos.length === 1 ? "kitchen" : "kitchens"} built with Forever Cabinets — White Shaker, plywood box, 36″ wall cabinets as standard.`
-            : "Customer install photos are coming soon. In the meantime, browse the catalog or build a kitchen with the visualizer."}
+            : "Customer install photos are coming soon. In the meantime, browse the catalog or design a kitchen in the 3D planner."}
         </p>
       </header>
 
@@ -45,7 +45,7 @@ export default function OurKitchensPage() {
             We&rsquo;re building a gallery of customer kitchens. Be one of the first — order today and we&rsquo;ll feature your install.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/visualizer" className="btn-primary">Build your kitchen</Link>
+            <Link href="/planner" className="btn-primary">Build your kitchen</Link>
             <Link href="/cabinets" className="btn-secondary">Browse the catalog</Link>
           </div>
         </div>

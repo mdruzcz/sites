@@ -17,23 +17,24 @@ type Slot =
 
 export function PdpGallery({ cabinet }: Props) {
   const photos = cabinet.image_urls ?? [];
+  // Real product photos lead; the annotated photo and dimension drawing follow.
   const slots: Slot[] = [
-    { kind: "diagram", label: "Dimension drawing" },
-    ...(photos[0]
-      ? [{ kind: "annotated" as const, src: photos[0], label: "Measurements" }]
-      : []),
     ...photos.map((src, i) => ({
       kind: "photo" as const,
       src,
       label: i === 0 ? "Front view" : i === 1 ? "In a kitchen" : `View ${i + 1}`,
     })),
+    ...(photos[0]
+      ? [{ kind: "annotated" as const, src: photos[0], label: "Measurements" }]
+      : []),
+    { kind: "diagram", label: "Dimension drawing" },
   ];
   const [active, setActive] = useState(0);
   const a = slots[active];
 
   return (
     <div>
-      <div className="aspect-square overflow-hidden border border-[var(--color-line)] bg-[var(--color-sandstone-soft)]">
+      <div className="aspect-square overflow-hidden border border-[var(--color-line)] bg-white">
         {a.kind === "diagram" ? (
           <DimensionDiagram
             width={cabinet.width_in}
@@ -58,7 +59,7 @@ export function PdpGallery({ cabinet }: Props) {
               alt={`${cabinet.name} — ${a.label}`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
+              className="object-contain p-4"
               priority={active === 0}
             />
           </div>

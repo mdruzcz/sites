@@ -8,7 +8,7 @@ export function TrustStrip() {
     { icon: "💬", text: "Talk to a human" },
   ];
   return (
-    <div className="border-y border-[var(--color-line)] bg-[var(--color-sandstone-soft)]">
+    <div className="no-print border-y border-[var(--color-line)] bg-[var(--color-sandstone-soft)]">
       <div className="mx-auto max-w-6xl px-4 py-2.5">
         <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-[13px] text-[var(--color-ink-soft)]">
           {items.map((i) => (

@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/accessories",
     "/our-cabinets",
     "/our-kitchens",
-    "/visualizer",
+    "/planner",
     "/service-area",
     "/how-it-works",
     "/shipping-returns",

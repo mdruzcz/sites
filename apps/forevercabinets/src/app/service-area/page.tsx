@@ -133,7 +133,7 @@ export default function ServiceAreaPage() {
         </div>
 
         <div className="mt-12 flex flex-wrap gap-3">
-          <Link href="/visualizer" className="btn-primary">Build your kitchen</Link>
+          <Link href="/planner" className="btn-primary">Build your kitchen</Link>
           <Link href="/cabinets" className="btn-secondary">Browse the catalog</Link>
         </div>
       </section>

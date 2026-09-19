@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: SITE.shortDescription,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
   },
 };
 
