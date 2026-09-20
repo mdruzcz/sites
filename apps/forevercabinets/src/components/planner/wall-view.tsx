@@ -263,7 +263,7 @@ function ElevationUnit({ u, H, selected, hovered, readonly, onPointerDown, onHov
         ? parts.map((part, i) => <Part key={i} part={part} unitH={h} />)
         : parts.map((part, i) => <Part key={i} part={part} unitH={h} />)}
       {w >= 8 && (
-        <text x={w / 2} y={def.level === "wall" ? -2.2 : def.group === "appliance" ? h / 2 : h - TOE_KICK_H - 3.5} fontSize={Math.min(3.6, w / 3)} textAnchor="middle" fill={INK_SOFT} fontFamily="Inter, sans-serif" style={{ pointerEvents: "none" }} dominantBaseline="middle" opacity={0.9}>
+        <text x={w / 2} y={def.level === "wall" ? -2.2 : def.group === "appliance" ? h / 2 : h - TOE_KICK_H - 3.5} fontSize={Math.min(3.6, w / 3)} textAnchor="middle" fill={INK_SOFT} fontFamily="Inter, sans-serif" style={{ pointerEvents: "none", paintOrder: "stroke" }} stroke="#ffffff" strokeWidth={0.9} strokeLinejoin="round" dominantBaseline="middle">
           {def.short}
         </text>
       )}
@@ -333,14 +333,78 @@ function Part({ part, unitH }: { part: FrontPart; unitH: number }) {
         </g>
       );
     }
-    case "appliance":
+    case "appliance": {
+      const v = part.variant ?? "range";
+      const steel = "#d9dbdd";
+      const dark = "#3a3f44";
+      const stroke = "#7d848b";
+      const cx = part.x + part.w / 2;
+      const isHood = v === "hood" || v === "chimney";
+      const fd = v === "fridge-fd";
+      const bi = v === "fridge-builtin";
+      const split = fd ? part.h * 0.6 : bi ? 0 : part.h * 0.3; // svg offset from the unit top to the horizontal seam
       return (
         <g style={{ pointerEvents: "none" }}>
-          <rect x={part.x} y={y} width={part.w} height={part.h} fill="#d9dbdd" stroke="#7d848b" strokeWidth={0.4} />
-          {part.label === "Range" && <rect x={part.x + 1.5} y={y + 1} width={part.w - 3} height={4} fill="#3a3f44" />}
-          {part.label === "Fridge" && <line x1={part.x} y1={y + part.h * 0.32} x2={part.x + part.w} y2={y + part.h * 0.32} stroke="#7d848b" strokeWidth={0.5} />}
-          {part.label === "Dishwasher" && <rect x={part.x + 2} y={y + 2} width={part.w - 4} height={3} fill="#a4aab0" />}
+          {isHood ? (
+            <>
+              {v === "chimney" && <rect x={cx - 5} y={y} width={10} height={part.h - 6} fill={steel} stroke={stroke} strokeWidth={0.4} />}
+              <path d={`M${part.x} ${y + part.h - 6} H${part.x + part.w} V${y + part.h - 2} L${part.x + part.w - 1.5} ${y + part.h} H${part.x + 1.5} L${part.x} ${y + part.h - 2} Z`} fill={steel} stroke={stroke} strokeWidth={0.4} />
+              <rect x={part.x + part.w * 0.55} y={y + part.h - 4} width={part.w * 0.35} height={1.2} fill={dark} />
+            </>
+          ) : (
+            <rect x={part.x} y={y} width={part.w} height={part.h} fill={steel} stroke={stroke} strokeWidth={0.4} />
+          )}
+          {v === "range" && (
+            <>
+              <rect x={part.x + 0.5} y={y} width={part.w - 1} height={3} fill={dark} />
+              {[0.25, 0.75].map((fx) => (
+                <ellipse key={fx} cx={part.x + part.w * fx} cy={y + 1.5} rx={Math.min(3.5, part.w * 0.12)} ry={0.8} fill="none" stroke="#9aa0a6" strokeWidth={0.4} />
+              ))}
+              <rect x={part.x + 3} y={y + 6} width={part.w - 6} height={1} rx={0.5} fill="#9aa0a6" />
+              <rect x={part.x + 2} y={y + 9} width={part.w - 4} height={part.h - 13} rx={0.5} fill="#e6e8ea" stroke={stroke} strokeWidth={0.3} />
+              <rect x={part.x + 5} y={y + 13} width={part.w - 10} height={part.h * 0.32} rx={0.8} fill={dark} />
+            </>
+          )}
+          {v === "microwave" && (
+            <>
+              <rect x={part.x + 1.5} y={y + 2} width={part.w * 0.6} height={part.h - 4} rx={0.6} fill={dark} />
+              <rect x={part.x + part.w * 0.7} y={y + 2} width={part.w * 0.26} height={part.h - 4} rx={0.6} fill="#2b2f34" />
+              <rect x={part.x + part.w * 0.64} y={y + 4} width={0.8} height={part.h - 8} fill="#9aa0a6" />
+            </>
+          )}
+          {v === "dishwasher" && (
+            <>
+              <rect x={part.x + 0.5} y={y + 0.5} width={part.w - 1} height={3} fill={dark} />
+              <rect x={part.x + 2} y={y + 5} width={part.w - 4} height={1} rx={0.5} fill="#9aa0a6" />
+              <rect x={part.x + 0.4} y={y + part.h - 4.5} width={part.w - 0.8} height={4.5} fill="#2b2b2b" />
+            </>
+          )}
+          {v.startsWith("fridge") && (
+            <>
+              {(fd || bi) && <line x1={cx} y1={y + 0.5} x2={cx} y2={y + (bi ? part.h : split)} stroke={stroke} strokeWidth={0.5} />}
+              {split > 0 && <line x1={part.x + 0.5} y1={y + split} x2={part.x + part.w - 0.5} y2={y + split} stroke={stroke} strokeWidth={0.5} />}
+              {fd ? (
+                <>
+                  <rect x={cx - 2.2} y={y + split * 0.25} width={0.8} height={split * 0.5} rx={0.4} fill="#9aa0a6" />
+                  <rect x={cx + 1.4} y={y + split * 0.25} width={0.8} height={split * 0.5} rx={0.4} fill="#9aa0a6" />
+                  <rect x={cx - part.w * 0.25} y={y + split + 4} width={part.w * 0.5} height={0.8} rx={0.4} fill="#9aa0a6" />
+                </>
+              ) : bi ? (
+                <>
+                  <rect x={cx - 2.4} y={y + part.h * 0.22} width={0.9} height={part.h * 0.55} rx={0.45} fill="#9aa0a6" />
+                  <rect x={cx + 1.5} y={y + part.h * 0.22} width={0.9} height={part.h * 0.55} rx={0.45} fill="#9aa0a6" />
+                  <rect x={part.x + 1} y={y + 1} width={part.w - 2} height={3} fill="#2b2f34" />
+                </>
+              ) : (
+                <>
+                  <rect x={part.x + 2.5} y={y + 4} width={0.8} height={Math.max(2, split - 8)} rx={0.4} fill="#9aa0a6" />
+                  <rect x={part.x + 2.5} y={y + split + 4} width={0.8} height={(part.h - split) * 0.5} rx={0.4} fill="#9aa0a6" />
+                </>
+              )}
+            </>
+          )}
         </g>
       );
+    }
   }
 }

@@ -78,12 +78,12 @@ export function autofillSurface(design: Design, surface: SurfaceId, opts: Autofi
   const seq: Seq[] = plan.pieces.map((p) => ({ sku: p.cabinet.sku, width: p.width_in }));
   if (includeDw) {
     const sinkIdx = seq.findIndex((s) => s.sku.startsWith("SB"));
-    seq.splice(sinkIdx >= 0 ? sinkIdx + 1 : seq.length, 0, { sku: "SPACER-DW-24", width: 24 });
+    seq.splice(sinkIdx >= 0 ? sinkIdx + 1 : seq.length, 0, { sku: "APPL-DW-24", width: 24 });
   }
   if (includeRange) {
     let idx = Math.max(1, Math.floor(seq.length / 3));
-    while (idx < seq.length && (seq[idx].sku.startsWith("SB") || seq[idx].sku.startsWith("SPACER"))) idx++;
-    seq.splice(Math.min(idx, seq.length), 0, { sku: "SPACER-RANGE-30", width: 30 });
+    while (idx < seq.length && (seq[idx].sku.startsWith("SB") || seq[idx].sku.startsWith("APPL"))) idx++;
+    seq.splice(Math.min(idx, seq.length), 0, { sku: "APPL-RANGE-30", width: 30 });
   }
 
   const actions: PlannerAction[] = [];
@@ -106,9 +106,14 @@ export function autofillSurface(design: Design, surface: SurfaceId, opts: Autofi
     const w3018 = getPlannerItem("W3018");
     for (const b of placedBase) {
       if (b.sku.startsWith("SB")) continue; // leave the window over the sink open
-      let picks: PlannerItem[];
-      if (b.sku === "SPACER-RANGE-30") picks = w3018 ? [w3018] : [];
-      else picks = wallsFor(b.width, walls);
+      if (b.sku === "APPL-RANGE-30") {
+        // hood at 66" with an 18"-tall cabinet above it; the reducer validates each placement
+        actions.push({ type: "add-item", sku: "APPL-HOOD-30", surface, t: b.t });
+        if (w3018) actions.push({ type: "add-item", sku: w3018.id, surface, t: b.t });
+        wallCount += w3018 ? 2 : 1;
+        continue;
+      }
+      const picks: PlannerItem[] = wallsFor(b.width, walls);
       let wt = b.t;
       for (const def of picks) {
         const pos = clampToSpans(wallSpans, def.width, wt);

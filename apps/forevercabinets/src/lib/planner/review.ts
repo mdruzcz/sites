@@ -43,6 +43,7 @@ export type Review = {
   warnings: Issue[];
   recommendations: Issue[];
   parts: PartLine[];
+  appliances: PartLine[]; // the customer's own appliances (unpriced)
   addons: AddonLine[];
   subtotal: number;
   stats: {
@@ -181,8 +182,8 @@ export function reviewDesign(design: Design): Review {
 
   if (placed.length > 0) {
     if (sinks.length === 0) rec("No sink base yet", "Most kitchens are planned around the sink. Add an SB33 or SB36 sink base — under a window if you have one.", { sku: "SB33" });
-    if (ranges.length === 0) rec("Reserve space for your range", "Add a 30″ or 36″ range space from Appliance spaces so the cabinets on either side land in the right place. We don't sell appliances — the space is just held for yours.");
-    if (fridges.length === 0) rec("Reserve space for your refrigerator", "Add a fridge space (33″ or 36″ wide) at the end of a run, ideally near the door you carry groceries through.");
+    if (ranges.length === 0) rec("Add your range", "Drop a 24″, 30″ or 36″ range in from Appliances so the cabinets on either side land in the right place. Appliances aren't sold here — they're drawn to standard sizes for layout.", { sku: "APPL-RANGE-30" });
+    if (fridges.length === 0) rec("Add your refrigerator", "Place a 24″–42″ refrigerator at the end of a run, ideally near the door you carry groceries through.", { sku: "APPL-FRIDGE-36" });
   }
 
   const adjacent = (a: Placed, b: Placed, gap = 1.5) =>
@@ -194,7 +195,7 @@ export function reviewDesign(design: Design): Review {
   for (const s of sinks) {
     const dw = dishwashers.find((d) => adjacent(s, d));
     if (!dw) {
-      rec(`Leave room for a dishwasher beside ${s.def.short}`, "Drop a 24″ dishwasher space right next to the sink base so the plumbing stays short.", { itemIds: [s.item.id], sku: "SPACER-DW-24" });
+      rec(`Leave room for a dishwasher beside ${s.def.short}`, "Put an 18″ or 24″ dishwasher right next to the sink base so the plumbing stays short.", { itemIds: [s.item.id], sku: "APPL-DW-24" });
     }
   }
   for (const d of dishwashers) {
@@ -214,15 +215,18 @@ export function reviewDesign(design: Design): Review {
       rec("Range is right beside the fridge", "Heat from the range works against the fridge. If you can, put a cabinet or counter between them.", { itemIds: [r.item.id] });
     }
     const above = placed.filter((p) => p.def.level === "wall" && p.item.surface === r.item.surface && p.corner === null && p.t < r.t + r.def.width - 0.5 && p.t + p.def.width > r.t + 0.5);
+    if (!above.some((a) => a.def.features.includes("hood"))) {
+      rec(`Add a range hood over the ${r.def.short}`, "A 30″ or 36″ under-cabinet hood, chimney hood or over-the-range microwave sits at 66″ with an 18″-tall cabinet (W3018) above it.", { itemIds: [r.item.id], sku: r.def.width >= 36 ? "APPL-HOOD-36" : "APPL-HOOD-30" });
+    }
     for (const a of above) {
-      if (a.def.zBottom < 66) {
+      if (a.def.zBottom < 66 && !a.def.features.includes("hood")) {
         rec(`${a.def.short} is too low over the range`, "Keep 30″ between the cooktop and anything above it. Use an 18″-tall W3018 (or the WRC3018 wine rack) over the range with a hood underneath, or leave that spot open.", { itemIds: [a.item.id], sku: "W3018" });
       }
     }
   }
   for (const f of fridges) {
     const above = placed.some((p) => p.def.level === "wall" && p.item.surface === f.item.surface && p.corner === null && p.t < f.t + f.def.width - 0.5 && p.t + p.def.width > f.t + 0.5);
-    if (!above) {
+    if (!above && f.def.height <= 72) {
       rec(`Cabinet above the ${f.def.short}`, "A 24″-deep over-fridge cabinet (W361824 or W301824) fills the gap above the fridge and gives you a spot for platters.", { itemIds: [f.item.id], sku: f.def.width >= 36 ? "W361824" : "W301824" });
     }
     const hasPanel = placed.some((p) => p.def.sku.startsWith("RRP24") && adjacent(f, p, 2));
@@ -325,6 +329,12 @@ export function reviewDesign(design: Design): Review {
     .sort((a, b) => a._g - b._g || a._w - b._w)
     .map(({ _g: _ignoreG, _w: _ignoreW, ...rest }) => rest);
   const subtotal = parts.reduce((s, p) => s + p.total, 0);
+  const applianceCounts = new Map<string, number>();
+  for (const p of placed) if (p.def.group === "appliance") applianceCounts.set(p.def.sku, (applianceCounts.get(p.def.sku) ?? 0) + 1);
+  const appliances: PartLine[] = [...applianceCounts.entries()].map(([sku, qty]) => {
+    const def = getPlannerItem(sku)!;
+    return { sku, name: def.name, qty, unit: 0, total: 0, image: def.image };
+  });
 
   // ---- Stats & finishing add-ons ----------------------------------------------
   let baseLinear = 0;
@@ -356,6 +366,7 @@ export function reviewDesign(design: Design): Review {
     warnings,
     recommendations,
     parts,
+    appliances,
     addons,
     subtotal,
     stats: {

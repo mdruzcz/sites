@@ -99,6 +99,12 @@ export function PrintSheet() {
         </table>
       </section>
 
+      {review.appliances.length > 0 && (
+        <section className="print-area" style={{ marginTop: 10, fontSize: 11 }}>
+          <strong>Your appliances (not supplied):</strong> {review.appliances.map((a) => `${a.qty} × ${a.name}`).join(", ")}
+        </section>
+      )}
+
       {(review.warnings.length > 0 || review.recommendations.length > 0) && (
         <section className="print-area" style={{ marginTop: 14, fontSize: 11 }}>
           <h2 style={{ fontSize: 16, margin: "0 0 6px 0" }}>Design check</h2>
@@ -127,7 +133,7 @@ export function PrintSheet() {
       )}
 
       <p style={{ marginTop: 16, fontSize: 10, color: "#3a4a5c" }}>
-        Prices are catalog estimates in CAD before delivery and tax. Quote subject to in-stock confirmation; freight quoted by postal code; lead time 2–3 weeks. Appliance spaces are placeholders — appliances are not supplied.
+        Prices are catalog estimates in CAD before delivery and tax. Quote subject to in-stock confirmation; freight quoted by postal code; lead time 2–3 weeks. Appliances are drawn to standard sizes for layout only — they are not supplied.
       </p>
     </div>
   );

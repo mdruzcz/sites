@@ -13,7 +13,7 @@ import {
   type SurfaceId,
   type WallId,
 } from "./types";
-import { getPlannerItem } from "./catalog";
+import { getPlannerItem, LEGACY_SKUS } from "./catalog";
 import { boxesOverlap, clampIsland, clampToSpans, cornerIsUsable, findSlot, freeSpans, nextWall, placeItem, prevWall, resolveAll } from "./geometry";
 
 export type PlannerAction =
@@ -119,6 +119,7 @@ export function normalizeDesign(raw: unknown): Design {
     : [];
   const items: PlacedItem[] = Array.isArray(d.items)
     ? d.items
+        .map((i) => (i && typeof i.sku === "string" && LEGACY_SKUS[i.sku] ? { ...i, sku: LEGACY_SKUS[i.sku] } : i))
         .filter((i) => i && typeof i.sku === "string" && getPlannerItem(i.sku))
         .map((i) => ({
           id: i.id || uid(),

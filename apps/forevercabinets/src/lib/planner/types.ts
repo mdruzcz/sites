@@ -44,7 +44,7 @@ export type Room = {
 
 export type PlacedItem = {
   id: string;
-  sku: string; // catalog SKU or a planner spacer id (e.g. "SPACER-RANGE-30")
+  sku: string; // catalog SKU or a planner appliance id (e.g. "APPL-RANGE-30")
   surface: SurfaceId;
   t: number; // left edge offset along the surface
   corner?: CornerId; // corner cabinets ignore surface/t and sit in this corner

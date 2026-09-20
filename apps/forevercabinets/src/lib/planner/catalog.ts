@@ -1,6 +1,6 @@
 // Planner catalog: turns the sales catalog (src/content/cabinets.json) into placeable
-// planner items with real footprints, mounting heights and front styles, plus a few
-// "space reserved" appliance placeholders (we don't sell appliances, but a kitchen plan
+// planner items with real footprints, mounting heights and front styles, plus standard
+// appliances drawn to typical sizes (we don't sell appliances, but a kitchen plan
 // still needs somewhere for the range, fridge and dishwasher to go).
 
 import { getAllCabinets, getCabinetBySku, type Cabinet } from "@/lib/catalog";
@@ -37,11 +37,14 @@ export type FrontStyle =
   | "filler" // flat filler strip
   | "panel" // finished end panel
   | "range"
+  | "hood" // under-cabinet range hood
+  | "chimney" // wall-mount chimney hood
+  | "microwave" // over-the-range microwave
   | "dishwasher"
   | "fridge";
 
 export type PlannerItem = {
-  id: string; // catalog SKU, or a SPACER-* id
+  id: string; // catalog SKU, or an APPL-* appliance id
   sku: string;
   name: string;
   short: string; // compact label for plans
@@ -57,7 +60,7 @@ export type PlannerItem = {
   front: FrontStyle;
   cornerSize?: number; // square footprint side for corner units
   features: string[];
-  sold: boolean; // false for spacers
+  sold: boolean; // false for appliances (layout only)
   cabinet?: Cabinet;
 };
 
@@ -70,7 +73,7 @@ export const GROUP_LABEL: Record<PlannerGroup, string> = {
   tall: "Tall & pantry",
   specialty: "Specialty",
   filler: "Fillers & panels",
-  appliance: "Appliance spaces",
+  appliance: "Appliances",
 };
 
 export const GROUP_ORDER: PlannerGroup[] = [
@@ -103,93 +106,65 @@ export const ADDON_SKUS = [
   '48"*96"(5mm)',
 ];
 
-const SPACERS: PlannerItem[] = [
-  {
-    id: "SPACER-RANGE-30",
-    sku: "SPACER-RANGE-30",
-    name: 'Range space — 30″ (appliance not included)',
-    short: "Range 30",
+// Standard appliances so a kitchen can be planned around them. We don't sell appliances —
+// these are unpriced, drawn to typical sizes, and listed separately on the design sheet.
+function appliance(
+  id: string,
+  name: string,
+  short: string,
+  dims: { w: number; h: number; d: number; z0?: number },
+  front: FrontStyle,
+  image: string,
+  features: string[],
+  level: Level = "base",
+): PlannerItem {
+  const z0 = dims.z0 ?? 0;
+  return {
+    id,
+    sku: id,
+    name,
+    short,
     group: "appliance",
-    level: "base",
-    width: 30,
-    height: 36,
-    depth: 25,
-    zBottom: 0,
-    zTop: 36,
+    level,
+    width: dims.w,
+    height: dims.h,
+    depth: dims.d,
+    zBottom: z0,
+    zTop: z0 + dims.h,
     price: 0,
-    front: "range",
-    features: ["appliance"],
+    image: `/images/planner/appliances/${image}.svg`,
+    front,
+    features: ["appliance", ...features],
     sold: false,
-  },
-  {
-    id: "SPACER-RANGE-36",
-    sku: "SPACER-RANGE-36",
-    name: 'Range space — 36″ (appliance not included)',
-    short: "Range 36",
-    group: "appliance",
-    level: "base",
-    width: 36,
-    height: 36,
-    depth: 25,
-    zBottom: 0,
-    zTop: 36,
-    price: 0,
-    front: "range",
-    features: ["appliance"],
-    sold: false,
-  },
-  {
-    id: "SPACER-DW-24",
-    sku: "SPACER-DW-24",
-    name: 'Dishwasher space — 24″ (appliance not included)',
-    short: "DW 24",
-    group: "appliance",
-    level: "base",
-    width: 24,
-    height: 34.5,
-    depth: 24,
-    zBottom: 0,
-    zTop: 34.5,
-    price: 0,
-    front: "dishwasher",
-    features: ["appliance", "dishwasher"],
-    sold: false,
-  },
-  {
-    id: "SPACER-FRIDGE-36",
-    sku: "SPACER-FRIDGE-36",
-    name: 'Refrigerator space — 36″ × 70″ (appliance not included)',
-    short: "Fridge 36",
-    group: "appliance",
-    level: "tall",
-    width: 36,
-    height: 70,
-    depth: 30,
-    zBottom: 0,
-    zTop: 70,
-    price: 0,
-    front: "fridge",
-    features: ["appliance", "fridge"],
-    sold: false,
-  },
-  {
-    id: "SPACER-FRIDGE-33",
-    sku: "SPACER-FRIDGE-33",
-    name: 'Refrigerator space — 33″ × 70″ (appliance not included)',
-    short: "Fridge 33",
-    group: "appliance",
-    level: "tall",
-    width: 33,
-    height: 70,
-    depth: 30,
-    zBottom: 0,
-    zTop: 70,
-    price: 0,
-    front: "fridge",
-    features: ["appliance", "fridge"],
-    sold: false,
-  },
+  };
+}
+
+const APPLIANCES: PlannerItem[] = [
+  appliance("APPL-RANGE-24", "24\u2033 Freestanding Range", "Range 24", { w: 24, h: 36, d: 25 }, "range", "range", ["range"]),
+  appliance("APPL-RANGE-30", "30\u2033 Freestanding Range", "Range 30", { w: 30, h: 36, d: 25 }, "range", "range", ["range"]),
+  appliance("APPL-RANGE-36", "36\u2033 Freestanding Range", "Range 36", { w: 36, h: 36, d: 25 }, "range", "range", ["range"]),
+  appliance("APPL-HOOD-30", "30\u2033 Under-Cabinet Range Hood", "Hood 30", { w: 30, h: 6, d: 18, z0: 66 }, "hood", "hood", ["hood"], "wall"),
+  appliance("APPL-HOOD-36", "36\u2033 Under-Cabinet Range Hood", "Hood 36", { w: 36, h: 6, d: 18, z0: 66 }, "hood", "hood", ["hood"], "wall"),
+  appliance("APPL-CHIMNEY-30", "30\u2033 Wall-Mount Chimney Hood", "Chimney 30", { w: 30, h: 24, d: 20, z0: 66 }, "chimney", "chimney", ["hood", "chimney"], "wall"),
+  appliance("APPL-CHIMNEY-36", "36\u2033 Wall-Mount Chimney Hood", "Chimney 36", { w: 36, h: 24, d: 20, z0: 66 }, "chimney", "chimney", ["hood", "chimney"], "wall"),
+  appliance("APPL-OTR-30", "30\u2033 Over-the-Range Microwave", "OTR Micro 30", { w: 30, h: 17, d: 16, z0: 66 }, "microwave", "microwave", ["hood", "microwave"], "wall"),
+  appliance("APPL-DW-18", "18\u2033 Dishwasher", "DW 18", { w: 18, h: 34.5, d: 24 }, "dishwasher", "dishwasher", ["dishwasher"]),
+  appliance("APPL-DW-24", "24\u2033 Dishwasher", "DW 24", { w: 24, h: 34.5, d: 24 }, "dishwasher", "dishwasher", ["dishwasher"]),
+  appliance("APPL-FRIDGE-24", "24\u2033 Apartment Refrigerator", "Fridge 24", { w: 24, h: 66, d: 26 }, "fridge", "fridge-top", ["fridge", "top-freezer"], "tall"),
+  appliance("APPL-FRIDGE-30", "30\u2033 Top-Freezer Refrigerator", "Fridge 30", { w: 30, h: 66, d: 30 }, "fridge", "fridge-top", ["fridge", "top-freezer"], "tall"),
+  appliance("APPL-FRIDGE-33", "33\u2033 French-Door Refrigerator", "Fridge 33", { w: 33, h: 70, d: 32 }, "fridge", "fridge-fd", ["fridge", "french-door"], "tall"),
+  appliance("APPL-FRIDGE-36", "36\u2033 French-Door Refrigerator", "Fridge 36", { w: 36, h: 70, d: 32 }, "fridge", "fridge-fd", ["fridge", "french-door"], "tall"),
+  appliance("APPL-FRIDGE-42", "42\u2033 Built-In Refrigerator", "Fridge 42", { w: 42, h: 84, d: 26 }, "fridge", "fridge-builtin", ["fridge", "built-in"], "tall"),
 ];
+
+/** Placeholder ids from the first planner release -> current appliance ids (keeps saved designs loading). */
+export const LEGACY_SKUS: Record<string, string> = {
+  "SPACER-RANGE-30": "APPL-RANGE-30",
+  "SPACER-RANGE-36": "APPL-RANGE-36",
+  "SPACER-DW-24": "APPL-DW-24",
+  "SPACER-FRIDGE-36": "APPL-FRIDGE-36",
+  "SPACER-FRIDGE-33": "APPL-FRIDGE-33",
+};
 
 function fromCabinet(c: Cabinet): PlannerItem | null {
   if (ADDON_SKUS.includes(c.sku)) return null;
@@ -357,7 +332,7 @@ export function getPlannerItems(): PlannerItem[] {
       const it = fromCabinet(c);
       if (it) list.push(it);
     }
-    list.push(...SPACERS);
+    list.push(...APPLIANCES);
     const order = new Map(GROUP_ORDER.map((g, i) => [g, i]));
     list.sort((a, b) => {
       const g = (order.get(a.group) ?? 99) - (order.get(b.group) ?? 99);
@@ -408,6 +383,7 @@ export type FrontPart = {
   h: number;
   hinge?: "left" | "right";
   label?: string;
+  variant?: string; // appliance drawing hint: range | hood | chimney | microwave | dishwasher | fridge-top | fridge-fd | fridge-builtin
 };
 
 const GAP = 0.125;
@@ -497,11 +473,17 @@ export function frontLayout(def: PlannerItem): FrontPart[] {
     case "panel":
       return [{ kind: "panel", x: 0, y: 0, w, h: def.height }];
     case "range":
-      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Range" }];
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Range", variant: "range" }];
+    case "hood":
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Hood", variant: "hood" }];
+    case "chimney":
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Hood", variant: "chimney" }];
+    case "microwave":
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Microwave", variant: "microwave" }];
     case "dishwasher":
-      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Dishwasher" }];
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Dishwasher", variant: "dishwasher" }];
     case "fridge":
-      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Fridge" }];
+      return [{ kind: "appliance", x: 0, y: 0, w, h: def.height, label: "Fridge", variant: def.features.includes("french-door") ? "fridge-fd" : def.features.includes("built-in") ? "fridge-builtin" : "fridge-top" }];
     case "lazy":
     case "diag":
     case "diag-glass":

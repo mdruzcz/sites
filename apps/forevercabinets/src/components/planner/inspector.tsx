@@ -32,7 +32,7 @@ export function Inspector() {
             </div>
             <div className="min-w-0">
               <h3 className="text-[15px] font-medium leading-snug text-[var(--color-navy)]">{def.name}</h3>
-              <p className="mt-1 font-mono text-[11px] text-[var(--color-brass-dark)]">{def.sold ? def.sku : "placeholder — not sold by us"}</p>
+              <p className="mt-1 font-mono text-[11px] text-[var(--color-brass-dark)]">{def.sold ? def.sku : "your appliance · not sold here, drawn to size"}</p>
               <p className="mt-1 text-[12px] text-[var(--color-ink-soft)]">
                 {formatInches(def.width)} W × {formatInches(def.height)} H × {formatInches(def.depth)} D
               </p>

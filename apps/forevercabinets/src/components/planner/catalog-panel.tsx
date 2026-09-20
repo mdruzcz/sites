@@ -2,10 +2,23 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { GROUP_LABEL, GROUP_ORDER, getPlannerItems, type PlannerGroup, type PlannerItem } from "@/lib/planner/catalog";
+import { GROUP_ORDER, getPlannerItems, type PlannerGroup, type PlannerItem } from "@/lib/planner/catalog";
 import { formatInches } from "@/lib/planner/types";
 import { formatCad } from "@/lib/utils";
 import { DRAG_MIME } from "./floor-view";
+
+const CHIP_LABEL: Record<PlannerGroup | "all", string> = {
+  all: "All",
+  base: "Base",
+  drawer: "Drawers",
+  sink: "Sinks",
+  corner: "Corners",
+  wall: "Wall",
+  tall: "Tall",
+  specialty: "Specialty",
+  filler: "Fillers",
+  appliance: "Appliances",
+};
 
 type Props = {
   onAdd: (sku: string) => void;
@@ -17,6 +30,11 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
   const items = useMemo(() => getPlannerItems(), []);
   const [group, setGroup] = useState<PlannerGroup | "all">("base");
   const [q, setQ] = useState("");
+  const counts = useMemo(() => {
+    const m = new Map<PlannerGroup, number>();
+    for (const i of items) m.set(i.group, (m.get(i.group) ?? 0) + 1);
+    return m;
+  }, [items]);
 
   const visible = useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -38,25 +56,40 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
           type="search"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Search by SKU, name or width…"
+          placeholder="Search: SB33, 30, fridge, hood…"
           className="h-10 w-full rounded-sm border border-[var(--color-line)] bg-white px-3 text-sm focus:border-[var(--color-navy)] focus:outline-none"
         />
-        <div className="mt-2 flex gap-1 overflow-x-auto scrollbar-thin pb-1">
-          {(["all", ...GROUP_ORDER] as const).map((g) => (
-            <button
-              key={g}
-              type="button"
-              onClick={() => setGroup(g)}
-              className={`shrink-0 rounded-full border px-2.5 py-1 text-[11px] uppercase tracking-wider ${
-                group === g ? "border-[var(--color-navy)] bg-[var(--color-navy)] text-white" : "border-[var(--color-line)] bg-white text-[var(--color-ink-soft)] hover:border-[var(--color-navy)]"
-              }`}
-            >
-              {g === "all" ? "All" : GROUP_LABEL[g].replace(" cabinets", "")}
-            </button>
-          ))}
+        <div className="mt-2 flex flex-wrap gap-1" role="tablist" aria-label="Cabinet categories">
+          {(["all", ...GROUP_ORDER] as const).map((g) => {
+            const count = g === "all" ? items.length : (counts.get(g) ?? 0);
+            const active = group === g && !q.trim();
+            return (
+              <button
+                key={g}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => {
+                  setGroup(g);
+                  setQ("");
+                }}
+                className={`inline-flex items-center gap-1 rounded-sm border px-2 py-1 text-[11px] leading-none ${
+                  active ? "border-[var(--color-navy)] bg-[var(--color-navy)] text-white" : "border-[var(--color-line)] bg-white text-[var(--color-navy)] hover:border-[var(--color-navy)]"
+                }`}
+              >
+                {CHIP_LABEL[g]}
+                <span className={`text-[10px] ${active ? "text-white/70" : "text-[var(--color-ink-soft)]"}`}>{count}</span>
+              </button>
+            );
+          })}
         </div>
         <p className="mt-2 text-[11px] text-[var(--color-ink-soft)]">
-          Click <strong>Add</strong> to place on the <strong>{activeLabel}</strong>, or drag a cabinet onto the plan.
+          {group === "appliance" && !q.trim() ? (
+            <>
+              Standard-size appliances to plan around — <strong>not sold here</strong>, drawn for layout.{" "}
+            </>
+          ) : null}
+          Click <strong>Add</strong> to place on the <strong>{activeLabel}</strong>, or drag onto the plan.
         </p>
       </div>
       <ul className={`min-h-0 flex-1 overflow-y-auto scrollbar-thin ${compact ? "flex gap-2 p-2" : "divide-y divide-[var(--color-line)]"}`}>
@@ -89,11 +122,11 @@ function CatalogRow({ item, onAdd, compact }: { item: PlannerItem; onAdd: (sku: 
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-[13px] font-medium leading-tight text-[var(--color-navy)]">{item.name}</p>
+        <p className="line-clamp-2 text-[13px] font-medium leading-tight text-[var(--color-navy)]">{item.name}</p>
         <p className="mt-0.5 text-[11px] text-[var(--color-ink-soft)]">
-          <span className="font-mono text-[var(--color-brass-dark)]">{item.sku.startsWith("SPACER") ? "space" : item.sku}</span> · {dims}
+          <span className="font-mono text-[var(--color-brass-dark)]">{item.sold ? item.sku : "appliance"}</span> · {dims}
         </p>
-        <p className="mt-0.5 text-[12px] font-medium">{item.sold ? formatCad(item.price) : <span className="text-[var(--color-ink-soft)]">No charge — placeholder</span>}</p>
+        <p className="mt-0.5 text-[12px] font-medium">{item.sold ? formatCad(item.price) : <span className="text-[var(--color-ink-soft)]">Your appliance · not sold here</span>}</p>
       </div>
       <button
         type="button"

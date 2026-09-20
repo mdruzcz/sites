@@ -532,7 +532,7 @@ function Unit({ p, selected, hovered, readonly, onPointerDown, onPointerOver, on
   const w = def.cornerSize ?? def.width;
   const d = def.cornerSize ?? def.depth;
   const h = def.zTop - def.zBottom;
-  const bodyMat = hovered && !selected ? m.hover : def.group === "appliance" ? (def.front === "range" ? m.applianceDark : m.appliance) : m.body;
+  const bodyMat = hovered && !selected ? m.hover : m.body;
 
   return (
     <group position={[origin.x, def.zBottom, origin.y]} rotation={[0, yaw, 0]} onPointerDown={onPointerDown} onPointerOver={onPointerOver} onPointerOut={onPointerOut}>
@@ -540,23 +540,25 @@ function Unit({ p, selected, hovered, readonly, onPointerDown, onPointerOver, on
         <LazySusan def={def} mat={bodyMat} selected={selected} />
       ) : def.front === "diag" || def.front === "diag-glass" ? (
         <DiagonalCorner def={def} mat={bodyMat} selected={selected} />
+      ) : def.group === "appliance" ? (
+        <Appliance def={def} selected={selected} hovered={hovered} />
       ) : (
         <>
-          {def.level === "base" && def.group !== "appliance" && def.front !== "panel" && (
+          {def.level === "base" && def.front !== "panel" && (
             <mesh position={[w / 2, TOE_KICK_H / 2, (d - 3) / 2]} material={m.toe}>
               <boxGeometry args={[Math.max(0.5, w - 0.4), TOE_KICK_H, d - 3]} />
             </mesh>
           )}
           <mesh
-            position={[w / 2, def.level === "base" && def.group !== "appliance" && def.front !== "panel" ? TOE_KICK_H + (h - TOE_KICK_H) / 2 : h / 2, d / 2]}
+            position={[w / 2, def.level === "base" && def.front !== "panel" ? TOE_KICK_H + (h - TOE_KICK_H) / 2 : h / 2, d / 2]}
             castShadow
             receiveShadow
             material={bodyMat}
           >
-            <boxGeometry args={[w, def.level === "base" && def.group !== "appliance" && def.front !== "panel" ? h - TOE_KICK_H : h, d]} />
+            <boxGeometry args={[w, def.level === "base" && def.front !== "panel" ? h - TOE_KICK_H : h, d]} />
             {selected && <Edges color="#c5a059" lineWidth={1.5} />}
           </mesh>
-          {def.group === "appliance" ? <ApplianceDetail def={def} /> : frontLayout(def).map((part, i) => <Front key={i} part={part} z={d} />)}
+          {frontLayout(def).map((part, i) => <Front key={i} part={part} z={d} />)}
           {def.front === "sink" && <SinkBasin w={w} d={d} />}
         </>
       )}
@@ -666,60 +668,184 @@ function Front({ part, z }: { part: FrontPart; z: number }) {
   }
 }
 
-function ApplianceDetail({ def }: { def: PlannerItem }) {
+function Appliance({ def, selected, hovered }: { def: PlannerItem; selected: boolean; hovered: boolean }) {
   const m = mats();
   const w = def.width;
   const d = def.depth;
-  if (def.front === "range") {
-    return (
-      <group>
-        <mesh position={[w / 2, def.height + 0.3, d / 2]} material={m.applianceDark}>
-          <boxGeometry args={[w - 1, 0.6, d - 2]} />
-        </mesh>
-        {[
-          [w * 0.28, d * 0.32],
-          [w * 0.72, d * 0.32],
-          [w * 0.28, d * 0.7],
-          [w * 0.72, d * 0.7],
-        ].map(([x, zz], i) => (
-          <mesh key={i} position={[x, def.height + 0.7, zz]} rotation={[-Math.PI / 2, 0, 0]} material={m.appliance}>
-            <ringGeometry args={[2.2, 3.2, 24]} />
+  const h = def.height;
+  const steel = hovered && !selected ? m.hover : m.appliance;
+  const edges = selected ? <Edges color="#c5a059" lineWidth={1.5} /> : null;
+  switch (def.front) {
+    case "range":
+      return (
+        <group>
+          <mesh position={[w / 2, h / 2, d / 2]} material={m.applianceDark} castShadow receiveShadow>
+            <boxGeometry args={[w, h, d]} />
+            {edges}
           </mesh>
-        ))}
-        <mesh position={[w / 2, def.height + 3.5, 1.2]} material={m.appliance}>
-          <boxGeometry args={[w, 6, 2.4]} />
+          {/* stainless oven door with window + bar handle */}
+          <mesh position={[w / 2, h * 0.42, d + 0.3]} material={steel}>
+            <boxGeometry args={[w - 1, h * 0.55, 0.6]} />
+          </mesh>
+          <mesh position={[w / 2, h * 0.4, d + 0.7]} material={m.glass}>
+            <boxGeometry args={[Math.max(6, w - 8), h * 0.26, 0.3]} />
+          </mesh>
+          <mesh position={[w / 2, h * 0.7, d + 1.2]} material={m.handle}>
+            <boxGeometry args={[w - 6, 0.9, 1.4]} />
+          </mesh>
+          {/* cooktop + burners */}
+          <mesh position={[w / 2, h + 0.3, d / 2]} material={m.applianceDark}>
+            <boxGeometry args={[w - 0.5, 0.6, d - 2]} />
+          </mesh>
+          {[
+            [w * 0.27, d * 0.32],
+            [w * 0.73, d * 0.32],
+            [w * 0.27, d * 0.7],
+            [w * 0.73, d * 0.7],
+          ].map(([x, zz], i) => (
+            <mesh key={i} position={[x, h + 0.7, zz]} rotation={[-Math.PI / 2, 0, 0]} material={m.appliance}>
+              <ringGeometry args={[Math.min(2.2, w * 0.07), Math.min(3.2, w * 0.1), 24]} />
+            </mesh>
+          ))}
+          {/* backguard with knobs */}
+          <mesh position={[w / 2, h + 4.5, 1.5]} material={steel} castShadow>
+            <boxGeometry args={[w, 9, 3]} />
+          </mesh>
+          {[0.2, 0.35, 0.65, 0.8].map((fx, i) => (
+            <mesh key={i} position={[w * fx, h + 4, 3.4]} rotation={[Math.PI / 2, 0, 0]} material={m.applianceDark}>
+              <cylinderGeometry args={[0.8, 0.8, 0.8, 12]} />
+            </mesh>
+          ))}
+        </group>
+      );
+    case "hood":
+      return (
+        <group>
+          <mesh position={[w / 2, h / 2, d / 2]} material={steel} castShadow>
+            <boxGeometry args={[w, h, d]} />
+            {edges}
+          </mesh>
+          <mesh position={[w / 2, 0.6, d - 1]} material={m.applianceDark}>
+            <boxGeometry args={[w - 4, 1.2, 2]} />
+          </mesh>
+        </group>
+      );
+    case "chimney":
+      return (
+        <group>
+          <mesh position={[w / 2, 3, d / 2]} material={steel} castShadow>
+            <boxGeometry args={[w, 6, d]} />
+            {edges}
+          </mesh>
+          <mesh position={[w / 2, 0.6, d - 1]} material={m.applianceDark}>
+            <boxGeometry args={[w - 4, 1.2, 2]} />
+          </mesh>
+          <mesh position={[w / 2, 6 + (h - 6) / 2, 6]} material={steel} castShadow>
+            <boxGeometry args={[10, h - 6, 12]} />
+          </mesh>
+        </group>
+      );
+    case "microwave":
+      return (
+        <group>
+          <mesh position={[w / 2, h / 2, d / 2]} material={steel} castShadow>
+            <boxGeometry args={[w, h, d]} />
+            {edges}
+          </mesh>
+          <mesh position={[w * 0.36, h / 2, d + 0.2]} material={m.applianceDark}>
+            <boxGeometry args={[w * 0.6, h - 4, 0.4]} />
+          </mesh>
+          <mesh position={[w * 0.84, h / 2, d + 0.2]} material={m.applianceDark}>
+            <boxGeometry args={[w * 0.22, h - 4, 0.4]} />
+          </mesh>
+          <mesh position={[w * 0.68, h / 2, d + 0.9]} material={m.handle}>
+            <boxGeometry args={[0.6, h - 6, 1.2]} />
+          </mesh>
+        </group>
+      );
+    case "dishwasher":
+      return (
+        <group>
+          <mesh position={[w / 2, h / 2, d / 2]} material={steel} castShadow receiveShadow>
+            <boxGeometry args={[w, h, d]} />
+            {edges}
+          </mesh>
+          <mesh position={[w / 2, h - 1.75, d + 0.2]} material={m.applianceDark}>
+            <boxGeometry args={[w - 0.5, 3.5, 0.4]} />
+          </mesh>
+          <mesh position={[w / 2, h - 5, d + 0.8]} material={m.handle}>
+            <boxGeometry args={[w - 4, 0.9, 1.4]} />
+          </mesh>
+          <mesh position={[w / 2, TOE_KICK_H / 2, d - 1.5]} material={m.toe}>
+            <boxGeometry args={[w - 0.4, TOE_KICK_H, 3]} />
+          </mesh>
+        </group>
+      );
+    case "fridge": {
+      const fd = def.features.includes("french-door");
+      const builtin = def.features.includes("built-in");
+      const splitY = fd ? h * 0.4 : builtin ? 0 : h * 0.7; // height of the horizontal door seam
+      return (
+        <group>
+          <mesh position={[w / 2, h / 2, d / 2]} material={steel} castShadow receiveShadow>
+            <boxGeometry args={[w, h, d]} />
+            {edges}
+          </mesh>
+          {(fd || builtin) && (
+            <mesh position={[w / 2, builtin ? h / 2 : (h + splitY) / 2, d + 0.05]} material={m.applianceDark}>
+              <boxGeometry args={[0.3, builtin ? h - 2 : h - splitY - 1, 0.1]} />
+            </mesh>
+          )}
+          {splitY > 0 && (
+            <mesh position={[w / 2, splitY, d + 0.05]} material={m.applianceDark}>
+              <boxGeometry args={[w - 0.5, 0.3, 0.1]} />
+            </mesh>
+          )}
+          {fd ? (
+            <>
+              <mesh position={[w / 2 - 1.6, splitY + (h - splitY) / 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[0.9, (h - splitY) * 0.6, 1.6]} />
+              </mesh>
+              <mesh position={[w / 2 + 1.6, splitY + (h - splitY) / 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[0.9, (h - splitY) * 0.6, 1.6]} />
+              </mesh>
+              <mesh position={[w / 2, splitY - 4, d + 1]} material={m.handle}>
+                <boxGeometry args={[w * 0.5, 0.9, 1.6]} />
+              </mesh>
+            </>
+          ) : builtin ? (
+            <>
+              <mesh position={[w / 2 - 1.8, h / 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[1, h * 0.55, 1.8]} />
+              </mesh>
+              <mesh position={[w / 2 + 1.8, h / 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[1, h * 0.55, 1.8]} />
+              </mesh>
+              <mesh position={[w / 2, h - 3, d + 0.2]} material={m.applianceDark}>
+                <boxGeometry args={[w - 2, 4, 0.4]} />
+              </mesh>
+            </>
+          ) : (
+            <>
+              <mesh position={[3, splitY + (h - splitY) / 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[0.9, (h - splitY) * 0.5, 1.6]} />
+              </mesh>
+              <mesh position={[3, splitY / 2 + 2, d + 1]} material={m.handle}>
+                <boxGeometry args={[0.9, splitY * 0.5, 1.6]} />
+              </mesh>
+            </>
+          )}
+        </group>
+      );
+    }
+    default:
+      return (
+        <mesh position={[w / 2, h / 2, d / 2]} material={steel}>
+          <boxGeometry args={[w, h, d]} />
+          {edges}
         </mesh>
-        <mesh position={[w / 2, def.height - 16, d + 0.6]} material={m.handle}>
-          <boxGeometry args={[w - 6, 0.9, 1.2]} />
-        </mesh>
-      </group>
-    );
+      );
   }
-  if (def.front === "fridge") {
-    return (
-      <group>
-        <mesh position={[w / 2, def.height * 0.66, d + 0.05]} material={m.applianceDark}>
-          <boxGeometry args={[w - 0.5, 0.4, 0.1]} />
-        </mesh>
-        <mesh position={[w / 2 - 6, def.height * 0.45, d + 1]} material={m.handle}>
-          <boxGeometry args={[1, def.height * 0.35, 1.5]} />
-        </mesh>
-        <mesh position={[w / 2 - 6, def.height * 0.82, d + 1]} material={m.handle}>
-          <boxGeometry args={[1, def.height * 0.18, 1.5]} />
-        </mesh>
-      </group>
-    );
-  }
-  return (
-    <group>
-      <mesh position={[w / 2, def.height - 3, d + 0.8]} material={m.handle}>
-        <boxGeometry args={[w - 4, 1, 1.4]} />
-      </mesh>
-      <mesh position={[w / 2, def.height - 8, d + 0.05]} material={m.applianceDark}>
-        <boxGeometry args={[w - 1, 0.3, 0.1]} />
-      </mesh>
-    </group>
-  );
 }
 
 function SinkBasin({ w, d }: { w: number; d: number }) {

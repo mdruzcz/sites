@@ -197,6 +197,18 @@ export function StepReview() {
                 </li>
               ))}
             </ul>
+            {review.appliances.length > 0 && (
+              <div className="border-t border-[var(--color-line)] px-4 py-3 text-[12px]">
+                <p className="text-[10px] uppercase tracking-widest text-[var(--color-ink-soft)]">Your appliances (not supplied)</p>
+                <ul className="mt-1 space-y-0.5 text-[var(--color-ink-soft)]">
+                  {review.appliances.map((a) => (
+                    <li key={a.sku}>
+                      {a.qty} × {a.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="flex items-baseline justify-between border-t border-[var(--color-line)] bg-[var(--color-sandstone-soft)] px-4 py-3">
               <span className="text-[11px] uppercase tracking-widest text-[var(--color-ink-soft)]">Cabinets</span>
               <span className="font-display text-xl text-[var(--color-navy)]">{formatCad(review.subtotal)}</span>
