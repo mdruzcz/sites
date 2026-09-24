@@ -197,9 +197,11 @@ export function StepDesign() {
             {design.items.length} unit{design.items.length === 1 ? "" : "s"} placed · working on the <strong>{activeLabel}</strong>
           </p>
           <div className="flex gap-2">
-            <button type="button" className="btn-secondary hidden h-9 px-3 py-0 text-xs sm:inline-flex" onClick={() => setUi({ step: 1 })}>
-              ← Space
-            </button>
+            <span className="hidden sm:block">
+              <button type="button" className="btn-secondary h-9 px-3 py-0 text-xs" onClick={() => setUi({ step: 1 })}>
+                ← Space
+              </button>
+            </span>
             <button
               type="button"
               className="btn-primary h-9 px-3 py-0 text-xs"

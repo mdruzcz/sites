@@ -102,17 +102,28 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
   );
 }
 
+function canDragWithPointer(): boolean {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return true;
+  try {
+    return !window.matchMedia("(pointer: coarse)").matches;
+  } catch {
+    return true;
+  }
+}
+
 function CatalogRow({ item, onAdd, compact }: { item: PlannerItem; onAdd: (sku: string) => void; compact?: boolean }) {
   const dims = `${formatInches(item.width)} W × ${formatInches(item.height)} H × ${formatInches(item.depth)} D`;
+  const draggable = canDragWithPointer();
   return (
     <li
-      draggable
+      draggable={draggable}
       onDragStart={(e) => {
+        if (!draggable) return;
         e.dataTransfer.setData(DRAG_MIME, item.id);
         e.dataTransfer.effectAllowed = "copy";
       }}
       className={`group flex items-center gap-3 bg-white p-2.5 hover:bg-[var(--color-sandstone-soft)] ${compact ? "w-48 shrink-0 flex-col items-stretch rounded-sm border border-[var(--color-line)]" : ""}`}
-      title="Drag onto the plan, or click Add"
+      title={draggable ? "Drag onto the plan, or click Add" : "Tap Add to place it"}
     >
       <div className={`relative shrink-0 overflow-hidden rounded-sm border border-[var(--color-line)] bg-white ${compact ? "h-24 w-full" : "h-14 w-14"}`}>
         {item.image ? (

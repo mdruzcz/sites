@@ -11,7 +11,8 @@ import { StepReview } from "./step-review";
 import { NotesPanel } from "./notes-panel";
 import { SaveSharePanel } from "./save-share";
 import { PrintSheet } from "./print-sheet";
-import { initialState, loadCurrent, plannerReducer, saveCurrent } from "@/lib/planner/store";
+import { PlannerErrorBoundary } from "./planner-error-boundary";
+import { defaultDesign, initialState, loadCurrent, plannerReducer, saveCurrent } from "@/lib/planner/store";
 import { decodeDesign, readHashPayload } from "@/lib/planner/encode";
 import { getPlannerItem } from "@/lib/planner/catalog";
 import type { Design } from "@/lib/planner/types";
@@ -87,6 +88,23 @@ export default function PlannerApp({ initialDesign }: { initialDesign?: Design }
     const id = window.setTimeout(() => saveCurrent(state.design), 350);
     return () => window.clearTimeout(id);
   }, [state.design, ready]);
+
+  // Surface uncaught errors (event handlers, promises) instead of failing silently
+  useEffect(() => {
+    const onError = (e: ErrorEvent) => {
+      if (e.message) toast(`Something went wrong: ${e.message.slice(0, 160)}`);
+    };
+    const onRejection = (e: PromiseRejectionEvent) => {
+      const msg = e.reason instanceof Error ? e.reason.message : String(e.reason ?? "");
+      if (msg) toast(`Something went wrong: ${msg.slice(0, 160)}`);
+    };
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+    };
+  }, [toast]);
 
   // Reducer errors → toast
   useEffect(() => {
@@ -213,9 +231,17 @@ export default function PlannerApp({ initialDesign }: { initialDesign?: Design }
         </div>
 
         <div className="relative">
-          {ui.step === 1 && <StepSpace />}
-          {ui.step === 2 && <StepDesign />}
-          {ui.step === 3 && <StepReview />}
+          <PlannerErrorBoundary
+            onReset={() => setUi({ selectedId: null, hoverId: null, panel: "none", view: "floor" })}
+            onStartOver={() => {
+              dispatch({ type: "reset", design: defaultDesign() });
+              setUi({ step: 1, selectedId: null, hoverId: null, panel: "none", view: "floor", activeSurface: 0, snapshot: null, addons: {} });
+            }}
+          >
+            {ui.step === 1 && <StepSpace />}
+            {ui.step === 2 && <StepDesign />}
+            {ui.step === 3 && <StepReview />}
+          </PlannerErrorBoundary>
 
           {ui.panel !== "none" && (
             <>

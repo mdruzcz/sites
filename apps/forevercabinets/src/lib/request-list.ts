@@ -26,7 +26,11 @@ export function readList(): RequestLine[] {
 export function writeList(lines: RequestLine[]) {
   if (typeof window === "undefined") return;
   const stored: StoredRequestList = { v: 1, lines };
-  window.localStorage.setItem(REQUEST_LIST_KEY, JSON.stringify(stored));
+  try {
+    window.localStorage.setItem(REQUEST_LIST_KEY, JSON.stringify(stored));
+  } catch {
+    /* private mode / blocked storage — keep the in-memory list */
+  }
 }
 
 export function addLine(lines: RequestLine[], sku: string, qty = 1): RequestLine[] {

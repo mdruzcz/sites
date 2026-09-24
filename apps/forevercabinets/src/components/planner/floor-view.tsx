@@ -81,13 +81,17 @@ export function FloorView({
   const toRoom = useCallback((e: { clientX: number; clientY: number }) => {
     const svg = svgRef.current;
     if (!svg) return { x: 0, y: 0 };
-    const pt = svg.createSVGPoint();
-    pt.x = e.clientX;
-    pt.y = e.clientY;
-    const ctm = svg.getScreenCTM();
-    if (!ctm) return { x: 0, y: 0 };
-    const p = pt.matrixTransform(ctm.inverse());
-    return { x: p.x, y: p.y };
+    try {
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return { x: 0, y: 0 };
+      const p = pt.matrixTransform(ctm.inverse());
+      return { x: p.x, y: p.y };
+    } catch {
+      return { x: 0, y: 0 };
+    }
   }, []);
 
   const startItemDrag = (e: ReactPointerEvent, p: Placed) => {
