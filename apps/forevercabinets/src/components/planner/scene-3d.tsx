@@ -119,8 +119,18 @@ function makeFloorTexture(): THREE.CanvasTexture | null {
 // Scene
 // ---------------------------------------------------------------------------
 
+function isTouchDevice(): boolean {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return false;
+  try {
+    return window.matchMedia("(pointer: coarse)").matches;
+  } catch {
+    return false;
+  }
+}
+
 export default function Scene3D(props: Scene3DProps) {
   const { design, className } = props;
+  const touch = useMemo(() => isTouchDevice(), []);
   const { width: W, depth: D } = design.room;
   const target = useMemo(() => new THREE.Vector3(W / 2, 30, D / 2), [W, D]);
   const dist = Math.max(W, D) * 1.35 + 40;
@@ -130,10 +140,18 @@ export default function Scene3D(props: Scene3DProps) {
     <div className={className} style={{ position: "relative" }}>
       <Canvas
         shadows="percentage"
-        dpr={[1, 1.75]}
-        gl={{ preserveDrawingBuffer: true, antialias: true }}
+        dpr={[1, touch ? 1.5 : 1.75]}
+        gl={{ preserveDrawingBuffer: true, antialias: !touch, powerPreference: "default", failIfMajorPerformanceCaveat: false }}
         camera={{ fov: 42, near: 2, far: 4000, position: [initial.x, initial.y, initial.z] }}
         style={{ position: "absolute", inset: 0 }}
+        fallback={
+          <div className="flex h-full w-full items-center justify-center p-6 text-center">
+            <div>
+              <p className="font-display text-xl text-[var(--color-navy)]">3D isn&rsquo;t available on this device</p>
+              <p className="mt-2 text-sm text-[var(--color-ink-soft)]">Your browser couldn&rsquo;t start WebGL. The floor plan and wall views still work, and the printed design sheet includes every elevation.</p>
+            </div>
+          </div>
+        }
       >
         <color attach="background" args={["#f7f4ee"]} />
         <SceneContent {...props} target={target} dist={dist} />
@@ -166,6 +184,7 @@ function presetPosition(p: CameraPreset, target: THREE.Vector3, dist: number): T
 
 function SceneContent(props: Scene3DProps & { target: THREE.Vector3; dist: number }) {
   const { design, selectedId, hoverId, readonly, onSelect, onHover, onDragStart, onMove, onIslandMove, onReady, target, dist } = props;
+  const touchShadow = useMemo(() => isTouchDevice(), []);
   const controls = useRef<ComponentRef<typeof OrbitControls>>(null);
   const { gl, camera } = useThree();
   const placed = useMemo(() => resolveAll(design), [design]);
@@ -205,7 +224,7 @@ function SceneContent(props: Scene3DProps & { target: THREE.Vector3; dist: numbe
         position={[W * 0.25, 220, D * 0.9]}
         intensity={1.25}
         castShadow
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={touchShadow ? [1024, 1024] : [2048, 2048]}
         shadow-bias={-0.0004}
         shadow-camera-left={-Math.max(W, D)}
         shadow-camera-right={Math.max(W, D)}

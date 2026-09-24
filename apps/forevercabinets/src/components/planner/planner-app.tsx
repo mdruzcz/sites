@@ -255,7 +255,7 @@ export default function PlannerApp({ initialDesign }: { initialDesign?: Design }
         </div>
 
         {toastMsg && (
-          <div role="status" className="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 rounded-sm bg-[var(--color-navy)] px-4 py-2 text-sm text-white shadow-lg lg:bottom-8">
+          <div role="status" className="pointer-events-none fixed bottom-36 left-1/2 z-[60] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 rounded-sm bg-[var(--color-navy)] px-4 py-2 text-center text-sm text-white shadow-lg lg:bottom-8 lg:w-auto">
             {toastMsg}
           </div>
         )}
