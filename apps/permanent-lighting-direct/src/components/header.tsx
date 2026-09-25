@@ -8,6 +8,7 @@ import { getStore } from "@/lib/catalog";
 
 const NAV = [
   { label: "Kits", href: "/diy-kits" },
+  { label: "Visualizer", href: "/visualizer" },
   { label: "How it works", href: "/how-it-works" },
   { label: "Gallery", href: "/gallery" },
   { label: "Guides", href: "/resources" },

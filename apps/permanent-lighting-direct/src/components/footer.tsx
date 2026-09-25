@@ -6,6 +6,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
     title: "Shop",
     links: [
       { label: "Permanent lighting kits", href: "/diy-kits" },
+      { label: "Light visualizer", href: "/visualizer" },
       { label: "Lights", href: "/product-category/lights" },
       { label: "Controllers", href: "/product-category/controllers" },
       { label: "Power supplies", href: "/product-category/power-supplies" },

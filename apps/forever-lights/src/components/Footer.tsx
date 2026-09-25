@@ -52,6 +52,7 @@ export function Footer() {
             <FooterCol
               title="Plan & Learn"
               links={[
+                { href: '/visualizer', label: 'Light Visualizer' },
                 { href: '/cost-estimator', label: 'Cost Estimator' },
                 { href: '/financing', label: 'Financing' },
                 { href: '/resources', label: 'Guides & Articles' },

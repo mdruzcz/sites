@@ -9,6 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: [string, number, MetadataRoute.Sitemap[number]["changeFrequency"]][] = [
     ["", 1, "weekly"],
     ["/diy-kits", 0.95, "weekly"],
+    ["/visualizer", 0.9, "monthly"],
     ["/shop", 0.9, "weekly"],
     ["/how-it-works", 0.8, "monthly"],
     ["/compare", 0.8, "monthly"],

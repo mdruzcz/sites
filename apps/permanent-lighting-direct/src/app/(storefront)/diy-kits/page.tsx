@@ -64,7 +64,7 @@ export default async function KitsPage() {
           <div className="max-w-3xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Step 1 · Pick your footage</p>
             <h2 className="font-display h2-fluid mt-5">Match the kit to your roofline.</h2>
-            <p className="lead mt-4 text-[var(--color-text-soft)]">Add up every edge you want lit. Round up: a few extra feet of track is cheap, a second order is not. Not sure? <Link href="/resources/how-to-measure-your-roofline-for-permanent-lighting" className="link-underline">Read the measuring guide</Link> or <Link href="/contact-us" className="link-underline">send us a sketch</Link>.</p>
+            <p className="lead mt-4 text-[var(--color-text-soft)]">Add up every edge you want lit. Round up: a few extra feet of track is cheap, a second order is not. Not sure? <Link href="/visualizer" className="link-underline">Draw your lights on a photo</Link> with the visualizer, <Link href="/resources/how-to-measure-your-roofline-for-permanent-lighting" className="link-underline">read the measuring guide</Link> or <Link href="/contact-us" className="link-underline">send us a sketch</Link>.</p>
           </div>
           <PermanentLightsConfigurator options={options} />
         </div>

@@ -9,6 +9,7 @@ import { Icon } from './icons';
 const links = [
   { href: '/services', label: 'Services' },
   { href: '/kits', label: 'DIY Kits' },
+  { href: '/visualizer', label: 'Visualizer' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/cost-estimator', label: 'Pricing' },
   { href: '/resources', label: 'Guides' },
@@ -48,14 +49,14 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden xl:flex items-center gap-7" aria-label="Primary">
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-7" aria-label="Primary">
           {links.map(l => {
             const active = pathname === l.href || pathname.startsWith(l.href + '/');
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`text-[15px] font-medium transition-colors min-h-[44px] inline-flex items-center border-b-2 ${active ? 'border-accent text-ink' : 'border-transparent text-ink-soft hover:text-ink'}`}
+                className={`text-[15px] font-medium transition-colors min-h-[44px] inline-flex items-center border-b-2 whitespace-nowrap ${active ? 'border-accent text-ink' : 'border-transparent text-ink-soft hover:text-ink'}`}
               >
                 {l.label}
               </Link>
@@ -64,9 +65,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href={phoneHref} className="inline-flex items-center gap-2 text-[15px] font-semibold text-ink hover:text-ink-soft min-h-[44px] px-2">
+          <a href={phoneHref} className="inline-flex items-center gap-2 text-[15px] font-semibold text-ink hover:text-ink-soft min-h-[44px] px-2 whitespace-nowrap">
             <Icon.phone size={18} />
-            {site.phone}
+            <span className="xl:hidden 2xl:inline">{site.phone}</span>
           </a>
           <Link href="/contact" className="btn btn-primary btn-sm">Free Quote</Link>
         </div>

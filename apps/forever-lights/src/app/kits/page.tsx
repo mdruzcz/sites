@@ -161,7 +161,7 @@ export default function KitsPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted">
-            Not sure which size? <Link href="/cost-estimator" className="font-semibold text-ink underline">Use the cost estimator</Link> to get a roofline length for your home.
+            Not sure which size? <Link href="/visualizer" className="font-semibold text-ink underline">Draw your lights on a photo</Link> with the Light Visualizer, or <Link href="/cost-estimator" className="font-semibold text-ink underline">use the cost estimator</Link> to get a roofline length for your home.
           </p>
         </div>
       </section>

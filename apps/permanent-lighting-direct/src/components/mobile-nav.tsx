@@ -8,6 +8,7 @@ import { SHOP_COLUMNS } from "@/components/mega-menu";
 
 const PRIMARY = [
   { label: "Kits", href: "/diy-kits" },
+  { label: "Visualizer", href: "/visualizer" },
   { label: "How it works", href: "/how-it-works" },
   { label: "Gallery", href: "/gallery" },
   { label: "Guides", href: "/resources" },
