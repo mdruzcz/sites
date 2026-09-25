@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/lib/site";
 import { useCart } from "@/lib/ui-context";
+import Logo from "./Logo";
 
 const NAV = [
   { href: "/shop", label: "Shop" },
+  { href: "/sale", label: "Sale" },
   { href: "/planner", label: "Kitchen Planner" },
   { href: "/kitchen-packages", label: "Kitchen Packages" },
-  { href: "/how-to-measure", label: "How to Measure" },
+  { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -21,13 +23,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-border">
       <div className="container flex items-center justify-between h-16 gap-4">
-        <Link href="/" className="font-bold text-lg leading-tight tracking-tight">
-          RTA Cabinets <span className="text-accent">Canada</span>
-        </Link>
+        <Logo />
 
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="hover:text-accent">
+            <Link key={n.href} href={n.href} className={n.href === "/sale" ? "text-red-700 font-semibold hover:text-red-800" : "hover:text-accent"}>
               {n.label}
             </Link>
           ))}

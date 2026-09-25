@@ -1,0 +1,807 @@
+{
+  "generatedAt": "2026-09-25T00:50:02.787Z",
+  "source": "Master Decker command center (item + stock_ledger)",
+  "dbPath": "C:/Users/Matt/Documents/Claude/Projects/Erpnext Clone/data/accounting.db",
+  "items": {
+    "B12": {
+      "on_hand": 25,
+      "on_order": 0,
+      "list_price": 256.8,
+      "lifecycle": "stocked",
+      "name": "12\" Base Cabinet",
+      "on_site": true
+    },
+    "B24": {
+      "on_hand": 18,
+      "on_order": 0,
+      "list_price": 370.57,
+      "lifecycle": "stocked",
+      "name": "24\" Base Cabinet",
+      "on_site": true
+    },
+    "SB36": {
+      "on_hand": 18,
+      "on_order": 0,
+      "list_price": 413.39,
+      "lifecycle": "stocked",
+      "name": "SInk Base Cabinet",
+      "on_site": true
+    },
+    "B09": {
+      "on_hand": 13,
+      "on_order": 0,
+      "list_price": 323.86,
+      "lifecycle": "stocked",
+      "name": "9\" Base Cabinets",
+      "on_site": true
+    },
+    "BBC42": {
+      "on_hand": 12,
+      "on_order": 0,
+      "list_price": 465.94,
+      "lifecycle": "stocked",
+      "name": "42-45\" Blind Corner Cabinet",
+      "on_site": true
+    },
+    "BBC45": {
+      "on_hand": 12,
+      "on_order": 0,
+      "list_price": 465.94,
+      "lifecycle": "stocked",
+      "name": "42-45\" Blind Corner Cabinet",
+      "on_site": true
+    },
+    "DB12": {
+      "on_hand": 12,
+      "on_order": 0,
+      "list_price": 396.57,
+      "lifecycle": "stocked",
+      "name": "12\" Three Drawer Cabinet",
+      "on_site": true
+    },
+    "DB15": {
+      "on_hand": 12,
+      "on_order": 0,
+      "list_price": 419.54,
+      "lifecycle": "stocked",
+      "name": "15\" Three Drawer Cabinet",
+      "on_site": true
+    },
+    "DB18": {
+      "on_hand": 16,
+      "on_order": 0,
+      "list_price": 443.11,
+      "lifecycle": "stocked",
+      "name": "18\" Thee Drawer Cabinet",
+      "on_site": true
+    },
+    "DB21": {
+      "on_hand": 14,
+      "on_order": 0,
+      "list_price": 467.19,
+      "lifecycle": "stocked",
+      "name": "21\" Three Drawer Cabinet",
+      "on_site": true
+    },
+    "DB24": {
+      "on_hand": 14,
+      "on_order": 0,
+      "list_price": 509.69,
+      "lifecycle": "stocked",
+      "name": "24\" Three Drawer Cabinet",
+      "on_site": true
+    },
+    "DB30": {
+      "on_hand": 16,
+      "on_order": 0,
+      "list_price": 574.65,
+      "lifecycle": "stocked",
+      "name": "30\" Three Drawer Cabinet",
+      "on_site": true
+    },
+    "SB33": {
+      "on_hand": 11,
+      "on_order": 0,
+      "list_price": 381.65,
+      "lifecycle": "stocked",
+      "name": "33\" Sink Base Cabinet",
+      "on_site": true
+    },
+    "B18": {
+      "on_hand": 13,
+      "on_order": 0,
+      "list_price": 313.02,
+      "lifecycle": "stocked",
+      "name": "18\" Base Cabinet",
+      "on_site": true
+    },
+    "Lazy Susan 33": {
+      "on_hand": 13,
+      "on_order": 0,
+      "list_price": 640.5,
+      "lifecycle": "stocked",
+      "name": "33\" Lazy Susan Corner Cabinet",
+      "on_site": true
+    },
+    "Lazy Susan 36": {
+      "on_hand": 15,
+      "on_order": 0,
+      "list_price": 713.86,
+      "lifecycle": "stocked",
+      "name": "36\" Lazy Susan Corner Cabinet",
+      "on_site": true
+    },
+    "B15": {
+      "on_hand": 10,
+      "on_order": 0,
+      "list_price": 301.92,
+      "lifecycle": "stocked",
+      "name": "15\" Base Cabinet",
+      "on_site": true
+    },
+    "B30": {
+      "on_hand": 8,
+      "on_order": 0,
+      "list_price": 418.86,
+      "lifecycle": "stocked",
+      "name": "30\" Base Cabinet",
+      "on_site": true
+    },
+    "B21": {
+      "on_hand": 4,
+      "on_order": 0,
+      "list_price": 335.31,
+      "lifecycle": "stocked",
+      "name": "21\" Base Cabinet",
+      "on_site": true
+    },
+    "B27": {
+      "on_hand": 7,
+      "on_order": 0,
+      "list_price": 397.23,
+      "lifecycle": "stocked",
+      "name": "27\" Base Cabinet",
+      "on_site": true
+    },
+    "B33": {
+      "on_hand": 5,
+      "on_order": 0,
+      "list_price": 461.3,
+      "lifecycle": "stocked",
+      "name": "33\" Base Cabinet",
+      "on_site": true
+    },
+    "B36": {
+      "on_hand": 5,
+      "on_order": 0,
+      "list_price": 483.81,
+      "lifecycle": "stocked",
+      "name": "36\" Base Cabinet",
+      "on_site": true
+    },
+    "BEC24": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 468.25,
+      "lifecycle": "stocked",
+      "name": "24\" Base End Corner Cabinet",
+      "on_site": true
+    },
+    "BWBK18": {
+      "on_hand": 6,
+      "on_order": 0,
+      "list_price": 523.25,
+      "lifecycle": "stocked",
+      "name": "18\" Roll Out Waste Basket Cabinet",
+      "on_site": true
+    },
+    "WRC3018": {
+      "on_hand": 7,
+      "on_order": 0,
+      "list_price": 215.62,
+      "lifecycle": "stocked",
+      "name": "30\" Wide Wine Rack Cabinet",
+      "on_site": true
+    },
+    "Stem Glass Holder": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 51.18,
+      "lifecycle": "stocked",
+      "name": "30\" Stem Glass Holder",
+      "on_site": true
+    },
+    "W0936": {
+      "on_hand": 9,
+      "on_order": 8,
+      "list_price": 189.41,
+      "lifecycle": "stocked",
+      "name": "9\" Wall Cabinet",
+      "on_site": true
+    },
+    "W1236": {
+      "on_hand": 6,
+      "on_order": 8,
+      "list_price": 224.03,
+      "lifecycle": "stocked",
+      "name": "12\" Wall Cabinet",
+      "on_site": true
+    },
+    "W1536": {
+      "on_hand": 0,
+      "on_order": 8,
+      "list_price": 246.9,
+      "lifecycle": "stocked",
+      "name": "15\" Wall Cabinet",
+      "on_site": true
+    },
+    "W1836": {
+      "on_hand": 0,
+      "on_order": 8,
+      "list_price": 267.86,
+      "lifecycle": "stocked",
+      "name": "18\" Wall Cabinet",
+      "on_site": true
+    },
+    "W2136": {
+      "on_hand": 9,
+      "on_order": 0,
+      "list_price": 261.5,
+      "lifecycle": "stocked",
+      "name": "21\" Wall Cabinet",
+      "on_site": true
+    },
+    "W2436": {
+      "on_hand": 1,
+      "on_order": 0,
+      "list_price": 301.75,
+      "lifecycle": "stocked",
+      "name": "24\" Wall Cabinet",
+      "on_site": true
+    },
+    "W2736": {
+      "on_hand": 6,
+      "on_order": 0,
+      "list_price": 320.67,
+      "lifecycle": "stocked",
+      "name": "27\" Wall Cabinet",
+      "on_site": true
+    },
+    "W3018": {
+      "on_hand": 0,
+      "on_order": 14,
+      "list_price": 271.44,
+      "lifecycle": "stocked",
+      "name": "30\" Wall Cabinet",
+      "on_site": true
+    },
+    "W301824": {
+      "on_hand": 4,
+      "on_order": 0,
+      "list_price": 246.23,
+      "lifecycle": "stocked",
+      "name": "30\" Above Fridge Cabinet",
+      "on_site": true
+    },
+    "W3036": {
+      "on_hand": 11,
+      "on_order": 0,
+      "list_price": 332.62,
+      "lifecycle": "stocked",
+      "name": "30\" Wall Cabinet",
+      "on_site": true
+    },
+    "W361824": {
+      "on_hand": 13,
+      "on_order": 0,
+      "list_price": 290.18,
+      "lifecycle": "stocked",
+      "name": "36\" Above Fridge Cabinet",
+      "on_site": true
+    },
+    "WBC2736": {
+      "on_hand": 13,
+      "on_order": 0,
+      "list_price": 284.4,
+      "lifecycle": "stocked",
+      "name": "27\" Wall Blind Corner",
+      "on_site": true
+    },
+    "WDC2436": {
+      "on_hand": 19,
+      "on_order": 7,
+      "list_price": 438.96,
+      "lifecycle": "stocked",
+      "name": "24\" Diagonal Wall Cabinet",
+      "on_site": true
+    },
+    "WDCG2463612": {
+      "on_hand": 2,
+      "on_order": 0,
+      "list_price": 472.49,
+      "lifecycle": "stocked",
+      "name": "24\" Wall Diagonal Cabinet Glass",
+      "on_site": true
+    },
+    "WEC1236": {
+      "on_hand": 1,
+      "on_order": 0,
+      "list_price": 377.68,
+      "lifecycle": "stocked",
+      "name": "12\" Wall End Cabinet",
+      "on_site": false
+    },
+    "WGC1236": {
+      "on_hand": 3,
+      "on_order": 0,
+      "list_price": 220.01,
+      "lifecycle": "stocked",
+      "name": "12\" Wall Glass Cabinet",
+      "on_site": true
+    },
+    "WGC1536": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 241.28,
+      "lifecycle": "stocked",
+      "name": "15\" Wall Glass Cabinet",
+      "on_site": true
+    },
+    "WGC1836": {
+      "on_hand": 4,
+      "on_order": 0,
+      "list_price": 273.63,
+      "lifecycle": "stocked",
+      "name": "18\" Wall Class Cabinet",
+      "on_site": true
+    },
+    "WMC2736": {
+      "on_hand": 10,
+      "on_order": 0,
+      "list_price": 285.36,
+      "lifecycle": "stocked",
+      "name": "27\" Wall Microwave Cabinet",
+      "on_site": true
+    },
+    "WP249024": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 879.46,
+      "lifecycle": "stocked",
+      "name": "24\" Tall Pantry Cabinet",
+      "on_site": true
+    },
+    "RRP24 (12mm)": {
+      "on_hand": 63,
+      "on_order": 0,
+      "list_price": 174.07,
+      "lifecycle": "stocked",
+      "name": "RRP24 (12mm)",
+      "on_site": true
+    },
+    "TK8(5MM)": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 33.16,
+      "lifecycle": "stocked",
+      "name": "Toe Kick 96\" length",
+      "on_site": true
+    },
+    "WF336": {
+      "on_hand": 52,
+      "on_order": 0,
+      "list_price": 22.73,
+      "lifecycle": "stocked",
+      "name": "WF336",
+      "on_site": true
+    },
+    "WF330": {
+      "on_hand": 27,
+      "on_order": 0,
+      "list_price": 23.69,
+      "lifecycle": "stocked",
+      "name": "WF330",
+      "on_site": true
+    },
+    "WF 3*96": {
+      "on_hand": 27,
+      "on_order": 0,
+      "list_price": 69.17,
+      "lifecycle": "stocked",
+      "name": "WF 3*96",
+      "on_site": true
+    },
+    "Outside Corner Mouldin": {
+      "on_hand": 40,
+      "on_order": 0,
+      "list_price": 33.16,
+      "lifecycle": "stocked",
+      "name": "Outside Corner Mouldin",
+      "on_site": true
+    },
+    "DWP3": {
+      "on_hand": 19,
+      "on_order": 0,
+      "list_price": 99.63,
+      "lifecycle": "stocked",
+      "name": "DWP3",
+      "on_site": true
+    },
+    "Light Rail Molding": {
+      "on_hand": 30,
+      "on_order": 0,
+      "list_price": 61.56,
+      "lifecycle": "stocked",
+      "name": "Light Rail Molding",
+      "on_site": true
+    },
+    "Scribe Moulding": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 28.4,
+      "lifecycle": "stocked",
+      "name": "Scribe Moulding",
+      "on_site": true
+    },
+    "Corbel 8x12": {
+      "on_hand": 8,
+      "on_order": 0,
+      "list_price": 66.53,
+      "lifecycle": "stocked",
+      "name": "Corbel 8x12",
+      "on_site": true
+    },
+    "48\"*96\"(5mm)": {
+      "on_hand": 6,
+      "on_order": 0,
+      "list_price": 175.5,
+      "lifecycle": "stocked",
+      "name": "48\"*96\"(5mm)",
+      "on_site": false
+    },
+    "Touch up Kit": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 35.1,
+      "lifecycle": "stocked",
+      "name": "Touch up Kit",
+      "on_site": true
+    },
+    "SB30": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 362.43,
+      "lifecycle": "proposed",
+      "name": "30\" Sink Base Cabinet",
+      "on_site": false
+    },
+    "W3618": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 236.8,
+      "lifecycle": "proposed",
+      "name": "36\" Over-Range Cabinet",
+      "on_site": false
+    },
+    "W3021": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 227.13,
+      "lifecycle": "proposed",
+      "name": "30\" Over-Range Cabinet — 21\" high",
+      "on_site": false
+    },
+    "W302424": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 298.15,
+      "lifecycle": "proposed",
+      "name": "30\" Above Fridge Cabinet — 24\" high",
+      "on_site": false
+    },
+    "W331824": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 265.55,
+      "lifecycle": "proposed",
+      "name": "33\" Above Fridge Cabinet",
+      "on_site": false
+    },
+    "W1230": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 173.35,
+      "lifecycle": "proposed",
+      "name": "12\" Wall Cabinet — 30\" high",
+      "on_site": true
+    },
+    "W1530": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 189.18,
+      "lifecycle": "proposed",
+      "name": "15\" Wall Cabinet — 30\" high",
+      "on_site": true
+    },
+    "W1830": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 214.58,
+      "lifecycle": "proposed",
+      "name": "18\" Wall Cabinet — 30\" high",
+      "on_site": true
+    },
+    "W2430": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 270.15,
+      "lifecycle": "proposed",
+      "name": "24\" Wall Cabinet — 30\" high",
+      "on_site": true
+    },
+    "W3030": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 298.43,
+      "lifecycle": "proposed",
+      "name": "30\" Wall Cabinet — 30\" high",
+      "on_site": true
+    },
+    "W1842": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 276.68,
+      "lifecycle": "proposed",
+      "name": "18\" Wall Cabinet — 42\" high",
+      "on_site": false
+    },
+    "W2442": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 348.92,
+      "lifecycle": "proposed",
+      "name": "24\" Wall Cabinet — 42\" high",
+      "on_site": false
+    },
+    "W3042": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 386.4,
+      "lifecycle": "proposed",
+      "name": "30\" Wall Cabinet — 42\" high",
+      "on_site": false
+    },
+    "W3642": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 442.23,
+      "lifecycle": "proposed",
+      "name": "36\" Wall Cabinet — 42\" high",
+      "on_site": false
+    },
+    "W362424": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 347.43,
+      "lifecycle": "proposed",
+      "name": "36\" Above Fridge Cabinet — 24\" high",
+      "on_site": false
+    },
+    "W3024": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 263.85,
+      "lifecycle": "proposed",
+      "name": "30\" Bridge Wall Cabinet — 24\" high",
+      "on_site": false
+    },
+    "WGC2136": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 298.63,
+      "lifecycle": "proposed",
+      "name": "21\" Wall Glass Cabinet",
+      "on_site": false
+    },
+    "WGC2436": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 323.25,
+      "lifecycle": "proposed",
+      "name": "24\" Wall Glass Cabinet",
+      "on_site": false
+    },
+    "WGC2736": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 353.25,
+      "lifecycle": "proposed",
+      "name": "27\" Wall Glass Cabinet",
+      "on_site": false
+    },
+    "WGC3036": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 374.7,
+      "lifecycle": "proposed",
+      "name": "30\" Wall Glass Cabinet",
+      "on_site": false
+    },
+    "CRM96": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 45.23,
+      "lifecycle": "proposed",
+      "name": "Crown Moulding 96\"",
+      "on_site": false
+    },
+    "BF334": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 18.05,
+      "lifecycle": "proposed",
+      "name": "Base Filler 3\" × 34½\"",
+      "on_site": false
+    },
+    "BEP2434": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 61.1,
+      "lifecycle": "proposed",
+      "name": "Base End Panel 24\" × 34½\"",
+      "on_site": false
+    },
+    "WEP1236": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 41.95,
+      "lifecycle": "proposed",
+      "name": "Wall End Panel 12\" × 36\"",
+      "on_site": false
+    },
+    "ROT24": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 77.05,
+      "lifecycle": "proposed",
+      "name": "Roll-Out Tray 24\"",
+      "on_site": false
+    },
+    "ROT18": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 64.47,
+      "lifecycle": "proposed",
+      "name": "Roll-Out Tray 18\"",
+      "on_site": false
+    },
+    "CUT18": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 37.13,
+      "lifecycle": "proposed",
+      "name": "Cutlery Divider 18\"",
+      "on_site": false
+    },
+    "SR9": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 92.5,
+      "lifecycle": "proposed",
+      "name": "9\" Spice Pull-Out",
+      "on_site": true
+    },
+    "TIP30": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 27.83,
+      "lifecycle": "proposed",
+      "name": "Sink Tip-Out Tray Kit",
+      "on_site": false
+    },
+    "HINGE-SC": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 3.85,
+      "lifecycle": "proposed",
+      "name": "Soft-Close Hinge (spare)",
+      "on_site": false
+    },
+    "SLIDE-SC": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 13.9,
+      "lifecycle": "proposed",
+      "name": "Soft-Close Drawer Slide Pair (spare)",
+      "on_site": false
+    },
+    "W3012": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 157.98,
+      "lifecycle": "proposed",
+      "name": "30\" Bridge Wall Cabinet — 12\" high",
+      "on_site": false
+    },
+    "W3015": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 178.78,
+      "lifecycle": "proposed",
+      "name": "30\" Bridge Wall Cabinet — 15\" high",
+      "on_site": false
+    },
+    "WP189024": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 688.65,
+      "lifecycle": "proposed",
+      "name": "18\" Pantry / Utility Cabinet — 90\" high",
+      "on_site": false
+    },
+    "WP309024": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 1068.1,
+      "lifecycle": "proposed",
+      "name": "30\" Pantry / Utility Cabinet — 90\" high",
+      "on_site": false
+    },
+    "OC309024": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 1112.65,
+      "lifecycle": "proposed",
+      "name": "30\" Oven Cabinet — 90\" high",
+      "on_site": false
+    },
+    "VSB24": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 325.7,
+      "lifecycle": "proposed",
+      "name": "24\" Vanity Sink Base",
+      "on_site": false
+    },
+    "VSB30": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 372.83,
+      "lifecycle": "proposed",
+      "name": "30\" Vanity Sink Base",
+      "on_site": false
+    },
+    "VSB36": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 429.4,
+      "lifecycle": "proposed",
+      "name": "36\" Vanity Sink Base",
+      "on_site": false
+    },
+    "VSB42": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 500.7,
+      "lifecycle": "proposed",
+      "name": "42\" Vanity Sink Base",
+      "on_site": false
+    },
+    "WHITE-SHAKER": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 27.75,
+      "lifecycle": "proposed",
+      "name": "Sample Door — Shaker",
+      "on_site": true
+    },
+    "SB24": {
+      "on_hand": 0,
+      "on_order": 0,
+      "list_price": 332.45,
+      "lifecycle": "proposed",
+      "name": "24\" Sink Base Cabinet",
+      "on_site": false
+    }
+  }
+}

@@ -34,7 +34,7 @@ export function PrintSheet() {
         <p style={{ fontSize: 12, marginTop: 8 }}>
           Room {formatFeet(design.room.width)} × {formatFeet(design.room.depth)} ({formatInches(design.room.width)} × {formatInches(design.room.depth)}), ceiling {formatInches(design.room.ceiling)}
           {design.room.openWalls.length ? ` · open on: ${design.room.openWalls.map((w) => WALL_NAMES[w as WallId].toLowerCase()).join(", ")}` : ""}
-          {design.island.enabled ? " · island" : ""} · {review.stats.units} cabinets · estimated {formatCad(review.subtotal)}
+          {design.island.enabled ? " · island" : ""} · {review.stats.units} cabinets · estimated {formatCad(review.subtotal)}{review.saved > 0 ? ` (regular ${formatCad(review.listSubtotal)}, kitchen sale saves ${formatCad(review.saved)})` : ""}
         </p>
       </div>
 

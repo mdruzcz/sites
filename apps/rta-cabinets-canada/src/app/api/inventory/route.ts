@@ -3,9 +3,10 @@ import { getCabinets } from "@/lib/catalog";
 import { getInventoryMap, mapForSkus } from "@/lib/inventory";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
+export const revalidate = 3600;
 
-/** Stock by catalog SKU for the planner and other client views. */
+/** Stock by catalog SKU (monthly command-center snapshot) for the planner and other client views. */
 export async function GET() {
   const map = await getInventoryMap();
   const bySku = mapForSkus(
@@ -13,6 +14,6 @@ export async function GET() {
     getCabinets().map((c) => c.sku),
   );
   return NextResponse.json(bySku, {
-    headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300" },
+    headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" },
   });
 }

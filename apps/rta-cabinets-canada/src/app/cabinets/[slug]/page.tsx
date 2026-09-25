@@ -13,6 +13,9 @@ import AddToQuoteButton from "@/components/AddToQuoteButton";
 import CabinetCard, { StockLine } from "@/components/CabinetCard";
 import { getInventoryMap, stockKey } from "@/lib/inventory";
 import CabinetGallery from "@/components/CabinetGallery";
+import { pricingFor } from "@/lib/sale";
+import { PriceTag, SaleBadge } from "@/components/SaleBadge";
+import TrustStrip from "@/components/TrustStrip";
 
 export const revalidate = 300;
 
@@ -61,6 +64,7 @@ export default async function CabinetPage({
   const inventory = await getInventoryMap();
   const stock = inventory[stockKey(c.sku)];
   const comingSoon = !!c.coming_soon;
+  const pricing = pricingFor(c.sku, c.price_cad, { comingSoon });
   const availability = comingSoon
     ? "https://schema.org/PreOrder"
     : stock && !stock.in_stock
@@ -80,9 +84,10 @@ export default async function CabinetPage({
       ? {
           offers: {
             "@type": "Offer",
-            price: c.price_cad.toFixed(2),
+            price: (pricing?.price ?? c.price_cad).toFixed(2),
             priceCurrency: "CAD",
             availability,
+            ...(pricing?.onSale ? { priceValidUntil: new Date(Date.now() + 30 * 864e5).toISOString().slice(0, 10) } : {}),
             url: `${site.url}/cabinets/${c.slug}`,
           },
         }
@@ -121,9 +126,11 @@ export default async function CabinetPage({
           <p className="text-sm text-accent font-medium mb-1">{c.group_label}</p>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">{c.name}</h1>
           <p className="text-sm text-ink-soft mb-4">SKU: {c.sku}</p>
-          <p className="text-3xl font-bold text-accent mb-2">
-            {comingSoon ? "Coming soon" : c.price_cad !== null ? `$${c.price_cad.toFixed(2)} CAD` : "Request a quote"}
-          </p>
+          {pricing?.onSale && <SaleBadge text={pricing.label ?? "Sale"} size="lg" className="mb-2" />}
+          <PriceTag pricing={pricing} size="lg" suffix=" CAD" fallback={comingSoon ? "Coming soon" : "Request a quote"} className="mb-2 text-accent" />
+          {pricing?.onSale && (
+            <p className="mb-2 text-sm text-ink-soft">Overstock pricing — we have plenty on the shelf, so this one ships right away. Design a whole kitchen in the planner for at least 8% off everything.</p>
+          )}
           <StockLine stock={stock} comingSoon={comingSoon} className="mb-6 text-sm" />
           {c.description && <p className="text-ink-soft mb-6">{c.description}</p>}
 
@@ -168,7 +175,9 @@ export default async function CabinetPage({
               <AddToQuoteButton
                 slug={c.slug}
                 name={c.name}
-                price_cad={c.price_cad}
+                price_cad={pricing ? pricing.price : c.price_cad}
+                list_price_cad={pricing?.onSale ? pricing.list : null}
+                sale_label={pricing?.label ?? null}
                 image={img}
                 kind="cabinet"
                 className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-md font-medium min-h-[48px]"
@@ -184,9 +193,11 @@ export default async function CabinetPage({
           <ul className="mt-6 space-y-2 text-sm text-ink-soft">
             <li>• Solid hardwood face frame &amp; doors, plywood box</li>
             <li>• Soft-close doors and drawers</li>
-            <li>• Ready to assemble — ships flat-packed</li>
-            <li>• Shipped across Canada · limited lifetime warranty</li>
+            <li>• Ready to assemble — ships flat-packed, or add expert assembly for ${site.assemblyPerCabinet}/cabinet in your quote</li>
+            <li>• Free delivery within {site.freeDeliveryKm} km of London, Ontario · shipped across Canada</li>
+            <li>• <Link href="/warranty" className="underline">Limited lifetime warranty</Link> · <Link href="/lowest-price-guarantee" className="underline">lowest price guarantee</Link> · <Link href="/financing" className="underline">0% APR financing</Link></li>
           </ul>
+          <TrustStrip compact className="mt-6" />
         </div>
       </div>
 

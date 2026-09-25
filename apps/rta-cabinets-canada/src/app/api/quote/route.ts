@@ -8,8 +8,12 @@ type QuoteItem = {
   name: string;
   qty: number;
   price: number | null;
+  list_price?: number | null;
+  sale_label?: string | null;
   kind?: string;
 };
+
+type Assembly = { units: number; rate: number; total: number };
 
 const HOSTNAME = "rtacabinetscanada.ca";
 const esc = (s: string) =>
@@ -22,10 +26,11 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
-  const { name, email, phone, postal, notes, items, token, company, design: rawDesign } = body as {
+  const { name, email, phone, postal, notes, items, token, company, design: rawDesign, assembly: rawAssembly, financing } = body as {
     name?: string; email?: string; phone?: string; postal?: string; notes?: string;
     items?: QuoteItem[]; token?: string; company?: string;
     design?: { name?: string; link?: string; summary?: string; notes?: string[] };
+    assembly?: Assembly | null; financing?: boolean;
   };
   // Kitchen Planner design attached from the planner (optional)
   const design =
@@ -40,7 +45,14 @@ export async function POST(req: NextRequest) {
   const designText = design
     ? [`Kitchen planner design: ${design.name}`, `Open: ${design.link}`, design.summary, ...(design.notes.length ? ["Design notes:", ...design.notes.map((n) => `- ${n}`)] : [])].join("\n")
     : "";
-  const notesForDb = [notes?.trim(), designText].filter(Boolean).join("\n\n") || null;
+  // Options ticked on the form (server recomputes the assembly total from units × rate)
+  const assembly: Assembly | null =
+    rawAssembly && Number.isFinite(Number(rawAssembly.units)) && Number(rawAssembly.units) > 0
+      ? { units: Math.min(500, Math.round(Number(rawAssembly.units))), rate: 75, total: Math.min(500, Math.round(Number(rawAssembly.units))) * 75 }
+      : null;
+  const wantsFinancing = financing === true;
+  const optionsText = [assembly ? `Expert assembly requested: ${assembly.units} cabinet(s) × $${assembly.rate} = $${assembly.total.toFixed(2)}` : "", wantsFinancing ? "Customer asked for 0% APR financing details." : ""].filter(Boolean).join("\n");
+  const notesForDb = [notes?.trim(), optionsText, designText].filter(Boolean).join("\n\n") || null;
 
   // Honeypot
   if (company) {
@@ -74,6 +86,9 @@ export async function POST(req: NextRequest) {
   }
 
   const subtotal = items.reduce((s: number, i: QuoteItem) => s + (i.price || 0) * i.qty, 0);
+  const listSubtotal = items.reduce((s: number, i: QuoteItem) => s + (i.list_price ?? i.price ?? 0) * i.qty, 0);
+  const saved = Math.max(0, Math.round((listSubtotal - subtotal) * 100) / 100);
+  const anySale = items.some((i) => i.list_price != null && i.price != null && i.list_price > i.price);
 
   // Email is the critical path; the DB rows are the backup.
   let emailed = false;
@@ -87,13 +102,15 @@ export async function POST(req: NextRequest) {
           from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
           reply_to: email,
-          subject: `New RTA Cabinets Quote Request from ${name}${design ? " (with kitchen design)" : ""}`,
+          subject: `New RTA Cabinets Quote Request from ${name}${design ? " (with kitchen design)" : ""}${assembly ? " + assembly" : ""}${wantsFinancing ? " + financing" : ""}`,
           html: `<h2>New Quote Request — RTA Cabinets Canada</h2>
             <p><strong>Name:</strong> ${esc(name)}</p>
             <p><strong>Email:</strong> ${esc(email)}</p>
             <p><strong>Phone:</strong> ${esc(phone || "-")}</p>
             <p><strong>Postal:</strong> ${esc(postal || "-")}</p>
             <p><strong>Notes:</strong> ${esc(notes || "-")}</p>
+            ${assembly ? `<p style="padding:8px;background:#fff7ed;border:1px solid #fdba74;"><strong>Expert assembly requested:</strong> ${assembly.units} cabinet(s) × $${assembly.rate} = <strong>$${assembly.total.toFixed(2)}</strong></p>` : ""}
+            ${wantsFinancing ? `<p style="padding:8px;background:#eff6ff;border:1px solid #93c5fd;"><strong>Customer asked for 0% APR financing details.</strong></p>` : ""}
             ${
               design
                 ? `<div style="margin:16px 0;padding:12px;border:1px solid #c2410c;background:#fbeae0;">
@@ -110,10 +127,12 @@ export async function POST(req: NextRequest) {
                 (i: QuoteItem) =>
                   `<li>${i.qty}x ${esc(i.name)}${i.kind === "package" ? " (package)" : ""} — ${
                     i.price ? "$" + (i.price * i.qty).toFixed(2) : "Quote on request"
-                  }</li>`
+                  }${i.list_price != null && i.price != null && i.list_price > i.price ? ` <span style="color:#b91c1c;">(${esc(i.sale_label || "sale")}, regular $${(i.list_price * i.qty).toFixed(2)})</span>` : ""}</li>`
               )
               .join("")}</ul>
-            <p><strong>Subtotal:</strong> $${subtotal.toFixed(2)}</p>`,
+            ${anySale ? `<p><strong>Regular price:</strong> <s>$${listSubtotal.toFixed(2)}</s> &nbsp; <strong style="color:#b91c1c;">Sale savings: −$${saved.toFixed(2)}</strong></p>` : ""}
+            <p><strong>Cabinet subtotal (sale prices):</strong> $${subtotal.toFixed(2)}</p>
+            ${assembly ? `<p><strong>Assembly:</strong> $${assembly.total.toFixed(2)}</p><p><strong>Estimated total before tax/shipping:</strong> $${(subtotal + assembly.total).toFixed(2)}</p>` : ""}`,
         }),
       });
       emailed = r.ok;

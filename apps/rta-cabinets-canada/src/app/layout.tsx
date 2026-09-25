@@ -7,6 +7,8 @@ import { CartProvider } from "@/lib/ui-context";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCall from "@/components/FloatingCall";
+import EmailSignup from "@/components/EmailSignup";
+import { TrustBar } from "@/components/TrustStrip";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -56,7 +58,9 @@ export default function RootLayout({
     telephone: site.phone,
     email: site.email,
     areaServed: { "@type": "Country", name: "Canada" },
+    address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: "ON", addressCountry: "CA" },
     priceRange: "$$",
+    makesOffer: { "@type": "Offer", description: `Free delivery within ${site.freeDeliveryKm} km of London, Ontario` },
   };
 
   return (
@@ -68,9 +72,11 @@ export default function RootLayout({
         />
         <CartProvider>
           <Header />
+          <TrustBar />
           <main className="min-h-[60vh]">{children}</main>
           <Footer />
           <FloatingCall />
+          <EmailSignup />
         </CartProvider>
               <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="040d3789-86d8-45b1-b874-d9e3683aa675" strategy="afterInteractive" />
       </body>

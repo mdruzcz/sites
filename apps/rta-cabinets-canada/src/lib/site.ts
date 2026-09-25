@@ -8,8 +8,12 @@ export const site = {
   tagline: "Premium White Shaker RTA cabinets, shipped across Canada.",
   phone: "(519) 914-5573",
   phoneHref: "tel:+15199145573",
-  email: "service@masterdecker.com",
+  email: "service@rtacabinetscanada.ca",
   serviceArea: "Canada",
+  city: "London",
+  province: "Ontario",
+  freeDeliveryKm: 300,
+  assemblyPerCabinet: 75,
 } as const;
 
 export type Site = typeof site;

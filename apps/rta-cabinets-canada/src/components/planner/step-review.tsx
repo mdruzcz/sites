@@ -17,6 +17,8 @@ import { encodeDesign, shareUrlFor } from "@/lib/planner/encode";
 import { surfacesWithUnits, buildAttachment, storeAttachment } from "@/lib/planner/attach";
 import { formatFeet, formatInches } from "@/lib/planner/types";
 import { formatCad } from "@/lib/planner-utils";
+import { KITCHEN_SALE } from "@/lib/sale";
+import { SaleBadge } from "@/components/SaleBadge";
 
 export function StepReview() {
   const { design, ui, setUi, toast, stock } = usePlanner();
@@ -76,7 +78,18 @@ export function StepReview() {
           skipped += qty;
           return;
         }
-        add({ slug: cab.slug, name: cab.name, price_cad: cab.quote_only ? null : cab.price_cad, image: cab.image_urls[0], kind: "cabinet", qty });
+        const line = review.parts.find((p) => p.sku === sku) ?? review.addons.find((a) => a.sku === sku);
+        const onSale = !!line && !!line.listUnit && line.unit < line.listUnit;
+        add({
+          slug: cab.slug,
+          name: cab.name,
+          price_cad: cab.quote_only ? null : onSale ? line!.unit : cab.price_cad,
+          list_price_cad: onSale ? line!.listUnit : null,
+          sale_label: onSale ? line!.saleLabel ?? `${KITCHEN_SALE.label} −${KITCHEN_SALE.pct}%` : null,
+          image: cab.image_urls[0],
+          kind: "cabinet",
+          qty,
+        });
         added += qty;
       };
       for (const p of review.parts) pushLine(p.sku, p.qty);
@@ -126,8 +139,13 @@ export function StepReview() {
         <Stat label="Cabinets" value={String(review.stats.units)} />
         <Stat label="Room" value={`${formatFeet(design.room.width)} × ${formatFeet(design.room.depth)}`} />
         <Stat label="Counter run" value={formatInches(Math.round(review.stats.counterLinear))} />
-        <Stat label="Estimated cabinets" value={formatCad(review.subtotal)} accent />
+        <Stat label="Estimated cabinets" value={formatCad(review.subtotal)} sub={review.saved > 0 ? formatCad(review.listSubtotal) : undefined} badge={review.saved > 0 ? `−${review.salePct}%` : undefined} accent />
       </div>
+      {review.saved > 0 && (
+        <p className="mt-2 text-[12px] text-[var(--color-ink-soft)]">
+          <span className="font-semibold text-red-700">You save {formatCad(review.saved)}</span> — {KITCHEN_SALE.pct}% off every cabinet in a planned kitchen; cabinets already on overstock sale keep their bigger discount. Sale prices carry into your quote.
+        </p>
+      )}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
         <div className="space-y-10">
@@ -211,6 +229,7 @@ export function StepReview() {
                     )}
                     <p className="text-[11px] text-[var(--color-ink-soft)]">
                       <span className="font-mono text-[var(--color-accent-dark)]">{p.sku}</span> · {p.qty} × {p.comingSoon ? "TBA" : formatCad(p.unit)}
+                      {!p.comingSoon && p.listUnit && p.listUnit > p.unit && <s className="ml-1">{formatCad(p.listUnit)}</s>}
                       {stock[p.sku] && !stock[p.sku].in_stock && <span className="ml-1 font-semibold text-red-700">· out of stock</span>}
                       {stock[p.sku] && stock[p.sku].in_stock && stock[p.sku].low_stock && <span className="ml-1 text-amber-700">· only {stock[p.sku].on_hand} left</span>}
                     </p>
@@ -231,9 +250,17 @@ export function StepReview() {
                 </ul>
               </div>
             )}
+            {review.saved > 0 && (
+              <div className="flex items-baseline justify-between border-t border-[var(--color-border)] px-4 py-2 text-[12px] text-[var(--color-ink-soft)]">
+                <span>Regular price</span>
+                <s>{formatCad(review.listSubtotal)}</s>
+              </div>
+            )}
             <div className="flex items-baseline justify-between border-t border-[var(--color-border)] bg-[var(--color-cream)] px-4 py-3">
-              <span className="text-[11px] uppercase tracking-widest text-[var(--color-ink-soft)]">Cabinets</span>
-              <span className="font-display text-xl text-[var(--color-ink)]">{formatCad(review.subtotal)}</span>
+              <span className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-[var(--color-ink-soft)]">
+                Cabinets {review.saved > 0 && <SaleBadge text={`−${review.salePct}%`} size="sm" />}
+              </span>
+              <span className={`font-display text-xl ${review.saved > 0 ? "text-red-700" : "text-[var(--color-ink)]"}`}>{formatCad(review.subtotal)}</span>
             </div>
           </div>
 
@@ -286,11 +313,17 @@ export function StepReview() {
   );
 }
 
-function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+function Stat({ label, value, sub, badge, accent }: { label: string; value: string; sub?: string; badge?: string; accent?: boolean }) {
   return (
-    <div className={`border px-4 py-3 ${accent ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-border)] bg-white"}`}>
-      <p className={`text-[10px] uppercase tracking-[0.25em] ${accent ? "text-[var(--color-accent)]" : "text-[var(--color-accent-dark)]"}`}>{label}</p>
-      <p className="mt-1 font-display text-2xl">{value}</p>
+    <div className={`relative border px-4 py-3 ${accent ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-border)] bg-white"}`}>
+      <p className={`flex items-center justify-between gap-2 text-[10px] uppercase tracking-[0.25em] ${accent ? "text-[var(--color-accent)]" : "text-[var(--color-accent-dark)]"}`}>
+        {label}
+        {badge && <SaleBadge text={badge} size="sm" className="tracking-wider" />}
+      </p>
+      <p className="mt-1 flex flex-wrap items-baseline gap-x-2 font-display text-2xl">
+        {value}
+        {sub && <s className="text-sm font-normal opacity-70">{sub}</s>}
+      </p>
     </div>
   );
 }

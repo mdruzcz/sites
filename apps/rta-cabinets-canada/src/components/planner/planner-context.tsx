@@ -19,7 +19,7 @@ export type PlannerUI = {
   addons: Record<string, boolean>; // step-3 add-on selections by SKU
 };
 
-export type StockInfo = { on_hand: number; in_stock: boolean; low_stock: boolean };
+export type StockInfo = { on_hand: number; on_order?: number; in_stock: boolean; low_stock: boolean };
 
 export type PlannerCtx = {
   state: PlannerState;

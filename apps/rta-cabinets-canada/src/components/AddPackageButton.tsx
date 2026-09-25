@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/lib/ui-context";
 import type { KitchenPackage } from "@/lib/catalog";
+import { KITCHEN_SALE, discounted } from "@/lib/sale";
 
 export default function AddPackageButton({ pkg }: { pkg: KitchenPackage }) {
   const { add } = useCart();
@@ -13,7 +14,9 @@ export default function AddPackageButton({ pkg }: { pkg: KitchenPackage }) {
     add({
       slug: pkg.slug,
       name: pkg.name,
-      price_cad: pkg.subtotal_cad,
+      price_cad: discounted(pkg.subtotal_cad, KITCHEN_SALE.pct),
+      list_price_cad: pkg.subtotal_cad,
+      sale_label: `${KITCHEN_SALE.label} −${KITCHEN_SALE.pct}%`,
       image: pkg.hero_image,
       kind: "package",
     });

@@ -16,6 +16,7 @@ import {
 } from "./geometry";
 import { GROUP_ORDER, getAddons, getPlannerItem, COUNTER_H, WALL_TOP } from "./catalog";
 import { getCabinetBySku } from "@/lib/planner-catalog";
+import { KITCHEN_SALE, kitchenLinePricing } from "@/lib/sale";
 
 export type Issue = {
   id: string;
@@ -31,8 +32,14 @@ export type PartLine = {
   sku: string;
   name: string;
   qty: number;
+  /** Sale unit price (what we quote). */
   unit: number;
   total: number;
+  /** Regular unit price before the kitchen / overstock sale. */
+  listUnit?: number;
+  listTotal?: number;
+  salePct?: number;
+  saleLabel?: string;
   image?: string;
   slug?: string;
   comingSoon?: boolean;
@@ -46,7 +53,12 @@ export type Review = {
   parts: PartLine[];
   appliances: PartLine[]; // the customer's own appliances (unpriced)
   addons: AddonLine[];
+  /** Sale subtotal of the parts list. */
   subtotal: number;
+  /** Regular-price subtotal of the parts list. */
+  listSubtotal: number;
+  saved: number;
+  salePct: number;
   stats: {
     units: number;
     baseLinear: number;
@@ -315,12 +327,17 @@ export function reviewDesign(design: Design): Review {
     .map(([sku, qty]) => {
       const def = getPlannerItem(sku)!;
       const cab = getCabinetBySku(sku);
+      const pr = def.comingSoon || def.price <= 0 ? null : kitchenLinePricing(sku, def.price);
       return {
         sku,
         name: cab?.name ?? def.name,
         qty,
-        unit: def.comingSoon ? 0 : def.price,
-        total: def.comingSoon ? 0 : def.price * qty,
+        unit: pr ? pr.price : 0,
+        total: pr ? Math.round(pr.price * qty * 100) / 100 : 0,
+        listUnit: pr ? pr.list : 0,
+        listTotal: pr ? Math.round(pr.list * qty * 100) / 100 : 0,
+        salePct: pr?.pct,
+        saleLabel: pr?.label ?? undefined,
         image: def.image,
         slug: cab?.slug,
         comingSoon: !!def.comingSoon,
@@ -330,7 +347,10 @@ export function reviewDesign(design: Design): Review {
     })
     .sort((a, b) => a._g - b._g || a._w - b._w)
     .map(({ _g: _ignoreG, _w: _ignoreW, ...rest }) => rest);
-  const subtotal = parts.reduce((s, p) => s + p.total, 0);
+  const subtotal = Math.round(parts.reduce((s, p) => s + p.total, 0) * 100) / 100;
+  const listSubtotal = Math.round(parts.reduce((s, p) => s + (p.listTotal ?? p.total), 0) * 100) / 100;
+  const saved = Math.round((listSubtotal - subtotal) * 100) / 100;
+  const salePct = listSubtotal > 0 ? Math.round((saved / listSubtotal) * 1000) / 10 : KITCHEN_SALE.pct;
   if (parts.some((p) => p.comingSoon)) {
     rec("Some units are from the 30″ wall line (coming soon)", "They're in your plan so you can design around them, but they can't be quoted until they land. We'll confirm pricing and timing with your quote.");
   }
@@ -374,6 +394,9 @@ export function reviewDesign(design: Design): Review {
     appliances,
     addons,
     subtotal,
+    listSubtotal,
+    saved,
+    salePct,
     stats: {
       units: placed.filter((p) => p.def.sold || p.def.comingSoon).length,
       baseLinear,

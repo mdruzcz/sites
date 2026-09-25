@@ -12,6 +12,8 @@ export default function AddToQuoteButton({
   kind = "cabinet",
   className,
   label = "Add to Quote",
+  list_price_cad,
+  sale_label,
 }: {
   slug: string;
   name: string;
@@ -20,12 +22,14 @@ export default function AddToQuoteButton({
   kind?: CartKind;
   className?: string;
   label?: string;
+  list_price_cad?: number | null;
+  sale_label?: string | null;
 }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
 
   function handleAdd() {
-    add({ slug, name, price_cad, image, kind });
+    add({ slug, name, price_cad, image, kind, list_price_cad, sale_label });
     setAdded(true);
     window.setTimeout(() => setAdded(false), 2500);
   }

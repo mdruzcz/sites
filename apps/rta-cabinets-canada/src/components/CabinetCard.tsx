@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Cabinet } from "@/lib/catalog";
 import type { StockInfo } from "@/lib/inventory";
+import { pricingFor } from "@/lib/sale";
+import { PriceTag, SaleBadge } from "./SaleBadge";
 
 export function StockLine({ stock, comingSoon, className = "" }: { stock?: StockInfo; comingSoon?: boolean; className?: string }) {
   if (comingSoon) return <p className={`text-xs font-medium text-accent-dark ${className}`}>Coming soon — not yet orderable</p>;
@@ -15,6 +17,7 @@ export default function CabinetCard({ cabinet, stock }: { cabinet: Cabinet; stoc
   const img = cabinet.images[0] ?? "/images/placeholder.svg";
   const comingSoon = !!cabinet.coming_soon;
   const outOfStock = !comingSoon && stock ? !stock.in_stock : false;
+  const pricing = pricingFor(cabinet.sku, cabinet.price_cad, { comingSoon });
   return (
     <Link
       href={`/cabinets/${cabinet.slug}`}
@@ -38,6 +41,7 @@ export default function CabinetCard({ cabinet, stock }: { cabinet: Cabinet; stoc
             Out of stock
           </span>
         )}
+        {pricing?.onSale && !outOfStock && <SaleBadge text={`Sale −${pricing.pct}%`} className="absolute right-2 top-2 -rotate-6" />}
         {comingSoon && cabinet.height_in === 30 && (
           <span className="absolute bottom-2 right-2 rounded-md bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-ink">30″ tall</span>
         )}
@@ -47,9 +51,7 @@ export default function CabinetCard({ cabinet, stock }: { cabinet: Cabinet; stoc
         <h3 className="text-sm font-medium leading-snug mb-2 line-clamp-2 group-hover:text-accent">
           {cabinet.name}
         </h3>
-        <p className="font-semibold">
-          {comingSoon ? "Price to be announced" : cabinet.price_cad !== null ? `$${cabinet.price_cad.toFixed(2)}` : "Request a quote"}
-        </p>
+        <PriceTag pricing={pricing} fallback={comingSoon ? "Price to be announced" : "Request a quote"} />
         <StockLine stock={stock} comingSoon={comingSoon} className="mt-1" />
       </div>
     </Link>

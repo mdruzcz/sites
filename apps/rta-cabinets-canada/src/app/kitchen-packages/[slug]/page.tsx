@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
 import { getPackage, getPackages, getCabinetBySku } from "@/lib/catalog";
 import AddPackageButton from "@/components/AddPackageButton";
+import { KITCHEN_SALE, discounted, formatMoney } from "@/lib/sale";
+import { SaleBadge } from "@/components/SaleBadge";
+import TrustStrip from "@/components/TrustStrip";
 
 export const revalidate = 3600;
 
@@ -44,6 +47,8 @@ export default async function PackagePage({
   const { slug } = await params;
   const p = getPackage(slug);
   if (!p) notFound();
+  const sale = discounted(p.subtotal_cad, KITCHEN_SALE.pct);
+  const saved = Math.round((p.subtotal_cad - sale) * 100) / 100;
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -54,9 +59,10 @@ export default async function PackagePage({
     brand: { "@type": "Brand", name: site.name },
     offers: {
       "@type": "Offer",
-      price: p.subtotal_cad.toFixed(2),
+      price: sale.toFixed(2),
       priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
+      priceValidUntil: new Date(Date.now() + 30 * 864e5).toISOString().slice(0, 10),
       url: `${site.url}/kitchen-packages/${p.slug}`,
     },
   };
@@ -102,15 +108,18 @@ export default async function PackagePage({
               <dd className="text-ink-soft">{p.bestFor}</dd>
             </div>
           </dl>
-          <p className="text-3xl font-bold text-accent mb-2">
-            {p.from_price ? "from " : ""}$
-            {p.subtotal_cad.toLocaleString("en-CA", { minimumFractionDigits: 2 })} CAD
+          <SaleBadge text={KITCHEN_SALE.badge} size="lg" className="mb-2" />
+          <p className="flex flex-wrap items-baseline gap-x-3 mb-1">
+            <span className="text-3xl font-bold text-red-700">{p.from_price ? "from " : ""}{formatMoney(sale)} CAD</span>
+            <s className="text-lg text-ink-soft">{formatMoney(p.subtotal_cad)}</s>
           </p>
+          <p className="text-sm font-semibold text-red-700 mb-2">You save {formatMoney(saved)} ({KITCHEN_SALE.pct}% kitchen sale)</p>
           <p className="text-sm text-ink-soft mb-6">
-            Package price for all {p.items.length} cabinet types below. Taxes &amp;
-            shipping confirmed in your written quote.
+            Package price for all {p.items.length} cabinet types below. Free delivery within {site.freeDeliveryKm} km of London, Ontario; taxes &amp;
+            shipping elsewhere confirmed in your written quote. Add expert assembly (${site.assemblyPerCabinet}/cabinet) in your quote list.
           </p>
           <AddPackageButton pkg={p} />
+          <TrustStrip compact className="mt-6" />
         </div>
       </div>
 
@@ -156,10 +165,18 @@ export default async function PackagePage({
             <tfoot>
               <tr className="border-t border-border font-semibold bg-sand">
                 <td className="px-4 py-3" colSpan={4}>
-                  Package Subtotal
+                  Regular package price
                 </td>
                 <td className="px-4 py-3 text-right">
-                  {p.from_price ? "from " : ""}${p.subtotal_cad.toFixed(2)}
+                  <s>{p.from_price ? "from " : ""}{formatMoney(p.subtotal_cad)}</s>
+                </td>
+              </tr>
+              <tr className="border-t border-border font-semibold bg-red-50 text-red-800">
+                <td className="px-4 py-3" colSpan={4}>
+                  Kitchen sale price ({KITCHEN_SALE.pct}% off)
+                </td>
+                <td className="px-4 py-3 text-right">
+                  {p.from_price ? "from " : ""}{formatMoney(sale)}
                 </td>
               </tr>
             </tfoot>

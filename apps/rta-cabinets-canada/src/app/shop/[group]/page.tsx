@@ -9,8 +9,9 @@ import {
   groupLabel,
   groupPriceRange,
 } from "@/lib/catalog";
-import CabinetCard from "@/components/CabinetCard";
-import { getInventoryMap, stockKey } from "@/lib/inventory";
+import CatalogGrid from "@/components/CatalogGrid";
+import TrustStrip from "@/components/TrustStrip";
+import { getInventoryMap, mapForSkus } from "@/lib/inventory";
 
 export const revalidate = 300;
 
@@ -50,7 +51,7 @@ export default async function GroupPage({
   if (items.length === 0) notFound();
   const label = groupLabel(group);
   const meta = GROUPS.find((g) => g.slug === group);
-  const stock = await getInventoryMap();
+  const stock = mapForSkus(await getInventoryMap(), items.map((c) => c.sku));
   const comingSoon = items.filter((c) => c.coming_soon).length;
 
   const jsonLd = {
@@ -90,11 +91,8 @@ export default async function GroupPage({
           </>
         )}
       </p>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {items.map((c) => (
-          <CabinetCard key={c.slug} cabinet={c} stock={stock[stockKey(c.sku)]} />
-        ))}
-      </div>
+      <CatalogGrid cabinets={items} stock={stock} groups={GROUPS.map((g) => ({ slug: g.slug, label: g.label }))} lockedGroup={group} />
+      <TrustStrip className="mt-14" />
     </div>
   );
 }

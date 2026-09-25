@@ -17,6 +17,8 @@ import { decodeDesign, readHashPayload } from "@/lib/planner/encode";
 import { getPlannerItem } from "@/lib/planner/catalog";
 import type { Design } from "@/lib/planner/types";
 import { formatCad } from "@/lib/planner-utils";
+import { KITCHEN_SALE, kitchenTotals } from "@/lib/sale";
+import { SaleBadge } from "@/components/SaleBadge";
 
 const STEPS: Array<{ n: Step; label: string; hint: string }> = [
   { n: 1, label: "Define your space", hint: "Room size, walls, windows & doors" },
@@ -155,7 +157,17 @@ export default function PlannerApp({ initialDesign }: { initialDesign?: Design }
   }, [ui.selectedId, ui.step, ui.panel, setUi]);
 
   const design = state.design;
-  const total = useMemo(() => design.items.reduce((s, i) => s + (getPlannerItem(i.sku)?.price ?? 0), 0), [design.items]);
+  const totals = useMemo(
+    () =>
+      kitchenTotals(
+        design.items
+          .map((i) => getPlannerItem(i.sku))
+          .filter((d): d is NonNullable<typeof d> => !!d && d.sold && d.price > 0)
+          .map((d) => ({ sku: d.sku, list: d.price, qty: 1 })),
+      ),
+    [design.items],
+  );
+  const total = totals.price;
   const ctx = useMemo(() => ({ state, design, dispatch, ui, setUi, toast, stock }), [state, design, ui, setUi, toast, stock]);
 
   if (!ready) {
@@ -226,8 +238,10 @@ export default function PlannerApp({ initialDesign }: { initialDesign?: Design }
                 </button>
               )}
               <span className="hidden text-[13px] text-[var(--color-ink-soft)] sm:inline">·</span>
-              <span className="font-display text-lg text-[var(--color-ink)]" aria-live="polite">
-                {formatCad(total)}
+              <span className="flex items-baseline gap-1.5" aria-live="polite" title={`${KITCHEN_SALE.label}: ${KITCHEN_SALE.pct}% off your whole kitchen`}>
+                {totals.list > 0 && <s className="hidden text-[12px] text-[var(--color-ink-soft)] sm:inline">{formatCad(totals.list)}</s>}
+                <span className={`font-display text-lg ${totals.list > 0 ? "text-red-700" : "text-[var(--color-ink)]"}`}>{formatCad(total)}</span>
+                {totals.list > 0 && <SaleBadge text={`−${KITCHEN_SALE.pct}%`} size="sm" className="hidden md:inline-flex" />}
               </span>
             </div>
 

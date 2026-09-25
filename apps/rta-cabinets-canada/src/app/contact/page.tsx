@@ -21,8 +21,7 @@ export default function ContactPage() {
     <div className="container py-12 max-w-3xl">
       <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
       <p className="text-ink-soft mb-8">
-        Have a question about a cabinet, a kitchen package, or shipping? Reach out
-        and we&apos;ll help you plan your kitchen.
+        Have a question about a cabinet, a kitchen package, financing or delivery? We&apos;re in {site.city}, {site.province} and deliver free within {site.freeDeliveryKm} km. Reach out and we&apos;ll help you plan your kitchen.
       </p>
       <div className="grid sm:grid-cols-2 gap-6 mb-10">
         <div className="bg-white border border-border rounded-lg p-6">

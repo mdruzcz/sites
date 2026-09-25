@@ -19,6 +19,9 @@ export type CartItem = {
   qty: number;
   kind: CartKind;
   image?: string;
+  /** Regular price when the line is on sale (price_cad is then the sale price). */
+  list_price_cad?: number | null;
+  sale_label?: string | null;
 };
 
 type AddInput = Omit<CartItem, "qty"> & { qty?: number };
@@ -27,6 +30,8 @@ type CartState = {
   items: CartItem[];
   count: number;
   subtotal: number;
+  /** Subtotal at regular prices (>= subtotal when anything is on sale). */
+  listSubtotal: number;
   hydrated: boolean;
   add: (item: AddInput) => void;
   remove: (slug: string) => void;
@@ -73,8 +78,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems((prev) => {
       const existing = prev.find((i) => i.slug === item.slug);
       if (existing) {
+        // keep the better price if the same cabinet is added again from a sale context
+        const better = item.price_cad !== null && existing.price_cad !== null && item.price_cad < existing.price_cad;
         return prev.map((i) =>
-          i.slug === item.slug ? { ...i, qty: i.qty + qty } : i,
+          i.slug === item.slug ? { ...i, qty: i.qty + qty, ...(better ? { price_cad: item.price_cad, list_price_cad: item.list_price_cad, sale_label: item.sale_label } : {}) } : i,
         );
       }
       return [...prev, { ...item, qty }];
@@ -98,7 +105,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = useMemo<CartState>(() => {
     const count = items.reduce((n, i) => n + i.qty, 0);
     const subtotal = items.reduce((s, i) => s + (i.price_cad ?? 0) * i.qty, 0);
-    return { items, count, subtotal, hydrated, add, remove, setQty, clear };
+    const listSubtotal = items.reduce((s, i) => s + (i.list_price_cad ?? i.price_cad ?? 0) * i.qty, 0);
+    return { items, count, subtotal, listSubtotal, hydrated, add, remove, setQty, clear };
   }, [items, hydrated, add, remove, setQty, clear]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
