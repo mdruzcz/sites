@@ -24,7 +24,7 @@ const HELP = "Please email service@masterdecker.com and we'll pick it up right a
 async function checkCaptcha(token: string | null): Promise<string | null> {
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   if (!siteKey || siteKey.startsWith("1x000")) return null;
-  if (!token) return `The spam check above the button hasn't finished yet. Give it a moment and submit again, or ${HELP}`;
+  if (!token) return "The spam check above the button hasn't finished yet. Give it a moment and submit again, or email service@masterdecker.com and we'll pick it up right away.";
   try {
     const res = await fetch(process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com", {
       method: "POST",
