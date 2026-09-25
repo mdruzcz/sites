@@ -22,10 +22,25 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
-  const { name, email, phone, postal, notes, items, token, company } = body as {
+  const { name, email, phone, postal, notes, items, token, company, design: rawDesign } = body as {
     name?: string; email?: string; phone?: string; postal?: string; notes?: string;
     items?: QuoteItem[]; token?: string; company?: string;
+    design?: { name?: string; link?: string; summary?: string; notes?: string[] };
   };
+  // Kitchen Planner design attached from the planner (optional)
+  const design =
+    rawDesign && typeof rawDesign.link === "string" && /^https?:\/\//.test(rawDesign.link)
+      ? {
+          name: String(rawDesign.name ?? "My kitchen").slice(0, 80),
+          link: rawDesign.link.slice(0, 6000),
+          summary: String(rawDesign.summary ?? "").slice(0, 1000),
+          notes: Array.isArray(rawDesign.notes) ? rawDesign.notes.map((n) => String(n).slice(0, 500)).slice(0, 50) : [],
+        }
+      : null;
+  const designText = design
+    ? [`Kitchen planner design: ${design.name}`, `Open: ${design.link}`, design.summary, ...(design.notes.length ? ["Design notes:", ...design.notes.map((n) => `- ${n}`)] : [])].join("\n")
+    : "";
+  const notesForDb = [notes?.trim(), designText].filter(Boolean).join("\n\n") || null;
 
   // Honeypot
   if (company) {
@@ -72,13 +87,23 @@ export async function POST(req: NextRequest) {
           from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
           reply_to: email,
-          subject: `New RTA Cabinets Quote Request from ${name}`,
+          subject: `New RTA Cabinets Quote Request from ${name}${design ? " (with kitchen design)" : ""}`,
           html: `<h2>New Quote Request — RTA Cabinets Canada</h2>
             <p><strong>Name:</strong> ${esc(name)}</p>
             <p><strong>Email:</strong> ${esc(email)}</p>
             <p><strong>Phone:</strong> ${esc(phone || "-")}</p>
             <p><strong>Postal:</strong> ${esc(postal || "-")}</p>
             <p><strong>Notes:</strong> ${esc(notes || "-")}</p>
+            ${
+              design
+                ? `<div style="margin:16px 0;padding:12px;border:1px solid #c2410c;background:#fbeae0;">
+              <p style="margin:0 0 4px 0;"><strong>Kitchen planner design attached:</strong> ${esc(design.name)}</p>
+              <p style="margin:0 0 4px 0;font-size:13px;">${esc(design.summary)}</p>
+              <p style="margin:0;"><a href="${esc(design.link)}">Open the design in the planner</a></p>
+              ${design.notes.length ? `<p style="margin:8px 0 0 0;font-size:13px;"><strong>Design notes:</strong></p><ul style="margin:4px 0 0 0;padding-left:18px;font-size:13px;">${design.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
+            </div>`
+                : ""
+            }
             <h3>Items</h3>
             <ul>${items
               .map(
@@ -110,7 +135,7 @@ export async function POST(req: NextRequest) {
       email,
       phone: phone || null,
       postal_code: postal || null,
-      notes: notes || null,
+      notes: notesForDb,
       subtotal_cad: subtotal,
     });
     if (reqErr) {

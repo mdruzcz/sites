@@ -12,6 +12,10 @@ export type Cabinet = {
   quote_only: boolean;
   description: string;
   images: string[];
+  height_in?: number | null;
+  depth_in?: number | null;
+  features?: string[];
+  coming_soon?: boolean;
 };
 
 export type PackageItem = {
@@ -76,6 +80,7 @@ export function getCabinetsByGroup(group: string): Cabinet[] {
 
 export function groupPriceRange(group: string): string {
   const prices = getCabinetsByGroup(group)
+    .filter((c) => !c.coming_soon)
     .map((c) => c.price_cad)
     .filter((p): p is number => p !== null);
   if (prices.length === 0) return "Quote only";

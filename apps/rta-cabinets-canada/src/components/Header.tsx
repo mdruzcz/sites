@@ -7,6 +7,7 @@ import { useCart } from "@/lib/ui-context";
 
 const NAV = [
   { href: "/shop", label: "Shop" },
+  { href: "/planner", label: "Kitchen Planner" },
   { href: "/kitchen-packages", label: "Kitchen Packages" },
   { href: "/how-to-measure", label: "How to Measure" },
   { href: "/about", label: "About" },

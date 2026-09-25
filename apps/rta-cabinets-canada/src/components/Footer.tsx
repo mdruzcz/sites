@@ -39,6 +39,7 @@ export default function Footer() {
           <p className="font-semibold text-white mb-3">Explore</p>
           <ul className="space-y-2 text-sm">
             <li><Link href="/shop" className="hover:text-white">All Cabinets</Link></li>
+            <li><Link href="/planner" className="hover:text-white">3D Kitchen Planner</Link></li>
             <li><Link href="/kitchen-packages" className="hover:text-white">Kitchen Packages</Link></li>
             <li><Link href="/how-to-measure" className="hover:text-white">How to Measure</Link></li>
             <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>

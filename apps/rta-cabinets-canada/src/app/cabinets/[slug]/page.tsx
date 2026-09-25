@@ -10,10 +10,11 @@ import {
   groupLabel,
 } from "@/lib/catalog";
 import AddToQuoteButton from "@/components/AddToQuoteButton";
-import CabinetCard from "@/components/CabinetCard";
+import CabinetCard, { StockLine } from "@/components/CabinetCard";
+import { getInventoryMap, stockKey } from "@/lib/inventory";
 import CabinetGallery from "@/components/CabinetGallery";
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return getCabinets().map((c) => ({ slug: c.slug }));
@@ -57,6 +58,14 @@ export default async function CabinetPage({
   const related = getCabinetsByGroup(c.group)
     .filter((r) => r.slug !== c.slug)
     .slice(0, 4);
+  const inventory = await getInventoryMap();
+  const stock = inventory[stockKey(c.sku)];
+  const comingSoon = !!c.coming_soon;
+  const availability = comingSoon
+    ? "https://schema.org/PreOrder"
+    : stock && !stock.in_stock
+      ? "https://schema.org/OutOfStock"
+      : "https://schema.org/InStock";
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -73,7 +82,7 @@ export default async function CabinetPage({
             "@type": "Offer",
             price: c.price_cad.toFixed(2),
             priceCurrency: "CAD",
-            availability: "https://schema.org/InStock",
+            availability,
             url: `${site.url}/cabinets/${c.slug}`,
           },
         }
@@ -112,9 +121,10 @@ export default async function CabinetPage({
           <p className="text-sm text-accent font-medium mb-1">{c.group_label}</p>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">{c.name}</h1>
           <p className="text-sm text-ink-soft mb-4">SKU: {c.sku}</p>
-          <p className="text-3xl font-bold text-accent mb-6">
-            {c.price_cad !== null ? `$${c.price_cad.toFixed(2)} CAD` : "Request a quote"}
+          <p className="text-3xl font-bold text-accent mb-2">
+            {comingSoon ? "Coming soon" : c.price_cad !== null ? `$${c.price_cad.toFixed(2)} CAD` : "Request a quote"}
           </p>
+          <StockLine stock={stock} comingSoon={comingSoon} className="mb-6 text-sm" />
           {c.description && <p className="text-ink-soft mb-6">{c.description}</p>}
 
           {c.width_in !== null && (
@@ -126,25 +136,50 @@ export default async function CabinetPage({
                 </tr>
                 <tr className="border-b border-border">
                   <th className="text-left bg-sand px-3 py-2 font-medium">Height</th>
-                  <td className="px-3 py-2">34.5&quot; (base) / 36&quot; (wall)</td>
+                  <td className="px-3 py-2">{c.height_in != null ? `${c.height_in}"` : '34.5" (base) / 36" (wall)'}</td>
                 </tr>
                 <tr>
                   <th className="text-left bg-sand px-3 py-2 font-medium">Depth</th>
-                  <td className="px-3 py-2">24&quot; (base) / 12&quot; (wall)</td>
+                  <td className="px-3 py-2">{c.depth_in != null ? `${c.depth_in}"` : '24" (base) / 12" (wall)'}</td>
                 </tr>
               </tbody>
             </table>
           )}
 
-          <AddToQuoteButton
-            slug={c.slug}
-            name={c.name}
-            price_cad={c.price_cad}
-            image={img}
-            kind="cabinet"
-            className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-md font-medium min-h-[48px]"
-            label={c.price_cad !== null ? "Add to Quote" : "Add to Quote (request price)"}
-          />
+          {comingSoon ? (
+            <div className="rounded-lg border border-accent/40 bg-accent-soft p-4 text-sm">
+              <p className="font-semibold text-ink">Part of our new 30&Prime;-tall wall cabinet line — arriving soon.</p>
+              <p className="mt-1 text-ink-soft">
+                You can already place it in the{" "}
+                <Link href="/planner" className="text-accent font-medium underline">Kitchen Planner</Link> to design around it. Email{" "}
+                <a href={`mailto:${site.email}?subject=${encodeURIComponent(`ETA for ${c.sku}`)}`} className="text-accent font-medium underline">
+                  {site.email}
+                </a>{" "}
+                for timing and pricing.
+              </p>
+            </div>
+          ) : (
+            <>
+              {stock && !stock.in_stock && (
+                <p className="mb-3 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800">
+                  This cabinet is out of stock right now. You can still add it to your quote — we&rsquo;ll confirm the restock date before anything is charged.
+                </p>
+              )}
+              <AddToQuoteButton
+                slug={c.slug}
+                name={c.name}
+                price_cad={c.price_cad}
+                image={img}
+                kind="cabinet"
+                className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-md font-medium min-h-[48px]"
+                label={stock && !stock.in_stock ? "Add to Quote (backorder)" : c.price_cad !== null ? "Add to Quote" : "Add to Quote (request price)"}
+              />
+            </>
+          )}
+          <p className="mt-4 text-sm text-ink-soft">
+            Planning a whole kitchen?{" "}
+            <Link href="/planner" className="text-accent font-medium underline">Design it in 3D with the Kitchen Planner</Link>.
+          </p>
 
           <ul className="mt-6 space-y-2 text-sm text-ink-soft">
             <li>• Solid hardwood face frame &amp; doors, plywood box</li>
@@ -160,7 +195,7 @@ export default async function CabinetPage({
           <h2 className="text-2xl font-bold mb-6">More {c.group_label}</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {related.map((r) => (
-              <CabinetCard key={r.slug} cabinet={r} />
+              <CabinetCard key={r.slug} cabinet={r} stock={inventory[stockKey(r.sku)]} />
             ))}
           </div>
         </section>

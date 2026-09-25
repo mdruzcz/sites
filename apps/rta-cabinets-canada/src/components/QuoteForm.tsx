@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useCart } from "@/lib/ui-context";
+import { clearAttachment, readAttachment, type DesignAttachment } from "@/lib/planner/attach";
 
 export default function QuoteForm() {
   const { items, subtotal, clear } = useCart();
@@ -11,6 +13,11 @@ export default function QuoteForm() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useState<string>("");
+  const [design, setDesign] = useState<DesignAttachment | null>(null);
+
+  useEffect(() => {
+    setDesign(readAttachment());
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,6 +41,7 @@ export default function QuoteForm() {
         kind: i.kind,
       })),
       token,
+      design: design ? { name: design.name, link: design.link, summary: design.summary, notes: design.notes } : undefined,
     };
 
     try {
@@ -47,6 +55,7 @@ export default function QuoteForm() {
         throw new Error(data.error || "Submission failed");
       }
       clear();
+      clearAttachment();
       router.push("/request/submitted");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
@@ -58,6 +67,31 @@ export default function QuoteForm() {
     <div className="grid lg:grid-cols-5 gap-10">
       <div className="lg:col-span-3">
         <form onSubmit={handleSubmit} className="space-y-4">
+          {design && (
+            <div className="flex items-start gap-3 rounded-lg border border-accent/40 bg-accent-soft p-3 text-sm">
+              <span aria-hidden="true">📐</span>
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-ink">Kitchen plan attached: {design.name}</p>
+                <p className="mt-0.5 text-xs text-ink-soft">{design.summary}</p>
+                <p className="mt-1 text-xs">
+                  <Link href={design.link} target="_blank" className="text-accent font-medium underline">
+                    Open plan
+                  </Link>
+                  <span className="mx-2 text-border">|</span>
+                  <button
+                    type="button"
+                    className="underline"
+                    onClick={() => {
+                      clearAttachment();
+                      setDesign(null);
+                    }}
+                  >
+                    Remove
+                  </button>
+                </p>
+              </div>
+            </div>
+          )}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">

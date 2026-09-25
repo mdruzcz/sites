@@ -15,7 +15,11 @@
       "/images/PXL_20250310_144336623.MP_.png",
       "/images/PXL_20250310_144345965.MP_.png",
       "/images/PXL_20250310_144404797.MP-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-36in-base-cabinet-double-door-single-drawer",
@@ -35,7 +39,11 @@
       "/images/DSC09482-Side-Closed-New-scaled-1-1536x1024-1.webp",
       "/images/updatesBaseSinkWithoutLegs-1536x1024-1.jpg",
       "/images/White-Shaker-Base-3-36inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-33in-base-cabinet-double-door-single-drawer",
@@ -55,7 +63,11 @@
       "/images/DSC09482-Side-Closed-New-scaled-1-1536x1024-1.webp",
       "/images/updatesBaseSinkWithoutLegs-1536x1024-1.jpg",
       "/images/White-Shaker-Base-3-33inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-30in-base-cabinet-double-door-single-drawer",
@@ -75,7 +87,11 @@
       "/images/DSC09482-Side-Closed-New-scaled-1-1536x1024-1.webp",
       "/images/updatesBaseSinkWithoutLegs-1536x1024-1.jpg",
       "/images/White-Shaker-Base-3-30inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-27in-base-cabinet-double-door-single-drawer",
@@ -95,7 +111,11 @@
       "/images/DSC09482-Side-Closed-New-scaled-1-1536x1024-1.webp",
       "/images/updatesBaseSinkWithoutLegs-1536x1024-1.jpg",
       "/images/White-Shaker-Base-3-27inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-21in-base-cabinet-single-door-single-drawer",
@@ -114,7 +134,11 @@
       "/images/13-1638x2048-2.jpg",
       "/images/06-1536x1229-2.jpg",
       "/images/White-Shaker-Base-1-21inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-18in-base-cabinet-single-door-single-drawer",
@@ -133,7 +157,11 @@
       "/images/13-1638x2048-2.jpg",
       "/images/06-1536x1229-2.jpg",
       "/images/White-Shaker-Base-1-18inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-15in-base-cabinet-single-door-single-drawer",
@@ -152,7 +180,11 @@
       "/images/13-1638x2048-2.jpg",
       "/images/06-1536x1229-2.jpg",
       "/images/White-Shaker-Base-1-15inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-wall-diagonal-cabinet-glass-24in",
@@ -169,7 +201,14 @@
       "/images/PXL_20250310_135947002.MP-1.png",
       "/images/PXL_20250310_135931202.MP-1.png",
       "/images/PXL_20250310_135848527.MP_.png"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "corner",
+      "glass-door"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-wall-cabinet-30in",
@@ -186,7 +225,11 @@
       "/images/1311906_2.webp",
       "/images/skw-w3036-2.webp",
       "/images/06-1536x1229-7.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "roll-out-waste-basket-cabinet-18in",
@@ -205,7 +248,13 @@
       "/images/PXL_20250310_140450221.MP-1.png",
       "/images/PXL_20250310_140656254.MP-1.png",
       "/images/PXL_20250310_141535723.MP_.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "waste-basket"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-base-end-corner-cabinet-24in",
@@ -222,7 +271,13 @@
       "/images/PXL_20250310_140152254.MP_.png",
       "/images/PXL_20250310_140138534.MP-1.png",
       "/images/PXL_20250310_140058990.MP_.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "corner"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-45in-blind-base-corner-cabinet",
@@ -242,7 +297,13 @@
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg",
       "/images/White-Shaker-Base-6-42inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "corner"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-36in-lazy-susan-corner-base-cabinet",
@@ -261,7 +322,13 @@
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg",
       "/images/White-Shaker-Base-5-36inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "lazy-susan"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-sink-base-cabinet-33in",
@@ -281,7 +348,13 @@
       "/images/13-1638x2048-5.jpg",
       "/images/06-1536x1229-5.jpg",
       "/images/White-Shaker-Base-4-33inch-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "sink"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-15in-three-drawer-base-cabinet",
@@ -301,7 +374,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-15inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-18in-three-drawer-base-cabinet",
@@ -321,7 +400,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-18inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-21in-three-drawer-base-cabinet",
@@ -341,7 +426,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-21inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-24in-three-drawer-base-cabinet",
@@ -361,7 +452,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-24inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-30in-three-drawer-base-cabinet",
@@ -381,7 +478,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-30inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-36in-refrigerator-wall-cabinet",
@@ -398,7 +501,11 @@
       "/images/16-4.jpg",
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg"
-    ]
+    ],
+    "height_in": 18,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-stem-glass-holder",
@@ -406,32 +513,45 @@
     "name": "White Shaker Stem Glass Holder",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 30,
     "price_cad": 51.18,
     "quote_only": false,
     "description": "levate your kitchen or bar area with the White Shaker Stem Glass Holder from RTA Cabinets Canada. This functional and stylish accessory is crafted to enhance your wine rack by providing a secure and elegant storage solution for wine glasses. Available in a pristine white color, it complements any decor, making it ideal for installations beneath cabinetry in kitchens, basement bars, or anywhere you display your finest glassware. Key Features: Purpose : Perfect for adding a sophisticated touch to wine racks, basement bars, or under cabinet areas by offering a practical storage solution for stem glasses. Color : Comes in a versatile white finish, easily integrating into various interior designs and matching other kitchen or bar furnishings. Installation : Designed for easy mounting underneath cabinets or shelves, maximizing space while keeping glassware conveniently accessible. Functionality : Not only useful for minor touch-ups and repairs but also enhances the utility and appearance of your space. Versatility : Ideal for displaying and storing glassware in a variety of settings, from kitchen cabinets to basement bars, adding both functionality and a decorative touch. Compatibility : Coordinates seamlessly with other White Shaker collection items, maintaining a cohesive look throughout your home. The White Shaker Stem Glass Holder from RTA Cabinets Canada is more than just a storage option; it's a transformative piece that integrates beauty and practicality into your home. Whether it's part of your kitchen or a standout feature in your basement bar, it ensures your glassware is displayed elegantly and within easy reach, making it a must-have for any stylish and organized space.",
     "images": [
       "/images/White-Shaker-Corbel-e1713458432767.jpeg",
       "/images/sgh30-acw.jpg"
-    ]
+    ],
+    "height_in": 1.5,
+    "depth_in": 12,
+    "features": [
+      "glass-door",
+      "stemware"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-4x8-painted-plywood-sheet-for-custom-panels",
-    "sku": "48&#8243;*96&#8243;(5mm)",
+    "sku": "48″*96″(5mm)",
     "name": "White Shaker 4x8 Painted Plywood Sheet For Custom Panels",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 48,
     "price_cad": 175.5,
     "quote_only": false,
     "description": "Revitalize your kitchen with precision and style using the White Shaker Painted Plywood Sheet for Custom Panels from RTA Cabinets Canada. This versatile plywood sheet is specifically designed for crafting custom kitchen panels and performing minor touch-ups or repairs, ensuring a cohesive and polished look throughout your kitchen space. Available in a classic white shade, the sheet is meticulously painted on both sides with a durable, color-matching kitchen enamel, perfect for creating island backers, custom refrigerator panels, or dishwasher panels. Key Features: Purpose : Ideal for customizing kitchen elements such as island backers, refrigerator, and dishwasher panels, as well as for performing minor repairs and touch-ups. Dimensions : Comes in a standard 4x8 feet size, with a thickness of 5/8 inches, providing ample material for various customization projects. Finish : Double-sided painting with a tough, kitchen-specific enamel ensures a durable and consistent appearance that matches existing kitchen decor. Material : Crafted from high-quality plywood, offering a sturdy and reliable base for any custom work. Aesthetic Compatibility : Designed to seamlessly integrate with the White Shaker cabinet collection, maintaining a uniform look throughout your kitchen. Versatility : The flexibility in application makes it an essential item for customizing and refining the aesthetic details of your kitchen environment. The White Shaker Painted Plywood Sheet for Custom Panels from RTA Cabinets Canada is not just a practical solution for your kitchen customization needs; it's a critical component for achieving a flawless and tailored appearance in your cooking space. It ensures that every aspect of your kitchen not only functions well but also reflects a meticulous attention to detail and a commitment to maintaining a luxurious and inviting atmosphere.",
     "images": [
       "/images/Untitled-design-3-2.png"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 0.25,
+    "features": [
+      "panel"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "8in-x12inwhite-shaker-corbel",
-    "sku": "Corbel 8&#215;12",
+    "sku": "Corbel 8x12",
     "name": "8\" x12\"White Shaker Corbel",
     "group": "accessories",
     "group_label": "Accessories & Trim",
@@ -441,7 +561,11 @@
     "description": "Elevate your kitchen aesthetics and functionality with the White Shaker Corbel from RTA Cabinets Canada. This elegantly designed corbel is crafted specifically to provide sturdy support for kitchen islands or countertop overhangs, making it an essential component for any sophisticated kitchen setup. With a classic white finish, the corbel blends seamlessly into any décor, enhancing both the style and structural integrity of your kitchen spaces. Key Features: Design Purpose : Specifically engineered to offer robust support for kitchen islands and overhangs, ensuring stability and safety in your culinary workspace. Installation Options : Versatile installation possibilities with the use of PL premium adhesive for a seamless look or the option to screw from the inside for enhanced support. Color and Style : Features a crisp white finish that complements the minimalist elegance of Shaker-style interiors, promoting a clean and cohesive kitchen environment. Material Durability : Constructed from high-quality materials designed to withstand the demands of a busy kitchen, guaranteeing long-lasting support and style. Aesthetic Integration : Designed to integrate effortlessly with existing cabinetry, maintaining the fluidity and harmony of your kitchen's design. Dimensions : Optimally sized to balance support and aesthetic proportionality, ensuring they do not overpower the visual flow of the kitchen. The White Shaker Corbel from RTA Cabinets Canada is not just a structural accessory; it is a stylish addition that enhances the overall functionality and elegance of your kitchen. Perfect for those seeking a blend of classic style and practical design, this corbel ensures your kitchen remains a paragon of sophistication and efficiency.",
     "images": [
       "/images/Corbel.png"
-    ]
+    ],
+    "height_in": 12,
+    "depth_in": 8,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-touch-up-kit",
@@ -455,7 +579,11 @@
     "description": "Maintain the pristine look of your cabinetry with the RTA Cabinets Canada Touch Up Kit. This indispensable accessory is tailored for addressing minor dents, scratches, or other imperfections that may occur during the installation process or through everyday use. Available in a choice of gray or white, this touch up pen is an essential tool for quick and efficient repairs, ensuring your cabinets remain flawless and visually appealing. Key Features: Purpose : Specifically designed for minor touch-ups and repairs, effectively concealing blemishes such as scratches, dents, or chips on your cabinetry. Color Options : Available in gray and white, allowing for a perfect match to the original finish of your cabinets. Ease of Use : Simple application process which ensures quick fixes with minimal effort, restoring the original look of the cabinets almost instantly. Versatility : Suitable for use on a variety of cabinet surfaces within your kitchen or any other cabinetry around the home. Portability : Compact and easy to store, making it a handy addition to your home maintenance toolkit. Effectiveness : Provides a durable cover for imperfections, helping to protect the affected areas from further damage while maintaining the cabinet's aesthetic. The RTA Cabinets Canada Touch Up Kit is more than just a repair tool; it is a crucial component for keeping your cabinets in optimal condition. Whether you're dealing with installation mishaps or the wear and tear of daily activities, this touch up pen ensures your cabinets continue to look their best, preserving the beauty and integrity of your home's cabinetry.",
     "images": [
       "/images/cupboards-6.webp"
-    ]
+    ],
+    "height_in": null,
+    "depth_in": null,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-scribe-moulding",
@@ -463,7 +591,7 @@
     "name": "White Shaker Scribe Moulding",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 0.75,
     "price_cad": 38.44,
     "quote_only": false,
     "description": "Looking to cover up any inconsistencies between your walls or ceilings and your cabinets? Look no further than our White Shaker Scribe Moulding! This Corner Moulding is the perfect way to achieve a polished, finished look on your cabinet units. With its versatile white finish, it will complement any décor. So don't wait - order yours today!",
@@ -471,7 +599,13 @@
       "/images/Untitled-design-3-2.png",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 0.25,
+    "features": [
+      "moulding"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-light-rail",
@@ -479,14 +613,20 @@
     "name": "White Shaker Light Rail",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 1.375,
     "price_cad": 61.56,
     "quote_only": false,
     "description": "Enhance your kitchen's elegance and functionality with the White Shaker Light Rail Moulding from RTA Cabinets Canada. This meticulously designed light rail moulding is the ideal choice for discreetly concealing under-cabinet lighting or masking any imperfections in backsplashes, ensuring a seamless and polished appearance. The White Shaker Light Rail Moulding complements your existing cabinetry and adds a refined decorative touch to any kitchen setting. Key Features: Purpose : Serves as a decorative cover to hide under-cabinet lighting fixtures and correct any visual discrepancies along kitchen backsplashes. Installation : Designed for easy installation beneath cabinets, providing a neat and finished look with minimal effort. Design : Features an elegantly routed curve that enhances the aesthetic appeal of your cabinetry without overwhelming it. Finish : Triple-coated with high-quality paint, ensuring durability and a pristine appearance that withstands the test of time and kitchen environments. Compatibility : Specifically tailored to match the White Shaker cabinet collection, guaranteeing a cohesive and stylish kitchen decor. Material : Crafted from robust materials that ensure longevity and maintain structural integrity even under frequent use. The White Shaker Light Rail Moulding from RTA Cabinets Canada is not merely a functional accessory; it is a transformative detail that elevates the overall look of your kitchen. By blending functionality with decorative appeal, this light rail moulding ensures your kitchen not only operates efficiently but also looks impeccably stylish. Perfect for those who appreciate attention to detail and a flawless kitchen environment.",
     "images": [
       "/images/Untitled-design-2-7.png",
       "/images/Crown-Molding-1-CloseUp-scaled-1.webp"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 2,
+    "features": [
+      "moulding"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-dishwasher-panel",
@@ -494,7 +634,7 @@
     "name": "White Shaker Dishwasher Panel",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 3,
     "price_cad": 99.63,
     "quote_only": false,
     "description": "rtacabinetscanada dishwasher panel helps you cover the exposed side of the dishwasher with a panel that matches the kitchen cabinets. The dishwasher panel is designed to achieve a sleek, uniform look that places your kitchen cabinetry front and center in your kitchen design.",
@@ -502,7 +642,13 @@
       "/images/cupboards.webp",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "panel"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "outside-corner-moulding",
@@ -510,7 +656,7 @@
     "name": "Outside Corner Moulding",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 0.75,
     "price_cad": 33.16,
     "quote_only": false,
     "description": "Looking for a quick and easy way to finish your outside corners? Look no further than our White Shaker Outside Corner Moulding! Made from solid hardwood in a white finish, this moulding is the perfect way to complete the look of your project. Plus, it's easy to install - simply glue or nail it into place!",
@@ -518,7 +664,14 @@
       "/images/Untitled-design-2.webp",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 0.75,
+    "depth_in": 96,
+    "features": [
+      "corner",
+      "moulding"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-wall-filler-96inx3in",
@@ -533,7 +686,13 @@
     "images": [
       "/images/Filler.png",
       "/images/wall-filler.png"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 0.75,
+    "features": [
+      "filler"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-base-filler-30inx3in",
@@ -549,7 +708,13 @@
       "/images/Filler.png",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 30,
+    "depth_in": 0.75,
+    "features": [
+      "filler"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-wall-filler-36inx3in",
@@ -565,7 +730,13 @@
       "/images/Filler.png",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 0.75,
+    "features": [
+      "filler"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-toe-kick-8ft",
@@ -581,7 +752,13 @@
       "/images/Untitled-design-5-3.png",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 0.25,
+    "features": [
+      "toe-kick"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-refrigerator-panel",
@@ -589,7 +766,7 @@
     "name": "White Shaker Refrigerator Panel",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 24,
     "price_cad": 174.07,
     "quote_only": false,
     "description": "rtacabinetscanada refrigerator panel helps you cover the exposed side of the refrigerator with a panel that matches the kitchen cabinets. The refrigerator panel is designed to achieve a sleek, uniform look that places your kitchen cabinetry front and center in your kitchen design.",
@@ -597,7 +774,13 @@
       "/images/cupboards.webp",
       "/images/Scene05-4K-4-scaled-2.webp",
       "/images/03-03-1.webp"
-    ]
+    ],
+    "height_in": 96,
+    "depth_in": 0.5,
+    "features": [
+      "panel"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-12in-wall-cabinet-glass-door",
@@ -613,7 +796,13 @@
       "/images/02-Single-door.webp",
       "/images/03-Single-door.webp",
       "/images/Picture-4.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "glass-door"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-24in-pantry-utility-cabinet",
@@ -631,7 +820,13 @@
       "/images/Front-Open-Doors-1-scaled-2.webp",
       "/images/Scene05-4K-4-scaled-1.webp",
       "/images/03-03.webp"
-    ]
+    ],
+    "height_in": 90,
+    "depth_in": 24,
+    "features": [
+      "tall"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-27in-wall-microwave-cabinet",
@@ -648,7 +843,13 @@
       "/images/Side-Closed-Doors-1-scaled-1.webp",
       "/images/Front-Open-Doors-1-scaled-1.webp",
       "/images/Picture-5-scaled-1.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "microwave"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-30in-wine-rack-cabinet",
@@ -665,7 +866,14 @@
       "/images/Side-v2-2-scaled-1.webp",
       "/images/Angle-v2-2-scaled-1.webp",
       "/images/Picture-7-scaled-1.webp"
-    ]
+    ],
+    "height_in": 18,
+    "depth_in": 12,
+    "features": [
+      "wine-rack",
+      "glass-door"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-18in-wall-cabinet-glass-door",
@@ -681,7 +889,13 @@
       "/images/02-Single-door.webp",
       "/images/03-Single-door.webp",
       "/images/Picture-4.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "glass-door"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-15in-wall-cabinet-glass-door",
@@ -697,7 +911,13 @@
       "/images/02-Single-door.webp",
       "/images/03-Single-door.webp",
       "/images/Picture-4.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "glass-door"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-42in-blind-base-corner-cabinet",
@@ -717,7 +937,13 @@
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg",
       "/images/White-Shaker-Base-6-42inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "corner"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-33in-lazy-susan-corner-base-cabinet",
@@ -736,7 +962,13 @@
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg",
       "/images/White-Shaker-Base-5-33inch-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "lazy-susan"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-sink-base-cabinet-36in",
@@ -756,7 +988,13 @@
       "/images/13-1638x2048-5.jpg",
       "/images/06-1536x1229-5.jpg",
       "/images/White-Shaker-Base-4-36inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "sink"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-24in-base-cabinet-double-door-single-drawer",
@@ -776,7 +1014,11 @@
       "/images/DSC09482-Side-Closed-New-scaled-1-1536x1024-1.webp",
       "/images/updatesBaseSinkWithoutLegs-1536x1024-1.jpg",
       "/images/White-Shaker-Base-3-24inch-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-12in-three-drawer-base-cabinet",
@@ -796,7 +1038,13 @@
       "/images/07-1536x1536-1.jpg",
       "/images/06-1536x1229-3.jpg",
       "/images/White-Shaker-Base-2-12inch-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "drawer"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-12in-base-cabinet-single-door-single-drawer",
@@ -815,7 +1063,11 @@
       "/images/13-1638x2048-2.jpg",
       "/images/06-1536x1229-2.jpg",
       "/images/White-Shaker-Base-1-12inch-1.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-09in-spice-rack",
@@ -835,7 +1087,14 @@
       "/images/13-1638x2048-1.jpg",
       "/images/16.jpg",
       "/images/Spice-Rack-9inch.png"
-    ]
+    ],
+    "height_in": 34.5,
+    "depth_in": 24,
+    "features": [
+      "pull-out",
+      "spice-rack"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-27in-wall-blind-corner-cabinet",
@@ -853,7 +1112,13 @@
       "/images/FRONT-open-mixed-final-uai-400x400-1.jpg",
       "/images/Scene05-4K-4-scaled-1-uai-1440x1440-1.webp",
       "/images/SIDE-mixed-final-uai-1707x1707-1.webp"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "corner"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-30in-wall-cabinet",
@@ -872,7 +1137,11 @@
       "/images/16-5.jpg",
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg"
-    ]
+    ],
+    "height_in": 18,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-30in-refrigerator-wall-cabinet",
@@ -889,7 +1158,11 @@
       "/images/16-4.jpg",
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg"
-    ]
+    ],
+    "height_in": 18,
+    "depth_in": 24,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-27in-wall-cabinet",
@@ -907,7 +1180,11 @@
       "/images/13-A3-scaled-uai-1707x1707-2.jpg",
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-24in-wall-diagonal-corner-cabinet",
@@ -926,7 +1203,13 @@
       "/images/16-4.jpg",
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [
+      "corner"
+    ],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-24in-wall-cabinet",
@@ -945,7 +1228,11 @@
       "/images/16-5.jpg",
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-21in-wall-cabinet",
@@ -964,7 +1251,11 @@
       "/images/16-4.jpg",
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-18in-wall-cabinet",
@@ -983,7 +1274,11 @@
       "/images/16-4.jpg",
       "/images/13-1638x2048-6.jpg",
       "/images/06-1536x1229-6.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-15in-wall-cabinet",
@@ -1002,7 +1297,11 @@
       "/images/16-5.jpg",
       "/images/13-1638x2048-7.jpg",
       "/images/06-1536x1229-7.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-12in-wall-cabinet",
@@ -1021,7 +1320,11 @@
       "/images/16-6.jpg",
       "/images/13-1638x2048-8.jpg",
       "/images/06-1536x1229-8.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-09in-wall-cabinet",
@@ -1040,7 +1343,11 @@
       "/images/16-6.jpg",
       "/images/13-1638x2048-8.jpg",
       "/images/06-1536x1229-8.jpg"
-    ]
+    ],
+    "height_in": 36,
+    "depth_in": 12,
+    "features": [],
+    "coming_soon": false
   },
   {
     "slug": "white-shaker-sample-door",
@@ -1048,12 +1355,324 @@
     "name": "White Shaker Sample Door",
     "group": "accessories",
     "group_label": "Accessories & Trim",
-    "width_in": null,
+    "width_in": 11,
     "price_cad": null,
     "quote_only": true,
     "description": "Take one of our cabinet door samples for a test drive so you can get a sense of how the color and style fits with your kitchen and home. A cabinet sample gives you the opportunity to see our the quality and finish of our cabinets right in your own home. Try out this Shaker cabinet door in the kitchen or bathroom to better envision the cabinet designs you'll be making for your updated space.",
     "images": [
       "/images/sample-door.jpeg"
+    ],
+    "height_in": 15,
+    "depth_in": 1,
+    "features": [
+      "sample"
+    ],
+    "coming_soon": false
+  },
+  {
+    "slug": "white-shaker-09in-x-30in-wall-cabinet",
+    "sku": "W0930",
+    "name": "White Shaker 9″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 9,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "single-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 9″ wide, 12″ deep — single door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-Update-4-1536x1024-1.jpg",
+      "/images/A3-Update-1536x1024-1.jpg",
+      "/images/13-A3-1-1536x1024-1.jpg",
+      "/images/16-6.jpg",
+      "/images/13-1638x2048-8.jpg",
+      "/images/06-1536x1229-8.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-12in-x-30in-wall-cabinet",
+    "sku": "W1230",
+    "name": "White Shaker 12″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 12,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "single-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 12″ wide, 12″ deep — single door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-Update-4-1536x1024-2.jpg",
+      "/images/13-A3-1-1536x1024-2.jpg",
+      "/images/A3-Update-1536x1024-2.jpg",
+      "/images/16-6.jpg",
+      "/images/13-1638x2048-8.jpg",
+      "/images/06-1536x1229-8.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-15in-x-30in-wall-cabinet",
+    "sku": "W1530",
+    "name": "White Shaker 15″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 15,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "single-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 15″ wide, 12″ deep — single door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-Update-4-1536x1024-2.jpg",
+      "/images/A3-Update-1536x1024-2.jpg",
+      "/images/13-A3-1-1536x1024-2.jpg",
+      "/images/16-5.jpg",
+      "/images/13-1638x2048-7.jpg",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-18in-x-30in-wall-cabinet",
+    "sku": "W1830",
+    "name": "White Shaker 18″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 18,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "single-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 18″ wide, 12″ deep — single door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-Update-4-1536x1024-2.jpg",
+      "/images/A3-Update-1536x1024-2.jpg",
+      "/images/13-A3-1-1536x1024-2.jpg",
+      "/images/16-4.jpg",
+      "/images/13-1638x2048-6.jpg",
+      "/images/06-1536x1229-6.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-21in-x-30in-wall-cabinet",
+    "sku": "W2130",
+    "name": "White Shaker 21″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 21,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "single-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 21″ wide, 12″ deep — single door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-Update-4-1536x1024-2.jpg",
+      "/images/A3-Update-1536x1024-2.jpg",
+      "/images/13-A3-1-1536x1024-2.jpg",
+      "/images/16-4.jpg",
+      "/images/13-1638x2048-6.jpg",
+      "/images/06-1536x1229-6.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-24in-x-30in-wall-cabinet",
+    "sku": "W2430",
+    "name": "White Shaker 24″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 24,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "double-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 24″ wide, 12″ deep — double door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-1536x1024-1.jpg",
+      "/images/13-A2-scaled-uai-1707x1707-1.jpg",
+      "/images/13-A3-scaled-uai-1707x1707-1.jpg",
+      "/images/16-5.jpg",
+      "/images/13-1638x2048-7.jpg",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-27in-x-30in-wall-cabinet",
+    "sku": "W2730",
+    "name": "White Shaker 27″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 27,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "double-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 27″ wide, 12″ deep — double door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/13-A1-1536x1024-3.jpg",
+      "/images/13-A2-scaled-uai-1707x1707-2.jpg",
+      "/images/13-A3-scaled-uai-1707x1707-2.jpg",
+      "/images/13-1638x2048-7.jpg",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-30in-x-30in-wall-cabinet",
+    "sku": "W3030",
+    "name": "White Shaker 30″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 30,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "double-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 30″ wide, 12″ deep — double door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/white-ready-to-assemble-kitchen-cabinets-sw-w3036-64_1000.jpg",
+      "/images/1311906_2.webp",
+      "/images/skw-w3036-2.webp",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-33in-x-30in-wall-cabinet",
+    "sku": "W3330",
+    "name": "White Shaker 33″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 33,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "double-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 33″ wide, 12″ deep — double door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/white-ready-to-assemble-kitchen-cabinets-sw-w3036-64_1000.jpg",
+      "/images/1311906_2.webp",
+      "/images/skw-w3036-2.webp",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-36in-x-30in-wall-cabinet",
+    "sku": "W3630",
+    "name": "White Shaker 36″ × 30″ Wall Cabinet",
+    "group": "wall",
+    "group_label": "Wall Cabinets",
+    "width_in": 36,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "double-door",
+      "30-tall"
+    ],
+    "description": "30-inch-tall White Shaker wall cabinet, 36″ wide, 12″ deep — double door. Made for kitchens with an 8-ft ceiling and crown moulding or bulkheads. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/white-ready-to-assemble-kitchen-cabinets-sw-w3036-64_1000.jpg",
+      "/images/1311906_2.webp",
+      "/images/skw-w3036-2.webp",
+      "/images/06-1536x1229-7.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-24in-x-30in-wall-diagonal-corner-cabinet",
+    "sku": "WDC2430",
+    "name": "White Shaker 24″ × 30″ Wall Diagonal Corner Cabinet",
+    "group": "corner",
+    "group_label": "Corner & Specialty Base",
+    "width_in": 24,
+    "height_in": 30,
+    "depth_in": 24,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "corner",
+      "diagonal",
+      "30-tall"
+    ],
+    "description": "30-inch-tall diagonal corner wall cabinet for the 30″ wall line. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/12-A1-1536x1024-1.jpg",
+      "/images/12-A3-scaled-uai-1707x1707-1.jpg",
+      "/images/12-A2-scaled-uai-1707x1707-1.jpg",
+      "/images/16-4.jpg",
+      "/images/13-1638x2048-6.jpg",
+      "/images/06-1536x1229-6.jpg"
+    ]
+  },
+  {
+    "slug": "white-shaker-27in-x-30in-wall-blind-corner-cabinet",
+    "sku": "WBC2730",
+    "name": "White Shaker 27″ × 30″ Wall Blind Corner Cabinet",
+    "group": "corner",
+    "group_label": "Corner & Specialty Base",
+    "width_in": 27,
+    "height_in": 30,
+    "depth_in": 12,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "corner",
+      "blind",
+      "30-tall"
+    ],
+    "description": "30-inch-tall blind corner wall cabinet for the 30″ wall line. Coming soon to RTA Cabinets Canada.",
+    "images": [
+      "/images/FRONT-mixed-final-white.jpg",
+      "/images/03-03-uai-1080x1080-1.webp",
+      "/images/FRONT-open-mixed-final-uai-400x400-1.jpg",
+      "/images/Scene05-4K-4-scaled-1-uai-1440x1440-1.webp",
+      "/images/SIDE-mixed-final-uai-1707x1707-1.webp"
     ]
   }
 ]

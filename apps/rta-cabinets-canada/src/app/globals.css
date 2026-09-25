@@ -77,3 +77,154 @@ h3,
     background-position: -200% 0;
   }
 }
+
+/* ---------------------------------------------------------------- Kitchen Planner */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    min-height: 44px;
+    transition: background 150ms ease;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-dark);
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--color-ink);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    font-weight: 600;
+    min-height: 44px;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .btn-mini {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 0 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    background: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-ink);
+    transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+  }
+  .btn-mini:hover {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    background: #fff;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--color-ink);
+  }
+  .btn-icon:hover:not(:disabled) {
+    border-color: var(--color-accent);
+  }
+  .btn-icon:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .btn-bar {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .btn-bar:hover,
+  .btn-bar.is-active {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #fff;
+  }
+}
+.planner-shell {
+  background: var(--color-sand);
+}
+main:has(.planner-shell) ~ a[href^="tel:"] {
+  bottom: 4.25rem;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+.print-show {
+  display: none;
+}
+.print-sheet {
+  color: #1c1917;
+  font-family: var(--font-body);
+}
+@media print {
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header,
+  footer,
+  nav,
+  aside,
+  button,
+  .no-print {
+    display: none !important;
+  }
+  .print-show {
+    display: block !important;
+  }
+  .print-area {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .print-sheet svg {
+    max-height: 4.6in;
+    width: 100%;
+  }
+  .print-sheet img {
+    max-height: 4.6in;
+    object-fit: contain;
+  }
+  a[href]::after {
+    content: "";
+  }
+}

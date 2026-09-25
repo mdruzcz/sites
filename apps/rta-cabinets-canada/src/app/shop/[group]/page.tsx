@@ -10,8 +10,9 @@ import {
   groupPriceRange,
 } from "@/lib/catalog";
 import CabinetCard from "@/components/CabinetCard";
+import { getInventoryMap, stockKey } from "@/lib/inventory";
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return getGroups().map((group) => ({ group }));
@@ -49,6 +50,8 @@ export default async function GroupPage({
   if (items.length === 0) notFound();
   const label = groupLabel(group);
   const meta = GROUPS.find((g) => g.slug === group);
+  const stock = await getInventoryMap();
+  const comingSoon = items.filter((c) => c.coming_soon).length;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -75,10 +78,21 @@ export default async function GroupPage({
         <Link href="/shop" className="hover:text-accent">Shop</Link> / {label}
       </nav>
       <h1 className="text-3xl md:text-4xl font-bold mb-2">{label}</h1>
-      <p className="text-ink-soft mb-8 max-w-2xl">{meta?.blurb}</p>
+      <p className="text-ink-soft mb-8 max-w-2xl">
+        {meta?.blurb}
+        {comingSoon > 0 && (
+          <>
+            {" "}
+            <span className="text-accent-dark font-medium">
+              {comingSoon} new 30&Prime;-tall {comingSoon === 1 ? "cabinet is" : "cabinets are"} coming soon
+            </span>{" "}
+            — shown so you can plan around them.
+          </>
+        )}
+      </p>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {items.map((c) => (
-          <CabinetCard key={c.slug} cabinet={c} />
+          <CabinetCard key={c.slug} cabinet={c} stock={stock[stockKey(c.sku)]} />
         ))}
       </div>
     </div>
