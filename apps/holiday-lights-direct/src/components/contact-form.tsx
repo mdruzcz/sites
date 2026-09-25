@@ -39,7 +39,7 @@ export function ContactForm() {
     setError("");
     start(async () => {
       try {
-        await submitContactMessage({
+        const res = await submitContactMessage({
           name: String(fd.get("name") ?? ""),
           email: String(fd.get("email") ?? ""),
           phone: String(fd.get("phone") ?? ""),
@@ -48,11 +48,16 @@ export function ContactForm() {
           website: String(fd.get("website") ?? ""),
           turnstile_token: token || null
         });
+        if (!res.ok) {
+          setState("err");
+          setError(res.error);
+          return;
+        }
         setState("ok");
         setTimeout(() => doneRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
-      } catch (err) {
+      } catch {
         setState("err");
-        setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+        setError("We couldn't reach the server. Please check your connection and try again, or email service@masterdecker.com.");
       }
     });
   }

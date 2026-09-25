@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { submitContact } from "@/lib/actions/contact";
 
@@ -12,10 +12,18 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
   const [state, setState] = useState<"idle" | "ok" | "err">("idle");
   const [message, setMessage] = useState("");
   const [token, setToken] = useState<string | null>(null);
-  const [engaged, setEngaged] = useState(false);
+  const [captchaSlow, setCaptchaSlow] = useState(false);
   const successRef = useRef<HTMLDivElement | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const captcha = !!siteKey && !siteKey.startsWith("1x000");
+
+  // The widget mounts with the form so the token is ready before anyone can
+  // submit. If it stalls, say so and offer email rather than silently failing.
+  useEffect(() => {
+    if (!captcha || token) return;
+    const t = setTimeout(() => setCaptchaSlow(true), 12000);
+    return () => clearTimeout(t);
+  }, [captcha, token]);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,7 +32,7 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
     setState("idle");
     startTransition(async () => {
       try {
-        await submitContact({
+        const res = await submitContact({
           name: String(form.get("name") ?? ""),
           email: String(form.get("email") ?? ""),
           phone: String(form.get("phone") ?? ""),
@@ -34,12 +42,17 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
           website: String(form.get("website") ?? ""),
           turnstile_token: token
         });
+        if (!res.ok) {
+          setState("err");
+          setMessage(res.error);
+          return;
+        }
         setState("ok");
         el.reset();
         setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
-      } catch (err) {
+      } catch {
         setState("err");
-        setMessage((err as Error).message);
+        setMessage("We couldn't reach the server. Please check your connection and try again, or email service@masterdecker.com.");
       }
     });
   }
@@ -54,7 +67,7 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
   }
 
   return (
-    <form onSubmit={onSubmit} onFocus={() => setEngaged(true)} className="card grid gap-4 p-6">
+    <form onSubmit={onSubmit} className="card grid gap-4 p-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="label" htmlFor="c-name">Name</label>
@@ -83,10 +96,13 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
       </div>
       <div>
         <label className="label" htmlFor="c-message">Message</label>
-        <textarea id="c-message" name="message" required rows={6} className="input" placeholder="Roofline lengths, soffit colour, a link to a photo, or your question." />
+        <textarea id="c-message" name="message" required rows={6} minLength={10} className="input" placeholder="Roofline lengths, soffit colour, a link to a photo, or your question." />
       </div>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
-      {captcha && engaged && <Turnstile siteKey={siteKey!} onSuccess={setToken} onExpire={() => setToken(null)} options={{ theme: "light" }} />}
+      {captcha && <Turnstile siteKey={siteKey!} onSuccess={setToken} onExpire={() => setToken(null)} onError={() => setCaptchaSlow(true)} options={{ theme: "light" }} />}
+      {captcha && captchaSlow && !token && (
+        <p className="text-xs text-[var(--color-text-soft)]">Spam check is taking a while. You can also email <a className="link-underline" href="mailto:service@masterdecker.com">service@masterdecker.com</a>.</p>
+      )}
       {state === "err" && <p className="rounded-xl bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]">{message}</p>}
       <button type="submit" disabled={pending} className="btn-primary disabled:opacity-60">{pending ? "Sending…" : "Send message"}</button>
       <p className="text-xs text-[var(--color-muted)]">We reply within one business day, Monday to Friday, from London, Ontario.</p>

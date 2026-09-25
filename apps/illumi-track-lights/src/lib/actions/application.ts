@@ -1,8 +1,9 @@
 "use server";
 
 import { getServiceSupabase } from "@/lib/supabase/server";
+import { checkCaptcha, sendLeadEmail, HELP, type LeadResult } from "@/lib/actions/lead-helpers";
 
-export async function submitApplication(input: {
+export interface ApplicationInput {
   tierSlug: string;
   company_name: string;
   contact_name: string;
@@ -13,39 +14,76 @@ export async function submitApplication(input: {
   annual_volume: string | null;
   website: string | null;
   additional_info: string | null;
-  turnstile_token: string;
-}) {
-  if (!input.turnstile_token) throw new Error("Captcha required");
-  const verifyRes = await fetch(
-    process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token: input.turnstile_token, hostname: "illumitracklights.ca" }),
-    },
-  );
-  const verify = (await verifyRes.json()) as { success: boolean };
-  if (!verify.success) throw new Error("Captcha verification failed");
+  turnstile_token: string | null;
+}
 
-  const service = getServiceSupabase();
-  const { data: tier, error: tierErr } = await service
-    .from("ecom_pricing_tiers")
-    .select("id")
-    .eq("slug", input.tierSlug)
-    .maybeSingle();
-  if (tierErr || !tier) throw new Error(tierErr?.message ?? "Tier not found");
+export type ApplicationResult = LeadResult;
 
-  const { error } = await service.from("ecom_b2b_applications").insert({
-    requested_tier_id: tier.id,
-    company_name: input.company_name,
-    contact_name: input.contact_name,
-    email: input.email,
-    phone: input.phone,
-    business_type: input.business_type,
-    years_experience: input.years_experience,
-    annual_volume: input.annual_volume,
-    website: input.website,
-    additional_info: input.additional_info
+/**
+ * Installer / municipality trade applications. Emailed to
+ * service@masterdecker.com AND stored in ecom_b2b_applications; only both
+ * halves failing is an error for the applicant.
+ */
+export async function submitApplication(input: ApplicationInput): Promise<ApplicationResult> {
+  if (!input.company_name.trim()) return { ok: false, error: "Please enter your company name." };
+  if (!input.contact_name.trim()) return { ok: false, error: "Please enter a contact name." };
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.email.trim())) {
+    return { ok: false, error: "Please enter a valid email address." };
+  }
+
+  const captchaError = await checkCaptcha(input.turnstile_token, "submit");
+  if (captchaError) return { ok: false, error: captchaError };
+
+  const emailed = await sendLeadEmail({
+    subject: `${input.tierSlug} application: ${input.company_name}`,
+    replyTo: input.email,
+    lines: [
+      `Tier requested: ${input.tierSlug}`,
+      `Company: ${input.company_name}`,
+      `Contact: ${input.contact_name}`,
+      `Email: ${input.email}`,
+      `Phone: ${input.phone || "-"}`,
+      `Business type: ${input.business_type ?? "-"}`,
+      `Years experience: ${input.years_experience ?? "-"}`,
+      `Annual volume: ${input.annual_volume ?? "-"}`,
+      `Website: ${input.website ?? "-"}`,
+      "",
+      input.additional_info ?? ""
+    ]
   });
-  if (error) throw new Error(error.message);
+
+  let stored = false;
+  try {
+    const service = getServiceSupabase();
+    const { data: tier, error: tierErr } = await service
+      .from("ecom_pricing_tiers")
+      .select("id")
+      .eq("slug", input.tierSlug)
+      .maybeSingle();
+    if (tierErr || !tier) {
+      console.error("ecom_pricing_tiers lookup failed:", tierErr?.message ?? "tier not found", input.tierSlug);
+    } else {
+      const { error } = await service.from("ecom_b2b_applications").insert({
+        requested_tier_id: tier.id,
+        company_name: input.company_name,
+        contact_name: input.contact_name,
+        email: input.email,
+        phone: input.phone,
+        business_type: input.business_type,
+        years_experience: input.years_experience,
+        annual_volume: input.annual_volume,
+        website: input.website,
+        additional_info: input.additional_info
+      });
+      if (error) console.error("ecom_b2b_applications insert failed:", error.message);
+      else stored = true;
+    }
+  } catch (err) {
+    console.error("ecom_b2b_applications insert threw:", err);
+  }
+
+  if (!emailed && !stored) {
+    return { ok: false, error: `Something went wrong on our end and your application didn't send. ${HELP}` };
+  }
+  return { ok: true };
 }

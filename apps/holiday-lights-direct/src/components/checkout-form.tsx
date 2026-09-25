@@ -43,7 +43,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
     setError(null);
     startTransition(async () => {
       try {
-        await submitShippingInquiry({
+        const res = await submitShippingInquiry({
           name,
           email,
           phone,
@@ -55,9 +55,13 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           discount_code: null,
           turnstile_token: turnstileToken.current
         });
+        if (!res.ok) {
+          setError(res.error);
+          return;
+        }
         router.push("/checkout/success");
-      } catch (e) {
-        setError(e instanceof Error ? e.message : "Could not send your request. Please try again.");
+      } catch {
+        setError("We couldn't reach the server. Please check your connection and try again, or email service@masterdecker.com.");
       }
     });
   }
