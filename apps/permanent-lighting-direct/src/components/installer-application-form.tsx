@@ -12,16 +12,12 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!token) {
-      setState("err");
-      setMessage("Please complete the captcha.");
-      return;
-    }
     const form = new FormData(e.currentTarget);
+    const el = e.currentTarget;
     setState("idle");
     startTransition(async () => {
       try {
-        await submitApplication({
+        const res = await submitApplication({
           tierSlug,
           company_name: String(form.get("company_name") ?? ""),
           contact_name: String(form.get("contact_name") ?? ""),
@@ -34,11 +30,16 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
           additional_info: String(form.get("additional_info") ?? "") || null,
           turnstile_token: token
         });
+        if (!res.ok) {
+          setState("err");
+          setMessage(res.error);
+          return;
+        }
         setState("ok");
-        (e.target as HTMLFormElement).reset();
-      } catch (err) {
+        el.reset();
+      } catch {
         setState("err");
-        setMessage((err as Error).message);
+        setMessage("We couldn't reach the server. Please try again, or email service@masterdecker.com.");
       }
     });
   }
@@ -104,7 +105,7 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
         onSuccess={setToken}
       />
-      <button type="submit" disabled={pending || !token} className="btn-primary mt-2 disabled:opacity-50">
+      <button type="submit" disabled={pending} className="btn-primary mt-2 disabled:opacity-50">
         {pending ? "Submitting…" : "Submit application"}
       </button>
       {state === "err" && <p className="text-sm text-rose-700">{message}</p>}
