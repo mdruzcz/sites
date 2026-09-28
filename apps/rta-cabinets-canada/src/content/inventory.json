@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T00:50:02.787Z",
+  "generatedAt": "2026-09-28T12:44:34.666Z",
   "source": "Master Decker command center (item + stock_ledger)",
   "dbPath": "C:/Users/Matt/Documents/Claude/Projects/Erpnext Clone/data/accounting.db",
   "items": {
@@ -737,7 +737,7 @@
       "list_price": 688.65,
       "lifecycle": "proposed",
       "name": "18\" Pantry / Utility Cabinet — 90\" high",
-      "on_site": false
+      "on_site": true
     },
     "WP309024": {
       "on_hand": 0,

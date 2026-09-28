@@ -155,7 +155,7 @@ export default async function CabinetPage({
 
           {comingSoon ? (
             <div className="rounded-lg border border-accent/40 bg-accent-soft p-4 text-sm">
-              <p className="font-semibold text-ink">Part of our new 30&Prime;-tall wall cabinet line — arriving soon.</p>
+              <p className="font-semibold text-ink">{c.height_in === 30 && c.group === "wall" ? "Part of our new 30″-tall wall cabinet line — arriving soon." : "A new size we're adding to the line — arriving soon."}</p>
               <p className="mt-1 text-ink-soft">
                 You can already place it in the{" "}
                 <Link href="/planner" className="text-accent font-medium underline">Kitchen Planner</Link> to design around it. Email{" "}
@@ -169,7 +169,7 @@ export default async function CabinetPage({
             <>
               {stock && !stock.in_stock && (
                 <p className="mb-3 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800">
-                  This cabinet is out of stock right now. You can still add it to your quote — we&rsquo;ll confirm the restock date before anything is charged.
+                  This cabinet is out of stock right now{stock.on_order ? ` (${stock.on_order} on order)` : ""}. You can still add it to your quote or place it in the Kitchen Planner — we&rsquo;ll confirm the restock date before anything is charged.
                 </p>
               )}
               <AddToQuoteButton

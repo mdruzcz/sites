@@ -352,7 +352,7 @@ export function reviewDesign(design: Design): Review {
   const saved = Math.round((listSubtotal - subtotal) * 100) / 100;
   const salePct = listSubtotal > 0 ? Math.round((saved / listSubtotal) * 1000) / 10 : KITCHEN_SALE.pct;
   if (parts.some((p) => p.comingSoon)) {
-    rec("Some units are from the 30″ wall line (coming soon)", "They're in your plan so you can design around them, but they can't be quoted until they land. We'll confirm pricing and timing with your quote.");
+    rec("Some units in your plan are coming soon", "They're in your plan so you can design around them, but they can't be priced until they land. We'll confirm pricing and timing with your quote.");
   }
   const applianceCounts = new Map<string, number>();
   for (const p of placed) if (p.def.group === "appliance") applianceCounts.set(p.def.sku, (applianceCounts.get(p.def.sku) ?? 0) + 1);

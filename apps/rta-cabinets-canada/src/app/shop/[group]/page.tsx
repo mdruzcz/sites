@@ -85,7 +85,7 @@ export default async function GroupPage({
           <>
             {" "}
             <span className="text-accent-dark font-medium">
-              {comingSoon} new 30&Prime;-tall {comingSoon === 1 ? "cabinet is" : "cabinets are"} coming soon
+              {comingSoon} new {comingSoon === 1 ? "size is" : "sizes are"} coming soon
             </span>{" "}
             — shown so you can plan around them.
           </>

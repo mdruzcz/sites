@@ -829,6 +829,31 @@
     "coming_soon": false
   },
   {
+    "slug": "white-shaker-18in-pantry-utility-cabinet",
+    "sku": "WP189024",
+    "name": "White Shaker 18″ Pantry / Utility Cabinet",
+    "group": "tall",
+    "group_label": "Pantry & Tall",
+    "width_in": 18,
+    "height_in": 90,
+    "depth_in": 24,
+    "price_cad": null,
+    "quote_only": true,
+    "coming_soon": true,
+    "features": [
+      "tall",
+      "single-door"
+    ],
+    "description": "18-inch-wide, 90-inch-tall White Shaker pantry with a single door top and bottom and adjustable shelves — the narrow pantry that squeezes into the end of a run beside the fridge or fills a gap next to a doorway. Same plywood box and soft-close hardware as our 24″ pantry. Coming soon to RTA Cabinets Canada: you can already place it in the Kitchen Planner and we will confirm pricing and timing with your quote.",
+    "images": [
+      "/images/Front-Closed-Doors-1-scaled-1.webp",
+      "/images/Side-Closed-Doors-1-scaled-2.webp",
+      "/images/Front-Open-Doors-1-scaled-2.webp",
+      "/images/Scene05-4K-4-scaled-1.webp",
+      "/images/03-03.webp"
+    ]
+  },
+  {
     "slug": "white-shaker-27in-wall-microwave-cabinet",
     "sku": "WMC2736",
     "name": "White Shaker 27\" Wall Microwave Cabinet",
@@ -1123,13 +1148,13 @@
   {
     "slug": "white-shaker-30in-wall-cabinet",
     "sku": "W3018",
-    "name": "White Shaker 30\" Wall Cabinet",
+    "name": "White Shaker 30″ × 18″ Wall Cabinet (Over-the-Range / Range Hood)",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 30,
     "price_cad": 271.44,
     "quote_only": false,
-    "description": "RTA Cabinets Canada introduces a versatile range of Shaker-style 30\" wall cabinets, designed to enhance storage and aesthetics above your kitchen counters. These cabinets come in three distinct heights-30\", 36\", and 42\"-to suit various spaces and design preferences. Each cabinet features a robust frameless design constructed from grade \"A\" plywood, ensuring durability and a refined look. The cabinet doors, crafted with precision and care, are attached with premium, concealed European hinges that offer a seamless, adjustable connection, promoting both form and function. Our wall-mounted units are equipped with two adjustable shelves, allowing for customized organization and easy access to kitchen essentials. The unique attributes of our cabinets include their eco-friendly construction materials, offering an edge in both cost and environmental responsibility. The wood texture and color remain vibrant and consistent across all pieces, eliminating any concerns about fading or color variations over time. RTA Cabinets Canada takes pride in the efficiency and simplicity of our ready-to-assemble solutions. Delivered in compact, flat packs, our cabinets are engineered for straightforward assembly, bringing convenience and elegance to your kitchen without the hassle. Each unit reflects the timeless elegance of the Shaker style, promising not only to fulfill storage needs but also to elevate the overall ambiance of your kitchen space. Product Specifications: Style: Shaker Dimensions: Width: 30\"; Height: 30\"/36\"/42\"; Depth: 12\" Shelves: 2 adjustable shelves for flexible storage Construction Material: Cabinet box made of 3/4\" A-Grade Plywood; Door material: Wood Hinges: 6-way adjustable, concealed, premium European hinges for a sleek, integrated look Overlay: Full overlay for a modern, streamlined appearance Delivery: Fast shipping within 3-7 business days, ready to transform your space with ease Guarantee: Comes with a comprehensive, limited lifetime warranty, ensuring satisfaction and peace of mind. Choose RTA Cabinets Canada for a blend of quality, functionality, and timeless beauty in your kitchen.",
+    "description": "The 30-inch-wide, 18-inch-tall White Shaker wall cabinet made for the spot above the stove: mount a 30″ under-cabinet range hood or over-the-range microwave beneath it and the 66″ clearance to the cooktop works out. Same grade-A plywood box, soft-close hinges and painted hardwood door as the rest of the line. Also used over a 30″ refrigerator with a 12″ depth. Currently on order — place it in the Kitchen Planner now and we will confirm the arrival date with your quote.",
     "images": [
       "/images/13-A1-1536x1024-4.jpg",
       "/images/13-A2-scaled-uai-1707x1707-4.jpg",
@@ -1140,7 +1165,11 @@
     ],
     "height_in": 18,
     "depth_in": 12,
-    "features": [],
+    "features": [
+      "double-door",
+      "over-range",
+      "hood-cabinet"
+    ],
     "coming_soon": false
   },
   {

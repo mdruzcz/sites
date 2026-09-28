@@ -143,7 +143,7 @@ function CatalogRow({ item, onAdd, compact }: { item: PlannerItem; onAdd: (sku: 
         </p>
         <p className="mt-0.5 text-[12px] font-medium">
           {item.comingSoon ? (
-            <span className="text-[var(--color-accent-dark)]">Coming soon · 30″ tall line</span>
+            <span className="text-[var(--color-accent-dark)]">Coming soon · {item.features.includes("30-tall") ? "30″ tall line" : "new size"} · plan with it now</span>
           ) : item.sold ? (
             <>
               {formatCad(item.price)}
@@ -170,7 +170,13 @@ function StockNote({ sku }: { sku: string }) {
   const { stock } = usePlanner();
   const s = stock[sku];
   if (!s) return null;
-  if (!s.in_stock) return <span className="ml-2 rounded-md bg-red-50 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-700">Out of stock</span>;
+  if (!s.in_stock)
+    return (
+      <span className="ml-2 inline-flex flex-wrap items-center gap-1">
+        <span className="rounded-md bg-red-50 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-700">Out of stock</span>
+        <span className="text-[10px] font-normal text-[var(--color-ink-soft)]">{s.on_order ? `${s.on_order} on order · ` : ""}plan with it now</span>
+      </span>
+    );
   if (s.low_stock) return <span className="ml-2 text-[11px] font-normal text-amber-700">Only {s.on_hand} left</span>;
   return <span className="ml-2 text-[11px] font-normal text-[var(--color-success)]">{s.on_hand} in stock</span>;
 }

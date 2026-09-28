@@ -8,7 +8,12 @@ import { PriceTag, SaleBadge } from "./SaleBadge";
 export function StockLine({ stock, comingSoon, className = "" }: { stock?: StockInfo; comingSoon?: boolean; className?: string }) {
   if (comingSoon) return <p className={`text-xs font-medium text-accent-dark ${className}`}>Coming soon — not yet orderable</p>;
   if (!stock) return null;
-  if (!stock.in_stock) return <p className={`text-xs font-semibold text-red-700 ${className}`}>Out of stock</p>;
+  if (!stock.in_stock)
+    return (
+      <p className={`text-xs font-semibold text-red-700 ${className}`}>
+        Out of stock{stock.on_order ? <span className="font-normal text-ink-soft"> · {stock.on_order} on order</span> : null}
+      </p>
+    );
   if (stock.low_stock) return <p className={`text-xs font-medium text-amber-700 ${className}`}>Only {stock.on_hand} left</p>;
   return <p className={`text-xs font-medium text-success ${className}`}>{stock.on_hand} in stock</p>;
 }
@@ -42,7 +47,7 @@ export default function CabinetCard({ cabinet, stock }: { cabinet: Cabinet; stoc
           </span>
         )}
         {pricing?.onSale && !outOfStock && <SaleBadge text={`Sale −${pricing.pct}%`} className="absolute right-2 top-2 -rotate-6" />}
-        {comingSoon && cabinet.height_in === 30 && (
+        {comingSoon && cabinet.height_in === 30 && cabinet.group === "wall" && (
           <span className="absolute bottom-2 right-2 rounded-md bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-ink">30″ tall</span>
         )}
       </div>
