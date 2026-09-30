@@ -31,20 +31,23 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
   const items = useMemo(() => getPlannerItems(), []);
   const [group, setGroup] = useState<PlannerGroup | "all">("base");
   const [q, setQ] = useState("");
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const counts = useMemo(() => {
     const m = new Map<PlannerGroup, number>();
-    for (const i of items) m.set(i.group, (m.get(i.group) ?? 0) + 1);
+    for (const i of items) if (showComingSoon || !i.comingSoon) m.set(i.group, (m.get(i.group) ?? 0) + 1);
     return m;
-  }, [items]);
+  }, [items, showComingSoon]);
+  const comingSoonCount = useMemo(() => items.filter((i) => i.comingSoon).length, [items]);
 
   const visible = useMemo(() => {
     const query = q.trim().toLowerCase();
     return items.filter((i) => {
+      if (i.comingSoon && !showComingSoon) return false;
       // A search looks across every group; otherwise stick to the selected tab.
       if (query) return i.sku.toLowerCase().includes(query) || i.name.toLowerCase().includes(query) || String(i.width).includes(query);
       return group === "all" || i.group === group;
     });
-  }, [items, group, q]);
+  }, [items, group, q, showComingSoon]);
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -62,7 +65,7 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
         />
         <div className="mt-2 flex flex-wrap gap-1" role="tablist" aria-label="Cabinet categories">
           {(["all", ...GROUP_ORDER] as const).map((g) => {
-            const count = g === "all" ? items.length : (counts.get(g) ?? 0);
+            const count = g === "all" ? [...counts.values()].reduce((a, b) => a + b, 0) : (counts.get(g) ?? 0);
             const active = group === g && !q.trim();
             return (
               <button
@@ -84,6 +87,12 @@ export function CatalogPanel({ onAdd, activeLabel, compact }: Props) {
             );
           })}
         </div>
+        {comingSoonCount > 0 && (
+          <label className="mt-2 flex items-center gap-2 text-[11px] text-[var(--color-ink-soft)]">
+            <input type="checkbox" checked={showComingSoon} onChange={(e) => setShowComingSoon(e.target.checked)} />
+            Show coming-soon cabinets ({comingSoonCount}) — plan with sizes we&rsquo;re bringing in
+          </label>
+        )}
         <p className="mt-2 text-[11px] text-[var(--color-ink-soft)]">
           {group === "appliance" && !q.trim() ? (
             <>

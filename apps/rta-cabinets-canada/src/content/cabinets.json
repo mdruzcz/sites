@@ -213,7 +213,7 @@
   {
     "slug": "white-shaker-wall-cabinet-30in",
     "sku": "W3036",
-    "name": "White Shaker Wall Cabinet - 30\"",
+    "name": "White Shaker 30\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 30,
@@ -489,7 +489,7 @@
   {
     "slug": "white-shaker-36in-refrigerator-wall-cabinet",
     "sku": "W361824",
-    "name": "White Shaker 36\" Refrigerator Wall Cabinet",
+    "name": "White Shaker 36\" × 18\" Refrigerator Wall Cabinet (24\" deep)",
     "group": "specialty",
     "group_label": "Specialty",
     "width_in": 36,
@@ -785,7 +785,7 @@
   {
     "slug": "white-shaker-12in-wall-cabinet-glass-door",
     "sku": "WGC1236",
-    "name": "White Shaker 12\" Wall Cabinet Glass Door",
+    "name": "White Shaker 12\" × 36\" Wall Cabinet - Glass Door",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 12,
@@ -856,7 +856,7 @@
   {
     "slug": "white-shaker-27in-wall-microwave-cabinet",
     "sku": "WMC2736",
-    "name": "White Shaker 27\" Wall Microwave Cabinet",
+    "name": "White Shaker 27\" × 36\" Wall Microwave Cabinet",
     "group": "specialty",
     "group_label": "Specialty",
     "width_in": 27,
@@ -879,7 +879,7 @@
   {
     "slug": "white-shaker-30in-wine-rack-cabinet",
     "sku": "WRC3018",
-    "name": "White Shaker 30\" Wine Rack Cabinet",
+    "name": "White Shaker 30\" × 18\" Wine Rack Cabinet",
     "group": "specialty",
     "group_label": "Specialty",
     "width_in": 30,
@@ -903,7 +903,7 @@
   {
     "slug": "white-shaker-18in-wall-cabinet-glass-door",
     "sku": "WGC1836",
-    "name": "White Shaker 18\" Wall Cabinet Glass Door",
+    "name": "White Shaker 18\" × 36\" Wall Cabinet - Glass Door",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 18,
@@ -925,7 +925,7 @@
   {
     "slug": "white-shaker-15in-wall-cabinet-glass-door",
     "sku": "WGC1536",
-    "name": "White Shaker 15\" Wall Cabinet Glass Door",
+    "name": "White Shaker 15\" × 36\" Wall Cabinet - Glass Door",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 15,
@@ -1148,7 +1148,7 @@
   {
     "slug": "white-shaker-30in-wall-cabinet",
     "sku": "W3018",
-    "name": "White Shaker 30″ × 18″ Wall Cabinet (Over-the-Range / Range Hood)",
+    "name": "White Shaker 30\" × 18\" Wall Cabinet (Over-the-Range / Range Hood)",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 30,
@@ -1175,7 +1175,7 @@
   {
     "slug": "white-shaker-30in-refrigerator-wall-cabinet",
     "sku": "W301824",
-    "name": "White Shaker 30\" Refrigerator Wall Cabinet",
+    "name": "White Shaker 30\" × 18\" Refrigerator Wall Cabinet (24\" deep)",
     "group": "specialty",
     "group_label": "Specialty",
     "width_in": 30,
@@ -1196,7 +1196,7 @@
   {
     "slug": "white-shaker-27in-wall-cabinet",
     "sku": "W2736",
-    "name": "White Shaker 27\" Wall Cabinet",
+    "name": "White Shaker 27\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 27,
@@ -1243,7 +1243,7 @@
   {
     "slug": "white-shaker-24in-wall-cabinet",
     "sku": "W2436",
-    "name": "White Shaker 24\" Wall Cabinet",
+    "name": "White Shaker 24\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 24,
@@ -1266,7 +1266,7 @@
   {
     "slug": "white-shaker-21in-wall-cabinet",
     "sku": "W2136",
-    "name": "White Shaker 21\" Wall Cabinet",
+    "name": "White Shaker 21\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 21,
@@ -1289,7 +1289,7 @@
   {
     "slug": "white-shaker-18in-wall-cabinet",
     "sku": "W1836",
-    "name": "White Shaker 18\" Wall Cabinet",
+    "name": "White Shaker 18\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 18,
@@ -1312,7 +1312,7 @@
   {
     "slug": "white-shaker-15in-wall-cabinet",
     "sku": "W1536",
-    "name": "White Shaker 15\" Wall Cabinet",
+    "name": "White Shaker 15\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 15,
@@ -1335,7 +1335,7 @@
   {
     "slug": "white-shaker-12in-wall-cabinet",
     "sku": "W1236",
-    "name": "White Shaker 12\" Wall Cabinet",
+    "name": "White Shaker 12\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 12,
@@ -1358,7 +1358,7 @@
   {
     "slug": "white-shaker-09in-wall-cabinet",
     "sku": "W0936",
-    "name": "White Shaker 09\" Wall Cabinet",
+    "name": "White Shaker 9\" × 36\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 9,
@@ -1401,7 +1401,7 @@
   {
     "slug": "white-shaker-09in-x-30in-wall-cabinet",
     "sku": "W0930",
-    "name": "White Shaker 9″ × 30″ Wall Cabinet",
+    "name": "White Shaker 9\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 9,
@@ -1427,7 +1427,7 @@
   {
     "slug": "white-shaker-12in-x-30in-wall-cabinet",
     "sku": "W1230",
-    "name": "White Shaker 12″ × 30″ Wall Cabinet",
+    "name": "White Shaker 12\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 12,
@@ -1453,7 +1453,7 @@
   {
     "slug": "white-shaker-15in-x-30in-wall-cabinet",
     "sku": "W1530",
-    "name": "White Shaker 15″ × 30″ Wall Cabinet",
+    "name": "White Shaker 15\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 15,
@@ -1479,7 +1479,7 @@
   {
     "slug": "white-shaker-18in-x-30in-wall-cabinet",
     "sku": "W1830",
-    "name": "White Shaker 18″ × 30″ Wall Cabinet",
+    "name": "White Shaker 18\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 18,
@@ -1505,7 +1505,7 @@
   {
     "slug": "white-shaker-21in-x-30in-wall-cabinet",
     "sku": "W2130",
-    "name": "White Shaker 21″ × 30″ Wall Cabinet",
+    "name": "White Shaker 21\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 21,
@@ -1531,7 +1531,7 @@
   {
     "slug": "white-shaker-24in-x-30in-wall-cabinet",
     "sku": "W2430",
-    "name": "White Shaker 24″ × 30″ Wall Cabinet",
+    "name": "White Shaker 24\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 24,
@@ -1557,7 +1557,7 @@
   {
     "slug": "white-shaker-27in-x-30in-wall-cabinet",
     "sku": "W2730",
-    "name": "White Shaker 27″ × 30″ Wall Cabinet",
+    "name": "White Shaker 27\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 27,
@@ -1582,7 +1582,7 @@
   {
     "slug": "white-shaker-30in-x-30in-wall-cabinet",
     "sku": "W3030",
-    "name": "White Shaker 30″ × 30″ Wall Cabinet",
+    "name": "White Shaker 30\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 30,
@@ -1606,7 +1606,7 @@
   {
     "slug": "white-shaker-33in-x-30in-wall-cabinet",
     "sku": "W3330",
-    "name": "White Shaker 33″ × 30″ Wall Cabinet",
+    "name": "White Shaker 33\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 33,
@@ -1630,7 +1630,7 @@
   {
     "slug": "white-shaker-36in-x-30in-wall-cabinet",
     "sku": "W3630",
-    "name": "White Shaker 36″ × 30″ Wall Cabinet",
+    "name": "White Shaker 36\" × 30\" Wall Cabinet",
     "group": "wall",
     "group_label": "Wall Cabinets",
     "width_in": 36,

@@ -167,12 +167,12 @@ function NumberField({ label, value, min, max, hint, onChange }: { label: string
     <label className="block text-[11px] text-[var(--color-ink-soft)]">
       {label}
       <input
-        type="number"
+        type="text"
         inputMode="numeric"
-        min={min}
-        max={max}
-        value={draft ?? value}
-        onChange={(e) => setDraft(e.target.value)}
+        pattern="[0-9]*"
+        value={draft ?? String(value)}
+        onChange={(e) => setDraft(e.target.value.replace(/[^0-9.]/g, ""))}
+        onFocus={(e) => e.target.select()}
         onBlur={commit}
         onKeyDown={(e) => {
           if (e.key === "Enter") (e.target as HTMLInputElement).blur();
@@ -217,16 +217,28 @@ function OpeningRow({ o, room, onChange, onRemove }: { o: Opening; room: { width
 }
 
 function Small({ label, value, max, onChange }: { label: string; value: number; max: number; onChange: (v: number) => void }) {
+  // Plain text field: type freely, the value is clamped only when you leave the box or press Enter.
+  const [draft, setDraft] = useState<string | null>(null);
+  const commit = () => {
+    if (draft === null) return;
+    const n = Number(draft);
+    if (Number.isFinite(n) && draft.trim() !== "") onChange(Math.min(Math.max(0, max), Math.max(0, n)));
+    setDraft(null);
+  };
   return (
     <label className="block text-[10px] uppercase tracking-wider text-[var(--color-ink-soft)]">
       {label}
       <input
-        type="number"
+        type="text"
         inputMode="numeric"
-        min={0}
-        max={Math.max(0, max)}
-        value={Math.round(value)}
-        onChange={(e) => onChange(Number(e.target.value) || 0)}
+        pattern="[0-9]*"
+        value={draft ?? String(Math.round(value))}
+        onChange={(e) => setDraft(e.target.value.replace(/[^0-9.]/g, ""))}
+        onFocus={(e) => e.target.select()}
+        onBlur={commit}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") (e.target as HTMLInputElement).blur();
+        }}
         className="mt-0.5 block h-9 w-full rounded-md border border-[var(--color-border)] bg-white px-1.5 text-sm normal-case tracking-normal text-[var(--color-ink)]"
       />
     </label>
