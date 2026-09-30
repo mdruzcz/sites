@@ -11,7 +11,7 @@ import { Inspector } from "./inspector";
 import { Scene3DLazy, type CameraPreset, type Scene3DApi } from "./scene-3d-lazy";
 import { describeSurface } from "@/lib/planner/store";
 import { getPlannerItem } from "@/lib/planner/catalog";
-import { WALL_NAMES, type CornerId, type SurfaceId, type WallId } from "@/lib/planner/types";
+import { WALL_NAMES, isWall, type CornerId, type SurfaceId, type WallId } from "@/lib/planner/types";
 
 type MobileTab = "canvas" | "catalog" | "inspector";
 
@@ -27,8 +27,9 @@ export function StepDesign() {
       const def = getPlannerItem(sku);
       if (!def) return;
       let surface: SurfaceId = ui.activeSurface;
+      if (surface === "free") surface = 0;
       if (surface === "island" && (!design.island.enabled || def.level !== "base")) surface = 0;
-      if (surface !== "island" && design.room.openWalls.includes(surface)) {
+      if (isWall(surface) && design.room.openWalls.includes(surface)) {
         surface = ([0, 1, 2, 3] as WallId[]).find((w) => !design.room.openWalls.includes(w)) ?? 0;
       }
       dispatch({ type: "add-item", sku, surface });
@@ -38,8 +39,9 @@ export function StepDesign() {
   );
 
   const onDropSku = useCallback(
-    (sku: string, hit: { surface?: SurfaceId; t?: number; corner?: CornerId }) => {
+    (sku: string, hit: { surface?: SurfaceId; t?: number; corner?: CornerId; x?: number; y?: number }) => {
       if (hit.corner !== undefined) dispatch({ type: "add-item", sku, surface: hit.corner, corner: hit.corner });
+      else if (hit.surface === "free") dispatch({ type: "add-item", sku, surface: "free", x: hit.x, y: hit.y });
       else if (hit.surface !== undefined) dispatch({ type: "add-item", sku, surface: hit.surface, t: hit.t });
       else addSku(sku);
     },
@@ -48,8 +50,8 @@ export function StepDesign() {
 
   const onMove = useCallback(
     (id: string, move: FloorMove, transient: boolean) => {
-      dispatch({ type: "move-item", id, surface: move.surface, t: move.t, corner: move.corner, transient });
-      if (!transient && move.surface !== undefined && move.surface !== ui.activeSurface) setUi({ activeSurface: move.surface });
+      dispatch({ type: "move-item", id, surface: move.surface, t: move.t, corner: move.corner, x: move.x, y: move.y, rot: move.rot, transient });
+      if (!transient && move.surface !== undefined && move.surface !== "free" && move.surface !== ui.activeSurface) setUi({ activeSurface: move.surface });
     },
     [dispatch, setUi, ui.activeSurface],
   );
@@ -60,7 +62,7 @@ export function StepDesign() {
       setUi({ selectedId: id });
       if (id) {
         const it = design.items.find((i) => i.id === id);
-        if (it && it.corner === undefined) setUi({ selectedId: id, activeSurface: it.surface });
+        if (it && it.corner === undefined && it.surface !== "free") setUi({ selectedId: id, activeSurface: it.surface });
       }
     },
     [design.items, setUi],
@@ -131,7 +133,7 @@ export function StepDesign() {
             </div>
           )}
           <span className="ml-auto hidden text-[11px] text-[var(--color-ink-soft)] md:inline">
-            {ui.view === "floor" && "Drag cabinets along a wall or onto the island · click a wall to select it"}
+            {ui.view === "floor" && "Drag cabinets along a wall, onto the island, or out into the room to make them free-standing · click a wall to select it"}
             {ui.view === "3d" && "Drag to orbit · scroll to zoom · drag a cabinet to move it"}
             {ui.view === "wall" && "Drag cabinets left and right · drop from the catalog"}
           </span>

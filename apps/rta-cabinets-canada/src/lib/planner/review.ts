@@ -75,6 +75,7 @@ function label(p: Placed): string {
 function surfaceName(p: Placed): string {
   if (p.corner !== null) return CORNER_NAMES[p.corner].toLowerCase();
   if (p.item.surface === "island") return "the island";
+  if (p.item.surface === "free") return "the free-standing island";
   return WALL_NAMES[p.item.surface as WallId].toLowerCase();
 }
 
@@ -111,7 +112,7 @@ export function reviewDesign(design: Design): Review {
   }
 
   for (const p of placed) {
-    if (p.item.surface === "island" || p.corner !== null) continue;
+    if (p.item.surface === "island" || p.item.surface === "free" || p.corner !== null) continue;
     if (p.t < -0.05 || p.t + p.def.width > p.frame.length + 0.05) {
       warn(`${p.def.short} hangs past the end of the ${surfaceName(p)}`, `The ${formatInches(p.def.width)} unit doesn't fit inside the ${formatInches(p.frame.length)} wall. Slide it over or choose a narrower width.`, {
         itemIds: [p.item.id],
@@ -164,6 +165,54 @@ export function reviewDesign(design: Design): Review {
         { sku: '48"*96"(5mm)' },
       );
     }
+  }
+
+  // ---- Free-standing island cabinets ---------------------------------------
+  const freeUnits = placed.filter((p) => p.item.surface === "free" && p.def.level !== "wall");
+  if (freeUnits.length) {
+    let minClear = Infinity;
+    let against = "";
+    const isl = design.island.enabled ? islandBox(design) : null;
+    for (const fb of freeUnits) {
+      for (const w of [0, 1, 2, 3] as WallId[]) {
+        if (room.openWalls.includes(w)) continue;
+        const pr = projectBox(wallFrame(room, w), fb.box);
+        if (pr.nmin < minClear) {
+          minClear = pr.nmin;
+          against = `the ${WALL_NAMES[w].toLowerCase()}`;
+        }
+      }
+      for (const p of placed) {
+        if (p.item.surface === "free" || p.def.level === "wall") continue;
+        const d = distanceBetween(fb.box, p.box);
+        if (d < minClear) {
+          minClear = d;
+          against = `${p.def.short} on ${surfaceName(p)}`;
+        }
+      }
+      if (isl) {
+        const d = distanceBetween(fb.box, isl);
+        if (d < minClear) {
+          minClear = d;
+          against = "the island";
+        }
+      }
+    }
+    if (minClear < 36) {
+      warn(
+        `Only ${formatInches(Math.max(0, Math.round(minClear)))} between a free-standing cabinet and ${against}`,
+        "Walkways around an island should be at least 36″ (42″ is ideal). Drag the free-standing units further into the room, or attach them to the wall from the side panel.",
+        { itemIds: freeUnits.map((u) => u.item.id) },
+      );
+    } else if (minClear < 42) {
+      rec(`${formatInches(Math.round(minClear))} clearance around the free-standing island — 42″ is ideal`, `The tightest walkway is next to ${against}. A few more inches lets two people pass.`, { itemIds: freeUnits.map((u) => u.item.id) });
+    }
+    const linear = freeUnits.reduce((s, u) => s + (u.def.cornerSize ?? u.def.width), 0);
+    rec(
+      "Finish the exposed sides of the free-standing island",
+      `Free-standing cabinets show their backs and ends. Cover them with painted plywood panels — about ${Math.ceil((linear * 2 + 48) / 96)} × 4×8 sheet(s) — so they match the doors.`,
+      { sku: '48"*96"(5mm)', itemIds: freeUnits.map((u) => u.item.id) },
+    );
   }
 
   for (const o of room.openings) {
@@ -381,6 +430,9 @@ export function reviewDesign(design: Design): Review {
     wallLinear > 0 ? addon("Light Rail Molding", Math.ceil(wallLinear / 96), `Trims the underside of ${formatInches(Math.round(wallLinear))} of wall cabinets and hides under-cabinet lights.`, true) : null,
     placed.length > 0 ? addon("Scribe Moulding", Math.max(1, Math.ceil(placed.filter((p) => p.corner === null && p.item.surface !== "island").length / 8)), "Closes the gap where cabinets meet an uneven wall.", false) : null,
     design.island.enabled && isl > 0 ? addon('48"*96"(5mm)', Math.ceil((isl + 48) / 96), "Painted plywood to finish the back and ends of the island.", true) : null,
+    !design.island.enabled && placed.some((p) => p.item.surface === "free" && p.def.level !== "wall")
+      ? addon('48"*96"(5mm)', Math.ceil((placed.filter((p) => p.item.surface === "free").reduce((s, p) => s + (p.def.cornerSize ?? p.def.width), 0) * 2 + 48) / 96), "Painted plywood to finish the backs and ends of the free-standing island cabinets.", true)
+      : null,
     design.island.enabled && isl > 0 ? addon("Corbel 8x12", 2, "Supports a seating overhang on the island counter.", false) : null,
     placed.length > 0 ? addon("Touch up Kit", 1, "Paint and marker for small nicks during install.", false) : null,
     placed.some((p) => p.def.level === "wall" && p.def.width >= 30) ? addon("Stem Glass Holder", 1, "Hangs under any 30″ wall cabinet.", false) : null,

@@ -6,11 +6,12 @@ import { useCallback, useMemo, useRef, useState, type PointerEvent as ReactPoint
 import type { CornerId, Design, SurfaceId, WallId } from "@/lib/planner/types";
 import { WALL_NAMES, WALL_SHORT, formatFeet, formatInches } from "@/lib/planner/types";
 import {
+  boxCentre,
   counterPieces,
   islandBox,
   islandFrame,
   localCoords,
-  nearestCorner,
+  nearCornerPoint,
   nearestSurface,
   resolveAll,
   wallFrame,
@@ -22,7 +23,7 @@ import {
 } from "@/lib/planner/geometry";
 import { getPlannerItem } from "@/lib/planner/catalog";
 
-export type FloorMove = { surface?: SurfaceId; t?: number; corner?: CornerId };
+export type FloorMove = { surface?: SurfaceId; t?: number; corner?: CornerId; x?: number; y?: number; rot?: 0 | 1 | 2 | 3 };
 
 export type FloorViewProps = {
   design: Design;
@@ -38,7 +39,7 @@ export type FloorViewProps = {
   onDragStart?: () => void;
   onMove?: (id: string, move: FloorMove, transient: boolean) => void;
   onIslandMove?: (x: number, y: number, transient: boolean) => void;
-  onDropSku?: (sku: string, hit: { surface?: SurfaceId; t?: number; corner?: CornerId }) => void;
+  onDropSku?: (sku: string, hit: { surface?: SurfaceId; t?: number; corner?: CornerId; x?: number; y?: number }) => void;
   className?: string;
   ariaLabel?: string;
 };
@@ -76,7 +77,7 @@ export function FloorView({
   const svgRef = useRef<SVGSVGElement>(null);
   const placed = useMemo(() => resolveAll(design), [design]);
   const counters = useMemo(() => counterPieces(design), [design]);
-  const [drag, setDrag] = useState<null | { id: string; offset: number; moved: boolean } | { island: true; dx: number; dy: number; moved: boolean }>(null);
+  const [drag, setDrag] = useState<null | { id: string; offset: number; fdx: number; fdy: number; moved: boolean } | { island: true; dx: number; dy: number; moved: boolean }>(null);
 
   const toRoom = useCallback((e: { clientX: number; clientY: number }) => {
     const svg = svgRef.current;
@@ -100,7 +101,8 @@ export function FloorView({
     (e.currentTarget as Element).setPointerCapture(e.pointerId);
     const pt = toRoom(e);
     const local = localCoords(p.frame, pt);
-    setDrag({ id: p.item.id, offset: local.t - p.t, moved: false });
+    const c = boxCentre(p.box);
+    setDrag({ id: p.item.id, offset: local.t - p.t, fdx: c.x - pt.x, fdy: c.y - pt.y, moved: false });
     onSelect?.(p.item.id);
   };
 
@@ -128,13 +130,20 @@ export function FloorView({
     const item = design.items.find((i) => i.id === drag.id);
     const def = item && getPlannerItem(item.sku);
     if (!item || !def) return;
+    const free = { surface: "free" as const, x: pt.x + drag.fdx, y: pt.y + drag.fdy };
     if (def.cornerSize) {
-      onMove?.(item.id, { corner: nearestCorner(design, pt) }, true);
+      const c = nearCornerPoint(design, pt, 40);
+      onMove?.(item.id, c !== null ? { corner: c } : free, true);
       return;
     }
-    const hit = nearestSurface(design, pt, def);
-    if (!hit) return;
-    if (hit.surface === item.surface) {
+    // free-standing units only re-attach when they're practically touching a wall; wall units float
+    // once you drag them out into the room
+    const hit = nearestSurface(design, pt, def, true, item.surface === "free" ? def.depth * 0.6 + 4 : undefined);
+    if (!hit) {
+      if (def.level !== "wall") onMove?.(item.id, free, true);
+      return;
+    }
+    if (hit.surface === item.surface && hit.surface !== "free") {
       const fr = hit.surface === "island" ? islandFrame(design) : wallFrame(room, hit.surface);
       const local = localCoords(fr, pt);
       onMove?.(item.id, { surface: hit.surface, t: local.t - drag.offset }, true);
@@ -154,7 +163,7 @@ export function FloorView({
       if (drag.moved) onIslandMove?.(design.island.x, design.island.y, false);
     } else if (drag.moved) {
       const item = design.items.find((i) => i.id === drag.id);
-      if (item) onMove?.(item.id, { surface: item.surface, t: item.t, corner: item.corner }, false);
+      if (item) onMove?.(item.id, item.surface === "free" ? { surface: "free", x: item.x, y: item.y, rot: item.rot } : { surface: item.surface, t: item.t, corner: item.corner }, false);
     }
     setDrag(null);
   };
@@ -168,11 +177,13 @@ export function FloorView({
     if (!def) return;
     const pt = toRoom(e);
     if (def.cornerSize) {
-      onDropSku(sku, { corner: nearestCorner(design, pt) });
+      const c = nearCornerPoint(design, pt, 40);
+      onDropSku(sku, c !== null ? { corner: c } : { surface: "free", x: pt.x, y: pt.y });
       return;
     }
     const hit = nearestSurface(design, pt, def);
     if (hit) onDropSku(sku, { surface: hit.surface, t: hit.t });
+    else if (def.level !== "wall" && pt.x > 0 && pt.y > 0 && pt.x < W && pt.y < D) onDropSku(sku, { surface: "free", x: pt.x, y: pt.y });
     else onDropSku(sku, {});
   };
 
@@ -447,11 +458,12 @@ function UnitShape({
       onPointerDown={onPointerDown}
       onPointerEnter={() => onHover?.(p.item.id)}
       onPointerLeave={() => onHover?.(null)}
-      style={{ cursor: readonly ? "default" : "grab" }}
+      style={{ cursor: readonly ? "default" : p.item.surface === "free" ? "move" : "grab" }}
       role={readonly ? undefined : "button"}
-      aria-label={`${def.name} — ${readonly ? "" : "drag to move"}`}
+      aria-label={`${def.name} — ${readonly ? "" : p.item.surface === "free" ? "free-standing, drag anywhere" : "drag to move"}`}
     >
       {shape}
+      {p.item.surface === "free" && !isAppliance && <rect x={-1.2} y={-1.2} width={w + 2.4} height={d + 2.4} fill="none" stroke={selected ? BRASS : "#b8ad9c"} strokeWidth={0.4} strokeDasharray="1.5 1.2" style={{ pointerEvents: "none" }} />}
       {w >= 9 && (
         <text
           x={w / 2}

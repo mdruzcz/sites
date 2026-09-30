@@ -12,9 +12,10 @@ import {
   type SavedDesignMeta,
   type SurfaceId,
   type WallId,
+  isWall,
 } from "./types";
 import { getPlannerItem, LEGACY_SKUS } from "./catalog";
-import { boxesOverlap, clampIsland, clampToSpans, cornerIsUsable, findSlot, freeSpans, nextWall, placeItem, prevWall, resolveAll } from "./geometry";
+import { boxCentre, boxesOverlap, clampFree, clampIsland, clampToSpans, cornerIsUsable, cornerPoint, findSlot, freeSpans, nearestSurface, nextWall, placeItem, prevWall, resolveAll, rotFor } from "./geometry";
 
 export type PlannerAction =
   | { type: "load"; design: Design }
@@ -26,9 +27,13 @@ export type PlannerAction =
   | { type: "add-opening"; opening: Omit<Opening, "id"> & { id?: string } }
   | { type: "update-opening"; id: string; patch: Partial<Opening> }
   | { type: "remove-opening"; id: string }
-  | { type: "add-item"; sku: string; surface: SurfaceId; t?: number; corner?: CornerId; id?: string }
-  | { type: "move-item"; id: string; surface?: SurfaceId; t?: number; corner?: CornerId; transient?: boolean }
+  | { type: "add-item"; sku: string; surface: SurfaceId; t?: number; corner?: CornerId; id?: string; x?: number; y?: number; rot?: 0 | 1 | 2 | 3 }
+  | { type: "move-item"; id: string; surface?: SurfaceId; t?: number; corner?: CornerId; x?: number; y?: number; rot?: 0 | 1 | 2 | 3; transient?: boolean }
   | { type: "nudge-item"; id: string; delta: number }
+  | { type: "nudge-free"; id: string; dx: number; dy: number }
+  | { type: "rotate-item"; id: string; delta: 1 | -1 }
+  | { type: "float-item"; id: string } // wall / island / corner unit → free-standing, keeps its spot
+  | { type: "dock-item"; id: string } // free-standing unit → nearest wall, island or corner
   | { type: "remove-item"; id: string }
   | { type: "swap-item"; id: string; sku: string }
   | { type: "duplicate-item"; id: string }
@@ -124,9 +129,10 @@ export function normalizeDesign(raw: unknown): Design {
         .map((i) => ({
           id: i.id || uid(),
           sku: i.sku,
-          surface: i.surface === "island" ? "island" : ([0, 1, 2, 3].includes(i.surface as number) ? (i.surface as WallId) : 0),
+          surface: i.surface === "island" ? "island" : i.surface === "free" ? "free" : ([0, 1, 2, 3].includes(i.surface as number) ? (i.surface as WallId) : 0),
           t: typeof i.t === "number" ? i.t : 0,
-          ...(typeof i.corner === "number" ? { corner: i.corner as CornerId } : {}),
+          ...(typeof i.corner === "number" && i.surface !== "free" ? { corner: i.corner as CornerId } : {}),
+          ...(i.surface === "free" ? { x: clampNum(i.x, 0, 480, room.width / 2), y: clampNum(i.y, 0, 480, room.depth / 2), rot: ([0, 1, 2, 3].includes(i.rot as number) ? i.rot : 0) as 0 | 1 | 2 | 3 } : {}),
         }))
     : [];
   const island: Island = { ...base.island, ...(d.island ?? {}) };
@@ -252,10 +258,17 @@ function applyDesign(design: Design, action: PlannerAction): Result {
       const def = getPlannerItem(action.sku);
       if (!def) return { design, error: "Unknown cabinet." };
       const id = action.id ?? uid();
+      if (action.surface === "free") {
+        if (def.level === "wall") return { design, error: "Wall cabinets need a wall behind them — only base, tall and corner units can stand free." };
+        return addFree(design, def, id, action.x, action.y, action.rot ?? 0);
+      }
       if (def.cornerSize) {
         const corner = action.corner ?? firstFreeCorner(design, def.level);
-        if (corner === null) return { design, error: "No free corner for that cabinet — every usable corner already has one." };
-        if (!cornerIsUsable(design, corner)) return { design, error: "That corner is open — corner cabinets need two walls." };
+        if (corner === null || !cornerIsUsable(design, corner) || (action.corner !== undefined && cornerOccupied(design, corner, def.level))) {
+          // No usable corner (open-plan room, or every corner taken): place it free-standing so it can anchor an island.
+          const r = addFree(design, def, id, action.x, action.y, action.rot ?? 0);
+          return r.error ? r : { ...r, error: `${def.short} placed free-standing — drag it anywhere to build an island, or use “Attach to wall” in the side panel.` };
+        }
         if (cornerOccupied(design, corner, def.level)) return { design, error: "That corner already has a corner cabinet." };
         const item: PlacedItem = { id, sku: def.id, surface: corner, t: 0, corner };
         const blocker = cornerBlockedBy(design, item);
@@ -264,7 +277,7 @@ function applyDesign(design: Design, action: PlannerAction): Result {
       }
       if (action.surface === "island" && !design.island.enabled) return { design, error: "Turn the island on first." };
       if (action.surface === "island" && def.level !== "base") return { design, error: "Only base cabinets can go on an island." };
-      if (action.surface !== "island" && design.room.openWalls.includes(action.surface)) return { design, error: "That side of the room is open — pick a wall." };
+      if (isWall(action.surface) && design.room.openWalls.includes(action.surface)) return { design, error: "That side of the room is open — pick a wall." };
       const spans = freeSpans(design, action.surface, def);
       const t = action.t !== undefined ? clampToSpans(spans, def.width, action.t) : findSlot(design, action.surface, def);
       if (t === null) return { design, error: `No room left for a ${def.width}″ unit there.` };
@@ -277,6 +290,18 @@ function applyDesign(design: Design, action: PlannerAction): Result {
       if (!item) return { design };
       const def = getPlannerItem(item.sku);
       if (!def) return { design };
+      const wantsFree = action.surface === "free" || (action.surface === undefined && item.surface === "free" && action.corner === undefined);
+      if (wantsFree) {
+        if (def.level === "wall") return { design, noHistory: action.transient, error: action.transient ? undefined : "Wall cabinets need a wall behind them." };
+        const rot = (action.rot ?? item.rot ?? 0) as 0 | 1 | 2 | 3;
+        const cur = placeItem(design, item);
+        const c = cur ? boxCentre(cur.box) : { x: design.room.width / 2, y: design.room.depth / 2 };
+        const draft: PlacedItem = { id: item.id, sku: item.sku, surface: "free", t: 0, x: action.x ?? item.x ?? c.x, y: action.y ?? item.y ?? c.y, rot };
+        const pos = clampFree(design, draft, def, draft.x!, draft.y!);
+        const next: PlacedItem = { ...draft, ...pos };
+        if (item.surface === "free" && item.x === next.x && item.y === next.y && item.rot === next.rot) return { design, noHistory: action.transient };
+        return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? next : i)) }, noHistory: action.transient };
+      }
       if (def.cornerSize) {
         const corner = action.corner ?? item.corner ?? 0;
         if (corner === item.corner) return { design, noHistory: action.transient };
@@ -284,16 +309,69 @@ function applyDesign(design: Design, action: PlannerAction): Result {
         if (cornerOccupied(design, corner, def.level, item.id)) return { design, error: "That corner already has a corner cabinet.", noHistory: action.transient };
         const blocker = cornerBlockedBy(design, { ...item, corner, surface: corner });
         if (blocker) return { design, error: `${blocker} is in the way of that corner — move it first.`, noHistory: action.transient };
-        return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { ...i, corner, surface: corner } : i)) }, noHistory: action.transient };
+        return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { id: i.id, sku: i.sku, t: 0, corner, surface: corner } : i)) }, noHistory: action.transient };
       }
       const surface = action.surface ?? item.surface;
+      if (surface === "free") return { design, noHistory: action.transient };
       if (surface === "island" && (!design.island.enabled || def.level !== "base")) return { design, noHistory: action.transient };
-      if (surface !== "island" && design.room.openWalls.includes(surface)) return { design, noHistory: action.transient };
+      if (isWall(surface) && design.room.openWalls.includes(surface)) return { design, noHistory: action.transient };
       const spans = freeSpans(design, surface, def, item.id);
       const t = clampToSpans(spans, def.width, action.t ?? item.t);
       if (t === null) return { design, noHistory: action.transient };
       if (t === item.t && surface === item.surface) return { design, noHistory: action.transient };
-      return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { ...i, surface, t } : i)) }, noHistory: action.transient };
+      return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { id: i.id, sku: i.sku, surface, t } : i)) }, noHistory: action.transient };
+    }
+
+    case "nudge-free": {
+      const item = design.items.find((i) => i.id === action.id);
+      if (!item || item.surface !== "free") return { design };
+      return applyDesign(design, { type: "move-item", id: item.id, surface: "free", x: (item.x ?? 0) + action.dx, y: (item.y ?? 0) + action.dy });
+    }
+
+    case "rotate-item": {
+      const item = design.items.find((i) => i.id === action.id);
+      if (!item || item.surface !== "free") return { design, error: "Only free-standing units rotate — wall units face into the room." };
+      const rot = ((((item.rot ?? 0) + action.delta) % 4) + 4) % 4;
+      return applyDesign(design, { type: "move-item", id: item.id, surface: "free", rot: rot as 0 | 1 | 2 | 3 });
+    }
+
+    case "float-item": {
+      const item = design.items.find((i) => i.id === action.id);
+      const def = item && getPlannerItem(item.sku);
+      if (!item || !def) return { design };
+      if (item.surface === "free") return { design };
+      if (def.level === "wall") return { design, error: "Wall cabinets need a wall behind them — only base, tall and corner units can stand free." };
+      const cur = placeItem(design, item);
+      if (!cur) return { design };
+      const c = boxCentre(cur.box);
+      return applyDesign(design, { type: "move-item", id: item.id, surface: "free", x: c.x, y: c.y, rot: rotFor(cur.frame.n) });
+    }
+
+    case "dock-item": {
+      const item = design.items.find((i) => i.id === action.id);
+      const def = item && getPlannerItem(item.sku);
+      if (!item || !def || item.surface !== "free") return { design };
+      const cur = placeItem(design, item);
+      if (!cur) return { design };
+      const c = boxCentre(cur.box);
+      if (def.cornerSize) {
+        let best: CornerId | null = null;
+        let bestD = Infinity;
+        for (const k of [0, 1, 2, 3] as CornerId[]) {
+          if (!cornerIsUsable(design, k) || cornerOccupied(design, k, def.level, item.id)) continue;
+          const q = cornerPoint(design.room, k);
+          const d = (q.x - c.x) ** 2 + (q.y - c.y) ** 2;
+          if (d < bestD) {
+            bestD = d;
+            best = k;
+          }
+        }
+        if (best === null) return { design, error: "No free corner with two walls to attach it to." };
+        return applyDesign(design, { type: "move-item", id: item.id, corner: best });
+      }
+      const hit = nearestSurface(design, c, def, true, 120);
+      if (!hit) return { design, error: "No wall close enough — drag it nearer a wall first." };
+      return applyDesign(design, { type: "move-item", id: item.id, surface: hit.surface, t: hit.t });
     }
 
     case "nudge-item": {
@@ -315,6 +393,11 @@ function applyDesign(design: Design, action: PlannerAction): Result {
       const item = design.items.find((i) => i.id === action.id);
       const def = getPlannerItem(action.sku);
       if (!item || !def) return { design };
+      if (item.surface === "free") {
+        if (def.level === "wall") return { design, error: "Wall cabinets can't stand free." };
+        const pos = clampFree(design, { ...item, sku: def.id }, def, item.x ?? 0, item.y ?? 0);
+        return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { ...i, sku: def.id, ...pos } : i)) } };
+      }
       if (def.cornerSize) {
         if (item.corner === undefined) return { design, error: "Use a regular cabinet here, not a corner unit." };
         return { design: { ...design, items: design.items.map((i) => (i.id === item.id ? { ...i, sku: def.id } : i)) } };
@@ -330,6 +413,12 @@ function applyDesign(design: Design, action: PlannerAction): Result {
       if (!item) return { design };
       const def = getPlannerItem(item.sku);
       if (!def) return { design };
+      if (item.surface === "free") {
+        const cur = placeItem(design, item);
+        const fr = cur?.frame;
+        const { w } = { w: def.cornerSize ?? def.width };
+        return applyDesign(design, { type: "add-item", sku: def.id, surface: "free", x: (item.x ?? 0) + (fr?.u.x ?? 1) * w, y: (item.y ?? 0) + (fr?.u.y ?? 0) * w, rot: item.rot ?? 0 });
+      }
       if (def.cornerSize) return applyDesign(design, { type: "add-item", sku: def.id, surface: item.surface });
       return applyDesign(design, { type: "add-item", sku: def.id, surface: item.surface, t: item.t + def.width });
     }
@@ -337,7 +426,7 @@ function applyDesign(design: Design, action: PlannerAction): Result {
     case "clear-surface": {
       const items = design.items.filter((i) => {
         if (i.surface === action.surface && i.corner === undefined) return false;
-        if (i.corner !== undefined && action.surface !== "island" && (i.corner === action.surface || nextWall(i.corner) === action.surface)) return false;
+        if (i.corner !== undefined && isWall(action.surface) && (i.corner === action.surface || nextWall(i.corner) === action.surface)) return false;
         return true;
       });
       return { design: { ...design, items } };
@@ -387,8 +476,37 @@ function applyDesign(design: Design, action: PlannerAction): Result {
 }
 
 function itemTouchesOpenWall(i: PlacedItem, open: WallId[]): boolean {
+  if (i.surface === "free") return false;
   if (i.corner !== undefined) return open.includes(i.corner) || open.includes(nextWall(i.corner));
-  return i.surface !== "island" && open.includes(i.surface);
+  return isWall(i.surface) && open.includes(i.surface);
+}
+
+/** Place a free-standing unit at (x, y) — or the nearest clear spot in an expanding ring around it. */
+function addFree(design: Design, def: ReturnType<typeof getPlannerItem> & object, id: string, x?: number, y?: number, rot: 0 | 1 | 2 | 3 = 0): Result {
+  const cx = x ?? design.room.width / 2;
+  const cy = y ?? design.room.depth / 2;
+  const others = resolveAll(design);
+  const tryAt = (px: number, py: number): PlacedItem | null => {
+    const draft: PlacedItem = { id, sku: def.id, surface: "free", t: 0, x: px, y: py, rot };
+    const pos = clampFree(design, draft, def, px, py);
+    const item = { ...draft, ...pos };
+    const placed = placeItem(design, item);
+    if (!placed) return null;
+    return others.some((o) => boxesOverlap(placed.box, o.box)) ? null : item;
+  };
+  let item = tryAt(cx, cy);
+  for (let r = 6; !item && r <= 144; r += 6) {
+    for (const [dx, dy] of [[r, 0], [-r, 0], [0, r], [0, -r], [r, r], [-r, r], [r, -r], [-r, -r]]) {
+      item = tryAt(cx + dx, cy + dy);
+      if (item) break;
+    }
+  }
+  if (!item) {
+    // room is packed — drop it where asked and let the design check flag the overlap
+    const draft: PlacedItem = { id, sku: def.id, surface: "free", t: 0, x: cx, y: cy, rot };
+    item = { ...draft, ...clampFree(design, draft, def, cx, cy) };
+  }
+  return { design: { ...design, items: [...design.items, item] } };
 }
 
 function cornerOccupied(design: Design, corner: CornerId, level: string, exceptId?: string): boolean {
@@ -518,6 +636,7 @@ export function deleteSaved(id: string) {
 
 export function describeSurface(s: SurfaceId): string {
   if (s === "island") return "Island";
+  if (s === "free") return "Free-standing island";
   return ["Back wall", "Right wall", "Front wall", "Left wall"][s];
 }
 

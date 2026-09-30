@@ -4,7 +4,11 @@
 
 export type WallId = 0 | 1 | 2 | 3; // 0 back, 1 right, 2 front, 3 left (clockwise from the back wall)
 export type CornerId = 0 | 1 | 2 | 3; // corner c sits where wall c ends and wall c+1 begins
-export type SurfaceId = WallId | "island";
+export type SurfaceId = WallId | "island" | "free"; // "free" = free-standing (island) cabinet anywhere on the floor
+
+export function isWall(s: SurfaceId | null | undefined): s is WallId {
+  return s === 0 || s === 1 || s === 2 || s === 3;
+}
 export type Level = "base" | "wall" | "tall";
 
 export const WALL_IDS: WallId[] = [0, 1, 2, 3];
@@ -48,6 +52,10 @@ export type PlacedItem = {
   surface: SurfaceId;
   t: number; // left edge offset along the surface
   corner?: CornerId; // corner cabinets ignore surface/t and sit in this corner
+  // free-standing units (surface === "free"): centre of the footprint + which way the doors face
+  x?: number;
+  y?: number;
+  rot?: 0 | 1 | 2 | 3; // same convention as Island.facing: 0 front wall, 1 left, 2 back, 3 right
 };
 
 export type Island = {

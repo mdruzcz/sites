@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { usePlanner } from "./planner-context";
-import { CORNER_NAMES, WALL_NAMES, formatInches, type CornerId, type SurfaceId, type WallId } from "@/lib/planner/types";
+import { CORNER_NAMES, WALL_NAMES, formatInches, isWall, type CornerId, type SurfaceId, type WallId } from "@/lib/planner/types";
 import { getPlannerItem, getWidthAlternatives } from "@/lib/planner/catalog";
 import { cornerIsUsable, freeSpans, surfaceFrame } from "@/lib/planner/geometry";
 import { describeSurface } from "@/lib/planner/store";
@@ -22,6 +22,8 @@ export function Inspector() {
     const alternatives = getWidthAlternatives(def);
     const itemNotes = design.notes.filter((n) => n.itemId === selected.id);
     const isCorner = selected.corner !== undefined;
+    const isFree = selected.surface === "free";
+    const canFloat = def.level !== "wall";
     return (
       <div className="flex h-full min-h-0 flex-col">
         <div className="border-b border-[var(--color-border)] p-4">
@@ -50,7 +52,52 @@ export function Inspector() {
           {/* Position */}
           <section>
             <h4 className="text-[11px] font-semibold uppercase tracking-widest text-[var(--color-ink-soft)]">Position</h4>
-            {isCorner ? (
+            {isFree ? (
+              <>
+                <p className="mt-1 text-[12px] text-[var(--color-ink-soft)]">
+                  <strong>Free-standing</strong> (island) · centre {formatInches(selected.x ?? 0)} from the left wall, {formatInches(selected.y ?? 0)} from the back wall · doors face the{" "}
+                  {["front", "left", "back", "right"][selected.rot ?? 0]}.
+                </p>
+                <div className="mt-2 grid grid-cols-3 gap-1.5">
+                  <span />
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "nudge-free", id: selected.id, dx: 0, dy: -6 })} aria-label="Move toward the back wall 6 inches">
+                    ↑ 6″
+                  </button>
+                  <span />
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "nudge-free", id: selected.id, dx: -6, dy: 0 })} aria-label="Move left 6 inches">
+                    ← 6″
+                  </button>
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "nudge-free", id: selected.id, dx: 0, dy: 6 })} aria-label="Move toward the front 6 inches">
+                    ↓ 6″
+                  </button>
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "nudge-free", id: selected.id, dx: 6, dy: 0 })} aria-label="Move right 6 inches">
+                    6″ →
+                  </button>
+                </div>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "rotate-item", id: selected.id, delta: -1 })}>
+                    ↺ Rotate
+                  </button>
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "rotate-item", id: selected.id, delta: 1 })}>
+                    ↻ Rotate
+                  </button>
+                  <button type="button" className="btn-mini" onClick={() => dispatch({ type: "dock-item", id: selected.id })} title="Snap it back onto the nearest wall, island or corner">
+                    Attach to wall
+                  </button>
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <label className="text-[11px] text-[var(--color-ink-soft)]">
+                    From left wall (centre)
+                    <input type="number" className="mt-1 h-9 w-full rounded-md border border-[var(--color-border)] bg-white px-2 text-sm" value={Math.round(selected.x ?? 0)} onChange={(e) => dispatch({ type: "move-item", id: selected.id, surface: "free", x: Number(e.target.value) || 0 })} />
+                  </label>
+                  <label className="text-[11px] text-[var(--color-ink-soft)]">
+                    From back wall (centre)
+                    <input type="number" className="mt-1 h-9 w-full rounded-md border border-[var(--color-border)] bg-white px-2 text-sm" value={Math.round(selected.y ?? 0)} onChange={(e) => dispatch({ type: "move-item", id: selected.id, surface: "free", y: Number(e.target.value) || 0 })} />
+                  </label>
+                </div>
+                <p className="mt-2 text-[11px] text-[var(--color-ink-soft)]">Drag it anywhere on the floor plan or in 3D. Put more cabinets beside it to build an L- or U-shaped island — the design check watches the walkways.</p>
+              </>
+            ) : isCorner ? (
               <div className="mt-2 grid grid-cols-2 gap-1.5">
                 {([0, 1, 2, 3] as CornerId[]).map((c) => (
                   <button
@@ -63,6 +110,9 @@ export function Inspector() {
                     {CORNER_NAMES[c]}
                   </button>
                 ))}
+                <button type="button" onClick={() => dispatch({ type: "float-item", id: selected.id })} className="col-span-2 rounded-md border border-dashed border-[var(--color-accent)] bg-white px-2 py-1.5 text-[11px] text-[var(--color-accent-dark)] hover:bg-[var(--color-accent-soft)]" title="Take it out of the corner so it can anchor an island">
+                  Make free-standing (island)
+                </button>
               </div>
             ) : (
               <>
@@ -89,6 +139,10 @@ export function Inspector() {
                     className="mt-1 block h-9 w-full rounded-md border border-[var(--color-border)] bg-white px-2 text-sm"
                     value={String(selected.surface)}
                     onChange={(e) => {
+                      if (e.target.value === "free") {
+                        dispatch({ type: "float-item", id: selected.id });
+                        return;
+                      }
                       const s = e.target.value === "island" ? "island" : (Number(e.target.value) as WallId);
                       dispatch({ type: "move-item", id: selected.id, surface: s, t: 0 });
                     }}
@@ -99,8 +153,14 @@ export function Inspector() {
                       </option>
                     ))}
                     {design.island.enabled && def.level === "base" && <option value="island">Island</option>}
+                    {canFloat && <option value="free">Free-standing (make it an island)</option>}
                   </select>
                 </label>
+                {canFloat && (
+                  <button type="button" onClick={() => dispatch({ type: "float-item", id: selected.id })} className="mt-2 w-full rounded-md border border-dashed border-[var(--color-accent)] bg-white px-2 py-1.5 text-[11px] text-[var(--color-accent-dark)] hover:bg-[var(--color-accent-soft)]" title="Unsnap it from the wall so you can drag it anywhere">
+                    Make free-standing (island)
+                  </button>
+                )}
               </>
             )}
           </section>
@@ -170,7 +230,8 @@ function SurfaceInspector() {
   const free = useMemo(() => (isIsland && !design.island.enabled ? [] : freeSpans(design, s, probe)), [design, s, isIsland, probe]);
   const freeTotal = free.reduce((a, [x, y]) => a + (y - x), 0);
   const [opts, setOpts] = useState<AutofillOptions>(DEFAULT_AUTOFILL);
-  const openWall = !isIsland && design.room.openWalls.includes(s as WallId);
+  const openWall = isWall(s) && design.room.openWalls.includes(s);
+  const freeUnits = design.items.filter((i) => i.surface === "free");
 
   const runAutofill = () => {
     const r = autofillSurface(design, s, opts);
@@ -236,6 +297,9 @@ function SurfaceInspector() {
             />
             <span>Add an island</span>
           </label>
+          <p className="mt-2 text-[11px] text-[var(--color-ink-soft)]">
+            Prefer to build your own? Drag any base, tall or corner cabinet (lazy susan, blind corner) out into the open floor and it becomes <strong>free-standing</strong> — no wall snapping. Select it to rotate it, nudge it, or attach it to a wall again. Put several together for an L- or U-shaped island.
+          </p>
           {design.island.enabled && (
             <div className="mt-2 space-y-2 text-[12px]">
               <p className="text-[var(--color-ink-soft)]">Drag the island around in the floor or 3D view. Doors face:</p>
@@ -306,6 +370,32 @@ function SurfaceInspector() {
             </div>
             <button type="button" onClick={runAutofill} className="btn-primary mt-3 w-full text-sm">
               Auto-fill
+            </button>
+          </section>
+        )}
+
+        {freeUnits.length > 0 && (
+          <section>
+            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-[var(--color-ink-soft)]">Free-standing units ({freeUnits.length})</h4>
+            <ul className="mt-2 divide-y divide-[var(--color-border)] border border-[var(--color-border)] bg-white">
+              {freeUnits.map((i) => {
+                const d = getPlannerItem(i.sku);
+                return (
+                  <li key={i.id}>
+                    <button type="button" onClick={() => setUi({ selectedId: i.id })} className="flex w-full items-center justify-between px-3 py-2 text-left text-[12px] hover:bg-[var(--color-cream)]">
+                      <span>
+                        <span className="font-mono text-[var(--color-accent-dark)]">{d?.short}</span> · {formatInches(d?.cornerSize ?? d?.width ?? 0)}
+                      </span>
+                      <span className="text-[var(--color-ink-soft)]">
+                        {formatInches(i.x ?? 0)} × {formatInches(i.y ?? 0)}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+            <button type="button" onClick={() => dispatch({ type: "clear-surface", surface: "free" })} className="btn-mini mt-2 border-red-300 text-red-700 hover:bg-red-600 hover:text-white">
+              Remove free-standing units
             </button>
           </section>
         )}

@@ -77,8 +77,74 @@ export function islandFrame(design: Design, override?: Partial<Island>): Frame {
   return { id: "island", start, u, n: f, length: L };
 }
 
+const FREE_NULL_FRAME: Frame = { id: "free", start: { x: 0, y: 0 }, u: { x: 1, y: 0 }, n: { x: 0, y: 1 }, length: 0 };
+
 export function surfaceFrame(design: Design, s: SurfaceId): Frame {
+  if (s === "free") return FREE_NULL_FRAME;
   return s === "island" ? islandFrame(design) : wallFrame(design.room, s);
+}
+
+/** Footprint of a free-standing unit: item.x/y is the centre, item.rot which way the doors face. */
+export function freeFootprint(def: PlannerItem): { w: number; d: number } {
+  const s = def.cornerSize;
+  return { w: s ?? def.width, d: s ?? def.depth };
+}
+
+export function freeFrame(item: PlacedItem, def: PlannerItem): Frame {
+  const f = FACING_VECS[(item.rot ?? 0) as 0 | 1 | 2 | 3];
+  const u = { x: f.y, y: -f.x };
+  const { w, d } = freeFootprint(def);
+  const cx = item.x ?? 0;
+  const cy = item.y ?? 0;
+  return { id: "free", start: { x: cx - (u.x * w) / 2 - (f.x * d) / 2, y: cy - (u.y * w) / 2 - (f.y * d) / 2 }, u, n: f, length: w };
+}
+
+/** Rotation index whose facing vector matches frame normal n (used when a wall unit is set free). */
+export function rotFor(n: Vec): 0 | 1 | 2 | 3 {
+  let best = 0;
+  let bestDot = -Infinity;
+  FACING_VECS.forEach((f, i) => {
+    const dot = f.x * n.x + f.y * n.y;
+    if (dot > bestDot) {
+      bestDot = dot;
+      best = i;
+    }
+  });
+  return best as 0 | 1 | 2 | 3;
+}
+
+export function boxCentre(b: Box): Vec {
+  return { x: (b.x0 + b.x1) / 2, y: (b.y0 + b.y1) / 2 };
+}
+
+/** Keep a free-standing unit inside the room (returns the corrected centre, snapped to ½″). */
+export function clampFree(design: Design, item: PlacedItem, def: PlannerItem, x: number, y: number): { x: number; y: number } {
+  const fr = freeFrame({ ...item, x, y }, def);
+  const { w, d } = freeFootprint(def);
+  const b = rectFromFrame(fr, 0, w, 0, d, 0, 1);
+  let dx = 0;
+  let dy = 0;
+  if (b.x0 < 0) dx = -b.x0;
+  if (b.x1 > design.room.width) dx = design.room.width - b.x1;
+  if (b.y0 < 0) dy = -b.y0;
+  if (b.y1 > design.room.depth) dy = design.room.depth - b.y1;
+  return { x: Math.round((x + dx) * 2) / 2, y: Math.round((y + dy) * 2) / 2 };
+}
+
+/** Usable corner whose point is within `radius` of p, else null. */
+export function nearCornerPoint(design: Design, p: Vec, radius = 40): CornerId | null {
+  let best: CornerId | null = null;
+  let bestD = radius * radius;
+  for (const c of [0, 1, 2, 3] as CornerId[]) {
+    if (!cornerIsUsable(design, c)) continue;
+    const q = cornerPoint(design.room, c);
+    const d = (q.x - p.x) ** 2 + (q.y - p.y) ** 2;
+    if (d < bestD) {
+      bestD = d;
+      best = c;
+    }
+  }
+  return best;
 }
 
 export function worldPoint(fr: Frame, t: number, n: number): Vec {
@@ -132,6 +198,11 @@ export function boxesOverlap(a: Box, b: Box, eps = 0.05): boolean {
 export function placeItem(design: Design, item: PlacedItem): Placed | null {
   const def = getPlannerItem(item.sku);
   if (!def) return null;
+  if (item.surface === "free") {
+    const fr = freeFrame(item, def);
+    const { w, d } = freeFootprint(def);
+    return { item, def, frame: fr, t: 0, box: rectFromFrame(fr, 0, w, 0, d, def.zBottom, def.zTop), corner: null };
+  }
   if (def.cornerSize) {
     const c = (item.corner ?? 0) as CornerId;
     const fr = wallFrame(design.room, c);
@@ -183,6 +254,7 @@ function mergeSpans(spans: Span[]): Span[] {
 
 /** Free intervals along `surface` where a unit like `def` could sit. */
 export function freeSpans(design: Design, surface: SurfaceId, def: PlannerItem, excludeId?: string): Span[] {
+  if (surface === "free") return [];
   if (surface !== "island" && design.room.openWalls.includes(surface)) return [];
   if (surface === "island" && !design.island.enabled) return [];
   const fr = surfaceFrame(design, surface);
@@ -255,12 +327,13 @@ export function clampToSpans(spans: Span[], width: number, desired: number, snap
 
 export type SurfaceHit = { surface: SurfaceId; t: number; distance: number };
 
-/** Which surface is the pointer closest to (for dragging units around the plan). */
-export function nearestSurface(design: Design, p: Vec, def: PlannerItem, allowIsland = true): SurfaceHit | null {
+/** Which surface is the pointer closest to (for dragging units around the plan). `reach` shrinks the
+ *  magnetic band (free-standing units only dock when they're practically touching a wall). */
+export function nearestSurface(design: Design, p: Vec, def: PlannerItem, allowIsland = true, reach?: number): SurfaceHit | null {
   let best: SurfaceHit | null = null;
   const consider = (surface: SurfaceId, fr: Frame, nCentre: number) => {
     const { t, n } = localCoords(fr, p);
-    const band = surface === "island" ? 30 : 40;
+    const band = reach ?? (surface === "island" ? 30 : 40);
     if (n < -10 || n > band) return;
     if (t < -18 || t > fr.length + 18) return;
     const distance = Math.abs(n - nCentre);
@@ -315,6 +388,12 @@ export function counterPieces(design: Design): CounterPiece[] {
   const bySurface = new Map<SurfaceId, Placed[]>();
   for (const p of placed) {
     if (!carriesCounter(p.def)) continue;
+    if (p.item.surface === "free") {
+      // free-standing: a top with 1½″ overhang all round (adjacent units simply overlap)
+      const { w, d } = freeFootprint(p.def);
+      pieces.push({ frame: p.frame, t0: -1.5, t1: w + 1.5, n0: -1.5, n1: d + 1.5, box: rectFromFrame(p.frame, -1.5, w + 1.5, -1.5, d + 1.5, BASE_H, COUNTER_H), surface: "free" });
+      continue;
+    }
     if (p.corner !== null) {
       // Corner unit: a square top over the corner with overhang on both inward faces
       const s = p.def.cornerSize ?? p.def.width;
@@ -377,6 +456,10 @@ export function levelOf(def: PlannerItem): Level {
 
 export function itemsOnSurface(design: Design, surface: SurfaceId): PlacedItem[] {
   return design.items.filter((i) => i.surface === surface && i.corner === undefined);
+}
+
+export function freeItems(design: Design): PlacedItem[] {
+  return design.items.filter((i) => i.surface === "free");
 }
 
 export function clampIsland(design: Design, x: number, y: number): { x: number; y: number } {

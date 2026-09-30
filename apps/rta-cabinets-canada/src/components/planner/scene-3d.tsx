@@ -13,7 +13,8 @@ import {
   islandBox,
   islandFrame,
   localCoords,
-  nearestCorner,
+  nearCornerPoint,
+  boxCentre,
   nearestSurface,
   resolveAll,
   wallFrame,
@@ -307,7 +308,7 @@ function SceneContent(props: Scene3DProps & { target: THREE.Vector3; dist: numbe
 // ---------------------------------------------------------------------------
 
 type DragState =
-  | { kind: "item"; id: string; offset: number; plane: THREE.Plane; moved: boolean }
+  | { kind: "item"; id: string; offset: number; fdx: number; fdy: number; plane: THREE.Plane; moved: boolean }
   | { kind: "island"; dx: number; dy: number; plane: THREE.Plane; moved: boolean };
 
 function useDrag({
@@ -356,13 +357,18 @@ function useDrag({
       const item = design.items.find((i) => i.id === d.id);
       const def = item && getPlannerItem(item.sku);
       if (!item || !def) return;
+      const free = { surface: "free" as const, x: room.x + d.fdx, y: room.y + d.fdy };
       if (def.cornerSize) {
-        onMove?.(item.id, { corner: nearestCorner(design, room) }, true);
+        const c = nearCornerPoint(design, room, 40);
+        onMove?.(item.id, c !== null ? { corner: c } : free, true);
         return;
       }
-      const near = nearestSurface(design, room, def);
-      if (!near) return;
-      if (near.surface === item.surface) {
+      const near = nearestSurface(design, room, def, true, item.surface === "free" ? def.depth * 0.6 + 4 : undefined);
+      if (!near) {
+        if (def.level !== "wall") onMove?.(item.id, free, true);
+        return;
+      }
+      if (near.surface === item.surface && near.surface !== "free") {
         const fr = near.surface === "island" ? islandFrame(design) : wallFrame(design.room, near.surface);
         const local = localCoords(fr, room);
         onMove?.(item.id, { surface: near.surface, t: local.t - d.offset }, true);
@@ -379,7 +385,7 @@ function useDrag({
       if (d.kind === "island") onIslandMove?.(design.island.x, design.island.y, false);
       else {
         const item = design.items.find((i) => i.id === d.id);
-        if (item) onMove?.(item.id, { surface: item.surface, t: item.t, corner: item.corner }, false);
+        if (item) onMove?.(item.id, item.surface === "free" ? { surface: "free", x: item.x, y: item.y, rot: item.rot } : { surface: item.surface, t: item.t, corner: item.corner }, false);
       }
     };
     el.addEventListener("pointermove", move);
@@ -398,7 +404,8 @@ function useDrag({
       const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -planeY);
       const pt = e.ray.intersectPlane(plane, new THREE.Vector3());
       const local = pt ? localCoords(p.frame, { x: pt.x, y: pt.z }) : { t: p.t };
-      ref.current = { kind: "item", id: p.item.id, offset: local.t - p.t, plane, moved: false };
+      const c = boxCentre(p.box);
+      ref.current = { kind: "item", id: p.item.id, offset: local.t - p.t, fdx: pt ? c.x - pt.x : 0, fdy: pt ? c.y - pt.z : 0, plane, moved: false };
       if (controls.current) controls.current.enabled = false;
     },
     startIsland: (e: ThreeEvent<PointerEvent>) => {

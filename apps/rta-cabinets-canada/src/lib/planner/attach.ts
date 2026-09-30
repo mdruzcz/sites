@@ -23,7 +23,7 @@ export function buildAttachment(design: Design, review: Review, link: string): D
     id: design.id,
     name: design.name,
     link,
-    summary: `${review.stats.units} cabinets · room ${formatFeet(room.width)} × ${formatFeet(room.depth)} · ${design.island.enabled ? "with island" : "no island"} · ${parts}`,
+    summary: `${review.stats.units} cabinets · room ${formatFeet(room.width)} × ${formatFeet(room.depth)} · ${design.island.enabled || design.items.some((i) => i.surface === "free") ? "with island" : "no island"} · ${parts}`,
     notes: design.notes.map((n) => n.text),
     savedAt: Date.now(),
   };
