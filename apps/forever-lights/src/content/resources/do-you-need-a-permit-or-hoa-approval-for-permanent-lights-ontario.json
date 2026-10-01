@@ -26,7 +26,7 @@
     },
     {
       "type": "p",
-      "text": "In Ontario, electrical permits and inspections are generally tied to work on the building's electrical installation: running new wiring, adding circuits, changing receptacles, or anything that touches the panel. A permanent lighting system is designed to sit on the other side of that line. The controller and power supply plug into an existing outdoor receptacle, which by code should be GFCI-protected, and everything downstream of that plug is low voltage. The LED track runs on 12V or 24V DC from the power supply, not on household 120V."
+      "text": "In Ontario, electrical permits and inspections are generally tied to work on the building's electrical installation: running new wiring, adding circuits, changing receptacles, or anything that touches the panel. A permanent lighting system is designed to sit on the other side of that line. The controller and power supply plug into an existing outdoor receptacle, which by code should be GFCI-protected, and everything downstream of that plug is low voltage. The Forever Lights track runs on 12V DC from the power supply, not on household 120V."
     },
     {
       "type": "p",

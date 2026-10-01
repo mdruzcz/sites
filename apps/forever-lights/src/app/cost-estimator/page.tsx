@@ -104,6 +104,15 @@ export default function CostEstimatorPage() {
             </Link>
             <Link href="/resources" className="btn btn-outline">Browse all resources</Link>
           </div>
+          <div className="mt-3 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+            <a href="/downloads/forever-lights-pricing-and-packages.pdf" download className="btn btn-outline">
+              <Icon.download size={18} /> 2026 price list (PDF)
+            </a>
+            <a href="/downloads/forever-lights-seasonal-vs-permanent-cost.pdf" download className="btn btn-outline">
+              <Icon.download size={18} /> Seasonal vs permanent cost (PDF)
+            </a>
+            <Link href="/brochures" className="btn btn-outline">All brochures</Link>
+          </div>
         </div>
       </section>
 

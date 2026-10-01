@@ -10,7 +10,7 @@
   "updated": "2026-09-03",
   "download": { "href": "/downloads/forever-lights-owners-quick-start-guide.pdf", "label": "Download the Quick Start Guide (PDF)" },
   "keyTakeaways": [
-    "Your system has four parts: the aluminum track with sealed LED points, a low-voltage power supply, a Wi-Fi controller, and the app on your phone.",
+    "Your system has four parts: the aluminum track with sealed LED points, a 12V low-voltage power supply, a Wi-Fi controller, and the app on your phone.",
     "Nothing on the roofline ever needs to be touched. Every change happens in the app or from the controller's power switch.",
     "Set a dusk-to-dawn schedule on night one and the lights will look after themselves all year.",
     "Keep the outlet the system is plugged into free. Unplugging it to run a leaf blower is the single most common reason lights 'stop working'.",
@@ -21,9 +21,9 @@
     { "type": "p", "text": "During your installation our crew mounted a slim aluminum channel along the soffit, fascia or roofline you agreed on at the site visit. Inside that channel sit the individually addressable LED points, spaced evenly and angled to throw an even line of light down the face of your home. The channel is colour-matched to your trim, which is why you barely see it in daylight." },
     { "type": "p", "text": "The track is wired back to two small boxes, usually mounted in the garage, on a sheltered exterior wall or in the soffit near your outlet: a low-voltage power supply (the transformer) and the Wi-Fi controller. The power supply plugs into a standard GFCI-protected outdoor or garage receptacle. No permit was needed because nothing was hard-wired into your panel." },
     { "type": "table", "headers": ["Part", "Where it is", "What it does"], "rows": [
-      ["LED track", "Along the soffit / roofline", "Holds the sealed LED points. Rated IP68 and to -40°C. Never needs maintenance."],
+      ["LED track", "Along the soffit / roofline", "Holds the sealed LED points. Rated IP67 and to -40°C. Never needs maintenance."],
       ["LED points", "Inside the track, every few inches", "Individually addressable RGB or RGBW diodes. Each draws about 0.3 W."],
-      ["Power supply", "Garage or sheltered wall, near the outlet", "Converts household power to safe low voltage for the track."],
+      ["Power supply", "Garage or sheltered wall, near the outlet", "Converts household power to a safe 12V for the track."],
       ["Wi-Fi controller", "Beside the power supply", "Talks to your phone over Wi-Fi and tells every point what colour to be."],
       ["App", "Your phone or tablet", "Colours, scenes, brightness, effects and schedules. Works from anywhere with internet."]
     ] },
@@ -50,7 +50,7 @@
     { "type": "p", "text": "For anything that is not answered in the app or in our troubleshooting guide, call the office at (519) 914-3404 or send us a message through the contact form on our website. Most questions are answered on the phone; many app and controller issues can be fixed remotely. Your installation date is your warranty start date, and your invoice is all we need to look up your system." }
   ],
   "faq": [
-    { "q": "Do I need to take the lights down or cover them in winter?", "a": "No. The track and LED points are sealed to IP68 and rated to -40°C. Snow, ice and freezing rain are all normal operating conditions. Nothing needs to come down, ever." },
+    { "q": "Do I need to take the lights down or cover them in winter?", "a": "No. The track and LED points are sealed to IP67 and rated to -40°C. Snow, ice and freezing rain are all normal operating conditions. Nothing needs to come down, ever." },
     { "q": "Can I paint my soffit or fascia later?", "a": "Yes. The track can be masked and painted with the trim, or removed and re-hung by our crew. Call us before the painter starts and we will advise on the best approach for your home." },
     { "q": "What happens if I change my Wi-Fi network or password?", "a": "The controller will show as offline in the app. Re-pair it to the new network following the steps in our troubleshooting guide, or call us and we will walk you through it in a few minutes." },
     { "q": "Does the system work without internet?", "a": "Yes. Saved schedules keep running on the controller even if your internet is down. You just cannot make changes from the app until the connection is back." }

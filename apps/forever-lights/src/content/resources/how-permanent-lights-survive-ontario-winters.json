@@ -2,14 +2,14 @@
   "slug": "how-permanent-lights-survive-ontario-winters",
   "title": "How Permanent Lights Survive Ontario Winters: Sealing, Cold Ratings and What Actually Fails",
   "metaTitle": "How Permanent Lights Survive Ontario Winter | Forever Lights",
-  "metaDescription": "What IP68 sealing, a -40°C rating and aluminum track mean for permanent LED lights through a London, Ontario winter, plus what fails in cheap systems.",
+  "metaDescription": "What IP67 sealing, a -40°C rating and aluminum track mean for permanent LED lights through a London, Ontario winter, plus what fails in cheap systems.",
   "category": "How it works",
   "excerpt": "Ice storms, lake-effect snow and freeze-thaw cycles are the real test of permanent lighting. Here is what the ratings mean, why nothing comes down, and where budget systems give out.",
   "readMinutes": 9,
   "updated": "2026-09-03",
   "heroAlt": "Snow-covered London Ontario home at night with permanent LED track lighting glowing warm white along an icy roofline",
   "keyTakeaways": [
-    "IP68 means the track, LED points and cable joints are sealed against dust and sustained submersion, so meltwater, driving rain and packed snow cannot reach the electronics.",
+    "IP67 means the track, LED points and cable joints are dust-tight and protected against immersion in water, so meltwater, driving rain and packed snow cannot reach the electronics.",
     "A -40°C rating covers the coldest nights Southwestern Ontario produces; LEDs actually run more efficiently in the cold than in summer heat.",
     "Rigid aluminum channel holds its shape and sheds heat through every freeze-thaw cycle, while plastic channel goes brittle, yellows and warps.",
     "Nothing comes down for winter and nothing needs clearing. Snow and ice sitting on the track do no harm.",
@@ -22,19 +22,19 @@
     },
     {
       "type": "h2",
-      "text": "IP68: what the sealing rating actually promises"
+      "text": "IP67: what the sealing rating actually promises"
     },
     {
       "type": "p",
-      "text": "IP ratings are a standard way of describing how well an enclosure keeps out solids and liquids. The first digit covers dust; 6 is the top of that scale and means dust-tight. The second digit covers water; 8 is the highest common rating and means the equipment can sit submerged for extended periods without water reaching the electronics. Together, IP68 is the rating used for gear that is expected to live under water."
+      "text": "IP ratings are a standard way of describing how well an enclosure keeps out solids and liquids. The first digit covers dust; 6 is the top of that scale and means dust-tight. The second digit covers water; 7 means the equipment is protected against immersion, tested at up to one metre for thirty minutes without water reaching the electronics. Together, IP67 means dust-tight and able to survive being dunked, which is far more than a roofline ever asks of it."
     },
     {
       "type": "p",
-      "text": "A roofline does not go under water, but it does see everything short of that. Meltwater runs off the shingles, over the eavestrough lip and along the fascia for hours at a time in a thaw. Wind drives rain and fine snow horizontally into every joint. Ice forms in the channel, then melts, then refreezes overnight. The point of IP68 is that none of this reaches the LED chips, the copper traces or the connectors. On a properly built system, the LED strip is fully encased inside the channel, the end caps are sealed, and the cable joints between sections use gasketed connectors rather than exposed plugs. That is where cheaper products cut corners, and where they fail first."
+      "text": "A roofline does not go under water, but it does see everything short of that. Meltwater runs off the shingles, over the eavestrough lip and along the fascia for hours at a time in a thaw. Wind drives rain and fine snow horizontally into every joint. Ice forms in the channel, then melts, then refreezes overnight. The point of IP67 is that none of this reaches the LED chips, the copper traces or the connectors. On a properly built system, the LED strip is fully encased inside the channel, the end caps are sealed, and the cable joints between sections use gasketed connectors rather than exposed plugs. That is where cheaper products cut corners, and where they fail first."
     },
     {
       "type": "callout",
-      "text": "The rating that matters is the one on the joints and end caps, not just the strip. A strip rated IP68 with unsealed connectors is only as waterproof as its weakest plug, and a roofline has a lot of plugs."
+      "text": "The rating that matters is the one on the joints and end caps, not just the strip. A strip rated IP67 with unsealed connectors is only as waterproof as its weakest plug, and a roofline has a lot of plugs."
     },
     {
       "type": "h2",
@@ -154,11 +154,11 @@
   "faq": [
     {
       "q": "Do permanent lights need to be taken down or covered in winter?",
-      "a": "No. The aluminum track, LED points and cable joints are sealed to IP68 and rated to -40°C, so they stay up year-round with no covering, clearing or seasonal removal. Snow and ice sitting on the track do no harm."
+      "a": "No. The aluminum track, LED points and cable joints are sealed to IP67 and rated to -40°C, so they stay up year-round with no covering, clearing or seasonal removal. Snow and ice sitting on the track do no harm."
     },
     {
-      "q": "What does IP68 mean for roofline lighting?",
-      "a": "IP68 is the rating used for equipment that can sit submerged without water reaching the electronics. On a roofline it means meltwater, driving rain and packed snow cannot get to the LED chips or connectors, provided the joints and end caps are sealed to the same standard as the strip."
+      "q": "What does IP67 mean for roofline lighting?",
+      "a": "IP67 means dust-tight and protected against temporary immersion in water, tested at up to one metre for thirty minutes. On a roofline it means meltwater, driving rain and packed snow cannot get to the LED chips or connectors, provided the joints and end caps are sealed to the same standard as the strip."
     },
     {
       "q": "Why did all my lights go out after an ice storm?",

@@ -171,7 +171,7 @@
     },
     {
       "q": "Will the lights work through an Ontario winter storm?",
-      "a": "Yes. The LEDs and track are sealed to IP68, rated to minus 40 degrees Celsius and built with CSA-approved components, so ice storms and lake-effect snow do not affect the schedule. The only weather-related thing to consider is that snow on the ground reflects light upward, so you may want winter scenes a touch dimmer."
+      "a": "Yes. The LEDs and track are sealed to IP67, rated to minus 40 degrees Celsius and built with CSA-approved components, so ice storms and lake-effect snow do not affect the schedule. The only weather-related thing to consider is that snow on the ground reflects light upward, so you may want winter scenes a touch dimmer."
     }
   ]
 }

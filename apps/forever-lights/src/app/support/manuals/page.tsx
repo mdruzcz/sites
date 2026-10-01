@@ -65,6 +65,14 @@ export default function ManualsPage() {
             ))}
           </div>
 
+          <Link href="/brochures" className="mt-8 card-soft p-6 flex items-center justify-between gap-4 hover:bg-tint transition-colors min-h-[44px]">
+            <span>
+              <span className="block text-lg font-bold text-ink">Brochures &amp; price sheets</span>
+              <span className="block mt-1 text-[15px] text-muted">The brochure, 2026 price list, cost comparison, FAQ, commercial sheet and lookbook.</span>
+            </span>
+            <Icon.arrow size={20} className="shrink-0 text-ink" />
+          </Link>
+
           <h2 className="text-2xl font-bold text-ink mt-14 mb-2">Coming soon</h2>
           <p className="text-muted mb-6 max-w-2xl">
             These are being prepared with our suppliers. If you need one of them today, call the office and we will send you the current version.

@@ -33,7 +33,7 @@ const values = [
   {
     icon: <Icon.shield size={22} />,
     title: 'Quality products',
-    text: 'CSA-approved, IP68-rated, 50,000-hour LEDs backed by a 5-year parts warranty. No shortcuts.',
+    text: 'CSA-approved, IP67-rated, 50,000-hour LEDs backed by a 5-year parts warranty. No shortcuts.',
   },
   {
     icon: <Icon.file size={22} />,

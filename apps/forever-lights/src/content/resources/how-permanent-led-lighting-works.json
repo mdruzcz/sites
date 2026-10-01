@@ -59,7 +59,7 @@
     {
       "type": "ul",
       "items": [
-        "The transformer (power supply) steps your household 120V down to the low voltage the LEDs run on, usually 12V or 24V. Low voltage is safer to work with and is a major reason these systems sip power rather than gulp it.",
+        "The transformer (power supply) steps your household 120V down to the 12V the LEDs run on. Low voltage is safer to work with and is a major reason these systems sip power rather than gulp it.",
         "The controller is the small computer that talks to the LEDs. It receives instructions from your phone over Wi-Fi or Bluetooth, then sends the right signal down the strip telling each addressable point what to do.",
         "Wiring is low-voltage cable run discreetly behind fascia and through soffit, connecting the track runs back to the controller and transformer."
       ]

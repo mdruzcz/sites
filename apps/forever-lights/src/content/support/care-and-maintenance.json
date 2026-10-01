@@ -18,7 +18,7 @@
   ],
   "body": [
     { "type": "h2", "text": "What never needs maintenance" },
-    { "type": "p", "text": "The aluminum channel, the LED points inside it and the low-voltage cable between sections are all sealed to IP68, which is the rating used for equipment that can sit under water. They are UV-stable and rated to -40°C. Snow can sit on them, ice can form on them and rain can pour over them all year without any effect. You do not need to clear snow from the track, cover it, or take anything down." },
+    { "type": "p", "text": "The aluminum channel, the LED points inside it and the low-voltage cable between sections are all sealed to IP67, which means dust-tight and protected against temporary immersion in water. They are UV-stable and rated to -40°C. Snow can sit on them, ice can form on them and rain can pour over them all year without any effect. You do not need to clear snow from the track, cover it, or take anything down." },
     { "type": "h2", "text": "Seasonal checklist" },
     { "type": "table", "headers": ["Season", "Five-minute check", "Why"], "rows": [
       ["Spring", "Look at the power supply and controller: dry, mounted firmly, outlet cover closes fully. Run each saved scene once from the driveway.", "Winter is hard on outlet covers and extension cords. Catching a loose cover prevents nuisance GFCI trips."],

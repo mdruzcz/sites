@@ -114,7 +114,7 @@
     },
     {
       "type": "p",
-      "text": "Ice damming is a real issue on London homes, particularly on older houses with limited attic insulation and on any roof after a heavy lake-effect snowfall followed by a thaw. The track itself is sealed to IP68 and rated to -40°C, so ice sitting on or against it does no harm. What we pay attention to is history: a fascia that has been repeatedly soaked by ice dam overflow may be soft, and a home that dams every winter needs its track placed so meltwater runs past it rather than pooling behind it. We also avoid covering soffit vents, because blocked ventilation makes ice damming worse and no light is worth a wet attic. If you have had ice dam problems, mention it on the site visit and we will plan around it."
+      "text": "Ice damming is a real issue on London homes, particularly on older houses with limited attic insulation and on any roof after a heavy lake-effect snowfall followed by a thaw. The track itself is sealed to IP67 and rated to -40°C, so ice sitting on or against it does no harm. What we pay attention to is history: a fascia that has been repeatedly soaked by ice dam overflow may be soft, and a home that dams every winter needs its track placed so meltwater runs past it rather than pooling behind it. We also avoid covering soffit vents, because blocked ventilation makes ice damming worse and no light is worth a wet attic. If you have had ice dam problems, mention it on the site visit and we will plan around it."
     },
     {
       "type": "h2",
@@ -161,7 +161,7 @@
     },
     {
       "q": "Is ice damming a problem for permanent lights?",
-      "a": "Not for the track, which is sealed to IP68 and rated to -40°C. It can be a problem for the fascia the track mounts to if repeated ice dam overflow has softened it, so we check condition and history on the site visit and position the track so meltwater runs past rather than pooling behind it."
+      "a": "Not for the track, which is sealed to IP67 and rated to -40°C. It can be a problem for the fascia the track mounts to if repeated ice dam overflow has softened it, so we check condition and history on the site visit and position the track so meltwater runs past rather than pooling behind it."
     }
   ]
 }

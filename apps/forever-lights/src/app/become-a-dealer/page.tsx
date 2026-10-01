@@ -52,7 +52,7 @@ const steps = [
 
 const faq = [
   { q: 'Is there a franchise or licensing fee?', a: 'No franchise fee. Dealers purchase product at dealer pricing and complete training. There is a modest opening order so you have stock for your first installs; we will walk through it on the discovery call.' },
-  { q: 'Do I need to be an electrician?', a: 'No. The system is low-voltage and plugs into an existing GFCI receptacle, so no electrical permit is needed for a standard install. If a customer needs a new outlet, you sub-contract or partner with a licensed electrician, as many of our dealers do.' },
+  { q: 'Do I need to be an electrician?', a: 'No. The system runs at 12V low voltage and plugs into an existing GFCI receptacle, so no electrical permit is needed for a standard install. If a customer needs a new outlet, you sub-contract or partner with a licensed electrician, as many of our dealers do.' },
   { q: 'What equipment do I need?', a: 'A reliable ladder setup or a lift for two-storey work, basic cordless tools, and a phone or tablet for the app and quoting software. We supply the training, product and marketing assets.' },
   { q: 'How big is a territory?', a: 'It depends on population and how many installs you can realistically take on. Typical territories are a city and its surrounding towns. We map it together so it is protected but not more than you can serve well.' },
   { q: 'Who handles warranty service in my territory?', a: 'You do, with warranty parts supplied by us at no charge. Service calls are one of the best ways to earn referrals, and dealer support is a phone call away for anything unusual.' },
@@ -157,6 +157,11 @@ export default function BecomeADealerPage() {
                 <p className="mt-2 text-white/70 text-[15px] leading-relaxed">{s.l}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/brochures" className="btn btn-outline-light">
+              See the brochures and price sheets you hand to customers <Icon.arrow size={18} />
+            </Link>
           </div>
         </div>
       </section>

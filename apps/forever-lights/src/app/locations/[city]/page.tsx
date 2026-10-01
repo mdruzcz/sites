@@ -96,7 +96,7 @@ export default async function CityPage({ params }: Props) {
   const why = [
     { icon: <Icon.smartphone size={22} />, title: 'App-controlled', text: `Change colours and schedules for your ${area.city} home from your phone, anywhere in the world.` },
     { icon: <Icon.eyeOff size={22} />, title: 'Invisible by day', text: 'Tracks are colour-matched to your soffit. Nobody knows they are there until the lights come on.' },
-    { icon: <Icon.snowflake size={22} />, title: 'Built for Ontario winters', text: 'IP68 waterproof, UV-rated and CSA-approved, tested to −40°C. Ready for every Southwestern Ontario storm.' },
+    { icon: <Icon.snowflake size={22} />, title: 'Built for Ontario winters', text: 'IP67 waterproof, UV-rated and CSA-approved, tested to −40°C. Ready for every Southwestern Ontario storm.' },
     { icon: <Icon.pin size={22} />, title: 'Local and nearby', text: `We serve ${area.city} and the surrounding communities, so scheduling your free site visit is quick and easy.` },
     { icon: <Icon.shield size={22} />, title: '5-year parts warranty', text: 'Every installation is backed by a 5-year parts warranty and 1-year labour warranty. No asterisks.' },
     { icon: <Icon.card size={22} />, title: 'Financing available', text: '24-month financing at 10% APR (on approved credit). Install now, spread the cost.' },

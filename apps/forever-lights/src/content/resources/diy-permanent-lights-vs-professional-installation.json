@@ -31,7 +31,7 @@
     },
     {
       "type": "p",
-      "text": "A professional system is an extruded aluminum channel, cut on site to your rooflines, holding individually addressable RGBW points spaced evenly along its length. It is screwed mechanically to the soffit or fascia, colour-matched to your trim in white, black, brown or a custom shade, wired with low-voltage cable back to a weatherproof controller, and fed from a GFCI-protected outlet. The hardware is sealed to IP68, uses CSA-listed components, is rated to operate at -40°C, and the LEDs themselves are rated for 50,000 hours. That list is not marketing; it is the difference in what the parts are built to survive."
+      "text": "A professional system is an extruded aluminum channel, cut on site to your rooflines, holding individually addressable RGBW points spaced evenly along its length. It is screwed mechanically to the soffit or fascia, colour-matched to your trim in white, black, brown or a custom shade, wired with low-voltage cable back to a weatherproof controller, and fed from a GFCI-protected outlet. The hardware is sealed to IP67, uses CSA-listed components, is rated to operate at -40°C, and the LEDs themselves are rated for 50,000 hours. That list is not marketing; it is the difference in what the parts are built to survive."
     },
     {
       "type": "h2",
@@ -75,7 +75,7 @@
     },
     {
       "type": "p",
-      "text": "On a professional system every part that lives outside is sealed to IP68, which is a submersion rating, and the low-voltage connections between track sections and back to the controller are sealed and tucked into the soffit or behind the fascia rather than exposed at the eave. The controller and power supply are mounted in a weather-rated enclosure or inside the garage. The system is designed on the assumption that it will be buried in snow, coated in ice and baked in August sun for many years, because that is the job."
+      "text": "On a professional system every part that lives outside is sealed to IP67, which means dust-tight and protected against immersion, and the low-voltage connections between track sections and back to the controller are sealed and tucked into the soffit or behind the fascia rather than exposed at the eave. The controller and power supply are mounted in a weather-rated enclosure or inside the garage. The system is designed on the assumption that it will be buried in snow, coated in ice and baked in August sun for many years, because that is the job."
     },
     {
       "type": "h2",
@@ -179,7 +179,7 @@
     },
     {
       "q": "Will a DIY kit survive an Ontario winter?",
-      "a": "The strip itself often will. The plug-together connectors, adhesive and exposed power adapters are the usual failure points after an ice storm or repeated freeze-thaw cycles. Professional systems are sealed to IP68 throughout, rated to -40°C and mounted so the connections are protected inside the soffit."
+      "a": "The strip itself often will. The plug-together connectors, adhesive and exposed power adapters are the usual failure points after an ice storm or repeated freeze-thaw cycles. Professional systems are sealed to IP67 throughout, rated to -40°C and mounted so the connections are protected inside the soffit."
     },
     {
       "q": "What does a professional warranty actually cover?",

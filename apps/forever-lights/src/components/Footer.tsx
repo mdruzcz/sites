@@ -56,6 +56,7 @@ export function Footer() {
                 { href: '/cost-estimator', label: 'Cost Estimator' },
                 { href: '/financing', label: 'Financing' },
                 { href: '/resources', label: 'Guides & Articles' },
+                { href: '/brochures', label: 'Brochures & Price Sheets' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/gallery', label: 'Gallery' },
                 { href: '/kits', label: 'DIY Kits' },

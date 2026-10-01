@@ -62,6 +62,7 @@ export interface SupportDownload {
 export const supportDownloads: SupportDownload[] = [
   { title: "Owner's Quick Start Guide", description: 'Your system at a glance: what was installed, how to control it, schedules, seasonal care and who to call.', kind: 'guide', href: '/downloads/forever-lights-owners-quick-start-guide.pdf', size: 'PDF' },
   { title: 'Warranty Terms', description: 'Full 5-year parts / 1-year labour warranty terms, coverage, exclusions and how to make a claim.', kind: 'warranty', href: '/downloads/forever-lights-warranty-terms.pdf', size: 'PDF' },
+  { title: 'Warranty Certificate & Care Card', description: 'The certificate filled in at handover, with the seasonal care checklist, what is covered and how to make a claim.', kind: 'warranty', href: '/downloads/forever-lights-warranty-certificate-and-care.pdf', size: 'PDF' },
   { title: 'Care & Maintenance Checklist', description: 'A one-page seasonal checklist for the controller, power supply, track and app.', kind: 'guide', href: '/downloads/forever-lights-care-and-maintenance-checklist.pdf', size: 'PDF' },
   { title: 'Controller & App Manual', description: 'Full manual for the Wi-Fi controller and mobile app: pairing, zones, effects, firmware updates.', kind: 'manual', href: null },
   { title: 'Track & LED Technical Spec Sheet', description: 'Channel dimensions, LED specifications, IP rating, operating temperature and electrical draw.', kind: 'spec', href: null },

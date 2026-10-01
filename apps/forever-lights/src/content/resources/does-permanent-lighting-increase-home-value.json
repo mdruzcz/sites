@@ -12,7 +12,7 @@
     "Permanent lighting is not a renovation that shows up as a line item on an appraisal. Its value is in how the home presents, particularly at dusk and in listing photos, and in what buyers assume about a house that looks cared for.",
     "Twilight photography is one of the most effective tools in a listing, and a home with clean roofline lighting is ready for it on any evening without a stylist.",
     "Buyers see a permanent, warrantied, app-controlled system as a finished feature they will never have to install, which is a different conversation from a box of light strings in the garage.",
-    "Low running cost, IP68 sealed fixtures rated to minus 40 degrees, 50,000-hour LEDs and a transferable warranty make it a feature that survives the inspection and the first winter.",
+    "Low running cost, IP67 sealed fixtures rated to minus 40 degrees, 50,000-hour LEDs and a transferable warranty make it a feature that survives the inspection and the first winter.",
     "Compared with other exterior upgrades, permanent lighting is a smaller, faster job that changes the look of the whole house rather than one part of it."
   ],
   "body": [
@@ -93,7 +93,7 @@
       "type": "ul",
       "items": [
         "The track is extruded aluminum, which does not rust, acts as a heat sink for the LEDs and is fastened to the soffit or fascia rather than through the roof.",
-        "Fixtures are sealed to IP68 and rated to operate down to minus 40 degrees Celsius, which covers anything a Southwestern Ontario winter produces.",
+        "Fixtures are sealed to IP67 and rated to operate down to minus 40 degrees Celsius, which covers anything a Southwestern Ontario winter produces.",
         "Components are CSA-approved and the system connects to an existing GFCI-protected outlet, so no permit is required and there is no change to the home's electrical panel.",
         "The LEDs are rated for 50,000 hours, which at a few hours a night is decades of use.",
         "Our installs carry a 5-year parts warranty and a 1-year workmanship warranty, and a buyer inherits a system that a local company is still standing behind."
@@ -175,7 +175,7 @@
     },
     {
       "q": "Does the lighting need a permit or any electrical work that a buyer would ask about?",
-      "a": "No permit is required when the system connects to your home's existing GFCI-protected outdoor receptacle, which is how we install it. The components are CSA-approved, the fixtures are IP68 sealed and rated to minus 40 degrees, and nothing changes at the electrical panel, so there is nothing unusual for an inspection."
+      "a": "No permit is required when the system connects to your home's existing GFCI-protected outdoor receptacle, which is how we install it. The components are CSA-approved, the fixtures are IP67 sealed and rated to minus 40 degrees, and nothing changes at the electrical panel, so there is nothing unusual for an inspection."
     }
   ]
 }

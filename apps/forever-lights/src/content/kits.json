@@ -28,8 +28,8 @@
       "key": "powerSupply",
       "name": "Forever Lights Power Supply, 150 W",
       "image": "power-supply-150w",
-      "blurb": "24 V 150 W constant-voltage waterproof LED driver with a standard plug end.",
-      "detail": "Converts household power down to safe low voltage for the run. It plugs into an existing GFCI-protected outdoor or garage receptacle, which is why a standard install needs no electrical permit. Larger kits include more than one so power can be fed from more than one point."
+      "blurb": "12 V 150 W constant-voltage waterproof LED driver with a standard plug end.",
+      "detail": "Converts household power down to a safe 12 V for the run. It plugs into an existing GFCI-protected outdoor or garage receptacle, which is why a standard install needs no electrical permit. Larger kits include more than one so power can be fed from more than one point."
     },
     {
       "key": "controller",

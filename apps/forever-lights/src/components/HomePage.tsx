@@ -87,7 +87,7 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
           </span>
           <span>2026 Service Excellence Award winner</span>
           <span>200+ homes lit across Southwestern Ontario</span>
-          <span>CSA approved · IP68 weatherproof</span>
+          <span>CSA approved · IP67 weatherproof</span>
         </div>
       </section>
 
@@ -144,7 +144,7 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
               {[
                 { icon: <Icon.ruler size={22} />, t: 'Measured & colour-matched', d: 'Every run is cut to your roofline and matched to your trim.' },
                 { icon: <Icon.eyeOff size={22} />, t: 'Sealed, recessed LEDs', d: 'Each puck sits inside a rigid channel, angled down for an even line of light.' },
-                { icon: <Icon.snowflake size={22} />, t: 'Built for Ontario winters', d: 'IP68 sealed, UV-stable and tested to −40°C. Snow and ice are not a problem.' },
+                { icon: <Icon.snowflake size={22} />, t: 'Built for Ontario winters', d: 'IP67 sealed, UV-stable and tested to −40°C. Snow and ice are not a problem.' },
                 { icon: <Icon.bolt size={22} />, t: '0.3 W per point', d: 'A whole house draws about as much as a few bulbs, all night, all year.' },
               ].map(f => (
                 <div key={f.t} className="flex gap-4">
@@ -196,7 +196,7 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
             {[
               { icon: <Icon.smartphone size={22} />, t: 'App-controlled', d: 'Colours, brightness, effects and schedules from your phone, anywhere in the world.' },
               { icon: <Icon.eyeOff size={22} />, t: 'Invisible by day', d: 'Colour-matched channel that reads as trim. Nobody knows it is there until dusk.' },
-              { icon: <Icon.snowflake size={22} />, t: 'Made for Canadian winters', d: 'IP68 waterproof, UV-rated, CSA-approved parts tested to −40°C.' },
+              { icon: <Icon.snowflake size={22} />, t: 'Made for Canadian winters', d: 'IP67 waterproof, UV-rated, CSA-approved parts tested to −40°C.' },
               { icon: <Icon.bolt size={22} />, t: 'Energy efficient', d: 'Just 0.3 W per LED point. Your whole house costs pennies a night to run.' },
               { icon: <Icon.shield size={22} />, t: '5-year parts warranty', d: '5 years on parts, 1 year on labour, and our own crew doing the service calls.' },
               { icon: <Icon.card size={22} />, t: 'Financing available', d: '24-month financing at 10% APR (on approved credit). Install now, spread the cost.' },
@@ -306,7 +306,7 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
             { v: '50,000', u: 'hours', l: 'LED lifespan' },
             { v: '20+', u: 'years', l: 'Expected life' },
             { v: '0.3 W', u: 'per point', l: 'Energy use' },
-            { v: 'IP68', u: 'sealed', l: 'Weatherproof' },
+            { v: 'IP67', u: 'sealed', l: 'Weatherproof' },
             { v: '−40°C', u: 'tested', l: 'Cold rating' },
             { v: '5 yr', u: 'parts', l: 'Warranty' },
           ].map(s => (
