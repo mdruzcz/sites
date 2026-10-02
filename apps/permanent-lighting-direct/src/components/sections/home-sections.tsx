@@ -55,7 +55,7 @@ export function TrustStrip() {
   const items = [
     ["12V RGBW pucks", "16M colours + true warm white"],
     ["Aluminum soffit track", "Hides the wire, matches your trim"],
-    ["Free shipping over $500", "Canada-wide from London, ON"],
+    ["Free shipping within 200 km", "$200 flat rate across Canada"],
     ["5-year parts warranty", "Real people answer the email"]
   ];
   return (
@@ -351,7 +351,7 @@ export const HOME_FAQ: { q: string; a: string }[] = [
   { q: "Do I need an electrician to install a permanent lighting kit?", a: "No for a standard plug-in install. The system is 12V low voltage (CSA Class 2) and the power supply plugs into an existing outdoor GFCI receptacle. If you want a new dedicated outlet under the soffit, that part is an electrician's job." },
   { q: "How do I know which kit size to order?", a: "Measure every roofline, soffit and fascia edge you want lit and add them up, including gaps you will bridge with connectors. Round up to the next kit size. Our measuring guide walks through it, and you can email us a sketch and we will size it for you." },
   { q: "Are all your products 12V?", a: "Yes. Every puck, controller, power supply and connector we sell is 12V. We do not carry 24V products, so everything in the store works together." },
-  { q: "How long does shipping take?", a: "Orders ship from London, Ontario within one to two business days. Most of Ontario and Quebec sees delivery in two to four days, and the rest of Canada in four to eight. Orders over $500 ship free." },
+  { q: "How long does shipping take?", a: "Orders ship from London, Ontario within one to two business days. Most of Ontario and Quebec sees delivery in two to four days, and the rest of Canada in four to eight. Shipping is free within 200 km of our Belmont, Ontario shop and a flat $200 elsewhere in Canada." },
   { q: "What does the warranty cover?", a: "Five years on parts against manufacturing defects on every kit and component. Damage from improper installation, surges or physical impact is not covered. See the warranty page for the full terms." },
   { q: "Can I add more lights later?", a: "Yes. Track, strands, connectors and power supplies are all sold separately, so you can extend a run or add a detached garage later. The controller handles up to several hundred pucks per output with power injection." }
 ];

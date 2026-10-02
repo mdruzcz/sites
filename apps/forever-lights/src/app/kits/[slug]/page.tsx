@@ -9,6 +9,8 @@ import {
 import { Breadcrumbs, SectionHeading, CheckList, CtaBand } from '@/components/ui';
 import { Icon } from '@/components/icons';
 import { KitRequestForm } from '@/components/KitRequestForm';
+import { AddToCart } from '@/components/AddToCart';
+import { orderableColours } from '@/lib/shop';
 
 export const revalidate = 3600;
 
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!kit) return {};
   const url = `https://${site.domain}/kits/${kit.slug}`;
   const title = `${kit.feet} ft DIY Permanent Lighting Kit`;
-  const description = `The ${kit.feet} ft Forever Lights DIY kit: ${kitLightCount(kit)} RGBW lights, ${kitTrackFeet(kit)} ft of aluminum track, controller, power and connectors. ${formatCad(kit.price)} plus shipping and tax.`;
+  const description = `The ${kit.feet} ft Forever Lights DIY kit: ${kitLightCount(kit)} RGBW lights, ${kitTrackFeet(kit)} ft of aluminum track, controller, power and connectors. ${formatCad(kit.price)}, order online. Free shipping within 200 km of our Ontario shop.`;
   return {
     title,
     description,
@@ -99,12 +101,18 @@ export default async function KitDetailPage({ params }: Props) {
               <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-xl">{kit.suits}</p>
               <p className="mt-8 font-heading text-4xl md:text-5xl font-bold text-ink">{formatCad(kit.price)}</p>
               <p className="mt-2 text-sm text-muted">
-                Kit only, about {formatCad(kit.price / kit.feet, 2)} per foot. Shipping and provincial tax quoted separately.
+                About {formatCad(kit.price / kit.feet, 2)} per foot. Free shipping within 200 km of our Belmont, Ontario shop,
+                $200 flat elsewhere in Canada, GST/HST added at checkout.
               </p>
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                <a href="#request" className="btn btn-primary btn-lg">Request this kit</a>
-                <a href={phoneHref} className="btn btn-outline btn-lg"><Icon.phone size={20} /> {site.phone}</a>
+              <div id="order" className="mt-7 scroll-mt-28">
+                <AddToCart
+                  slug={kit.slug}
+                  feet={kit.feet}
+                  priceLabel={formatCad(kit.price)}
+                  colours={orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }))}
+                />
               </div>
+              <a href={phoneHref} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink min-h-[44px]"><Icon.phone size={18} /> Questions first? Call {site.phone}</a>
             </div>
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden bg-white border border-line aspect-[4/3]">
@@ -200,7 +208,7 @@ export default async function KitDetailPage({ params }: Props) {
             </dl>
             <p className="mt-5 text-xs text-muted leading-relaxed">
               The saving is the labour: measuring, mounting, wiring, commissioning and the 1-year workmanship warranty. The
-              5-year parts warranty is the same either way. Kit price excludes shipping and provincial tax.
+              5-year parts warranty is the same either way. Kit price excludes shipping and GST/HST.
             </p>
             <Link href="/resources/diy-permanent-lights-vs-professional-installation" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink min-h-[44px]">
               Which is right for you? <Icon.arrow size={16} />
@@ -240,11 +248,11 @@ export default async function KitDetailPage({ params }: Props) {
       <section id="request" className="section scroll-mt-24">
         <div className="wrap grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-5">
-            <SectionHeading align="left" eyebrow="Request this kit" title={`Get a total for the ${kit.feet} ft kit.`} />
+            <SectionHeading align="left" eyebrow="Custom colour or questions" title="Want a custom colour, or help choosing?" />
             <p className="mt-5 text-ink-soft leading-relaxed">
-              There is no checkout here. Send us your shipping address and we will email a written total, the kit at{' '}
-              {formatCad(kit.price)} plus exact shipping to your postal code and the tax for your province. Nothing is charged
-              until you agree to it.
+              The four standard track colours can be ordered above and paid for online. For a custom colour match, a combination
+              of kits, or if you would like us to check the size first, send us the details here and we will reply with a written
+              quote. Nothing is charged until you agree to it.
             </p>
             <div className="mt-8 card-soft p-6">
               <h3 className="font-bold text-ink flex items-center gap-2"><Icon.headset size={20} /> Not sure this is the right size?</h3>
@@ -257,8 +265,8 @@ export default async function KitDetailPage({ params }: Props) {
           </div>
           <div className="lg:col-span-7">
             <div className="card p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-ink">Kit request</h2>
-              <p className="text-muted text-sm mt-1 mb-6">We reply within one business day with shipping and tax.</p>
+              <h2 className="text-2xl font-bold text-ink">Ask about this kit</h2>
+              <p className="text-muted text-sm mt-1 mb-6">We reply within one business day.</p>
               <KitRequestForm kitOptions={kitOptions} colourOptions={colourOptions} defaultKit={kit.slug} />
             </div>
           </div>

@@ -16,7 +16,7 @@ const url = `https://${site.domain}/kits`;
 export const metadata: Metadata = {
   title: 'DIY Permanent Lighting Kits: Buy and Install It Yourself',
   description:
-    'Buy a Forever Lights permanent LED roofline kit and install it yourself. Six sizes from 50 to 250 feet, everything in the box, shipped across Canada. Request a quote.',
+    'Buy a Forever Lights permanent LED roofline kit and install it yourself. Six sizes from 50 to 250 feet, everything in the box, shipped across Canada. Order online with free shipping within 200 km.',
   alternates: { canonical: url },
   openGraph: {
     title: 'DIY Permanent Lighting Kits | Forever Lights',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 };
 
 const faq = [
-  { q: 'How do I pay for a kit?', a: 'You do not pay on the website. You choose a kit and send us your shipping address, then we email a written total: the kit price, exact shipping to your address, and the tax for your province. If it looks good, we take payment and ship. Nothing is charged before you agree to the total.' },
-  { q: 'Why is shipping not shown on the site?', a: 'Kits are heavy and bulky, and the cost changes a lot between, say, London and Whitehorse. Rather than pad every kit with a worst-case shipping charge, we quote the real cost to your postal code.' },
+  { q: 'How do I pay for a kit?', a: 'Choose a size and track colour, add it to your cart and check out by credit card, debit, Apple Pay or Google Pay on Stripe’s secure page. Kits are invoiced by our billing company, Master Decker Inc., and your invoice is emailed as soon as the payment goes through. For a custom colour match, use the question form and we will quote it.' },
+  { q: 'How much is shipping?', a: 'Shipping is free within 200 km of our shop in Belmont, just south of London: most of Southwestern Ontario, Kitchener-Waterloo, Hamilton, Niagara and most of the GTA. Anywhere else in Canada it is a flat $200 per order. Checkout shows which applies as soon as you enter your postal code, and GST or HST for your province is added there too.' },
   { q: 'Which size do I need?', a: 'Measure the rooflines you want lit, in feet, and round up. Our cost estimator will also give you a length if you pick your home size. If you are between sizes, tell us in the notes and we will help you choose. Every kit ships with a little more track than its nominal length to allow for corners and offcuts.' },
   { q: 'How hard is the install?', a: 'If you are comfortable working from a ladder and using a cordless drill, it is a weekend job on a single-storey home. The connectors are sealed twist fittings, so there is no cutting or soldering, and the power supply plugs into an existing GFCI outlet. Two-storey and steep rooflines are where most people decide to have us install it instead.' },
   { q: 'What warranty comes with a kit?', a: 'DIY kits carry the same 5-year parts warranty as our installed systems. The 1-year workmanship warranty applies only where our own crew did the install, since we cannot warranty how a kit was mounted.' },
@@ -97,7 +97,7 @@ export default function KitsPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#kits" className="btn btn-primary btn-lg">See the kits</a>
-              <a href="#request" className="btn btn-outline-light btn-lg">Request a quote</a>
+              <a href="#request" className="btn btn-outline-light btn-lg">Ask a question</a>
             </div>
             <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/80">
               {['Everything in one box', 'No cutting or soldering', 'Same 5-year parts warranty', 'Phone support included'].map(t => (
@@ -113,9 +113,9 @@ export default function KitsPage() {
         <div className="wrap section-tight">
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { t: 'Pick your kit', d: 'Choose the size that covers your roofline. Every kit lists exactly what is in the box.' },
-              { t: 'Send your address', d: 'Fill in the short form. We need your province and postal code to work out shipping and tax.' },
-              { t: 'We send your total', d: 'Within one business day you get a written total: kit, shipping and tax. Nothing is charged until you say yes.' },
+              { t: 'Pick your kit', d: 'Choose the size that covers your roofline and a track colour. Every kit lists exactly what is in the box.' },
+              { t: 'Check out securely', d: 'Pay by card on Stripe. Shipping and GST/HST for your postal code are shown before you pay.' },
+              { t: 'We ship it', d: 'Kits leave our Belmont, Ontario shop within one to two business days, with your invoice emailed right away.' },
             ].map((s, i) => (
               <div key={s.t} className="flex gap-4">
                 <span className="w-10 h-10 rounded-full bg-accent text-ink font-heading font-bold flex items-center justify-center shrink-0">{i + 1}</span>
@@ -127,8 +127,8 @@ export default function KitsPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted max-w-2xl mx-auto">
-            This is not an online store and there is no checkout. Kit prices below are the product only, in Canadian dollars,
-            before shipping and provincial tax.
+            Free shipping within 200 km of our Belmont, Ontario shop and a $200 flat rate anywhere else in Canada. Prices are in
+            Canadian dollars, before GST/HST.
           </p>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function KitsPage() {
                   <div className="flex justify-between gap-3"><dt className="text-muted">Installed by us</dt><dd className="text-ink font-medium">{formatCad(k.installedLow)}+</dd></div>
                 </dl>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink">
-                  What is in the box <Icon.arrow size={16} className="transition-transform group-hover:translate-x-1" />
+                  Choose colour and order <Icon.arrow size={16} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
             ))}
@@ -329,7 +329,7 @@ export default function KitsPage() {
             </div>
             <p className="mt-3 text-xs text-muted">
               Installed prices are the low end of our full-service range for the same length and include measuring, mounting,
-              wiring, commissioning and the 1-year workmanship warranty. Kit prices exclude shipping and provincial tax.
+              wiring, commissioning and the 1-year workmanship warranty. Kit prices exclude shipping and GST/HST.
             </p>
             <Link href="/resources/diy-permanent-lights-vs-professional-installation" className="mt-5 inline-flex items-center gap-2 font-semibold text-ink min-h-[44px]">
               Read the full DIY versus professional comparison <Icon.arrow size={18} />
@@ -355,15 +355,15 @@ export default function KitsPage() {
       <section id="request" className="section bg-soft border-y border-line scroll-mt-24">
         <div className="wrap grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-5">
-            <SectionHeading align="left" eyebrow="Request a kit" title="Tell us where it is going and we will price it." />
+            <SectionHeading align="left" eyebrow="Questions or custom colours" title="Not ready to order yet? Ask us first." />
             <p className="mt-5 text-ink-soft leading-relaxed">
-              Shipping and tax both depend on where you are, so we quote them rather than guess. Send your address and you will
-              have a written total within one business day. There is no payment step on this website and nothing is charged
-              until you agree to the total.
+              Standard kits can be ordered and paid for online. For a custom colour match, several kits for one property, or a
+              second opinion on sizing, send your details and you will have a written answer within one business day. Nothing is
+              charged until you agree to it.
             </p>
             <div className="mt-8 space-y-4">
               {[
-                { icon: <Icon.file size={20} />, t: 'A written total', d: 'Kit, shipping and provincial tax, itemised.' },
+                { icon: <Icon.file size={20} />, t: 'A written quote', d: 'Kit, shipping and GST/HST, itemised.' },
                 { icon: <Icon.shield size={20} />, t: '5-year parts warranty', d: 'The same warranty as our installed systems.' },
                 { icon: <Icon.clock size={20} />, t: 'One business day', d: 'We reply Monday to Friday, usually the same day.' },
               ].map(r => (
@@ -379,8 +379,8 @@ export default function KitsPage() {
           </div>
           <div className="lg:col-span-7">
             <div className="card p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-ink">Kit request</h2>
-              <p className="text-muted text-sm mt-1 mb-6">No payment now. We reply with shipping and tax for your province.</p>
+              <h2 className="text-2xl font-bold text-ink">Ask about a kit</h2>
+              <p className="text-muted text-sm mt-1 mb-6">No payment now. We reply within one business day.</p>
               <KitRequestForm kitOptions={kitOptions} colourOptions={colourOptions} />
             </div>
           </div>

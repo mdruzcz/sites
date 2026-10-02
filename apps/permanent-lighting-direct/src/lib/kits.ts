@@ -64,6 +64,6 @@ export function kitDescription(kit: Kit): string {
     "- Free WLED app for Android and iOS: scenes, schedules, sunset triggers, zones, voice control",
     "- IP68 pucks, tested to −40 °C, 50,000-hour rated LEDs",
     "- CSA Class 2 low voltage: plugs into a GFCI outlet, no electrician required for a plug-in install",
-    "- 5-year parts warranty, shipped from London, Ontario, free shipping over $500",
+    "- 5-year parts warranty, shipped from London, Ontario, free shipping within 200 km ($200 flat elsewhere in Canada)",
   ].join("\n");
 }

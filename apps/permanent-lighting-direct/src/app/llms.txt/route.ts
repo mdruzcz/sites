@@ -9,7 +9,7 @@ export function GET() {
   const lines = [
     "# Permanent Lighting Direct",
     "",
-    "> Canadian online store (London, Ontario) selling DIY permanent LED roofline lighting kits and 12V components. Professional-grade aluminum soffit track with RGBW puck lights and WLED WiFi app control, shipped across Canada. Free shipping over $500 CAD. 5-year parts warranty. All products are 12V.",
+    "> Canadian online store (London, Ontario) selling DIY permanent LED roofline lighting kits and 12V components. Professional-grade aluminum soffit track with RGBW puck lights and WLED WiFi app control, shipped across Canada. Free shipping within 200 km of the Belmont, Ontario shop (straight-line, by postal code); $200 CAD flat rate elsewhere in Canada. 5-year parts warranty. All products are 12V.",
     "",
     "## Kits (CAD, kit only, DIY install)",
     ...kits.map((k) => `- ${k.feet} ft kit: $${k.price.toFixed(2)} — ${kitLightCount(k)} RGBW pucks, ${kitTrackFeet(k)} ft aluminum track, WiFi controller, ${k.bom.powerSupply} × 12V power supply, connectors, colour-matched screws. Installed by our crew: $${k.installedLow.toFixed(2)}–$${k.installedHigh.toFixed(2)}. ${SITE_URL}/product/${k.slug}`),
@@ -19,7 +19,7 @@ export function GET() {
     "- Pucks: 12V RGBW, about 46 lumens and 0.3 W each, IP68, tested to −40 °C, 50,000-hour rated, 5 per 42-inch track piece",
     "- Control: WLED WiFi controller, free Android/iOS app, 16M colours + dedicated warm white, scenes, schedules, sunset triggers, zones, Alexa/Google; scenes run offline",
     "- Power: CSA Class 2 low voltage, plugs into a GFCI outlet; power injection every ~120 pucks on long runs",
-    "- Shipping: from London, Ontario within 1–2 business days; free over $500 across Canada; no US shipping",
+    "- Shipping: from London, Ontario within 1–2 business days; free within 200 km of Belmont, Ontario, $200 flat rate elsewhere in Canada; GST/HST charged by province; no US shipping",
     "- Returns: 30 days, unused, original packaging. Warranty: 5 years on parts.",
     "",
     "## Pages",

@@ -119,7 +119,7 @@ export default async function GuidePage({ params }: Props) {
             <div className="panel-dark mt-16 p-8 md:p-10">
               <p className="eyebrow text-[var(--color-gold)]">Ready to build it?</p>
               <h2 className="font-display mt-4 text-2xl md:text-3xl">Everything in this guide ships from London, Ontario.</h2>
-              <p className="mt-4 text-white/75">Complete 12V kits from $1,265, plus every part sold separately. Free Canadian shipping over $500.</p>
+              <p className="mt-4 text-white/75">Complete 12V kits from $1,265, plus every part sold separately. Free shipping within 200 km of our Belmont shop, $200 flat across Canada.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/diy-kits" className="btn-primary">Pick a kit</Link>
                 <Link href="/shop" className="btn-ghost-light">Shop parts</Link>

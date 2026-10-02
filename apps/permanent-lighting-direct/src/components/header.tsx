@@ -23,7 +23,7 @@ export async function Header() {
       <div className="hidden border-b border-white/10 bg-[var(--color-ink-deep)] text-[11px] tracking-wide text-white/75 md:block">
         <div className="shell flex h-8 items-center justify-between">
           <p>
-            <span className="font-semibold text-[var(--color-accent-bright)]">Free shipping</span> across Canada over $500 · Ships from London, Ontario
+            <span className="font-semibold text-[var(--color-accent-bright)]">Free shipping</span> within 200 km of our Belmont, ON shop · $200 flat rate across Canada
           </p>
           <p className="flex gap-5">
             <Link href="/warranty" className="hover:text-white">5-year warranty</Link>

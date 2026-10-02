@@ -50,7 +50,7 @@ export function Footer() {
       <div className="border-b border-white/10 bg-[var(--color-ink-deep)]">
         <div className="shell grid grid-cols-2 gap-3 py-4 text-center text-xs text-white/80 md:grid-cols-4">
           <span>12V RGBW, 16M colours</span>
-          <span>Free shipping over $500</span>
+          <span>Free shipping within 200 km</span>
           <span>5-year parts warranty</span>
           <span>Ships from London, Ontario</span>
         </div>

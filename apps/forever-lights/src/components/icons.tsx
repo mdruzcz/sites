@@ -23,6 +23,21 @@ function Base({ size = 24, children, ...rest }: P) {
 }
 
 export const Icon = {
+  cart: (p: P) => (
+    <Base {...p}><circle cx="9" cy="20" r="1.4" /><circle cx="18" cy="20" r="1.4" /><path d="M2.5 3.5h2.6l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 7.5H6.2" /></Base>
+  ),
+  minus: (p: P) => (
+    <Base {...p}><path d="M5 12h14" /></Base>
+  ),
+  plus: (p: P) => (
+    <Base {...p}><path d="M12 5v14M5 12h14" /></Base>
+  ),
+  trash: (p: P) => (
+    <Base {...p}><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13" /></Base>
+  ),
+  lock: (p: P) => (
+    <Base {...p}><rect x="5" y="10.5" width="14" height="10" rx="2" /><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" /></Base>
+  ),
   phone: (p: P) => (
     <Base {...p}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></Base>
   ),

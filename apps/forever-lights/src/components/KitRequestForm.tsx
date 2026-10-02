@@ -61,7 +61,7 @@ export function KitRequestForm({
         `Kit: ${chosen ? `${chosen.label} (${chosen.price})` : kit || 'not selected'}`,
         `Track colour: ${colour || 'not selected'}`,
         `Ship to: ${fd.get('street') || '-'}, ${fd.get('city') || '-'}, ${province || '-'} ${fd.get('postal') || ''}`,
-        'Needs: shipping estimate + provincial tax quote',
+        'Needs: written quote (custom colour, multiple kits or sizing help)',
         '',
         note,
       ].join('\n'),
@@ -208,7 +208,7 @@ export function KitRequestForm({
         {status === 'loading' ? 'Sending…' : engaged && !token ? (captcha.failed ? 'Spam check unavailable' : 'Checking you’re human…') : 'Request my kit quote'}
       </button>
       <p className="text-xs text-center text-muted">
-        No payment now · We reply within one business day with shipping and tax for your province
+        No payment now · We reply within one business day with a written quote
       </p>
     </form>
   );

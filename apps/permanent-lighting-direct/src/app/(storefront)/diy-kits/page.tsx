@@ -13,7 +13,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Permanent Lighting Kits, 50 to 250 ft | DIY 12V RGBW",
   description:
-    "Complete DIY permanent lighting kits from $1,265: 12V RGBW pucks, aluminum soffit track in black, white, wicker or brown, WiFi controller, power and every connector. Free shipping over $500 in Canada.",
+    "Complete DIY permanent lighting kits from $1,265: 12V RGBW pucks, aluminum soffit track in black, white, wicker or brown, WiFi controller, power and every connector. Free shipping within 200 km of our Ontario shop, $200 flat rate across Canada.",
   alternates: { canonical: `${SITE_URL}/diy-kits` },
   openGraph: { title: "Permanent Lighting Kits, 50 to 250 ft | Permanent Lighting Direct", description: "Six complete 12V kits with app control, from $1,265. Ships from London, Ontario.", url: `${SITE_URL}/diy-kits`, images: ["/images/photos/home-blue-night.webp"] }
 };
@@ -185,7 +185,7 @@ export default async function KitsPage() {
         <div className="shell section grid gap-8 md:grid-cols-3">
           {[
             ["5-year parts warranty", "We repair or replace any kit component that fails from a manufacturing defect within five years.", "/warranty", "Read the warranty"],
-            ["Free shipping over $500", "Every kit qualifies. Orders leave London, Ontario within two business days.", "/shipping-returns", "Shipping details"],
+            ["Free shipping within 200 km", "Free across Southwestern Ontario and most of the GTA, $200 flat anywhere else in Canada. Orders leave within two business days.", "/shipping-returns", "Shipping details"],
             ["Prefer a pro?", "Installers across Canada use this exact hardware. We will connect you with one near you.", "/installers", "Find an installer"]
           ].map(([t, b, h, l]) => (
             <div key={t} className="card p-6">

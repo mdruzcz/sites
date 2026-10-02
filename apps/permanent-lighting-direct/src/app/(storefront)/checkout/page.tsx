@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { getCart } from "@/lib/cart";
 import { CheckoutForm } from "@/components/checkout-form";
-import { CheckoutSummary } from "@/components/checkout-summary";
 
 export const metadata = { title: "Checkout", robots: { index: false } };
+export const dynamic = "force-dynamic";
 
 export default async function CheckoutPage() {
   const cart = await getCart();
@@ -31,7 +31,7 @@ export default async function CheckoutPage() {
 
       {/* Progress indicator */}
       <ol className="mx-auto mb-8 grid max-w-2xl grid-cols-3 gap-4 text-center text-xs">
-        {["Information", "Shipping & payment", "Confirmation"].map((step, idx) => (
+        {["Details & shipping", "Secure payment", "Confirmation"].map((step, idx) => (
           <li key={step} className="flex flex-col items-center gap-2">
             <span
               className={`grid size-8 place-items-center rounded-full text-sm font-bold ${
@@ -50,10 +50,7 @@ export default async function CheckoutPage() {
         ))}
       </ol>
 
-      <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        <CheckoutForm cart={cart} />
-        <CheckoutSummary cart={cart} />
-      </div>
+      <CheckoutForm cart={cart} />
     </div>
   );
 }

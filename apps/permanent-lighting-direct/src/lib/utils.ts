@@ -15,7 +15,6 @@ export const formatCad = (n: number | null | undefined, decimals?: number) =>
 
 export const STORE_SLUG = process.env.STORE_SLUG ?? "permanent-lighting-direct";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://permanentlightingdirect.ca";
-export const FREE_SHIPPING_THRESHOLD_DEFAULT = 500;
 
 export const BRAND = {
   name: "Permanent Lighting Direct",
@@ -26,6 +25,5 @@ export const BRAND = {
   country: "Canada",
   email: "service@masterdecker.com",
   warrantyYears: 5,
-  freeShippingOver: 500,
   domain: "permanentlightingdirect.ca"
 } as const;

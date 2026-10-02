@@ -4,8 +4,8 @@ import { PageHero } from "@/components/page-hero";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Shipping & Returns: Free Canada-Wide Over $500",
-  description: "Permanent Lighting Direct ships from London, Ontario within two business days. Free shipping across Canada on orders over $500, 30-day returns on unused items.",
+  title: "Shipping & Returns: Free Within 200 km, $200 Flat Canada",
+  description: "Permanent Lighting Direct ships within two business days. Free shipping within 200 km of our Belmont, Ontario shop, $200 flat rate across Canada, 30-day returns.",
   alternates: { canonical: `${SITE_URL}/shipping-returns` }
 };
 
@@ -17,12 +17,14 @@ export default function ShippingReturnsPage() {
         <div className="shell section grid gap-10 lg:grid-cols-[1fr_320px]">
           <article className="prose-clean max-w-[72ch] text-[var(--color-text-soft)]">
             <h2>Shipping</h2>
-            <p>Every order ships from our warehouse in London, Ontario. Orders placed before noon Eastern usually leave the same or next business day; everything else within two business days. You receive a tracking number by email.</p>
+            <p>Every order ships from our shop in Belmont, just south of London, Ontario. Orders placed before noon Eastern usually leave the same or next business day; everything else within two business days. You receive a tracking number by email.</p>
             <ul>
-              <li><strong>Free shipping</strong> on orders over $500 CAD anywhere in Canada. Every complete kit qualifies.</li>
+              <li><strong>Free shipping within 200 km</strong> of our Belmont shop: London, Windsor, Sarnia, Kitchener-Waterloo, Hamilton, Niagara and most of the GTA. Distance is measured straight-line to your postal code, and checkout tells you before you pay.</li>
+              <li><strong>$200 flat rate</strong> anywhere else in Canada, whatever the order size.</li>
+              <li>GST or HST for your province is added at checkout. Orders are invoiced by our billing company, Master Decker Inc.</li>
               <li>Ontario and Quebec: typically 2 to 4 business days.</li>
               <li>Atlantic, Prairies and BC: typically 4 to 8 business days.</li>
-              <li>Territories and remote postal codes: quoted at checkout.</li>
+              <li>Territories and remote postal codes: 1 to 3 weeks.</li>
             </ul>
             <p>Kits ship in one or two boxes depending on size. Track is packed in a rigid carton; pucks, controller and connectors ship inside the same shipment.</p>
             <h2>Returns</h2>
@@ -37,8 +39,8 @@ export default function ShippingReturnsPage() {
             <div className="card p-6">
               <p className="eyebrow text-[var(--color-accent-dark)]">At a glance</p>
               <ul className="mt-3 space-y-2 text-sm text-[var(--color-text-soft)]">
-                <li>Ships from London, ON</li>
-                <li>Free over $500, Canada-wide</li>
+                <li>Ships from Belmont, ON</li>
+                <li>Free within 200 km, $200 flat elsewhere</li>
                 <li>1–2 business days handling</li>
                 <li>30-day returns, unused</li>
               </ul>

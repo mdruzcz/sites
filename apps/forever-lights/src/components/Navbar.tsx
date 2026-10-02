@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { site, phoneHref } from '@/lib/site-config';
 import { Logo } from './Logo';
 import { Icon } from './icons';
+import { useCart } from './CartProvider';
 
 const links = [
   { href: '/services', label: 'Services' },
@@ -23,6 +24,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { count } = useCart();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 8);
@@ -65,6 +67,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <CartLink count={count} />
           <a href={phoneHref} className="inline-flex items-center gap-2 text-[15px] font-semibold text-ink hover:text-ink-soft min-h-[44px] px-2 whitespace-nowrap">
             <Icon.phone size={18} />
             <span className="xl:hidden 2xl:inline">{site.phone}</span>
@@ -74,6 +77,7 @@ export function Navbar() {
 
         {/* Mobile controls */}
         <div className="flex lg:hidden items-center gap-1">
+          <CartLink count={count} />
           <a href={phoneHref} className="w-11 h-11 inline-flex items-center justify-center rounded-full text-ink hover:bg-soft" aria-label={`Call ${site.phone}`}>
             <Icon.phone size={22} />
           </a>
@@ -116,5 +120,22 @@ export function Navbar() {
         </nav>
       </div>
     </header>
+  );
+}
+
+function CartLink({ count }: { count: number }) {
+  return (
+    <Link
+      href="/cart"
+      className="relative w-11 h-11 inline-flex items-center justify-center rounded-full text-ink hover:bg-soft"
+      aria-label={count ? `Cart, ${count} item${count === 1 ? '' : 's'}` : 'Cart'}
+    >
+      <Icon.cart size={22} />
+      {count > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 min-w-5 h-5 px-1 rounded-full bg-accent text-ink text-[11px] font-bold leading-5 text-center">
+          {count}
+        </span>
+      )}
+    </Link>
   );
 }

@@ -103,7 +103,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
             <li>All connectors and screws</li>
           </ul>
           <p className="mt-3 text-sm text-[var(--color-text-soft)]">{selected?.suits}</p>
-          <p className="mt-3 text-xs text-[var(--color-muted)]">Free Canadian shipping on this order. Saves about {formatCad(selected?.saving ?? 0, 0)} versus our installed price.</p>
+          <p className="mt-3 text-xs text-[var(--color-muted)]">Free shipping within 200 km of our Ontario shop, $200 flat elsewhere in Canada. Saves about {formatCad(selected?.saving ?? 0, 0)} versus our installed price.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <button type="button" onClick={addKit} disabled={pending || !variantId} className="btn-primary flex-1 disabled:opacity-50">
               {pending ? "Adding…" : "Add kit to cart"}

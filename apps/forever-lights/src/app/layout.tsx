@@ -5,6 +5,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { FloatingCTA } from '@/components/FloatingCTA';
+import { CartProvider } from '@/components/CartProvider';
 import { site, serviceAreas, testimonials } from '@/lib/site';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
@@ -74,10 +75,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] btn btn-dark btn-sm">Skip to content</a>
-        <Navbar />
-        <main id="main">{children}</main>
-        <Footer />
-        <FloatingCTA />
+        <CartProvider>
+          <Navbar />
+          <main id="main">{children}</main>
+          <Footer />
+          <FloatingCTA />
+        </CartProvider>
               <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="c70e8c5b-580b-48d7-a6be-e6fa895b1b80" strategy="afterInteractive" />
       </body>
     </html>

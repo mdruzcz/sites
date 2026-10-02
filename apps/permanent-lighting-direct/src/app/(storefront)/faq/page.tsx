@@ -48,7 +48,7 @@ const GROUPS: { title: string; items: { q: string; a: string }[] }[] = [
   {
     title: "Ordering and shipping",
     items: [
-      { q: "How long does shipping take?", a: "Orders leave London, Ontario within one to two business days. Ontario and Quebec usually see delivery in two to four days, the rest of Canada in four to eight. Orders over $500 ship free." },
+      { q: "How long does shipping take?", a: "Orders leave London, Ontario within one to two business days. Ontario and Quebec usually see delivery in two to four days, the rest of Canada in four to eight. Shipping is free within 200 km of our Belmont, Ontario shop and a flat $200 anywhere else in Canada; checkout shows which applies to your postal code." },
       { q: "Do you ship to the United States?", a: "Not at the moment. Contact us about larger orders and we will see what we can do." },
       { q: "What is the return policy?", a: "Unused items in original packaging can be returned within 30 days for a refund. Kits must be complete. Return shipping is at the customer's expense." },
       { q: "Do you offer installation?", a: "We sell the kits; installers across Canada install them. Tell us your postal code on the installers page and we will connect you with one who uses this hardware." }
