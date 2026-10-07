@@ -3,7 +3,8 @@ import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/components/CartProvider';
-import type { CatalogColour, CatalogKit } from '@/lib/shop';
+import type { CatalogAddon, CatalogColour, CatalogKit } from '@/lib/shop';
+import { AddOns, FEATURED_ADDONS } from '@/components/AddOns';
 import {
   FLAT_RATE_CAD, FREE_RADIUS_KM, PROVINCES, SHOP,
   estimateTotals, normalizePostal, postalMatchesProvince, provinceName,
@@ -15,7 +16,11 @@ const money = (n: number) => new Intl.NumberFormat('en-CA', { style: 'currency',
 
 type Field = 'email' | 'phone' | 'firstName' | 'lastName' | 'company' | 'line1' | 'line2' | 'city' | 'province' | 'postal' | 'note';
 
-export function CartView({ kits, colours }: { kits: CatalogKit[]; colours: CatalogColour[] }) {
+type Line =
+  | { kind: 'kit'; item: { slug: string; colour: string; qty: number }; kit: CatalogKit; colour: CatalogColour; title: string; sub: string; unit: number; image: string | null; href: string }
+  | { kind: 'addon'; item: { slug: string; colour: string; qty: number }; addon: CatalogAddon; title: string; sub: string; unit: number; image: string | null; href: string };
+
+export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKit[]; addons: CatalogAddon[]; colours: CatalogColour[]; stockNote?: string }) {
   const { items, ready, setQty, remove } = useCart();
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,13 +32,27 @@ export function CartView({ kits, colours }: { kits: CatalogKit[]; colours: Catal
   const set = (k: Field) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setF(prev => ({ ...prev, [k]: k === 'postal' ? e.target.value.toUpperCase() : e.target.value }));
 
-  const lines = useMemo(
-    () => items
-      .map(i => ({ item: i, kit: kits.find(k => k.slug === i.slug), colour: colours.find(c => c.key === i.colour) }))
-      .filter((l): l is { item: typeof l.item; kit: CatalogKit; colour: CatalogColour } => !!l.kit && !!l.colour),
-    [items, kits, colours],
-  );
-  const subtotal = lines.reduce((n, l) => n + l.kit.price * l.item.qty, 0);
+  const lines = useMemo<Line[]>(() => {
+    const out: Line[] = [];
+    for (const i of items) {
+      if (i.slug.startsWith('addon:')) {
+        const addon = addons.find(a => a.slug === i.slug);
+        if (!addon) continue;
+        const colour = addon.needsColour ? colours.find(c => c.key === i.colour) : null;
+        if (addon.needsColour && !colour) continue;
+        out.push({ kind: 'addon', item: i, addon, title: addon.name, sub: `${colour ? `${colour.label} · ` : ''}add-on part · ${money(addon.price)} / ${addon.unit}`, unit: addon.price, image: addon.image, href: '/kits#add-ons' });
+        continue;
+      }
+      const kit = kits.find(k => k.slug === i.slug);
+      const colour = colours.find(c => c.key === i.colour);
+      if (!kit || !colour) continue;
+      out.push({ kind: 'kit', item: i, kit, colour, title: kit.title, sub: `${colour.label} track · ${kit.lights} lights · ${kit.trackFeet} ft of track`, unit: kit.price, image: kit.image, href: `/kits/${kit.slug}` });
+    }
+    // Kits first, then parts.
+    return out.sort((a, b) => (a.kind === b.kind ? 0 : a.kind === 'kit' ? -1 : 1));
+  }, [items, kits, addons, colours]);
+  const subtotal = lines.reduce((n, l) => n + l.unit * l.item.qty, 0);
+  const hasKit = lines.some(l => l.kind === 'kit');
   const postal = normalizePostal(f.postal);
   const mismatch = postal ? !postalMatchesProvince(postal, f.province) : false;
   const totals = postal && !mismatch ? estimateTotals(subtotal, postal, f.province) : null;
@@ -82,38 +101,52 @@ export function CartView({ kits, colours }: { kits: CatalogKit[]; colours: Catal
       <div className="lg:col-span-7 space-y-6">
         {/* Lines */}
         <section className="card divide-y divide-line">
-          {lines.map(({ item, kit, colour }) => (
-            <article key={`${item.slug}-${item.colour}`} className="flex gap-4 p-5">
-              <div className="relative w-20 h-20 shrink-0 rounded-xl overflow-hidden bg-white border border-line">
-                {kit.image && (
-                  <Image src={kit.image} alt={`Forever Lights ${kit.feet} ft DIY permanent lighting kit with ${colour.label.toLowerCase()} track`} fill sizes="80px" className="object-contain p-1.5" />
-                )}
-              </div>
-              <div className="flex-1 min-w-0">
-                <Link href={`/kits/${kit.slug}`} className="font-bold text-ink hover:underline">{kit.title}</Link>
-                <p className="text-sm text-muted">{colour.label} track · {kit.lights} lights · {kit.trackFeet} ft of track</p>
-                <div className="mt-3 flex items-center gap-2">
-                  <div className="inline-flex items-center rounded-full border border-line">
-                    <button type="button" className="w-11 h-11 inline-flex items-center justify-center text-ink disabled:opacity-40" onClick={() => setQty(item.slug, item.colour, item.qty - 1)} aria-label={`One fewer ${kit.title}`} disabled={item.qty <= 1}>
-                      <Icon.minus size={18} />
-                    </button>
-                    <span className="w-8 text-center font-semibold tabular-nums" aria-live="polite">{item.qty}</span>
-                    <button type="button" className="w-11 h-11 inline-flex items-center justify-center text-ink disabled:opacity-40" onClick={() => setQty(item.slug, item.colour, item.qty + 1)} aria-label={`One more ${kit.title}`} disabled={item.qty >= 20}>
-                      <Icon.plus size={18} />
+          {lines.map(l => {
+            const { item } = l;
+            return (
+              <article key={`${item.slug}-${item.colour}`} className="flex gap-4 p-5">
+                <div className="relative w-20 h-20 shrink-0 rounded-xl overflow-hidden bg-white border border-line">
+                  {l.image && (
+                    <Image src={l.image} alt={l.title} fill sizes="80px" className="object-contain p-1.5" />
+                  )}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <Link href={l.href} className="font-bold text-ink hover:underline">{l.title}</Link>
+                  <p className="text-sm text-muted">{l.sub}</p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <div className="inline-flex items-center rounded-full border border-line">
+                      <button type="button" className="w-11 h-11 inline-flex items-center justify-center text-ink disabled:opacity-40" onClick={() => setQty(item.slug, item.colour, item.qty - 1)} aria-label={`One fewer ${l.title}`} disabled={item.qty <= 1}>
+                        <Icon.minus size={18} />
+                      </button>
+                      <span className="w-8 text-center font-semibold tabular-nums" aria-live="polite">{item.qty}</span>
+                      <button type="button" className="w-11 h-11 inline-flex items-center justify-center text-ink disabled:opacity-40" onClick={() => setQty(item.slug, item.colour, item.qty + 1)} aria-label={`One more ${l.title}`} disabled={item.qty >= 20}>
+                        <Icon.plus size={18} />
+                      </button>
+                    </div>
+                    <button type="button" onClick={() => remove(item.slug, item.colour)} className="inline-flex items-center gap-1.5 min-h-[44px] px-3 text-sm text-muted hover:text-ink">
+                      <Icon.trash size={16} /> Remove
                     </button>
                   </div>
-                  <button type="button" onClick={() => remove(item.slug, item.colour)} className="inline-flex items-center gap-1.5 min-h-[44px] px-3 text-sm text-muted hover:text-ink">
-                    <Icon.trash size={16} /> Remove
-                  </button>
                 </div>
-              </div>
-              <div className="text-right">
-                <p className="font-bold text-ink tabular-nums">{money(kit.price * item.qty)}</p>
-                {item.qty > 1 && <p className="text-xs text-muted">{money(kit.price)} each</p>}
-              </div>
-            </article>
-          ))}
+                <div className="text-right">
+                  <p className="font-bold text-ink tabular-nums">{money(l.unit * item.qty)}</p>
+                  {item.qty > 1 && <p className="text-xs text-muted">{money(l.unit)} each</p>}
+                </div>
+              </article>
+            );
+          })}
         </section>
+
+        {/* Upsell: the parts people run short on */}
+        <AddOns
+          addons={addons}
+          colours={colours}
+          keys={FEATURED_ADDONS}
+          compact
+          title={hasKit ? "Don't get caught short on install day" : 'Popular add-on parts'}
+          intro="Most rooflines need one or two extras the kit can't predict: a spare strand, a longer jumper, a power T. Add them now and they ship in the same box."
+          stockNote={stockNote}
+        />
 
         {/* Contact + address */}
         <section className="card p-5 md:p-7">

@@ -25,7 +25,7 @@ export function Hero() {
             <Link href="/how-it-works" className="btn-ghost-light">See how it works</Link>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-white/65">
-            <li>Kits from $1,265</li>
+            <li>Kits from $1,455</li>
             <li>5-year warranty</li>
             <li>IP68 · −40 °C tested</li>
             <li>CSA Class 2 · 12V</li>

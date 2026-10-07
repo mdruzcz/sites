@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { site } from '@/lib/site-config';
-import { priceCart, kitProductName, kitSku } from '@/lib/shop';
+import { priceCart, kitProductName, kitSku, addonSku } from '@/lib/shop';
 import { getServiceSupabase, getStoreId, STORE_SLUG } from '@/lib/supabase-admin';
 import { createOrderAndSession, parseCustomer } from '@/lib/orders/checkout-server';
 
@@ -27,14 +27,25 @@ export async function POST(req: Request) {
     service: getServiceSupabase(),
     stripe,
     store: { id: storeId, slug: STORE_SLUG, name: site.name, prefix: 'FL', siteUrl: `https://${site.domain}` },
-    lines: cart.lines.map(l => ({
-      variantId: null,
-      productName: kitProductName(l.kit),
-      variantName: l.colourLabel,
-      sku: kitSku(l.kit, l.colourKey),
-      quantity: l.qty,
-      unitPriceCad: l.kit.price,
-    })),
+    lines: cart.lines.map(l =>
+      l.kind === 'kit'
+        ? {
+            variantId: null,
+            productName: kitProductName(l.kit),
+            variantName: l.colourLabel,
+            sku: kitSku(l.kit, l.colourKey),
+            quantity: l.qty,
+            unitPriceCad: l.kit.price,
+          }
+        : {
+            variantId: null,
+            productName: l.name,
+            variantName: l.colourLabel,
+            sku: addonSku(l.addon, l.colourKey),
+            quantity: l.qty,
+            unitPriceCad: l.addon.price,
+          },
+    ),
     customer: parsed.customer,
     cancelPath: '/cart',
   });

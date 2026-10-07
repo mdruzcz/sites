@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui';
 import { CartView } from '@/components/CartView';
 import { cartCatalog } from '@/lib/shop';
+import { STOCK_NOTE } from '@/lib/kits';
 
 export const metadata: Metadata = {
   title: 'Your Cart and Checkout',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function CartPage() {
-  const { kits, colours } = cartCatalog();
+  const { kits, addons, colours } = cartCatalog();
   return (
     <section className="bg-soft border-b border-line">
       <div className="wrap pt-8 pb-16 md:pt-10 md:pb-24">
@@ -21,7 +22,7 @@ export default function CartPage() {
           Check your kit and track colour, tell us where it is going, then pay securely on the next page.
         </p>
         <div className="mt-10">
-          <CartView kits={kits} colours={colours} />
+          <CartView kits={kits} addons={addons} colours={colours} stockNote={STOCK_NOTE} />
         </div>
       </div>
     </section>

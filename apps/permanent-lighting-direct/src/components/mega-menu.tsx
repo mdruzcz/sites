@@ -110,7 +110,7 @@ export function MegaMenu() {
               <span className="photo-scrim-soft" aria-hidden />
               <span className="absolute inset-x-0 bottom-0 p-5">
                 <span className="eyebrow text-[var(--color-gold)]">Most popular</span>
-                <span className="font-display mt-1 block text-lg">100 ft kit, $1,729.20</span>
+                <span className="font-display mt-1 block text-lg">100 ft kit, $1,989</span>
                 <span className="mt-1 block text-xs text-white/75">Everything for a typical bungalow front, one box.</span>
               </span>
             </Link>

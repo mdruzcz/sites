@@ -10,7 +10,7 @@
   "heroAlt": "Side-by-side comparison of a DIY permanent LED lighting kit box and a professionally installed roofline lighting run on a Canadian home",
   "keyTakeaways": [
     "Professional permanent lighting installs typically cost $25 to $40 per foot in Canada, largely for labour, not parts.",
-    "A 100 ft DIY kit costs $1,729.20, or about $17.30 per foot, roughly a third of a typical installed price for the same run.",
+    "A 100 ft DIY kit costs $1,989, or about $19.89 per foot, roughly a third of a typical installed price for the same run.",
     "Consumer strip lights like Govee or Eufy are cheaper per foot again, but they are adhesive-mounted, show visible wire, and are not built for permanent year-round exposure.",
     "The parts inside a DIY kit and a professional install are usually the same 12V aluminum-track system; the price gap is who does the mounting and wiring.",
     "A weekend of DIY labour is the trade-off for the savings, and the same 5-year parts warranty applies either way."
@@ -23,14 +23,14 @@
     { "type": "h2", "text": "What a DIY kit costs" },
     { "type": "p", "text": "A DIY permanent lighting kit is priced by length, with everything needed for the install bundled in. Current kit pricing in Canadian dollars runs as follows." },
     { "type": "ul", "items": [
-      "50 ft kit: $1,265",
-      "75 ft kit: $1,485",
-      "100 ft kit: $1,729.20",
-      "150 ft kit: $2,240.70",
-      "200 ft kit: $2,648.80",
-      "250 ft kit: $3,157"
+      "50 ft kit: $1,455",
+      "75 ft kit: $1,709",
+      "100 ft kit: $1,989",
+      "150 ft kit: $2,579",
+      "200 ft kit: $3,049",
+      "250 ft kit: $3,629"
     ] },
-    { "type": "p", "text": "On a per-foot basis, the 100 ft kit works out to about $17.30 per foot, and the price per foot drops further on the larger kits. Compare that to the $25 to $40 per foot for a professional install of the same length, and a DIY kit typically lands at roughly a third to two-thirds of the installed price, depending on house size and how efficiently the professional crew works." },
+    { "type": "p", "text": "On a per-foot basis, the 100 ft kit works out to about $19.89 per foot, and the price per foot drops further on the larger kits. Compare that to the $25 to $40 per foot for a professional install of the same length, and a DIY kit typically lands at roughly a third to two-thirds of the installed price, depending on house size and how efficiently the professional crew works." },
     { "type": "p", "text": "That price includes everything required to complete a standard install, not just the lights. A 100 ft kit, for example, comes with 32 strands of five RGBW puck lights each, 160 lights total, plus 31 pieces of 42-inch five-hole aluminum track in your choice of black, white, wicker or brown, a WiFi controller running WLED for app control with 16 million colours and a dedicated warm white channel, a 150 W 12V power supply, a full assortment of extension connectors from 1 ft to 20 ft, T-connectors, power-injection T-connectors and cables, colour-matched soffit screws, and spare fuses. Full kit contents and sizing are at /diy-kits." },
     { "type": "h2", "text": "Why the price gap exists when the parts are similar" },
     { "type": "p", "text": "It can feel odd that a box of parts costs a third of the installed price for what is functionally the same system. The explanation is straightforward: labour, not hardware, is the expensive part of a professional lighting install. Ladder work on a two-storey home, precise fitting around gables and returns, running wire out of sight, and troubleshooting connections all take skilled time, and that time is billed at a trade rate whether the parts underneath are $17 a foot or $30 a foot. A DIY installer is trading that labour cost for their own weekend, at the cost of doing the ladder work and the fitting themselves." },
@@ -41,7 +41,7 @@
     { "type": "h2", "text": "A side-by-side look at a 100 ft roofline" },
     { "type": "ul", "items": [
       "Consumer strip lights: roughly $200 to $400 in parts, adhesive-mounted, visible wiring, shorter expected lifespan.",
-      "DIY permanent lighting kit: $1,729.20 for the 100 ft kit, aluminum track, sealed connectors, 5-year warranty, a weekend of your own labour.",
+      "DIY permanent lighting kit: $1,989 for the 100 ft kit, aluminum track, sealed connectors, 5-year warranty, a weekend of your own labour.",
       "Professional install: roughly $2,500 to $4,000 for the same 100 ft using a similar 12V aluminum-track system, fully installed and warrantied by the installer, little to no labour on your part."
     ] },
     { "type": "h2", "text": "Other costs that factor into the total" },
@@ -56,7 +56,7 @@
   ],
   "faq": [
     { "q": "How much does a professional permanent lighting install cost in Canada?", "a": "Most professional installers price the job at $25 to $40 per linear foot, which puts a typical 100 ft roofline between $2,500 and $4,000. Larger homes with more gables, dormers and branches trend toward the higher end of that range." },
-    { "q": "How much cheaper is a DIY kit than hiring a professional?", "a": "A 100 ft DIY kit costs $1,729.20, or about $17.30 per foot, compared with $25 to $40 per foot professionally installed. That puts a DIY kit at roughly a third to two-thirds of the professional price for the same length, depending on house complexity." },
+    { "q": "How much cheaper is a DIY kit than hiring a professional?", "a": "A 100 ft DIY kit costs $1,989, or about $19.89 per foot, compared with $25 to $40 per foot professionally installed. That puts a DIY kit at roughly a third to two-thirds of the professional price for the same length, depending on house complexity." },
     { "q": "Are DIY kit parts the same quality as what professionals install?", "a": "Largely yes. Both typically use a 12V aluminum-track system with sealed IP68 pucks rated for around 50,000 hours and tested to -40 C, backed by a 5-year parts warranty. The price difference is mostly labour, not hardware quality." },
     { "q": "Why are consumer strip lights like Govee or Eufy so much cheaper?", "a": "They are adhesive-mounted rather than screwed into aluminum track, use exposed wiring rather than a sealed channel, and are generally built for lighter, shorter-term use. That makes them cheaper per foot but less durable for a permanent, multi-year, all-season install." },
     { "q": "Do I need an electrician for a DIY permanent lighting kit?", "a": "No, for a standard install. The 12V power supply and WiFi controller plug into an existing outdoor GFCI outlet, so no electrical permit or electrician is required, though it is worth checking local rules for your specific property." },

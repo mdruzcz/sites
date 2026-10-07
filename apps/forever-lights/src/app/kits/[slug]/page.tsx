@@ -10,7 +10,9 @@ import { Breadcrumbs, SectionHeading, CheckList, CtaBand } from '@/components/ui
 import { Icon } from '@/components/icons';
 import { KitRequestForm } from '@/components/KitRequestForm';
 import { AddToCart } from '@/components/AddToCart';
-import { orderableColours } from '@/lib/shop';
+import { AddOns } from '@/components/AddOns';
+import { orderableColours, addonCatalog } from '@/lib/shop';
+import { STOCK_NOTE } from '@/lib/kits';
 
 export const revalidate = 3600;
 
@@ -184,6 +186,19 @@ export default async function KitDetailPage({ params }: Props) {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Add-on parts upsell */}
+      <section id="add-ons" className="section-tight scroll-mt-24">
+        <div className="wrap">
+          <AddOns
+            addons={addonCatalog()}
+            colours={orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }))}
+            title="Add the extras your roofline will ask for"
+            intro={`The ${kit.feet} ft kit covers a typical layout, but every house has a corner, a gap or a long run the kit can't predict. These ship in the same box, so there is no second delivery and no stopping half-way up the ladder.`}
+            stockNote={STOCK_NOTE}
+          />
         </div>
       </section>
 

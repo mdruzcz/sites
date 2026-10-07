@@ -32,8 +32,26 @@ export interface KitImage {
   blurDataURL: string;
 }
 
+/** An a-la-carte part sold alongside the kits (extra strand, jumper, supply…). */
+export interface KitAddon {
+  /** Matches a KitComponent key. */
+  key: string;
+  price: number;
+  unit: string;
+  pitch: string;
+}
+
 export const kits = kitsData.kits as Kit[];
 export const kitComponents = kitsData.components as KitComponent[];
+export const kitAddons = kitsData.addons as KitAddon[];
+export const STOCK_NOTE = kitsData.stockNote as string;
+
+export function getAddon(key: string): KitAddon | null {
+  return kitAddons.find(a => a.key === key) ?? null;
+}
+
+/** Add-ons whose colour must match the track (so the cart asks for one). */
+export const COLOURED_ADDONS = new Set(['track', 'screws']);
 export const kitColours = kitsData.colours as KitColour[];
 export const TRACK_PIECE_FEET = kitsData.trackPieceFeet;
 export const LIGHTS_PER_STRAND = kitsData.lightsPerStrand;

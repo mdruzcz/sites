@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCart } from "@/lib/cart";
 import { CartLineEditor } from "@/components/cart-line-editor";
 import { CheckoutBar } from "@/components/checkout-bar";
+import { CartUpsells } from "@/components/cart-upsells";
 import { formatCad } from "@/lib/utils";
 
 export const metadata = { title: "Your cart" };
@@ -63,6 +64,11 @@ export default async function CartPage() {
               </div>
             </article>
           ))}
+
+          <CartUpsells
+            hasKit={cart.items.some((l) => l.product_slug.startsWith("led-housing-package"))}
+            exclude={cart.items.map((l) => l.product_slug)}
+          />
         </div>
 
         <aside className="rounded-lg border border-slate-200 bg-white p-5">

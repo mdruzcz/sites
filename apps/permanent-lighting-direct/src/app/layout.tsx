@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Permanent Lighting Direct"
   },
   description:
-    "Professional-grade 12V RGBW permanent roofline lighting sold as complete DIY kits from $1,265. Aluminum soffit track, WiFi app control, 5-year warranty. Ships across Canada from London, Ontario.",
+    "Professional-grade 12V RGBW permanent roofline lighting sold as complete DIY kits from $1,455. Aluminum soffit track, WiFi app control, 5-year warranty. Ships across Canada from London, Ontario.",
   openGraph: {
     type: "website",
     siteName: BRAND.name,

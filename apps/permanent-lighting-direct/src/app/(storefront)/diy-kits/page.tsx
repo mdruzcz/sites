@@ -13,9 +13,9 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Permanent Lighting Kits, 50 to 250 ft | DIY 12V RGBW",
   description:
-    "Complete DIY permanent lighting kits from $1,265: 12V RGBW pucks, aluminum soffit track in black, white, wicker or brown, WiFi controller, power and every connector. Free shipping within 200 km of our Ontario shop, $200 flat rate across Canada.",
+    "Complete DIY permanent lighting kits from $1,455: 12V RGBW pucks, aluminum soffit track in black, white, wicker or brown, WiFi controller, power and every connector. Free shipping within 200 km of our Ontario shop, $200 flat rate across Canada.",
   alternates: { canonical: `${SITE_URL}/diy-kits` },
-  openGraph: { title: "Permanent Lighting Kits, 50 to 250 ft | Permanent Lighting Direct", description: "Six complete 12V kits with app control, from $1,265. Ships from London, Ontario.", url: `${SITE_URL}/diy-kits`, images: ["/images/photos/home-blue-night.webp"] }
+  openGraph: { title: "Permanent Lighting Kits, 50 to 250 ft | Permanent Lighting Direct", description: "Six complete 12V kits with app control, from $1,455. Ships from London, Ontario.", url: `${SITE_URL}/diy-kits`, images: ["/images/photos/home-blue-night.webp"] }
 };
 
 export default async function KitsPage() {
