@@ -1,129 +1,139 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getServiceAreas, getCityBySlug, getServices } from "@/lib/content";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
-import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
-import { QuoteForm } from "@/components/QuoteForm";
+import { getCities, getCityBySlug, getNearbyCities, getPhoto, getServices, getOccasions } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, faqSchema, lineServiceSchema, localBusinessSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { Breadcrumbs, CityChips, FaqList, SectionHeading, IconTile } from "@/components/ui";
+import { AiPreviewButton } from "@/components/AiPreviewProvider";
+import { ClosingForm, Testimonials } from "@/components/sections";
 
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  return getServiceAreas().cities.map((c) => ({ city: c.slug }));
+  return getCities().map((c) => ({ city: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
-  const { city: citySlug } = await params;
-  const city = getCityBySlug(citySlug);
+  const { city: slug } = await params;
+  const city = getCityBySlug(slug);
   if (!city) return {};
+  const title = `Outdoor Lighting Installer in ${city.name}, ON`;
   return {
-    title: `Permanent Lighting in ${city.name}`,
-    description: `Permanent outdoor LED lighting installation in ${city.name}, ON. App-controlled, weatherproof, lifetime warranty. Free quote — call ${site.phone}.`,
-    alternates: { canonical: `/service-areas/${citySlug}` },
-    openGraph: {
-      title: `Permanent Lighting Installer in ${city.name}, ON | Celebrate Lighting`,
-      description: `Professional permanent LED lighting in ${city.name}, Ontario. Lifetime warranty, app-controlled, built for Canadian winters.`,
-      url: `${site.url}/service-areas/${citySlug}`,
-      images: [{ url: "/images/hero-main.jpg", alt: `Permanent outdoor LED lighting in ${city.name}, Ontario by Celebrate Lighting` }],
-    },
+    title: { absolute: `${title} | ${site.name}` },
+    description: city.meta.area,
+    alternates: { canonical: `/service-areas/${slug}` },
+    openGraph: { title: `${title} | ${site.name}`, description: city.meta.area, url: `${site.url}/service-areas/${slug}`, images: [{ url: "/images/gallery/cool-white-permanent-roofline-lights-stone-home-wraparound-porch.jpg", alt: `Permanent lighting installer serving ${city.name}, Ontario` }] },
+    twitter: { card: "summary_large_image", title, description: city.meta.area },
   };
 }
 
 export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
-  const { city: citySlug } = await params;
-  const city = getCityBySlug(citySlug);
+  const { city: slug } = await params;
+  const city = getCityBySlug(slug);
   if (!city) notFound();
-
+  const nearby = getNearbyCities(city.slug, 10);
   const services = getServices();
-  const areas = getServiceAreas();
-  const otherCities = areas.cities.filter((c) => c.slug !== citySlug).slice(0, 4);
-
+  const occasions = getOccasions().slice(0, 8);
+  const hero = getPhoto("cool-white-permanent-roofline-lights-stone-home-wraparound-porch");
+  const url = `${site.url}/service-areas/${slug}`;
+  const cards = [
+    { href: `/permanent-lighting/${city.slug}`, title: `Permanent lighting in ${city.name}`, body: city.permanentCopy[0], photo: getPhoto("warm-white-permanent-roofline-lights-brick-home-garage-gable"), cta: site.demo.cta },
+    { href: `/seasonal-lighting/${city.slug}`, title: `Christmas lights in ${city.name}`, body: city.seasonalCopy[0], photo: getPhoto("red-white-green-permanent-christmas-roofline-lights-blue-two-storey"), cta: site.seasonal.cta, gold: true },
+  ];
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(services[0], city.name)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Service Areas", url: `${site.url}/service-areas` },
-        { name: city.name, url: `${site.url}/service-areas/${citySlug}` },
-      ])) }} />
-
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-2">/</span>
-            <Link href="/service-areas" className="hover:text-[var(--accent)]">Service Areas</Link>
-            <span className="mx-2">/</span>
-            <span>{city.name}</span>
-          </nav>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="section-eyebrow mb-3">{city.name}, Ontario</p>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-6">
-                Permanent Light Installer in {city.name}
-              </h1>
-              <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">{city.description}</p>
-              <p className="text-[var(--muted)] leading-relaxed mb-4">{city.localContext}</p>
-              <p className="text-[var(--muted)] leading-relaxed mb-6">
-                We offer a full range of permanent lighting solutions in {city.name}, including{" "}
-                {services.map((s, i) => (
-                  <span key={s.slug}>
-                    <Link href={`/services/${s.slug}/${citySlug}`} className="text-[var(--accent)] hover:underline font-medium">{s.title}</Link>
-                    {i < services.length - 1 ? ", " : ""}
-                  </span>
-                ))}.
-              </p>
-
-              <div className="space-y-3 mb-8">
-                {["Licensed & Insured — fully certified contractors", "Lifetime warranty on all installations", "Weather-resistant LEDs rated to −40°C", "App-controlled via WiFi — change colours anytime", "Local team with knowledge of " + city.name + " homes"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm">
-                    <svg className="w-4 h-4 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-[var(--foreground)]">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Other cities */}
-              <div className="p-4 rounded-xl text-sm" style={{ background: "var(--accent-light)", border: "1px solid var(--accent)" }}>
-                <strong className="text-[var(--foreground)]">Also serving:</strong>{" "}
-                {otherCities.map((c, i) => (
-                  <span key={c.slug}>
-                    <Link href={`/service-areas/${c.slug}`} className="text-[var(--accent)] hover:underline">{c.name}</Link>
-                    {i < otherCities.length - 1 ? ", " : ""}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">Free Quote in {city.name}</h2>
-              <p className="text-sm text-[var(--muted)] mb-6">We respond within 24 hours. No obligation.</p>
-              <QuoteForm />
+      <JsonLd data={[
+        localBusinessSchema(),
+        lineServiceSchema({ name: `Outdoor lighting installation in ${city.name}`, description: city.meta.area, url, serviceType: "Permanent and seasonal outdoor lighting installation", city: city.name }),
+        breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: `${site.url}/service-areas` }, { name: city.name, url }]),
+        faqSchema(city.faqs),
+      ]} />
+      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+        <div className="absolute inset-0"><Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover" /><div className="absolute inset-0 night-veil" /></div>
+        <div className="wrap relative py-14 md:py-20">
+          <Breadcrumbs items={[{ name: "Service Areas", href: "/service-areas" }, { name: city.name }]} />
+          <div className="mt-6 max-w-3xl">
+            <span className="pill mb-4"><Icon.Pin width={14} height={14} /> {city.county} · {city.driveFromWoodstock} from Woodstock</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">Permanent &amp; Christmas Lighting in <span className="text-[var(--accent)]">{city.name}, Ontario</span></h1>
+            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{city.intro}</p>
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <Link href="/contact" className="btn btn-primary btn-lg">{site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
+              <AiPreviewButton className="btn btn-ghost-white btn-lg" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service links for this city */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
-            Our Services in {city.name}
-          </h2>
-          <p className="text-sm text-[var(--muted)] mb-8">Everything you need for permanent outdoor lighting in {city.name}, Ontario.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}/${citySlug}`} className="card p-6 hover:shadow-md transition-shadow group">
-                <h3 className="font-bold text-[var(--foreground)] mb-1 group-hover:text-[var(--accent)] transition-colors">{s.title} in {city.name}</h3>
-                <p className="text-sm text-[var(--muted)]">{s.shortDescription}</p>
-              </Link>
-            ))}
-          </div>
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid md:grid-cols-2 gap-5">
+          {cards.map((c) => (
+            <Link key={c.href} href={c.href} className="card card-lift overflow-hidden group">
+              <div className="relative aspect-[16/9]"><Image src={c.photo.src} alt={c.photo.alt} fill sizes="(max-width: 768px) 100vw, 50vw" placeholder="blur" blurDataURL={c.photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" /></div>
+              <div className="p-6"><h2 className="font-bold text-xl text-white">{c.title}</h2><p className="mt-2 text-sm text-[var(--muted)] leading-relaxed line-clamp-4">{c.body}</p><span className={`mt-4 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"}`}>{c.cta} <Icon.Arrow width={16} height={16} /></span></div>
+            </Link>
+          ))}
         </div>
       </section>
+
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap grid lg:grid-cols-[1.4fr_1fr] gap-10">
+          <div className="prose-dark">
+            <h2 className="!mt-0">About lighting homes in {city.name}</h2>
+            <p>{city.permanentCopy[1]}</p>
+            <p>{city.permanentCopy[2]}</p>
+            <h3>Neighbourhoods we serve in {city.name}</h3>
+            <p>{city.neighbourhoods.join(", ")}. {city.housingStock}</p>
+            <h3>Built for {city.name} winters</h3>
+            <p>{city.climateNote} Every permanent system we install is IP67 sealed, UV-rated and cold-rated to −40°C, with a lifetime warranty on parts, hardware and workmanship.</p>
+            <h3>Commercial lighting in {city.name}</h3>
+            <p>{city.commercialNote} <Link href="/commercial">See our commercial services.</Link></p>
+          </div>
+          <aside className="space-y-4">
+            <div className="card card-static p-6">
+              <h3 className="font-bold text-white mb-3">{city.name} quick facts</h3>
+              <dl className="text-sm space-y-2">
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">County</dt><dd className="text-white font-semibold text-right">{city.county}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Population</dt><dd className="text-white font-semibold text-right">{city.population}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">From our base</dt><dd className="text-white font-semibold text-right">{city.driveFromWoodstock}</dd></div>
+              </dl>
+              <p className="mt-4 text-xs text-[var(--muted)]">Landmarks: {city.landmarks.join(" · ")}</p>
+            </div>
+            <div className="card card-static p-6">
+              <h3 className="font-bold text-white mb-3">All services in {city.name}</h3>
+              <ul className="text-sm space-y-2">
+                {services.map((s) => (<li key={s.slug}><Link href={`/services/${s.slug}/${city.slug}`} className="text-[#d6deea] hover:text-[var(--accent)] inline-flex items-center gap-2 min-h-[32px]"><Icon.Check width={14} height={14} className="text-[var(--accent)]" /> {s.title} in {city.name}</Link></li>))}
+              </ul>
+            </div>
+            <div className="card card-static p-6">
+              <IconTile className="mb-3"><Icon.Sparkle /></IconTile>
+              <h3 className="font-bold text-white">Free AI preview, {city.name}</h3>
+              <p className="text-sm text-[var(--muted)] mt-1 mb-4">Upload one photo of your house and see it lit before anyone comes out.</p>
+              <AiPreviewButton className="btn btn-outline btn-sm w-full" />
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions from {city.name} homeowners</h2><p className="mt-3 text-[var(--muted)]">More answers on the <Link href="/faq" className="text-[var(--accent)] underline underline-offset-2">full FAQ page</Link>.</p></div><FaqList items={city.faqs} name="city-faq" /></div>
+      </section>
+
+      <Testimonials />
+
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap">
+          <SectionHeading eyebrow="Every occasion" title={`Scenes ${city.name} homeowners run all year`} align="left" />
+          <div className="flex flex-wrap gap-2">{occasions.map((o) => <Link key={o.slug} href={`/occasions/${o.slug}`} className="chip">{o.name}</Link>)}</div>
+          <div className="hairline my-10" />
+          <SectionHeading eyebrow="Nearby" title={`Communities near ${city.name}`} align="left" />
+          <CityChips cities={nearby} basePath="/service-areas" />
+        </div>
+      </section>
+
+      <ClosingForm formProps={{ serviceValue: `Free On-Site Demo - ${city.name}` }} title={`See it lit up on your ${city.name} home. Then decide.`} />
     </>
   );
 }

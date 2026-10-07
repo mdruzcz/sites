@@ -1,459 +1,270 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { QuoteForm } from "@/components/QuoteForm";
 import { site } from "@/lib/site";
-import { getFeaturedProjects, getFeaturedTestimonials, getServices, getTestimonials } from "@/lib/content";
-import { localBusinessSchema, faqSchema } from "@/lib/jsonld";
+import { getCities, getFaqGroups, getOccasions, getPhoto, getPhotos, getTestimonials } from "@/lib/content";
+import { JsonLd, faqSchema, localBusinessSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { SectionHeading, FeatureGrid, FaqList, CityChips, IconTile } from "@/components/ui";
+import { QuoteFormCompact } from "@/components/QuoteFormCompact";
+import { AiPreviewButton } from "@/components/AiPreviewProvider";
+import { ProcessTimeline, Testimonials, BookCta, SplitFeature } from "@/components/sections";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: { absolute: "Permanent LED Lighting in Ontario | Celebrate Lighting" },
+  title: "Permanent Outdoor LED Lighting in Ontario | Celebrate Lighting",
   description:
-    "Stop climbing ladders every holiday season. Permanent outdoor LED lighting across Southwestern Ontario — app-controlled, lifetime warranty, built for winters.",
+    "Permanent roofline LED lighting and seasonal C9 Christmas lights across Southwestern Ontario. Free on-site demo and free AI preview of your home. Woodstock, London, Kitchener-Waterloo, Guelph, Brantford.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Celebrate Lighting | Permanent Outdoor LED Lighting in Ontario",
-    description: "Stop climbing ladders every holiday season. Professional permanent LED lighting, app-controlled, lifetime warranty.",
-    url: "https://celebratelighting.ca",
-    images: [{ url: "/images/hero-main.jpg", alt: "Permanent outdoor LED lighting installed by Celebrate Lighting in Ontario" }],
+    title: "Permanent Outdoor LED Lighting in Ontario | Celebrate Lighting",
+    description: "See permanent lighting lit up on your own home before you pay. Free on-site demo, free AI preview, lifetime warranty.",
+    url: site.url,
+    images: [{ url: "/images/gallery/rainbow-permanent-roofline-lights-two-storey-stone-and-siding-home.jpg", alt: "Permanent roofline lighting on an Ontario home" }],
   },
+  twitter: { card: "summary_large_image", title: "Permanent Outdoor LED Lighting in Ontario | Celebrate Lighting", description: "Free on-site demo and free AI preview of your home. Lifetime warranty." },
 };
 
 const homeFaqs = [
-  { question: "How long does installation take?", answer: "Most residential installations are completed in 1–2 days, depending on the size of your home. We provide a detailed timeline during your free consultation." },
-  { question: "Will it damage my roof or gutters?", answer: "No. We use specialized clips and mounting systems that don't penetrate your roof or damage gutters. Our methods are designed to protect your property." },
-  { question: "How much does a system cost?", answer: "Most residential installations range from $2,500 to $8,000 depending on your home's size and complexity. We provide a transparent, itemized quote with no hidden fees." },
-  { question: "How do I control the lights?", answer: "Your system comes with a user-friendly mobile app connected via WiFi. Control colours, brightness, patterns, and schedules from anywhere. Pre-programmed holiday themes are included." },
-  { question: "What warranty do you offer?", answer: "We provide a comprehensive lifetime warranty covering LED lights, mounting hardware, and installation workmanship — including free repairs and replacements." },
+  { question: "What is permanent outdoor lighting?", answer: "A colour-matched aluminum track with individually controlled LEDs, fitted into your soffit and fascia once and left up year-round. You control colours, scenes and schedules from an app. Warm white on a normal night, holiday colours when you want them, with nothing to hang or take down." },
+  { question: "How much does permanent lighting cost in Ontario?", answer: "Most homes land between $2,500 and $8,000 as a one-time cost, depending on how many linear feet of roofline you light and how many peaks and storeys are involved. You get an itemized quote at your free on-site demo before you commit to anything." },
+  { question: "What happens at the free on-site demo?", answer: site.demo.detail },
+  { question: "What is the free AI home preview?", answer: `${site.aiPreview.detail} It arrives by email ${site.aiPreview.turnaround}.` },
+  { question: "Do you still install traditional Christmas lights?", answer: "Yes. Our seasonal C9 service installs classic big-bulb Christmas lights in October and November, services them through the season and takes them down in January. You can rent the lights or buy them. Book before September 30 for the best dates and pricing." },
+  { question: "Where do you install?", answer: `We're based in Woodstock and serve Southwestern Ontario within about 90 minutes, including ${site.serviceAreas.slice(1, 9).join(", ")} and the towns in between.` },
 ];
 
 export default function HomePage() {
-  const projects = getFeaturedProjects();
-  const testimonials = getFeaturedTestimonials();
-  const services = getServices();
+  const hero = getPhoto("rainbow-permanent-roofline-lights-two-storey-stone-and-siding-home");
+  const cities = getCities();
+  const occasions = getOccasions();
+  const photos = getPhotos();
+  const teaser = [
+    getPhoto("cool-white-permanent-roofline-lights-stone-home-wraparound-porch"),
+    getPhoto("red-green-white-permanent-roofline-lights-stone-home-steep-gables"),
+    getPhoto("white-permanent-roofline-lights-modern-flat-roof-home"),
+    getPhoto("rainbow-gradient-permanent-roofline-lights-dark-siding-bungalow"),
+    getPhoto("warm-white-permanent-roofline-lights-brick-home-garage-gable"),
+  ];
+  const lineCards = [
+    { title: "Permanent Lighting", href: "/permanent-lighting", photo: getPhoto("warm-white-permanent-roofline-lights-two-storey-home-covered-porch"), body: "Colour-matched LED track installed in your soffit once. 16 million colours, app control, lifetime warranty.", bullets: ["Roofline, peaks & gables", "Warm white every day, colour for every holiday", "Free on-site demo first"] },
+    { title: "Seasonal C9 Christmas Lights", href: "/seasonal-lighting", photo: getPhoto("red-white-green-permanent-christmas-roofline-lights-blue-two-storey"), body: "The classic big-bulb look, custom-fit to your roofline, hung in the fall and removed in January.", bullets: ["Install, service, takedown", "Rent the lights or buy them", "Early-bird pricing before Sept 30"], gold: true },
+    { title: "Commercial Lighting", href: "/commercial", photo: getPhoto("purple-and-teal-permanent-roofline-lights-commercial-building"), body: "Storefronts, plazas, churches and municipal buildings. Brand colours year-round, civic colours on demand.", bullets: ["Insured, WSIB covered", "Off-hours installation", "Written specs for tender"] },
+  ];
+  const faqForSchema = [...homeFaqs, ...getFaqGroups().flatMap((g) => g.items).slice(0, 6)];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(getTestimonials())) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFaqs)) }}
-      />
+      <JsonLd data={[localBusinessSchema(getTestimonials()), faqSchema(faqForSchema)]} />
 
-      {/* HERO */}
-      <section className="relative text-white overflow-hidden min-h-[600px] flex items-center" style={{ background: "var(--foreground)" }}>
+      {/* ---------- Hero ---------- */}
+      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero-main.jpg"
-            alt="Beautiful permanent outdoor LED lighting installation on an Ontario home by Celebrate Lighting"
-            fill
-            className="object-cover opacity-35"
-            priority
-          />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(26,26,46,0.85) 50%, rgba(26,26,46,0.4) 100%)" }} />
+          <Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover hero-drift" />
+          <div className="absolute inset-0 night-veil" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-36 w-full">
+        <div className="wrap relative py-16 md:py-24 lg:py-28 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
           <div className="max-w-2xl">
-            <p className="section-eyebrow mb-5 text-base tracking-widest">Permanent Outdoor LED Lighting — Ontario</p>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
-              Make Your Home<br className="hidden md:block" /> Stand Out.<br />
-              <span style={{ color: "var(--accent)" }}>Every Night</span>{" "}
-              of the Year.
+            <span className="pill pill-gold mb-5">{site.bookingBanner}</span>
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.6rem] leading-[1.05] text-white text-balance">
+              Permanent Roofline &amp; Holiday Lighting
+              <span className="block text-[var(--accent)]">Southwestern Ontario</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-lg">
-              Professional permanent LED lighting, track-mounted and colour-matched to your home. App-controlled, weatherproof, and backed by a lifetime warranty.
+            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed max-w-xl">
+              Discreet, colour-matched LED track installed in your soffit once. Brilliant by night, nearly invisible by day, and controlled from your phone. We light it up on your own house before you pay a cent.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn btn-primary text-base px-8 py-4" style={{ fontSize: "1rem" }}>
-                Get Your Free Quote
-              </Link>
-              <a href={site.phoneHref} className="btn btn-ghost-white text-base px-8 py-4" style={{ fontSize: "1rem" }}>
-                {site.phone}
-              </a>
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
+              <Link href="/contact" className="btn btn-primary btn-lg">{site.demo.cta} <Icon.Arrow width={18} height={18} /></Link>
+              <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
             </div>
+            <p className="mt-5 inline-flex items-center gap-2 text-sm text-[#c3cddc]"><Icon.Pin width={16} height={16} className="text-[var(--accent)]" /> Based in Woodstock · serving London, Kitchener-Waterloo, Guelph, Brantford and beyond</p>
+          </div>
+          <div className="card-light p-5 sm:p-7">
+            <span className="pill mb-3"><Icon.Sparkle width={14} height={14} /> {site.demo.short}</span>
+            <h2 className="text-xl font-bold text-slate-900 leading-tight">See it lit on your home first</h2>
+            <p className="text-sm text-slate-600 mt-1 mb-4">We colour-match your soffit and mount a live sample on your house. Free, no obligation.</p>
+            <QuoteFormCompact formId="hero" />
           </div>
         </div>
       </section>
 
-      {/* FEATURE STRIP */}
-      <section style={{ background: "var(--accent)" }} className="py-5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-white/20">
-            {[
-              {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-                label: "No More Hassle",
-                sub: "One install, forever",
-              },
-              {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                ),
-                label: "Fully Customizable",
-                sub: "16 million+ colours",
-              },
-              {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                ),
-                label: "Sleek Hidden Design",
-                sub: "Colour-matched tracks",
-              },
-              {
-                icon: (
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                ),
-                label: "Built for All Seasons",
-                sub: "Rated to −40°C",
-              },
-            ].map((feat) => (
-              <div key={feat.label} className="flex flex-col items-center text-center gap-2 md:px-8 py-2">
-                <div className="text-white/90">{feat.icon}</div>
-                <div>
-                  <div className="font-bold text-white text-sm">{feat.label}</div>
-                  <div className="text-white/75 text-xs">{feat.sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST BAR */}
-      <section style={{ background: "var(--surface-2)" }} className="border-b border-gray-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {site.trustBadges.map((badge) => (
-              <div key={badge.label} className="flex items-center gap-2 text-sm">
-                <svg className="w-4 h-4 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="font-semibold text-[var(--foreground)]">{badge.label}:</span>
-                <span className="text-[var(--muted)]">{badge.value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section style={{ background: "var(--surface)" }} className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="section-eyebrow mb-3">Why Celebrate Lighting</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-              The Smart Way to Light Your Home
-            </h2>
-            <p className="mt-5 text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              Premium permanent lighting with unmatched quality and a warranty that actually means something.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Convenience & Safety",
-                body: "Never waste time or risk your safety climbing ladders to hang lights again. Your permanent system is always ready, year-round.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Seamless Integration",
-                body: "Lights are installed in tracks that colour-match your soffit, creating a sleek, professional appearance that enhances curb appeal.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Durable & Weatherproof",
-                body: "Waterproof, UV-rated cables and IP67-rated lights built to withstand Canadian winters — including temperatures as low as −40°C.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Smart App Control",
-                body: "Control colours, brightness, and schedules from anywhere with an intuitive mobile app connected via WiFi.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Endless Customisation",
-                body: "16 million+ colours. Match any holiday, sports team, or occasion — pink for Valentine's, green for St. Patrick's, orange for Halloween.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Lifetime Warranty",
-                body: "A comprehensive lifetime warranty on LED lights, mounting hardware, and workmanship — free repairs and replacements included.",
-                icon: (
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                ),
-              },
-            ].map((feature) => (
-              <div key={feature.title} className="card p-7 flex gap-4">
-                <div
-                  className="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center"
-                  style={{ background: "var(--accent-light)", color: "var(--accent)" }}
-                >
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="font-bold text-[var(--foreground)] mb-1.5">{feature.title}</h3>
-                  <p className="text-sm text-[var(--muted)] leading-relaxed">{feature.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PAIN POINT */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="section-eyebrow mb-4">Sound Familiar?</p>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-6">
-                Tired of the Annual<br className="hidden md:block" /> Light Ladder Ritual?
-              </h2>
-              <div className="space-y-4 text-[var(--muted)] leading-relaxed">
-                <p>Every year, it&apos;s the same story: hours spent untangling lights, climbing ladders in the cold, only to take everything down a few weeks later. Temporary lights damage gutters, blow fuses, and leave your home looking amateurish.</p>
-                <p>The cheap strings from the hardware store rarely survive two seasons. You end up buying new ones every year — spending more money for the same hassle.</p>
-              </div>
-              <div
-                className="mt-8 p-5 rounded-2xl border-l-4"
-                style={{ background: "var(--accent-light)", borderColor: "var(--accent)" }}
-              >
-                <p className="font-semibold text-[var(--foreground)] text-lg leading-snug">
-                  Celebrate Lighting ends that cycle for good. One professional installation. Permanent results. Control it all from your phone.
-                </p>
-              </div>
+      {/* ---------- Trust bar ---------- */}
+      <section className="border-y" style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
+        <div className="wrap py-8 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:divide-x lg:divide-[var(--border)]">
+          {[
+            { icon: <Icon.Home />, title: "Free on-site demo", body: "A live sample lit on your actual house before you decide." },
+            { icon: <Icon.Snow />, title: "Ontario winter rated", body: "IP67 sealed and cold-rated to −40°C. Built for lake-effect snow." },
+            { icon: <Icon.App />, title: "App controlled", body: "16M+ colours, scenes, schedules and zones from your phone." },
+            { icon: <Icon.Shield />, title: "Lifetime warranty", body: "Parts, hardware and workmanship, in writing." },
+          ].map((t) => (
+            <div key={t.title} className="flex flex-col items-center text-center px-2">
+              <IconTile className="mb-3">{t.icon}</IconTile>
+              <h3 className="font-bold text-white">{t.title}</h3>
+              <p className="mt-1 text-xs md:text-sm text-[var(--muted)] leading-snug">{t.body}</p>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/project-tillsonburg.jpg"
-                alt="Professionally installed permanent LED lighting on a home in Tillsonburg, Ontario by Celebrate Lighting"
-                width={600}
-                height={450}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section style={{ background: "var(--foreground)" }} className="py-20 md:py-28 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--accent)" }}>Simple 3-Step Process</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-              Lights On in As Little as One Day
-            </h2>
-            <p className="mt-4 text-gray-300 max-w-xl mx-auto">From your first call to a lit-up home — most installations are done the same week.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
-            {[
-              { step: "01", title: "Free Consultation", desc: "We visit your property, take measurements, and colour-match your soffit. You get a transparent, itemized quote with no obligation." },
-              { step: "02", title: "Custom Installation", desc: "Our certified technicians install your track-mounted LED system with clean wiring and secure mounting — usually in one day." },
-              { step: "03", title: "App Setup & Enjoy", desc: "We configure your mobile app, walk you through all the controls, and you're live. Change any colour, any pattern, any time." },
-            ].map((item, i) => (
-              <div key={item.step} className="relative flex flex-col items-center text-center px-6">
-                {i < 2 && (
-                  <div className="hidden md:block absolute right-0 top-7 w-1/2 h-px" style={{ background: "var(--accent)", opacity: 0.3 }} />
-                )}
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-white font-extrabold text-xl border-2"
-                  style={{ background: "var(--accent)", borderColor: "var(--accent)" }}
-                >
-                  {item.step}
+      {/* ---------- Services ---------- */}
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap">
+          <SectionHeading eyebrow="Our services" title="Lighting Solutions" sub="Permanent for every night of the year, seasonal for the classic Christmas look, commercial for your business." />
+          <div className="grid md:grid-cols-3 gap-5">
+            {lineCards.map((c) => (
+              <Link key={c.href} href={c.href} className="card card-lift overflow-hidden flex flex-col group">
+                <div className="relative aspect-[4/3]">
+                  <Image src={c.photo.src} alt={c.photo.alt} fill sizes="(max-width: 768px) 100vw, 33vw" placeholder="blur" blurDataURL={c.photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <h3 className="font-bold text-white text-lg mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/contact" className="btn btn-primary text-base px-10 py-4">
-              Start My Free Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">Our Work</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">Real Homes, Real Results</h2>
-            <p className="mt-4 text-[var(--muted)] max-w-xl mx-auto">Every installation is tailored to the home&apos;s architecture and the homeowner&apos;s vision.</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {projects.map((project) => (
-              <div key={project.slug} className="relative rounded-xl overflow-hidden aspect-video group">
-                <Image
-                  src={project.image}
-                  alt={`${project.title} by Celebrate Lighting in ${project.city}, Ontario`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-sm font-semibold">{project.title}</span>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-bold text-xl text-white">{c.title}</h3>
+                  <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">{c.body}</p>
+                  <ul className="mt-4 space-y-1.5 text-sm text-[#d6deea]">
+                    {c.bullets.map((b) => (
+                      <li key={b} className="flex items-center gap-2"><Icon.Check width={14} height={14} className={c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"} /> {b}</li>
+                    ))}
+                  </ul>
+                  <span className={`mt-5 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"}`}>Learn more <Icon.Arrow width={16} height={16} /></span>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link href="/gallery" className="btn btn-outline">View Full Gallery</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section style={{ background: "var(--surface)" }} className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">What We Offer</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">Our Services</h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="card p-7 hover:shadow-lg transition-shadow group">
-                <h3 className="font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--accent)] transition-colors text-lg">{service.title}</h3>
-                <p className="text-sm text-[var(--muted)] leading-relaxed mb-5">{service.shortDescription}</p>
-                <span className="text-sm font-semibold text-[var(--accent)] flex items-center gap-1">
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">Customer Reviews</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">What Our Customers Say</h2>
-          </div>
+      {/* ---------- Why us ---------- */}
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <SectionHeading eyebrow="Why Celebrate Lighting" title="Your Local Lighting Partner" sub="Premium product, careful installation, and a team in Woodstock you can actually reach." />
+          <FeatureGrid
+            items={[
+              { icon: <Icon.Eye />, title: "Try before you buy", body: "The free on-site demo is the whole point. You see your own home lit up, at night, before you spend anything." },
+              { icon: <Icon.Pin />, title: "Local, Oxford County based", body: "Our crews know the homes from London to Guelph, and the weather they have to survive." },
+              { icon: <Icon.Ruler />, title: "End-to-end service", body: "Measure, colour-match, install, app setup and training. One team from start to finish." },
+              { icon: <Icon.Shield />, title: "Guaranteed for life", body: "LED modules, mounting hardware and our workmanship, covered for as long as you own the home." },
+            ]}
+          />
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="card p-7">
-                <div className="flex mb-4" aria-label={`${t.rating} out of 5 stars`}>
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <svg key={j} className="w-5 h-5" style={{ color: "var(--gold)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-sm text-[var(--muted)] italic leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</blockquote>
-                <div className="font-semibold text-sm text-[var(--foreground)]">{t.author}</div>
-                <div className="text-xs text-[var(--muted)]">{t.location}</div>
+      {/* ---------- Process ---------- */}
+      <ProcessTimeline
+        steps={[
+          { title: "Free consultation", desc: "Call or send the form. We ring back within 24 hours and set a time, evenings included." },
+          { title: "On-site demo", desc: "We measure your rooflines, colour-match your soffit and mount a live sample. You see it lit on your house.", highlight: "The free part" },
+          { title: "Itemized quote", desc: "A clear, written price before we leave. No pressure to sign on the spot." },
+          { title: "Installation", desc: "Usually one to two days. Concealed cable routing, no roof penetration, clean finish." },
+          { title: "App setup & support", desc: "We configure scenes and schedules, walk you through the app, and back it all for life." },
+        ]}
+      />
+
+      {/* ---------- Soffit split ---------- */}
+      <SplitFeature
+        eyebrow="Discreet by day. Brilliant by night."
+        title={<>Installed in Your Soffit. <span className="text-[var(--accent)]">Built to Disappear.</span></>}
+        body="We take a physical colour sample of your soffit and fascia and match the aluminum track to it, so the housing sits inside the trim line. Most visitors never notice it until the lights come on. Everything is IP67 sealed, UV-rated and cold-rated to −40°C, and nothing is screwed through your shingles."
+        bullets={[
+          { icon: <Icon.Eye width={18} height={18} />, label: "Virtually invisible by day" },
+          { icon: <Icon.Palette width={18} height={18} />, label: "16M+ colours & patterns" },
+          { icon: <Icon.App width={18} height={18} />, label: "App controlled" },
+          { icon: <Icon.Snow width={18} height={18} />, label: "Weatherproof to −40°C" },
+        ]}
+        photoNeedle="daytime-colour-matched-permanent-light-track-in-white-soffit"
+        cta={{ label: "How permanent lighting works", href: "/permanent-lighting" }}
+      />
+
+      {/* ---------- AI preview ---------- */}
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <span className="pill mb-4"><Icon.Sparkle width={14} height={14} /> New · Free AI Home Preview</span>
+            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white text-balance">Curious How It Would Look on Your House?</h2>
+            <p className="mt-4 text-[var(--muted)] leading-relaxed">{site.aiPreview.detail}</p>
+            <ol className="mt-6 space-y-3">
+              {[
+                ["Snap a photo", "Stand across the street and get the whole roofline in frame. Day or dusk both work."],
+                ["Upload it", "Takes 30 seconds. Tell us the colour you're picturing, or let us choose."],
+                ["Get your preview", `We email your AI preview ${site.aiPreview.turnaround}. Then book a demo to see it for real.`],
+              ].map(([t, b], i) => (
+                <li key={t} className="flex gap-4">
+                  <span className="timeline-dot !w-9 !h-9 text-sm shrink-0 !shadow-none">{i + 1}</span>
+                  <div><p className="font-bold text-white">{t}</p><p className="text-sm text-[var(--muted)]">{b}</p></div>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <AiPreviewButton className="btn btn-primary btn-lg" />
+              <Link href="/ai-preview" className="btn btn-outline btn-lg">How it works</Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {[getPhoto("warm-white-permanent-roofline-lights-brick-home-garage-gable"), getPhoto("rainbow-permanent-roofline-lights-brick-home-garage-gable"), getPhoto("cool-white-permanent-roofline-lights-brick-home-garage-gable"), getPhoto("purple-and-teal-permanent-roofline-lights-brick-home-garage-gable")].map((p, i) => (
+              <div key={p.src} className={`relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)] ${i % 3 === 0 ? "" : ""}`}>
+                <Image src={p.src} alt={p.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" />
+                <span className="absolute left-3 bottom-3 pill pill-white !text-[0.62rem] !py-1">{p.colour}</span>
               </div>
             ))}
+            <p className="col-span-2 text-center text-xs text-[var(--muted)]">The same house, four scenes. One system does all of it.</p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section style={{ background: "var(--surface)" }} className="py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">Common Questions</p>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">Frequently Asked Questions</h2>
+      {/* ---------- Gallery teaser ---------- */}
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap grid lg:grid-cols-[0.8fr_1.6fr] gap-10 items-center">
+          <div>
+            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.05] text-white">Beautiful Homes.<br />Happy Clients.</h2>
+            <p className="mt-4 text-[var(--muted)] leading-relaxed">Browse permanent roofline installations in every colour, from everyday warm white to full holiday scenes. {photos.length} photos and counting.</p>
+            <Link href="/gallery" className="btn btn-primary mt-6">View gallery <Icon.Arrow width={16} height={16} /></Link>
           </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {homeFaqs.map((faq) => (
-              <details key={faq.question} className="card p-5 group">
-                <summary className="flex items-center justify-between cursor-pointer font-semibold text-[var(--foreground)] list-none">
-                  {faq.question}
-                  <svg className="w-5 h-5 shrink-0 group-open:rotate-180 transition-transform" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed">{faq.answer}</p>
-              </details>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {teaser.map((p, i) => (
+              <Link key={p.src} href="/gallery" className={`relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)] group ${i === 0 ? "md:col-span-2 md:row-span-2 md:aspect-auto" : ""}`}>
+                <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 50vw, 33vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" />
+              </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-10">
-            <Link href="/faq" className="btn btn-outline">View All FAQs</Link>
+      <Testimonials />
+
+      {/* ---------- Occasions ---------- */}
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap">
+          <SectionHeading eyebrow="One system, every occasion" title="Lights for Every Holiday, Game and Party" sub="Pre-built scenes for the whole calendar. Change the entire house in about five seconds." />
+          <div className="flex flex-wrap justify-center gap-2">
+            {occasions.map((o) => (
+              <Link key={o.slug} href={`/occasions/${o.slug}`} className="chip">{o.name}</Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CLOSING CTA */}
-      <section style={{ background: "var(--foreground)" }} className="py-20 md:py-28 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 70% 50%, var(--accent) 0%, transparent 60%)" }} />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-widest" style={{ color: "var(--accent)" }}>Ready to Transform Your Home?</p>
-              <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">
-                This is the last year you hang Christmas lights.
-              </h2>
-              <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-                Book a no-obligation consultation with our lighting specialists. We&apos;ll visit your property, colour-match your soffit, and provide a transparent, itemized quote.
-              </p>
-              <ul className="space-y-3 text-sm text-gray-300">
-                {["Free on-site consultation — no obligation", "Fast response within 24 hours", "Transparent pricing, no hidden fees", "Serving all of Southwestern Ontario"].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <svg className="w-4 h-4 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-[var(--foreground)] font-bold text-xl mb-6">Request Your Free Quote</h3>
-              <QuoteForm />
-            </div>
+      {/* ---------- Service area ---------- */}
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap grid lg:grid-cols-[1fr_1.3fr] gap-10 items-center">
+          <div>
+            <span className="pill mb-4">Where we work</span>
+            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white">Proudly Serving Southwestern Ontario</h2>
+            <p className="mt-4 text-[var(--muted)] leading-relaxed">Based at {site.addressLine}, we install permanent and seasonal lighting across Oxford County and the surrounding region, within roughly 90 minutes of home.</p>
+            <Link href="/service-areas" className="btn btn-outline mt-6">All service areas <Icon.Arrow width={16} height={16} /></Link>
           </div>
+          <CityChips cities={cities} basePath="/service-areas" />
         </div>
       </section>
+
+      {/* ---------- FAQ ---------- */}
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap max-w-4xl">
+          <SectionHeading eyebrow="Got questions?" title="Frequently Asked Questions" />
+          <FaqList items={homeFaqs} name="home-faq" />
+          <div className="text-center mt-8"><Link href="/faq" className="btn btn-outline btn-sm">All 40 questions answered <Icon.Arrow width={14} height={14} /></Link></div>
+        </div>
+      </section>
+
+      <BookCta />
     </>
   );
 }

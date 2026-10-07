@@ -1,36 +1,37 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getServices, getServiceBySlug, getServiceAreas, getCityBySlug } from "@/lib/content";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
-import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
-import { QuoteForm } from "@/components/QuoteForm";
+import { getServices, getServiceBySlug, getCities, getCityBySlug, getNearbyCities, getPhoto, getServiceLine } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { Breadcrumbs, CityChips, CheckList, FaqList, SectionHeading } from "@/components/ui";
+import { ClosingForm } from "@/components/sections";
 
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const services = getServices();
-  const areas = getServiceAreas();
-  return services.flatMap((s) =>
-    areas.cities.map((c) => ({ slug: s.slug, city: c.slug }))
-  );
+  const cities = getCities();
+  return services.flatMap((s) => cities.map((c) => ({ slug: s.slug, city: c.slug })));
 }
+
+const VERB: Record<string, string> = { "new-installation": "Permanent Lighting Installation", "repair-service": "Permanent Lighting Repair", consultation: "Free Lighting Consultation", maintenance: "Permanent Lighting Maintenance", "replace-existing-lights": "Permanent Lighting Upgrades" };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; city: string }> }): Promise<Metadata> {
   const { slug, city: citySlug } = await params;
   const service = getServiceBySlug(slug);
   const city = getCityBySlug(citySlug);
   if (!service || !city) return {};
+  const title = `${VERB[slug] ?? service.title} in ${city.name}, ON`;
+  const description = `${VERB[slug] ?? service.title} for ${city.name} homes in ${city.county}. ${service.shortDescription.split(". ")[0]}. Free on-site demo, lifetime warranty. Call ${site.phone}.`.slice(0, 160);
   return {
-    title: `${service.title} in ${city.name}`,
-    description: `Professional ${service.title.toLowerCase()} in ${city.name}, ON. Permanent app-controlled outdoor LED lighting, weatherproof with a lifetime warranty. Call ${site.phone}.`,
+    title: { absolute: `${title} | ${site.name}` },
+    description,
     alternates: { canonical: `/services/${slug}/${citySlug}` },
-    openGraph: {
-      title: `${service.title} in ${city.name}, Ontario | Celebrate Lighting`,
-      description: `Professional ${service.title.toLowerCase()} in ${city.name}, ON. App-controlled, weatherproof, lifetime warranty.`,
-      url: `${site.url}/services/${slug}/${citySlug}`,
-      images: [{ url: "/images/hero-main.jpg", alt: `${service.title} in ${city.name}, Ontario by Celebrate Lighting` }],
-    },
+    openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/services/${slug}/${citySlug}`, images: [{ url: "/images/gallery/warm-white-permanent-roofline-lights-dark-siding-bungalow.jpg", alt: `${service.title} in ${city.name}` }] },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -39,100 +40,54 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
   const service = getServiceBySlug(slug);
   const city = getCityBySlug(citySlug);
   if (!service || !city) notFound();
-
-  const areas = getServiceAreas();
-  const otherCities = areas.cities.filter((c) => c.slug !== citySlug).slice(0, 4);
-  const services = getServices();
-  const otherServices = services.filter((s) => s.slug !== slug).slice(0, 3);
-
+  const nearby = getNearbyCities(city.slug, 10);
+  const line = getServiceLine("permanent-lighting")!;
+  const photo = getPhoto("warm-white-permanent-roofline-lights-dark-siding-bungalow");
+  const faqs = [...city.faqs, line.faqs[1]];
+  const url = `${site.url}/services/${slug}/${citySlug}`;
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(service, city.name)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Services", url: `${site.url}/services` },
-        { name: service.title, url: `${site.url}/services/${slug}` },
-        { name: city.name, url: `${site.url}/services/${slug}/${citySlug}` },
-      ])) }} />
-
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8 flex flex-wrap gap-1">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-1">/</span>
-            <Link href="/services" className="hover:text-[var(--accent)]">Services</Link>
-            <span className="mx-1">/</span>
-            <Link href={`/services/${slug}`} className="hover:text-[var(--accent)]">{service.title}</Link>
-            <span className="mx-1">/</span>
-            <span>{city.name}</span>
-          </nav>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <JsonLd data={[serviceSchema(service, city.name), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Services", url: `${site.url}/services` }, { name: service.title, url: `${site.url}/services/${slug}` }, { name: city.name, url }]), faqSchema(faqs)]} />
+      <section className="section !pb-10" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <Breadcrumbs items={[{ name: "Services", href: "/services" }, { name: service.title, href: `/services/${slug}` }, { name: city.name }]} />
+          <div className="mt-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <div>
-              <p className="section-eyebrow mb-3">{city.name}, Ontario</p>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-6">
-                {service.title} in {city.name}, Ontario
-              </h1>
-              <p className="text-lg text-[var(--muted)] leading-relaxed mb-4">
-                Looking for professional {service.title.toLowerCase()} in {city.name}? Celebrate Lighting brings permanent outdoor LED lighting to {city.name} homes and businesses — app-controlled, weatherproof, and built for Ontario winters.
-              </p>
-              <p className="text-[var(--muted)] leading-relaxed mb-4">{city.description}</p>
-              <p className="text-[var(--muted)] leading-relaxed mb-6">{city.localContext}</p>
-              <ul className="space-y-3 mb-8">
-                {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm">
-                    <svg className="w-5 h-5 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-[var(--foreground)]">{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Interlinking — other cities */}
-              <div className="p-4 rounded-xl text-sm mb-6" style={{ background: "var(--accent-light)", border: "1px solid var(--accent)" }}>
-                <strong className="text-[var(--foreground)]">Also available in:</strong>{" "}
-                {otherCities.map((c, i) => (
-                  <span key={c.slug}>
-                    <Link href={`/services/${slug}/${c.slug}`} className="text-[var(--accent)] hover:underline">{c.name}</Link>
-                    {i < otherCities.length - 1 ? ", " : ""}
-                  </span>
-                ))}
+              <span className="pill mb-4">{service.title} · {city.name}</span>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">{VERB[slug] ?? service.title} in <span className="text-[var(--accent)]">{city.name}</span></h1>
+              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{service.shortDescription} Serving {city.name} and {city.county}, {city.driveFromWoodstock} from our Woodstock base.</p>
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                <Link href={`/contact?service=${slug}`} className="btn btn-primary btn-lg">{slug === "repair-service" ? "Book a repair visit" : site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
+                <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
               </div>
-
-              {/* Interlinking — city landing page */}
-              <p className="text-sm text-[var(--muted)]">
-                See all services available in{" "}
-                <Link href={`/service-areas/${citySlug}`} className="text-[var(--accent)] hover:underline font-medium">{city.name}</Link>.
-              </p>
             </div>
-
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-2">
-                Get a Free Quote in {city.name}
-              </h2>
-              <p className="text-sm text-[var(--muted)] mb-6">We respond within 24 hours. No obligation.</p>
-              <QuoteForm />
-            </div>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--border)]"><Image src={photo.src} alt={photo.alt} fill priority sizes="(max-width: 1024px) 100vw, 45vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /></div>
           </div>
         </div>
       </section>
-
-      {/* Other services in this city */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">Other Services in {city.name}</h2>
-          <p className="text-sm text-[var(--muted)] mb-6">Celebrate Lighting offers a full range of permanent lighting services in {city.name}, Ontario.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {otherServices.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}/${citySlug}`} className="card p-5 hover:shadow-md transition-shadow group">
-                <h3 className="font-bold text-[var(--foreground)] mb-1 group-hover:text-[var(--accent)] transition-colors text-sm">{s.title} in {city.name}</h3>
-                <p className="text-xs text-[var(--muted)]">{s.shortDescription}</p>
-              </Link>
-            ))}
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid lg:grid-cols-[1.4fr_1fr] gap-10">
+          <div className="prose-dark">
+            <h2 className="!mt-0">{service.title} for {city.name} homes</h2>
+            <p>{service.fullDescription}</p>
+            <p>{city.intro}</p>
+            <p>{city.permanentCopy[0]}</p>
+            <h3>{city.name} neighbourhoods we serve</h3>
+            <p>{city.neighbourhoods.join(", ")} and the surrounding area. {city.housingStock} {city.climateNote}</p>
           </div>
+          <aside className="space-y-4">
+            <div className="card card-static p-6"><h3 className="font-bold text-white mb-3">What’s included</h3><CheckList items={service.features} className="text-sm" /></div>
+            <div className="card card-static p-6"><h3 className="font-bold text-white mb-2">More in {city.name}</h3><ul className="text-sm space-y-1.5"><li><Link href={`/permanent-lighting/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">Permanent lighting in {city.name}</Link></li><li><Link href={`/seasonal-lighting/${city.slug}`} className="text-[var(--gold)] underline underline-offset-2">Christmas light installation in {city.name}</Link></li><li><Link href={`/service-areas/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">{city.name} service area page</Link></li></ul></div>
+          </aside>
         </div>
       </section>
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions from {city.name} homeowners</h2></div><FaqList items={faqs} name="svc-city-faq" /></div>
+      </section>
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap"><SectionHeading eyebrow="Nearby" title={`${service.title} near ${city.name}`} align="left" /><CityChips cities={nearby} basePath={`/services/${slug}`} /></div>
+      </section>
+      <ClosingForm formProps={{ serviceValue: `${service.title} - ${city.name}` }} title={`See it lit up on your ${city.name} home. Then decide.`} />
     </>
   );
 }

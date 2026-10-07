@@ -1,118 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
-import { getServiceAreas, getServices } from "@/lib/content";
-import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
+import { getCities, getPhoto } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, localBusinessSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { Breadcrumbs, SectionHeading, StatRow } from "@/components/ui";
+import { BookCta } from "@/components/sections";
+
+export const revalidate = 3600;
+
+const title = "Service Area: Permanent Lighting Across Southwestern Ontario";
+const description = "Celebrate Lighting installs permanent LED and seasonal Christmas lighting in 16 communities within 90 minutes of Woodstock: London, Kitchener-Waterloo, Cambridge, Guelph, Brantford, Stratford and more.";
 
 export const metadata: Metadata = {
-  title: "Service Areas in SW Ontario",
-  description:
-    "Permanent outdoor LED lighting installation across Southwestern Ontario — London, Waterloo, Guelph, Brantford, St. Thomas, Stratford, Tillsonburg & Woodstock.",
+  title: { absolute: `${title} | ${site.name}` },
+  description,
   alternates: { canonical: "/service-areas" },
-  openGraph: {
-    title: "Service Areas | Celebrate Lighting — SW Ontario LED Lighting",
-    description: "Professional permanent outdoor LED lighting installation across Southwestern Ontario. Find your city.",
-    url: "https://celebratelighting.ca/service-areas",
-    images: [{ url: "/images/hero-main.jpg", alt: "Celebrate Lighting service areas across Southwestern Ontario" }],
-  },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/service-areas`, images: [{ url: "/images/gallery/rainbow-permanent-roofline-lights-two-storey-stone-and-siding-home.jpg", alt: "Permanent roofline lighting in Southwestern Ontario" }] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ServiceAreasPage() {
-  const areas = getServiceAreas();
-  const services = getServices();
-
+  const cities = getCities();
+  const counties = Array.from(new Set(cities.map((c) => c.county)));
+  const photos = ["warm-white-permanent-roofline-lights-two-storey-home-covered-porch", "rainbow-gradient-permanent-roofline-lights-dark-siding-bungalow", "cool-white-permanent-roofline-lights-brick-home-garage-gable", "red-green-white-permanent-roofline-lights-stone-home-steep-gables"].map(getPhoto);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Service Areas", url: `${site.url}/service-areas` },
-      ])) }} />
-
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-2">/</span>
-            <span>Service Areas</span>
-          </nav>
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">Where We Work</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-4">
-              Our Service Areas
-            </h1>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              Celebrate Lighting serves homes and businesses across Southwestern Ontario. Click your city to see local pricing, project examples, and availability.
-            </p>
+      <JsonLd data={[localBusinessSchema(), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: `${site.url}/service-areas` }])]} />
+      <section className="section !pb-10" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <Breadcrumbs items={[{ name: "Service Areas" }]} />
+          <div className="mt-6 max-w-3xl">
+            <span className="pill mb-4">Serving Southwestern Ontario</span>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Where We Install Permanent &amp; Seasonal Lighting</h1>
+            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Based at {site.addressLine}, we cover Oxford County and the cities around it, roughly a 90-minute radius. Every community below has its own page with neighbourhood detail, local FAQs and the free on-site demo offer.</p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {areas.cities.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/service-areas/${city.slug}`}
-                className="card p-6 hover:shadow-md transition-shadow group"
-              >
-                <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style={{ background: "var(--accent-light)" }}>
-                  <svg className="w-5 h-5" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h2 className="font-bold text-[var(--foreground)] mb-1 group-hover:text-[var(--accent)] transition-colors">{city.name}</h2>
-                <p className="text-xs text-[var(--muted)]">Population ~{city.population}</p>
-                <span className="mt-3 text-xs font-semibold text-[var(--accent)] flex items-center gap-1">
-                  View services
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-[var(--muted)] mb-2">Don&apos;t see your city?</p>
-            <p className="text-sm text-[var(--muted)] mb-6">We serve many communities beyond those listed. Contact us and we&apos;ll confirm service availability in your area.</p>
-            <Link href="/contact" className="btn btn-primary px-8">Contact Us to Check Your Area</Link>
-          </div>
+          <div className="mt-10"><StatRow stats={[{ stat: String(cities.length), label: "Communities with local pages" }, { stat: "90 min", label: "Typical service radius from Woodstock" }, { stat: "24 hrs", label: "Response on every request" }, { stat: "Free", label: "On-site demo and AI preview" }]} /></div>
         </div>
       </section>
-
-      {/* Cross-link table */}
-      <section className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[var(--foreground)] mb-8 text-center">Services by Location</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr style={{ background: "var(--surface-2)" }}>
-                  <th className="text-left p-3 font-semibold text-[var(--foreground)]">Service</th>
-                  {areas.cities.slice(0, 5).map((c) => (
-                    <th key={c.slug} className="text-center p-3 font-semibold text-[var(--foreground)]">
-                      <Link href={`/service-areas/${c.slug}`} className="hover:text-[var(--accent)]">{c.name}</Link>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {services.map((s, i) => (
-                  <tr key={s.slug} style={{ background: i % 2 === 0 ? "#fff" : "var(--surface)" }}>
-                    <td className="p-3 font-medium text-[var(--foreground)]">
-                      <Link href={`/services/${s.slug}`} className="hover:text-[var(--accent)]">{s.title}</Link>
-                    </td>
-                    {areas.cities.slice(0, 5).map((c) => (
-                      <td key={c.slug} className="p-3 text-center">
-                        <Link href={`/services/${s.slug}/${c.slug}`} className="text-[var(--accent)] hover:underline text-xs">✓</Link>
-                      </td>
-                    ))}
-                  </tr>
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap">
+          {counties.map((county) => (
+            <div key={county} className="mb-12 last:mb-0">
+              <h2 className="font-bold text-2xl text-white mb-5 flex items-center gap-3"><Icon.Pin className="text-[var(--accent)]" /> {county}</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {cities.filter((c) => c.county === county).map((c) => (
+                  <Link key={c.slug} href={`/service-areas/${c.slug}`} className="card card-lift p-6 group">
+                    <div className="flex items-start justify-between gap-3">
+                      <div><h3 className="font-bold text-xl text-white">{c.name}</h3><p className="text-xs text-[var(--muted)] mt-0.5">{c.driveFromWoodstock} · pop. {c.population}</p></div>
+                      <span className="icon-tile !w-9 !h-9 shrink-0 group-hover:bg-[var(--accent)] group-hover:text-[#04121a] transition-colors"><Icon.Arrow width={16} height={16} /></span>
+                    </div>
+                    <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed line-clamp-3">{c.intro}</p>
+                    <p className="mt-3 text-xs text-[#c3cddc]">{c.neighbourhoods.slice(0, 4).join(" · ")}</p>
+                  </Link>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <SectionHeading eyebrow="Recent work" title="Homes Across the Region" sub="Every photo in our gallery is a real permanent installation." />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {photos.map((p) => (<Link key={p.src} href="/gallery" className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)]"><Image src={p.src} alt={p.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" /></Link>))}
+          </div>
+          <p className="mt-6 text-sm text-[var(--muted)]">Not on the list? We regularly travel further for larger projects. <Link href="/contact" className="text-[var(--accent)] underline underline-offset-2">Ask us</Link>.</p>
+        </div>
+      </section>
+      <BookCta />
     </>
   );
 }

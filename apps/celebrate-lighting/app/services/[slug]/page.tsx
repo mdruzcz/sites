@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getServices, getServiceBySlug, getServiceAreas } from "@/lib/content";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
-import { serviceSchema, breadcrumbSchema } from "@/lib/jsonld";
-import { QuoteForm } from "@/components/QuoteForm";
+import { getServices, getServiceBySlug, getCities, getPhoto, getServiceLine } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { Breadcrumbs, CityChips, CheckList, FaqList, SectionHeading } from "@/components/ui";
+import { ClosingForm, ProcessTimeline } from "@/components/sections";
 
 export const revalidate = 3600;
 
@@ -12,154 +15,96 @@ export async function generateStaticParams() {
   return getServices().map((s) => ({ slug: s.slug }));
 }
 
+const META: Record<string, { title: string; description: string }> = {
+  "new-installation": { title: "Permanent LED Lighting Installation", description: "Professional permanent LED track installation across Southwestern Ontario. Colour-matched to your soffit, app-controlled, lifetime warranty. Free on-site demo before you pay." },
+  "repair-service": { title: "Permanent Lighting Repair, Any Brand", description: "Permanent outdoor lighting not working? We repair all major brands across Southwestern Ontario: dead sections, controllers, wiring and app connectivity. Most fixes same day." },
+  consultation: { title: "Free Lighting Consultation & On-Site Demo", description: "A free, no-pressure lighting consultation at your Southwestern Ontario home: measurements, colour matching, a live sample lit on your house and an itemized quote." },
+  maintenance: { title: "Permanent Lighting Maintenance Plans", description: "Annual inspection, cleaning, firmware and connection checks for permanent lighting systems across Southwestern Ontario. Keep your roofline lights performing like new." },
+  "replace-existing-lights": { title: "Upgrade or Replace Permanent Lights", description: "Replace an older permanent lighting system with modern colour-matched LED track, 16M+ colours and app control. Clean removal, reuse of wiring where possible, Southwestern Ontario." },
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
+  const m = META[slug] ?? { title: service.title, description: service.shortDescription };
   return {
-    title: service.title,
-    description: `Professional ${service.title.toLowerCase()} across Southwestern Ontario — permanent app-controlled LED lighting with a lifetime warranty. Call ${site.phone}.`,
-    alternates: { canonical: `/services/${service.slug}` },
-    openGraph: {
-      title: `${service.title} | Celebrate Lighting`,
-      description: service.shortDescription,
-      url: `${site.url}/services/${service.slug}`,
-      images: [{ url: "/images/hero-main.jpg", alt: `${service.title} — permanent LED lighting by Celebrate Lighting` }],
-    },
+    title: { absolute: `${m.title} | ${site.name}` },
+    description: m.description,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: { title: `${m.title} | ${site.name}`, description: m.description, url: `${site.url}/services/${slug}`, images: [{ url: "/images/gallery/teal-permanent-soffit-lights-close-up-grey-siding.jpg", alt: service.title }] },
+    twitter: { card: "summary_large_image", title: m.title, description: m.description },
   };
 }
+
+const FAQS: Record<string, { question: string; answer: string }[]> = {
+  "new-installation": [
+    { question: "How long does a permanent lighting install take?", answer: "Most homes take one to two days from start to lights-on. Larger properties with several storeys or long perimeters can take a little longer. We confirm the schedule at your demo." },
+    { question: "Does installation damage my roof or soffit?", answer: "No. Track clips into the soffit or fascia channel. Nothing is screwed through shingles and nothing is glued to the siding." },
+    { question: "Is the on-site demo really free?", answer: "Yes. We measure, colour-match and mount a live sample section on your house, light it at night, and leave you an itemized quote. No cost, no obligation." },
+  ],
+  "repair-service": [
+    { question: "Do you repair permanent lighting that someone else installed?", answer: "Yes. We work on all major brands of permanent track lighting: dead sections, failed controllers, wiring faults, water ingress and app connectivity. Most repairs are completed in a single visit." },
+    { question: "What does a repair visit cost?", answer: "We quote a diagnostic visit up front and tell you the repair cost before any work starts. Celebrate Lighting installs are covered by our lifetime warranty at no charge." },
+    { question: "A section of my lights is a different colour or flickering. Is that fixable?", answer: "Usually, yes. Colour drift and flicker are typically a failed LED module or a data connection issue in the run, both of which we can replace or reseat on site." },
+  ],
+  consultation: [
+    { question: "What happens during the consultation?", answer: site.demo.detail },
+    { question: "Do I need to be home at night?", answer: "The demo shows best after dark, so we schedule evenings when we can. If that doesn't work, we can mount the sample during the day and you can view it that evening." },
+    { question: "Is there any pressure to sign?", answer: "None. You get an itemized quote before we leave and decide on your own timeline." },
+  ],
+  maintenance: [
+    { question: "Does permanent lighting need maintenance?", answer: "Very little. The optional annual plan covers a system inspection, cleaning of the track and fixtures, connection and waterproofing checks and firmware updates, so small issues never become big ones." },
+    { question: "Is maintenance required to keep the warranty?", answer: "No. The lifetime warranty on parts, hardware and workmanship applies either way. Maintenance is for owners who want the system checked every year." },
+    { question: "Can I book a one-off check before the holidays?", answer: "Yes. A pre-season check in October or November is the most common booking. Contact us and we'll schedule it before the rush." },
+  ],
+  "replace-existing-lights": [
+    { question: "Can you reuse my existing wiring?", answer: "Often, yes. If the existing cable runs and power location are sound, we reuse them, which lowers cost and shortens the install." },
+    { question: "What's the benefit of upgrading?", answer: "Modern individually addressable RGBW LEDs, 16 million colours, true warm white, app control with scenes and schedules, better weather sealing and a lifetime warranty on the new system." },
+    { question: "Do you remove the old system?", answer: "Yes. We take the old track and fixtures down cleanly and dispose of them, then install the new system in a matching colour." },
+  ],
+};
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
-
-  const areas = getServiceAreas();
-  const allServices = getServices();
-  const otherServices = allServices.filter((s) => s.slug !== slug).slice(0, 3);
-
+  const cities = getCities();
+  const line = getServiceLine("permanent-lighting")!;
+  const faqs = FAQS[slug] ?? [];
+  const photo = getPhoto(slug === "repair-service" || slug === "maintenance" ? "teal-permanent-soffit-lights-close-up-grey-siding" : "daytime-colour-matched-permanent-light-track-in-white-soffit");
+  const m = META[slug];
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(service)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Services", url: `${site.url}/services` },
-        { name: service.title, url: `${site.url}/services/${service.slug}` },
-      ])) }} />
-
-      {/* Hero */}
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-2">/</span>
-            <Link href="/services" className="hover:text-[var(--accent)]">Services</Link>
-            <span className="mx-2">/</span>
-            <span>{service.title}</span>
-          </nav>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <JsonLd data={[serviceSchema(service), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Services", url: `${site.url}/services` }, { name: service.title, url: `${site.url}/services/${slug}` }]), faqSchema(faqs)]} />
+      <section className="section !pb-10" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <Breadcrumbs items={[{ name: "Services", href: "/services" }, { name: service.title }]} />
+          <div className="mt-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <div>
-              <p className="section-eyebrow mb-3">Our Services</p>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-6">{service.title}</h1>
-              <p className="text-lg text-[var(--muted)] leading-relaxed mb-6">{service.fullDescription}</p>
-              <ul className="space-y-3 mb-8">
-                {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm">
-                    <svg className="w-5 h-5 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-[var(--foreground)]">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="p-4 rounded-xl text-sm" style={{ background: "var(--accent-light)", border: "1px solid var(--accent)" }}>
-                <strong className="text-[var(--foreground)]">Available in:</strong>{" "}
-                {areas.cities.map((c, i) => (
-                  <span key={c.slug}>
-                    <Link href={`/services/${service.slug}/${c.slug}`} className="text-[var(--accent)] hover:underline font-medium">{c.name}</Link>
-                    {i < areas.cities.length - 1 ? ", " : ""}
-                  </span>
-                ))}
+              <span className="pill mb-4">Permanent lighting service</span>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">{m?.title ?? service.title}</h1>
+              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{service.fullDescription}</p>
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                <Link href={`/contact?service=${slug}`} className="btn btn-primary btn-lg">{slug === "new-installation" || slug === "consultation" ? site.demo.ctaLong : `Book ${service.title.toLowerCase()}`} <Icon.Arrow width={18} height={18} /></Link>
+                <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
               </div>
             </div>
-            <div className="card p-8">
-              <h2 className="text-xl font-bold text-[var(--foreground)] mb-6">Get a Free Quote for {service.title}</h2>
-              <QuoteForm />
-            </div>
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--border)]"><Image src={photo.src} alt={photo.alt} fill priority sizes="(max-width: 1024px) 100vw, 45vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /></div>
           </div>
         </div>
       </section>
-
-      {/* In-depth content */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-6 text-[var(--muted)] leading-relaxed">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight">
-            Why Choose Celebrate Lighting for {service.title}
-          </h2>
-          <p>
-            {service.title} is more than a quick add-on — it&apos;s a permanent
-            improvement to your home that you&apos;ll use every night of the year. Our
-            team approaches every {service.title.toLowerCase()} project the same way:
-            licensed, insured electricians, commercial-grade IP67 LED components rated to
-            −40&deg;C, and a clean, colour-matched track that disappears into your soffit
-            and fascia. Nothing about the finished result looks bolted-on or temporary.
-          </p>
-          <p>
-            Because our systems are app-controlled over WiFi, your {service.title.toLowerCase()}{" "}
-            gives you 16&nbsp;million-plus colours, custom scenes, and full scheduling from
-            your phone. Warm white for everyday curb appeal, team colours on game day,
-            orange and purple for Halloween, the full spectrum for the holidays — all
-            without ever touching a ladder again. And every installation is backed by our
-            comprehensive lifetime warranty covering LED modules, mounting hardware, and
-            workmanship.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight pt-2">
-            What to Expect
-          </h2>
-          <p>
-            We start with a free, no-obligation consultation: a lighting specialist visits
-            your property, takes measurements, colour-matches your soffit and fascia, and
-            provides a transparent, itemized quote. Once you approve, our certified
-            technicians complete most residential installations in one to two days with
-            clean, concealed cable routing. Before we leave, we configure your mobile app,
-            walk you through every control, and make sure you&apos;re comfortable running
-            your new system. From first call to a fully lit home, most projects wrap up
-            within the same week.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] tracking-tight pt-2">
-            Built for Southwestern Ontario
-          </h2>
-          <p>
-            From the freeze-thaw swings of a London winter to the humid summers across
-            Oxford and Waterloo Region, our {service.title.toLowerCase()} systems are built
-            for the local climate. We serve {areas.cities.map((c) => c.name).slice(0, -1).join(", ")} and{" "}
-            {areas.cities[areas.cities.length - 1]?.name}, and we know the homes and
-            architecture in each community. Whether you have a century brick home or a new
-            build, we tailor the {service.title.toLowerCase()} to your property and your
-            vision — and we stand behind it for life.
-          </p>
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid lg:grid-cols-2 gap-10">
+          <div className="card card-static p-6 md:p-8"><h2 className="font-bold text-2xl text-white mb-4">What’s included</h2><CheckList items={service.features} /></div>
+          <div><SectionHeading eyebrow="FAQ" title={`${service.title} questions`} align="left" /><FaqList items={faqs} name={`${slug}-faq`} /></div>
         </div>
       </section>
-
-      {/* Other Services */}
-      {otherServices.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-[var(--foreground)] mb-8">Other Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {otherServices.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="card p-6 hover:shadow-md transition-shadow group">
-                  <h3 className="font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--accent)] transition-colors">{s.title}</h3>
-                  <p className="text-sm text-[var(--muted)]">{s.shortDescription}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <ProcessTimeline steps={line.steps} title="How It Works" />
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap"><SectionHeading eyebrow="Available in" title={`${service.title} by City`} align="left" /><CityChips cities={cities} basePath={`/services/${slug}`} /></div>
+      </section>
+      <ClosingForm formProps={{ serviceValue: service.title }} />
     </>
   );
 }

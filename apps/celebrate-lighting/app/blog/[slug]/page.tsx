@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { getServiceAreas } from "@/lib/content";
+import { getCities } from "@/lib/content";
 import { breadcrumbSchema, articleSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
@@ -223,11 +223,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   const paragraphs = post.content.trim().split("\n").filter(Boolean);
-  const cities = getServiceAreas().cities;
+  const cities = getCities();
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({ title: post.title, description: post.description, image: post.image, date: post.date, slug })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({ title: post.title, description: post.description, image: post.image, date: post.date, url: `${site.url}/blog/${slug}`, type: "BlogPosting" })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: "Home", url: site.url },
         { name: "Blog", url: `${site.url}/blog` },

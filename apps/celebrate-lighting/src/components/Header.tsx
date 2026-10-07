@@ -1,116 +1,207 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
+import { Icon } from "./Icons";
+import { useAiPreview } from "./AiPreviewProvider";
 
-const nav = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Service Areas", href: "/service-areas" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Blog", href: "/blog" },
-];
-
+/**
+ * Two-tier header with a CENTRED logo.
+ *
+ * Desktop: row 1 = phone/hours (left) · logo (centre) · CTAs (right);
+ * row 2 = the full nav, centred, with a Services dropdown.
+ * Mobile: hamburger (left) · logo (centre) · call button (right).
+ *
+ * Note the mobile drawer is a sibling of the blurred bar, not a child —
+ * backdrop-filter turns the bar into a containing block for fixed
+ * descendants and would clip the drawer.
+ */
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const { open: openPreview } = useAiPreview();
+
+  // Close menus on navigation without a setState-in-effect: key the
+  // open state to the pathname it was opened on.
+  const [openedOn, setOpenedOn] = useState(pathname);
+  if (openedOn !== pathname) {
+    setOpenedOn(pathname);
+    setOpen(false);
+    setServicesOpen(false);
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* Row 1: centered logo */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between lg:justify-center py-3">
-          <Link href="/" className="flex items-center" aria-label="Celebrate Lighting home">
-            <Image
-              src="/images/logo.png"
-              alt="Celebrate Lighting logo"
-              width={240}
-              height={66}
-              className="h-16 w-auto object-contain"
-              priority
-            />
-          </Link>
-          {/* Mobile hamburger */}
-          <button
-            className="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
+    <>
+      <header
+        className="sticky top-0 z-40 border-b"
+        style={{ background: "rgba(10, 15, 26, 0.9)", backdropFilter: "blur(14px)", borderColor: "var(--border)" }}
+      >
+        <div className="wrap">
+          {/* Row 1 */}
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center h-[72px] lg:h-[100px]">
+            {/* Left: mobile menu / desktop phone + hours */}
+            <div className="flex items-center">
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -ml-2 rounded-xl text-white hover:bg-white/10"
+                aria-label="Open menu"
+                aria-expanded={open}
+              >
+                <Icon.Menu />
+              </button>
+              <div className="hidden lg:flex items-center gap-5 text-sm">
+                <a href={site.phoneHref} className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-white hover:text-[var(--accent)] transition-colors">
+                  <span className="icon-tile !w-9 !h-9"><Icon.Phone width={16} height={16} /></span>
+                  {site.phone}
+                </a>
+                <span className="hidden xl:inline text-[var(--muted)]">{site.hoursShort}</span>
+              </div>
+            </div>
 
-      {/* Row 2: nav bar (desktop only) */}
-      <div className="hidden lg:block" style={{ background: "var(--foreground)" }}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-11">
-            <nav className="flex items-center gap-7" aria-label="Main navigation">
-              {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex items-center gap-4">
+            {/* Centre: logo */}
+            <Link href="/" className="flex items-center justify-center" aria-label="Celebrate Lighting home">
+              <Image
+                src="/images/logo-dark.png"
+                alt="Celebrate Lighting logo"
+                width={304}
+                height={273}
+                className="h-[60px] lg:h-[88px] w-auto object-contain"
+                priority
+              />
+            </Link>
+
+            {/* Right: mobile call / desktop CTAs */}
+            <div className="flex items-center justify-end gap-2">
               <a
                 href={site.phoneHref}
-                className="text-sm font-semibold text-white hover:text-[var(--accent)] transition-colors"
+                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-xl text-[var(--accent)] hover:bg-white/10"
+                aria-label={`Call ${site.phone}`}
               >
-                {site.phone}
+                <Icon.Phone />
               </a>
-              <Link
-                href="/contact"
-                className="btn btn-primary text-xs h-8 min-h-0 py-0 px-4"
-              >
-                Get Free Quote
+              <button type="button" onClick={openPreview} className="hidden lg:inline-flex btn btn-outline btn-sm">
+                <Icon.Sparkle width={16} height={16} />
+                {site.aiPreview.ctaShort}
+              </button>
+              <Link href="/contact" className="hidden lg:inline-flex btn btn-primary btn-sm">
+                {site.demo.cta}
               </Link>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Mobile menu drawer */}
+          {/* Row 2: desktop nav */}
+          <nav className="hidden lg:flex items-center justify-center gap-1 h-12 border-t" style={{ borderColor: "var(--border)" }} aria-label="Main navigation">
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                type="button"
+                className={`inline-flex items-center gap-1 px-4 h-12 text-[0.9rem] font-semibold transition-colors ${
+                  isActive("/permanent-lighting") || isActive("/seasonal-lighting") || isActive("/commercial") || isActive("/services")
+                    ? "text-[var(--accent)]"
+                    : "text-[#d6deea] hover:text-white"
+                }`}
+                aria-expanded={servicesOpen}
+                onClick={() => setServicesOpen((v) => !v)}
+              >
+                Services <Icon.Chevron width={14} height={14} />
+              </button>
+              {servicesOpen && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 w-[23rem] pop-in">
+                  <div className="card card-static p-2 shadow-2xl">
+                    {site.nav.services.map((s) => (
+                      <Link key={s.href} href={s.href} className="flex flex-col gap-0.5 rounded-xl px-4 py-3 hover:bg-white/5">
+                        <span className="font-semibold text-white">{s.label}</span>
+                        <span className="text-xs text-[var(--muted)]">{s.desc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            {site.nav.main.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`inline-flex items-center px-4 h-12 text-[0.9rem] font-semibold transition-colors ${
+                  isActive(item.href) ? "text-[var(--accent)]" : "text-[#d6deea] hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link href="/contact" className="inline-flex items-center px-4 h-12 text-[0.9rem] font-semibold text-[#d6deea] hover:text-white">
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile drawer (outside the blurred header on purpose) */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-1 shadow-lg">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block py-2.5 text-sm font-medium text-gray-700 hover:text-[var(--accent)] border-b border-gray-50 last:border-0"
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="pt-4 flex flex-col gap-2">
-            <a href={site.phoneHref} className="btn btn-outline w-full justify-center">
-              {site.phone}
-            </a>
-            <Link
-              href="/contact"
-              className="btn btn-primary w-full justify-center"
-              onClick={() => setOpen(false)}
-            >
-              Get Free Quote
-            </Link>
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+          <button type="button" className="absolute inset-0 bg-black/70" aria-label="Close menu" onClick={() => setOpen(false)} />
+          <div className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto pop-in" style={{ background: "var(--surface)" }}>
+            <div className="flex items-center justify-between px-4 h-[68px] border-b" style={{ borderColor: "var(--border)" }}>
+              <Image src="/images/logo-dark.png" alt="Celebrate Lighting" width={304} height={273} className="h-11 w-auto" />
+              <button type="button" onClick={() => setOpen(false)} className="w-11 h-11 inline-flex items-center justify-center rounded-xl text-white hover:bg-white/10" aria-label="Close menu">
+                <Icon.X />
+              </button>
+            </div>
+            <div className="p-4 space-y-6">
+              <div>
+                <p className="pill mb-2">Services</p>
+                <ul className="space-y-1">
+                  {site.nav.services.map((s) => (
+                    <li key={s.href}>
+                      <Link href={s.href} className="flex flex-col rounded-xl px-3 py-3 hover:bg-white/5 min-h-[44px]">
+                        <span className="font-semibold text-white">{s.label}</span>
+                        <span className="text-xs text-[var(--muted)]">{s.desc}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="pill mb-2">Explore</p>
+                <ul className="space-y-1">
+                  {[...site.nav.main, { label: "Reviews", href: "/reviews" }, { label: "Blog", href: "/blog" }, { label: "Contact", href: "/contact" }].map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="flex items-center rounded-xl px-3 min-h-[44px] font-semibold text-[#d6deea] hover:text-white hover:bg-white/5">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-2 pt-2">
+                <button type="button" onClick={() => { setOpen(false); openPreview(); }} className="btn btn-outline w-full">
+                  <Icon.Sparkle width={16} height={16} /> {site.aiPreview.cta}
+                </button>
+                <Link href="/contact" className="btn btn-primary w-full">{site.demo.ctaLong}</Link>
+                <a href={site.phoneHref} className="btn btn-gold w-full"><Icon.Phone width={16} height={16} /> {site.phone}</a>
+              </div>
+              <p className="text-xs text-[var(--muted)] text-center">{site.hours}</p>
+            </div>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

@@ -1,0 +1,946 @@
+[
+  {
+    "slug": "christmas",
+    "name": "Christmas",
+    "metaTitle": "Permanent Christmas Lights | Celebrate Lighting",
+    "metaDescription": "Permanent Christmas lights for your roofline in Woodstock and Southwestern Ontario. App-controlled warm white, red and green scenes with no ladders, ever again.",
+    "season": "November to January",
+    "eyebrow": "The season, without ladders",
+    "heading": "Permanent Christmas Lights for Your Roofline",
+    "intro": "Christmas is the reason most of our clients call. With permanent LED track in your soffit, you never climb a ladder in November again. Open the app, pick a classic warm white glow, candy cane red and white, or a slow twinkle that looks like falling snow, and your whole roofline lights up on schedule. The same lights switch back to soft architectural white in January, so you keep the curb appeal all year without storing a single bin of tangled strings.",
+    "colourRecipes": [
+      {
+        "name": "Classic Warm White",
+        "colours": [
+          "#FFD9A0",
+          "#FFC680"
+        ],
+        "description": "A 2700K glow that reads like traditional incandescent strings along the eaves."
+      },
+      {
+        "name": "Candy Cane",
+        "colours": [
+          "#E3172C",
+          "#FFFFFF"
+        ],
+        "description": "Alternating red and bright white pixels for a cheerful, high-contrast roofline."
+      },
+      {
+        "name": "Evergreen and Gold",
+        "colours": [
+          "#1B7A3A",
+          "#E3172C",
+          "#F5C04A"
+        ],
+        "description": "Pine green, berry red and warm gold for a richer, old-world holiday palette."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Falling Snow",
+        "description": "Soft white base with a slow 3% twinkle that drifts along the roofline like flakes in streetlight."
+      },
+      {
+        "name": "Candy Cane Chase",
+        "description": "Red and white segments that slowly march around the house, perfect for when the kids get home from school."
+      },
+      {
+        "name": "Christmas Eve Glow",
+        "description": "Static warm white at 70% brightness with gold accents over the front door and garage."
+      }
+    ],
+    "tips": [
+      "Set a schedule from the first Saturday after the Woodstock Santa Claus Parade through January 6 so the lights handle themselves.",
+      "Run animated scenes from dusk to 10 p.m. and switch to a static warm white overnight to keep things calm for the street.",
+      "Keep brightness around 60 to 75% on homes with close neighbours so the glow looks festive rather than floodlit.",
+      "Match your landscape lighting and any wreath spotlights to the same warm white so the whole property reads as one design."
+    ],
+    "body": [
+      "Southwestern Ontario Christmases are cold, icy and dark by 5 p.m., which is exactly when traditional strings fail you. Clips snap in the cold, bulbs go out after the first freeze, and nobody wants to be on a ladder in sleet. Our track is IP67 rated and cold-rated to -40°C, mounted under the soffit where it stays out of the snow load, so your lights come on every night from the first parade to Twelfth Night without a single repair trip.",
+      "The season here is full of light. Families drive in from Woodstock, Ingersoll and Tillsonburg to see London Lights, wander the Kitchener Christkindl Market, and line the streets for the Woodstock Santa Claus Parade. Permanent lighting lets your home join in on your own schedule. Turn it on the night of the parade, save a scene for Christmas Eve dinner, and set a New Year's countdown, all from the same app you used to pick the colours.",
+      "Because every LED is individually addressable, you are not locked into one look for six weeks. Run classic warm white for most of December, switch to red and green for a family party, and add a gentle twinkle when the grandkids visit. When January arrives, there is nothing to take down. One tap returns the house to its everyday architectural white, and your Christmas scenes are saved and waiting for next year."
+    ],
+    "faq": [
+      {
+        "question": "Can permanent lights look like traditional Christmas lights?",
+        "answer": "Yes. Our classic warm white scene uses a 2700K tone that closely matches old incandescent strings, and you can add subtle twinkle or alternating colours. Many clients who loved the look of big-bulb C9s are surprised how traditional the warm white setting feels from the street."
+      },
+      {
+        "question": "Do I still need to take anything down after Christmas?",
+        "answer": "No. The track stays in your soffit all year and is nearly invisible during the day. In January you simply switch to an everyday scene or turn the lights off in the app."
+      }
+    ]
+  },
+  {
+    "slug": "halloween",
+    "name": "Halloween",
+    "metaTitle": "Halloween Lighting Scenes | Celebrate Lighting",
+    "metaDescription": "Permanent Halloween lights for your roofline in Southwestern Ontario. Spooky purple, orange and green scenes, flicker effects and trick-or-treat schedules.",
+    "season": "October",
+    "eyebrow": "Spooky in one tap",
+    "heading": "Permanent Halloween Lights for Your Roofline",
+    "intro": "Halloween has become the second biggest decorating night of the year on many Ontario streets, and your roofline can do a lot of the work. Permanent LED track lets you wash the house in eerie purple, pumpkin orange or a sickly green glow, then add a slow flicker or a lightning flash for trick-or-treaters. Set it to start the first week of October, ramp up the drama on October 31, and switch back to warm white on November 1 without touching a ladder.",
+    "colourRecipes": [
+      {
+        "name": "Pumpkin Patch",
+        "colours": [
+          "#FF6A00",
+          "#FFB347"
+        ],
+        "description": "Two shades of orange that glow like a row of carved jack-o'-lanterns."
+      },
+      {
+        "name": "Witching Hour",
+        "colours": [
+          "#6A0DAD",
+          "#FF6A00"
+        ],
+        "description": "Deep purple and orange, the most popular Halloween combination on our installs."
+      },
+      {
+        "name": "Haunted Manor",
+        "colours": [
+          "#39FF14",
+          "#6A0DAD",
+          "#1A0033"
+        ],
+        "description": "Toxic green and dark violet for a full haunted-house effect."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Slow Cauldron",
+        "description": "A slow purple-to-orange fade across the roofline with a 2% twinkle, ideal for the whole month."
+      },
+      {
+        "name": "Candle Flicker",
+        "description": "Warm orange pixels that randomly dim and brighten like candles inside pumpkins."
+      },
+      {
+        "name": "Lightning Strike",
+        "description": "Dim violet base with occasional bright white flashes that run the length of the eaves on Halloween night."
+      }
+    ],
+    "tips": [
+      "Schedule the Halloween palette for October 1 to 31 and let the app switch you back to warm white on November 1 automatically.",
+      "Save Lightning Strike for 5 to 9 p.m. on October 31 so the flashes are a treat for visitors rather than a nightly surprise.",
+      "Keep the porch and walkway well lit in white or soft orange so kids can see the steps safely.",
+      "Pair the roofline with orange landscape uplights on trees or a purple spotlight on inflatables for a layered look."
+    ],
+    "body": [
+      "Across Woodstock, London and Kitchener-Waterloo, some neighbourhoods now see hundreds of trick-or-treaters, and homeowners go all-in on decorations. The problem is that October in Southwestern Ontario is wet and windy, and string lights stapled to the eaves rarely survive the month. Permanent track is sealed to IP67, so rain, early frost and the odd snow flurry on Halloween night will not knock out a single section. No more replacing burnt-out orange bulbs or chasing extension cords across a soggy lawn the week before the big night.",
+      "Halloween is also the perfect occasion to show off what addressable LEDs can do. Every light is controlled on its own, which means real effects like flickering candles, a slow colour fade or lightning rolling across the roof. You can build a scene in minutes, save it, and bring it back every October. Pair it with a fog machine and a few inflatables and your house becomes the stop every kid on the street talks about.",
+      "Best of all, you get the full haunted-house effect without buying another box of seasonal decor. The same lights that run warm white all summer turn purple and orange on October 1, then hand off to your Christmas scenes in November. For families who decorate for every holiday, that one install replaces years of buying, hanging and storing separate light sets. You can even preview your Halloween colours on your own house first during our free on-site demo, lit live after dark so you know exactly how it will look."
+    ],
+    "faq": [
+      {
+        "question": "Can the lights do spooky effects, not just colours?",
+        "answer": "Yes. Because each LED is individually addressable, the app can run flicker, fade, chase and flash effects. Candle flicker and lightning are two of the most requested Halloween scenes."
+      },
+      {
+        "question": "Will purple and orange look good on my house colour?",
+        "answer": "Purple and orange read well on most brick, siding and stucco. During our free on-site demo we can light a sample on your home at night so you see exactly how the colours look before you commit."
+      }
+    ]
+  },
+  {
+    "slug": "canada-day",
+    "name": "Canada Day",
+    "metaTitle": "Canada Day Lighting Scenes | Celebrate Lighting",
+    "metaDescription": "Light your roofline red and white for Canada Day with permanent LED lighting. App scenes, fireworks effects and schedules for homes across Southwestern Ontario.",
+    "season": "July 1",
+    "eyebrow": "Red, white and home",
+    "heading": "Canada Day Lights in Red and White",
+    "intro": "On July 1, Southwestern Ontario turns red and white, and your home can join the party long after the backyard barbecue ends. Permanent LED track lets you light the roofline in crisp maple leaf red and bright white, add a fireworks-style sparkle for the evening, then return to warm architectural white the next morning. Set the scene once and it will come back automatically every Canada Day, whether you are home hosting family or out watching fireworks downtown.",
+    "colourRecipes": [
+      {
+        "name": "True North",
+        "colours": [
+          "#D52B1E",
+          "#FFFFFF"
+        ],
+        "description": "Flag red and pure white in alternating blocks that echo the Canadian flag."
+      },
+      {
+        "name": "Maple Glow",
+        "colours": [
+          "#D52B1E",
+          "#FFD9A0"
+        ],
+        "description": "Red paired with warm white for a softer, more elegant patriotic look."
+      },
+      {
+        "name": "Fireworks Night",
+        "colours": [
+          "#D52B1E",
+          "#FFFFFF",
+          "#F5C04A"
+        ],
+        "description": "Red and white with gold sparks for an evening that feels like a fireworks show."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Flag Blocks",
+        "description": "Static red, white, red segments sized to frame the front of the house."
+      },
+      {
+        "name": "Sparkler",
+        "description": "Red base with random white and gold bursts that pop along the roofline after dark."
+      },
+      {
+        "name": "Wave the Flag",
+        "description": "A slow red and white wave that rolls from one end of the house to the other."
+      }
+    ],
+    "tips": [
+      "Schedule the Canada Day scene from June 30 to July 2 so it covers the long weekend gatherings.",
+      "Run Sparkler only after sunset, around 9:30 p.m. in early July, so it does not compete with daylight.",
+      "Turn brightness down after midnight so neighbours who skipped the fireworks can sleep.",
+      "Add red or white landscape uplights on a flagpole or front tree to tie the roofline to the yard."
+    ],
+    "body": [
+      "Canada Day is one of the biggest community celebrations in our area. Brantford's Canada Day festivities, fireworks over the river in London, and local celebrations in Woodstock and the surrounding towns bring families out late into the evening. Coming home to a roofline glowing red and white is a simple way to keep the spirit going after the fireworks fade, and it makes your street look great for anyone driving home from the show.",
+      "Summer is also where permanent lighting quietly earns its keep. In July, the sun sets late and you only need a few hours of lighting each night. Our app lets you set a Canada Day scene that starts at dusk and turns off at a set time, using very little power. The rest of the summer, the same track provides warm white accent lighting for patio evenings and backyard parties.",
+      "Many families decorate for Canada Day with flags and bunting but have nothing for after dark. Your roofline fills that gap without any extra hardware to buy or store. Because the track is colour-matched to your soffit and fascia, it is nearly invisible during the day, so the house looks clean at noon and patriotic at night. Save the scene once and it is ready again next July 1. It is a small touch that makes the whole street feel more festive."
+    ],
+    "faq": [
+      {
+        "question": "Can I schedule the Canada Day lights in advance?",
+        "answer": "Yes. You can set the scene to run on specific dates and times, including starting at dusk. Once saved, you can reuse it every year with a single tap or a repeating schedule."
+      },
+      {
+        "question": "How bright is the red at night?",
+        "answer": "Fully adjustable. Most clients run patriotic scenes at 60 to 80% brightness, which reads clearly from the street without overpowering the neighbourhood."
+      }
+    ]
+  },
+  {
+    "slug": "valentines-day",
+    "name": "Valentine's Day",
+    "metaTitle": "Valentine's Day Lighting Scenes | Celebrate Lighting",
+    "metaDescription": "Set a romantic Valentine's Day glow with permanent roofline lights in Southwestern Ontario. Soft pinks, reds and warm white scenes controlled from your phone.",
+    "season": "February",
+    "eyebrow": "A little love outside",
+    "heading": "Valentine's Day Lights in Pink and Red",
+    "intro": "February in Southwestern Ontario is grey, cold and long, which makes Valentine's Day the perfect excuse to bring some colour back to the street. With permanent LED lighting you can wash your roofline in soft blush pink, deep romantic red or a warm rose gold glow, then add a slow heartbeat pulse for the evening. It takes seconds in the app, there is nothing to hang in the snow, and you can switch back to warm white the next morning.",
+    "colourRecipes": [
+      {
+        "name": "Blush",
+        "colours": [
+          "#FF8FB1",
+          "#FFD9E4"
+        ],
+        "description": "Two soft pinks that look gentle and warm against snow."
+      },
+      {
+        "name": "Romance",
+        "colours": [
+          "#C2185B",
+          "#E3172C"
+        ],
+        "description": "Deep raspberry and red for a classic Valentine's look."
+      },
+      {
+        "name": "Rose Gold",
+        "colours": [
+          "#E8A0A0",
+          "#F5C04A",
+          "#FFD9A0"
+        ],
+        "description": "Pink blended with gold and warm white for an elegant, grown-up glow."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Heartbeat",
+        "description": "Red pixels that pulse together in a slow double beat, then rest for a moment."
+      },
+      {
+        "name": "Candlelit Dinner",
+        "description": "Static warm white at 50% with soft pink accents over the front door."
+      },
+      {
+        "name": "Pink Drift",
+        "description": "A gentle fade between blush and raspberry that moves slowly along the eaves."
+      }
+    ],
+    "tips": [
+      "Schedule Valentine's colours from February 10 to 15 so the glow covers the weekend closest to the day.",
+      "Keep brightness low, around 40 to 60%, since pink reads strongly against fresh snow.",
+      "Save Heartbeat for the evening of February 14 and use a static scene on the other nights.",
+      "Pair with warm white path lights so the walkway stays safe and well lit on icy nights."
+    ],
+    "body": [
+      "Midwinter is when permanent lighting really proves itself. In February, Woodstock and London see some of the coldest nights of the year, and that is exactly when nobody wants to be on a ladder with a staple gun. Our track is cold-rated to -40°C and sealed to IP67, so you can change your roofline from warm white to pink in seconds from the warmth of the kitchen. There are no frozen clips, no cold fingers and no extension cords buried under the snowbank by the driveway.",
+      "Valentine's Day is also a small, personal occasion, which is what makes it fun. Surprise a partner by setting a red scene on a timer before they get home, light the house pink for a February birthday, or let the kids pick the colours for a classroom party weekend. Since every LED is addressable, you can highlight just the front gable or the garage, rather than the whole house, for a more subtle touch.",
+      "For businesses, a pink or red roofline is an easy seasonal touch that brings attention through the slow weeks of winter. Restaurants, florists and shops across Southwestern Ontario use the same system to draw eyes in February, then switch to green in March and pastels for Easter. One install covers every promotion for the year without hiring anyone to change the decor. For a homeowner, it is simply a nice way to brighten one of the darkest, longest months of the year in Southwestern Ontario."
+    ],
+    "faq": [
+      {
+        "question": "Can I light only part of the house for Valentine's Day?",
+        "answer": "Yes. We set up zones during installation, such as the front gable, garage or porch, so you can light one area in pink or red and keep the rest in warm white or off."
+      },
+      {
+        "question": "Do the lights work in deep February cold?",
+        "answer": "They do. The LEDs and track are rated to -40°C and sealed against moisture and ice, so they perform on the coldest nights of an Ontario winter."
+      }
+    ]
+  },
+  {
+    "slug": "st-patricks-day",
+    "name": "St. Patrick's Day",
+    "metaTitle": "St. Patrick's Day Lighting | Celebrate Lighting",
+    "metaDescription": "Go green for St. Patrick's Day with permanent roofline lighting across Southwestern Ontario. Shamrock green, gold and white scenes, all set from your phone.",
+    "season": "March 17",
+    "eyebrow": "Go green in one tap",
+    "heading": "St. Patrick's Day Lights in Shamrock Green",
+    "intro": "St. Patrick's Day is a fun excuse to break up the end of winter, and a green roofline is one of the easiest ways to join in. Permanent LED track lets you light your home in shamrock green, add a little gold for the pot at the end of the rainbow, or run a lively green and white chase for a house party. Set it the week before March 17, let the schedule run, and switch back to architectural white without stepping outside in the March slush.",
+    "colourRecipes": [
+      {
+        "name": "Shamrock",
+        "colours": [
+          "#009A49",
+          "#7FD858"
+        ],
+        "description": "Two greens, deep and bright, for a lush clover look."
+      },
+      {
+        "name": "Irish Tricolour",
+        "colours": [
+          "#169B62",
+          "#FFFFFF",
+          "#FF883E"
+        ],
+        "description": "Green, white and orange blocks inspired by the flag of Ireland."
+      },
+      {
+        "name": "Pot of Gold",
+        "colours": [
+          "#009A49",
+          "#F5C04A"
+        ],
+        "description": "Rich green with gold accents for a playful, lucky feel."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Lucky Glow",
+        "description": "Static shamrock green at 70% with occasional gold twinkles along the roofline."
+      },
+      {
+        "name": "Jig",
+        "description": "A quick green and white chase that loops around the house for party nights."
+      },
+      {
+        "name": "Rainbow's End",
+        "description": "A slow rainbow sweep that settles into solid gold over the front door."
+      }
+    ],
+    "tips": [
+      "Schedule green from March 14 to 18 to cover the weekend celebrations as well as the day itself.",
+      "Use the faster Jig chase only during a party and keep a static scene for regular evenings.",
+      "Green looks brighter to the eye than red or blue, so 50 to 70% brightness is usually plenty.",
+      "Add green spotlights on a front tree or hedge to extend the theme into the yard."
+    ],
+    "body": [
+      "Across Southwestern Ontario, St. Patrick's Day is a big night. Pubs in downtown London fill up, Kitchener-Waterloo celebrates with energy, and smaller towns like Woodstock and Stratford hold their own gatherings. A green roofline turns your house into part of the celebration, whether you are hosting friends or just want a cheerful sign that spring is coming. It is also one of the first chances each year to switch the lights off winter white and into something bright, fun and full of colour.",
+      "March is also unpredictable weather-wise. One week brings freezing rain, the next brings a thaw and puddles. Traditional strings and clips do not hold up well through that cycle, but our aluminum track is mounted under the soffit and sealed to IP67. The lights do not care whether it is snowing or raining, and you never have to go outside to switch a plug. Change scenes from your phone while you wait for the parade, the pub or the party to start.",
+      "For bars, restaurants and shops, St. Patrick's Day is one of the best nights of the year to draw attention. Commercial clients use permanent lighting to go green for the week, then switch to pastels for Easter and red and white for Canada Day. The same lights handle every promotion, and the schedules can be set weeks in advance so staff never have to think about it. That kind of reliability is hard to beat during a busy week."
+    ],
+    "faq": [
+      {
+        "question": "Can businesses use permanent lights for St. Patrick's Day promotions?",
+        "answer": "Absolutely. We install permanent lighting for commercial clients too. Bars and restaurants can schedule green for the full week and change scenes for every promotion through the year."
+      },
+      {
+        "question": "Is it easy to switch back to normal lighting afterwards?",
+        "answer": "Yes. You can set the green scene to end on a specific date, and the lights will return to your everyday warm white automatically."
+      }
+    ]
+  },
+  {
+    "slug": "easter",
+    "name": "Easter",
+    "metaTitle": "Easter Lighting Scenes | Celebrate Lighting",
+    "metaDescription": "Welcome spring with soft pastel Easter lights on your roofline. Permanent LED lighting for homes and businesses in Woodstock and Southwestern Ontario, by app.",
+    "season": "March or April",
+    "eyebrow": "Soft pastels for spring",
+    "heading": "Easter Lights in Soft Spring Pastels",
+    "intro": "Easter is the first holiday of spring, and a pastel roofline is a gentle way to welcome it. With permanent LED lighting you can set your home in soft lavender, robin's egg blue, buttercup yellow and blush pink, then let the colours drift slowly like an Easter egg hunt in motion. The scene is easy to schedule around Good Friday through Easter Monday, and the lights return to warm white for the rest of the spring.",
+    "colourRecipes": [
+      {
+        "name": "Easter Basket",
+        "colours": [
+          "#C3A6FF",
+          "#A0E7FF",
+          "#FFF59D",
+          "#FFB6C9"
+        ],
+        "description": "Four pastels in rotation for a playful, egg-dyed look."
+      },
+      {
+        "name": "Spring Garden",
+        "colours": [
+          "#B5E48C",
+          "#FFF59D"
+        ],
+        "description": "Soft green and daffodil yellow for a fresh, early-spring feel."
+      },
+      {
+        "name": "Sunrise Service",
+        "colours": [
+          "#FFD9A0",
+          "#FFB6C9",
+          "#C3A6FF"
+        ],
+        "description": "Warm white fading into pink and lavender like an Easter morning sky."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Egg Hunt",
+        "description": "Pastel segments that slowly shuffle positions along the roofline every few seconds."
+      },
+      {
+        "name": "Easter Sunrise",
+        "description": "A slow fade from lavender to pink to warm white, timed for early morning on Easter Sunday."
+      },
+      {
+        "name": "Spring Bloom",
+        "description": "Static green and yellow at 60% with a gentle 2% sparkle."
+      }
+    ],
+    "tips": [
+      "Easter moves every year, so set the schedule for Good Friday through Easter Monday once the date is known.",
+      "Pastels can look washed out at full power, so try 50 to 70% brightness for richer tones.",
+      "Use the Sunrise scene on a morning timer if your family heads out early for church or brunch.",
+      "Pair with soft white garden lights so new spring beds and blooms stand out at night."
+    ],
+    "body": [
+      "By Easter, most Southwestern Ontario homeowners are ready to leave winter behind. The snowbanks are finally gone in Woodstock and London, but April can still bring frost and cold rain, so it is not always a pleasant time to be on a ladder. With permanent lighting, the transition to spring takes a few taps rather than an afternoon of untangling cords. Pick your pastel palette on Good Friday, let it run all weekend, and switch back to everyday warm white when the chocolate is gone.",
+      "Pastels are where individually addressable RGBW LEDs shine. Cheap coloured strings can only do bold primary colours, but our system mixes red, green, blue and a dedicated white channel to create soft lavender, baby blue and blush tones. That means your Easter scene looks gentle and inviting, not like a stage show. You can preview colours in the app and adjust them until they suit your brick or siding. It is the same hardware that runs bold Christmas reds, simply tuned softer.",
+      "Easter is also a family holiday, and many households host dinners or egg hunts. A pastel roofline gives arriving guests a warm welcome and makes the house feel festive without a single decoration bin. For churches, garden centres and local shops, it is a simple way to mark the season, and the same system handles every other holiday on the calendar. It is one install that keeps paying off every season, holiday after holiday, year after year."
+    ],
+    "faq": [
+      {
+        "question": "Can the lights really make soft pastel colours?",
+        "answer": "Yes. Our RGBW LEDs have a dedicated white channel that blends with colour, which produces true pastels like lavender, baby blue and blush pink rather than harsh primary colours."
+      },
+      {
+        "question": "Easter changes dates every year. Do I need to reprogram it?",
+        "answer": "Just update the dates on your saved Easter scene. The colours and effects stay saved, so it takes about a minute each spring."
+      }
+    ]
+  },
+  {
+    "slug": "diwali",
+    "name": "Diwali",
+    "metaTitle": "Diwali Lighting for Your Home | Celebrate Lighting",
+    "metaDescription": "Celebrate Diwali with permanent roofline lights in Kitchener-Waterloo, London and across Southwestern Ontario. Warm gold, diya glow and festive scenes.",
+    "season": "October or November",
+    "eyebrow": "A festival of light",
+    "heading": "Permanent Diwali Lights for Your Home",
+    "intro": "Diwali is the festival of lights, and a glowing home is at the heart of the celebration. Permanent LED track lets you outline your entire roofline in warm diya gold, add saffron and magenta accents, or run a gentle shimmer that echoes rows of oil lamps. Because the lights are already installed, you can light the house for all five days of the festival with a single schedule, then move straight into your Christmas or everyday white scenes afterward.",
+    "colourRecipes": [
+      {
+        "name": "Diya Glow",
+        "colours": [
+          "#FFB627",
+          "#FFD9A0"
+        ],
+        "description": "Deep amber and warm gold that look like rows of flickering oil lamps."
+      },
+      {
+        "name": "Rangoli",
+        "colours": [
+          "#FF2E88",
+          "#FF9933",
+          "#7B2CBF",
+          "#00B4D8"
+        ],
+        "description": "Bright magenta, saffron, violet and turquoise inspired by rangoli patterns."
+      },
+      {
+        "name": "Festive Gold",
+        "colours": [
+          "#F5C04A",
+          "#C2185B",
+          "#FF9933"
+        ],
+        "description": "Gold with jewel-tone accents for an elegant, celebratory look."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Lamp Shimmer",
+        "description": "Warm amber base with soft random flicker on each LED, like hundreds of diyas along the roof."
+      },
+      {
+        "name": "Rangoli Bloom",
+        "description": "Colourful segments that slowly bloom outward from the centre of the house."
+      },
+      {
+        "name": "Lakshmi Puja",
+        "description": "Static rich gold at full brightness, perfect for the main evening of the festival."
+      }
+    ],
+    "tips": [
+      "Set a five-day schedule from Dhanteras to Bhai Dooj so the house is lit for the full festival.",
+      "Run full brightness on the main Diwali evening and dial back to 60% on the surrounding nights.",
+      "Let neighbours know if you plan to run colourful effects late; most love the display but appreciate the heads-up.",
+      "Pair the roofline with warm white or gold landscape lights along the walkway to welcome guests."
+    ],
+    "body": [
+      "Diwali is celebrated widely across Southwestern Ontario, with growing community events in Kitchener-Waterloo, London, Brantford and Cambridge, and families gathering in homes across the region. Lighting the house is central to the festival, but autumn evenings here are cold and often wet, which makes hanging strings or setting out lamps a challenge. Permanent lighting gives you a bright, reliable display every night of the festival. It also means you can spend the evenings with family and guests rather than fixing a string that went dark in the rain.",
+      "Because Diwali falls in October or November, it often lands just as the first real cold snaps arrive. Our track is cold-rated to -40°C and sealed to IP67, so rain, wind and early snow do not affect it. The individually addressable LEDs can produce a warm diya glow that feels traditional, or bright jewel tones that look festive from across the street. Many families save several scenes, such as warm gold for most nights and colourful rangoli for the main celebration, and switch between them in a tap.",
+      "Permanent lighting is also practical for families who celebrate many occasions. The same install handles Diwali, Christmas, birthdays and Canada Day, and the rest of the year it provides soft architectural white for curb appeal and security. Save your Diwali scenes once and simply update the dates each year, since the festival follows the lunar calendar and shifts from year to year. That makes planning simple, even in years when Diwali lands close to Halloween or Remembrance Day."
+    ],
+    "faq": [
+      {
+        "question": "Can the lights look like traditional diyas?",
+        "answer": "Yes. Our Lamp Shimmer scene uses warm amber with a gentle random flicker on each LED, which gives the impression of a row of oil lamps along the roofline."
+      },
+      {
+        "question": "Diwali changes date each year. How do I schedule it?",
+        "answer": "Your Diwali scenes stay saved in the app. Each year you just set the new start and end dates and the lights run automatically for the full festival."
+      }
+    ]
+  },
+  {
+    "slug": "pride-month",
+    "name": "Pride Month",
+    "metaTitle": "Pride Month Rainbow Lighting | Celebrate Lighting",
+    "metaDescription": "Light your home or business in rainbow colours for Pride Month in Southwestern Ontario. Permanent LED roofline lights with app-controlled Pride scenes.",
+    "season": "June",
+    "eyebrow": "Every colour, all month",
+    "heading": "Rainbow Pride Lights for Your Roofline",
+    "intro": "Pride Month is about visibility, and a rainbow roofline is a bright, welcoming way to show support. With permanent LED lighting, every pixel on your home can display its own colour, so a true six-colour rainbow or the Progress Pride palette is easy to create. Run it every evening in June, slow it into a gentle flowing rainbow for the weekend of your local Pride festival, and return to warm white on July 1.",
+    "colourRecipes": [
+      {
+        "name": "Classic Rainbow",
+        "colours": [
+          "#E40303",
+          "#FF8C00",
+          "#FFED00",
+          "#008026"
+        ],
+        "description": "Red, orange, yellow and green blocks that continue into blue and violet in the full scene."
+      },
+      {
+        "name": "Progress",
+        "colours": [
+          "#5BCEFA",
+          "#F5A9B8",
+          "#FFFFFF",
+          "#784F17"
+        ],
+        "description": "Light blue, pink, white and brown accents inspired by the Progress Pride flag."
+      },
+      {
+        "name": "Violet Warmth",
+        "colours": [
+          "#732982",
+          "#24408E",
+          "#FFD9A0"
+        ],
+        "description": "Violet and blue blended with warm white for a softer, all-month look."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Flowing Rainbow",
+        "description": "A slow, continuous rainbow that rolls from one end of the roofline to the other."
+      },
+      {
+        "name": "Pride Blocks",
+        "description": "Static rainbow segments sized evenly across the front of the house."
+      },
+      {
+        "name": "Festival Sparkle",
+        "description": "Rainbow base with a 3% white sparkle for festival weekend evenings."
+      }
+    ],
+    "tips": [
+      "Schedule Pride colours for June 1 to 30 with a dusk start, which is close to 9 p.m. in June.",
+      "Use static Pride Blocks on weeknights and save Flowing Rainbow for weekends and festival dates.",
+      "A slower animation speed looks smoother and more polished from the street.",
+      "Add a rainbow or white spotlight on a flag or front tree to tie the roofline into the yard."
+    ],
+    "body": [
+      "Pride celebrations take place across Southwestern Ontario, from Pride London Festival to events in Kitchener-Waterloo, Guelph and smaller communities throughout the region. Lighting your roofline in rainbow colours is a visible, positive way to take part, and with permanent lighting it is as simple as choosing a saved scene. No flags to re-hang after a windstorm, no strings to replace. June evenings are long and mild, which makes it a great month for neighbours out walking to enjoy the display all month long.",
+      "A proper rainbow needs many distinct colours side by side, which is something basic coloured string lights cannot do well. Our individually addressable RGBW LEDs let every pixel show a different colour, so the rainbow is crisp and even across the whole house. You can also build the Progress Pride, trans or bi palettes and switch between them during the month. Every scene can be saved and brought back next June without any setup at all.",
+      "Businesses across the region use Pride Month to show customers and staff that everyone is welcome. A rainbow storefront or office roofline is simple to schedule for June, and it hands off to your Canada Day scene on July 1. For homeowners and commercial clients alike, the same install covers every season of the year without buying more decorations. It is a simple, lasting way to show that your home or business is a welcoming place every June, not just on parade day."
+    ],
+    "faq": [
+      {
+        "question": "Can the lights show a full rainbow at once?",
+        "answer": "Yes. Each LED is individually addressable, so we can display every colour of the rainbow side by side across your roofline, either static or slowly flowing."
+      },
+      {
+        "question": "Can I use other Pride flag colours?",
+        "answer": "Yes. You can create scenes for the Progress, trans, bi or any other flag palette in the app and switch between them whenever you like."
+      }
+    ]
+  },
+  {
+    "slug": "remembrance-day",
+    "name": "Remembrance Day",
+    "metaTitle": "Remembrance Day Lighting | Celebrate Lighting",
+    "metaDescription": "A respectful Remembrance Day lighting scene for your home in Southwestern Ontario. Steady poppy red or soft white, dimmed with no animation, set by app.",
+    "season": "November 11",
+    "eyebrow": "Lest we forget",
+    "heading": "A Respectful Remembrance Day Light",
+    "intro": "Remembrance Day is not a celebration, and we recommend lighting your home for it quietly. A single steady poppy red or a soft warm white, dimmed low with no animation, is a simple and respectful way to honour veterans and those who served. Set the scene for the evening of November 10 and the day of November 11, then return to your usual lighting on November 12. Nothing more is needed.",
+    "colourRecipes": [
+      {
+        "name": "Poppy Red",
+        "colours": [
+          "#B31B1B"
+        ],
+        "description": "A single steady, deep red that recalls the poppy on your lapel."
+      },
+      {
+        "name": "Vigil White",
+        "colours": [
+          "#FFD9A0"
+        ],
+        "description": "Soft warm white at low brightness for a calm, solemn glow."
+      },
+      {
+        "name": "Poppy and Light",
+        "colours": [
+          "#B31B1B",
+          "#FFD9A0"
+        ],
+        "description": "Red along the roofline with a single section of warm white over the door."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Steady Poppy",
+        "description": "Static deep red at 30 to 40% brightness with no movement or twinkle."
+      },
+      {
+        "name": "Quiet Vigil",
+        "description": "Static warm white at 30% brightness across the full roofline."
+      },
+      {
+        "name": "Doorway Light",
+        "description": "Roofline off, with a single steady warm white zone over the entrance."
+      }
+    ],
+    "tips": [
+      "Schedule the scene for dusk on November 10 through the evening of November 11.",
+      "Keep brightness low, between 25 and 40%, so the lighting feels reflective rather than decorative.",
+      "Avoid animations, chases and twinkles entirely; a steady light is the respectful choice.",
+      "If you have landscape lighting, a single soft spotlight on a flag or wreath is enough."
+    ],
+    "body": [
+      "Across Southwestern Ontario, communities gather at cenotaphs in Woodstock, London, Brantford, Stratford and many smaller towns each November 11. Many homeowners wear a poppy and want a way to mark the day at home as well. A dim, steady red or soft white roofline is a quiet gesture that fits the tone of the day without turning it into a display. It suits homes near a cenotaph or on a parade route especially well, and it lets families mark the day together after attending a service.",
+      "This is one occasion where we deliberately recommend restraint. Permanent lighting can do chases, sparkles and colour fades, but none of those belong on Remembrance Day. A single colour at low brightness, holding still, carries the meaning best. The app makes it easy to save that scene and bring it back each year with the same respectful settings. If you prefer, you can light only the entrance and leave the rest of the roofline dark. Simple, steady and calm is always the right choice here.",
+      "Remembrance Day also arrives just before the holiday season, when many homes are about to switch on their Christmas scenes. We suggest scheduling your holiday lighting to begin after November 11, so the day keeps its own space. With permanent lighting, both are handled automatically by schedule, so you do not need to remember to change anything. The schedule takes care of the timing, and the day is given the quiet attention it deserves."
+    ],
+    "faq": [
+      {
+        "question": "What is the most respectful way to light my home for Remembrance Day?",
+        "answer": "We recommend a single steady colour, either poppy red or soft warm white, at low brightness with no animation. Run it the evening of November 10 and on November 11."
+      },
+      {
+        "question": "Should I wait to turn on Christmas lights until after November 11?",
+        "answer": "Many families prefer to, and we think it is a good practice. You can schedule your holiday scenes to begin on November 12 or later so each occasion has its own time."
+      }
+    ]
+  },
+  {
+    "slug": "game-day",
+    "name": "Game Day",
+    "metaTitle": "Game Day Team Colour Lights | Celebrate Lighting",
+    "metaDescription": "Light your roofline in team colours for the Leafs, Blue Jays, Raptors, Knights, Rangers and more. Permanent game day lighting across Southwestern Ontario.",
+    "season": "Year-round",
+    "eyebrow": "Show your team colours",
+    "heading": "Game Day Lights in Your Team's Colours",
+    "intro": "Hockey nights, playoff runs and opening days are a big deal in Southwestern Ontario, and your roofline can cheer along. Permanent LED lighting lets you light the house in Maple Leafs blue and white, Blue Jays blue, Raptors red, London Knights green and gold or Kitchener Rangers red, white and blue. Save a scene for each team, flip it on before puck drop, and run a celebration chase when your team wins.",
+    "colourRecipes": [
+      {
+        "name": "Maple Leafs",
+        "colours": [
+          "#00205B",
+          "#FFFFFF"
+        ],
+        "description": "Toronto Maple Leafs blue and white for every hockey night and playoff run."
+      },
+      {
+        "name": "Blue Jays",
+        "colours": [
+          "#134A8E",
+          "#1D2D5C",
+          "#E8291C"
+        ],
+        "description": "Toronto Blue Jays royal and navy blue with a red accent for baseball season."
+      },
+      {
+        "name": "London Knights",
+        "colours": [
+          "#00573F",
+          "#C4A13A"
+        ],
+        "description": "London Knights green and gold for OHL nights at Canada Life Place."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Puck Drop",
+        "description": "Static team colours in alternating blocks, scheduled to turn on an hour before the game."
+      },
+      {
+        "name": "Goal Celebration",
+        "description": "A fast chase in team colours that runs for 30 seconds when you tap it from the app."
+      },
+      {
+        "name": "Playoff Mode",
+        "description": "Team colours with a slow pulse and white sparkle that runs every night of the playoffs."
+      }
+    ],
+    "tips": [
+      "Save one scene per team, including Raptors red, black and silver, Argonauts double blue, Tiger-Cats black and gold, and Rangers red, white and blue.",
+      "Schedule team colours for game nights only so the scene stays special.",
+      "Keep the Goal Celebration chase short and run it before 11 p.m. so neighbours stay on your side.",
+      "Pair the roofline with team-coloured landscape lights or a spotlight on a team flag for big games."
+    ],
+    "body": [
+      "Southwestern Ontario is a sports region. On any given night, fans are watching the Toronto Maple Leafs, the Raptors or the Blue Jays, while the London Knights and Kitchener Rangers pack arenas for OHL hockey. Football fans split between the Toronto Argonauts and the Hamilton Tiger-Cats. With permanent lighting, your home can show your loyalty all season instead of only on a flag. Your house becomes the one everyone on the street notices on game night, especially once the playoffs begin in spring.",
+      "Team colours are where individually addressable LEDs make a big difference. Basic coloured strings can rarely match navy, royal blue and green accurately, but our RGBW system can tune each colour to look close to the team palette. Save Leafs blue and white, Raptors red and black, Tiger-Cats black and gold, Argonauts double blue, Knights green and gold and Rangers red, white and blue, and switch between them in seconds.",
+      "Playoff runs are when this really gets fun. Set Playoff Mode to run every game night and tap Goal Celebration from your phone when your team scores. Mixed households can split the roofline into zones, so the garage can be Knights green while the front gable shows Rangers red. When the season ends, the lights go back to warm white until next year's home opener. There is nothing to repaint, hang or store, just a new scene for every new season."
+    ],
+    "faq": [
+      {
+        "question": "Can I save colours for more than one team?",
+        "answer": "Yes. You can save as many team scenes as you like, from the Leafs and Raptors to the London Knights, Kitchener Rangers and Tiger-Cats, and switch between them in seconds."
+      },
+      {
+        "question": "Can I trigger a celebration when my team scores?",
+        "answer": "Yes. Save a short chase or flash scene and tap it from your phone when your team scores or wins, then the lights return to your game night scene."
+      }
+    ]
+  },
+  {
+    "slug": "thanksgiving-fall",
+    "name": "Thanksgiving and Fall",
+    "metaTitle": "Thanksgiving and Fall Lighting | Celebrate Lighting",
+    "metaDescription": "Warm autumn lighting for Canadian Thanksgiving and fall evenings in Southwestern Ontario. Amber, harvest gold and rust scenes on permanent roofline lights.",
+    "season": "September to November",
+    "eyebrow": "Harvest glow, all season",
+    "heading": "Thanksgiving and Fall Lights for Your Home",
+    "intro": "Fall in Southwestern Ontario is harvest season, and your home can share in the warm colours of the leaves. Permanent LED lighting lets you set your roofline in amber, harvest gold and rusty orange for Thanksgiving dinner in October and the cozy evenings that follow. As the days get shorter, the lights switch on earlier on their own, giving your home a welcoming glow from the September long weekend until you switch to Halloween or Christmas scenes.",
+    "colourRecipes": [
+      {
+        "name": "Harvest Gold",
+        "colours": [
+          "#F5A623",
+          "#FFD9A0"
+        ],
+        "description": "Golden amber blended with warm white for a soft autumn glow."
+      },
+      {
+        "name": "Maple Leaves",
+        "colours": [
+          "#C1440E",
+          "#E07A1F",
+          "#F5C04A"
+        ],
+        "description": "Rust, burnt orange and gold that echo a sugar maple in October."
+      },
+      {
+        "name": "Thanksgiving Table",
+        "colours": [
+          "#8B2E16",
+          "#F5A623",
+          "#FFD9A0"
+        ],
+        "description": "Cranberry, pumpkin and candlelight tones for a family dinner evening."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Falling Leaves",
+        "description": "Rust and gold pixels that slowly drift along the roofline with a 2% twinkle."
+      },
+      {
+        "name": "Harvest Evening",
+        "description": "Static amber at 60% brightness, ideal for every night through September and October."
+      },
+      {
+        "name": "Thanksgiving Welcome",
+        "description": "Warm white across the roof with an amber glow over the front door for arriving guests."
+      }
+    ],
+    "tips": [
+      "Set the lights to turn on at sunset, since autumn evenings get noticeably darker each week.",
+      "Use Thanksgiving Welcome for the Saturday through Monday of the October long weekend.",
+      "Amber and orange read as warm and calm, so 50 to 70% brightness feels cozy without glare.",
+      "Pair with warm white uplights on trees or a spotlight on a porch display of pumpkins and mums."
+    ],
+    "body": [
+      "Canadian Thanksgiving arrives on the second Monday of October, right when the colours across Oxford County, Middlesex and Waterloo Region are at their best. It is a season of apple picking, fall fairs, pumpkin patches and family dinners. A warm amber roofline makes the house feel welcoming when relatives pull into the driveway, and it fits naturally with the season rather than looking like a holiday display. It also makes a lovely backdrop for family photos on the front steps.",
+      "Fall is also when permanent lighting starts to pay off in daily life. Sunset moves from about 8 p.m. in early September to before 5 p.m. by November, and the app schedule follows along automatically. Coming home to a lit house on a dark, rainy October night is one of the things our clients mention most. Our IP67 track handles wind, rain and the first frost without any fuss. No timers to reset and no switches to remember.",
+      "Fall lighting also bridges the gap between summer and the holidays. Run harvest colours through September and early October, switch to Halloween purple and orange for the last weeks of the month, then hand off to Christmas in November. If you would like to add classic C9 bulbs for the holidays as well, our seasonal crew installs them in October and November, so fall is the time to plan both."
+    ],
+    "faq": [
+      {
+        "question": "Is fall lighting just for Thanksgiving weekend?",
+        "answer": "Not at all. Many clients run a warm harvest scene from September through October as everyday lighting, since it looks seasonal without feeling like a holiday display."
+      },
+      {
+        "question": "Will the lights adjust as sunset gets earlier?",
+        "answer": "Yes. You can set schedules based on sunset, so the lights turn on at dusk every evening as the days get shorter through the fall."
+      }
+    ]
+  },
+  {
+    "slug": "new-years-eve",
+    "name": "New Year's Eve",
+    "metaTitle": "New Year's Eve Lighting Scenes | Celebrate Lighting",
+    "metaDescription": "Ring in the new year with permanent roofline lights in Southwestern Ontario. Gold, silver and sparkle scenes plus a midnight countdown, all from your phone.",
+    "season": "December 31",
+    "eyebrow": "Countdown in lights",
+    "heading": "New Year's Eve Lights with a Midnight Countdown",
+    "intro": "New Year's Eve deserves a little more sparkle than the rest of the holidays. With permanent LED lighting you can move from your Christmas scene to champagne gold and silver for the evening, add a glittering twinkle for the party, and trigger a celebration burst right at midnight. It is a fun finale to the season, and once the countdown is over the lights can settle back into warm white for the quiet weeks of January.",
+    "colourRecipes": [
+      {
+        "name": "Champagne",
+        "colours": [
+          "#F7E7CE",
+          "#F5C04A"
+        ],
+        "description": "Pale champagne and gold for an elegant, celebratory glow."
+      },
+      {
+        "name": "Silver and Gold",
+        "colours": [
+          "#C0C0C0",
+          "#F5C04A",
+          "#FFFFFF"
+        ],
+        "description": "Cool silver, gold and bright white for classic New Year's sparkle."
+      },
+      {
+        "name": "Midnight Blue",
+        "colours": [
+          "#0B1F4B",
+          "#F5C04A"
+        ],
+        "description": "Deep night blue with gold accents like fireworks against the sky."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Bubbles",
+        "description": "Champagne base with a 4% random white sparkle that looks like rising bubbles."
+      },
+      {
+        "name": "Countdown",
+        "description": "A ten-section sequence that turns off one segment at a time before midnight."
+      },
+      {
+        "name": "Midnight Burst",
+        "description": "Rapid gold and white bursts across the whole roofline for two minutes after midnight."
+      }
+    ],
+    "tips": [
+      "Schedule Bubbles from dusk on December 31 and set Midnight Burst to start at 12:00 a.m.",
+      "Keep Midnight Burst short, a few minutes at most, then drop to a calm warm white.",
+      "Set a January 1 schedule that returns the house to everyday white by early afternoon.",
+      "Light the walkway and driveway well so guests heading home late can see their footing on ice."
+    ],
+    "body": [
+      "New Year's Eve in Southwestern Ontario usually means cold, clear nights and gatherings at home with family and friends. Whether you are hosting a party in Woodstock, heading to a celebration in London, or watching the Toronto countdown on TV, a sparkling roofline adds to the moment. It is also the last big night of the holiday lighting season, so it is fun to go out with a show. And because everything runs from the app, nobody needs to step out into the cold to make it happen.",
+      "Because the lights are already up, New Year's Eve takes no extra effort. You simply schedule a gold and silver scene to replace your Christmas lighting for the evening, set a countdown sequence, and let the app trigger a celebration at midnight. Guests outside for fireworks will see the roofline light up at exactly the right moment, without anyone leaving the party to flip a switch. You can even preview the countdown in the afternoon to make sure everything looks just right.",
+      "After New Year's, our seasonal C9 clients book their January takedown, while permanent lighting owners have nothing to remove. The track stays tucked under the soffit, and the house simply returns to warm architectural white. That ease is one of the main reasons families upgrade from seasonal strings, and January is a great time to start planning a permanent install for the year ahead. Spring and summer installs have the most flexible scheduling."
+    ],
+    "faq": [
+      {
+        "question": "Can the lights do a countdown at midnight?",
+        "answer": "Yes. We can help you set up a countdown sequence and a celebration scene that are scheduled to the minute, so the roofline reacts right at midnight."
+      },
+      {
+        "question": "Will the countdown work if I am not home?",
+        "answer": "Yes. Schedules run from the controller on your home, so the scene plays on time even if you are out celebrating elsewhere."
+      }
+    ]
+  },
+  {
+    "slug": "birthdays-and-parties",
+    "name": "Birthdays and Parties",
+    "metaTitle": "Birthday and Party Lighting | Celebrate Lighting",
+    "metaDescription": "Light your roofline for birthdays, graduations, gender reveals and backyard parties in Southwestern Ontario. Permanent LED lights in any colour, set by app.",
+    "season": "Year-round",
+    "eyebrow": "Every celebration counts",
+    "heading": "Birthday and Party Lights for Your Home",
+    "intro": "Holidays only come once a year, but birthdays, graduations, anniversaries and backyard parties happen all the time. Permanent LED lighting lets you light your home in the guest of honour's favourite colour, school colours for a graduation, pink or blue for a gender reveal, or a full party chase for a summer bash. It takes seconds to set up, it looks amazing when guests arrive, and it turns an ordinary evening into something everyone remembers.",
+    "colourRecipes": [
+      {
+        "name": "Birthday Confetti",
+        "colours": [
+          "#FF2E88",
+          "#00B4D8",
+          "#FFED00",
+          "#7B2CBF"
+        ],
+        "description": "Bright mixed colours in a playful pattern, great for kids' birthdays."
+      },
+      {
+        "name": "Gender Reveal",
+        "colours": [
+          "#FFB6C9",
+          "#89CFF0"
+        ],
+        "description": "Soft pink and baby blue, ready to flip to one colour at the big moment."
+      },
+      {
+        "name": "Anniversary Glow",
+        "colours": [
+          "#F5C04A",
+          "#FFD9A0",
+          "#C0C0C0"
+        ],
+        "description": "Gold, warm white and silver for milestone anniversaries and elegant dinners."
+      }
+    ],
+    "scenes": [
+      {
+        "name": "Party Chase",
+        "description": "Multicolour segments that chase around the roofline at a lively speed for backyard parties."
+      },
+      {
+        "name": "The Reveal",
+        "description": "Alternating pink and blue that pauses, then floods the house in the reveal colour on your tap."
+      },
+      {
+        "name": "Favourite Colour",
+        "description": "The guest of honour's favourite colour at 70% with a soft sparkle all evening."
+      }
+    ],
+    "tips": [
+      "Set the party scene to start 30 minutes before guests arrive so the house is glowing when cars pull up.",
+      "Use school colours for graduation parties or a sports team scene for a fan's birthday.",
+      "Switch to a calm warm white after 11 p.m. so the party winds down nicely for the neighbours.",
+      "Light the backyard with warm white path and string lighting so the roofline is the colourful highlight."
+    ],
+    "body": [
+      "Summer in Southwestern Ontario is packed with backyard gatherings, from graduation parties in June to milestone birthdays and anniversaries on long weekends. Permanent lighting turns your home into part of the celebration. Choose a colour for the guest of honour, light the house in school colours from Western, Waterloo, Laurier or Fanshawe, or run a party chase while the barbecue is going. It is the kind of detail guests remember and photograph.",
+      "Small moments matter too. Kids love seeing the house light up in their favourite colour on their birthday morning, and it is an easy surprise to set the night before. For gender reveals, the app lets you hold a pink and blue scene and flip the whole roofline to one colour with a single tap while friends and family watch. Every LED is individually addressable, so the effects are crisp.",
+      "Because the lights live in your soffit year-round, there is no rental, no setup crew and no cleanup after the party. Save each scene once and reuse it every year for the same birthdays. Between parties, the system runs everyday warm white for curb appeal, then switches to the major holidays on schedule. It is a single investment that celebrates everything on your family calendar. No other home upgrade gets this much use or this many smiles."
+    ],
+    "faq": [
+      {
+        "question": "Can I set up a scene for a specific birthday?",
+        "answer": "Yes. You can save a scene in any colour or pattern and schedule it for the date, so the house lights up on the morning or evening of the birthday automatically."
+      },
+      {
+        "question": "Can the lights work for a gender reveal?",
+        "answer": "Yes. Many clients set an alternating pink and blue scene, then tap to flood the entire roofline in the reveal colour while guests watch."
+      }
+    ]
+  }
+]

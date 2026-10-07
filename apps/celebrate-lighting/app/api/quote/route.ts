@@ -1,73 +1,61 @@
+import { escapeHtml, NOTIFY_TO, sendEmail, storeLead, verifyTurnstile } from "@/lib/leads";
+
 export const runtime = "edge";
 
 export async function POST(req: Request) {
-  const body = await req.json();
-
-  // Turnstile verification via shared Worker
-  const turnstileEndpoint = process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com";
-  const turnstileRes = await fetch(turnstileEndpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ token: body.turnstileToken ?? "", hostname: "celebratelighting.ca" }),
-  });
-  const turnstileData = await turnstileRes.json() as { success: boolean };
-  if (!turnstileData.success) {
-    return Response.json({ error: "Captcha verification failed." }, { status: 400 });
+  let body: Record<string, unknown>;
+  try {
+    body = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return Response.json({ error: "Bad request" }, { status: 400 });
   }
 
-  // Honeypot
-  if (body.website?.trim()) return Response.json({ ok: true });
+  // Honeypot: pretend success.
+  if (typeof body.website === "string" && body.website.trim()) return Response.json({ ok: true });
 
-  // Validate required fields
-  if (!body.name || !body.phone || !body.email || !body.service) {
+  if (!(await verifyTurnstile(String(body.turnstileToken ?? "")))) {
+    return Response.json({ error: "Captcha verification failed. Please try again or call us." }, { status: 400 });
+  }
+
+  const name = String(body.name ?? "").trim();
+  const phone = String(body.phone ?? "").trim();
+  const email = String(body.email ?? "").trim();
+  const service = String(body.service ?? "").trim();
+  if (!name || !phone || !email || !service) {
     return Response.json({ error: "All required fields must be filled." }, { status: 400 });
   }
 
-  const payload = {
-    name: body.name,
-    phone: body.phone,
-    email: body.email,
-    address: body.address ?? null,
-    service: body.service,
-    message: body.message ?? null,
+  const extras: string[] = [];
+  if (body.preferredContact) extras.push(`Preferred contact: ${body.preferredContact}`);
+  if (body.formId) extras.push(`Source: ${body.formId}`);
+  const message = [String(body.message ?? "").trim(), ...extras].filter(Boolean).join("\n") || null;
+
+  const row = {
+    name,
+    phone,
+    email,
+    address: body.address ? String(body.address) : null,
+    service,
+    message,
   };
 
-  // Save via shared forms Worker
-  const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
-  const insertRes = await fetch(formsEndpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ hostname: "celebratelighting.ca", row: payload }),
+  // Email is the critical path; the DB row is the backup.
+  const emailed = await sendEmail({
+    to: NOTIFY_TO(),
+    replyTo: email,
+    subject: `New Lead: ${service} - ${name}`,
+    html: `
+      <h2>New Lead — Celebrate Lighting</h2>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Phone:</strong> <a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a></p>
+      <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+      <p><strong>Address:</strong> ${escapeHtml(row.address ?? "Not provided")}</p>
+      <p><strong>Service:</strong> ${escapeHtml(service)}</p>
+      <p><strong>Message:</strong><br>${escapeHtml(message ?? "None").replace(/\n/g, "<br>")}</p>
+    `,
   });
-  if (!insertRes.ok) {
-    console.error("Forms worker insert error:", insertRes.status, await insertRes.text());
-    return Response.json({ error: "Failed to save request" }, { status: 502 });
-  }
+  const stored = await storeLead(row);
 
-  // Send email via Resend
-  if (process.env.RESEND_API_KEY) {
-    await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL ?? "noreply@celebratelighting.ca",
-        to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
-        subject: `New Quote Request: ${body.service} — ${body.name}`,
-        html: `
-          <h2>New Quote Request — Celebrate Lighting</h2>
-          <p><strong>Name:</strong> ${body.name}</p>
-          <p><strong>Phone:</strong> ${body.phone}</p>
-          <p><strong>Email:</strong> ${body.email}</p>
-          <p><strong>Address:</strong> ${body.address ?? "Not provided"}</p>
-          <p><strong>Service:</strong> ${body.service}</p>
-          <p><strong>Message:</strong> ${body.message ?? "None"}</p>
-        `,
-      }),
-    });
-  }
-
-  return Response.json({ ok: true });
+  if (!emailed && !stored) return Response.json({ error: "Failed to send request" }, { status: 502 });
+  return Response.json({ ok: true, emailed, stored });
 }

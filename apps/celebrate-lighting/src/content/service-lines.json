@@ -1,0 +1,409 @@
+[
+  {
+    "slug": "permanent-lighting",
+    "name": "Permanent Lighting",
+    "shortName": "Permanent",
+    "offerKey": "demo",
+    "eyebrow": "Permanent Outdoor LED Lighting",
+    "tagline": "Installed once. Yours every night after.",
+    "heroH1": "Permanent Lighting, Installed Once.",
+    "heroH1Accent": "Then Every Night Is Yours.",
+    "heroSub": "Colour-matched LED track fitted into your soffit and fascia, controlled from your phone. Warm white on an ordinary Tuesday, red and green in December, your team's colours on game day — with nothing to hang and nothing to take down, ever again.",
+    "metaTitle": "Permanent LED Lighting in Southwestern Ontario",
+    "metaDescription": "Permanent outdoor LED lighting — colour-matched track, app-controlled, IP67, −40°C rated, lifetime warranty. Free on-site demo before you pay. London to Woodstock.",
+    "audienceFit": {
+      "heading": "Permanent is the right call if…",
+      "yes": [
+        "You want lighting up year-round, not just in December",
+        "You're tired of ladders, tangled strings and blown fuses",
+        "You'd use it for more than Christmas — Halloween, Canada Day, game day, everyday warm white",
+        "You plan to stay in the home long enough to enjoy the investment",
+        "You want it to look built-in, not bolted-on"
+      ],
+      "noHeading": "Seasonal might suit you better if…",
+      "no": [
+        "You only want lights up for the holidays",
+        "You'd rather a lower yearly cost than a one-time investment",
+        "You want the classic large-bulb C9 look on the roofline",
+        "You're renting, or moving within a year or two"
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Colour-matched to disappear",
+        "body": "We take a physical colour sample of your soffit and fascia at the demo and match the track to it. Dramatic after dark, close to invisible at noon — no white plastic strip running across the front of your house."
+      },
+      {
+        "title": "16 million+ colours, from your phone",
+        "body": "Set scenes, brightness, patterns and schedules in the app. Pre-programmed themes for every holiday are included, and changing the whole house takes about five seconds."
+      },
+      {
+        "title": "Built for Ontario winters",
+        "body": "IP67-sealed fixtures, UV-rated cable and components cold-rated to −40°C. Installed once and left up through freeze-thaw, lake-effect snow and humid summers."
+      },
+      {
+        "title": "No roof penetration",
+        "body": "Track fastens into the soffit or fascia channel using specialised clips. Nothing is screwed through your shingles and nothing damages your gutters."
+      },
+      {
+        "title": "Lifetime warranty in writing",
+        "body": "LED modules, mounting hardware and our workmanship — covered for life, including free repairs and replacements. The LEDs themselves are rated past 50,000 hours."
+      },
+      {
+        "title": "Adds to curb appeal, not clutter",
+        "body": "Warm-white architectural wash is the everyday setting most owners run. It reads as landscape lighting for the roofline rather than as decoration."
+      }
+    ],
+    "steps": [
+      {
+        "step": "01",
+        "title": "Book your free demo",
+        "desc": "Call or send the form. We ring back within 24 hours and find a time that suits you — evenings included, since the lights show best after dark."
+      },
+      {
+        "step": "02",
+        "title": "We come out and turn the lights on",
+        "desc": "We measure your rooflines, colour-match your soffit, and mount a live sample section right on your house. You see your own home lit up before you've spent a cent, then get an itemized quote.",
+        "highlight": "The free part"
+      },
+      {
+        "step": "03",
+        "title": "Installation, usually in a day or two",
+        "desc": "Certified crews fit the full system with concealed cable routing, set up your app, and walk you through every control before leaving."
+      },
+      {
+        "step": "04",
+        "title": "It's yours from then on",
+        "desc": "No takedown, no storage, no annual bill. If anything ever fails, the lifetime warranty covers the repair."
+      }
+    ],
+    "specs": [
+      { "label": "Fixture rating", "value": "IP67 sealed" },
+      { "label": "Cold rating", "value": "−40°C" },
+      { "label": "LED lifespan", "value": "50,000+ hours" },
+      { "label": "Colour range", "value": "16 million+" },
+      { "label": "Control", "value": "WiFi mobile app" },
+      { "label": "Warranty", "value": "Lifetime" },
+      { "label": "Typical install", "value": "1–2 days" },
+      { "label": "Mounting", "value": "Soffit / fascia channel, no roof penetration" }
+    ],
+    "pricing": {
+      "heading": "What a permanent system costs",
+      "lead": "Most residential installations land between $2,500 and $8,000. It's a one-time cost — there's no seasonal bill afterwards.",
+      "drivers": [
+        "Total linear feet of roofline being covered",
+        "Number of peaks, gables and storeys (access difficulty)",
+        "Whether you're lighting the full perimeter or just the front elevation",
+        "Any add-ons like landscape, column or soffit-downlight zones"
+      ],
+      "closer": "You get a transparent, itemized quote at your demo — before you commit, with no pressure to sign on the spot."
+    },
+    "faqs": [
+      {
+        "question": "What actually happens at the free on-site demo?",
+        "answer": "A lighting specialist comes to your home, measures your rooflines and takes a colour sample of your soffit and fascia. Then we mount a live sample section of track on your house and turn it on, so you can stand on your own driveway and see exactly how your home looks lit up — the real thing, at night, on your home. You get an itemized quote before we leave. No cost and no obligation."
+      },
+      {
+        "question": "Will it damage my roof or gutters?",
+        "answer": "No. Track fastens into the soffit or fascia channel with specialised clips — nothing penetrates your shingles and nothing is fixed to the gutter face in a way that damages it."
+      },
+      {
+        "question": "Can you see the track during the day?",
+        "answer": "Only if you go looking. We colour-match to your soffit and fascia so the housing sits inside the trim line. Most visitors never notice it until the lights come on."
+      },
+      {
+        "question": "How do I control the lights?",
+        "answer": "Through a mobile app over WiFi. Colours, brightness, patterns and schedules from anywhere, with pre-programmed holiday themes included. You can also set it and forget it — dusk-to-a-set-time schedules are common."
+      },
+      {
+        "question": "What does the warranty cover?",
+        "answer": "A lifetime warranty on the LED modules, mounting hardware and our installation workmanship, including free repairs and replacements. LEDs are rated past 50,000 hours and components are IP67-sealed and cold-rated to −40°C."
+      },
+      {
+        "question": "Does it use much electricity?",
+        "answer": "Very little. These are low-draw LEDs, and most homeowners run a warm-white scene at partial brightness on a schedule. It costs a fraction of what old incandescent C9 strings drew."
+      },
+      {
+        "question": "Can you install in winter?",
+        "answer": "Often yes. Installation depends on safe roof access rather than the calendar, so we schedule around weather. Booking a demo in the off-season usually means faster install dates."
+      }
+    ],
+    "commercial": {
+      "metaTitle": "Commercial Permanent LED Lighting — Ontario",
+      "metaDescription": "Permanent architectural LED lighting for commercial and municipal properties across Southwestern Ontario — plazas, storefronts, dealerships, civic buildings. Insured crews.",
+      "eyebrow": "Commercial & Municipal",
+      "h1": "Permanent Architectural Lighting for Commercial Properties",
+      "sub": "One installed system that carries your building through every season, every promotion and every civic event — controlled centrally, with no annual install bill and no crew back on your roof each November.",
+      "lead": "Permanent LED makes the most sense for properties that want to be lit more than a few weeks a year. Retail frontages get brand colours year-round. Dealerships get a lit lot boundary. Municipal buildings get civic colours for Remembrance Day, Pride, Canada Day and awareness campaigns without booking a contractor each time.",
+      "segments": [
+        {
+          "title": "Retail plazas & storefronts",
+          "body": "Define your frontage after dark and change colours for every promotion, holiday and sale without paying for a new install. Tenants get a consistent look across the whole plaza."
+        },
+        {
+          "title": "Car dealerships & lots",
+          "body": "Light the building line and lot perimeter permanently. Brand colours on the showroom, white light where customers walk, and a lit frontage that reads as open long after dark."
+        },
+        {
+          "title": "Municipal & civic buildings",
+          "body": "Town halls, arenas, libraries and community centres. Run civic colours for awareness days, Remembrance Day, Pride and Canada Day from an app instead of scheduling a contractor for each event."
+        },
+        {
+          "title": "Office parks & industrial",
+          "body": "Clean architectural wash on the building line improves the look of the property and the sense of security in the parking area, with almost no operating cost."
+        },
+        {
+          "title": "Restaurants & hospitality",
+          "body": "Patio and frontage lighting that shifts with the season and the event. Warm and quiet on a Tuesday, full colour for a holiday service or a private booking."
+        },
+        {
+          "title": "Multi-site & franchise",
+          "body": "One specification rolled out across every location so the brand looks identical in every town. We handle the survey, install and warranty for the whole portfolio."
+        }
+      ],
+      "reasons": [
+        { "title": "Fully insured, WSIB covered", "body": "Certificates and proof of coverage provided up front for your procurement file." },
+        { "title": "Off-hours installation", "body": "We work outside your trading hours so there's no disruption to customers, tenants or staff." },
+        { "title": "Written specs for tender", "body": "We supply itemized scope, product specs and drawings suitable for RFP, tender and council submissions." },
+        { "title": "One warranty, one contact", "body": "Lifetime warranty on parts and workmanship across every site, with a single point of contact for service." }
+      ],
+      "faqs": [
+        {
+          "question": "Can you quote against a tender or RFP?",
+          "answer": "Yes. We provide itemized scope of work, product specifications and proof of insurance and WSIB coverage in a format suitable for municipal tender and procurement review. Send us the documents and we'll respond to the stated format."
+        },
+        {
+          "question": "Do you handle multiple locations under one contract?",
+          "answer": "Yes. For franchise and multi-site portfolios we survey each property, build one specification so every site looks identical, then schedule the rollout around each location's trading hours."
+        },
+        {
+          "question": "Will installation disrupt our business?",
+          "answer": "No. Commercial installs are scheduled outside trading hours, and work is staged so entrances, drive lanes and parking stay usable throughout."
+        },
+        {
+          "question": "Who maintains the system afterwards?",
+          "answer": "We do. The lifetime warranty on parts, hardware and workmanship applies to commercial installs, and you get one contact for any service call across all your sites."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "seasonal-lighting",
+    "name": "Seasonal Lighting",
+    "shortName": "Seasonal",
+    "offerKey": "seasonal",
+    "eyebrow": "Seasonal C9 Christmas Lighting",
+    "tagline": "The classic look. None of the ladder work.",
+    "heroH1": "Classic C9 Christmas Lights,",
+    "heroH1Accent": "Hung, Serviced and Taken Down for You.",
+    "heroSub": "The big-bulb roofline look people actually picture when they think of Christmas lights — professionally installed in the fall, watched over all season, and removed and stored in January. You never touch a ladder, a staple gun or a tangled box.",
+    "metaTitle": "Christmas Light Installation in Southwestern Ontario",
+    "metaDescription": "Professional C9 Christmas light installation, in-season service, takedown and storage across Southwestern Ontario. Book early for the best rates and install dates.",
+    "audienceFit": {
+      "heading": "Seasonal is the right call if…",
+      "yes": [
+        "You want that classic large-bulb C9 look on the roofline",
+        "You only want lights up for the holiday season",
+        "You'd rather a predictable yearly cost than a one-time investment",
+        "You want it gone and stored in January without lifting a finger",
+        "You're renting, or you might move in the next year or two"
+      ],
+      "noHeading": "Permanent might suit you better if…",
+      "no": [
+        "You'd use lighting year-round, not just in December",
+        "You want Halloween, Canada Day and game-day colours too",
+        "You'd rather pay once than every season",
+        "You want app control and instant colour changes"
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Commercial-grade C9, not big-box strings",
+        "body": "Heavy LED C9 bulbs on commercial wire, cut and built to your rooflines. They hold colour, survive the wind, and won't leave you with a dead third of a run in December."
+      },
+      {
+        "title": "Install, service, takedown, storage",
+        "body": "One price covers the whole cycle. We hang it in the fall, come back if anything fails mid-season, then remove and store everything in January."
+      },
+      {
+        "title": "Custom-fit to your roofline",
+        "body": "Runs are measured and built for your house rather than stretched from a fixed-length box, so lines are straight, spacing is even and there's no sagging or doubling back."
+      },
+      {
+        "title": "In-season service included",
+        "body": "If a run goes dark in the middle of December, you call and we come out. You're not on a ladder in the snow trying to find the bad bulb."
+      },
+      {
+        "title": "Nothing to store",
+        "body": "On the rental plan we take everything away and store it. No bins in the garage, no untangling next November."
+      },
+      {
+        "title": "Clean removal",
+        "body": "Clips come off with the lights. No staples left in your fascia, no adhesive marks, no holes to fill in the spring."
+      }
+    ],
+    "steps": [
+      {
+        "step": "01",
+        "title": "Book before the calendar fills",
+        "desc": "Send the form or call. The earliest bookings get the season's best pricing and first pick of install dates — the fall calendar fills fast.",
+        "highlight": "Book early"
+      },
+      {
+        "step": "02",
+        "title": "We measure and design",
+        "desc": "We walk the property, measure every run, and plan the layout — rooflines, peaks, columns, trees and walkways — then give you a firm per-season price."
+      },
+      {
+        "step": "03",
+        "title": "Installation in the fall",
+        "desc": "Crews install in October and November so you're lit for the season. Everything is custom-cut and clipped, with timers set to whatever schedule you want."
+      },
+      {
+        "step": "04",
+        "title": "Takedown and storage in January",
+        "desc": "We come back, take everything down cleanly, and — on the rental plan — store it until next season. Rebooking is a phone call."
+      }
+    ],
+    "seasonTimeline": [
+      { "period": "Jul – Sep", "title": "Booking window", "desc": "Best pricing and widest choice of install dates. Design and quoting happen now." },
+      { "period": "Oct – Nov", "title": "Installation", "desc": "Crews install across the service area. Earlier bookings get earlier slots." },
+      { "period": "Dec", "title": "In season", "desc": "Lights run on your schedule. Any failure mid-season is a phone call and we come out." },
+      { "period": "Jan", "title": "Takedown & storage", "desc": "Clean removal, clips and all. On the rental plan everything goes into our storage until next year." }
+    ],
+    "plans": [
+      {
+        "name": "Rental",
+        "tagline": "Most popular — nothing to buy, nothing to store",
+        "body": "We own the lights. One per-season price covers design, custom-built runs, installation, in-season service calls, takedown and off-season storage. Rebooking each year is a single phone call and your layout is already on file.",
+        "bestFor": "Homeowners who want the whole thing handled and no bins in the garage.",
+        "includes": [
+          "Design and measurement",
+          "Commercial-grade C9 LED, custom cut",
+          "Installation and timer setup",
+          "In-season service calls",
+          "Takedown in January",
+          "Off-season storage"
+        ]
+      },
+      {
+        "name": "Buy",
+        "tagline": "Own the lights, we do the labour",
+        "body": "You buy the C9 sets outright as a one-time cost, custom-built to your rooflines. After that you pay only for install and takedown each year. Over enough seasons it works out cheaper, and the lights are yours if you move.",
+        "bestFor": "Owners staying put long-term who'd rather own the material and pay less each year.",
+        "includes": [
+          "Design and measurement",
+          "Commercial-grade C9 LED, custom cut, yours to keep",
+          "Installation and timer setup each season",
+          "In-season service calls",
+          "Takedown in January",
+          "Storage at your place (or add ours)"
+        ]
+      }
+    ],
+    "pricing": {
+      "heading": "What seasonal lighting costs",
+      "lead": "Seasonal is priced per season and quoted per property — there's no useful one-size figure, because a single-storey bungalow frontage and a two-storey with four gables are very different jobs.",
+      "drivers": [
+        "Total linear feet of roofline being lit",
+        "Number of storeys and peaks — access drives labour more than anything",
+        "Front elevation only, or the full perimeter",
+        "Extras like columns, trees, garland, wreaths and walkway stakes",
+        "Rental or buy — rental spreads the cost, buying front-loads it"
+      ],
+      "closer": "You get a firm, itemized per-season price after we've measured. Book before the deadline and that price is locked in before the fall rush."
+    },
+    "faqs": [
+      {
+        "question": "When should I book Christmas light installation?",
+        "answer": "As early as you can — ideally summer or early fall. Installation runs through October and November and the calendar fills from the outside in, so the earliest bookings get the season's best pricing and first pick of dates. Leaving it to late November usually means limited availability."
+      },
+      {
+        "question": "Do I buy the lights or do you?",
+        "answer": "Either. On the rental plan we own, install, remove and store the lights, and you pay one per-season price. On the buy plan you purchase the custom-built C9 sets outright as a one-time cost and then pay only for install and takedown each year. We'll show you both numbers at the quote."
+      },
+      {
+        "question": "Is takedown included?",
+        "answer": "Yes — takedown in January is part of every plan. On the rental plan we also store everything through the off-season, so there's nothing in your garage."
+      },
+      {
+        "question": "What happens if a section goes out in December?",
+        "answer": "You call us and we come out. In-season service is included, so you're never the one on a ladder in the snow hunting for a failed run."
+      },
+      {
+        "question": "Will the clips damage my roof or fascia?",
+        "answer": "No. We use purpose-made clips that attach to the shingle edge and fascia without staples, screws or adhesive. They come off with the lights in January and leave nothing behind."
+      },
+      {
+        "question": "What's the difference between C9 and permanent track lighting?",
+        "answer": "C9 is the classic large-bulb look, installed in the fall and removed in January — a seasonal service you rebook each year. Permanent track lighting is a one-time install of small colour-matched LEDs fitted into your soffit that stays up year-round and is controlled from an app. Many people choose C9 for the traditional Christmas look and permanent for year-round use."
+      },
+      {
+        "question": "Do you do more than rooflines?",
+        "answer": "Yes. Columns, porch garland, wreaths, tree wrapping, shrub and hedge lighting, and walkway stakes are all common add-ons. We plan them together so the whole property reads as one display."
+      }
+    ],
+    "commercial": {
+      "metaTitle": "Commercial & Municipal Christmas Light Installation — Ontario",
+      "metaDescription": "Commercial Christmas light installation for parks, municipalities, downtown BIAs, light shows, charity events and fundraisers across Southwestern Ontario. Insured, WSIB.",
+      "eyebrow": "Commercial, Municipal & Events",
+      "h1": "Christmas & Event Lighting for Parks, Municipalities and Events",
+      "sub": "Tree wrapping, downtown streetscapes, drive-through light shows, charity displays and fundraiser events — designed, installed, serviced through the season, and removed on your schedule.",
+      "lead": "Seasonal lighting at scale is a different job from a house. It involves budgets and approvals, public safety, power planning, tight installation windows and a hard opening date that cannot move. We've done park tree wrapping and commercial streetscape work across Oxford County and the surrounding region, and we scope commercial jobs around the deadline you actually have to hit.",
+      "segments": [
+        {
+          "title": "Parks & conservation areas",
+          "body": "Tree wrapping on mature canopy, pathway and feature lighting, and displays laid out so pedestrian routes stay lit and safe. Installed and removed on the municipality's schedule."
+        },
+        {
+          "title": "Municipalities & downtown BIAs",
+          "body": "Main-street streetscapes, boulevard trees, lamp standards, civic squares and town-hall frontages. One coordinated look across the whole core rather than a patchwork of separate contractors."
+        },
+        {
+          "title": "Drive-through light shows",
+          "body": "Large-scale displays for fairgrounds, conservation areas and ticketed events — route planning, power distribution, sequenced and synced sections, and a crew on call for the run of the show."
+        },
+        {
+          "title": "Charity events & fundraisers",
+          "body": "Festival of lights, hospital and hospice fundraisers, service-club displays and community campaigns. We work to fixed budgets and fixed opening nights, and we'll help stage the spend across seasons."
+        },
+        {
+          "title": "Retail & business frontages",
+          "body": "Plazas, storefronts, restaurants, dealerships and office parks. Installed outside trading hours so customers and tenants never see a crew or a closed entrance."
+        },
+        {
+          "title": "Community & seasonal events",
+          "body": "Santa Claus parades, tree lightings, winter markets, skating trails and outdoor rinks. Short-run installs built around a single date, then struck cleanly afterwards."
+        }
+      ],
+      "reasons": [
+        { "title": "Fully insured, WSIB covered", "body": "Certificates and proof of coverage supplied up front for procurement and council files." },
+        { "title": "We hit the opening date", "body": "Public displays have a hard deadline. We scope backwards from your opening night and build slack into the schedule." },
+        { "title": "Written scope for tender", "body": "Itemized scope, product specs and drawings in a format suited to RFPs, tenders and council submissions." },
+        { "title": "Service through the run", "body": "A crew on call for the season, so a dark section on a Friday night in December gets fixed, not explained." }
+      ],
+      "faqs": [
+        {
+          "question": "Do you work with municipal budgets and tender processes?",
+          "answer": "Yes. We provide itemized scope of work, product specifications, and proof of insurance and WSIB coverage in a format suitable for tender and procurement review. If you have a fixed budget, tell us the number and we'll design to it and show you what each additional zone would add."
+        },
+        {
+          "question": "Can you handle a drive-through or ticketed light show?",
+          "answer": "Yes. That work involves route and sightline planning, power distribution across the site, sequenced or synced sections, and a crew on call for the run of the show. It needs a longer lead time than a roofline job, so start the conversation early — ideally in the spring or summer before the season."
+        },
+        {
+          "question": "We're a charity with a fixed budget. Can you work to it?",
+          "answer": "Yes, and it's common. Give us the budget and the opening date and we'll design the biggest display that fits, prioritising the highest-visibility areas first. Many groups build their display up over several seasons, and we plan the layout so each year adds to the last rather than replacing it."
+        },
+        {
+          "question": "How far ahead do commercial and municipal jobs need to be booked?",
+          "answer": "Much further than residential. Streetscapes, parks and light shows involve approvals, power planning and long install windows, so spring or summer is right for a display opening that November. Smaller commercial frontages can often still be fitted in later."
+        },
+        {
+          "question": "Do you take down and store commercial displays too?",
+          "answer": "Yes. Takedown is scoped into the contract on your schedule — public displays often need to come down quickly after a set date — and storage between seasons can be included so the same display goes back up next year."
+        }
+      ]
+    }
+  }
+]

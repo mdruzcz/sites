@@ -1,94 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { getServices, getServiceAreas } from "@/lib/content";
-import { localBusinessSchema, breadcrumbSchema } from "@/lib/jsonld";
+import { getServices, getCities } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, localBusinessSchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { SectionHeading, Breadcrumbs, CityChips, IconTile, CheckList } from "@/components/ui";
+import { BookCta } from "@/components/sections";
+
+export const revalidate = 3600;
+
+const title = "Permanent Lighting Services: Install, Repair, Maintenance";
+const description = "New permanent LED installs, repairs on any brand, annual maintenance, consultations and system upgrades across Southwestern Ontario. Free on-site demo on new installs.";
 
 export const metadata: Metadata = {
-  title: "Permanent Lighting Services",
-  description:
-    "New installs, repairs, consultations, maintenance, and system replacements for permanent outdoor LED lighting across Southwestern Ontario.",
+  title: { absolute: `${title} | ${site.name}` },
+  description,
   alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Services | Permanent Outdoor Lighting — Celebrate Lighting",
-    description: "New installs, repairs, maintenance, and consultation for permanent outdoor LED lighting in SW Ontario.",
-    url: "https://celebratelighting.ca/services",
-    images: [{ url: "/images/hero-main.jpg", alt: "Permanent outdoor LED lighting services by Celebrate Lighting" }],
-  },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/services`, images: [{ url: "/images/gallery/teal-permanent-soffit-lights-close-up-grey-siding.jpg", alt: "Close-up of permanent soffit lighting" }] },
+  twitter: { card: "summary_large_image", title, description },
 };
+
+const ICONS: Record<string, React.ReactNode> = { zap: <Icon.Bolt />, tool: <Icon.Wrench />, clipboard: <Icon.Ruler />, settings: <Icon.Shield />, "refresh-cw": <Icon.Sparkle /> };
 
 export default function ServicesPage() {
   const services = getServices();
-  const areas = getServiceAreas();
-
+  const cities = getCities();
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Services", url: `${site.url}/services` },
-      ])) }} />
-
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-2">/</span>
-            <span>Services</span>
-          </nav>
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">What We Do</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--foreground)] tracking-tight mb-4">
-              Our Services
-            </h1>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              From brand-new permanent LED installations to repairs and maintenance, Celebrate Lighting handles every aspect of your outdoor lighting needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => (
-              <div key={service.slug} className="card p-8">
-                <h2 className="text-2xl font-bold text-[var(--foreground)] mb-3">{service.title}</h2>
-                <p className="text-[var(--muted)] leading-relaxed mb-4">{service.fullDescription}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-[var(--muted)]">
-                      <svg className="w-4 h-4 shrink-0" style={{ color: "var(--accent)" }} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex gap-3">
-                  <Link href={`/services/${service.slug}`} className="btn btn-primary text-sm">Learn More</Link>
-                  <Link href="/contact" className="btn btn-outline text-sm">Get Quote</Link>
-                </div>
-                <div className="mt-4 pt-4 border-t border-[var(--border)]">
-                  <p className="text-xs text-[var(--muted)]">
-                    Available in:{" "}
-                    {areas.cities.map((c, i) => (
-                      <span key={c.slug}>
-                        <Link href={`/services/${service.slug}/${c.slug}`} className="text-[var(--accent)] hover:underline">{c.name}</Link>
-                        {i < areas.cities.length - 1 ? ", " : ""}
-                      </span>
-                    ))}
-                  </p>
-                </div>
-              </div>
-            ))}
+      <JsonLd data={[localBusinessSchema(), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Services", url: `${site.url}/services` }])]} />
+      <section className="section !pb-10" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <Breadcrumbs items={[{ name: "Services" }]} />
+          <div className="mt-6 max-w-3xl">
+            <span className="pill mb-4">Everything we do</span>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Permanent Lighting Services in Southwestern Ontario</h1>
+            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">New installations with a free on-site demo, repairs on any brand of permanent lighting, annual maintenance, and upgrades for older systems. Plus <Link href="/seasonal-lighting" className="text-[var(--gold)] underline underline-offset-2">seasonal C9 Christmas lights</Link> and <Link href="/commercial" className="text-[var(--accent)] underline underline-offset-2">commercial work</Link>.</p>
           </div>
         </div>
       </section>
-
-      <section style={{ background: "var(--foreground)" }} className="py-16 text-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-300 mb-8">Contact us today for a free consultation and transparent quote for your home or business.</p>
-          <Link href="/contact" className="btn btn-primary px-8 text-base">Book Your Free Consultation</Link>
+      <section className="section" style={{ background: "var(--bg)" }}>
+        <div className="wrap grid md:grid-cols-2 gap-5">
+          {services.map((s) => (
+            <div key={s.slug} className="card card-static p-6 md:p-8 flex flex-col">
+              <IconTile className="mb-4">{ICONS[s.icon] ?? <Icon.Sparkle />}</IconTile>
+              <h2 className="font-bold text-2xl text-white">{s.title}</h2>
+              <p className="mt-2 text-[var(--muted)] leading-relaxed">{s.shortDescription}</p>
+              <CheckList items={s.features.slice(0, 3)} className="mt-4 text-sm" />
+              <Link href={`/services/${s.slug}`} className="btn btn-outline btn-sm mt-6 self-start">About {s.title.toLowerCase()} <Icon.Arrow width={14} height={14} /></Link>
+            </div>
+          ))}
         </div>
       </section>
+      <section className="section" style={{ background: "var(--surface)" }}>
+        <div className="wrap"><SectionHeading eyebrow="Where we work" title="Service by City" align="left" /><CityChips cities={cities} basePath="/service-areas" /></div>
+      </section>
+      <BookCta />
     </>
   );
 }

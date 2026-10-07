@@ -1,74 +1,61 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
-import { getProjects } from "@/lib/content";
-import { breadcrumbSchema } from "@/lib/jsonld";
+import { getPhotos } from "@/lib/content";
+import { JsonLd, breadcrumbSchema, imageGallerySchema } from "@/lib/jsonld";
+import { Icon } from "@/components/Icons";
+import { Breadcrumbs, SectionHeading } from "@/components/ui";
+import { GalleryGrid } from "@/components/GalleryGrid";
+import { BookCta } from "@/components/sections";
+import xmasGallery from "@/content/xmas-gallery.json";
+
+export const revalidate = 3600;
+
+const title = "Gallery: Permanent Roofline Lighting Photos";
+const description = "Real permanent LED roofline installations in warm white, cool white, red and green, purple, teal and full rainbow. Filter by colour to picture your own home, then get a free AI preview.";
 
 export const metadata: Metadata = {
-  title: "Project Gallery",
-  description:
-    "Browse Celebrate Lighting's permanent outdoor LED installations across Southwestern Ontario — real homes, real results from Brantford to London to Waterloo.",
+  title: { absolute: `${title} | ${site.name}` },
+  description,
   alternates: { canonical: "/gallery" },
-  openGraph: {
-    title: "Project Gallery | Permanent LED Lighting — Celebrate Lighting",
-    description: "See our permanent outdoor LED lighting installations across SW Ontario homes and businesses.",
-    url: "https://celebratelighting.ca/gallery",
-    images: [{ url: "/images/hero-main.jpg", alt: "Gallery of permanent outdoor LED lighting installs by Celebrate Lighting" }],
-  },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/gallery`, images: [{ url: "/images/gallery/rainbow-gradient-permanent-roofline-lights-dark-siding-bungalow.jpg", alt: "Rainbow permanent roofline lights on a bungalow" }] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function GalleryPage() {
-  const projects = getProjects();
-
+  const photos = getPhotos();
+  const seasonal = (xmasGallery as { image: string; alt: string; category: string; width: number; height: number; blurDataURL: string }[]).filter((x) => ["residential", "residential-exterior", "home"].some((k) => x.category.includes(k)) || /home|house|brick-home|eaves/.test(x.image)).slice(0, 8);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-        { name: "Home", url: site.url },
-        { name: "Gallery", url: `${site.url}/gallery` },
-      ])) }} />
-
-      <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
-            <span className="mx-2">/</span>
-            <span>Gallery</span>
-          </nav>
-          <div className="text-center mb-14">
-            <p className="section-eyebrow mb-3">Our Work</p>
-            <h1 className="text-4xl font-extrabold text-[var(--foreground)] tracking-tight mb-4">Project Gallery</h1>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              Every installation is custom-designed and professionally installed. Browse our portfolio of permanent outdoor LED lighting projects across Southwestern Ontario.
-            </p>
-          </div>
-
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-            {projects.map((project) => (
-              <div key={project.slug} className="break-inside-avoid rounded-xl overflow-hidden relative group">
-                <Image
-                  src={project.image}
-                  alt={`${project.description} — Permanent LED lighting by Celebrate Lighting`}
-                  width={600}
-                  height={450}
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div>
-                    <div className="text-white font-semibold text-sm">{project.title}</div>
-                    <div className="text-gray-300 text-xs">{project.city}, Ontario</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-14">
-            <p className="text-[var(--muted)] mb-6">Ready to add your home to our gallery?</p>
-            <Link href="/contact" className="btn btn-primary px-8">Get Your Free Quote</Link>
+      <JsonLd data={[imageGallerySchema(photos.map((p) => ({ url: `${site.url}${p.src}`, caption: p.alt }))), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Gallery", url: `${site.url}/gallery` }])]} />
+      <section className="section !pb-8" style={{ background: "var(--surface)" }}>
+        <div className="wrap">
+          <Breadcrumbs items={[{ name: "Gallery" }]} />
+          <div className="mt-6 max-w-3xl">
+            <span className="pill mb-4">See the transformation</span>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Project Gallery</h1>
+            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Permanent roofline lighting on real homes and businesses. Filter by colour to see the look you’re picturing, then <Link href="/ai-preview" className="text-[var(--accent)] underline underline-offset-2">get a free AI preview of your own house</Link>.</p>
           </div>
         </div>
       </section>
+      <section className="section !pt-8" style={{ background: "var(--bg)" }}>
+        <div className="wrap"><GalleryGrid photos={photos} /></div>
+      </section>
+      {seasonal.length > 0 && (
+        <section className="section" style={{ background: "var(--surface)" }}>
+          <div className="wrap">
+            <SectionHeading eyebrow="Seasonal C9 & holiday work" title="Christmas Lighting Installs" sub="Traditional holiday lighting from our seasonal service: rooflines, trees, wreaths and garland." gold align="left" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {seasonal.map((x) => (
+                <div key={x.image} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)]"><Image src={x.image} alt={x.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" placeholder="blur" blurDataURL={x.blurDataURL} className="object-cover" /></div>
+              ))}
+            </div>
+            <Link href="/seasonal-lighting" className="btn btn-gold btn-sm mt-6">About seasonal lighting <Icon.Arrow width={14} height={14} /></Link>
+          </div>
+        </section>
+      )}
+      <BookCta eyebrow="Your home next" title="Want to See Your House Here?" />
     </>
   );
 }
