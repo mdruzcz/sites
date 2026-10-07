@@ -8,6 +8,7 @@ type Track = {
   artist: string;
   kind: "song" | "skit" | string;
   lastYear: boolean;
+  note?: string;
   duration: number | null;
   src: string | null;
   sizeMb: number;
@@ -221,24 +222,19 @@ export function PlaylistBuilder({ library }: { library: Library }) {
   const skitCount = orderedTracks.filter((t) => t.kind !== "song").length;
   const totalSeconds = orderedTracks.reduce((s, t) => s + (t.duration ?? 0), 0);
 
+  const lastYearSeconds = library.tracks.filter((t) => t.lastYear).reduce((s, t) => s + (t.duration ?? 0), 0);
   const groups = [
     {
       key: "last",
       title: `Last year's show (${library.showYear})`,
-      blurb: "Everything that played last year. These are pre-ticked — untick any you'd like to retire.",
+      blurb: `The ${library.showYear} show as it ran, in order — about ${fmt(lastYearSeconds)} of songs and skits. These are pre-ticked; untick any you'd like to retire.`,
       tracks: library.tracks.filter((t) => t.lastYear),
     },
     {
       key: "new",
-      title: "New songs available",
-      blurb: "Fully sequenced and ready to go. Preview and tick the ones you'd like to add.",
+      title: "More songs available",
+      blurb: "Fully sequenced and ready to go. Preview and tick the ones you'd like to add. Songs marked \"Sequenced 2025\" were prepared last year but didn't make the final show.",
       tracks: library.tracks.filter((t) => !t.lastYear && t.src),
-    },
-    {
-      key: "nopreview",
-      title: "Also available (no preview yet)",
-      blurb: "We have light sequences for these but no preview audio online yet. You can still pick them by name.",
-      tracks: library.tracks.filter((t) => !t.lastYear && !t.src),
     },
   ];
 
@@ -288,7 +284,7 @@ export function PlaylistBuilder({ library }: { library: Library }) {
         <div className="min-w-0 flex-1">
           <p className="font-bold text-[var(--ink)]">{library.fullShow.title}</p>
           <p className="text-sm text-[var(--ink-mute)]">
-            The complete {library.showYear} show as it ran, songs and skits in order · {fmt(library.fullShow.duration)}
+            The complete {library.showYear} Blenheim show as it ran, songs and skits in order · {fmt(library.fullShow.duration)}
           </p>
         </div>
       </div>
@@ -592,6 +588,7 @@ function TrackRow({
           {track.artist && <span>{track.artist}</span>}
           {track.kind === "skit" && <Badge tone="blue">Skit</Badge>}
           {track.lastYear && <Badge tone="green">Last year&apos;s show</Badge>}
+          {track.note && <Badge tone="grey">{track.note}</Badge>}
           {!track.src && <Badge tone="grey">No preview</Badge>}
         </span>
       </label>
