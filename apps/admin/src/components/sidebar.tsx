@@ -59,6 +59,10 @@ const NAV: Array<{
     items: [{ href: "/rta-cabinets/quote-requests", label: "Quote Requests" }]
   },
   {
+    section: "Light Shows",
+    items: [{ href: "/rotary", label: "Blenheim Rotary Playlist" }]
+  },
+  {
     section: "Operations",
     items: [
       { href: "/traffic", label: "Site Traffic" },

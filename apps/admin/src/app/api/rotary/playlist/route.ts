@@ -21,11 +21,16 @@ const ALLOWED_ORIGINS = new Set([
   "http://localhost:3023",
 ]);
 
+type Item = { id: string; title: string; artist?: string; kind?: string; duration?: number | null };
+type PropPick = { id: string; name: string; group?: string };
 type Playlist = {
   selected: string[];
   order: string[];
+  items?: Item[];
+  props?: PropPick[];
   notes?: string;
   editor?: string;
+  approved?: { by: string; at: string } | null;
   updatedAt?: string;
 };
 
@@ -89,11 +94,38 @@ export async function PUT(req: NextRequest) {
     const body = (await req.json()) as Partial<Playlist>;
     const clean = (v: unknown) =>
       Array.isArray(v) ? v.filter((x): x is string => typeof x === "string" && x.length < 120).slice(0, 200) : [];
+    const str = (v: unknown, max: number) => (typeof v === "string" ? v.slice(0, max) : "");
+    const items: Item[] = Array.isArray(body.items)
+      ? body.items
+          .filter((i): i is Item => !!i && typeof i === "object" && typeof (i as Item).id === "string")
+          .slice(0, 200)
+          .map((i) => ({
+            id: str(i.id, 120),
+            title: str(i.title, 160),
+            artist: str(i.artist, 160),
+            kind: str(i.kind, 20),
+            duration: typeof i.duration === "number" ? i.duration : null,
+          }))
+      : [];
+    const props: PropPick[] = Array.isArray(body.props)
+      ? body.props
+          .filter((p): p is PropPick => !!p && typeof p === "object" && typeof (p as PropPick).id === "string")
+          .slice(0, 100)
+          .map((p) => ({ id: str(p.id, 120), name: str(p.name, 160), group: str(p.group, 80) }))
+      : [];
+    const approvedIn = body.approved as { by?: unknown; at?: unknown } | null | undefined;
+    const approved =
+      approvedIn && typeof approvedIn === "object"
+        ? { by: str(approvedIn.by, 80), at: typeof approvedIn.at === "string" ? approvedIn.at : new Date().toISOString() }
+        : null;
     const playlist: Playlist = {
       selected: clean(body.selected),
       order: clean(body.order),
-      notes: typeof body.notes === "string" ? body.notes.slice(0, 2000) : "",
-      editor: typeof body.editor === "string" ? body.editor.slice(0, 80) : "",
+      items,
+      props,
+      notes: str(body.notes, 2000),
+      editor: str(body.editor, 80),
+      approved,
       updatedAt: new Date().toISOString(),
     };
     const { base, headers } = storage();

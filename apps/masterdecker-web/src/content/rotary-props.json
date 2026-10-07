@@ -1,0 +1,225 @@
+{
+  "intro": "Every prop below is a pixel-mapped coro display, built, programmed into the show and stored by Master Decker. Tick anything that catches your eye and we'll put together a quote.",
+  "groups": [
+    {
+      "key": "characters",
+      "title": "Singing & animated characters",
+      "blurb": "Faces and figures that sing along to the music — the crowd favourites at any show.",
+      "items": [
+        {
+          "id": "cpsantasleigh",
+          "name": "Singing Santa & His Sleigh",
+          "size": "Large",
+          "blurb": "Santa belts out every song from a sleigh piled with gifts. A natural centrepiece beside the bandstand."
+        },
+        {
+          "id": "cpsantaface",
+          "name": "Singing Santa Face",
+          "size": "Large",
+          "blurb": "A giant animated Santa face with moving mouth and eyes that lip-syncs to every track."
+        },
+        {
+          "id": "cpmrsclausface",
+          "name": "Singing Mrs Claus Face",
+          "size": "Large",
+          "blurb": "Pair her with Santa for duets — the two faces can trade verses."
+        },
+        {
+          "id": "cpsnowman-snowy",
+          "name": "Snowy the Singing Snowman",
+          "size": "Large",
+          "blurb": "A cheerful singing snowman with scarf and top hat. Kids love him."
+        },
+        {
+          "id": "cptree-molly",
+          "name": "Molly the Singing Christmas Tree",
+          "size": "Large",
+          "blurb": "A singing tree with expressive eyes and mouth that can carry a whole song solo."
+        },
+        {
+          "id": "cpimpact-a",
+          "name": "Impact Characters",
+          "size": "Large",
+          "blurb": "A whole cast of bold, high-impact singing characters that light up the entire scene."
+        },
+        {
+          "id": "cpnarwhal",
+          "name": "Tiny the Singing Narwhal",
+          "size": "Medium",
+          "blurb": "An unexpected star — a singing narwhal that gets a laugh every time."
+        },
+        {
+          "id": "cppenguinsnowball",
+          "name": "Jack the Snowball-Throwing Penguin",
+          "size": "Medium",
+          "blurb": "Animated penguin that winds up and throws a snowball in time with the beat."
+        },
+        {
+          "id": "cppenguinwaving",
+          "name": "Chip the Waving Penguin",
+          "size": "Medium",
+          "blurb": "Waves at passing cars and families. A perfect greeter at the entrance."
+        },
+        {
+          "id": "cpcarolpenguin-red",
+          "name": "Caroling Penguin",
+          "size": "Medium",
+          "blurb": "A penguin with a red songbook, singing along with the choir numbers."
+        }
+      ]
+    },
+    {
+      "key": "scene",
+      "title": "Scene builders",
+      "blurb": "Big shapes that fill the park and frame the stage.",
+      "items": [
+        {
+          "id": "cpnorthpole-snow",
+          "name": "North Pole Sign",
+          "size": "Tall",
+          "blurb": "A snow-capped North Pole post with gold top — a landmark for photos."
+        },
+        {
+          "id": "cpreindeer-sm-walking",
+          "name": "Walking Animated Reindeer",
+          "size": "Medium",
+          "blurb": "Legs animate so the reindeer walks across the lawn. Line up several for Santa's team."
+        },
+        {
+          "id": "cpreindeer-sm-rearing",
+          "name": "Rearing Reindeer",
+          "size": "Medium",
+          "blurb": "Rears up on its hind legs — great as the lead reindeer in front of the sleigh."
+        },
+        {
+          "id": "cpreindeer-sm-grazing",
+          "name": "Grazing Reindeer",
+          "size": "Medium",
+          "blurb": "Head-down grazing pose that looks natural scattered among the trees."
+        },
+        {
+          "id": "cpgiftsofthree-rg",
+          "name": "Three-Box Gift Stack",
+          "size": "Medium",
+          "blurb": "A stack of three wrapped presents with animated ribbons and bows."
+        },
+        {
+          "id": "cpgiftlarge-rg",
+          "name": "Large Gift Box",
+          "size": "Large",
+          "blurb": "One oversized present with a bow — stack a few for a pile of gifts under the trees."
+        },
+        {
+          "id": "cpginger-dad-l",
+          "name": "Gingerbread Dad",
+          "size": "Large",
+          "blurb": "A friendly gingerbread man with top hat and icing details that chase to the music."
+        },
+        {
+          "id": "cpginger-mom-l",
+          "name": "Gingerbread Mom",
+          "size": "Large",
+          "blurb": "Gingerbread Mom with holly — pair with Dad for a gingerbread family."
+        },
+        {
+          "id": "cpmaple-leaf-l",
+          "name": "Canadian Maple Leaf",
+          "size": "Large",
+          "blurb": "A big maple leaf in red and white — a proud Canadian touch for a community show."
+        }
+      ]
+    },
+    {
+      "key": "sky",
+      "title": "Snowflakes, stars & spinners",
+      "blurb": "Spinning and twinkling pieces that add motion and sparkle everywhere.",
+      "items": [
+        {
+          "id": "cw24snowflake-1",
+          "name": "24\" Snowflake",
+          "size": "24 in",
+          "blurb": "A classic pixel snowflake — hang several at different heights for falling-snow effects."
+        },
+        {
+          "id": "cw24snowflake-snowman",
+          "name": "Dance of the Snowman Snowflake",
+          "size": "36 in",
+          "blurb": "A 36-inch snowflake with dancing snowmen worked into the design."
+        },
+        {
+          "id": "cpwreath-xmas1",
+          "name": "Christmas Wreath Spinner",
+          "size": "45 in",
+          "blurb": "A 45-inch green wreath with red bow that spins and chases with the music."
+        },
+        {
+          "id": "cpflowerl-poinsettia",
+          "name": "Poinsettia Spinner",
+          "size": "45 in",
+          "blurb": "A giant red poinsettia that spins and blooms in time with the show."
+        },
+        {
+          "id": "cwstar36-5l",
+          "name": "Five-Layer Star",
+          "size": "36 in",
+          "blurb": "A 36-inch star with five rings of pixels for deep, radiating effects — ideal for the peak of the bandstand."
+        },
+        {
+          "id": "cwstar22",
+          "name": "22\" Star",
+          "size": "22 in",
+          "blurb": "A smaller star to scatter across the tree line."
+        },
+        {
+          "id": "cpc9lf-r",
+          "name": "Giant C9 Bulb with Singing Face",
+          "size": "Large",
+          "blurb": "An oversized red C9 bulb with a singing face — fun and nostalgic."
+        },
+        {
+          "id": "cpc9lm-g",
+          "name": "Giant C9 Bulb (Matrix)",
+          "size": "Large",
+          "blurb": "A green giant C9 bulb with a full pixel matrix for text and patterns."
+        },
+        {
+          "id": "cpbaublelp-sw",
+          "name": "Large Pointed Bauble",
+          "size": "Large",
+          "blurb": "A giant pointed ornament with a swirl pattern — hang it like a tree ornament the size of a person."
+        },
+        {
+          "id": "cpbaublelr-stsw",
+          "name": "Large Round Bauble",
+          "size": "Large",
+          "blurb": "A giant round ornament with stripes and swirls that animate."
+        }
+      ]
+    },
+    {
+      "key": "candy",
+      "title": "Candy Lane",
+      "blurb": "Line the walkway with sweets.",
+      "items": [
+        {
+          "id": "cpcanel-red",
+          "name": "Red Candy Cane",
+          "size": "Tall",
+          "blurb": "A tall striped candy cane — use pairs to frame paths and the stage steps."
+        },
+        {
+          "id": "cplollipop-red",
+          "name": "Red Lollipop",
+          "size": "Tall",
+          "blurb": "A giant swirled lollipop on a stick."
+        },
+        {
+          "id": "cpsquarecandy-redstripe",
+          "name": "Red Striped Candy",
+          "size": "Medium",
+          "blurb": "A wrapped candy with twisted ends and animated stripes."
+        }
+      ]
+    }
+  ]
+}

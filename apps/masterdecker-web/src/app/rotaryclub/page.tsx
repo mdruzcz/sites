@@ -4,6 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PlaylistBuilder } from "@/components/rotary/playlist-builder";
 import library from "@/content/rotary-songs.json";
+import catalog from "@/content/rotary-props.json";
 
 export const dynamic = "force-static";
 
@@ -47,13 +48,13 @@ export default function RotaryClubPage() {
               Press play to preview any song, tick the ones you want in this year&apos;s show, then drag
               them into the order you&apos;d like them played. Everything from last year&apos;s show is
               highlighted in green and already ticked, so untick anything you&apos;d like to swap out.
-              Hit <strong className="text-white">Save playlist</strong>{" "}when you&apos;re happy and we&apos;ll
-              see your picks on our end.
+              Hit <strong className="text-white">Save playlist</strong>{" "}as you go, browse the add-on prop
+              ideas, and press <strong className="text-white">Approve</strong>{" "}when it&apos;s final.
             </p>
           </div>
         </section>
 
-        <PlaylistBuilder library={library} />
+        <PlaylistBuilder library={library} catalog={catalog} />
       </main>
       <Footer />
     </>

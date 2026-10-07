@@ -24,9 +24,18 @@ type Library = {
 type SavedPlaylist = {
   selected: string[];
   order: string[];
+  items?: { id: string; title: string; artist?: string; kind?: string; duration?: number | null }[];
+  props?: { id: string; name: string; group?: string }[];
   notes?: string;
   editor?: string;
+  approved?: { by: string; at: string } | null;
   updatedAt?: string;
+};
+
+type PropItem = { id: string; name: string; size: string; blurb: string };
+type PropCatalog = {
+  intro: string;
+  groups: { key: string; title: string; blurb: string; items: PropItem[] }[];
 };
 
 const API =
@@ -54,20 +63,34 @@ function fmtWhen(iso?: string) {
   }
 }
 
-export function PlaylistBuilder({ library }: { library: Library }) {
+export function PlaylistBuilder({ library, catalog }: { library: Library; catalog: PropCatalog }) {
   const byId = useMemo(() => new Map(library.tracks.map((t) => [t.id, t])), [library.tracks]);
   const lastYearIds = useMemo(() => library.tracks.filter((t) => t.lastYear).map((t) => t.id), [library.tracks]);
+  const propById = useMemo(
+    () => new Map(catalog.groups.flatMap((g) => g.items.map((p) => [p.id, { ...p, group: g.title }] as const))),
+    [catalog],
+  );
 
   // ---- selection + order -------------------------------------------------
   const [order, setOrder] = useState<string[]>(lastYearIds);
   const selected = useMemo(() => new Set(order), [order]);
+  const [propPicks, setPropPicks] = useState<string[]>([]);
   const [notes, setNotes] = useState("");
   const [editor, setEditor] = useState("");
+  const [approved, setApproved] = useState<{ by: string; at: string } | null>(null);
   const [loaded, setLoaded] = useState<SavedPlaylist | null>(null);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "offline">("loading");
   const [dirty, setDirty] = useState(false);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle");
-  const [step, setStep] = useState<"pick" | "order">("pick");
+  const [step, setStep] = useState<"pick" | "order" | "props">("pick");
+  const nameRef = useRef<HTMLInputElement | null>(null);
+
+  // Any edit after approval re-opens the plan; the client re-approves when done.
+  const touch = useCallback(() => {
+    setDirty(true);
+    setSaveState("idle");
+    setApproved(null);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -80,8 +103,10 @@ export function PlaylistBuilder({ library }: { library: Library }) {
         if (data.playlist) {
           const known = (data.playlist.order?.length ? data.playlist.order : data.playlist.selected).filter((id) => byId.has(id));
           setOrder(known);
+          setPropPicks((data.playlist.props ?? []).map((p) => p.id).filter((id) => propById.has(id)));
           setNotes(data.playlist.notes ?? "");
           setEditor(data.playlist.editor ?? "");
+          setApproved(data.playlist.approved ?? null);
           setLoaded(data.playlist);
         }
         setLoadState("ready");
@@ -92,7 +117,7 @@ export function PlaylistBuilder({ library }: { library: Library }) {
     return () => {
       cancelled = true;
     };
-  }, [byId]);
+  }, [byId, propById]);
 
   useEffect(() => {
     if (!dirty) return;
@@ -103,59 +128,103 @@ export function PlaylistBuilder({ library }: { library: Library }) {
     return () => window.removeEventListener("beforeunload", onUnload);
   }, [dirty]);
 
-  const toggle = useCallback((id: string) => {
-    setOrder((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
-    setDirty(true);
-    setSaveState("idle");
-  }, []);
+  const toggle = useCallback(
+    (id: string) => {
+      setOrder((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+      touch();
+    },
+    [touch],
+  );
 
-  const move = useCallback((id: string, dir: -1 | 1) => {
-    setOrder((prev) => {
-      const i = prev.indexOf(id);
-      const j = i + dir;
-      if (i < 0 || j < 0 || j >= prev.length) return prev;
-      const next = [...prev];
-      [next[i], next[j]] = [next[j], next[i]];
-      return next;
-    });
-    setDirty(true);
-    setSaveState("idle");
-  }, []);
+  const toggleProp = useCallback(
+    (id: string) => {
+      setPropPicks((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+      touch();
+    },
+    [touch],
+  );
 
-  const moveTo = useCallback((id: string, targetIndex: number) => {
-    setOrder((prev) => {
-      const from = prev.indexOf(id);
-      if (from < 0) return prev;
-      const next = prev.filter((x) => x !== id);
-      next.splice(Math.max(0, Math.min(targetIndex, next.length)), 0, id);
-      return next;
-    });
-    setDirty(true);
-    setSaveState("idle");
-  }, []);
+  const move = useCallback(
+    (id: string, dir: -1 | 1) => {
+      setOrder((prev) => {
+        const i = prev.indexOf(id);
+        const j = i + dir;
+        if (i < 0 || j < 0 || j >= prev.length) return prev;
+        const next = [...prev];
+        [next[i], next[j]] = [next[j], next[i]];
+        return next;
+      });
+      touch();
+    },
+    [touch],
+  );
+
+  const moveTo = useCallback(
+    (id: string, targetIndex: number) => {
+      setOrder((prev) => {
+        const from = prev.indexOf(id);
+        if (from < 0) return prev;
+        const next = prev.filter((x) => x !== id);
+        next.splice(Math.max(0, Math.min(targetIndex, next.length)), 0, id);
+        return next;
+      });
+      touch();
+    },
+    [touch],
+  );
 
   const resetToLastYear = () => {
     setOrder(lastYearIds);
-    setDirty(true);
-    setSaveState("idle");
+    touch();
   };
 
-  const save = async () => {
+  const persist = async (approval: { by: string; at: string } | null) => {
     setSaveState("saving");
     try {
+      const items = order.map((id) => {
+        const t = byId.get(id)!;
+        return { id, title: t.title, artist: t.artist, kind: t.kind, duration: t.duration };
+      });
+      const props = propPicks.map((id) => {
+        const p = propById.get(id)!;
+        return { id, name: p.name, group: p.group };
+      });
       const r = await fetch(API, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ selected: order, order, notes, editor }),
+        body: JSON.stringify({ selected: order, order, items, props, notes, editor, approved: approval }),
       });
       if (!r.ok) throw new Error(String(r.status));
       const data = (await r.json()) as { playlist: SavedPlaylist };
       setLoaded(data.playlist);
+      setApproved(data.playlist.approved ?? null);
       setDirty(false);
       setSaveState("saved");
+      return true;
     } catch {
       setSaveState("error");
+      return false;
     }
+  };
+
+  const save = () => persist(null);
+
+  const approve = async () => {
+    let by = editor.trim();
+    if (!by) {
+      by = (window.prompt("Please enter your name to approve this year's playlist:") ?? "").trim();
+      if (!by) return;
+      setEditor(by);
+    }
+    if (
+      !window.confirm(
+        `Approve this playlist as final for the ${library.showYear + 1} show?\n\n${order.length} items · ${fmt(totalSeconds)}${
+          propPicks.length ? `\n${propPicks.length} prop idea${propPicks.length === 1 ? "" : "s"} flagged` : ""
+        }\n\nYou can still come back and make changes later — we'll just ask you to approve again.`,
+      )
+    )
+      return;
+    await persist({ by, at: new Date().toISOString() });
   };
 
   // ---- audio ----------------------------------------------------------------
@@ -242,6 +311,10 @@ export function PlaylistBuilder({ library }: { library: Library }) {
     const lines = orderedTracks.map((t, i) => `${i + 1}. ${t.title}${t.artist ? ` — ${t.artist}` : ""} (${fmt(t.duration)})`);
     lines.push("", `Total: ${orderedTracks.length} items · ${fmt(totalSeconds)}`);
     if (notes.trim()) lines.push("", `Notes: ${notes.trim()}`);
+    if (propPicks.length) {
+      lines.push("", "Prop ideas:");
+      propPicks.forEach((id) => lines.push(`- ${propById.get(id)?.name ?? id}`));
+    }
     try {
       await navigator.clipboard.writeText(lines.join("\n"));
       alert("Playlist copied to your clipboard.");
@@ -253,6 +326,45 @@ export function PlaylistBuilder({ library }: { library: Library }) {
   return (
     <div className="container py-8 md:py-12 pb-40">
       <audio ref={audioRef} preload="none" />
+
+      {/* approval banner */}
+      <div
+        className={`rounded-2xl border p-4 md:p-5 mb-6 flex flex-col md:flex-row md:items-center gap-4 ${
+          approved ? "bg-emerald-50 border-emerald-300" : "bg-white border-[var(--border)]"
+        }`}
+      >
+        <div className="flex-1">
+          {approved ? (
+            <>
+              <p className="font-extrabold text-emerald-900 text-lg">
+                ✅ Approved by {approved.by} · {fmtWhen(approved.at)}
+              </p>
+              <p className="text-sm text-emerald-800">
+                This playlist is locked in as final for the {library.showYear + 1}{" "}show. Changing anything will
+                re-open it — just press Approve again when you&apos;re done.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="font-extrabold text-[var(--ink)] text-lg">Happy with everything? Approve the playlist.</p>
+              <p className="text-sm text-[var(--ink-soft)]">
+                Save as you go. When the songs, the order and any prop ideas are final, press{" "}
+                <strong>Approve</strong>{" "}so we know to start building this year&apos;s show.
+              </p>
+            </>
+          )}
+        </div>
+        {!approved && (
+          <button
+            type="button"
+            onClick={approve}
+            disabled={saveState === "saving" || order.length === 0}
+            className="btn-primary whitespace-nowrap disabled:opacity-60 !bg-emerald-600 hover:!bg-emerald-700 !shadow-emerald-600/30"
+          >
+            ✓ Approve this year&apos;s show
+          </button>
+        )}
+      </div>
 
       {/* status / last saved */}
       <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 mb-6 text-sm">
@@ -293,7 +405,49 @@ export function PlaylistBuilder({ library }: { library: Library }) {
       <div className="flex gap-2 mb-6" role="tablist" aria-label="Playlist steps">
         <StepTab active={step === "pick"} onClick={() => setStep("pick")} n={1} label="Pick your songs" />
         <StepTab active={step === "order"} onClick={() => setStep("order")} n={2} label={`Set the order (${orderedTracks.length})`} />
+        <StepTab
+          active={step === "props"}
+          onClick={() => setStep("props")}
+          n={3}
+          label={`Add-on ideas${propPicks.length ? ` (${propPicks.length})` : ""}`}
+        />
       </div>
+
+      {step === "props" && (
+        <div className="space-y-10">
+          <div className="rounded-2xl bg-[var(--shell)] text-white p-6 md:p-8 relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-[var(--accent)]/20 blur-3xl" aria-hidden="true" />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)] mb-2">Make this year bigger</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Add-on props for the {library.showYear + 1} show</h2>
+            <p className="text-white/80 max-w-3xl leading-relaxed">{catalog.intro}</p>
+            <p className="text-white/60 text-sm mt-3">
+              Tick anything you like — nothing is committed. We&apos;ll follow up with options and pricing for your
+              shortlist.
+            </p>
+          </div>
+          {catalog.groups.map((g) => (
+            <section key={g.key}>
+              <div className="mb-4">
+                <h3 className="text-xl md:text-2xl font-extrabold text-[var(--ink)]">{g.title}</h3>
+                <p className="text-sm text-[var(--ink-mute)]">{g.blurb}</p>
+              </div>
+              <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {g.items.map((p) => (
+                  <PropCard key={p.id} prop={p} picked={propPicks.includes(p.id)} onToggle={() => toggleProp(p.id)} />
+                ))}
+              </ul>
+            </section>
+          ))}
+          <div className="flex flex-wrap gap-3 pt-2">
+            <button type="button" onClick={save} className="btn-primary">
+              Save my shortlist
+            </button>
+            <button type="button" onClick={() => setStep("order")} className="btn-outline">
+              ← Back to the order
+            </button>
+          </div>
+        </div>
+      )}
 
       {step === "pick" && (
         <div className="space-y-10">
@@ -323,7 +477,7 @@ export function PlaylistBuilder({ library }: { library: Library }) {
               ),
           )}
           <div className="flex flex-wrap gap-3 pt-2">
-            <button type="button" onClick={() => setStep("order")} className="btn-primary">
+            <button type="button" onClick={() => { setStep("order"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="btn-primary">
               Next: set the order →
             </button>
             <button type="button" onClick={resetToLastYear} className="btn-outline">
@@ -378,6 +532,7 @@ export function PlaylistBuilder({ library }: { library: Library }) {
             <label className="block text-sm">
               <span className="font-semibold">Your name</span>
               <input
+                ref={nameRef}
                 value={editor}
                 onChange={(e) => {
                   setEditor(e.target.value);
@@ -406,6 +561,9 @@ export function PlaylistBuilder({ library }: { library: Library }) {
             <button type="button" onClick={copyList} className="btn-outline w-full">
               Copy list as text
             </button>
+            <button type="button" onClick={() => { setStep("props"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="btn-primary w-full">
+              Next: add-on ideas →
+            </button>
           </aside>
         </div>
       )}
@@ -423,12 +581,22 @@ export function PlaylistBuilder({ library }: { library: Library }) {
               </span>
             </p>
             <p className="text-xs text-[var(--ink-mute)] truncate">
-              {saveState === "saved" && "Saved — thanks! We can see your playlist now."}
+              {saveState === "saved" && (approved ? "Approved and saved — thank you!" : "Saved — thanks! We can see your playlist now.")}
               {saveState === "saving" && "Saving…"}
               {saveState === "error" && "Save failed. Please try again or call us at (519) 266-6796."}
-              {saveState === "idle" && (dirty ? "You have unsaved changes." : "Everything is saved.")}
+              {saveState === "idle" && (dirty ? "You have unsaved changes." : approved ? "Approved ✓" : "Everything is saved.")}
             </p>
           </div>
+          {!approved && (
+            <button
+              type="button"
+              onClick={approve}
+              disabled={saveState === "saving" || order.length === 0}
+              className="hidden sm:inline-flex btn-outline whitespace-nowrap disabled:opacity-60 !border-emerald-600 !text-emerald-700"
+            >
+              ✓ Approve
+            </button>
+          )}
           <button
             type="button"
             onClick={save}
@@ -601,6 +769,49 @@ function TrackRow({
         aria-label={`Select ${track.title}`}
         className="w-6 h-6 shrink-0 accent-[var(--accent)] cursor-pointer"
       />
+    </li>
+  );
+}
+
+function PropCard({ prop, picked, onToggle }: { prop: PropItem; picked: boolean; onToggle: () => void }) {
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-pressed={picked}
+        className={`group w-full text-left rounded-2xl overflow-hidden border bg-white transition-all hover:-translate-y-0.5 hover:shadow-xl ${
+          picked ? "ring-2 ring-[var(--accent)] border-transparent shadow-lg" : "border-[var(--border)] shadow-sm"
+        }`}
+      >
+        <div className="relative aspect-[4/3] bg-[#0b0b0b]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/images/rotary/props/${prop.id}.jpg`}
+            alt={prop.name}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <span
+            className={`absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold shadow ${
+              picked ? "bg-[var(--accent)]" : "bg-black/50 group-hover:bg-black/70"
+            }`}
+            aria-hidden="true"
+          >
+            {picked ? "✓" : "+"}
+          </span>
+          <span className="absolute bottom-2 left-2 text-[10px] font-bold uppercase tracking-wider bg-white/90 text-[var(--ink)] px-2 py-0.5 rounded-full">
+            {prop.size}
+          </span>
+        </div>
+        <div className="p-3">
+          <p className="font-bold leading-tight text-[var(--ink)]">{prop.name}</p>
+          <p className="text-xs text-[var(--ink-mute)] mt-1 leading-snug">{prop.blurb}</p>
+          <p className={`text-xs font-bold mt-2 ${picked ? "text-[var(--accent)]" : "text-[var(--ink-soft)]"}`}>
+            {picked ? "✓ On my shortlist" : "Add to shortlist"}
+          </p>
+        </div>
+      </button>
     </li>
   );
 }
