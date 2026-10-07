@@ -58,9 +58,20 @@ export async function OPTIONS(req: NextRequest) {
 export async function GET(req: NextRequest) {
   try {
     const { base, headers } = storage();
-    // Authenticated read bypasses the public CDN cache so a fresh save is
-    // visible immediately.
-    const r = await fetch(`${base}/authenticated/${BUCKET}/${KEY}`, { headers, cache: "no-store" });
+    // The storage CDN caches `playlist.json` for minutes (and ignores query
+    // strings), so a reload right after a save could show stale picks. Each
+    // save also writes a uniquely named snapshot under history/, which is
+    // never cached — read the newest one and fall back to playlist.json only
+    // if no snapshot exists.
+    const list = await fetch(`${base}/list/${BUCKET}`, {
+      method: "POST",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({ prefix: "history", limit: 1, sortBy: { column: "name", order: "desc" } }),
+      cache: "no-store",
+    });
+    const newest = list.ok ? ((await list.json()) as { name: string }[])[0]?.name : undefined;
+    const path = newest ? `history/${newest}` : KEY;
+    const r = await fetch(`${base}/authenticated/${BUCKET}/${path}`, { headers, cache: "no-store" });
     if (r.status === 404 || r.status === 400) {
       return cors(req, NextResponse.json({ playlist: null }));
     }
