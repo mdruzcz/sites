@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
+import main from "@/content/main-content.json";
 
 export const revalidate = 3600;
 
@@ -27,8 +28,10 @@ const projects = [
   { title: "Stamped Concrete Patio", category: "Concrete", image: "/images/wp-stamped-concrete.jpg", alt: "Stamped concrete patio by Master Decker" },
   { title: "Stamped Concrete Driveway", category: "Concrete", image: "/images/wp-stamped-concrete-2.jpg", alt: "Stamped concrete driveway by Master Decker" },
   { title: "Heated Driveway Install", category: "Concrete", image: "/images/wp-heated-driveway.jpg", alt: "Heated driveway installation by Master Decker" },
-  { title: "Custom Arbor", category: "Pergolas", image: "/images/wp-arbor.jpg", alt: "Custom arbor by Master Decker" },
-  { title: "Boat Dock Staining", category: "Staining", image: "/images/wp-boat-dock.jpg", alt: "Boat dock staining by Master Decker" },
+  { title: "Cedar Pergola Restoration", category: "Staining", image: "/images/wp-arbor.jpg", alt: "Cedar pergola staining and restoration by Master Decker in London Ontario" },
+  { title: "Concrete Retaining Wall", category: "Concrete", image: "/images/ss-concrete-wall.jpg", alt: "Poured concrete retaining wall by Master Decker in Southwestern Ontario" },
+  { title: "Vinyl Privacy Fence", category: "Fences", image: "/images/ss-vinyl-fence.jpg", alt: "Vinyl privacy fence installation by Master Decker" },
+  { title: "Block Retaining Wall", category: "Concrete", image: "/images/ss-block-wall.jpg", alt: "Engineered block retaining wall by Master Decker in London Ontario" },
 ];
 
 export default function ProjectsPage() {
@@ -46,6 +49,17 @@ export default function ProjectsPage() {
 
         <section className="section bg-white">
           <div className="container">
+            <div className="max-w-4xl mx-auto mb-14">
+              <div className="text-center mb-8">
+                <p className="eyebrow mb-3">Portfolio</p>
+                <h2 className="h-display text-3xl md:text-4xl">{main.projectsIntro.heading}</h2>
+              </div>
+              <div className="prose-md text-center sm:text-left">
+                {main.projectsIntro.paras.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((p, i) => (
                 <article key={`${p.title}-${i}`} className="group gallery-item">

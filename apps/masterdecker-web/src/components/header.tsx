@@ -7,10 +7,9 @@ import services from "@/content/services.json";
 
 const aboutLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Why Us", href: "/why-us" },
-  { label: "Composite Decking Colours", href: "/composite-decking-colours" },
-  { label: "Deck Stain Colour Choices", href: "/stain-choices" },
-  { label: "Concrete Sealer Choices", href: "/concrete-sealer-choices" },
+  { label: "All Services", href: "/services" },
+  { label: "Project Examples", href: "/project-examples" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Service Locations", href: "/service-locations" },
 ];
@@ -54,7 +53,7 @@ export function Header() {
             <Link href="/contact" className="text-sm font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors">Contact Us</Link>
           </nav>
           <div className="flex items-center gap-5">
-            <a href={`mailto:${site.email}`} className="text-xs hover:text-[var(--ink)] transition-colors">{site.email}</a>
+            <Link href="/contact" className="text-xs font-semibold uppercase tracking-wider hover:text-[var(--ink)] transition-colors">Request a Free Quote</Link>
             <a href={site.phoneHref} className="text-base font-bold hover:text-[var(--ink)] transition-colors">{site.phone}</a>
           </div>
         </div>

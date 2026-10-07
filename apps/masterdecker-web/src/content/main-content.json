@@ -1,0 +1,56 @@
+{
+  "homeIntro": {
+    "heading": "Outdoor Living Specialists Serving London & Southwestern Ontario",
+    "paras": [
+      "Master Decker has been transforming backyards across Southwestern Ontario since 2014. What started as a deck-focused crew quickly grew into a full outdoor-living contractor — one team capable of handling everything from pressure-treated deck builds and solid-colour staining to wood privacy fences, concrete driveways, exposed aggregate patios, and engineered retaining walls. If it lives outside your back door, chances are we've built or refinished it.",
+      "Homeowners choose us because outdoor projects rarely come in isolation. A new deck often needs a matching fence. A resurfaced patio leads to a retaining wall conversation. Rather than hiring three separate contractors and coordinating three separate schedules, you get a single point of contact, a single written quote, and a crew that already knows your property. That continuity makes a real difference in how a project turns out.",
+      "We serve London and a wide band of communities across Southwestern Ontario — from Kitchener-Waterloo and Hamilton to the Greater Toronto Area — with the same locally-rooted team, the same commitment to honest pricing, and the same standard of work we've built our reputation on for over a decade. Give us a call at (519) 266-6796 or request a free written quote online."
+    ]
+  },
+  "about": {
+    "story": [
+      "Master Decker was founded in 2014 by a small, tight-knit crew with one straightforward idea: build decks properly, treat customers honestly, and let the work speak. In the early years that meant showing up on time, cleaning up every day, and delivering the kind of finish that holds up through a Canadian winter and still looks sharp five seasons later. Word spread quickly in the London area, and a waiting list started forming.",
+      "As the company grew, so did what clients were asking for. A homeowner who trusted us with a new composite deck would mention the fence was rotting too. Another would ask whether we could pour the concrete pad below the stairs while we were already on site. Rather than turning that work away, we invested in expanding the crew's skills and trade coverage — adding fence installation, concrete flatwork, and eventually retaining wall construction to the core offering. By the end of our first decade, Master Decker had quietly become the outdoor-living contractor in Southwestern Ontario.",
+      "Today we operate across a large stretch of the province, from London and the surrounding communities of St. Thomas, Strathroy, and Woodstock, east through Brantford and Hamilton, north through Kitchener-Waterloo and Guelph, and all the way into the Greater Toronto Area. The geography has expanded, but the approach hasn't changed: small crew, personal attention, written quotes with no surprise add-ons. Every project is still treated as if our name is going on a sign in that front yard — because in a real sense, it is.",
+      "We're fully insured, WSIB-covered, and carry the documentation to prove it before we ever set foot on your property. We believe that transparency about credentials, pricing, and timelines is the foundation of a good contractor relationship. You'll never be left guessing what something costs or when we'll arrive. That's not a marketing line — it's just how we prefer to do business, and it's the reason so much of our new work still comes through referrals from customers we built something for years ago."
+    ],
+    "whyChoose": [
+      { "title": "Craftsmanship That Holds", "desc": "We build and refinish to last — proper prep, quality materials, and a finish that handles freeze-thaw cycles, UV exposure, and daily family use without letting you down after one season." },
+      { "title": "One Contractor, Multiple Trades", "desc": "Deck, fence, concrete, retaining wall — one call, one quote, one crew. No coordinating between separate contractors or paying twice for someone to figure out what the last guy did." },
+      { "title": "Transparent Written Quotes", "desc": "Every estimate arrives in writing with a clear line-item breakdown. The number we quote is the number you pay — no hidden charges once the project is underway and no vague verbal ballparks." },
+      { "title": "Local, Insured & Accountable", "desc": "We're based in Southwestern Ontario, fully insured, and WSIB-covered. You're hiring a real local business with a track record — not an out-of-province crew chasing seasonal work." }
+    ]
+  },
+  "servicesIntro": {
+    "heading": "Every Outdoor Service Your Property Needs Under One Roof",
+    "paras": [
+      "Master Decker's full-service offering covers the complete range of outdoor living work that Southwestern Ontario homeowners ask for most. We build new wood and composite decks from the ground up, and we refinish existing decks with professional staining and sealing. We install privacy and picket fences, pour and finish concrete driveways and exposed aggregate patios, and engineer block retaining walls that manage grade and erosion while looking the part. Whatever your outdoor space needs, we have the trade knowledge and tools to deliver it properly.",
+      "The real advantage isn't any single service — it's having all of them available through one contractor who already knows your property. Projects frequently overlap: the concrete pad under a new deck, the fence that wraps the same yard, the retaining wall that levels the slope before the patio goes in. When one crew handles the full scope, the details align, the timeline is coordinated, and the finished result looks like it was designed as a whole — because it was. That's the Master Decker difference."
+    ]
+  },
+  "locations": {
+    "intro": [
+      "Master Decker travels to clients across a wide stretch of Southwestern Ontario, and we don't charge a travel premium for communities within our service area. Whether you're in London, the Kitchener-Waterloo region, the Hamilton area, or the Greater Toronto Area, you get the same crew, the same written quote process, and the same standard of work. Our willingness to travel is a direct result of the demand we've built up — clients in every corner of the region have asked us back, and we kept extending the map.",
+      "If you're unsure whether we cover your community, the honest answer is: call us. We serve a broad territory and have likely worked in your neighbourhood before. We can usually confirm coverage in under a minute and get a site visit on the calendar from there. No obligation, no sales pressure — just a straightforward conversation about what you're trying to get done and whether we're the right fit."
+    ],
+    "regions": {
+      "London": "London remains our home base, and it's where much of our deck staining, deck building, fence installation, and concrete work takes root each spring. We serve the full city and the communities that ring it — St. Thomas to the south, Strathroy to the west, Woodstock to the east. Homeowners across this corridor know us by reputation, and a good portion of our London-area work comes through neighbour referrals. If you're in the Forest City or nearby, you're in good hands.",
+      "Kitchener": "We've been active in the Kitchener-Waterloo corridor for several years, serving homeowners in Kitchener, Waterloo, Cambridge, and Guelph with the same outdoor services we're known for in London. The region's mix of mature neighbourhoods and newer subdivisions keeps us busy with everything from deck refinishing on older properties to full composite deck builds on recently constructed homes. If you're in the Tri-Cities or Guelph, we're well within range.",
+      "Hamilton": "The Hamilton area — including Burlington, Ancaster, Brantford, and the communities along the escarpment — generates consistent demand for retaining walls, concrete patios, and deck work, and we meet that demand year-round. The terrain here often calls for more engineering than flat-lot work, and that's where our experience with block retaining walls and graded concrete flatwork earns its keep. We're comfortable on challenging lots and enjoy the variety the region brings.",
+      "Toronto": "Master Decker serves the Greater Toronto Area including Mississauga, Oakville, Vaughan, and Markham. GTA homeowners often reach out after difficulty finding contractors who show up reliably and price honestly — both things we take seriously. Whether it's a cedar deck refinish in Oakville or a concrete driveway replacement in Vaughan, we bring the same written-quote process and trade-direct approach that's worked for us in Southwestern Ontario for over a decade."
+    }
+  },
+  "projectsIntro": {
+    "heading": "A Decade of Outdoor Projects Across Southwestern Ontario",
+    "paras": [
+      "The portfolio you're browsing represents a cross-section of the outdoor work Master Decker has completed since 2014 — deck builds in a range of materials and configurations, staining and restoration projects that brought weathered surfaces back to life, privacy fences, exposed aggregate patios, concrete driveways, and retaining walls at varying scales. The photography is unretouched and pulled from real job sites, because we'd rather show you what a finished project actually looks like on a typical property than stage something that doesn't reflect real-world conditions.",
+      "Every project in this gallery started with the same process: a site visit, a written quote, and a conversation about what the homeowner was trying to achieve. Some are straightforward single-scope jobs; others are multi-trade efforts where a deck, fence, and concrete pad came together in one coordinated build season. If something in the gallery resembles what you have in mind, feel free to mention it when you reach out — it gives us a useful starting point for your quote and helps us understand the look and finish you're going for."
+    ]
+  },
+  "contactIntro": {
+    "paras": [
+      "Getting a quote from Master Decker is simple and low-pressure. Reach out by phone at (519) 266-6796 or use the form on this page, and we'll get back to you within one business day to arrange a site visit at your convenience. Every quote is provided in writing with a clear scope and price — no verbal estimates, no ambiguous line items. You'll know exactly what you're agreeing to before any work begins.",
+      "We're happy to answer questions before you're ready to commit. If you're still in the planning stage, comparing options, or just trying to get a realistic budget in mind, a quick conversation with our team costs you nothing and usually saves time later. Southwestern Ontario homeowners have been trusting us with their outdoor spaces since 2014 — we'd like to earn that trust from you too."
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
 import { ContactForm } from "@/components/contact-form";
 import { site } from "@/lib/site";
+import main from "@/content/main-content.json";
 
 export const revalidate = 3600;
 
@@ -29,7 +30,6 @@ const jsonLd = {
     "@type": "LocalBusiness",
     name: site.legalName,
     telephone: site.phone,
-    email: site.email,
     openingHours: ["Mo-Fr 08:00-18:00", "Sa 10:00-17:00"],
   },
 };
@@ -50,10 +50,16 @@ export default function ContactPage() {
 
         <section className="section bg-white">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="h-display text-3xl md:text-4xl mb-3">Contact Us Today</h2>
-              <p className="text-[var(--ink-soft)]">Don&apos;t wait to improve your outdoor space.</p>
-              <p className="text-xs text-[var(--ink-soft)] mt-2">&quot;*&quot; indicates required fields</p>
+            <div className="max-w-3xl mx-auto mb-12">
+              <div className="text-center mb-6">
+                <h2 className="h-display text-3xl md:text-4xl mb-3">Contact Us Today</h2>
+              </div>
+              <div className="prose-md text-center sm:text-left">
+                {main.contactIntro.paras.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <p className="text-xs text-[var(--ink-soft)] mt-4 text-center">&quot;*&quot; indicates required fields</p>
             </div>
 
             <div className="grid gap-12 lg:grid-cols-[1fr_380px] max-w-5xl mx-auto">
@@ -63,10 +69,6 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-1.5">Phone</p>
                     <a href={site.phoneHref} className="text-lg font-bold text-[var(--ink)] hover:text-[var(--accent)]">{site.phone}</a>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-1.5">Email</p>
-                    <a href={`mailto:${site.email}`} className="font-bold text-[var(--ink)] hover:text-[var(--accent)] text-sm break-all">{site.email}</a>
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)] mb-1.5">Hours</p>

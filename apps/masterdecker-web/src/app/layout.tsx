@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} | Decks, Fences & Concrete | London Ontario`,
-    template: `%s | ${site.name}`,
+    // Page titles already include the brand, so don't append it again.
+    template: "%s",
   },
   description: site.description,
   openGraph: {

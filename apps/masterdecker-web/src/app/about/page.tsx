@@ -6,6 +6,7 @@ import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
 import locations from "@/content/locations.json";
+import main from "@/content/main-content.json";
 
 export const revalidate = 3600;
 
@@ -20,12 +21,6 @@ const journey = [
   { title: "The Beginnings", desc: "Master Decker was founded on a passion for transforming outdoor environments into stunning living spaces. Our journey began with a focus on deck building, which quickly expanded to encompass a full suite of outdoor living solutions." },
   { title: "Growth and Expansion", desc: "As we grew, so did our services. Recognizing the need for comprehensive outdoor solutions, we began to offer fence installation, deck and fence staining, concrete driveways, and retaining walls. Each project is handled with the same level of precision and care that we brought to our first deck builds." },
   { title: "Vision for the Future", desc: "We continue to innovate and expand our services, always aiming to provide the best in functionality and design. Our vision is to not just meet, but exceed, the expectations of our clients, ensuring that every outdoor space we create is a testament to our dedication and expertise." },
-];
-
-const mission = [
-  { title: "Dedication to Craftsmanship", desc: "At Master Decker, our mission is to deliver outdoor living solutions that stand the test of time. We use premium materials and meticulous craftsmanship to ensure that your outdoor spaces are not only beautiful but durable." },
-  { title: "Customized Outdoor Solutions", desc: "Understanding that each property is unique, we tailor our services to fit the specific needs and desires of each client. Our team works closely with you to bring your vision to life, ensuring that every detail reflects your personal style and functional requirements." },
-  { title: "Sustainability Practices", desc: "We are committed to sustainability, utilizing eco-friendly materials and practices whenever possible. This commitment extends to every aspect of our operations, from waste reduction in our building processes to the use of non-toxic stains and sealants." },
 ];
 
 export default function AboutPage() {
@@ -43,9 +38,23 @@ export default function AboutPage() {
         />
 
         <section className="section bg-white">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-10">
+              <p className="eyebrow mb-3">Our Story</p>
+              <h2 className="h-display text-3xl md:text-4xl">A Decade of Outdoor Living in Southwestern Ontario</h2>
+            </div>
+            <div className="prose-md">
+              {main.about.story.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section bg-[var(--surface)] border-y border-[var(--border)]">
           <div className="container">
             <div className="text-center mb-14">
-              <p className="eyebrow mb-3">Our Story</p>
+              <p className="eyebrow mb-3">How We Grew</p>
               <h2 className="h-display text-3xl md:text-4xl">Our Journey</h2>
             </div>
             <div className="grid gap-10 md:grid-cols-3">
@@ -60,17 +69,17 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="section bg-[var(--surface)] border-y border-[var(--border)]">
+        <section className="section bg-white">
           <div className="container">
             <div className="text-center mb-14">
               <p className="eyebrow mb-3">What Drives Us</p>
-              <h2 className="h-display text-3xl md:text-4xl">Our Mission and Values</h2>
+              <h2 className="h-display text-3xl md:text-4xl">Why Homeowners Choose Master Decker</h2>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {mission.map((m) => (
-                <div key={m.title} className="bg-white p-8 border border-[var(--border)]">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {main.about.whyChoose.map((m) => (
+                <div key={m.title} className="bg-[var(--surface)] p-8 border border-[var(--border)]">
                   <div className="w-12 h-1 bg-[var(--accent)] mb-5" />
-                  <h3 className="font-bold text-xl mb-3">{m.title}</h3>
+                  <h3 className="font-bold text-lg mb-3">{m.title}</h3>
                   <p className="text-sm text-[var(--ink-soft)] leading-relaxed">{m.desc}</p>
                 </div>
               ))}
@@ -78,7 +87,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="section bg-white">
+        <section className="section bg-[var(--surface)] border-y border-[var(--border)]">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <p className="eyebrow mb-3">Coverage</p>

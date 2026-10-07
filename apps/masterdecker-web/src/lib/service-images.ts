@@ -37,12 +37,9 @@ export const serviceImages: Record<string, string> = {
   // ── Concrete ───────────────────────────────────────────────────
   "concrete-patios": "/images/ss-concrete-patio.jpg",
   "concrete-driveways": "/images/ss-concrete-driveway.jpeg",
-  "hot-tub-and-shed-pads": "/images/ss-hot-tub-pad.jpg",
-  "concrete-walkway-installation": "/images/ss-stamped-walkway.png",
-  "heated-driveway-installation": "/images/wp-heated-driveway.jpg",
+  "hot-tub-swim-spa-shed-pads": "/images/ss-hot-tub-pad.jpg",
   "concrete-retaining-wall-installation": "/images/ss-concrete-wall.jpg",
   "stamped-concrete-driveway-installation": "/images/wp-stamped-concrete-2.jpg",
-  "swim-spa-pad-installation": "/images/ss-concrete-pad.webp",
   "stamped-patio-installation": "/images/ss-stamped-1.jpg",
 
   // ── Landscaping & Lighting ─────────────────────────────────────
@@ -64,4 +61,47 @@ export const categoryFallback: Record<string, string> = {
 
 export function imageFor(slug: string, categoryId: string): string {
   return serviceImages[slug] ?? categoryFallback[categoryId] ?? "/images/pergola.jpg";
+}
+
+// A pool of category-relevant photos used to build per-service galleries.
+const categoryGallery: Record<string, string[]> = {
+  "staining-sealing": [
+    "/images/wp-deck-stained-cedar.jpg",
+    "/images/ss-deck-restore.jpeg",
+    "/images/ss-fence-stain.webp",
+    "/images/wp-cedar-deck.jpg",
+    "/images/ss-deck-refinish.webp",
+    "/images/pergola.jpg",
+  ],
+  woodwork: [
+    "/images/wp-deck-building.jpg",
+    "/images/wp-backyard-deck.jpg",
+    "/images/wp-deck-railing.jpg",
+    "/images/wp-deck-tree.jpg",
+    "/images/ss-wood-wall.jpg",
+    "/images/ss-fence-hero.jpg",
+  ],
+  concrete: [
+    "/images/wp-stamped-concrete.jpg",
+    "/images/ss-concrete-driveway.jpeg",
+    "/images/wp-stamped-concrete-2.jpg",
+    "/images/ss-concrete-patio.jpg",
+    "/images/ss-broom-finish.jpg",
+    "/images/ss-concrete-wall.jpg",
+  ],
+  landscaping: [
+    "/images/ss-fence-hero.jpg",
+    "/images/ss-vinyl-fence.jpg",
+    "/images/ss-chainlink.jpg",
+    "/images/ss-block-wall.jpg",
+    "/images/ss-christmas-lights.jpg",
+    "/images/ss-metal-fence.jpg",
+  ],
+};
+
+// Returns up to `count` gallery photos for a service, excluding its hero image.
+export function galleryFor(slug: string, categoryId: string, count = 3): string[] {
+  const hero = imageFor(slug, categoryId);
+  const pool = categoryGallery[categoryId] ?? categoryGallery["staining-sealing"];
+  return pool.filter((src) => src !== hero).slice(0, count);
 }

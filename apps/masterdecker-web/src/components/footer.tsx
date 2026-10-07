@@ -14,8 +14,8 @@ const additionalLinks = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Service Locations", href: "/service-locations" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Deck Staining", href: "/deck-staining-services" },
+  { label: "Concrete Driveways", href: "/concrete-driveways" },
 ];
 
 export function Footer() {
@@ -31,7 +31,7 @@ export function Footer() {
               <a href={site.phoneHref} className="hover:text-[var(--accent)] transition-colors">Phone: {site.phone}</a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="hover:text-[var(--accent)] transition-colors">Email: {site.email}</a>
+              <Link href="/contact" className="hover:text-[var(--accent)] transition-colors font-semibold text-[var(--accent)]">Request a Free Quote →</Link>
             </li>
             <li>Hours: {site.hours.weekday}</li>
             <li>Hours: {site.hours.saturday}</li>
@@ -70,11 +70,9 @@ export function Footer() {
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18v-8.45H5.67V18h2.67zM7 8.3a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11 9.7v-4.9c0-2.4-1.3-3.5-3.04-3.5-1.4 0-2.04.77-2.4 1.32V9.55H9.9c.04.74 0 8.45 0 8.45h2.66v-4.72c0-.24.02-.48.09-.65.19-.48.63-.97 1.36-.97.96 0 1.34.73 1.34 1.8V18H18z" /></svg>
             </a>
           </div>
-          <div className="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--accent)]">Join Our Newsletter</div>
-          <form className="flex gap-2">
-            <input type="email" placeholder="Email" aria-label="Email address" className="flex-1 px-3 py-2 rounded text-[var(--ink)] text-sm bg-white" />
-            <button type="submit" className="bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">Send</button>
-          </form>
+          <div className="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--accent)]">Get Started</div>
+          <p className="text-sm text-white/80 mb-4">Ready for a free, no-obligation written quote? It takes under a minute.</p>
+          <Link href="/contact" className="btn-primary w-full">Request a Free Quote</Link>
         </div>
       </div>
 

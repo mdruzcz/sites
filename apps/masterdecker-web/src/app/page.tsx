@@ -5,10 +5,13 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileFab } from "@/components/mobile-fab";
 import { Hero } from "@/components/hero";
+import { TrustBar } from "@/components/trust-bar";
+import { QuoteForm } from "@/components/quote-form";
 import { TestimonialSlider } from "@/components/testimonial-slider";
 import { site } from "@/lib/site";
 import testimonials from "@/content/testimonials.json";
 import faq from "@/content/faq.json";
+import main from "@/content/main-content.json";
 
 export const revalidate = 3600;
 
@@ -26,23 +29,22 @@ export const metadata: Metadata = {
 };
 
 const hpServices = [
-  { title: "Fence Painting", desc: "Brighten and protect your property boundary.", bg: "/images/fence.jpg", href: "/fence-painting-services" },
   { title: "Deck Staining", desc: "Preserve the longevity and beauty of your deck.", bg: "/images/wp-deck-stained-cedar.jpg", href: "/deck-staining-services" },
-  { title: "Concrete Sealing", desc: "Guard your surfaces against wear and weather.", bg: "/images/wp-stamped-concrete.jpg", href: "/concrete-sealing" },
-  { title: "Pressure Washing", desc: "Comprehensive cleaning for decks, fences, and patios.", bg: "/images/wp-project-2.jpg", href: "/patio-pressure-washing-services" },
-  { title: "Decks", desc: "Custom deck building, resurfacing, and repairs.", bg: "/images/wp-deck-building.jpg", href: "/deck-building" },
-  { title: "Pergolas & Gazebos", desc: "Crafted to complement your outdoor living.", bg: "/images/pergola.jpg", href: "/custom-pergolas" },
-  { title: "Fences & Privacy Screens", desc: "From classic wood to modern designs.", bg: "/images/testimonial-3.jpg", href: "/fence-building" },
-  { title: "Retaining Walls", desc: "Functional, stylish solutions for sloped yards.", bg: "/images/wp-arbor.jpg", href: "/wooden-retaining-wall" },
-  { title: "Driveways & Patios", desc: "Durable, stylish concrete installations.", bg: "/images/wp-heated-driveway.jpg", href: "/concrete-driveways" },
-  { title: "Stamped Concrete", desc: "Beautiful patterns for a unique look.", bg: "/images/wp-stamped-concrete-2.jpg", href: "/stamped-concrete-driveway-installation" },
+  { title: "Deck Building", desc: "Custom deck building, resurfacing, and repairs.", bg: "/images/wp-deck-building.jpg", href: "/deck-building" },
+  { title: "Fence Staining", desc: "Protect and refresh your wood or cedar fence.", bg: "/images/ss-fence-stain.webp", href: "/fence-staining-services" },
+  { title: "Fence Building", desc: "Wood, cedar, vinyl, and ornamental metal fences.", bg: "/images/ss-fence-hero.jpg", href: "/fence-building" },
+  { title: "Concrete Driveways", desc: "Durable, reinforced concrete driveways and aprons.", bg: "/images/ss-concrete-driveway.jpeg", href: "/concrete-driveways" },
+  { title: "Concrete Patios", desc: "Reinforced concrete patios poured to last.", bg: "/images/ss-concrete-patio.jpg", href: "/concrete-patios" },
+  { title: "Stamped Concrete", desc: "Beautiful stone-look patterns for driveways and patios.", bg: "/images/wp-stamped-concrete-2.jpg", href: "/stamped-concrete-driveway-installation" },
+  { title: "Retaining Walls", desc: "Timber, concrete, and engineered block walls.", bg: "/images/ss-block-wall.jpg", href: "/wooden-retaining-wall" },
+  { title: "Concrete Sealing", desc: "Guard your surfaces against salt, frost, and weather.", bg: "/images/wp-stamped-concrete.jpg", href: "/concrete-sealing" },
 ];
 
 const whyUs = [
-  { title: "Exceptional Customer Service", desc: "Our team prioritizes clear and prompt communication. From the initial consultation to the final walkthrough, we keep you informed and involved. Your satisfaction is our top priority, and we're dedicated to exceeding your expectations with every project." },
-  { title: "Customized Solutions", desc: "Every home is unique, and so should be its outdoor spaces. We offer fully customized designs tailored to meet your specific needs and preferences. Whether it's a custom deck layout, unique fence designs, or specialized concrete finishes, we make sure it's a perfect fit for your property." },
-  { title: "Eco-Friendly Options", desc: "We're committed to sustainability. Master Decker provides eco-friendly options including reclaimed wood and low-impact concrete alternatives. Our practices are designed to minimize environmental impact while maximizing outdoor enjoyment." },
-  { title: "Fast and Reliable Execution", desc: "Time is of the essence in any construction project. We pride ourselves on completing projects efficiently without disrupting your daily life. Our streamlined process, from planning to execution, ensures that your project is completed on time and to your satisfaction." },
+  { title: "Clear Communication", desc: "Prompt replies from first call to final walkthrough — you're never left guessing on timing or cost." },
+  { title: "Custom-Fit Solutions", desc: "Deck layouts, fence styles, and concrete finishes tailored to your property — never one-size-fits-all." },
+  { title: "One Crew, Every Trade", desc: "Deck, fence, and concrete handled by one team — fewer headaches, tighter timelines, lower cost." },
+  { title: "On-Time, Clean Job Sites", desc: "A streamlined process that finishes on schedule without taking over your home and yard." },
 ];
 
 const recentProjects = [
@@ -80,7 +82,6 @@ const jsonLd = {
   name: site.legalName,
   url: site.url,
   telephone: site.phone,
-  email: site.email,
   image: `${site.url}/images/logo.png`,
   address: {
     "@type": "PostalAddress",
@@ -116,19 +117,31 @@ export default function HomePage() {
           title="Master Decker Home Services"
           subtitle="We Help Enhance Your Outdoor Living Spaces From Deck Staining to Concrete Patios and Everything In Between"
           background="/images/wp-deck-railing.jpg"
-          primaryCta={{ label: "More About Us", href: "/about" }}
+          primaryCta={{ label: "Get a Free Quote", href: "/contact" }}
           secondaryCta={{ label: "Our Projects", href: "/project-examples" }}
         />
 
-        {/* INTRO */}
+        <TrustBar />
+
+        {/* INTRO + QUOTE FORM (conversion zone) */}
         <section className="section bg-white">
-          <div className="container text-center max-w-4xl mx-auto">
-            <h2 className="h-display text-3xl md:text-4xl mb-4">
-              Deck, Fence, Concrete Company Near You – Serving London and Surrounding Areas Since 2014
-            </h2>
-            <p className="text-lg text-[var(--ink-soft)]">
-              Get the help you need from building a new deck, to deck restoration. We can help.
-            </p>
+          <div className="container">
+            <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] items-start">
+              <div>
+                <p className="eyebrow mb-3">Since 2014</p>
+                <h2 className="h-display text-3xl md:text-4xl mb-5">{main.homeIntro.heading}</h2>
+                {main.homeIntro.paras.slice(0, 2).map((p, i) => (
+                  <p key={i} className="text-[var(--ink-soft)] leading-relaxed mb-4">{p}</p>
+                ))}
+                <div className="flex flex-wrap gap-3 mt-2">
+                  <Link href="/services" className="btn-primary">View All Services</Link>
+                  <a href={site.phoneHref} className="btn-outline">{site.phone}</a>
+                </div>
+              </div>
+              <div id="quote" className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-6 shadow-sm scroll-mt-28">
+                <QuoteForm compact heading="Get Your Free Quote" subheading="Decks, fences, concrete & more — written quote within 1 business day." />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -267,9 +280,9 @@ export default function HomePage() {
             </div>
             <div className="grid gap-10 sm:grid-cols-3">
               {[
-                { n: "1", title: "Complete the Form", desc: "Click here to access our detailed quote form. Please fill it out with as much detail as possible to ensure an accurate quote. If you have any general inquiries or need assistance with the form, feel free to contact us directly." },
-                { n: "2", title: "Wait for Feedback", desc: "After you submit the form, we will review the details and send you a personalized quote via email. If we need any more information to provide a comprehensive estimate, we may contact you directly." },
-                { n: "3", title: "Schedule the Job", desc: "Once you approve the quote, we'll work with you to schedule the job at a time that suits your convenience. We aim to start the cleaning or repair services as quickly as possible, ensuring minimal disruption to your daily routine." },
+                { n: "1", title: "Request a Quote", desc: "Fill out the quick form or give us a call. A few details is all we need to get started." },
+                { n: "2", title: "Get Your Written Quote", desc: "We review your project and send back a clear, written quote — usually within 1 business day." },
+                { n: "3", title: "Schedule the Job", desc: "Approve the quote and we book a start date that works for you. Clean, on-time, guaranteed." },
               ].map((s) => (
                 <div key={s.n} className="text-center">
                   <div className="w-20 h-20 rounded-full bg-[var(--accent)] text-white text-3xl font-extrabold flex items-center justify-center mx-auto mb-5 shadow-lg">{s.n}</div>

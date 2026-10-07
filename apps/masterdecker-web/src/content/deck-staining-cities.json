@@ -1,0 +1,104 @@
+{
+  "cities": [
+    {
+      "slug": "london",
+      "name": "London",
+      "region": "Middlesex County",
+      "nearby": ["st-thomas", "strathroy", "woodstock"],
+      "intro": [
+        "London is Master Decker's home turf. We've stained decks in Old South, Byron, Masonville, Hyde Park, and right across the Forest City since 2014 — and most of our London work still comes from neighbour referrals.",
+        "London decks face hard freeze-thaw winters and full-sun summers that grey and crack unsealed wood fast. We clean, brighten, and stain to lock out moisture and hold colour for years, not months."
+      ]
+    },
+    {
+      "slug": "st-thomas",
+      "name": "St. Thomas",
+      "region": "Elgin County",
+      "nearby": ["london", "strathroy", "woodstock"],
+      "intro": [
+        "We stain decks throughout St. Thomas and the surrounding Elgin County communities, from established neighbourhoods near downtown to newer subdivisions on the edge of town.",
+        "Our St. Thomas crews bring the same prep-first process we're known for in London — proper cleaning and brightening before any stain goes on, so the finish actually lasts through Ontario winters."
+      ]
+    },
+    {
+      "slug": "strathroy",
+      "name": "Strathroy",
+      "region": "Middlesex County",
+      "nearby": ["london", "st-thomas"],
+      "intro": [
+        "Strathroy homeowners trust Master Decker to bring weathered decks back to life with premium penetrating stains built for our climate.",
+        "Whether your cedar deck has greyed out or your pressure-treated boards are thirsty for protection, we clean, brighten, and stain so your deck looks sharp and sheds water for seasons to come."
+      ]
+    },
+    {
+      "slug": "woodstock",
+      "name": "Woodstock",
+      "region": "Oxford County",
+      "nearby": ["london", "st-thomas"],
+      "intro": [
+        "We stain and seal decks across Woodstock and Oxford County, protecting your outdoor living investment from UV fade, moisture, and the freeze-thaw cycling that splits unprotected wood.",
+        "From a quick maintenance recoat to a full strip-clean-and-stain, our Woodstock deck staining service is backed by a written quote and a workmanship guarantee."
+      ]
+    },
+    {
+      "slug": "kitchener",
+      "name": "Kitchener",
+      "region": "Waterloo Region",
+      "nearby": ["waterloo", "cambridge", "guelph"],
+      "intro": [
+        "Master Decker has been active in the Kitchener-Waterloo corridor for years, staining decks on everything from mature lots in older neighbourhoods to recently built homes in the city's growing subdivisions.",
+        "Our Kitchener deck staining process starts with a thorough clean and wood brightener — the prep most contractors skip — so your stain bonds deep and holds its colour through the region's harsh winters."
+      ]
+    },
+    {
+      "slug": "waterloo",
+      "name": "Waterloo",
+      "region": "Waterloo Region",
+      "nearby": ["kitchener", "cambridge", "guelph"],
+      "intro": [
+        "We stain decks throughout Waterloo, from Uptown to Beechwood and Laurelwood, with premium oil and water-based penetrating stains chosen to suit your wood and sun exposure.",
+        "A properly stained deck in Waterloo's climate can last decades. We handle the cleaning, prep, and staining so you get a finish that protects the wood rather than just sitting on top of it."
+      ]
+    },
+    {
+      "slug": "cambridge",
+      "name": "Cambridge",
+      "region": "Waterloo Region",
+      "nearby": ["kitchener", "waterloo", "guelph"],
+      "intro": [
+        "Cambridge homeowners call Master Decker to restore and protect decks across Galt, Preston, and Hespeler with stains built for Ontario's freeze-thaw reality.",
+        "We clean, brighten, and saturate every board — including the end grain and railings most jobs miss — so your Cambridge deck holds its colour and sheds water for years."
+      ]
+    },
+    {
+      "slug": "guelph",
+      "name": "Guelph",
+      "region": "Wellington County",
+      "nearby": ["kitchener", "cambridge", "waterloo"],
+      "intro": [
+        "We bring our deck staining service to Guelph and the surrounding Wellington County communities, protecting wood decks from the UV and moisture that quietly age an unsealed surface.",
+        "From heritage homes in the city core to newer builds on the edges of town, our Guelph deck staining is prep-first, written-quote, and guarantee-backed."
+      ]
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "region": "Hamilton-Wentworth",
+      "nearby": ["brantford"],
+      "intro": [
+        "Master Decker stains decks across Hamilton, from the mountain to the escarpment communities and into Ancaster, Dundas, and Stoney Creek.",
+        "Hamilton decks take prevailing winds, road grit, and hard freeze-thaw cycling. Our cleaning, brightening, and premium penetrating stains are built to stand up to all of it."
+      ]
+    },
+    {
+      "slug": "brantford",
+      "name": "Brantford",
+      "region": "Brant County",
+      "nearby": ["hamilton"],
+      "intro": [
+        "We stain and seal decks throughout Brantford and Brant County, reviving tired, greyed wood and protecting newer decks before the damage starts.",
+        "Our Brantford deck staining service includes a full clean and wood brightener treatment so the stain penetrates properly — the difference between a finish that lasts and one that peels by spring."
+      ]
+    }
+  ]
+}

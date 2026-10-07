@@ -21,7 +21,9 @@ export async function POST(req: NextRequest) {
 
     if (website) return NextResponse.json({ ok: true });
 
-    if (!firstName || !phone || !email || !streetAddress || !city) {
+    // Keep the barrier low for higher conversion: only name, phone, and email
+    // are required. Address/city are optional (collected when available).
+    if (!firstName || !phone || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -68,7 +70,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
       to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-      subject: `New Quote Request — ${firstName}${lastName ? " " + lastName : ""}`,
+      subject: `New Quote Request - ${firstName}${lastName ? " " + lastName : ""}`,
       text: [
         `Name: ${firstName}${lastName ? " " + lastName : ""}`,
         `Phone: ${phone}`,
