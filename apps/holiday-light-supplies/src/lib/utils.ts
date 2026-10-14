@@ -8,6 +8,10 @@ export const formatCad = (n: number | null | undefined) =>
     ? "—"
     : new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(n);
 
+/** Whole-dollar money for large display pieces (no trailing .00). */
+export const formatCadRound = (n: number) =>
+  new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD", maximumFractionDigits: Number.isInteger(n) ? 0 : 2 }).format(n);
+
 export const STORE_SLUG = process.env.STORE_SLUG ?? "holiday-light-supplies";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3102";
 export const FREE_SHIPPING_THRESHOLD_DEFAULT = 150;
@@ -20,5 +24,12 @@ export const FREE_SHIPPING_THRESHOLD_DEFAULT = 150;
 export const PLACEHOLDER_IMAGE = "/images/logo.png";
 
 /** Returns a usable image src, falling back to the brand placeholder. */
-export const imageSrc = (url: string | null | undefined) =>
-  url && url.trim() ? url : PLACEHOLDER_IMAGE;
+export const imageSrc = (url: string | null | undefined) => (url && url.trim() ? url : PLACEHOLDER_IMAGE);
+
+/** A product whose every variant is priced at 0 is a quote-only display piece. */
+export const isQuoteOnly = (prices: number[]) => prices.length > 0 && prices.every((p) => !p || p <= 0);
+
+export function absoluteUrl(path: string) {
+  if (/^https?:\/\//.test(path)) return path;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}

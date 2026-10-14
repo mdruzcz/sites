@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useUI } from "@/components/ui-context";
+import { Icon } from "@/components/icons";
 
 export function SearchTrigger() {
   const { openSearch } = useUI();
@@ -23,11 +24,11 @@ export function SearchTrigger() {
       type="button"
       onClick={openSearch}
       aria-label="Search the catalog (Ctrl+K)"
-      className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-sm text-slate-500 transition hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]"
+      className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-3 text-sm text-[var(--color-muted)] transition hover:border-[var(--color-brand)] hover:text-[var(--color-brand)] md:min-w-[200px] md:justify-start md:px-4"
     >
-      <span aria-hidden>🔍</span>
-      <span className="hidden md:inline">Search</span>
-      <kbd className="hidden rounded border border-[var(--color-border)] bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-500 md:inline">
+      <Icon.search size={17} />
+      <span className="hidden md:inline">Search C9, displays, wreaths…</span>
+      <kbd className="ml-auto hidden rounded border border-[var(--color-border)] bg-[var(--color-bg-warm)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--color-muted)] md:inline">
         ⌘K
       </kbd>
     </button>

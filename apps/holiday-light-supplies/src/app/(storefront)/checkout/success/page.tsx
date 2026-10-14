@@ -1,26 +1,21 @@
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
-export const metadata = { title: "Inquiry received", robots: { index: false } };
+export const metadata = { title: "Quote request received", robots: { index: false } };
 
 export default function InquirySuccess() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-20 text-center">
-      <div className="inline-flex size-12 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
-        ✓
-      </div>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight">Inquiry received — check your inbox soon</h1>
-      <p className="mt-3 text-slate-600">
-        Thanks! We&rsquo;ve got the products you want and your delivery address. We&rsquo;ll email you
-        your shipping cost and delivery timeline, <strong>usually within one business day</strong>. No
-        payment is taken until you approve the quote.
+    <div className="shell py-20 text-center">
+      <span className="mx-auto grid size-14 place-items-center rounded-full bg-[var(--color-brand)] text-white">
+        <Icon.check size={26} />
+      </span>
+      <h1 className="font-display mt-5 text-3xl md:text-4xl">Got it. Your quote is on its way.</h1>
+      <p className="mx-auto mt-4 max-w-xl text-[var(--color-text-soft)]">
+        We have your list and delivery address. A real person emails your pricing, shipping cost and timeline <strong>within one business day</strong>. Nothing is charged until you approve the quote.
       </p>
-      <div className="mt-8 flex justify-center gap-3">
-        <Link href="/" className="btn-primary">
-          Back to home
-        </Link>
-        <Link href="/shop" className="btn-secondary">
-          Keep browsing
-        </Link>
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <Link href="/shop" className="btn-primary">Keep browsing</Link>
+        <Link href="/resources" className="btn-secondary">Read the planning guides</Link>
       </div>
     </div>
   );

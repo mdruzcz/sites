@@ -1,0 +1,226 @@
+{
+  "plaza-tree": {
+    "src": "/images/hero/plaza-tree.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Towering commercial Christmas tree with red and gold ornaments and warm-white lights outside a shopping plaza at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwUG/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAAwQREjIhQlH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwDL0YpurtI9E5Qmr0ZfxbkRXDVqeXxdbEImtu1SDXjrKRL/2Q=="
+  },
+  "plaza-tree-night": {
+    "src": "/images/hero/plaza-tree-night.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Illuminated commercial Christmas tree with red ornaments in a shopping-centre courtyard at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB8QAAICAgEFAAAAAAAAAAAAAAECAAMEIRESEyJCUf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDMY+Kbu4B6oWgxVqXsO2lEbrVQTrxHGoutuMnKmpNH5KE2I3//2Q=="
+  },
+  "golden-cone-tree": {
+    "src": "/images/hero/golden-cone-tree.jpg",
+    "width": 1200,
+    "height": 1600,
+    "alt": "Towering golden cone-shaped Christmas tree glowing at night in a downtown city plaza with a lit star topper",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAeEAABBAIDAQAAAAAAAAAAAAABAAIEEQMhEhMUQf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGhEAAgMBAQAAAAAAAAAAAAAAAhEAAQMhMf/aAAwDAQACEQMRAD8AjRYxy9hIPEY3Ua+oyox5sPCXjtaAaOrpDPmLjxzavVqsN2ZPyDefKU//2Q=="
+  },
+  "plaza-vintage-truck": {
+    "src": "/images/hero/plaza-vintage-truck.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Two lit commercial Christmas trees and a vintage truck in a shopping plaza at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB8QAAIBBAIDAAAAAAAAAAAAAAECAAMEEiFBURMxkf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAESH/2gAMAwEAAhEDEQA/AM/YWnndww0EJ33xFDSYe1PyXKd29EnWYPcA1xVLsciN8mN0x//Z"
+  },
+  "downtown-street-trees": {
+    "src": "/images/hero/downtown-street-trees.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Downtown street trees wrapped in warm-white Christmas lights outside an office tower on a snowy night.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAfEAABBAICAwAAAAAAAAAAAAABAgMEEQASE2ExQVH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAGhEAAgIDAAAAAAAAAAAAAAAAAQIAAxETIv/aAAwDAQACEQMRAD8AOlxG3GVDZIPqvF/MLTCUjjcJsbC+sfgR23IdqTZChlkRltAKQkV2LxtXUxEV6GZ//9k="
+  },
+  "downtown-street-trees-2": {
+    "src": "/images/hero/downtown-street-trees-2.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Downtown street trees wrapped in warm white Christmas lights on a snowy winter night.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQID/8QAHxAAAgEEAgMAAAAAAAAAAAAAAQIEAAMREiFBEyJx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABYRAQEBAAAAAAAAAAAAAAAAAAAhMv/aAAwDAQACEQMRAD8AGnQi9peR5FOD8rCLFBtey5IJB4zinHguGR9tg7E6hTk91YgwyBvZdW7AYijmE//Z"
+  },
+  "downtown-boulevard": {
+    "src": "/images/hero/downtown-boulevard.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Downtown boulevard with warm-white lit trees and blue accent lighting outside an office tower at night.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQME/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQMCAAQREhMhIjFBQtH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABcRAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAMAwEAAhEDEQA/AADaZtuDo49qmpbVLnuDpkAAfBpy3St6plkAdGMfa1lcJ2+3KIMCOxq8Ak63/9k="
+  },
+  "town-park-trees": {
+    "src": "/images/hero/town-park-trees.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Town park trees wrapped in warm-white Christmas lights along a lamplit walkway",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwAG/8QAHRABAAEEAwEAAAAAAAAAAAAAAQIAAxExBBIhcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMrYsZVmxYhrtvyq5x+kMjmWdU9oGXoUt0MAAfKlH//Z"
+  },
+  "town-square": {
+    "src": "/images/hero/town-square.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Town square park with trees in warm-white Christmas lights and a lit Christmas tree at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBv/EAB0QAAMAAwADAQAAAAAAAAAAAAECAwAEESIxYaH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMzr60qswrYIB6+4NdYTbwoG6fzLNSKMxJHeY/YRZ0QKBxgejJL/2Q=="
+  },
+  "town-park-arch": {
+    "src": "/images/hero/town-park-arch.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Town park entrance archway wrapped in warm-white holiday lights glowing at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMFBv/EAB0QAAICAgMBAAAAAAAAAAAAAAECAxEAIQQSExT/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAxQf/aAAwDAQACEQMRAD8AznxecatKwUMaFbwtxESL0J7ow0RqjlGaMN0jNlVusQ8SiKOOrUFjgVyQdv/Z"
+  },
+  "commercial-roofline": {
+    "src": "/images/hero/commercial-roofline.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Large residential complex with warm-white roofline Christmas lights and a holiday courtyard display at the entrance",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAIhAAAQMDAwUAAAAAAAAAAAAAAQACAwQREiExQQUVIlFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABURAQEAAAAAAAAAAAAAAAAAAABB/9oADAMBAAIRAxEAPwDNdumN8RkPeyHp08YJe23zVX01VKyXxfxtwlVVTOcHF2trJB//2Q=="
+  },
+  "commercial-entrance-drive": {
+    "src": "/images/hero/commercial-entrance-drive.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Commercial building entrance drive lit with warm-white roofline Christmas lights and a holiday display",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIFBv/EACIQAAEDBAAHAAAAAAAAAAAAAAECAxEABAUSITEyM5Ghsf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEUH/2gAMAwEAAhEDEQA/AM0Mc8egbDxQVj3kdxOvv5VewunFrO+qhEQRwpr+6cDiAIA5QBTKP//Z"
+  },
+  "estate-fountain": {
+    "src": "/images/hero/estate-fountain.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Grand estate lit with warm-white roofline Christmas lights and trees wrapped in lights around an illuminated fountain",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAG/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxIhBBEx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAIf/aAAwDAQACEQMRAD8AzScVDWTZZi++hIcOtwAloyPXp1A6DfsGIEml/9k="
+  },
+  "venue-fountain": {
+    "src": "/images/hero/venue-fountain.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Grand event venue with warm-white roofline Christmas lights and tree wrapping around a stone fountain",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAfEAABBAICAwAAAAAAAAAAAAABAAIDEQQhBWETUVL/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABcRAAMBAAAAAAAAAAAAAAAAAAABAiH/2gAMAwEAAhEDEQA/AJDOPkfF5BQHaGbBljYHUCOikGbMGkAgCq0idmzfW/ahOhw//9k="
+  },
+  "office-tower": {
+    "src": "/images/hero/office-tower.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Office tower plaza with warm-white tree wraps, blue-lit shrubs and an illuminated angel light display.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBv/EACAQAAICAQMFAAAAAAAAAAAAAAECAxEABAVREhMhMWH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAiER/9oADAMBAAIRAxEAPwDOtpZAhDLfuiuEGoSGMI0Nnk3laEgR1ILbzbdXOMm3wSKG7jt9GVD5oXCrGf/Z"
+  },
+  "office-tower-entrance": {
+    "src": "/images/hero/office-tower-entrance.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Office tower entrance framed by trees wrapped in warm-white and blue Christmas lights on a winter night.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBf/EAB0QAAIDAQADAQAAAAAAAAAAAAECAxESAAQhMWH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAv/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAiH/2gAMAwEAAhEDEQA/AMCPwHWIFckn7zBFLCpkVF2nu/tddrceMqFqqA4mmTDKCCK/eZe1ORL/2Q=="
+  },
+  "boulevard-cone-trees": {
+    "src": "/images/hero/boulevard-cone-trees.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Illuminated cone-shaped Christmas trees lining a commercial boulevard median at night.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQEC/8QAHxAAAgEEAgMAAAAAAAAAAAAAAQIDAAQRMQUhEyJR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAAMBAAAAAAAAAAAAAAAAAAABAiH/2gAMAwEAAhEDEQA/AB5uHy6KjAMVyc61UvOJuQieKIlMfdmkbeNIlLKPZegT3ut3U7lBk0VW4KR//9k="
+  },
+  "cone-tree": {
+    "src": "/images/hero/cone-tree.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Commercial holiday display of a lit evergreen and warm-white cone trees along a tree-lined street",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMG/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDEQAEBRIxEyFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIDEUH/2gAMAwEAAhEDEQA/AM9tiI0wZwCovKy6NEBYtS2Qtjs/MNDK0UY4ACz3ifNIixhWIv3lTkc8Bzs//9k="
+  },
+  "luxury-venue": {
+    "src": "/images/hero/luxury-venue.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Luxury venue with warm-white roofline Christmas lights and mature trees wrapped in lights along the driveway",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAIG/8QAHxAAAQQCAgMAAAAAAAAAAAAAAQACAxEEIRIxMkFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAWEQEBAQAAAAAAAAAAAAAAAAABACH/2gAMAwEAAhEDEQA/AM3DjxvvbhQGz9SMd8mKS6HZFi66UBrT6SvPGdy3XSmKMsb/2Q=="
+  },
+  "estate-roofline": {
+    "src": "/images/hero/estate-roofline.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Elegant estate event venue outlined in warm-white roofline lights with lit wrapped trees along the circular drive.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQQF/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIDEQAFMRITITKR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAIf/aAAwDAQACEQMRAD8AxYNWsoPRIbPqK5wn1jKD25Y2I5BNHB55G8lsjmYtdgfMml//2Q=="
+  },
+  "mansion-roofline": {
+    "src": "/images/hero/mansion-roofline.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Warm-white Christmas roofline lights outlining a large estate mansion with lit trees.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIDBv/EAB0QAQACAgIDAAAAAAAAAAAAAAEAAgQRAxIxMkH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMrTGrc93t8NQ2xA315aqeRQkLWViyD/2Q=="
+  },
+  "large-plaza-tree": {
+    "src": "/images/hero/large-plaza-tree.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Large decorated commercial Christmas tree with warm-white lights in a shopping plaza at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEBv/EAB0QAAICAwEBAQAAAAAAAAAAAAECAwQAEUESITL/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFhEAAwAAAAAAAAAAAAAAAAAAABEh/9oADAMBAAIRAxEAPwDM1qEsk6q8bBfQBPMazQlWxIkUTFQ3zQ5zL60rJJ6B2QO/cJLMrz/rWxo6wdFQ/9k="
+  },
+  "mall-red-tree": {
+    "src": "/images/hero/mall-red-tree.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Giant red-lit Christmas tree towering under a mall atrium skylight.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIDBf/EACEQAAIBBAEFAQAAAAAAAAAAAAECAwAEESHwBRITMUGB/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//EABcRAQADAAAAAAAAAAAAAAAAAAABIjH/2gAMAwEAAhEDEQA/AMy6thDMESRQs+tbxw0VTxKEAY4Gzil6q7m+Zlyyx47cDn2rzvLI4aOGMqVGD6P7R6aav//Z"
+  },
+  "mall-atrium-tree": {
+    "src": "/images/hero/mall-atrium-tree.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Towering red and green Christmas tree display in a shopping mall atrium.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAP/xAAfEAACAQQCAwAAAAAAAAAAAAABAgMAERIhBBMyQWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/ABzJJEqWQHLQ3bdSdRl4k/bUvmnseExsR1tlYm5NAlRjK5yJBYkb9URq/9k="
+  },
+  "mall-reindeer": {
+    "src": "/images/hero/mall-reindeer.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Illuminated gold wire reindeer sculpture flanked by decorated Christmas trees in a shopping mall",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIDEQASBAUiYXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/ACj7x7KyaoABXhdm8rkd28aJrDRsg7Crr5mXxmZIgFY0TeO0jsCGYkH3gpx//9k="
+  },
+  "mall-santa-cabin": {
+    "src": "/images/hero/mall-santa-cabin.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Shopping mall Santa's log cabin Christmas display with decorated trees and a photo podium",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwAB/8QAHRAAAgIDAQEBAAAAAAAAAAAAAQIDEQAEEiJRof/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AAEr0JO5VhZegwb8wYd+WTXdpFZwlkEmyMg5aFo29IpFD5maFHbXyoHZFAZJj//Z"
+  },
+  "mall-photo-booth": {
+    "src": "/images/hero/mall-photo-booth.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Shopping mall Christmas photo booth with a Santa's cabin backdrop and ornament-covered trees",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAgEAACAgIBBQEAAAAAAAAAAAABAgMRAAQhEhMVIjFB/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABYRAAMAAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8AVtvXeSo5n9ftrdYbb2ujU8rsfwggcZOhZdnaqRAe5QZqI4rKvgonpur6MKMSP//Z"
+  },
+  "lobby-archway": {
+    "src": "/images/hero/lobby-archway.jpg",
+    "width": 1200,
+    "height": 1600,
+    "alt": "Illuminated gold Christmas light archway tunnel in a building lobby with visitors walking through.",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIE/8QAIBABAAIBAgcAAAAAAAAAAAAAAQIRABJhAxMhMVFxkf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAIRAf/aAAwDAQACEQMRAD8AySk8qBGNT86utYc+JoaIvy8eASBdw2vIWlHv6yTPRYsP/9k="
+  },
+  "lobby-atrium-tree": {
+    "src": "/images/hero/lobby-atrium-tree.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Tall decorated Christmas tree in a grand corporate marble atrium lobby with warm-white lights",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQID/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIDEQAEBSFRExVB/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//EABgRAAIDAAAAAAAAAAAAAAAAAAABITFR/9oADAMBAAIRAxEAPwDGXcFbTuqsPK4qlFUPuHCFnJIVjRrgYj6yOgRKVbsDKOkiJJMjgnrjCdwKnp//2Q=="
+  },
+  "lobby-warm-white-trees": {
+    "src": "/images/hero/lobby-warm-white-trees.jpg",
+    "width": 1205,
+    "height": 1600,
+    "alt": "Pair of elegantly decorated warm-white Christmas trees with silver ribbon in a commercial lobby",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAQAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwT/xAAeEAACAgICAwAAAAAAAAAAAAABAgADERIhMSJRUv/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwCNkLAqB5dyazZHK4jC/S0vuORnHqDezbjDV9fcmBm2/9k="
+  },
+  "lobby-potted-trees": {
+    "src": "/images/hero/lobby-potted-trees.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Three potted Christmas trees with warm and red lights in gold planters at a commercial building entrance",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB8QAAIBBAIDAAAAAAAAAAAAAAECAwAEERIFITFRYf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAWEQADAAAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhEDEQA/AF+RQG5VlZg2oAqXcW5AlYucjGOvNaVLSKYLJJsWI90DkbOJLU6gg6k5z8olQjk//9k="
+  },
+  "brewery-tree-wrap": {
+    "src": "/images/hero/brewery-tree-wrap.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "Warm-white wrapped trees lighting the entrance of a commercial brewery building at night",
+    "blurDataURL": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EACAQAAICAQMFAAAAAAAAAAAAAAECAAMRBCFhBSIxgZH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACERL/2gAMAwEAAhEDEQA/AMIdPuTyo+wPSQG7GwoBJ5l9Njaqxhac8jYiJqFapLcWMQqAgNgjf1Ab2HInJP/Z"
+  }
+}

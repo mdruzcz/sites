@@ -1,11 +1,15 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { Turnstile } from "@marsidev/react-turnstile";
 import type { Cart } from "@/lib/cart";
 import { submitShippingInquiry } from "@/lib/actions/inquiry";
+import { Icon } from "@/components/icons";
+import { SITE_EMAIL, WELCOME_CODE } from "@/lib/site";
+
+const Turnstile = dynamic(() => import("@marsidev/react-turnstile").then((m) => m.Turnstile), { ssr: false });
 
 const PROVINCES = [
   ["AB", "Alberta"],
@@ -27,168 +31,125 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [province, setProvince] = useState("ON");
-  const [postal, setPostal] = useState("");
-  const [notes, setNotes] = useState("");
-  const turnstileToken = useRef<string | null>(null);
+  const [token, setToken] = useState("");
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [captchaFailed, setCaptchaFailed] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+  const captchaOn = !!siteKey && !siteKey.startsWith("1x000");
 
-  function sendInquiry() {
+  useEffect(() => {
+    if (!captchaOn || !showCaptcha || token) {
+      setCaptchaFailed(false);
+      return;
+    }
+    const id = setTimeout(() => setCaptchaFailed(true), 15000);
+    return () => clearTimeout(id);
+  }, [captchaOn, showCaptcha, token]);
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
     setError(null);
     startTransition(async () => {
       try {
-        await submitShippingInquiry({
-          name,
-          email,
-          phone,
-          address,
-          city,
-          province,
-          postal,
-          notes: notes || null,
-          discount_code: null,
-          turnstile_token: turnstileToken.current
+        const res = await submitShippingInquiry({
+          name: String(fd.get("name") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          organization: String(fd.get("organization") ?? "") || null,
+          address: String(fd.get("address") ?? ""),
+          city: String(fd.get("city") ?? ""),
+          province: String(fd.get("province") ?? "ON"),
+          postal: String(fd.get("postal_code") ?? "").toUpperCase(),
+          notes: String(fd.get("notes") ?? "") || null,
+          discount_code: String(fd.get("discount_code") ?? "") || null,
+          turnstile_token: token || null
         });
+        if (!res.ok) {
+          setError(res.error);
+          return;
+        }
         router.push("/checkout/success");
-      } catch (e) {
-        setError(e instanceof Error ? e.message : "Could not send your inquiry. Please try again.");
+      } catch {
+        setError(`We couldn't reach the server. Please try again, or email ${SITE_EMAIL}.`);
       }
     });
   }
 
   return (
-    <div className="space-y-6">
-      {/* How it works */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-brand-soft)] p-5">
-        <h2 className="font-display text-xl text-[var(--color-brand-dark)]">
-          How ordering works — no payment online
-        </h2>
-        <p className="mt-2 text-sm text-slate-700">
-          Send us the products you want and your delivery address below. We&rsquo;ll reply by email,{" "}
-          <strong>usually within one business day</strong>, with your shipping cost and delivery
-          timeline. Once you approve the quote, we arrange payment and ship your order.
+    <form ref={formRef} onSubmit={onSubmit} onFocus={() => setShowCaptcha(true)} className="space-y-6">
+      <section className="rounded-2xl border border-[var(--color-brand)]/15 bg-[var(--color-brand-soft)] p-5">
+        <h2 className="font-display text-xl text-[var(--color-brand-dark)]">How this works</h2>
+        <p className="mt-2 text-sm text-[var(--color-text-soft)]">
+          Send us your list and delivery address. We reply by email, <strong>usually within one business day</strong>, with pricing (including any volume, installer or public-sector pricing), shipping and a timeline. Approve the quote and we arrange payment and ship. Nothing is charged now.
         </p>
       </section>
 
-      {/* Contact */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
+      <section className="card p-5 md:p-6">
         <h2 className="font-display text-xl">1 · Contact</h2>
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Input label="Full name" name="name" autoComplete="name" required value={name} onChange={(e) => setName(e.target.value)} />
-          <Input label="Email" name="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-          <Input label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className="md:col-span-2" />
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <Field label="Full name *" name="name" autoComplete="name" required />
+          <Field label="Organization / property (optional)" name="organization" autoComplete="organization" placeholder="e.g. Main Street BIA" />
+          <Field label="Email *" name="email" type="email" autoComplete="email" inputMode="email" required />
+          <Field label="Phone" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
         </div>
       </section>
 
-      {/* Delivery address */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
+      <section className="card p-5 md:p-6">
         <h2 className="font-display text-xl">2 · Delivery address</h2>
-        <p className="mt-1 text-xs text-slate-500">
-          Shipping is quoted per order from our Ontario warehouse — your full address lets us give
-          you an accurate cost and timeline.
-        </p>
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          <Input
-            label="Street address"
-            name="address"
-            autoComplete="street-address"
-            required
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            className="md:col-span-2"
-          />
-          <Input label="City / town" name="city" autoComplete="address-level2" required value={city} onChange={(e) => setCity(e.target.value)} />
+        <p className="mt-1 text-xs text-[var(--color-muted)]">Shipping is quoted per order from London, Ontario; a full address gives you an accurate cost and timeline.</p>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <Field label="Street address *" name="address" autoComplete="street-address" required wrapClass="md:col-span-2" />
+          <Field label="City / town *" name="city" autoComplete="address-level2" required />
           <label className="block">
-            <span className="text-xs font-medium text-slate-600">Province</span>
-            <select
-              name="province"
-              value={province}
-              onChange={(e) => setProvince(e.target.value)}
-              className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-            >
-              {PROVINCES.map(([code, provinceName]) => (
-                <option key={code} value={code}>
-                  {provinceName}
-                </option>
+            <span className="label">Province</span>
+            <select name="province" defaultValue="ON" className="input">
+              {PROVINCES.map(([code, name]) => (
+                <option key={code} value={code}>{name}</option>
               ))}
             </select>
           </label>
-          <Input
-            label="Postal code"
-            name="postal_code"
-            autoComplete="postal-code"
-            inputMode="text"
-            required
-            value={postal}
-            onChange={(e) => setPostal(e.target.value.toUpperCase())}
-            placeholder="A1A 1A1"
-            pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d"
-          />
+          <Field label="Postal code *" name="postal_code" autoComplete="postal-code" required placeholder="A1A 1A1" pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d" inputClass="uppercase" />
+          <Field label={`Discount code (e.g. ${WELCOME_CODE})`} name="discount_code" autoComplete="off" inputClass="uppercase" />
         </div>
-        <label className="mt-3 block">
-          <span className="text-xs font-medium text-slate-600">Notes (optional)</span>
-          <textarea
-            name="notes"
-            rows={3}
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="Delivery instructions, timing, questions…"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-          />
+        <label className="mt-4 block">
+          <span className="label">Notes (optional)</span>
+          <textarea name="notes" rows={3} placeholder="Install date, loading dock details, questions, PO number…" className="input" />
         </label>
       </section>
 
-      {turnstileSiteKey && !turnstileSiteKey.startsWith("1x000") && (
-        <Turnstile
-          siteKey={turnstileSiteKey}
-          onSuccess={(token) => {
-            turnstileToken.current = token;
-          }}
-        />
+      {captchaOn && showCaptcha && (
+        <div>
+          <Turnstile siteKey={siteKey} onSuccess={setToken} onExpire={() => setToken("")} options={{ appearance: "interaction-only" }} />
+          {captchaFailed && !token && (
+            <p className="mt-2 text-xs text-[var(--color-muted)]">
+              Spam check is slow to load. You can still submit — if it fails, email <a href={`mailto:${SITE_EMAIL}`} className="underline">{SITE_EMAIL}</a>.
+            </p>
+          )}
+        </div>
       )}
 
-      <button
-        type="button"
-        onClick={sendInquiry}
-        disabled={pending || cart.items.length === 0}
-        className="btn-primary w-full justify-center text-base disabled:opacity-50"
-      >
-        {pending ? "Sending your inquiry…" : "Submit inquiry →"}
+      <button type="submit" disabled={pending || cart.items.length === 0} className="btn-accent w-full text-base disabled:opacity-50">
+        {pending ? "Sending your request…" : "Send my quote request"} {!pending && <Icon.arrow size={18} />}
       </button>
 
-      {error && <p className="rounded-md bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p>}
+      {error && <p className="rounded-xl bg-[var(--color-berry-soft)] px-4 py-3 text-sm text-[var(--color-berry-dark)]">{error}</p>}
 
-      <p className="text-center text-xs text-slate-400">
-        No payment is taken online and requesting a quote doesn&rsquo;t commit you to anything. By
-        sending your inquiry you agree to our{" "}
+      <p className="text-center text-xs text-[var(--color-muted)]">
+        No payment is taken online and requesting a quote doesn&rsquo;t commit you to anything. By sending you agree to our{" "}
         <Link href="/privacy" className="underline">privacy policy</Link>.
       </p>
-    </div>
+    </form>
   );
 }
 
-function Input({
-  label,
-  name,
-  type = "text",
-  className = "",
-  ...rest
-}: React.InputHTMLAttributes<HTMLInputElement> & { label: string; name: string }) {
+function Field({ label, name, type = "text", wrapClass = "", inputClass = "", ...rest }: React.InputHTMLAttributes<HTMLInputElement> & { label: string; name: string; wrapClass?: string; inputClass?: string }) {
   return (
-    <label className={`block ${className}`}>
-      <span className="text-xs font-medium text-slate-600">{label}</span>
-      <input
-        name={name}
-        type={type}
-        className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        {...rest}
-      />
+    <label className={`block ${wrapClass}`}>
+      <span className="label">{label}</span>
+      <input name={name} type={type} className={`input ${inputClass}`} {...rest} />
     </label>
   );
 }

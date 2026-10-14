@@ -1,0 +1,211 @@
+{
+  "slug": "c9-led-christmas-lights-commercial-buying-guide",
+  "title": "Commercial C9 LED Christmas Lights: Bulbs, Spools, Wire and Power Math",
+  "metaTitle": "Commercial C9 LED Christmas Lights Buying Guide",
+  "metaDescription": "Commercial C9 LED Christmas lights buying guide for Canada: bulbs vs spools, 12-inch spacing math, colour temperature, amps per run at 120V, SPT-1 vs SPT-2.",
+  "category": "Buying guides",
+  "excerpt": "Buying C9 lights for a building is an arithmetic problem: feet of roofline, bulbs per foot, watts per run and amps per circuit. This guide walks through the maths, the wire and plug choices, and how to pick a colour temperature that suits the building.",
+  "readMinutes": 9,
+  "updated": "2026-10-14",
+  "heroAlt": "Commercial building roofline outlined in warm white C9 LED bulbs on socket wire at 12-inch spacing in winter dusk",
+  "keyTakeaways": [
+    "Commercial C9 systems are built from three parts: socket wire spools, C9 bulbs sold in 25-packs, and plugs; the wire sets the spacing and the bulbs set the look.",
+    "At 12-inch spacing you need one bulb per foot, so a 200 ft roofline needs 200 bulbs, or eight 25-packs.",
+    "At about 0.6 W per C9 LED, a 1000 ft spool at 12-inch spacing draws roughly 600 W, or 5 A at 120V.",
+    "SPT-2 wire carries more current than SPT-1; choose it for long runs, heavy loads or where you chain spools.",
+    "Pick colour temperature by the building: 3000K warm white for brick and wood, pure white for glass and steel."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "C9 bulbs are the standard for outlining commercial roofs, eaves, columns and signage, and the system that holds them is simple once you see the three parts: a spool of socket wire that sets the spacing, the bulbs that plug into each socket, and the plug or connector that feeds power in. Getting the quantities and electrical loads right is arithmetic, not guesswork. This guide gives you the formulas, the typical numbers and the decisions that matter, in the order you will make them."
+    },
+    {
+      "type": "h2",
+      "text": "Bulbs, spools or strands: what are you buying?"
+    },
+    {
+      "type": "p",
+      "text": "Retail strings come as a single sealed unit with the bulbs fixed in place. Commercial C9 lighting separates the parts, and that is the point: any bulb can be swapped without cutting wire, and the same spool can be reused for years. Know the vocabulary before you order."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Socket wire spools: 100 ft, 500 ft and 1000 ft rolls of wire with empty C7/C9 sockets at 12-inch spacing, ready for bulbs. This is the backbone of most commercial installs.",
+        "C9 bulbs: faceted LED bulbs with an E17 base, sold in 25-packs, available in 12 colours including warm white 3000K, pure white and multicolour. See [C9 LED bulbs](/product-category/large-strawberry-lights-c9), with 25-packs from $45.",
+        "Plugs and connectors: vampire plugs that pierce the wire to feed a spool at the end or in the middle, plus end-caps and extension connectors. See [extension cords and wire](/product-category/extension-cords-and-wire).",
+        "Strands: prewired strings of bulbs, including 5mm mini lights, G20 globes and snowfall tubes, used for trees, shrubs and accents. See [mini lights](/product-category/mini-lights)."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "The spacing math"
+    },
+    {
+      "type": "p",
+      "text": "Spools are sold with sockets at 12-inch spacing, which makes quantity planning easy: one bulb per foot of wire. Measure the run in feet, add 5 to 10 percent for corners, drops and feed leads, and divide by 25 to get the number of bulb packs."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "200 ft roofline plus 10 percent = 220 ft of wire, which is 220 bulbs, or 9 packs of 25 (225 bulbs).",
+        "500 ft perimeter plus 10 percent = 550 ft of wire: one 500 ft spool plus one 100 ft spool, and 550 bulbs, or 22 packs.",
+        "1,000 ft of wire = 1,000 bulbs = 40 packs of 25.",
+        "Skip sockets where the wire turns tightly or passes a downspout; you can leave sockets empty and add a blank cap, or fill them with a few spare bulbs."
+      ]
+    },
+    {
+      "type": "callout",
+      "text": "Always order 3 to 5 percent more bulbs than your count. A cracked bulb in transit or a dropped bulb on the ladder is a 10-minute delay if you have spares and a day's delay if you do not."
+    },
+    {
+      "type": "h2",
+      "text": "Power math at 120V"
+    },
+    {
+      "type": "p",
+      "text": "Commercial C9 LED bulbs draw very little power. For planning, assume about 0.6 W per bulb. At 12-inch spacing that makes the arithmetic straightforward: watts equals bulbs times 0.6, and amps equals watts divided by 120."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "100 ft spool: 100 bulbs x 0.6 W = 60 W, or 0.5 A.",
+        "500 ft spool: 500 bulbs x 0.6 W = 300 W, or 2.5 A.",
+        "1000 ft spool: 1,000 bulbs x 0.6 W = 600 W, or 5 A.",
+        "A 15 A circuit at 80 percent continuous load is 12 A, or 1,440 W, which is about 2,400 bulbs. In practice, two 1000 ft spools on one circuit is a comfortable 10 A."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Always check the actual wattage on the product page of the bulb you choose, since it varies by colour and brand. Then check the limiting factor on each run, which is rarely the breaker. It is more often the plug's amp rating, the wire gauge or voltage drop."
+    },
+    {
+      "type": "h3",
+      "text": "Voltage drop on long runs"
+    },
+    {
+      "type": "p",
+      "text": "Current flowing through thin wire loses voltage along the way, and bulbs at the far end can look dimmer than the first ones. As a conservative rule, feed a run longer than about 500 ft from the middle, or add a second feed point, so that no section is more than about 250 to 500 ft from power. Look for brightness variation when you test the run on the ground."
+    },
+    {
+      "type": "h2",
+      "text": "SPT-1 vs SPT-2 wire"
+    },
+    {
+      "type": "p",
+      "text": "SPT stands for service parallel thermoplastic, and the number is the insulation thickness class. SPT-1 is the lighter wire, typically 18 AWG, rated about 10 A. SPT-2 is thicker, typically 16 AWG, rated about 13 A, with tougher insulation that stands up better to ice, scraping and repeated install and takedown."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Choose SPT-1 for short, light runs: storefront outlines, signage, interior-adjacent displays.",
+        "Choose SPT-2 for long rooflines, runs where you chain spools, or any install you plan to reuse for 5 or more seasons.",
+        "Do not mix wire types in a single run without checking that the plug and the thinnest wire are both rated for the load.",
+        "Confirm the wire gauge and amp rating on the spool listing before you order."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Colour temperature: 2400K, 3000K and 5000K plus"
+    },
+    {
+      "type": "p",
+      "text": "Colour temperature is measured in kelvin: lower numbers are warmer and more amber, higher numbers are cooler and bluer. Choose it by building material and what you want the night view to say."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Around 2400K: the amber glow of old incandescent bulbs. Confirm availability on the product page, since not every range includes it.",
+        "3000K warm white: a soft, traditional white that flatters brick, stone, wood and heritage storefronts. Our most common commercial choice.",
+        "5000K and above, pure white: crisp and bright, best on glass, steel and modern fascia, and on blue-toned snowy scenes.",
+        "Multicolour: a festive choice for family-focused or retail-park properties; keep it to a single zone so the property does not look busy.",
+        "Never mix colour temperatures on one continuous line; the difference is obvious at night."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Plugs, feeds and building a run"
+    },
+    {
+      "type": "p",
+      "text": "A vampire plug clamps onto the wire, piercing the insulation to make contact, and gives you a power feed anywhere along a spool. Because it is installed on the wire, the plug position is flexible: feed from the end for short runs and from the middle for long ones. Build runs with a few rules."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Install a plug once; repeated moves weaken the insulation and increase the chance of moisture getting in.",
+        "Put an end cap on every open end and seal connections with weatherproof covers.",
+        "Do not exceed the plug's rated amps, and check the fuse in the plug before you power a run.",
+        "Test each run on the ground before it goes up, and label the plug end with the zone it feeds.",
+        "Use GFCI-protected outlets and timers at the source, and set a dusk-to-late schedule."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Worked example: outlining a small plaza"
+    },
+    {
+      "type": "p",
+      "text": "Suppose a plaza has a 160 ft front roofline, two 40 ft side returns and eight columns that you want to wrap with a single bulb run of 12 ft each. Total wire is 160 + 80 + 96 = 336 ft; add 10 percent for corners and feed leads to get about 370 ft."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Wire: one 500 ft spool covers it with 130 ft to spare for next season, or three 100 ft spools plus a 100 ft top-up if you want modular pieces.",
+        "Bulbs: 370 sockets means 370 bulbs, which is 15 packs of 25 (375 bulbs). Add one more pack as spares.",
+        "Load: 370 bulbs x 0.6 W = about 222 W, or 1.85 A. That sits well inside a single 15 A circuit.",
+        "Feeds: put a vampire plug in the middle of the front roofline so no bulb is more than about 185 ft from power.",
+        "Control: one outdoor timer or photocell at the receptacle, set for dusk to 11 pm."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Common mistakes to avoid"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Buying bulbs by the string count instead of by the foot of wire. Always count sockets.",
+        "Chaining several spools end to end without calculating total amps or checking plug ratings.",
+        "Mixing warm white and pure white on adjacent lines, which reads as a mismatch at night.",
+        "Skipping the ground test. A dead section is far easier to fix before it is on a roof.",
+        "Leaving sockets empty and exposed. Fill them or cap them so water does not enter.",
+        "Storing wire loosely coiled, which kinks and cracks the insulation after a few seasons."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Mounting and maintenance"
+    },
+    {
+      "type": "p",
+      "text": "Use clips matched to the surface: shingle clips, gutter hooks, fascia clips or track for flat edges. Keep spacing consistent by clipping at every second or third socket. Store spools on reels or large frames, never loosely coiled, so the wire does not kink. Replace failed bulbs in the first week, not in January. For the whole product range, browse the [shop](/shop) or send your measurements to the team through the [quote request form](/request-a-quote)."
+    },
+    {
+      "type": "p",
+      "text": "Holiday Light Supplies ships from London, Ontario, with free shipping on orders over $150. Ordering is inquiry-based, so add the bulbs, spools and plugs to your cart, submit an inquiry and the team replies by email, usually within one business day, with shipping cost, timeline and any volume pricing."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How many C9 bulbs do I need per foot?",
+      "a": "On a standard 12-inch spaced socket wire, you need one bulb per foot. A 200 ft roofline needs 200 bulbs plus a small allowance for corners and spares, which works out to about 9 packs of 25."
+    },
+    {
+      "q": "How many amps does a 1000 ft spool of C9 LED lights draw?",
+      "a": "At about 0.6 W per bulb and 12-inch spacing, 1,000 bulbs use roughly 600 W, which is 5 A at 120V. Always check the wattage on the specific bulb and the amp rating on the wire and plug."
+    },
+    {
+      "q": "What is the difference between SPT-1 and SPT-2 wire?",
+      "a": "SPT-2 has thicker insulation and a heavier conductor than SPT-1, so it carries more current and handles repeated installs better. Use SPT-1 for short light runs and SPT-2 for long rooflines or chained spools."
+    },
+    {
+      "q": "Which colour temperature should I choose for a commercial building?",
+      "a": "Warm white 3000K suits brick, stone and wood. Pure white, at 5000K or above, looks crisp on glass and steel. Keep one colour temperature on each continuous line."
+    },
+    {
+      "q": "Can I replace a single bulb on commercial socket wire?",
+      "a": "Yes. Each C9 bulb has an E17 base and unscrews from its socket, so you replace a failed bulb in seconds without cutting the wire. That is a main advantage over sealed retail strings."
+    }
+  ]
+}

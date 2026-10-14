@@ -6,11 +6,8 @@ import Link from "next/link";
 import { useUI } from "@/components/ui-context";
 import { setLineQuantityAction, removeLineAction } from "@/lib/actions/cart";
 import type { Cart } from "@/lib/cart";
-import { imageSrc } from "@/lib/utils";
-
-function formatCad(n: number) {
-  return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(n);
-}
+import { formatCad, imageSrc } from "@/lib/utils";
+import { Icon } from "@/components/icons";
 
 export function MiniCartDrawer() {
   const { miniCartOpen, closeMiniCart } = useUI();
@@ -18,7 +15,6 @@ export function MiniCartDrawer() {
   const [loading, setLoading] = useState(false);
   const [, startTransition] = useTransition();
 
-  // Fetch cart whenever drawer opens
   useEffect(() => {
     if (!miniCartOpen) return;
     setLoading(true);
@@ -28,7 +24,6 @@ export function MiniCartDrawer() {
       .finally(() => setLoading(false));
   }, [miniCartOpen]);
 
-  // Close on Escape
   useEffect(() => {
     if (!miniCartOpen) return;
     function onKey(e: KeyboardEvent) {
@@ -41,76 +36,52 @@ export function MiniCartDrawer() {
   if (!miniCartOpen) return null;
 
   const subtotal = cart?.subtotal_cad ?? 0;
-
+  const refresh = async () => {
+    const r = await fetch("/api/cart");
+    const d = await r.json();
+    setCart(d.cart ?? null);
+  };
   function setQty(lineId: string, qty: number) {
     startTransition(async () => {
       await setLineQuantityAction(lineId, qty);
-      // Re-fetch
-      const r = await fetch("/api/cart");
-      const d = await r.json();
-      setCart(d.cart ?? null);
+      await refresh();
     });
   }
   function remove(lineId: string) {
     startTransition(async () => {
       await removeLineAction(lineId);
-      const r = await fetch("/api/cart");
-      const d = await r.json();
-      setCart(d.cart ?? null);
+      await refresh();
     });
   }
 
   return (
     <>
       <div className="drawer-overlay" onClick={closeMiniCart} aria-hidden />
-      <aside
-        role="dialog"
-        aria-modal="true"
-        aria-label="Shopping cart"
-        className="drawer-panel"
-      >
-        <div className="flex items-center justify-between border-b border-[var(--color-border)] px-4 py-4">
+      <aside role="dialog" aria-modal="true" aria-label="Quote list" className="drawer-panel">
+        <div className="flex items-center justify-between border-b border-[var(--color-border)] px-5 py-4">
           <div>
-            <p className="eyebrow text-slate-500">Your cart</p>
+            <p className="eyebrow text-[var(--color-muted)]">Quote list</p>
             <p className="font-display text-xl">
               {cart?.items.length ?? 0} item{cart && cart.items.length === 1 ? "" : "s"}
             </p>
           </div>
-          <button
-            type="button"
-            onClick={closeMiniCart}
-            aria-label="Close cart"
-            className="grid size-9 place-items-center rounded-full border border-[var(--color-border)] hover:bg-slate-50"
-          >
-            ✕
+          <button type="button" onClick={closeMiniCart} aria-label="Close" className="grid size-11 place-items-center rounded-full border border-[var(--color-border)] hover:bg-[var(--color-bg-warm)]">
+            <Icon.close size={16} />
           </button>
         </div>
 
-        {/* No-payment reassurance */}
-        <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3">
-          <p className="text-sm text-[var(--color-brand-dark)]">
-            <span className="font-semibold">No payment online</span> — we&rsquo;ll email your shipping
-            quote &amp; timeline within one business day.
-          </p>
+        <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-5 py-3 text-sm text-[var(--color-brand-dark)]">
+          <span className="font-semibold">No payment online.</span> Submit the list and we email pricing, shipping and timeline within one business day.
         </div>
 
-        {/* Items */}
-        <div className="flex-1 overflow-y-auto px-4 py-4">
-          {loading && !cart && <p className="text-sm text-slate-500">Loading…</p>}
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          {loading && !cart && <p className="text-sm text-[var(--color-muted)]">Loading…</p>}
           {!loading && cart && cart.items.length === 0 && (
             <div className="grid h-full place-items-center text-center">
               <div>
-                <p className="font-display text-xl text-slate-700">Your cart is empty</p>
-                <p className="mt-2 text-sm text-slate-500">
-                  Add some lights to get started.
-                </p>
-                <Link
-                  href="/shop"
-                  onClick={closeMiniCart}
-                  className="btn-primary mt-6 inline-flex"
-                >
-                  Start shopping →
-                </Link>
+                <p className="font-display text-xl">Your list is empty</p>
+                <p className="mt-2 text-sm text-[var(--color-muted)]">Add bulbs, displays and décor to get a quote.</p>
+                <Link href="/shop" onClick={closeMiniCart} className="btn-primary mt-6">Browse the catalog</Link>
               </div>
             </div>
           )}
@@ -118,95 +89,43 @@ export function MiniCartDrawer() {
             <ul className="space-y-4">
               {cart.items.map((l) => (
                 <li key={l.id} className="flex gap-3">
-                  <div className="size-16 shrink-0 overflow-hidden rounded-md bg-slate-50">
-                    <Image
-                      src={imageSrc(l.image_url)}
-                      alt={l.product_name}
-                      width={80}
-                      height={80}
-                      className="h-full w-full object-contain"
-                    />
+                  <div className="size-16 shrink-0 overflow-hidden rounded-xl bg-[var(--color-bg-warm)]">
+                    <Image src={imageSrc(l.image_url)} alt={l.product_name} width={80} height={80} className="h-full w-full object-contain p-1" />
                   </div>
                   <div className="flex-1 text-sm">
-                    <Link
-                      href={`/product/${l.product_slug}`}
-                      onClick={closeMiniCart}
-                      className="line-clamp-2 font-medium leading-tight hover:text-[var(--color-brand)]"
-                    >
+                    <Link href={`/product/${l.product_slug}`} onClick={closeMiniCart} className="line-clamp-2 font-medium leading-tight hover:text-[var(--color-brand)]">
                       {l.product_name}
                     </Link>
-                    <p className="text-xs text-slate-500">{l.variant_name}</p>
+                    <p className="text-xs text-[var(--color-muted)]">{l.variant_name}</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <div className="inline-flex items-center rounded-md border border-[var(--color-border)]">
-                        <button
-                          type="button"
-                          onClick={() => setQty(l.id, Math.max(1, l.quantity - 1))}
-                          aria-label="Decrease quantity"
-                          className="px-2 text-sm hover:bg-slate-50"
-                        >
-                          −
-                        </button>
+                      <div className="inline-flex items-center rounded-lg border border-[var(--color-border)]">
+                        <button type="button" onClick={() => setQty(l.id, Math.max(1, l.quantity - 1))} aria-label="Decrease quantity" className="grid size-9 place-items-center hover:bg-[var(--color-bg-warm)]">−</button>
                         <span className="w-8 text-center text-sm">{l.quantity}</span>
-                        <button
-                          type="button"
-                          onClick={() => setQty(l.id, l.quantity + 1)}
-                          aria-label="Increase quantity"
-                          className="px-2 text-sm hover:bg-slate-50"
-                        >
-                          +
-                        </button>
+                        <button type="button" onClick={() => setQty(l.id, l.quantity + 1)} aria-label="Increase quantity" className="grid size-9 place-items-center hover:bg-[var(--color-bg-warm)]">+</button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => remove(l.id)}
-                        className="text-xs text-rose-700 hover:underline"
-                      >
-                        Remove
-                      </button>
+                      <button type="button" onClick={() => remove(l.id)} className="text-xs text-[var(--color-berry)] hover:underline">Remove</button>
                     </div>
                   </div>
-                  <p className="text-sm font-semibold">
-                    {formatCad(l.unit_price_cad * l.quantity)}
-                  </p>
+                  <p className="text-sm font-semibold">{l.unit_price_cad > 0 ? formatCad(l.unit_price_cad * l.quantity) : <span className="text-[var(--color-brand)]">Quoted</span>}</p>
                 </li>
               ))}
             </ul>
           )}
         </div>
 
-        {/* Footer */}
         {cart && cart.items.length > 0 && (
-          <div className="border-t border-[var(--color-border)] bg-white px-4 py-4 pb-safe">
+          <div className="border-t border-[var(--color-border)] bg-white px-5 py-4 pb-safe">
             <div className="flex items-baseline justify-between">
-              <span className="text-sm text-slate-600">Subtotal</span>
-              <span className="font-display text-2xl text-[var(--color-brand)]">
-                {formatCad(subtotal)}
-              </span>
+              <span className="text-sm text-[var(--color-muted)]">Priced subtotal</span>
+              <span className="font-display text-2xl text-[var(--color-brand)]">{formatCad(subtotal)}</span>
             </div>
-            <p className="mt-1 text-right text-xs text-slate-500">
-              No payment online — we&rsquo;ll email your shipping quote
-            </p>
-            <Link
-              href="/checkout"
-              onClick={closeMiniCart}
-              className="btn-primary mt-4 w-full justify-center"
-            >
-              Submit an inquiry →
+            <p className="mt-1 text-right text-xs text-[var(--color-muted)]">Shipping, tax and volume pricing on the quote</p>
+            <Link href="/checkout" onClick={closeMiniCart} className="btn-accent mt-4 w-full">
+              Request my quote <Icon.arrow size={16} />
             </Link>
-            <Link
-              href="/cart"
-              onClick={closeMiniCart}
-              className="mt-2 block text-center text-xs text-slate-500 underline-offset-2 hover:underline"
-            >
-              View full cart page
+            <Link href="/cart" onClick={closeMiniCart} className="mt-2 block text-center text-xs text-[var(--color-muted)] underline-offset-2 hover:underline">
+              View full list
             </Link>
-            <div className="mt-3 flex items-center justify-center gap-3 text-[10px] text-slate-400">
-              <span>✉️ No payment online</span>
-              <span>·</span>
-              <span>Shipping quoted by email</span>
-              <span>·</span>
-              <span>30-day returns</span>
-            </div>
           </div>
         )}
       </aside>

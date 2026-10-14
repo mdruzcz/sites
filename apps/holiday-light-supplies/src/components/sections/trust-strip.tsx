@@ -1,19 +1,25 @@
-export function TrustStrip() {
-  const badges = [
-    { icon: "🍁", label: "Ships across Ontario" },
-    { icon: "🛠️", label: "Installer-grade, sold direct" },
-    { icon: "❄️", label: "Tested to -40°C" },
-    { icon: "🚚", label: "Free shipping over $150" }
-  ];
+import { Icon, type IconName } from "@/components/icons";
+import { BENEFITS } from "@/lib/site";
+
+/** Benefits bar — the five promises, repeated under the hero and on key landing pages. */
+export function TrustStrip({ compact = false }: { compact?: boolean }) {
   return (
-    <section className="border-y border-[var(--color-border)] bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-[var(--color-border)] md:grid-cols-4">
-        {badges.map((b) => (
-          <div key={b.label} className="flex items-center justify-center gap-2 bg-white px-4 py-5 text-sm">
-            <span aria-hidden className="text-lg">{b.icon}</span>
-            <span className="font-medium text-slate-700">{b.label}</span>
-          </div>
-        ))}
+    <section className="border-y border-[var(--color-border)] bg-white" aria-label="Why buy from Holiday Light Supplies">
+      <div className={`shell grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-5 ${compact ? "py-5" : "py-7"}`}>
+        {BENEFITS.map((b) => {
+          const I = Icon[b.icon as IconName];
+          return (
+            <div key={b.title} className="flex items-start gap-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand)]">
+                <I size={20} />
+              </span>
+              <div>
+                <p className="text-sm font-semibold leading-tight text-[var(--color-text)]">{b.title}</p>
+                {!compact && <p className="mt-1 text-xs leading-snug text-[var(--color-muted)]">{b.body}</p>}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

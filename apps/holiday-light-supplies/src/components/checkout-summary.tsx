@@ -11,7 +11,7 @@ export function CheckoutSummary({ cart }: { cart: Cart }) {
   return (
     <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
       {/* Items */}
-      <div className="rounded-xl border border-[var(--color-border)] bg-white">
+      <div className="card">
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
@@ -26,7 +26,7 @@ export function CheckoutSummary({ cart }: { cart: Cart }) {
           <ul className="divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
             {cart.items.map((l) => (
               <li key={l.id} className="flex gap-3 px-4 py-3">
-                <div className="relative size-16 shrink-0 overflow-hidden rounded-md bg-slate-50">
+                <div className="relative size-16 shrink-0 overflow-hidden rounded-md bg-[var(--color-bg-warm)]">
                   <Image
                     src={imageSrc(l.image_url)}
                     alt={l.product_name}
@@ -40,7 +40,7 @@ export function CheckoutSummary({ cart }: { cart: Cart }) {
                 </div>
                 <div className="flex-1 text-sm">
                   <p className="line-clamp-2 font-medium leading-tight">{l.product_name}</p>
-                  <p className="text-xs text-slate-500">{l.variant_name}</p>
+                  <p className="text-xs text-[var(--color-muted)]">{l.variant_name}</p>
                 </div>
                 <p className="text-sm font-semibold">
                   {formatCad(l.unit_price_cad * l.quantity)}
@@ -52,11 +52,11 @@ export function CheckoutSummary({ cart }: { cart: Cart }) {
       </div>
 
       {/* Totals */}
-      <div className="rounded-xl border border-[var(--color-border)] bg-white p-4">
+      <div className="card p-4">
         <dl className="space-y-2 text-sm">
           <Row label="Product subtotal" value={formatCad(cart.subtotal_cad)} />
           <Row label="Shipping" value="Quoted by email" />
-          <Row label="Tax" value="Included in your quote" small />
+          <Row label="Tax" value="Added on quote" small />
         </dl>
         <div className="mt-4 border-t border-[var(--color-border)] pt-4">
           <div className="flex justify-between text-base">
@@ -65,13 +65,13 @@ export function CheckoutSummary({ cart }: { cart: Cart }) {
               {formatCad(cart.subtotal_cad)}
             </span>
           </div>
-          <p className="mt-1 text-right text-[11px] text-slate-400">CAD · shipping &amp; tax quoted by email</p>
+          <p className="mt-1 text-right text-[11px] text-[var(--color-muted)]">CAD · shipping &amp; tax quoted by email</p>
         </div>
       </div>
 
       {/* Trust footer */}
       <div className="rounded-xl bg-[var(--color-brand-soft)] p-4 text-xs text-[var(--color-brand)]">
-        <p className="flex items-center gap-2 font-semibold">✉️ No payment taken online</p>
+        <p className="flex items-center gap-2 font-semibold">No payment taken online</p>
         <p className="mt-2 text-[var(--color-brand-dark)]/80">
           We reply with your shipping cost &amp; timeline, usually within one business day · Ships from
           our Ontario warehouse.
@@ -93,7 +93,7 @@ function Row({
   valueColor?: string;
 }) {
   return (
-    <div className={`flex justify-between ${small ? "text-xs text-slate-500" : ""}`}>
+    <div className={`flex justify-between ${small ? "text-xs text-[var(--color-muted)]" : ""}`}>
       <dt>{label}</dt>
       <dd className={`${valueColor ?? ""} font-medium`}>{value}</dd>
     </div>

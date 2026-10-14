@@ -1,0 +1,81 @@
+{
+  "slug": "power-planning-for-large-holiday-light-displays",
+  "title": "Holiday Lighting Power Requirements: Planning Circuits for Large Displays",
+  "metaTitle": "Holiday Lighting Power Requirements: Circuit Planning",
+  "metaDescription": "Plan holiday lighting power requirements for large commercial displays in Canada: 120V circuit math, C9 LED watts, 24V transformers, cord gauge and energy cost.",
+  "category": "How-to",
+  "excerpt": "Large displays fail on power, not on design: tripped breakers, undersized cords and overloaded transformers. This guide walks through 120V circuit math, watts per C9 LED and mini strand, 24V transformer sizing, GFCI, cord gauge by length, timers and a worked electricity cost.",
+  "readMinutes": 9,
+  "updated": "2026-10-14",
+  "heroAlt": "Facility crew checking an outdoor power distribution box feeding a large commercial Christmas lighting display at night",
+  "keyTakeaways": [
+    "A 15 A, 120V circuit supplies 1,800 W, and for continuous holiday loads you should plan to 80%, which is 1,440 W per circuit.",
+    "LED C9 bulbs draw about 0.6 W each, so a 1,000 ft spool at 12 inch spacing is roughly 600 W and one circuit can carry about 2,400 bulbs.",
+    "24V displays are limited by transformer capacity: size each 200 W transformer to carry no more than about 160 W continuous.",
+    "Cord gauge must rise with load and length to hold voltage drop near 3%; at 10 A, 14 gauge cord is good for about 60 ft and 12 gauge for about 100 ft.",
+    "Put every circuit on GFCI protection plus a timer or photocell, and budget energy with a simple kWh calculation before the season starts."
+  ],
+  "body": [
+    { "type": "p", "text": "A large holiday display is an electrical project first and a decorating project second. Most failures we hear about from malls, BIAs and municipalities are power failures: a breaker that trips every evening at 5:30 pm, a thin extension cord that runs warm, or a display whose far end is visibly dimmer than the start. All of them are avoidable with 30 minutes of arithmetic before the order goes in. This guide gives you the numbers and the method." },
+    { "type": "h2", "text": "The basic circuit math at 120V" },
+    { "type": "p", "text": "Power in watts equals volts times amps. A standard 15 A circuit at 120V supplies 15 x 120 = 1,800 W. Holiday displays run for hours at a time, which counts as a continuous load, so electrical practice is to load a circuit to no more than 80% of its rating. That gives 12 A, or 1,440 W of usable capacity per 15 A circuit. A 20 A circuit gives 2,400 W at the same 80% rule, which is 1,920 W usable." },
+    { "type": "ul", "items": [
+      "15 A circuit: 1,800 W rated, 1,440 W usable, 12 A continuous.",
+      "20 A circuit: 2,400 W rated, 1,920 W usable, 16 A continuous.",
+      "Divide the usable watts by the load of each unit (a spool, a strand, a transformer) to find how many units one circuit carries.",
+      "Always confirm with the building's electrician which receptacles share a breaker. Two outdoor outlets on opposite walls may be on the same circuit as the lobby lights."
+    ] },
+    { "type": "callout", "text": "Before you design anything, label every outdoor receptacle on the property with its breaker number and rating. This 20-minute walk saves hours of troubleshooting in November." },
+    { "type": "h2", "text": "Watts per light: C9 and mini strands" },
+    { "type": "p", "text": "Commercial LED bulbs draw a fraction of what incandescent bulbs did, and that is why large displays are practical today. For planning, use about 0.6 W per [C9 LED bulb](/product-category/large-strawberry-lights-c9). On C7/C9 socket wire at 12 inch spacing, there is one bulb per foot, so the maths is simple:" },
+    { "type": "ul", "items": [
+      "100 ft spool, 12 inch spacing: 100 bulbs x 0.6 W = 60 W.",
+      "500 ft spool: 500 x 0.6 = 300 W.",
+      "1,000 ft spool: 1,000 x 0.6 = 600 W, about 5 A at 120V.",
+      "One 15 A circuit at 1,440 W usable: 1,440 / 0.6 = 2,400 bulbs, which is about 2,400 ft of wire at 12 inch spacing."
+    ] },
+    { "type": "p", "text": "[5mm mini light strands](/product-category/mini-lights) draw much less per bulb. A typical 100-light LED strand lands somewhere in the 4 to 7 W range, so use the label wattage on your actual strand. A few hundred strands still only add up to a couple of circuits. G20 globe bulbs and larger specialty bulbs vary, so read the spec on each product page and keep a running total in a spreadsheet." },
+    { "type": "p", "text": "Wire gauge matters too. SPT-1 and SPT-2 are the two common wire types for socket wire, and SPT-2 is the heavier of the two, with a higher current rating. Even a 1,000 ft spool at 5 A is better fed from the middle or from both ends than from one end, which keeps voltage drop low and the last bulbs as bright as the first. Check the label for the maximum run per feed." },
+    { "type": "h2", "text": "Sizing 24V transformers for 3D displays" },
+    { "type": "p", "text": "Our [3D](/product-category/3d) and [2D LED displays](/product-category/2d) are low-voltage, 24V, and run through transformers. The transformer, not the household circuit, is usually the limit. A common size is 200 W. The same 80% rule applies: a 200 W transformer should carry no more than about 160 W continuous." },
+    { "type": "p", "text": "As a planning figure, assume 0.04 to 0.06 W per LED on netting and frame displays. A 700-LED piece is roughly 30 to 40 W. An 8,000-LED piece is near 400 W, which needs three 200 W transformers once the 80% rule is applied (400 / 160 = 2.5, round up). Use the exact figures on each product page for your final design, since LED type and flash mode change the load." },
+    { "type": "ul", "items": [
+      "Add up the watts of every display connected to a transformer, then divide by 160 to find the minimum number of 200 W transformers.",
+      "Do not exceed the number of displays that can be linked to one transformer, even if the wattage looks fine.",
+      "Mount transformers above snow line, on a dry shelf or in a weatherproof box, with a drip loop on the plug.",
+      "Remember that the 120V side of each transformer counts against the circuit. Four fully loaded 200 W transformers on one 15 A circuit is 800 W, well inside 1,440 W."
+    ] },
+    { "type": "h2", "text": "Extension cord gauge by length" },
+    { "type": "p", "text": "Cord resistance drops voltage along the run. Too much drop makes lights dim, makes transformers work harder and heats the cord. A good target is to keep voltage drop at or under 3%, which is 3.6 V on a 120V supply. The numbers below come from standard copper resistance and give the longest recommended one-way length for each gauge." },
+    { "type": "ul", "items": [
+      "Load up to 5 A (600 W): 16 gauge to about 75 ft, 14 gauge to about 125 ft, 12 gauge to about 200 ft.",
+      "Load up to 10 A (1,200 W): 14 gauge to about 60 ft, 12 gauge to about 100 ft, 10 gauge to about 150 ft.",
+      "Load up to 12 A (1,440 W): 12 gauge to about 90 ft, 10 gauge to about 150 ft. Do not use 16 gauge at this load.",
+      "Use outdoor-rated cords with a lighted end or weatherproof boots. Our [extension cords and wire](/product-category/extension-cords-and-wire) range covers the common gauges.",
+      "Fully uncoil cords. A coiled cord under load heats up and can exceed its rating."
+    ] },
+    { "type": "p", "text": "If a run is longer than the gauge allows, you have three choices: step up a gauge, move the power source closer, or split the load across two feeds. Moving power closer is nearly always cheapest. Vampire plugs let you tap socket wire at a specific point to feed a display from a nearby cord rather than running everything from the end." },
+    { "type": "h2", "text": "GFCI, timers and photocells" },
+    { "type": "p", "text": "Every outdoor circuit that feeds holiday lighting should be GFCI protected. Many modern outdoor receptacles already are, but older buildings may not be, so test each one with its test button and confirm it resets. Where a receptacle is not GFCI protected, use a portable GFCI cord or have an electrician fit a protected receptacle." },
+    { "type": "p", "text": "Control the schedule with outdoor-rated timers or photocells. A photocell turns the display on at dusk and a timer cuts it off at a set hour, which stops lights burning through the night and cuts energy use. In Ontario, dusk in December arrives around 4:45 pm, so a common schedule is dusk to 11 pm on weekdays and dusk to midnight on weekends. For one-off events, add a second timer for the extra hours. See our [accessories](/product-category/accessories) range for timers and clips." },
+    { "type": "p", "text": "Plan a single point of control for each zone so staff can shut a section off in an emergency or for a snow clearing, and label each cord with the zone and circuit number." },
+    { "type": "h2", "text": "What it costs to run: a worked example" },
+    { "type": "p", "text": "LED energy use is small, but a budget line is still useful. Take a display with 5,000 C9 LED bulbs. The load is 5,000 x 0.6 W = 3,000 W, or 3 kW. That needs about three 15 A circuits (3,000 / 1,440 = 2.1, round up to 3)." },
+    { "type": "ul", "items": [
+      "Run time: 6 hours per night x 45 nights = 270 hours.",
+      "Energy: 3 kW x 270 hours = 810 kWh.",
+      "Cost at an example rate of $0.15 per kWh: 810 x 0.15 = $121.50 for the season.",
+      "Cut the schedule from 6 to 5 hours and the same display uses 675 kWh, which saves 135 kWh. Your actual cost depends on your utility's rate structure, including time-of-use pricing."
+    ] },
+    { "type": "p", "text": "The point of the example is not the dollar figure, which depends on your rate, but the method: watts x hours / 1,000 x rate. Do the same calculation for each zone and add them up for a season budget." },
+    { "type": "h2", "text": "Putting the plan together" },
+    { "type": "p", "text": "Build a one-page power plan before you order: a list of every display or spool, its wattage, the circuit it sits on, the cord gauge and length, and the timer. Give a copy to the electrician and one to the installer. Then add the products to your cart and submit an inquiry. The team replies by email, usually within one business day, with shipping cost, timeline and any volume pricing. Free shipping applies over $150, and municipalities and BIAs can request net-30 invoicing, tax-exempt handling and RFP-ready line-item quotes through [our municipal team](/municipalities)." }
+  ],
+  "faq": [
+    { "q": "How many watts can one 15 amp circuit handle for Christmas lights?", "a": "A 15 A circuit at 120V is rated for 1,800 W, but plan to 80% for continuous holiday loads, which is 1,440 W. That carries about 2,400 LED C9 bulbs at roughly 0.6 W each." },
+    { "q": "How much power does a C9 LED bulb use?", "a": "Plan on about 0.6 W per C9 LED bulb. A 100 ft spool at 12 inch spacing has 100 bulbs and draws about 60 W, and a 1,000 ft spool draws about 600 W." },
+    { "q": "How do I size a transformer for a 3D LED display?", "a": "Add the watts of every display on the transformer and divide by 160, which is 80% of a 200 W transformer. For example, a 400 W display needs three 200 W transformers. Use the wattage on each product page for the final plan." },
+    { "q": "What extension cord gauge do I need for a long run?", "a": "At a 10 A load, 14 gauge cord is good for about 60 ft and 12 gauge for about 100 ft at 3% voltage drop. Heavier loads or longer runs need 10 gauge cord or a closer power source." },
+    { "q": "Do holiday displays need GFCI protection?", "a": "Yes. Every outdoor circuit feeding holiday lights should be GFCI protected, either at the receptacle, at the panel or with a portable GFCI cord. Test each one before the display goes live." }
+  ]
+}

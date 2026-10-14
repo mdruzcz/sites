@@ -1,0 +1,84 @@
+{
+  "slug": "3d-led-christmas-light-displays-buying-guide",
+  "title": "3D LED Christmas Light Displays: A Commercial Buying Guide for Canada",
+  "metaTitle": "3D LED Christmas Displays: Commercial Buying Guide",
+  "metaDescription": "Choose the right 3D LED Christmas displays for malls, plazas and parks in Canada: sizes from 1.2 m to 5 m, LED counts, 24V power, anchoring and storage.",
+  "category": "Buying guides",
+  "excerpt": "3D LED Christmas displays give malls, BIAs and municipalities a photo-op centrepiece that works from the street and up close. This guide covers sizes from 1.2 m to 5 m, LED counts, 24V transformers, IP44 rating, placement, anchoring and storage.",
+  "readMinutes": 8,
+  "updated": "2026-10-14",
+  "heroAlt": "Large illuminated 3D LED Christmas archway and gift box display in a snowy commercial plaza at dusk",
+  "keyTakeaways": [
+    "Match display height to viewing distance: 1.2 to 2 m pieces for entrances and sidewalks, 3 to 5 m pieces for plazas, roundabouts and forecourts.",
+    "Frame-and-netting 3D displays run on 24V low voltage through transformers, so power planning is about transformer capacity, not household circuits alone.",
+    "Higher LED counts (700 to 8,000) buy density and visibility at distance, while a 20% flashing mix adds sparkle without making the piece look busy.",
+    "Every freestanding display needs a ballast or anchor plan before it is unloaded, because Canadian winter wind and snow load are the usual cause of tip-overs.",
+    "Order early, inspect on arrival and store flat in the original crates to get five or more seasons from an aluminum-frame display."
+  ],
+  "body": [
+    { "type": "p", "text": "A 3D LED Christmas display is the piece people walk toward. For a mall forecourt, a downtown BIA or a municipal park, it is usually the single decision that drives photos, foot traffic and the look of the whole season. It is also the purchase where mistakes are most expensive: the wrong height for the site, a display with no anchoring plan, or a power feed that was never mapped. This guide walks through how to choose size, LED count and lighting mode, how the 24V power works, where to place the piece, how to anchor it, and how to receive and store it." },
+    { "type": "h2", "text": "What a commercial 3D LED display is made of" },
+    { "type": "p", "text": "Commercial 3D displays are built on a welded aluminum frame. The frame is covered with LED netting or latex webbing that carries the lights, which gives the piece its shape and keeps it light enough for two people to move and set. Aluminum does not rust, so the frame survives wet snow, road salt spray and freeze-thaw cycles that would ruin a painted steel armature." },
+    { "type": "p", "text": "Our [3D LED displays](/product-category/3d) include archways, gift boxes, ornament rings, reindeer, snowmen, candy canes, JOY and NOEL letter signs, polar bears and giant stars and snowflakes. Most are rated IP44 and designed to run on 24V low voltage through a transformer. IP44 means the display is protected from splashing water from any direction and from solid objects larger than 1 mm, which is the right rating for snow, rain and sleet. It does not mean the piece can sit in standing water, so keep bases off low spots where meltwater pools." },
+    { "type": "h2", "text": "Choosing a size: 1.2 m to 5 m" },
+    { "type": "p", "text": "Size is a viewing-distance decision. A good rule is that a display should be roughly one third as tall as the distance from the main viewing point to the piece, up to the point where it dominates the space. Use the ranges below as a starting point, then walk the site and confirm." },
+    { "type": "ul", "items": [
+      "1.2 to 1.5 m (about 4 to 5 ft): entrances, lobbies, planter beds and storefront sidewalks. These are close-up pieces that people read from 3 to 6 m away.",
+      "2 m (about 6.5 ft): plaza corners, boulevard medians and the edges of a photo-op area. Tall enough to read from across a parking aisle.",
+      "3 m (about 10 ft): the standard centrepiece for a mall forecourt or town square. Visible from 25 to 30 m and still easy to photograph.",
+      "4 to 5 m (about 13 to 16 ft): roundabouts, large downtown intersections and park entrances where the piece must hold its own against buildings and vehicle traffic. Plan for a lift or a crew of four, and a proper ballast design."
+    ] },
+    { "type": "p", "text": "Buy for the sightline, not the budget line. A 1.5 m piece in a space built for a 3 m piece will look lost, and most facility teams end up adding a second display the following year to compensate. If you are building a multi-piece scene, vary the heights: one tall anchor piece, two mid-height pieces and a few low accents read as a composition. Four identical 2 m pieces in a row read as a fence." },
+    { "type": "h2", "text": "LED counts, static versus flashing" },
+    { "type": "p", "text": "LED counts across commercial 3D displays run from about 700 on a small gift box up to 8,000 or more on a giant star or a walk-through archway. Count matters because it sets the density of light on the surface. A low-density piece looks dotted from 10 m away, while a high-density piece looks solid and holds its silhouette in snow and fog." },
+    { "type": "p", "text": "Most displays can be ordered static, meaning every LED is steady, or with a flashing mix where roughly 20% of the LEDs twinkle. The 20% mix is the better default for public spaces. It adds sparkle and draws the eye, but it avoids the strobing effect of fully animated pieces, which can bother people with light sensitivity and look cheap on camera. Choose fully static only when the piece sits next to residential windows or a hotel frontage where movement could become a complaint." },
+    { "type": "callout", "text": "Decision rule: if your viewers are driving past at 50 km/h or more, choose the highest LED count in the size you need. If they are walking up to it, a mid-range count is fine because they see the form, not the individual lights." },
+    { "type": "h2", "text": "Power: 24V transformers and IP44" },
+    { "type": "p", "text": "The displays run on 24V low voltage. Each piece connects to one or more transformers, commonly rated 200 W, that step the 120V supply down to 24V. The transformer is the only mains-voltage component, which keeps the walk-through and photo-op surfaces safer for the public." },
+    { "type": "p", "text": "As a planning figure, assume 0.04 to 0.06 W per LED on netting. That puts a 700-LED piece at roughly 30 to 40 W, so one 200 W transformer easily covers it. An 8,000-LED piece lands near 400 W, which means two or three transformers once you keep each at 80% of its rating, or about 160 W continuous. Larger pieces ship with the transformer count they need, and the product page lists the exact wattage, so use those numbers for your electrician rather than this estimate." },
+    { "type": "ul", "items": [
+      "Place transformers off the ground on a dry shelf, bracket or inside a weatherproof box, and keep the plug end of each connection above snow line.",
+      "Feed each transformer from a GFCI-protected outdoor circuit, and use a weatherproof in-use cover on the receptacle.",
+      "Put the whole display on a timer or photocell so it runs at dusk and shuts off at a set hour. See our [extension cords and wire](/product-category/extension-cords-and-wire) range for outdoor-rated cords sized for the run.",
+      "Keep 24V cable runs as short as the layout allows, and avoid daisy-chaining more pieces than the manufacturer allows on one transformer."
+    ] },
+    { "type": "h2", "text": "Photo-op versus walk-through displays" },
+    { "type": "p", "text": "Decide early what the public is meant to do with the piece. A photo-op display is built so people stand in front of it: a giant ornament ring, a framed star, a JOY sign or a polar bear with room to pose beside it. A walk-through display, like an archway or a tunnel, is built so people pass under or through it. They are different products with different safety and placement needs." },
+    { "type": "p", "text": "Photo-op pieces need a clear apron of about 2 m in front, a plain background behind (a dark wall or tree line helps the LEDs read), and a spot where a group of 6 to 8 people can stand without blocking a sidewalk. Walk-through pieces need to meet accessible-route clearance: leave the full path free of cables, keep the underside clear of sharp edges, and make sure the frame is anchored to survive people brushing against it. For both, see our [photo-op displays](/product-category/photo-op-displays) category." },
+    { "type": "h2", "text": "Placement and sightlines" },
+    { "type": "p", "text": "Most placement mistakes come from walking the site in daylight. Visit at dusk on a clear night, with the building lights on, and look for glare, competing signage and sightline blockers such as parked vehicles, bus shelters and trees." },
+    { "type": "ul", "items": [
+      "Put the primary piece on the longest approach, so drivers and pedestrians see it from 40 m or more.",
+      "Keep at least 1 m between the display and any road curb, and follow your municipality's rules on clear sight triangles at intersections.",
+      "Face the front of the piece toward the main approach. Many 3D pieces are designed with a front and a back, and the back may have more visible framework.",
+      "Avoid placing the display directly under a light standard, since the white light washes out the LEDs.",
+      "Plan a snow route: where will plows push snow, and will it bury the base or the transformers?"
+    ] },
+    { "type": "h2", "text": "Anchoring, ballast and wind" },
+    { "type": "p", "text": "A 3 m display has a sail area of several square metres, and a Canadian winter wind gust can generate enough force to tip an unanchored piece. Decide the anchoring method before the display ships." },
+    { "type": "ul", "items": [
+      "Soft ground (park, lawn, planter bed): use ground stakes or earth anchors driven through the base plates, plus guy lines on pieces over 2.5 m.",
+      "Paved surfaces (plaza, parking lot): use ballast. Concrete blocks or sandbags on the base frame are the standard approach, and the weight needed rises quickly with height. Calculate it for your tallest piece, not your smallest.",
+      "Frozen ground: stakes will not penetrate in January, so plan for installation before the freeze or use ballast.",
+      "Check anchoring after every major wind or snow event, and re-tension guy lines as the ground thaws and settles."
+    ] },
+    { "type": "p", "text": "For tall installations, have the property owner or a structural contractor sign off on the anchoring plan. A written plan also helps with insurance. Municipal and BIA buyers can request line-item quotes for ballast hardware alongside the display on our [request a quote](/request-a-quote) page." },
+    { "type": "h2", "text": "Shipping, receiving and storage" },
+    { "type": "p", "text": "Large 3D displays ship in crates or on a pallet by freight from our London, Ontario warehouse. Free shipping applies on orders over $150, and the team confirms exact freight cost and timeline by email once you submit an inquiry, usually within one business day." },
+    { "type": "ul", "items": [
+      "Confirm that the delivery address has a loading dock or lift gate, or arrange a forklift for the crate.",
+      "Inspect on arrival and note any damage on the bill of lading before the driver leaves.",
+      "Test every display on the ground before it goes up. Plug it in, confirm all LED sections light, and tag any dark sections for warranty follow-up.",
+      "Order by late September for a late November installation. Lead times tighten sharply in October."
+    ] },
+    { "type": "p", "text": "At the end of the season, let the display dry fully before packing. Coil the power cord loosely, never tightly, and store the piece flat in the original crate in a dry, temperature-stable room. Wrap LED netting with soft material so it does not snag on the frame. Stored this way, an aluminum-frame display should give you many seasons of use." },
+    { "type": "callout", "text": "Municipalities and BIAs can request net-30 invoicing, tax-exempt handling and RFP-ready line-item quotes. Submit an inquiry with your list of displays and heights, and the team replies with shipping cost, timeline and any volume pricing." }
+  ],
+  "faq": [
+    { "q": "What size 3D LED display should I buy for a mall forecourt?", "a": "A 3 m (about 10 ft) display is the standard centrepiece for a mall forecourt or town square. It reads clearly from 25 to 30 m and is still easy to photograph. For larger roundabouts or intersections, step up to 4 or 5 m." },
+    { "q": "Are 3D LED displays safe for the public to touch?", "a": "Yes. The displays run on 24V low voltage and are rated IP44. The only mains-voltage component is the transformer, which should be mounted out of reach, off the ground and on a GFCI-protected circuit." },
+    { "q": "How many transformers does a 3D display need?", "a": "It depends on the LED count. A 700-LED piece generally needs one 200 W transformer, while an 8,000-LED piece may need two or three. The product page lists the exact wattage and transformer count for each display." },
+    { "q": "Can 3D LED displays stay up all winter in Canada?", "a": "They are built for Canadian winters, with aluminum frames and IP44 rated LED netting. The risks are wind and snow load, so anchor or ballast them properly and keep transformers above the snow line." },
+    { "q": "How do I order 3D displays for a municipality or BIA?", "a": "Add the displays to your cart and submit an inquiry. The team replies by email, usually within one business day, with shipping cost, timeline and volume pricing. Net-30 invoicing and tax-exempt handling are available for municipalities and BIAs." }
+  ]
+}

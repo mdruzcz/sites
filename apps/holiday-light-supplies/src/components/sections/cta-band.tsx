@@ -1,26 +1,37 @@
 import Link from "next/link";
+import { Photo } from "@/components/photo";
+import { Icon } from "@/components/icons";
 
-export function CtaBand() {
+export function CtaBand({
+  title = "Tell us about the property. We'll quote it line by line.",
+  body = "Pole counts, tree lists, ceiling heights or a site plan — whatever you have. A real person replies within one business day with pricing, shipping and a timeline.",
+  photo = "town-square",
+  primary = { href: "/request-a-quote", label: "Request a commercial quote" },
+  secondary = { href: "/shop", label: "Shop the catalog" }
+}: {
+  title?: string;
+  body?: string;
+  photo?: string;
+  primary?: { href: string; label: string };
+  secondary?: { href: string; label: string };
+}) {
   return (
     <section className="relative isolate overflow-hidden bg-[var(--color-night)] text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand-deep)] via-[var(--color-night)] to-[var(--color-brand-deep)] opacity-95" />
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 py-24 text-center">
-        <p className="eyebrow text-[var(--color-gold)]">Ready when you are</p>
-        <h2 className="font-display max-w-3xl text-4xl leading-tight md:text-6xl">
-          Light up the season.<br />
-          <span className="italic text-[var(--color-gold)]">Shipped to your door.</span>
-        </h2>
-        <p className="max-w-xl text-lg text-white/80">
-          Commercial-grade Christmas lights and décor, in stock and ready to ship from our Ontario
-          warehouse. Free shipping over $150.
-        </p>
-        <div className="mt-2 flex flex-wrap justify-center gap-3">
-          <Link href="/shop" className="btn-gold">
-            Shop the catalog
-          </Link>
-          <Link href="/contact-us" className="btn-ghost-light">
-            Talk to us first →
-          </Link>
+      <Photo name={photo} ratio="absolute inset-0" sizes="100vw" imgClassName="opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#09201a] via-[#09201a]/85 to-[#09201a]/50" aria-hidden />
+      <div className="shell section-lg relative">
+        <div className="max-w-2xl">
+          <p className="eyebrow text-[var(--color-gold-bright)]">Ready when you are</p>
+          <h2 className="font-display h2-fluid mt-4">{title}</h2>
+          <p className="mt-5 text-lg text-white/80">{body}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href={primary.href} className="btn-accent text-base">
+              {primary.label} <Icon.arrow size={18} />
+            </Link>
+            <Link href={secondary.href} className="btn-ghost-light text-base">
+              {secondary.label}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

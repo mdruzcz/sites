@@ -1,33 +1,35 @@
+import Link from "next/link";
+import { Icon } from "@/components/icons";
+
+const PLACES = [
+  "Toronto", "Mississauga", "Brampton", "Hamilton", "London", "Kitchener-Waterloo", "Ottawa", "Windsor", "Niagara", "Barrie", "Kingston", "Sudbury",
+  "Montréal", "Québec City", "Halifax", "Moncton", "Winnipeg", "Regina", "Saskatoon", "Calgary", "Edmonton", "Vancouver", "Victoria", "Kelowna"
+];
+
 export function ServiceAreas() {
-  const cities = [
-    "London", "St. Thomas", "Woodstock", "Stratford", "Ingersoll",
-    "Tillsonburg", "Brantford", "Kitchener-Waterloo", "Hamilton",
-    "Mississauga", "Toronto", "Ottawa", "Windsor", "Sarnia",
-    "Burlington", "Oakville", "Niagara"
-  ];
   return (
     <section className="bg-warm">
-      <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <p className="eyebrow text-[var(--color-accent)]">Where we ship</p>
-        <h2 className="font-display mt-3 max-w-3xl text-4xl md:text-5xl">
-          Shipping from our Ontario warehouse &mdash; arriving anywhere in Canada.
-        </h2>
-        <p className="mt-5 max-w-2xl text-lg text-[var(--color-muted)]">
-          We carry our full catalog in stock in Ontario. Most orders ship same- or next-business-day via
-          Canada Post. Free shipping over $150 CAD anywhere in the country.
-        </p>
-        <ul className="mt-8 flex flex-wrap gap-2">
-          {cities.map((c) => (
-            <li
-              key={c}
-              className="rounded-full border border-[var(--color-border)] bg-white px-3 py-1 text-sm text-slate-700"
-            >
-              {c}
-            </li>
+      <div className="shell section grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
+        <div>
+          <p className="eyebrow eyebrow-rule text-[var(--color-accent)]">Where we ship</p>
+          <h2 className="font-display h2-fluid mt-4">Stocked in Ontario. Delivered across Canada.</h2>
+          <p className="mt-5 text-lg leading-relaxed text-[var(--color-muted)]">
+            Bulbs, spools and accessories ship by courier; 3D displays and trees ship freight on a pallet or crate. Shipping is quoted per order so a BIA in Alberta pays what it actually costs, not a blanket surcharge.
+          </p>
+          <ul className="mt-6 space-y-2 text-sm text-[var(--color-text-soft)]">
+            <li className="flex items-center gap-2"><Icon.check size={16} className="text-[var(--color-brand)]" /> Free courier shipping over $150</li>
+            <li className="flex items-center gap-2"><Icon.check size={16} className="text-[var(--color-brand)]" /> Freight quoted for displays, trees and pallet orders</li>
+            <li className="flex items-center gap-2"><Icon.check size={16} className="text-[var(--color-brand)]" /> Warehouse pickup in London, Ontario by arrangement</li>
+          </ul>
+          <Link href="/shipping-returns" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-brand)] hover:underline">
+            Shipping details <Icon.arrow size={14} />
+          </Link>
+        </div>
+        <ul className="flex flex-wrap gap-2">
+          {PLACES.map((c) => (
+            <li key={c} className="chip">{c}</li>
           ))}
-          <li className="rounded-full border border-[var(--color-brand)] bg-[var(--color-brand-soft)] px-3 py-1 text-sm font-semibold text-[var(--color-brand)]">
-            + every Canadian postal code
-          </li>
+          <li className="chip !border-[var(--color-brand)] !bg-[var(--color-brand-soft)] !text-[var(--color-brand)]">+ every Canadian postal code</li>
         </ul>
       </div>
     </section>

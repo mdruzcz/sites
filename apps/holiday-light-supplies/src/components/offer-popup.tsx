@@ -1,93 +1,68 @@
 "use client";
 
+import Image from "next/image";
 import { useUI } from "@/components/ui-context";
-import { useState } from "react";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { Icon } from "@/components/icons";
 
+/**
+ * Newsletter popup. Fires once per 21 days after 9 s, 45 % scroll or exit
+ * intent (see ui-context). Captures an email + buyer segment and hands over
+ * the FIRST10 welcome code on success.
+ */
 export function OfferPopup() {
   const { popupOpen, dismissPopup } = useUI();
-  const [copied, setCopied] = useState(false);
   if (!popupOpen) return null;
-
-  function copyCode() {
-    try {
-      navigator.clipboard.writeText("FIRST10");
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {}
-  }
 
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="offer-popup-title"
-      className="drawer-overlay !flex !items-center !justify-center !bg-black/60 p-4"
+      className="drawer-overlay !flex !items-end !justify-center p-0 sm:!items-center sm:p-4"
       onClick={dismissPopup}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl"
+        className="pop-in relative grid w-full max-w-3xl overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl md:grid-cols-[0.9fr_1.1fr]"
       >
         <button
           type="button"
           onClick={dismissPopup}
-          aria-label="Close special offer"
-          className="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-white/80 text-slate-700 hover:bg-white"
+          aria-label="Close"
+          className="absolute right-3 top-3 z-10 grid size-10 place-items-center rounded-full bg-white/90 text-[var(--color-text)] shadow hover:bg-white"
         >
-          ✕
+          <Icon.close size={16} />
         </button>
 
-        {/* Festive header strip */}
-        <div className="relative bg-gradient-to-br from-[var(--color-brand)] via-[var(--color-brand-dark)] to-[var(--color-brand-deep)] px-8 py-10 text-center text-white">
-          <div className="pointer-events-none absolute inset-0 flex justify-around opacity-50">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <span
-                key={i}
-                className={`twinkle twinkle-delay-${(i % 5) as 0 | 1 | 2 | 3 | 4} mt-3 inline-block size-2 rounded-full bg-[var(--color-gold)]`}
-                style={{ boxShadow: "0 0 8px 2px rgba(244,200,66,0.7)" }}
-              />
-            ))}
+        <div className="relative hidden min-h-[420px] md:block">
+          <Image
+            src="/images/hero/plaza-tree-night.jpg"
+            alt="Illuminated commercial Christmas tree in a plaza at night"
+            fill
+            sizes="360px"
+            className="object-cover"
+          />
+          <div className="scrim-strong absolute inset-0" aria-hidden />
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+            <p className="eyebrow text-[var(--color-gold-bright)]">Trade newsletter</p>
+            <p className="font-display mt-2 text-2xl leading-tight">The season sells out early. Hear about it first.</p>
           </div>
-          <p className="eyebrow relative text-[var(--color-gold)]">🎁 Special Offer</p>
-          <h2 id="offer-popup-title" className="font-display relative mt-3 text-4xl font-bold leading-tight">
-            Get <span className="text-[var(--color-gold)]">10% OFF</span><br />
-            your first order
-          </h2>
-          <p className="relative mt-3 text-sm text-red-100">
-            Welcome to Holiday Light Supplies. Use this code at checkout:
-          </p>
         </div>
 
-        <div className="px-8 py-6 text-center">
-          <div className="inline-flex items-center gap-2 rounded-lg border-2 border-dashed border-[var(--color-brand)] bg-[var(--color-brand-soft)] px-5 py-3">
-            <span className="font-display text-2xl font-bold tracking-widest text-[var(--color-brand)]">
-              FIRST10
-            </span>
-            <button
-              type="button"
-              onClick={copyCode}
-              className="text-xs font-semibold uppercase tracking-wide text-[var(--color-brand)] underline-offset-2 hover:underline"
-            >
-              {copied ? "Copied!" : "Copy"}
-            </button>
-          </div>
-          <p className="mt-4 text-xs text-slate-500">
-            Valid on your first order. One use per customer. Cannot be combined with installer/municipality
-            pricing.
+        <div className="px-6 py-7 sm:px-8 sm:py-9">
+          <p className="eyebrow text-[var(--color-accent)]">Welcome offer</p>
+          <h2 id="offer-popup-title" className="font-display mt-2 text-3xl leading-tight text-[var(--color-text)] sm:text-4xl">
+            10% off your first order, plus early-season pricing.
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
+            Join buyers at malls, BIAs, municipalities and installation crews. We send new displays, stock alerts and pre-season pricing a few times a year.
           </p>
-          <button
-            type="button"
-            onClick={dismissPopup}
-            className="btn-primary mt-6 w-full justify-center"
-          >
-            Shop now →
-          </button>
-          <button
-            type="button"
-            onClick={dismissPopup}
-            className="mt-2 text-xs text-slate-500 underline-offset-2 hover:underline"
-          >
-            No thanks, I&rsquo;ll pay full price
+          <div className="mt-5">
+            <NewsletterForm variant="light" source="popup" showSegment onSuccess={() => setTimeout(dismissPopup, 4500)} />
+          </div>
+          <button type="button" onClick={dismissPopup} className="mt-4 text-xs text-[var(--color-muted)] underline-offset-2 hover:underline">
+            No thanks, I&rsquo;ll browse without the code
           </button>
         </div>
       </div>

@@ -1,66 +1,69 @@
 import Link from "next/link";
 import Image from "next/image";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { CartBadge } from "@/components/cart-badge";
 import { MegaMenu } from "@/components/mega-menu";
+import { MobileNav } from "@/components/mobile-nav";
 import { SearchTrigger } from "@/components/search-trigger";
-import { TruckIcon } from "@/components/truck-icon";
+import { Icon } from "@/components/icons";
+import { FREE_SHIPPING_OVER, SHIP_FROM, WELCOME_CODE } from "@/lib/site";
 
 export function Header() {
-  // Optionally show the user-supplied PNG logo if they dropped one at public/images/logo.png.
-  // Otherwise we fall back to the styled-text wordmark.
-  const logoFsPath = join(process.cwd(), "public", "images", "logo.png");
-  const hasLogo = existsSync(logoFsPath);
-
   return (
     <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-white/95 backdrop-blur">
-      <div className="flex items-center justify-center gap-2 border-b border-[var(--color-border)] bg-[var(--color-cream)] px-4 py-2 text-center text-[11px] tracking-wide text-[var(--color-brand)] sm:gap-3">
-        <span className="font-semibold text-[var(--color-accent)]">🎁 FIRST10</span>
-        <span className="text-[var(--color-brand)]/40">·</span>
-        <span>10% off your first order</span>
-        <span className="text-[var(--color-brand)]/40">·</span>
-        <span className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-accent)]">
-          <TruckIcon className="size-4" /> Free shipping over $150
-        </span>
-        <span className="hidden text-[var(--color-brand)]/40 sm:inline">·</span>
-        <span className="hidden sm:inline">Shipping across Ontario</span>
+      {/* Utility bar */}
+      <div className="bg-[var(--color-brand-deep)] text-[12px] text-white/85">
+        <div className="shell flex min-h-9 items-center justify-between gap-4">
+          <p className="flex items-center gap-2 truncate">
+            <Icon.truck size={15} className="shrink-0 text-[var(--color-gold-bright)]" />
+            <span className="truncate">
+              Free shipping over ${FREE_SHIPPING_OVER} · Ships from {SHIP_FROM} · Volume pricing on case orders
+            </span>
+          </p>
+          <div className="hidden items-center gap-5 md:flex">
+            <span className="text-white/70">
+              First order? <span className="font-semibold text-[var(--color-gold-bright)]">{WELCOME_CODE}</span> saves 10%
+            </span>
+            <Link href="/municipalities" className="transition hover:text-white">Municipal & BIA accounts</Link>
+            <Link href="/track-order" className="transition hover:text-white">Track order</Link>
+          </div>
+        </div>
       </div>
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" aria-label="Holiday Light Supplies home" className="flex items-center gap-2">
-          {hasLogo ? (
+
+      {/* Main row */}
+      <div className="shell relative flex items-center justify-between gap-3 py-3 md:gap-6">
+        <div className="flex items-center gap-2">
+          <MobileNav />
+          <Link href="/" aria-label="Holiday Light Supplies home" className="flex shrink-0 items-center">
             <Image
               src="/images/logo.png"
               alt="Holiday Light Supplies"
               width={320}
               height={130}
               priority
-              className="h-14 w-auto md:h-16"
+              sizes="(max-width: 768px) 150px, 200px"
+              className="h-11 w-auto md:h-14"
             />
-          ) : (
-            <span className="font-display text-2xl font-bold tracking-tight text-[var(--color-brand)]">
-              Holiday Light <span className="text-[var(--color-accent)]">Supplies</span>
-            </span>
-          )}
-        </Link>
+          </Link>
+        </div>
 
-        <nav className="hidden gap-7 text-sm font-medium md:flex" aria-label="Primary">
-          <MegaMenu />
-          <Link href="/product-category/permanent-lighting-kits" className="font-semibold text-[var(--color-accent)] hover:text-[var(--color-accent-dark)]">Permanent Lights</Link>
-          <Link href="/shop" className="hover:text-[var(--color-brand)]">All Products</Link>
-          <Link href="/gallery" className="hover:text-[var(--color-brand)]">Gallery</Link>
-          <Link href="/professional-installer" className="hover:text-[var(--color-brand)]">Pro Installers</Link>
-          <Link href="/municipalities" className="hover:text-[var(--color-brand)]">Municipalities</Link>
-          <Link href="/faq" className="hover:text-[var(--color-brand)]">FAQ</Link>
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+          <MegaMenu label="Shop" />
+          <MegaMenu label="Commercial & wholesale" variant="commercial" />
+          <Link href="/product-category/permanent-lighting-kits" className="link-underline min-h-[44px] inline-flex items-center text-[15px] font-medium transition hover:text-[var(--color-accent)]">
+            Permanent lighting
+          </Link>
+          <Link href="/professional-installer" className="link-underline min-h-[44px] inline-flex items-center text-[15px] font-medium transition hover:text-[var(--color-accent)]">
+            Installers
+          </Link>
+          <Link href="/resources" className="link-underline min-h-[44px] inline-flex items-center text-[15px] font-medium transition hover:text-[var(--color-accent)]">
+            Guides
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
           <SearchTrigger />
-          <Link
-            href="/account"
-            className="hidden rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-[var(--color-brand)] hover:text-[var(--color-brand)] md:inline-flex"
-          >
-            Account
+          <Link href="/request-a-quote" className="btn-accent hidden !min-h-[42px] !px-4 !py-2 text-sm md:inline-flex">
+            Get a quote
           </Link>
           <CartBadge />
         </div>

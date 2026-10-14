@@ -4,11 +4,13 @@ import { getCart } from "@/lib/cart";
 import { getStore } from "@/lib/catalog";
 import { getServiceSupabase } from "@/lib/supabase/server";
 import { formatCad } from "@/lib/utils";
+import { checkCaptcha, EMAIL_RE, HELP, type LeadResult } from "@/lib/actions/lead-helpers";
 
 export interface ShippingInquiryInput {
   name: string;
   email: string;
   phone: string;
+  organization: string | null;
   address: string;
   city: string;
   province: string;
@@ -19,53 +21,40 @@ export interface ShippingInquiryInput {
 }
 
 /**
- * We don't take payment online. Instead the customer sends the products they
- * want + their delivery address and we reply by email with shipping cost and
- * timeline. The inquiry is stored in Supabase, emailed to
- * service@masterdecker.com; a central trigger (notify-inquiry) emails + texts Matt.
+ * Quote-list submission. We don't take payment online: the customer sends the
+ * products they want + delivery address and we reply by email with pricing,
+ * shipping and timeline. The inquiry is stored in Supabase; a central trigger
+ * (notify-inquiry) emails + texts Matt, so there is no inline send here.
+ * Returns a result instead of throwing — prod masks thrown Server Action messages.
  */
-export async function submitShippingInquiry(input: ShippingInquiryInput) {
-  // Spam protection — enforced once a real Turnstile site key is configured.
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-  const captchaConfigured = !!siteKey && !siteKey.startsWith("1x000");
-  if (captchaConfigured) {
-    if (!input.turnstile_token) throw new Error("Please complete the captcha.");
-    const verifyRes = await fetch(
-      process.env.TURNSTILE_VERIFY_ENDPOINT ?? "https://turnstile.masterdecker.com",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: input.turnstile_token, hostname: "holidaylightsupplies.ca" })
-      }
-    );
-    const verify = (await verifyRes.json()) as { success: boolean };
-    if (!verify.success) throw new Error("Captcha verification failed.");
-  }
+export async function submitShippingInquiry(input: ShippingInquiryInput): Promise<LeadResult> {
+  if (!input.name.trim()) return { ok: false, error: "Please enter your name." };
+  if (!EMAIL_RE.test(input.email)) return { ok: false, error: "Please enter a valid email address." };
+  if (!input.address.trim() || !input.city.trim() || !input.postal.trim()) return { ok: false, error: "Please enter your full delivery address so we can quote shipping." };
 
-  if (!input.name.trim()) throw new Error("Please enter your name.");
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.email)) throw new Error("Please enter a valid email.");
-  if (!input.address.trim() || !input.city.trim() || !input.postal.trim())
-    throw new Error("Please enter your full delivery address so we can quote shipping.");
+  const captchaError = await checkCaptcha(input.turnstile_token);
+  if (captchaError) return { ok: false, error: captchaError };
 
-  // The cart is read server-side so the inquiry always reflects what's really in it.
   const cart = await getCart();
-  if (!cart || cart.items.length === 0) throw new Error("Your cart is empty.");
+  if (!cart || cart.items.length === 0) return { ok: false, error: "Your quote list is empty." };
 
   const store = await getStore();
-  if (!store) throw new Error("Store not found");
+  if (!store) return { ok: false, error: `Something went wrong on our end. ${HELP}` };
 
-  const cartLines = cart.items.map(
-    (l) => `${l.quantity} × ${l.product_name} — ${l.variant_name} (${l.sku}) @ ${formatCad(l.unit_price_cad)} = ${formatCad(l.unit_price_cad * l.quantity)}`
-  );
+  const cartLines = cart.items.map((l) => {
+    const price = l.unit_price_cad > 0 ? ` @ ${formatCad(l.unit_price_cad)} = ${formatCad(l.unit_price_cad * l.quantity)}` : " @ QUOTE";
+    return `${l.quantity} × ${l.product_name} — ${l.variant_name} (${l.sku})${price}`;
+  });
   const messageBody = [
-    "SHIPPING QUOTE REQUEST (no payment taken — reply with shipping cost + timeline)",
+    "QUOTE REQUEST (no payment taken — reply with pricing, shipping + timeline)",
     "",
+    input.organization?.trim() ? `Organization: ${input.organization.trim()}` : null,
     `Deliver to: ${input.address}, ${input.city}, ${input.province} ${input.postal}`,
     "",
-    "Requested order:",
+    "Requested products:",
     ...cartLines,
     "",
-    `Product subtotal: ${formatCad(cart.subtotal_cad)} + shipping & tax`,
+    `Priced subtotal: ${formatCad(cart.subtotal_cad)} + shipping & tax (quote-only lines excluded)`,
     input.discount_code ? `Discount code entered: ${input.discount_code}` : null,
     input.notes?.trim() ? `\nCustomer notes:\n${input.notes.trim()}` : null
   ]
@@ -75,17 +64,17 @@ export async function submitShippingInquiry(input: ShippingInquiryInput) {
   const supabase = getServiceSupabase();
   const { error } = await supabase.from("ecom_contact_messages").insert({
     store_id: store.id,
-    name: input.name,
+    name: input.organization?.trim() ? `${input.name} (${input.organization.trim()})` : input.name,
     email: input.email,
     phone: input.phone || null,
     province: input.province,
-    subject: "Holiday Light Supplies — Inquiry",
+    subject: "Holiday Light Supplies — Quote request",
     message: messageBody,
     source: "shipping-inquiry"
   });
-  if (error) throw new Error(error.message);
-
-  // Email + SMS notifications are sent CENTRALLY by the Supabase `notify-inquiry` trigger
-  // + edge function when this row is inserted into ecom_contact_messages (see the
-  // project_order_notifications setup). No inline send here — that would double-notify.
+  if (error) {
+    console.error("inquiry insert failed:", error.message);
+    return { ok: false, error: `Something went wrong on our end and your request didn't send. ${HELP}` };
+  }
+  return { ok: true };
 }

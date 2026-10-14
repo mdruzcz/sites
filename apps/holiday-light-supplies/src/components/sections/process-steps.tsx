@@ -1,42 +1,46 @@
+import Link from "next/link";
+import { SectionHeading } from "@/components/ui";
+import { Icon } from "@/components/icons";
+
 export function ProcessSteps() {
   const steps = [
     {
       n: "01",
-      title: "Browse the catalog",
-      body: "C9, G20, mini strands, snowfall tubes, LED trees and 3D displays — every spec listed, transparent pricing, no quote required."
+      title: "Build your list",
+      body: "Add bulbs, displays and décor to your quote list from the catalog, or send us a pole count, tree list or site plan and we'll build it for you."
     },
     {
       n: "02",
-      title: "Order online",
-      body: "Add to cart and check out securely. Free shipping across Ontario over $150, and up to 40% off on bulk and commercial orders."
+      title: "Get a line-item quote",
+      body: "We reply by email within one business day with shipping, timeline, and any volume, installer or public-sector pricing you qualify for. No payment online."
     },
     {
       n: "03",
-      title: "Ships fast from Ontario",
-      body: "Packed and dispatched from our Ontario warehouse so your strands arrive in days, not weeks — ready for the season."
+      title: "Approve and we ship",
+      body: "Approve the quote, pay by card, e-transfer or PO (net-30 for municipalities and BIAs), and it ships from our London, Ontario warehouse."
     }
   ];
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
-        <div className="max-w-2xl">
-          <p className="eyebrow text-[var(--color-accent)]">How it works</p>
-          <h2 className="font-display mt-3 text-4xl md:text-5xl">From cart to doorstep in 3 steps.</h2>
-        </div>
-        <ol className="mt-16 grid gap-8 md:grid-cols-3">
+      <div className="shell section">
+        <SectionHeading eyebrow="How ordering works" title="Quote first, so the pricing fits the project." sub="Large orders deserve a human. Here is the whole process." />
+        <ol className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <li
-              key={s.n}
-              className="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-warm)] p-8"
-            >
-              <span className="font-display absolute -top-5 left-7 grid size-12 place-items-center rounded-full bg-[var(--color-accent)] text-lg font-bold text-white">
-                {s.n}
-              </span>
-              <h3 className="mt-6 text-xl font-semibold">{s.title}</h3>
+            <li key={s.n} className="relative rounded-3xl border border-[var(--color-border)] bg-[var(--color-bg-warm)] p-8 pt-10">
+              <span className="font-display absolute -top-5 left-7 grid size-11 place-items-center rounded-full bg-[var(--color-accent)] text-base font-bold text-white shadow-lg">{s.n}</span>
+              <h3 className="text-xl font-semibold">{s.title}</h3>
               <p className="mt-3 leading-relaxed text-[var(--color-muted)]">{s.body}</p>
             </li>
           ))}
         </ol>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Link href="/request-a-quote" className="btn-primary">
+            Start a quote <Icon.arrow size={16} />
+          </Link>
+          <Link href="/faq" className="text-sm font-semibold text-[var(--color-brand)] hover:underline">
+            Read the ordering FAQ
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,2492 @@
+{
+ "cassel-gingerbread-house": {
+  "title": "Cassel Gingerbread House",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "4m (13.2')"
+   ],
+   [
+    "Depth",
+    "1m (3.4')"
+   ],
+   [
+    "Height",
+    "3.6m (11.9')"
+   ],
+   [
+    "Weight",
+    "135kg (297.6lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.2m (0.5')"
+   ],
+   [
+    "Watts",
+    "189"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "3252"
+   ],
+   [
+    "Static LEDs",
+    "2602"
+   ],
+   [
+    "Flashing LEDs",
+    "650"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.199876998769988"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "WHITE, RED AND TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "200"
+   ],
+   [
+    "Lighting",
+    "Pure White, Warm White, Red"
+   ]
+  ],
+  "colours": null
+ },
+ "eh-3d-sign": {
+  "title": "eh! 3D Sign",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "90in (228.6cm)"
+   ],
+   [
+    "Depth",
+    "12in (30.48cm)"
+   ],
+   [
+    "Height",
+    "60in (152.4cm)"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Lighting",
+    "Warm White, Red"
+   ],
+   [
+    "Structure",
+    "Silver"
+   ]
+  ],
+  "colours": null
+ },
+ "hanna-frame": {
+  "title": "Hanna Frame",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.7m (5.6')"
+   ],
+   [
+    "Depth",
+    "0.1m (0.4')"
+   ],
+   [
+    "Height",
+    "2.3m (7.7')"
+   ],
+   [
+    "Weight",
+    "26kg (57.3lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "48"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "708"
+   ],
+   [
+    "Static LEDs",
+    "566"
+   ],
+   [
+    "Flashing LEDs",
+    "142"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.200564971751412"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": "Warm White"
+ },
+ "infinity-snowman": {
+  "title": "Infinity Snowman",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Height",
+    "5.9ft (1.8m)"
+   ],
+   [
+    "Lighting",
+    "Green, Red, Pure White, Orange"
+   ],
+   [
+    "Strucure",
+    "Grey"
+   ]
+  ],
+  "colours": null
+ },
+ "joy-3d-sign": {
+  "title": "JOY 3D Sign",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "2.7m (9')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "1.5m (4.9')"
+   ],
+   [
+    "Weight",
+    "50kg (110.2lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.4')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "90"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1512"
+   ],
+   [
+    "Static LEDs",
+    "1210"
+   ],
+   [
+    "Flashing LEDs",
+    "302"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.19973544973545"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "transparent"
+   ],
+   [
+    "Transformer W",
+    "1X100w"
+   ],
+   [
+    "Assembled",
+    "Yes"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": "Warm White"
+ },
+ "lapua-star-totem": {
+  "title": "Lapua Star Totem",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.9m (6.1')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "3.5m (11.5')"
+   ],
+   [
+    "Weight",
+    "63kg (138.9lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "68"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1104"
+   ],
+   [
+    "Static LEDs",
+    "884"
+   ],
+   [
+    "Flashing LEDs",
+    "220"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.199275362318841"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "100"
+   ],
+   [
+    "Lighting",
+    "Warm White"
+   ],
+   [
+    "Structure",
+    "Gold"
+   ]
+  ],
+  "colours": null
+ },
+ "lavina-gift-box": {
+  "title": "Lavina Gift Box",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "0.8m (2.5')"
+   ],
+   [
+    "Height",
+    "2.2m (7.2')"
+   ],
+   [
+    "Weight",
+    "15kg (33.1lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "12"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "160"
+   ],
+   [
+    "Static LEDs",
+    "128"
+   ],
+   [
+    "Flashing LEDs",
+    "32"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.2"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "15"
+   ],
+   [
+    "Lighting",
+    "Warm White"
+   ],
+   [
+    "Structure",
+    "Gold"
+   ]
+  ],
+  "colours": null
+ },
+ "oakdale-3d-gift-box": {
+  "title": "Oakdale 3D Gift Box",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "2.2m (7.2')"
+   ],
+   [
+    "Depth",
+    "0.8m (2.6')"
+   ],
+   [
+    "Height",
+    "2.6m (8.5')"
+   ],
+   [
+    "Weight",
+    "42kg (92.6lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "90"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "2100"
+   ],
+   [
+    "Static LEDs",
+    "1680"
+   ],
+   [
+    "Flashing LEDs",
+    "420"
+   ],
+   [
+    "% Flashing LEDs",
+    "20"
+   ],
+   [
+    "IP Code",
+    "IP67"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": "Warm White"
+ },
+ "tabora-walk-through-present-box": {
+  "title": "Tabora Walk-Through Present Box",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "3.1m (10.3')"
+   ],
+   [
+    "Depth",
+    "3.1m (10.3')"
+   ],
+   [
+    "Height",
+    "3.5m (11.6')"
+   ],
+   [
+    "Weight",
+    "285kg (628.3lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "532"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "8676"
+   ],
+   [
+    "Static LEDs",
+    "6940"
+   ],
+   [
+    "Flashing LEDs",
+    "1736"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.200092208390964"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT AND TRANSPARENT RED"
+   ],
+   [
+    "Transformer W",
+    "4 X 200"
+   ],
+   [
+    "Lighting",
+    "Warm White"
+   ],
+   [
+    "Structure",
+    "Gold"
+   ]
+  ],
+  "colours": null
+ },
+ "tiksi-polar-bear": {
+  "title": "Tiksi Polar Bear",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "3.9m (12.8')"
+   ],
+   [
+    "Depth",
+    "0.8m (2.6')"
+   ],
+   [
+    "Height",
+    "2m (6.6')"
+   ],
+   [
+    "Weight",
+    "57kg (125.7lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "2m (6.4')"
+   ],
+   [
+    "Depth",
+    "0.4m (1.3')"
+   ],
+   [
+    "Height",
+    "1m (3.3')"
+   ],
+   [
+    "Weight",
+    "15kg (33.1lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "140"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "3255"
+   ],
+   [
+    "Static LEDs",
+    "2604"
+   ],
+   [
+    "Flashing LEDs",
+    "651"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.2"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "200"
+   ],
+   [
+    "Watts",
+    "33"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "770"
+   ],
+   [
+    "Static LEDs",
+    "616"
+   ],
+   [
+    "Flashing LEDs",
+    "154"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.2"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Lighting",
+    "Pure White"
+   ],
+   [
+    "Structure",
+    "Silver"
+   ]
+  ],
+  "colours": null
+ },
+ "kodiak-snowman": {
+  "title": "Kodiak Snowman",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "3m (9.7')"
+   ],
+   [
+    "Depth",
+    "2.3m (7.5')"
+   ],
+   [
+    "Height",
+    "5m (16.4')"
+   ],
+   [
+    "Weight",
+    "146kg (321.9lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "269"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "4578"
+   ],
+   [
+    "Static LEDs",
+    "3662"
+   ],
+   [
+    "Flashing LEDs",
+    "916"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.200087374399301"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "2 X 200"
+   ],
+   [
+    "Lighting",
+    "Pure White"
+   ],
+   [
+    "Structure",
+    "Silver"
+   ]
+  ],
+  "colours": null
+ },
+ "otaki-archway": {
+  "title": "Otaki Archway",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "4m (13.1')"
+   ],
+   [
+    "Depth",
+    "1.8m (5.9')"
+   ],
+   [
+    "Height",
+    "3.5m (11.5')"
+   ],
+   [
+    "Weight",
+    "90kg (198.4lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1596"
+   ],
+   [
+    "Static LEDs",
+    "1596"
+   ],
+   [
+    "Flashing LEDs",
+    "1277"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.800125313283208"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": "Warm White"
+ },
+ "waterloo-reindeer-3d": {
+  "title": "Waterloo Reindeer 3D",
+  "sizes_m": [
+   "1.2",
+   "2",
+   "3"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.6m (5.2')"
+   ],
+   [
+    "Depth",
+    "0.3m (1.1')"
+   ],
+   [
+    "Height",
+    "3m (9.8')"
+   ],
+   [
+    "Weight",
+    "47kg (103.6lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "0.6m (2.1')"
+   ],
+   [
+    "Depth",
+    "1.5m (5')"
+   ],
+   [
+    "Height",
+    "1.2m (3.9')"
+   ],
+   [
+    "Weight",
+    "6.3kg (13.9lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.3m (1.1')"
+   ],
+   [
+    "Length",
+    "1.1m (3.5')"
+   ],
+   [
+    "Depth",
+    "0.2m (0.7')"
+   ],
+   [
+    "Height",
+    "2m (6.6')"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "80"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1582"
+   ],
+   [
+    "Static LEDs",
+    "1356"
+   ],
+   [
+    "Flashing LEDs",
+    "226"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.142857142857143"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "100"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Watts",
+    "14"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "238"
+   ],
+   [
+    "Static LEDs",
+    "214"
+   ],
+   [
+    "Flashing LEDs",
+    "24"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.100840336134454"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "30"
+   ],
+   [
+    "Assembled",
+    "Yes"
+   ],
+   [
+    "Watts",
+    "58"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "792"
+   ],
+   [
+    "Static LEDs",
+    "704"
+   ],
+   [
+    "Flashing LEDs",
+    "88"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.111111111111111"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": "Warm White"
+ },
+ "3d-gingerbread-man": {
+  "title": "3D Gingerbread Man",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Height",
+    "2.6m (8.5')"
+   ],
+   [
+    "Depth",
+    "25cm (9.8\")"
+   ],
+   [
+    "Lighting",
+    "warm white, pure white"
+   ]
+  ],
+  "colours": null
+ },
+ "denton-candy-canes": {
+  "title": "Denton Candy Canes",
+  "sizes_m": [
+   "3.4",
+   "2.5"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.5m (4.9')"
+   ],
+   [
+    "Depth",
+    "0.2m (0.5')"
+   ],
+   [
+    "Height",
+    "2.5m (8.2')"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "2m (6.7')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "3.4m (11.2')"
+   ],
+   [
+    "Weight",
+    "50kg (110.2lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "46"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "774"
+   ],
+   [
+    "Static LEDs",
+    "619"
+   ],
+   [
+    "Flashing LEDs",
+    "155"
+   ],
+   [
+    "% Flashing LEDs",
+    "20%"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT AND TRANSPARENT RED"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Watts",
+    "85"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1821"
+   ],
+   [
+    "Static LEDs",
+    "1561"
+   ],
+   [
+    "Flashing LEDs",
+    "260"
+   ],
+   [
+    "% Flashing LEDs",
+    "14%"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT AND TRANSPARENT RED"
+   ],
+   [
+    "Transformer W",
+    "100"
+   ],
+   [
+    "Lighting",
+    "Warm White, Red"
+   ],
+   [
+    "Structure",
+    "Gold"
+   ]
+  ],
+  "colours": null
+ },
+ "infinity-nutcracker": {
+  "title": "Infinity Nutcracker",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Height",
+    "5.9ft (1.8m)"
+   ],
+   [
+    "Lights",
+    "Pure white, red, warm white"
+   ]
+  ],
+  "colours": null
+ },
+ "infinity-santa": {
+  "title": "Infinity Santa",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Height",
+    "5.9ft (1.8m)"
+   ],
+   [
+    "LED Lights",
+    "Red, Pure White, Blue, Green, Warm White"
+   ]
+  ],
+  "colours": null
+ },
+ "kadoka-ornament": {
+  "title": "Kadoka Ornament",
+  "sizes_m": [
+   "1.5",
+   "2.1"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.3m (4.4')"
+   ],
+   [
+    "Depth",
+    "1.3m (4.4')"
+   ],
+   [
+    "Height",
+    "1.6m (5.1')"
+   ],
+   [
+    "Weight",
+    "40kg (88.2lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "1.8m (5.9')"
+   ],
+   [
+    "Depth",
+    "1.8m (5.9')"
+   ],
+   [
+    "Height",
+    "2.1m (6.9')"
+   ],
+   [
+    "Weight",
+    "67kg (147.7lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "42"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "756"
+   ],
+   [
+    "Static LEDs",
+    "606"
+   ],
+   [
+    "Flashing LEDs",
+    "150"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.198412698412698"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Watts",
+    "58"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1008"
+   ],
+   [
+    "Static LEDs",
+    "806"
+   ],
+   [
+    "Flashing LEDs",
+    "202"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.200396825396825"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ],
+   [
+    "Pure White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": null
+ },
+ "mosby-snowman": {
+  "title": "Mosby Snowman",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Length",
+    "3.5m (11.5')"
+   ],
+   [
+    "Height",
+    "2.2m (7.1')"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "Lighting",
+    "Pure White, Warm White, Red"
+   ]
+  ],
+  "colours": null
+ },
+ "noel-3d-sign": {
+  "title": "NOEL 3D Sign",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "3m (9.8')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "1.5m (4.9')"
+   ],
+   [
+    "Weight",
+    "54kg (119lbs)"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "Assembled",
+    "Yes"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ],
+   [
+    "Pure White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": null
+ },
+ "spokane-reindeer": {
+  "title": "Spokane Reindeer",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Length",
+    "2.14m (7')"
+   ],
+   [
+    "Depth",
+    "24cm (9.4\")"
+   ],
+   [
+    "Height",
+    "3m (10')"
+   ],
+   [
+    "Watts",
+    "120"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "2022"
+   ],
+   [
+    "Static LEDs",
+    "1617"
+   ],
+   [
+    "Flashing LEDs",
+    "405"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Transformer W",
+    "200"
+   ],
+   [
+    "Lighting",
+    "Warm White, Pure White, Red"
+   ]
+  ],
+  "colours": null
+ },
+ "the-toque": {
+  "title": "The Toque",
+  "sizes_m": [],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Depth",
+    "2.3m (7.5')"
+   ],
+   [
+    "Watts",
+    "81"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Lighting",
+    "Warm White & Red, Pure White & Blue"
+   ]
+  ],
+  "colours": null
+ },
+ "waterloo-moose-3d": {
+  "title": "Waterloo Moose 3D",
+  "sizes_m": [
+   "3",
+   "4",
+   "7",
+   "9"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "6.6m (21.6')"
+   ],
+   [
+    "Depth",
+    "2.2m (7.2')"
+   ],
+   [
+    "Height",
+    "9m (29.5')"
+   ],
+   [
+    "Length",
+    "5.1m (16.8')"
+   ],
+   [
+    "Depth",
+    "1.7m (5.6')"
+   ],
+   [
+    "Height",
+    "7m (23')"
+   ],
+   [
+    "Length",
+    "3m (9.7')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "4m (13.1')"
+   ],
+   [
+    "Length",
+    "2.2m (7.2')"
+   ],
+   [
+    "Depth",
+    "0.3m (0.9')"
+   ],
+   [
+    "Height",
+    "3m (9.8')"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "Lighting",
+    "Warm White"
+   ],
+   [
+    "Structure",
+    "Gold"
+   ]
+  ],
+  "colours": null
+ },
+ "waterloo-snowflake-3d": {
+  "title": "Waterloo Snowflake 3D",
+  "sizes_m": [
+   "1.2",
+   "2",
+   "3"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "1.1m (3.7')"
+   ],
+   [
+    "Depth",
+    "0.1m (0.4')"
+   ],
+   [
+    "Height",
+    "1.2m (3.9')"
+   ],
+   [
+    "Weight",
+    "13.4kg (29.5lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.4')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "1.9m (6.2')"
+   ],
+   [
+    "Depth",
+    "0.2m (0.7')"
+   ],
+   [
+    "Height",
+    "2m (6.6')"
+   ],
+   [
+    "Weight",
+    "33kg (72.8lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.4')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "2.8m (9.3')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "3m (9.8')"
+   ],
+   [
+    "Weight",
+    "70kg (154.3lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.4')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Watts",
+    "18"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "364"
+   ],
+   [
+    "Static LEDs",
+    "291"
+   ],
+   [
+    "Flashing LEDs",
+    "73"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.200549450549451"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "transparent"
+   ],
+   [
+    "Transformer W",
+    "30"
+   ],
+   [
+    "Assembled",
+    "Yes"
+   ],
+   [
+    "Watts",
+    "49"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "980"
+   ],
+   [
+    "Static LEDs",
+    "784"
+   ],
+   [
+    "Flashing LEDs",
+    "196"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.2"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "transparent"
+   ],
+   [
+    "Transformer W",
+    "60"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Watts",
+    "118"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "2345"
+   ],
+   [
+    "Static LEDs",
+    "1876"
+   ],
+   [
+    "Flashing LEDs",
+    "469"
+   ],
+   [
+    "% Flashing LEDs",
+    "0.2"
+   ],
+   [
+    "IP Code",
+    "IP44"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "transparent"
+   ],
+   [
+    "Transformer W",
+    "200"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Lighting",
+    "Pure White"
+   ],
+   [
+    "Structure",
+    "Silver"
+   ]
+  ],
+  "colours": null
+ },
+ "waterloo-star-3d": {
+  "title": "Waterloo Star 3D",
+  "sizes_m": [
+   "1",
+   "2",
+   "3"
+  ],
+  "specs": [
+   [
+    "Structure",
+    "Aluminum"
+   ],
+   [
+    "Netting",
+    "Latex Webbing"
+   ],
+   [
+    "Length",
+    "2.1m (6.9')"
+   ],
+   [
+    "Depth",
+    "0.2m (0.8')"
+   ],
+   [
+    "Height",
+    "2m (6.6')"
+   ],
+   [
+    "Weight",
+    "32kg (70.5lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "3.1m (10.2')"
+   ],
+   [
+    "Depth",
+    "0.3m (1')"
+   ],
+   [
+    "Height",
+    "3m (9.8')"
+   ],
+   [
+    "Weight",
+    "61kg (134.5lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Length",
+    "1m (3.3')"
+   ],
+   [
+    "Depth",
+    "0.1m (0.3')"
+   ],
+   [
+    "Height",
+    "1m (3.3')"
+   ],
+   [
+    "Weight",
+    "4.8kg (10.6lbs)"
+   ],
+   [
+    "Cable Length",
+    "0.1m (0.5')"
+   ],
+   [
+    "Extended Wire Length",
+    "0.3m (1.1')"
+   ],
+   [
+    "Watts",
+    "40"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "805"
+   ],
+   [
+    "Static LEDs",
+    "725"
+   ],
+   [
+    "Flashing LEDs",
+    "80"
+   ],
+   [
+    "% Flashing LEDs",
+    "10"
+   ],
+   [
+    "IP Code",
+    "IP67"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Watts",
+    "90"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "1800"
+   ],
+   [
+    "Static LEDs",
+    "1620"
+   ],
+   [
+    "Flashing LEDs",
+    "180"
+   ],
+   [
+    "% Flashing LEDs",
+    "10"
+   ],
+   [
+    "IP Code",
+    "IP67"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Assembled",
+    "No"
+   ],
+   [
+    "Watts",
+    "10"
+   ],
+   [
+    "Volts",
+    "24"
+   ],
+   [
+    "LEDs",
+    "160"
+   ],
+   [
+    "Static LEDs",
+    "144"
+   ],
+   [
+    "Flashing LEDs",
+    "16"
+   ],
+   [
+    "% Flashing LEDs",
+    "10"
+   ],
+   [
+    "IP Code",
+    "IP67"
+   ],
+   [
+    "In/Out",
+    "In/Out"
+   ],
+   [
+    "QPP",
+    "1"
+   ],
+   [
+    "Low-V connect",
+    "YES"
+   ],
+   [
+    "Cable Material",
+    "PVC"
+   ],
+   [
+    "Cable Colour",
+    "TRANSPARENT"
+   ],
+   [
+    "Assembled",
+    "Yes"
+   ],
+   [
+    "Warm White Lighting",
+    "Structure:"
+   ],
+   [
+    "Pure White Lighting",
+    "Structure:"
+   ]
+  ],
+  "colours": null
+ }
+}

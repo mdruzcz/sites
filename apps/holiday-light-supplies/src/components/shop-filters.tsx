@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { Icon } from "@/components/icons";
 
 interface Props {
   categories: { slug: string; name: string; count: number }[];
@@ -13,16 +14,19 @@ interface Props {
 }
 
 const PRICE_BUCKETS = [
-  { label: "Under $25", value: "0-25" },
-  { label: "$25 – $100", value: "25-100" },
-  { label: "$100 – $500", value: "100-500" },
-  { label: "$500 +", value: "500-99999" }
+  { label: "Under $50", value: "0-50" },
+  { label: "$50 – $250", value: "50-250" },
+  { label: "$250 – $1,000", value: "250-1000" },
+  { label: "$1,000 – $5,000", value: "1000-5000" },
+  { label: "$5,000 +", value: "5000-999999" },
+  { label: "Quote only", value: "quote" }
 ];
 
 export function ShopFilters({ categories, activeCategory, activePrice, activeSort, activeQ }: Props) {
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState(activeQ ?? "");
+  const [open, setOpen] = useState(false);
 
   function update(patch: Record<string, string | undefined>) {
     const next = new URLSearchParams(params.toString());
@@ -31,131 +35,105 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
       else next.set(k, v);
     }
     router.push(`/shop?${next.toString()}`);
+    setOpen(false);
   }
 
+  const hasFilters = !!(activeCategory || activePrice || activeSort || activeQ);
+
   return (
-    <aside className="space-y-6">
-      {/* Search within filters */}
-      <div>
-        <label className="eyebrow text-slate-500" htmlFor="filter-q">
-          Search in catalog
-        </label>
-        <input
-          id="filter-q"
-          type="search"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          onBlur={() => update({ q })}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") update({ q });
-          }}
-          placeholder="e.g. C9 bulb"
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        />
-      </div>
+    <aside>
+      <button type="button" onClick={() => setOpen((o) => !o)} className="btn-secondary mb-4 w-full lg:hidden" aria-expanded={open}>
+        <Icon.menu size={16} /> {open ? "Hide filters" : "Filter & sort"}
+        {hasFilters && <span className="ml-1 rounded-full bg-[var(--color-accent)] px-2 text-xs text-white">on</span>}
+      </button>
 
-      {/* Sort */}
-      <div>
-        <p className="eyebrow text-slate-500">Sort by</p>
-        <select
-          value={activeSort ?? "default"}
-          onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })}
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
-        >
-          <option value="default">Featured</option>
-          <option value="name">Name (A–Z)</option>
-          <option value="price-asc">Price: low to high</option>
-          <option value="price-desc">Price: high to low</option>
-        </select>
-      </div>
-
-      {/* Category */}
-      <div>
-        <p className="eyebrow text-slate-500">Category</p>
-        <ul className="mt-2 space-y-1 text-sm">
-          <li>
-            <Filter
-              label="All categories"
-              count={categories.reduce((s, c) => s + c.count, 0)}
-              active={!activeCategory}
-              onClick={() => update({ category: undefined })}
+      <div className={`space-y-7 ${open ? "block" : "hidden"} lg:block`}>
+        <div>
+          <label className="label" htmlFor="filter-q">Search the catalog</label>
+          <div className="relative">
+            <input
+              id="filter-q"
+              type="search"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") update({ q });
+              }}
+              placeholder="e.g. C9 warm white, reindeer"
+              className="input pr-10"
             />
-          </li>
-          {categories.map((c) => (
-            <li key={c.slug}>
-              <Filter
-                label={c.name}
-                count={c.count}
-                active={activeCategory === c.slug}
-                onClick={() => update({ category: c.slug })}
-              />
+            <button type="button" onClick={() => update({ q })} aria-label="Search" className="absolute right-1 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-lg text-[var(--color-muted)] hover:bg-[var(--color-bg-warm)]">
+              <Icon.search size={16} />
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label className="label" htmlFor="filter-sort">Sort by</label>
+          <select id="filter-sort" value={activeSort ?? "default"} onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })} className="input">
+            <option value="default">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="name">Name (A–Z)</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+          </select>
+        </div>
+
+        <div>
+          <p className="label">Category</p>
+          <ul className="space-y-0.5 text-sm">
+            <li>
+              <Filter label="All categories" count={categories.reduce((s, c) => s + c.count, 0)} active={!activeCategory} onClick={() => update({ category: undefined })} />
             </li>
-          ))}
-        </ul>
-      </div>
+            {categories.map((c) => (
+              <li key={c.slug}>
+                <Filter label={c.name} count={c.count} active={activeCategory === c.slug} onClick={() => update({ category: c.slug })} />
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Price */}
-      <div>
-        <p className="eyebrow text-slate-500">Price (CAD)</p>
-        <ul className="mt-2 space-y-1 text-sm">
-          <li>
-            <Filter
-              label="Any price"
-              active={!activePrice}
-              onClick={() => update({ price: undefined })}
-            />
-          </li>
-          {PRICE_BUCKETS.map((b) => (
-            <li key={b.value}>
-              <Filter
-                label={b.label}
-                active={activePrice === b.value}
-                onClick={() => update({ price: b.value })}
-              />
+        <div>
+          <p className="label">Price (CAD)</p>
+          <ul className="space-y-0.5 text-sm">
+            <li>
+              <Filter label="Any price" active={!activePrice} onClick={() => update({ price: undefined })} />
             </li>
-          ))}
-        </ul>
-      </div>
+            {PRICE_BUCKETS.map((b) => (
+              <li key={b.value}>
+                <Filter label={b.label} active={activePrice === b.value} onClick={() => update({ price: b.value })} />
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {(activeCategory || activePrice || activeSort || activeQ) && (
-        <Link
-          href="/shop"
-          className="block rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-center text-sm text-[var(--color-brand)] hover:bg-[var(--color-brand-soft)]"
-        >
-          Clear all filters
-        </Link>
-      )}
+        {hasFilters && (
+          <Link href="/shop" className="btn-secondary w-full">
+            Clear all filters
+          </Link>
+        )}
 
-      <div className="rounded-lg bg-[var(--color-brand-soft)] p-3 text-xs text-[var(--color-brand-dark)]">
-        🎁 First order? Use code <span className="font-bold">FIRST10</span> at checkout for 10% off.
+        <div className="rounded-2xl bg-[var(--color-night)] p-5 text-white">
+          <p className="eyebrow text-[var(--color-gold-bright)]">Buying in volume?</p>
+          <p className="mt-2 text-sm text-white/80">Case, installer and public-sector pricing is applied on your quote. Send the whole list at once.</p>
+          <Link href="/request-a-quote" className="btn-gold mt-4 w-full">Request a quote</Link>
+        </div>
       </div>
     </aside>
   );
 }
 
-function Filter({
-  label,
-  count,
-  active,
-  onClick
-}: {
-  label: string;
-  count?: number;
-  active: boolean;
-  onClick: () => void;
-}) {
+function Filter({ label, count, active, onClick }: { label: string; count?: number; active: boolean; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left transition ${
-        active
-          ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]"
-          : "hover:bg-slate-50"
+      className={`flex min-h-[38px] w-full items-center justify-between rounded-lg px-2.5 text-left transition ${
+        active ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]" : "hover:bg-[var(--color-bg-warm)]"
       }`}
     >
       <span>{label}</span>
-      {count !== undefined && <span className="text-xs text-slate-400">{count}</span>}
+      {count !== undefined && <span className="text-xs text-[var(--color-muted)]">{count}</span>}
     </button>
   );
 }
