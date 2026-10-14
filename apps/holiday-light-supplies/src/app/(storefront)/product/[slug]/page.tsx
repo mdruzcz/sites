@@ -118,10 +118,10 @@ export default async function ProductPage({ params }: PageProps) {
       <div className="shell py-6 md:py-10">
         <Breadcrumbs items={crumbs} />
 
-        <div className="mt-5 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="mt-5 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14">
           <ProductGallery images={product.ecom_product_images} name={product.name} />
 
-          <div>
+          <div className="min-w-0">
             {primaryCat && (
               <Link href={`/product-category/${primaryCat.slug}`} className="eyebrow text-[var(--color-accent)] hover:underline">
                 {catTitle}
