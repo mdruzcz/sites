@@ -39,7 +39,11 @@ const imageDir = path.join(ROOT, "public", "images", "products");
 const imageFiles = fs.readdirSync(imageDir);
 const imagesFor = (slug) =>
   imageFiles.filter((f) => f.startsWith(`xd-${slug}-`) && /-(\d+)\.webp$/.test(f)).sort((a, b) => Number(a.match(/-(\d+)\.webp$/)[1]) - Number(b.match(/-(\d+)\.webp$/)[1]));
-const skuFor = (slug) => `HLS-${slug.toUpperCase().replace(/[^A-Z0-9]+/g, "").slice(0, 18)}-01`;
+const skuFor = (slug) => {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return `HLS-${slug.toUpperCase().replace(/[^A-Z0-9]+/g, "").slice(0, 16)}-${h.toString(36).toUpperCase().slice(0, 4)}`;
+};
 
 async function main() {
   const cats = await rest("GET", "ecom_categories", { query: `store_id=eq.${STORE_ID}&select=id,slug` });
