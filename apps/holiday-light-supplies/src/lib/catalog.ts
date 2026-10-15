@@ -128,6 +128,18 @@ export function priceRange(product: Pick<CatalogProduct, "ecom_variants">) {
   return { min: Math.min(...real), max: Math.max(...real), quoteOnly: false as const };
 }
 
+/** Highest compare-at price among active variants when it exceeds the live price (drives the Save % badge). */
+export function compareAtFor(product: Pick<CatalogProduct, "ecom_variants">): number | null {
+  const vs = (product.ecom_variants ?? []).filter((v) => v.is_active);
+  const candidates = vs
+    .map((v) => ({ price: Number(v.price_cad), compare: Number(v.compare_at_price_cad ?? 0) }))
+    .filter((x) => x.compare > x.price && x.price > 0);
+  if (!candidates.length) return null;
+  // Use the compare-at that belongs to the lowest-priced variant so "from $X / was $Y" stays consistent.
+  const lowest = candidates.sort((a, b) => a.price - b.price)[0];
+  return lowest.compare;
+}
+
 /** Category slugs a product belongs to. */
 export function productCategorySlugs(product: CatalogProduct, categories: CatalogCategory[]) {
   const byId = new Map(categories.map((c) => [c.id, c.slug]));
