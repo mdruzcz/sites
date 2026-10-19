@@ -23,13 +23,16 @@ function Card({ item, picked, onToggle, tag }: { item: Item; picked: boolean; on
       className={`group flex flex-col overflow-hidden rounded-md border-2 bg-white transition cursor-pointer ${picked ? "border-[var(--accent)] shadow-lg" : "border-[var(--border)] hover:border-[var(--accent)]/60"}`}
     >
       <div className="relative aspect-[4/3] bg-[#0b1026]">
-        <Image src={item.image} alt={item.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
+        <Image src={item.image} alt={item.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px" className="object-cover transition duration-300 group-hover:scale-[1.03]" />
         {tag && <span className="absolute left-2 top-2 rounded-full bg-black/70 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">{tag}</span>}
       </div>
-      <div className="flex flex-1 flex-col gap-1.5 p-4">
+      <div className="flex flex-1 flex-col gap-1.5 p-3.5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-bold leading-snug text-[var(--ink)]">{item.name}</h3>
-          <span className="shrink-0 font-extrabold text-[var(--accent)] tabular-nums">{money(item.price)}</span>
+          <h3 className="text-[15px] font-bold leading-snug text-[var(--ink)]">{item.name}</h3>
+          <span className="shrink-0 text-right leading-tight">
+            <span className="block font-extrabold text-[var(--accent)] tabular-nums">{money(item.price)}</span>
+            <span className="block text-[10px] font-bold uppercase tracking-wider text-[var(--ink-mute)]">Season rental</span>
+          </span>
         </div>
         <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-mute)]">{item.size}</p>
         <p className="text-sm leading-relaxed text-[var(--ink-soft)]">{item.blurb}</p>
@@ -52,7 +55,7 @@ export function DisplayPicker({ catalog }: { catalog: JestrCatalog }) {
   const total = items.length ? subtotal + TRAVEL : 0;
 
   const mailto = useMemo(() => {
-    const lines = items.map((i) => `- ${i.name}: ${money(i.price)}`);
+    const lines = items.map((i) => `- ${i.name}: ${money(i.price)} season rental`);
     const body = [
       `Hi ${catalog.contact.name},`,
       "",
@@ -76,8 +79,8 @@ export function DisplayPicker({ catalog }: { catalog: JestrCatalog }) {
       <section className="section-tight">
         <div className="container">
           <p className="eyebrow">{catalog.confirmed.title}</p>
-          <p className="mb-6 max-w-2xl text-[var(--ink-soft)]">{catalog.confirmed.blurb}</p>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <p className="mb-6 max-w-2xl text-[var(--ink-soft)]">{catalog.confirmed.blurb} All prices on this page are season rentals for {catalog.season}, including setup, care and takedown.</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {catalog.confirmed.items.map((i) => (
               <Card key={i.id} item={i} picked={picked.includes(i.id)} onToggle={() => toggle(i.id)} tag="Requested" />
             ))}
@@ -91,7 +94,7 @@ export function DisplayPicker({ catalog }: { catalog: JestrCatalog }) {
             <p className="eyebrow">{t.date}</p>
             <h2 className="mb-2 text-2xl font-extrabold text-[var(--ink)] md:text-3xl">{t.title}</h2>
             <p className="mb-6 max-w-2xl text-[var(--ink-soft)]">{t.blurb}</p>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {t.items.map((i) => (
                 <Card key={i.id} item={i} picked={picked.includes(i.id)} onToggle={() => toggle(i.id)} />
               ))}
@@ -116,7 +119,7 @@ export function DisplayPicker({ catalog }: { catalog: JestrCatalog }) {
             {items.length ? (
               <>
                 <strong className="text-[var(--ink)]">{items.length} display{items.length === 1 ? "" : "s"}</strong>
-                {" · "}{money(subtotal)} + {money(TRAVEL)} travel ={" "}
+                {" · "}{money(subtotal)} season rental + {money(TRAVEL)} travel ={" "}
                 <strong className="text-[var(--ink)] tabular-nums">{money(total)}</strong>
                 <span className="text-[var(--ink-mute)]"> + HST</span>
               </>
