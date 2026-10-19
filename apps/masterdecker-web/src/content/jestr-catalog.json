@@ -1,0 +1,106 @@
+{
+  "client": "Jester Events",
+  "season": "November 14 to December 12, 2026",
+  "contact": { "name": "Kyle", "email": "service@masterdecker.com", "phone": "(519) 266-6796" },
+  "terms": [
+    "Prices are season rentals: the display is delivered, set up, looked after and taken down by our crew, then goes back to our shop.",
+    "Travel is a single $1,000 charge for the whole order ($500 for the install trip and $500 for the takedown trip), however many displays you add.",
+    "Each display runs on a standard 120V outlet. Timers and long extension cords are extra only if they are needed, $500 at most, assuming power is close to the displays.",
+    "Sizes are approximate and most pieces can be made larger or smaller. HST is extra.",
+    "A 50% deposit reserves the displays. Proof of insurance ($5 million per occurrence, with the City named as additional insured) follows once the quote is approved and the deposit is in."
+  ],
+  "confirmed": {
+    "title": "Your displays",
+    "blurb": "The two pieces you asked about, ready to reserve.",
+    "items": [
+      {
+        "id": "tunnel",
+        "name": "22 ft walk-through light tunnel",
+        "size": "About 22 ft long, 13 ft wide, 10 ft tall",
+        "price": 7500,
+        "blurb": "A glowing archway guests walk straight through. Works for every theme night, and it is the photo everyone takes.",
+        "image": "/images/jestr/tunnel.jpg"
+      },
+      {
+        "id": "snowmen-trio",
+        "name": "Snowman family, three snowmen",
+        "size": "3 m, 2.5 m and 2 m tall (1.5 to 2.2 m bases)",
+        "price": 5000,
+        "blurb": "Three giant lit snowmen in hats and scarves, set up as a family group. The centrepiece for Frosty Festivities.",
+        "image": "/images/jestr/snowmen-trio.jpg"
+      }
+    ]
+  },
+  "themes": [
+    {
+      "key": "grinchmas",
+      "date": "Nov. 14",
+      "title": "Grinchmas",
+      "blurb": "Grinch green and Who-ville red: crooked trees, a giant Santa hat and a pile of glowing presents waiting to be stolen.",
+      "items": [
+        { "id": "spiral-tree-red-green", "name": "Red and green spiral tree", "size": "About 16 ft tall", "price": 4800, "blurb": "A tall cone tree wrapped in red and green ribbons of light with a star on top.", "image": "/images/jestr/spiral-tree-red-green.jpg" },
+        { "id": "walk-through-santa-hat", "name": "Walk-through Santa hat", "size": "About 10 ft tall", "price": 3900, "blurb": "A giant red Santa hat guests can stand under, the Grinch's favourite disguise.", "image": "/images/jestr/walk-through-santa-hat.jpg" },
+        { "id": "gift-pile", "name": "Spilling pile of glowing presents", "size": "About 20 ft across", "price": 3400, "blurb": "Colourful lit gifts and baubles tumbling out of a giant sack, ready for the Grinch to make off with.", "image": "/images/jestr/gift-pile.jpg" },
+        { "id": "leaning-gold-trees", "name": "Leaning Who-ville trees, pair", "size": "About 12 and 15 ft tall", "price": 2600, "blurb": "Two angular gold trees leaning every which way, straight out of Who-ville.", "image": "/images/jestr/leaning-gold-trees.jpg" },
+        { "id": "gift-stack-red-green", "name": "Giant red and green gift box", "size": "About 6 ft tall", "price": 1450, "blurb": "A big red present with a green ribbon and bow.", "image": "/images/jestr/gift-stack-red-green.jpg" },
+        { "id": "green-gift-box", "name": "Grinch green gift box", "size": "About 6 ft tall", "price": 1200, "blurb": "An all-green lit present, Grinch colours from top to bottom.", "image": "/images/jestr/green-gift-box.jpg" }
+      ]
+    },
+    {
+      "key": "frosty",
+      "date": "Nov. 21",
+      "title": "Frosty Festivities",
+      "blurb": "Snowmen, snowflakes and sledding, built around the snowman family.",
+      "items": [
+        { "id": "walk-through-snowman", "name": "Walk-through snowman", "size": "About 13 ft tall", "price": 4600, "blurb": "A giant snowman with an archway right through his middle.", "image": "/images/jestr/walk-through-snowman.jpg" },
+        { "id": "snowman-arch", "name": "Snowman archway with stick arms", "size": "About 12 ft tall", "price": 4200, "blurb": "A top-hatted snowman entrance arch with branch arms and a red scarf.", "image": "/images/jestr/snowman-arch.jpg" },
+        { "id": "snowflake-arch", "name": "Walk-through snowflake arch", "size": "About 12 ft tall", "price": 3600, "blurb": "A giant 3D snowflake guests walk through. Also suits the Penguin Polar Party.", "image": "/images/jestr/snowflake-arch.jpg" },
+        { "id": "snowman-tree", "name": "Snowman inside a tree", "size": "About 14 ft tall", "price": 2900, "blurb": "A frame tree with a glowing snowman standing inside it.", "image": "/images/jestr/snowman-tree.jpg" },
+        { "id": "snowmen-toboggan", "name": "Snowmen on a toboggan", "size": "About 8 ft long", "price": 2400, "blurb": "Two snowmen sledding together, a favourite for photos.", "image": "/images/jestr/snowmen-toboggan.jpg" },
+        { "id": "2d-snowman-sled", "name": "Snowman pulling a sled (2D)", "size": "About 8 ft wide", "price": 650, "blurb": "A lit outline of a snowman pulling a little one on a sled.", "image": "/images/jestr/2d-snowman-sled.jpg" }
+      ]
+    },
+    {
+      "key": "penguin",
+      "date": "Nov. 28",
+      "title": "Penguin Polar Party",
+      "blurb": "Ice blue and white: penguins, polar bears and a frozen throne.",
+      "items": [
+        { "id": "blue-ornament-arch", "name": "Blue ornament walk-through", "size": "About 12 ft tall", "price": 3900, "blurb": "A giant blue and gold ornament with an archway through the middle.", "image": "/images/jestr/blue-ornament-arch.jpg" },
+        { "id": "ice-throne", "name": "Ice crystal throne", "size": "About 10 ft tall", "price": 3800, "blurb": "A sparkling white throne framed by ice-blue crystal trees. Guests sit for photos.", "image": "/images/jestr/ice-throne.jpg" },
+        { "id": "polar-bear-frame", "name": "Polar bear photo frame", "size": "About 9 ft tall", "price": 3200, "blurb": "A polar bear in a toque between two giant skis, with a seat for photos.", "image": "/images/jestr/polar-bear-frame.jpg" },
+        { "id": "penguin-family", "name": "Penguin family, three penguins", "size": "About 3 to 7 ft tall", "price": 2700, "blurb": "Three glowing penguins, big to small.", "image": "/images/jestr/penguin-family.jpg" },
+        { "id": "polar-bear-pair", "name": "Polar bear pair", "size": "About 6 ft long each", "price": 2600, "blurb": "A mother polar bear and her cub in bright white light.", "image": "/images/jestr/polar-bear-pair.jpg" },
+        { "id": "icicle-pathway", "name": "Icicle pathway", "size": "Lines about 30 ft of path", "price": 2200, "blurb": "Tall lit icicles standing along both sides of a walkway.", "image": "/images/jestr/icicle-pathway.jpg" }
+      ]
+    },
+    {
+      "key": "gingerbread",
+      "date": "Dec. 5",
+      "title": "Gingerbread Lane",
+      "blurb": "Candy canes, gingerbread and a candy house you can walk into.",
+      "items": [
+        { "id": "candy-house-arch", "name": "Gingerbread house walk-through", "size": "About 13 ft tall", "price": 4800, "blurb": "A candy-trimmed gingerbread house with an archway guests walk through.", "image": "/images/jestr/candy-house-arch.jpg" },
+        { "id": "candy-cane-arch", "name": "Candy cane archway", "size": "About 12 ft tall", "price": 3400, "blurb": "Two giant red and white candy canes crossed into an entrance arch.", "image": "/images/jestr/candy-cane-arch.jpg" },
+        { "id": "candy-cottage", "name": "Candy cottage", "size": "About 10 ft tall", "price": 3200, "blurb": "A little lit house with candy cane trim and a frosted roof.", "image": "/images/jestr/candy-cottage.jpg" },
+        { "id": "gingerbread-man", "name": "Gingerbread man with candy canes", "size": "About 8 ft tall", "price": 2600, "blurb": "A smiling golden gingerbread man between two candy canes.", "image": "/images/jestr/gingerbread-man.jpg" },
+        { "id": "candy-canes-bow", "name": "Candy canes with a green bow", "size": "About 8 ft tall", "price": 1600, "blurb": "A pair of crossed candy canes tied with a big green bow.", "image": "/images/jestr/candy-canes-bow.jpg" },
+        { "id": "2d-gingerbread-house", "name": "Gingerbread house outline (2D)", "size": "About 8 ft wide", "price": 750, "blurb": "A lit outline of a gingerbread house with candy trim and a heart door.", "image": "/images/jestr/2d-gingerbread-house.jpg" }
+      ]
+    },
+    {
+      "key": "reindeer",
+      "date": "Dec. 12",
+      "title": "Reindeer Round-Up",
+      "blurb": "Santa's team in gold and white, from a single stag to the full sleigh.",
+      "items": [
+        { "id": "reindeer-sleigh-team", "name": "Golden reindeer team and sleigh", "size": "About 40 ft long", "price": 5600, "blurb": "A full team of gold reindeer pulling Santa's sleigh in a long line.", "image": "/images/jestr/reindeer-sleigh-team.jpg" },
+        { "id": "santa-sleigh-white-reindeer", "name": "Santa's sleigh with white reindeer", "size": "About 16 ft long", "price": 4900, "blurb": "Santa in his sleigh behind two bright white reindeer.", "image": "/images/jestr/santa-sleigh-white-reindeer.jpg" },
+        { "id": "giant-cartoon-reindeer", "name": "Giant cartoon reindeer", "size": "About 10 ft tall", "price": 3600, "blurb": "A big friendly reindeer in a Santa hat and red scarf, made for selfies.", "image": "/images/jestr/giant-cartoon-reindeer.jpg" },
+        { "id": "reindeer-family", "name": "Reindeer family, three reindeer", "size": "About 4 to 7 ft tall", "price": 2800, "blurb": "A stag, a doe and a fawn in warm gold light.", "image": "/images/jestr/reindeer-family.jpg" },
+        { "id": "golden-reindeer", "name": "Golden stag", "size": "About 7 ft tall", "price": 1650, "blurb": "A single large gold reindeer with a red bow.", "image": "/images/jestr/golden-reindeer.jpg" },
+        { "id": "2d-flying-reindeer", "name": "Flying reindeer and sleigh (2D)", "size": "About 25 ft long", "price": 850, "blurb": "Santa's sleigh and team in lit outline, flying across a lawn or fence line.", "image": "/images/jestr/2d-flying-reindeer.jpg" }
+      ]
+    }
+  ]
+}
