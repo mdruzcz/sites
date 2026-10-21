@@ -1,0 +1,8 @@
+[
+  { "slug": "mega-tree-plaza", "title": "Mega tree, retail plaza", "caption": "Placeholder — replace with a photo of a Resonate mega tree installation.", "image": "/images/gallery/placeholder-01.svg", "tag": "Mega tree" },
+  { "slug": "roofline-restaurant", "title": "Roofline run, restaurant patio", "caption": "Placeholder — replace with a photo of a roofline pixel run.", "image": "/images/gallery/placeholder-02.svg", "tag": "Roofline" },
+  { "slug": "singing-trees-square", "title": "Singing trees, town square", "caption": "Placeholder — replace with a photo of a municipal singing-tree display.", "image": "/images/gallery/placeholder-03.svg", "tag": "Singing trees" },
+  { "slug": "controller-box", "title": "Pi 5 controller box", "caption": "Placeholder — replace with a photo of the controller enclosure.", "image": "/images/gallery/placeholder-04.svg", "tag": "Hardware" },
+  { "slug": "light-show-app", "title": "Light Show app on a phone", "caption": "Placeholder — replace with a screenshot of the control app.", "image": "/images/gallery/placeholder-05.svg", "tag": "Software" },
+  { "slug": "bia-main-street", "title": "BIA main street at night", "caption": "Placeholder — replace with a photo of a multi-building streetscape.", "image": "/images/gallery/placeholder-06.svg", "tag": "BIA" }
+]

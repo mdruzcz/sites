@@ -1,0 +1,76 @@
+[
+  {
+    "slug": "starter",
+    "name": "Starter Package",
+    "tier": "Starter",
+    "audience": "Restaurants, patios, storefronts and small commercial frontages",
+    "headline": "One feature, one controller, fully music-reactive.",
+    "summary": "The Starter Package puts a single statement prop — a mega tree or a roofline run — in front of your business and makes it react to the music you already play. Everything ships pre-configured; plug in, join the Wi-Fi hotspot and press Play.",
+    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
+    "pixelController": "SanDevices E682 pixel controller",
+    "mic": "USB microphone (room or outdoor-rated placement)",
+    "propsIncluded": [
+      "One mega tree (roughly 8–12 ft) OR one roofline strip run",
+      "12 V WS2811 pixels, weather-rated for Ontario winters",
+      "Power supply, enclosure, data cabling and mounting hardware"
+    ],
+    "bestFor": [
+      "Restaurant and bar patios",
+      "Single-storefront retail",
+      "Office entrances and lobbies",
+      "Seasonal pop-ups and event booths"
+    ],
+    "software": "Lifetime access to the Resonate Light Show control app, pre-installed on the Pi. Updates included.",
+    "image": "/images/gallery/placeholder-starter.svg"
+  },
+  {
+    "slug": "business",
+    "name": "Business Package",
+    "tier": "Business",
+    "audience": "Retail plazas, multi-tenant buildings, venues and property managers",
+    "headline": "Rooflines, trees and accents working as one show.",
+    "summary": "The Business Package combines rooflines, one or more mega trees and accent props into a single synchronized display driven by one controller. Choose live music reactivity for everyday ambience and switch to fully sequenced holiday shows when the season arrives.",
+    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
+    "pixelController": "SanDevices E682 for reactive mode, or Kulp K-series running FPP for sequenced holiday shows",
+    "mic": "USB microphone with placement tuned to your sound system",
+    "propsIncluded": [
+      "Roofline pixel runs across the primary frontage",
+      "One or two mega trees or singing trees",
+      "Accent strips for columns, signage or windows",
+      "12 V WS2811 pixels, power injection, enclosures and cabling"
+    ],
+    "bestFor": [
+      "Retail plazas and strip malls",
+      "Event venues and banquet halls",
+      "Hotels and mixed-use buildings",
+      "Property management portfolios"
+    ],
+    "software": "Lifetime access to the Resonate Light Show control app plus our sequencing service for holiday shows. Updates included.",
+    "image": "/images/gallery/placeholder-business.svg"
+  },
+  {
+    "slug": "municipal",
+    "name": "Municipal Package",
+    "tier": "Municipal",
+    "audience": "BIAs, municipalities, downtown cores, parks and public squares",
+    "headline": "A public light show your whole community shows up for.",
+    "summary": "Built for streetscapes and public spaces: multiple mega trees, singing trees for choreographed holiday programming, and roofline or canopy runs across several buildings — all synchronized. We design for public-space durability, power availability and easy seasonal changeover.",
+    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
+    "pixelController": "Kulp K-series pixel controllers running FPP for scheduled, sequenced shows (E682 available for reactive zones)",
+    "mic": "USB microphone for live-reactive zones, plus scheduled playback for sequenced shows",
+    "propsIncluded": [
+      "Multiple mega trees sized to the site",
+      "Singing trees for choreographed holiday programming",
+      "Roofline, canopy and streetscape pixel runs",
+      "12 V WS2811 pixels, weatherproof power and data distribution, lockable enclosures"
+    ],
+    "bestFor": [
+      "Business Improvement Areas (BIAs)",
+      "Municipal downtown and holiday programs",
+      "Parks, squares and waterfronts",
+      "Large event venues and fairgrounds"
+    ],
+    "software": "Lifetime access to the Resonate Light Show control app, holiday show sequencing, and seasonal service. Updates included.",
+    "image": "/images/gallery/placeholder-municipal.svg"
+  }
+]

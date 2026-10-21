@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "design",
+    "title": "Lighting Design",
+    "shortDescription": "Site walk, prop layout, power plan and a rendered preview before anything is ordered.",
+    "description": "Every Resonate project starts with a design pass. We walk the site (or review your photos and drawings), map rooflines, trees and sightlines, and plan power and data runs so the installation is clean and serviceable. You receive a layout showing where each prop goes, how pixels are counted, and what the display will look like at night.",
+    "bullets": [
+      "On-site or remote site assessment",
+      "Prop placement and pixel count plan",
+      "Power and data routing with weather-rated enclosures",
+      "Rendered night preview and mode recommendations"
+    ],
+    "icon": "design"
+  },
+  {
+    "slug": "supply",
+    "title": "Kit Supply",
+    "shortDescription": "Pre-configured controller box, pixel controller, microphone and props delivered ready to connect.",
+    "description": "Each kit ships with the Raspberry Pi 5 controller box already running LedFx and the Resonate Light Show app, a pixel controller configured for your prop map, a USB microphone, and 12 V WS2811 props built to your layout. You get lifetime access to the control software that powers the kit; updates are included.",
+    "bullets": [
+      "Raspberry Pi 5 controller box, pre-configured",
+      "SanDevices E682 or Kulp K-series (FPP) pixel controller",
+      "USB microphone and 12 V WS2811 props",
+      "Lifetime access to the Light Show app, updates included"
+    ],
+    "icon": "supply"
+  },
+  {
+    "slug": "installation",
+    "title": "Installation",
+    "shortDescription": "Professional mounting, power injection and commissioning by our Ontario install team.",
+    "description": "Our installers mount props, run data and power, and commission the show on site. We tune microphone placement to your sound system, verify every pixel, and hand over the Light Show app on your phone before we leave. Rooflines use clip systems appropriate to the facade; trees are anchored for Ontario wind and snow loads.",
+    "bullets": [
+      "Roofline clips, tree frames and anchoring",
+      "Power injection and weatherproof connections",
+      "Microphone placement and sensitivity tuning",
+      "Pixel-by-pixel verification and handover"
+    ],
+    "icon": "install"
+  },
+  {
+    "slug": "seasonal-service",
+    "title": "Seasonal Service",
+    "shortDescription": "Holiday show sequencing, seasonal changeovers, takedown and storage.",
+    "description": "Permanent kits change character with the calendar. We sequence holiday shows for Kulp/FPP controllers, swap colour themes for Canada Day, Halloween and winter, and offer takedown and storage for seasonal props. Service visits include pixel checks and software updates.",
+    "bullets": [
+      "Custom sequenced holiday shows (FPP)",
+      "Theme changeovers through the year",
+      "Takedown, storage and spring re-install",
+      "Pixel health checks and software updates"
+    ],
+    "icon": "service"
+  }
+]

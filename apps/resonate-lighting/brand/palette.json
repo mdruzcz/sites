@@ -1,0 +1,39 @@
+{
+  "name": "Resonate Lighting",
+  "mode": "dark-first",
+  "base": {
+    "ink": { "hex": "#0B0F1A", "use": "Page background. Deep charcoal-navy; never pure black so pixels glow against it." },
+    "ink-800": { "hex": "#101627", "use": "Alternate section background." },
+    "ink-700": { "hex": "#161E33", "use": "Elevated panels, header blur base." },
+    "surface": { "hex": "#141B2E", "use": "Cards and form fields." },
+    "surface-200": { "hex": "#1C2540", "use": "Hovered cards, secondary surfaces." },
+    "line": { "hex": "#2A3454", "use": "Borders and dividers." }
+  },
+  "accent": {
+    "resonant": { "hex": "#FF9A3C", "use": "Primary warm accent: CTAs, eyebrows, active states, the glow. Think incandescent warmth." },
+    "resonant-600": { "hex": "#F26B1D", "use": "Hover/pressed state for resonant; on light backgrounds." },
+    "cool": { "hex": "#4CC9F0", "use": "Secondary cool accent: data, links on dark, gradient end-stop, pixel highlights." },
+    "cool-600": { "hex": "#1A9FD0", "use": "Cool on light backgrounds." }
+  },
+  "signal": {
+    "pixel-red": { "hex": "#FF3B5C", "use": "Theme swatches and demo only." },
+    "pixel-green": { "hex": "#3DDC84", "use": "Theme swatches, success states." },
+    "pixel-white": { "hex": "#F4F6FB", "use": "Primary text." }
+  },
+  "text": {
+    "foreground": { "hex": "#F4F6FB", "use": "Headings and primary copy." },
+    "muted-strong": { "hex": "#BAC3DB", "use": "Body copy on dark." },
+    "muted": { "hex": "#8E98B4", "use": "Captions, labels, placeholders." }
+  },
+  "gradients": {
+    "brand": "linear-gradient(135deg, #FF9A3C 0%, #4CC9F0 100%)",
+    "cta": "linear-gradient(135deg, #FF9A3C 0%, #F26B1D 100%)"
+  },
+  "rules": [
+    "Resonant (warm) always leads; cool is the answer, never the question. Roughly 70/30 warm-to-cool on any screen.",
+    "Only one gradient element per viewport: the mark, a CTA, or a heading highlight, not all three.",
+    "Text on ink uses foreground or muted-strong. Never set body copy in an accent colour.",
+    "Minimum contrast: 4.5:1 for body text, 3:1 for large display text and UI chrome.",
+    "Signal colours are for pixel/theme swatches and status, never for layout."
+  ]
+}

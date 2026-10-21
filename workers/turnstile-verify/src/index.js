@@ -94,6 +94,8 @@ const HOSTNAME_TO_GROUP = {
   "permanentlightingdirect.ca": 10,
   "www.permanentlightingdirect.ca": 10,
   "readykitchens.ca": 10,
+  "resonatelighting.com": 13,
+  "www.resonatelighting.com": 13,
   "www.readykitchens.ca": 10,
   "readysealdirect.ca": 10,
   "www.readysealdirect.ca": 10,

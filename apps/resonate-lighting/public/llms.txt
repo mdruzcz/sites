@@ -1,0 +1,32 @@
+# Resonate Lighting
+
+> Music-reactive, permanent and seasonal pixel lighting kits for commercial spaces, Business Improvement Areas (BIAs) and municipalities in Ontario, Canada. Design, supply, installation and seasonal service. Prices quoted per project in CAD — request a quote.
+
+## What the kit is
+- Raspberry Pi 5 controller box running LedFx with the proprietary Resonate "Light Show" control app (a web page served from the Pi's own Wi-Fi hotspot; works on any phone, no app store).
+- USB microphone for live music reactivity.
+- Pixel controller: SanDevices E682 (reactive) or Kulp K-series running FPP (sequenced holiday shows).
+- 12 V WS2811 pixel props: mega trees, singing trees, strips, rooflines.
+- Buyers get lifetime access to the control software; updates included.
+
+## Packages (no public pricing — quote per project)
+- Starter Package: one feature prop (mega tree or roofline run) for restaurants, patios, storefronts.
+- Business Package: rooflines, trees and accents for plazas, venues, property managers.
+- Municipal Package: multiple mega trees, singing trees and streetscape runs for BIAs and municipalities.
+
+## Pages
+- Home (interactive mega tree / roofline demo): https://resonatelighting.com/
+- Kits: https://resonatelighting.com/kits
+- Installation & Services: https://resonatelighting.com/services
+- Commercial: https://resonatelighting.com/commercial
+- BIA: https://resonatelighting.com/bia
+- Municipal: https://resonatelighting.com/municipal
+- Gallery: https://resonatelighting.com/gallery
+- About: https://resonatelighting.com/about
+- FAQ: https://resonatelighting.com/faq
+- Request a quote: https://resonatelighting.com/contact
+
+## Contact
+- Phone: 519-878-6735
+- Email: service@masterdecker.com
+- Service area: Ontario, Canada (Toronto, Ottawa, Hamilton, London, Kitchener-Waterloo, Windsor, Niagara, Mississauga, Barrie, Kingston and surrounding regions)
