@@ -13,7 +13,7 @@
       "Works indoors or outdoors (IP67/IP68 outdoor hardware)"
     ],
     "icon": "sparkles",
-    "image": "/images/uploads/placeholder-experiential.svg",
+    "image": "/images/show/crowd-white-beams.jpg",
     "order": 1
   },
   {
@@ -30,7 +30,7 @@
       "Engineered for Ontario freeze-thaw"
     ],
     "icon": "frame",
-    "image": "/images/uploads/placeholder-architectural.svg",
+    "image": "/images/show/show-warm-white.jpg",
     "order": 2
   },
   {
@@ -47,7 +47,7 @@
       "Optional managed service (we sequence, you press play)"
     ],
     "icon": "rgb",
-    "image": "/images/uploads/placeholder-rgb.svg",
+    "image": "/images/show/show-gold.jpg",
     "order": 3
   },
   {
@@ -64,7 +64,7 @@
       "Optional on-site operator during show nights"
     ],
     "icon": "stage",
-    "image": "/images/uploads/placeholder-immersive.svg",
+    "image": "/images/show/crowd-purple.jpg",
     "order": 4
   },
   {
@@ -81,7 +81,7 @@
       "Once installed, no more ladders or seasonal hires"
     ],
     "icon": "tree",
-    "image": "/images/uploads/placeholder-holiday.svg",
+    "image": "/images/show/show-blue-snowflakes.jpg",
     "order": 5
   }
 ]

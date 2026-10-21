@@ -11,6 +11,7 @@ export function Header() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
+    { href: "/plan-your-show", label: "Plan Your Show" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/service-areas", label: "Service Areas" },
     { href: "/about", label: "About" },

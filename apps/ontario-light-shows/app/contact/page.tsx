@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { QuoteForm } from "@/components/QuoteForm";
+import { decodeCounts, describeCounts, estimate } from "@/lib/estimate";
+import { pricing, REGIONS, type RegionId } from "@/lib/pricing";
 
 export const revalidate = 3600;
 
@@ -10,7 +12,22 @@ export const metadata: Metadata = {
   alternates: { canonical: `${site.url}/contact` },
 };
 
-export default function ContactPage() {
+type Search = { budget?: string; layout?: string; region?: string };
+
+export default async function ContactPage({ searchParams }: { searchParams: Promise<Search> }) {
+  const sp = await searchParams;
+  const region = (REGIONS as string[]).includes(sp.region ?? "") ? (sp.region as RegionId) : undefined;
+  const counts = decodeCounts(sp.layout);
+  const budget = sp.budget ? Math.max(0, Math.min(10_000_000, parseInt(sp.budget, 10) || 0)) : 0;
+  const est = counts ? estimate(counts, region ?? "home") : null;
+  const lines: string[] = [];
+  if (budget) lines.push(`Show budget: $${budget.toLocaleString("en-CA")} (installed, before tax)`);
+  if (counts) lines.push(`Props from the show planner: ${describeCounts(counts)}`);
+  if (est) lines.push(`Planner estimate: $${est.total.toLocaleString("en-CA")} (equipment $${est.hardwareTotal.toLocaleString("en-CA")}, installation and travel $${est.installTotal.toLocaleString("en-CA")})`);
+  if (region) lines.push(`Region: ${pricing.travel.regions[region].name}`);
+  if (lines.length) lines.push("", "Venue, dates and anything else we should know:", "");
+  const defaultMessage = lines.length ? lines.join("\n") : undefined;
+
   return (
     <>
       <section className="bg-midnight-800 border-b border-soft">
@@ -81,7 +98,9 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-3">
-              <QuoteForm />
+              <div id="quote" className="scroll-mt-24">
+                <QuoteForm defaultMessage={defaultMessage} defaultService={defaultMessage ? "Experiential Lighting" : undefined} />
+              </div>
             </div>
           </div>
         </div>

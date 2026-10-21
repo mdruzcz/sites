@@ -1,5 +1,117 @@
 [
   {
+    "slug": "christmas-light-show-in-the-park-2025",
+    "title": "Christmas Light Show in the Park",
+    "headline": "A pavilion stage, two mega trees and a crowd on the lawn.",
+    "summary": "On December 5, 2025 our music-synchronized show lit a park pavilion in Chatham-Kent: the stage outlined in pixels with snowflakes in the gable, two mega trees with star toppers, singing-tree faces and candy canes, all sequenced to the soundtrack while families watched from the snowy lawn.",
+    "client": "Community holiday event",
+    "location": "Chatham-Kent, Ontario",
+    "year": "2025",
+    "scope": [
+      "Show design",
+      "Stage gable and eave outline",
+      "Pixel verticals on the columns",
+      "Pixel snowflakes",
+      "Two pixel mega trees with star toppers",
+      "Singing-tree faces and candy canes",
+      "Music-synchronized sequencing",
+      "On-site setup and show operation"
+    ],
+    "stats": [
+      {
+        "label": "Show night",
+        "value": "Dec 5, 2025"
+      },
+      {
+        "label": "Mega trees",
+        "value": "2"
+      },
+      {
+        "label": "Stage props",
+        "value": "Flakes, canes, faces"
+      },
+      {
+        "label": "Video clips",
+        "value": "5 below"
+      }
+    ],
+    "challenge": "A park pavilion is built for a band, not a light show. The brief was to turn it into the centrepiece of a winter evening: readable from across a snowy lawn, paced to music, with every prop facing the crowd the way a stage set does.",
+    "approach": "We traced the pavilion's gable and eave in pixels, ran pixel verticals up the porch columns and filled the gable with snowflakes. Two mega trees with star toppers flank the stage, with singing-tree faces and candy canes in front. Every element is sequenced to the soundtrack, from slow colour washes to full-tree beat hits, with searchlight beams pushing colour into the sky behind the roof.",
+    "outcome": "Families filled the lawn in front of the stage and stayed to watch the show through the evening. The clips on this page are unedited phone footage from show night, with the audio removed.",
+    "testimonialQuote": null,
+    "testimonialAttribution": null,
+    "heroImage": "/images/show/show-blue-snowflakes.jpg",
+    "gallery": [
+      {
+        "src": "/images/show/show-blue-mega-trees.jpg",
+        "alt": "Pavilion stage with two blue pixel mega trees and star toppers at a Christmas light show in Chatham-Kent"
+      },
+      {
+        "src": "/images/show/show-magenta.jpg",
+        "alt": "Stage show washed in magenta with snowflakes in the gable, Chatham-Kent park light show"
+      },
+      {
+        "src": "/images/show/show-rainbow-trees.jpg",
+        "alt": "Rainbow-striped pixel mega trees beside the lit pavilion stage on a snowy lawn"
+      },
+      {
+        "src": "/images/show/show-gold.jpg",
+        "alt": "Gold and white pixel mega trees and singing-tree faces in front of the pavilion stage"
+      },
+      {
+        "src": "/images/show/crowd-white-beams.jpg",
+        "alt": "Crowd watching white pixel mega trees and searchlight beams at the park Christmas show"
+      },
+      {
+        "src": "/images/show/crowd-green.jpg",
+        "alt": "Families on the lawn watching the stage glow green during the music-synchronized show"
+      },
+      {
+        "src": "/images/show/stage-snowflakes-close.jpg",
+        "alt": "Close view of pixel snowflakes on the pavilion gable and a white mega tree with star"
+      },
+      {
+        "src": "/images/show/crowd-candy-stripe-trees.jpg",
+        "alt": "Candy-stripe mega trees and the crowd in front of the pavilion stage"
+      }
+    ],
+    "videos": [
+      {
+        "src": "/media/show-wide.mp4",
+        "poster": "/images/show/poster-show-wide.jpg",
+        "title": "The full stage, colour by colour",
+        "length": "1:02"
+      },
+      {
+        "src": "/media/show-rainbow.mp4",
+        "poster": "/images/show/poster-show-rainbow.jpg",
+        "title": "Mega trees going rainbow",
+        "length": "0:30"
+      },
+      {
+        "src": "/media/show-crowd.mp4",
+        "poster": "/images/show/poster-show-crowd.jpg",
+        "title": "From the crowd",
+        "length": "0:32"
+      },
+      {
+        "src": "/media/show-colours.mp4",
+        "poster": "/images/show/poster-show-colours.jpg",
+        "title": "Colour changes on the beat",
+        "length": "0:32"
+      },
+      {
+        "src": "/media/fountain-walkthrough.mp4",
+        "poster": "/images/show/poster-fountain.jpg",
+        "title": "The walk in, from the fountain to the show",
+        "length": "0:46"
+      }
+    ],
+    "videoEmbed": null,
+    "featured": true,
+    "order": 0
+  },
+  {
     "slug": "blenheim-rotary-christmas-parade",
     "title": "Blenheim Rotary Club Christmas Parade",
     "headline": "A community parade, scored and synchronized.",
@@ -15,10 +127,22 @@
       "FM transmitter for vehicle-side audio"
     ],
     "stats": [
-      { "label": "Addressable Pixels", "value": "12,000+" },
-      { "label": "Sequenced Songs", "value": "8 holiday tracks" },
-      { "label": "Show Length", "value": "45 minutes" },
-      { "label": "Audience", "value": "5,000+ attendees" }
+      {
+        "label": "Addressable Pixels",
+        "value": "12,000+"
+      },
+      {
+        "label": "Sequenced Songs",
+        "value": "8 holiday tracks"
+      },
+      {
+        "label": "Show Length",
+        "value": "45 minutes"
+      },
+      {
+        "label": "Audience",
+        "value": "5,000+ attendees"
+      }
     ],
     "challenge": "The Rotary Club wanted to transform their long-running community parade into a regional headline event — without sacrificing the small-town, family character that had made it a tradition. We had to deliver a production-quality music-synced light show on a parade route, in winter, on a community budget, and with zero downtime tolerance on show night.",
     "approach": "We built the entire show in-studio against the final audio mix the parade committee approved, pre-loaded sequences onto outdoor-rated controllers, and weather-sealed every connector to IP67. A wireless cue rig let our operator trigger transitions in time with the parade announcer. Pixels were mounted to a parade-stage rig that broke down into modular sections so the same install could be reused across multiple parade nights and stored compactly off-season.",
@@ -27,13 +151,26 @@
     "testimonialAttribution": "Blenheim Rotary Club, Parade Committee",
     "heroImage": "/images/uploads/placeholder-blenheim-hero.svg",
     "gallery": [
-      "/images/uploads/placeholder-blenheim-1.svg",
-      "/images/uploads/placeholder-blenheim-2.svg",
-      "/images/uploads/placeholder-blenheim-3.svg",
-      "/images/uploads/placeholder-blenheim-4.svg"
+      {
+        "src": "/images/uploads/placeholder-blenheim-1.svg",
+        "alt": "Blenheim Rotary Club Christmas Parade, photo 1"
+      },
+      {
+        "src": "/images/uploads/placeholder-blenheim-2.svg",
+        "alt": "Blenheim Rotary Club Christmas Parade, photo 2"
+      },
+      {
+        "src": "/images/uploads/placeholder-blenheim-3.svg",
+        "alt": "Blenheim Rotary Club Christmas Parade, photo 3"
+      },
+      {
+        "src": "/images/uploads/placeholder-blenheim-4.svg",
+        "alt": "Blenheim Rotary Club Christmas Parade, photo 4"
+      }
     ],
     "videoEmbed": null,
     "featured": true,
-    "order": 1
+    "order": 1,
+    "videos": []
   }
 ]

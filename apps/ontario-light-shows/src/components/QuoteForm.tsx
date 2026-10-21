@@ -7,10 +7,12 @@ import { getServices } from "@/lib/content";
 
 type Props = {
   defaultService?: string;
+  defaultMessage?: string;
+  defaultCity?: string;
   variant?: "card" | "inline";
 };
 
-export function QuoteForm({ defaultService, variant = "card" }: Props) {
+export function QuoteForm({ defaultService, defaultMessage, defaultCity, variant = "card" }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [token, setToken] = useState<string | null>(null);
   const services = getServices();
@@ -107,7 +109,7 @@ export function QuoteForm({ defaultService, variant = "card" }: Props) {
 
       <div>
         <label htmlFor="address" className="block text-xs font-semibold text-muted-strong mb-1.5 uppercase tracking-wider">Project City</label>
-        <input id="address" name="address" type="text" placeholder="e.g. Toronto, ON" autoComplete="address-level2" className={inputClass} />
+        <input id="address" name="address" type="text" defaultValue={defaultCity ?? ""} placeholder="e.g. Toronto, ON" autoComplete="address-level2" className={inputClass} />
       </div>
 
       <div>
@@ -126,7 +128,8 @@ export function QuoteForm({ defaultService, variant = "card" }: Props) {
         <textarea
           id="message"
           name="message"
-          rows={3}
+          rows={defaultMessage ? 6 : 3}
+          defaultValue={defaultMessage ?? ""}
           placeholder="Venue type, scale, soundtrack, target dates, anything else helpful…"
           className={`${inputClass} resize-y`}
         />

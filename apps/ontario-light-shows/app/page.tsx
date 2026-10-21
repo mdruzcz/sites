@@ -17,6 +17,9 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { StepProcess } from "@/components/StepProcess";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { MegaTreeSection } from "@/components/MegaTreeSection";
+import { HeroVideo } from "@/components/HeroVideo";
+import { ShowDemo } from "@/components/demo/ShowDemo";
+import { ShowPlanner } from "@/components/ShowPlanner";
 import { faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
@@ -28,7 +31,7 @@ export default function HomePage() {
   const areas = getServiceAreas();
   const faqs = getFaqs();
   const caseStudies = getCaseStudies();
-  const blenheim = caseStudies[0];
+  const featured = caseStudies[0];
 
   return (
     <>
@@ -39,13 +42,13 @@ export default function HomePage() {
 
       {/* 1. Hero */}
       <section className="relative overflow-hidden">
-        <Image
-          src="/images/uploads/placeholder-blenheim-hero.svg"
-          alt="Music-synchronized addressable LED light show by Ontario Light Shows"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
+        <div className="absolute inset-0 opacity-60">
+          <HeroVideo
+            src="/media/fountain-walkthrough-hero.mp4"
+            poster="/images/show/park-fountain.jpg"
+            alt="Walking from the lit fountain through the park to an Ontario Light Shows Christmas show in Chatham-Kent"
+          />
+        </div>
         <div className="hero-gradient absolute inset-0" />
         <div className="spotlight" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
@@ -92,6 +95,30 @@ export default function HomePage() {
       {/* 2. Trust bar */}
       <TrustBar />
 
+      {/* 2b. Interactive 3D show */}
+      <section id="try-the-show" className="py-20 sm:py-28 bg-midnight-800 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-4 lg:sticky lg:top-28">
+              <p className="eyebrow">Try the show</p>
+              <h2 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                Run a stage show <span className="gradient-text">from your browser</span>.
+              </h2>
+              <p className="text-muted-strong text-lg leading-relaxed mb-6">
+                A 3D model of the kind of show we built in December 2025: a stage outlined in pixels with snowflakes in the gable, mega trees on either side, singing trees and candy canes out front, and the crowd on the lawn. Pick a theme, play the piano or drums, or turn on your microphone and watch every prop follow the music.
+              </p>
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
+                <Link href={`/case-studies/${featured.slug}`} className="btn btn-outline">Watch the real show</Link>
+                <Link href="/plan-your-show" className="btn btn-ghost">Plan your show</Link>
+              </div>
+            </div>
+            <div className="lg:col-span-8">
+              <ShowDemo />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Services overview */}
       <section className="py-20 sm:py-28 bg-midnight">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -113,15 +140,15 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="eyebrow">Case Study · 2024</p>
+              <p className="eyebrow">Case Study · {featured.year}</p>
               <h2 className="h-display text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
-                The <span className="gradient-text">Blenheim Rotary Club</span> Christmas Parade.
+                <span className="gradient-text">{featured.title}</span>.
               </h2>
               <p className="text-muted-strong text-base sm:text-lg leading-relaxed mb-6">
-                {blenheim.summary}
+                {featured.summary}
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                {blenheim.stats.map((s) => (
+                {featured.stats.map((s) => (
                   <div key={s.label}>
                     <div className="text-2xl sm:text-3xl font-extrabold gradient-text leading-none mb-1.5">
                       {s.value}
@@ -132,35 +159,52 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <Link href={`/case-studies/${blenheim.slug}`} className="btn btn-primary">
-                Read the full case study
+              <Link href={`/case-studies/${featured.slug}`} className="btn btn-primary">
+                Watch the show and read the case study
                 <Arrow />
               </Link>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden card-glow card">
+            <Link href={`/case-studies/${featured.slug}`} className="group relative aspect-[4/3] rounded-2xl overflow-hidden card-glow card block">
               <Image
-                src={blenheim.heroImage}
-                alt={`${blenheim.title} — case study cover image`}
+                src={featured.heroImage}
+                alt={`${featured.title} in ${featured.location}: the pavilion stage with pixel snowflakes and mega trees`}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="w-16 h-16 rounded-full bg-black/55 border border-white/30 flex items-center justify-center text-white group-hover:bg-accent group-hover:text-[#001018] transition-colors">
+                  <svg className="w-6 h-6 ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
               <div className="absolute inset-x-4 bottom-4 bg-[rgba(5,7,15,0.85)] backdrop-blur-md rounded-xl p-4 border border-soft">
-                <p className="text-[11px] uppercase tracking-widest text-accent font-bold mb-1">
-                  {blenheim.location}
-                </p>
+                <p className="text-[11px] uppercase tracking-widest text-accent font-bold mb-1">{featured.location}</p>
                 <p className="text-white font-semibold text-sm sm:text-base">
-                  &ldquo;{blenheim.testimonialQuote}&rdquo;
+                  {featured.testimonialQuote ? <>&ldquo;{featured.testimonialQuote}&rdquo;</> : `${featured.videos.length} clips from show night`}
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 5. Pixel Mega Trees — signature build */}
       <MegaTreeSection />
+
+      {/* 5b. Show planner */}
+      <section className="py-20 sm:py-28 bg-midnight-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Plan your show"
+            title="Slide your budget. Watch the stage fill up."
+            description="Set a budget and where the show is. Snowflakes, singing trees, mega trees, candy canes and arches appear in front of the stage as the budget rises, with an itemised estimate you can send with your quote request."
+          />
+          <ShowPlanner />
+        </div>
+      </section>
 
       {/* 6. Why choose us */}
       <section className="py-20 sm:py-28 bg-midnight">
@@ -215,7 +259,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Recent Work"
             title="Light, sequenced and earned."
-            description="Each install labelled by city and discipline. Drop your own brief — we'll come back with a sample sequence."
+            description="Photos from our December 2025 park show in Chatham-Kent. Send us your brief and we'll come back with a sample sequence."
           />
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((p) => (

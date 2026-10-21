@@ -141,33 +141,48 @@ export default async function CaseStudyDetail({ params }: Params) {
         </div>
       </section>
 
+      {/* Video */}
+      {study.videos.length > 0 && (
+        <section className="py-16 sm:py-24 bg-midnight">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="eyebrow text-center">Watch</p>
+            <h2 className="h-display text-3xl sm:text-4xl text-white text-center mb-3">Show night, on video.</h2>
+            <p className="text-muted-strong text-center mb-10">Unedited phone footage. Audio removed.</p>
+            <div className="card overflow-hidden mb-6">
+              <video className="w-full aspect-video bg-black" src={study.videos[0].src} poster={study.videos[0].poster} controls muted playsInline preload="none" aria-label={study.videos[0].title} />
+              <p className="px-5 py-3 text-sm text-muted-strong">{study.videos[0].title} · {study.videos[0].length}</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {study.videos.slice(1).map((v) => (
+                <div key={v.src} className="card overflow-hidden">
+                  <video className="w-full aspect-video bg-black" src={v.src} poster={v.poster} controls muted playsInline preload="none" aria-label={v.title} />
+                  <p className="px-4 py-3 text-xs text-muted-strong">{v.title} · {v.length}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Gallery */}
-      <section className="py-16 sm:py-24 bg-midnight">
+      <section className="py-16 sm:py-24 bg-midnight-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="eyebrow text-center">Gallery</p>
           <h2 className="h-display text-3xl sm:text-4xl text-white text-center mb-12">
             From the show floor.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {study.gallery.map((img, i) => (
-              <div key={img} className="relative aspect-[3/2] rounded-2xl overflow-hidden card">
-                <Image
-                  src={img}
-                  alt={`${study.title} — photo ${i + 1}`}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+            {study.gallery.map((img) => (
+              <figure key={img.src} className="relative aspect-[16/9] rounded-2xl overflow-hidden card">
+                <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+              </figure>
             ))}
           </div>
-          <p className="text-center text-muted text-sm mt-8">
-            Drop final photos and videos in <code className="text-accent">public/images/uploads/</code> and we'll wire them in.
-          </p>
         </div>
       </section>
 
       {/* Testimonial */}
+      {study.testimonialQuote && (
       <section className="py-16 sm:py-24 bg-midnight-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card card-glow p-10 sm:p-14 text-center">
@@ -181,6 +196,7 @@ export default async function CaseStudyDetail({ params }: Params) {
           </div>
         </div>
       </section>
+      )}
 
       {/* CTA + form */}
       <section className="py-16 sm:py-24 bg-midnight">

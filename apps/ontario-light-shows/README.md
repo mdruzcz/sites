@@ -37,7 +37,15 @@ Edit JSON files in `src/content/`:
 Then push. Vercel rebuilds and serves the new content.
 
 ## Photos & videos
-Drop new media into `public/images/uploads/` — see the README in that folder for filename mappings.
+- `public/images/show/` — stills taken from our own phone video of the December 5, 2025 park show in Chatham-Kent (pavilion stage, mega trees, crowd) and the walk in past the fountain, light tunnel and giant ornament. 1920 px JPGs.
+- `public/media/` — web clips from the same footage, H.264, audio removed (the show soundtrack is commercial music): `fountain-walkthrough-hero.mp4` (home hero background, 960 px), `fountain-walkthrough.mp4`, `show-wide.mp4`, `show-rainbow.mp4`, `show-crowd.mp4`, `show-colours.mp4`. Originals: `PXL_20251206_*.mp4`.
+- No stock or third-party media is used. Older placeholder SVGs remain in `public/images/uploads/` for the Blenheim case study.
+
+## Interactive show and planner
+- `src/lib/lightshow/` — 3D pixel renderer (shared design with resonatelighting.com) plus `stageProps.ts`: the pavilion stage, pixel snowflakes, candy canes, singing trees with animated faces, and the audience. Everything faces the crowd.
+- `src/components/demo/ShowDemo.tsx` — home demo: scene switcher, Preview / Microphone / Piano / Drums, themes, looks, colours.
+- `src/components/ShowPlanner.tsx` — budget slider; props appear in front of the stage as the budget rises; "Request a quote" pre-fills `/contact`.
+- **All planner prices are in `src/lib/pricing.ts`.**
 
 ## Required env vars
 See `.env.local.example`. In production, set on the Vercel project:
