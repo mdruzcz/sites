@@ -38,7 +38,7 @@ export function pricingFaqs(): Faq[] {
     {
       category: "Pricing",
       question: "How is installation priced?",
-      answer: `Installation is billed by the crew-day at ${formatCad(inst.crewDayRate)} per day for a ${inst.crewLabel}. Travel is by zone: no trip fee in ${pricing.travel.homeRegion}, our home region (mileage beyond ${pricing.travel.homeFreeRadiusKm} km of our base); ${z.prairies.name} ${formatCad(z.prairies.tripFee)}, ${z.national.name} ${formatCad(z.national.tripFee)}, ${z.east.name} ${formatCad(z.east.tripFee)} and ${z.north.name} from ${formatCad(z.north.tripFee)} per crew trip. Multi-day jobs outside ${pricing.travel.homeRegion} add accommodation per crew-night, from ${formatCad(z.prairies.accommodationPerNight)}.`,
+      answer: `Installation is billed at a day rate of ${formatCad(inst.crewDayRate)} per ${inst.crewLabel} and itemised in your quote. Travel is by zone: no trip fee in ${pricing.travel.homeRegion}, our home region (mileage beyond ${pricing.travel.homeFreeRadiusKm} km of our base); ${z.prairies.name} ${formatCad(z.prairies.tripFee)}, ${z.national.name} ${formatCad(z.national.tripFee)}, ${z.east.name} ${formatCad(z.east.tripFee)} and ${z.north.name} from ${formatCad(z.north.tripFee)} per crew trip. Multi-day jobs outside ${pricing.travel.homeRegion} add accommodation per crew-night, from ${formatCad(z.prairies.accommodationPerNight)}.`,
     },
   ];
 }
