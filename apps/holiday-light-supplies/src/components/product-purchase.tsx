@@ -14,6 +14,8 @@ interface Variant {
   price_cad: number;
   compare_at_price_cad?: number | null;
   on_hand: number;
+  /** With on_hand at 0: true is a special order, false is sold out. */
+  allow_backorder?: boolean;
   sku: string;
   attribute_type: string | null;
   attribute_value: string | null;
@@ -59,7 +61,10 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
   const { hasAttributes } = groupVariants(variants);
 
   const variant = variants.find((v) => v.id === variantId);
-  const outOfStock = !!variant && variant.on_hand <= 0 && !quoteOnly;
+  const stockOf = (v: Variant) => (v.on_hand > 0 ? "in" : v.allow_backorder ? "special" : "out");
+  const stock = variant ? stockOf(variant) : "in";
+  const outOfStock = stock === "out";
+  const specialOrder = stock === "special";
   const lowStock = !!variant && variant.on_hand > 0 && variant.on_hand < 10 && !quoteOnly;
 
   useEffect(() => {
@@ -105,7 +110,7 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
                   onClick={() => setVariantId(v.id)}
                   aria-pressed={v.id === variantId}
                   className={`chip min-h-[40px] transition ${v.id === variantId ? "!border-[var(--color-brand)] !bg-[var(--color-brand-soft)] !text-[var(--color-brand)]" : ""} ${
-                    v.on_hand <= 0 && !quoteOnly ? "opacity-50" : ""
+                    stockOf(v) === "out" ? "opacity-50" : ""
                   }`}
                 >
                   {v.name}
@@ -119,7 +124,7 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
                 <option key={v.id} value={v.id}>
                   {v.name}
                   {!quoteOnly ? ` — ${formatCad(v.price_cad)}` : ""}
-                  {v.on_hand <= 0 && !quoteOnly ? " (Out of stock)" : ""}
+                  {stockOf(v) === "out" ? " (Sold out)" : stockOf(v) === "special" ? " (Special order)" : ""}
                 </option>
               ))}
             </select>
@@ -137,6 +142,18 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
         </div>
       )}
 
+      {specialOrder && (
+        <div className="mb-4 rounded-xl bg-[var(--color-gold-soft)] p-4 text-sm text-[var(--color-brand-dark)]">
+          <p className="font-semibold">Special order for this season.</p>
+          <p className="mt-1">This one is made for you once you order. Add it to your quote list and we confirm the lead time and delivery date on your quote.</p>
+        </div>
+      )}
+      {outOfStock && (
+        <div className="mb-4 rounded-xl bg-[var(--color-bg-warm)] p-4 text-sm text-[var(--color-text-soft)]">
+          <p className="font-semibold">Sold out for this season.</p>
+          <p className="mt-1">Ask us about availability. We can suggest a similar display or reserve one for next season.</p>
+        </div>
+      )}
       {quoteOnly ? (
         <div className="mb-4 rounded-xl bg-[var(--color-brand-soft)] p-4 text-sm text-[var(--color-brand-dark)]">
           <p className="font-semibold">Priced per project.</p>
@@ -180,7 +197,7 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
           disabled={pending || outOfStock}
           className="btn-primary h-11 flex-1 disabled:opacity-50"
         >
-          <Icon.cart size={18} /> {pending ? "Adding…" : outOfStock ? "Out of stock" : quoteOnly ? "Add to quote list" : "Add to quote list"}
+          <Icon.cart size={18} /> {pending ? "Adding…" : outOfStock ? "Sold out" : "Add to quote list"}
         </button>
         <button
           type="button"
@@ -195,8 +212,8 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
         </button>
       </div>
 
-      <button type="button" onClick={inquireNow} disabled={pending || outOfStock} className="btn-accent mt-3 w-full disabled:opacity-50">
-        {quoteOnly ? "Request a quote for this display" : "Request pricing & shipping"} <Icon.arrow size={16} />
+      <button type="button" onClick={inquireNow} disabled={pending} className="btn-accent mt-3 w-full disabled:opacity-50">
+        {outOfStock ? "Ask about availability" : quoteOnly ? "Request a quote for this display" : "Request pricing & shipping"} <Icon.arrow size={16} />
       </button>
       <p className="mt-2 text-center text-xs text-[var(--color-muted)]">
         No payment online. We email a quote within one business day{!quoteOnly && lineTotal > 0 ? ` · product subtotal ${formatCad(lineTotal)}` : ""}.
@@ -207,8 +224,10 @@ export function ProductPurchase({ productName, productSlug, variants, quoteOnly 
           <span>
             SKU <span className="font-mono">{variant.sku}</span>
           </span>
-          {!outOfStock && !quoteOnly && <span className="text-[var(--color-success)]">✓ In stock in Ontario</span>}
-          {quoteOnly && <span>Lead time confirmed on quote</span>}
+          {stock === "in" && !quoteOnly && <span className="text-[var(--color-success)]">✓ In stock in Ontario</span>}
+          {specialOrder && <span>Special order · lead time confirmed on quote</span>}
+          {outOfStock && <span>Sold out for this season</span>}
+          {stock === "in" && quoteOnly && <span>Lead time confirmed on quote</span>}
         </p>
       )}
 

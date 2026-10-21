@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type CatalogProduct, primaryImage, secondaryImage, priceRange, compareAtFor } from "@/lib/catalog";
+import { type CatalogProduct, type StockStatus, primaryImage, secondaryImage, priceRange, compareAtFor, productStock } from "@/lib/catalog";
 import { formatCadRound, imageSrc } from "@/lib/utils";
 
-/** Badge logic: sale beats quote-only beats best seller beats new (last 60 days). */
-function badges(product: CatalogProduct, quoteOnly: boolean, savePct: number | null) {
+/** Badge logic: stock comes first, then sale beats quote-only beats best seller beats new (last 60 days). */
+function badges(product: CatalogProduct, quoteOnly: boolean, savePct: number | null, stock: StockStatus) {
   const out: { label: string; tone: string }[] = [];
+  if (stock === "special") out.push({ label: "Special order", tone: "bg-[var(--color-gold)] text-[var(--color-text)]" });
+  else if (stock === "out") out.push({ label: "Sold out this season", tone: "bg-[var(--color-muted)] text-white" });
   if (savePct) out.push({ label: `Save ${savePct}%`, tone: "bg-[var(--color-berry)] text-white" });
   else if (quoteOnly) out.push({ label: "Quote only", tone: "bg-[var(--color-night)] text-white" });
   else if (product.featured) out.push({ label: "Best seller", tone: "bg-[var(--color-accent)] text-white" });
@@ -21,7 +23,7 @@ export function ProductCard({ product, priority = false }: { product: CatalogPro
   const quoteOnly = !!range?.quoteOnly;
   const compare = compareAtFor(product);
   const savePct = compare && range && !quoteOnly && compare > range.min ? Math.round((1 - range.min / compare) * 100) : null;
-  const b = badges(product, quoteOnly, savePct);
+  const b = badges(product, quoteOnly, savePct, productStock(product));
   const variants = (product.ecom_variants ?? []).filter((v) => v.is_active).length;
 
   return (

@@ -142,6 +142,7 @@ export default async function ProductPage({ params }: PageProps) {
                   price_cad: Number(v.price_cad),
                   compare_at_price_cad: v.compare_at_price_cad ? Number(v.compare_at_price_cad) : null,
                   on_hand: inv?.on_hand ?? 0,
+                  allow_backorder: !!inv?.allow_backorder,
                   sku: v.sku,
                   attribute_type: v.attribute_type,
                   attribute_value: v.attribute_value

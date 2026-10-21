@@ -30,6 +30,27 @@ export const getCategories = cache(async (): Promise<CatalogCategory[]> => {
   return (data as CatalogCategory[]) ?? [];
 });
 
+/** on_hand 0 with allow_backorder is a special order (made after it is ordered); without it, sold out. */
+export interface InventoryRow {
+  on_hand: number;
+  allow_backorder?: boolean | null;
+}
+
+export type StockStatus = "in" | "special" | "out";
+
+export function variantStock(inv: InventoryRow | InventoryRow[] | null | undefined): StockStatus {
+  const row = Array.isArray(inv) ? inv[0] : inv;
+  if (!row || row.on_hand > 0) return "in";
+  return row.allow_backorder ? "special" : "out";
+}
+
+/** A product is special order or sold out only when none of its active options is in stock. */
+export function productStock(product: Pick<CatalogProduct, "ecom_variants">): StockStatus {
+  const states = (product.ecom_variants ?? []).filter((v) => v.is_active).map((v) => variantStock(v.ecom_inventory));
+  if (!states.length || states.includes("in")) return "in";
+  return states.includes("special") ? "special" : "out";
+}
+
 export interface CatalogProduct {
   id: string;
   slug: string;
@@ -50,7 +71,7 @@ export interface CatalogProduct {
     attribute_type: string | null;
     attribute_value: string | null;
     is_active: boolean;
-    ecom_inventory: { on_hand: number } | { on_hand: number }[] | null;
+    ecom_inventory: InventoryRow | InventoryRow[] | null;
   }[];
   ecom_product_images: {
     id: string;
@@ -63,7 +84,7 @@ export interface CatalogProduct {
 }
 
 const LIST_SELECT =
-  "id, slug, name, short_description, status, featured, created_at, ecom_variants(id, sku, name, price_cad, compare_at_price_cad, is_active), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)";
+  "id, slug, name, short_description, status, featured, created_at, ecom_variants(id, sku, name, price_cad, compare_at_price_cad, is_active, ecom_inventory(on_hand, allow_backorder)), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)";
 
 /** Every active product in the store, cached per request. Filtering happens in memory — the catalog is ~150 rows. */
 export const listAllProducts = cache(async (): Promise<CatalogProduct[]> => {
@@ -98,7 +119,7 @@ export async function getProduct(slug: string): Promise<CatalogProduct | null> {
   const { data } = await supabase
     .from("ecom_products")
     .select(
-      "id, slug, name, short_description, long_description, status, featured, meta_title, meta_description, created_at, ecom_variants(id, sku, name, price_cad, compare_at_price_cad, attribute_type, attribute_value, is_active, ecom_inventory(on_hand)), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)"
+      "id, slug, name, short_description, long_description, status, featured, meta_title, meta_description, created_at, ecom_variants(id, sku, name, price_cad, compare_at_price_cad, attribute_type, attribute_value, is_active, ecom_inventory(on_hand, allow_backorder)), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)"
     )
     .eq("store_id", store.id)
     .eq("slug", slug)
