@@ -48,6 +48,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-13 | `woodstock-concrete-forming` | woodstockconcreteforming.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-concrete-pros` | woodstockconcretepros.ca | `0x4AAAAAADXetRNHN8PdanEk` |
 | MD-13 | `woodstock-deck-and-fence` | woodstockdeckandfence.ca | `0x4AAAAAADXetRNHN8PdanEk` |
+| MD-13 | `resonate-lighting` | resonatelighting.com | `0x4AAAAAADXetRNHN8PdanEk` | **hostname not yet added in CF dashboard (Worker map updated 2026-10-20) — add it to the MD-13 widget, or create MD-14 if MD-13 is at its hostname limit** |
 
 ## Zones not mapped to a Vercel project
 
