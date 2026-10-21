@@ -13,19 +13,19 @@
     "id": "kit-starter",
     "kind": "image",
     "src": null,
-    "alt": "Starter Kit mega tree by Resonate Lighting at a restaurant patio at night",
-    "note": "MATT: photo of a Starter Kit mega tree at night, landscape 4:3, at least 1600 px wide.",
-    "scene": "mega",
-    "theme": "Candy Cane"
+    "alt": "Resonate Lighting Starter Kit control system with pre-wired pigtails",
+    "note": "MATT: photo of the Starter Kit control system: open enclosure showing the Pi 5, mic, Kulp controller, power supplies and pigtails. Landscape.",
+    "scene": "controller",
+    "theme": "Christmas"
   },
   {
     "id": "kit-business",
     "kind": "image",
     "src": null,
-    "alt": "Business Kit roofline, mega tree and wrapped trees by Resonate Lighting at night",
-    "note": "MATT: photo of a Business Kit install (roofline + mega tree + wrapped trees), landscape 4:3.",
-    "scene": "display",
-    "theme": "Christmas"
+    "alt": "Business Kit music-reactive mega tree by Resonate Lighting at night",
+    "note": "MATT: photo of a Business Kit mega tree at night, landscape.",
+    "scene": "mega",
+    "theme": "Candy Cane"
   },
   {
     "id": "kit-plaza",
@@ -51,8 +51,8 @@
     "src": null,
     "alt": "Resonate Lighting controller box with Raspberry Pi 5 and pixel controller",
     "note": "MATT: photo of the controller enclosure, open, showing the Pi 5, mic and pixel controller.",
-    "scene": "mega",
-    "theme": "Gold & White"
+    "scene": "controller",
+    "theme": "Christmas"
   },
   {
     "id": "app-phone",

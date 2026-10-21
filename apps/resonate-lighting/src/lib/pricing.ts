@@ -24,12 +24,25 @@ export const pricing = {
   currency: "CAD",
   taxNote: "plus applicable taxes",
 
-  /** Base of every kit: the controller box and everything that runs the show. */
+  /**
+   * The control system on its own is the Starter Kit, so its price is the
+   * Starter price. Every larger kit is this plus props.
+   */
   controlSystem: {
     label: "Control system",
     detail:
-      "Raspberry Pi 5 Light Show engine with LedFx and the Light Show app, USB microphone, pixel controller, power supply and weatherproof enclosure, lifetime software access",
-    price: 2900,
+      "Pi 5 Light Show controller with USB microphone, Kulp pixel controller running FPP, power supplies, weatherproof enclosure and pre-wired pigtails, with lifetime software",
+    includes: [
+      "Raspberry Pi 5 Light Show controller running LedFx and the Light Show app, with its own Lightshow Wi-Fi hotspot",
+      "USB microphone, calibrated to your sound system on site",
+      "Kulp K-series pixel controller running Falcon Player (FPP): 16 fused pixel outputs, each good for up to 800 pixels at 40 frames a second, plus differential ports to reach distant props through receiver boards",
+      "Real-time clock, temperature and input-voltage monitoring, and an OLED status display on the pixel controller",
+      "12 V switching power supplies sized to the layout, with heavy-gauge (10 AWG) power wiring",
+      "Weatherproof enclosure with mounting plate, cable glands, network pass-through and vents",
+      "Pre-wired 3-core pigtails on every output, labelled by port, ready to plug props into",
+      "Ethernet link between the Light Show controller and the pixel controller, and AC power cords",
+    ],
+    price: 6900,
     crewDays: 0.5, // commissioning: Setup wizard, mic calibration, look check, handover
   },
 
@@ -39,7 +52,7 @@ export const pricing = {
       label: "Mega tree",
       plural: "Mega trees",
       detail: "Cone of 12 V WS2811 pixel strands on a centre pole with a star topper, sized to the site",
-      price: 4000,
+      price: 11600,
       crewDays: 1,
     },
     roof: {
@@ -53,21 +66,21 @@ export const pricing = {
       label: "Wrapped tree",
       plural: "Wrapped trees",
       detail: "Trunk and main branches of an existing deciduous tree wrapped in pixels",
-      price: 3000,
+      price: 3200,
       crewDays: 0.75,
     },
     evergreen: {
       label: "Evergreen spiral",
       plural: "Evergreen spirals",
       detail: "An evergreen wrapped bottom to top in a single spiral of pixels",
-      price: 2400,
+      price: 2600,
       crewDays: 0.5,
     },
     arch: {
       label: "Pixel arch",
       plural: "Pixel arches",
       detail: "Free-standing walk-through arch outlined in pixels",
-      price: 1800,
+      price: 2750,
       crewDays: 0.25,
     },
   } satisfies Record<PropType, { label: string; plural: string; detail: string; price: number; crewDays: number }>,
@@ -93,7 +106,7 @@ export const pricing = {
       fullName: "Starter Kit",
       price: 6900,
       priceLabel: "Starting at",
-      contents: { mega: 1, roof: 0, deciduous: 0, evergreen: 0, arch: 0 },
+      contents: { mega: 0, roof: 0, deciduous: 0, evergreen: 0, arch: 0 },
     },
     {
       slug: "business",
@@ -101,7 +114,7 @@ export const pricing = {
       fullName: "Business Kit",
       price: 18500,
       priceLabel: "Starting at",
-      contents: { mega: 1, roof: 1, deciduous: 2, evergreen: 0, arch: 0 },
+      contents: { mega: 1, roof: 0, deciduous: 0, evergreen: 0, arch: 0 },
     },
     {
       slug: "plaza",
@@ -109,7 +122,7 @@ export const pricing = {
       fullName: "Plaza / BIA Kit",
       price: 42000,
       priceLabel: "Starting at",
-      contents: { mega: 2, roof: 3, deciduous: 4, evergreen: 0, arch: 2 },
+      contents: { mega: 2, roof: 0, deciduous: 2, evergreen: 0, arch: 2 },
     },
     {
       slug: "municipal",
@@ -117,7 +130,7 @@ export const pricing = {
       fullName: "Municipal Program",
       price: 95000,
       priceLabel: "From",
-      contents: { mega: 4, roof: 6, deciduous: 8, evergreen: 6, arch: 6 },
+      contents: { mega: 4, roof: 2, deciduous: 4, evergreen: 2, arch: 4 },
     },
   ] as PackageDef[],
 
@@ -189,8 +202,12 @@ export const pricing = {
     default: 25000,
     /** Most props of each type the planner will add automatically. */
     caps: { mega: 8, roof: 10, deciduous: 16, evergreen: 12, arch: 12 } satisfies Record<PropType, number>,
-    /** Order in which the planner adds extras on top of a package as the budget grows. */
-    recipe: ["roof", "deciduous", "deciduous", "evergreen", "evergreen", "mega", "arch", "arch"] as PropType[],
+    /**
+     * Order in which the planner adds props, starting from the control system
+     * alone (Starter). One cycle from empty reaches Business, then Plaza; two
+     * cycles reach the Municipal layout.
+     */
+    recipe: ["mega", "deciduous", "arch", "deciduous", "arch", "mega", "evergreen", "roof"] as PropType[],
   },
 };
 

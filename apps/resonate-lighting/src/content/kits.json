@@ -3,30 +3,45 @@
     "slug": "starter",
     "name": "Starter Kit",
     "tier": "Starter",
-    "audience": "Restaurants, patios, storefronts, hotel entrances and single commercial frontages",
-    "headline": "One mega tree that listens to the room.",
-    "summary": "The Starter Kit is a complete music-reactive mega tree: the Light Show controller box, USB microphone, pixel controller, power and the tree itself, configured before it ships. Join the controller's Wi-Fi from any phone, pick a theme or a music look, and set a schedule.",
-    "bestFor": ["Restaurant and bar patios", "Single storefronts and showrooms", "Hotel and office entrances", "Event booths and pop-ups"],
-    "scene": "mega"
+    "audience": "Businesses with pixel props of their own, or anyone starting with the control system and adding props later",
+    "headline": "The complete control system, ready for props.",
+    "summary": "Everything that runs a Resonate show, built and tested in one weatherproof enclosure: the Raspberry Pi 5 Light Show controller and its USB microphone, a Kulp pixel controller running Falcon Player, power supplies and pre-wired pigtails on every output. Plug in your own pixel props or add ours, join the controller's Wi-Fi from any phone, and the show runs.",
+    "bestFor": [
+      "Making an existing pixel display music-reactive",
+      "Venues adding props over several seasons",
+      "Event and rental operators",
+      "Testing the system before a larger rollout"
+    ],
+    "scene": "controller"
   },
   {
     "slug": "business",
     "name": "Business Kit",
     "tier": "Business",
-    "audience": "Retail plazas, venues, hotels, offices and managed properties",
-    "headline": "Roofline, mega tree and wrapped trees as one show.",
-    "summary": "The Business Kit traces the main roofline of your building in pixels, adds a mega tree and wraps two existing trees, all running from one controller. Run a brand-colour look all year and switch to holiday themes on a schedule or a playlist.",
-    "bestFor": ["Retail plazas and strip centres", "Event venues and banquet halls", "Hotels and mixed-use buildings", "Office campuses and showrooms"],
-    "scene": "display"
+    "audience": "Restaurants, patios, storefronts, hotel entrances and single commercial frontages",
+    "headline": "One mega tree that listens to the room.",
+    "summary": "The Business Kit is the control system plus a music-reactive mega tree, configured before it ships. Put it at the entrance, on the patio or in the courtyard; it follows the music you already play and runs on a schedule, with staff changing themes from a phone.",
+    "bestFor": [
+      "Restaurant and bar patios",
+      "Storefronts and showrooms",
+      "Hotel and office entrances",
+      "Courtyards and small plazas"
+    ],
+    "scene": "mega"
   },
   {
     "slug": "plaza",
     "name": "Plaza / BIA Kit",
     "tier": "Plaza / BIA",
     "audience": "Business Improvement Areas, main streets, town squares and multi-tenant plazas",
-    "headline": "A main street that lights up together.",
-    "summary": "Sized for a block or a square: rooflines across three frontages, two mega trees, four wrapped trees and a pair of walk-through arches, synchronised from one control system. Each prop can run its own look, and the whole street can join one theme for events.",
-    "bestFor": ["Business Improvement Areas (BIAs, BIDs, BIZ, SDCs)", "Main streets and town squares", "Shopping centres with outdoor courts", "Holiday markets and festivals"],
+    "headline": "Two mega trees and four smaller props, one show.",
+    "summary": "Sized for a square or a block: two mega trees, two wrapped trees and a pair of walk-through arches, all synchronised from one control system. Each prop can run its own look, and everything can join one theme for launch nights and events.",
+    "bestFor": [
+      "Business Improvement Areas (BIAs, BIDs, BIZ, SDCs)",
+      "Main streets and town squares",
+      "Shopping centres with outdoor courts",
+      "Holiday markets and festivals"
+    ],
     "scene": "display"
   },
   {
@@ -35,8 +50,13 @@
     "tier": "Municipal",
     "audience": "Municipalities, downtown programs, parks, civic squares and tourism offices",
     "headline": "A public light show your whole community comes out for.",
-    "summary": "A civic-scale program: multiple mega trees, rooflines on civic and downtown buildings, wrapped trees along streets and in parks, evergreen spirals and an arch walkway, all scheduled from one system. Scoped in phases to fit budget cycles, with itemised quotes for council and procurement.",
-    "bestFor": ["Municipal downtown and holiday programs", "Parks, squares and waterfronts", "Civic buildings and city halls", "Tourism and winter festival sites"],
+    "summary": "A civic-scale program: four mega trees, ten smaller props (wrapped trees, walk-through arches and evergreen spirals) and rooflines on two civic buildings, scheduled from one system. Scoped in phases to fit budget cycles, with itemised quotes for council and procurement.",
+    "bestFor": [
+      "Municipal downtown and holiday programs",
+      "Parks, squares and waterfronts",
+      "Civic buildings and city halls",
+      "Tourism and winter festival sites"
+    ],
     "scene": "display"
   }
 ]

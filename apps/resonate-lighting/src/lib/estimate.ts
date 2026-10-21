@@ -53,7 +53,7 @@ export function estimate(c: Counts, zone: ZoneId): Estimate {
     hardware.push({
       kind: "package",
       label: pkg.fullName,
-      detail: `Control system + ${describeCounts(pkg.contents)}`,
+      detail: totalProps(pkg.contents) ? `Control system + ${describeCounts(pkg.contents)}` : pricing.controlSystem.detail,
       qty: 1,
       unit: pkg.price,
       total: pkg.price,
@@ -139,7 +139,6 @@ export function estimate(c: Counts, zone: ZoneId): Estimate {
 function buildSequence(): Counts[] {
   const seq: Counts[] = [];
   const c = emptyCounts();
-  c.mega = 1;
   seq.push({ ...c });
   const { recipe, caps } = pricing.planner;
   let progressed = true;
@@ -206,11 +205,9 @@ export function decodeCounts(s: string | undefined | null): Counts | null {
 
 /** Plain-language list of what ships in a package. */
 export function kitIncludes(contents: Counts): string[] {
-  const items = [
-    "Light Show controller box: Raspberry Pi 5 running LedFx and the Light Show app, with its own Lightshow Wi-Fi",
-    "USB microphone",
-    "Pixel controller, power supplies and weatherproof enclosure",
-  ];
+  const items = totalProps(contents)
+    ? ["The complete control system (everything in the Starter Kit)"]
+    : [...pricing.controlSystem.includes];
   for (const t of PROP_TYPES) {
     const n = contents[t];
     if (!n) continue;
@@ -219,7 +216,7 @@ export function kitIncludes(contents: Counts): string[] {
   }
   const ctl = controllersNeeded(contents);
   if (ctl) items.push(`${ctl} additional pixel controller${ctl === 1 ? "" : "s"} with power distribution`);
-  items.push("12 V WS2811 pixels, data and power cabling, mounting hardware");
+  if (totalProps(contents)) items.push("12 V WS2811 pixels, extension cabling and mounting hardware for the props");
   items.push("Lifetime access to the Light Show software, updates included");
   return items;
 }

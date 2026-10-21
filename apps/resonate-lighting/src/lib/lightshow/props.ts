@@ -457,3 +457,79 @@ export function pixelArch(o: Placement & { span?: number; height?: number; spaci
     pixelSize: 0.045,
   };
 }
+
+// ---------------------------------------------------------------------------
+/**
+ * The control system on its own (the Starter Kit): a weatherproof enclosure on a
+ * post with the USB microphone on top, and a pre-wired pigtail on every output
+ * fanning out across the ground, each ending in a short lit test string.
+ */
+export function controllerKit(o: Placement & { outputs?: number; key?: string; seed?: number }): Prop {
+  const N = Math.max(4, o.outputs ?? 16);
+  const pl = placer(o);
+  const W = 0.62;
+  const Hh = 0.44;
+  const D = 0.24;
+  const y0 = 0.75;
+  const x0 = -W / 2;
+  const x1 = W / 2;
+  const z0 = -D / 2;
+  const z1 = D / 2;
+  const y1 = y0 + Hh;
+  const flat = (pts: Vec3[]) => pts.flatMap(([a, b, c]) => pl.p(a, b, c));
+  const edge = "rgba(170,190,240,0.22)";
+  const prims: Prim[] = [
+    { t: "line", pts: flat([[0, 0, -0.06], [0, y0, -0.06]]), w: 0.08, c: "rgba(78,88,112,0.9)" },
+    { t: "line", pts: flat([[-0.24, y0, -0.06], [-0.42, 0.02, -0.35], [-1.3, 0.02, -0.7]]), w: 0.016, c: "rgba(46,48,58,0.95)" },
+    { t: "poly", pts: flat([[x0, y0, z0], [x0, y0, z1], [x0, y1, z1], [x0, y1, z0]]), fill: "#1b233c", stroke: edge },
+    { t: "poly", pts: flat([[x1, y0, z1], [x1, y0, z0], [x1, y1, z0], [x1, y1, z1]]), fill: "#1b233c", stroke: edge },
+    { t: "poly", pts: flat([[x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1]]), fill: "#2c385a", stroke: edge },
+    { t: "poly", pts: flat([[x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1]]), fill: "#232c49", stroke: edge },
+    // status display and LED on the door
+    { t: "poly", pts: flat([[-0.21, y0 + 0.25, z1 + 0.006], [-0.05, y0 + 0.25, z1 + 0.006], [-0.05, y0 + 0.33, z1 + 0.006], [-0.21, y0 + 0.33, z1 + 0.006]]), fill: "rgba(76,201,240,0.6)" },
+    { t: "poly", pts: flat([[0.02, y0 + 0.3, z1 + 0.006], [0.04, y0 + 0.3, z1 + 0.006], [0.04, y0 + 0.32, z1 + 0.006], [0.02, y0 + 0.32, z1 + 0.006]]), fill: "#3ddc84" },
+    // USB microphone on a short gooseneck
+    { t: "line", pts: flat([[0.2, y1, 0], [0.21, y1 + 0.1, 0.02], [0.24, y1 + 0.17, 0.05]]), w: 0.012, c: "rgba(150,160,190,0.95)" },
+    { t: "line", pts: flat([[0.24, y1 + 0.17, 0.05], [0.255, y1 + 0.24, 0.06]]), w: 0.045, c: "rgba(28,30,40,1)" },
+  ];
+
+  const posL: number[] = [];
+  const si: number[] = [];
+  const aa: number[] = [];
+  const hh: number[] = [];
+  const PER = 8;
+  for (let k = 0; k < N; k++) {
+    const f = k / (N - 1);
+    const th = -1.3 + 2.6 * f;
+    const reach = 1.55 + (k % 2) * 0.2;
+    const p0: Vec3 = [x0 + 0.06 + (W - 0.12) * f, y0, 0.02];
+    const p1: Vec3 = [p0[0] * 1.15, 0.28, 0.2];
+    const g0: Vec3 = [Math.sin(th) * 0.5, 0.03, 0.18 + Math.cos(th) * 0.45];
+    const e: Vec3 = [Math.sin(th) * reach, 0.03, 0.18 + Math.cos(th) * reach * 0.85];
+    prims.push({ t: "line", pts: flat([p0, p1, g0, e]), w: 0.014, c: "rgba(62,68,88,0.95)" });
+    for (let j = 0; j < PER; j++) {
+      const t = 0.3 + (0.7 * j) / (PER - 1);
+      const p = pl.p(g0[0] + (e[0] - g0[0]) * t, 0.06, g0[2] + (e[2] - g0[2]) * t);
+      posL.push(...p);
+      si.push(k);
+      aa.push(f);
+      hh.push(j / (PER - 1));
+    }
+  }
+  const c = pl.p(0, 0, 0);
+  return {
+    key: o.key ?? `ctrl-${c[0]}-${c[2]}`,
+    kind: "mega",
+    g: customGeom(si, aa, hh, N, o.seed ?? 13),
+    pos: Float32Array.from(posL),
+    backDim: 1,
+    cx: c[0],
+    cz: c[2],
+    radius: 1.8,
+    top: y1 + 0.3,
+    prims,
+    spin: false,
+    phase: 0,
+    pixelSize: 0.028,
+  };
+}

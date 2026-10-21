@@ -44,9 +44,7 @@ export function BudgetPlanner({ defaultProvince = "SK", cityName, id = "budget-p
   const fill = `${(toPos(budget) / 10).toFixed(1)}%`;
 
   const step = (t: PropType, d: number) => {
-    const next = { ...counts, [t]: Math.max(0, Math.min(pricing.planner.caps[t], counts[t] + d)) };
-    if (totalProps(next) === 0) return;
-    setCustom(next);
+    setCustom({ ...counts, [t]: Math.max(0, Math.min(pricing.planner.caps[t], counts[t] + d)) });
   };
 
   return (
@@ -59,7 +57,7 @@ export function BudgetPlanner({ defaultProvince = "SK", cityName, id = "budget-p
           <div className="absolute top-3 left-3 right-3 flex flex-wrap items-start justify-between gap-2 pointer-events-none">
             <div className="pointer-events-none">
               <p className="text-[11px] uppercase tracking-widest text-muted-strong font-semibold">{custom ? "Your custom layout" : "Layout for this budget"}</p>
-              <p className="text-sm text-white/90 font-semibold max-w-[34ch]">{describeCounts(counts)}</p>
+              <p className="text-sm text-white/90 font-semibold max-w-[34ch] first-letter:uppercase">{totalProps(counts) ? describeCounts(counts) : "Control system only (Starter Kit)"}</p>
             </div>
             <label className="pointer-events-auto">
               <span className="sr-only">Preview theme</span>
@@ -194,9 +192,9 @@ export function BudgetPlanner({ defaultProvince = "SK", cityName, id = "budget-p
                 <tr key={l.label}>
                   <td className="pr-3">
                     <span className="text-white font-semibold">{l.label}</span>
-                    {l.detail && <span className="block text-xs text-muted">{l.detail}</span>}
+                    <span className="block text-xs text-muted">{installNote(l.kind, provinceName)}</span>
                   </td>
-                  <td className="text-right text-muted whitespace-nowrap pr-3">{`${l.qty} × ${formatCad(l.unit)}`}</td>
+                  <td className="text-right text-muted whitespace-nowrap pr-3">{l.kind === "travel" && l.qty > 1 ? `${l.qty} × ${formatCad(l.unit)}` : ""}</td>
                   <td className="text-right text-white tabular-nums whitespace-nowrap">{formatCad(l.total)}</td>
                 </tr>
               ))}
@@ -210,7 +208,7 @@ export function BudgetPlanner({ defaultProvince = "SK", cityName, id = "budget-p
             <p className="text-xs text-muted mt-1">CAD, {pricing.taxNote}. Kit {formatCad(est.hardwareTotal)} + installation and travel {formatCad(est.installTotal)}.</p>
             {!custom && plan.underMinimum && (
               <p className="text-sm text-[#FFD08A] mt-3">
-                Our smallest complete system is the Starter Kit at {formatCad(est.total)} installed in {provinceName}. Smaller budgets: ask about a supply-only kit.
+                Our smallest system is the Starter Kit (the complete control system) at {formatCad(est.total)} installed in {provinceName}. Smaller budgets: ask about supply-only.
               </p>
             )}
             {!custom && !plan.underMinimum && plan.remaining >= 1000 && (
@@ -232,6 +230,14 @@ export function BudgetPlanner({ defaultProvince = "SK", cityName, id = "budget-p
       </div>
     </div>
   );
+}
+
+/** Installation lines describe what is covered, never how long it takes. */
+function installNote(kind: string, provinceName: string) {
+  if (kind === "install") return `Professional installation by our ${pricing.installation.crewLabel}s, commissioning and handover`;
+  if (kind === "travel") return `Crew travel to ${provinceName}`;
+  if (kind === "accommodation") return `Crew accommodation on multi-day jobs outside ${pricing.travel.homeRegion}`;
+  return "";
 }
 
 function BudgetScene({ counts, theme }: { counts: Counts; theme: string }) {
@@ -272,7 +278,7 @@ function BudgetScene({ counts, theme }: { counts: Counts; theme: string }) {
   }, [key, reduced]);
 
   return (
-    <canvas ref={ref} className="absolute inset-0 block w-full h-full" role="img" aria-label={`3D preview of the layout: ${describeCounts(counts)}`}>
+    <canvas ref={ref} className="absolute inset-0 block w-full h-full" role="img" aria-label={`3D preview of the layout: ${totalProps(counts) ? describeCounts(counts) : "control system with pigtails"}`}>
       {describeCounts(counts)}
     </canvas>
   );

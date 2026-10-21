@@ -1,7 +1,7 @@
-import { deciduousTree, evergreen, houseRoofline, megaTree, pixelArch, type Prop } from "./props";
+import { controllerKit, deciduousTree, evergreen, houseRoofline, megaTree, pixelArch, type Prop } from "./props";
 import type { PropType } from "../pricing";
 
-export type SceneId = "mega" | "roofline" | "deciduous" | "evergreen" | "display";
+export type SceneId = "mega" | "roofline" | "deciduous" | "evergreen" | "display" | "controller";
 
 export interface Camera {
   /** Downward tilt, radians. tree.js looks down by about 0.16. */
@@ -31,6 +31,11 @@ const cam = (c: Partial<Camera>): Camera => ({ pitch: 0.16, sway: 0, swayPeriod:
 export function buildScene(id: SceneId, q = 1): { props: Prop[]; camera: Camera } {
   const sq = Math.sqrt(q);
   switch (id) {
+    case "controller":
+      return {
+        props: [controllerKit({ key: "ctrl" })],
+        camera: cam({ pitch: 0.42, sway: 0.45, swayPeriod: 40, persp: 0.25, yaw: 0.1 }),
+      };
     case "mega":
       return {
         props: [megaTree({ key: "mega", height: 6, strands: Math.round(16 * sq), perStrand: Math.round(44 * sq), spin: true })],
@@ -145,6 +150,8 @@ export function layoutScene(counts: Record<PropType, number>, maxPixels = 2600):
   const sq = Math.sqrt(q);
   const grow = 1 + (1 - q) * 0.7; // fewer pixels → slightly larger dots so the props still read
   const props: Prop[] = [];
+  // No props yet: the Starter Kit's control system on its own.
+  if (!(Object.keys(NOMINAL) as PropType[]).some((t) => counts[t] > 0)) return [controllerKit({ key: "ctrl" })];
   const add = (p: Prop) => {
     p.pixelSize *= grow;
     props.push(p);

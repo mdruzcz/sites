@@ -164,7 +164,7 @@ export default function HowItWorksPage() {
             <p className="eyebrow">Setup tools</p>
             <h2 className="text-2xl font-bold text-white mb-3">Built-in Setup wizard</h2>
             <ul className="space-y-3 text-sm text-muted-strong">
-              <li className="flex items-start gap-2"><Check /> Find the pixel controller on the network and read its port settings (SanDevices E682), then name each prop.</li>
+              <li className="flex items-start gap-2"><Check /> Find the pixel controller on the network, set the pixels on each port (or read them straight from a SanDevices E682), then name each prop.</li>
               <li className="flex items-start gap-2"><Check /> Port tests: flash a whole prop, or light only its last 10 pixels to prove the pixel count is right.</li>
               <li className="flex items-start gap-2"><Check /> Microphone calibration: with music playing, the Pi adjusts the mic gain until loud moments reach near-full brightness without clipping.</li>
               <li className="flex items-start gap-2"><Check /> Look check: each music look runs for 8 seconds while the Pi measures how much of the prop lights and how often it clips, then suggests fixes.</li>

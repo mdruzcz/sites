@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Kit } from "@/lib/content";
-import { describeCounts } from "@/lib/estimate";
+import { describeCounts, totalProps } from "@/lib/estimate";
 import { formatCad, pricing } from "@/lib/pricing";
 import { MediaSlot } from "./MediaSlot";
 import { Check } from "./Icons";
@@ -17,10 +17,10 @@ export function KitCard({ kit }: { kit: Kit }) {
         <p className="text-xs text-muted mb-4">CAD, {pricing.taxNote}, installation extra</p>
         <ul className="space-y-2 text-sm text-muted-strong mb-6 flex-1">
           <li className="flex items-start gap-2">
-            <Check /> Control system + lifetime software
+            <Check /> {totalProps(kit.pkg.contents) ? "Complete control system" : "Pi 5 controller, mic, Kulp controller, power, pigtails"}
           </li>
           <li className="flex items-start gap-2">
-            <Check /> <span className="first-letter:uppercase">{describeCounts(kit.pkg.contents)}</span>
+            <Check /> <span className="first-letter:uppercase">{totalProps(kit.pkg.contents) ? describeCounts(kit.pkg.contents) : "Ready for your own props or ours"}</span>
           </li>
           <li className="flex items-start gap-2">
             <Check /> {kit.audience}

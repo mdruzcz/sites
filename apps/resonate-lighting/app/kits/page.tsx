@@ -39,12 +39,12 @@ const CORE = [
     body: "Hears whatever is playing. The engine tracks the room's background noise so music looks only move for music, and Setup calibrates the gain on site.",
   },
   {
-    title: "Pixel controller and power",
-    body: "A pixel controller (the app reads SanDevices E682 port settings directly), power supplies and distribution sized to the props, all set up before shipping.",
+    title: "Kulp pixel controller and power",
+    body: "A Kulp K-series pixel controller running Falcon Player, with 16 fused outputs, differential ports for distant props, a real-time clock and status display, plus 12 V power supplies sized to the props.",
   },
   {
-    title: "12 V WS2811 props",
-    body: "Mega trees, roofline runs, wrapped trees, evergreen spirals and arches, with cabling and mounting hardware for your site and climate.",
+    title: "Enclosure and pigtails",
+    body: "Everything is built into a weatherproof enclosure with cable glands and vents, with a pre-wired pigtail on every output, labelled by port, so props plug straight in.",
   },
   {
     title: "Lifetime software access",
@@ -78,7 +78,7 @@ export default function KitsPage() {
             What&apos;s in the <span className="gradient-text">box</span>.
           </h1>
           <p className="text-muted-strong text-lg max-w-3xl leading-relaxed mb-8">
-            Every Resonate kit is the same control system and software, scaled with props. Choose Starter, Business, Plaza / BIA or Municipal, and we size the props, power and pixel controllers to your frontage, square or street.
+            The Starter Kit is the complete control system. Business adds a mega tree, Plaza / BIA adds two mega trees and four smaller props, and the Municipal Program scales up from there. We size the props, power and pixel controllers to your frontage, square or street.
           </p>
           <div className="flex flex-wrap gap-3">
             {kits.map((k) => (
@@ -92,7 +92,7 @@ export default function KitsPage() {
 
       <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="In every kit" title="The control system." align="left" description="The part that listens, decides and drives the pixels is the same in every package." />
+          <SectionHeader eyebrow="In every kit" title="The control system." align="left" description="The part that listens, decides and drives the pixels is the same in every package. On its own, it is the Starter Kit." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CORE.map((c, i) => (
               <div key={c.title} className="card card-glow p-7">
@@ -209,7 +209,7 @@ export default function KitsPage() {
             <p className="eyebrow">Themes</p>
             <h2 className="text-2xl font-bold text-white mb-3">Sixteen themes, ready on day one</h2>
             <p className="text-muted-strong leading-relaxed mb-4">
-              Themes bring their own pattern and colours and can pulse with the music. For choreographed shows sequenced to specific songs, Plaza and Municipal projects can add a Kulp K-series controller running FPP, quoted separately.
+              Themes bring their own pattern and colours and can pulse with the music. The Kulp controller in every kit also runs Falcon Player (FPP), so choreographed shows sequenced to specific songs can be added, quoted separately.
             </p>
             <div className="flex flex-wrap gap-2">
               {THEMES.map((t) => (

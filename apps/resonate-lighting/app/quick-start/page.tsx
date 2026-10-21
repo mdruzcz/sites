@@ -28,8 +28,8 @@ const STEPS: Step[] = [
     name: "Unbox and check the parts",
     text: "Lay out the controller box, USB microphone, pixel controller, power supplies, props and cables, and check them against your prop map.",
     detail: [
-      "Controller box (Raspberry Pi 5 inside), USB microphone, pixel controller and power supplies.",
-      "Props for your package, labelled to match the ports on your prop map.",
+      "Light Show controller (Raspberry Pi 5), USB microphone and the Kulp pixel controller with its power supplies, in one weatherproof enclosure.",
+      "Pre-wired pigtails on every output, labelled by port, and the props for your package (Business Kit and larger).",
       "Data and power cables and mounting hardware.",
       "Keep the packaging if your props are seasonal; it is the easiest way to store them.",
     ],
@@ -66,7 +66,7 @@ const STEPS: Step[] = [
     name: "Run Setup, step 1: controller and ports",
     text: "Open Setup. Check each prop with Flash and Last 10 so you know every pixel count is right.",
     detail: [
-      "Kits ship configured. If you ever change the layout, use Settings, Controller: Find controllers, then Read ports from the SanDevices E682, name each prop and Apply.",
+      "Kits ship configured. If you ever change the layout, use Settings, Controller: Find controllers, enter the number of pixels on each port (or read them from a SanDevices E682), name each prop and Apply.",
       "Flash lights a whole prop for a few seconds so you can see which is which.",
       "Last 10 lights only the final 10 pixels of a prop. If they are not at the very end of the string, the pixel count is wrong.",
       "Under Settings, Props, give each prop a name and, for mega trees, the number of strands and whether alternate strands run top-down (zig-zag).",

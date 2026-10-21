@@ -5,7 +5,8 @@
 ## What a kit is
 - Light Show controller box: Raspberry Pi 5 running LedFx and Resonate's proprietary Light Show engine and app, in a weatherproof enclosure.
 - USB microphone; the engine tracks background noise (quiet-room gate) so music looks only react to music.
-- Pixel controller, power supplies and distribution (the app reads SanDevices E682 port settings).
+- Kulp K-series pixel controller running Falcon Player (FPP): 16 fused outputs, differential expansion ports, RTC and status display.
+- 12 V power supplies, weatherproof enclosure with glands and vents, pre-wired pigtails on every output.
 - 12 V WS2811 props: mega trees, roofline runs, wrapped deciduous trees, evergreen spirals, pixel arches.
 - Lifetime software access with updates; no subscription.
 
@@ -16,7 +17,7 @@
 - Setup wizard: controller and port tests, microphone calibration, look check.
 
 ## Pricing (CAD, starting at, plus tax; installation extra)
-Current figures are published at https://resonatelighting.com/pricing (packages: Starter Kit, Business Kit, Plaza / BIA Kit, Municipal Program). Installation is billed per crew-day plus travel by zone from Saskatchewan, with accommodation on multi-day jobs outside the home region.
+Current figures are published at https://resonatelighting.com/pricing. Starter Kit = the complete control system; Business Kit = control system + one mega tree; Plaza / BIA Kit = two mega trees and four smaller props; Municipal Program = four mega trees, ten smaller props and two rooflines. Installation is billed per crew-day plus travel by zone from Saskatchewan, with accommodation on multi-day jobs outside the home region.
 
 ## Pages
 - Home and live 3D demo (microphone, piano and drum modes): https://resonatelighting.com/

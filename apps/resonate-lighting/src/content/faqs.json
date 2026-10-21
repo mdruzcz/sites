@@ -1,17 +1,77 @@
 [
-  { "category": "The kit", "question": "What is in a Resonate Lighting kit?", "answer": "Every kit has the same control system: a Raspberry Pi 5 controller box running the Light Show engine (LedFx plus our Light Show app), a USB microphone, a pixel controller, power supplies and a weatherproof enclosure. Then come the props for your package: 12 V WS2811 mega trees, roofline runs, wrapped trees, evergreen spirals or arches, with cabling and mounting hardware. Lifetime access to the software is included." },
-  { "category": "The kit", "question": "What does lifetime software access mean?", "answer": "The proprietary Light Show software that runs your kit ships on the controller and is yours to use for the life of the kit, with no subscription. Updates are included." },
-  { "category": "The kit", "question": "How does the lighting react to music?", "answer": "The USB microphone on the controller listens to whatever is playing. The engine measures loudness and beats and drives the music looks (Power, Scroll, Ripple, Pulse, Piano, Flow, Lava, Beat Bars, Fire, Glow and Beat Flash). Themes can also pulse with the music when React to music is switched on." },
-  { "category": "The kit", "question": "What happens when the music stops?", "answer": "The controller tracks the background noise of the room or street. When no music is playing, music looks rest on a soft always-on glow instead of flickering at conversation or traffic noise, and they come back the moment the music does. You can tune this with the Music sensitivity slider." },
-  { "category": "The kit", "question": "Do I need to download an app?", "answer": "No. The controller broadcasts its own Wi-Fi network called Lightshow and serves the Light Show page to any phone, tablet or laptop. Sign in with the admin password and add the page to your home screen if you like. No app store, no account, and no internet connection is needed to run the show." },
-  { "category": "The kit", "question": "Can the controller play music too?", "answer": "Yes. The Light Show app can play MP3s from a USB stick plugged into the controller, or tracks you upload, through a connected sound system. The lights then react through the microphone like they do to any other music." },
-  { "category": "Running the show", "question": "What can staff change from the phone?", "answer": "Pick one of 16 themes, choose a music look or a steady look, change colour schemes or set custom colours, and adjust brightness, smoothness, speed, the always-on glow and music sensitivity. Each prop can run its own look, or all props together." },
-  { "category": "Running the show", "question": "Can the display run on a schedule?", "answer": "Yes. Set lights-on and lights-off times and the days of the week, and choose whether the on time brings back the last look or starts your playlist. Playlists step through themes and saved looks for a set number of seconds each and loop until you stop them." },
-  { "category": "Running the show", "question": "Who can control the lights?", "answer": "Anyone on the Lightshow Wi-Fi can open the page, but only someone with the admin password can control the lights. Changing the password signs every other phone out." },
-  { "category": "Pricing", "question": "Can we start small and grow?", "answer": "Yes. Every package runs on the same control system, so a Starter Kit can grow into a Business or Plaza layout by adding props, plus an extra pixel controller as the layout gets larger. Nothing is thrown away." },
-  { "category": "Pricing", "question": "Are your prices final?", "answer": "Published prices are starting prices in Canadian dollars, plus applicable taxes. Every project is confirmed after a site review because tree sizes, roofline lengths, power and access change the final figure." },
-  { "category": "Installation & service", "question": "Where do you install?", "answer": "Anywhere in Canada. We are based in Saskatchewan, and installation is available in any city with applicable travel charges. See the locations page for notes on 20 major cities." },
-  { "category": "Installation & service", "question": "Is the hardware built for Canadian winters?", "answer": "We install for the local climate: sealed connections and drip loops for rain and freeze-thaw, cold-flexible cable and service loops for prairie cold, wind-rated anchoring for open and coastal sites, and enclosures kept above the snow line." },
-  { "category": "Installation & service", "question": "What does seasonal care include?", "answer": "Pre-season checks, pixel and connection repairs, theme and playlist changes for the season, re-running the microphone calibration and look check, software updates, and takedown and storage for seasonal props. See the Care page." },
-  { "category": "Installation & service", "question": "Do you offer fully sequenced holiday shows?", "answer": "The Light Show app runs themes, looks and timed playlists. For choreographed shows sequenced to specific songs, Plaza and Municipal projects can add a Kulp K-series controller running FPP (Falcon Player), quoted separately." }
+  {
+    "category": "The kit",
+    "question": "What is in a Resonate Lighting kit?",
+    "answer": "Every kit starts with the control system, which on its own is the Starter Kit: a Raspberry Pi 5 Light Show controller running LedFx and our Light Show app, a USB microphone, a Kulp pixel controller running Falcon Player, power supplies, a weatherproof enclosure and pre-wired pigtails on every output. The Business Kit adds a mega tree; the Plaza / BIA Kit adds two mega trees and four smaller props; the Municipal Program scales up from there. Lifetime access to the software is included."
+  },
+  {
+    "category": "The kit",
+    "question": "What does lifetime software access mean?",
+    "answer": "The proprietary Light Show software that runs your kit ships on the controller and is yours to use for the life of the kit, with no subscription. Updates are included."
+  },
+  {
+    "category": "The kit",
+    "question": "How does the lighting react to music?",
+    "answer": "The USB microphone on the controller listens to whatever is playing. The engine measures loudness and beats and drives the music looks (Power, Scroll, Ripple, Pulse, Piano, Flow, Lava, Beat Bars, Fire, Glow and Beat Flash). Themes can also pulse with the music when React to music is switched on."
+  },
+  {
+    "category": "The kit",
+    "question": "What happens when the music stops?",
+    "answer": "The controller tracks the background noise of the room or street. When no music is playing, music looks rest on a soft always-on glow instead of flickering at conversation or traffic noise, and they come back the moment the music does. You can tune this with the Music sensitivity slider."
+  },
+  {
+    "category": "The kit",
+    "question": "Do I need to download an app?",
+    "answer": "No. The controller broadcasts its own Wi-Fi network called Lightshow and serves the Light Show page to any phone, tablet or laptop. Sign in with the admin password and add the page to your home screen if you like. No app store, no account, and no internet connection is needed to run the show."
+  },
+  {
+    "category": "The kit",
+    "question": "Can the controller play music too?",
+    "answer": "Yes. The Light Show app can play MP3s from a USB stick plugged into the controller, or tracks you upload, through a connected sound system. The lights then react through the microphone like they do to any other music."
+  },
+  {
+    "category": "Running the show",
+    "question": "What can staff change from the phone?",
+    "answer": "Pick one of 16 themes, choose a music look or a steady look, change colour schemes or set custom colours, and adjust brightness, smoothness, speed, the always-on glow and music sensitivity. Each prop can run its own look, or all props together."
+  },
+  {
+    "category": "Running the show",
+    "question": "Can the display run on a schedule?",
+    "answer": "Yes. Set lights-on and lights-off times and the days of the week, and choose whether the on time brings back the last look or starts your playlist. Playlists step through themes and saved looks for a set number of seconds each and loop until you stop them."
+  },
+  {
+    "category": "Running the show",
+    "question": "Who can control the lights?",
+    "answer": "Anyone on the Lightshow Wi-Fi can open the page, but only someone with the admin password can control the lights. Changing the password signs every other phone out."
+  },
+  {
+    "category": "Pricing",
+    "question": "Can we start small and grow?",
+    "answer": "Yes. Every kit runs on the same control system, so a Starter Kit can drive your own props today and grow into a Business or Plaza layout by adding props, plus an extra pixel controller as the layout gets larger. Nothing is thrown away."
+  },
+  {
+    "category": "Pricing",
+    "question": "Are your prices final?",
+    "answer": "Published prices are starting prices in Canadian dollars, plus applicable taxes. Every project is confirmed after a site review because tree sizes, roofline lengths, power and access change the final figure."
+  },
+  {
+    "category": "Installation & service",
+    "question": "Where do you install?",
+    "answer": "Anywhere in Canada. We are based in Saskatchewan, and installation is available in any city with applicable travel charges. See the locations page for notes on 20 major cities."
+  },
+  {
+    "category": "Installation & service",
+    "question": "Is the hardware built for Canadian winters?",
+    "answer": "We install for the local climate: sealed connections and drip loops for rain and freeze-thaw, cold-flexible cable and service loops for prairie cold, wind-rated anchoring for open and coastal sites, and enclosures kept above the snow line."
+  },
+  {
+    "category": "Installation & service",
+    "question": "What does seasonal care include?",
+    "answer": "Pre-season checks, pixel and connection repairs, theme and playlist changes for the season, re-running the microphone calibration and look check, software updates, and takedown and storage for seasonal props. See the Care page."
+  },
+  {
+    "category": "Installation & service",
+    "question": "Do you offer fully sequenced holiday shows?",
+    "answer": "The Light Show app runs themes, looks and timed playlists. Because the Kulp pixel controller in every kit runs Falcon Player (FPP), choreographed shows sequenced to specific songs can be added too, quoted separately."
+  }
 ]
