@@ -118,9 +118,10 @@ export function pixelColor(
       break;
     }
     case "Scroll": {
-      const idx = Math.floor((u * n * 2 + state.scrollPhase * n) % (n * 2)) % n;
+      // Spiral bands: colour index advances around the prop and up its height.
+      const idx = Math.floor((u * n * 2 + k * n * 1.5 + state.scrollPhase * n) % (n * 2)) % n;
       out.rgb = palette[(idx + n) % n];
-      out.b = 0.45 + 0.55 * e;
+      out.b = 0.5 + 0.5 * e + a.beat * 0.15;
       break;
     }
     case "Power": {
@@ -131,9 +132,10 @@ export function pixelColor(
       break;
     }
     case "Rainbow": {
-      const hue = u + k * 0.35 + t * 0.08 + a.bass * 0.15;
-      out.rgb = hslToRgb(hue, 1, 0.5);
-      out.b = 0.35 + 0.65 * e;
+      // Diagonal rainbow spiral climbing the tree, like a wrapped pixel string.
+      const hue = u * 1.5 + k * 1.2 - t * 0.12 + a.bass * 0.15;
+      out.rgb = hslToRgb(hue, 1, 0.55);
+      out.b = 0.45 + 0.55 * e + a.beat * 0.15;
       break;
     }
     case "Solid":

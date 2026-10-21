@@ -8,7 +8,7 @@ Next.js 16 site for Resonate Lighting: music-reactive, permanent/seasonal pixel 
 - Cloudflare Turnstile on the quote form → shared `turnstile.masterdecker.com` Worker
 - Supabase backup via the shared `forms.masterdecker.com` Worker (table `resonatelighting_quote_requests`)
 - Resend email to `service@masterdecker.com` (from `noreply@masterdecker.com`, a Resend-verified domain)
-- Home-page demo: canvas pixel simulation driven by a Web Audio synthesis of Für Elise (public domain) through an `AnalyserNode`
+- Home-page demo: canvas pixel simulation (dusk sky, mega tree with star topper, wrapped deciduous tree, roofline) driven through an `AnalyserNode` by a Web Audio synthesis of Tchaikovsky's Trepak (public domain composition, our own transcription in `src/components/demo/trepak.ts`), a local audio file the visitor picks, or the microphone. Never embed a copyrighted recording here.
 
 ## Local dev
 ```bash

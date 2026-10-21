@@ -20,7 +20,7 @@ export default function TermsPage() {
         <h2>Software</h2>
         <p>Kits include access to the Resonate Light Show software for the life of the kit, with updates included. The software is licensed, not sold, for use with the hardware supplied by {site.name}.</p>
         <h2>Website content</h2>
-        <p>The home-page demonstration synthesises a public-domain composition (Beethoven, Für Elise) in your browser; no recordings are distributed. Brand assets on this site belong to {site.name}.</p>
+        <p>The home-page demonstration synthesises a public-domain composition (Tchaikovsky, Trepak from The Nutcracker) in your browser; no recordings are distributed. Audio files you choose and microphone input are processed only in your browser and are never uploaded. Brand assets on this site belong to {site.name}.</p>
         <h2>Contact</h2>
         <p>Questions? Email <a href={site.emailHref}>{site.email}</a>.</p>
       </div>

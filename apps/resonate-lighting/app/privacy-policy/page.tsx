@@ -19,6 +19,8 @@ export default function PrivacyPage() {
         <p>When you submit the quote form we collect the details you enter: name, business or organization, phone, email, project city, type of space, package of interest and your message. We also record the time of submission.</p>
         <h2>How we use it</h2>
         <p>We use this information only to respond to your enquiry and prepare a quote. Submissions are emailed to our service inbox and stored in a secure database so we can follow up. We do not sell or share your information with third parties for marketing.</p>
+        <h2>Demo audio</h2>
+        <p>The home-page demo can use an audio file you choose or your microphone. Both are processed entirely in your browser to drive the simulation and are never recorded, stored or sent to us.</p>
         <h2>Spam protection</h2>
         <p>The form is protected by Cloudflare Turnstile, which may process limited technical information about your browser to confirm you are not a bot.</p>
         <h2>Contact</h2>
