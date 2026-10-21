@@ -1,3 +1,5 @@
+import cities from "@/content/cities.json";
+
 export const site = {
   name: "Resonate Lighting",
   shortName: "Resonate",
@@ -7,30 +9,20 @@ export const site = {
   email: "service@masterdecker.com",
   emailHref: "mailto:service@masterdecker.com",
   address: {
-    region: "ON",
+    region: "SK",
     country: "CA",
   },
-  addressLine: "Ontario, Canada · Serving commercial clients province-wide",
+  homeRegion: "Saskatchewan",
+  addressLine: "Based in Saskatchewan · Installing across Canada",
   hours: "Mon – Fri · 9 AM – 7 PM | Sat · 10 AM – 4 PM",
   url: "https://resonatelighting.com",
   domain: "resonatelighting.com",
   tagline: "Lighting that listens.",
   description:
-    "Resonate Lighting designs, supplies and installs music-reactive pixel lighting kits for commercial spaces across Ontario. Raspberry Pi 5 controller running LedFx with our own Light Show app, USB microphone, pixel controller and 12 V WS2811 props — mega trees, singing trees, strips and rooflines — with lifetime access to the control software.",
+    "Resonate Lighting supplies and installs music-reactive pixel lighting kits for commercial spaces, BIAs and municipalities across Canada: a Raspberry Pi 5 Light Show engine with USB microphone, pixel controller and 12 V WS2811 mega trees, rooflines, wrapped trees and arches, with lifetime access to the software that runs them.",
   currency: "CAD",
   responseTime: "24 hours",
-  serviceAreas: [
-    "Toronto",
-    "Ottawa",
-    "Hamilton",
-    "London",
-    "Kitchener-Waterloo",
-    "Windsor",
-    "Niagara",
-    "Mississauga",
-    "Barrie",
-    "Kingston",
-  ],
+  serviceAreas: cities.map((c) => c.name),
   markets: [
     "Commercial spaces",
     "Retail plazas",

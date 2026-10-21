@@ -1,67 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { getFaqs, getKits } from "@/lib/content";
+import { kitIncludes } from "@/lib/estimate";
+import { formatCad, pricing, PROP_TYPES } from "@/lib/pricing";
+import { MUSIC_LOOKS, STEADY_LOOKS, THEMES } from "@/lib/lightshow/core";
+import type { SceneId } from "@/lib/lightshow/scenes";
 import { SectionHeader } from "@/components/SectionHeader";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
+import { MediaSlot } from "@/components/MediaSlot";
+import { SceneCanvas } from "@/components/demo/SceneCanvas";
+import { Check } from "@/components/Icons";
 import { breadcrumbSchema, faqSchema, kitProductSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
+const title = "Pixel Lighting Kits & What's Inside";
+const description =
+  "What ships in each Resonate kit: Pi 5 Light Show controller, USB mic, pixel controller, WS2811 mega trees, rooflines and wrapped trees, and lifetime software.";
+
 export const metadata: Metadata = {
-  title: "Pixel Lighting Kits — Starter, Business & Municipal Packages",
-  description:
-    "What is in a Resonate Lighting kit: Raspberry Pi 5 controller running LedFx, SanDevices E682 or Kulp/FPP pixel controller, USB microphone and 12 V WS2811 props. Starter, Business and Municipal packages for Ontario. Request a quote.",
+  title,
+  description,
   alternates: { canonical: `${site.url}/kits` },
-  openGraph: {
-    title: `Pixel Lighting Kits | ${site.name}`,
-    description: "Starter, Business and Municipal music-reactive pixel lighting packages. Lifetime software access included.",
-    url: `${site.url}/kits`,
-  },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/kits` },
+  twitter: { title: `${title} | ${site.name}`, description },
 };
 
 const CORE = [
   {
-    title: "Raspberry Pi 5 controller box",
-    body: "Runs LedFx and the Resonate Light Show app. Broadcasts its own Wi-Fi hotspot and serves the control page to any phone — no app store, no accounts.",
-  },
-  {
-    title: "Pixel controller",
-    body: "SanDevices E682 for live music-reactive displays, or a Kulp K-series controller running FPP (Falcon Player) when you want fully sequenced, scheduled holiday shows.",
+    title: "Light Show controller box",
+    body: "A Raspberry Pi 5 running LedFx and our Light Show engine and app, in a weatherproof enclosure. It broadcasts its own Lightshow Wi-Fi and serves the control page to any phone.",
   },
   {
     title: "USB microphone",
-    body: "Listens to whatever is playing and feeds the analysis. Placement is tuned on install to your sound system.",
+    body: "Hears whatever is playing. The engine tracks the room's background noise so music looks only move for music, and Setup calibrates the gain on site.",
   },
   {
-    title: "12 V WS2811 pixel props",
-    body: "Mega trees, singing trees, strips and rooflines, sized to the package and built for Ontario weather. Power supplies, enclosures and cabling included.",
+    title: "Pixel controller and power",
+    body: "A pixel controller (the app reads SanDevices E682 port settings directly), power supplies and distribution sized to the props, all set up before shipping.",
+  },
+  {
+    title: "12 V WS2811 props",
+    body: "Mega trees, roofline runs, wrapped trees, evergreen spirals and arches, with cabling and mounting hardware for your site and climate.",
   },
   {
     title: "Lifetime software access",
-    body: "The proprietary Resonate Light Show software ships on the Pi. Access is for the life of the kit and updates are included.",
+    body: "The proprietary Light Show software ships on the controller. No subscription: it is yours for the life of the kit, with updates included.",
   },
+];
+
+const PROP_SCENES: { type: (typeof PROP_TYPES)[number]; scene: SceneId; theme: string }[] = [
+  { type: "mega", scene: "mega", theme: "Candy Cane" },
+  { type: "roof", scene: "roofline", theme: "Christmas" },
+  { type: "deciduous", scene: "deciduous", theme: "Northern Lights" },
+  { type: "evergreen", scene: "evergreen", theme: "Icicles" },
 ];
 
 export default function KitsPage() {
   const kits = getKits();
-  const faqs = getFaqs().filter((f) => f.category === "The kit" || f.category === "Packages");
+  const faqs = getFaqs().filter((f) => f.category === "The kit" || f.category === "Pricing");
 
   return (
     <>
       {kits.map((kit) => (
-        <JsonLd key={kit.slug} data={kitProductSchema(kit)} />
+        <JsonLd key={kit.slug} data={kitProductSchema(kit, kitIncludes(kit.pkg.contents))} />
       ))}
       <JsonLd data={faqSchema(faqs)} />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", url: site.url },
-          { name: "Kits", url: `${site.url}/kits` },
-        ])}
-      />
+      <JsonLd data={breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Kits", url: `${site.url}/kits` }])} />
 
       <section className="bg-ink-800 border-b border-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -69,16 +77,22 @@ export default function KitsPage() {
           <h1 className="h-display text-4xl sm:text-5xl text-white mb-4">
             What&apos;s in the <span className="gradient-text">box</span>.
           </h1>
-          <p className="text-muted-strong text-lg max-w-3xl leading-relaxed">
-            Every Resonate kit is the same five parts, scaled to the space. Choose Starter, Business or Municipal and we size the props, power and controller to your frontage, tree or street. Pricing is quoted per project in Canadian dollars.
+          <p className="text-muted-strong text-lg max-w-3xl leading-relaxed mb-8">
+            Every Resonate kit is the same control system and software, scaled with props. Choose Starter, Business, Plaza / BIA or Municipal, and we size the props, power and pixel controllers to your frontage, square or street.
           </p>
+          <div className="flex flex-wrap gap-3">
+            {kits.map((k) => (
+              <Link key={k.slug} href={`#${k.slug}`} className="seg">
+                {k.name} · {formatCad(k.pkg.price)}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Core components */}
       <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="Included in every kit" title="The core components." align="left" />
+          <SectionHeader eyebrow="In every kit" title="The control system." align="left" description="The part that listens, decides and drives the pixels is the same in every package." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CORE.map((c, i) => (
               <div key={c.title} className="card card-glow p-7">
@@ -87,60 +101,40 @@ export default function KitsPage() {
                 <p className="text-muted-strong text-sm leading-relaxed">{c.body}</p>
               </div>
             ))}
+            <div className="card overflow-hidden relative min-h-[220px]">
+              <MediaSlot id="controller-box" className="absolute inset-0" sizes="(min-width: 1024px) 33vw, 100vw" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Packages */}
       <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Packages"
-            title="Starter, Business, Municipal."
-            description="Three sizes of the same system. Start where the site is today and expand later without replacing the controller or software."
+            title="Starter, Business, Plaza / BIA, Municipal."
+            description={`Starting prices in Canadian dollars, ${pricing.taxNote}. Installation is billed by the crew-day plus travel by zone; see pricing for the rates or plan a layout with the budget planner.`}
           />
           <div className="space-y-10">
-            {kits.map((kit, i) => (
+            {kits.map((kit) => (
               <article key={kit.slug} id={kit.slug} className="card overflow-hidden scroll-mt-24">
-                <div className={`grid grid-cols-1 lg:grid-cols-5 ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                  <div className="lg:col-span-2 relative min-h-[220px] placeholder-slot">
-                    <Image
-                      src={kit.image}
-                      alt={`${kit.name} — placeholder image slot for a ${kit.tier.toLowerCase()} installation by ${site.name}`}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 40vw, 100vw"
-                    />
-                  </div>
-                  <div className="lg:col-span-3 p-7 sm:p-10">
-                    <p className="eyebrow">{kit.tier} Package</p>
-                    <h2 className="h-display text-2xl sm:text-3xl text-white mb-3">{kit.headline}</h2>
+                <MediaSlot id={`kit-${kit.slug}`} className="aspect-[4/3] sm:aspect-[2/1] lg:aspect-[21/8]" sizes="(min-width: 1280px) 1200px, 100vw" />
+                <div>
+                  <div className="p-7 sm:p-10">
+                    <p className="eyebrow">{kit.tier}</p>
+                    <h2 className="h-display text-2xl sm:text-3xl text-white mb-2">{kit.name}</h2>
+                    <p className="text-lg text-white/90 font-semibold mb-3">{kit.headline}</p>
+                    <p className="mb-5">
+                      <span className="text-sm text-muted">{kit.pkg.priceLabel} </span>
+                      <span className="h-display text-3xl text-white">{formatCad(kit.pkg.price)}</span>
+                      <span className="text-sm text-muted"> CAD, {pricing.taxNote}, installation extra</span>
+                    </p>
                     <p className="text-muted-strong leading-relaxed mb-6">{kit.summary}</p>
-
-                    <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-sm mb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                       <div>
-                        <dt className="text-[11px] uppercase tracking-widest text-muted font-semibold mb-1">Controller</dt>
-                        <dd className="text-muted-strong">{kit.controller}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[11px] uppercase tracking-widest text-muted font-semibold mb-1">Pixel controller</dt>
-                        <dd className="text-muted-strong">{kit.pixelController}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[11px] uppercase tracking-widest text-muted font-semibold mb-1">Microphone</dt>
-                        <dd className="text-muted-strong">{kit.mic}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[11px] uppercase tracking-widest text-muted font-semibold mb-1">Software</dt>
-                        <dd className="text-muted-strong">{kit.software}</dd>
-                      </div>
-                    </dl>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                      <div>
-                        <h3 className="text-sm font-bold text-white mb-2">Props &amp; pixels</h3>
+                        <h3 className="text-sm font-bold text-white mb-2">What&apos;s in the kit</h3>
                         <ul className="space-y-2 text-sm text-muted-strong">
-                          {kit.propsIncluded.map((p) => (
+                          {kitIncludes(kit.pkg.contents).map((p) => (
                             <li key={p} className="flex items-start gap-2"><Check /> {p}</li>
                           ))}
                         </ul>
@@ -154,10 +148,9 @@ export default function KitsPage() {
                         </ul>
                       </div>
                     </div>
-
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Link href={`/contact?kit=${kit.slug}`} className="btn btn-primary">Request a quote for {kit.tier}</Link>
-                      <Link href="/services" className="btn btn-ghost">Installation &amp; services</Link>
+                      <Link href={`/contact?kit=${kit.slug}#quote`} className="btn btn-primary">Request a quote for {kit.tier}</Link>
+                      <Link href="/pricing#budget-planner" className="btn btn-ghost">Plan a budget</Link>
                     </div>
                   </div>
                 </div>
@@ -167,37 +160,67 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* Reactive vs sequenced */}
       <section className="py-16 sm:py-24 bg-ink">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Add props"
+            title="Every prop, rendered."
+            description="Grow any kit with more props on the same control system. Each render below is generated live by this site from the same patterns the controller runs."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PROP_SCENES.map((p) => {
+              const prop = pricing.props[p.type];
+              return (
+                <div key={p.type} className="card overflow-hidden flex flex-col">
+                  <div className="relative aspect-[4/3] bg-[#04060b]">
+                    <SceneCanvas scene={p.scene} selection={{ kind: "theme", name: p.theme }} label={`3D render of a ${prop.label.toLowerCase()} running the ${p.theme} theme`} />
+                  </div>
+                  <div className="p-5 flex-1">
+                    <h3 className="font-bold text-white">{prop.label}</h3>
+                    <p className="text-sm text-muted-strong mt-1 mb-3">{prop.detail}.</p>
+                    <p className="text-sm text-white">Add-on from {formatCad(prop.price)}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-sm text-muted mt-6">
+            Also available: pixel arches from {formatCad(pricing.props.arch.price)} and additional pixel controllers from {formatCad(pricing.extraController.price)}. Want them moving? Try the <Link href="/" className="text-cool underline underline-offset-2">live demo</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="card p-8">
-            <p className="eyebrow">Live reactive</p>
-            <h2 className="text-2xl font-bold text-white mb-3">Pi 5 + LedFx + E682</h2>
+            <p className="eyebrow">Lifetime software</p>
+            <h2 className="text-2xl font-bold text-white mb-3">The Light Show app, for the life of the kit</h2>
             <p className="text-muted-strong leading-relaxed mb-4">
-              The everyday mode. The microphone hears the music, LedFx analyses it, and the E682 drives the pixels. Pick Pulse, Ripple, Scroll, Power, Rainbow or Solid and a colour theme in the Light Show app. Try it in the demo on the <Link href="/" className="text-cool underline underline-offset-2">home page</Link>.
+              The proprietary software that runs every kit is included with no subscription. From any phone on the controller&apos;s Wi-Fi: {THEMES.length} themes, {MUSIC_LOOKS.length} music looks, {STEADY_LOOKS.length} steady looks, colour schemes and custom colours, saved looks, playlists and schedules, plus Setup tools for ports, mic calibration and a look check.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Pulse", "Ripple", "Scroll", "Power", "Rainbow", "Solid"].map((m) => (
-                <span key={m} className="spec-chip">{m}</span>
+              {MUSIC_LOOKS.map((m) => (
+                <span key={m.id} className="spec-chip">{m.name}</span>
               ))}
             </div>
+            <Link href="/how-it-works" className="inline-flex items-center min-h-[44px] mt-4 text-cool underline underline-offset-2 text-sm">How the system works</Link>
           </div>
           <div className="card p-8">
-            <p className="eyebrow">Sequenced holiday shows</p>
-            <h2 className="text-2xl font-bold text-white mb-3">Kulp K-series + FPP</h2>
+            <p className="eyebrow">Themes</p>
+            <h2 className="text-2xl font-bold text-white mb-3">Sixteen themes, ready on day one</h2>
             <p className="text-muted-strong leading-relaxed mb-4">
-              For scheduled, choreographed programs — singing trees, synchronized rooflines across several buildings, a tree-lighting ceremony — Business and Municipal packages add a Kulp K-series controller running FPP. We sequence the shows as part of <Link href="/services#seasonal-service" className="text-cool underline underline-offset-2">seasonal service</Link>.
+              Themes bring their own pattern and colours and can pulse with the music. For choreographed shows sequenced to specific songs, Plaza and Municipal projects can add a Kulp K-series controller running FPP, quoted separately.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Christmas", "Candy Cane", "Grinch", "Snowman", "Halloween", "Canada Day", "Ocean"].map((t) => (
-                <span key={t} className="spec-chip spec-chip-cool">{t}</span>
+              {THEMES.map((t) => (
+                <span key={t.name} className="spec-chip spec-chip-cool">{t.name}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
+      <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Kit FAQ" title="Questions about the kits." />
           <FaqAccordion faqs={faqs} />
@@ -206,13 +229,5 @@ export default function KitsPage() {
 
       <CtaBand />
     </>
-  );
-}
-
-function Check() {
-  return (
-    <svg className="w-4 h-4 text-resonant mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
   );
 }

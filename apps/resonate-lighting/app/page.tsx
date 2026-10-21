@@ -1,54 +1,68 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { getFaqs, getKits, getMarkets, getServices } from "@/lib/content";
+import { getCities, getFaqs, getKits, getMarkets } from "@/lib/content";
+import { formatCad, pricing } from "@/lib/pricing";
 import { LightShowDemo } from "@/components/demo/LightShowDemo";
+import { BudgetPlanner } from "@/components/BudgetPlanner";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SignalChain } from "@/components/SignalChain";
+import { KitCard } from "@/components/KitCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
+import { Check } from "@/components/Icons";
 import { faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
+const title = "Resonate Lighting | Music-Reactive Pixel Lighting Kits";
+const description =
+  "Music-reactive mega trees, rooflines and wrapped trees for businesses, BIAs and municipalities across Canada. Premium kits, lifetime software, full install.";
+
 export const metadata: Metadata = {
-  title: `${site.name} | Music-Reactive Pixel Lighting Kits for Commercial Spaces in Ontario`,
-  description:
-    "Music-reactive pixel lighting kits for commercial spaces, BIAs and municipalities in Ontario. Raspberry Pi 5 + LedFx controller, mega trees, rooflines, lifetime software. Design, supply, installation and seasonal service. Request a quote.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: site.url },
+  openGraph: { title, description, url: site.url },
+  twitter: { title, description },
 };
 
 export default function HomePage() {
   const kits = getKits();
   const markets = getMarkets();
-  const services = getServices();
-  const faqs = getFaqs().slice(0, 6);
+  const cities = getCities();
+  const faqs = getFaqs().filter((f) => ["The kit", "Pricing"].includes(f.category ?? "")).slice(0, 6);
+  const starter = pricing.packages[0];
 
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
 
-      {/* Hero + demo */}
-      <section className="relative overflow-hidden">
+      {/* Hero + live demo */}
+      <section className="relative">
         <div className="hero-gradient absolute inset-0 pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-12 sm:pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-5">
-              <p className="eyebrow">Music-reactive pixel lighting · Ontario</p>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-12 sm:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <p className="eyebrow">Music-reactive pixel lighting kits · Canada</p>
               <h1 className="h-display text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
                 Lighting that <span className="gradient-text">listens</span>.
               </h1>
               <p className="text-muted-strong text-lg leading-relaxed mb-6">
-                Permanent and seasonal pixel lighting kits for commercial spaces, BIAs and municipalities. A Raspberry Pi 5 controller listens through a microphone and drives mega trees, singing trees, strips and rooflines in time with the music — controlled from any phone, no app store required.
+                Mega trees, rooflines, wrapped trees and arches for commercial spaces, BIAs and municipalities. A Raspberry Pi 5 Light Show engine hears the music through a microphone and moves every pixel with it, and your staff run it all from a phone.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <Link href="/contact" className="btn btn-primary">Request a Quote</Link>
-                <Link href="/kits" className="btn btn-ghost">See the kits</Link>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Link href="/contact#quote" className="btn btn-primary">Request a Quote</Link>
+                <Link href="#budget-planner" className="btn btn-ghost">Plan a budget</Link>
               </div>
-              <ul className="grid grid-cols-2 gap-3 text-sm text-muted-strong">
-                <li className="flex items-start gap-2"><Check /> Pi 5 + LedFx controller box</li>
-                <li className="flex items-start gap-2"><Check /> E682 or Kulp/FPP pixel controller</li>
-                <li className="flex items-start gap-2"><Check /> 12 V WS2811 props</li>
+              <p className="text-sm text-muted mb-6">
+                Kits from <strong className="text-white">{formatCad(starter.price)}</strong> CAD, {pricing.taxNote}. Installation anywhere in Canada.
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-strong">
+                <li className="flex items-start gap-2"><Check /> Pi 5 Light Show controller box</li>
+                <li className="flex items-start gap-2"><Check /> USB mic with quiet-room gate</li>
+                <li className="flex items-start gap-2"><Check /> 12 V WS2811 pixel props</li>
                 <li className="flex items-start gap-2"><Check /> Lifetime software access</li>
               </ul>
             </div>
@@ -64,33 +78,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="How it works"
-            title="Three parts. One show."
-            description="Every kit is the same simple chain: something that listens, something that decides, and pixels that light up. Staff only ever touch the Light Show app."
+            title="From a song to a street of pixels."
+            description="Every kit is the same chain: something that listens, an engine that decides, a controller that drives the pixels, and the props. Staff only ever touch the Light Show app."
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                step: "01",
-                title: "Listen",
-                body: "A USB microphone on the controller picks up whatever your sound system is playing — live band, playlist or a busker on the street.",
-              },
-              {
-                step: "02",
-                title: "Analyse",
-                body: "The Raspberry Pi 5 runs LedFx, breaking the audio into beats and energy in real time. Our Light Show app sits on top so anyone can pick a mode and theme in two taps.",
-              },
-              {
-                step: "03",
-                title: "Light",
-                body: "A SanDevices E682 (or Kulp K-series running FPP for sequenced holiday shows) drives 12 V WS2811 pixels on mega trees, singing trees, strips and rooflines.",
-              },
-            ].map((s) => (
-              <div key={s.step} className="card card-glow p-7">
-                <div className="h-display text-resonant text-sm tracking-widest mb-3">{s.step}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{s.title}</h3>
-                <p className="text-muted-strong text-sm leading-relaxed">{s.body}</p>
-              </div>
-            ))}
+          <SignalChain />
+          <div className="text-center mt-10">
+            <Link href="/how-it-works" className="btn btn-outline">How the system works</Link>
           </div>
         </div>
       </section>
@@ -100,34 +93,40 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Kits"
-            title="Starter, Business, Municipal."
-            description="Same controller, same software, scaled to the space. Every package is quoted per project in Canadian dollars."
+            title="Four sizes of the same system."
+            description="Every kit includes the controller box, microphone, pixel controller, props and lifetime access to the software that runs them. Starting prices in Canadian dollars; installation is quoted by crew-day plus travel."
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {kits.map((kit) => (
-              <Link key={kit.slug} href={`/kits#${kit.slug}`} className="card card-glow p-7 flex flex-col">
-                <p className="eyebrow">{kit.tier} Package</p>
-                <h3 className="text-xl font-bold text-white mb-2">{kit.headline}</h3>
-                <p className="text-muted-strong text-sm leading-relaxed mb-5 flex-1">{kit.audience}</p>
-                <ul className="space-y-2 text-sm text-muted-strong mb-6">
-                  {kit.propsIncluded.slice(0, 3).map((p) => (
-                    <li key={p} className="flex items-start gap-2"><Check /> {p}</li>
-                  ))}
-                </ul>
-                <span className="text-resonant font-semibold text-sm">What&apos;s included →</span>
-              </Link>
+              <KitCard key={kit.slug} kit={kit} />
             ))}
+          </div>
+          <div className="text-center mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/kits" className="btn btn-outline">Compare the kits</Link>
+            <Link href="/pricing" className="btn btn-ghost">Pricing &amp; installation rates</Link>
           </div>
         </div>
       </section>
 
-      {/* Markets */}
+      {/* Budget planner */}
       <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Budget planner"
+            title="Slide your budget. Watch the display grow."
+            description="Set a project budget and where the site is. The 3D scene adds mega trees, rooflines, wrapped trees and arches as the budget rises, with an itemised estimate including installation and travel."
+          />
+          <BudgetPlanner />
+        </div>
+      </section>
+
+      {/* Markets */}
+      <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Who we serve"
             title="Built for the places people gather."
-            description="Retail plazas, restaurants and patios, Business Improvement Areas, municipalities, event venues and property managers across Ontario."
+            description="Retail plazas, restaurants and hotels, Business Improvement Areas, municipalities, event venues and property managers."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {markets.map((m) => (
@@ -145,27 +144,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 sm:py-24 bg-ink">
+      {/* Locations */}
+      <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Installation & services"
-            title="Design, supply, installation, seasonal service."
-            description="One team from the first site walk to the holiday changeover."
+            eyebrow="Locations"
+            title="Installed anywhere in Canada."
+            description={`Based in ${site.homeRegion}, our crews install in any city with applicable travel charges. Climate, district and travel notes for major cities:`}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((s) => (
-              <Link key={s.slug} href={`/services#${s.slug}`} className="card card-glow p-6">
-                <h3 className="text-lg font-bold text-white mb-2">{s.title}</h3>
-                <p className="text-muted-strong text-sm leading-relaxed">{s.shortDescription}</p>
-              </Link>
+          <ul className="flex flex-wrap justify-center gap-2">
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/locations/${c.slug}`} className="spec-chip spec-chip-cool normal-case tracking-normal text-sm min-h-[44px] hover:bg-[rgba(76,201,240,0.15)]">
+                  {c.name}
+                </Link>
+              </li>
             ))}
+          </ul>
+          <div className="text-center mt-8">
+            <Link href="/locations" className="btn btn-outline">All locations &amp; travel zones</Link>
           </div>
         </div>
       </section>
 
       {/* FAQ teaser */}
-      <section className="py-16 sm:py-24 bg-ink-800 border-y border-soft">
+      <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="FAQ" title="Common questions." />
           <FaqAccordion faqs={faqs} />
@@ -177,13 +180,5 @@ export default function HomePage() {
 
       <CtaBand />
     </>
-  );
-}
-
-function Check() {
-  return (
-    <svg className="w-4 h-4 text-resonant mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
   );
 }

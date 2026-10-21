@@ -8,11 +8,16 @@ import { breadcrumbSchema, faqSchema } from "@/lib/jsonld";
 
 export const revalidate = 3600;
 
+const title = "FAQ: Pixel Lighting Kits & Installation";
+const description =
+  "Answers about Resonate kits: what ships in the box, how music reactivity and the quiet-room gate work, the phone app, pricing, installation and seasonal care.";
+
 export const metadata: Metadata = {
-  title: "FAQ — Music-Reactive Pixel Lighting Kits & Installation",
-  description:
-    "Answers about Resonate Lighting kits: what is included, how music reactivity works, the Light Show app, E682 vs Kulp/FPP controllers, packages, Ontario installation and seasonal service.",
+  title,
+  description,
   alternates: { canonical: `${site.url}/faq` },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/faq` },
+  twitter: { title: `${title} | ${site.name}`, description },
 };
 
 export default function FaqPage() {
@@ -27,7 +32,7 @@ export default function FaqPage() {
           <p className="eyebrow">FAQ</p>
           <h1 className="h-display text-4xl sm:text-5xl text-white mb-4">Questions, answered.</h1>
           <p className="text-muted-strong text-lg max-w-3xl leading-relaxed">
-            Everything about the kit, the packages, installation across Ontario and the modes and themes. Still unsure? Call {site.phone}.
+            Everything about the kit, running the show, pricing, and installation and care across Canada. Still unsure? Call {site.phone}.
           </p>
         </div>
       </section>

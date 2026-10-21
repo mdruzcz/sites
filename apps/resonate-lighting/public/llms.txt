@@ -1,32 +1,38 @@
 # Resonate Lighting
 
-> Music-reactive, permanent and seasonal pixel lighting kits for commercial spaces, Business Improvement Areas (BIAs) and municipalities in Ontario, Canada. Design, supply, installation and seasonal service. Prices quoted per project in CAD — request a quote.
+> Music-reactive pixel lighting kits for commercial spaces, Business Improvement Areas (BIAs) and municipalities in Canada, with installation anywhere in the country and lifetime access to the software that runs them. Based in Saskatchewan.
 
-## What the kit is
-- Raspberry Pi 5 controller box running LedFx with the proprietary Resonate "Light Show" control app (a web page served from the Pi's own Wi-Fi hotspot; works on any phone, no app store).
-- USB microphone for live music reactivity.
-- Pixel controller: SanDevices E682 (reactive) or Kulp K-series running FPP (sequenced holiday shows).
-- 12 V WS2811 pixel props: mega trees, singing trees, strips, rooflines.
-- Buyers get lifetime access to the control software; updates included.
+## What a kit is
+- Light Show controller box: Raspberry Pi 5 running LedFx and Resonate's proprietary Light Show engine and app, in a weatherproof enclosure.
+- USB microphone; the engine tracks background noise (quiet-room gate) so music looks only react to music.
+- Pixel controller, power supplies and distribution (the app reads SanDevices E682 port settings).
+- 12 V WS2811 props: mega trees, roofline runs, wrapped deciduous trees, evergreen spirals, pixel arches.
+- Lifetime software access with updates; no subscription.
 
-## Packages (no public pricing — quote per project)
-- Starter Package: one feature prop (mega tree or roofline run) for restaurants, patios, storefronts.
-- Business Package: rooflines, trees and accents for plazas, venues, property managers.
-- Municipal Package: multiple mega trees, singing trees and streetscape runs for BIAs and municipalities.
+## The Light Show app
+- Served by the controller over its own "Lightshow" Wi-Fi hotspot to any phone; no app store, no internet needed; admin password.
+- 16 themes, 11 music looks (Power, Scroll, Ripple, Pulse, Piano, Flow, Lava, Beat Bars, Fire, Glow, Beat Flash), 8 steady looks, 10 colour schemes plus custom colours.
+- Brightness, smoothness, speed, always-on glow, music sensitivity; saved looks; playlists; on/off schedules by day; MP3 playback from USB.
+- Setup wizard: controller and port tests, microphone calibration, look check.
+
+## Pricing (CAD, starting at, plus tax; installation extra)
+Current figures are published at https://resonatelighting.com/pricing (packages: Starter Kit, Business Kit, Plaza / BIA Kit, Municipal Program). Installation is billed per crew-day plus travel by zone from Saskatchewan, with accommodation on multi-day jobs outside the home region.
 
 ## Pages
-- Home (interactive mega tree / roofline demo): https://resonatelighting.com/
+- Home and live 3D demo (microphone, piano and drum modes): https://resonatelighting.com/
 - Kits: https://resonatelighting.com/kits
-- Installation & Services: https://resonatelighting.com/services
+- Pricing and budget planner: https://resonatelighting.com/pricing
+- How it works: https://resonatelighting.com/how-it-works
+- Quick-start guide: https://resonatelighting.com/quick-start
+- Installation and services: https://resonatelighting.com/services
+- Care and seasonal service: https://resonatelighting.com/care
 - Commercial: https://resonatelighting.com/commercial
-- BIA: https://resonatelighting.com/bia
+- BIAs: https://resonatelighting.com/bia
 - Municipal: https://resonatelighting.com/municipal
-- Gallery: https://resonatelighting.com/gallery
-- About: https://resonatelighting.com/about
+- Locations (20 cities): https://resonatelighting.com/locations
 - FAQ: https://resonatelighting.com/faq
 - Request a quote: https://resonatelighting.com/contact
 
 ## Contact
 - Phone: 519-878-6735
 - Email: service@masterdecker.com
-- Service area: Ontario, Canada (Toronto, Ottawa, Hamilton, London, Kitchener-Waterloo, Windsor, Niagara, Mississauga, Barrie, Kingston and surrounding regions)

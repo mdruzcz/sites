@@ -1,7 +1,7 @@
 # Resonate Lighting — Brand Guide
 
 **Tagline:** Lighting that listens.
-**What we are:** music-reactive, permanent and seasonal pixel lighting kits for commercial spaces, BIAs and municipalities in Ontario.
+**What we are:** music-reactive, permanent and seasonal pixel lighting kits for commercial spaces, BIAs and municipalities, installed anywhere in Canada from a home base in Saskatchewan.
 
 ## 1. The mark
 
@@ -63,11 +63,11 @@ Scale: 12 / 14 / 16 / 18 / 20 / 24 / 32 / 40 / 56 / 72 px. Headlines use sentenc
 
 ## 4. Voice
 
-Plain, confident, specific. Say what the hardware is (Raspberry Pi 5, LedFx, USB microphone, E682 or Kulp K-series with FPP, 12 V WS2811). Never invent specs or prices: every pricing CTA is "Request a quote" in CAD. Lead with what the client's customers see at night; follow with how little the staff has to do.
+Plain, confident, specific. Say what the hardware is (Raspberry Pi 5 Light Show engine with LedFx, USB microphone, pixel controller, 12 V WS2811 props) and only describe features the Light Show app really has. Prices are premium and published as starting prices in CAD, plus tax, installation extra; every price comes from `src/lib/pricing.ts`, never typed into copy.
 
 Words we use: *reactive, synchronized, show, mode, theme, prop, roofline, mega tree, singing tree, pixel.*
 Words we avoid: *smart, revolutionary, cutting-edge, solution, seamless.*
 
 ## 5. Imagery
 
-Night photography of real installations, wide enough to show the building and the lit prop together. Warm foreground light, cool sky. Until real photos exist, use the labelled placeholder slots in `public/images/gallery/`, never stock photos of someone else's display.
+Night photography of real installations, wide enough to show the building and the lit prop together. Until real photos exist, the site's own live 3D renders fill each media slot (`src/content/media-slots.json`), labelled as renders. Never use photos or video of someone else's display or copied from another company's site; stock only from Pexels, Unsplash or Pixabay, logged in `MEDIA-CREDITS.md`.

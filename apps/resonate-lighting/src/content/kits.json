@@ -1,76 +1,42 @@
 [
   {
     "slug": "starter",
-    "name": "Starter Package",
+    "name": "Starter Kit",
     "tier": "Starter",
-    "audience": "Restaurants, patios, storefronts and small commercial frontages",
-    "headline": "One feature, one controller, fully music-reactive.",
-    "summary": "The Starter Package puts a single statement prop — a mega tree or a roofline run — in front of your business and makes it react to the music you already play. Everything ships pre-configured; plug in, join the Wi-Fi hotspot and press Play.",
-    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
-    "pixelController": "SanDevices E682 pixel controller",
-    "mic": "USB microphone (room or outdoor-rated placement)",
-    "propsIncluded": [
-      "One mega tree (roughly 8–12 ft) OR one roofline strip run",
-      "12 V WS2811 pixels, weather-rated for Ontario winters",
-      "Power supply, enclosure, data cabling and mounting hardware"
-    ],
-    "bestFor": [
-      "Restaurant and bar patios",
-      "Single-storefront retail",
-      "Office entrances and lobbies",
-      "Seasonal pop-ups and event booths"
-    ],
-    "software": "Lifetime access to the Resonate Light Show control app, pre-installed on the Pi. Updates included.",
-    "image": "/images/gallery/placeholder-starter.svg"
+    "audience": "Restaurants, patios, storefronts, hotel entrances and single commercial frontages",
+    "headline": "One mega tree that listens to the room.",
+    "summary": "The Starter Kit is a complete music-reactive mega tree: the Light Show controller box, USB microphone, pixel controller, power and the tree itself, configured before it ships. Join the controller's Wi-Fi from any phone, pick a theme or a music look, and set a schedule.",
+    "bestFor": ["Restaurant and bar patios", "Single storefronts and showrooms", "Hotel and office entrances", "Event booths and pop-ups"],
+    "scene": "mega"
   },
   {
     "slug": "business",
-    "name": "Business Package",
+    "name": "Business Kit",
     "tier": "Business",
-    "audience": "Retail plazas, multi-tenant buildings, venues and property managers",
-    "headline": "Rooflines, trees and accents working as one show.",
-    "summary": "The Business Package combines rooflines, one or more mega trees and accent props into a single synchronized display driven by one controller. Choose live music reactivity for everyday ambience and switch to fully sequenced holiday shows when the season arrives.",
-    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
-    "pixelController": "SanDevices E682 for reactive mode, or Kulp K-series running FPP for sequenced holiday shows",
-    "mic": "USB microphone with placement tuned to your sound system",
-    "propsIncluded": [
-      "Roofline pixel runs across the primary frontage",
-      "One or two mega trees or singing trees",
-      "Accent strips for columns, signage or windows",
-      "12 V WS2811 pixels, power injection, enclosures and cabling"
-    ],
-    "bestFor": [
-      "Retail plazas and strip malls",
-      "Event venues and banquet halls",
-      "Hotels and mixed-use buildings",
-      "Property management portfolios"
-    ],
-    "software": "Lifetime access to the Resonate Light Show control app plus our sequencing service for holiday shows. Updates included.",
-    "image": "/images/gallery/placeholder-business.svg"
+    "audience": "Retail plazas, venues, hotels, offices and managed properties",
+    "headline": "Roofline, mega tree and wrapped trees as one show.",
+    "summary": "The Business Kit traces the main roofline of your building in pixels, adds a mega tree and wraps two existing trees, all running from one controller. Run a brand-colour look all year and switch to holiday themes on a schedule or a playlist.",
+    "bestFor": ["Retail plazas and strip centres", "Event venues and banquet halls", "Hotels and mixed-use buildings", "Office campuses and showrooms"],
+    "scene": "display"
+  },
+  {
+    "slug": "plaza",
+    "name": "Plaza / BIA Kit",
+    "tier": "Plaza / BIA",
+    "audience": "Business Improvement Areas, main streets, town squares and multi-tenant plazas",
+    "headline": "A main street that lights up together.",
+    "summary": "Sized for a block or a square: rooflines across three frontages, two mega trees, four wrapped trees and a pair of walk-through arches, synchronised from one control system. Each prop can run its own look, and the whole street can join one theme for events.",
+    "bestFor": ["Business Improvement Areas (BIAs, BIDs, BIZ, SDCs)", "Main streets and town squares", "Shopping centres with outdoor courts", "Holiday markets and festivals"],
+    "scene": "display"
   },
   {
     "slug": "municipal",
-    "name": "Municipal Package",
+    "name": "Municipal Program",
     "tier": "Municipal",
-    "audience": "BIAs, municipalities, downtown cores, parks and public squares",
-    "headline": "A public light show your whole community shows up for.",
-    "summary": "Built for streetscapes and public spaces: multiple mega trees, singing trees for choreographed holiday programming, and roofline or canopy runs across several buildings — all synchronized. We design for public-space durability, power availability and easy seasonal changeover.",
-    "controller": "Raspberry Pi 5 controller box running LedFx with the Resonate Light Show app",
-    "pixelController": "Kulp K-series pixel controllers running FPP for scheduled, sequenced shows (E682 available for reactive zones)",
-    "mic": "USB microphone for live-reactive zones, plus scheduled playback for sequenced shows",
-    "propsIncluded": [
-      "Multiple mega trees sized to the site",
-      "Singing trees for choreographed holiday programming",
-      "Roofline, canopy and streetscape pixel runs",
-      "12 V WS2811 pixels, weatherproof power and data distribution, lockable enclosures"
-    ],
-    "bestFor": [
-      "Business Improvement Areas (BIAs)",
-      "Municipal downtown and holiday programs",
-      "Parks, squares and waterfronts",
-      "Large event venues and fairgrounds"
-    ],
-    "software": "Lifetime access to the Resonate Light Show control app, holiday show sequencing, and seasonal service. Updates included.",
-    "image": "/images/gallery/placeholder-municipal.svg"
+    "audience": "Municipalities, downtown programs, parks, civic squares and tourism offices",
+    "headline": "A public light show your whole community comes out for.",
+    "summary": "A civic-scale program: multiple mega trees, rooflines on civic and downtown buildings, wrapped trees along streets and in parks, evergreen spirals and an arch walkway, all scheduled from one system. Scoped in phases to fit budget cycles, with itemised quotes for council and procurement.",
+    "bestFor": ["Municipal downtown and holiday programs", "Parks, squares and waterfronts", "Civic buildings and city halls", "Tourism and winter festival sites"],
+    "scene": "display"
   }
 ]

@@ -2,52 +2,52 @@
   {
     "slug": "design",
     "title": "Lighting Design",
-    "shortDescription": "Site walk, prop layout, power plan and a rendered preview before anything is ordered.",
-    "description": "Every Resonate project starts with a design pass. We walk the site (or review your photos and drawings), map rooflines, trees and sightlines, and plan power and data runs so the installation is clean and serviceable. You receive a layout showing where each prop goes, how pixels are counted, and what the display will look like at night.",
+    "shortDescription": "Site review, prop layout, power plan and a 3D preview before anything is ordered.",
+    "description": "Every project starts with a design pass. We review your photos and dimensions (or walk the site), map rooflines, trees and sightlines, and plan power and data runs so the installation is clean and serviceable. You receive a layout showing where each prop goes, which package it fits, and an itemised quote with installation crew-days and travel.",
     "bullets": [
-      "On-site or remote site assessment",
-      "Prop placement and pixel count plan",
-      "Power and data routing with weather-rated enclosures",
-      "Rendered night preview and mode recommendations"
+      "Remote or on-site site review",
+      "Prop placement and package recommendation",
+      "Power and data routing with weatherproof enclosures",
+      "Itemised quote: kit, crew-days and travel"
     ],
     "icon": "design"
   },
   {
     "slug": "supply",
     "title": "Kit Supply",
-    "shortDescription": "Pre-configured controller box, pixel controller, microphone and props delivered ready to connect.",
-    "description": "Each kit ships with the Raspberry Pi 5 controller box already running LedFx and the Resonate Light Show app, a pixel controller configured for your prop map, a USB microphone, and 12 V WS2811 props built to your layout. You get lifetime access to the control software that powers the kit; updates are included.",
+    "shortDescription": "Controller box, microphone, pixel controller and props, configured before they ship.",
+    "description": "Each kit ships with the Raspberry Pi 5 controller box already running the Light Show engine, a pixel controller set up for your props, a USB microphone, and 12 V WS2811 props built to your layout. Lifetime access to the software is included, with updates.",
     "bullets": [
-      "Raspberry Pi 5 controller box, pre-configured",
-      "SanDevices E682 or Kulp K-series (FPP) pixel controller",
+      "Raspberry Pi 5 Light Show controller box",
+      "Pixel controller and power, sized to the layout",
       "USB microphone and 12 V WS2811 props",
-      "Lifetime access to the Light Show app, updates included"
+      "Lifetime software access, updates included"
     ],
     "icon": "supply"
   },
   {
     "slug": "installation",
     "title": "Installation",
-    "shortDescription": "Professional mounting, power injection and commissioning by our Ontario install team.",
-    "description": "Our installers mount props, run data and power, and commission the show on site. We tune microphone placement to your sound system, verify every pixel, and hand over the Light Show app on your phone before we leave. Rooflines use clip systems appropriate to the facade; trees are anchored for Ontario wind and snow loads.",
+    "shortDescription": "Two-person crews anywhere in Canada, billed by the crew-day plus zone travel.",
+    "description": "Our crews mount props, run power and data and commission the show on site: Setup wizard, port tests on every prop, microphone calibration with your music playing, and a look check. We hand over the Light Show app on your phone before we leave. Installation is available in any city in Canada; it is billed by the crew-day, plus travel by zone and accommodation on multi-day jobs outside Saskatchewan.",
     "bullets": [
-      "Roofline clips, tree frames and anchoring",
-      "Power injection and weatherproof connections",
-      "Microphone placement and sensitivity tuning",
-      "Pixel-by-pixel verification and handover"
+      "Roofline clips, tree frames and anchoring for local weather",
+      "Power injection and sealed connections",
+      "Mic calibration and look check with your music",
+      "Handover and training on your phone"
     ],
     "icon": "install"
   },
   {
     "slug": "seasonal-service",
-    "title": "Seasonal Service",
-    "shortDescription": "Holiday show sequencing, seasonal changeovers, takedown and storage.",
-    "description": "Permanent kits change character with the calendar. We sequence holiday shows for Kulp/FPP controllers, swap colour themes for Canada Day, Halloween and winter, and offer takedown and storage for seasonal props. Service visits include pixel checks and software updates.",
+    "title": "Care & Seasonal Service",
+    "shortDescription": "Pre-season checks, theme changeovers, repairs, takedown and storage.",
+    "description": "Kits change character with the calendar. Care visits cover pre-season checks and repairs, theme and playlist changes for each season, re-running the mic calibration and look check if your sound system changes, software updates, and takedown and storage for seasonal props.",
     "bullets": [
-      "Custom sequenced holiday shows (FPP)",
-      "Theme changeovers through the year",
-      "Takedown, storage and spring re-install",
-      "Pixel health checks and software updates"
+      "Pre-season pixel and connection checks",
+      "Theme, playlist and schedule changeovers",
+      "Takedown, storage and re-install",
+      "Software updates and recalibration"
     ],
     "icon": "service"
   }

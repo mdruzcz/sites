@@ -1,0 +1,802 @@
+[
+  {
+    "slug": "vancouver",
+    "name": "Vancouver",
+    "province": "BC",
+    "provinceName": "British Columbia",
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "title": "Pixel Light Shows in Vancouver, BC",
+    "description": "Music-reactive mega trees, rooflines and wrapped trees for Vancouver businesses, BIAs and civic sites, sealed for coastal rain. Kits, install and software.",
+    "h1": "Music-reactive pixel lighting for Vancouver",
+    "intro": "Vancouver's winter is dark early and wet far more often than it is white, which makes it one of the best cities in Canada for permanent pixel lighting. Rooflines and wrapped trees can stay up all year and change theme with the calendar, and a mega tree in a plaza or courtyard draws people out on a rainy December evening.",
+    "climate": "Winters on the coast are mild, usually hovering a few degrees above freezing, with long runs of rain and the occasional wet snowfall that rarely lasts. The challenge is water rather than cold: weeks of steady rain find any connector that is not sealed, and wind off the water drives it sideways.",
+    "installNotes": [
+      "Every pixel connection is sealed and every cable gets a drip loop so water runs off before it reaches a joint.",
+      "Controller and power enclosures are mounted under cover where possible, with cable glands at the bottom, never the top.",
+      "Near the water we use corrosion-resistant clips and fasteners and check them at each service visit.",
+      "Because roofs rarely ice up, rooflines are good candidates for year-round permanent installs with theme changes through the seasons."
+    ],
+    "districts": "Commercial activity in Vancouver is spread across the downtown core and dozens of neighbourhood high streets, each with its own character and, in many cases, its own business improvement association running seasonal events. Courtyards, plazas, hotel entrances and waterfront promenades are natural homes for a mega tree, while street trees along a high street suit wrapped-tree programs coordinated with the association and the city.",
+    "season": "Sunset comes before 4:30 pm in December, so a scheduled show can run from late afternoon through the evening rush. Book in late summer for a November install; permanent rooflines can go in any time of year.",
+    "recommend": "business",
+    "recommendWhy": "A roofline that stays up year-round plus a mega tree and wrapped trees for the holiday season gets the most out of a mild, dark coastal winter.",
+    "theme": "Ocean",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Will the lights survive Vancouver rain?",
+        "answer": "Yes, if they are installed for it. We seal every connection, add drip loops, mount enclosures with bottom-entry glands and check the run at each service visit. Rain is the main design factor on the coast, not cold."
+      },
+      {
+        "question": "Can we leave a roofline up all year in Vancouver?",
+        "answer": "Usually, yes. Mild winters with little roof ice make permanent rooflines practical. The Light Show app's schedule turns them on at dusk, and you change themes for holidays, events or your brand colours."
+      }
+    ],
+    "nearby": [
+      "victoria",
+      "kelowna",
+      "calgary"
+    ]
+  },
+  {
+    "slug": "victoria",
+    "name": "Victoria",
+    "province": "BC",
+    "provinceName": "British Columbia",
+    "lat": 48.4284,
+    "lng": -123.3656,
+    "title": "Pixel Light Shows in Victoria, BC",
+    "description": "Music-reactive pixel lighting for Victoria hotels, heritage streets and civic spaces: mega trees, rooflines and wrapped trees, with lifetime software access.",
+    "h1": "Music-reactive pixel lighting for Victoria",
+    "intro": "Victoria has the mildest winter climate of any major Canadian city, a compact heritage downtown and a harbour that people walk all year. That combination suits permanent rooflines and wrapped trees that change theme through the seasons, with a sequenced holiday show at the centre of it.",
+    "climate": "Winters are cool and damp rather than cold, with rain, coastal wind and salt air, and snow that is rare and short-lived. Like Vancouver, the enemy is moisture and corrosion, and exposed waterfront sites take the brunt of winter storms.",
+    "installNotes": [
+      "Sealed connections, drip loops and bottom-entry enclosures for long wet spells.",
+      "Corrosion-resistant hardware on waterfront and harbour-facing sites.",
+      "On heritage facades we favour clip and clamp mounts that avoid drilling into original masonry, and we work with your heritage requirements before anything is fixed.",
+      "Wind-rated anchoring for mega trees on open, exposed sites."
+    ],
+    "districts": "Downtown Victoria is a walkable mix of heritage blocks, the inner harbour, Chinatown and independent retail streets, with tourism and hospitality setting much of the seasonal rhythm. Hotels, restaurants and retail courtyards are typical commercial clients, and downtown business groups and the municipality are natural partners for streetscape and tree-wrap programs.",
+    "season": "Short December days and a year-round visitor season mean a display earns its keep beyond the holidays. Plan a summer site walk for a late-autumn install.",
+    "recommend": "business",
+    "recommendWhy": "Permanent rooflines and wrapped trees suit a mild climate, and a mega tree adds a holiday focal point for visitors.",
+    "theme": "Gold & White",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Can you install on a heritage building in Victoria?",
+        "answer": "Yes. We plan mounts that clip or clamp to existing features rather than drilling into original masonry where possible, and we work to your heritage requirements and approvals before installation."
+      },
+      {
+        "question": "Is travel to Vancouver Island extra?",
+        "answer": "Victoria is in our BC & Ontario travel zone, so a crew trip fee applies, plus accommodation on multi-day installs. Your quote confirms the travel figure for the island."
+      }
+    ],
+    "nearby": [
+      "vancouver",
+      "kelowna",
+      "calgary"
+    ]
+  },
+  {
+    "slug": "kelowna",
+    "name": "Kelowna",
+    "province": "BC",
+    "provinceName": "British Columbia",
+    "lat": 49.888,
+    "lng": -119.496,
+    "title": "Pixel Light Shows in Kelowna, BC",
+    "description": "Music-reactive pixel lighting for Kelowna and Okanagan wineries, resorts and downtown businesses: mega trees, rooflines and wrapped trees, installed for you.",
+    "h1": "Music-reactive pixel lighting for Kelowna and the Okanagan",
+    "intro": "Kelowna's draw is the lake, the wineries and the resorts, and its winters are often grey under valley cloud. A display that lights up a winery entrance, a resort plaza or the downtown waterfront gives people a reason to come out on the long evenings between the summer and ski seasons.",
+    "climate": "The Okanagan is drier than the coast, with cold winters, moderate snow and frequent low cloud trapped in the valley. Summers are hot and sunny, so anything left up year-round has to handle strong UV as well as winter freeze-thaw.",
+    "installNotes": [
+      "UV-stable cable, clips and pixel housings for permanent installs that see a full Okanagan summer.",
+      "Freeze-thaw rated sealing at every connection.",
+      "Snow and wind anchoring for mega trees on open vineyard and resort sites.",
+      "Long data and power runs planned carefully on large rural properties."
+    ],
+    "districts": "Commercial lighting in the area centres on the downtown waterfront and its business association, resort and hotel properties, wineries along the lake benches, and suburban retail centres. Rural sites often mean long runs between the building and the feature tree, which we design for at the site walk.",
+    "season": "Book early autumn for a holiday install; wineries and resorts often want the display ready for November events.",
+    "recommend": "business",
+    "recommendWhy": "A roofline on the tasting room or lodge, a mega tree at the entrance and wrapped trees along the drive make one synchronised show for guests.",
+    "theme": "Candlelight",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Do you install at wineries and resorts outside Kelowna?",
+        "answer": "Yes. Installation is available anywhere in the Okanagan and across Canada; travel is charged by zone, and long runs on rural properties are planned at the site walk."
+      },
+      {
+        "question": "Can the display react to live music at events?",
+        "answer": "Yes. The controller's USB microphone listens to whatever is playing, and the quiet-room gate keeps the lights resting on a soft glow when the music stops."
+      }
+    ],
+    "nearby": [
+      "vancouver",
+      "calgary",
+      "victoria"
+    ]
+  },
+  {
+    "slug": "calgary",
+    "name": "Calgary",
+    "province": "AB",
+    "provinceName": "Alberta",
+    "lat": 51.0447,
+    "lng": -114.0719,
+    "title": "Pixel Light Shows in Calgary, AB",
+    "description": "Music-reactive mega trees, rooflines and wrapped trees for Calgary businesses, BIAs and civic sites, installed to handle chinooks and deep cold snaps.",
+    "h1": "Music-reactive pixel lighting for Calgary",
+    "intro": "Calgary winters swing hard: a chinook can lift the temperature well above freezing in a few hours, and a cold snap can drop it below minus thirty a few days later. Pixel lighting that lives through that cycle is installed differently from lighting that only has to survive a mild season.",
+    "climate": "The air is dry, the sun is strong at Calgary's elevation, and chinook winds bring rapid thaws followed by hard refreezes. Those repeated freeze-thaw cycles work on fasteners, sealant and anything that traps water, and deep cold makes cable stiff and brittle.",
+    "installNotes": [
+      "Mounts and clips that tolerate repeated freeze-thaw without loosening, checked at each service visit.",
+      "Connections sealed so meltwater from a chinook cannot sit in a joint and freeze.",
+      "Cold-flexible cable and service loops so stiff cable in a cold snap does not pull on connectors.",
+      "Wind-rated anchoring for mega trees; chinook gusts can be strong."
+    ],
+    "districts": "Calgary's commercial lighting opportunities range from the downtown core and inner-city main streets, many with their own BIA running seasonal programming, to large suburban retail centres, hotels and event venues. Plazas and pedestrian streets suit mega trees, while main-street BIAs often phase in rooflines block by block.",
+    "season": "Install before mid-November to avoid working through the coldest stretches; shows run on a dusk schedule from the first week of December.",
+    "recommend": "plaza",
+    "recommendWhy": "Main-street BIAs and retail centres get the most from synchronised rooflines across several frontages with mega trees in the gathering spaces.",
+    "theme": "Northern Lights",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "How do chinooks affect pixel lighting?",
+        "answer": "The rapid thaw and refreeze is harder on hardware than steady cold. We seal connections against meltwater, use clips that hold through freeze-thaw and check fasteners at every service visit."
+      },
+      {
+        "question": "What does travel to Calgary cost?",
+        "answer": "Calgary is in our Prairies zone: a crew trip fee from Saskatchewan plus accommodation on multi-day installs. The budget planner on this page shows the figures for your layout."
+      }
+    ],
+    "nearby": [
+      "edmonton",
+      "kelowna",
+      "saskatoon"
+    ]
+  },
+  {
+    "slug": "edmonton",
+    "name": "Edmonton",
+    "province": "AB",
+    "provinceName": "Alberta",
+    "lat": 53.5461,
+    "lng": -113.4938,
+    "title": "Pixel Light Shows in Edmonton, AB",
+    "description": "Music-reactive pixel lighting for Edmonton businesses, BIAs and civic spaces: mega trees, rooflines and wrapped trees installed for long, cold winters.",
+    "h1": "Music-reactive pixel lighting for Edmonton",
+    "intro": "Edmonton has long, cold, dark winters and a city that makes the most of them, with winter patios, festivals and outdoor events through the season. A synchronised light show gives a plaza, a main street or a venue entrance something to gather around from late afternoon on.",
+    "climate": "Expect extended stretches well below minus twenty, dry air and early sunsets, around 4:15 pm in December. Snow is steady rather than heavy, and the cold is the main design factor: cable stiffens, plastic becomes brittle and anything installed has to stay put for months without attention.",
+    "installNotes": [
+      "Installs scheduled before the deep cold so crews are not handling stiff cable at minus thirty.",
+      "Cold-flexible cable and generous service loops at every connector.",
+      "Power supplies and controllers in enclosures sized for the load, mounted off the ground and clear of snow banks.",
+      "Long dark evenings mean long run times; the schedule turns the show on at dusk and off at close."
+    ],
+    "districts": "Edmonton's opportunities include downtown and its BIAs, older main streets in neighbourhoods across the city, large retail centres, hotels and event venues. Main-street BIAs already invest in winter programming, and a synchronised show tying several storefronts together fits that well.",
+    "season": "Book by early autumn; we aim to install in late October and early November ahead of the cold.",
+    "recommend": "plaza",
+    "recommendWhy": "Long winters reward a larger display: rooflines across several frontages, mega trees and wrapped trees running on a nightly schedule for months.",
+    "theme": "Northern Lights",
+    "scene": "mega",
+    "faqs": [
+      {
+        "question": "Do the lights work at minus thirty?",
+        "answer": "The 12 V WS2811 pixels and controllers run in deep cold. What matters is installing before the cold, using cold-flexible cable and leaving slack so stiff cable never pulls on a connector."
+      },
+      {
+        "question": "Can the show run every night on its own?",
+        "answer": "Yes. The Light Show app's schedule turns the lights on and off at set times on chosen days, and can start a playlist of looks and themes at the on time."
+      }
+    ],
+    "nearby": [
+      "calgary",
+      "saskatoon",
+      "regina"
+    ]
+  },
+  {
+    "slug": "saskatoon",
+    "name": "Saskatoon",
+    "province": "SK",
+    "provinceName": "Saskatchewan",
+    "lat": 52.1332,
+    "lng": -106.67,
+    "title": "Pixel Light Shows in Saskatoon, SK",
+    "description": "Music-reactive mega trees, rooflines and wrapped trees for Saskatoon businesses and BIDs. Saskatchewan is our home region: no crew trip fee to install.",
+    "h1": "Music-reactive pixel lighting for Saskatoon",
+    "intro": "Saskatoon is in our home region, so there is no crew trip fee, and our crews know prairie winters first-hand. Cold, dry, sunny days and long nights make it a city where a lit mega tree or a glowing main street is seen by everyone driving home.",
+    "climate": "Prairie winters bring extended cold, cold snaps past minus thirty, wind and blowing snow across open ground, and very low humidity. Snow is rarely deep, but drifting and wind are constant, and freeze-thaw comes in the shoulder seasons.",
+    "installNotes": [
+      "Wind and drift-aware placement: enclosures and connections kept above where snow piles and plows push it.",
+      "Cold-flexible cable and service loops; installs completed before the deep cold.",
+      "Mega trees anchored for open, windy prairie sites.",
+      "Home-region service visits are easy to schedule for pixel checks and theme changeovers."
+    ],
+    "districts": "Saskatoon's main streets are organised as business improvement districts (BIDs) in areas such as Downtown, Broadway, Riversdale, Sutherland and 33rd Street, and the river valley gives the city a natural stage for winter events. Retail centres, hotels and venues across the city are equally good candidates for a feature mega tree.",
+    "season": "We install across Saskatchewan from October; because we are local, late bookings are easier here than anywhere else.",
+    "recommend": "business",
+    "recommendWhy": "A roofline, mega tree and wrapped trees on one controller is the most popular size for a single business; BIDs often start here and expand block by block.",
+    "theme": "Christmas",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Is there a travel charge in Saskatoon?",
+        "answer": "No crew trip fee: Saskatchewan is our home region. Mileage applies only to longer drives from our base, and there is no accommodation charge in the home region."
+      },
+      {
+        "question": "Can a BID run one show across several storefronts?",
+        "answer": "Yes. Props across several buildings run from one control system with additional pixel controllers as the layout grows, and the coordinator runs it from a phone on the controller's own Wi-Fi."
+      }
+    ],
+    "nearby": [
+      "regina",
+      "edmonton",
+      "winnipeg"
+    ]
+  },
+  {
+    "slug": "regina",
+    "name": "Regina",
+    "province": "SK",
+    "provinceName": "Saskatchewan",
+    "lat": 50.4452,
+    "lng": -104.6189,
+    "title": "Pixel Light Shows in Regina, SK",
+    "description": "Music-reactive pixel lighting for Regina businesses, business improvement districts and civic sites. Home region install, so there is no crew trip fee.",
+    "h1": "Music-reactive pixel lighting for Regina",
+    "intro": "Regina is in our home region: no crew trip fee and crews who work in prairie wind every winter. The capital's open skyline means a lit mega tree, a synchronised roofline or a row of wrapped trees can be seen from a long way off.",
+    "climate": "Regina sits on flat, open prairie, so wind is the defining winter condition, along with extended cold, cold snaps past minus thirty and blowing snow. Low humidity keeps snow dry and light, and it drifts.",
+    "installNotes": [
+      "Wind-rated anchoring for mega trees and arches on open sites.",
+      "Enclosures and connections kept above drift lines and away from plow paths.",
+      "Cold-flexible cable with service loops; installs finished before the deep cold.",
+      "Quick home-region service calls for pixel checks and theme changeovers."
+    ],
+    "districts": "Regina's downtown and its Warehouse District each have a business improvement district, and the city's parks, legislative grounds and event venues anchor its winter calendar. Retail centres and hotels round out the commercial picture.",
+    "season": "Installs run from October across Saskatchewan; local scheduling makes later bookings practical.",
+    "recommend": "business",
+    "recommendWhy": "A single controller running a roofline, a mega tree and wrapped trees suits most frontages; BIDs can phase in more buildings each year.",
+    "theme": "Snowman",
+    "scene": "mega",
+    "faqs": [
+      {
+        "question": "How do you deal with prairie wind?",
+        "answer": "Mega trees and arches are anchored for open sites, cables are secured along their whole run, and nothing is left loose to whip. We check anchors at each service visit."
+      },
+      {
+        "question": "Do you service displays through the winter?",
+        "answer": "Yes. Care visits in the home region are easy to schedule for pixel checks, theme changes, and re-running the mic calibration if the sound system changes."
+      }
+    ],
+    "nearby": [
+      "saskatoon",
+      "winnipeg",
+      "calgary"
+    ]
+  },
+  {
+    "slug": "winnipeg",
+    "name": "Winnipeg",
+    "province": "MB",
+    "provinceName": "Manitoba",
+    "lat": 49.8951,
+    "lng": -97.1384,
+    "title": "Pixel Light Shows in Winnipeg, MB",
+    "description": "Music-reactive mega trees, rooflines and wrapped trees for Winnipeg businesses, BIZ zones and civic sites, installed for deep prairie cold and the wind.",
+    "h1": "Music-reactive pixel lighting for Winnipeg",
+    "intro": "Winnipeg is one of the coldest large cities in the world, and it is also a city that goes outside anyway, with skating trails, festivals and winter patios. A synchronised light show suits the places people already gather on a cold night.",
+    "climate": "Long, very cold winters with wind chill that makes Portage and Main famous, steady snow and dry air. The cold lasts for months, so installation quality matters more than anywhere: a display has to run untouched from December to March.",
+    "installNotes": [
+      "Installation completed before the deep cold, with cold-flexible cable and service loops.",
+      "Wind-rated anchoring on open sites and along the rivers.",
+      "Enclosures mounted clear of snow banks and plow paths.",
+      "Service visits planned around the coldest weeks."
+    ],
+    "districts": "Winnipeg's main streets are organised as Business Improvement Zones (BIZ), from downtown and the historic Exchange District to neighbourhood strips across the city. The Forks, at the junction of the Red and Assiniboine rivers, shows how much the city invests in winter gathering spaces. Heritage buildings in the Exchange call for mounts that respect the facades.",
+    "season": "Book by late summer for an October install; Winnipeg's cold arrives early.",
+    "recommend": "plaza",
+    "recommendWhy": "BIZ zones and plazas get the most from rooflines across several buildings with mega trees and arches where people walk.",
+    "theme": "Icicles",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "What does travel to Winnipeg cost?",
+        "answer": "Winnipeg is in our Prairies zone: a crew trip fee from Saskatchewan plus accommodation on multi-day installs. Use the budget planner on this page to see it for your layout."
+      },
+      {
+        "question": "Can you mount on heritage buildings in the Exchange District?",
+        "answer": "Yes. We plan clip and clamp mounts that avoid drilling original masonry where possible and work to your heritage approvals before installing."
+      }
+    ],
+    "nearby": [
+      "regina",
+      "saskatoon",
+      "thunder-bay"
+    ]
+  },
+  {
+    "slug": "thunder-bay",
+    "name": "Thunder Bay",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 48.3809,
+    "lng": -89.2477,
+    "title": "Pixel Light Shows in Thunder Bay, ON",
+    "description": "Music-reactive pixel lighting for Thunder Bay businesses and both downtowns on Lake Superior: mega trees, rooflines and wrapped trees, installed for you.",
+    "h1": "Music-reactive pixel lighting for Thunder Bay",
+    "intro": "Thunder Bay sits on Lake Superior's north shore with long winters and two historic downtowns, a legacy of the 1970 amalgamation of Fort William and Port Arthur. Each has its own main streets and waterfront, and each can be the stage for a synchronised winter show.",
+    "climate": "Cold, snowy winters shaped by Lake Superior, with lake-effect snow, wind off the water and extended cold. The lake keeps the air damper than on the prairies, so ice build-up and freeze-thaw are part of the design.",
+    "installNotes": [
+      "Sealed connections and drip loops for damp lake air and freeze-thaw.",
+      "Wind-rated anchoring on waterfront sites.",
+      "Enclosures kept above snow lines and out of plow paths.",
+      "Longer lead times: we plan freight and crew travel well ahead for northwestern Ontario."
+    ],
+    "districts": "With two downtown cores, each with its own business association, plus the waterfront and retail areas along the main arteries, Thunder Bay suits a phased plan: a mega tree and rooflines in one downtown first, then a matching show in the other.",
+    "season": "Book in summer; northwestern Ontario installs are scheduled early to fit freight and travel before winter roads.",
+    "recommend": "business",
+    "recommendWhy": "A roofline, mega tree and wrapped trees is a strong first phase for a downtown, with more frontages added later on the same controller.",
+    "theme": "Icicles",
+    "scene": "evergreen",
+    "faqs": [
+      {
+        "question": "Do you really travel to Thunder Bay?",
+        "answer": "Yes. Installation is available in any city in Canada with travel charges. Thunder Bay is in our BC & Ontario zone: a crew trip fee plus accommodation on multi-day installs."
+      },
+      {
+        "question": "Can both downtowns share one show?",
+        "answer": "Two separate sites normally get their own control system, each running the same themes and schedule. We can program matching playlists so they light up together."
+      }
+    ],
+    "nearby": [
+      "winnipeg",
+      "toronto",
+      "london"
+    ]
+  },
+  {
+    "slug": "toronto",
+    "name": "Toronto",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "title": "Pixel Light Shows in Toronto, ON",
+    "description": "Music-reactive pixel lighting for Toronto BIAs, retail, hospitality and civic spaces: synchronised mega trees, rooflines, wrapped trees and pixel arches.",
+    "h1": "Music-reactive pixel lighting for Toronto",
+    "intro": "Toronto is where the business improvement area began, in Bloor West Village in 1970, and the city still has one of the largest BIA networks anywhere. Main streets compete for winter foot traffic, and a synchronised light show that reacts to music gives a street a reason to visit.",
+    "climate": "Lake Ontario takes the edge off the cold, but Toronto winters bring frequent freeze-thaw, wet snow, freezing rain and road salt spray. Downtown, tall buildings funnel wind along streets and across plazas.",
+    "installNotes": [
+      "Sealed connections and salt-resistant hardware at street level.",
+      "Freeze-thaw rated clips and fasteners, checked at each service visit.",
+      "Wind-rated anchoring for plazas between tall buildings.",
+      "Night or early-morning installs on busy streets, coordinated with landlords and any required permits."
+    ],
+    "districts": "From downtown plazas and hotel entrances to neighbourhood main streets run by their own BIAs, Toronto has more places for a winter show than almost any city in Canada. BIAs often phase in rooflines block by block, with mega trees and arches in parkettes and squares; retail centres and hospitality venues usually start with a single feature.",
+    "season": "Book in late summer for a November install; downtown work often needs extra lead time for access and approvals.",
+    "recommend": "plaza",
+    "recommendWhy": "The Plaza / BIA Kit is sized for a main street: rooflines across several storefronts, mega trees and wrapped trees, and an arch entrance, all synchronised.",
+    "theme": "Party",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Do you work with Toronto BIAs?",
+        "answer": "Yes. BIAs are a core client for us. We scope projects in phases to suit budget cycles, provide itemised quotes for board approval and train your coordinator on the Light Show app."
+      },
+      {
+        "question": "Is installation in Toronto charged travel?",
+        "answer": "Toronto is in our BC & Ontario zone: a crew trip fee plus accommodation on multi-day installs. The planner on this page shows the estimate for any layout."
+      }
+    ],
+    "nearby": [
+      "mississauga",
+      "hamilton",
+      "kitchener-waterloo"
+    ]
+  },
+  {
+    "slug": "mississauga",
+    "name": "Mississauga",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 43.589,
+    "lng": -79.6441,
+    "title": "Pixel Light Shows in Mississauga, ON",
+    "description": "Music-reactive pixel lighting for Mississauga retail plazas, village BIAs and offices: mega trees, rooflines and wrapped trees on one phone-run controller.",
+    "h1": "Music-reactive pixel lighting for Mississauga",
+    "intro": "Mississauga mixes a busy city centre, large retail plazas and office campuses with village main streets such as Port Credit and Streetsville. Each wants something different from winter lighting, and the same kit scales to all of them.",
+    "climate": "Lake Ontario moderates the shoreline, but winters still bring freeze-thaw, wet snow, freezing rain and plenty of road salt. Open parking lots and plazas catch the wind.",
+    "installNotes": [
+      "Salt-resistant hardware and sealed connections near roads and parking lots.",
+      "Freeze-thaw rated clips on rooflines, checked at service visits.",
+      "Wind-rated anchoring for mega trees in open plazas.",
+      "Installs planned around retail hours and tenant access."
+    ],
+    "districts": "Large retail plazas and office campuses suit a mega tree at the entrance and rooflines on the main frontage, while village main streets, each with its own BIA, suit synchronised rooflines and wrapped street trees. Civic squares host seasonal events that a reactive show complements.",
+    "season": "Book in late summer for a November install; retail landlords often want lighting up before the holiday shopping season.",
+    "recommend": "business",
+    "recommendWhy": "A single plaza or office frontage is a natural fit for a roofline, mega tree and wrapped trees on one controller.",
+    "theme": "Gold & White",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Can a property manager run displays at several plazas?",
+        "answer": "Each site gets its own control system and phone control. Themes, looks and schedules can be set up to match across your portfolio."
+      },
+      {
+        "question": "Will the display react to music on a quiet plaza?",
+        "answer": "The quiet-room gate tracks the background noise and only lets music looks move when music is playing; otherwise the lights rest on a soft glow or run a steady look or theme."
+      }
+    ],
+    "nearby": [
+      "toronto",
+      "hamilton",
+      "kitchener-waterloo"
+    ]
+  },
+  {
+    "slug": "hamilton",
+    "name": "Hamilton",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 43.2557,
+    "lng": -79.8711,
+    "title": "Pixel Light Shows in Hamilton, ON",
+    "description": "Music-reactive pixel lighting for Hamilton BIAs and businesses from Locke Street to the waterfront: mega trees, rooflines and wrapped trees, installed.",
+    "h1": "Music-reactive pixel lighting for Hamilton",
+    "intro": "Hamilton's character comes from its neighbourhood main streets, each with a BIA of its own, from Locke Street to Ottawa Street, and from the escarpment that splits the city into lower city and Mountain. Lit rooflines along a main street read beautifully from both.",
+    "climate": "Lake-moderated but changeable: freeze-thaw, wet snow, freezing rain and wind, with conditions that can differ between the lower city and the Mountain above the escarpment.",
+    "installNotes": [
+      "Freeze-thaw rated clips and sealed connections for changeable winters.",
+      "Salt-resistant hardware on busy streets.",
+      "Wind-rated anchoring on exposed escarpment-edge sites.",
+      "Heritage-sensitive mounts on older main-street facades."
+    ],
+    "districts": "Hamilton has a dense network of BIAs across downtown and neighbourhood main streets, many lined with older brick storefronts that take rooflines well. Civic squares, the waterfront and event venues are natural homes for mega trees and sequenced holiday programs.",
+    "season": "Book by late summer; main-street BIAs often plan for a launch event in late November.",
+    "recommend": "plaza",
+    "recommendWhy": "BIAs can light a block of storefronts with synchronised rooflines and add mega trees and wrapped trees at the gathering points.",
+    "theme": "Christmas",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Can individual merchants have their own colours?",
+        "answer": "Yes. Each roofline is its own prop in the Light Show app, so a storefront can run its own look, and every prop can join the same theme for a street-wide show."
+      },
+      {
+        "question": "Do you mount on older brick buildings?",
+        "answer": "Yes. We use clip and clamp mounts that minimise drilling, and plan routes for power and data with the owner before installing."
+      }
+    ],
+    "nearby": [
+      "toronto",
+      "mississauga",
+      "kitchener-waterloo"
+    ]
+  },
+  {
+    "slug": "ottawa",
+    "name": "Ottawa",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 45.4215,
+    "lng": -75.6972,
+    "title": "Pixel Light Shows in Ottawa, ON",
+    "description": "Music-reactive pixel lighting for Ottawa BIAs, businesses and civic spaces, built for snowy capital winters: mega trees, rooflines and wrapped trees too.",
+    "h1": "Music-reactive pixel lighting for Ottawa",
+    "intro": "Ottawa is a winter city: one of the snowiest national capitals, with a calendar built around Winterlude and outdoor skating. Main streets like Sparks Street and the ByWard Market area compete for winter visitors, and a synchronised light show helps.",
+    "climate": "Cold, snowy winters with deep cold snaps, heavy snowfall and freeze-thaw in the shoulder seasons. Snow clearing on streets and sidewalks is constant, so where cables and enclosures sit matters.",
+    "installNotes": [
+      "Enclosures and cables kept clear of plow and snow-blower paths, above the snow line.",
+      "Cold-flexible cable and installs completed before the deep cold.",
+      "Freeze-thaw rated clips and sealed connections.",
+      "Mega trees anchored for snow load and wind."
+    ],
+    "districts": "Ottawa's BIAs run from downtown pedestrian streets and the market district to neighbourhood main streets across the city, alongside hotels, retail centres and event venues. Sites on federal or other public land may need approvals from the agency that manages them, which we plan for in the schedule.",
+    "season": "Book by late summer for an early-November install, before heavy snow; displays can run through to the end of Winterlude.",
+    "recommend": "plaza",
+    "recommendWhy": "A long season from December to February suits a larger synchronised display on a main street or square.",
+    "theme": "Northern Lights",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Can the display stay up through Winterlude?",
+        "answer": "Yes. Displays are installed to run untouched through the winter, and the schedule and playlist can be changed from a phone at any time for events."
+      },
+      {
+        "question": "What about snow clearing?",
+        "answer": "We place enclosures and cable runs above the snow line and away from plow and blower paths, and we agree routes with whoever clears the site."
+      }
+    ],
+    "nearby": [
+      "montreal",
+      "toronto",
+      "kitchener-waterloo"
+    ]
+  },
+  {
+    "slug": "london",
+    "name": "London",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 42.9849,
+    "lng": -81.2453,
+    "title": "Pixel Light Shows in London, ON",
+    "description": "Music-reactive pixel lighting for London, Ontario businesses and BIAs, installed for snowbelt squalls: mega trees, rooflines and wrapped trees on one app.",
+    "h1": "Music-reactive pixel lighting for London, Ontario",
+    "intro": "London sits in the snowbelt downwind of Lake Huron, and its downtown and Old East Village main streets work hard to bring people out in winter. A music-reactive display gives a street, a plaza or a venue entrance a nightly reason to visit.",
+    "climate": "Lake-effect snow squalls off Lake Huron can drop heavy snow quickly, between spells of freeze-thaw, wet snow and freezing rain. That mix is hard on fasteners and anything that traps water.",
+    "installNotes": [
+      "Sealed connections with drip loops for freeze-thaw and wet snow.",
+      "Mounts and clips that hold through repeated freeze-thaw.",
+      "Mega trees anchored for squall winds and snow load.",
+      "Enclosures above the snow line and away from plow paths."
+    ],
+    "districts": "London's BIAs, including Downtown London and Old East Village, alongside neighbourhood business areas, retail centres, the university and hospital districts and event venues, all have winter programming that a synchronised show can anchor.",
+    "season": "Book in late summer for a November install, ahead of the first squalls.",
+    "recommend": "business",
+    "recommendWhy": "A roofline, mega tree and wrapped trees on one controller suits most single frontages; BIAs can scale up in phases.",
+    "theme": "Candy Cane",
+    "scene": "mega",
+    "faqs": [
+      {
+        "question": "How does snowbelt weather affect installation?",
+        "answer": "Squalls bring heavy snow and wind quickly, and freeze-thaw follows. We anchor for wind and load, seal every connection and keep enclosures above the snow line."
+      },
+      {
+        "question": "Is there a travel charge to London?",
+        "answer": "London is in our BC & Ontario zone: a crew trip fee plus accommodation on multi-day installs. The planner on this page shows the estimate for your layout."
+      }
+    ],
+    "nearby": [
+      "kitchener-waterloo",
+      "windsor",
+      "hamilton"
+    ]
+  },
+  {
+    "slug": "kitchener-waterloo",
+    "name": "Kitchener-Waterloo",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 43.4643,
+    "lng": -80.5204,
+    "title": "Pixel Light Shows in Kitchener-Waterloo",
+    "description": "Music-reactive pixel lighting for Kitchener-Waterloo businesses, Uptown and Downtown BIAs and campuses: mega trees, rooflines and wrapped trees, installed.",
+    "h1": "Music-reactive pixel lighting for Kitchener-Waterloo",
+    "intro": "Kitchener-Waterloo has two downtowns, Uptown Waterloo and Downtown Kitchener, joined by the ION light rail, plus university and tech campuses that keep the region busy year-round. Both cores run winter programming that a synchronised, music-reactive show fits naturally.",
+    "climate": "Inland and colder than the lakeshore cities, with regular snow, some lake-effect from Lake Huron, freeze-thaw and freezing rain.",
+    "installNotes": [
+      "Freeze-thaw rated clips and sealed connections.",
+      "Enclosures above the snow line and clear of sidewalk clearing.",
+      "Mega trees anchored for snow load and wind in open squares.",
+      "Installs coordinated around transit corridors and pedestrian traffic."
+    ],
+    "districts": "Uptown Waterloo and Downtown Kitchener each have a BIA, public squares and a calendar of winter events. Campuses, tech offices, hotels and retail centres across the region are strong candidates for a feature mega tree or a branded roofline that changes colour with the season.",
+    "season": "Book in late summer for a November install; campus clients often want displays up before exams and the holiday break.",
+    "recommend": "business",
+    "recommendWhy": "A roofline in brand colours that switches to holiday themes in December, plus a mega tree and wrapped trees, suits offices and campuses.",
+    "theme": "Elf",
+    "scene": "deciduous",
+    "faqs": [
+      {
+        "question": "Can the lights show our brand colours?",
+        "answer": "Yes. Pick a colour scheme or set custom colours in the Light Show app, and switch to holiday themes on a playlist or schedule."
+      },
+      {
+        "question": "Do you install on campuses?",
+        "answer": "Yes. We work with facilities teams on access, power and approvals, and hand over the app to whoever runs events."
+      }
+    ],
+    "nearby": [
+      "london",
+      "hamilton",
+      "toronto"
+    ]
+  },
+  {
+    "slug": "windsor",
+    "name": "Windsor",
+    "province": "ON",
+    "provinceName": "Ontario",
+    "lat": 42.3149,
+    "lng": -83.0364,
+    "title": "Pixel Light Shows in Windsor, ON",
+    "description": "Music-reactive pixel lighting for Windsor businesses, BIAs and riverfront civic spaces: mega trees, rooflines and wrapped trees built for freezing rain.",
+    "h1": "Music-reactive pixel lighting for Windsor",
+    "intro": "Windsor is Canada's southernmost major city, facing Detroit across the Detroit River. Its riverfront, downtown and neighbourhood BIAs such as Walkerville and Via Italia are made for winter evenings out, and a synchronised display shows up well across the water.",
+    "climate": "Milder and more humid than most of Ontario, with less snow but more freezing rain and frequent freeze-thaw. Ice build-up is a bigger factor here than deep cold.",
+    "installNotes": [
+      "Sealed connections and drip loops for freezing rain and humidity.",
+      "Mounts that tolerate ice load on rooflines and trees.",
+      "Wind-rated anchoring on the open riverfront.",
+      "Year-round rooflines are practical in the milder climate."
+    ],
+    "districts": "Downtown, the riverfront parks and neighbourhood BIAs give Windsor several distinct places for a show, along with retail centres, hospitality venues and event spaces.",
+    "season": "Book by early autumn; the milder climate also makes spring and summer roofline installs easy.",
+    "recommend": "business",
+    "recommendWhy": "A roofline that runs year-round plus holiday props makes the most of a milder climate.",
+    "theme": "Canada Day",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Is freezing rain a problem for pixel lighting?",
+        "answer": "Ice adds weight and finds unsealed joints. We seal every connection, add drip loops and use mounts rated to carry ice on rooflines and trees."
+      },
+      {
+        "question": "Can the lights do Canada Day and other events?",
+        "answer": "Yes. Canada Day is one of the built-in themes, and you can pick colours, looks and playlists for any event."
+      }
+    ],
+    "nearby": [
+      "london",
+      "kitchener-waterloo",
+      "hamilton"
+    ]
+  },
+  {
+    "slug": "montreal",
+    "name": "Montréal",
+    "province": "QC",
+    "provinceName": "Québec",
+    "lat": 45.5019,
+    "lng": -73.5674,
+    "title": "Pixel Light Shows in Montréal, QC",
+    "description": "Music-reactive pixel lighting for Montréal commercial streets, SDCs, venues and civic spaces: synchronised mega trees, rooflines, wrapped trees and arches.",
+    "h1": "Music-reactive pixel lighting for Montréal",
+    "intro": "Montréal treats light as part of the city, from festival districts to commercial streets lit for the holidays. Its commercial streets are organised into SDCs (sociétés de développement commercial), Québec's version of a BIA, and a synchronised show that reacts to music fits right into that culture.",
+    "climate": "Heavy snowfall, deep cold snaps and freezing rain, with major ice storms in the city's history. Snow removal is a large operation, with sidewalk and street plows working through the night.",
+    "installNotes": [
+      "Mounts and anchors rated for ice load, with sealed connections.",
+      "Enclosures and cable runs placed clear of snow-removal equipment and above the snow line.",
+      "Cold-flexible cable, installs finished before the deep cold.",
+      "Mega trees anchored for snow load and wind."
+    ],
+    "districts": "SDCs on commercial streets across the city, downtown festival districts, Old Montréal, hotels, retail centres and event venues all run winter programming. Older buildings call for heritage-sensitive mounts that avoid drilling original stone where possible.",
+    "season": "Book in summer for a November install; Québec installs are scheduled early to fit crew travel and freight.",
+    "recommend": "plaza",
+    "recommendWhy": "SDC streets suit synchronised rooflines across several storefronts with mega trees and arches where people gather.",
+    "theme": "Northern Lights",
+    "scene": "display",
+    "faqs": [
+      {
+        "question": "Do you work with SDCs?",
+        "answer": "Yes. SDCs, like BIAs, are a core client: we scope in phases, provide itemised quotes and train your coordinator on the Light Show app."
+      },
+      {
+        "question": "What does travel to Montréal cost?",
+        "answer": "Montréal is in our Québec & Atlantic zone: a crew trip fee plus accommodation on multi-day installs. The planner on this page shows it for your layout."
+      }
+    ],
+    "nearby": [
+      "quebec-city",
+      "ottawa",
+      "halifax"
+    ]
+  },
+  {
+    "slug": "quebec-city",
+    "name": "Québec City",
+    "province": "QC",
+    "provinceName": "Québec",
+    "lat": 46.8139,
+    "lng": -71.208,
+    "title": "Pixel Light Shows in Québec City, QC",
+    "description": "Music-reactive pixel lighting for Québec City businesses and civic spaces, installed for heavy snow and heritage streets: mega trees, rooflines and more.",
+    "h1": "Music-reactive pixel lighting for Québec City",
+    "intro": "Québec City is one of the snowiest cities of its size anywhere, home to a UNESCO World Heritage old town and the Carnaval de Québec. Winter is the main event, and lighting that can live through it is worth investing in.",
+    "climate": "Very heavy snowfall, long cold winters, wind off the St. Lawrence and freezing rain. Snow load and snow clearing shape every installation decision.",
+    "installNotes": [
+      "Props, enclosures and cable runs placed above the expected snow line.",
+      "Mega trees anchored and braced for heavy snow load.",
+      "Heritage-sensitive clip and clamp mounts on historic stone buildings, planned with your approvals.",
+      "Cold-flexible cable; installs finished before the deep cold."
+    ],
+    "districts": "Commercial streets, the old town, hotels and hospitality, retail centres and event venues all lean into winter. Heritage districts bring approval requirements that we build into the schedule.",
+    "season": "Book in early summer; heritage approvals and travel need lead time.",
+    "recommend": "plaza",
+    "recommendWhy": "A long, snowy season rewards a larger synchronised display across several buildings.",
+    "theme": "Snowman",
+    "scene": "evergreen",
+    "faqs": [
+      {
+        "question": "Can lighting go up in a heritage district?",
+        "answer": "Often, yes, with the right mounts and approvals. We avoid drilling original stone where possible and work to the requirements that apply to your building."
+      },
+      {
+        "question": "How do you handle heavy snow?",
+        "answer": "We keep props, enclosures and cables above the snow line, brace mega trees for load and agree routes with whoever clears snow on the site."
+      }
+    ],
+    "nearby": [
+      "montreal",
+      "ottawa",
+      "halifax"
+    ]
+  },
+  {
+    "slug": "halifax",
+    "name": "Halifax",
+    "province": "NS",
+    "provinceName": "Nova Scotia",
+    "lat": 44.6488,
+    "lng": -63.5752,
+    "title": "Pixel Light Shows in Halifax, NS",
+    "description": "Music-reactive pixel lighting for Halifax businesses, business districts and the waterfront, built for coastal storms: mega trees, rooflines and wrapped trees.",
+    "h1": "Music-reactive pixel lighting for Halifax",
+    "intro": "Halifax lives on its waterfront, and its downtown and neighbourhood business districts work year-round to bring people to the harbour and the main streets. A music-reactive display gives a winter evening on the boardwalk or a main street something to see.",
+    "climate": "Maritime winters alternate between rain, snow and freezing rain, often in the same week, with strong coastal winds, nor'easters and salt air. Moisture, ice and wind matter more than deep cold.",
+    "installNotes": [
+      "Corrosion-resistant hardware and sealed connections for salt air.",
+      "Wind-rated anchoring for storm conditions on the waterfront.",
+      "Drip loops and bottom-entry enclosures for mixed precipitation.",
+      "Service visits after major storms on request."
+    ],
+    "districts": "Halifax's business districts, from downtown and the waterfront to neighbourhood main streets, run seasonal programming, and hotels, restaurants and retail along the harbour are natural clients for rooflines and feature trees.",
+    "season": "Book in summer for a November install; Atlantic installs are scheduled early to fit travel and freight.",
+    "recommend": "business",
+    "recommendWhy": "A roofline, mega tree and wrapped trees on one controller suits a waterfront venue or a single main-street frontage.",
+    "theme": "Ocean",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Will the display survive a nor'easter?",
+        "answer": "It is installed for it: wind-rated anchors, secured cable runs, corrosion-resistant hardware and sealed connections. We can schedule a check after a major storm."
+      },
+      {
+        "question": "What does travel to Halifax cost?",
+        "answer": "Halifax is in our Québec & Atlantic zone: a crew trip fee plus accommodation on multi-day installs. See the planner on this page for your layout."
+      }
+    ],
+    "nearby": [
+      "st-johns",
+      "quebec-city",
+      "montreal"
+    ]
+  },
+  {
+    "slug": "st-johns",
+    "name": "St. John's",
+    "province": "NL",
+    "provinceName": "Newfoundland and Labrador",
+    "lat": 47.5615,
+    "lng": -52.7126,
+    "title": "Pixel Light Shows in St. John's, NL",
+    "description": "Music-reactive pixel lighting for St. John's businesses and downtown, built for wind, fog and freezing rain: mega trees, rooflines and wrapped trees, installed.",
+    "h1": "Music-reactive pixel lighting for St. John's",
+    "intro": "St. John's is famous for its colourful row houses climbing the hills above the harbour, for Water Street and for its weather. A display that reacts to music suits a downtown known for live music, as long as it is built for the wind.",
+    "climate": "St. John's is often described as Canada's windiest, foggiest and wettest major city, with heavy snow, freezing rain and storms off the Atlantic. Wind and ice are the design factors.",
+    "installNotes": [
+      "Everything anchored and secured along its full run; nothing left loose to whip in the wind.",
+      "Sealed connections and drip loops for fog, rain and freezing rain.",
+      "Corrosion-resistant hardware for salt air.",
+      "Freight and crew travel planned well ahead, with spare pixels left on site."
+    ],
+    "districts": "Downtown St. John's, with its business improvement area, Water Street and the harbourfront, is the heart of the city's evenings out, alongside hotels, retail centres and venues. Steep streets and colourful facades make rooflines especially striking.",
+    "season": "Book in early summer; Newfoundland installs are scheduled early for freight and travel.",
+    "recommend": "business",
+    "recommendWhy": "Rooflines on a row of colourful facades, a mega tree and wrapped trees on one controller make a strong first phase for a downtown block.",
+    "theme": "Canada Day",
+    "scene": "roofline",
+    "faqs": [
+      {
+        "question": "Can pixel lighting handle St. John's wind?",
+        "answer": "Yes, when it is installed for it: wind-rated anchors and clips, cable secured along every run and props sized for the site. We assess exposure at the site walk."
+      },
+      {
+        "question": "Is travel to Newfoundland included?",
+        "answer": "St. John's is in our Québec & Atlantic zone: a crew trip fee plus accommodation on multi-day installs, with freight planned ahead."
+      }
+    ],
+    "nearby": [
+      "halifax",
+      "quebec-city",
+      "montreal"
+    ]
+  }
+]

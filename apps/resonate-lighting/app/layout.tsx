@@ -11,7 +11,7 @@ import { organizationSchema, websiteSchema } from "@/lib/jsonld";
 const sora = Sora({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-sora", display: "swap" });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-inter", display: "swap" });
 
-const defaultTitle = `${site.name} | Music-Reactive Pixel Lighting Kits for Commercial Spaces in Ontario`;
+const defaultTitle = `${site.name} | Music-Reactive Pixel Lighting Kits`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,17 +24,16 @@ export const metadata: Metadata = {
   keywords: [
     "music reactive lighting",
     "pixel lighting kit",
-    "commercial pixel lighting Ontario",
-    "permanent holiday lighting commercial",
-    "BIA holiday lighting",
-    "municipal holiday lighting Ontario",
+    "commercial pixel lighting Canada",
+    "mega tree kit",
     "mega tree installation",
-    "singing trees",
-    "roofline pixel lights",
+    "roofline pixel lighting",
+    "commercial holiday lighting installation",
+    "BIA holiday lighting",
+    "municipal holiday lighting",
     "WS2811 commercial lighting",
-    "LedFx Raspberry Pi light show",
-    "FPP Kulp controller holiday show",
-    ...site.serviceAreas.map((c) => `commercial pixel lighting ${c}`),
+    "Raspberry Pi 5 light show controller",
+    ...site.serviceAreas.map((c) => `pixel lighting installation ${c}`),
   ],
   openGraph: {
     type: "website",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
         url: "/images/brand/og-resonate-lighting.png",
         width: 1200,
         height: 630,
-        alt: "Resonate Lighting — music-reactive pixel lighting kits for commercial spaces in Ontario",
+        alt: "Resonate Lighting: music-reactive pixel lighting kits for commercial spaces, BIAs and municipalities in Canada",
       },
     ],
   },

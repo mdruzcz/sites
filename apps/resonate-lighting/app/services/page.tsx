@@ -5,38 +5,42 @@ import { getServices } from "@/lib/content";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/jsonld";
+import { breadcrumbSchema, installationServiceSchema, serviceSchema } from "@/lib/jsonld";
+import { getCities } from "@/lib/content";
+import { formatCad, pricing } from "@/lib/pricing";
 
 export const revalidate = 3600;
 
+const title = "Pixel Lighting Installation & Services";
+const description =
+  "Pixel lighting installation anywhere in Canada: design, kit supply, mega tree and roofline installs billed by crew-day, and seasonal care for businesses and BIAs.";
+
 export const metadata: Metadata = {
-  title: "Installation & Services — Design, Supply, Install, Seasonal Service",
-  description:
-    "Commercial pixel lighting installation across Ontario: site design, kit supply, professional roofline and mega tree installation, holiday show sequencing and seasonal service. Request a quote.",
+  title,
+  description,
   alternates: { canonical: `${site.url}/services` },
-  openGraph: {
-    title: `Installation & Services | ${site.name}`,
-    description: "Design, supply, installation and seasonal service for music-reactive pixel lighting in Ontario.",
-    url: `${site.url}/services`,
-  },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/services` },
+  twitter: { title: `${title} | ${site.name}`, description },
 };
 
 const PROCESS = [
   { step: "1", title: "Site walk & photos", body: "Send photos and rough dimensions, or book a site visit. We identify rooflines, tree locations, power and the best microphone placement." },
-  { step: "2", title: "Design & quote", body: "You receive a prop layout, pixel counts, power plan and a quote in CAD, with a package recommendation (Starter, Business or Municipal)." },
-  { step: "3", title: "Build & configure", body: "The Pi 5 controller box, pixel controller and props are configured to your layout before they leave our shop." },
-  { step: "4", title: "Install & commission", body: "Our crew mounts, powers and tests every pixel, tunes the microphone and hands over the Light Show app on your phone." },
-  { step: "5", title: "Seasonal service", body: "Holiday sequencing, theme changeovers, takedown and storage, pixel checks and software updates on a schedule that suits you." },
+  { step: "2", title: "Design & quote", body: "You receive a prop layout, power plan and an itemised quote in CAD: kit, crew-days and travel, with a package recommendation." },
+  { step: "3", title: "Build & configure", body: "The Pi 5 controller box, pixel controller and props are configured to your layout before they ship." },
+  { step: "4", title: "Install & commission", body: "Our crew mounts and powers the props, runs Setup (port tests, mic calibration, look check) and hands over the Light Show app on your phone." },
+  { step: "5", title: "Care", body: "Theme and playlist changeovers, pixel checks, takedown and storage, and software updates on a schedule that suits you." },
 ];
 
 export default function ServicesPage() {
   const services = getServices();
+  const cities = getCities();
 
   return (
     <>
       {services.map((s) => (
         <JsonLd key={s.slug} data={serviceSchema(s)} />
       ))}
+      <JsonLd data={installationServiceSchema()} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", url: site.url },
@@ -51,7 +55,7 @@ export default function ServicesPage() {
             From site walk to <span className="gradient-text">season</span>.
           </h1>
           <p className="text-muted-strong text-lg max-w-3xl leading-relaxed">
-            Resonate Lighting is a design, supply, installation and service company. We handle the whole project across Ontario — so the only thing your team ever does is pick a mode and a colour theme.
+            Resonate Lighting designs, supplies, installs and services music-reactive pixel lighting anywhere in Canada. Installation is billed at {formatCad(pricing.installation.crewDayRate)} per crew-day plus travel by zone, and the only thing your team ever does is pick a theme or a look.
           </p>
         </div>
       </section>
@@ -72,6 +76,12 @@ export default function ServicesPage() {
                     <li key={b} className="flex items-start gap-2"><Check /> {b}</li>
                   ))}
                 </ul>
+                {s.slug === "installation" && (
+                  <Link href="/pricing#installation" className="inline-flex items-center min-h-[44px] mt-3 text-cool underline underline-offset-2 text-sm">Crew-day rate and travel zones</Link>
+                )}
+                {s.slug === "seasonal-service" && (
+                  <Link href="/care" className="inline-flex items-center min-h-[44px] mt-3 text-cool underline underline-offset-2 text-sm">Care &amp; seasonal service</Link>
+                )}
               </div>
             </article>
           ))}
@@ -95,12 +105,12 @@ export default function ServicesPage() {
 
       <section className="py-16 sm:py-24 bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader eyebrow="Service areas" title="Installing across Ontario." description="Based in Ontario, Canada. We travel for commercial, BIA and municipal projects province-wide." />
+          <SectionHeader eyebrow="Service areas" title="Installing across Canada." description={`Based in ${pricing.travel.homeRegion}. Installation is available in any city with applicable travel charges.`} />
           <div className="flex flex-wrap justify-center gap-2">
-            {site.serviceAreas.map((c) => (
-              <span key={c} className="spec-chip spec-chip-cool normal-case tracking-normal text-sm">{c}</span>
+            {cities.map((c) => (
+              <Link key={c.slug} href={`/locations/${c.slug}`} className="spec-chip spec-chip-cool normal-case tracking-normal text-sm min-h-[44px]">{c.name}</Link>
             ))}
-            <span className="spec-chip normal-case tracking-normal text-sm">+ surrounding regions</span>
+            <Link href="/locations" className="spec-chip normal-case tracking-normal text-sm min-h-[44px]">All locations</Link>
           </div>
           <p className="text-center text-muted text-sm mt-6">
             Not sure if we cover your area? <Link href="/contact" className="text-cool underline underline-offset-2">Ask us</Link> — we reply within {site.responseTime}.

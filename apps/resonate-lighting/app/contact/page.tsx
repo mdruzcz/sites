@@ -1,24 +1,51 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { QuoteForm } from "@/components/QuoteForm";
+import { QuoteForm, type QuotePrefill } from "@/components/QuoteForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/jsonld";
+import { decodeCounts, describeCounts, estimate } from "@/lib/estimate";
+import { getPackage, PROVINCES, zoneForProvince } from "@/lib/pricing";
+
+const title = "Request a Quote";
+const description = `Request a quote for a Resonate Lighting kit, installation or care plan anywhere in Canada. Send photos and rough sizes; we reply within ${site.responseTime} with pricing.`;
 
 export const metadata: Metadata = {
-  title: "Request a Quote — Commercial Pixel Lighting in Ontario",
-  description: `Request a quote for a Resonate Lighting kit or installation. Starter, Business and Municipal packages for commercial spaces, BIAs and municipalities in Ontario. We reply within ${site.responseTime}.`,
+  title,
+  description,
   alternates: { canonical: `${site.url}/contact` },
+  openGraph: { title: `${title} | ${site.name}`, description, url: `${site.url}/contact` },
+  twitter: { title: `${title} | ${site.name}`, description },
 };
 
-const KIT_TO_PACKAGE: Record<string, string> = {
-  starter: "Starter Package",
-  business: "Business Package",
-  municipal: "Municipal Package",
-};
+type Search = { kit?: string; budget?: string; layout?: string; prov?: string; city?: string };
 
-export default async function ContactPage({ searchParams }: { searchParams: Promise<{ kit?: string }> }) {
-  const { kit } = await searchParams;
-  const defaultPackage = kit ? KIT_TO_PACKAGE[kit] : undefined;
+export default async function ContactPage({ searchParams }: { searchParams: Promise<Search> }) {
+  const sp = await searchParams;
+  const pkg = sp.kit ? getPackage(sp.kit) : undefined;
+  const defaultPackage = sp.kit === "care" ? "Care / seasonal service" : pkg?.fullName;
+  const province = PROVINCES.find((p) => p.code === sp.prov)?.code;
+  const counts = decodeCounts(sp.layout);
+  const budget = sp.budget ? Math.max(0, Math.min(10_000_000, parseInt(sp.budget, 10) || 0)) : 0;
+  const est = counts ? estimate(counts, zoneForProvince(province ?? "SK")) : null;
+  const layoutText = counts ? describeCounts(counts) : undefined;
+  const city = sp.city?.slice(0, 80);
+  const provinceName = province ? PROVINCES.find((p) => p.code === province)?.name : undefined;
+
+  const lines: string[] = [];
+  if (budget) lines.push(`Budget: $${budget.toLocaleString("en-CA")} (installed, before tax)`);
+  if (provinceName && !city) lines.push(`Province: ${provinceName}`);
+  if (layoutText) lines.push(`Props from the planner: ${layoutText}`);
+  if (est) lines.push(`Planner estimate: $${est.total.toLocaleString("en-CA")} (kit $${est.hardwareTotal.toLocaleString("en-CA")}, installation and travel $${est.installTotal.toLocaleString("en-CA")})`);
+  if (lines.length) lines.push("", "Anything else we should know (frontage length, tree heights, dates):", "");
+
+  const prefill: QuotePrefill = {
+    budget: budget || undefined,
+    layoutText,
+    estimate: est?.total,
+    province,
+    city,
+    message: lines.join("\n"),
+  };
 
   return (
     <>
@@ -30,7 +57,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
             Request a <span className="gradient-text">quote</span>.
           </h1>
           <p className="text-muted-strong text-lg max-w-3xl leading-relaxed">
-            Tell us about the frontage, tree or street. A few photos and rough dimensions are enough to start. We reply within {site.responseTime} with a package recommendation and pricing in Canadian dollars.
+            Tell us about the frontage, tree, square or street. A few photos and rough dimensions are enough to start. We reply within {site.responseTime} with a recommendation and an itemised quote in Canadian dollars, including installation and travel.
           </p>
         </div>
       </section>
@@ -78,14 +105,14 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                 <ul className="space-y-2 text-sm text-muted-strong">
                   <li>Photos of the frontage, roofline or site, ideally at night</li>
                   <li>Approximate roofline length or tree height</li>
-                  <li>Number of buildings (BIA / municipal)</li>
+                  <li>Number of buildings (BIA / municipal) and the city</li>
                   <li>Your music source and target dates</li>
                 </ul>
               </div>
             </div>
 
-            <div className="lg:col-span-3">
-              <QuoteForm defaultPackage={defaultPackage} />
+            <div id="quote" className="lg:col-span-3 scroll-mt-24">
+              <QuoteForm defaultPackage={defaultPackage} prefill={prefill} />
             </div>
           </div>
         </div>

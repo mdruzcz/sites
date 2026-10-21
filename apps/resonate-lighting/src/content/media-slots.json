@@ -1,0 +1,121 @@
+[
+  {
+    "id": "home-video",
+    "kind": "video",
+    "src": null,
+    "poster": null,
+    "alt": "Resonate Lighting mega tree reacting to live music at night",
+    "note": "MATT: night video of a real install reacting to music. 15-30 s, landscape 16:9, MP4 (H.264), under 8 MB. Put it in public/media/ and set src to /media/<file>.mp4 (and an optional poster JPG).",
+    "scene": "display",
+    "theme": "Christmas"
+  },
+  {
+    "id": "kit-starter",
+    "kind": "image",
+    "src": null,
+    "alt": "Starter Kit mega tree by Resonate Lighting at a restaurant patio at night",
+    "note": "MATT: photo of a Starter Kit mega tree at night, landscape 4:3, at least 1600 px wide.",
+    "scene": "mega",
+    "theme": "Candy Cane"
+  },
+  {
+    "id": "kit-business",
+    "kind": "image",
+    "src": null,
+    "alt": "Business Kit roofline, mega tree and wrapped trees by Resonate Lighting at night",
+    "note": "MATT: photo of a Business Kit install (roofline + mega tree + wrapped trees), landscape 4:3.",
+    "scene": "display",
+    "theme": "Christmas"
+  },
+  {
+    "id": "kit-plaza",
+    "kind": "image",
+    "src": null,
+    "alt": "Plaza and BIA pixel lighting by Resonate Lighting along a main street at night",
+    "note": "MATT: photo of a main street or plaza install, landscape 4:3.",
+    "layout": "plaza",
+    "theme": "Gold & White"
+  },
+  {
+    "id": "kit-municipal",
+    "kind": "image",
+    "src": null,
+    "alt": "Municipal pixel light show by Resonate Lighting in a town square",
+    "note": "MATT: photo of a municipal square or park install, landscape 4:3.",
+    "layout": "municipal",
+    "theme": "Northern Lights"
+  },
+  {
+    "id": "controller-box",
+    "kind": "image",
+    "src": null,
+    "alt": "Resonate Lighting controller box with Raspberry Pi 5 and pixel controller",
+    "note": "MATT: photo of the controller enclosure, open, showing the Pi 5, mic and pixel controller.",
+    "scene": "mega",
+    "theme": "Gold & White"
+  },
+  {
+    "id": "app-phone",
+    "kind": "image",
+    "src": null,
+    "alt": "Light Show app on a phone showing themes and the live 3D tree",
+    "note": "MATT: screenshot or photo of the Light Show app on a phone (portrait is fine).",
+    "scene": "mega",
+    "theme": "Elf"
+  },
+  {
+    "id": "gallery-mega",
+    "kind": "image",
+    "src": null,
+    "alt": "Mega tree by Resonate Lighting at a retail plaza",
+    "note": "MATT: gallery photo - mega tree.",
+    "scene": "mega",
+    "theme": "Christmas"
+  },
+  {
+    "id": "gallery-roofline",
+    "kind": "image",
+    "src": null,
+    "alt": "Roofline pixel lighting by Resonate Lighting on a restaurant",
+    "note": "MATT: gallery photo - roofline.",
+    "scene": "roofline",
+    "theme": "Candy Cane"
+  },
+  {
+    "id": "gallery-wrapped",
+    "kind": "image",
+    "src": null,
+    "alt": "Wrapped deciduous tree in pixels by Resonate Lighting",
+    "note": "MATT: gallery photo - wrapped tree.",
+    "scene": "deciduous",
+    "theme": "Northern Lights"
+  },
+  {
+    "id": "gallery-evergreens",
+    "kind": "image",
+    "src": null,
+    "alt": "Evergreen spiral pixel wraps by Resonate Lighting",
+    "note": "MATT: gallery photo - evergreen spirals.",
+    "scene": "evergreen",
+    "theme": "Icicles"
+  },
+  {
+    "id": "gallery-street",
+    "kind": "image",
+    "src": null,
+    "alt": "BIA main street lit by Resonate Lighting at night",
+    "note": "MATT: gallery photo - main street / BIA.",
+    "layout": "plaza",
+    "theme": "Party"
+  },
+  {
+    "id": "gallery-video",
+    "kind": "video",
+    "src": null,
+    "poster": null,
+    "alt": "Video of a Resonate Lighting display reacting to music",
+    "note": "MATT: gallery video, MP4 H.264, under 8 MB.",
+    "scene": "display",
+    "theme": "Fireplace"
+  }
+]

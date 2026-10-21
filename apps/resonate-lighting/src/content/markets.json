@@ -3,87 +3,133 @@
     "slug": "commercial",
     "name": "Commercial Spaces",
     "navLabel": "Commercial",
-    "title": "Music-Reactive Lighting for Commercial Spaces in Ontario",
-    "metaDescription": "Permanent music-reactive pixel lighting for retail plazas, restaurants, patios, venues and property managers across Ontario. Design, supply, installation and seasonal service. Request a quote.",
+    "title": "Commercial Pixel Lighting & Installation",
+    "metaDescription": "Music-reactive pixel lighting kits for retail plazas, restaurants, hotels, venues and property managers across Canada. Mega trees and rooflines, installed.",
     "h1": "Commercial lighting that reacts to the room.",
-    "intro": "Restaurants, patios, retail plazas, venues and managed properties use Resonate kits to turn an ordinary frontage into the reason people stop, look and come in. The display listens to your music and moves with it — every night, without staff touching anything.",
-    "audiences": ["Retail plazas", "Restaurants & patios", "Event venues", "Property managers", "Hotels & mixed-use"],
+    "intro": "Restaurants, patios, retail plazas, hotels, venues and managed properties use Resonate kits to turn an ordinary frontage into the reason people stop, look and come in. The display listens to your music and moves with it, every night, without staff touching anything.",
+    "audiences": [
+      "Retail plazas",
+      "Restaurants & patios",
+      "Hotels",
+      "Event venues",
+      "Property managers"
+    ],
+    "recommend": "business",
     "sections": [
       {
         "heading": "Why commercial operators choose pixel lighting",
-        "body": "Traditional string lights are static and seasonal. Addressable 12 V WS2811 pixels give you every colour, every pattern, and the ability to change the whole look from a phone. A patio can run a slow warm Pulse on a Tuesday and a full Rainbow Scroll for a Saturday event — same hardware, no ladders."
+        "body": "String lights are static and seasonal. Addressable 12 V WS2811 pixels can show any colour and any pattern, and the whole look changes from a phone. A patio can run a slow warm Candlelight theme on a Tuesday and a music-reactive Power look for a Saturday event, on the same hardware with no ladders."
       },
       {
         "heading": "Built to run itself",
-        "body": "The kit boots into the Resonate Light Show app automatically. Staff connect to the controller's own Wi-Fi hotspot from any phone — no app store, no accounts — and pick a mode and colour theme. Scheduling turns the show on at dusk and off at close."
+        "body": "The controller turns the lights on at dusk and off at close on the days you choose, and can start a playlist that steps through themes and saved looks. Staff connect to the controller's own Wi-Fi from any phone, with no app store and no account, and change the look in two taps."
       },
       {
         "heading": "Permanent or seasonal",
-        "body": "Roofline runs and accent strips are designed to stay up year-round and change theme with the calendar. Mega trees and singing trees can be permanent features or seasonal installs with takedown and storage handled by our team."
+        "body": "Rooflines can stay up year-round in brand colours and switch to holiday themes in December. Mega trees and wrapped trees can be permanent features or seasonal installs, with takedown and storage handled by our care service."
       }
     ],
     "faqs": [
-      { "question": "Does the lighting need our sound system?", "answer": "No. A USB microphone on the controller listens to ambient music, so any speaker system works. If you prefer, we can place the mic near a speaker for tighter response." },
-      { "question": "Can we turn the reactivity off?", "answer": "Yes. Solid, Rainbow and Scroll modes can run without music, and you can set a fixed colour theme for quiet hours." },
-      { "question": "What about winter?", "answer": "Props use 12 V WS2811 pixels in weather-rated housings with sealed power connections. We design for Ontario snow and wind loads." }
+      {
+        "question": "Does the lighting need our sound system?",
+        "answer": "No. The USB microphone on the controller listens to whatever is playing on your existing speakers. The controller can also play MP3s from a USB stick through a sound system if you want it to."
+      },
+      {
+        "question": "Can we turn the reactivity off?",
+        "answer": "Yes. Steady looks and themes run without music, and themes only pulse with the music when React to music is switched on."
+      },
+      {
+        "question": "What about winter?",
+        "answer": "We install for your local climate, with sealed connections, cold-flexible cable, wind-rated anchoring and enclosures above the snow line. See the notes for your city on the locations page."
+      }
     ]
   },
   {
     "slug": "bia",
     "name": "Business Improvement Areas",
     "navLabel": "BIA",
-    "title": "BIA Streetscape & Holiday Lighting | Ontario Pixel Light Shows",
-    "metaDescription": "Synchronized pixel lighting for Business Improvement Areas: mega trees, singing trees and roofline runs across multiple buildings, with lifetime control software. Ontario BIA lighting quotes.",
-    "h1": "Give your main street a show worth the drive.",
-    "intro": "Business Improvement Areas compete for foot traffic with malls and online shopping. A synchronized light show along the main street — rooflines across several buildings, a mega tree in the square, singing trees for the holiday program — creates an event people plan around and merchants benefit from.",
-    "audiences": ["Downtown BIAs", "Main street associations", "Holiday market organizers", "Tourism boards"],
+    "title": "BIA Holiday & Streetscape Pixel Lighting",
+    "metaDescription": "Synchronised pixel lighting for BIAs, BIDs, BIZ zones and SDCs across Canada: rooflines over several storefronts, mega trees and arches, lifetime software.",
+    "h1": "Give your main street a show worth the trip.",
+    "intro": "Business Improvement Areas compete for foot traffic with malls and online shopping. A synchronised, music-reactive light show along the main street, with rooflines across several storefronts, mega trees in the square and an arch at the entrance, creates an event people plan around and merchants benefit from.",
+    "audiences": [
+      "BIAs, BIDs, BIZ zones and SDCs",
+      "Main street associations",
+      "Holiday market organisers",
+      "Tourism boards"
+    ],
+    "recommend": "plaza",
     "sections": [
       {
-        "heading": "One show across many buildings",
-        "body": "Kulp K-series controllers running FPP synchronize props spread along a street into a single timed show. Sequenced holiday programs run on a schedule; live-reactive zones (powered by the Pi 5 and LedFx) respond to buskers, parades and street performers."
+        "heading": "One show across many storefronts",
+        "body": "Every prop on the street runs from one control system, with additional pixel controllers as the layout grows. Each roofline can run its own look for its merchant, and the whole street can join one theme for a launch night, a parade or a festival."
       },
       {
         "heading": "Designed around your budget cycle",
-        "body": "We scope BIA projects in phases — a central mega tree and a few rooflines in year one, expanding block by block. Every phase uses the same control platform, so nothing is thrown away as the display grows."
+        "body": "We scope BIA projects in phases, often a mega tree and a few rooflines in year one, then more frontages each year. Every phase uses the same control platform and software, so nothing is replaced as the display grows. Itemised quotes are ready for board approval."
       },
       {
         "heading": "Serviced for the season",
-        "body": "Our seasonal service covers show sequencing, theme changeovers, pixel checks and, where props are seasonal, takedown and storage. Your coordinator gets the Light Show app for day-to-day control."
+        "body": "Care visits cover pre-season checks, theme and playlist changes, pixel repairs and takedown and storage for seasonal props. Your coordinator runs day-to-day control from a phone."
       }
     ],
     "faqs": [
-      { "question": "Who controls the display?", "answer": "Your BIA coordinator (or delegate) uses the Resonate Light Show app from any phone connected to the controller's hotspot. Scheduled shows run automatically on FPP." },
-      { "question": "Can merchants have their own zones?", "answer": "Yes. Rooflines can be grouped so individual storefronts run their own theme while still joining the main sequenced show at set times." },
-      { "question": "Do you work with municipal electrical?", "answer": "Yes. We design power distribution around available circuits and coordinate with your municipality's electrical contractor where required." }
+      {
+        "question": "Who controls the display?",
+        "answer": "Your coordinator or a delegate, from any phone on the controller's Lightshow Wi-Fi, signed in with the admin password. Schedules and playlists run on their own."
+      },
+      {
+        "question": "Can merchants have their own colours?",
+        "answer": "Yes. Each roofline is its own prop in the Light Show app, so a storefront can run its own look, and every prop can join the same theme for street-wide events."
+      },
+      {
+        "question": "Do you work with municipal electrical?",
+        "answer": "Yes. We design power distribution around available circuits and coordinate with your municipality's electrical contractor where needed; electrical work by others is billed at cost."
+      }
     ]
   },
   {
     "slug": "municipal",
     "name": "Municipalities",
     "navLabel": "Municipal",
-    "title": "Municipal Holiday & Public Space Lighting | Ontario Pixel Light Shows",
-    "metaDescription": "Public-space pixel lighting for Ontario municipalities: mega trees, singing trees and streetscape runs with scheduled sequenced shows. Design, supply, installation and seasonal service. Request a quote.",
+    "title": "Municipal Holiday Lighting Programs",
+    "metaDescription": "Public-space pixel lighting programs for Canadian municipalities: mega trees, wrapped trees, rooflines and arch walkways, scheduled from one phone app.",
     "h1": "Public light shows, built for public spaces.",
-    "intro": "Town squares, parks, waterfronts and civic buildings are where a community gathers in winter. Resonate municipal kits put a synchronized mega tree and singing-tree program at the centre of it, with the durability, lockable enclosures and scheduling municipalities require.",
-    "audiences": ["Parks & recreation departments", "Downtown revitalization programs", "Civic facilities", "Tourism and events offices"],
+    "intro": "Town squares, parks, waterfronts and civic buildings are where a community gathers in winter. A Resonate municipal program puts synchronised mega trees, wrapped trees and an arch walkway at the centre of it, scheduled and run from one system.",
+    "audiences": [
+      "Parks & recreation",
+      "Downtown revitalisation programs",
+      "Civic facilities",
+      "Tourism and events offices"
+    ],
+    "recommend": "municipal",
     "sections": [
       {
-        "heading": "Scheduled, sequenced, dependable",
-        "body": "Municipal shows run on Kulp K-series controllers with FPP, playing sequenced holiday programs on a schedule you set. Live-reactive zones driven by the Pi 5 controller and USB microphone can be added for tree-lighting ceremonies and events."
+        "heading": "Scheduled and dependable",
+        "body": "The show turns on and off at set times on chosen days and can run a looping playlist of themes and looks all season. For a tree-lighting ceremony, switch to a music look and let the microphone follow the band."
       },
       {
         "heading": "Hardware chosen for public sites",
-        "body": "12 V WS2811 pixels in weather-rated housings, sealed power injection, and lockable enclosures for controllers and supplies. Props are anchored for snow and wind loads and placed with sightlines and pedestrian safety in mind."
+        "body": "12 V WS2811 pixels, sealed connections, lockable enclosures, and props anchored for snow and wind loads, placed with sightlines and pedestrian safety in mind."
       },
       {
         "heading": "Procurement-friendly scoping",
-        "body": "We provide itemized scopes with product descriptions, power requirements and service terms suitable for council reports and procurement processes. Pricing is quoted per project in Canadian dollars."
+        "body": "Itemised scopes with product descriptions, power requirements, installation crew-days and travel, suitable for council reports and procurement. Starting prices are published and every project is confirmed after a site review."
       }
     ],
     "faqs": [
-      { "question": "Can the show be timed to a tree-lighting ceremony?", "answer": "Yes. A sequenced FPP show can be triggered manually at the ceremony, then revert to the nightly schedule." },
-      { "question": "How are updates handled?", "answer": "Software updates for the Resonate Light Show app are included for the life of the kit and are applied during service visits or remotely where network access is available." },
-      { "question": "Do you provide documentation?", "answer": "Yes. Each project is delivered with a prop map, power plan, controller configuration and a one-page operator guide." }
+      {
+        "question": "Can the show be timed to a tree-lighting ceremony?",
+        "answer": "Yes. Switch the props on from a phone at the moment of the ceremony, then let the nightly schedule and playlist take over."
+      },
+      {
+        "question": "How are software updates handled?",
+        "answer": "Updates to the Light Show software are included for the life of the kit and are applied during care visits."
+      },
+      {
+        "question": "Do you provide documentation?",
+        "answer": "Yes. Each project is delivered with a prop map, power plan, controller port settings and a one-page operator guide."
+      }
     ]
   }
 ]

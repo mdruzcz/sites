@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export function CtaBand({ kit }: { kit?: string }) {
-  const href = kit ? `/contact?kit=${kit}` : "/contact";
+  const href = kit ? `/contact?kit=${kit}#quote` : "/contact#quote";
   return (
     <section className="relative overflow-hidden">
       <div
@@ -20,7 +20,7 @@ export function CtaBand({ kit }: { kit?: string }) {
               Tell us about the <span className="gradient-text">space</span>.
             </h2>
             <p className="text-muted-strong text-base sm:text-lg max-w-2xl">
-              Send a few photos and the rough size of the frontage, tree or street. We reply within {site.responseTime} with a package recommendation and a quote in Canadian dollars.
+              Send a few photos and the rough size of the frontage, tree or street. We reply within {site.responseTime} with a recommendation and an itemised quote in Canadian dollars, installation and travel included.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">

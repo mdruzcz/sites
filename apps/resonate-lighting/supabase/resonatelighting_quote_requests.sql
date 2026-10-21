@@ -12,8 +12,19 @@ create table if not exists public.resonatelighting_quote_requests (
   city text,
   venue_type text,
   package text,
-  message text
+  message text,
+  -- budget planner (all optional)
+  budget integer,
+  estimate_total integer,
+  props text,
+  province text
 );
+
+-- If the table was created before the planner columns existed:
+alter table public.resonatelighting_quote_requests add column if not exists budget integer;
+alter table public.resonatelighting_quote_requests add column if not exists estimate_total integer;
+alter table public.resonatelighting_quote_requests add column if not exists props text;
+alter table public.resonatelighting_quote_requests add column if not exists province text;
 
 create index if not exists resonatelighting_quote_requests_created_at_idx
   on public.resonatelighting_quote_requests (created_at desc);
