@@ -29,7 +29,7 @@ function assemblyUnitsFor(items: ReturnType<typeof useCart>["items"]): number {
 }
 
 export default function QuoteForm() {
-  const { items, subtotal, listSubtotal, clear } = useCart();
+  const { items, subtotal, listSubtotal, clear, setQty, remove } = useCart();
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -230,13 +230,22 @@ export default function QuoteForm() {
                 return (
                   <li key={i.slug} className="flex justify-between text-sm gap-2">
                     <span className="min-w-0">
-                      {i.qty}× {i.name}
+                      {i.name}
                       {i.kind === "package" && <span className="text-xs text-accent"> (package)</span>}
                       {onSale && (
                         <span className="block mt-0.5">
                           <SaleBadge text={i.sale_label ?? "Sale"} size="sm" />
                         </span>
                       )}
+                      {/* The list used to be read-only, so a doubled quantity could not be undone. */}
+                      <span className="mt-1.5 flex items-center gap-2">
+                        <span className="inline-flex items-center rounded-md border border-border bg-white">
+                          <button type="button" aria-label={`One fewer ${i.name}`} className="h-7 w-7 text-base leading-none hover:bg-sand disabled:opacity-40" disabled={i.qty <= 1} onClick={() => setQty(i.slug, i.qty - 1)}>−</button>
+                          <span className="w-7 text-center tabular-nums" aria-label="Quantity">{i.qty}</span>
+                          <button type="button" aria-label={`One more ${i.name}`} className="h-7 w-7 text-base leading-none hover:bg-sand" onClick={() => setQty(i.slug, i.qty + 1)}>+</button>
+                        </span>
+                        <button type="button" className="text-xs text-ink-soft underline hover:text-accent" onClick={() => remove(i.slug)}>Remove</button>
+                      </span>
                     </span>
                     <span className="whitespace-nowrap text-right">
                       {i.price_cad !== null ? (

@@ -14,6 +14,8 @@ export type DesignAttachment = {
   summary: string;
   notes: string[];
   savedAt: number;
+  /** Cart slugs this design put in the quote list, so adding it again replaces them instead of stacking. */
+  slugs?: string[];
 };
 
 export function buildAttachment(design: Design, review: Review, link: string): DesignAttachment {
