@@ -14,7 +14,7 @@ import { useCart } from "@/lib/ui-context";
 import { getCabinetBySku } from "@/lib/planner-catalog";
 import { reviewDesign, type Issue } from "@/lib/planner/review";
 import { encodeDesign, shareUrlFor } from "@/lib/planner/encode";
-import { surfacesWithUnits, buildAttachment, storeAttachment } from "@/lib/planner/attach";
+import { surfacesWithUnits, buildAttachment, storeAttachment, readAttachment } from "@/lib/planner/attach";
 import { formatFeet, formatInches } from "@/lib/planner/types";
 import { formatCad } from "@/lib/planner-utils";
 import { KITCHEN_SALE } from "@/lib/sale";
@@ -22,7 +22,7 @@ import { SaleBadge } from "@/components/SaleBadge";
 
 export function StepReview() {
   const { design, ui, setUi, toast, stock } = usePlanner();
-  const { add, items: cartItems } = useCart();
+  const { add, setQty, remove, items: cartItems } = useCart();
   const router = useRouter();
   const [addedToQuote, setAddedToQuote] = useState(false);
   const review = useMemo(() => reviewDesign(design), [design]);
@@ -64,37 +64,60 @@ export function StepReview() {
       toast("Nothing to add yet.");
       return;
     }
-    if (cartItems.length > 0 && !window.confirm("Your quote list already has items. Add this design on top of them?")) return;
     setAdding(true);
     try {
       const payload = await encodeDesign(design);
       const link = shareUrlFor(payload);
-      storeAttachment(buildAttachment(design, review, link));
-      let added = 0;
+      /* Adding the design again sets the quote list to match it rather than
+         adding every cabinet a second time. A customer (Oct 2026) went back to
+         switch on scribe moulding, pressed this again, and got two of
+         everything with no way to take it back. Items from the shop are kept. */
+      const previous = readAttachment();
+      const before = new Set(previous?.id === design.id ? previous.slugs ?? [] : []);
+      type Line = (typeof review.parts)[number] | (typeof review.addons)[number];
+      const wanted = new Map<string, { qty: number; line: Line; name: string; image: string | undefined; price: number | null }>();
       let skipped = 0;
-      const pushLine = (sku: string, qty: number) => {
+      const want = (sku: string, qty: number) => {
         const cab = getCabinetBySku(sku);
         if (!cab || cab.coming_soon) {
           skipped += qty;
           return;
         }
-        const line = review.parts.find((p) => p.sku === sku) ?? review.addons.find((a) => a.sku === sku);
-        const onSale = !!line && !!line.listUnit && line.unit < line.listUnit;
-        add({
-          slug: cab.slug,
-          name: cab.name,
-          price_cad: cab.quote_only ? null : onSale ? line!.unit : cab.price_cad,
-          list_price_cad: onSale ? line!.listUnit : null,
-          sale_label: onSale ? line!.saleLabel ?? `${KITCHEN_SALE.label} −${KITCHEN_SALE.pct}%` : null,
-          image: cab.image_urls[0],
-          kind: "cabinet",
-          qty,
-        });
-        added += qty;
+        const line: Line | undefined = review.parts.find((p) => p.sku === sku) ?? review.addons.find((a) => a.sku === sku);
+        if (!line) return;
+        const had = wanted.get(cab.slug);
+        wanted.set(cab.slug, { qty: (had?.qty ?? 0) + qty, line, name: cab.name, image: cab.image_urls[0], price: cab.quote_only ? null : cab.price_cad });
       };
-      for (const p of review.parts) pushLine(p.sku, p.qty);
-      for (const a of review.addons) if (addonOn(a.sku, a.defaultOn)) pushLine(a.sku, a.qty);
-      toast(`Added ${added} item${added === 1 ? "" : "s"} to your quote list${skipped ? ` (${skipped} coming-soon unit${skipped === 1 ? "" : "s"} noted on the design instead)` : ""}.`);
+      for (const p of review.parts) want(p.sku, p.qty);
+      for (const a of review.addons) if (addonOn(a.sku, a.defaultOn)) want(a.sku, a.qty);
+
+      let added = 0;
+      const updating = before.size > 0 || cartItems.some((i) => wanted.has(i.slug));
+      for (const [slug, w] of wanted) {
+        added += w.qty;
+        if (cartItems.some((i) => i.slug === slug)) {
+          setQty(slug, w.qty);
+          continue;
+        }
+        const onSale = !!w.line.listUnit && w.line.unit < w.line.listUnit;
+        add({
+          slug,
+          name: w.name,
+          price_cad: w.price === null ? null : onSale ? w.line.unit : w.price,
+          list_price_cad: onSale ? w.line.listUnit : null,
+          sale_label: onSale ? w.line.saleLabel ?? `${KITCHEN_SALE.label} −${KITCHEN_SALE.pct}%` : null,
+          image: w.image,
+          kind: "cabinet",
+          qty: w.qty,
+        });
+      }
+      /* Taken out of the design since it was last added. */
+      for (const slug of before) if (!wanted.has(slug)) remove(slug);
+      storeAttachment({ ...buildAttachment(design, review, link), slugs: [...wanted.keys()] });
+      const tail = skipped ? ` (${skipped} coming-soon unit${skipped === 1 ? "" : "s"} noted on the design instead)` : "";
+      toast(updating
+        ? `Updated your quote list to match this design: ${added} item${added === 1 ? "" : "s"}${tail}.`
+        : `Added ${added} item${added === 1 ? "" : "s"} to your quote list${tail}.`);
       setAddedToQuote(true);
     } finally {
       setAdding(false);
