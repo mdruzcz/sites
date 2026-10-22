@@ -16,3 +16,5 @@ Next.js 16 app in the `mdruzcz/sites` monorepo. Commercial division of We Instal
 - [ ] Deploy workers/forms-submit and workers/turnstile-verify (hostname maps updated in this commit).
 - [ ] Umami: create a website for the domain and add the script tag to `app/layout.tsx`.
 - [ ] lobbydecorating.ca: add as a domain on the Vercel project; `next.config.mjs` redirects it to `/condo-apartment-lobbies`.
+
+First deployed 2026-10-22.
