@@ -10,7 +10,7 @@ Each site embeds its assigned `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (public, safe to 
 | MD-02 | `bright-event-lighting` | brighteventlighting.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | MD-02 | `celebrate-lighting` | celebratelighting.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
 | MD-02 | `christmas-lights-london` | christmaslightslondon.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` |
-| MD-02 | `commercial-holiday-decorators` | commercialholidaydecorators.ca | `0x4AAAAAADXeqnHhIPVYrl4Q` | **hostname not yet added to the MD-02 widget in the CF dashboard (2026-10-22)** |
+| MD-14 | `commercial-holiday-decorators` | commercialholidaydecorators.ca (+ lobbydecorating.ca) | `0x4AAAAAAFgyIiLOJvE0DekY` | widget created 2026-10-22 (MD-02 was at its 10-hostname limit) |
 | MD-03 | `concrete-driveways-ca` | concretedriveways.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `concrete-tilsonburg` | concretetilsonburg.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
 | MD-03 | `deck-heroes` | deckheroes.ca | `0x4AAAAAADXeqw5EIxIy1kBT` |
