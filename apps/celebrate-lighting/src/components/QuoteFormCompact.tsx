@@ -1,5 +1,6 @@
-import Link from "next/link";
 "use client";
+
+import Link from "next/link";
 
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
