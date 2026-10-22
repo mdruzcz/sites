@@ -100,7 +100,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             </div>
             <div className="card card-static p-5 text-sm text-[var(--muted)]">
               <p className="font-bold text-ink mb-1">Talk to a human</p>
-              <p>Call <a href={site.phoneHref} className="text-[var(--accent-ink)]">{site.phone}</a> or <Link href="/contact" className="text-[var(--accent-ink)]">book a free demo</Link>.</p>
+              <p>Send the form <Link href="/contact" className="text-[var(--accent-ink)]">book a free demo</Link>.</p>
             </div>
           </aside>
         </div>

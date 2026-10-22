@@ -53,7 +53,7 @@ function LineHero({ line, city, h1, sub, eyebrow, crumbs }: { line: ServiceLine;
             <p className="mt-5 text-lg text-body leading-relaxed">{sub}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>{offer.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
-              <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+              <Link href="/ai-preview" className="btn btn-ghost-white btn-lg"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
             </div>
             {city && <p className="mt-5 inline-flex items-center gap-2 text-sm text-body"><Icon.Pin width={16} height={16} className={gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"} /> {city.name}, {city.county} · {city.driveFromWoodstock} from our Woodstock base</p>}
           </div>
@@ -196,7 +196,7 @@ export function ServiceLinePage({ line }: { line: ServiceLine }) {
           <div>
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>FAQ</span>
             <h2 className="font-display text-3xl text-ink leading-tight">{line.name} questions, answered</h2>
-            <p className="mt-3 text-[var(--muted)]">Still unsure? <Link href="/faq" className="text-[var(--accent-ink)] underline underline-offset-2">Read all 40 FAQs</Link> or call {site.phone}.</p>
+            <p className="mt-3 text-[var(--muted)]">Still unsure? <Link href="/faq" className="text-[var(--accent-ink)] underline underline-offset-2">Read all 40 FAQs</Link> or send the form.</p>
           </div>
           <FaqList items={line.faqs} name={`${line.slug}-faq`} />
         </div>
@@ -323,7 +323,7 @@ export function CommercialLinePage({ line }: { line: ServiceLine }) {
             <p className="mt-5 text-lg text-body leading-relaxed">{c.sub}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact?service=commercial" className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>Request a commercial quote <Icon.Arrow width={18} height={18} /></Link>
-              <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+              <Link href="/ai-preview" className="btn btn-ghost-white btn-lg"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
             </div>
           </div>
         </div>

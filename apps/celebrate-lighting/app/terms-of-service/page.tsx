@@ -48,7 +48,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">6. Contact</h2>
-            <p>For questions about these terms, call <a href={site.phoneHref} className="text-[var(--accent-ink)] hover:underline">{site.phone}</a> or use our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
+            <p>For questions about these terms, use our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
           </section>
         </div>
       </div>

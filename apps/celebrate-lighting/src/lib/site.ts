@@ -1,9 +1,6 @@
 export const site = {
   name: "Celebrate Lighting",
   tagline: "Permanent Outdoor LED Lighting in Southwestern Ontario",
-  phone: "519-266-6796",
-  phoneHref: "tel:+15192666796",
-  smsHref: "sms:+15192666796",
   address: {
     street: "631 Peel Street",
     city: "Woodstock",

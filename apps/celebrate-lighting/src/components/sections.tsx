@@ -102,7 +102,7 @@ export function BookCta({
             <p className="mt-4 text-[var(--muted)] leading-relaxed max-w-xl">{body ?? site.demo.detail}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href={primary.href} className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>{primary.label} <Icon.Arrow width={18} height={18} /></Link>
-              <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> Call {site.phone}</a>
+              <Link href="/ai-preview" className="btn btn-outline btn-lg"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
             </div>
           </div>
           <ul className="space-y-3">
@@ -150,7 +150,7 @@ export function ClosingForm({
           <p className="mt-4 text-body leading-relaxed max-w-xl">{body}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <AiPreviewButton className="btn btn-outline" />
-            <a href={site.phoneHref} className="btn btn-ghost-white"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+            <Link href="/ai-preview" className="btn btn-ghost-white"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
           </div>
         </div>
         <div className="card-light p-5 sm:p-7">

@@ -14,7 +14,7 @@ export function GET() {
   const lines = [
     `# ${site.name}`,
     "",
-    `> ${site.tagline}. Based at ${site.addressLine}, serving Southwestern Ontario within about 90 minutes: ${site.serviceAreas.join(", ")}. Phone ${site.phone}.`,
+    `> ${site.tagline}. Based at ${site.addressLine}, serving Southwestern Ontario within about 90 minutes: ${site.serviceAreas.join(", ")}.`,
     "",
     "## What we do",
     `- Permanent outdoor LED lighting: colour-matched aluminum track in the soffit/fascia, 16M+ colours, app control, IP67, cold-rated to −40°C, no roof penetration, 1–2 day install, lifetime warranty on parts, hardware and workmanship. Typical one-time cost $2,500 to $8,000. Offer: free on-site demo (a live sample mounted and lit on the customer's house before purchase). ${site.url}/permanent-lighting`,

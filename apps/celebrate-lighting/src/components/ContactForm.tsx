@@ -45,7 +45,7 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
       <div ref={successRef} className="rounded-2xl border border-[var(--accent)] bg-[var(--accent-light)] p-8 text-center">
         <div className="w-14 h-14 rounded-full bg-[var(--accent)] text-[#04121a] flex items-center justify-center mx-auto mb-4"><Icon.Check strokeWidth={3} width={26} height={26} /></div>
         <h3 className="text-xl font-bold text-ink mb-2">Thanks, we’ve got your message.</h3>
-        <p className="text-body leading-relaxed">We reply to every request within <strong>24 hours</strong>, usually sooner. If it’s urgent, call us at <a href={site.phoneHref} className="text-[var(--accent-ink)] font-semibold">{site.phone}</a>.</p>
+        <p className="text-body leading-relaxed">We reply to every request within <strong>24 hours</strong>, usually sooner.</p>
       </div>
     );
   }
@@ -96,7 +96,7 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
         </div>
       </div>
       <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} onSuccess={setToken} onExpire={() => setToken("")} options={{ size: "flexible", theme: "dark" }} />
-      {status === "error" && <p className="text-sm text-red-400" role="alert">Something went wrong. Please try again, or call us at {site.phone}.</p>}
+      {status === "error" && <p className="text-sm text-red-400" role="alert">Something went wrong. Please try again.</p>}
       <button type="submit" disabled={status === "loading"} className="btn btn-primary btn-lg w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed">
         {status === "loading" ? (<><span className="w-4 h-4 rounded-full border-2 border-black/20 border-t-black animate-spin" aria-hidden="true" /> Sending…</>) : "Send My Request"}
       </button>

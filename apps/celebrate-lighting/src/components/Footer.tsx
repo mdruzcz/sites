@@ -73,9 +73,9 @@ export function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--muted)] mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href={site.phoneHref} className="flex items-center gap-3 text-white font-semibold hover:text-[var(--accent)] min-h-[44px]">
-                  <span className="icon-tile !w-9 !h-9"><Icon.Phone width={16} height={16} /></span>{site.phone}
-                </a>
+                <Link href="/contact" className="flex items-center gap-3 text-white font-semibold hover:text-[var(--accent)] min-h-[44px]">
+                  <span className="icon-tile !w-9 !h-9"><Icon.Mail width={16} height={16} /></span>Send us a request
+                </Link>
               </li>
               <li className="flex items-start gap-3 text-[#c3cddc]">
                 <span className="icon-tile !w-9 !h-9 shrink-0"><Icon.Pin width={16} height={16} /></span>

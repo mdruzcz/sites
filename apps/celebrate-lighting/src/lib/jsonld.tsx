@@ -10,7 +10,6 @@ export function localBusinessSchema(testimonials?: Testimonial[]) {
     "@id": `${site.url}/#business`,
     name: site.name,
     description: site.tagline,
-    telephone: site.phone,
     image: OG_IMAGE,
     logo: `${site.url}/images/logo.png`,
     priceRange: "$$$",
@@ -78,7 +77,7 @@ export function lineServiceSchema(input: { name: string; description: string; ur
     serviceType: input.serviceType,
     description: input.description,
     url: input.url,
-    provider: { "@type": "LocalBusiness", "@id": `${site.url}/#business`, name: site.name, url: site.url, telephone: site.phone },
+    provider: { "@type": "LocalBusiness", "@id": `${site.url}/#business`, name: site.name, url: site.url },
     areaServed: input.city ? { "@type": "City", name: input.city, containedInPlace: { "@type": "AdministrativeArea", name: "Ontario" } } : site.serviceAreas.map((c) => ({ "@type": "City", name: c })),
     ...(input.priceRange ? { offers: { "@type": "Offer", priceCurrency: "CAD", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "CAD", description: input.priceRange } } } : {}),
   };

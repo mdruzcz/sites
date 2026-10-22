@@ -1,3 +1,4 @@
+import Link from "next/link";
 "use client";
 
 import { useRef, useState } from "react";
@@ -60,7 +61,7 @@ export function QuoteFormCompact({
         <p className="text-sm text-slate-600 leading-relaxed">
           {successBody ?? (<>We’ll call within <strong>24 hours</strong> to lock in a time. Then we come out, mount a live sample on your house, and light it up. No cost, no obligation.</>)}
         </p>
-        <a href={site.phoneHref} className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">Sooner? Call {site.phone}</a>
+        <Link href="/faq" className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">Questions? Read the FAQ</Link>
       </div>
     );
   }
@@ -87,7 +88,7 @@ export function QuoteFormCompact({
         <input id={`${formId}-address`} name="address" autoComplete="street-address" placeholder="Address or city (so we know where to come)" className="field" />
       </div>
       <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"} onSuccess={setToken} onExpire={() => setToken("")} options={{ size: "flexible" }} />
-      {status === "error" && <p className="text-sm text-red-600" role="alert">Something went wrong. Please try again, or call us at {site.phone}.</p>}
+      {status === "error" && <p className="text-sm text-red-600" role="alert">Something went wrong. Please try again.</p>}
       <button type="submit" disabled={status === "loading"} className={`btn ${gold ? "btn-gold" : "btn-primary"} w-full disabled:opacity-60 disabled:cursor-not-allowed`}>
         {status === "loading" ? (<><span className="w-4 h-4 rounded-full border-2 border-black/20 border-t-black animate-spin" aria-hidden="true" /> Sending…</>) : (submitLabel ?? site.demo.ctaLong)}
       </button>

@@ -49,7 +49,7 @@ export default function CommercialPage() {
             <p className="mt-5 text-lg text-body leading-relaxed">Storefronts, plazas, dealerships, churches, town halls and parks. Permanent LED when you want the building lit all year, seasonal displays when you need a hard opening date. Insured crews, off-hours installs, paperwork ready for procurement.</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact?service=commercial" className="btn btn-primary btn-lg">Request a commercial quote <Icon.Arrow width={18} height={18} /></Link>
-              <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+              <Link href="/ai-preview" className="btn btn-ghost-white btn-lg"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
             </div>
           </div>
         </div>

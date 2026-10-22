@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export default function NotFound() {
@@ -15,7 +16,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/" className="btn btn-primary px-8">Go Home</Link>
           <Link href="/contact" className="btn btn-outline px-8">Contact Us</Link>
-          <a href={site.phoneHref} className="btn btn-outline px-8">{site.phone}</a>
+          <Link href="/ai-preview" className="btn btn-outline px-8"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
         </div>
       </div>
     </section>

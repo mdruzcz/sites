@@ -1,3 +1,4 @@
+import Link from "next/link";
 "use client";
 
 import { useRef, useState } from "react";
@@ -80,7 +81,7 @@ export function AiPreviewForm({ formId = "ai", compact = false, onDone }: { form
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
     } catch (err) {
       setStatus("error");
-      setError(err instanceof Error && err.message !== "Failed" ? err.message : `Something went wrong. Please try again or call ${site.phone}.`);
+      setError(err instanceof Error && err.message !== "Failed" ? err.message : "Something went wrong. Please try again.");
     }
   }
 
@@ -94,7 +95,7 @@ export function AiPreviewForm({ formId = "ai", compact = false, onDone }: { form
         <p className="text-sm text-body leading-relaxed">
           We’ll email your AI preview <strong>{site.aiPreview.turnaround}</strong>. Want to see it for real? We can also book your free on-site demo at the same time.
         </p>
-        <a href={site.phoneHref} className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">Questions? Call {site.phone}</a>
+        <Link href="/faq" className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">Questions? Read the FAQ</Link>
       </div>
     );
   }

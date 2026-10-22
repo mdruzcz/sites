@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const city = getCityBySlug(citySlug);
   if (!service || !city) return {};
   const title = `${VERB[slug] ?? service.title} in ${city.name}, ON`;
-  const description = `${VERB[slug] ?? service.title} for ${city.name} homes in ${city.county}. ${service.shortDescription.split(". ")[0]}. Free on-site demo, lifetime warranty. Call ${site.phone}.`.slice(0, 160);
+  const description = `${VERB[slug] ?? service.title} for ${city.name} homes in ${city.county}. ${service.shortDescription.split(". ")[0]}. Free on-site demo, lifetime warranty.`.slice(0, 160);
   return {
     title: { absolute: `${title} | ${site.name}` },
     description,
@@ -58,7 +58,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
               <p className="mt-5 text-lg text-body leading-relaxed">{service.shortDescription} Serving {city.name} and {city.county}, {city.driveFromWoodstock} from our Woodstock base.</p>
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <Link href={`/contact?service=${slug}`} className="btn btn-primary btn-lg">{slug === "repair-service" ? "Book a repair visit" : site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
-                <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+                <Link href="/ai-preview" className="btn btn-outline btn-lg"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--border)]"><Image src={photo.src} alt={photo.alt} fill priority sizes="(max-width: 1024px) 100vw, 45vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /></div>

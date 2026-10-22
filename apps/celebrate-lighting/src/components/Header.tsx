@@ -64,11 +64,11 @@ export function Header() {
                 <Icon.Menu />
               </button>
               <div className="hidden lg:flex items-center gap-5 text-sm">
-                <a href={site.phoneHref} className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-ink hover:text-[var(--accent-ink)] transition-colors">
-                  <span className="icon-tile !w-9 !h-9"><Icon.Phone width={16} height={16} /></span>
-                  {site.phone}
-                </a>
-                <span className="hidden xl:inline text-[var(--muted)]">{site.hoursShort}</span>
+                <span className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-ink">
+                  <span className="icon-tile !w-9 !h-9"><Icon.Pin width={16} height={16} /></span>
+                  Woodstock, ON
+                </span>
+                <span className="hidden xl:inline text-[var(--muted)]">Serving Southwestern Ontario</span>
               </div>
             </div>
 
@@ -86,13 +86,14 @@ export function Header() {
 
             {/* Right: mobile call / desktop CTAs */}
             <div className="flex items-center justify-end gap-2">
-              <a
-                href={site.phoneHref}
+              <button
+                type="button"
+                onClick={openPreview}
                 className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-xl text-[var(--accent-ink)] hover:bg-[var(--surface-2)]"
-                aria-label={`Call ${site.phone}`}
+                aria-label={site.aiPreview.cta}
               >
-                <Icon.Phone />
-              </a>
+                <Icon.Sparkle />
+              </button>
               <button type="button" onClick={openPreview} className="hidden lg:inline-flex btn btn-outline btn-sm">
                 <Icon.Sparkle width={16} height={16} />
                 {site.aiPreview.ctaShort}
@@ -195,7 +196,7 @@ export function Header() {
                   <Icon.Sparkle width={16} height={16} /> {site.aiPreview.cta}
                 </button>
                 <Link href="/contact" className="btn btn-primary w-full">{site.demo.ctaLong}</Link>
-                <a href={site.phoneHref} className="btn btn-gold w-full"><Icon.Phone width={16} height={16} /> {site.phone}</a>
+                <Link href="/ai-preview" className="btn btn-gold w-full"><Icon.Sparkle width={18} height={18} /> Free AI Preview</Link>
               </div>
               <p className="text-xs text-[var(--muted)] text-center">{site.hours}</p>
             </div>

@@ -43,12 +43,12 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">5. Your Rights (PIPEDA)</h2>
-            <p>Under Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to access, correct, and request deletion of your personal information. To exercise these rights, call us at {site.phone} or use the contact form.</p>
+            <p>Under Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to access, correct, and request deletion of your personal information. To exercise these rights, use the contact form.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">6. Contact</h2>
-            <p>For privacy-related questions, call <a href={site.phoneHref} className="text-[var(--accent-ink)] hover:underline">{site.phone}</a> or send a note through our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
+            <p>For privacy-related questions, use our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
           </section>
         </div>
       </div>

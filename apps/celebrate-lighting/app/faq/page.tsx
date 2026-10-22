@@ -47,7 +47,7 @@ export default function FaqPage() {
           ))}
           <div className="card card-static p-6 md:p-8 mt-12 text-center">
             <h2 className="font-bold text-2xl text-ink">Still have questions?</h2>
-            <p className="mt-2 text-[var(--muted)]">Call {site.phone} or send a note. We reply within 24 hours.</p>
+            <p className="mt-2 text-[var(--muted)]">Send a note through the contact form. We reply within 24 hours.</p>
             <div className="mt-5 flex flex-wrap justify-center gap-3"><Link href="/contact" className="btn btn-primary">Contact us <Icon.Arrow width={16} height={16} /></Link><Link href="/guides" className="btn btn-outline">Read the guides</Link></div>
           </div>
         </div>
