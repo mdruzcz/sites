@@ -1,5 +1,15 @@
 # DESIGN.md: Celebrate Lighting 2026 rebuild
 
+## 2026-10-22: light theme + new logo (Gemstone-style)
+
+- **Reference:** https://www.gemstonelights.com/residential-track-lights/ (white canvas, navy ink, photo-right hero, uppercase CTAs).
+- **Tokens** in `app/globals.css` keep their names but are now light: `--bg` white, `--surface` #f5f8fb band, navy `--foreground`, teal `--accent` for buttons with `--accent-ink` (#0b7f73) for teal *text* so it passes AA on white; same split for gold (`--gold-ink`).
+- **Text roles:** `text-ink` and `text-body` replace the old `text-white` / `text-[#d6deea]` utilities. Photo heroes (city, line, occasion, commercial, AI page, closing form) and the footer carry the `on-photo` class; unlayered rules at the bottom of `globals.css` flip ink, body, pills, outline buttons and icon tiles to white inside it. A `.card-light` inside `.on-photo` keeps its own ink.
+- **Home hero** is light: headline left, photo right with a floating "Free on-site demo" card. The closing section now carries the compact form (`ClosingForm`) instead of `BookCta`.
+- **Logo:** `brand/logo.html` is the source (roofline mark with teal lights and a gold peak, "Celebrate" in Plus Jakarta Sans 800, "LIGHTING" letter-spaced teal). `node brand/render-logo.mjs` renders `public/images/logo.png` (navy, header), `logo-dark.png` (white, footer) and `logo-mark.png` via QuickQuote's puppeteer. `app/icon.png` is the mark.
+- **Contact:** the Call / Text / Email tiles are gone from `/contact`; the site no longer publishes an email address anywhere (no forwarding exists for contact@celebratelighting.ca). Phone stays in the header, footer and FAB.
+
+
 - **Reference:** https://illumicomichigan.com/ (layout, feel, functionality)
 - **Shipped to code:** 2026-10-07
 - **Supersedes:** the 2026-07-31 horizonlightingfl-style redesign (same dark canvas, new component system and page architecture).

@@ -47,24 +47,24 @@ export function Header() {
     <>
       <header
         className="sticky top-0 z-40 border-b"
-        style={{ background: "rgba(10, 15, 26, 0.9)", backdropFilter: "blur(14px)", borderColor: "var(--border)" }}
+        style={{ background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(14px)", borderColor: "var(--border)" }}
       >
         <div className="wrap">
           {/* Row 1 */}
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center h-[72px] lg:h-[100px]">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center h-[64px] lg:h-[84px]">
             {/* Left: mobile menu / desktop phone + hours */}
             <div className="flex items-center">
               <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -ml-2 rounded-xl text-white hover:bg-white/10"
+                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -ml-2 rounded-xl text-ink hover:bg-[var(--surface-2)]"
                 aria-label="Open menu"
                 aria-expanded={open}
               >
                 <Icon.Menu />
               </button>
               <div className="hidden lg:flex items-center gap-5 text-sm">
-                <a href={site.phoneHref} className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-white hover:text-[var(--accent)] transition-colors">
+                <a href={site.phoneHref} className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-ink hover:text-[var(--accent-ink)] transition-colors">
                   <span className="icon-tile !w-9 !h-9"><Icon.Phone width={16} height={16} /></span>
                   {site.phone}
                 </a>
@@ -75,11 +75,11 @@ export function Header() {
             {/* Centre: logo */}
             <Link href="/" className="flex items-center justify-center" aria-label="Celebrate Lighting home">
               <Image
-                src="/images/logo-dark.png"
+                src="/images/logo.png"
                 alt="Celebrate Lighting logo"
-                width={304}
-                height={273}
-                className="h-[60px] lg:h-[88px] w-auto object-contain"
+                width={1881}
+                height={522}
+                className="h-10 lg:h-14 w-auto object-contain"
                 priority
               />
             </Link>
@@ -88,7 +88,7 @@ export function Header() {
             <div className="flex items-center justify-end gap-2">
               <a
                 href={site.phoneHref}
-                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-xl text-[var(--accent)] hover:bg-white/10"
+                className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-xl text-[var(--accent-ink)] hover:bg-[var(--surface-2)]"
                 aria-label={`Call ${site.phone}`}
               >
                 <Icon.Phone />
@@ -114,8 +114,8 @@ export function Header() {
                 type="button"
                 className={`inline-flex items-center gap-1 px-4 h-12 text-[0.9rem] font-semibold transition-colors ${
                   isActive("/permanent-lighting") || isActive("/seasonal-lighting") || isActive("/commercial") || isActive("/services")
-                    ? "text-[var(--accent)]"
-                    : "text-[#d6deea] hover:text-white"
+                    ? "text-[var(--accent-ink)]"
+                    : "text-body hover:text-ink"
                 }`}
                 aria-expanded={servicesOpen}
                 onClick={() => setServicesOpen((v) => !v)}
@@ -126,8 +126,8 @@ export function Header() {
                 <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 w-[23rem] pop-in">
                   <div className="card card-static p-2 shadow-2xl">
                     {site.nav.services.map((s) => (
-                      <Link key={s.href} href={s.href} className="flex flex-col gap-0.5 rounded-xl px-4 py-3 hover:bg-white/5">
-                        <span className="font-semibold text-white">{s.label}</span>
+                      <Link key={s.href} href={s.href} className="flex flex-col gap-0.5 rounded-xl px-4 py-3 hover:bg-[var(--surface-2)]">
+                        <span className="font-semibold text-ink">{s.label}</span>
                         <span className="text-xs text-[var(--muted)]">{s.desc}</span>
                       </Link>
                     ))}
@@ -140,13 +140,13 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={`inline-flex items-center px-4 h-12 text-[0.9rem] font-semibold transition-colors ${
-                  isActive(item.href) ? "text-[var(--accent)]" : "text-[#d6deea] hover:text-white"
+                  isActive(item.href) ? "text-[var(--accent-ink)]" : "text-body hover:text-ink"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" className="inline-flex items-center px-4 h-12 text-[0.9rem] font-semibold text-[#d6deea] hover:text-white">
+            <Link href="/contact" className="inline-flex items-center px-4 h-12 text-[0.9rem] font-semibold text-body hover:text-ink">
               Contact
             </Link>
           </nav>
@@ -159,8 +159,8 @@ export function Header() {
           <button type="button" className="absolute inset-0 bg-black/70" aria-label="Close menu" onClick={() => setOpen(false)} />
           <div className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto pop-in" style={{ background: "var(--surface)" }}>
             <div className="flex items-center justify-between px-4 h-[68px] border-b" style={{ borderColor: "var(--border)" }}>
-              <Image src="/images/logo-dark.png" alt="Celebrate Lighting" width={304} height={273} className="h-11 w-auto" />
-              <button type="button" onClick={() => setOpen(false)} className="w-11 h-11 inline-flex items-center justify-center rounded-xl text-white hover:bg-white/10" aria-label="Close menu">
+              <Image src="/images/logo.png" alt="Celebrate Lighting" width={1881} height={522} className="h-9 w-auto" />
+              <button type="button" onClick={() => setOpen(false)} className="w-11 h-11 inline-flex items-center justify-center rounded-xl text-ink hover:bg-[var(--surface-2)]" aria-label="Close menu">
                 <Icon.X />
               </button>
             </div>
@@ -170,8 +170,8 @@ export function Header() {
                 <ul className="space-y-1">
                   {site.nav.services.map((s) => (
                     <li key={s.href}>
-                      <Link href={s.href} className="flex flex-col rounded-xl px-3 py-3 hover:bg-white/5 min-h-[44px]">
-                        <span className="font-semibold text-white">{s.label}</span>
+                      <Link href={s.href} className="flex flex-col rounded-xl px-3 py-3 hover:bg-[var(--surface-2)] min-h-[44px]">
+                        <span className="font-semibold text-ink">{s.label}</span>
                         <span className="text-xs text-[var(--muted)]">{s.desc}</span>
                       </Link>
                     </li>
@@ -183,7 +183,7 @@ export function Header() {
                 <ul className="space-y-1">
                   {[...site.nav.main, { label: "Reviews", href: "/reviews" }, { label: "Blog", href: "/blog" }, { label: "Contact", href: "/contact" }].map((item) => (
                     <li key={item.href}>
-                      <Link href={item.href} className="flex items-center rounded-xl px-3 min-h-[44px] font-semibold text-[#d6deea] hover:text-white hover:bg-white/5">
+                      <Link href={item.href} className="flex items-center rounded-xl px-3 min-h-[44px] font-semibold text-body hover:text-ink hover:bg-[var(--surface-2)]">
                         {item.label}
                       </Link>
                     </li>

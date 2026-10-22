@@ -39,14 +39,14 @@ export default function CommercialPage() {
   return (
     <>
       <JsonLd data={[lineServiceSchema({ name: "Commercial lighting", description, url: `${site.url}/commercial`, serviceType: "Commercial exterior lighting" }), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Commercial", url: `${site.url}/commercial` }]), faqSchema(faqs)]} />
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+      <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0"><Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover" /><div className="absolute inset-0 night-veil" /></div>
         <div className="wrap relative py-14 md:py-20 lg:py-24">
           <Breadcrumbs items={[{ name: "Commercial" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Commercial · Municipal · Non-profit</span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">Exterior Lighting for Businesses Across <span className="text-[var(--accent)]">Southwestern Ontario</span></h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Storefronts, plazas, dealerships, churches, town halls and parks. Permanent LED when you want the building lit all year, seasonal displays when you need a hard opening date. Insured crews, off-hours installs, paperwork ready for procurement.</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-ink text-balance">Exterior Lighting for Businesses Across <span className="text-[var(--accent-ink)]">Southwestern Ontario</span></h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Storefronts, plazas, dealerships, churches, town halls and parks. Permanent LED when you want the building lit all year, seasonal displays when you need a hard opening date. Insured crews, off-hours installs, paperwork ready for procurement.</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact?service=commercial" className="btn btn-primary btn-lg">Request a commercial quote <Icon.Arrow width={18} height={18} /></Link>
               <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
@@ -62,7 +62,7 @@ export default function CommercialPage() {
             {cards.map((c) => (
               <Link key={c.href} href={c.href} className="card card-lift overflow-hidden group">
                 <div className="relative aspect-[16/9]"><Image src={c.photo.src} alt={c.photo.alt} fill sizes="(max-width: 768px) 100vw, 50vw" placeholder="blur" blurDataURL={c.photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" /></div>
-                <div className="p-6"><h2 className="font-bold text-xl text-white">{c.title}</h2><p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">{c.body}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent)]">Learn more <Icon.Arrow width={16} height={16} /></span></div>
+                <div className="p-6"><h2 className="font-bold text-xl text-ink">{c.title}</h2><p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">{c.body}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent-ink)]">Learn more <Icon.Arrow width={16} height={16} /></span></div>
               </Link>
             ))}
           </div>
@@ -87,7 +87,7 @@ export default function CommercialPage() {
 
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10">
-          <div><span className="pill mb-4">Commercial FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions property managers ask first</h2></div>
+          <div><span className="pill mb-4">Commercial FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">Questions property managers ask first</h2></div>
           <FaqList items={faqs} name="commercial-hub-faq" />
         </div>
       </section>

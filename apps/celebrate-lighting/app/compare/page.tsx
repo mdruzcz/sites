@@ -53,8 +53,8 @@ export default function ComparePage() {
           <Breadcrumbs items={[{ name: "Compare" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Which one is right for you?</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Permanent Lighting vs Seasonal C9 Christmas Lights</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Two good options for two different homeowners. Here’s an honest side-by-side so you pick the one you’ll actually be happy with.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Permanent Lighting vs Seasonal C9 Christmas Lights</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Two good options for two different homeowners. Here’s an honest side-by-side so you pick the one you’ll actually be happy with.</p>
           </div>
         </div>
       </section>
@@ -64,15 +64,15 @@ export default function ComparePage() {
             {[{ line: perm, photo: a, gold: false }, { line: seas, photo: b, gold: true }].map(({ line, photo, gold }) => (
               <Link key={line.slug} href={`/${line.slug}`} className="card card-lift overflow-hidden group">
                 <div className="relative aspect-[16/9]"><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 100vw, 50vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" /></div>
-                <div className="p-6"><span className={`pill ${gold ? "pill-gold" : ""} mb-3`}>{line.eyebrow}</span><h2 className="font-bold text-2xl text-white">{line.name}</h2><p className="mt-2 text-[var(--muted)]">{line.tagline}</p></div>
+                <div className="p-6"><span className={`pill ${gold ? "pill-gold" : ""} mb-3`}>{line.eyebrow}</span><h2 className="font-bold text-2xl text-ink">{line.name}</h2><p className="mt-2 text-[var(--muted)]">{line.tagline}</p></div>
               </Link>
             ))}
           </div>
           <div className="card card-static overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
-                <thead><tr className="text-left" style={{ background: "var(--panel-2)" }}><th className="p-4 font-bold text-white w-[20%]">Factor</th><th className="p-4 font-bold text-[var(--accent)]">Permanent lighting</th><th className="p-4 font-bold text-[var(--gold)]">Seasonal C9</th></tr></thead>
-                <tbody>{rows.map(([k, p, s]) => <tr key={k} className="border-t" style={{ borderColor: "var(--border)" }}><th scope="row" className="p-4 font-semibold text-white align-top">{k}</th><td className="p-4 text-[#d6deea] align-top">{p}</td><td className="p-4 text-[#d6deea] align-top">{s}</td></tr>)}</tbody>
+                <thead><tr className="text-left" style={{ background: "var(--panel-2)" }}><th className="p-4 font-bold text-ink w-[20%]">Factor</th><th className="p-4 font-bold text-[var(--accent-ink)]">Permanent lighting</th><th className="p-4 font-bold text-[var(--gold-ink)]">Seasonal C9</th></tr></thead>
+                <tbody>{rows.map(([k, p, s]) => <tr key={k} className="border-t" style={{ borderColor: "var(--border)" }}><th scope="row" className="p-4 font-semibold text-ink align-top">{k}</th><td className="p-4 text-body align-top">{p}</td><td className="p-4 text-body align-top">{s}</td></tr>)}</tbody>
               </table>
             </div>
           </div>
@@ -80,12 +80,12 @@ export default function ComparePage() {
       </section>
       <section className="section" style={{ background: "var(--surface)" }}>
         <div className="wrap grid md:grid-cols-2 gap-5">
-          <div className="card card-static p-6 md:p-8" style={{ borderColor: "rgba(34,193,176,0.4)" }}><h2 className="font-bold text-xl text-white mb-4">{perm.audienceFit.heading}</h2><CheckList items={perm.audienceFit.yes} /><Link href="/permanent-lighting" className="btn btn-primary btn-sm mt-6">Permanent lighting <Icon.Arrow width={14} height={14} /></Link></div>
-          <div className="card card-static p-6 md:p-8" style={{ borderColor: "rgba(232,182,0,0.4)" }}><h2 className="font-bold text-xl text-white mb-4">{seas.audienceFit.heading}</h2><CheckList items={seas.audienceFit.yes} /><Link href="/seasonal-lighting" className="btn btn-gold btn-sm mt-6">Seasonal C9 lights <Icon.Arrow width={14} height={14} /></Link></div>
+          <div className="card card-static p-6 md:p-8" style={{ borderColor: "rgba(34,193,176,0.4)" }}><h2 className="font-bold text-xl text-ink mb-4">{perm.audienceFit.heading}</h2><CheckList items={perm.audienceFit.yes} /><Link href="/permanent-lighting" className="btn btn-primary btn-sm mt-6">Permanent lighting <Icon.Arrow width={14} height={14} /></Link></div>
+          <div className="card card-static p-6 md:p-8" style={{ borderColor: "rgba(232,182,0,0.4)" }}><h2 className="font-bold text-xl text-ink mb-4">{seas.audienceFit.heading}</h2><CheckList items={seas.audienceFit.yes} /><Link href="/seasonal-lighting" className="btn btn-gold btn-sm mt-6">Seasonal C9 lights <Icon.Arrow width={14} height={14} /></Link></div>
         </div>
       </section>
       <section className="section" style={{ background: "var(--bg)" }}>
-        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><SectionHeading eyebrow="FAQ" title="Comparison questions" align="left" /><p className="text-[var(--muted)] -mt-8">Still deciding? <Link href="/guides/permanent-vs-seasonal-christmas-lights" className="text-[var(--accent)] underline underline-offset-2">Read the full guide</Link>.</p></div><FaqList items={faqs} name="compare-faq" /></div>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><SectionHeading eyebrow="FAQ" title="Comparison questions" align="left" /><p className="text-[var(--muted)] -mt-8">Still deciding? <Link href="/guides/permanent-vs-seasonal-christmas-lights" className="text-[var(--accent-ink)] underline underline-offset-2">Read the full guide</Link>.</p></div><FaqList items={faqs} name="compare-faq" /></div>
       </section>
       <BookCta />
     </>

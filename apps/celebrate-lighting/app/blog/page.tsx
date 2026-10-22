@@ -55,7 +55,7 @@ export default function BlogPage() {
       <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
+            <Link href="/" className="hover:text-[var(--accent-ink)]">Home</Link>
             <span className="mx-2">/</span>
             <span>Blog</span>
           </nav>
@@ -84,9 +84,9 @@ export default function BlogPage() {
                     <span className="text-xs font-semibold px-2 py-1 rounded-full" style={{ background: "var(--accent-light)", color: "var(--accent)" }}>{post.category}</span>
                     <span className="text-xs text-[var(--muted)]">{new Date(post.date).toLocaleDateString("en-CA", { month: "long", day: "numeric", year: "numeric" })}</span>
                   </div>
-                  <h2 className="font-bold text-[var(--foreground)] mb-3 leading-snug group-hover:text-[var(--accent)] transition-colors">{post.title}</h2>
+                  <h2 className="font-bold text-[var(--foreground)] mb-3 leading-snug group-hover:text-[var(--accent-ink)] transition-colors">{post.title}</h2>
                   <p className="text-sm text-[var(--muted)] leading-relaxed line-clamp-3">{post.excerpt}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--accent)]">
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--accent-ink)]">
                     Read more
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

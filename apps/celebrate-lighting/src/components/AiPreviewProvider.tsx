@@ -135,7 +135,7 @@ export function AiPreviewProvider({ children }: { children: React.ReactNode }) {
                 </div>
                 <div className="p-5 sm:p-7 md:p-8">
                   <span className="pill mb-3"><Icon.Sparkle width={14} height={14} /> Free AI Home Preview</span>
-                  <h2 id="ai-popup-title" className="font-display text-2xl md:text-3xl text-white leading-tight">{site.aiPreview.title}</h2>
+                  <h2 id="ai-popup-title" className="font-display text-2xl md:text-3xl text-ink leading-tight">{site.aiPreview.title}</h2>
                   <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">
                     {site.aiPreview.promise} Delivered to your inbox {site.aiPreview.turnaround}.
                   </p>

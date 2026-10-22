@@ -54,8 +54,8 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
           <div className="mt-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <div>
               <span className="pill mb-4">{service.title} · {city.name}</span>
-              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">{VERB[slug] ?? service.title} in <span className="text-[var(--accent)]">{city.name}</span></h1>
-              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{service.shortDescription} Serving {city.name} and {city.county}, {city.driveFromWoodstock} from our Woodstock base.</p>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">{VERB[slug] ?? service.title} in <span className="text-[var(--accent-ink)]">{city.name}</span></h1>
+              <p className="mt-5 text-lg text-body leading-relaxed">{service.shortDescription} Serving {city.name} and {city.county}, {city.driveFromWoodstock} from our Woodstock base.</p>
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <Link href={`/contact?service=${slug}`} className="btn btn-primary btn-lg">{slug === "repair-service" ? "Book a repair visit" : site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
                 <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
@@ -76,13 +76,13 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ sl
             <p>{city.neighbourhoods.join(", ")} and the surrounding area. {city.housingStock} {city.climateNote}</p>
           </div>
           <aside className="space-y-4">
-            <div className="card card-static p-6"><h3 className="font-bold text-white mb-3">What’s included</h3><CheckList items={service.features} className="text-sm" /></div>
-            <div className="card card-static p-6"><h3 className="font-bold text-white mb-2">More in {city.name}</h3><ul className="text-sm space-y-1.5"><li><Link href={`/permanent-lighting/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">Permanent lighting in {city.name}</Link></li><li><Link href={`/seasonal-lighting/${city.slug}`} className="text-[var(--gold)] underline underline-offset-2">Christmas light installation in {city.name}</Link></li><li><Link href={`/service-areas/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">{city.name} service area page</Link></li></ul></div>
+            <div className="card card-static p-6"><h3 className="font-bold text-ink mb-3">What’s included</h3><CheckList items={service.features} className="text-sm" /></div>
+            <div className="card card-static p-6"><h3 className="font-bold text-ink mb-2">More in {city.name}</h3><ul className="text-sm space-y-1.5"><li><Link href={`/permanent-lighting/${city.slug}`} className="text-[var(--accent-ink)] underline underline-offset-2">Permanent lighting in {city.name}</Link></li><li><Link href={`/seasonal-lighting/${city.slug}`} className="text-[var(--gold-ink)] underline underline-offset-2">Christmas light installation in {city.name}</Link></li><li><Link href={`/service-areas/${city.slug}`} className="text-[var(--accent-ink)] underline underline-offset-2">{city.name} service area page</Link></li></ul></div>
           </aside>
         </div>
       </section>
       <section className="section" style={{ background: "var(--surface)" }}>
-        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions from {city.name} homeowners</h2></div><FaqList items={faqs} name="svc-city-faq" /></div>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">Questions from {city.name} homeowners</h2></div><FaqList items={faqs} name="svc-city-faq" /></div>
       </section>
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap"><SectionHeading eyebrow="Nearby" title={`${service.title} near ${city.name}`} align="left" /><CityChips cities={nearby} basePath={`/services/${slug}`} /></div>

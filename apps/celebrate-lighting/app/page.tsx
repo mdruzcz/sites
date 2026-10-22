@@ -6,9 +6,8 @@ import { getCities, getFaqGroups, getOccasions, getPhoto, getPhotos, getTestimon
 import { JsonLd, faqSchema, localBusinessSchema } from "@/lib/jsonld";
 import { Icon } from "@/components/Icons";
 import { SectionHeading, FeatureGrid, FaqList, CityChips, IconTile } from "@/components/ui";
-import { QuoteFormCompact } from "@/components/QuoteFormCompact";
 import { AiPreviewButton } from "@/components/AiPreviewProvider";
-import { ProcessTimeline, Testimonials, BookCta, SplitFeature } from "@/components/sections";
+import { ProcessTimeline, Testimonials, ClosingForm, SplitFeature } from "@/components/sections";
 
 export const revalidate = 3600;
 
@@ -58,33 +57,44 @@ export default function HomePage() {
     <>
       <JsonLd data={[localBusinessSchema(getTestimonials()), faqSchema(faqForSchema)]} />
 
-      {/* ---------- Hero ---------- */}
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
-        <div className="absolute inset-0">
-          <Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover hero-drift" />
-          <div className="absolute inset-0 night-veil" />
-        </div>
-        <div className="wrap relative py-16 md:py-24 lg:py-28 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
-          <div className="max-w-2xl">
+      {/* ---------- Hero (light, photo right) ---------- */}
+      <section className="relative overflow-hidden" style={{ background: "linear-gradient(180deg, var(--surface) 0%, #fff 100%)" }}>
+        <div className="wrap relative py-14 md:py-20 lg:py-24 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+          <div className="max-w-xl">
             <span className="pill pill-gold mb-5">{site.bookingBanner}</span>
-            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.6rem] leading-[1.05] text-white text-balance">
-              Permanent Roofline &amp; Holiday Lighting
-              <span className="block text-[var(--accent)]">Southwestern Ontario</span>
+            <h1 className="font-display text-[2.5rem] sm:text-5xl lg:text-[3.5rem] leading-[1.05] text-ink text-balance">
+              Permanent roofline lighting that <span className="text-[var(--accent-ink)]">disappears by day</span> and glows every night.
             </h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed max-w-xl">
-              Discreet, colour-matched LED track installed in your soffit once. Brilliant by night, nearly invisible by day, and controlled from your phone. We light it up on your own house before you pay a cent.
+            <p className="mt-5 text-lg text-body leading-relaxed">
+              Colour-matched LED track installed in your soffit once. Warm white for everyday, any colour for every holiday, all from your phone. We light it up on your own house before you pay a cent.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn btn-primary btn-lg">{site.demo.cta} <Icon.Arrow width={18} height={18} /></Link>
-              <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
+              <AiPreviewButton className="btn btn-outline btn-lg" />
             </div>
-            <p className="mt-5 inline-flex items-center gap-2 text-sm text-[#c3cddc]"><Icon.Pin width={16} height={16} className="text-[var(--accent)]" /> Based in Woodstock · serving London, Kitchener-Waterloo, Guelph, Brantford and beyond</p>
+            <ul className="mt-7 grid grid-cols-2 gap-x-6 gap-y-2 text-sm font-semibold text-body">
+              {[
+                [<Icon.Shield key="s" width={16} height={16} />, "Lifetime warranty"],
+                [<Icon.Snow key="w" width={16} height={16} />, "Rated to −40°C"],
+                [<Icon.Palette key="p" width={16} height={16} />, "16M+ colours"],
+                [<Icon.Pin key="l" width={16} height={16} />, "Woodstock based"],
+              ].map(([icon, label]) => (
+                <li key={String(label)} className="flex items-center gap-2"><span className="text-[var(--accent-ink)]">{icon}</span>{label}</li>
+              ))}
+            </ul>
           </div>
-          <div className="card-light p-5 sm:p-7">
-            <span className="pill mb-3"><Icon.Sparkle width={14} height={14} /> {site.demo.short}</span>
-            <h2 className="text-xl font-bold text-slate-900 leading-tight">See it lit on your home first</h2>
-            <p className="text-sm text-slate-600 mt-1 mb-4">We colour-match your soffit and mount a live sample on your house. Free, no obligation.</p>
-            <QuoteFormCompact formId="hero" />
+          <div className="relative lg:pb-10">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden" style={{ boxShadow: "var(--shadow-lift)" }}>
+              <Image src={hero.src} alt={hero.alt} fill priority sizes="(max-width: 1024px) 100vw, 50vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover" />
+            </div>
+            <div className="card-light mt-4 lg:mt-0 lg:absolute lg:-bottom-0 lg:-left-8 lg:w-[22rem] p-5 flex items-start gap-4">
+              <IconTile className="shrink-0"><Icon.Home /></IconTile>
+              <div>
+                <p className="font-bold text-slate-900 leading-tight">{site.demo.short}</p>
+                <p className="text-sm text-slate-600 mt-1">{site.demo.promise}</p>
+                <Link href="/contact" className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent-ink)] hover:underline">Book a time <Icon.Arrow width={14} height={14} /></Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -100,7 +110,7 @@ export default function HomePage() {
           ].map((t) => (
             <div key={t.title} className="flex flex-col items-center text-center px-2">
               <IconTile className="mb-3">{t.icon}</IconTile>
-              <h3 className="font-bold text-white">{t.title}</h3>
+              <h3 className="font-bold text-ink">{t.title}</h3>
               <p className="mt-1 text-xs md:text-sm text-[var(--muted)] leading-snug">{t.body}</p>
             </div>
           ))}
@@ -118,14 +128,14 @@ export default function HomePage() {
                   <Image src={c.photo.src} alt={c.photo.alt} fill sizes="(max-width: 768px) 100vw, 33vw" placeholder="blur" blurDataURL={c.photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-bold text-xl text-white">{c.title}</h3>
+                  <h3 className="font-bold text-xl text-ink">{c.title}</h3>
                   <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed">{c.body}</p>
-                  <ul className="mt-4 space-y-1.5 text-sm text-[#d6deea]">
+                  <ul className="mt-4 space-y-1.5 text-sm text-body">
                     {c.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-2"><Icon.Check width={14} height={14} className={c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"} /> {b}</li>
+                      <li key={b} className="flex items-center gap-2"><Icon.Check width={14} height={14} className={c.gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"} /> {b}</li>
                     ))}
                   </ul>
-                  <span className={`mt-5 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"}`}>Learn more <Icon.Arrow width={16} height={16} /></span>
+                  <span className={`mt-5 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"}`}>Learn more <Icon.Arrow width={16} height={16} /></span>
                 </div>
               </Link>
             ))}
@@ -162,7 +172,7 @@ export default function HomePage() {
       {/* ---------- Soffit split ---------- */}
       <SplitFeature
         eyebrow="Discreet by day. Brilliant by night."
-        title={<>Installed in Your Soffit. <span className="text-[var(--accent)]">Built to Disappear.</span></>}
+        title={<>Installed in Your Soffit. <span className="text-[var(--accent-ink)]">Built to Disappear.</span></>}
         body="We take a physical colour sample of your soffit and fascia and match the aluminum track to it, so the housing sits inside the trim line. Most visitors never notice it until the lights come on. Everything is IP67 sealed, UV-rated and cold-rated to −40°C, and nothing is screwed through your shingles."
         bullets={[
           { icon: <Icon.Eye width={18} height={18} />, label: "Virtually invisible by day" },
@@ -179,7 +189,7 @@ export default function HomePage() {
         <div className="wrap grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <span className="pill mb-4"><Icon.Sparkle width={14} height={14} /> New · Free AI Home Preview</span>
-            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white text-balance">Curious How It Would Look on Your House?</h2>
+            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-ink text-balance">Curious How It Would Look on Your House?</h2>
             <p className="mt-4 text-[var(--muted)] leading-relaxed">{site.aiPreview.detail}</p>
             <ol className="mt-6 space-y-3">
               {[
@@ -189,7 +199,7 @@ export default function HomePage() {
               ].map(([t, b], i) => (
                 <li key={t} className="flex gap-4">
                   <span className="timeline-dot !w-9 !h-9 text-sm shrink-0 !shadow-none">{i + 1}</span>
-                  <div><p className="font-bold text-white">{t}</p><p className="text-sm text-[var(--muted)]">{b}</p></div>
+                  <div><p className="font-bold text-ink">{t}</p><p className="text-sm text-[var(--muted)]">{b}</p></div>
                 </li>
               ))}
             </ol>
@@ -214,7 +224,7 @@ export default function HomePage() {
       <section className="section" style={{ background: "var(--surface)" }}>
         <div className="wrap grid lg:grid-cols-[0.8fr_1.6fr] gap-10 items-center">
           <div>
-            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.05] text-white">Beautiful Homes.<br />Happy Clients.</h2>
+            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.05] text-ink">Beautiful Homes.<br />Happy Clients.</h2>
             <p className="mt-4 text-[var(--muted)] leading-relaxed">Browse permanent roofline installations in every colour, from everyday warm white to full holiday scenes. {photos.length} photos and counting.</p>
             <Link href="/gallery" className="btn btn-primary mt-6">View gallery <Icon.Arrow width={16} height={16} /></Link>
           </div>
@@ -247,7 +257,7 @@ export default function HomePage() {
         <div className="wrap grid lg:grid-cols-[1fr_1.3fr] gap-10 items-center">
           <div>
             <span className="pill mb-4">Where we work</span>
-            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white">Proudly Serving Southwestern Ontario</h2>
+            <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-ink">Proudly Serving Southwestern Ontario</h2>
             <p className="mt-4 text-[var(--muted)] leading-relaxed">Based at {site.addressLine}, we install permanent and seasonal lighting across Oxford County and the surrounding region, within roughly 90 minutes of home.</p>
             <Link href="/service-areas" className="btn btn-outline mt-6">All service areas <Icon.Arrow width={16} height={16} /></Link>
           </div>
@@ -264,7 +274,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <BookCta />
+      <ClosingForm />
     </>
   );
 }

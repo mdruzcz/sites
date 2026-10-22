@@ -11,7 +11,6 @@ export function localBusinessSchema(testimonials?: Testimonial[]) {
     name: site.name,
     description: site.tagline,
     telephone: site.phone,
-    email: site.email,
     image: OG_IMAGE,
     logo: `${site.url}/images/logo.png`,
     priceRange: "$$$",

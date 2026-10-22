@@ -22,7 +22,7 @@ export function SectionHeading({
   return (
     <div className={`${center ? "text-center mx-auto" : ""} max-w-3xl mb-10 md:mb-14`}>
       {eyebrow && <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{eyebrow}</span>}
-      <Tag className="font-display text-3xl md:text-[2.6rem] leading-[1.1] text-white text-balance">{title}</Tag>
+      <Tag className="font-display text-3xl md:text-[2.6rem] leading-[1.1] text-ink text-balance">{title}</Tag>
       {sub && <p className="mt-4 text-base md:text-lg text-[var(--muted)] leading-relaxed text-balance">{sub}</p>}
     </div>
   );
@@ -32,11 +32,11 @@ export function Breadcrumbs({ items }: { items: { name: string; href?: string }[
   return (
     <nav aria-label="Breadcrumb" className="text-xs text-[var(--muted)]">
       <ol className="flex flex-wrap items-center gap-1.5">
-        <li><Link href="/" className="hover:text-white">Home</Link></li>
+        <li><Link href="/" className="hover:text-ink">Home</Link></li>
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
-            {it.href ? <Link href={it.href} className="hover:text-white">{it.name}</Link> : <span className="text-[#c3cddc]">{it.name}</span>}
+            {it.href ? <Link href={it.href} className="hover:text-ink">{it.name}</Link> : <span className="text-body">{it.name}</span>}
           </li>
         ))}
       </ol>
@@ -50,7 +50,7 @@ export function FaqList({ items, name = "faq" }: { items: { question: string; an
       {items.map((f, i) => (
         <details key={i} className="faq-item" name={name}>
           <summary>
-            <span className="text-white">{f.question}</span>
+            <span className="text-ink">{f.question}</span>
             <span className="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div className="faq-body">{f.answer}</div>
@@ -79,7 +79,7 @@ export function FeatureGrid({
       {items.map((it) => (
         <div key={it.title} className="card card-static p-6">
           <IconTile gold={gold} className="mb-4">{it.icon}</IconTile>
-          <h3 className="font-bold text-white text-lg mb-1.5">{it.title}</h3>
+          <h3 className="font-bold text-ink text-lg mb-1.5">{it.title}</h3>
           <p className="text-sm text-[var(--muted)] leading-relaxed">{it.body}</p>
         </div>
       ))}
@@ -91,8 +91,8 @@ export function CheckList({ items, className = "" }: { items: readonly string[] 
   return (
     <ul className={`space-y-2.5 ${className}`}>
       {items.map((t) => (
-        <li key={t} className="flex items-start gap-3 text-[#d6deea]">
-          <span className="mt-0.5 inline-flex w-5 h-5 shrink-0 items-center justify-center rounded-full bg-[var(--accent-light)] text-[var(--accent)]">
+        <li key={t} className="flex items-start gap-3 text-body">
+          <span className="mt-0.5 inline-flex w-5 h-5 shrink-0 items-center justify-center rounded-full bg-[var(--accent-light)] text-[var(--accent-ink)]">
             <Icon.Check width={12} height={12} strokeWidth={3} />
           </span>
           <span>{t}</span>

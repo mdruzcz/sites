@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#0f1b2d; --teal:#14b3a2; --teal2:#2fd6c4; --gold:#f2b705; }
+  body { margin:0; background:transparent; font-family:"Plus Jakarta Sans", sans-serif; }
+  .lockup { display:inline-flex; align-items:center; gap:22px; padding:12px 16px; }
+  .lockup.white { --ink:#ffffff; }
+  .words { display:flex; flex-direction:column; line-height:1; }
+  .name { font-weight:800; font-size:92px; letter-spacing:-0.035em; color:var(--ink); }
+  .sub { margin-top:10px; font-weight:700; font-size:30px; letter-spacing:0.42em; color:var(--teal); padding-left:4px; }
+  .lockup.white .sub { color:var(--teal2); }
+  .mark { width:150px; height:150px; display:block; }
+  .stack { display:inline-flex; flex-direction:column; align-items:center; padding:24px; }
+  .stack .mark { width:220px; height:220px; }
+</style></head>
+<body>
+<svg id="defs" width="0" height="0" style="position:absolute">
+  <symbol id="roof" viewBox="0 0 100 100">
+    <path d="M8 62 L50 20 L92 62" fill="none" stroke="var(--ink)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 66 L24 82 M76 66 L76 82" fill="none" stroke="var(--ink)" stroke-width="9" stroke-linecap="round"/>
+    <g fill="var(--teal)" stroke="#fff" stroke-width="2.4">
+      <circle cx="22" cy="48" r="5.4"/><circle cx="36" cy="34" r="5.4"/><circle cx="64" cy="34" r="5.4"/><circle cx="78" cy="48" r="5.4"/>
+    </g>
+    <circle cx="50" cy="20" r="6.2" fill="var(--gold)" stroke="#fff" stroke-width="2.4"/>
+  </symbol>
+</svg>
+
+<div id="logo" class="lockup">
+  <svg class="mark" viewBox="0 0 100 100"><use href="#roof"/></svg>
+  <div class="words"><span class="name">Celebrate</span><span class="sub">LIGHTING</span></div>
+</div>
+<br>
+<div id="logo-white" class="lockup white">
+  <svg class="mark" viewBox="0 0 100 100"><use href="#roof"/></svg>
+  <div class="words"><span class="name">Celebrate</span><span class="sub">LIGHTING</span></div>
+</div>
+<br>
+<div id="mark" class="stack"><svg class="mark" viewBox="0 0 100 100"><use href="#roof"/></svg></div>
+</body></html>

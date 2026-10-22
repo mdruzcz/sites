@@ -42,23 +42,23 @@ export default function AiPreviewPage() {
         faqSchema(faqs),
         breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Free AI Home Preview", url: `${site.url}/ai-preview` }]),
       ]} />
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+      <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0"><Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover" /><div className="absolute inset-0 night-veil" /></div>
         <div className="wrap relative py-14 md:py-20 lg:py-24">
           <Breadcrumbs items={[{ name: "Free AI Home Preview" }]} />
           <div className="mt-6 grid lg:grid-cols-[1fr_1fr] gap-10 items-start">
             <div>
               <span className="pill mb-4"><Icon.Sparkle width={14} height={14} /> Free · No obligation</span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">See Your Home Lit Up <span className="text-[var(--accent)]">Before You Decide</span></h1>
-              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{site.aiPreview.detail}</p>
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-ink text-balance">See Your Home Lit Up <span className="text-[var(--accent-ink)]">Before You Decide</span></h1>
+              <p className="mt-5 text-lg text-body leading-relaxed">{site.aiPreview.detail}</p>
               <ol className="mt-7 space-y-4">
                 {[["Take a photo", "From across the street, whole roofline in frame, camera level."], ["Upload it here", "30 seconds. Tell us the colour you're picturing, or let us choose."], ["Get your preview by email", `Delivered ${site.aiPreview.turnaround}. Then book the free on-site demo to see it for real.`]].map(([t, b], i) => (
-                  <li key={t} className="flex gap-4"><span className="timeline-dot shrink-0 !shadow-none">{i + 1}</span><div><p className="font-bold text-white">{t}</p><p className="text-sm text-[#c3cddc]">{b}</p></div></li>
+                  <li key={t} className="flex gap-4"><span className="timeline-dot shrink-0 !shadow-none">{i + 1}</span><div><p className="font-bold text-ink">{t}</p><p className="text-sm text-body">{b}</p></div></li>
                 ))}
               </ol>
             </div>
-            <div className="card card-static p-5 sm:p-7" style={{ background: "rgba(13,19,32,0.92)", backdropFilter: "blur(10px)" }}>
-              <h2 className="text-xl font-bold text-white">Upload your photo</h2>
+            <div className="card-light p-5 sm:p-7">
+              <h2 className="text-xl font-bold text-ink">Upload your photo</h2>
               <p className="text-sm text-[var(--muted)] mt-1 mb-5">We’ll email your preview {site.aiPreview.turnaround}.</p>
               <AiPreviewForm formId="page" />
             </div>
@@ -88,7 +88,7 @@ export default function AiPreviewPage() {
       </section>
 
       <section className="section" style={{ background: "var(--bg)" }}>
-        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">FAQ</span><h2 className="font-display text-3xl text-white leading-tight">About the AI preview</h2><p className="mt-3 text-[var(--muted)]">Prefer to see it for real? <Link href="/contact" className="text-[var(--accent)] underline underline-offset-2">Book the free on-site demo</Link>.</p></div><FaqList items={faqs} name="ai-faq" /></div>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">About the AI preview</h2><p className="mt-3 text-[var(--muted)]">Prefer to see it for real? <Link href="/contact" className="text-[var(--accent-ink)] underline underline-offset-2">Book the free on-site demo</Link>.</p></div><FaqList items={faqs} name="ai-faq" /></div>
       </section>
 
       <Testimonials />

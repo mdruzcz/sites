@@ -237,9 +237,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-[var(--muted)] mb-8">
-            <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
+            <Link href="/" className="hover:text-[var(--accent-ink)]">Home</Link>
             <span className="mx-2">/</span>
-            <Link href="/blog" className="hover:text-[var(--accent)]">Blog</Link>
+            <Link href="/blog" className="hover:text-[var(--accent-ink)]">Blog</Link>
             <span className="mx-2">/</span>
             <span className="line-clamp-1">{post.title}</span>
           </nav>
@@ -275,7 +275,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={c.slug}
                   href={`/service-areas/${c.slug}`}
-                  className="text-sm px-3 py-1.5 rounded-full border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                  className="text-sm px-3 py-1.5 rounded-full border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent-ink)] hover:border-[var(--accent)] transition-colors"
                 >
                   {c.name}
                 </Link>

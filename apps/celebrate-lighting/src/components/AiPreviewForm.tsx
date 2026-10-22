@@ -90,11 +90,11 @@ export function AiPreviewForm({ formId = "ai", compact = false, onDone }: { form
         <div className="w-12 h-12 rounded-full bg-[var(--accent)] text-[#04121a] flex items-center justify-center mx-auto mb-3">
           <Icon.Check strokeWidth={3} />
         </div>
-        <h3 className="text-lg font-bold text-white mb-1.5">Photo received. Your preview is on its way.</h3>
-        <p className="text-sm text-[#d6deea] leading-relaxed">
+        <h3 className="text-lg font-bold text-ink mb-1.5">Photo received. Your preview is on its way.</h3>
+        <p className="text-sm text-body leading-relaxed">
           We’ll email your AI preview <strong>{site.aiPreview.turnaround}</strong>. Want to see it for real? We can also book your free on-site demo at the same time.
         </p>
-        <a href={site.phoneHref} className="mt-4 inline-block text-sm font-semibold text-[var(--accent)] hover:underline">Questions? Call {site.phone}</a>
+        <a href={site.phoneHref} className="mt-4 inline-block text-sm font-semibold text-[var(--accent-ink)] hover:underline">Questions? Call {site.phone}</a>
       </div>
     );
   }
@@ -125,14 +125,14 @@ export function AiPreviewForm({ formId = "ai", compact = false, onDone }: { form
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={photo} alt="Your uploaded home photo" className="w-20 h-16 object-cover rounded-lg" />
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold text-white truncate">{photoName}</p>
-              <button type="button" onClick={() => fileRef.current?.click()} className="text-xs text-[var(--accent)] hover:underline min-h-[32px]">Change photo</button>
+              <p className="text-sm font-semibold text-ink truncate">{photoName}</p>
+              <button type="button" onClick={() => fileRef.current?.click()} className="text-xs text-[var(--accent-ink)] hover:underline min-h-[32px]">Change photo</button>
             </div>
           </div>
         ) : (
           <label htmlFor={`${formId}-photo`} className="flex flex-col items-center gap-2 cursor-pointer py-2 min-h-[44px]">
             <span className="icon-tile"><Icon.Upload /></span>
-            <span className="text-sm font-semibold text-white">Tap to add a photo of your home</span>
+            <span className="text-sm font-semibold text-ink">Tap to add a photo of your home</span>
             <span className="text-xs text-[var(--muted)]">Front of the house from the street, whole roofline in frame. Day or dusk both work.</span>
           </label>
         )}

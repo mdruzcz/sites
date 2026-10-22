@@ -30,13 +30,13 @@ export default function ProcessPage() {
           <Breadcrumbs items={[{ name: "Our Process" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">How it works</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">From Free Demo to Lights-On</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">No pressure, no surprises. Here’s exactly what happens from your first call to the night the whole house lights up.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">From Free Demo to Lights-On</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">No pressure, no surprises. Here’s exactly what happens from your first call to the night the whole house lights up.</p>
           </div>
         </div>
       </section>
       <ProcessTimeline steps={perm.steps} title="Permanent Lighting" sub="Usually inside two weeks from first call to lights-on." />
-      <SplitFeature eyebrow="Step two, the free part" title={<>The On-Site Demo Is <span className="text-[var(--accent)]">Where You Decide</span></>} body={site.demo.detail} bullets={[{ icon: <Icon.Ruler width={18} height={18} />, label: "Rooflines measured" }, { icon: <Icon.Palette width={18} height={18} />, label: "Soffit colour-matched" }, { icon: <Icon.Lamp width={18} height={18} />, label: "Live sample mounted and lit" }, { icon: <Icon.Check width={18} height={18} />, label: "Itemized quote before we leave" }]} photoNeedle="teal-permanent-soffit-lights-close-up-grey-siding" cta={{ label: "Book my free demo", href: "/contact" }} />
+      <SplitFeature eyebrow="Step two, the free part" title={<>The On-Site Demo Is <span className="text-[var(--accent-ink)]">Where You Decide</span></>} body={site.demo.detail} bullets={[{ icon: <Icon.Ruler width={18} height={18} />, label: "Rooflines measured" }, { icon: <Icon.Palette width={18} height={18} />, label: "Soffit colour-matched" }, { icon: <Icon.Lamp width={18} height={18} />, label: "Live sample mounted and lit" }, { icon: <Icon.Check width={18} height={18} />, label: "Itemized quote before we leave" }]} photoNeedle="teal-permanent-soffit-lights-close-up-grey-siding" cta={{ label: "Book my free demo", href: "/contact" }} />
       <ProcessTimeline steps={seas.steps} gold title="Seasonal C9 Lighting" sub="Book, measure, install in the fall, takedown in January." />
       <section className="section" style={{ background: "var(--surface)" }}>
         <div className="wrap text-center max-w-2xl mx-auto"><SectionHeading eyebrow="Start even earlier" title="Not Ready for a Visit? Try the AI Preview." sub="Upload one photo and see your home lit before anyone comes out." /><Link href="/ai-preview" className="btn btn-outline">How the AI preview works <Icon.Arrow width={16} height={16} /></Link></div>

@@ -13,7 +13,7 @@ export default function TermsPage() {
     <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <nav className="text-sm text-[var(--muted)] mb-8">
-          <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
+          <Link href="/" className="hover:text-[var(--accent-ink)]">Home</Link>
           <span className="mx-2">/</span>
           <span>Terms of Service</span>
         </nav>
@@ -48,7 +48,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">6. Contact</h2>
-            <p>For questions about these terms, contact us at <a href={site.emailHref} className="text-[var(--accent)] hover:underline">{site.email}</a>.</p>
+            <p>For questions about these terms, call <a href={site.phoneHref} className="text-[var(--accent-ink)] hover:underline">{site.phone}</a> or use our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
           </section>
         </div>
       </div>

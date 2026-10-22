@@ -4,8 +4,6 @@ export const site = {
   phone: "519-266-6796",
   phoneHref: "tel:+15192666796",
   smsHref: "sms:+15192666796",
-  email: "contact@celebratelighting.ca",
-  emailHref: "mailto:contact@celebratelighting.ca",
   address: {
     street: "631 Peel Street",
     city: "Woodstock",

@@ -39,7 +39,7 @@ function LineHero({ line, city, h1, sub, eyebrow, crumbs }: { line: ServiceLine;
   const photo = heroPhotoFor(line);
   const offer = gold ? site.seasonal : site.demo;
   return (
-    <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+    <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
       <div className="absolute inset-0">
         <Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" />
         <div className="absolute inset-0 night-veil" />
@@ -49,13 +49,13 @@ function LineHero({ line, city, h1, sub, eyebrow, crumbs }: { line: ServiceLine;
         <div className="mt-6 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-center">
           <div className="max-w-2xl">
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{eyebrow}</span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">{h1}</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{sub}</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-ink text-balance">{h1}</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">{sub}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>{offer.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
               <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
             </div>
-            {city && <p className="mt-5 inline-flex items-center gap-2 text-sm text-[#c3cddc]"><Icon.Pin width={16} height={16} className={gold ? "text-[var(--gold)]" : "text-[var(--accent)]"} /> {city.name}, {city.county} · {city.driveFromWoodstock} from our Woodstock base</p>}
+            {city && <p className="mt-5 inline-flex items-center gap-2 text-sm text-body"><Icon.Pin width={16} height={16} className={gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"} /> {city.name}, {city.county} · {city.driveFromWoodstock} from our Woodstock base</p>}
           </div>
           <div className="card-light p-5 sm:p-7">
             <span className={`pill ${gold ? "pill-gold" : ""} mb-3`}>{offer.short}</span>
@@ -76,14 +76,14 @@ function AudienceFit({ line }: { line: ServiceLine }) {
     <section className="section" style={{ background: "var(--surface)" }}>
       <div className="wrap grid md:grid-cols-2 gap-5">
         <div className="card card-static p-6 md:p-8" style={{ borderColor: gold ? "rgba(232,182,0,0.4)" : "rgba(34,193,176,0.4)" }}>
-          <h2 className="font-bold text-xl text-white mb-4">{line.audienceFit.heading}</h2>
+          <h2 className="font-bold text-xl text-ink mb-4">{line.audienceFit.heading}</h2>
           <CheckList items={line.audienceFit.yes} />
         </div>
         <div className="card card-static p-6 md:p-8">
-          <h2 className="font-bold text-xl text-white mb-4">{line.audienceFit.noHeading}</h2>
+          <h2 className="font-bold text-xl text-ink mb-4">{line.audienceFit.noHeading}</h2>
           <ul className="space-y-2.5">
             {line.audienceFit.no.map((t) => (
-              <li key={t} className="flex items-start gap-3 text-[#d6deea]"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--muted)] shrink-0" />{t}</li>
+              <li key={t} className="flex items-start gap-3 text-body"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--muted)] shrink-0" />{t}</li>
             ))}
           </ul>
           <Link href={`/${other.slug}`} className="btn btn-outline btn-sm mt-6">See {other.name.toLowerCase()} <Icon.Arrow width={14} height={14} /></Link>
@@ -113,28 +113,28 @@ function Pricing({ line }: { line: ServiceLine }) {
       <div className="wrap grid lg:grid-cols-[1fr_1fr] gap-10 items-start">
         <div>
           <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>Pricing</span>
-          <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white">{line.pricing.heading}</h2>
-          <p className="mt-4 text-[#d6deea] leading-relaxed text-lg">{line.pricing.lead}</p>
+          <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-ink">{line.pricing.heading}</h2>
+          <p className="mt-4 text-body leading-relaxed text-lg">{line.pricing.lead}</p>
           <p className="mt-4 text-[var(--muted)] leading-relaxed">{line.pricing.closer}</p>
           {!gold && <Link href="/guides/permanent-christmas-lights-cost-ontario" className="btn btn-outline btn-sm mt-6">Read the full cost guide <Icon.Arrow width={14} height={14} /></Link>}
         </div>
         <div className="card card-static p-6 md:p-8">
-          <h3 className="font-bold text-white mb-4">What moves the price</h3>
+          <h3 className="font-bold text-ink mb-4">What moves the price</h3>
           <CheckList items={line.pricing.drivers} />
           {"specs" in line && line.specs && (
             <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 border-t pt-6" style={{ borderColor: "var(--border)" }}>
               {line.specs.map((s) => (
-                <div key={s.label}><dt className="text-xs uppercase tracking-wide text-[var(--muted)]">{s.label}</dt><dd className="font-semibold text-white text-sm">{s.value}</dd></div>
+                <div key={s.label}><dt className="text-xs uppercase tracking-wide text-[var(--muted)]">{s.label}</dt><dd className="font-semibold text-ink text-sm">{s.value}</dd></div>
               ))}
             </dl>
           )}
           {"plans" in line && line.plans && (
             <div className="mt-6 grid sm:grid-cols-2 gap-4 border-t pt-6" style={{ borderColor: "var(--border)" }}>
               {line.plans.map((p) => (
-                <div key={p.name} className="rounded-xl p-4" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)" }}>
-                  <p className="font-bold text-[var(--gold)]">{p.name}</p>
+                <div key={p.name} className="rounded-xl p-4" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                  <p className="font-bold text-[var(--gold-ink)]">{p.name}</p>
                   <p className="text-xs text-[var(--muted)] mb-2">{p.tagline}</p>
-                  <ul className="text-xs text-[#d6deea] space-y-1">{p.includes.map((i) => <li key={i}>· {i}</li>)}</ul>
+                  <ul className="text-xs text-body space-y-1">{p.includes.map((i) => <li key={i}>· {i}</li>)}</ul>
                 </div>
               ))}
             </div>
@@ -155,7 +155,7 @@ function SeasonTimeline({ line }: { line: ServiceLine }) {
           {line.seasonTimeline.map((t) => (
             <div key={t.period} className="card card-static p-6">
               <p className="stat-num text-2xl">{t.period}</p>
-              <h3 className="font-bold text-white mt-2">{t.title}</h3>
+              <h3 className="font-bold text-ink mt-2">{t.title}</h3>
               <p className="text-sm text-[var(--muted)] mt-1 leading-relaxed">{t.desc}</p>
             </div>
           ))}
@@ -178,14 +178,14 @@ export function ServiceLinePage({ line }: { line: ServiceLine }) {
         faqSchema(line.faqs),
         howToSchema({ name: `How ${line.name.toLowerCase()} works with Celebrate Lighting`, description: line.heroSub, steps: line.steps.map((s) => ({ name: s.title, text: s.desc })) }),
       ]} />
-      <LineHero line={line} eyebrow={line.eyebrow} h1={<>{line.heroH1} <span className={gold ? "text-[var(--gold)]" : "text-[var(--accent)]"}>{line.heroH1Accent}</span></>} sub={line.heroSub} crumbs={[{ name: line.name }]} />
+      <LineHero line={line} eyebrow={line.eyebrow} h1={<>{line.heroH1} <span className={gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"}>{line.heroH1Accent}</span></>} sub={line.heroSub} crumbs={[{ name: line.name }]} />
       <section className="border-b" style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
         <div className="wrap py-8"><StatRow stats={gold ? [{ stat: "Oct–Nov", label: "Installation window" }, { stat: "Jan", label: "Takedown and storage" }, { stat: "Rent / Buy", label: "Your choice of plan" }, { stat: site.seasonal.deadline, label: "Early-bird deadline" }] : site.proofPoints} /></div>
       </section>
       <AudienceFit line={line} />
       <Benefits line={line} />
       {!gold && (
-        <SplitFeature eyebrow="Colour-matched track" title={<>Invisible by Day. <span className="text-[var(--accent)]">Yours Every Night.</span></>} body="We take a physical sample of your soffit and fascia at the demo and match the aluminum track to it. The LEDs sit inside the trim channel with concealed cable routing, so in daylight the house looks exactly as it did before." bullets={[{ icon: <Icon.Eye width={18} height={18} />, label: "Colour-matched housing" }, { icon: <Icon.Home width={18} height={18} />, label: "No roof penetration" }, { icon: <Icon.Snow width={18} height={18} />, label: "IP67, −40°C rated" }, { icon: <Icon.Shield width={18} height={18} />, label: "Lifetime warranty" }]} photoNeedle="daytime-colour-matched-permanent-light-track-in-white-soffit" cta={{ label: "Will it work on my soffit?", href: "/guides/soffit-fascia-compatibility-guide" }} />
+        <SplitFeature eyebrow="Colour-matched track" title={<>Invisible by Day. <span className="text-[var(--accent-ink)]">Yours Every Night.</span></>} body="We take a physical sample of your soffit and fascia at the demo and match the aluminum track to it. The LEDs sit inside the trim channel with concealed cable routing, so in daylight the house looks exactly as it did before." bullets={[{ icon: <Icon.Eye width={18} height={18} />, label: "Colour-matched housing" }, { icon: <Icon.Home width={18} height={18} />, label: "No roof penetration" }, { icon: <Icon.Snow width={18} height={18} />, label: "IP67, −40°C rated" }, { icon: <Icon.Shield width={18} height={18} />, label: "Lifetime warranty" }]} photoNeedle="daytime-colour-matched-permanent-light-track-in-white-soffit" cta={{ label: "Will it work on my soffit?", href: "/guides/soffit-fascia-compatibility-guide" }} />
       )}
       <ProcessTimeline steps={line.steps} gold={gold} title={gold ? "How the Season Works" : "How It Works"} sub={gold ? "Book, measure, install, enjoy, takedown. You never touch a ladder." : "From first call to lights-on, usually inside two weeks."} />
       <SeasonTimeline line={line} />
@@ -195,8 +195,8 @@ export function ServiceLinePage({ line }: { line: ServiceLine }) {
         <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10">
           <div>
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>FAQ</span>
-            <h2 className="font-display text-3xl text-white leading-tight">{line.name} questions, answered</h2>
-            <p className="mt-3 text-[var(--muted)]">Still unsure? <Link href="/faq" className="text-[var(--accent)] underline underline-offset-2">Read all 40 FAQs</Link> or call {site.phone}.</p>
+            <h2 className="font-display text-3xl text-ink leading-tight">{line.name} questions, answered</h2>
+            <p className="mt-3 text-[var(--muted)]">Still unsure? <Link href="/faq" className="text-[var(--accent-ink)] underline underline-offset-2">Read all 40 FAQs</Link> or call {site.phone}.</p>
           </div>
           <FaqList items={line.faqs} name={`${line.slug}-faq`} />
         </div>
@@ -219,7 +219,7 @@ export function LineCityPage({ line, city }: { line: ServiceLine; city: City }) 
   const copy = gold ? city.seasonalCopy : city.permanentCopy;
   const nearby = getNearbyCities(city.slug, 10);
   const url = `${site.url}/${line.slug}/${city.slug}`;
-  const h1 = gold ? <>Christmas Light Installation in <span className="text-[var(--gold)]">{city.name}</span></> : <>Permanent Lighting in <span className="text-[var(--accent)]">{city.name}, Ontario</span></>;
+  const h1 = gold ? <>Christmas Light Installation in <span className="text-[var(--gold-ink)]">{city.name}</span></> : <>Permanent Lighting in <span className="text-[var(--accent-ink)]">{city.name}, Ontario</span></>;
   const photos = gold
     ? [getPhoto("red-white-green-permanent-christmas-roofline-lights-blue-two-storey"), getPhoto("warm-white-permanent-roofline-lights-dark-siding-bungalow"), getPhoto("multicolour-permanent-roofline-lights-stone-and-timber-porch-close-up")]
     : [getPhoto("warm-white-permanent-roofline-lights-brick-home-garage-gable"), getPhoto("rainbow-permanent-roofline-lights-brick-home-garage-gable"), getPhoto("purple-and-teal-permanent-roofline-lights-brick-home-garage-gable")];
@@ -244,12 +244,12 @@ export function LineCityPage({ line, city }: { line: ServiceLine; city: City }) 
           </div>
           <aside className="space-y-4">
             <div className="card card-static p-6">
-              <h3 className="font-bold text-white mb-3">{city.name} at a glance</h3>
+              <h3 className="font-bold text-ink mb-3">{city.name} at a glance</h3>
               <dl className="text-sm space-y-2">
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">County</dt><dd className="text-white font-semibold text-right">{city.county}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Population</dt><dd className="text-white font-semibold text-right">{city.population}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">From Woodstock</dt><dd className="text-white font-semibold text-right">{city.driveFromWoodstock}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Response</dt><dd className="text-white font-semibold text-right">Within 24 hours</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">County</dt><dd className="text-ink font-semibold text-right">{city.county}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Population</dt><dd className="text-ink font-semibold text-right">{city.population}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">From Woodstock</dt><dd className="text-ink font-semibold text-right">{city.driveFromWoodstock}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Response</dt><dd className="text-ink font-semibold text-right">Within 24 hours</dd></div>
               </dl>
               <p className="mt-4 text-xs text-[var(--muted)]">Landmarks nearby: {city.landmarks.join(" · ")}</p>
             </div>
@@ -262,7 +262,7 @@ export function LineCityPage({ line, city }: { line: ServiceLine; city: City }) 
             </div>
             <div className="card card-static p-6">
               <IconTile gold={gold} className="mb-3"><Icon.Sparkle /></IconTile>
-              <h3 className="font-bold text-white">Free AI preview for your {city.name} home</h3>
+              <h3 className="font-bold text-ink">Free AI preview for your {city.name} home</h3>
               <p className="text-sm text-[var(--muted)] mt-1 mb-4">Upload one photo and see it lit before anyone comes out.</p>
               <AiPreviewButton className="btn btn-outline btn-sm w-full" />
             </div>
@@ -277,7 +277,7 @@ export function LineCityPage({ line, city }: { line: ServiceLine; city: City }) 
         <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10">
           <div>
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{city.name} FAQ</span>
-            <h2 className="font-display text-3xl text-white leading-tight">Questions from {city.name} homeowners</h2>
+            <h2 className="font-display text-3xl text-ink leading-tight">Questions from {city.name} homeowners</h2>
           </div>
           <FaqList items={[...city.faqs, ...line.faqs.slice(0, 3)]} name={`${city.slug}-faq`} />
         </div>
@@ -287,7 +287,7 @@ export function LineCityPage({ line, city }: { line: ServiceLine; city: City }) 
         <div className="wrap">
           <SectionHeading eyebrow="Nearby" title={`${line.name} in communities near ${city.name}`} gold={gold} align="left" />
           <CityChips cities={nearby} basePath={`/${line.slug}`} />
-          <p className="mt-6 text-sm text-[var(--muted)]">Also see: <Link href={`/service-areas/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">everything we do in {city.name}</Link> · <Link href={`/${getOtherServiceLine(line.slug)!.slug}/${city.slug}`} className="text-[var(--accent)] underline underline-offset-2">{getOtherServiceLine(line.slug)!.name.toLowerCase()} in {city.name}</Link></p>
+          <p className="mt-6 text-sm text-[var(--muted)]">Also see: <Link href={`/service-areas/${city.slug}`} className="text-[var(--accent-ink)] underline underline-offset-2">everything we do in {city.name}</Link> · <Link href={`/${getOtherServiceLine(line.slug)!.slug}/${city.slug}`} className="text-[var(--accent-ink)] underline underline-offset-2">{getOtherServiceLine(line.slug)!.name.toLowerCase()} in {city.name}</Link></p>
         </div>
       </section>
 
@@ -310,7 +310,7 @@ export function CommercialLinePage({ line }: { line: ServiceLine }) {
         breadcrumbSchema([{ name: "Home", url: site.url }, { name: line.name, url: `${site.url}/${line.slug}` }, { name: "Commercial", url }]),
         faqSchema(c.faqs),
       ]} />
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+      <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0">
           <Image src={photos[0].src} alt={photos[0].alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photos[0].blurDataURL} className="object-cover" />
           <div className="absolute inset-0 night-veil" />
@@ -319,8 +319,8 @@ export function CommercialLinePage({ line }: { line: ServiceLine }) {
           <Breadcrumbs items={[{ name: line.name, href: `/${line.slug}` }, { name: "Commercial" }]} />
           <div className="mt-6 max-w-3xl">
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{c.eyebrow}</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">{c.h1}</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{c.sub}</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">{c.h1}</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">{c.sub}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact?service=commercial" className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>Request a commercial quote <Icon.Arrow width={18} height={18} /></Link>
               <a href={site.phoneHref} className="btn btn-ghost-white btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
@@ -330,7 +330,7 @@ export function CommercialLinePage({ line }: { line: ServiceLine }) {
       </section>
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap">
-          <p className="max-w-3xl text-lg text-[#d6deea] leading-relaxed mb-12">{c.lead}</p>
+          <p className="max-w-3xl text-lg text-body leading-relaxed mb-12">{c.lead}</p>
           <FeatureGrid cols={3} gold={gold} items={c.segments.map((s, i) => ({ icon: icons[i % icons.length], title: s.title, body: s.body }))} />
         </div>
       </section>
@@ -338,13 +338,13 @@ export function CommercialLinePage({ line }: { line: ServiceLine }) {
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {c.reasons.map((r) => (
-            <div key={r.title} className="card card-static p-6"><h3 className="font-bold text-white mb-1.5">{r.title}</h3><p className="text-sm text-[var(--muted)] leading-relaxed">{r.body}</p></div>
+            <div key={r.title} className="card card-static p-6"><h3 className="font-bold text-ink mb-1.5">{r.title}</h3><p className="text-sm text-[var(--muted)] leading-relaxed">{r.body}</p></div>
           ))}
         </div>
       </section>
       <section className="section" style={{ background: "var(--surface)" }}>
         <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10">
-          <div><span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>Commercial FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions from property managers and municipalities</h2></div>
+          <div><span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>Commercial FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">Questions from property managers and municipalities</h2></div>
           <FaqList items={c.faqs} name="commercial-faq" />
         </div>
       </section>

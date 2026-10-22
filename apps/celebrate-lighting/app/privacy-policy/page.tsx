@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <section style={{ background: "var(--surface)" }} className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <nav className="text-sm text-[var(--muted)] mb-8">
-          <Link href="/" className="hover:text-[var(--accent)]">Home</Link>
+          <Link href="/" className="hover:text-[var(--accent-ink)]">Home</Link>
           <span className="mx-2">/</span>
           <span>Privacy Policy</span>
         </nav>
@@ -43,12 +43,12 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">5. Your Rights (PIPEDA)</h2>
-            <p>Under Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to access, correct, and request deletion of your personal information. To exercise these rights, contact us at {site.email}.</p>
+            <p>Under Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to access, correct, and request deletion of your personal information. To exercise these rights, call us at {site.phone} or use the contact form.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-[var(--foreground)] mb-3">6. Contact</h2>
-            <p>For privacy-related questions, contact us at <a href={site.emailHref} className="text-[var(--accent)] hover:underline">{site.email}</a> or call <a href={site.phoneHref} className="text-[var(--accent)] hover:underline">{site.phone}</a>.</p>
+            <p>For privacy-related questions, call <a href={site.phoneHref} className="text-[var(--accent-ink)] hover:underline">{site.phone}</a> or send a note through our <Link href="/contact" className="text-[var(--accent-ink)] hover:underline">contact form</Link>.</p>
           </section>
         </div>
       </div>

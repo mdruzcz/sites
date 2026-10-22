@@ -33,8 +33,8 @@ export default function ServicesPage() {
           <Breadcrumbs items={[{ name: "Services" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Everything we do</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Permanent Lighting Services in Southwestern Ontario</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">New installations with a free on-site demo, repairs on any brand of permanent lighting, annual maintenance, and upgrades for older systems. Plus <Link href="/seasonal-lighting" className="text-[var(--gold)] underline underline-offset-2">seasonal C9 Christmas lights</Link> and <Link href="/commercial" className="text-[var(--accent)] underline underline-offset-2">commercial work</Link>.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Permanent Lighting Services in Southwestern Ontario</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">New installations with a free on-site demo, repairs on any brand of permanent lighting, annual maintenance, and upgrades for older systems. Plus <Link href="/seasonal-lighting" className="text-[var(--gold-ink)] underline underline-offset-2">seasonal C9 Christmas lights</Link> and <Link href="/commercial" className="text-[var(--accent-ink)] underline underline-offset-2">commercial work</Link>.</p>
           </div>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div key={s.slug} className="card card-static p-6 md:p-8 flex flex-col">
               <IconTile className="mb-4">{ICONS[s.icon] ?? <Icon.Sparkle />}</IconTile>
-              <h2 className="font-bold text-2xl text-white">{s.title}</h2>
+              <h2 className="font-bold text-2xl text-ink">{s.title}</h2>
               <p className="mt-2 text-[var(--muted)] leading-relaxed">{s.shortDescription}</p>
               <CheckList items={s.features.slice(0, 3)} className="mt-4 text-sm" />
               <Link href={`/services/${s.slug}`} className="btn btn-outline btn-sm mt-6 self-start">About {s.title.toLowerCase()} <Icon.Arrow width={14} height={14} /></Link>

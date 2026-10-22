@@ -34,8 +34,8 @@ export default function GalleryPage() {
           <Breadcrumbs items={[{ name: "Gallery" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">See the transformation</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Project Gallery</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Permanent roofline lighting on real homes and businesses. Filter by colour to see the look you’re picturing, then <Link href="/ai-preview" className="text-[var(--accent)] underline underline-offset-2">get a free AI preview of your own house</Link>.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Project Gallery</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Permanent roofline lighting on real homes and businesses. Filter by colour to see the look you’re picturing, then <Link href="/ai-preview" className="text-[var(--accent-ink)] underline underline-offset-2">get a free AI preview of your own house</Link>.</p>
           </div>
         </div>
       </section>

@@ -30,8 +30,8 @@ export default function OccasionsPage() {
           <Breadcrumbs items={[{ name: "Occasions" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">One system, every occasion</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Lights for Every Holiday, Game and Party</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Permanent lighting isn’t just for December. Here’s how Southwestern Ontario homeowners use the same roofline all year, with colour recipes you can copy into the app.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Lights for Every Holiday, Game and Party</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Permanent lighting isn’t just for December. Here’s how Southwestern Ontario homeowners use the same roofline all year, with colour recipes you can copy into the app.</p>
           </div>
         </div>
       </section>
@@ -41,9 +41,9 @@ export default function OccasionsPage() {
             <Link key={o.slug} href={`/occasions/${o.slug}`} className="card card-lift p-6 group flex flex-col">
               <div className="flex gap-1.5 mb-4">{o.colourRecipes[0]?.colours.map((c) => <span key={c} className="w-7 h-7 rounded-full border border-white/20" style={{ background: c, boxShadow: `0 0 14px ${c}66` }} aria-hidden="true" />)}</div>
               <span className="text-xs uppercase tracking-wide text-[var(--muted)]">{o.season}</span>
-              <h2 className="font-bold text-xl text-white mt-1">{o.name}</h2>
+              <h2 className="font-bold text-xl text-ink mt-1">{o.name}</h2>
               <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed line-clamp-3 flex-1">{o.intro}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent)]">Scenes &amp; colours <Icon.Arrow width={16} height={16} /></span>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent-ink)]">Scenes &amp; colours <Icon.Arrow width={16} height={16} /></span>
             </Link>
           ))}
         </div>

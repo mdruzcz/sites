@@ -34,8 +34,8 @@ export default function AboutPage() {
           <div className="mt-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <div>
               <span className="pill mb-4">Our story</span>
-              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">A Woodstock Lighting Company That Shows You First</h1>
-              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Celebrate Lighting installs permanent outdoor LED lighting and seasonal C9 Christmas lights across Southwestern Ontario from our base at {site.addressLine}. We started with one belief: you shouldn’t have to imagine what a lighting system looks like on your house. You should see it.</p>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">A Woodstock Lighting Company That Shows You First</h1>
+              <p className="mt-5 text-lg text-body leading-relaxed">Celebrate Lighting installs permanent outdoor LED lighting and seasonal C9 Christmas lights across Southwestern Ontario from our base at {site.addressLine}. We started with one belief: you shouldn’t have to imagine what a lighting system looks like on your house. You should see it.</p>
             </div>
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--border)]"><Image src={photo.src} alt={photo.alt} fill priority sizes="(max-width: 1024px) 100vw, 45vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /></div>
           </div>

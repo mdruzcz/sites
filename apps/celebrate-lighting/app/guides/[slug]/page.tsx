@@ -55,8 +55,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: g.title }]} />
           <div className="mt-6">
             <span className="pill mb-4">{g.category} · {g.readingMinutes} min read</span>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.08] text-white text-balance">{g.title}</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{g.summary}</p>
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.08] text-ink text-balance">{g.title}</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">{g.summary}</p>
             <p className="mt-3 text-xs text-[var(--muted)]">Published {new Date(g.publishedAt).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" })} · By the Celebrate Lighting team, Woodstock ON</p>
           </div>
         </div>
@@ -66,8 +66,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           <article>
             <div className="relative aspect-[16/9] rounded-3xl overflow-hidden border border-[var(--border)] mb-8"><Image src={photo.src} alt={photo.alt} fill priority sizes="(max-width: 1024px) 100vw, 800px" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /></div>
             <div className="card card-static p-6 mb-8">
-              <h2 className="font-bold text-white mb-3">Key takeaways</h2>
-              <ul className="space-y-2">{g.keyTakeaways.map((k) => <li key={k} className="flex gap-3 text-sm text-[#d6deea]"><Icon.Check width={16} height={16} className="text-[var(--accent)] shrink-0 mt-0.5" />{k}</li>)}</ul>
+              <h2 className="font-bold text-ink mb-3">Key takeaways</h2>
+              <ul className="space-y-2">{g.keyTakeaways.map((k) => <li key={k} className="flex gap-3 text-sm text-body"><Icon.Check width={16} height={16} className="text-[var(--accent-ink)] shrink-0 mt-0.5" />{k}</li>)}</ul>
             </div>
             <div className="prose-dark">
               {g.sections.map((s) => (
@@ -84,23 +84,23 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             </div>
             <FaqList items={g.faqs} name="guide-faq" />
             <div className="card card-static p-6 md:p-8 mt-10" style={{ background: "linear-gradient(135deg, var(--panel), var(--surface-2))" }}>
-              <h2 className="font-display text-2xl text-white">{g.cta.heading}</h2>
+              <h2 className="font-display text-2xl text-ink">{g.cta.heading}</h2>
               <p className="mt-2 text-[var(--muted)]">{g.cta.body}</p>
               <div className="mt-5 flex flex-wrap gap-3"><Link href={g.cta.href} className="btn btn-primary">{g.cta.label} <Icon.Arrow width={16} height={16} /></Link><AiPreviewButton /></div>
             </div>
           </article>
           <aside className="space-y-4 lg:sticky lg:top-40 self-start">
             <div className="card card-static p-5">
-              <h3 className="font-bold text-white mb-2">In this guide</h3>
-              <ol className="text-sm space-y-1.5">{g.sections.map((s) => <li key={s.heading} className="text-[#c3cddc]">{s.heading}</li>)}</ol>
+              <h3 className="font-bold text-ink mb-2">In this guide</h3>
+              <ol className="text-sm space-y-1.5">{g.sections.map((s) => <li key={s.heading} className="text-body">{s.heading}</li>)}</ol>
             </div>
             <div className="card card-static p-5">
-              <h3 className="font-bold text-white mb-2">Related guides</h3>
-              <ul className="text-sm space-y-2">{related.map((r) => r && <li key={r.slug}><Link href={`/guides/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.title}</Link></li>)}</ul>
+              <h3 className="font-bold text-ink mb-2">Related guides</h3>
+              <ul className="text-sm space-y-2">{related.map((r) => r && <li key={r.slug}><Link href={`/guides/${r.slug}`} className="text-[var(--accent-ink)] hover:underline">{r.title}</Link></li>)}</ul>
             </div>
             <div className="card card-static p-5 text-sm text-[var(--muted)]">
-              <p className="font-bold text-white mb-1">Talk to a human</p>
-              <p>Call <a href={site.phoneHref} className="text-[var(--accent)]">{site.phone}</a> or <Link href="/contact" className="text-[var(--accent)]">book a free demo</Link>.</p>
+              <p className="font-bold text-ink mb-1">Talk to a human</p>
+              <p>Call <a href={site.phoneHref} className="text-[var(--accent-ink)]">{site.phone}</a> or <Link href="/contact" className="text-[var(--accent-ink)]">book a free demo</Link>.</p>
             </div>
           </aside>
         </div>

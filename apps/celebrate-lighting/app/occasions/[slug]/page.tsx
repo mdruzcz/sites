@@ -55,14 +55,14 @@ export default async function OccasionPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <JsonLd data={[articleSchema({ title: o.heading, description: o.metaDescription, image: photo.src, date: "2026-10-07", url }), breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Occasions", url: `${site.url}/occasions` }, { name: o.name, url }]), faqSchema(o.faq)]} />
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+      <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0"><Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover" /><div className="absolute inset-0 night-veil" /></div>
         <div className="wrap relative py-14 md:py-20">
           <Breadcrumbs items={[{ name: "Occasions", href: "/occasions" }, { name: o.name }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">{o.eyebrow} · {o.season}</span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">{o.heading}</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{o.intro}</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-ink text-balance">{o.heading}</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">{o.intro}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3"><Link href="/contact" className="btn btn-primary btn-lg">{site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link><AiPreviewButton className="btn btn-ghost-white btn-lg" /></div>
           </div>
         </div>
@@ -75,9 +75,9 @@ export default async function OccasionPage({ params }: { params: Promise<{ slug:
             {o.colourRecipes.map((r) => (
               <div key={r.name} className="card card-static p-6">
                 <div className="flex gap-2 mb-4">{r.colours.map((c) => <span key={c} className="w-10 h-10 rounded-full border border-white/20" style={{ background: c, boxShadow: `0 0 18px ${c}66` }} title={c} aria-label={`Colour ${c}`} />)}</div>
-                <h3 className="font-bold text-white">{r.name}</h3>
+                <h3 className="font-bold text-ink">{r.name}</h3>
                 <p className="text-sm text-[var(--muted)] mt-1 leading-relaxed">{r.description}</p>
-                <p className="mt-3 text-[11px] font-mono text-[#c3cddc]">{r.colours.join(" · ")}</p>
+                <p className="mt-3 text-[11px] font-mono text-body">{r.colours.join(" · ")}</p>
               </div>
             ))}
           </div>
@@ -92,19 +92,19 @@ export default async function OccasionPage({ params }: { params: Promise<{ slug:
           </div>
           <aside className="space-y-4">
             <div className="card card-static p-6">
-              <h3 className="font-bold text-white mb-3">Scene ideas</h3>
-              <ul className="space-y-3">{o.scenes.map((s) => <li key={s.name}><p className="font-semibold text-[#e3e9f2] text-sm">{s.name}</p><p className="text-sm text-[var(--muted)]">{s.description}</p></li>)}</ul>
+              <h3 className="font-bold text-ink mb-3">Scene ideas</h3>
+              <ul className="space-y-3">{o.scenes.map((s) => <li key={s.name}><p className="font-semibold text-body text-sm">{s.name}</p><p className="text-sm text-[var(--muted)]">{s.description}</p></li>)}</ul>
             </div>
             <div className="card card-static p-6">
-              <h3 className="font-bold text-white mb-3">Tips</h3>
-              <ul className="space-y-2">{o.tips.map((t) => <li key={t} className="flex gap-2 text-sm text-[#d6deea]"><Icon.Check width={16} height={16} className="text-[var(--accent)] shrink-0 mt-0.5" />{t}</li>)}</ul>
+              <h3 className="font-bold text-ink mb-3">Tips</h3>
+              <ul className="space-y-2">{o.tips.map((t) => <li key={t} className="flex gap-2 text-sm text-body"><Icon.Check width={16} height={16} className="text-[var(--accent-ink)] shrink-0 mt-0.5" />{t}</li>)}</ul>
             </div>
           </aside>
         </div>
       </section>
 
       <section className="section" style={{ background: "var(--bg)" }}>
-        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">FAQ</span><h2 className="font-display text-3xl text-white leading-tight">{o.name} questions</h2></div><FaqList items={o.faq} name="occ-faq" /></div>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">{o.name} questions</h2></div><FaqList items={o.faq} name="occ-faq" /></div>
       </section>
 
       <section className="section" style={{ background: "var(--surface)" }}>

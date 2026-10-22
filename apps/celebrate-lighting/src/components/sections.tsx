@@ -31,7 +31,7 @@ export function ProcessTimeline({
             <li key={s.title} className="relative pl-16 lg:pl-0 lg:text-center">
               <span className={`timeline-dot absolute left-0 top-0 lg:static lg:flex lg:mx-auto lg:mb-5 ${gold ? "!bg-[var(--gold)]" : ""}`}>{i + 1}</span>
               {s.highlight && <div className="mb-2"><span className={`pill ${gold ? "pill-gold" : ""}`}>{s.highlight}</span></div>}
-              <h3 className="font-bold text-white text-lg mb-1.5">{s.title}</h3>
+              <h3 className="font-bold text-ink text-lg mb-1.5">{s.title}</h3>
               <p className="text-sm text-[var(--muted)] leading-relaxed">{s.desc}</p>
             </li>
           ))}
@@ -55,11 +55,11 @@ export function Testimonials({ items, title = "What Our Clients Say", sub = "Hom
           <div className="p-6 md:p-10 grid sm:grid-cols-2 gap-6">
             {list.slice(0, 4).map((t) => (
               <figure key={t.author + t.location} className="flex flex-col">
-                <div className="flex gap-0.5 text-[var(--gold)] mb-3" aria-label={`${t.rating} out of 5 stars`}>
+                <div className="flex gap-0.5 text-[var(--gold-ink)] mb-3" aria-label={`${t.rating} out of 5 stars`}>
                   {Array.from({ length: t.rating }).map((_, i) => <Icon.Star key={i} width={16} height={16} />)}
                 </div>
-                <blockquote className="text-[#e3e9f2] leading-relaxed text-[0.95rem] flex-1">“{t.quote}”</blockquote>
-                <figcaption className="mt-3 text-sm"><span className="font-bold text-white">{t.author}</span> <span className="text-[var(--muted)]">· {t.location}</span></figcaption>
+                <blockquote className="text-body leading-relaxed text-[0.95rem] flex-1">“{t.quote}”</blockquote>
+                <figcaption className="mt-3 text-sm"><span className="font-bold text-ink">{t.author}</span> <span className="text-[var(--muted)]">· {t.location}</span></figcaption>
               </figure>
             ))}
           </div>
@@ -98,7 +98,7 @@ export function BookCta({
         <div className="card card-static p-6 md:p-10 lg:p-14 grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center" style={{ background: "linear-gradient(135deg, var(--panel) 0%, var(--surface-2) 100%)" }}>
           <div>
             <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{eyebrow}</span>
-            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.08] text-white">{title}</h2>
+            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.08] text-ink">{title}</h2>
             <p className="mt-4 text-[var(--muted)] leading-relaxed max-w-xl">{body ?? site.demo.detail}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href={primary.href} className={`btn ${gold ? "btn-gold" : "btn-primary"} btn-lg`}>{primary.label} <Icon.Arrow width={18} height={18} /></Link>
@@ -107,10 +107,10 @@ export function BookCta({
           </div>
           <ul className="space-y-3">
             {items.map((b) => (
-              <li key={b.title} className="card card-static p-4 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.03)" }}>
+              <li key={b.title} className="card card-static p-4 flex gap-4 items-start" style={{ background: "var(--surface)" }}>
                 <IconTile gold={gold} className="shrink-0">{b.icon}</IconTile>
                 <div>
-                  <p className="font-bold text-white">{b.title}</p>
+                  <p className="font-bold text-ink">{b.title}</p>
                   <p className="text-sm text-[var(--muted)] leading-relaxed">{b.body}</p>
                 </div>
               </li>
@@ -140,14 +140,14 @@ export function ClosingForm({
 }) {
   const photo = getPhoto(photoNeedle);
   return (
-    <section className="relative overflow-hidden section" style={{ background: "var(--deep)" }}>
+    <section className="relative overflow-hidden section on-photo" style={{ background: "var(--deep)" }}>
       <Image src={photo.src} alt={photo.alt} fill sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover opacity-50" />
       <div className="absolute inset-0 night-veil-center" />
       <div className="wrap relative grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{eyebrow}</span>
-          <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.08] text-white text-balance">{title}</h2>
-          <p className="mt-4 text-[#c3cddc] leading-relaxed max-w-xl">{body}</p>
+          <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.08] text-ink text-balance">{title}</h2>
+          <p className="mt-4 text-body leading-relaxed max-w-xl">{body}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <AiPreviewButton className="btn btn-outline" />
             <a href={site.phoneHref} className="btn btn-ghost-white"><Icon.Phone width={18} height={18} /> {site.phone}</a>
@@ -191,12 +191,12 @@ export function SplitFeature({
         </div>
         <div>
           <span className={`pill ${gold ? "pill-gold" : ""} mb-4`}>{eyebrow}</span>
-          <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-white text-balance">{title}</h2>
+          <h2 className="font-display text-3xl md:text-[2.4rem] leading-[1.1] text-ink text-balance">{title}</h2>
           <p className="mt-4 text-[var(--muted)] leading-relaxed">{body}</p>
           {bullets && (
             <ul className="mt-6 grid sm:grid-cols-2 gap-3">
               {bullets.map((b) => (
-                <li key={b.label} className="flex items-center gap-3 text-sm font-semibold text-[#e3e9f2]">
+                <li key={b.label} className="flex items-center gap-3 text-sm font-semibold text-body">
                   <IconTile gold={gold} className="!w-10 !h-10 shrink-0">{b.icon}</IconTile>{b.label}
                 </li>
               ))}

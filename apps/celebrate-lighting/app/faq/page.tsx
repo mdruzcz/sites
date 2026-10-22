@@ -31,8 +31,8 @@ export default function FaqPage() {
           <Breadcrumbs items={[{ name: "FAQ" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Got questions?</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Frequently Asked Questions</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Everything we get asked about permanent lighting, seasonal C9 lights, pricing, installation, warranties and the free demo and AI preview.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Frequently Asked Questions</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Everything we get asked about permanent lighting, seasonal C9 lights, pricing, installation, warranties and the free demo and AI preview.</p>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">{groups.map((g) => <a key={g.category} href={`#${slug(g.category)}`} className="chip">{g.category}</a>)}</div>
         </div>
@@ -41,12 +41,12 @@ export default function FaqPage() {
         <div className="wrap max-w-4xl">
           {groups.map((g) => (
             <div key={g.category} id={slug(g.category)} className="mb-12 last:mb-0 scroll-mt-40">
-              <h2 className="font-bold text-2xl text-white mb-5">{g.category}</h2>
+              <h2 className="font-bold text-2xl text-ink mb-5">{g.category}</h2>
               <FaqList items={g.items} name={`faq-${slug(g.category)}`} />
             </div>
           ))}
           <div className="card card-static p-6 md:p-8 mt-12 text-center">
-            <h2 className="font-bold text-2xl text-white">Still have questions?</h2>
+            <h2 className="font-bold text-2xl text-ink">Still have questions?</h2>
             <p className="mt-2 text-[var(--muted)]">Call {site.phone} or send a note. We reply within 24 hours.</p>
             <div className="mt-5 flex flex-wrap justify-center gap-3"><Link href="/contact" className="btn btn-primary">Contact us <Icon.Arrow width={16} height={16} /></Link><Link href="/guides" className="btn btn-outline">Read the guides</Link></div>
           </div>

@@ -42,40 +42,30 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
           <Breadcrumbs items={[{ name: "Contact" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Get in touch</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Contact Celebrate Lighting</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Book a free on-site demo, request a seasonal quote, or just ask a question. We reply to everything within 24 hours.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Contact Celebrate Lighting</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Book a free on-site demo, request a seasonal quote, or just ask a question. We reply to everything within 24 hours.</p>
           </div>
         </div>
       </section>
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap grid lg:grid-cols-[1.4fr_1fr] gap-10">
           <div className="card card-static p-6 md:p-8">
-            <h2 className="font-bold text-2xl text-white">Send a request</h2>
+            <h2 className="font-bold text-2xl text-ink">Send a request</h2>
             <p className="text-sm text-[var(--muted)] mt-1 mb-6 flex flex-wrap gap-x-4 gap-y-1"><span>✓ Free estimate</span><span>✓ 24-hour response</span><span>✓ No obligation</span></p>
             <ContactForm defaultService={defaultService} />
           </div>
           <aside className="space-y-4">
-            {[
-              { icon: <Icon.Phone />, title: "Call us", body: site.phone, sub: site.hoursShort, href: site.phoneHref },
-              { icon: <Icon.App />, title: "Text us", body: site.phone, sub: "Quick replies during business hours", href: site.smsHref },
-              { icon: <Icon.Mail />, title: "Email us", body: site.email, sub: "We respond within 24 hours", href: site.emailHref },
-            ].map((c) => (
-              <a key={c.title} href={c.href} className="card card-lift p-5 flex items-center gap-4">
-                <IconTile className="shrink-0">{c.icon}</IconTile>
-                <div><p className="text-xs uppercase tracking-wide text-[var(--muted)]">{c.title}</p><p className="font-bold text-white">{c.body}</p><p className="text-xs text-[var(--muted)]">{c.sub}</p></div>
-              </a>
-            ))}
             <div className="card card-static p-5">
               <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">Visit or mail</p>
-              <p className="font-bold text-white">{site.address.street}</p>
-              <p className="text-sm text-[#d6deea]">{site.address.city}, {site.address.region} {site.address.postal}</p>
+              <p className="font-bold text-ink">{site.address.street}</p>
+              <p className="text-sm text-body">{site.address.city}, {site.address.region} {site.address.postal}</p>
               <div className="hairline my-4" />
               <p className="text-xs uppercase tracking-wide text-[var(--muted)] mb-2">Business hours</p>
-              <ul className="text-sm text-[#d6deea] space-y-1">{site.hoursDetailed.map((h) => <li key={h.day} className="flex justify-between gap-4"><span>{h.day}</span><span className="text-white font-semibold">{h.hours}</span></li>)}</ul>
+              <ul className="text-sm text-body space-y-1">{site.hoursDetailed.map((h) => <li key={h.day} className="flex justify-between gap-4"><span>{h.day}</span><span className="text-ink font-semibold">{h.hours}</span></li>)}</ul>
             </div>
             <div className="card card-static p-5">
               <IconTile className="mb-3"><Icon.Sparkle /></IconTile>
-              <p className="font-bold text-white">Not ready to talk yet?</p>
+              <p className="font-bold text-ink">Not ready to talk yet?</p>
               <p className="text-sm text-[var(--muted)] mt-1 mb-3">Upload a photo and get a free AI preview of your home with permanent lighting.</p>
               <AiPreviewButton className="btn btn-outline btn-sm w-full" />
             </div>
@@ -84,7 +74,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
       </section>
       <section className="section" style={{ background: "var(--surface)" }}>
         <div className="wrap text-center max-w-2xl mx-auto">
-          <h2 className="font-display text-3xl text-white">Have questions first?</h2>
+          <h2 className="font-display text-3xl text-ink">Have questions first?</h2>
           <p className="mt-3 text-[var(--muted)]">Pricing, installation, warranty, the demo, the AI preview and what happens in a Southwestern Ontario winter.</p>
           <Link href="/faq" className="btn btn-outline mt-6">Read the FAQ <Icon.Arrow width={16} height={16} /></Link>
         </div>

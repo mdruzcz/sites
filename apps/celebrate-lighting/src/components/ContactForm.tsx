@@ -44,8 +44,8 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
     return (
       <div ref={successRef} className="rounded-2xl border border-[var(--accent)] bg-[var(--accent-light)] p-8 text-center">
         <div className="w-14 h-14 rounded-full bg-[var(--accent)] text-[#04121a] flex items-center justify-center mx-auto mb-4"><Icon.Check strokeWidth={3} width={26} height={26} /></div>
-        <h3 className="text-xl font-bold text-white mb-2">Thanks, we’ve got your message.</h3>
-        <p className="text-[#d6deea] leading-relaxed">We reply to every request within <strong>24 hours</strong>, usually sooner. If it’s urgent, call us at <a href={site.phoneHref} className="text-[var(--accent)] font-semibold">{site.phone}</a>.</p>
+        <h3 className="text-xl font-bold text-ink mb-2">Thanks, we’ve got your message.</h3>
+        <p className="text-body leading-relaxed">We reply to every request within <strong>24 hours</strong>, usually sooner. If it’s urgent, call us at <a href={site.phoneHref} className="text-[var(--accent-ink)] font-semibold">{site.phone}</a>.</p>
       </div>
     );
   }
@@ -55,35 +55,35 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="c-name" className="block text-sm font-semibold text-white mb-1.5">Full name *</label>
+          <label htmlFor="c-name" className="block text-sm font-semibold text-ink mb-1.5">Full name *</label>
           <input id="c-name" name="name" required autoComplete="name" className="field field-dark" />
         </div>
         <div>
-          <label htmlFor="c-phone" className="block text-sm font-semibold text-white mb-1.5">Phone *</label>
+          <label htmlFor="c-phone" className="block text-sm font-semibold text-ink mb-1.5">Phone *</label>
           <input id="c-phone" name="phone" type="tel" required inputMode="tel" autoComplete="tel" className="field field-dark" />
         </div>
         <div>
-          <label htmlFor="c-email" className="block text-sm font-semibold text-white mb-1.5">Email *</label>
+          <label htmlFor="c-email" className="block text-sm font-semibold text-ink mb-1.5">Email *</label>
           <input id="c-email" name="email" type="email" required autoComplete="email" className="field field-dark" />
         </div>
         <div>
-          <label htmlFor="c-address" className="block text-sm font-semibold text-white mb-1.5">Address or city</label>
+          <label htmlFor="c-address" className="block text-sm font-semibold text-ink mb-1.5">Address or city</label>
           <input id="c-address" name="address" autoComplete="street-address" placeholder="So we know where to come" className="field field-dark" />
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="c-service" className="block text-sm font-semibold text-white mb-1.5">What are you interested in? *</label>
+          <label htmlFor="c-service" className="block text-sm font-semibold text-ink mb-1.5">What are you interested in? *</label>
           <select id="c-service" name="service" required className="field field-dark" defaultValue={defaultService}>
             <option value="" disabled>Choose one</option>
             {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="c-message" className="block text-sm font-semibold text-white mb-1.5">Tell us about your home or project</label>
+          <label htmlFor="c-message" className="block text-sm font-semibold text-ink mb-1.5">Tell us about your home or project</label>
           <textarea id="c-message" name="message" placeholder="Storeys, roofline sections you want lit, colours you have in mind, timing…" className="field field-dark" />
         </div>
         <div className="sm:col-span-2">
           <fieldset>
-            <legend className="block text-sm font-semibold text-white mb-1.5">Preferred contact</legend>
+            <legend className="block text-sm font-semibold text-ink mb-1.5">Preferred contact</legend>
             <div className="flex flex-wrap gap-2">
               {["Call", "Text", "Email"].map((m) => (
                 <label key={m} className="chip cursor-pointer has-[:checked]:chip-active">

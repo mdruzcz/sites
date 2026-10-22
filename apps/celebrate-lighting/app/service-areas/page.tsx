@@ -33,8 +33,8 @@ export default function ServiceAreasPage() {
           <Breadcrumbs items={[{ name: "Service Areas" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Serving Southwestern Ontario</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Where We Install Permanent &amp; Seasonal Lighting</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Based at {site.addressLine}, we cover Oxford County and the cities around it, roughly a 90-minute radius. Every community below has its own page with neighbourhood detail, local FAQs and the free on-site demo offer.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Where We Install Permanent &amp; Seasonal Lighting</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Based at {site.addressLine}, we cover Oxford County and the cities around it, roughly a 90-minute radius. Every community below has its own page with neighbourhood detail, local FAQs and the free on-site demo offer.</p>
           </div>
           <div className="mt-10"><StatRow stats={[{ stat: String(cities.length), label: "Communities with local pages" }, { stat: "90 min", label: "Typical service radius from Woodstock" }, { stat: "24 hrs", label: "Response on every request" }, { stat: "Free", label: "On-site demo and AI preview" }]} /></div>
         </div>
@@ -43,16 +43,16 @@ export default function ServiceAreasPage() {
         <div className="wrap">
           {counties.map((county) => (
             <div key={county} className="mb-12 last:mb-0">
-              <h2 className="font-bold text-2xl text-white mb-5 flex items-center gap-3"><Icon.Pin className="text-[var(--accent)]" /> {county}</h2>
+              <h2 className="font-bold text-2xl text-ink mb-5 flex items-center gap-3"><Icon.Pin className="text-[var(--accent-ink)]" /> {county}</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {cities.filter((c) => c.county === county).map((c) => (
                   <Link key={c.slug} href={`/service-areas/${c.slug}`} className="card card-lift p-6 group">
                     <div className="flex items-start justify-between gap-3">
-                      <div><h3 className="font-bold text-xl text-white">{c.name}</h3><p className="text-xs text-[var(--muted)] mt-0.5">{c.driveFromWoodstock} · pop. {c.population}</p></div>
+                      <div><h3 className="font-bold text-xl text-ink">{c.name}</h3><p className="text-xs text-[var(--muted)] mt-0.5">{c.driveFromWoodstock} · pop. {c.population}</p></div>
                       <span className="icon-tile !w-9 !h-9 shrink-0 group-hover:bg-[var(--accent)] group-hover:text-[#04121a] transition-colors"><Icon.Arrow width={16} height={16} /></span>
                     </div>
                     <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed line-clamp-3">{c.intro}</p>
-                    <p className="mt-3 text-xs text-[#c3cddc]">{c.neighbourhoods.slice(0, 4).join(" · ")}</p>
+                    <p className="mt-3 text-xs text-body">{c.neighbourhoods.slice(0, 4).join(" · ")}</p>
                   </Link>
                 ))}
               </div>
@@ -66,7 +66,7 @@ export default function ServiceAreasPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {photos.map((p) => (<Link key={p.src} href="/gallery" className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)]"><Image src={p.src} alt={p.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" /></Link>))}
           </div>
-          <p className="mt-6 text-sm text-[var(--muted)]">Not on the list? We regularly travel further for larger projects. <Link href="/contact" className="text-[var(--accent)] underline underline-offset-2">Ask us</Link>.</p>
+          <p className="mt-6 text-sm text-[var(--muted)]">Not on the list? We regularly travel further for larger projects. <Link href="/contact" className="text-[var(--accent-ink)] underline underline-offset-2">Ask us</Link>.</p>
         </div>
       </section>
       <BookCta />

@@ -9,12 +9,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t" style={{ background: "var(--deep)", borderColor: "var(--border)" }}>
+    <footer className="border-t on-photo" style={{ background: "var(--deep)", borderColor: "var(--border)" }}>
       <div className="wrap py-14 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <Image src="/images/logo-dark.png" alt="Celebrate Lighting" width={304} height={273} className="h-16 w-auto mb-4" />
+            <Image src="/images/logo-dark.png" alt="Celebrate Lighting" width={1881} height={522} className="h-14 w-auto mb-4" />
             <p className="text-sm text-[var(--muted)] leading-relaxed max-w-xs">
               Permanent outdoor LED lighting and seasonal C9 Christmas lights, installed across Southwestern Ontario from our base in Woodstock.
             </p>
@@ -75,11 +75,6 @@ export function Footer() {
               <li>
                 <a href={site.phoneHref} className="flex items-center gap-3 text-white font-semibold hover:text-[var(--accent)] min-h-[44px]">
                   <span className="icon-tile !w-9 !h-9"><Icon.Phone width={16} height={16} /></span>{site.phone}
-                </a>
-              </li>
-              <li>
-                <a href={site.emailHref} className="flex items-center gap-3 text-[#c3cddc] hover:text-white min-h-[44px]">
-                  <span className="icon-tile !w-9 !h-9"><Icon.Mail width={16} height={16} /></span>{site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-[#c3cddc]">

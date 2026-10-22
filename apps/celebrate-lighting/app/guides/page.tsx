@@ -31,8 +31,8 @@ export default function GuidesPage() {
           <Breadcrumbs items={[{ name: "Guides" }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4">Learn before you buy</span>
-            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">Permanent Lighting Guides for Ontario Homeowners</h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">Honest, specific answers to the questions we hear at every demo. Written for Southwestern Ontario homes and winters.</p>
+            <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">Permanent Lighting Guides for Ontario Homeowners</h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">Honest, specific answers to the questions we hear at every demo. Written for Southwestern Ontario homes and winters.</p>
           </div>
         </div>
       </section>
@@ -40,14 +40,14 @@ export default function GuidesPage() {
         <div className="wrap">
           {cats.map((cat) => (
             <div key={cat} className="mb-12 last:mb-0">
-              <h2 className="font-bold text-2xl text-white mb-5">{cat}</h2>
+              <h2 className="font-bold text-2xl text-ink mb-5">{cat}</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {guides.filter((g) => g.category === cat).map((g) => (
                   <Link key={g.slug} href={`/guides/${g.slug}`} className="card card-lift p-6 flex flex-col group">
                     <span className="text-xs text-[var(--muted)]">{g.readingMinutes} min read</span>
-                    <h3 className="font-bold text-lg text-white mt-2 leading-snug">{g.title}</h3>
+                    <h3 className="font-bold text-lg text-ink mt-2 leading-snug">{g.title}</h3>
                     <p className="mt-2 text-sm text-[var(--muted)] leading-relaxed line-clamp-3 flex-1">{g.summary}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent)]">Read guide <Icon.Arrow width={16} height={16} /></span>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[var(--accent-ink)]">Read guide <Icon.Arrow width={16} height={16} /></span>
                   </Link>
                 ))}
               </div>

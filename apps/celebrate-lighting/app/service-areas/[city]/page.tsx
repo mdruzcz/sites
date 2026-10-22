@@ -51,14 +51,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         breadcrumbSchema([{ name: "Home", url: site.url }, { name: "Service Areas", url: `${site.url}/service-areas` }, { name: city.name, url }]),
         faqSchema(city.faqs),
       ]} />
-      <section className="relative overflow-hidden" style={{ background: "var(--deep)" }}>
+      <section className="relative overflow-hidden on-photo" style={{ background: "var(--deep)" }}>
         <div className="absolute inset-0"><Image src={hero.src} alt={hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={hero.blurDataURL} className="object-cover" /><div className="absolute inset-0 night-veil" /></div>
         <div className="wrap relative py-14 md:py-20">
           <Breadcrumbs items={[{ name: "Service Areas", href: "/service-areas" }, { name: city.name }]} />
           <div className="mt-6 max-w-3xl">
             <span className="pill mb-4"><Icon.Pin width={14} height={14} /> {city.county} · {city.driveFromWoodstock} from Woodstock</span>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-white text-balance">Permanent &amp; Christmas Lighting in <span className="text-[var(--accent)]">{city.name}, Ontario</span></h1>
-            <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{city.intro}</p>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05] text-ink text-balance">Permanent &amp; Christmas Lighting in <span className="text-[var(--accent-ink)]">{city.name}, Ontario</span></h1>
+            <p className="mt-5 text-lg text-body leading-relaxed">{city.intro}</p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn btn-primary btn-lg">{site.demo.ctaLong} <Icon.Arrow width={18} height={18} /></Link>
               <AiPreviewButton className="btn btn-ghost-white btn-lg" />
@@ -72,7 +72,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           {cards.map((c) => (
             <Link key={c.href} href={c.href} className="card card-lift overflow-hidden group">
               <div className="relative aspect-[16/9]"><Image src={c.photo.src} alt={c.photo.alt} fill sizes="(max-width: 768px) 100vw, 50vw" placeholder="blur" blurDataURL={c.photo.blurDataURL} className="object-cover transition-transform duration-500 group-hover:scale-105" /></div>
-              <div className="p-6"><h2 className="font-bold text-xl text-white">{c.title}</h2><p className="mt-2 text-sm text-[var(--muted)] leading-relaxed line-clamp-4">{c.body}</p><span className={`mt-4 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold)]" : "text-[var(--accent)]"}`}>{c.cta} <Icon.Arrow width={16} height={16} /></span></div>
+              <div className="p-6"><h2 className="font-bold text-xl text-ink">{c.title}</h2><p className="mt-2 text-sm text-[var(--muted)] leading-relaxed line-clamp-4">{c.body}</p><span className={`mt-4 inline-flex items-center gap-1 text-sm font-bold ${c.gold ? "text-[var(--gold-ink)]" : "text-[var(--accent-ink)]"}`}>{c.cta} <Icon.Arrow width={16} height={16} /></span></div>
             </Link>
           ))}
         </div>
@@ -93,23 +93,23 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
           <aside className="space-y-4">
             <div className="card card-static p-6">
-              <h3 className="font-bold text-white mb-3">{city.name} quick facts</h3>
+              <h3 className="font-bold text-ink mb-3">{city.name} quick facts</h3>
               <dl className="text-sm space-y-2">
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">County</dt><dd className="text-white font-semibold text-right">{city.county}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Population</dt><dd className="text-white font-semibold text-right">{city.population}</dd></div>
-                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">From our base</dt><dd className="text-white font-semibold text-right">{city.driveFromWoodstock}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">County</dt><dd className="text-ink font-semibold text-right">{city.county}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">Population</dt><dd className="text-ink font-semibold text-right">{city.population}</dd></div>
+                <div className="flex justify-between gap-4"><dt className="text-[var(--muted)]">From our base</dt><dd className="text-ink font-semibold text-right">{city.driveFromWoodstock}</dd></div>
               </dl>
               <p className="mt-4 text-xs text-[var(--muted)]">Landmarks: {city.landmarks.join(" · ")}</p>
             </div>
             <div className="card card-static p-6">
-              <h3 className="font-bold text-white mb-3">All services in {city.name}</h3>
+              <h3 className="font-bold text-ink mb-3">All services in {city.name}</h3>
               <ul className="text-sm space-y-2">
-                {services.map((s) => (<li key={s.slug}><Link href={`/services/${s.slug}/${city.slug}`} className="text-[#d6deea] hover:text-[var(--accent)] inline-flex items-center gap-2 min-h-[32px]"><Icon.Check width={14} height={14} className="text-[var(--accent)]" /> {s.title} in {city.name}</Link></li>))}
+                {services.map((s) => (<li key={s.slug}><Link href={`/services/${s.slug}/${city.slug}`} className="text-body hover:text-[var(--accent-ink)] inline-flex items-center gap-2 min-h-[32px]"><Icon.Check width={14} height={14} className="text-[var(--accent-ink)]" /> {s.title} in {city.name}</Link></li>))}
               </ul>
             </div>
             <div className="card card-static p-6">
               <IconTile className="mb-3"><Icon.Sparkle /></IconTile>
-              <h3 className="font-bold text-white">Free AI preview, {city.name}</h3>
+              <h3 className="font-bold text-ink">Free AI preview, {city.name}</h3>
               <p className="text-sm text-[var(--muted)] mt-1 mb-4">Upload one photo of your house and see it lit before anyone comes out.</p>
               <AiPreviewButton className="btn btn-outline btn-sm w-full" />
             </div>
@@ -118,7 +118,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
 
       <section className="section" style={{ background: "var(--bg)" }}>
-        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-white leading-tight">Questions from {city.name} homeowners</h2><p className="mt-3 text-[var(--muted)]">More answers on the <Link href="/faq" className="text-[var(--accent)] underline underline-offset-2">full FAQ page</Link>.</p></div><FaqList items={city.faqs} name="city-faq" /></div>
+        <div className="wrap grid lg:grid-cols-[1fr_1.4fr] gap-10"><div><span className="pill mb-4">{city.name} FAQ</span><h2 className="font-display text-3xl text-ink leading-tight">Questions from {city.name} homeowners</h2><p className="mt-3 text-[var(--muted)]">More answers on the <Link href="/faq" className="text-[var(--accent-ink)] underline underline-offset-2">full FAQ page</Link>.</p></div><FaqList items={city.faqs} name="city-faq" /></div>
       </section>
 
       <Testimonials />

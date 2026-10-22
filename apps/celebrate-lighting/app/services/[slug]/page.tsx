@@ -83,8 +83,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-6 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <div>
               <span className="pill mb-4">Permanent lighting service</span>
-              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-white text-balance">{m?.title ?? service.title}</h1>
-              <p className="mt-5 text-lg text-[#d6deea] leading-relaxed">{service.fullDescription}</p>
+              <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] text-ink text-balance">{m?.title ?? service.title}</h1>
+              <p className="mt-5 text-lg text-body leading-relaxed">{service.fullDescription}</p>
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
                 <Link href={`/contact?service=${slug}`} className="btn btn-primary btn-lg">{slug === "new-installation" || slug === "consultation" ? site.demo.ctaLong : `Book ${service.title.toLowerCase()}`} <Icon.Arrow width={18} height={18} /></Link>
                 <a href={site.phoneHref} className="btn btn-outline btn-lg"><Icon.Phone width={18} height={18} /> {site.phone}</a>
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
       <section className="section" style={{ background: "var(--bg)" }}>
         <div className="wrap grid lg:grid-cols-2 gap-10">
-          <div className="card card-static p-6 md:p-8"><h2 className="font-bold text-2xl text-white mb-4">What’s included</h2><CheckList items={service.features} /></div>
+          <div className="card card-static p-6 md:p-8"><h2 className="font-bold text-2xl text-ink mb-4">What’s included</h2><CheckList items={service.features} /></div>
           <div><SectionHeading eyebrow="FAQ" title={`${service.title} questions`} align="left" /><FaqList items={faqs} name={`${slug}-faq`} /></div>
         </div>
       </section>
