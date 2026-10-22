@@ -41,6 +41,8 @@ const HOSTNAME_TO_TABLE = {
   "ontariorampsolutions.ca": "ontariorampsolutions_quote_requests",
   "optimumhvac.ca": "optimum_hvac_leads",
   "resonatelighting.com": "resonatelighting_quote_requests",
+  "commercialholidaydecorators.ca": "chd_quote_requests",
+  "lobbydecorating.ca": "chd_quote_requests",
   "restoremydeck.ca": "rmd_quote_requests",
   "spotlessdeckstaining.ca": "spotless_quote_requests",
   "spotlesspropertycleaning.ca": "spotless_quote_requests",

@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#13231e; --green:#1f6f52; --gold:#c9a24a; }
+  body { margin:0; background:transparent; font-family:"Inter", sans-serif; }
+  .lockup { display:inline-flex; align-items:center; gap:22px; padding:12px 16px; }
+  .lockup.white { --ink:#ffffff; --green:#9fd3bd; }
+  .words { display:flex; flex-direction:column; line-height:1; }
+  .name { font-family:"Playfair Display", serif; font-weight:700; font-size:86px; letter-spacing:-0.01em; color:var(--ink); white-space:nowrap; }
+  .sub { margin-top:12px; font-weight:700; font-size:27px; letter-spacing:0.36em; color:var(--green); padding-left:4px; }
+  .mark { width:150px; height:150px; display:block; }
+  .stack { display:inline-flex; flex-direction:column; align-items:center; padding:24px; }
+  .stack .mark { width:220px; height:220px; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wreath" viewBox="0 0 100 100">
+    <!-- wreath ring -->
+    <circle cx="50" cy="52" r="33" fill="none" stroke="var(--green)" stroke-width="9"/>
+    <!-- berries -->
+    <g fill="var(--gold)">
+      <circle cx="50" cy="19" r="4.2"/><circle cx="73" cy="29" r="4.2"/><circle cx="83" cy="52" r="4.2"/><circle cx="73" cy="75" r="4.2"/>
+      <circle cx="50" cy="85" r="4.2"/><circle cx="27" cy="75" r="4.2"/><circle cx="17" cy="52" r="4.2"/><circle cx="27" cy="29" r="4.2"/>
+    </g>
+    <!-- star -->
+    <path d="M50 36 L54.2 46.4 L65.4 47.2 L56.8 54.4 L59.5 65.4 L50 59.4 L40.5 65.4 L43.2 54.4 L34.6 47.2 L45.8 46.4 Z" fill="var(--gold)"/>
+  </symbol>
+</svg>
+
+<div id="logo" class="lockup">
+  <svg class="mark" viewBox="0 0 100 100"><use href="#wreath"/></svg>
+  <div class="words"><span class="name">Commercial Holiday</span><span class="sub">DECORATORS</span></div>
+</div>
+<br>
+<div id="logo-white" class="lockup white">
+  <svg class="mark" viewBox="0 0 100 100"><use href="#wreath"/></svg>
+  <div class="words"><span class="name">Commercial Holiday</span><span class="sub">DECORATORS</span></div>
+</div>
+<br>
+<div id="mark" class="stack"><svg class="mark" viewBox="0 0 100 100"><use href="#wreath"/></svg></div>
+</body></html>
