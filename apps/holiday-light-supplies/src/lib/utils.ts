@@ -33,3 +33,13 @@ export function absoluteUrl(path: string) {
   if (/^https?:\/\//.test(path)) return path;
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
+
+/** Shop price filter buckets (CAD), matched against a product's lowest option. */
+export const PRICE_BUCKETS = [
+  { label: "Under $50", value: "0-50" },
+  { label: "$50 – $250", value: "50-250" },
+  { label: "$250 – $1,000", value: "250-1000" },
+  { label: "$1,000 – $5,000", value: "1000-5000" },
+  { label: "$5,000 +", value: "5000-999999" },
+  { label: "Quote only", value: "quote" }
+];

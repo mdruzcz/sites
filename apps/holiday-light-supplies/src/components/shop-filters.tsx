@@ -2,31 +2,29 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@/components/icons";
+import { PRICE_BUCKETS } from "@/lib/utils";
+
 
 interface Props {
   categories: { slug: string; name: string; count: number }[];
+  /** Products left after search and price, before the category is applied. */
+  total: number;
   activeCategory?: string;
   activePrice?: string;
   activeSort?: string;
   activeQ?: string;
 }
 
-const PRICE_BUCKETS = [
-  { label: "Under $50", value: "0-50" },
-  { label: "$50 – $250", value: "50-250" },
-  { label: "$250 – $1,000", value: "250-1000" },
-  { label: "$1,000 – $5,000", value: "1000-5000" },
-  { label: "$5,000 +", value: "5000-999999" },
-  { label: "Quote only", value: "quote" }
-];
-
-export function ShopFilters({ categories, activeCategory, activePrice, activeSort, activeQ }: Props) {
+export function ShopFilters({ categories, total, activeCategory, activePrice, activeSort, activeQ }: Props) {
   const router = useRouter();
   const params = useSearchParams();
   const [q, setQ] = useState(activeQ ?? "");
   const [open, setOpen] = useState(false);
+
+  // Keep the box in step with the URL (chips, Clear all, back button).
+  useEffect(() => setQ(activeQ ?? ""), [activeQ]);
 
   function update(patch: Record<string, string | undefined>) {
     const next = new URLSearchParams(params.toString());
@@ -57,12 +55,12 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
               value={q}
               onChange={(e) => setQ(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") update({ q });
+                if (e.key === "Enter") update({ q: q.trim() });
               }}
               placeholder="e.g. C9 warm white, reindeer"
               className="input pr-10"
             />
-            <button type="button" onClick={() => update({ q })} aria-label="Search" className="absolute right-1 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-lg text-[var(--color-muted)] hover:bg-[var(--color-bg-warm)]">
+            <button type="button" onClick={() => update({ q: q.trim() })} aria-label="Search" className="absolute right-1 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-lg text-[var(--color-muted)] hover:bg-[var(--color-bg-warm)]">
               <Icon.search size={16} />
             </button>
           </div>
@@ -80,14 +78,14 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
         </div>
 
         <div>
-          <p className="label">Category</p>
+          <p className="label">{activeQ ? "Category (in your results)" : "Category"}</p>
           <ul className="space-y-0.5 text-sm">
             <li>
-              <Filter label="All categories" count={categories.reduce((s, c) => s + c.count, 0)} active={!activeCategory} onClick={() => update({ category: undefined })} />
+              <Filter label="All categories" count={total} active={!activeCategory} onClick={() => update({ category: undefined })} />
             </li>
             {categories.map((c) => (
               <li key={c.slug}>
-                <Filter label={c.name} count={c.count} active={activeCategory === c.slug} onClick={() => update({ category: c.slug })} />
+                <Filter label={c.name} count={c.count} active={activeCategory === c.slug} disabled={c.count === 0 && activeCategory !== c.slug} onClick={() => update({ category: c.slug })} />
               </li>
             ))}
           </ul>
@@ -123,13 +121,18 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
   );
 }
 
-function Filter({ label, count, active, onClick }: { label: string; count?: number; active: boolean; onClick: () => void }) {
+function Filter({ label, count, active, disabled, onClick }: { label: string; count?: number; active: boolean; disabled?: boolean; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      disabled={disabled}
       className={`flex min-h-[38px] w-full items-center justify-between rounded-lg px-2.5 text-left transition ${
-        active ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]" : "hover:bg-[var(--color-bg-warm)]"
+        active
+          ? "bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]"
+          : disabled
+            ? "cursor-default text-[var(--color-muted)] opacity-50"
+            : "hover:bg-[var(--color-bg-warm)]"
       }`}
     >
       <span>{label}</span>

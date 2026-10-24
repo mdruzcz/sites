@@ -1,20 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useUI } from "@/components/ui-context";
-import { getBrowserSupabase } from "@/lib/supabase/client";
 import { Icon } from "@/components/icons";
+import { searchCatalog } from "@/lib/search";
+import type { SearchIndex, SearchIndexItem } from "@/app/api/search-index/route";
 import { formatCadRound, imageSrc } from "@/lib/utils";
 
-interface SearchHit {
-  id: string;
-  slug: string;
-  name: string;
-  short_description: string | null;
-  image_url: string | null;
-  min_price: number;
+/** Loaded once per page view, the first time search opens. */
+let indexPromise: Promise<SearchIndex> | null = null;
+function loadIndex() {
+  indexPromise ??= fetch("/api/search-index")
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .catch(() => {
+      indexPromise = null;
+      return { products: [], categories: [] };
+    });
+  return indexPromise;
 }
 
 const POPULAR = ["C9 warm white", "Socket spool", "Reindeer", "Snowflake pole mount", "Wreath", "Gift box", "Mini lights", "Permanent lighting kit"];
@@ -30,52 +34,27 @@ const QUICK_LINKS = [
 export function PredictiveSearch() {
   const { searchOpen, closeSearch } = useUI();
   const [q, setQ] = useState("");
-  const [hits, setHits] = useState<SearchHit[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [index, setIndex] = useState<SearchIndex | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    if (searchOpen) inputRef.current?.focus();
-    else {
-      setQ("");
-      setHits([]);
-    }
+    if (searchOpen) {
+      inputRef.current?.focus();
+      loadIndex().then(setIndex);
+    } else setQ("");
   }, [searchOpen]);
 
-  const debounced = useDebounced(q, 200);
+  const debounced = useDebounced(q, 80);
+  const loading = debounced.trim().length >= 2 && !index;
 
-  useEffect(() => {
-    if (!debounced || debounced.length < 2) {
-      setHits([]);
-      return;
-    }
-    let cancelled = false;
-    setLoading(true);
-    (async () => {
-      const supabase = getBrowserSupabase();
-      const terms = debounced.trim().split(/\s+/).filter(Boolean);
-      let query = supabase
-        .from("ecom_products")
-        .select("id, slug, name, short_description, ecom_variants(price_cad, is_active), ecom_product_images(public_url, is_primary, sort_order)")
-        .eq("status", "active");
-      for (const t of terms) query = query.ilike("name", `%${t}%`);
-      const { data } = await query.limit(8);
-      if (cancelled) return;
-      const mapped: SearchHit[] = (data ?? []).map((p) => {
-        const variants = (p.ecom_variants as { price_cad: number; is_active: boolean }[]) ?? [];
-        const prices = variants.filter((v) => v.is_active).map((v) => Number(v.price_cad)).filter((n) => n > 0);
-        const min = prices.length ? Math.min(...prices) : 0;
-        const imgs = (p.ecom_product_images as { public_url: string | null; is_primary: boolean; sort_order: number }[]) ?? [];
-        const primary = imgs.find((i) => i.is_primary) ?? [...imgs].sort((a, b) => a.sort_order - b.sort_order)[0];
-        return { id: p.id, slug: p.slug, name: p.name, short_description: p.short_description, image_url: primary?.public_url ?? null, min_price: min };
-      });
-      setHits(mapped);
-      setLoading(false);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [debounced]);
+  const { hits, total, loose, cats } = useMemo(() => {
+    const term = debounced.trim();
+    if (!index || term.length < 2) return { hits: [] as SearchIndexItem[], total: 0, loose: false, cats: [] as SearchIndex["categories"] };
+    const result = searchCatalog(index.products, term, (p) => p);
+    const catResult = searchCatalog(index.categories, term, (c) => ({ name: c.name, slug: c.slug }));
+    const cats = catResult.loose ? [] : catResult.items.slice(0, 3);
+    return { hits: result.items.slice(0, 8), total: result.items.length, loose: result.loose, cats };
+  }, [index, debounced]);
 
   if (!searchOpen) return null;
 
@@ -133,7 +112,19 @@ export function PredictiveSearch() {
           {q.length > 0 && q.length < 2 && <p className="px-5 py-4 text-sm text-[var(--color-muted)]">Keep typing…</p>}
           {loading && <p className="px-5 py-4 text-sm text-[var(--color-muted)]">Searching…</p>}
 
-          {!loading && q.length >= 2 && hits.length === 0 && (
+          {cats.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2 border-b border-[var(--color-border)] px-5 py-3 text-sm">
+              <span className="text-xs text-[var(--color-muted)]">Browse</span>
+              {cats.map((c) => (
+                <Link key={c.slug} href={`/product-category/${c.slug}`} onClick={closeSearch} className="chip min-h-[34px] hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]">
+                  {c.name} <span className="text-xs text-[var(--color-muted)]">{c.count}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+          {loose && hits.length > 0 && <p className="px-5 pt-3 text-xs text-[var(--color-muted)]">No product matches every word, so these are the closest.</p>}
+
+          {!loading && index && debounced.trim().length >= 2 && q.trim().length >= 2 && hits.length === 0 && (
             <div className="px-5 py-6 text-sm">
               <p className="font-medium">No matches for &ldquo;{q}&rdquo;</p>
               <p className="mt-1 text-[var(--color-muted)]">Try a broader term, or <Link href="/request-a-quote" onClick={closeSearch} className="font-semibold text-[var(--color-brand)] hover:underline">ask us to source it</Link>.</p>
@@ -143,7 +134,7 @@ export function PredictiveSearch() {
           {hits.length > 0 && (
             <ul className="divide-y divide-[var(--color-border)]">
               {hits.map((h) => (
-                <li key={h.id}>
+                <li key={h.slug}>
                   <Link href={`/product/${h.slug}`} onClick={closeSearch} className="flex items-center gap-3 px-5 py-3 hover:bg-[var(--color-brand-soft)]">
                     <div className="size-14 shrink-0 overflow-hidden rounded-xl bg-[var(--color-bg-warm)]">
                       <Image src={imageSrc(h.image_url)} alt={h.name} width={60} height={60} className="h-full w-full object-contain p-1" />
@@ -157,8 +148,8 @@ export function PredictiveSearch() {
                 </li>
               ))}
               <li className="px-5 py-3 text-center text-xs">
-                <Link href={`/shop?q=${encodeURIComponent(q)}`} onClick={closeSearch} className="font-semibold text-[var(--color-brand)] hover:underline">
-                  See all results for &ldquo;{q}&rdquo; →
+                <Link href={`/shop?q=${encodeURIComponent(q.trim())}`} onClick={closeSearch} className="font-semibold text-[var(--color-brand)] hover:underline">
+                  See all {total} results for &ldquo;{q.trim()}&rdquo; →
                 </Link>
               </li>
             </ul>
