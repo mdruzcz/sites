@@ -21,6 +21,14 @@ const wpRedirects: { source: string; destination: string; permanent: boolean }[]
   { source: "/product/:slug/", destination: "/product/:slug", permanent: true },
   // Archived duplicate product slug that still ranks in Google — 301 to the live canonical product.
   { source: "/product/c9-faceted-bulb-warm-white-2", destination: "/product/c9-faceted-bulb-warm-white", permanent: true },
+  // Duplicate listings archived 2026-10-24 — each old URL goes to the listing that was kept.
+  { source: "/product/3-9-grace-snowy-2", destination: "/product/3-9-grace-snowy", permanent: true },
+  { source: "/product/6-santa-elf-and-reindeer-w-presents", destination: "/product/6-santa-elf-and-reindeer-with-presents", permanent: true },
+  { source: "/product/7-2d-santa-snowman-and-sleigh-photo-op-display", destination: "/product/7-santa-snowman-and-sleigh-photo-op-display", permanent: true },
+  { source: "/product/7-2d-santa-w-photo-frame-photo-op-display", destination: "/product/7-2d-santa-with-photo-frame", permanent: true },
+  { source: "/product/7-5-3d-christmas-present-sitting-bench-2", destination: "/product/7-5-3d-christmas-present-sitting-bench", permanent: true },
+  { source: "/product/snowfall-light-w-plugs-pure-white-5-pack", destination: "/product/snowfall-light-w-plugs-pure-white-5-pack-2", permanent: true },
+  { source: "/product/welcome-stand-2-95-x-4-9-2", destination: "/product/welcome-stand-2-95-x-4-9", permanent: true },
   // fuchsia is not carried; send the old URL to the closest colour
   { source: "/product/c9-faceted-bulb-fuchsia", destination: "/product/c9-faceted-bulb-pink", permanent: true },
   // Rebuild additions: friendly aliases
