@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import { pushConversion } from '@/lib/gtm';
+import { pushConversion, getAttribution } from '@/lib/gtm';
 import { site, phoneHref } from '@/lib/site-config';
 import { useCaptchaWatchdog, useEngageOnVisible, CaptchaFallback } from '@/components/captcha-gate';
 
@@ -45,6 +45,7 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
       message: [interest ? `Interested in: ${interest}` : '', note].filter(Boolean).join('\n\n'),
       website: fd.get('website'),
       token,
+      attribution: getAttribution(),
     };
     try {
       const res = await fetch('/api/contact', {
@@ -55,7 +56,7 @@ export function QuoteForm({ city, tone = 'light', compact = false }: { city?: st
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         setStatus('success');
-        pushConversion('quote_form_submit', city);
+        pushConversion('quote_form_submit', city, { email: String(body.email ?? ''), phone: String(body.phone ?? '') });
         setTimeout(() => successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       } else {
         setStatus('error');

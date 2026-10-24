@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { serviceAreas, getArea, getNearbyAreas, getPhoto, getPhotosByTag, testimonials, site, phoneHref } from '@/lib/site';
 import { QuoteForm } from '@/components/QuoteForm';
+import { AdHeadline } from '@/components/AdHeadline';
 import { Breadcrumbs, PhotoImg, FeatureCard, SectionHeading, CtaBand } from '@/components/ui';
 import { Icon } from '@/components/icons';
 
@@ -127,7 +128,9 @@ export default async function CityPage({ params }: Props) {
             <div className="lg:col-span-7">
               <span className="eyebrow eyebrow-light">Serving {area.label} · Pop. {area.population}</span>
               <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[3.6rem] font-bold leading-[1.04] text-white">
-                Permanent Christmas &amp; year-round LED lighting in {area.city}, Ontario
+                <AdHeadline city={area.city}>
+                  Permanent Christmas &amp; year-round LED lighting in {area.city}, Ontario
+                </AdHeadline>
               </h1>
               <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
                 {area.description} Installed once on your soffit, then controlled forever from your phone. Every holiday, every colour, zero ladders.

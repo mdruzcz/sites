@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ClearCart } from '@/components/CartProvider';
+import { PurchaseConversion } from '@/components/PurchaseConversion';
 import { Icon } from '@/components/icons';
 import { getServiceSupabase } from '@/lib/supabase-admin';
 import { loadOrderDoc } from '@/lib/orders/order-doc';
@@ -23,6 +24,7 @@ export default async function CheckoutSuccess({ searchParams }: { searchParams: 
   return (
     <section className="bg-soft border-b border-line">
       {order && <ClearCart />}
+      {order && <PurchaseConversion number={order.number} subtotal={order.subtotal} email={order.email} phone={order.phone} />}
       <div className="wrap max-w-3xl pt-12 pb-20">
         <div className="text-center">
           <span className="inline-flex w-14 h-14 items-center justify-center rounded-full bg-accent text-ink"><Icon.check size={28} /></span>

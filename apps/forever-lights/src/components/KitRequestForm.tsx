@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import { pushConversion } from '@/lib/gtm';
+import { pushConversion, getAttribution } from '@/lib/gtm';
 import { site, phoneHref } from '@/lib/site-config';
 import { useCaptchaWatchdog, useEngageOnVisible, CaptchaFallback } from '@/components/captcha-gate';
 
@@ -66,6 +66,7 @@ export function KitRequestForm({
         note,
       ].join('\n'),
       website: fd.get('website'),
+      attribution: getAttribution(),
       token,
     };
     try {
@@ -73,7 +74,7 @@ export function KitRequestForm({
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         setStatus('success');
-        pushConversion('kit_request_submit', chosen?.label);
+        pushConversion('kit_request_submit', chosen?.label, { email: String(body.email ?? ''), phone: String(body.phone ?? '') });
         setTimeout(() => successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       } else {
         setStatus('error');

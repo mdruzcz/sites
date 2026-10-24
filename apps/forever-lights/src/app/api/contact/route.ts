@@ -31,6 +31,15 @@ export async function POST(req: NextRequest) {
   const city = String(body.city ?? '').trim().slice(0, 80);
   const message = String(body.message ?? '').trim().slice(0, 3000);
   const token = String(body.token ?? '');
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const attr = body.attribution && typeof body.attribution === 'object' ? (body.attribution as Record<string, unknown>) : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === 'string' && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join('\n');
+  const source = attr.gclid || attr.gbraid || attr.wbraid ? 'Google Ads' : attr.utm_source ? String(attr.utm_source).slice(0, 40) : '';
   const isDealer = body.kind === 'dealer';
   const isKit = body.kind === 'kit';
 
@@ -65,8 +74,8 @@ export async function POST(req: NextRequest) {
       subject: isDealer
         ? `New DEALER inquiry - ${name} (${address || 'company n/a'}, ${city || 'territory n/a'})`
         : isKit
-          ? `New DIY KIT request - ${name} (${city || 'province n/a'})`
-          : `New Forever Lights quote request - ${name} (${city || 'London'})`,
+          ? `New DIY KIT request - ${name} (${city || 'province n/a'})${source ? ` [${source}]` : ''}`
+          : `New Forever Lights quote request - ${name} (${city || 'London'})${source ? ` [${source}]` : ''}`,
       html: `
         <h2 style="font-family:sans-serif">${isDealer ? 'New dealer inquiry' : isKit ? 'New DIY kit request' : 'New quote request'} — Forever Lights</h2>
         <table cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
@@ -76,6 +85,7 @@ export async function POST(req: NextRequest) {
           <tr><td><strong>${isDealer ? 'Company' : isKit ? 'Ship to' : 'Address'}</strong></td><td>${esc(address) || '—'}</td></tr>
           <tr><td><strong>${isDealer ? 'Territory' : isKit ? 'Province' : 'City'}</strong></td><td>${esc(city) || '—'}</td></tr>
           <tr><td valign="top"><strong>Message</strong></td><td>${esc(message).replace(/\n/g, '<br>') || '—'}</td></tr>
+          ${attribution ? `<tr><td valign="top"><strong>Ad source</strong></td><td style="font-size:12px;color:#555">${esc(attribution).replace(/\n/g, '<br>')}</td></tr>` : ''}
         </table>
         <p style="font-family:sans-serif;font-size:12px;color:#888">Sent from ${HOSTNAME} at ${new Date().toISOString()}</p>
       `,
@@ -95,7 +105,7 @@ export async function POST(req: NextRequest) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         hostname: HOSTNAME,
-        row: { name, email, phone, address, city, message, created_at: new Date().toISOString() },
+        row: { name, email, phone, address, city, message: attribution ? `${message}\n\n--- Ad source ---\n${attribution}` : message, created_at: new Date().toISOString() },
       }),
     });
     stored = insertRes.ok;
