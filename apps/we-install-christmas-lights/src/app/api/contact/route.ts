@@ -13,6 +13,7 @@ type Payload = {
   website?: string;
   source?: string;
   turnstileToken?: string | null;
+  attribution?: Record<string, unknown>;
 };
 
 const HOSTNAME = "weinstallchristmaslights.ca";
@@ -53,6 +54,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Security check unavailable. Please call us." }, { status: 400 });
   }
 
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const attr = data.attribution && typeof data.attribution === "object" ? data.attribution : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join("\n");
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
   const isCommercial = /commercial|business|property|hoa|retail|office|hotel|restaurant|dealership|municipal|church/i.test(
     `${data.propertyType ?? ""} ${data.service ?? ""}`,
   );
@@ -70,6 +81,7 @@ export async function POST(req: Request) {
 <p><strong>Service:</strong> ${esc(data.service || "")}</p>
 <p><strong>Message:</strong></p>
 <pre style="font-family:inherit;white-space:pre-wrap">${esc(data.message || "")}</pre>
+${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
 <hr>
 <p style="font-size:12px;color:#888">Sent from weinstallchristmaslights.ca${data.source ? ` (${esc(data.source)})` : ""}</p>`;
       const r = await fetch("https://api.resend.com/emails", {
@@ -79,7 +91,7 @@ export async function POST(req: Request) {
           from: `We Install Christmas Lights <${process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com"}>`,
           to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
           reply_to: data.email,
-          subject: `${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}`,
+          subject: `${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${adSource ? ` [${adSource}]` : ""}`,
           html,
         }),
       });
@@ -106,7 +118,7 @@ export async function POST(req: Request) {
           phone: data.phone || null,
           city: data.city || null,
           service: [data.propertyType, data.service].filter(Boolean).join(" · ") || null,
-          message: data.message || null,
+          message: [data.message, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
         },
       }),
     });

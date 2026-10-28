@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { CheckIcon } from "./icons";
+import { getAttribution, trackConversion } from "@/lib/ads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -34,6 +35,7 @@ export function ContactForm() {
       service: String(form.get("service") || ""),
       message: String(form.get("message") || ""),
       turnstileToken: token,
+      attribution: getAttribution(),
     };
 
     try {
@@ -47,6 +49,7 @@ export function ContactForm() {
         throw new Error(data.error || "Submission failed.");
       }
       setStatus("success");
+      trackConversion("quote", { email: payload.email, phone: payload.phone });
       (e.target as HTMLFormElement).reset();
       ref.current?.reset();
       setToken(null);

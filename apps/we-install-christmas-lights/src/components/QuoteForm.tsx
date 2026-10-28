@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { CheckIcon } from "./icons";
 import { site } from "@/lib/site";
+import { getAttribution, trackConversion } from "@/lib/ads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -79,6 +80,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
       message: String(form.get("message") || ""),
       source: source || (typeof window !== "undefined" ? window.location.pathname : ""),
       turnstileToken: token,
+      attribution: getAttribution(),
     };
 
     try {
@@ -91,6 +93,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
       setToken(null);
       (window as unknown as { umami?: { track: (n: string, d?: Record<string, string>) => void } }).umami?.track("quote-request", { type, source: payload.source });
       (window as unknown as { dataLayer?: unknown[] }).dataLayer?.push({ event: "form_submission", form: "quote", type });
+      trackConversion("quote", { email: payload.email, phone: payload.phone });
       setTimeout(() => rootRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     } catch (err) {
       setStatus("error");
