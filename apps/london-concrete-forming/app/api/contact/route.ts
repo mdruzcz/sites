@@ -1,5 +1,8 @@
 export const runtime = "edge";
 
+const esc = (s: string) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -32,6 +35,16 @@ export async function POST(request: Request) {
       return Response.json({ error: "Security check failed" }, { status: 400 });
     }
 
+    // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+    // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+    const attr: Record<string, unknown> = body.attribution && typeof body.attribution === "object" ? body.attribution : {};
+    const attribution = Object.entries(attr)
+      .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+      .slice(0, 12)
+      .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+      .join("\n");
+    const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
     // Save the lead via the shared forms Worker (holds the Supabase publishable
     // key in one place, so a key rotation never silently drops leads fleet-wide).
     const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
@@ -46,7 +59,7 @@ export async function POST(request: Request) {
           phone,
           email,
           services: Array.isArray(services) ? services : services ? [services] : null,
-          message: message || null,
+          message: [message, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
         },
       }),
     });
@@ -72,7 +85,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from: fromEmail,
           to: [toEmail],
-          subject: `New Quote Request - ${servicesStr} | London Concrete Forming`,
+          subject: `New Quote Request - ${servicesStr} | London Concrete Forming${adSource ? ` [${adSource}]` : ""}`,
           html: `
             <h2>New Quote Request — London Concrete Forming</h2>
             <table style="border-collapse:collapse;width:100%">
@@ -82,6 +95,7 @@ export async function POST(request: Request) {
               <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Services</td><td style="padding:8px;border:1px solid #ddd">${servicesStr}</td></tr>
               <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Message</td><td style="padding:8px;border:1px solid #ddd">${message || "None"}</td></tr>
             </table>
+            ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
           `,
         }),
       });

@@ -23,6 +23,29 @@ export async function verifyTurnstile(token: string): Promise<boolean> {
   }
 }
 
+/**
+ * Ad click IDs / UTM tags captured on landing (sent by the form as
+ * `attribution`), kept so leads can be matched back to Google Ads clicks
+ * for offline conversion upload of booked/sold jobs.
+ */
+export function formatAttribution(input: unknown): { text: string; adSource: string } {
+  const attr = input && typeof input === "object" ? (input as Record<string, unknown>) : {};
+  const text = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join("\n");
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+  return { text, adSource };
+}
+
+/** HTML block for the notification email; empty when there's no attribution. */
+export function attributionHtml(text: string): string {
+  return text
+    ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${escapeHtml(text)}</pre>`
+    : "";
+}
+
 export interface LeadRow {
   name: string;
   phone: string;

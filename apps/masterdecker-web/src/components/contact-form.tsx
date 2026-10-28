@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
+import { getAttribution, trackQuoteSubmit } from "@/lib/gtm";
 
 const serviceCheckboxes = [
   "Deck/Fence Staining",
@@ -39,6 +40,7 @@ export function ContactForm() {
       message: formData.get("message"),
       website: formData.get("website"),
       token,
+      attribution: getAttribution(),
     };
     try {
       const res = await fetch("/api/contact", {
@@ -47,6 +49,7 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
+      trackQuoteSubmit(services, { email: data.email, phone: data.phone });
       setStatus("success");
       form.reset();
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);

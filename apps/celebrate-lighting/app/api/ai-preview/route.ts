@@ -1,4 +1,4 @@
-import { bytesToBase64, dataUrlToBytes, escapeHtml, makeCode, NOTIFY_TO, sendEmail, storeLead, storePhoto, verifyTurnstile } from "@/lib/leads";
+import { attributionHtml, bytesToBase64, dataUrlToBytes, escapeHtml, formatAttribution, makeCode, NOTIFY_TO, sendEmail, storeLead, storePhoto, verifyTurnstile } from "@/lib/leads";
 
 export const runtime = "edge";
 
@@ -43,6 +43,8 @@ export async function POST(req: Request) {
   const ext = photo.mime === "image/png" ? "png" : photo.mime === "image/webp" ? "webp" : "jpg";
   const photoUrl = await storePhoto(`celebratelighting/${code}/photo.${ext}`, photo.bytes, photo.mime);
 
+  const attribution = formatAttribution(body.attribution);
+
   const summary = [
     `Free AI Home Preview request #${code}`,
     `City: ${city || "n/a"}`,
@@ -50,6 +52,7 @@ export async function POST(req: Request) {
     notes ? `Notes: ${notes}` : "",
     photoUrl ? `Photo: ${photoUrl}` : "Photo: attached to notification email (storage not configured)",
     body.formId ? `Source: ${body.formId}` : "",
+    attribution.text ? `\n--- Ad source ---\n${attribution.text}` : "",
   ].filter(Boolean).join("\n");
 
   const attachments = [{ filename: `home-photo-${code}.${ext}`, content: bytesToBase64(photo.bytes) }];
@@ -57,7 +60,7 @@ export async function POST(req: Request) {
   const emailed = await sendEmail({
     to: NOTIFY_TO(),
     replyTo: email,
-    subject: `AI Preview Request #${code} - ${name} (${city || "city n/a"})`,
+    subject: `AI Preview Request #${code} - ${name} (${city || "city n/a"})${attribution.adSource ? ` [${attribution.adSource}]` : ""}`,
     attachments,
     html: `
       <h2>Free AI Home Preview request</h2>
@@ -69,6 +72,7 @@ export async function POST(req: Request) {
          <strong>Colour preference:</strong> ${escapeHtml(colour || "n/a")}</p>
       ${notes ? `<p><strong>Notes:</strong><br>${escapeHtml(notes).replace(/\n/g, "<br>")}</p>` : ""}
       ${photoUrl ? `<p><strong>Photo link (60 days):</strong> <a href="${escapeHtml(photoUrl)}">${escapeHtml(photoUrl)}</a></p>` : "<p><em>Photo attached.</em></p>"}
+      ${attributionHtml(attribution.text)}
       <p style="color:#888">Reference #${code}</p>
     `,
   });

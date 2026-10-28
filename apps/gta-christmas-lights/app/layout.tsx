@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
+import { AdsTracking } from "@/components/AdsTracking";
+import { GOOGLE_ADS_ID } from "@/lib/gtm";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -56,6 +58,11 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
         <Script
           id="ld-org"
           type="application/ld+json"

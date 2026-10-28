@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { CheckIcon } from "./icons";
+import { getAttribution, trackConversion } from "@/lib/ads";
 
 export const SERVICE_OPTIONS = [
   "Deck Staining",
@@ -35,11 +36,12 @@ export function HeroQuoteForm({ city, service, compact = false }: { city?: strin
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: form.get("name"), email: form.get("email"), phone: form.get("phone"), city: form.get("city"), service: form.get("service"), message: "Submitted from the website hero form.", token: token ?? "" }),
+        body: JSON.stringify({ name: form.get("name"), email: form.get("email"), phone: form.get("phone"), city: form.get("city"), service: form.get("service"), message: "Submitted from the website hero form.", token: token ?? "", attribution: getAttribution() }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) { setError(data.error || "Something went wrong. Please call us."); setStatus("error"); return; }
       setStatus("success");
+      trackConversion("quote", { email: form.get("email"), phone: form.get("phone") });
     } catch {
       setError("Network error. Please call us.");
       setStatus("error");

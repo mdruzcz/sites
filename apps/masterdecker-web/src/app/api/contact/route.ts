@@ -43,6 +43,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Captcha verification failed" }, { status: 400 });
     }
 
+    // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+    // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+    const attr: Record<string, unknown> =
+      body.attribution && typeof body.attribution === "object" ? body.attribution : {};
+    const attribution = Object.entries(attr)
+      .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+      .slice(0, 12)
+      .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+      .join("\n");
+    const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
     try {
       const formsEndpoint = process.env.FORMS_SUBMIT_ENDPOINT ?? "https://forms.masterdecker.com";
       await fetch(formsEndpoint, {
@@ -58,7 +69,7 @@ export async function POST(req: NextRequest) {
             street_address: streetAddress,
             city,
             services: services || null,
-            message: message || null,
+            message: [message, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
           },
         }),
       });
@@ -70,7 +81,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com",
       to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-      subject: `New Quote Request - ${firstName}${lastName ? " " + lastName : ""}`,
+      subject: `New Quote Request - ${firstName}${lastName ? " " + lastName : ""}${adSource ? ` [${adSource}]` : ""}`,
       text: [
         `Name: ${firstName}${lastName ? " " + lastName : ""}`,
         `Phone: ${phone}`,
@@ -80,6 +91,7 @@ export async function POST(req: NextRequest) {
         "",
         `Message:`,
         message || "—",
+        ...(attribution ? ["", "Ad source:", attribution] : []),
       ].join("\n"),
     });
 

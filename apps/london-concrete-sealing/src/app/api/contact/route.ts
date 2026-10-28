@@ -38,6 +38,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, message: 'Security check unavailable. Please call us.' }, { status: 400 });
   }
 
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const rawAttr = (body as { attribution?: unknown }).attribution;
+  const attr = rawAttr && typeof rawAttr === 'object' ? (rawAttr as Record<string, unknown>) : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === 'string' && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join('\n');
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? 'Google Ads' : '';
+
   // Email is the critical path; the DB row is the backup.
   // Resend can only send from masterdecker.com — any other from-address 403s.
   let emailed = false;
@@ -50,7 +61,7 @@ export async function POST(req: NextRequest) {
           from: process.env.CONTACT_FROM_EMAIL || 'noreply@masterdecker.com',
           to: process.env.CONTACT_TO_EMAIL || 'service@masterdecker.com',
           reply_to: email,
-          subject: `New Contact Form Submission - London Concrete Sealing`,
+          subject: `New Contact Form Submission - London Concrete Sealing${adSource ? ` [${adSource}]` : ''}`,
           html: `
             <h2>New Contact Form Submission — London Concrete Sealing</h2>
             <p><strong>Name:</strong> ${esc(firstName)} ${esc(lastName || '')}</p>
@@ -58,6 +69,7 @@ export async function POST(req: NextRequest) {
             <p><strong>Phone:</strong> ${esc(phone)}</p>
             <p><strong>Message:</strong></p>
             <p>${esc(message || '(no message)')}</p>
+            ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ''}
           `,
         }),
       });
@@ -81,7 +93,7 @@ export async function POST(req: NextRequest) {
           last_name: lastName || null,
           email,
           phone,
-          message: message || null,
+          message: [message, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join('\n\n') || null,
         },
       }),
     });

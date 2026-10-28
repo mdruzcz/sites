@@ -7,6 +7,8 @@ import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { AiPreviewProvider } from "@/components/AiPreviewProvider";
+import { AdsTracking } from "@/components/AdsTracking";
+import { GOOGLE_ADS_ID } from "@/lib/gtm";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -45,6 +47,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <CallNowFab />
         </AiPreviewProvider>
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
         <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="d2920cb9-621b-4dbf-808e-05e4b70a3cd1" strategy="afterInteractive" />
       </body>
     </html>

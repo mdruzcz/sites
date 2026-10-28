@@ -25,8 +25,18 @@ export async function POST(req: NextRequest) {
   if (!name || !email || !phone || !token) return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   if (!(await verifyTurnstile(token))) return NextResponse.json({ error: "Invalid captcha" }, { status: 400 });
 
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const attr = body.attribution && typeof body.attribution === "object" ? (body.attribution as Record<string, unknown>) : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join("\n");
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
   const details = [city && `Town: ${city}`, wallType && `Wall type: ${wallType}`, source && `Page: ${source}`].filter(Boolean).join("\n");
-  const fullMessage = [message?.trim(), details].filter(Boolean).join("\n\n");
+  const fullMessage = [message?.trim(), details, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n");
 
   // Email is the critical path; the DB row is the backup.
   let emailed = false;
@@ -35,10 +45,11 @@ export async function POST(req: NextRequest) {
       from: process.env.CONTACT_FROM_EMAIL ?? "noreply@masterdecker.com",
       to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
       replyTo: email,
-      subject: `Retaining wall quote request: ${name}${city ? ` (${city})` : ""}`,
+      subject: `Retaining wall quote request: ${name}${city ? ` (${city})` : ""}${adSource ? ` [${adSource}]` : ""}`,
       html: `<h2>New quote request, London Retaining Walls</h2>
         <p><strong>Name:</strong> ${esc(name)}<br/><strong>Phone:</strong> ${esc(phone)}<br/><strong>Email:</strong> ${esc(email)}<br/><strong>Town:</strong> ${esc(city || "—")}<br/><strong>Wall type:</strong> ${esc(wallType || "—")}<br/><strong>Page:</strong> ${esc(source || "—")}</p>
-        <p><strong>Message:</strong><br/>${esc(message || "—").replace(/\n/g, "<br/>")}</p>`,
+        <p><strong>Message:</strong><br/>${esc(message || "—").replace(/\n/g, "<br/>")}</p>
+        ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}`,
     });
     emailed = !r.error;
     if (r.error) console.error("[lrw contact] resend error", r.error);

@@ -5,6 +5,8 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
+import AdsTracking from '@/components/AdsTracking';
+import { GOOGLE_ADS_ID } from '@/lib/gtm';
 import { site, services, serviceAreas } from '@/lib/content';
 
 const poppins = Poppins({
@@ -82,6 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
               <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="ada30e17-7c80-4e26-9559-12b9dd0735cd" strategy="afterInteractive" />
       </body>
     </html>

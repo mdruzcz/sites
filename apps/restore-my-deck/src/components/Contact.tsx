@@ -3,6 +3,7 @@
 import { useState, useRef, type FormEvent } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
+import { getAttribution, trackConversion } from "@/lib/ads";
 import { SERVICE_OPTIONS } from "./HeroQuoteForm";
 import { PhoneIcon, MapPinIcon, CheckIcon, ClockIcon, MailIcon } from "./icons";
 
@@ -25,13 +26,14 @@ export function Contact({ cityName, service }: { cityName?: string; service?: st
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: data.get("name"), email: data.get("email"), phone: data.get("phone"), city: data.get("city"), service: data.get("service"), message: data.get("message"), token: token ?? "" }),
+        body: JSON.stringify({ name: data.get("name"), email: data.get("email"), phone: data.get("phone"), city: data.get("city"), service: data.get("service"), message: data.get("message"), token: token ?? "", attribution: getAttribution() }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
       setStatus("success");
+      trackConversion("quote", { email: data.get("email"), phone: data.get("phone") });
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");

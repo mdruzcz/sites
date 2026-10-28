@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBar from "@/components/StickyBar";
+import AdsTracking from "@/components/AdsTracking";
+import { GOOGLE_ADS_ID } from "@/lib/ads";
 import { site } from "@/lib/site";
 import { organizationGraph, JsonLd } from "@/lib/jsonld";
 
@@ -34,6 +36,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pb-16 md:pb-0">{children}</main>
         <Footer />
         <StickyBar />
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
         <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id={site.umamiId} strategy="afterInteractive" />
       </body>
     </html>

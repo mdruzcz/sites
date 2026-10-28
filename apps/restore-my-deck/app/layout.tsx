@@ -5,6 +5,8 @@ import "./globals.css";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
+import { AdsTracking } from "@/components/AdsTracking";
+import { GOOGLE_ADS_ID } from "@/lib/ads";
 import { site } from "@/lib/site";
 
 const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -66,6 +68,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <CallNowFab />
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
               <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="f701654a-050f-4b72-9e88-9ed41244db3f" strategy="afterInteractive" />
       </body>
     </html>

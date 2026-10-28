@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { trackFormSubmission } from "@/lib/gtm";
+import { getAttribution, trackFormSubmission } from "@/lib/gtm";
 import { site } from "@/lib/site";
 
 const serviceOptions = [
@@ -42,11 +42,12 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
           services: data.getAll("services"),
           message: data.get("message"),
           turnstileToken,
+          attribution: getAttribution(),
         }),
       });
       if (!res.ok) throw new Error("Submission failed");
       setState("success");
-      trackFormSubmission("contact_form", (data.getAll("services") as string[]).join(", "));
+      trackFormSubmission("contact_form", (data.getAll("services") as string[]).join(", "), { email: data.get("email"), phone: data.get("phone") });
       setTimeout(() => { successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }); }, 100);
     } catch {
       setState("error");

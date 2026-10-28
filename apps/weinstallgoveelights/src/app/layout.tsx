@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingEmailButton from "@/components/FloatingEmailButton";
+import AdsTracking from "@/components/AdsTracking";
+import { GOOGLE_ADS_ID } from "@/lib/ads";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,6 +48,11 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingEmailButton />
+        <AdsTracking />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
               <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="e7b77dbb-cf35-423c-b911-53f13bb5618a" strategy="afterInteractive" />
       </body>
     </html>

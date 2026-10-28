@@ -1,5 +1,8 @@
 export const runtime = "edge";
 
+const esc = (s: string) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
 export async function POST(req: Request) {
   const body = await req.json();
 
@@ -52,6 +55,17 @@ export async function POST(req: Request) {
     }
   }
 
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const attr: Record<string, unknown> =
+    body.attribution && typeof body.attribution === "object" ? body.attribution : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join("\n");
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
   const payload = {
     name: body.name,
     email: body.email,
@@ -60,7 +74,10 @@ export async function POST(req: Request) {
     city: body.city || null,
     service_type: body.serviceType,
     budget: body.budget || null,
-    message: body.message || null,
+    message:
+      [body.message, attribution && `--- Ad source ---\n${attribution}`]
+        .filter(Boolean)
+        .join("\n\n") || null,
   };
 
   // Save via shared forms Worker
@@ -87,7 +104,7 @@ export async function POST(req: Request) {
           from:
             process.env.CONTACT_FROM_EMAIL || "noreply@gtachristmaslighting.ca",
           to: process.env.CONTACT_TO_EMAIL || "service@masterdecker.com",
-          subject: `New GTA Christmas Lighting Quote: ${body.serviceType} — ${body.name}`,
+          subject: `New GTA Christmas Lighting Quote: ${body.serviceType} — ${body.name}${adSource ? ` [${adSource}]` : ""}`,
           html: `
             <h2 style="color:#C2151E;margin-bottom:8px;">New GTA Christmas Lighting Quote Request</h2>
             <p style="color:#666;margin-top:0;">A new quote request just came in via gtachristmaslighting.ca.</p>
@@ -101,6 +118,7 @@ export async function POST(req: Request) {
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Budget</td><td style="padding:8px;border:1px solid #eee;">${body.budget || "—"}</td></tr>
               <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Message</td><td style="padding:8px;border:1px solid #eee;">${body.message || "None"}</td></tr>
             </table>
+            ${attribution ? `<p style="margin-top:16px;"><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
             <p style="color:#999;font-size:12px;margin-top:16px;">Submitted via gtachristmaslighting.ca</p>
           `,
         }),

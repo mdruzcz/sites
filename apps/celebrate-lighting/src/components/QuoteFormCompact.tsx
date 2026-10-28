@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { trackFormSubmission } from "@/lib/gtm";
+import { getAttribution, trackFormSubmission } from "@/lib/gtm";
 import { site } from "@/lib/site";
 import { Icon } from "./Icons";
 
@@ -43,11 +43,11 @@ export function QuoteFormCompact({
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, service: serviceValue, turnstileToken: token, formId }),
+        body: JSON.stringify({ ...data, service: serviceValue, turnstileToken: token, formId, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error("Failed");
       setStatus("success");
-      trackFormSubmission(`lead_form_${formId}`);
+      trackFormSubmission(`lead_form_${formId}`, { email: data.email, phone: data.phone });
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
     } catch {
       setStatus("error");

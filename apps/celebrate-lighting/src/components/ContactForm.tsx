@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { trackFormSubmission } from "@/lib/gtm";
+import { getAttribution, trackFormSubmission } from "@/lib/gtm";
 import { site } from "@/lib/site";
 import { Icon } from "./Icons";
 
@@ -29,11 +29,11 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, turnstileToken: token, formId: "contact" }),
+        body: JSON.stringify({ ...data, turnstileToken: token, formId: "contact", attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error("Failed");
       setStatus("success");
-      trackFormSubmission("contact_form");
+      trackFormSubmission("contact_form", { email: data.email, phone: data.phone });
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
     } catch {
       setStatus("error");

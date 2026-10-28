@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { getAttribution, trackConversion } from "@/lib/ads";
 
 interface FormData {
   firstName: string;
@@ -40,10 +41,11 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, token, hostname: "weinstallgoveelights.ca" }),
+        body: JSON.stringify({ ...form, token, hostname: "weinstallgoveelights.ca", attribution: getAttribution() }),
       });
       if (res.ok) {
         setStatus("success");
+        trackConversion("quote", { email: form.email, phone: form.phone });
         setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
       } else {
         setStatus("error");

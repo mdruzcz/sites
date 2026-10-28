@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
+import { getAttribution, trackConversion } from "@/lib/ads";
 
 const WALL_TYPES = ["Not sure yet", "Interlocking block", "Poured concrete", "Timber", "Natural / armour stone", "Repair or rebuild"];
 
@@ -26,11 +27,13 @@ export default function QuoteForm({ compact = false, source = "" }: { compact?: 
       source,
       honeypot: fd.get("website"),
       token,
+      attribution: getAttribution(),
     };
     try {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
       if (res.ok) {
         setStatus("success");
+        trackConversion("quote", { email: body.email, phone: body.phone });
         if (typeof window !== "undefined" && (window as unknown as { umami?: { track: (n: string) => void } }).umami) (window as unknown as { umami: { track: (n: string) => void } }).umami.track("quote-submitted");
         setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
       } else setStatus("error");

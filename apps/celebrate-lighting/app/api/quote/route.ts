@@ -1,4 +1,4 @@
-import { escapeHtml, NOTIFY_TO, sendEmail, storeLead, verifyTurnstile } from "@/lib/leads";
+import { attributionHtml, escapeHtml, formatAttribution, NOTIFY_TO, sendEmail, storeLead, verifyTurnstile } from "@/lib/leads";
 
 export const runtime = "edge";
 
@@ -29,6 +29,7 @@ export async function POST(req: Request) {
   if (body.preferredContact) extras.push(`Preferred contact: ${body.preferredContact}`);
   if (body.formId) extras.push(`Source: ${body.formId}`);
   const message = [String(body.message ?? "").trim(), ...extras].filter(Boolean).join("\n") || null;
+  const attribution = formatAttribution(body.attribution);
 
   const row = {
     name,
@@ -36,14 +37,14 @@ export async function POST(req: Request) {
     email,
     address: body.address ? String(body.address) : null,
     service,
-    message,
+    message: [message, attribution.text && `--- Ad source ---\n${attribution.text}`].filter(Boolean).join("\n\n") || null,
   };
 
   // Email is the critical path; the DB row is the backup.
   const emailed = await sendEmail({
     to: NOTIFY_TO(),
     replyTo: email,
-    subject: `New Lead: ${service} - ${name}`,
+    subject: `New Lead: ${service} - ${name}${attribution.adSource ? ` [${attribution.adSource}]` : ""}`,
     html: `
       <h2>New Lead — Celebrate Lighting</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
@@ -52,6 +53,7 @@ export async function POST(req: Request) {
       <p><strong>Address:</strong> ${escapeHtml(row.address ?? "Not provided")}</p>
       <p><strong>Service:</strong> ${escapeHtml(service)}</p>
       <p><strong>Message:</strong><br>${escapeHtml(message ?? "None").replace(/\n/g, "<br>")}</p>
+      ${attributionHtml(attribution.text)}
     `,
   });
   const stored = await storeLead(row);

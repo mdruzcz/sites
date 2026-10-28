@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
-import { trackQuoteSubmit } from "@/lib/gtm";
+import { getAttribution, trackQuoteSubmit } from "@/lib/gtm";
 
 type Props = {
   /** Compact = short 3-field form for embedding on service/city pages. */
@@ -55,6 +55,7 @@ export function QuoteForm({ compact = false, service, city, heading, subheading 
       message: formData.get("message") || "",
       website: formData.get("website"),
       token,
+      attribution: getAttribution(),
     };
     try {
       const res = await fetch("/api/contact", {
@@ -63,7 +64,7 @@ export function QuoteForm({ compact = false, service, city, heading, subheading 
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
-      trackQuoteSubmit(services);
+      trackQuoteSubmit(services, { email: data.email, phone: data.phone });
       setStatus("success");
       form.reset();
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);

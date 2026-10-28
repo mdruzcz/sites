@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
-import { gtmEvent } from '@/lib/gtm';
+import { gtmEvent, getAttribution, trackConversion } from '@/lib/gtm';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -27,6 +27,7 @@ export default function ContactForm() {
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
       honeypot: (form.elements.namedItem('website') as HTMLInputElement).value,
       token,
+      attribution: getAttribution(),
     };
 
     try {
@@ -41,6 +42,7 @@ export default function ContactForm() {
       }
       setStatus('success');
       gtmEvent('contact_form_submit', { form: 'contact' });
+      trackConversion('quote', { email: data.email, phone: data.phone });
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
     } catch (err: any) {
       setStatus('error');

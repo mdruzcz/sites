@@ -2,7 +2,7 @@
 
 import { useState, useRef, type FormEvent } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { trackFormSubmission } from "@/lib/gtm";
+import { getAttribution, trackFormSubmission } from "@/lib/gtm";
 
 const serviceOptions = [
   "Christmas Light Installation",
@@ -73,6 +73,7 @@ export function QuoteForm({
           budget: data.get("budget"),
           message: data.get("message"),
           turnstileToken,
+          attribution: getAttribution(),
         }),
       });
 
@@ -82,7 +83,7 @@ export function QuoteForm({
       }
 
       setSubmitted(true);
-      trackFormSubmission("quote_form");
+      trackFormSubmission("quote_form", { email: data.get("email"), phone: data.get("phone") });
       setTimeout(() => {
         successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 100);

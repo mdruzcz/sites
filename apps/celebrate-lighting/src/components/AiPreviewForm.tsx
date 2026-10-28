@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { site } from "@/lib/site";
-import { trackFormSubmission } from "@/lib/gtm";
+import { getAttribution, trackFormSubmission } from "@/lib/gtm";
 import { Icon } from "./Icons";
 
 const COLOURS = ["Warm white (everyday)", "Cool white", "Multicolour / holiday", "Red & green (Christmas)", "Team colours", "Not sure, surprise me"];
@@ -72,12 +72,13 @@ export function AiPreviewForm({ formId = "ai", compact = false, onDone }: { form
       const res = await fetch("/api/ai-preview", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, photo, turnstileToken: token, formId }),
+        body: JSON.stringify({ ...data, photo, turnstileToken: token, formId, attribution: getAttribution() }),
       });
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json.error || "Failed");
       setStatus("success");
-      trackFormSubmission(`ai_preview_${formId}`);
+      // Collects name, email and phone (all required), so it counts as a lead.
+      trackFormSubmission(`ai_preview_${formId}`, { email: data.email, phone: data.phone });
       onDone?.();
       setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
     } catch (err) {

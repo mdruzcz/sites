@@ -19,7 +19,7 @@ async function verifyTurnstile(token: string, hostname: string): Promise<boolean
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 export async function POST(req: NextRequest) {
-  let body: { name?: string; email?: string; phone?: string; city?: string; service?: string; message?: string; honeypot?: string; token?: string };
+  let body: { name?: string; email?: string; phone?: string; city?: string; service?: string; message?: string; honeypot?: string; token?: string; attribution?: Record<string, unknown> };
   try {
     body = await req.json();
   } catch {
@@ -35,7 +35,20 @@ export async function POST(req: NextRequest) {
   const valid = await verifyTurnstile(token, hostname === "localhost" ? "restoremydeck.ca" : hostname);
   if (!valid) return NextResponse.json({ error: "Security check failed. Please try again." }, { status: 400 });
 
-  const fullMessage = [service ? `Service: ${service}.` : "", city ? `City: ${city}.` : "", message || ""].filter(Boolean).join(" ");
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of booked/sold jobs).
+  const attr = body.attribution && typeof body.attribution === "object" ? body.attribution : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`)
+    .join("\n");
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+
+  const fullMessage = [
+    [service ? `Service: ${service}.` : "", city ? `City: ${city}.` : "", message || ""].filter(Boolean).join(" "),
+    attribution && `--- Ad source ---\n${attribution}`,
+  ].filter(Boolean).join("\n\n");
 
   // Email first (critical path), DB row as backup.
   let emailed = false;
@@ -48,14 +61,15 @@ export async function POST(req: NextRequest) {
           from: process.env.CONTACT_FROM_EMAIL ?? "noreply@masterdecker.com",
           to: process.env.CONTACT_TO_EMAIL ?? "service@masterdecker.com",
           reply_to: email,
-          subject: `New Quote Request from ${name} - Restore My Deck`,
+          subject: `New Quote Request from ${name} - Restore My Deck${adSource ? ` [${adSource}]` : ""}`,
           html: `<h2>New Quote Request — Restore My Deck</h2>
             <p><strong>Name:</strong> ${esc(name)}</p>
             <p><strong>Email:</strong> ${esc(email)}</p>
             <p><strong>Phone:</strong> ${esc(phone)}</p>
             <p><strong>City:</strong> ${esc(city || "—")}</p>
             <p><strong>Service:</strong> ${esc(service || "—")}</p>
-            <p><strong>Message:</strong> ${esc(message || "—")}</p>`,
+            <p><strong>Message:</strong> ${esc(message || "—")}</p>
+            ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}`,
         }),
       });
       emailed = r.ok;
