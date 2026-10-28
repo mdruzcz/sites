@@ -27,6 +27,8 @@ type Props = {
   heading?: string;
   subheading?: string;
   className?: string;
+  /** Ad landing pages: name, phone, email, city and optional notes only. */
+  short?: boolean;
 };
 
 /**
@@ -34,7 +36,7 @@ type Props = {
  * tags the lead as commercial in the email subject. Turnstile mounts on
  * visibility, and a watchdog shows a call fallback if no token arrives.
  */
-export function QuoteForm({ variant = "full", defaultType = "Residential", defaultCity, source, heading, subheading, className = "" }: Props) {
+export function QuoteForm({ variant = "full", defaultType = "Residential", defaultCity, source, heading, subheading, className = "", short = false }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
@@ -45,6 +47,8 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
   const rootRef = useRef<HTMLDivElement>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const hero = variant === "hero";
+  // Make sure the page's own city is selectable (e.g. "London Surrounding Areas").
+  const cityOptions = defaultCity && !CITY_OPTIONS.includes(defaultCity) ? [defaultCity, ...CITY_OPTIONS] : CITY_OPTIONS;
 
   useEffect(() => {
     const el = rootRef.current;
@@ -106,7 +110,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
 
   if (status === "success") {
     return (
-      <div ref={rootRef} className={`card p-8 text-center ${className}`}>
+      <div ref={rootRef} data-quote-form className={`card p-8 text-center ${className}`}>
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--brand-green)] text-white"><CheckIcon className="h-6 w-6" /></div>
         <h3 className="heading-display mt-4 text-xl text-[color:var(--brand-green)]">Thanks, your request is in.</h3>
         <p className="mt-2 text-[color:var(--ink-soft)]">
@@ -118,7 +122,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
   }
 
   return (
-    <div ref={rootRef} className={`card ${hero ? "p-5 sm:p-6" : "p-6 sm:p-8"} ${className}`}>
+    <div ref={rootRef} data-quote-form className={`card ${hero ? "p-5 sm:p-6" : "p-6 sm:p-8"} ${className}`}>
       {(heading || hero) && (
         <div className="mb-4">
           <h3 className="heading-display text-xl text-[color:var(--ink-strong)]">{heading ?? "Get your free quote"}</h3>
@@ -128,20 +132,22 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
       <form onSubmit={onSubmit} className="space-y-3.5" noValidate>
         <input type="text" name="website" autoComplete="off" tabIndex={-1} className="hidden" aria-hidden="true" />
 
-        <div role="radiogroup" aria-label="Property type" className="grid grid-cols-2 gap-1 rounded-lg bg-[color:var(--bg-cream)] p-1">
-          {(["Residential", "Commercial"] as const).map((t) => (
-            <button
-              key={t}
-              type="button"
-              role="radio"
-              aria-checked={type === t}
-              onClick={() => setType(t)}
-              className={`min-h-[40px] rounded-md text-sm font-bold transition-colors ${type === t ? "bg-[color:var(--brand-red)] text-white shadow-sm" : "text-[color:var(--ink-soft)] hover:text-[color:var(--ink-strong)]"}`}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
+        {!short && (
+          <div role="radiogroup" aria-label="Property type" className="grid grid-cols-2 gap-1 rounded-lg bg-[color:var(--bg-cream)] p-1">
+            {(["Residential", "Commercial"] as const).map((t) => (
+              <button
+                key={t}
+                type="button"
+                role="radio"
+                aria-checked={type === t}
+                onClick={() => setType(t)}
+                className={`min-h-[40px] rounded-md text-sm font-bold transition-colors ${type === t ? "bg-[color:var(--brand-red)] text-white shadow-sm" : "text-[color:var(--ink-soft)] hover:text-[color:var(--ink-strong)]"}`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className={hero ? "grid gap-3 sm:grid-cols-2" : "grid gap-4 sm:grid-cols-2"}>
           <div>
@@ -160,23 +166,25 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
             <label htmlFor={`${variant}-city`} className={label}>City</label>
             <select id={`${variant}-city`} name="city" defaultValue={defaultCity ?? ""} className={input}>
               <option value="">Select your city</option>
-              {CITY_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
+              {cityOptions.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
-          <div className="sm:col-span-2">
-            <label htmlFor={`${variant}-service`} className={label}>{type === "Commercial" ? "What does the property need?" : "What are you thinking of?"}</label>
-            <select id={`${variant}-service`} name="service" className={input} defaultValue="">
-              <option value="">Choose one</option>
-              {SERVICE_OPTIONS[type].map((s) => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
-          {!hero && (
+          {!short && (
+            <div className="sm:col-span-2">
+              <label htmlFor={`${variant}-service`} className={label}>{type === "Commercial" ? "What does the property need?" : "What are you thinking of?"}</label>
+              <select id={`${variant}-service`} name="service" className={input} defaultValue="">
+                <option value="">Choose one</option>
+                {SERVICE_OPTIONS[type].map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+          )}
+          {!hero && !short && (
             <div className="sm:col-span-2">
               <label htmlFor={`${variant}-message`} className={label}>{type === "Commercial" ? "Property address, timing and any details" : "Tell us about your home (address helps us quote faster)"}</label>
               <textarea id={`${variant}-message`} name="message" rows={4} className={input} />
             </div>
           )}
-          {hero && (
+          {(hero || short) && (
             <div className="sm:col-span-2">
               <label htmlFor={`${variant}-message`} className={label}>Address or notes (optional)</label>
               <input id={`${variant}-message`} name="message" className={input} placeholder={type === "Commercial" ? "Property address, number of buildings, deadline" : "Street address, roofline, trees you want lit"} />
@@ -197,7 +205,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
         <button type="submit" disabled={status === "submitting"} className="btn btn-red w-full min-h-[48px] disabled:opacity-60">
           {status === "submitting" ? "Sending…" : type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote"}
         </button>
-        <p className="text-center text-xs text-[color:var(--ink-soft)]">{site.earlyBird.short} · Fully insured · 5.0★ Google rating</p>
+        <p className="text-center text-xs text-[color:var(--ink-soft)]">Free quote, no obligation · Fully insured · {site.googleRating}★ Google rating</p>
       </form>
     </div>
   );

@@ -98,7 +98,7 @@ export default function HomePage() {
               <span>Installed in as little as 1 day</span>
             </div>
             <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-red)] px-4 py-1.5 text-sm font-bold text-white shadow-lg">
-              <span aria-hidden>🎁</span> {site.earlyBird.headline}
+              <span aria-hidden>🎄</span> {site.seasonNotice.headline}
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#quote" className="btn btn-red lg:hidden">Get a Free Quote</a>

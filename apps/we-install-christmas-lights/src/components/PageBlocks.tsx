@@ -16,6 +16,10 @@ export function PhotoHero({
   formCity,
   source,
   ctaLabel = "Get a Free Quote",
+  trust,
+  priceFrom,
+  mobileForm = false,
+  shortForm = false,
 }: {
   eyebrow: string;
   h1: string;
@@ -25,6 +29,13 @@ export function PhotoHero({
   formCity?: string;
   source?: string;
   ctaLabel?: string;
+  /** Replaces the default rating / insured / since-2016 row. */
+  trust?: string[];
+  /** Price anchor, e.g. "$700", shown as "Packages from $700". */
+  priceFrom?: string;
+  /** Show the quote form in the hero on phones too (ad landing pages). */
+  mobileForm?: boolean;
+  shortForm?: boolean;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-[color:var(--ink-strong)] text-white">
@@ -32,23 +43,42 @@ export function PhotoHero({
         <Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover opacity-60" />
       )}
       <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[#022B1A]/90 via-[#022B1A]/70 to-[#022B1A]/30" aria-hidden />
-      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-20">
+      <div className={`relative mx-auto grid w-full max-w-7xl px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-10 lg:px-8 lg:py-20 ${mobileForm ? "gap-6 py-8 sm:py-14" : "gap-10 py-14"}`}>
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">{eyebrow}</p>
           <h1 className="heading-display mt-3 text-4xl leading-[1.05] text-white sm:text-5xl lg:text-[3.4rem]">{h1}</h1>
-          <p className="mt-5 max-w-xl text-lg text-white/90">{intro}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
-            <span className="flex items-center gap-1.5"><StarIcon className="h-4 w-4 text-[#FFD43B]" /> 5.0 on Google · 80+ reviews</span>
-            <span>Fully insured · WSIB</span>
-            <span>Since 2016</span>
-          </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:hidden">
-            <a href="#quote" className="btn btn-red">{ctaLabel}</a>
-            <a href={site.phoneHref} className="btn btn-outline-white">Call {site.phone}</a>
-          </div>
+          <p className={`max-w-xl text-white/90 ${mobileForm ? "mt-4 text-base sm:mt-5 sm:text-lg" : "mt-5 text-lg"}`}>{intro}</p>
+          {trust ? (
+            <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-semibold text-white sm:flex sm:flex-wrap sm:gap-x-6">
+              {trust.map((t, i) => (
+                <li key={t} className="flex items-center gap-1.5">
+                  {i === 0 ? <StarIcon className="h-4 w-4 shrink-0 text-[#FFD43B]" /> : <CheckIcon className="h-4 w-4 shrink-0 text-[#FFD43B]" />}
+                  {t}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
+              <span className="flex items-center gap-1.5"><StarIcon className="h-4 w-4 text-[#FFD43B]" /> 5.0 on Google · 80+ reviews</span>
+              <span>Fully insured · WSIB</span>
+              <span>Since 2016</span>
+            </div>
+          )}
+          {priceFrom && (
+            <p className="mt-5 inline-flex items-baseline gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white ring-1 ring-white/25">
+              Packages from <span className="heading-display text-lg text-[#FFD43B]">{priceFrom}</span>
+              <Link href="/lighting-packages" className="text-xs font-bold underline-offset-2 hover:underline">See packages</Link>
+            </p>
+          )}
+          {!mobileForm && (
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:hidden">
+              <a href="#quote" className="btn btn-red">{ctaLabel}</a>
+              <a href={site.phoneHref} className="btn btn-outline-white">Call {site.phone}</a>
+            </div>
+          )}
         </div>
-        <div className="hidden lg:block">
-          <QuoteForm variant="hero" defaultType={formType} defaultCity={formCity} source={source} />
+        <div className={mobileForm ? "" : "hidden lg:block"}>
+          <QuoteForm variant="hero" defaultType={formType} defaultCity={formCity} source={source} short={shortForm} />
         </div>
       </div>
     </section>
@@ -162,7 +192,7 @@ export function FaqSection({ faqs, title = "Questions we hear a lot", withSchema
   );
 }
 
-export function QuoteSection({ type = "Residential", city, source, title, blurb }: { type?: "Residential" | "Commercial"; city?: string; source?: string; title?: string; blurb?: string }) {
+export function QuoteSection({ type = "Residential", city, source, title, blurb, short = false }: { type?: "Residential" | "Commercial"; city?: string; source?: string; title?: string; blurb?: string; short?: boolean }) {
   return (
     <section className="section bg-[color:var(--bg-cream)]" id="quote">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
@@ -180,7 +210,46 @@ export function QuoteSection({ type = "Residential", city, source, title, blurb 
             ))}
           </ul>
         </div>
-        <QuoteForm variant="full" defaultType={type} defaultCity={city} source={source} />
+        <QuoteForm variant="full" defaultType={type} defaultCity={city} source={source} short={short} />
+      </div>
+    </section>
+  );
+}
+
+/** Three-step "how it works" strip with a row of real install-crew photos. */
+export function HowItWorks({ photos = [], city }: { photos?: Photo[]; city?: string }) {
+  const steps = [
+    ["Free design quote", `Send your address or a photo. We design around your roofline and reply within ${site.responseTime} with a firm, all-in price.`],
+    ["Install in as little as 1 day", "An insured crew installs commercial-grade LED lights that we supply, custom-cut to your roofline and clipped on, with no staples or nails."],
+    ["Takedown in January", "Mid-season maintenance is included at no charge. In January we take everything down, with optional storage from $100."],
+  ];
+  return (
+    <section className="section">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="eyebrow">How it works{city ? ` in ${city}` : ""}</p>
+        <h2 className="heading-display mt-2 text-3xl">Three steps, and you never climb a ladder</h2>
+        <ol className="mt-8 grid gap-4 md:grid-cols-3">
+          {steps.map(([title, body], i) => (
+            <li key={title} className="card p-6">
+              <span className="heading-display flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--brand-red)] text-base text-white">{i + 1}</span>
+              <h3 className="heading-display mt-4 text-lg text-[color:var(--brand-green)]">{title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--ink-soft)]">{body}</p>
+            </li>
+          ))}
+        </ol>
+        {photos.length > 0 && (
+          <ul className="mt-6 grid grid-cols-3 gap-3">
+            {photos.map((p) => (
+              <li key={p.file} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-stone-200">
+                <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 420px, 33vw" placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover" />
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#quote" className="btn btn-red">Get my free quote</a>
+          <a href={site.phoneHref} className="btn btn-outline-green">Call {site.phone}</a>
+        </div>
       </div>
     </section>
   );
@@ -192,7 +261,7 @@ export function CtaBand({ type = "Residential" }: { type?: "Residential" | "Comm
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <h2 className="heading-display text-3xl text-white sm:text-4xl">{type === "Commercial" ? "Book your property before the calendar fills." : "Installs book up by mid-November."}</h2>
-          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} <strong>{site.earlyBird.headline}</strong></p>
+          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <a href="#quote" className="btn btn-outline-white">Get a Free Quote</a>

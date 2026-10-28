@@ -5,7 +5,8 @@ import Image from "next/image";
 import { cities, getCityBySlug, site } from "@/lib/site";
 import { getCityContent, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
 import { pageTitle } from "@/lib/seo";
-import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs } from "@/components/PageBlocks";
+import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs, HowItWorks } from "@/components/PageBlocks";
+import { StickyQuoteCta } from "@/components/StickyQuoteCta";
 import { PackageGrid } from "@/components/PackageGrid";
 import { Testimonials } from "@/components/Testimonials";
 
@@ -44,6 +45,8 @@ export default async function CityPage({ params }: Props) {
   const heroPhoto = pickPhotos("residential-exterior", 1, slug)[0] ?? null;
   const homePhotos = pickPhotos("residential-exterior", 5, slug + "-grid").filter((p) => p.file !== heroPhoto?.file);
   const commercialPhotos = pickPhotos(["commercial-exterior", "commercial-indoor"], 4, slug + "-com");
+  // No photos are tagged by city, so show residential install-crew shots, rotated per city.
+  const crewPhotos = pickPhotos("install-action", 3, slug + "-crew", (p) => /home|house/i.test(p.alt));
   const nearby = c.nearby.map(getCityBySlug).filter((x): x is NonNullable<typeof x> => !!x);
   const url = `${site.url}/cities/${city.slug}`;
 
@@ -65,8 +68,20 @@ export default async function CityPage({ params }: Props) {
       <script id={`service-schema-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script id={`crumbs-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: "Service Areas", path: "/service-areas" }, { name: c.name }])) }} />
 
-      <PhotoHero eyebrow={`Christmas light installers serving ${c.displayName}`} h1={c.h1} intro={c.heroIntro} photo={heroPhoto} formCity={c.name === "London" ? "London" : c.name} source={`city:${slug}`} />
+      <PhotoHero
+        eyebrow={`Christmas light installers serving ${c.displayName}`}
+        h1={c.h1}
+        intro={c.heroIntro}
+        photo={heroPhoto}
+        formCity={c.name}
+        source={`city:${slug}`}
+        trust={[`${site.googleRating} Google rating · ${site.reviewCount}+ reviews`, "Fully insured", "We supply the lights", "Free mid-season maintenance"]}
+        priceFrom={site.startingPrice}
+        mobileForm
+        shortForm
+      />
       <TrustBar />
+      <HowItWorks photos={crewPhotos} city={c.name} />
 
       <section className="section">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -121,7 +136,7 @@ export default async function CityPage({ params }: Props) {
             </ul>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/commercial-christmas-lighting" className="btn btn-red">Commercial lighting services</Link>
-              <a href="#quote" className="btn btn-outline-white">Request a site visit</a>
+              <Link href="/commercial-christmas-lighting#quote" className="btn btn-outline-white">Request a site visit</Link>
             </div>
           </div>
           <ul className="grid grid-cols-2 gap-3">
@@ -137,7 +152,7 @@ export default async function CityPage({ params }: Props) {
       <PackageGrid />
       <Testimonials />
       <FaqSection faqs={c.faq} title={`${c.name} Christmas lighting questions`} id={`faq-${slug}`} />
-      <QuoteSection city={c.name} source={`city:${slug}`} title={`Get your ${c.name} quote`} />
+      <QuoteSection city={c.name} source={`city:${slug}`} title={`Get your ${c.name} quote`} short />
 
       <section className="section bg-[color:var(--bg-soft)]">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -153,6 +168,7 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
       <CtaBand />
+      <StickyQuoteCta />
     </>
   );
 }

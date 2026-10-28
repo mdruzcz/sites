@@ -98,9 +98,9 @@ export function getPhotos(): Photo[] {
 }
 
 /** Deterministic photo picks so each page gets a stable, distinct set. */
-export function pickPhotos(category: string | string[], count: number, seed = ""): Photo[] {
+export function pickPhotos(category: string | string[], count: number, seed = "", match?: (p: Photo) => boolean): Photo[] {
   const cats = Array.isArray(category) ? category : [category];
-  const pool = getPhotos().filter((p) => cats.includes(p.category));
+  const pool = getPhotos().filter((p) => cats.includes(p.category) && (!match || match(p)));
   if (pool.length === 0) return [];
   let h = 0;
   for (const ch of seed) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
