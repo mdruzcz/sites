@@ -30,6 +30,15 @@ export async function POST(req: Request) {
   const extras: string[] = [];
   if (body.timeline) extras.push(`Timeline: ${body.timeline}`);
   if (body.formId) extras.push(`Source: ${body.formId}`);
+  // Ad click IDs / UTM tags captured on landing, kept so leads can be matched
+  // back to Google Ads clicks (offline conversion upload of won contracts).
+  const attr = body.attribution && typeof body.attribution === "object" ? (body.attribution as Record<string, unknown>) : {};
+  const attribution = Object.entries(attr)
+    .filter(([k, v]) => /^[a-z_]{2,20}$/.test(k) && typeof v === "string" && v)
+    .slice(0, 12)
+    .map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`);
+  const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
+  if (attribution.length) extras.push("--- Ad source ---", ...attribution);
   const message = [String(body.message ?? "").trim(), ...extras].filter(Boolean).join("\n") || null;
 
   const row = {
@@ -48,7 +57,7 @@ export async function POST(req: Request) {
   const emailed = await sendEmail({
     to: NOTIFY_TO(),
     replyTo: email,
-    subject: `New Lead: ${subjectWhat} - ${name}${company ? ` (${company})` : ""}`,
+    subject: `New Lead: ${subjectWhat} - ${name}${company ? ` (${company})` : ""}${adSource ? ` [${adSource}]` : ""}`,
     html: `
       <h2 style="font-family:system-ui">New Lead — Commercial Holiday Decorators</h2>
       <table style="font-family:system-ui;font-size:14px;line-height:1.6">
