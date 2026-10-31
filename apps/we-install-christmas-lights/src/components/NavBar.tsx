@@ -28,6 +28,7 @@ const RESIDENTIAL_LINKS = [
 const CITIES = [
   { label: "London Ontario", href: "/cities/london-ontario" },
   { label: "Brampton", href: "/cities/brampton" },
+  { label: "Brantford", href: "/cities/brantford" },
   { label: "Burlington", href: "/cities/burlington" },
   { label: "Cambridge", href: "/cities/cambridge" },
   { label: "Etobicoke", href: "/cities/etobicoke" },

@@ -506,6 +506,20 @@ export const cities: City[] = [
     localFact: "Hamilton's premium Christmas lighting team for Ancaster's finest properties.",
   },
   {
+    slug: "brantford",
+    name: "Brantford",
+    region: "ON",
+    heroIntro:
+      "Brantford's full-service Christmas light installers. Custom roofline lighting, trees and shrubs, installed, maintained and taken down for you.",
+    description:
+      "From heritage homes near Brant Avenue to new builds in West Brant and Shellard Lane, we handle the design, lights, installation, maintenance and takedown.",
+    neighbourhoods: ["Brant Avenue area", "Dufferin", "Holmedale", "Eagle Place", "West Brant", "Shellard Lane", "Echo Place", "Terrace Hill"],
+    metaTitle: "Christmas Light Installation Brantford ON | We Install Christmas Lights",
+    metaDescription:
+      "Christmas light installation in Brantford, Ontario. Custom roofline design, LED lights supplied, 1-day install, maintenance and takedown. Free quote today.",
+    localFact: "Full-service holiday lighting along the Grand River, from Brant Avenue to West Brant.",
+  },
+  {
     slug: "london-surrounding-areas",
     name: "London Surrounding Areas",
     region: "ON",

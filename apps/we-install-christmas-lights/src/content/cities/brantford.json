@@ -1,0 +1,52 @@
+{
+  "slug": "brantford",
+  "name": "Brantford",
+  "displayName": "Brantford, Ontario",
+  "metaTitle": "Christmas Light Installation in Brantford, Ontario",
+  "metaDescription": "Christmas light installation in Brantford, Ontario. Custom roofline design, LED lights supplied, 1-day install, maintenance and takedown. Free quote today.",
+  "h1": "Christmas Light Installation in Brantford, Ontario",
+  "heroIntro": "From the heritage homes along Brant Avenue to the newer streets of West Brant and Shellard Lane, we design, install and take down custom roofline lighting across the Telephone City.",
+  "intro": [
+    "Brantford grew up along the Grand River, and its housing tells that story street by street. The Brant Avenue and Dufferin areas hold some of the city's most detailed older homes, with steep gables, brick trim and deep porches that suit a full roofline outline. Holmedale and Eagle Place sit close to the river with a mix of older one-and-a-half and two-storey houses on tighter lots, while West Brant and Shellard Lane on the southwest side have newer two-storey homes with long, clean rooflines and attached garages. Echo Place and Terrace Hill round out the city with postwar bungalows and family homes where a simple outline and a lit shrub bed go a long way.",
+    "The all-inclusive program works the same way in Brantford as everywhere else we install: a custom design based on your roofline, professional-grade LED lighting we supply and install, installation in as little as a day, mid-season maintenance if a strand or bulb ever fails, and takedown once the season ends in January. Optional storage from $100 a season keeps the totes out of your garage year-round. You get one quote and one point of contact, and there is nothing to climb, untangle or test yourself."
+  ],
+  "neighbourhoods": ["Brant Avenue area", "Dufferin", "Holmedale", "Eagle Place", "West Brant", "Shellard Lane", "Echo Place", "Terrace Hill", "Paris (nearby)", "St. George (nearby)"],
+  "sections": [
+    {
+      "heading": "Homes in Brantford: what we typically light",
+      "text": "Older homes around Brant Avenue and Dufferin tend to have the most architectural detail in the city, and their gables and dormers read well with a full C9 roofline outline plus a lit wreath at the entrance. Mature trees are common on these lots too, and a wrapped trunk adds a lot from the street. In West Brant and Shellard Lane, newer two-storey homes usually have long roof runs and a prominent garage, where a clean outline with the garage peak included makes the biggest impression. Bungalows in Echo Place and Terrace Hill are often a good fit for our Classic package, with shrubs or a front tree added if you want more colour at ground level."
+    },
+    {
+      "heading": "Timing, weather and scheduling in Brantford",
+      "text": "Our installs run from early October through the first week of December, and the calendar gets busier as November goes on. Booking by early to mid-November is the safer approach if you want lights up by the start of December. Brantford's location along the Highway 403 corridor makes it a straightforward stop, and we watch the forecast closely so a scheduled install doesn't run into wind, ice or unsafe roof conditions."
+    },
+    {
+      "heading": "Why Brantford homeowners choose us",
+      "text": "Most Brantford homeowners who call us have either spent a cold afternoon on a ladder or skipped the tall part of the roofline altogether. Our crews are fully insured and WSIB-compliant, and bucket trucks and aerial lifts reach the peaks a ladder can't safely get to. Mid-season maintenance means a failed bulb or strand gets fixed without any climbing on your part, and about 96% of our customers book us again the following year."
+    }
+  ],
+  "commercial": {
+    "heading": "Commercial Christmas lighting in Brantford",
+    "text": "Downtown Brantford around Colborne Street and Harmony Square has a walkable, historic main-street feel, and storefronts there tend to suit a tidy roofline outline paired with a wreath or lit garland. Retail and plazas along King George Road and Lynden Road see faster-moving traffic, so displays there are usually bigger and more visible from the road. Offices, churches, community buildings and multi-residential properties around the city also book seasonal lighting for entrances and rooflines. Commercial work is quoted from a site visit or photos and plans, covering design through storage as one package.",
+    "examples": ["Storefronts along Colborne Street", "Plazas on King George Road and Lynden Road", "Offices and professional buildings", "Municipal and community buildings", "Churches and community halls"]
+  },
+  "faq": [
+    {
+      "q": "Do I need a permit for holiday lighting on my Brantford home?",
+      "a": "A typical residential display on a single-family home doesn't normally need a municipal permit. If you're in a townhome or condo-managed community, check with your board first, and we can help coordinate that approval as part of your quote."
+    },
+    {
+      "q": "What's the typical cost for a Christmas light installation in Brantford?",
+      "a": "Packages start at $700 for our Classic package, which often suits a smaller bungalow. Most two-storey homes fall in the Festive range, roughly $1,400 to $2,000, depending on roofline length and whether trees or shrubs are included. Larger properties can move into the Griswold range near $2,800. Every quote is confirmed after we see the home."
+    },
+    {
+      "q": "Can you light the mature trees on older Brantford properties?",
+      "a": "Yes, our bucket trucks and aerial lifts reach the larger mature trees common on older lots. We can wrap a trunk and lower canopy or light a single feature tree, and this can be added to any residential or commercial package during your free quote."
+    },
+    {
+      "q": "Do you also install in Paris and St. George?",
+      "a": "Send us your address with your quote request and we'll confirm scheduling for Paris, St. George and other communities around Brantford."
+    }
+  ],
+  "nearby": ["hamilton", "ancaster", "cambridge", "woodstock"]
+}
