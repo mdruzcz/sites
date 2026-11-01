@@ -86,7 +86,7 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
         <div className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-10 lg:px-8 lg:py-14">
           <div>
             <h1 className="lp-heading text-[1.9rem] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.55)] sm:text-5xl lg:text-[3.2rem]">
-              <span className="block text-[#FFD27A]">{lp.h1Accent}</span> <span className="mt-1 block">{lp.h1Rest}</span>
+              <span className="block text-[#FFD27A]">{lp.h1Accent}</span> <span className="mt-1 block text-[1.45rem] sm:text-5xl lg:text-[3.2rem]">{lp.h1Rest}</span>
             </h1>
             <p className="mt-3 max-w-2xl text-base text-white/95 lg:mt-4 [text-shadow:0_1px_10px_rgba(0,0,0,.6)] sm:text-lg lg:text-xl">{lp.sub}</p>
             <ul className="mt-3 flex flex-wrap gap-1.5 sm:gap-2 lg:mt-5">
