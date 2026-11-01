@@ -39,7 +39,7 @@ export default function ResidentialServices() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="heading-display text-base text-[color:var(--brand-green)]">{s.name}</h3>
+                <h3 className="heading-display text-base text-[color:var(--accent)]">{s.name}</h3>
                 <p className="mt-2 text-sm text-[color:var(--ink-soft)]">{s.description}</p>
               </div>
             </Link>

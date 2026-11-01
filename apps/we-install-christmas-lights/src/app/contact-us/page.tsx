@@ -28,23 +28,23 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10">
           <aside className="lg:col-span-1 space-y-6">
             <div className="card p-6">
-              <h3 className="heading-display text-base text-[color:var(--brand-green)]">Call</h3>
+              <h3 className="heading-display text-base text-[color:var(--accent)]">Call</h3>
               <Link href={site.phoneHref} className="mt-3 flex items-center gap-2 text-[color:var(--ink-strong)] font-semibold">
-                <PhoneIcon className="w-4 h-4 text-[color:var(--brand-red)]" /> {site.phone}
+                <PhoneIcon className="w-4 h-4 text-[color:var(--accent)]" /> {site.phone}
               </Link>
               <p className="mt-2 text-sm text-[color:var(--ink-soft)]">{site.hours}</p>
             </div>
             <div className="card p-6">
-              <h3 className="heading-display text-base text-[color:var(--brand-green)]">Email</h3>
+              <h3 className="heading-display text-base text-[color:var(--accent)]">Email</h3>
               <a href={`mailto:${site.email}`} className="mt-3 flex items-center gap-2 text-[color:var(--ink-strong)] font-semibold break-all">
-                <MailIcon className="w-4 h-4 text-[color:var(--brand-red)]" /> {site.email}
+                <MailIcon className="w-4 h-4 text-[color:var(--accent)]" /> {site.email}
               </a>
               <p className="mt-2 text-sm text-[color:var(--ink-soft)]">Replies within 24 hours, Mon–Fri.</p>
             </div>
             <div className="card p-6">
-              <h3 className="heading-display text-base text-[color:var(--brand-green)]">Visit</h3>
+              <h3 className="heading-display text-base text-[color:var(--accent)]">Visit</h3>
               <p className="mt-3 flex items-start gap-2 text-[color:var(--ink-strong)] font-semibold">
-                <MapPinIcon className="w-4 h-4 text-[color:var(--brand-red)] mt-0.5" /> {site.addressLine}
+                <MapPinIcon className="w-4 h-4 text-[color:var(--accent)] mt-0.5" /> {site.addressLine}
               </p>
               <p className="mt-2 text-sm text-[color:var(--ink-soft)]">By appointment only.</p>
             </div>

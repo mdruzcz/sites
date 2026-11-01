@@ -101,14 +101,14 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
     }
   }
 
-  const input = "mt-1 w-full rounded-lg border border-[color:var(--border)] bg-white px-3.5 py-2.5 text-[15px] text-[color:var(--ink-strong)] focus:border-[color:var(--brand-green)] focus:outline-none min-h-[44px]";
+  const input = "mt-1 w-full rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] px-3.5 py-2.5 text-[15px] text-[color:var(--ink-strong)] focus:border-[color:var(--brand-green)] focus:outline-none min-h-[44px]";
   const label = "block text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]";
 
   if (status === "success") {
     return (
-      <div ref={rootRef} className={`card p-8 text-center ${className}`}>
+      <div ref={rootRef} className={`surface-light card p-8 text-center ${className}`}>
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--brand-green)] text-white"><CheckIcon className="h-6 w-6" /></div>
-        <h3 className="heading-display mt-4 text-xl text-[color:var(--brand-green)]">Thanks, your request is in.</h3>
+        <h3 className="heading-display mt-4 text-xl text-[color:var(--accent)]">Thanks, your request is in.</h3>
         <p className="mt-2 text-[color:var(--ink-soft)]">
           {type === "Commercial" ? "A commercial lighting specialist" : "We"} will reply with a free quote within 24 hours. Need it sooner? Call{" "}
           <a className="font-semibold underline" href={site.phoneHref}>{site.phone}</a>.
@@ -118,7 +118,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
   }
 
   return (
-    <div ref={rootRef} className={`card ${hero ? "p-5 sm:p-6" : "p-6 sm:p-8"} ${className}`}>
+    <div ref={rootRef} className={`surface-light card ${hero ? "p-5 sm:p-6" : "p-6 sm:p-8"} ${className}`}>
       {(heading || hero) && (
         <div className="mb-4">
           <h3 className="heading-display text-xl text-[color:var(--ink-strong)]">{heading ?? "Get your free quote"}</h3>

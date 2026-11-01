@@ -9,6 +9,23 @@
   --brand-green:      #04603A;
   --brand-green-deep: #034F30;
   --accent-blue:      #2098D1;
+  --accent:           #FFD27A;
+  --surface:          #0F1A16;
+  --bg:               #050B08;
+  --bg-soft:          #09130F;
+  --bg-cream:         #0C1713;
+  --ink:              #C9D3CE;
+  --ink-strong:       #F6F8F7;
+  --ink-soft:         #A3B1AA;
+  --border:           rgba(255, 255, 255, 0.11);
+  --muted:            #8B9992;
+  color-scheme: dark;
+}
+
+/* Forms and the PPC landing pages stay on light surfaces: the tokens flip back inside this class. */
+.surface-light {
+  --accent:           #04603A;
+  --surface:          #FFFFFF;
   --bg:               #FFFFFF;
   --bg-soft:          #FFF8F4;
   --bg-cream:         #FBF6EE;
@@ -17,6 +34,8 @@
   --ink-soft:         #4A6B5C;
   --border:           #E6E6E6;
   --muted:            #6b7280;
+  color: var(--ink);
+  color-scheme: light;
 }
 
 @theme inline {
@@ -54,7 +73,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.015em;
   color: var(--ink-strong);
 }
 
@@ -62,76 +81,107 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
   color: #fff;
 }
 
-.heading-display {
-  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.005em;
-  line-height: 1.05;
+/* Layered so Tailwind utilities such as lg:hidden and w-full still win. */
+@layer components {
+  .heading-display {
+    font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(255, 210, 122, 0.28);
+    border-radius: 9999px;
+    background: rgba(255, 210, 122, 0.07);
+    font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.875rem;
+    font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    min-height: 48px;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-red {
+    background: #D0303A;
+    color: #fff;
+    box-shadow: 0 14px 30px -12px rgba(208, 48, 58, 0.75);
+  }
+  .btn-red:hover { background: #B3262F; }
+  .btn-green {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  .btn-green:hover { background: rgba(255, 255, 255, 0.14); }
+  .btn-outline-white {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #fff;
+  }
+  .btn-outline-white:hover {
+    background: #fff;
+    color: #06140E;
+  }
+  .btn-outline-green {
+    border: 1px solid rgba(255, 210, 122, 0.5);
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn-outline-green:hover {
+    background: var(--accent);
+    color: #06140E;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.125rem;
+  }
+
+  /* A soft warm light from above, as if the section were lit by the roofline */
+  .glow-band {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--bg-soft);
+    border-block: 1px solid var(--border);
+  }
+  .glow-band::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -12rem 0 auto;
+    height: 24rem;
+    margin-inline: auto;
+    max-width: 52rem;
+    border-radius: 9999px;
+    background: rgba(255, 179, 71, 0.2);
+    filter: blur(70px);
+  }
 }
 
-.eyebrow {
-  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--brand-green);
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 9999px;
-  font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  min-height: 48px;
-  transition: transform 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s;
-}
-.btn:hover { transform: translateY(-1px); }
-.btn-red {
-  background: var(--brand-red);
-  color: #fff;
-}
-.btn-red:hover { background: var(--brand-red-deep); }
-.btn-green {
-  background: var(--brand-green);
-  color: #fff;
-}
-.btn-green:hover { background: var(--brand-green-deep); }
-.btn-outline-white {
-  border: 2px solid #fff;
-  background: transparent;
-  color: #fff;
-}
-.btn-outline-white:hover {
-  background: #fff;
-  color: var(--brand-green);
-}
-.btn-outline-green {
-  border: 2px solid var(--brand-green);
-  background: transparent;
-  color: var(--brand-green);
-}
-.btn-outline-green:hover {
-  background: var(--brand-green);
-  color: #fff;
-}
-
-/* Cards */
-.card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(4, 96, 58, 0.05);
-}
+.prose a { color: var(--accent); text-decoration: underline; }
 
 /* Sections */
 .section {
@@ -206,7 +256,7 @@ body:has(.lp-header) .site-header { display: none; }
   100% { background-position: 200% 0; }
 }
 .shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, #111c18 25%, #1a2822 50%, #111c18 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

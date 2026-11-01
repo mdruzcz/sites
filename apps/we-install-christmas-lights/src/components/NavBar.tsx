@@ -61,12 +61,12 @@ export function NavBar() {
 
   return (
     <header
-      className={`site-header sticky top-0 z-50 bg-white transition-shadow ${
-        scrolled ? "shadow-md" : "shadow-sm"
+      className={`site-header sticky top-0 z-50 border-b transition-colors ${
+        scrolled ? "border-white/15 bg-[#050B08]" : "border-white/10 bg-[#050B08]/95"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between gap-4">
+        <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="We Install Christmas Lights — Home">
             <Image
@@ -75,27 +75,27 @@ export function NavBar() {
               width={300}
               height={76}
               priority
-              className="h-16 w-auto"
+              className="h-14 w-auto brightness-110"
             />
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-8 text-[14px] font-bold tracking-[0.12em] uppercase text-[color:var(--brand-green)]">
+          <ul className="hidden lg:flex items-center gap-6 text-[15px] font-semibold text-[color:var(--ink)]">
             <li>
-              <Link href="/about-us" className="hover:text-[color:var(--brand-red)] transition-colors">About Us</Link>
+              <Link href="/about-us" className="hover:text-[color:var(--accent)] transition-colors">About Us</Link>
             </li>
 
             <li className="group relative">
-              <button className="flex items-center gap-1 hover:text-[color:var(--brand-red)] transition-colors">
+              <button className="flex items-center gap-1 hover:text-[color:var(--accent)] transition-colors">
                 Commercial Services <ChevronDown className="w-3 h-3" />
               </button>
               <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3 z-50">
-                <div className="bg-white border border-[color:var(--border)] rounded-lg shadow-lg min-w-[280px] py-2">
+                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[280px] py-2">
                   {COMMERCIAL_LINKS.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-[12px] hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--brand-red)]"
+                      className="block px-4 py-2 text-sm font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
                     >
                       {l.label}
                     </Link>
@@ -105,16 +105,16 @@ export function NavBar() {
             </li>
 
             <li className="group relative">
-              <button className="flex items-center gap-1 hover:text-[color:var(--brand-red)] transition-colors">
+              <button className="flex items-center gap-1 hover:text-[color:var(--accent)] transition-colors">
                 Residential Services <ChevronDown className="w-3 h-3" />
               </button>
               <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3 z-50">
-                <div className="bg-white border border-[color:var(--border)] rounded-lg shadow-lg min-w-[280px] py-2">
+                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[280px] py-2">
                   {RESIDENTIAL_LINKS.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-[12px] hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--brand-red)]"
+                      className="block px-4 py-2 text-sm font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
                     >
                       {l.label}
                     </Link>
@@ -124,16 +124,16 @@ export function NavBar() {
             </li>
 
             <li className="group relative">
-              <Link href="/service-areas" className="flex items-center gap-1 hover:text-[color:var(--brand-red)] transition-colors">
+              <Link href="/service-areas" className="flex items-center gap-1 hover:text-[color:var(--accent)] transition-colors">
                 Service Areas <ChevronDown className="w-3 h-3" />
               </Link>
               <div className="invisible group-hover:visible absolute right-0 top-full pt-3 z-50">
-                <div className="bg-white border border-[color:var(--border)] rounded-lg shadow-lg min-w-[260px] py-2 grid grid-cols-2 gap-0">
+                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[260px] py-2 grid grid-cols-2 gap-0">
                   {CITIES.map((c) => (
                     <Link
                       key={c.href}
                       href={c.href}
-                      className="block px-4 py-1.5 text-[11px] hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--brand-red)]"
+                      className="block px-4 py-1.5 text-[13px] font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
                     >
                       {c.label}
                     </Link>
@@ -143,21 +143,22 @@ export function NavBar() {
             </li>
 
             <li>
-              <Link href="/gallery" className="hover:text-[color:var(--brand-red)] transition-colors">Gallery</Link>
+              <Link href="/gallery" className="hover:text-[color:var(--accent)] transition-colors">Gallery</Link>
             </li>
 
             <li>
-              <Link href="/faq" className="hover:text-[color:var(--brand-red)] transition-colors">FAQ</Link>
+              <Link href="/faq" className="hover:text-[color:var(--accent)] transition-colors">FAQ</Link>
             </li>
           </ul>
 
-          <div className="hidden lg:flex items-center gap-2">
-            <Link href="/contact-us" className="btn btn-red text-sm">Contact Us</Link>
+          <div className="hidden lg:flex items-center gap-4">
+            <a href={site.phoneHref} className="text-[15px] font-bold whitespace-nowrap text-[color:var(--ink-strong)] hover:text-[color:var(--accent)]">{site.phone}</a>
+            <Link href="/contact-us" className="btn btn-red whitespace-nowrap">Contact Us</Link>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 -mr-2 text-[color:var(--brand-green)]"
+            className="lg:hidden flex h-11 w-11 -mr-2 items-center justify-center text-[color:var(--ink-strong)]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
@@ -204,7 +205,7 @@ function MobileLink({ href, children, onClick }: { href: string; children: React
       <Link
         href={href}
         onClick={onClick}
-        className="block px-3 py-2 text-[color:var(--brand-green)] font-semibold hover:bg-[color:var(--bg-soft)] rounded"
+        className="block px-3 py-2.5 text-[color:var(--ink-strong)] font-semibold hover:bg-white/10 rounded-lg"
       >
         {children}
       </Link>

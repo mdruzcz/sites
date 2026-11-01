@@ -40,8 +40,8 @@ export default function BlogIndex() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-3">
           {POSTS.map((p) => (
             <Link key={p.slug} href={`/blog/${p.slug}`} className="card p-5 block hover:shadow-md">
-              <h2 className="heading-display text-base text-[color:var(--brand-green)]">{p.title}</h2>
-              <span className="mt-2 inline-block text-xs uppercase tracking-widest text-[color:var(--brand-red)] font-bold">
+              <h2 className="heading-display text-base text-[color:var(--accent)]">{p.title}</h2>
+              <span className="mt-2 inline-block text-xs uppercase tracking-widest text-[color:var(--accent)] font-bold">
                 Read article →
               </span>
             </Link>

@@ -82,7 +82,7 @@ export default async function IndustryPage({ params }: Props) {
               <p className="eyebrow">{c.shortName}</p>
               <h2 className="heading-display mt-2 text-3xl">Holiday décor that works as hard as your property</h2>
               <Prose paragraphs={c.intro} className="mt-5" />
-              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">What we install for {c.shortName.toLowerCase()}</h3>
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--accent)]">What we install for {c.shortName.toLowerCase()}</h3>
               <div className="mt-4"><CheckList items={c.whatWeInstall} /></div>
             </div>
             <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
@@ -90,11 +90,11 @@ export default async function IndustryPage({ params }: Props) {
                 <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">How it works</p>
                 <ol className="mt-4 space-y-3">
                   {c.process.map((s, i) => (
-                    <li key={s} className="flex gap-3 text-[15px] text-[color:var(--ink-strong)]"><span className="heading-display text-[color:var(--brand-red)]">{i + 1}.</span>{s}</li>
+                    <li key={s} className="flex gap-3 text-[15px] text-[color:var(--ink-strong)]"><span className="heading-display text-[color:var(--accent)]">{i + 1}.</span>{s}</li>
                   ))}
                 </ol>
                 <a href="#quote" className="btn btn-red mt-6 w-full">Request a site visit</a>
-                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--accent)]">or call {site.phone}</a>
               </div>
             </aside>
           </div>
@@ -118,7 +118,7 @@ export default async function IndustryPage({ params }: Props) {
           <h2 className="heading-display text-2xl">Other property types we decorate</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             {others.map((i) => (
-              <Link key={i.slug} href={`/industries/${i.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{i.shortName}</Link>
+              <Link key={i.slug} href={`/industries/${i.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]">{i.shortName}</Link>
             ))}
           </div>
         </div>

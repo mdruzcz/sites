@@ -19,12 +19,12 @@ export function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
               onClick={() => setOpenIdx(isOpen ? null : i)}
               aria-expanded={isOpen}
             >
-              <span className="heading-display text-sm text-[color:var(--brand-red)] mt-0.5">Q:</span>
+              <span className="heading-display text-sm text-[color:var(--accent)] mt-0.5">Q:</span>
               <span className="flex-1 font-semibold text-[color:var(--ink-strong)]">
                 {f.question}
               </span>
               <ChevronDown
-                className={`w-5 h-5 text-[color:var(--brand-green)] mt-0.5 transition-transform ${
+                className={`w-5 h-5 text-[color:var(--accent)] mt-0.5 transition-transform ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />

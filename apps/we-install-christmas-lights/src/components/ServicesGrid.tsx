@@ -31,13 +31,13 @@ export function ServicesGrid() {
                 />
               </div>
               <div className="p-5 flex-1 flex flex-col">
-                <h3 className="heading-display text-base text-[color:var(--brand-green)]">
+                <h3 className="heading-display text-base text-[color:var(--accent)]">
                   {s.name}
                 </h3>
                 <p className="mt-2 text-sm text-[color:var(--ink-soft)] leading-relaxed flex-1">
                   {s.description}
                 </p>
-                <span className="mt-4 text-xs uppercase tracking-widest font-bold text-[color:var(--brand-red)] group-hover:underline">
+                <span className="mt-4 text-xs uppercase tracking-widest font-bold text-[color:var(--accent)] group-hover:underline">
                   Learn more →
                 </span>
               </div>

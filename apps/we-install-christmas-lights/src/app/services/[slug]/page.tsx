@@ -75,7 +75,7 @@ export default async function ServicePage({ params }: Props) {
               <p className="eyebrow">{service.shortName}</p>
               <h2 className="heading-display mt-2 text-3xl">{service.tagline}</h2>
               <Prose paragraphs={c.intro} className="mt-5" />
-              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">What is included</h3>
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--accent)]">What is included</h3>
               <div className="mt-4"><CheckList items={c.included} /></div>
             </div>
             <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">
@@ -83,12 +83,12 @@ export default async function ServicePage({ params }: Props) {
                 <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--ink-soft)]">Pricing</p>
                 <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--ink-strong)]">{c.pricing}</p>
                 <a href="#quote" className="btn btn-red mt-6 w-full">{commercial ? "Request a quote" : "Get my free quote"}</a>
-                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--accent)]">or call {site.phone}</a>
               </div>
               {!commercial && (
                 <div className="rounded-2xl bg-[color:var(--bg-cream)] p-6 text-sm text-[color:var(--ink-soft)]">
                   <p className="font-bold text-[color:var(--ink-strong)]">Compare packages</p>
-                  <p className="mt-2">Classic, Festive and Griswold, with everything supplied, installed, maintained and removed. <Link href="/lighting-packages" className="font-bold text-[color:var(--brand-red)] hover:underline">See packages →</Link></p>
+                  <p className="mt-2">Classic, Festive and Griswold, with everything supplied, installed, maintained and removed. <Link href="/lighting-packages" className="font-bold text-[color:var(--accent)] hover:underline">See packages →</Link></p>
                 </div>
               )}
             </aside>
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: Props) {
             <h2 className="heading-display text-2xl">Related services</h2>
             <div className="mt-5 flex flex-wrap gap-3">
               {related.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{s.shortName}</Link>
+                <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]">{s.shortName}</Link>
               ))}
             </div>
           </div>

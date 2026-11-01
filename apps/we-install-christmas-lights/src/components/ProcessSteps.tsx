@@ -49,7 +49,7 @@ export function ProcessSteps() {
                 <span className="w-9 h-9 rounded-full bg-[color:var(--brand-red)] text-white heading-display text-base flex items-center justify-center">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="heading-display text-lg text-[color:var(--brand-green)]">
+                <h3 className="heading-display text-lg text-[color:var(--accent)]">
                   {step.title}
                 </h3>
               </div>

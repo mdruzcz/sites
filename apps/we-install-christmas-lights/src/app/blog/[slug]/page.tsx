@@ -142,7 +142,7 @@ export default async function BlogPost({ params }: Props) {
     <article>
       <section className="bg-[color:var(--bg-soft)] border-b border-[color:var(--border)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-          <Link href="/blog" className="text-xs uppercase tracking-widest font-bold text-[color:var(--brand-red)] hover:underline">
+          <Link href="/blog" className="text-xs uppercase tracking-widest font-bold text-[color:var(--accent)] hover:underline">
             ← Back to all posts
           </Link>
           <h1 className="heading-display text-3xl sm:text-4xl lg:text-5xl mt-4">{post.title}</h1>

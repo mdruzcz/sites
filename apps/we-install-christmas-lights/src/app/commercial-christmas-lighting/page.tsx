@@ -95,7 +95,7 @@ export default function CommercialHubPage() {
               <li key={s.slug} className="card flex flex-col p-6">
                 <h3 className="heading-display text-lg text-[color:var(--ink-strong)]">{s.name}</h3>
                 <p className="mt-2 flex-1 text-sm text-[color:var(--ink-soft)]">{s.description}</p>
-                <Link href={`/services/${s.slug}`} className="mt-4 text-sm font-bold text-[color:var(--brand-red)] hover:underline">Learn more →</Link>
+                <Link href={`/services/${s.slug}`} className="mt-4 text-sm font-bold text-[color:var(--accent)] hover:underline">Learn more →</Link>
               </li>
             ))}
           </ul>
@@ -124,7 +124,7 @@ export default function CommercialHubPage() {
 
       <PhotoGrid photos={photos.slice(4)} title="Commercial installs across Ontario" caption="Plazas, office buildings, hotels, dealerships, malls, churches and downtown displays." />
 
-      <section className="section bg-[color:var(--ink-strong)] text-white">
+      <section className="section bg-[color:var(--bg-soft)] text-white">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">How a commercial program runs</p>
           <ol className="mt-6 grid gap-6 md:grid-cols-4">
@@ -135,7 +135,7 @@ export default function CommercialHubPage() {
               ["Maintain, remove, store", "Any fault fixed at no charge. January takedown, labelled storage, and a priority date next season."],
             ].map(([h, t], i) => (
               <li key={h} className="rounded-2xl border border-white/15 p-5">
-                <span className="heading-display text-3xl text-[color:var(--brand-red)]">{i + 1}</span>
+                <span className="heading-display text-3xl text-[color:var(--accent)]">{i + 1}</span>
                 <h3 className="heading-display mt-2 text-lg text-white">{h}</h3>
                 <p className="mt-2 text-sm text-white/80">{t}</p>
               </li>

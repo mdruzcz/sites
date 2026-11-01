@@ -65,11 +65,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div id="contact-form-anchor" className="card p-8 text-center">
+      <div id="contact-form-anchor" className="surface-light card p-8 text-center">
         <div className="w-12 h-12 mx-auto rounded-full bg-[color:var(--brand-green)] text-white flex items-center justify-center">
           <CheckIcon className="w-6 h-6" />
         </div>
-        <h3 className="heading-display text-xl mt-4 text-[color:var(--brand-green)]">Thanks! Your request is in.</h3>
+        <h3 className="heading-display text-xl mt-4 text-[color:var(--accent)]">Thanks! Your request is in.</h3>
         <p className="mt-2 text-[color:var(--ink-soft)]">
           We'll reply with a free quote within 24 hours. For urgent requests call <a className="font-semibold underline" href="tel:+15192666796">(519) 266-6796</a>.
         </p>
@@ -78,33 +78,33 @@ export function ContactForm() {
   }
 
   return (
-    <form id="contact-form-anchor" onSubmit={onSubmit} className="card p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form id="contact-form-anchor" onSubmit={onSubmit} className="surface-light card p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
       {/* honeypot */}
       <input type="text" name="website" autoComplete="off" tabIndex={-1} className="hidden" aria-hidden="true" />
 
       <div className="sm:col-span-2">
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="name">Name</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="name">Name</label>
         <input id="name" name="name" required autoComplete="name" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)]" />
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="email">Email</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="email">Email</label>
         <input id="email" name="email" type="email" required autoComplete="email" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)]" />
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="phone">Phone</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="phone">Phone</label>
         <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)]" />
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="city">City</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="city">City</label>
         <input id="city" name="city" autoComplete="address-level2" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)]" />
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="service">Service</label>
-        <select id="service" name="service" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)] bg-white">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="service">Service</label>
+        <select id="service" name="service" className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)] bg-[color:var(--surface)]">
           <option value="">Choose a service…</option>
           <option>Residential Christmas Light Installation</option>
           <option>Residential Christmas Decorators</option>
@@ -120,7 +120,7 @@ export function ContactForm() {
       </div>
 
       <div className="sm:col-span-2">
-        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--brand-green)]" htmlFor="message">Tell us about your project</label>
+        <label className="block text-xs font-bold uppercase tracking-wider text-[color:var(--accent)]" htmlFor="message">Tell us about your project</label>
         <textarea id="message" name="message" rows={5} className="mt-1 w-full px-4 py-2.5 border border-[color:var(--border)] rounded-lg focus:outline-none focus:border-[color:var(--brand-green)]" placeholder="What kind of display are you imagining? Roof lines, trees, hedges, ground stakes? Estimated budget?" />
       </div>
 
@@ -138,7 +138,7 @@ export function ContactForm() {
       )}
 
       {errorMsg && (
-        <p className="sm:col-span-2 text-sm text-[color:var(--brand-red)] font-semibold">{errorMsg}</p>
+        <p className="sm:col-span-2 text-sm text-[color:var(--accent)] font-semibold">{errorMsg}</p>
       )}
 
       <div className="sm:col-span-2 flex flex-col sm:flex-row gap-3 items-start">

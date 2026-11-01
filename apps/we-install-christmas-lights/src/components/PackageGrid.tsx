@@ -55,7 +55,7 @@ export function PackageGrid() {
                 />
               </div>
               <div className="p-5 flex-1">
-                <h3 className="heading-display text-base text-[color:var(--brand-green)]">
+                <h3 className="heading-display text-base text-[color:var(--accent)]">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm text-[color:var(--ink-soft)] leading-relaxed">

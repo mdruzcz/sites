@@ -61,7 +61,7 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
   const urgencyBody = lp.urgency.eventBody && lp.urgency.eventUntil && new Date() < new Date(lp.urgency.eventUntil) ? lp.urgency.eventBody : lp.urgency.body;
 
   return (
-    <>
+    <div className="surface-light">
       {/* Paid traffic gets a header with no way out but the phone or the form. CSS hides the site nav while this exists. */}
       <header className="lp-header sticky top-0 z-50 border-b border-[color:var(--border)] bg-white">
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
@@ -321,6 +321,6 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
       </section>
 
       <StickyUploadBar />
-    </>
+    </div>
   );
 }

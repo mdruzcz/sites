@@ -32,11 +32,11 @@ export default function ServiceAreasPage() {
                 href={`/cities/${c.slug}`}
                 className="card p-6 hover:shadow-lg transition-shadow"
               >
-                <h2 className="heading-display text-base text-[color:var(--brand-green)]">
+                <h2 className="heading-display text-base text-[color:var(--accent)]">
                   Christmas Lights in {c.name}
                 </h2>
                 <p className="mt-2 text-sm text-[color:var(--ink-soft)]">{c.localFact}</p>
-                <span className="mt-4 inline-block text-xs uppercase tracking-widest font-bold text-[color:var(--brand-red)]">
+                <span className="mt-4 inline-block text-xs uppercase tracking-widest font-bold text-[color:var(--accent)]">
                   See {c.name} →
                 </span>
               </Link>

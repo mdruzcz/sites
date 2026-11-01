@@ -19,7 +19,7 @@ const PACKAGES = [
     summary: "Tasteful, elegant lighting for the front of your home",
     features: ["Front roofline LED lighting", "1–2 wreaths or accents", "1 tree or hedge", "Maintenance + takedown", "Free design + quote"],
     cta: "Best for townhomes and bungalows",
-    color: "var(--brand-green)",
+    color: "var(--accent)",
   },
   {
     name: "Festive",
@@ -36,7 +36,7 @@ const PACKAGES = [
     summary: "Full estate — roofline, trees, hedges, wrap effects, and statement décor",
     features: ["Every line and edge lit", "Multiple statement trees", "Custom-built features", "On-call maintenance", "White-glove takedown + storage"],
     cta: "For homes that want to win the street",
-    color: "var(--brand-green)",
+    color: "var(--accent)",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function LightingPackagesPage() {
                 className={`card p-8 flex flex-col ${p.featured ? "ring-2 ring-[color:var(--brand-red)]" : ""}`}
               >
                 {p.featured && (
-                  <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)] mb-2">Most Popular</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--accent)] mb-2">Most Popular</div>
                 )}
                 <h2 className="heading-display text-2xl" style={{ color: p.color }}>{p.name}</h2>
                 <p className="mt-2 text-sm text-[color:var(--ink-soft)]">{p.summary}</p>
@@ -74,7 +74,7 @@ export default function LightingPackagesPage() {
                 <ul className="mt-6 space-y-2 text-sm flex-1">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <CheckIcon className="w-4 h-4 mt-0.5 text-[color:var(--brand-red)] shrink-0" /> {f}
+                      <CheckIcon className="w-4 h-4 mt-0.5 text-[color:var(--accent)] shrink-0" /> {f}
                     </li>
                   ))}
                 </ul>
@@ -87,7 +87,7 @@ export default function LightingPackagesPage() {
           </div>
 
           <div className="mt-12 card p-8 max-w-3xl mx-auto text-center">
-            <h3 className="heading-display text-xl text-[color:var(--brand-green)]">Need something custom?</h3>
+            <h3 className="heading-display text-xl text-[color:var(--accent)]">Need something custom?</h3>
             <p className="mt-2 text-[color:var(--ink-soft)]">
               We design custom packages for large estates, commercial properties, and multi-location businesses.
             </p>

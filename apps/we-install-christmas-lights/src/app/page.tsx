@@ -66,7 +66,7 @@ export default function HomePage() {
       {VIDEO_SCHEMA && <script id="video-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(VIDEO_SCHEMA) }} />}
 
       {/* Hero: photo + quote form */}
-      <section className="relative isolate overflow-hidden bg-[color:var(--ink-strong)] text-white">
+      <section className="relative isolate overflow-hidden bg-[color:var(--bg-soft)] text-white">
         {heroPhoto && <Image src={heroPhoto.src} alt={heroPhoto.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={heroPhoto.blurDataURL} className="object-cover opacity-60" />}
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-70 motion-reduce:hidden"
@@ -80,7 +80,7 @@ export default function HomePage() {
         >
           <source src="/videos/warm-white-roofline-christmas-lights-large-home-wrapped-trees-01.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#022B1A]/90 via-[#022B1A]/70 to-[#022B1A]/25" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" aria-hidden />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white/90">
@@ -119,7 +119,7 @@ export default function HomePage() {
       <PackageGrid />
 
       {/* Commercial band */}
-      <section className="section bg-[color:var(--ink-strong)] text-white" id="commercial">
+      <section className="section bg-[color:var(--bg-soft)] text-white" id="commercial">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
@@ -146,9 +146,9 @@ export default function HomePage() {
           </div>
           <ul className="mt-10 flex flex-wrap gap-2">
             {featuredIndustries.map((i) => (
-              <li key={i.slug}><Link href={`/industries/${i.slug}`} className="inline-block rounded-full border border-white/25 px-4 py-1.5 text-sm text-white/90 hover:border-[color:var(--brand-red)] hover:text-white">{i.shortName}</Link></li>
+              <li key={i.slug}><Link href={`/industries/${i.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border border-white/25 px-4 py-1.5 text-sm text-white/90 hover:border-[color:var(--accent)] hover:text-white">{i.shortName}</Link></li>
             ))}
-            <li><Link href="/commercial-christmas-lighting" className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white">All property types →</Link></li>
+            <li><Link href="/commercial-christmas-lighting" className="inline-flex min-h-[44px] items-center rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white">All property types →</Link></li>
           </ul>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function HomePage() {
       <ServicesGrid />
 
       {heroVideo && (
-        <section className="section bg-[color:var(--brand-green)] text-white">
+        <section className="section glow-band text-white">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 text-center">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">See our work</p>
@@ -185,11 +185,11 @@ export default function HomePage() {
               <p className="eyebrow">Service areas</p>
               <h2 className="heading-display mt-2 text-3xl">From London to the GTA</h2>
             </div>
-            <Link href="/service-areas" className="text-sm font-bold text-[color:var(--brand-green)] hover:text-[color:var(--brand-red)]">All areas →</Link>
+            <Link href="/service-areas" className="text-sm font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)]">All areas →</Link>
           </div>
           <ul className="mt-6 flex flex-wrap gap-2">
             {cities.map((c) => (
-              <li key={c.slug}><Link href={`/cities/${c.slug}`} className="inline-block rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--ink-strong)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">{c.name}</Link></li>
+              <li key={c.slug}><Link href={`/cities/${c.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--ink-strong)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]">{c.name}</Link></li>
             ))}
           </ul>
         </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
             <p className="mt-4 text-[17px] leading-relaxed text-[color:var(--ink-soft)]">Pick residential or commercial, send the address and what you have in mind. You get a custom design and a firm all-in price, and we hold a date for you.</p>
             <div className="mt-8">
               <FAQAccordion faqs={FAQS} />
-              <Link href="/faq" className="mt-4 inline-block text-sm font-bold text-[color:var(--brand-green)] hover:text-[color:var(--brand-red)]">All questions answered →</Link>
+              <Link href="/faq" className="mt-4 inline-block text-sm font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)]">All questions answered →</Link>
             </div>
           </div>
           <QuoteForm variant="full" source="home-quote" />

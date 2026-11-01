@@ -27,11 +27,11 @@ export function PhotoHero({
   ctaLabel?: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-[color:var(--ink-strong)] text-white">
+    <section className="relative isolate overflow-hidden bg-[color:var(--bg-soft)] text-white">
       {photo && (
         <Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover opacity-60" />
       )}
-      <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[#022B1A]/90 via-[#022B1A]/70 to-[#022B1A]/30" aria-hidden />
+      <div className="absolute inset-0 -z-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" aria-hidden />
       <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-20">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">{eyebrow}</p>
@@ -67,7 +67,7 @@ export function TrustBar() {
       <ul className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-4 px-4 py-5 sm:px-6 md:grid-cols-4 lg:px-8">
         {items.map(([n, l]) => (
           <li key={l} className="flex items-baseline gap-2">
-            <span className="heading-display text-2xl text-[color:var(--brand-red)]">{n}</span>
+            <span className="heading-display whitespace-nowrap text-2xl text-[color:var(--accent)]">{n}</span>
             <span className="text-sm text-[color:var(--ink-soft)]">{l}</span>
           </li>
         ))}
@@ -123,12 +123,12 @@ export function PhotoGrid({ photos, title, caption }: { photos: Photo[]; title?:
               <h2 className="heading-display mt-2 text-3xl">{title}</h2>
               {caption && <p className="mt-2 max-w-2xl text-[color:var(--ink-soft)]">{caption}</p>}
             </div>
-            <Link href="/gallery" className="text-sm font-bold text-[color:var(--brand-green)] hover:text-[color:var(--brand-red)]">Full gallery →</Link>
+            <Link href="/gallery" className="text-sm font-bold text-[color:var(--accent)] hover:text-[color:var(--accent)]">Full gallery →</Link>
           </div>
         )}
         <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
           {photos.map((p, i) => (
-            <li key={p.file} className={`relative overflow-hidden rounded-xl bg-stone-200 ${i === 0 ? "col-span-2 row-span-2 aspect-[4/3]" : "aspect-[4/3]"}`}>
+            <li key={p.file} className={`relative overflow-hidden rounded-xl bg-[color:var(--surface)] ${i === 0 ? "col-span-2 row-span-2 aspect-[4/3]" : "aspect-[4/3]"}`}>
               <Image src={p.src} alt={p.alt} fill sizes={i === 0 ? "(min-width: 1024px) 640px, 100vw" : "(min-width: 1024px) 320px, 50vw"} placeholder="blur" blurDataURL={p.blurDataURL} className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
             </li>
           ))}
@@ -145,12 +145,12 @@ export function FaqSection({ faqs, title = "Questions we hear a lot", withSchema
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <p className="eyebrow">FAQ</p>
         <h2 className="heading-display mt-2 text-3xl">{title}</h2>
-        <div className="mt-8 divide-y divide-[color:var(--border)] rounded-2xl border border-[color:var(--border)] bg-white">
+        <div className="mt-8 divide-y divide-[color:var(--border)] rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)]">
           {faqs.map((f) => (
             <details key={f.q} className="group px-5 py-4">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-bold text-[color:var(--ink-strong)] [&::-webkit-details-marker]:hidden">
                 {f.q}
-                <span className="shrink-0 text-[color:var(--brand-red)] transition-transform group-open:rotate-45" aria-hidden>+</span>
+                <span className="shrink-0 text-[color:var(--accent)] transition-transform group-open:rotate-45" aria-hidden>+</span>
               </summary>
               <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--ink-soft)]">{f.a}</p>
             </details>
@@ -188,14 +188,14 @@ export function QuoteSection({ type = "Residential", city, source, title, blurb 
 
 export function CtaBand({ type = "Residential" }: { type?: "Residential" | "Commercial" }) {
   return (
-    <section className="bg-[color:var(--brand-red)] text-white">
+    <section className="glow-band text-white">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <h2 className="heading-display text-3xl text-white sm:text-4xl">{type === "Commercial" ? "Book your property before the calendar fills." : "Installs book up by mid-November."}</h2>
-          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} {earlyBirdActive() && <strong>{site.earlyBird.headline}</strong>}</p>
+          <p className="mt-3 max-w-xl text-white/80">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} {earlyBirdActive() && <strong>{site.earlyBird.headline}</strong>}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a href="#quote" className="btn btn-outline-white">Get a Free Quote</a>
+          <a href="#quote" className="btn btn-red">Get a Free Quote</a>
           <a href={site.phoneHref} className="btn btn-green">Call {site.phone}</a>
         </div>
       </div>
@@ -209,7 +209,7 @@ export function Breadcrumbs({ items }: { items: { name: string; href?: string }[
       {items.map((it, i) => (
         <span key={it.name}>
           {i > 0 && <span className="mx-2">/</span>}
-          {it.href ? <Link href={it.href} className="hover:text-[color:var(--brand-red)]">{it.name}</Link> : <span className="text-[color:var(--ink-strong)]">{it.name}</span>}
+          {it.href ? <Link href={it.href} className="hover:text-[color:var(--accent)]">{it.name}</Link> : <span className="text-[color:var(--ink-strong)]">{it.name}</span>}
         </span>
       ))}
     </nav>

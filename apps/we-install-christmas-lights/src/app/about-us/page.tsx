@@ -73,7 +73,7 @@ export default function AboutPage() {
             { label: "Light strands installed", value: site.stats[2].number },
           ].map((s) => (
             <div key={s.label} className="card p-8 text-center">
-              <div className="heading-display text-4xl text-[color:var(--brand-green)]">{s.value}</div>
+              <div className="heading-display text-4xl text-[color:var(--accent)]">{s.value}</div>
               <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-[color:var(--ink-soft)]">{s.label}</p>
             </div>
           ))}

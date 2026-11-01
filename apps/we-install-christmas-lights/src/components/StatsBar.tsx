@@ -7,7 +7,7 @@ export function StatsBar() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           {site.stats.map((s) => (
             <div key={s.label}>
-              <div className="heading-display text-4xl sm:text-5xl text-[color:var(--brand-green)]">
+              <div className="heading-display text-4xl sm:text-5xl text-[color:var(--accent)]">
                 {s.number}
               </div>
               <p className="mt-2 text-sm sm:text-base font-semibold uppercase tracking-wide text-[color:var(--ink-soft)]">

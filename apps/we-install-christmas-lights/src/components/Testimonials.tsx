@@ -58,7 +58,7 @@ export function Testimonials() {
                 <div className="flex text-[color:#F5A623] gap-0.5">
                   {[0, 1, 2, 3, 4].map((i) => <StarIcon key={i} className="w-4 h-4" />)}
                 </div>
-                <h3 className="heading-display text-base text-[color:var(--brand-green)] mt-3">
+                <h3 className="heading-display text-base text-[color:var(--accent)] mt-3">
                   {r.name} <span className="text-[color:var(--ink-soft)] font-normal normal-case">— {r.city}</span>
                 </h3>
                 <blockquote className="mt-3 text-sm text-[color:var(--ink-soft)] leading-relaxed">

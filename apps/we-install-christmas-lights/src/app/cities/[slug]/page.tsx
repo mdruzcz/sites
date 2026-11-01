@@ -89,10 +89,10 @@ export default async function CityPage({ params }: Props) {
               <p className="eyebrow">{c.displayName}</p>
               <h2 className="heading-display mt-2 text-3xl">Holiday lighting done for you in {c.name}</h2>
               <Prose paragraphs={c.intro} className="mt-5" />
-              <h3 className="heading-display mt-10 text-xl text-[color:var(--brand-green)]">Neighbourhoods we light in {c.name}</h3>
+              <h3 className="heading-display mt-10 text-xl text-[color:var(--accent)]">Neighbourhoods we light in {c.name}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {c.neighbourhoods.map((n) => (
-                  <li key={n} className="rounded-full border border-[color:var(--border)] bg-white px-3 py-1 text-sm text-[color:var(--ink-strong)]">{n}</li>
+                  <li key={n} className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-sm text-[color:var(--ink-strong)]">{n}</li>
                 ))}
               </ul>
             </div>
@@ -103,11 +103,11 @@ export default async function CityPage({ params }: Props) {
                   <CheckList columns={1} items={["Free design and firm all-in quote", "Commercial-grade LED lights, supplied by us", "Custom-cut roofline, clips only (no staples)", "Mid-season maintenance at no charge", "January takedown and optional storage"]} />
                 </div>
                 <a href="#quote" className="btn btn-red mt-6 w-full">Get a {c.name} quote</a>
-                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--brand-green)]">or call {site.phone}</a>
+                <a href={site.phoneHref} className="mt-3 block text-center text-sm font-bold text-[color:var(--accent)]">or call {site.phone}</a>
               </div>
               <div className="rounded-2xl bg-[color:var(--bg-cream)] p-6 text-sm text-[color:var(--ink-soft)]">
                 <p className="font-bold text-[color:var(--ink-strong)]">Residential packages</p>
-                <p className="mt-2">Classic from $700 · Festive from $1,400 · Griswold from $2,800. <Link href="/lighting-packages" className="font-bold text-[color:var(--brand-red)] hover:underline">See what is included →</Link></p>
+                <p className="mt-2">Classic from $700 · Festive from $1,400 · Griswold from $2,800. <Link href="/lighting-packages" className="font-bold text-[color:var(--accent)] hover:underline">See what is included →</Link></p>
               </div>
             </aside>
           </div>
@@ -123,7 +123,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       {/* Commercial */}
-      <section className="section bg-[color:var(--ink-strong)] text-white">
+      <section className="section bg-[color:var(--bg-soft)] text-white">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">For businesses and property managers</p>
@@ -157,11 +157,11 @@ export default async function CityPage({ params }: Props) {
           <h2 className="heading-display text-2xl">Also serving near {c.name}</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             {nearby.map((n) => (
-              <Link key={n.slug} href={`/cities/${n.slug}`} className="rounded-full border border-[color:var(--border)] bg-white px-4 py-2 text-sm font-semibold text-[color:var(--brand-green)] hover:border-[color:var(--brand-red)] hover:text-[color:var(--brand-red)]">
+              <Link key={n.slug} href={`/cities/${n.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-2 text-sm font-semibold text-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]">
                 Christmas lights in {n.name}
               </Link>
             ))}
-            <Link href="/service-areas" className="rounded-full border border-dashed border-[color:var(--border)] px-4 py-2 text-sm text-[color:var(--ink-soft)] hover:text-[color:var(--brand-red)]">All service areas →</Link>
+            <Link href="/service-areas" className="inline-flex min-h-[44px] items-center rounded-full border border-dashed border-[color:var(--border)] px-4 py-2 text-sm text-[color:var(--ink-soft)] hover:text-[color:var(--accent)]">All service areas →</Link>
           </div>
         </div>
       </section>
