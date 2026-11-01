@@ -37,6 +37,8 @@ export const site = {
     headline: "Early Bird: book by October 15 and save 10% on your install.",
     short: "Book by Oct 15, save 10%",
     terms: "Applies to new residential and commercial installs booked and confirmed by October 15. Not combinable with other offers.",
+    // Every mention of the offer disappears after this date. Move it forward for next season.
+    endsOn: "2026-10-16",
   },
   stats: [
     { number: "740", label: "Houses Decorated" },
@@ -44,6 +46,8 @@ export const site = {
     { number: "3,960", label: "Light Strands Connected" },
   ],
 } as const;
+
+export const earlyBirdActive = () => new Date() < new Date(site.earlyBird.endsOn);
 
 export type Service = {
   slug: string;

@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@source "../app";
+@source "../components";
+@source "../lib";
 
 :root {
   --brand-red:        #E7464E;
@@ -133,6 +136,60 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
 /* Sections */
 .section {
   padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+/* PPC landing pages. Layered so utilities like hidden and w-full still win. */
+@layer components {
+  .lp-heading {
+    font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .lp-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--ink-strong);
+  }
+  .lp-form-card {
+    background: #fff;
+    color: var(--ink-strong);
+    border-radius: 1.25rem;
+    box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.65);
+    scroll-margin-block: 7rem;
+  }
+  .lp-cta,
+  .lp-cta-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 54px;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.875rem;
+    font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  }
+  .lp-cta {
+    background: #D0303A;
+    color: #fff;
+    box-shadow: 0 14px 30px -10px rgba(208, 48, 58, 0.7);
+  }
+  .lp-cta:hover { background: #B3262F; transform: translateY(-1px); }
+  .lp-cta-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+  }
+  .lp-cta-ghost:hover { background: #fff; color: var(--ink-strong); }
+}
+/* The sticky upload bar owns the bottom edge, so the call button moves up and the footer stays reachable. */
+@media (max-width: 1023px) {
+  body:has(.lp-sticky) { padding-bottom: 5rem; }
+  body:has(.lp-sticky) .call-fab { bottom: 5.5rem; }
 }
 
 /* Shimmer skeleton */

@@ -1,0 +1,43 @@
+{
+  "slug": "brantford",
+  "city": "Brantford",
+  "areaLabel": "Brantford / Brant County",
+  "h1Accent": "Brantford’s Premier",
+  "h1Rest": "All-Inclusive Christmas Light Installation",
+  "sub": "Custom commercial-grade lighting, installation, maintenance, takedown, and storage. Zero ladders, zero stress this winter.",
+  "badges": ["5.0★ on Google, 80+ reviews", "Fully Insured ($2M Liability)", "Commercial-Grade C9 LEDs"],
+  "mapCenter": { "lat": 43.1394, "lng": -80.2644 },
+  "proof": {
+    "heading": "Lighting Up Homes Across Brantford & Brant County",
+    "body": "Join the 740+ homeowners across South-Western Ontario who trust our team to make their properties shine every holiday season, now installing in West Brant, Henderson Survey, Brier Park, and North Park.",
+    "neighbourhoods": ["West Brant", "Henderson Survey", "Brier Park", "North Park", "Shellard Lane", "Holmedale", "Eagle Place", "Echo Place", "Terrace Hill"]
+  },
+  "reviews": [
+    { "name": "John M.", "city": "St. Thomas", "quote": "They took the hassle out of our holiday preparations by providing a professional and timely installation and takedown service." },
+    { "name": "Mike and Beth", "city": "Woodstock", "quote": "The quality of the lights used was truly top-notch — brightness and durability stood out in our harsh winter weather." },
+    { "name": "Philipe Cartier", "city": "Ingersoll", "quote": "Their turnaround time from quote to installation was incredibly quick, without compromising on the quality of their work." }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to supply the lights, or do you provide them?",
+      "a": "We supply all commercial-grade LED lights, custom wiring, timers, and heavy-duty clips as part of our all-inclusive rental and installation service. You don't have to worry about buying or replacing burnt-out strands."
+    },
+    {
+      "q": "How much does Christmas light installation cost in Brantford?",
+      "a": "Most residential projects in Brantford range between $700 and $2,800 depending on total roofline linear footage, roof pitch, and whether you add tree wrapping or wreaths. Upload your photo for an exact line-item quote."
+    },
+    {
+      "q": "When do you take the lights down in January?",
+      "a": "Takedowns begin January 2nd and run through January 20th, weather permitting. You do not need to be home for takedown."
+    },
+    {
+      "q": "What happens if a bulb goes out or a storm knocks a line loose?",
+      "a": "Our 48-Hour Maintenance Guarantee covers all repairs. Simply text our team a picture of the loose strand, and an installer will stop by to fix it free of charge."
+    }
+  ],
+  "urgency": {
+    "heading": "Prime November Installation Slots Fill Quickly!",
+    "body": "Avoid the holiday rush and secure your preferred installation week before our schedule locks for the season.",
+    "button": "Get My Free Design & Quote Now"
+  }
+}

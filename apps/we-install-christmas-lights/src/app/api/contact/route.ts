@@ -14,7 +14,13 @@ type Payload = {
   source?: string;
   turnstileToken?: string | null;
   attribution?: Record<string, unknown>;
+  address?: string;
+  useStreetView?: boolean;
+  photo?: { name?: string; type?: string; data?: string };
 };
+
+// Clients shrink photos to about 2.4 MB first; this is the base64 ceiling for that.
+const MAX_PHOTO_CHARS = 3_400_000;
 
 const HOSTNAME = "weinstallchristmaslights.ca";
 const esc = (s: string) =>
@@ -31,8 +37,16 @@ export async function POST(req: Request) {
   // Honeypot
   if (data.website?.trim()) return NextResponse.json({ ok: true });
 
-  if (!data.name || !data.email) {
-    return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
+  // Landing page leads come in by phone (SMS quote) with no email address.
+  if (!data.name || (!data.email && !data.phone)) {
+    return NextResponse.json({ error: "Name and a phone number or email are required." }, { status: 400 });
+  }
+  const photo =
+    data.photo?.data && /^image\/[a-z0-9.+-]+$/i.test(data.photo.type ?? "") && data.photo.data.length <= MAX_PHOTO_CHARS
+      ? { filename: String(data.photo.name || "home-photo.jpg").replace(/[^\w.-]+/g, "-").slice(0, 80), content: data.photo.data }
+      : null;
+  if (data.photo?.data && !photo) {
+    return NextResponse.json({ error: "That photo could not be sent. Try another, or tick the Street View box." }, { status: 400 });
   }
   if (!data.turnstileToken) {
     return NextResponse.json({ error: "Please complete the security check." }, { status: 400 });
@@ -68,14 +82,19 @@ export async function POST(req: Request) {
     `${data.propertyType ?? ""} ${data.service ?? ""}`,
   );
 
+  const mapsUrl = data.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${data.address}, ${data.city ?? ""}, ON`)}` : "";
+  const photoNote = photo ? "Home photo attached" : data.useStreetView ? "No photo: customer asked us to use Street View" : "";
+
   // 1) Email is the critical path. Resend can only send from masterdecker.com.
   let emailed = false;
   if (process.env.RESEND_API_KEY) {
     try {
-      const html = `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
-<p><strong>Name:</strong> ${esc(data.name)}</p>
-<p><strong>Email:</strong> ${esc(data.email)}</p>
+      const html = (note: string) => `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
+<p><strong>Name:</strong> ${esc(data.name!)}</p>
+<p><strong>Email:</strong> ${esc(data.email || "")}</p>
 <p><strong>Phone:</strong> ${esc(data.phone || "")}</p>
+${data.address ? `<p><strong>Address:</strong> ${esc(data.address)} (<a href="${esc(mapsUrl)}">open in Google Maps</a>, drag the pegman for Street View)</p>` : ""}
+${note ? `<p><strong>Photo:</strong> ${esc(note)}</p>` : ""}
 <p><strong>City:</strong> ${esc(data.city || "")}</p>
 <p><strong>Property type:</strong> ${esc(data.propertyType || "")}</p>
 <p><strong>Service:</strong> ${esc(data.service || "")}</p>
@@ -84,17 +103,25 @@ export async function POST(req: Request) {
 ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
 <hr>
 <p style="font-size:12px;color:#888">Sent from weinstallchristmaslights.ca${data.source ? ` (${esc(data.source)})` : ""}</p>`;
-      const r = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-        body: JSON.stringify({
-          from: `We Install Christmas Lights <${process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com"}>`,
-          to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
-          reply_to: data.email,
-          subject: `${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${adSource ? ` [${adSource}]` : ""}`,
-          html,
-        }),
-      });
+      const send = (note: string, attachments?: { filename: string; content: string }[]) =>
+        fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+          body: JSON.stringify({
+            from: `We Install Christmas Lights <${process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com"}>`,
+            to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
+            ...(data.email ? { reply_to: data.email } : {}),
+            subject: `${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
+            html: html(note),
+            ...(attachments ? { attachments } : {}),
+          }),
+        });
+      let r = await send(photoNote, photo ? [photo] : undefined);
+      if (!r.ok && photo) {
+        // A rejected attachment must not cost us the lead: resend without it.
+        console.error("Resend rejected photo:", r.status, await r.text());
+        r = await send("Customer sent a photo but it failed to attach. Ask them to text it.");
+      }
       emailed = r.ok;
       if (!r.ok) console.error("Resend error:", r.status, await r.text());
     } catch (e) {
@@ -114,11 +141,12 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
         hostname: HOSTNAME,
         row: {
           name: data.name,
-          email: data.email,
+          // Lead tables declare email NOT NULL; phone-only landing leads store it blank.
+          email: data.email || "",
           phone: data.phone || null,
           city: data.city || null,
           service: [data.propertyType, data.service].filter(Boolean).join(" · ") || null,
-          message: [data.message, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
+          message: [data.message, data.address && `Address: ${data.address}`, photoNote, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
         },
       }),
     });

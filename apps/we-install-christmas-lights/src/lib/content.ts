@@ -65,6 +65,21 @@ export type Photo = {
   blurDataURL: string;
 };
 
+export type LandingContent = {
+  slug: string;
+  city: string;
+  areaLabel: string;
+  h1Accent: string;
+  h1Rest: string;
+  sub: string;
+  badges: string[];
+  mapCenter: { lat: number; lng: number };
+  proof: { heading: string; body: string; neighbourhoods: string[] };
+  reviews: { name: string; city: string; quote: string }[];
+  faq: Faq[];
+  urgency: { heading: string; body: string; button: string };
+};
+
 const ROOT = path.join(process.cwd(), "src", "content");
 const cache = new Map<string, Map<string, unknown>>();
 
@@ -88,6 +103,11 @@ export const getCityContent = (slug: string) => readDir<CityContent>("cities").g
 export const getAllCityContent = () => [...readDir<CityContent>("cities").values()];
 export const getIndustryContent = (slug: string) => readDir<IndustryContent>("industries").get(slug) ?? null;
 export const getServiceContent = (slug: string) => readDir<ServiceContent>("services").get(slug) ?? null;
+export const getLandingContent = (slug: string) => readDir<LandingContent>("landing").get(slug) ?? null;
+
+export function getLandingPhotos(): Record<string, Photo> {
+  return JSON.parse(fs.readFileSync(path.join(ROOT, "landing-photos.json"), "utf8")) as Record<string, Photo>;
+}
 
 let photoCache: Photo[] | null = null;
 export function getPhotos(): Photo[] {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Faq, Photo, Section } from "@/lib/content";
 import { faqJsonLd } from "@/lib/content";
-import { site } from "@/lib/site";
+import { earlyBirdActive, site } from "@/lib/site";
 import { CheckIcon, StarIcon } from "./icons";
 import { QuoteForm } from "./QuoteForm";
 
@@ -192,7 +192,7 @@ export function CtaBand({ type = "Residential" }: { type?: "Residential" | "Comm
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <h2 className="heading-display text-3xl text-white sm:text-4xl">{type === "Commercial" ? "Book your property before the calendar fills." : "Installs book up by mid-November."}</h2>
-          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} <strong>{site.earlyBird.headline}</strong></p>
+          <p className="mt-3 max-w-xl text-white/90">{type === "Commercial" ? "Commercial slots go first because they run after hours. A site visit now locks your dates and your price." : "Lock in your date now. We can install early and switch on whenever you like."} {earlyBirdActive() && <strong>{site.earlyBird.headline}</strong>}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <a href="#quote" className="btn btn-outline-white">Get a Free Quote</a>

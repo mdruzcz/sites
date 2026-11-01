@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { CheckIcon } from "./icons";
-import { site } from "@/lib/site";
+import { earlyBirdActive, site } from "@/lib/site";
 import { getAttribution, trackConversion } from "@/lib/ads";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 const CITY_OPTIONS = [
   "London", "St. Thomas", "Strathroy", "Ingersoll", "Woodstock", "Kitchener", "Waterloo", "Cambridge", "Guelph",
-  "Hamilton", "Ancaster", "Burlington", "Oakville", "Milton", "Georgetown", "Mississauga", "Brampton", "Etobicoke", "Other",
+  "Hamilton", "Ancaster", "Brantford", "Burlington", "Oakville", "Milton", "Georgetown", "Mississauga", "Brampton", "Etobicoke", "Other",
 ];
 
 const SERVICE_OPTIONS: Record<"Residential" | "Commercial", string[]> = {
@@ -197,7 +197,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
         <button type="submit" disabled={status === "submitting"} className="btn btn-red w-full min-h-[48px] disabled:opacity-60">
           {status === "submitting" ? "Sending…" : type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote"}
         </button>
-        <p className="text-center text-xs text-[color:var(--ink-soft)]">{site.earlyBird.short} · Fully insured · 5.0★ Google rating</p>
+        <p className="text-center text-xs text-[color:var(--ink-soft)]">{earlyBirdActive() ? `${site.earlyBird.short} · ` : ""}Fully insured · 5.0★ Google rating</p>
       </form>
     </div>
   );

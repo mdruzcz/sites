@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { cities, getCityBySlug, site } from "@/lib/site";
-import { getCityContent, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
+import { getCityContent, getLandingContent, getLandingPhotos, faqJsonLd, pickPhotos, breadcrumbJsonLd } from "@/lib/content";
 import { pageTitle } from "@/lib/seo";
+import { LandingPage } from "@/components/landing/LandingPage";
 import { PhotoHero, TrustBar, Prose, SectionList, CheckList, PhotoGrid, FaqSection, QuoteSection, CtaBand, Breadcrumbs } from "@/components/PageBlocks";
 import { PackageGrid } from "@/components/PackageGrid";
 import { Testimonials } from "@/components/Testimonials";
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = pageTitle(c?.metaTitle ?? city.metaTitle);
   const description = c?.metaDescription ?? city.metaDescription;
   const url = `${site.url}/cities/${city.slug}`;
-  const hero = pickPhotos("residential-exterior", 1, slug)[0];
+  const hero = getLandingContent(slug) ? getLandingPhotos().hero : pickPhotos("residential-exterior", 1, slug)[0];
   return {
     title: { absolute: title },
     description,
@@ -59,6 +60,18 @@ export default async function CityPage({ params }: Props) {
     offers: { "@type": "Offer", priceCurrency: "CAD", price: "700", description: "Residential programs from $700; commercial custom-quoted" },
     url,
   };
+
+  const lp = getLandingContent(slug);
+  if (lp) {
+    return (
+      <>
+        <script id={`service-schema-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+        <script id={`crumbs-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: "Service Areas", path: "/service-areas" }, { name: c.name }])) }} />
+        <script id={`faq-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([...lp.faq, ...c.faq.filter((f) => !/cost|price/i.test(f.q))])) }} />
+        <LandingPage lp={lp} city={c} />
+      </>
+    );
+  }
 
   return (
     <>

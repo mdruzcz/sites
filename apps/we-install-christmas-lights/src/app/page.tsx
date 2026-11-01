@@ -11,7 +11,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { VideoLoop } from "@/components/VideoLoop";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar, PhotoGrid, CtaBand, CheckList } from "@/components/PageBlocks";
-import { site, cities, industries } from "@/lib/site";
+import { earlyBirdActive, site, cities, industries } from "@/lib/site";
 import { pickPhotos } from "@/lib/content";
 import videosData from "@/content/xmas-videos.json";
 import { StarIcon } from "@/components/icons";
@@ -97,9 +97,11 @@ export default function HomePage() {
               <span>Fully insured · WSIB</span>
               <span>Installed in as little as 1 day</span>
             </div>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-red)] px-4 py-1.5 text-sm font-bold text-white shadow-lg">
+            {earlyBirdActive() && (
+              <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-[color:var(--brand-red)] px-4 py-1.5 text-sm font-bold text-white shadow-lg">
               <span aria-hidden>🎁</span> {site.earlyBird.headline}
             </p>
+            )}
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a href="#quote" className="btn btn-red lg:hidden">Get a Free Quote</a>
               <Link href="/commercial-christmas-lighting" className="btn btn-outline-white">Commercial lighting →</Link>

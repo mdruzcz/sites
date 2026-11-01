@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { CallNowFab } from "@/components/CallNowFab";
 import { AdsTracking } from "@/components/AdsTracking";
 import { GOOGLE_ADS_ID } from "@/lib/ads";
-import { site } from "@/lib/site";
+import { earlyBirdActive, site } from "@/lib/site";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -100,9 +100,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <div className="bg-[color:var(--brand-red)] px-4 py-2 text-center text-sm font-semibold text-white">
-          <a href="/contact-us" className="hover:underline">{site.earlyBird.headline} Get a free quote →</a>
-        </div>
+        {earlyBirdActive() && (
+          <div className="bg-[color:var(--brand-red)] px-4 py-2 text-center text-sm font-semibold text-white">
+            <a href="/contact-us" className="hover:underline">{site.earlyBird.headline} Get a free quote →</a>
+          </div>
+        )}
         <NavBar />
         <main>{children}</main>
         <Footer />
