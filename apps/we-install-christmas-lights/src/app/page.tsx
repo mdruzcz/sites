@@ -9,6 +9,7 @@ import { TenReasons } from "@/components/TenReasons";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { VideoLoop } from "@/components/VideoLoop";
+import { HeroVideo } from "@/components/HeroVideo";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar, PhotoGrid, CtaBand, CheckList } from "@/components/PageBlocks";
 import { earlyBirdActive, site, cities, industries } from "@/lib/site";
@@ -56,8 +57,7 @@ const FAQS = [
 ];
 
 export default function HomePage() {
-  const heroPhoto = pickPhotos("residential-exterior", 1, "home-hero")[0] ?? null;
-  const homePhotos = pickPhotos("residential-exterior", 5, "home-grid").filter((p) => p.file !== heroPhoto?.file);
+  const homePhotos = pickPhotos("residential-exterior", 5, "home-grid");
   const commercialPhotos = pickPhotos(["commercial-exterior", "commercial-indoor"], 4, "home-commercial");
   const featuredIndustries = industries.filter((i) => ["christmas-decorators-for-retail", "christmas-decorators-for-office-lobbies", "christmas-decorators-for-hotels", "christmas-decorators-for-car-dealerships", "christmas-decorator-for-malls", "christmas-decorators-for-hoas"].includes(i.slug));
 
@@ -66,30 +66,19 @@ export default function HomePage() {
       {VIDEO_SCHEMA && <script id="video-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(VIDEO_SCHEMA) }} />}
 
       {/* Hero: photo + quote form */}
-      <section className="relative isolate overflow-hidden bg-[color:var(--bg-soft)] text-white">
-        {heroPhoto && <Image src={heroPhoto.src} alt={heroPhoto.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={heroPhoto.blurDataURL} className="object-cover opacity-60" />}
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-70 motion-reduce:hidden"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={heroPhoto?.src}
-          aria-hidden="true"
-        >
-          <source src="/videos/warm-white-roofline-christmas-lights-large-home-wrapped-trees-01.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" aria-hidden />
+      <section className="relative isolate overflow-hidden surface-dark text-white">
+        <Image src="/images/hero-reel-poster.jpg" alt="Two-storey stone home with warm white roofline Christmas lights and a light-wrapped evergreen at night" fill priority sizes="100vw" placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDlLWzt8hridQF5KqclvatKbSYBZySYcBE3qQmTz6nNZdp9+tD/AJZt9KzcncpLQ//Z" className="object-cover" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" aria-hidden />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white/90">
               <StarIcon className="h-3.5 w-3.5 text-[#FFD43B]" /> 2026 Service Excellence Award winner
             </p>
-            <h1 className="heading-display mt-5 text-4xl leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="heading-display mt-5 text-4xl leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.55)] sm:text-5xl lg:text-6xl">
               Christmas Lights, Installed.<br />Homes and Businesses.
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-white/90 lg:text-xl">
+            <p className="mt-5 max-w-xl text-lg text-white/95 [text-shadow:0_1px_10px_rgba(0,0,0,.6)] lg:text-xl">
               Custom-designed, professionally installed, maintained all season and taken down in January. Serving London, Kitchener-Waterloo, Hamilton and the GTA since 2016.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/85">
@@ -119,7 +108,7 @@ export default function HomePage() {
       <PackageGrid />
 
       {/* Commercial band */}
-      <section className="section bg-[color:var(--bg-soft)] text-white" id="commercial">
+      <section className="section surface-dark text-white" id="commercial">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>

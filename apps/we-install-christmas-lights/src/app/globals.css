@@ -9,33 +9,54 @@
   --brand-green:      #04603A;
   --brand-green-deep: #034F30;
   --accent-blue:      #2098D1;
-  --accent:           #FFD27A;
-  --surface:          #0F1A16;
-  --bg:               #050B08;
-  --bg-soft:          #09130F;
-  --bg-cream:         #0C1713;
-  --ink:              #C9D3CE;
-  --ink-strong:       #F6F8F7;
-  --ink-soft:         #A3B1AA;
-  --border:           rgba(255, 255, 255, 0.11);
-  --muted:            #8B9992;
-  color-scheme: dark;
+  --accent:           #04603A;
+  --eyebrow-ink:      #8A5A00;
+  --eyebrow-bg:       #FFF4DC;
+  --eyebrow-line:     #F2DDB0;
+  --surface:          #FFFFFF;
+  --bg:               #FFFFFF;
+  --bg-soft:          #FFF9F3;
+  --bg-cream:         #FBF6EE;
+  --ink:              #1F3A2E;
+  --ink-strong:       #06241A;
+  --ink-soft:         #4A6B5C;
+  --border:           #E9E4DA;
+  --muted:            #6b7280;
+  color-scheme: light;
 }
 
-/* Forms and the PPC landing pages stay on light surfaces: the tokens flip back inside this class. */
+/* Keeps a block light when it sits inside a dark band, such as the quote form in a hero. */
 .surface-light {
   --accent:           #04603A;
   --surface:          #FFFFFF;
   --bg:               #FFFFFF;
-  --bg-soft:          #FFF8F4;
+  --bg-soft:          #FFF9F3;
   --bg-cream:         #FBF6EE;
-  --ink:              #04603A;
-  --ink-strong:       #022B1A;
+  --ink:              #1F3A2E;
+  --ink-strong:       #06241A;
   --ink-soft:         #4A6B5C;
-  --border:           #E6E6E6;
-  --muted:            #6b7280;
+  --border:           #E9E4DA;
   color: var(--ink);
   color-scheme: light;
+}
+
+/* Heroes and accent bands: the night-time look, used for contrast between light sections. */
+.surface-dark,
+.glow-band {
+  --accent:           #FFD27A;
+  --eyebrow-ink:      #FFD27A;
+  --eyebrow-bg:       rgba(255, 210, 122, 0.08);
+  --eyebrow-line:     rgba(255, 210, 122, 0.3);
+  --surface:          #0F1A16;
+  --bg:               #06140E;
+  --bg-soft:          #06140E;
+  --bg-cream:         #0C1713;
+  --ink:              #C9D3CE;
+  --ink-strong:       #F6F8F7;
+  --ink-soft:         #A9B7B0;
+  --border:           rgba(255, 255, 255, 0.14);
+  background-color: #06140E;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -95,15 +116,15 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
     align-items: center;
     gap: 0.4rem;
     padding: 0.3rem 0.8rem;
-    border: 1px solid rgba(255, 210, 122, 0.28);
+    border: 1px solid var(--eyebrow-line);
     border-radius: 9999px;
-    background: rgba(255, 210, 122, 0.07);
+    background: var(--eyebrow-bg);
     font-family: var(--font-montserrat), Helvetica, Arial, sans-serif;
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--eyebrow-ink);
   }
 
   /* Buttons */
@@ -128,11 +149,10 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
   }
   .btn-red:hover { background: #B3262F; }
   .btn-green {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--brand-green);
     color: #fff;
   }
-  .btn-green:hover { background: rgba(255, 255, 255, 0.14); }
+  .btn-green:hover { background: var(--brand-green-deep); }
   .btn-outline-white {
     border: 1px solid rgba(255, 255, 255, 0.4);
     background: transparent;
@@ -143,13 +163,13 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
     color: #06140E;
   }
   .btn-outline-green {
-    border: 1px solid rgba(255, 210, 122, 0.5);
+    border: 1.5px solid var(--accent);
     background: transparent;
     color: var(--accent);
   }
   .btn-outline-green:hover {
     background: var(--accent);
-    color: #06140E;
+    color: var(--surface);
   }
 
   /* Cards */
@@ -157,6 +177,7 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 1.125rem;
+    box-shadow: 0 10px 30px -18px rgba(6, 36, 26, 0.28);
   }
 
   /* A soft warm light from above, as if the section were lit by the roofline */
@@ -164,8 +185,6 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background: var(--bg-soft);
-    border-block: 1px solid var(--border);
   }
   .glow-band::before {
     content: "";
@@ -256,7 +275,7 @@ body:has(.lp-header) .site-header { display: none; }
   100% { background-position: 200% 0; }
 }
 .shimmer {
-  background: linear-gradient(90deg, #111c18 25%, #1a2822 50%, #111c18 75%);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

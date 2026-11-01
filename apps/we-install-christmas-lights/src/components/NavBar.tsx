@@ -62,7 +62,7 @@ export function NavBar() {
   return (
     <header
       className={`site-header sticky top-0 z-50 border-b transition-colors ${
-        scrolled ? "border-white/15 bg-[#050B08]" : "border-white/10 bg-[#050B08]/95"
+        scrolled ? "border-[color:var(--border)] bg-white shadow-sm" : "border-[color:var(--border)] bg-white"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@ export function NavBar() {
               width={300}
               height={76}
               priority
-              className="h-14 w-auto brightness-110"
+              className="h-14 w-auto"
             />
           </Link>
 
@@ -90,12 +90,12 @@ export function NavBar() {
                 Commercial Services <ChevronDown className="w-3 h-3" />
               </button>
               <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3 z-50">
-                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[280px] py-2">
+                <div className="bg-white border border-[color:var(--border)] rounded-xl shadow-xl min-w-[280px] py-2">
                   {COMMERCIAL_LINKS.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-sm font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
+                      className="block px-4 py-2 text-sm font-medium hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--accent)]"
                     >
                       {l.label}
                     </Link>
@@ -109,12 +109,12 @@ export function NavBar() {
                 Residential Services <ChevronDown className="w-3 h-3" />
               </button>
               <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3 z-50">
-                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[280px] py-2">
+                <div className="bg-white border border-[color:var(--border)] rounded-xl shadow-xl min-w-[280px] py-2">
                   {RESIDENTIAL_LINKS.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="block px-4 py-2 text-sm font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
+                      className="block px-4 py-2 text-sm font-medium hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--accent)]"
                     >
                       {l.label}
                     </Link>
@@ -128,12 +128,12 @@ export function NavBar() {
                 Service Areas <ChevronDown className="w-3 h-3" />
               </Link>
               <div className="invisible group-hover:visible absolute right-0 top-full pt-3 z-50">
-                <div className="bg-[#0F1A16] border border-white/15 rounded-xl shadow-2xl min-w-[260px] py-2 grid grid-cols-2 gap-0">
+                <div className="bg-white border border-[color:var(--border)] rounded-xl shadow-xl min-w-[260px] py-2 grid grid-cols-2 gap-0">
                   {CITIES.map((c) => (
                     <Link
                       key={c.href}
                       href={c.href}
-                      className="block px-4 py-1.5 text-[13px] font-medium hover:bg-white/10 hover:text-[color:var(--accent)]"
+                      className="block px-4 py-1.5 text-[13px] font-medium hover:bg-[color:var(--bg-soft)] hover:text-[color:var(--accent)]"
                     >
                       {c.label}
                     </Link>
@@ -205,7 +205,7 @@ function MobileLink({ href, children, onClick }: { href: string; children: React
       <Link
         href={href}
         onClick={onClick}
-        className="block px-3 py-2.5 text-[color:var(--ink-strong)] font-semibold hover:bg-white/10 rounded-lg"
+        className="block px-3 py-2.5 text-[color:var(--ink-strong)] font-semibold hover:bg-[color:var(--bg-soft)] rounded-lg"
       >
         {children}
       </Link>

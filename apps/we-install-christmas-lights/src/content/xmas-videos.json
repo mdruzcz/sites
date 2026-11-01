@@ -1,5 +1,8 @@
 {
-  "reel": null,
+  "reel": {
+    "src": "/videos/light-show-highlight-reel.mp4",
+    "poster": "/images/light-show-reel-poster.jpg"
+  },
   "clips": [
     {
       "src": "/videos/blue-white-wrapped-tree-commercial-christmas-lights-01.mp4",

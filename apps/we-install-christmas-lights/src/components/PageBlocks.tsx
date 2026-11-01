@@ -27,7 +27,7 @@ export function PhotoHero({
   ctaLabel?: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-[color:var(--bg-soft)] text-white">
+    <section className="relative isolate overflow-hidden surface-dark text-white">
       {photo && (
         <Image src={photo.src} alt={photo.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photo.blurDataURL} className="object-cover opacity-60" />
       )}

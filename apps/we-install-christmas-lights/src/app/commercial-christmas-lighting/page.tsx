@@ -124,7 +124,7 @@ export default function CommercialHubPage() {
 
       <PhotoGrid photos={photos.slice(4)} title="Commercial installs across Ontario" caption="Plazas, office buildings, hotels, dealerships, malls, churches and downtown displays." />
 
-      <section className="section bg-[color:var(--bg-soft)] text-white">
+      <section className="section surface-dark text-white">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">How a commercial program runs</p>
           <ol className="mt-6 grid gap-6 md:grid-cols-4">

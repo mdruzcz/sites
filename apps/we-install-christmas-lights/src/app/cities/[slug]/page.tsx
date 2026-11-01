@@ -123,7 +123,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       {/* Commercial */}
-      <section className="section bg-[color:var(--bg-soft)] text-white">
+      <section className="section surface-dark text-white">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">For businesses and property managers</p>
