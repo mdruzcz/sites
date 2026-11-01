@@ -2,20 +2,39 @@
   "slug": "brantford",
   "city": "Brantford",
   "areaLabel": "Brantford / Brant County",
-  "h1Accent": "Brantford’s Premier",
-  "h1Rest": "All-Inclusive Christmas Light Installation",
-  "sub": "Custom commercial-grade lighting, installation, maintenance, takedown, and storage. Zero ladders, zero stress this winter.",
-  "badges": ["5.0★ on Google, 80+ reviews", "Fully Insured ($2M Liability)", "Commercial-Grade C9 LEDs"],
-  "mapCenter": { "lat": 43.1394, "lng": -80.2644 },
+  "h1Accent": "Brantford Christmas Light Installation",
+  "h1Rest": "All-inclusive, from $700.",
+  "sub": "We design, supply, install, maintain, take down and store your commercial-grade C9 lights. Zero ladders, zero stress this winter.",
+  "badges": [
+    "5.0★ on Google, 80+ reviews",
+    "Fully Insured ($2M Liability)",
+    "Commercial-Grade C9 LEDs"
+  ],
+  "mapCenter": {
+    "lat": 43.1394,
+    "lng": -80.2644
+  },
   "proof": {
     "heading": "Lighting Up Homes Across Brantford & Brant County",
-    "body": "Join the 740+ homeowners across South-Western Ontario who trust our team to make their properties shine every holiday season, now installing in West Brant, Henderson Survey, Brier Park, and North Park.",
-    "neighbourhoods": ["West Brant", "Henderson Survey", "Brier Park", "North Park", "Shellard Lane", "Holmedale", "Eagle Place", "Echo Place", "Terrace Hill"]
+    "body": "Join the 740+ homeowners across South-Western Ontario who trust our team to make their properties shine every holiday season, now installing from West Brant and the North End to Brier Park, Holmedale and Henderson Survey.",
+    "reviewsNote": "Recent reviews from homeowners in nearby communities."
   },
   "reviews": [
-    { "name": "John M.", "city": "St. Thomas", "quote": "They took the hassle out of our holiday preparations by providing a professional and timely installation and takedown service." },
-    { "name": "Mike and Beth", "city": "Woodstock", "quote": "The quality of the lights used was truly top-notch — brightness and durability stood out in our harsh winter weather." },
-    { "name": "Philipe Cartier", "city": "Ingersoll", "quote": "Their turnaround time from quote to installation was incredibly quick, without compromising on the quality of their work." }
+    {
+      "name": "John M.",
+      "city": "St. Thomas",
+      "quote": "They took the hassle out of our holiday preparations by providing a professional and timely installation and takedown service."
+    },
+    {
+      "name": "Mike and Beth",
+      "city": "Woodstock",
+      "quote": "The quality of the lights used was truly top-notch — brightness and durability stood out in our harsh winter weather."
+    },
+    {
+      "name": "Philipe Cartier",
+      "city": "Ingersoll",
+      "quote": "Their turnaround time from quote to installation was incredibly quick, without compromising on the quality of their work."
+    }
   ],
   "faq": [
     {
@@ -33,11 +52,65 @@
     {
       "q": "What happens if a bulb goes out or a storm knocks a line loose?",
       "a": "Our 48-Hour Maintenance Guarantee covers all repairs. Simply text our team a picture of the loose strand, and an installer will stop by to fix it free of charge."
+    },
+    {
+      "q": "Do I need a permit for holiday lighting on my Brantford home?",
+      "a": "A typical residential display on a single-family home doesn't normally need a municipal permit. If you're in a townhome or condo-managed community, check with your board first, and we can help coordinate that approval as part of your quote."
+    },
+    {
+      "q": "Can you light the mature trees on older Brantford properties?",
+      "a": "Yes. Our bucket trucks and aerial lifts reach the larger mature trees common in areas like Brier Park and Myrtleville. We can wrap a trunk and lower canopy or light a single feature tree, and it can be added to any package during your free quote."
+    },
+    {
+      "q": "Do you also install in Paris and St. George?",
+      "a": "Send us your address with your quote request and we'll confirm scheduling for Paris, St. George and other communities around Brantford."
     }
   ],
   "urgency": {
     "heading": "Prime November Installation Slots Fill Quickly!",
+    "eventBody": "Brantford's Santa Claus Parade and tree lighting at Harmony Square is Saturday, November 28. Book now to have your home glowing by then, before our schedule locks for the season.",
+    "eventUntil": "2026-11-29",
     "body": "Avoid the holiday rush and secure your preferred installation week before our schedule locks for the season.",
     "button": "Get My Free Design & Quote Now"
-  }
+  },
+  "areasHeading": "What we usually light in your part of Brantford",
+  "areasIntro": "Brantford is not one kind of house. Here is where we usually start for each area. Your photo tells us the rest.",
+  "areas": [
+    {
+      "name": "West Brant & Shellard Lane",
+      "text": "Newer two-storey homes with long roof runs and prominent garages. A clean C9 outline that includes the garage peak makes the biggest impression from the street.",
+      "fit": "Signature, from $1,400"
+    },
+    {
+      "name": "North End & Henderson Survey",
+      "text": "Larger homes on bigger lots near the 403, often with wraparound rooflines. Side runs and a lit front tree keep the display from stopping at the corners.",
+      "fit": "Signature or Estate"
+    },
+    {
+      "name": "Brier Park & Myrtleville",
+      "text": "Mature trees, larger lots and executive homes. The trees are the opportunity here: our aerial lifts reach the canopy a ladder cannot, so a wrapped feature tree can anchor the design.",
+      "fit": "Estate, from $2,800"
+    },
+    {
+      "name": "Holmedale & Brant Avenue",
+      "text": "Character homes near the Grand River with steep gables, dormers, brick trim and deep porches. A full C9 outline and a lit wreath at the entrance show off the architecture.",
+      "fit": "Signature, from $1,400"
+    },
+    {
+      "name": "Terrace Hill, East Ward & Eagle Place",
+      "text": "Older one-and-a-half and two-storey homes, often on tighter lots. We plan the runs around side yards and porch roofs, keeping the focus on the front elevation.",
+      "fit": "Essentials or Signature"
+    },
+    {
+      "name": "Echo Place, Fairview & Cedarland",
+      "text": "Bungalows and family homes where a simple front roofline goes a long way. Add a lit shrub bed or a single front tree if you want more colour at ground level.",
+      "fit": "Essentials, from $700"
+    }
+  ],
+  "areasNote": "Near Brantford? Send your address and we will confirm scheduling for Paris, St. George and other Brant County communities.",
+  "packageFit": [
+    "Common in Echo Place, Fairview and Cedarland",
+    "Common in West Brant, Holmedale and Shellard Lane",
+    "Common in Brier Park, Myrtleville and the North End"
+  ]
 }

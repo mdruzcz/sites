@@ -17,6 +17,8 @@ type Payload = {
   address?: string;
   useStreetView?: boolean;
   photo?: { name?: string; type?: string; data?: string };
+  /** "partial" = they gave contact details, then stopped at the photo step. */
+  stage?: "partial";
 };
 
 // Clients shrink photos to about 2.4 MB first; this is the base64 ceiling for that.
@@ -83,7 +85,10 @@ export async function POST(req: Request) {
   );
 
   const mapsUrl = data.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${data.address}, ${data.city ?? ""}, ON`)}` : "";
-  const photoNote = photo ? "Home photo attached" : data.useStreetView ? "No photo: customer asked us to use Street View" : "";
+  const unfinished = data.stage === "partial";
+  const photoNote = unfinished
+    ? "UNFINISHED: they entered their details but stopped at the photo step. Worth a quick text or call."
+    : photo ? "Home photo attached" : data.useStreetView ? "No photo: customer asked us to use Street View" : "";
 
   // 1) Email is the critical path. Resend can only send from masterdecker.com.
   let emailed = false;
@@ -111,7 +116,7 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
             from: `We Install Christmas Lights <${process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com"}>`,
             to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
             ...(data.email ? { reply_to: data.email } : {}),
-            subject: `${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
+            subject: `${unfinished ? "UNFINISHED QUOTE: " : ""}${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
             html: html(note),
             ...(attachments ? { attachments } : {}),
           }),

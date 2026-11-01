@@ -41,6 +41,7 @@ export default async function CityPage({ params }: Props) {
   const city = getCityBySlug(slug);
   const c = getCityContent(slug);
   if (!city || !c) notFound();
+  const lp = getLandingContent(slug);
 
   const heroPhoto = pickPhotos("residential-exterior", 1, slug)[0] ?? null;
   const homePhotos = pickPhotos("residential-exterior", 5, slug + "-grid").filter((p) => p.file !== heroPhoto?.file);
@@ -55,19 +56,18 @@ export default async function CityPage({ params }: Props) {
     name: `Christmas Light Installation in ${c.name}`,
     serviceType: "Christmas light installation",
     provider: { "@id": `${site.url}/#business` },
-    areaServed: { "@type": "City", name: `${c.name}, Ontario` },
+    areaServed: lp ? [{ "@type": "City", name: `${c.name}, Ontario` }, ...lp.areas.flatMap((x) => x.name.split(/, | & /)).map((name) => ({ "@type": "Place", name: `${name}, ${c.name}` }))] : { "@type": "City", name: `${c.name}, Ontario` },
     description: c.metaDescription,
     offers: { "@type": "Offer", priceCurrency: "CAD", price: "700", description: "Residential programs from $700; commercial custom-quoted" },
     url,
   };
 
-  const lp = getLandingContent(slug);
   if (lp) {
     return (
       <>
         <script id={`service-schema-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <script id={`crumbs-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(site.url, [{ name: "Home", path: "/" }, { name: "Service Areas", path: "/service-areas" }, { name: c.name }])) }} />
-        <script id={`faq-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd([...lp.faq, ...c.faq.filter((f) => !/cost|price/i.test(f.q))])) }} />
+        <script id={`faq-${city.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(lp.faq)) }} />
         <LandingPage lp={lp} city={c} />
       </>
     );

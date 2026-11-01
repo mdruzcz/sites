@@ -3,7 +3,8 @@ import Link from "next/link";
 import type { CityContent, LandingContent, Photo } from "@/lib/content";
 import { getLandingPhotos } from "@/lib/content";
 import { getCityBySlug, site } from "@/lib/site";
-import { CheckIcon, DropletIcon, PhoneIcon, ShieldIcon, StarIcon } from "../icons";
+import { AwardBadge } from "../award-badge";
+import { CheckIcon, DropletIcon, MapPinIcon, PhoneIcon, ShieldIcon, StarIcon } from "../icons";
 import { BeforeAfter } from "./BeforeAfter";
 import { JumpToFormButton, SelectPackageButton, StickyUploadBar } from "./LandingCtas";
 import { LandingQuoteForm } from "./LandingQuoteForm";
@@ -36,6 +37,13 @@ const PACKAGES = [
   },
 ];
 
+const STATS = [
+  [`${site.googleRating}★`, `Google rating, ${site.reviewCount}+ reviews`],
+  ["96%", "of customers rebook next year"],
+  ["740+", "homes decorated"],
+  ["2016", "family-owned since"],
+];
+
 const initials = (name: string) => name.split(/\s+/).filter((w) => /^[A-Za-z]/.test(w) && w.toLowerCase() !== "and").slice(0, 2).map((w) => w[0].toUpperCase()).join("");
 
 function Stars({ className = "h-4 w-4" }: { className?: string }) {
@@ -50,30 +58,46 @@ function Photo({ p, sizes, className = "object-cover" }: { p: Photo; sizes: stri
 export function LandingPage({ lp, city }: { lp: LandingContent; city: CityContent }) {
   const photos = getLandingPhotos();
   const nearby = city.nearby.map(getCityBySlug).filter((x): x is NonNullable<typeof x> => !!x);
-  const extraFaqs = city.faq.filter((f) => !/cost|price/i.test(f.q));
+  const urgencyBody = lp.urgency.eventBody && lp.urgency.eventUntil && new Date() < new Date(lp.urgency.eventUntil) ? lp.urgency.eventBody : lp.urgency.body;
 
   return (
     <>
+      {/* Paid traffic gets a header with no way out but the phone or the form. CSS hides the site nav while this exists. */}
+      <header className="lp-header sticky top-0 z-50 border-b border-[color:var(--border)] bg-white">
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="shrink-0" aria-label={`${site.name} home`}>
+            <Image src="/images/logo.png" alt={`${site.name} logo`} width={300} height={76} priority className="h-11 w-auto" />
+          </Link>
+          <p className="hidden items-center gap-1.5 text-sm font-semibold text-[color:var(--ink-soft)] lg:flex"><MapPinIcon className="h-4 w-4 text-[color:var(--brand-red-deep)]" /> Serving {lp.areaLabel.replace(" / ", " & ")}</p>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <a href={site.phoneHref} aria-label={`Call ${site.phone}`} className="flex min-h-[44px] items-center gap-2 px-1 font-bold text-[color:var(--ink-strong)] hover:underline">
+              <PhoneIcon className="h-4 w-4 text-[color:var(--brand-red-deep)]" /><span className="hidden sm:inline">{site.phone}</span><span className="sm:hidden">Call</span>
+            </a>
+            <JumpToFormButton className="lp-cta lp-cta-sm">Free Quote</JumpToFormButton>
+          </div>
+        </div>
+      </header>
+
       {/* 1. Hero: 60/40 split with the form above the fold */}
       <section className="relative isolate overflow-hidden bg-[#06140E] text-white">
         <Image src={photos.hero.src} alt={photos.hero.alt} fill priority sizes="100vw" placeholder="blur" blurDataURL={photos.hero.blurDataURL} className="-z-20 object-cover brightness-125 saturate-125" />
         <div className="absolute inset-0 -z-10 bg-black/40" aria-hidden />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/40 via-black/10 to-transparent" aria-hidden />
-        <div className="mx-auto grid w-full max-w-7xl gap-7 px-4 py-8 sm:px-6 lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-10 lg:px-8 lg:py-14">
+        <div className="mx-auto grid w-full max-w-7xl gap-5 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[3fr_2fr] lg:items-center lg:gap-10 lg:px-8 lg:py-14">
           <div>
-            <h1 className="lp-heading text-[2.1rem] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.55)] sm:text-5xl lg:text-[3.4rem]">
-              <span className="block text-[#FFD27A]">{lp.h1Accent}</span> {lp.h1Rest}
+            <h1 className="lp-heading text-[1.9rem] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.55)] sm:text-5xl lg:text-[3.2rem]">
+              <span className="block text-[#FFD27A]">{lp.h1Accent}</span> <span className="mt-1 block">{lp.h1Rest}</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-white/95 [text-shadow:0_1px_10px_rgba(0,0,0,.6)] sm:text-xl">{lp.sub}</p>
-            <ul className="mt-5 flex flex-wrap gap-2">
+            <p className="mt-3 max-w-2xl text-base text-white/95 lg:mt-4 [text-shadow:0_1px_10px_rgba(0,0,0,.6)] sm:text-lg lg:text-xl">{lp.sub}</p>
+            <ul className="mt-3 flex flex-wrap gap-1.5 sm:gap-2 lg:mt-5">
               {lp.badges.map((b) => (
-                <li key={b} className="flex min-h-[34px] items-center gap-1.5 rounded-full border border-white/25 bg-black/45 px-3.5 py-1 text-sm font-semibold backdrop-blur-sm">
+                <li key={b} className="flex min-h-[28px] items-center gap-1.5 rounded-full border border-white/25 bg-black/45 px-2.5 py-0.5 text-xs font-semibold sm:min-h-[34px] sm:px-3.5 sm:text-sm backdrop-blur-sm">
                   <CheckIcon className="h-3.5 w-3.5 text-[#FFD27A]" />{b}
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <JumpToFormButton className="lp-cta hidden lg:inline-flex">Get My Free Design &amp; Quote</JumpToFormButton>
+            <div className="mt-6 hidden flex-wrap items-center gap-x-5 gap-y-3 lg:flex">
+              <JumpToFormButton className="lp-cta">Get My Free Design &amp; Quote</JumpToFormButton>
               <a href={site.phoneHref} className="flex min-h-[44px] items-center gap-2 font-bold text-white [text-shadow:0_1px_8px_rgba(0,0,0,.6)] hover:underline"><PhoneIcon className="h-4 w-4 text-[#FFD27A]" /> Call {site.phone}</a>
             </div>
           </div>
@@ -81,22 +105,28 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
         </div>
       </section>
 
+      {/* Proof numbers sit right under the fold line */}
+      <section aria-label="Why homeowners choose us" className="bg-[#06140E] text-white">
+        <ul className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-x-4 gap-y-3 px-4 py-5 sm:px-6 md:grid-cols-4 lg:px-8">
+          {STATS.map(([n, label]) => (
+            <li key={label} className="flex items-baseline gap-2">
+              <span className="lp-heading text-2xl text-[#FFD27A]">{n}</span>
+              <span className="text-sm text-white/80">{label}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* 3. Local proof */}
       <section className="border-b border-[color:var(--border)] bg-white py-10 lg:py-14">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <h2 className="lp-heading text-2xl sm:text-3xl">{lp.proof.heading}</h2>
               <p className="mt-3 max-w-3xl text-[17px] leading-relaxed text-[color:var(--ink-soft)]">{lp.proof.body}</p>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl border border-[color:var(--border)] px-5 py-3">
-              <span className="lp-heading text-3xl">{site.googleRating}</span>
-              <span><Stars /><span className="mt-0.5 block text-sm text-[color:var(--ink-soft)]">{site.reviewCount}+ Google reviews</span></span>
-            </div>
+            <AwardBadge style={{ justifySelf: "start" }} />
           </div>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {lp.proof.neighbourhoods.map((n) => <li key={n} className="rounded-full bg-[color:var(--bg-cream)] px-3 py-1 text-sm font-semibold text-[color:var(--ink-strong)]">{n}</li>)}
-          </ul>
           <ul className="mt-7 grid gap-4 md:grid-cols-3">
             {lp.reviews.map((r) => (
               <li key={r.name} className="flex gap-3 rounded-2xl border border-[color:var(--border)] p-5">
@@ -109,11 +139,12 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
               </li>
             ))}
           </ul>
+          <p className="mt-3 text-sm text-[color:var(--ink-soft)]">{lp.proof.reviewsNote}</p>
         </div>
       </section>
 
       {/* 4. How it works */}
-      <section className="section bg-[color:var(--bg-cream)]">
+      <section className="section bg-[color:var(--bg-soft)]">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="lp-heading text-3xl sm:text-4xl">How it works</h2>
           <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -137,11 +168,12 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
           <h2 className="lp-heading text-3xl text-white sm:text-4xl">All-Inclusive Service Packages</h2>
           <p className="mt-3 max-w-3xl text-[17px] leading-relaxed text-white/80">We supply all commercial-grade custom LED bulbs, timers, hidden wiring, and heavy-duty clips. You own the convenience; we own the maintenance.</p>
           <div className="mt-9 grid gap-5 lg:grid-cols-3 lg:items-stretch">
-            {PACKAGES.map((p) => (
+            {PACKAGES.map((p, i) => (
               <article key={p.name} className={`relative flex flex-col rounded-2xl p-6 ${p.featured ? "bg-white text-[color:var(--ink-strong)] shadow-[0_0_60px_-12px_rgba(255,210,122,.55)] ring-2 ring-[#FFD27A]" : "border border-white/15 bg-white/5"}`}>
                 {p.featured && <span className="absolute -top-3 left-6 rounded-full bg-[#FFD27A] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-[#06140E]">Most popular</span>}
                 <h3 className={`lp-heading text-xl ${p.featured ? "" : "text-white"}`}>{p.name}</h3>
                 <p className={`lp-heading mt-3 text-3xl ${p.featured ? "text-[color:var(--brand-red-deep)]" : "text-[#FFD27A]"}`}>{p.price}</p>
+                {lp.packageFit[i] && <p className={`mt-1.5 flex items-start gap-1.5 text-sm font-semibold ${p.featured ? "text-[color:var(--brand-green)]" : "text-white/80"}`}><MapPinIcon className="mt-0.5 h-3.5 w-3.5 shrink-0" />{lp.packageFit[i]}</p>}
                 <dl className={`mt-5 flex-1 space-y-3.5 text-[15px] ${p.featured ? "text-[color:var(--ink-strong)]" : "text-white/90"}`}>
                   {[["Ideal for", p.idealFor], ["Included lighting", p.lighting], ["Hardware grade", "Commercial-Grade Custom C9 LEDs"], ["Service included", p.service]].map(([k, v]) => (
                     <div key={k}>
@@ -155,6 +187,28 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
                 </div>
               </article>
             ))}
+          </div>
+          <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-white/75">Your exact number depends on roofline footage, roof pitch and add-ons like tree wrapping or wreaths. You get a firm line-item price from your photo before anything is booked.</p>
+        </div>
+      </section>
+
+      {/* Local guide: unique to each city, visible rather than tucked away */}
+      <section className="section bg-[color:var(--bg-cream)]">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="lp-heading text-3xl sm:text-4xl">{lp.areasHeading}</h2>
+          <p className="mt-3 max-w-3xl text-[17px] leading-relaxed text-[color:var(--ink-soft)]">{lp.areasIntro}</p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {lp.areas.map((a) => (
+              <li key={a.name} className="flex flex-col rounded-2xl bg-white p-5 shadow-sm">
+                <h3 className="lp-heading flex items-start gap-2 text-lg"><MapPinIcon className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--brand-red-deep)]" />{a.name}</h3>
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--ink-soft)]">{a.text}</p>
+                <p className="mt-3 text-sm font-bold text-[color:var(--brand-green)]">Usually fits: {a.fit}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-2xl text-[15px] text-[color:var(--ink-soft)]">{lp.areasNote}</p>
+            <JumpToFormButton className="lp-cta shrink-0">Get My Free Design &amp; Quote</JumpToFormButton>
           </div>
         </div>
       </section>
@@ -243,12 +297,6 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
                   <p className="mt-1.5">{s.text}</p>
                 </div>
               ))}
-              {extraFaqs.map((f) => (
-                <div key={f.q}>
-                  <h3 className="lp-heading text-base">{f.q}</h3>
-                  <p className="mt-1">{f.a}</p>
-                </div>
-              ))}
               <div>
                 <h3 className="lp-heading text-lg">{city.commercial.heading}</h3>
                 <p className="mt-1.5">{city.commercial.text} <Link href="/commercial-christmas-lighting" className="inline-flex min-h-[44px] items-center font-bold text-[color:var(--brand-green)] underline">Commercial lighting services</Link>.</p>
@@ -267,7 +315,7 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
         <div className="absolute inset-x-0 -top-40 mx-auto h-80 max-w-3xl rounded-full bg-[#FFB347]/25 blur-3xl" aria-hidden />
         <div className="relative mx-auto w-full max-w-3xl px-4 py-16 text-center sm:px-6 lg:py-20">
           <h2 className="lp-heading text-3xl text-white sm:text-[2.6rem]">{lp.urgency.heading}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">{lp.urgency.body}</p>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">{urgencyBody}</p>
           <JumpToFormButton className="lp-cta mt-7">{lp.urgency.button}</JumpToFormButton>
         </div>
       </section>

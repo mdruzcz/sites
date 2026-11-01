@@ -185,7 +185,15 @@ h1.text-white, h2.text-white, h3.text-white, h4.text-white {
     color: #fff;
   }
   .lp-cta-ghost:hover { background: #fff; color: var(--ink-strong); }
+  .lp-cta-sm {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+  }
 }
+/* Landing pages bring their own header, so paid clicks have nowhere to wander. */
+body:has(.lp-header) .site-header { display: none; }
 /* The sticky upload bar owns the bottom edge, so the call button moves up and the footer stays reachable. */
 @media (max-width: 1023px) {
   body:has(.lp-sticky) { padding-bottom: 5rem; }

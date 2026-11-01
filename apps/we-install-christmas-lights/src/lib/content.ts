@@ -74,10 +74,17 @@ export type LandingContent = {
   sub: string;
   badges: string[];
   mapCenter: { lat: number; lng: number };
-  proof: { heading: string; body: string; neighbourhoods: string[] };
+  proof: { heading: string; body: string; reviewsNote: string };
   reviews: { name: string; city: string; quote: string }[];
+  areasHeading: string;
+  areasIntro: string;
+  areas: { name: string; text: string; fit: string }[];
+  areasNote: string;
+  /** Local home types for Essentials, Signature and Estate, in that order. */
+  packageFit: string[];
   faq: Faq[];
-  urgency: { heading: string; body: string; button: string };
+  /** eventBody replaces body until eventUntil, so a dated local hook retires itself. */
+  urgency: { heading: string; body: string; eventBody?: string; eventUntil?: string; button: string };
 };
 
 const ROOT = path.join(process.cwd(), "src", "content");

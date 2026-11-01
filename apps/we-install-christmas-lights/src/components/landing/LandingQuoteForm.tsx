@@ -15,6 +15,7 @@ type Suggestion = { text: string };
 const MAX_SIDE = 1800;
 // Edge routes cap the request body near 4 MB and base64 adds a third.
 const MAX_BYTES = 2_400_000;
+const UNFINISHED_AFTER_MS = 3 * 60 * 1000;
 
 function canvasToBlob(canvas: HTMLCanvasElement, quality: number) {
   return new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", quality));
@@ -191,15 +192,51 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
   const [useStreetView, setUseStreetView] = useState(false);
   const [token, setToken] = useState<string | null>(null);
   const [stalled, setStalled] = useState(false);
+  // The captcha script only loads once someone starts on the form, which keeps first paint fast.
+  const [armed, setArmed] = useState(false);
+  const tokenRef = useRef<string | null>(null);
+  const leadSent = useRef(false);
   const turnstile = useRef<TurnstileInstance | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   useEffect(() => {
-    const onPick = (e: Event) => setChoice((e as CustomEvent<PackageChoice>).detail);
+    const onPick = (e: Event) => { setChoice((e as CustomEvent<PackageChoice>).detail); setArmed(true); };
     window.addEventListener(PACKAGE_EVENT, onPick);
     return () => window.removeEventListener(PACKAGE_EVENT, onPick);
   }, []);
+
+  useEffect(() => { tokenRef.current = token; }, [token]);
+
+  // Step 1 is already a callable lead. If they stall or leave at the photo step, send what we have.
+  useEffect(() => {
+    if (step !== 2 || status === "success") return;
+    const sendUnfinished = () => {
+      if (leadSent.current || !tokenRef.current) return;
+      const sent = navigator.sendBeacon("/api/contact", new Blob([JSON.stringify({
+        name: name.trim(),
+        phone: phone.trim(),
+        address: address.trim(),
+        city,
+        propertyType: "Residential",
+        service: choice?.lead ?? "Landing page quote",
+        stage: "partial",
+        source,
+        turnstileToken: tokenRef.current,
+        attribution: getAttribution(),
+      })], { type: "application/json" }));
+      if (!sent) return;
+      leadSent.current = true;
+      track("lp-unfinished-sent", { source });
+      // Tokens are single use, so fetch a fresh one in case they come back and finish.
+      tokenRef.current = null;
+      setToken(null);
+      turnstile.current?.reset();
+    };
+    const timer = setTimeout(sendUnfinished, UNFINISHED_AFTER_MS);
+    window.addEventListener("pagehide", sendUnfinished);
+    return () => { clearTimeout(timer); window.removeEventListener("pagehide", sendUnfinished); };
+  }, [step, status, name, phone, address, city, choice, source]);
 
   useEffect(() => {
     if (step !== 2 || token) return;
@@ -215,6 +252,7 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
     if (address.trim().length < 5) next.address = "Please enter your street address.";
     setErrors(next);
     if (Object.keys(next).length) return;
+    setArmed(true);
     setStep(2);
     track("lp-step-1-complete", { source });
     setTimeout(() => rootRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 40);
@@ -253,6 +291,8 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
       setErrorMsg("Please wait a moment for the security check to finish, or call us.");
       return;
     }
+    const finishingEarlierLead = leadSent.current;
+    leadSent.current = true;
     setStatus("submitting");
     setErrorMsg(null);
     try {
@@ -266,6 +306,7 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
           city,
           propertyType: "Residential",
           service: choice?.lead ?? "Landing page quote",
+          message: finishingEarlierLead ? "They came back and finished after the earlier unfinished-quote email." : undefined,
           useStreetView: !photo && useStreetView,
           photo: photo ? { name: photo.name, type: photo.type, data: photo.data } : undefined,
           source,
@@ -281,6 +322,7 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
       trackConversion("quote", { phone });
       setTimeout(() => rootRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     } catch (err) {
+      leadSent.current = finishingEarlierLead;
       turnstile.current?.reset();
       setToken(null);
       setStatus("error");
@@ -304,7 +346,7 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
   }
 
   return (
-    <div ref={rootRef} id="quote-form" className="lp-form-card p-5 sm:p-6">
+    <div ref={rootRef} id="quote-form" className="lp-form-card p-5 sm:p-6" onFocusCapture={() => setArmed(true)}>
       <div className="flex items-center gap-2" aria-hidden>
         <span className={`h-1.5 flex-1 rounded-full ${step >= 1 ? "bg-[color:var(--brand-red)]" : "bg-stone-200"}`} />
         <span className={`h-1.5 flex-1 rounded-full ${step === 2 ? "bg-[color:var(--brand-red)]" : "bg-stone-200"}`} />
@@ -321,7 +363,7 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
         <form onSubmit={nextStep} noValidate className="mt-4">
           <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--brand-red-deep)]">Step 1 of 2</p>
           <h2 className="lp-heading mt-1 text-xl sm:text-2xl">Get your fast {city} quote</h2>
-          <p className="mt-0.5 text-sm text-[color:var(--ink-soft)]">Takes 60 seconds.</p>
+          <p className="mt-0.5 text-sm text-[color:var(--ink-soft)]">Takes 60 seconds. Now booking November installs.</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div>
               <label htmlFor="lp-name" className="lp-label">Full name</label>
@@ -335,8 +377,9 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
             </div>
             <AddressField value={address} onChange={setAddress} label={`Street address (${areaLabel})`} center={center} error={errors.address} inputClass={input} />
           </div>
-          <button type="submit" className="lp-cta mt-4 w-full">Next: Upload your home photo <span aria-hidden>→</span></button>
-          <p className="mt-1 text-center text-xs text-[color:var(--ink-soft)]">Free, no obligation. Commercial property? <a className="inline-flex min-h-[44px] items-center font-semibold underline" href="/commercial-christmas-lighting">See commercial lighting</a></p>
+          <button type="submit" className="lp-cta mt-4 w-full">Next: Upload My Photo <span aria-hidden>→</span></button>
+          <p className="mt-2.5 text-center text-xs leading-relaxed text-[color:var(--ink-soft)]">Free, no obligation. Tapping Next lets us text or call you about this quote only.</p>
+          <p className="text-center text-xs text-[color:var(--ink-soft)]">Commercial property? <a className="inline-flex min-h-[44px] items-center font-semibold underline" href="/commercial-christmas-lighting">See commercial lighting</a></p>
         </form>
       )}
 
@@ -378,11 +421,6 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
             <span>No photo handy? Use my address on Google Street View to estimate my roofline.</span>
           </label>
 
-          {siteKey && (
-            <div className="mt-3 min-h-[65px]">
-              <Turnstile ref={turnstile} siteKey={siteKey} options={{ theme: "light", size: "flexible" }} onSuccess={(t) => { setToken(t); setStalled(false); }} onExpire={() => setToken(null)} onError={() => setToken(null)} />
-            </div>
-          )}
           {stalled && !token && (
             <p className="mt-2 text-xs text-[color:var(--ink-soft)]">Security check is taking a while. You can also call <a className="font-semibold underline" href={site.phoneHref}>{site.phone}</a> for a quote right now.</p>
           )}
@@ -393,6 +431,13 @@ export function LandingQuoteForm({ city, areaLabel, center, source }: {
           </button>
           <button type="button" onClick={() => { setStep(1); setErrorMsg(null); jumpToForm(); }} className="mt-1 min-h-[44px] w-full text-sm font-semibold text-[color:var(--ink-soft)] hover:text-[color:var(--ink-strong)]">← Back to my details</button>
         </form>
+      )}
+
+      {/* One widget across both steps. Interaction-only stays invisible unless Cloudflare needs a challenge. */}
+      {siteKey && armed && (
+        <div className="mt-2">
+          <Turnstile ref={turnstile} siteKey={siteKey} options={{ theme: "light", size: "flexible", appearance: "interaction-only" }} onSuccess={(t) => { setToken(t); setStalled(false); }} onExpire={() => setToken(null)} onError={() => setToken(null)} />
+        </div>
       )}
     </div>
   );

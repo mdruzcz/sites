@@ -61,7 +61,7 @@ export function NavBar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow ${
+      className={`site-header sticky top-0 z-50 bg-white transition-shadow ${
         scrolled ? "shadow-md" : "shadow-sm"
       }`}
     >
