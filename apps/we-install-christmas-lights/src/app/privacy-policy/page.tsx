@@ -12,17 +12,17 @@ export default function PrivacyPolicy() {
     <section className="section">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose">
         <h1 className="heading-display text-3xl">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-[color:var(--ink-soft)]">Last updated: 2026-05-28</p>
+        <p className="mt-2 text-sm text-[color:var(--ink-soft)]">Last updated: 2026-11-01</p>
         <p>
           We Install Christmas Lights (&ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your privacy. This policy explains what information we collect and how we use it.
         </p>
         <h2 className="heading-display text-lg mt-8">Information We Collect</h2>
         <p>
-          We collect the information you give us through our contact form (name, email, phone, city, message). We also collect basic analytics (page views, referring pages) via privacy-respecting tools.
+          We collect the information you give us through our forms (name, email, phone, address, city, message, and any photo of your home). We may look up your address on Google Maps or Street View to prepare your quote. We also collect basic analytics (page views, referring pages) via privacy-respecting tools.
         </p>
         <h2 className="heading-display text-lg mt-6">How We Use It</h2>
         <p>
-          We use your contact details to respond to your quote request and to follow up on service. We do not sell or rent your information.
+          We use your contact details to respond to your quote request and to follow up on service, including by text message. Reply STOP to any text to opt out. Text messages are sent through Twilio. We do not sell or rent your information.
         </p>
         <h2 className="heading-display text-lg mt-6">Cookies</h2>
         <p>

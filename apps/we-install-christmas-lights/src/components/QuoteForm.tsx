@@ -214,6 +214,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
           {status === "submitting" ? "Sending…" : submitLabel ?? (type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote")}
         </button>
         <p className="text-center text-xs text-[color:var(--ink-soft)]">{earlyBirdActive() ? `${site.earlyBird.short} · ` : ""}Fully insured · 5.0★ Google rating</p>
+        <p className="text-center text-xs text-[color:var(--ink-soft)]">By sending this, you agree we can text or call you about this request. Reply STOP anytime.</p>
       </form>
     </div>
   );

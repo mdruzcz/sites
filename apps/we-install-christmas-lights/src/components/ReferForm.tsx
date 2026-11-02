@@ -125,6 +125,7 @@ export function ReferForm() {
         <button type="submit" disabled={status === "submitting"} className="btn btn-red w-full min-h-[48px] disabled:opacity-60">
           {status === "submitting" ? "Processing..." : "Get my link"}
         </button>
+        <p className="text-center text-xs text-[color:var(--ink-soft)]">By sending this, you agree we can text you your link and about your referrals. Reply STOP anytime.</p>
       </form>
     </div>
   );

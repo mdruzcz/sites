@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { site } from "@/lib/site";
+import { customerText, sendSms, toE164 } from "@/lib/sms";
 
 export const runtime = "edge";
 
@@ -25,6 +27,26 @@ type Payload = {
 // Marks where a lead came from in the email subject. Anything else is ignored.
 const LEAD_TAGS = ["ESTIMATE", "REBOOK", "REFERRED", "REFER-SIGNUP"];
 
+/** Street View of the address for the lead email. The metadata check is free, so we only pay for a real image. */
+async function streetViewImage(location: string) {
+  const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  if (!key) return null;
+  const q = `location=${encodeURIComponent(location)}&source=outdoor&key=${encodeURIComponent(key)}`;
+  try {
+    const meta = await fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?${q}`, { signal: AbortSignal.timeout(3000) });
+    if (((await meta.json()) as { status?: string }).status !== "OK") return null;
+    const img = await fetch(`https://maps.googleapis.com/maps/api/streetview?size=640x400&fov=80&${q}`, { signal: AbortSignal.timeout(4000) });
+    if (!img.ok) return null;
+    const bytes = new Uint8Array(await img.arrayBuffer());
+    let bin = "";
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    return { filename: "street-view.jpg", content: btoa(bin), content_id: STREET_CID };
+  } catch (e) {
+    console.error("Street View lookup failed", e);
+    return null;
+  }
+}
+
 function newReferralCode() {
   const alphabet = "23456789ABCDEFGHJKMNPQRSTUVWXYZ"; // matches REFERRAL_CODE in lib/site.ts
   return [...crypto.getRandomValues(new Uint8Array(6))].map((b) => alphabet[b % alphabet.length]).join("");
@@ -34,6 +56,7 @@ function newReferralCode() {
 const MAX_PHOTO_CHARS = 3_400_000;
 // Lets the lead email show the photo in the body, above the fold, not just as an attachment.
 const PHOTO_CID = "home-photo";
+const STREET_CID = "street-view";
 
 const HOSTNAME = "weinstallchristmaslights.ca";
 const esc = (s: string) =>
@@ -111,8 +134,11 @@ export async function POST(req: Request) {
   let emailed = false;
   if (process.env.RESEND_API_KEY) {
     try {
-      const html = (note: string, inlinePhoto = false) => `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
-${inlinePhoto ? `<p><img src="cid:${PHOTO_CID}" alt="Customer's home photo" style="display:block;max-width:100%;width:600px;height:auto;border-radius:8px"></p>` : ""}
+      const street = data.address ? await streetViewImage(`${data.address}, ${data.city ?? ""}, ON`) : null;
+      const pic = (cid: string, alt: string) => `<p><img src="cid:${cid}" alt="${alt}" style="display:block;max-width:100%;width:600px;height:auto;border-radius:8px"></p>`;
+      const html = (note: string, attached: { content_id: string }[] = []) => `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
+${attached.some((a) => a.content_id === PHOTO_CID) ? pic(PHOTO_CID, "Customer's home photo") : ""}
+${attached.some((a) => a.content_id === STREET_CID) ? `<p style="margin-bottom:4px"><strong>Street View of the address</strong> (may be out of date):</p>${pic(STREET_CID, "Google Street View of the address")}` : ""}
 <p><strong>Name:</strong> ${esc(data.name!)}</p>
 <p><strong>Email:</strong> ${esc(data.email || "")}</p>
 <p><strong>Phone:</strong> ${esc(data.phone || "")}</p>
@@ -126,7 +152,8 @@ ${note ? `<p><strong>Photo:</strong> ${esc(note)}</p>` : ""}
 ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
 <hr>
 <p style="font-size:12px;color:#888">Sent from weinstallchristmaslights.ca${data.source ? ` (${esc(data.source)})` : ""}</p>`;
-      const send = (note: string, attachments?: { filename: string; content: string; content_id: string }[]) =>
+      const views = street ? [street] : [];
+      const send = (note: string, attachments: { filename: string; content: string; content_id: string }[]) =>
         fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -135,15 +162,15 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
             to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
             ...(data.email ? { reply_to: data.email } : {}),
             subject: `${unfinished ? "UNFINISHED QUOTE: " : ""}${tag ? `${tag}: ` : ""}${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
-            html: html(note, !!attachments),
-            ...(attachments ? { attachments } : {}),
+            html: html(note, attachments),
+            ...(attachments.length ? { attachments } : {}),
           }),
         });
-      let r = await send(photoNote, photo ? [photo] : undefined);
-      if (!r.ok && photo) {
+      let r = await send(photoNote, photo ? [photo, ...views] : views);
+      if (!r.ok && (photo || street)) {
         // A rejected attachment must not cost us the lead: resend without it.
-        console.error("Resend rejected photo:", r.status, await r.text());
-        r = await send("Customer sent a photo but it failed to attach. Ask them to text it.");
+        console.error("Resend rejected attachment:", r.status, await r.text());
+        r = await send(photo ? "Customer sent a photo but it failed to attach. Ask them to text it." : photoNote, []);
       }
       emailed = r.ok;
       if (!r.ok) console.error("Resend error:", r.status, await r.text());
@@ -182,5 +209,23 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
   if (!emailed && !stored) {
     return NextResponse.json({ error: "We couldn't send your request. Please call us." }, { status: 502 });
   }
-  return NextResponse.json({ ok: true, emailed, stored, ...(referralCode ? { code: referralCode } : {}) });
+
+  // 3) Instant text-back. Someone who stopped at the photo step did not ask for a reply yet, so only the team hears about it.
+  const customerPhone = toE164(data.phone);
+  const [texted, alerted] = await Promise.all([
+    unfinished
+      ? Promise.resolve(false)
+      : sendSms(customerPhone, customerText({ name: data.name, tag, isCommercial, code: referralCode, phone: site.phone, url: site.url, business: site.name })),
+    sendSms(
+      process.env.NOTIFY_SMS_TO,
+      [
+        `${unfinished ? "UNFINISHED lead" : tag ? `${tag} lead` : isCommercial ? "COMMERCIAL lead" : "New lead"}: ${data.name}`,
+        data.phone,
+        data.address || data.city,
+        photo ? "Photo in email" : "",
+      ].filter(Boolean).join(" | ").slice(0, 300),
+    ),
+  ]);
+
+  return NextResponse.json({ ok: true, emailed, stored, texted, alerted, ...(referralCode ? { code: referralCode } : {}) });
 }

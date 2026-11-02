@@ -25,11 +25,6 @@ export const site = {
     instagram: "https://www.instagram.com/weinstallchristmaslights",
     youtube: "https://www.youtube.com/@weinstallchristmaslights",
   },
-  affiliates: [
-    { name: "Master Decker", url: "https://masterdecker.com/" },
-    { name: "London Concrete Sealing", url: "https://londonconcretesealing.ca/" },
-    { name: "London Christmas Lights", url: "https://masterdecker.com/" },
-  ],
   // Early-bird offer shown site-wide. Edit here to change the discount or deadline.
   earlyBird: {
     discount: "10%",

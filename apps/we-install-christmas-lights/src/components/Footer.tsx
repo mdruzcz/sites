@@ -77,13 +77,6 @@ export function Footer() {
               <a href={`mailto:${site.email}`} className="hover:text-[color:var(--accent)] break-all">{site.email}</a>
             </li>
           </ul>
-
-          <h4 className="heading-display text-sm text-[color:var(--accent)] mt-8">Affiliates</h4>
-          <ul className="mt-3 space-y-2 text-sm text-[color:var(--ink-soft)]">
-            {site.affiliates.map((a) => (
-              <li key={a.name}><a href={a.url} className="hover:text-[color:var(--accent)]" target="_blank" rel="noopener">{a.name}</a></li>
-            ))}
-          </ul>
         </div>
       </div>
 
