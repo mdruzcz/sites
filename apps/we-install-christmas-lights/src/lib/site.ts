@@ -40,6 +40,15 @@ export const site = {
     // Every mention of the offer disappears after this date. Move it forward for next season.
     endsOn: "2026-10-16",
   },
+  // Same design as last year. Shown on /rebook. Edit here to change the terms.
+  rebook: {
+    terms: "Your saved price is what you paid last season, for the same design on the same home. Additions are quoted separately. New bookings depend on install dates still being open.",
+  },
+  // Neighbour referral offer. Edit here to change the amount or terms everywhere.
+  referral: {
+    amount: "$50",
+    terms: "Credit applies once your neighbour's install is complete and paid. New customers only, one credit per new address. Your credit comes off your next install and has no cash value. Not combinable with other offers.",
+  },
   stats: [
     { number: "740", label: "Houses Decorated" },
     { number: "921", label: "Decorated Christmas Trees (Residential)" },
@@ -48,6 +57,9 @@ export const site = {
 } as const;
 
 export const earlyBirdActive = () => new Date() < new Date(site.earlyBird.endsOn);
+
+/** Six characters from an alphabet with no look-alikes (0/O, 1/I/L). */
+export const REFERRAL_CODE = /^[2-9A-HJKMNP-Z]{6}$/;
 
 export type Service = {
   slug: string;
@@ -264,12 +276,12 @@ export const cities: City[] = [
     heroIntro:
       "London's #1 rated holiday lighting installer — proudly transforming homes in Old North, Byron, Masonville, Hyde Park, and every London neighbourhood.",
     description:
-      "Our home base. We've decorated over 700 London homes since we started, and our team lives here year-round. Quick turnaround, local crews, and the most experienced installers in the city.",
+      "Our home base. Our team lives here year-round, so you get quick turnaround and local crews who know London's neighbourhoods.",
     neighbourhoods: ["Old North", "Byron", "Masonville", "Hyde Park", "Westmount", "Lambeth", "White Oaks", "Hunt Club"],
     metaTitle: "Christmas Light Installation London Ontario | We Install Christmas Lights",
     metaDescription:
-      "Professional Christmas light installation in London, Ontario. 96% return rate, 5-star reviews, 740+ London homes decorated. Free quote — (519) 266-6796.",
-    localFact: "Over 740 London homes decorated since 2016 — our flagship service area.",
+      "Professional Christmas light installation in London, Ontario. 96% return rate, 5-star reviews, local crews. Free quote — (519) 266-6796.",
+    localFact: "London is our home base and flagship service area, family-owned since 2016.",
   },
   {
     slug: "strathroy",

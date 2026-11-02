@@ -23,6 +23,9 @@ const RESIDENTIAL_LINKS = [
   { label: "Govee Light Installation", href: "/services/govee-light-installer" },
   { label: "Eufy Light Installation", href: "/services/eufy-light-installer" },
   { label: "Lighting Packages", href: "/lighting-packages" },
+  { label: "Cost Estimator", href: "/estimator" },
+  { label: "Rebook Last Year's Design", href: "/rebook" },
+  { label: "Refer a Neighbour", href: "/refer" },
 ];
 
 const CITIES = [

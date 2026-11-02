@@ -21,6 +21,9 @@ Quotes: free, replied to within 24 hours.
 - Commercial hub: ${site.url}/commercial-christmas-lighting
 - Residential services: ${site.url}/residential-services
 - Packages and pricing: ${site.url}/lighting-packages
+- Cost estimator for homes: ${site.url}/estimator
+- Rebook last year's design: ${site.url}/rebook
+- Refer a neighbour (${site.referral.amount} off for both): ${site.url}/refer
 - Contact / quote: ${site.url}/contact-us
 
 ## Services

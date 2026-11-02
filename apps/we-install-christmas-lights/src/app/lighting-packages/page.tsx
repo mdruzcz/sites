@@ -51,6 +51,7 @@ export default function LightingPackagesPage() {
             Every package includes free design, installation, maintenance, takedown, and storage.
             Final price depends on the size of your home — request a free quote for an exact number.
           </p>
+          <Link href="/estimator" className="btn btn-red mt-6">Estimate my home in 60 seconds</Link>
         </div>
       </section>
 

@@ -39,7 +39,9 @@ export function Footer() {
             <li><Link href="/services/commercial-christmas-trees-and-decorations" className="hover:text-[color:var(--accent)]">Commercial Trees & Décor</Link></li>
             <li><Link href="/services/full-season-holiday-service" className="hover:text-[color:var(--accent)]">Full Season Service</Link></li>
             <li><Link href="/services/christmas-light-year-long-storage" className="hover:text-[color:var(--accent)]">Year-Long Storage</Link></li>
-            <li><Link href="/lighting-packages" className="hover:text-[color:var(--accent)]">Cost Estimator</Link></li>
+            <li><Link href="/estimator" className="hover:text-[color:var(--accent)]">Cost Estimator</Link></li>
+            <li><Link href="/rebook" className="hover:text-[color:var(--accent)]">Rebook Last Year&rsquo;s Design</Link></li>
+            <li><Link href="/refer" className="hover:text-[color:var(--accent)]">Refer a Neighbour</Link></li>
           </ul>
         </div>
 

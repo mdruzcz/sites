@@ -19,7 +19,16 @@ type Payload = {
   photo?: { name?: string; type?: string; data?: string };
   /** "partial" = they gave contact details, then stopped at the photo step. */
   stage?: "partial";
+  tag?: string;
 };
+
+// Marks where a lead came from in the email subject. Anything else is ignored.
+const LEAD_TAGS = ["ESTIMATE", "REBOOK", "REFERRED", "REFER-SIGNUP"];
+
+function newReferralCode() {
+  const alphabet = "23456789ABCDEFGHJKMNPQRSTUVWXYZ"; // matches REFERRAL_CODE in lib/site.ts
+  return [...crypto.getRandomValues(new Uint8Array(6))].map((b) => alphabet[b % alphabet.length]).join("");
+}
 
 // Clients shrink photos to about 2.4 MB first; this is the base64 ceiling for that.
 const MAX_PHOTO_CHARS = 3_400_000;
@@ -80,9 +89,15 @@ export async function POST(req: Request) {
     .join("\n");
   const adSource = attr.gclid || attr.gbraid || attr.wbraid ? "Google Ads" : "";
 
-  const isCommercial = /commercial|business|property|hoa|retail|office|hotel|restaurant|dealership|municipal|church/i.test(
+  // "Full property (Griswold)" is a home package, so an explicit Residential wins.
+  const isCommercial = data.propertyType !== "Residential" && /commercial|business|property|hoa|retail|office|hotel|restaurant|dealership|municipal|church/i.test(
     `${data.propertyType ?? ""} ${data.service ?? ""}`,
   );
+
+  const tag = LEAD_TAGS.includes(data.tag ?? "") ? data.tag! : "";
+  // The referrer's code only exists in this record, so it is what we match credits against.
+  const referralCode = tag === "REFER-SIGNUP" ? newReferralCode() : "";
+  const message = [data.message, referralCode && `Referral code issued: ${referralCode}`].filter(Boolean).join("\n\n");
 
   const mapsUrl = data.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${data.address}, ${data.city ?? ""}, ON`)}` : "";
   const unfinished = data.stage === "partial";
@@ -104,7 +119,7 @@ ${note ? `<p><strong>Photo:</strong> ${esc(note)}</p>` : ""}
 <p><strong>Property type:</strong> ${esc(data.propertyType || "")}</p>
 <p><strong>Service:</strong> ${esc(data.service || "")}</p>
 <p><strong>Message:</strong></p>
-<pre style="font-family:inherit;white-space:pre-wrap">${esc(data.message || "")}</pre>
+<pre style="font-family:inherit;white-space:pre-wrap">${esc(message)}</pre>
 ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
 <hr>
 <p style="font-size:12px;color:#888">Sent from weinstallchristmaslights.ca${data.source ? ` (${esc(data.source)})` : ""}</p>`;
@@ -116,7 +131,7 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
             from: `We Install Christmas Lights <${process.env.CONTACT_FROM_EMAIL || "noreply@masterdecker.com"}>`,
             to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
             ...(data.email ? { reply_to: data.email } : {}),
-            subject: `${unfinished ? "UNFINISHED QUOTE: " : ""}${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
+            subject: `${unfinished ? "UNFINISHED QUOTE: " : ""}${tag ? `${tag}: ` : ""}${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
             html: html(note),
             ...(attachments ? { attachments } : {}),
           }),
@@ -150,8 +165,8 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
           email: data.email || "",
           phone: data.phone || null,
           city: data.city || null,
-          service: [data.propertyType, data.service].filter(Boolean).join(" · ") || null,
-          message: [data.message, data.address && `Address: ${data.address}`, photoNote, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
+          service: [data.propertyType, tag, data.service].filter(Boolean).join(" · ") || null,
+          message: [message, data.address && `Address: ${data.address}`, photoNote, attribution && `--- Ad source ---\n${attribution}`].filter(Boolean).join("\n\n") || null,
         },
       }),
     });
@@ -164,5 +179,5 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
   if (!emailed && !stored) {
     return NextResponse.json({ error: "We couldn't send your request. Please call us." }, { status: 502 });
   }
-  return NextResponse.json({ ok: true, emailed, stored });
+  return NextResponse.json({ ok: true, emailed, stored, ...(referralCode ? { code: referralCode } : {}) });
 }

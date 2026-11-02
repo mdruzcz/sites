@@ -118,6 +118,26 @@ export default function HomePage() {
       <Pitch />
       <PackageGrid />
 
+      {/* Price and returning customers */}
+      <section className="pb-14 lg:pb-20">
+        <ul className="mx-auto grid w-full max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+          {[
+            { href: "/estimator", eyebrow: "New here?", title: "See a price for your home", body: "Answer three quick questions for a range. No contact details needed.", cta: "Open the estimator" },
+            { href: "/rebook", eyebrow: "With us last year?", title: "Same design, saved price", body: "Skip the new quote. Rebook last year's lights in about a minute.", cta: "Rebook my design" },
+            { href: "/refer", eyebrow: "Neighbours asking?", title: `You both get ${site.referral.amount} off`, body: "Share your personal link. When they book an install, you both save.", cta: "Get my link" },
+          ].map((c) => (
+            <li key={c.href}>
+              <Link href={c.href} className="card block h-full p-6 transition-colors hover:border-[color:var(--accent)]">
+                <p className="eyebrow">{c.eyebrow}</p>
+                <h2 className="heading-display mt-3 text-xl text-[color:var(--ink-strong)]">{c.title}</h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--ink-soft)]">{c.body}</p>
+                <p className="mt-4 text-sm font-bold text-[color:var(--accent)]">{c.cta} →</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Commercial band */}
       <section className="section surface-dark text-white" id="commercial">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

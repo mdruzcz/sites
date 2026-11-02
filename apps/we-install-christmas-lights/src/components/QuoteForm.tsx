@@ -27,6 +27,17 @@ type Props = {
   heading?: string;
   subheading?: string;
   className?: string;
+  /** Marks the lead in the email subject (see LEAD_TAGS in the contact route). */
+  tag?: "ESTIMATE" | "REBOOK" | "REFERRED";
+  /** Added to the message, for context the customer already gave on the page. */
+  details?: string;
+  /** Residential only: drops the Residential/Commercial toggle. */
+  hideType?: boolean;
+  /** Replaces the service dropdown when the page already answers it. */
+  fixedService?: string;
+  messageLabel?: string;
+  submitLabel?: string;
+  successBody?: string;
 };
 
 /**
@@ -34,7 +45,7 @@ type Props = {
  * tags the lead as commercial in the email subject. Turnstile mounts on
  * visibility, and a watchdog shows a call fallback if no token arrives.
  */
-export function QuoteForm({ variant = "full", defaultType = "Residential", defaultCity, source, heading, subheading, className = "" }: Props) {
+export function QuoteForm({ variant = "full", defaultType = "Residential", defaultCity, source, heading, subheading, className = "", tag, details, hideType = false, fixedService, messageLabel, submitLabel, successBody }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [token, setToken] = useState<string | null>(null);
@@ -76,8 +87,9 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
       phone: String(form.get("phone") || ""),
       city: String(form.get("city") || ""),
       propertyType: type,
-      service: String(form.get("service") || ""),
-      message: String(form.get("message") || ""),
+      service: fixedService ?? String(form.get("service") || ""),
+      message: [String(form.get("message") || ""), details].filter(Boolean).join("\n\n"),
+      tag,
       source: source || (typeof window !== "undefined" ? window.location.pathname : ""),
       turnstileToken: token,
       attribution: getAttribution(),
@@ -110,7 +122,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--brand-green)] text-white"><CheckIcon className="h-6 w-6" /></div>
         <h3 className="heading-display mt-4 text-xl text-[color:var(--accent)]">Thanks, your request is in.</h3>
         <p className="mt-2 text-[color:var(--ink-soft)]">
-          {type === "Commercial" ? "A commercial lighting specialist" : "We"} will reply with a free quote within 24 hours. Need it sooner? Call{" "}
+          {successBody ?? `${type === "Commercial" ? "A commercial lighting specialist" : "We"} will reply with a free quote within 24 hours.`} Need it sooner? Call{" "}
           <a className="font-semibold underline" href={site.phoneHref}>{site.phone}</a>.
         </p>
       </div>
@@ -128,20 +140,22 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
       <form onSubmit={onSubmit} className="space-y-3.5" noValidate>
         <input type="text" name="website" autoComplete="off" tabIndex={-1} className="hidden" aria-hidden="true" />
 
-        <div role="radiogroup" aria-label="Property type" className="grid grid-cols-2 gap-1 rounded-lg bg-[color:var(--bg-cream)] p-1">
-          {(["Residential", "Commercial"] as const).map((t) => (
-            <button
-              key={t}
-              type="button"
-              role="radio"
-              aria-checked={type === t}
-              onClick={() => setType(t)}
-              className={`min-h-[40px] rounded-md text-sm font-bold transition-colors ${type === t ? "bg-[color:var(--brand-red)] text-white shadow-sm" : "text-[color:var(--ink-soft)] hover:text-[color:var(--ink-strong)]"}`}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
+        {!hideType && (
+          <div role="radiogroup" aria-label="Property type" className="grid grid-cols-2 gap-1 rounded-lg bg-[color:var(--bg-cream)] p-1">
+            {(["Residential", "Commercial"] as const).map((t) => (
+              <button
+                key={t}
+                type="button"
+                role="radio"
+                aria-checked={type === t}
+                onClick={() => setType(t)}
+                className={`min-h-[40px] rounded-md text-sm font-bold transition-colors ${type === t ? "bg-[color:var(--brand-red)] text-white shadow-sm" : "text-[color:var(--ink-soft)] hover:text-[color:var(--ink-strong)]"}`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className={hero ? "grid gap-3 sm:grid-cols-2" : "grid gap-4 sm:grid-cols-2"}>
           <div>
@@ -163,16 +177,18 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
               {CITY_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
-          <div className="sm:col-span-2">
-            <label htmlFor={`${variant}-service`} className={label}>{type === "Commercial" ? "What does the property need?" : "What are you thinking of?"}</label>
-            <select id={`${variant}-service`} name="service" className={input} defaultValue="">
-              <option value="">Choose one</option>
-              {SERVICE_OPTIONS[type].map((s) => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
+          {!fixedService && (
+            <div className="sm:col-span-2">
+              <label htmlFor={`${variant}-service`} className={label}>{type === "Commercial" ? "What does the property need?" : "What are you thinking of?"}</label>
+              <select id={`${variant}-service`} name="service" className={input} defaultValue="">
+                <option value="">Choose one</option>
+                {SERVICE_OPTIONS[type].map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+          )}
           {!hero && (
             <div className="sm:col-span-2">
-              <label htmlFor={`${variant}-message`} className={label}>{type === "Commercial" ? "Property address, timing and any details" : "Tell us about your home (address helps us quote faster)"}</label>
+              <label htmlFor={`${variant}-message`} className={label}>{messageLabel ?? (type === "Commercial" ? "Property address, timing and any details" : "Tell us about your home (address helps us quote faster)")}</label>
               <textarea id={`${variant}-message`} name="message" rows={4} className={input} />
             </div>
           )}
@@ -195,7 +211,7 @@ export function QuoteForm({ variant = "full", defaultType = "Residential", defau
         {errorMsg && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{errorMsg}</p>}
 
         <button type="submit" disabled={status === "submitting"} className="btn btn-red w-full min-h-[48px] disabled:opacity-60">
-          {status === "submitting" ? "Sending…" : type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote"}
+          {status === "submitting" ? "Sending…" : submitLabel ?? (type === "Commercial" ? "Request a Commercial Quote" : "Get My Free Quote")}
         </button>
         <p className="text-center text-xs text-[color:var(--ink-soft)]">{earlyBirdActive() ? `${site.earlyBird.short} · ` : ""}Fully insured · 5.0★ Google rating</p>
       </form>
