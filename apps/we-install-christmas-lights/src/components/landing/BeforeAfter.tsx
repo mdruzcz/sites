@@ -24,7 +24,7 @@ export function BeforeAfter({ before, after, beforeLabel, afterLabel }: { before
         max={100}
         value={pos}
         onChange={(e) => setPos(Number(e.target.value))}
-        aria-label="Slide to compare the home before dark and after dark"
+        aria-label="Slide to compare the home with its Christmas lights off and on"
         className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
       />
     </div>

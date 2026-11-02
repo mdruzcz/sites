@@ -220,7 +220,8 @@ export function LandingPage({ lp, city }: { lp: LandingContent; city: CityConten
           <p className="mt-2 text-[17px] text-[color:var(--ink-soft)]">Slide to see how custom-cut commercial LEDs turn standard rooflines into winter wonderlands.</p>
           <div className="mt-7 grid gap-4 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <BeforeAfter before={photos.baDay} after={photos.baNight} beforeLabel="At dusk" afterLabel="After dark" />
+              <BeforeAfter before={photos.baDay} after={photos.baNight} beforeLabel="Lights off" afterLabel="Lights on" />
+              <p className="mt-2 text-xs leading-relaxed text-[color:var(--ink-soft)]">&ldquo;Lights on&rdquo; is our real photo of a finished install. &ldquo;Lights off&rdquo; is the same photo with the lights digitally removed, so you can compare.</p>
             </div>
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
               {[photos.gallery1, photos.gallery2].map((p) => (

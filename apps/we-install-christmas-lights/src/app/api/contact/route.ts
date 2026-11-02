@@ -32,6 +32,8 @@ function newReferralCode() {
 
 // Clients shrink photos to about 2.4 MB first; this is the base64 ceiling for that.
 const MAX_PHOTO_CHARS = 3_400_000;
+// Lets the lead email show the photo in the body, above the fold, not just as an attachment.
+const PHOTO_CID = "home-photo";
 
 const HOSTNAME = "weinstallchristmaslights.ca";
 const esc = (s: string) =>
@@ -54,7 +56,7 @@ export async function POST(req: Request) {
   }
   const photo =
     data.photo?.data && /^image\/[a-z0-9.+-]+$/i.test(data.photo.type ?? "") && data.photo.data.length <= MAX_PHOTO_CHARS
-      ? { filename: String(data.photo.name || "home-photo.jpg").replace(/[^\w.-]+/g, "-").slice(0, 80), content: data.photo.data }
+      ? { filename: String(data.photo.name || "home-photo.jpg").replace(/[^\w.-]+/g, "-").slice(0, 80), content: data.photo.data, content_id: PHOTO_CID }
       : null;
   if (data.photo?.data && !photo) {
     return NextResponse.json({ error: "That photo could not be sent. Try another, or tick the Street View box." }, { status: 400 });
@@ -103,13 +105,14 @@ export async function POST(req: Request) {
   const unfinished = data.stage === "partial";
   const photoNote = unfinished
     ? "UNFINISHED: they entered their details but stopped at the photo step. Worth a quick text or call."
-    : photo ? "Home photo attached" : data.useStreetView ? "No photo: customer asked us to use Street View" : "";
+    : photo ? "Home photo is in the lead email" : data.useStreetView ? "No photo: customer asked us to use Street View" : "";
 
   // 1) Email is the critical path. Resend can only send from masterdecker.com.
   let emailed = false;
   if (process.env.RESEND_API_KEY) {
     try {
-      const html = (note: string) => `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
+      const html = (note: string, inlinePhoto = false) => `<h2>${isCommercial ? "New COMMERCIAL Christmas Lighting Lead" : "New Christmas Light Installation Lead"}</h2>
+${inlinePhoto ? `<p><img src="cid:${PHOTO_CID}" alt="Customer's home photo" style="display:block;max-width:100%;width:600px;height:auto;border-radius:8px"></p>` : ""}
 <p><strong>Name:</strong> ${esc(data.name!)}</p>
 <p><strong>Email:</strong> ${esc(data.email || "")}</p>
 <p><strong>Phone:</strong> ${esc(data.phone || "")}</p>
@@ -123,7 +126,7 @@ ${note ? `<p><strong>Photo:</strong> ${esc(note)}</p>` : ""}
 ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;color:#555;white-space:pre-wrap">${esc(attribution)}</pre>` : ""}
 <hr>
 <p style="font-size:12px;color:#888">Sent from weinstallchristmaslights.ca${data.source ? ` (${esc(data.source)})` : ""}</p>`;
-      const send = (note: string, attachments?: { filename: string; content: string }[]) =>
+      const send = (note: string, attachments?: { filename: string; content: string; content_id: string }[]) =>
         fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -132,7 +135,7 @@ ${attribution ? `<p><strong>Ad source:</strong></p><pre style="font-size:12px;co
             to: [process.env.CONTACT_TO_EMAIL || "service@masterdecker.com"],
             ...(data.email ? { reply_to: data.email } : {}),
             subject: `${unfinished ? "UNFINISHED QUOTE: " : ""}${tag ? `${tag}: ` : ""}${isCommercial ? "COMMERCIAL " : ""}Christmas Lights Lead - ${data.name}${data.city ? ` (${data.city})` : ""}${photo ? " + photo" : ""}${adSource ? ` [${adSource}]` : ""}`,
-            html: html(note),
+            html: html(note, !!attachments),
             ...(attachments ? { attachments } : {}),
           }),
         });
