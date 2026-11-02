@@ -138,6 +138,12 @@ export function pickPhotos(category: string | string[], count: number, seed = ""
   return [...new Map(out.map((p) => [p.file, p])).values()];
 }
 
+/** Hand-picked shots for a specific slot, in the order given. */
+export function photosByFile(files: string[]): Photo[] {
+  const all = getPhotos();
+  return files.flatMap((f) => all.filter((p) => p.file === f));
+}
+
 export const faqJsonLd = (faqs: Faq[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",

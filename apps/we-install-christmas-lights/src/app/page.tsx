@@ -13,7 +13,7 @@ import { HeroVideo } from "@/components/HeroVideo";
 import { QuoteForm } from "@/components/QuoteForm";
 import { TrustBar, PhotoGrid, CtaBand, CheckList } from "@/components/PageBlocks";
 import { earlyBirdActive, site, cities, industries } from "@/lib/site";
-import { pickPhotos } from "@/lib/content";
+import { photosByFile } from "@/lib/content";
 import videosData from "@/content/xmas-videos.json";
 import { StarIcon } from "@/components/icons";
 
@@ -57,8 +57,19 @@ const FAQS = [
 ];
 
 export default function HomePage() {
-  const homePhotos = pickPhotos("residential-exterior", 5, "home-grid");
-  const commercialPhotos = pickPhotos(["commercial-exterior", "commercial-indoor"], 4, "home-commercial");
+  const homePhotos = photosByFile([
+    "brick-home-warm-white-c9-roofline-three-car-garage-wet-driveway-01.jpg",
+    "stone-home-warm-white-c9-roofline-large-wrapped-tree-01.jpg",
+    "stone-bungalow-multicolour-c9-roofline-christmas-lights-01.jpg",
+    "row-of-spruce-trees-warm-white-christmas-lights-wreaths-01.jpg",
+    "brick-home-cool-white-c9-roofline-porch-night-01.jpg",
+  ]);
+  const commercialPhotos = photosByFile([
+    "commercial-holiday-tree-lighting-restaurant-exterior-night-01.jpg",
+    "commercial-building-facade-christmas-tree-lighting-01.jpg",
+    "warm-white-lit-evergreen-hedge-commercial-walkway-01.jpg",
+    "corporate-lobby-christmas-tree-lit-garland-01.jpg",
+  ]);
   const featuredIndustries = industries.filter((i) => ["christmas-decorators-for-retail", "christmas-decorators-for-office-lobbies", "christmas-decorators-for-hotels", "christmas-decorators-for-car-dealerships", "christmas-decorator-for-malls", "christmas-decorators-for-hoas"].includes(i.slug));
 
   return (
@@ -67,7 +78,7 @@ export default function HomePage() {
 
       {/* Hero: photo + quote form */}
       <section className="relative isolate overflow-hidden surface-dark text-white">
-        <Image src="/images/hero-reel-poster.jpg" alt="Two-storey stone home with warm white roofline Christmas lights and a light-wrapped evergreen at night" fill priority sizes="100vw" placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDlLWzt8hridQF5KqclvatKbSYBZySYcBE3qQmTz6nNZdp9+tD/AJZt9KzcncpLQ//Z" className="object-cover" />
+        <Image src="/images/hero-reel-poster.jpg" alt="Brick home with warm white roofline Christmas lights and a lit tree in the bay window at dusk" fill priority sizes="100vw" placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDnbIJLAjERBzkfMD29hVjyLWRyiTYbGcEcfSsyD70f0Fa9z0X6Vnd3LSTP/9k=" className="object-cover" />
         <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" aria-hidden />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">

@@ -13,7 +13,7 @@ export function HeroVideo() {
   useEffect(() => {
     const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
     if (saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    setSrc(window.innerWidth >= 768 ? "/videos/hero-reel-1600.mp4" : "/videos/hero-reel-portrait.mp4");
+    setSrc(window.innerWidth >= 768 ? "/videos/hero-reel-1920.mp4" : "/videos/hero-reel-portrait.mp4");
   }, []);
 
   if (!src) return null;
