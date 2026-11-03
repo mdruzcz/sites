@@ -174,7 +174,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="panel-dark mt-16 p-8 md:p-10">
               <p className="eyebrow text-[var(--color-gold)]">Kit or installed</p>
               <h2 className="font-display mt-4 text-2xl md:text-3xl">Everything in this guide ships from London, Ontario.</h2>
-              <p className="mt-4 text-white/75">Complete 12V soffit track kits from $1,265, every part sold separately, and professional installation across Southwestern Ontario.</p>
+              <p className="mt-4 text-white/75">Complete 12V soffit track kits from $1,455, every part sold separately, and professional installation across Southwestern Ontario.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/diy-kits" className="btn-primary">Shop kits</Link>
                 <Link href="/installation" className="btn-ghost-light">Book an install</Link>

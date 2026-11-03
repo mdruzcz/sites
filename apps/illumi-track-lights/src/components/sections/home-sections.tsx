@@ -25,7 +25,7 @@ export function Hero() {
             <Link href="/installation" className="btn-ghost-light">Get it installed</Link>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-white/65">
-            <li>Kits from $1,265</li>
+            <li>Kits from $1,455</li>
             <li>5-year warranty</li>
             <li>IP68 · −40 °C tested</li>
             <li>All 12V · CSA Class 2</li>
@@ -309,7 +309,7 @@ export const HOME_FAQ: { q: string; a: string }[] = [
   { q: "Is it hard to install myself?", a: "A comfortable DIYer with a drill and a ladder does a bungalow front in an afternoon. Track screws up with the colour-matched screws, pucks press in, connectors twist together, and the power supply plugs into a GFCI outlet." },
   { q: "Do you install it?", a: "Yes, in Southwestern Ontario: London, Woodstock, Kitchener, Waterloo, Cambridge, Guelph, Stratford, Ingersoll and nearby. We measure on site for free. Elsewhere in Canada we connect you with partner installers who use the same hardware." },
   { q: "Are all your parts 12V?", a: "Yes. Every puck, controller, power supply and connector is 12V, so anything in the store works with anything else and nothing can be plugged into the wrong supply." },
-  { q: "How much does it cost?", a: "Kits run from $1,265 for 50 ft to $3,157 for 250 ft. Installed by our crew, the same lengths run from about $1,665 to $4,988 depending on the house. Both are a fraction of national installers at $25 to $40 per foot." },
+  { q: "How much does it cost?", a: "Kits run from $1,455 for 50 ft to $3,629 for 250 ft. Installed by our crew, the same lengths run from about $1,665 to $4,988 depending on the house. Both are a fraction of national installers at $25 to $40 per foot." },
   { q: "What about winter?", a: "Pucks and connectors are IP68 sealed and the hardware is tested to −40 °C. Aluminum track sheds snow and ice. Nothing comes down in January." }
 ];
 

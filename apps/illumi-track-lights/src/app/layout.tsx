@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Illumi Track Lights"
   },
   description:
-    "Permanent LED soffit track lighting for Canadian homes: 12V RGBW pucks in colour-matched aluminum track, WiFi app control, complete DIY kits from $1,265 and professional installation across Southwestern Ontario.",
+    "Permanent LED soffit track lighting for Canadian homes: 12V RGBW pucks in colour-matched aluminum track, WiFi app control, complete DIY kits from $1,455 and professional installation across Southwestern Ontario.",
   openGraph: {
     type: "website",
     siteName: BRAND.name,
