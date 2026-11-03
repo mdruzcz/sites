@@ -30,8 +30,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Contact us", href: "/contact-us" },
       { label: "Track your order", href: "/track-order" },
       { label: "Shipping & returns", href: "/shipping-returns" },
-      { label: "5-year warranty", href: "/warranty" },
-      { label: "Your account", href: "/account" }
+      { label: "5-year warranty", href: "/warranty" }
     ]
   },
   {

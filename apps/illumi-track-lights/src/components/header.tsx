@@ -51,12 +51,6 @@ export async function Header() {
         </div>
 
         <div className="ml-auto flex items-center gap-2">
-          <Link
-            href="/account"
-            className="hidden h-11 items-center rounded-full border border-white/15 bg-white/10 px-4 text-sm font-medium text-white transition hover:bg-white/20 lg:inline-flex"
-          >
-            Account
-          </Link>
           <CartBadge />
           <MobileNav storeId={storeId} />
         </div>
