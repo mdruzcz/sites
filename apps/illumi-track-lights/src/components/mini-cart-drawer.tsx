@@ -40,8 +40,6 @@ export function MiniCartDrawer() {
   if (!miniCartOpen) return null;
 
   const subtotal = cart?.subtotal_cad ?? 0;
-  const remaining = Math.max(0, 500 - subtotal);
-  const progress = Math.min(100, (subtotal / 500) * 100);
 
   function setQty(lineId: string, qty: number) {
     startTransition(async () => {
@@ -87,23 +85,9 @@ export function MiniCartDrawer() {
           </button>
         </div>
 
-        {/* Free shipping bar */}
-        <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3">
-          {remaining > 0 ? (
-            <p className="text-sm text-[var(--color-brand-dark)]">
-              <span className="font-semibold">Add {formatCad(remaining)}</span> for FREE Canada shipping
-            </p>
-          ) : (
-            <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-success)]">
-              ✓ You&rsquo;ve unlocked free shipping
-            </p>
-          )}
-          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white">
-            <div
-              className="h-full bg-[var(--color-brand)] transition-all"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+        {/* Shipping policy */}
+        <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3 text-sm text-[var(--color-brand-dark)]">
+          <span className="font-semibold">Free shipping</span> within 200 km of our Belmont, ON shop · $200 flat rate elsewhere in Canada
         </div>
 
         {/* Items */}

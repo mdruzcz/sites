@@ -69,20 +69,15 @@ export default async function CartPage() {
           <h2 className="text-base font-semibold">Order summary</h2>
           <dl className="mt-4 space-y-2 text-sm">
             <Row label="Subtotal" value={formatCad(cart.subtotal_cad)} />
-            <Row
-              label="Shipping"
-              value={cart.subtotal_cad >= 500 ? "FREE" : "Calculated at checkout"}
-            />
-            <Row label="Tax" value="Calculated at checkout" />
+            <Row label="Shipping" value="By postal code at checkout" />
+            <Row label="GST/HST" value="By province at checkout" />
           </dl>
           <div className="mt-4 border-t border-slate-200 pt-4 text-sm">
             <Row label="Estimated total" value={formatCad(cart.subtotal_cad)} bold />
           </div>
-          {cart.subtotal_cad < 500 && (
-            <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
-              Spend {formatCad(500 - cart.subtotal_cad)} more for FREE shipping in Canada.
-            </p>
-          )}
+          <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
+            Free shipping within 200 km of our Belmont, Ontario shop. $200 flat rate anywhere else in Canada.
+          </p>
           <CheckoutBar />
         </aside>
       </div>

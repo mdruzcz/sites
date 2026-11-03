@@ -54,7 +54,7 @@ export function TrustStrip() {
   const items = [
     ["Colour-matched track", "Black, white, wicker or brown, flush to the soffit"],
     ["12V RGBW pucks", "16M colours and a true warm white"],
-    ["Ships from London, ON", "Free across Canada over $500"],
+    ["Ships from London, ON", "Free shipping within 200 km"],
     ["Installed in SW Ontario", "Our crew, free on-site measurement"]
   ];
   return (
@@ -175,7 +175,7 @@ export function TwoWays() {
           <div className="glass p-7">
             <Photo name="install-track-mounting" ratio="aspect-[16/9]" rounded="rounded-xl" sizes="(max-width: 768px) 100vw, 540px" />
             <h3 className="font-display mt-6 text-2xl">DIY kit, shipped anywhere in Canada</h3>
-            <p className="mt-3 text-white/75">A drill, a ladder and a Saturday. The track screws to the soffit, the pucks snap in, the controller plugs into a GFCI outlet. From {formatCad(kits[0].price, 0)}, free shipping over $500.</p>
+            <p className="mt-3 text-white/75">A drill, a ladder and a Saturday. The track screws to the soffit, the pucks snap in, the controller plugs into a GFCI outlet. From {formatCad(kits[0].price, 0)}, free shipping within 200 km.</p>
             <Link href="/diy-kits" className="btn-gold mt-6">Pick a kit</Link>
           </div>
           <div className="glass p-7">

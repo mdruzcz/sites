@@ -26,7 +26,7 @@ const GROUPS: { title: string; items: { q: string; a: string }[] }[] = [
       { q: "How much track do I need?", a: "Add up every roofline, gable and soffit edge you want lit, including the gaps you will bridge with connectors, and round up to the next kit. A bungalow front is usually 50 to 75 ft; a two-storey front plus both sides is 150 to 200 ft. Email us a photo and we will size it, or book a free on-site measurement in Southwestern Ontario." },
       { q: "What is in a kit?", a: "Track, five-puck RGBW strands, a WLED WiFi controller, 12V power supplies, 1 to 20 ft extension connectors, T-connectors, power-injection parts on 100 ft and up, a data amplifier on larger kits, and colour-matched screws. The full bill of materials is on the kits page." },
       { q: "Can I buy parts on their own?", a: "Yes. Track, strands, controllers, power supplies, connectors and screws are all sold individually for custom runs, extensions and repairs." },
-      { q: "How long does shipping take?", a: "Orders leave London, Ontario within two business days. Ontario and Quebec usually see delivery in two to four days, the rest of Canada in four to eight. Orders over $500 ship free. We do not ship to the United States." }
+      { q: "How long does shipping take?", a: "Orders leave London, Ontario within two business days. Ontario and Quebec usually see delivery in two to four days, the rest of Canada in four to eight. Shipping is free within 200 km of our Belmont, Ontario shop and a $200 flat rate anywhere else in Canada. We do not ship to the United States." }
     ]
   },
   {

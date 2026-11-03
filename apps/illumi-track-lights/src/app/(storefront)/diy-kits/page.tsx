@@ -13,7 +13,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Soffit Track Lighting Kits, 50 to 250 ft | 12V RGBW",
   description:
-    "Complete soffit track lighting kits from $1,265: 12V RGBW pucks in aluminum track (black, white, wicker, brown), WiFi controller, power supplies and every connector. Ships from London, Ontario, free over $500.",
+    "Complete soffit track lighting kits from $1,265: 12V RGBW pucks in aluminum track (black, white, wicker, brown), WiFi controller, power supplies and every connector. Ships from London, Ontario, free within 200 km.",
   alternates: { canonical: `${SITE_URL}/diy-kits` },
   openGraph: { title: "Soffit Track Lighting Kits, 50 to 250 ft | Illumi Track Lights", description: "Six complete 12V kits with app control, from $1,265. Ships from London, Ontario.", url: `${SITE_URL}/diy-kits`, images: ["/images/photos/home-blue-night.webp"] }
 };
@@ -185,7 +185,7 @@ export default async function KitsPage() {
         <div className="shell section grid gap-8 md:grid-cols-3">
           {[
             ["5-year parts warranty", "We repair or replace any kit component that fails from a manufacturing defect within five years.", "/warranty", "Read the warranty"],
-            ["Free shipping over $500", "Every kit qualifies. Orders leave London, Ontario within two business days.", "/shipping-returns", "Shipping details"],
+            ["Free local shipping", "Free within 200 km of our Belmont, ON shop, $200 flat rate elsewhere in Canada. Orders leave within two business days.", "/shipping-returns", "Shipping details"],
             ["Prefer a pro?", "Our own crew installs across Southwestern Ontario, and partner installers cover the rest of Canada.", "/installation", "Professional installation"]
           ].map(([t, b, h, l]) => (
             <div key={t} className="card p-6">
