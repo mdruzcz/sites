@@ -59,13 +59,13 @@ export function MiniCartDrawer() {
   }
 
   return (
-    <>
-      <div className="drawer-overlay" onClick={closeMiniCart} aria-hidden />
+    <div className="drawer-overlay" onClick={closeMiniCart}>
       <aside
         role="dialog"
         aria-modal="true"
         aria-label="Shopping cart"
-        className="drawer-panel"
+        className="drawer-panel flex h-full flex-col"
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-[var(--color-border)] px-4 py-4">
           <div>
@@ -207,6 +207,6 @@ export function MiniCartDrawer() {
           </div>
         )}
       </aside>
-    </>
+    </div>
   );
 }

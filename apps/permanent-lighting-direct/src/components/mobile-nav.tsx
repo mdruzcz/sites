@@ -82,7 +82,7 @@ export function MobileNav({ storeId }: { storeId: string }) {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/diy-kits" onClick={() => setMenu(false)} className="btn-primary">Pick a kit</Link>
-              <Link href="/account" onClick={() => setMenu(false)} className="btn-ghost-light">Account</Link>
+              <Link href="/track-order" onClick={() => setMenu(false)} className="btn-ghost-light">Track order</Link>
             </div>
           </nav>
         </div>,

@@ -10,7 +10,8 @@ const redirects: { source: string; destination: string; permanent: boolean }[] =
   { source: "/professional-installer-program/", destination: "/professional-installer", permanent: true },
   { source: "/frequently-asked-questions-faq/", destination: "/faq", permanent: true },
   { source: "/installers/", destination: "/installers", permanent: true },
-  { source: "/my-account/", destination: "/account", permanent: false },
+  { source: "/my-account/", destination: "/track-order", permanent: false },
+  { source: "/account", destination: "/track-order", permanent: false },
   { source: "/product-category/permanent-lighting-kits", destination: "/diy-kits", permanent: true },
   { source: "/product-category/diy-kits", destination: "/diy-kits", permanent: true },
   // 2026-09 catalogue clean-up: everything is 12V, kits match Forever Lights sizes
