@@ -32,7 +32,7 @@
       },
       {
         "label": "Video clips",
-        "value": "5 below"
+        "value": "6 below"
       }
     ],
     "challenge": "A park pavilion is built for a band, not a light show. The brief was to turn it into the centrepiece of a winter evening: readable from across a snowy lawn, paced to music, with every prop facing the crowd the way a stage set does.",
@@ -76,6 +76,12 @@
       }
     ],
     "videos": [
+      {
+        "src": "/media/park-walkthrough.mp4",
+        "poster": "/images/show/poster-park-walkthrough.jpg",
+        "title": "Walking through the park on show night, past the light tunnel to the stage",
+        "length": "1:14"
+      },
       {
         "src": "/media/show-wide.mp4",
         "poster": "/images/show/poster-show-wide.jpg",
