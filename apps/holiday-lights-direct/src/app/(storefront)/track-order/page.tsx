@@ -29,11 +29,11 @@ export default function TrackOrderPage() {
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
           <div className="mx-auto max-w-2xl">
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-7 md:p-10">
+            <div className="rounded-[14px] border border-[var(--color-border)] bg-white p-7 md:p-10">
               <TrackOrderForm />
             </div>
 
-            <div className="mt-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-6 text-sm leading-relaxed text-[var(--color-text-soft)]">
+            <div className="mt-8 rounded-[14px] border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-6 text-sm leading-relaxed text-[var(--color-text-soft)]">
               Lost the confirmation email?{" "}
               <a
                 href="mailto:service@masterdecker.com"

@@ -147,6 +147,13 @@ export async function updateLineQuantity(lineId: string, quantity: number) {
   }
 }
 
+/** Empties a cart once its contents have been sent to us as a quote request. */
+export async function clearCart(cartId: string) {
+  const service = getServiceSupabase();
+  const { error } = await service.from("ecom_cart_items").delete().eq("cart_id", cartId);
+  if (error) throw new Error(error.message);
+}
+
 export async function removeLine(lineId: string) {
   const service = getServiceSupabase();
   await service.from("ecom_cart_items").delete().eq("id", lineId);

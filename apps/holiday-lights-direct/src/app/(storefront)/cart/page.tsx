@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getCart } from "@/lib/cart";
 import { CartLineEditor } from "@/components/cart-line-editor";
 import { CheckoutBar } from "@/components/checkout-bar";
-import { formatCad } from "@/lib/utils";
+import { formatCad, shipsFree, toFreeShipping } from "@/lib/utils";
 
 export const metadata = { title: "Your cart" };
 
@@ -12,28 +12,30 @@ export default async function CartPage() {
 
   if (!cart || cart.items.length === 0) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight">Your cart is empty</h1>
-        <p className="mt-2 text-slate-500">Browse the shop to add lights, clips, wires and connectors.</p>
-        <Link href="/shop" className="btn-primary mt-6 inline-block">
+      <div className="shell py-20 text-center md:py-28">
+        <h1 className="font-display text-[2rem] md:text-[2.6rem]">Your cart is empty</h1>
+        <p className="mt-2 text-[var(--color-muted)]">Browse the shop to add lights, clips, wires and connectors.</p>
+        <Link href="/shop" className="btn-primary mt-7">
           Start shopping
         </Link>
       </div>
     );
   }
 
+  const free = shipsFree(cart.subtotal_cad);
+
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <h1 className="text-3xl font-semibold tracking-tight">Your cart</h1>
+    <div className="shell py-10 md:py-14">
+      <h1 className="font-display text-[2rem] md:text-[2.6rem]">Your cart</h1>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-4">
           {cart.items.map((l) => (
             <article
               key={l.id}
-              className="flex gap-4 rounded-lg border border-slate-200 bg-white p-4"
+              className="surface flex gap-4 p-4"
             >
-              <div className="size-24 shrink-0 overflow-hidden rounded-md bg-slate-50">
+              <div className="size-24 shrink-0 overflow-hidden rounded-[10px] bg-[var(--color-bg-tint)]">
                 <Image
                   src={l.image_url || "/images/products/placeholder.webp"}
                   alt={l.product_name}
@@ -49,34 +51,36 @@ export default async function CartPage() {
                 >
                   {l.product_name}
                 </Link>
-                <p className="text-xs text-slate-500">{l.variant_name}</p>
-                <p className="text-xs text-slate-400 font-mono">{l.sku}</p>
+                <p className="text-xs text-[var(--color-muted)]">{l.variant_name}</p>
+                <p className="text-xs text-[var(--color-muted)] font-mono">{l.sku}</p>
                 <div className="mt-2 flex items-center gap-3">
                   <CartLineEditor lineId={l.id} initialQty={l.quantity} maxQty={l.on_hand} />
                 </div>
               </div>
               <div className="text-right">
                 <p className="text-sm font-semibold">{formatCad(l.unit_price_cad * l.quantity)}</p>
-                <p className="text-xs text-slate-500">{formatCad(l.unit_price_cad)} each</p>
+                <p className="text-xs text-[var(--color-muted)]">{formatCad(l.unit_price_cad)} each</p>
               </div>
             </article>
           ))}
         </div>
 
-        <aside className="rounded-lg border border-slate-200 bg-white p-5">
-          <h2 className="text-base font-semibold">Order summary</h2>
+        <aside className="surface self-start p-5 lg:sticky lg:top-36">
+          <h2 className="text-lg font-bold tracking-[-0.02em]">Order summary</h2>
           <dl className="mt-4 space-y-2 text-sm">
             <Row label="Product subtotal" value={formatCad(cart.subtotal_cad)} />
-            <Row label="Shipping" value="Quoted by email" />
-            <Row label="Tax" value="Included in your quote" />
+            <Row label="Shipping" value={free ? "Free" : "Quoted by email"} />
+            <Row label="Tax" value={free ? "Confirmed by email" : "Included in your quote"} />
           </dl>
-          <div className="mt-4 border-t border-slate-200 pt-4 text-sm">
+          <div className="mt-4 border-t border-[var(--color-border)] pt-4 text-sm">
             <Row label="Products" value={formatCad(cart.subtotal_cad)} bold />
           </div>
-          <p className="mt-3 rounded-md bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
-            No payment is taken online — we&rsquo;ll email your shipping cost, usually within one business day.
+          <p className="mt-3 rounded-[10px] bg-[var(--color-accent-soft)] p-2 text-xs text-[var(--color-accent)]">
+            {free
+              ? "This order ships free anywhere in Canada. No payment is taken online."
+              : `Add ${formatCad(toFreeShipping(cart.subtotal_cad))} more for free shipping. Under $500, we email your shipping cost before any payment.`}
           </p>
-          <CheckoutBar />
+          <CheckoutBar free={free} />
         </aside>
       </div>
     </div>
@@ -86,7 +90,7 @@ export default async function CartPage() {
 function Row({ label, value, bold }: { label: string; value: string; bold?: boolean }) {
   return (
     <div className="flex justify-between">
-      <dt className="text-slate-500">{label}</dt>
+      <dt className="text-[var(--color-muted)]">{label}</dt>
       <dd className={bold ? "font-semibold" : ""}>{value}</dd>
     </div>
   );

@@ -36,27 +36,27 @@ export function TrackOrderForm() {
 
   return (
     <>
-      <form onSubmit={submit} className="mt-6 grid gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-5">
+      <form onSubmit={submit} className="mt-6 grid gap-3 rounded-[14px] border border-[var(--color-border)] bg-white p-5">
         <label className="block">
-          <span className="text-xs font-medium text-slate-600">Order number</span>
+          <span className="text-xs font-medium text-[var(--color-text-soft)]">Order number</span>
           <input
             type="text"
             value={orderNumber}
             onChange={(e) => setOrderNumber(e.target.value)}
             required
             placeholder="HLD-10001"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
+            className="mt-1 w-full rounded-[10px] border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
           />
         </label>
         <label className="block">
-          <span className="text-xs font-medium text-slate-600">Email used at checkout</span>
+          <span className="text-xs font-medium text-[var(--color-text-soft)]">Email used at checkout</span>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             autoComplete="email"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
+            className="mt-1 w-full rounded-[10px] border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
           />
         </label>
         <button type="submit" disabled={pending} className="btn-primary mt-1 justify-center disabled:opacity-50">
@@ -65,14 +65,14 @@ export function TrackOrderForm() {
       </form>
 
       {result === "not_found" && (
-        <p className="mt-4 rounded-md bg-rose-50 px-4 py-3 text-sm text-rose-800">
+        <p className="mt-4 rounded-[10px] bg-rose-50 px-4 py-3 text-sm text-rose-800">
           We couldn&rsquo;t find an order matching that number and email. Double-check both and try again.
         </p>
       )}
 
       {result && result !== "not_found" && (
-        <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5">
-          <p className="eyebrow text-slate-500">{result.order_number}</p>
+        <div className="mt-4 rounded-[14px] border border-[var(--color-border)] bg-white p-5">
+          <p className="label">{result.order_number}</p>
           <h2 className="font-display mt-1 text-2xl">
             Status: <span className="text-[var(--color-brand)]">{result.status}</span>
           </h2>
@@ -105,8 +105,8 @@ export function TrackOrderForm() {
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between">
-      <dt className="text-slate-500">{label}</dt>
-      <dd className="font-medium text-slate-800">{value}</dd>
+      <dt className="text-[var(--color-muted)]">{label}</dt>
+      <dd className="font-medium text-[var(--color-text)]">{value}</dd>
     </div>
   );
 }

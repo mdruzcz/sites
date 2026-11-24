@@ -76,7 +76,7 @@ export default function FaqPage() {
               ))}
             </dl>
 
-            <div className="mt-14 rounded-3xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
+            <div className="mt-14 rounded-[14px] border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-9 text-center md:p-12">
               <h2 className="font-display text-2xl">Still have a question?</h2>
               <p className="mx-auto mt-4 max-w-md text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
                 We answer the phone and the inbox from London, Ontario. Ask us anything before you order.

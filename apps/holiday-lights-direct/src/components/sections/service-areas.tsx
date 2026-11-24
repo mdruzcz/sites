@@ -10,8 +10,8 @@ export function ServiceAreas() {
     <section className="bg-[var(--color-bg)]">
       <div className="shell section">
         <div className="reveal max-w-3xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Where we ship</p>
-          <h2 className="font-display h2-fluid mt-6">
+          <p className="eyebrow-plain">Where we ship</p>
+          <h2 className="font-display h2-fluid mt-3">
             Out of London, Ontario — arriving anywhere in Canada.
           </h2>
           <p className="lead mt-6 text-[var(--color-text-soft)]">

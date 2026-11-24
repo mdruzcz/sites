@@ -36,13 +36,13 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
   }
 
   return (
-    <aside className="space-y-8">
+    <aside className="surface space-y-8 self-start p-5 lg:sticky lg:top-36">
       <div>
-        <p className="eyebrow text-[var(--color-muted)]">Sort by</p>
+        <p className="label">Sort by</p>
         <select
           value={activeSort ?? "default"}
           onChange={(e) => update({ sort: e.target.value === "default" ? undefined : e.target.value })}
-          className="mt-3 min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-2.5 text-sm"
+          className="field mt-3"
         >
           <option value="default">Featured</option>
           <option value="name">Name (A–Z)</option>
@@ -52,7 +52,7 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
       </div>
 
       <div>
-        <p className="eyebrow text-[var(--color-muted)]">Category</p>
+        <p className="label">Category</p>
         <ul className="mt-3 space-y-1 text-sm">
           <li>
             <Filter
@@ -76,7 +76,7 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
       </div>
 
       <div>
-        <p className="eyebrow text-[var(--color-muted)]">Price (CAD)</p>
+        <p className="label">Price (CAD)</p>
         <ul className="mt-3 space-y-1 text-sm">
           <li>
             <Filter label="Any price" active={!activePrice} onClick={() => update({ price: undefined })} />
@@ -102,7 +102,7 @@ export function ShopFilters({ categories, activeCategory, activePrice, activeSor
         </Link>
       )}
 
-      <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-5 text-sm text-[var(--color-text-soft)]">
+      <div className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-gold-soft)] p-5 text-sm text-[var(--color-text-soft)]">
         <p className="font-semibold text-[var(--color-text)]">First order?</p>
         <p className="mt-1.5 leading-relaxed">
           Use code <span className="font-bold text-[var(--color-gold-text)]">FIRST10</span> at checkout for
@@ -128,7 +128,7 @@ function Filter({
     <button
       type="button"
       onClick={onClick}
-      className={`flex min-h-11 w-full items-center justify-between rounded-xl px-3 py-2.5 text-left transition ${
+      className={`flex min-h-11 w-full items-center justify-between rounded-[14px] px-3 py-2.5 text-left transition ${
         active
           ? "bg-[var(--color-gold-soft)] font-semibold text-[var(--color-gold-text)]"
           : "hover:bg-[var(--color-bg-warm)]"

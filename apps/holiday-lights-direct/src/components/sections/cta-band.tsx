@@ -18,11 +18,11 @@ export function CtaBand() {
         style={{ background: "radial-gradient(circle, rgba(224,177,85,0.28), rgba(224,177,85,0) 70%)" }}
       />
       <div className="shell section">
-        <div className="reveal overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-lg)]">
+        <div className="reveal overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-lg)]">
           <div className="grid items-stretch gap-0 md:grid-cols-[1.05fr_0.95fr]">
             <div className="flex flex-col justify-center p-9 sm:p-12 lg:p-14">
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Ready when you are</p>
-              <h2 className="font-display h2-fluid mt-6 leading-tight text-[var(--color-text)]">
+              <p className="eyebrow-plain">Ready when you are</p>
+              <h2 className="font-display h2-fluid mt-3 leading-tight text-[var(--color-text)]">
                 Stop putting lights up.
                 <span className="block text-[var(--color-gold-text)]">Start turning them on.</span>
               </h2>

@@ -63,12 +63,12 @@ export function ContactForm() {
   }
 
   const field =
-    "w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition focus:border-[var(--color-gold)] focus:ring-2 focus:ring-[var(--color-gold)]/25";
+    "w-full rounded-[14px] border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition focus:border-[var(--color-gold)] focus:ring-2 focus:ring-[var(--color-gold)]/25";
   const label = "mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]";
 
   if (state === "ok") {
     return (
-      <div ref={doneRef} className="rounded-2xl border border-[var(--color-green)]/35 bg-[var(--color-green-soft)] p-8 text-center">
+      <div ref={doneRef} className="rounded-[14px] border border-[var(--color-green)]/35 bg-[var(--color-green-soft)] p-8 text-center">
         <div aria-hidden className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-green)] text-white">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m5 12 5 5 9-10" /></svg>
         </div>
@@ -81,7 +81,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-sm)] sm:p-8">
+    <form onSubmit={onSubmit} className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-sm)] sm:p-8">
       <div className="hidden" aria-hidden>
         <label htmlFor="hld-website">Website</label>
         <input id="hld-website" name="website" tabIndex={-1} autoComplete="off" />
@@ -129,14 +129,14 @@ export function ContactForm() {
       )}
 
       {captchaFailed && !token && (
-        <p className="mt-4 rounded-xl bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]" role="alert">
+        <p className="mt-4 rounded-[14px] bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]" role="alert">
           The spam check could not load, usually a browser extension. Reload the page, or email{" "}
           <a className="font-semibold underline" href="mailto:service@masterdecker.com">service@masterdecker.com</a> and we will pick it up.
         </p>
       )}
 
       {state === "err" && (
-        <p className="mt-4 rounded-xl bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]" role="alert">
+        <p className="mt-4 rounded-[14px] bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]" role="alert">
           {error}
         </p>
       )}

@@ -40,8 +40,8 @@ export function UseCases() {
     <section className="bg-[var(--color-bg)]">
       <div className="shell section">
         <div className="reveal max-w-2xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Where they go</p>
-          <h2 className="font-display h2-fluid mt-6">One system, every occasion.</h2>
+          <p className="eyebrow-plain">Where they go</p>
+          <h2 className="font-display h2-fluid mt-3">One system, every occasion.</h2>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-10">

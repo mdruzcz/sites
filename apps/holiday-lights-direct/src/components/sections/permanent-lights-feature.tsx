@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Photo } from "@/components/photo";
 import { type CatalogProduct, priceRange } from "@/lib/catalog";
-import { formatCad } from "@/lib/utils";
+import { KitSizeGrid } from "@/components/kit-coverage";
 
 const FEATURES = [
   "Smart phone-app control",
@@ -18,8 +18,8 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
       <div className="shell section">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
           <div className="reveal">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Flagship — Permanent Lights</p>
-            <h2 className="font-display h2-fluid mt-6">
+            <p className="eyebrow-plain">Flagship — Permanent Lights</p>
+            <h2 className="font-display h2-fluid mt-3">
               The lights pros install,
               <span className="block text-[var(--color-gold-text)]">sold as a complete kit.</span>
             </h2>
@@ -53,9 +53,9 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
 
           {/* Day / night pair — the clearest way to explain the product */}
           <div className="grid gap-5 sm:grid-cols-2">
-            <figure className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)]">
+            <figure className="reveal-sm overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)]">
               <Photo
-                name="track-daytime-discreet"
+                name="farmhouse-daytime-track"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 300px"
               />
@@ -66,54 +66,44 @@ export function PermanentLightsFeature({ housingPackages }: { housingPackages: C
                 </p>
               </figcaption>
             </figure>
-            <figure className="reveal-sm overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)] sm:mt-10">
+            <figure className="reveal-sm overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white shadow-[var(--shadow-lg)] sm:mt-10">
               <Photo
-                name="track-night-glow"
+                name="farmhouse-gable-dusk"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 300px"
               />
               <figcaption className="px-5 py-4">
-                <p className="eyebrow text-[var(--color-muted)]">By night</p>
+                <p className="eyebrow text-[var(--color-muted)]">Same home at dusk</p>
                 <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-text-soft)]">
-                  One tap and the whole roofline lights up.
+                  One tap and every gable and eave lights up.
                 </p>
               </figcaption>
             </figure>
           </div>
         </div>
 
-        {/* Kit sizes */}
+        {/* Kit sizes: every kit on the home it covers */}
         {housingPackages.length > 0 && (
           <div className="mt-20 border-t border-[var(--color-border-strong)] pt-14">
             <div className="flex flex-wrap items-end justify-between gap-5">
-              <h3 className="font-display h3-fluid">Popular kit sizes</h3>
-              <Link
-                href="/permanent-lights"
-                className="text-sm font-semibold text-[var(--color-gold-text)] hover:underline"
-              >
-                Compare every size
+              <div>
+                <h3 className="font-display h3-fluid">Which kit fits your home?</h3>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-[var(--color-text-soft)]">
+                  Six sizes, each drawn on the kind of home it typically covers.
+                </p>
+              </div>
+              <Link href="/permanent-lights#build" className="text-sm font-semibold text-[var(--color-gold-text)] hover:underline">
+                Open the kit builder
               </Link>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {housingPackages.map((p) => {
-                const range = priceRange(p);
-                const footage = p.slug.replace(/.*?-(\d+).*/, "$1");
-                return (
-                  <Link key={p.id} href={`/product/${p.slug}`} className="card group reveal-sm p-6">
-                    <p className="font-display text-4xl text-[var(--color-gold-text)]">
-                      {footage}
-                      <span className="ml-1 align-top text-base">ft</span>
-                    </p>
-                    <p className="mt-3 text-sm font-semibold leading-snug">{p.name}</p>
-                    <p className="mt-2 text-sm text-[var(--color-muted)]">
-                      {range ? `from ${formatCad(range.min)}` : "—"}
-                    </p>
-                    <p className="mt-4 text-xs font-semibold text-[var(--color-gold-text)] opacity-0 transition group-hover:opacity-100">
-                      View kit →
-                    </p>
-                  </Link>
-                );
-              })}
+            <div className="mt-8">
+              <KitSizeGrid
+                kits={housingPackages.map((p) => ({
+                  footage: Number(/-(\d+)/.exec(p.slug)?.[1] ?? 0),
+                  slug: p.slug,
+                  priceFrom: priceRange(p)?.min ?? null
+                }))}
+              />
             </div>
           </div>
         )}

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { getServerSupabase } from "@/lib/supabase/server";
-import { getStore, primaryImage, type CatalogProduct } from "@/lib/catalog";
-import { PermanentLightsConfigurator } from "@/components/permanent-lights-configurator";
+import { getStore, type CatalogProduct } from "@/lib/catalog";
+import { PermanentLightsConfigurator, type ConfigOption } from "@/components/permanent-lights-configurator";
+import { KitSizeGrid } from "@/components/kit-coverage";
+import { PageHero } from "@/components/page-hero";
 import { Photo } from "@/components/photo";
 import type { PhotoKey } from "@/lib/photos";
 import { SITE_URL } from "@/lib/utils";
@@ -18,7 +20,7 @@ export const metadata = {
     description:
       "Complete 12V permanent LED lighting kits from 50 to 250 ft, shipped from London, Ontario.",
     url: `${SITE_URL}/permanent-lights`,
-    images: [{ url: "/images/photos/track-night-glow.webp", width: 1600, height: 1067 }]
+    images: [{ url: "/images/photos/stone-bungalow-night.webp", width: 1600, height: 900 }]
   }
 };
 
@@ -41,6 +43,21 @@ export default async function PermanentLightsPage() {
     return num(a.slug) - num(b.slug);
   });
 
+  const options: ConfigOption[] = packages.map((p) => {
+    const active = (p.ecom_variants ?? []).filter((v) => v.is_active);
+    const coloured = active.filter((v) => v.attribute_type?.toLowerCase() === "color" && v.attribute_value);
+    return {
+      slug: p.slug,
+      name: p.name,
+      footage: parseInt(p.slug.replace(/.*-(\d+).*/, "$1"), 10) || 0,
+      variants: (coloured.length ? coloured : active).map((v) => ({
+        id: v.id,
+        color: v.attribute_type?.toLowerCase() === "color" ? (v.attribute_value ?? "") : "",
+        price: Number(v.price_cad)
+      }))
+    };
+  });
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -58,8 +75,9 @@ export default async function PermanentLightsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <Hero />
+      <KitSizes options={options} />
+      <ConfiguratorSection options={options} />
       <ColourStrip />
-      <ConfiguratorSection packages={packages} />
       <WhatsIncluded />
       <SmartControl />
       <Specs />
@@ -71,33 +89,58 @@ export default async function PermanentLightsPage() {
 
 function Hero() {
   return (
-    <section className="relative isolate">
-      <Photo
-        name="track-night-glow"
-        alt="Roofline of a home glowing with warm-white permanent LED track lighting at night"
-        ratio="aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/8]"
-        sizes="100vw"
-        priority
-        scrim="strong"
-      />
-      <div className="absolute inset-0 flex items-end">
-        <div className="shell pb-12 md:pb-20">
-          <p className="eyebrow text-[var(--color-gold-bright)]">Flagship — Permanent Lights</p>
-          <h1 className="font-display mt-4 max-w-3xl text-[2.3rem] leading-tight text-white md:text-[3.75rem]">
-            Soffit-mounted LED lighting,
-            <span className="block text-[var(--color-gold-bright)]">installed once.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-white/80">
-            Discreet aluminum tracks, 12V RGBW LED pucks, smart-app control and the full hardware bundle,
-            delivered as one complete kit. Six sizes: 50, 75, 100, 150, 200 and 250 linear feet, in black,
-            white, wicker or brown track.
+    <PageHero
+      size="lg"
+      photo="stone-bungalow-night"
+      position="center 40%"
+      crumb="Permanent lights"
+      eyebrow="Permanent LED lighting kits"
+      title="Light the roofline once. Change it from your phone."
+      intro="Discreet aluminum track, 12V RGBW pucks, a WiFi controller and every connector, delivered as one complete kit. Six sizes from 50 to 250 feet, in black, white, wicker or brown track."
+    >
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href="#build" className="btn-hero group sm:min-w-[18rem]">
+          Build your kit
+          <svg className="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+        <a href="#sizes" className="btn-ghost-light min-h-[54px]">
+          See what each size covers
+        </a>
+      </div>
+      <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] font-medium text-white/85">
+        {["5-year warranty", "CSA Class 2", "IP68 weatherproof", "Tested to \u221240\u00b0C"].map((p) => (
+          <li key={p} className="flex items-center gap-2">
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#ffd24a]" />
+            {p}
+          </li>
+        ))}
+      </ul>
+    </PageHero>
+  );
+}
+
+function KitSizes({ options }: { options: ConfigOption[] }) {
+  return (
+    <section id="sizes" className="bg-[var(--color-bg)]">
+      <div className="shell section">
+        <div className="max-w-3xl">
+          <p className="eyebrow-plain">Which size fits</p>
+          <h2 className="section-title mt-3">Six kits, drawn against the home each one covers.</h2>
+          <p className="mt-5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+            Each kit is drawn on the kind of home it typically covers, from a bungalow front to a wide
+            estate. Use them to find your ballpark, then measure your own roofline before you order.
           </p>
-          <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.14em] text-white/70">
-            <li>5-year warranty</li>
-            <li>CSA Class 2</li>
-            <li>IP68 weatherproof</li>
-            <li>−40°C tested</li>
-          </ul>
+        </div>
+        <div className="mt-10">
+          <KitSizeGrid
+            kits={options.map((o) => ({
+              footage: o.footage,
+              slug: o.slug,
+              priceFrom: o.variants.length ? Math.min(...o.variants.map((v) => v.price)) : null
+            }))}
+          />
         </div>
       </div>
     </section>
@@ -118,11 +161,11 @@ function ColourStrip() {
     <section className="bg-[var(--color-ink-deep)]">
       <div className="shell py-16 md:py-20">
         <p className="text-center text-sm text-white/60">
-          One install. Every scene below is the same set of lights, changed from the app.
+          One install, every occasion. Each scene below is a colour you can set from the app.
         </p>
         <div className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {COLOUR_SCENES.map((s) => (
-            <figure key={s.photo} className="group relative isolate overflow-hidden rounded-xl">
+            <figure key={s.photo} className="group relative isolate overflow-hidden rounded-[14px]">
               <Photo
                 name={s.photo}
                 ratio="aspect-square"
@@ -141,14 +184,14 @@ function ColourStrip() {
   );
 }
 
-function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
+function ConfiguratorSection({ options }: { options: ConfigOption[] }) {
   return (
-    <section className="bg-[var(--color-surface)]">
+    <section id="build" className="bg-[var(--color-bg-warm)]">
       <div className="shell section">
         <div className="max-w-3xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Step 1 — Pick your kit</p>
-          <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Match your home perimeter.</h2>
-          <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
+          <p className="eyebrow-plain">Build your kit</p>
+          <h2 className="section-title mt-3">Pick a length and a track colour.</h2>
+          <p className="mt-5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
             Measure the rooflines, soffits or fascia you want lit, then pick the kit that covers it. Every
             kit ships with a little more track than its nominal length for corners and offcuts, and includes
             the lights, aluminum track, WiFi controller, power supplies, every connector and colour-matched
@@ -156,33 +199,8 @@ function ConfiguratorSection({ packages }: { packages: CatalogProduct[] }) {
           </p>
         </div>
 
-        <div className="mt-12">
-          <PermanentLightsConfigurator
-            options={packages.map((p) => {
-              const variants = (p.ecom_variants ?? []).filter((v) => v.is_active);
-              const minPrice = variants.length ? Math.min(...variants.map((v) => Number(v.price_cad))) : 0;
-              const colors = Array.from(
-                new Set(
-                  variants
-                    .filter((v) => v.attribute_type?.toLowerCase() === "color")
-                    .map((v) => v.attribute_value ?? "")
-                    .filter(Boolean)
-                )
-              );
-              return {
-                slug: p.slug,
-                name: p.name,
-                footage: parseInt(p.slug.replace(/.*-(\d+).*/, "$1"), 10) || 0,
-                price: minPrice,
-                colors,
-                image: primaryImage(p)?.public_url ?? null,
-                firstVariantId:
-                  variants.find((v) => v.attribute_value?.toLowerCase() === "white")?.id ??
-                  variants[0]?.id ??
-                  null
-              };
-            })}
-          />
+        <div className="mt-10">
+          <PermanentLightsConfigurator options={options} />
         </div>
       </div>
     </section>
@@ -208,8 +226,8 @@ function WhatsIncluded() {
       <div className="shell section">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
           <div>
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Step 2 — In the box</p>
-            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">
+            <p className="eyebrow-plain">In the box</p>
+            <h2 className="section-title mt-3">
               Everything you need, one delivery.
             </h2>
             <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
@@ -220,18 +238,18 @@ function WhatsIncluded() {
                 name="detail-led-pucks"
                 ratio="aspect-[3/2]"
                 sizes="(max-width: 1024px) 50vw, 420px"
-                rounded="rounded-2xl"
+                rounded="rounded-[14px]"
               />
               <Photo
                 name="detail-track-mounting"
                 ratio="aspect-[3/2]"
                 sizes="(max-width: 1024px) 50vw, 420px"
-                rounded="rounded-2xl"
+                rounded="rounded-[14px]"
               />
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
+          <div className="overflow-hidden rounded-[14px] border border-[var(--color-border)] bg-white">
             <ul className="divide-y divide-[var(--color-border)]">
               {BOX_CONTENTS.map(([part, qty, note]) => (
                 <li key={part} className="px-6 py-4">
@@ -258,8 +276,8 @@ function SmartControl() {
       <div className="shell section">
         <div className="grid gap-14 md:grid-cols-2 md:items-center md:gap-20">
           <div>
-            <p className="eyebrow text-[var(--color-gold-bright)]">Step 3 — Smart control</p>
-            <h2 className="font-display mt-5 text-[2.1rem] md:text-[3rem]">
+            <p className="eyebrow text-[var(--color-gold-bright)]">Smart control</p>
+            <h2 className="section-title mt-3">
               Every holiday, every colour, from your phone.
             </h2>
             <p className="mt-6 text-[1.0625rem] leading-relaxed text-white/75">
@@ -288,14 +306,14 @@ function SmartControl() {
               name="home-blue-app-control"
               ratio="aspect-[4/3]"
               sizes="(max-width: 768px) 100vw, 480px"
-              rounded="rounded-3xl"
+              rounded="rounded-[14px]"
             />
-            <div className="rounded-3xl border border-white/12 bg-white/5 p-8 text-center backdrop-blur">
+            <div className="rounded-[14px] border border-white/12 bg-white/5 p-8 text-center backdrop-blur">
               <p className="font-display text-5xl text-[var(--color-gold-bright)] md:text-6xl">2850K</p>
               <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/60">to 6500K</p>
               <div className="mt-6 grid grid-cols-6 gap-2">
                 {["#fff4d6", "#fffadc", "#ffffee", "#f3faff", "#e6f1ff", "#d8ebff"].map((c) => (
-                  <div key={c} className="h-7 rounded-md" style={{ background: c }} />
+                  <div key={c} className="h-7 rounded-[10px]" style={{ background: c }} />
                 ))}
               </div>
               <p className="mt-5 text-xs text-white/55">
@@ -322,8 +340,8 @@ function Specs() {
     <section className="bg-[var(--color-surface)]">
       <div className="shell section">
         <div className="max-w-2xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">The specs</p>
-          <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">Built for serious lighting.</h2>
+          <p className="eyebrow-plain">The specs</p>
+          <h2 className="section-title mt-3">Built for serious lighting.</h2>
         </div>
         <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-3 lg:grid-cols-6">
           {specs.map((s) => (
@@ -349,8 +367,8 @@ function Warranty() {
       <div className="shell section">
         <div className="grid gap-14 md:grid-cols-2 md:items-center md:gap-20">
           <div>
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Backed by warranty</p>
-            <h2 className="font-display mt-6 text-[2.1rem] md:text-[3rem]">5-year parts warranty.</h2>
+            <p className="eyebrow-plain">Backed by warranty</p>
+            <h2 className="section-title mt-3">5-year parts warranty.</h2>
             <p className="mt-6 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
               We repair or replace any kit component that fails from a manufacturing defect within five years
               of purchase. The warranty excludes damage from improper installation, electrical surges and
@@ -360,7 +378,7 @@ function Warranty() {
               See the full warranty
             </Link>
           </div>
-          <div className="rounded-3xl border border-[var(--color-border)] bg-white p-10 text-center">
+          <div className="rounded-[14px] border border-[var(--color-border)] bg-white p-10 text-center">
             <p className="font-display text-7xl leading-none text-[var(--color-gold-text)] md:text-8xl">5</p>
             <p className="eyebrow mt-4 text-[var(--color-muted)]">Years parts coverage</p>
             <div className="mx-auto mt-8 h-px w-full bg-[var(--color-border)]" />
@@ -379,8 +397,8 @@ function InstallerCTA() {
   return (
     <section className="relative isolate">
       <Photo
-        name="home-install-1"
-        alt="Completed permanent LED lighting install on a two-storey home"
+        name="commercial-gable-wreaths"
+        alt="Shingled commercial gable at night outlined in warm white LED lights with two lit wreaths"
         ratio="aspect-[4/3] sm:aspect-[16/7] md:aspect-[21/7]"
         sizes="100vw"
         scrim="strong"

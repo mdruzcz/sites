@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InstallerApplicationForm } from "@/components/installer-application-form";
 import { Photo } from "@/components/photo";
+import { PageHero } from "@/components/page-hero";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
@@ -34,30 +35,28 @@ const PILLARS = [
 export default function MunicipalitiesPage() {
   return (
     <div>
-      {/* Photo hero with a scrim — this heading used to sit on an undefined
-          background colour, which rendered white text on a white page. */}
-      <section className="relative isolate">
-        <Photo
-          name="home-wide-elevation"
-          alt="Wide building elevation lit end to end with permanent LED track lighting at night"
-          ratio="aspect-[16/10] md:aspect-[21/7]"
-          sizes="100vw"
-          priority
-          scrim="strong"
-        />
-        <div className="absolute inset-0 flex items-end">
-          <div className="shell pb-12 md:pb-16">
-            <p className="eyebrow text-[var(--color-gold-bright)]">Public sector</p>
-            <h1 className="font-display mt-4 max-w-3xl text-[2.2rem] leading-tight text-white md:text-[3.5rem]">
-              For Ontario municipalities &amp; BIAs
-            </h1>
-            <p className="mt-5 max-w-2xl text-[1.0625rem] leading-relaxed text-white/80">
-              Net-30 invoicing, tax-exempt pricing, RFP-friendly quotes and Canadian-stocked permanent LED
-              lighting for parks departments, downtown BIAs and public works.
-            </p>
-          </div>
+      <PageHero
+        size="lg"
+        photo="commercial-gable-install"
+        photoAlt="Commercial building at night with lit wreaths, wrapped posts and roofline lighting"
+        position="center 40%"
+        crumb="Municipalities"
+        eyebrow="Public sector"
+        title={<>For Ontario municipalities &amp; BIAs</>}
+        intro="Net-30 invoicing, tax-exempt pricing, RFP-friendly quotes and Canadian-stocked permanent LED lighting for parks departments, downtown BIAs and public works."
+      >
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="#register" className="btn-hero group sm:min-w-[18rem]">
+            Register your organization
+            <svg className="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <Link href="/contact-us" className="btn-ghost-light min-h-[54px]">
+            Ask for a quote
+          </Link>
         </div>
-      </section>
+      </PageHero>
 
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
@@ -72,29 +71,29 @@ export default function MunicipalitiesPage() {
 
           <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-7">
             <Photo
-              name="install-banner"
-              alt="Permanent LED lighting running the full width of a building facade"
+              name="commercial-gable-wreaths"
+              alt="Shingled commercial gable at night outlined in warm white LED lights with two lit wreaths"
               ratio="aspect-[3/2]"
               sizes="(max-width: 768px) 100vw, 560px"
-              rounded="rounded-3xl"
+              rounded="rounded-[14px]"
             />
             <Photo
               name="home-side-elevation"
               alt="Long building elevation lit end to end with permanent LED track lighting"
               ratio="aspect-[3/2]"
               sizes="(max-width: 768px) 100vw, 560px"
-              rounded="rounded-3xl"
+              rounded="rounded-[14px]"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-[var(--color-bg-warm)]">
+      <section id="register" className="bg-[var(--color-bg-warm)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
             <div>
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Get set up</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.75rem]">
+              <p className="eyebrow-plain">Get set up</p>
+              <h2 className="font-display mt-3 text-[2rem] md:text-[2.75rem]">
                 Register your municipality.
               </h2>
               <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
@@ -113,7 +112,7 @@ export default function MunicipalitiesPage() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-7 md:p-10">
+            <div className="rounded-[14px] border border-[var(--color-border)] bg-white p-7 md:p-10">
               <InstallerApplicationForm tierSlug="municipality" />
             </div>
           </div>

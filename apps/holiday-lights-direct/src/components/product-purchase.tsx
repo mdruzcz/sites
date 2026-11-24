@@ -4,7 +4,7 @@ import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { addToCartAction } from "@/lib/actions/cart";
 import { useUI } from "@/components/ui-context";
-import { formatCad } from "@/lib/utils";
+import { formatCad, shipsFree } from "@/lib/utils";
 
 interface Variant {
   id: string;
@@ -32,14 +32,6 @@ function writeWishlist(list: string[]) {
   } catch {}
 }
 
-// Small, honest review counts: 2 or 3 verified reviews per product, derived
-// deterministically from the product slug so the number is stable between renders.
-function reviewSummary(key: string): { count: number; rating: number } {
-  let h = 0;
-  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
-  return { count: 2 + (h % 2), rating: h % 3 === 0 ? 4.5 : 5 };
-}
-
 interface Props {
   productName: string;
   productSlug?: string;
@@ -58,7 +50,6 @@ export function ProductPurchase({ productSlug, variants }: Props) {
   const outOfStock = !!variant && variant.on_hand <= 0;
   const lowStock = !!variant && variant.on_hand > 0 && variant.on_hand < 10;
   const wishKey = productSlug ?? variant?.id ?? "";
-  const review = reviewSummary(productSlug ?? variants[0]?.sku ?? "x");
 
   useEffect(() => {
     if (!wishKey) return;
@@ -90,17 +81,17 @@ export function ProductPurchase({ productSlug, variants }: Props) {
   }
 
   return (
-    <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-white p-5">
+    <div className="surface mt-6 p-5 md:p-6">
       {variants.length > 1 && (
-        <div className="mb-4">
-          <label className="eyebrow text-slate-500" htmlFor="variant-picker">
-            Choose option
+        <div className="mb-5">
+          <label className="label" htmlFor="variant-picker">
+            Choose an option
           </label>
           <select
             id="variant-picker"
             value={variantId}
             onChange={(e) => setVariantId(e.target.value)}
-            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+            className="field mt-2"
           >
             {variants.map((v) => (
               <option key={v.id} value={v.id}>
@@ -113,29 +104,33 @@ export function ProductPurchase({ productSlug, variants }: Props) {
       )}
 
       {lowStock && (
-        <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-[var(--color-gold-soft)] px-3 py-1 text-xs font-semibold text-[var(--color-brand-dark)]">
-          <span aria-hidden>🔥</span> Only {variant?.on_hand} left in stock
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-[var(--color-gold-soft)] px-3 py-1.5 text-xs font-bold text-[var(--color-gold-text)]">
+          <span aria-hidden className="size-1.5 rounded-full bg-[var(--color-gold)]" />
+          Only {variant?.on_hand} left in stock
         </p>
       )}
 
       <div className="flex flex-wrap items-end gap-3">
         <div>
-          <label className="eyebrow text-slate-500" htmlFor="qty-input">Qty</label>
+          <label className="label" htmlFor="qty-input">
+            Qty
+          </label>
           <input
             id="qty-input"
             type="number"
+            inputMode="numeric"
             min={1}
             value={qty}
             onChange={(e) => setQty(Math.max(1, Number(e.target.value)))}
             aria-label="Quantity"
-            className="mt-2 w-20 rounded-md border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
+            className="field mt-2 w-20 text-center"
           />
         </div>
         <button
           type="button"
           onClick={add}
           disabled={pending || outOfStock}
-          className="btn-primary inline-flex h-11 flex-1 justify-center disabled:opacity-50"
+          className="btn-primary min-w-[10rem] flex-1 disabled:opacity-50"
           aria-label={outOfStock ? "Out of stock" : "Add to cart"}
         >
           {pending ? "Adding…" : outOfStock ? "Out of stock" : "Add to cart"}
@@ -145,13 +140,16 @@ export function ProductPurchase({ productSlug, variants }: Props) {
           onClick={toggleWishlist}
           aria-label={wishlisted ? "Remove from wishlist" : "Save to wishlist"}
           aria-pressed={wishlisted}
-          className={`grid size-11 place-items-center rounded-md border transition ${
-            wishlisted
-              ? "border-[var(--color-brand)] bg-[var(--color-brand-soft)] text-[var(--color-brand)]"
-              : "border-[var(--color-border)] bg-white text-slate-600 hover:border-[var(--color-brand)]"
-          }`}
+          className={`round-btn ${wishlisted ? "border-[var(--color-gold)] bg-[var(--color-gold-soft)] text-[var(--color-gold-text)]" : ""}`}
         >
-          <span aria-hidden className="text-lg">{wishlisted ? "♥" : "♡"}</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill={wishlisted ? "currentColor" : "none"} aria-hidden>
+            <path
+              d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
       </div>
 
@@ -159,28 +157,27 @@ export function ProductPurchase({ productSlug, variants }: Props) {
         type="button"
         onClick={buyNow}
         disabled={pending || outOfStock}
-        className="btn-green mt-3 w-full justify-center disabled:opacity-50"
+        className="btn-green group mt-3 w-full disabled:opacity-50"
       >
-        Request a shipping quote &rarr;
+        {variant && shipsFree(variant.price_cad * qty) ? "Order now, ships free" : "Request a shipping quote"}
+        <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </button>
 
       {variant && (
-        <p className="mt-3 text-xs text-slate-500">
-          SKU <span className="font-mono">{variant.sku}</span>
+        <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[var(--color-muted)]">
+          <span>
+            SKU <span className="font-mono">{variant.sku}</span>
+          </span>
           {!outOfStock && !lowStock && (
-            <span className="ml-3 text-[var(--color-success)]">✓ In stock</span>
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-green)]">
+              <span aria-hidden className="size-1.5 rounded-full bg-[var(--color-green-bright)]" />
+              In stock
+            </span>
           )}
         </p>
       )}
-
-      <div className="mt-4 flex items-center gap-3 border-t border-[var(--color-border)] pt-3">
-        <span aria-label={`${review.rating} of 5 stars`} className="text-[var(--color-gold)] tracking-wide">
-          ★★★★<span className={review.rating === 5 ? "" : "text-[var(--color-gold-dark)]"}>★</span>
-        </span>
-        <span className="text-xs text-slate-600">
-          {review.rating.toFixed(1)} from {review.count} verified reviews
-        </span>
-      </div>
     </div>
   );
 }

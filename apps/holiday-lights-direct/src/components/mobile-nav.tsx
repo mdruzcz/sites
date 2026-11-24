@@ -51,7 +51,7 @@ export function MobileNav() {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="grid size-11 place-items-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] transition hover:border-[var(--color-gold)] md:hidden"
+        className="hdr-chip inline-flex w-11 px-0 md:hidden"
       >
         <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden>
           <path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
@@ -91,7 +91,7 @@ export function MobileNav() {
                     <Link
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-xl px-4 py-3.5 transition hover:bg-[var(--color-gold-soft)]"
+                      className="block rounded-[14px] px-4 py-3.5 transition hover:bg-[var(--color-gold-soft)]"
                     >
                       <span className="text-[15px] font-semibold">{l.label}</span>
                       {l.note && <span className="mt-0.5 block text-xs text-[var(--color-muted)]">{l.note}</span>}

@@ -35,9 +35,11 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   const [province, setProvince] = useState("ON");
   const [postal, setPostal] = useState("");
   const [notes, setNotes] = useState("");
+  const [discount, setDiscount] = useState("");
   const turnstileToken = useRef<string | null>(null);
 
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const free = cart.subtotal_cad >= 500;
 
   function sendInquiry() {
     setError(null);
@@ -52,7 +54,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           province,
           postal,
           notes: notes || null,
-          discount_code: null,
+          discount_code: discount.trim() || null,
           turnstile_token: turnstileToken.current
         });
         if (!res.ok) {
@@ -69,19 +71,21 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   return (
     <div className="space-y-6">
       {/* How it works */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-brand-soft)] p-5">
+      <section className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-brand-soft)] p-5">
         <h2 className="font-display text-xl text-[var(--color-brand-dark)]">
           How ordering works — no payment online
         </h2>
-        <p className="mt-2 text-sm text-slate-700">
+        <p className="mt-2 text-sm text-[var(--color-text)]">
           Send us your order and delivery address below. We&rsquo;ll reply by email,{" "}
-          <strong>usually within one business day</strong>, with your shipping cost and delivery
-          timeline. Once you approve the quote, we arrange payment and ship your lights.
+          <strong>usually within one business day</strong>,{" "}
+          {free
+            ? "to confirm your order and delivery timeline. Shipping is free on this order. Once you approve, we arrange payment and ship your lights."
+            : "with your shipping cost and delivery timeline. Once you approve the quote, we arrange payment and ship your lights."}
         </p>
       </section>
 
       {/* Contact */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
+      <section className="rounded-[14px] border border-[var(--color-border)] bg-white p-5">
         <h2 className="font-display text-xl">1 · Contact</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           <Input label="Full name" name="name" autoComplete="name" required value={name} onChange={(e) => setName(e.target.value)} />
@@ -91,11 +95,12 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
       </section>
 
       {/* Delivery address */}
-      <section className="rounded-xl border border-[var(--color-border)] bg-white p-5">
+      <section className="rounded-[14px] border border-[var(--color-border)] bg-white p-5">
         <h2 className="font-display text-xl">2 · Delivery address</h2>
-        <p className="mt-1 text-xs text-slate-500">
-          Shipping is quoted per order from London, ON — your full address lets us give you an
-          accurate cost and timeline.
+        <p className="mt-1 text-xs text-[var(--color-muted)]">
+          {free
+            ? "Your order ships free from London, Ontario. Your full address lets us confirm the delivery timeline."
+            : "Orders under $500 are quoted from London, Ontario. Your full address lets us give you an accurate cost and timeline."}
         </p>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           <Input
@@ -109,12 +114,12 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           />
           <Input label="City / town" name="city" autoComplete="address-level2" required value={city} onChange={(e) => setCity(e.target.value)} />
           <label className="block">
-            <span className="text-xs font-medium text-slate-600">Province</span>
+            <span className="text-xs font-medium text-[var(--color-text-soft)]">Province</span>
             <select
               name="province"
               value={province}
               onChange={(e) => setProvince(e.target.value)}
-              className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+              className="mt-1 w-full rounded-[10px] border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
             >
               {PROVINCES.map(([code, provinceName]) => (
                 <option key={code} value={code}>
@@ -136,16 +141,35 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           />
         </div>
         <label className="mt-3 block">
-          <span className="text-xs font-medium text-slate-600">Notes (optional)</span>
+          <span className="text-xs font-medium text-[var(--color-text-soft)]">Notes (optional)</span>
           <textarea
             name="notes"
             rows={3}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Delivery instructions, timing, questions…"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+            className="mt-1 w-full rounded-[10px] border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
           />
         </label>
+      </section>
+
+      {/* Discount code */}
+      <section className="rounded-[14px] border border-[var(--color-border)] bg-white p-5">
+        <h2 className="font-display text-xl">3 · Discount code</h2>
+        <p className="mt-1 text-xs text-[var(--color-muted)]">
+          Have a code such as FIRST10? Enter it here and we apply it to your quote.
+        </p>
+        <div className="mt-4 max-w-xs">
+          <Input
+            label="Discount code (optional)"
+            name="discount_code"
+            autoComplete="off"
+            autoCapitalize="characters"
+            value={discount}
+            onChange={(e) => setDiscount(e.target.value.toUpperCase())}
+            placeholder="FIRST10"
+          />
+        </div>
       </section>
 
       {turnstileSiteKey && !turnstileSiteKey.startsWith("1x000") && (
@@ -163,13 +187,13 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
         disabled={pending || cart.items.length === 0}
         className="btn-primary w-full justify-center text-base disabled:opacity-50"
       >
-        {pending ? "Sending your request…" : "Request shipping quote →"}
+        {pending ? "Sending your request…" : free ? "Send order request →" : "Request shipping quote →"}
       </button>
 
-      {error && <p className="rounded-md bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p>}
+      {error && <p className="rounded-[10px] bg-rose-50 px-3 py-2 text-sm text-[var(--color-red)]">{error}</p>}
 
-      <p className="text-center text-xs text-slate-400">
-        No payment is taken online and requesting a quote doesn&rsquo;t commit you to anything. By
+      <p className="text-center text-xs text-[var(--color-muted)]">
+        No payment is taken online and sending this request doesn&rsquo;t commit you to anything. By
         sending your request you agree to our{" "}
         <Link href="/privacy" className="underline">privacy policy</Link>.
       </p>
@@ -186,11 +210,11 @@ function Input({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string; name: string }) {
   return (
     <label className={`block ${className}`}>
-      <span className="text-xs font-medium text-slate-600">{label}</span>
+      <span className="text-xs font-medium text-[var(--color-text-soft)]">{label}</span>
       <input
         name={name}
         type={type}
-        className="mt-1 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm shadow-sm"
+        className="field mt-1"
         {...rest}
       />
     </label>

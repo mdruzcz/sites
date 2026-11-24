@@ -36,7 +36,7 @@ function Block({ block }: { block: ArticleBlock }): ReactNode {
       );
     case "callout":
       return (
-        <aside className="my-8 rounded-2xl border border-[var(--color-border-strong)] bg-[var(--color-gold-soft)] px-6 py-5">
+        <aside className="my-8 rounded-[14px] border border-[var(--color-border-strong)] bg-[var(--color-gold-soft)] px-6 py-5">
           <p className="leading-relaxed text-[var(--color-text)]">{block.text}</p>
         </aside>
       );

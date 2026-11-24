@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -9,17 +9,11 @@ import { OfferPopup } from "@/components/offer-popup";
 import { MiniCartDrawer } from "@/components/mini-cart-drawer";
 import { SITE_URL } from "@/lib/utils";
 
-// Body: humanist geometric sans — wide apertures, reads cleanly at small sizes.
+// One family for body and display: a humanist geometric sans. Headings use it at
+// weight 800 with tight tracking (see .font-display in globals.css).
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans-loaded",
-  display: "swap"
-});
-
-// Display: warm high-contrast serif that pairs with the brass-gold accent.
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display-loaded",
   display: "swap"
 });
 
@@ -53,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${fraunces.variable}`}>
+    <html lang="en" className={jakarta.variable}>
       <body>
         <UIProvider>
           <Header />

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
 import { ShopFilters } from "@/components/shop-filters";
-import { Photo } from "@/components/photo";
+import { PageHero } from "@/components/page-hero";
+import { CategoryChips } from "@/components/category-chips";
 import { getCategories, listProducts, priceRange } from "@/lib/catalog";
 import { SITE_URL } from "@/lib/utils";
 
@@ -70,37 +71,28 @@ export default async function ShopPage({ searchParams }: PageProps) {
 
   return (
     <div>
-      {/* Banner — photo with a real scrim so the heading always reads */}
-      <section className="relative isolate">
-        <Photo
-          name="home-side-elevation"
-          alt="Permanent LED track lighting running along every roofline of a wide home elevation"
-          ratio="aspect-[16/7] md:aspect-[21/6]"
-          sizes="100vw"
-          priority
-          scrim="strong"
-        />
-        <div className="absolute inset-0 flex items-end">
-          <div className="shell pb-10 md:pb-14">
-            <nav aria-label="Breadcrumb" className="text-xs text-white/70">
-              <Link href="/" className="hover:text-white hover:underline">
-                Home
-              </Link>
-              <span className="mx-1.5">/</span>
-              <span className="text-white">Shop</span>
-            </nav>
-            <h1 className="font-display mt-3 text-[2.1rem] text-white md:text-5xl">
-              {activeCategory ? activeCategory.name : "Shop the catalog"}
-            </h1>
-            <p className="mt-3 max-w-xl text-sm text-white/80 md:text-base">
-              Installer-grade lighting hardware, bulk priced and shipped same or next business day from
-              London, Ontario.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        photo="farmhouse-roofline-dusk"
+        photoAlt="Stone farmhouse at dusk with permanent LED lights along its upper and porch rooflines"
+        position="center 82%"
+        crumb={activeCategory ? activeCategory.name : "Shop"}
+        trail={activeCategory ? [{ label: "Shop", href: "/shop" }] : []}
+        eyebrow="The catalog"
+        title={activeCategory ? activeCategory.name : "Shop the catalog"}
+        intro="Installer-grade lighting hardware, bulk priced and shipped same or next business day from London, Ontario."
+      />
 
-      <div className="shell py-14 md:py-20">
+      <CategoryChips
+        label="Shop by category"
+        items={[
+          { label: "Everything", href: "/shop", active: !activeCategory },
+          ...categories
+            .filter((c) => (categoryCounts.get(c.slug) ?? 0) > 0)
+            .map((c) => ({ label: c.name, href: `/shop?category=${c.slug}`, active: c.slug === category }))
+        ]}
+      />
+
+      <div className="shell py-10 md:py-16">
         <div className="grid gap-10 lg:grid-cols-[268px_1fr] lg:gap-14">
           <ShopFilters
             categories={categories.map((c) => ({
@@ -119,7 +111,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
             </p>
 
             {products.length === 0 ? (
-              <div className="rounded-2xl border border-[var(--color-border)] bg-white p-12 text-center">
+              <div className="rounded-[14px] border border-[var(--color-border)] bg-white p-12 text-center">
                 <p className="font-display text-xl">No products match those filters.</p>
                 <Link href="/shop" className="btn-secondary mt-5">
                   Clear filters

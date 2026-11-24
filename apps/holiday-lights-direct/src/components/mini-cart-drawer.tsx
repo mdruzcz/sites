@@ -70,7 +70,7 @@ export function MiniCartDrawer() {
       >
         <div className="flex items-center justify-between border-b border-[var(--color-border)] px-4 py-4">
           <div>
-            <p className="eyebrow text-slate-500">Your cart</p>
+            <p className="label">Your cart</p>
             <p className="font-display text-xl">
               {cart?.items.length ?? 0} item{cart && cart.items.length === 1 ? "" : "s"}
             </p>
@@ -79,7 +79,7 @@ export function MiniCartDrawer() {
             type="button"
             onClick={closeMiniCart}
             aria-label="Close cart"
-            className="grid size-9 place-items-center rounded-full border border-[var(--color-border)] hover:bg-slate-50"
+            className="grid size-9 place-items-center rounded-full border border-[var(--color-border)] hover:bg-[var(--color-bg-tint)]"
           >
             ✕
           </button>
@@ -88,18 +88,18 @@ export function MiniCartDrawer() {
         {/* No-payment reassurance */}
         <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3">
           <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-success)]">
-            ✓ No payment taken online — we&rsquo;ll email your shipping cost
+            ✓ Free shipping over $500. No payment taken online.
           </p>
         </div>
 
         {/* Items */}
         <div className="flex-1 overflow-y-auto px-4 py-4">
-          {loading && !cart && <p className="text-sm text-slate-500">Loading…</p>}
+          {loading && !cart && <p className="text-sm text-[var(--color-muted)]">Loading…</p>}
           {!loading && cart && cart.items.length === 0 && (
             <div className="grid h-full place-items-center text-center">
               <div>
-                <p className="font-display text-xl text-slate-700">Your cart is empty</p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="font-display text-xl text-[var(--color-text)]">Your cart is empty</p>
+                <p className="mt-2 text-sm text-[var(--color-muted)]">
                   Add some lights to get started.
                 </p>
                 <Link
@@ -116,7 +116,7 @@ export function MiniCartDrawer() {
             <ul className="space-y-4">
               {cart.items.map((l) => (
                 <li key={l.id} className="flex gap-3">
-                  <div className="size-16 shrink-0 overflow-hidden rounded-md bg-slate-50">
+                  <div className="size-16 shrink-0 overflow-hidden rounded-[10px] bg-[var(--color-bg-tint)]">
                     <Image
                       src={l.image_url || "/images/products/placeholder.webp"}
                       alt={l.product_name}
@@ -133,14 +133,14 @@ export function MiniCartDrawer() {
                     >
                       {l.product_name}
                     </Link>
-                    <p className="text-xs text-slate-500">{l.variant_name}</p>
+                    <p className="text-xs text-[var(--color-muted)]">{l.variant_name}</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <div className="inline-flex items-center rounded-md border border-[var(--color-border)]">
+                      <div className="inline-flex items-center rounded-[10px] border border-[var(--color-border)]">
                         <button
                           type="button"
                           onClick={() => setQty(l.id, Math.max(1, l.quantity - 1))}
                           aria-label="Decrease quantity"
-                          className="px-2 text-sm hover:bg-slate-50"
+                          className="px-2 text-sm hover:bg-[var(--color-bg-tint)]"
                         >
                           −
                         </button>
@@ -149,7 +149,7 @@ export function MiniCartDrawer() {
                           type="button"
                           onClick={() => setQty(l.id, l.quantity + 1)}
                           aria-label="Increase quantity"
-                          className="px-2 text-sm hover:bg-slate-50"
+                          className="px-2 text-sm hover:bg-[var(--color-bg-tint)]"
                         >
                           +
                         </button>
@@ -157,7 +157,7 @@ export function MiniCartDrawer() {
                       <button
                         type="button"
                         onClick={() => remove(l.id)}
-                        className="text-xs text-rose-700 hover:underline"
+                        className="text-xs text-[var(--color-red)] hover:underline"
                       >
                         Remove
                       </button>
@@ -176,30 +176,30 @@ export function MiniCartDrawer() {
         {cart && cart.items.length > 0 && (
           <div className="border-t border-[var(--color-border)] bg-white px-4 py-4 pb-safe">
             <div className="flex items-baseline justify-between">
-              <span className="text-sm text-slate-600">Subtotal</span>
+              <span className="text-sm text-[var(--color-text-soft)]">Subtotal</span>
               <span className="font-display text-2xl text-[var(--color-brand)]">
                 {formatCad(subtotal)}
               </span>
             </div>
-            <p className="mt-1 text-right text-xs text-slate-500">
-              Shipping &amp; tax quoted by email
+            <p className="mt-1 text-right text-xs text-[var(--color-muted)]">
+              {subtotal >= 500 ? "Free shipping on this order. Tax confirmed by email." : "Shipping and tax quoted by email. Free shipping over $500."}
             </p>
             <Link
               href="/checkout"
               onClick={closeMiniCart}
               className="btn-primary mt-4 w-full justify-center"
             >
-              Request a shipping quote →
+              {subtotal >= 500 ? "Send order request →" : "Request a shipping quote →"}
             </Link>
             <Link
               href="/cart"
               onClick={closeMiniCart}
-              className="mt-2 block text-center text-xs text-slate-500 underline-offset-2 hover:underline"
+              className="mt-2 block text-center text-xs text-[var(--color-muted)] underline-offset-2 hover:underline"
             >
               View full cart page
             </Link>
-            <div className="mt-3 flex items-center justify-center gap-3 text-[10px] text-slate-400">
-              <span>✉️ Quote by email</span>
+            <div className="mt-3 flex items-center justify-center gap-3 text-[10px] text-[var(--color-muted)]">
+              <span>Free shipping over $500</span>
               <span>·</span>
               <span>No payment online</span>
               <span>·</span>

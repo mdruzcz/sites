@@ -9,12 +9,20 @@ export function CartBadgeButton({ count }: { count: number }) {
       type="button"
       onClick={openMiniCart}
       aria-label={`Open cart (${count} item${count === 1 ? "" : "s"})`}
-      className="relative inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-sm font-medium transition hover:border-[var(--color-brand)] hover:text-[var(--color-brand)]"
+      className="hdr-chip relative inline-flex"
     >
-      <span aria-hidden>🛒</span>
-      <span>Cart</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path
+          d="M6 8h12l-1 12H7L6 8Zm3 0V6a3 3 0 0 1 6 0v2"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="hidden sm:inline">Cart</span>
       {count > 0 && (
-        <span className="ml-1 inline-flex min-w-5 items-center justify-center rounded-full bg-[var(--color-brand)] px-1.5 text-xs font-semibold text-white">
+        <span className="inline-flex min-w-5 items-center justify-center rounded-full bg-[var(--color-gold)] px-1.5 text-xs font-bold text-[#17130a]">
           {count}
         </span>
       )}

@@ -90,7 +90,7 @@ export default async function GuidePage({ params }: Props) {
             </p>
             <p className="lead mt-6 text-[var(--color-text-soft)]">{article.excerpt}</p>
 
-            <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-white p-7 shadow-[var(--shadow-sm)]">
+            <div className="mt-10 rounded-[14px] border border-[var(--color-border)] bg-white p-7 shadow-[var(--shadow-sm)]">
               <p className="eyebrow text-[var(--color-gold-text)]">Key takeaways</p>
               <ol className="mt-4 space-y-3">
                 {article.keyTakeaways.map((t, i) => (
@@ -111,7 +111,7 @@ export default async function GuidePage({ params }: Props) {
                 <h2 className="font-display text-[1.75rem] md:text-[2.1rem]">Frequently asked questions</h2>
                 <div className="mt-6 space-y-3">
                   {article.faq.map((f, i) => (
-                    <details key={i} className="group rounded-2xl border border-[var(--color-border)] bg-white">
+                    <details key={i} className="group rounded-[14px] border border-[var(--color-border)] bg-white">
                       <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-semibold">
                         {f.q}
                         <span aria-hidden className="text-[var(--color-muted)] transition group-open:rotate-180">▾</span>
@@ -123,7 +123,7 @@ export default async function GuidePage({ params }: Props) {
               </section>
             )}
 
-            <div className="mt-16 rounded-2xl bg-[var(--color-ink)] p-8 text-white md:p-10">
+            <div className="mt-16 rounded-[14px] bg-[var(--color-ink)] p-8 text-white md:p-10">
               <p className="eyebrow text-[var(--color-gold-bright)]">Stock up</p>
               <h2 className="font-display mt-4 text-2xl md:text-3xl">Everything in this guide ships from London, Ontario.</h2>
               <p className="mt-4 text-white/75">Installer-grade C9 bulbs, socket wire, SPT-2 spools, plugs, clips and 12V permanent lighting kits. Free Canadian shipping over $500.</p>
@@ -136,7 +136,7 @@ export default async function GuidePage({ params }: Props) {
 
           {related.length > 0 && (
             <section className="mx-auto mt-20 max-w-6xl">
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Keep reading</p>
+              <p className="eyebrow-plain">Keep reading</p>
               <div className="mt-8 grid gap-5 sm:grid-cols-3">
                 {related.map((r) => (
                   <Link key={r.slug} href={`/resources/${r.slug}`} className="card group flex flex-col p-6">

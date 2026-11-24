@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/product-card";
 import { PageHero } from "@/components/page-hero";
+import { CategoryChips } from "@/components/category-chips";
 import { getCategories, listProducts } from "@/lib/catalog";
 import type { PhotoKey } from "@/lib/photos";
 import { SITE_URL } from "@/lib/utils";
@@ -10,9 +11,9 @@ export const revalidate = 3600;
 
 /** Category slug → lifestyle photo used for the page header. */
 const CATEGORY_PHOTOS: Record<string, PhotoKey> = {
-  "permanent-lights": "track-night-glow",
-  "permanent-lighting-kits": "home-nighttime-lit",
-  "aluminum-tracks": "track-daytime-discreet",
+  "permanent-lights": "stone-bungalow-night",
+  "permanent-lighting-kits": "farmhouse-roofline-dusk",
+  "aluminum-tracks": "farmhouse-daytime-track",
   "led-puck-lights": "detail-led-pucks",
   "christmas-light-bulbs": "home-christmas-warm-white",
   "mini-light-strands": "home-cottage-evening",
@@ -87,10 +88,23 @@ export default async function CategoryPage({ params }: PageProps) {
         title={cat.name}
         intro={cat.description ?? undefined}
         crumb={cat.name}
+        trail={[{ label: "Shop", href: "/shop" }]}
+      />
+
+      <CategoryChips
+        label="Other categories"
+        items={[
+          { label: "Everything", href: "/shop" },
+          ...categories.map((c) => ({
+            label: c.name,
+            href: `/product-category/${c.slug}`,
+            active: c.slug === cat.slug
+          }))
+        ]}
       />
 
       <section className="bg-[var(--color-bg)]">
-        <div className="shell section">
+        <div className="shell py-10 md:py-16">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="text-sm text-[var(--color-muted)]">
               {products.length} {products.length === 1 ? "product" : "products"}
@@ -101,7 +115,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
 
           {products.length === 0 ? (
-            <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-white p-12 text-center">
+            <div className="mt-10 rounded-[14px] border border-[var(--color-border)] bg-white p-12 text-center">
               <p className="font-display text-xl">Nothing in this category yet.</p>
               <Link href="/shop" className="btn-secondary mt-6">
                 Back to the shop

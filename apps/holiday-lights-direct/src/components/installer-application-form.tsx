@@ -46,7 +46,7 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
 
   if (state === "ok") {
     return (
-      <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 p-6">
+      <div className="mt-6 rounded-[10px] border border-emerald-200 bg-emerald-50 p-6">
         <h3 className="text-lg font-semibold text-emerald-800">Application received</h3>
         <p className="mt-1 text-sm text-emerald-900">
           Thanks! We&rsquo;ll review your application and email you within 1 business day.
@@ -56,7 +56,7 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-white p-5">
+    <form onSubmit={onSubmit} className="mt-6 grid gap-3 rounded-[10px] border border-[var(--color-border)] bg-white p-5">
       <Field label="Company name" name="company_name" required />
       <Field label="Contact name" name="contact_name" required />
       <div className="grid gap-3 md:grid-cols-2">
@@ -108,7 +108,7 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
       <button type="submit" disabled={pending} className="btn-primary mt-2 disabled:opacity-50">
         {pending ? "Submitting…" : "Submit application"}
       </button>
-      {state === "err" && <p className="text-sm text-rose-700">{message}</p>}
+      {state === "err" && <p className="text-sm text-[var(--color-red)]">{message}</p>}
     </form>
   );
 }
@@ -136,10 +136,10 @@ function Field({
   autoComplete?: string;
   inputMode?: "tel" | "text" | "email" | "url" | "numeric";
 }) {
-  const className = "mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm";
+  const className = "mt-1 w-full rounded-[10px] border border-[var(--color-border-strong)] px-3 py-2 text-sm shadow-sm";
   return (
     <label className="block">
-      <span className="text-xs font-medium text-slate-600">{label}{required && " *"}</span>
+      <span className="text-xs font-medium text-[var(--color-text-soft)]">{label}{required && " *"}</span>
       {element === "input" && (
         <input
           name={name}

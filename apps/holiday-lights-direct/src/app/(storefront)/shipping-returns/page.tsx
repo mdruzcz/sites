@@ -18,7 +18,7 @@ export const metadata = {
 const SECTIONS = [
   {
     heading: "Free shipping",
-    body: "Shipping is free on every order over $500 CAD, anywhere in Canada. Orders below that are quoted live at checkout using Canada Post rates for your postal code."
+    body: "Shipping is free on every order over $500 CAD, anywhere in Canada. For smaller orders we email your shipping cost, based on your postal code, before any payment is taken."
   },
   {
     heading: "Dispatch times",

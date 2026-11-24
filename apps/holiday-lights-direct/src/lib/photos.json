@@ -159,5 +159,68 @@
     "width": 2200,
     "height": 1467,
     "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoMAAgAA4BaJbACdAELKVU+EAD+7tfPNTg8mcyHDxBc/pAYJmhK53EJJh1v2y8gqLGTIpNqCbTfj4etzTh88SMKe/9vDpg9A2H5R1ZwAAA="
+  },
+  "farmhouse-gable-dusk": {
+    "src": "/images/photos/farmhouse-gable-dusk.webp",
+    "alt": "White board-and-batten gable at dusk with permanent LED track lights glowing along the black soffit",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoMAAkAA4BaJYgCdADQY26AAPfUI7ZZa+uT8ws1SeYl7FP3vZLXW0kcllYviLkt2ZThhAVNK6MrJi4GOwQAkw3kCrm1eAAA"
+  },
+  "farmhouse-roofline-dusk": {
+    "src": "/images/photos/farmhouse-roofline-dusk.webp",
+    "alt": "Stone and board-and-batten farmhouse at dusk with permanent LED lights along the upper and porch rooflines",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAkAA4BaJZgCdADcDblOQAD3sM7rDlgZoYVDr0/ffPHTbiFO8+Ok9tUOw/JfGqhPZQ3XbJ87iGhIAAA="
+  },
+  "farmhouse-dormer-dusk": {
+    "src": "/images/photos/farmhouse-dormer-dusk.webp",
+    "alt": "Garage dormer and eave at dusk outlined with permanent LED track lighting",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAkAA4BaJZACdAEQL255gAD977qFdTK7HNTttXIT6ZJYsV+LZE5HaMeaeZWvBrx13jlePnmXzqwReAA="
+  },
+  "farmhouse-daytime-track": {
+    "src": "/images/photos/farmhouse-daytime-track.webp",
+    "alt": "Modern farmhouse in daylight with black aluminum LED track tucked along the gable and eaves",
+    "width": 2000,
+    "height": 1125,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAcAA4BaJYgCdADZoPU0AAD2U/swdr+ojMbxngXP/RW9fLIMGUeNT7MI1db7RAzsYQFrn9f+jCkv/yTg8bjF/AAAAA=="
+  },
+  "farmhouse-install-day": {
+    "src": "/images/photos/farmhouse-install-day.webp",
+    "alt": "Permanent LED lighting kit being unpacked in front of a modern farmhouse with ladders set up at the porch",
+    "width": 1500,
+    "height": 1125,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAkAA4BaJQBOgCHHjzEgAAD+iRJvWA6Ovvj1pCg+tgvvo5KM09SWHXKcXc0I1yMafGVAHcUC5hyD2DBHAngA"
+  },
+  "stone-bungalow-night": {
+    "src": "/images/photos/stone-bungalow-night.webp",
+    "alt": "Stone bungalow at night with bright white permanent LED track lighting along the gables and front entry",
+    "width": 1600,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoMAAcAA4BaJZwAAlbb0uqAAP7xtS3q2Y0h3O8xCXSw7e7LrENZb1sOOANN2M6NqWnX0EzCJDZAAA=="
+  },
+  "commercial-install-lift": {
+    "src": "/images/photos/commercial-install-lift.webp",
+    "alt": "Boom lift installing roofline LED lighting on a timber and stone commercial building at night",
+    "width": 2000,
+    "height": 1506,
+    "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAkAA4BaJQBOgCPqLTg6uoAA/vMSY9k+fArXAygmOdxfryiwFLTKjhNqy28JJtnSgkIzcQbDHkiyAAA="
+  },
+  "commercial-gable-install": {
+    "src": "/images/photos/commercial-gable-install.webp",
+    "alt": "Commercial building at night with lit wreaths, wrapped posts and roofline lighting mid-install",
+    "width": 2000,
+    "height": 1506,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAkAA4BaJQBOj+ADCRi3U0AA/vkp13rKbtAu1OAwunbumDJBSFTUWpL6kqRPu0Qqz+3MAAA="
+  },
+  "commercial-gable-wreaths": {
+    "src": "/images/photos/commercial-gable-wreaths.webp",
+    "alt": "Shingled commercial gable at night outlined in warm white LED lights with two lit wreaths",
+    "width": 1163,
+    "height": 875,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoMAAkAA4BaJZACdADptsIgAP71+WM2EHqA8oRf3NDVts+qKxTKlZMqOiORVfdD0CU+lrRFTLMqrOF0MXRTgWeAAAA="
   }
 }

@@ -7,7 +7,7 @@ export function Testimonial() {
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
           <div className="reveal">
             <p aria-hidden className="font-display text-6xl leading-none text-[var(--color-gold)]">&ldquo;</p>
-            <blockquote className="font-display mt-4 text-[1.65rem] leading-[1.3] text-[var(--color-text)] md:text-[2.25rem]">
+            <blockquote className="mt-4 text-[1.5rem] font-bold leading-[1.3] tracking-[-0.02em] text-[var(--color-text)] md:text-[2rem]">
               We have been buying our C9 strings and the RGBW housing kits from Holiday Lights Direct all
               season. The gear holds up at −30°C and the installer pricing makes the math work.
             </blockquote>
@@ -23,7 +23,7 @@ export function Testimonial() {
             name="home-install-1"
             ratio="aspect-[4/3]"
             sizes="(max-width: 1024px) 100vw, 460px"
-            rounded="rounded-3xl"
+            rounded="rounded-[14px]"
             className="shadow-[var(--shadow-lg)]"
           />
         </div>

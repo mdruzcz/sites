@@ -57,7 +57,7 @@ export default function ResourcesPage() {
             <div key={group.category}>
               <div className="flex items-end justify-between gap-4">
                 <div>
-                  <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">{group.category}</p>
+                  <p className="eyebrow-plain">{group.category}</p>
                 </div>
                 <p className="text-sm text-[var(--color-muted)]">
                   {group.items.length} {group.items.length === 1 ? "guide" : "guides"}

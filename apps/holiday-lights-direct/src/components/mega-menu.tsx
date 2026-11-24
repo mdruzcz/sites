@@ -85,7 +85,7 @@ export function MegaMenu() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="true"
-        className="inline-flex items-center gap-1 hover:text-[var(--color-brand)]"
+        className="hdr-link"
       >
         Shop
         <span aria-hidden className={`transition ${open ? "rotate-180" : ""}`}>▾</span>
@@ -94,7 +94,7 @@ export function MegaMenu() {
       {open && (
         <div
           role="menu"
-          className="absolute left-1/2 top-full z-40 mt-3 w-screen max-w-4xl -translate-x-1/2 rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-xl"
+          className="absolute left-1/2 top-full z-40 mt-3 w-screen max-w-4xl -translate-x-1/2 rounded-[14px] border border-[var(--color-border)] bg-white p-6 text-[var(--color-text)] shadow-xl"
         >
           <div className="grid grid-cols-4 gap-6">
             {COLUMNS.map((col) => (
@@ -109,7 +109,7 @@ export function MegaMenu() {
                 <ul className="mt-3 space-y-2 text-sm">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href} className="text-slate-600 hover:text-[var(--color-brand)]">
+                      <Link href={l.href} className="text-[var(--color-text-soft)] hover:text-[var(--color-brand)]">
                         {l.label}
                       </Link>
                     </li>
@@ -118,7 +118,7 @@ export function MegaMenu() {
               </div>
             ))}
           </div>
-          <div className="mt-6 flex items-center justify-between gap-4 rounded-lg bg-[var(--color-brand-soft)] px-4 py-3 text-sm">
+          <div className="mt-6 flex items-center justify-between gap-4 rounded-[10px] bg-[var(--color-brand-soft)] px-4 py-3 text-sm">
             <p className="font-medium text-[var(--color-brand-dark)]">
               🎁 First order? Use code <span className="font-bold">FIRST10</span> for 10% off.
             </p>

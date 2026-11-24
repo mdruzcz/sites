@@ -13,8 +13,8 @@ export function SpecCallouts() {
       <div className="shell section">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <div className="order-2 lg:order-1">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">The numbers</p>
-            <h2 className="font-display h2-fluid mt-6">
+            <p className="eyebrow-plain">The numbers</p>
+            <h2 className="font-display h2-fluid mt-3">
               Engineered for serious lighting.
             </h2>
             <p className="lead mt-6 max-w-lg text-[var(--color-text-soft)]">
@@ -43,7 +43,7 @@ export function SpecCallouts() {
               name="detail-led-pucks"
               ratio="aspect-[4/5]"
               sizes="(max-width: 640px) 100vw, 320px"
-              rounded="rounded-2xl"
+              rounded="rounded-[14px]"
               className="sm:col-span-1 shadow-[var(--shadow-lg)]"
             />
             <div className="grid gap-5">
@@ -51,14 +51,14 @@ export function SpecCallouts() {
                 name="detail-track-mounting"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 640px) 100vw, 320px"
-                rounded="rounded-2xl"
+                rounded="rounded-[14px]"
                 className="shadow-[var(--shadow-lg)]"
               />
               <Photo
                 name="track-residential"
                 ratio="aspect-square"
                 sizes="(max-width: 640px) 100vw, 320px"
-                rounded="rounded-2xl"
+                rounded="rounded-[14px]"
                 className="shadow-[var(--shadow-lg)]"
               />
             </div>

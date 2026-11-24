@@ -26,13 +26,13 @@ export function OfferPopup() {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl"
+        className="relative w-full max-w-md overflow-hidden rounded-[14px] bg-white shadow-2xl"
       >
         <button
           type="button"
           onClick={dismissPopup}
           aria-label="Close special offer"
-          className="absolute right-3 top-3 grid size-8 place-items-center rounded-full bg-white/80 text-slate-700 hover:bg-white"
+          className="absolute right-2 top-2 z-10 grid size-11 place-items-center rounded-full bg-white/85 text-[var(--color-text)] hover:bg-white"
         >
           ✕
         </button>
@@ -48,30 +48,30 @@ export function OfferPopup() {
               />
             ))}
           </div>
-          <p className="eyebrow relative text-[var(--color-gold)]">🎁 Special Offer</p>
+          <p className="eyebrow relative text-[#ffd24a]">Special offer</p>
           <h2 id="offer-popup-title" className="font-display relative mt-3 text-4xl font-bold leading-tight">
-            Get <span className="text-[var(--color-gold)]">10% OFF</span><br />
+            Get <span className="text-[#ffd24a]">10% off</span><br />
             your first order
           </h2>
-          <p className="relative mt-3 text-sm text-red-100">
-            Welcome to Holiday Lights Direct. Use this code at checkout:
+          <p className="relative mt-3 text-sm text-white/85">
+            Welcome to Holiday Lights Direct. Enter this code when you request your quote:
           </p>
         </div>
 
         <div className="px-8 py-6 text-center">
-          <div className="inline-flex items-center gap-2 rounded-lg border-2 border-dashed border-[var(--color-brand)] bg-[var(--color-brand-soft)] px-5 py-3">
+          <div className="inline-flex items-center gap-2 rounded-[10px] border-2 border-dashed border-[var(--color-brand)] bg-[var(--color-brand-soft)] px-5 py-3">
             <span className="font-display text-2xl font-bold tracking-widest text-[var(--color-brand)]">
               FIRST10
             </span>
             <button
               type="button"
               onClick={copyCode}
-              className="text-xs font-semibold uppercase tracking-wide text-[var(--color-brand)] underline-offset-2 hover:underline"
+              className="inline-flex min-h-11 items-center px-1 text-xs font-semibold uppercase tracking-wide text-[var(--color-brand)] underline-offset-2 hover:underline"
             >
               {copied ? "Copied!" : "Copy"}
             </button>
           </div>
-          <p className="mt-4 text-xs text-slate-500">
+          <p className="mt-4 text-xs text-[var(--color-muted)]">
             Valid on your first order. One use per customer. Cannot be combined with installer/municipality
             pricing.
           </p>
@@ -85,7 +85,7 @@ export function OfferPopup() {
           <button
             type="button"
             onClick={dismissPopup}
-            className="mt-2 text-xs text-slate-500 underline-offset-2 hover:underline"
+            className="mt-1 inline-flex min-h-11 items-center text-xs text-[var(--color-muted)] underline-offset-2 hover:underline"
           >
             No thanks, I&rsquo;ll pay full price
           </button>

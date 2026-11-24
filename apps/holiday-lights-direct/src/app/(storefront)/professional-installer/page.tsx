@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { InstallerApplicationForm } from "@/components/installer-application-form";
 import { Photo } from "@/components/photo";
+import { PageHero } from "@/components/page-hero";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
@@ -38,30 +39,28 @@ const BENEFITS = [
 export default function ProfessionalInstallerPage() {
   return (
     <div>
-      {/* Photo hero with a scrim — this heading used to sit on an undefined
-          background colour, which rendered white text on a white page. */}
-      <section className="relative isolate">
-        <Photo
-          name="install-banner"
-          alt="Wide view of a completed permanent LED lighting install running the full width of a home"
-          ratio="aspect-[16/10] md:aspect-[21/7]"
-          sizes="100vw"
-          priority
-          scrim="strong"
-        />
-        <div className="absolute inset-0 flex items-end">
-          <div className="shell pb-12 md:pb-16">
-            <p className="eyebrow text-[var(--color-gold-bright)]">Trade program</p>
-            <h1 className="font-display mt-4 max-w-3xl text-[2.2rem] leading-tight text-white md:text-[3.5rem]">
-              Professional Installer Program
-            </h1>
-            <p className="mt-5 max-w-2xl text-[1.0625rem] leading-relaxed text-white/80">
-              Bulk pricing, faster fulfillment and dedicated support — built for Christmas light installers,
-              event lighting companies and landscaping crews working across Canada.
-            </p>
-          </div>
+      <PageHero
+        size="lg"
+        photo="commercial-install-lift"
+        photoAlt="Boom lift installing roofline LED lighting on a timber and stone commercial building at night"
+        position="center 45%"
+        crumb="Pro installers"
+        eyebrow="Trade program"
+        title="Professional Installer Program"
+        intro="Bulk pricing, faster fulfillment and dedicated support, built for Christmas light installers, event lighting companies and landscaping crews working across Canada."
+      >
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="#apply" className="btn-hero group sm:min-w-[18rem]">
+            Apply for installer pricing
+            <svg className="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <Link href="/shop" className="btn-ghost-light min-h-[54px]">
+            Browse the catalog
+          </Link>
         </div>
-      </section>
+      </PageHero>
 
       <section className="bg-[var(--color-bg)]">
         <div className="shell section">
@@ -76,12 +75,12 @@ export default function ProfessionalInstallerPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-bg-warm)]">
+      <section id="apply" className="bg-[var(--color-bg-warm)]">
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
             <div>
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Apply now</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.75rem]">
+              <p className="eyebrow-plain">Apply now</p>
+              <h2 className="font-display mt-3 text-[2rem] md:text-[2.75rem]">
                 Get your installer pricing.
               </h2>
               <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">
@@ -89,11 +88,11 @@ export default function ProfessionalInstallerPage() {
                 to confirm your installer tier.
               </p>
               <Photo
-                name="track-security-white"
-                alt="Home lit in bright daylight-white by permanent LED track lighting"
+                name="farmhouse-install-day"
+                alt="Permanent LED lighting kit being unpacked at a farmhouse with ladders set up along the porch"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 1024px) 100vw, 460px"
-                rounded="rounded-3xl"
+                rounded="rounded-[14px]"
                 className="mt-10 hidden lg:block"
               />
               <p className="mt-8 text-sm text-[var(--color-text-soft)]">
@@ -105,7 +104,7 @@ export default function ProfessionalInstallerPage() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-7 md:p-10">
+            <div className="rounded-[14px] border border-[var(--color-border)] bg-white p-7 md:p-10">
               <InstallerApplicationForm tierSlug="installer" />
             </div>
           </div>

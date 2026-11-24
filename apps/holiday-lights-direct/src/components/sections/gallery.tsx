@@ -10,8 +10,8 @@ const SCENES: { photo: PhotoKey; caption: string; span?: string }[] = [
   { photo: "home-blue-app-control", caption: "Cool blue, set from the app", span: "md:col-span-2" },
   { photo: "home-nighttime-lit", caption: "Warm white, every night" },
   { photo: "home-teal-backyard", caption: "Teal across the backyard" },
-  { photo: "home-cottage-evening", caption: "Cottage eaves at dusk" },
-  { photo: "home-example-3", caption: "Roofline and garage accent" }
+  { photo: "farmhouse-roofline-dusk", caption: "Farmhouse eaves at dusk" },
+  { photo: "stone-bungalow-night", caption: "Bright white at the front entry" }
 ];
 
 export function Gallery() {
@@ -20,8 +20,8 @@ export function Gallery() {
       <div className="shell section">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="reveal max-w-2xl">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Real installs</p>
-            <h2 className="font-display h2-fluid mt-6 text-[var(--color-text)]">
+            <p className="eyebrow-plain">Real installs</p>
+            <h2 className="font-display h2-fluid mt-3 text-[var(--color-text)]">
               Every colour. Same set of lights.
             </h2>
             <p className="lead mt-5 text-[var(--color-text-soft)]">
@@ -38,7 +38,7 @@ export function Gallery() {
           {SCENES.map((s) => (
             <figure
               key={s.photo}
-              className={`reveal-sm group relative isolate overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-[var(--shadow-xs)] ${s.span ?? ""}`}
+              className={`reveal-sm group relative isolate overflow-hidden rounded-[14px] border border-[var(--color-border)] shadow-[var(--shadow-xs)] ${s.span ?? ""}`}
             >
               <Photo
                 name={s.photo}

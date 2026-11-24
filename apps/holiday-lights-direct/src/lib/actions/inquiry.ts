@@ -1,9 +1,10 @@
 "use server";
 
-import { getCart } from "@/lib/cart";
+import { revalidatePath } from "next/cache";
+import { clearCart, getCart } from "@/lib/cart";
 import { getStore } from "@/lib/catalog";
 import { getServiceSupabase } from "@/lib/supabase/server";
-import { formatCad } from "@/lib/utils";
+import { formatCad, shipsFree } from "@/lib/utils";
 import { checkCaptcha, sendLeadEmail, HELP, type LeadResult } from "@/lib/actions/lead-helpers";
 
 export interface ShippingInquiryInput {
@@ -49,15 +50,18 @@ export async function submitShippingInquiry(input: ShippingInquiryInput): Promis
   const cartLines = cart.items.map(
     (l) => `${l.quantity} × ${l.product_name} — ${l.variant_name} (${l.sku}) @ ${formatCad(l.unit_price_cad)} = ${formatCad(l.unit_price_cad * l.quantity)}`
   );
+  const free = shipsFree(cart.subtotal_cad);
   const messageBody = [
-    "SHIPPING QUOTE REQUEST (no payment taken — reply with shipping cost + timeline)",
+    free
+      ? "ORDER REQUEST, FREE SHIPPING (over $500). No payment taken: reply to confirm the order + timeline"
+      : "SHIPPING QUOTE REQUEST (no payment taken — reply with shipping cost + timeline)",
     "",
     `Deliver to: ${input.address}, ${input.city}, ${input.province} ${input.postal}`,
     "",
     "Requested order:",
     ...cartLines,
     "",
-    `Product subtotal: ${formatCad(cart.subtotal_cad)} + shipping & tax`,
+    `Product subtotal: ${formatCad(cart.subtotal_cad)} + ${free ? "tax (shipping is FREE, order is over $500)" : "shipping & tax"}`,
     input.discount_code ? `Discount code entered: ${input.discount_code}` : null,
     input.notes?.trim() ? `\nCustomer notes:\n${input.notes.trim()}` : null
   ]
@@ -65,7 +69,7 @@ export async function submitShippingInquiry(input: ShippingInquiryInput): Promis
     .join("\n");
 
   const emailed = await sendLeadEmail({
-    subject: "Shipping quote request",
+    subject: free ? "Order request (free shipping)" : "Shipping quote request",
     replyTo: email,
     lines: [`Name: ${name}`, `Email: ${email}`, `Phone: ${input.phone || "-"}`, "", messageBody]
   });
@@ -95,6 +99,16 @@ export async function submitShippingInquiry(input: ShippingInquiryInput): Promis
 
   if (!emailed && !stored) {
     return { ok: false, error: `Something went wrong on our end and your request didn't send. ${HELP}` };
+  }
+
+  // The request is with us, so empty the cart. A failure here must not turn a
+  // delivered request into an error for the customer.
+  try {
+    await clearCart(cart.id);
+    revalidatePath("/cart");
+    revalidatePath("/", "layout");
+  } catch (err) {
+    console.error("cart clear after inquiry failed:", err);
   }
   return { ok: true };
 }

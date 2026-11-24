@@ -1,80 +1,85 @@
 import Link from "next/link";
 import Image from "next/image";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { CartBadge } from "@/components/cart-badge";
 import { MegaMenu } from "@/components/mega-menu";
 import { MobileNav } from "@/components/mobile-nav";
+import { HeaderFrame } from "@/components/header-frame";
 
+/**
+ * Three stacked rows: a one-line announcement, the centred wordmark with menu
+ * and cart either side, then a centred pill of primary links. On the homepage
+ * the whole thing floats over the hero photo (see HeaderFrame).
+ */
 export function Header() {
-  // Show the supplied PNG logo if one was dropped at public/images/logo.png,
-  // otherwise fall back to the styled wordmark.
-  const hasLogo = existsSync(join(process.cwd(), "public", "images", "logo.png"));
-
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 shadow-[0_1px_0_rgba(255,255,255,0.6),0_6px_24px_-18px_rgba(26,29,35,0.4)] backdrop-blur-md">
-      <div className="bg-[var(--color-green-dark)] px-4 py-2 text-center text-[11px] tracking-wide text-white/85">
+    <HeaderFrame>
+      <div className="hdr-topbar flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap px-4">
         <span className="font-semibold text-[var(--color-gold-bright)]">FIRST10</span>
-        <span className="mx-2 text-white/35">·</span>
+        <span aria-hidden className="text-white/40">·</span>
         <span>10% off your first order</span>
-        <span className="mx-2 text-white/35">·</span>
-        <span className="font-semibold text-[var(--color-gold-bright)]">Fast shipping across Canada</span>
-        <span className="mx-2 hidden text-white/35 sm:inline">·</span>
-        <span className="hidden sm:inline">Ships from London, Ontario</span>
+        <span aria-hidden className="hidden text-white/40 sm:inline">·</span>
+        <span className="hidden sm:inline">Free shipping over $500 across Canada</span>
       </div>
 
-      <div className="shell flex items-center justify-between gap-4 py-4">
-        <Link href="/" aria-label="Holiday Lights Direct home" className="flex shrink-0 items-center gap-2">
-          {hasLogo ? (
-            <Image
-              src="/images/logo.png"
-              alt="Holiday Lights Direct"
-              width={1361}
-              height={239}
-              priority
-              sizes="(max-width: 768px) 220px, 300px"
-              className="h-10 w-auto md:h-12"
-            />
-          ) : (
-            <span className="font-display text-[1.4rem] leading-none tracking-tight text-[var(--color-text)] md:text-2xl">
-              Holiday Lights <span className="text-[var(--color-gold-text)]">Direct</span>
-            </span>
-          )}
+      <div className="shell grid grid-cols-[1fr_auto_1fr] items-center gap-3 py-3">
+        <div className="flex items-center gap-3">
+          <MobileNav />
+          <span className="hdr-meta hidden lg:inline">Proudly Canadian · Installer-grade, sold direct</span>
+        </div>
+
+        <Link href="/" aria-label="Holiday Lights Direct home" className="flex items-center justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="Holiday Lights Direct"
+            width={1361}
+            height={239}
+            priority
+            sizes="(max-width: 768px) 200px, 280px"
+            className="logo-dark h-9 w-auto md:h-11"
+          />
+          <Image
+            src="/images/logo-white.png"
+            alt=""
+            aria-hidden
+            width={1361}
+            height={239}
+            priority
+            sizes="(max-width: 768px) 200px, 280px"
+            className="logo-light h-9 w-auto md:h-11"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm md:flex" aria-label="Primary">
-          <Link
-            href="/permanent-lights"
-            className="font-semibold text-[var(--color-gold-text)] transition hover:text-[var(--color-gold-dark)]"
-          >
-            Permanent Lights
-          </Link>
-          <MegaMenu />
-          <Link href="/professional-installer" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
-            Pro Installers
-          </Link>
-          <Link href="/municipalities" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
-            Municipalities
-          </Link>
-          <Link href="/resources" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
-            Guides
-          </Link>
-          <Link href="/faq" className="link-underline font-medium transition hover:text-[var(--color-gold-text)]">
-            FAQ
-          </Link>
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <Link
-            href="/account"
-            className="hidden items-center rounded-full border border-[var(--color-border)] bg-white px-4 py-2.5 text-sm font-medium text-[var(--color-text-soft)] transition hover:border-[var(--color-gold)] hover:text-[var(--color-gold-text)] md:inline-flex"
-          >
+        <div className="flex items-center justify-end gap-2">
+          <Link href="/account" className="hdr-chip hidden md:inline-flex">
             Account
           </Link>
           <CartBadge />
-          <MobileNav />
         </div>
       </div>
-    </header>
+
+      <div className="hidden justify-center pb-3 md:flex">
+        <nav className="hdr-nav flex" aria-label="Primary">
+          <Link href="/permanent-lights" className="hdr-link hdr-link-accent">
+            Permanent Lights
+          </Link>
+          <MegaMenu />
+          <Link href="/product-category/christmas-light-bulbs" className="hdr-link">
+            C9 Bulbs
+          </Link>
+          <Link href="/professional-installer" className="hdr-link">
+            Pro Installers
+          </Link>
+          <Link href="/municipalities" className="hdr-link">
+            Municipalities
+          </Link>
+          <Link href="/resources" className="hdr-link">
+            Guides
+          </Link>
+          <Link href="/faq" className="hdr-link">
+            FAQ
+          </Link>
+        </nav>
+      </div>
+    </HeaderFrame>
   );
 }

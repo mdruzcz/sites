@@ -1,19 +1,24 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
-import Image from "next/image";
+import { useState, useTransition } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { addToCartAction } from "@/lib/actions/cart";
+import { KitCoverage } from "@/components/kit-coverage";
 import { formatCad } from "@/lib/utils";
+
+export interface ConfigVariant {
+  id: string;
+  /** Track colour, e.g. "Black". Empty when the kit has a single option. */
+  color: string;
+  price: number;
+}
 
 export interface ConfigOption {
   slug: string;
   name: string;
   footage: number;
-  price: number;
-  colors: string[];
-  image: string | null;
-  firstVariantId: string | null;
+  variants: ConfigVariant[];
 }
 
 const COLOR_SWATCH: Record<string, string> = {
@@ -25,138 +30,130 @@ const COLOR_SWATCH: Record<string, string> = {
   "Custom Color": "repeating-linear-gradient(45deg,#e2e8f0,#e2e8f0 5px,#cbd5e1 5px,#cbd5e1 10px)"
 };
 
+/**
+ * Kit builder: pick a footage, pick a track colour, see the example home that
+ * footage covers, and add that exact variant to the cart.
+ */
 export function PermanentLightsConfigurator({ options }: { options: ConfigOption[] }) {
-  const [selectedSlug, setSelectedSlug] = useState<string>(options[1]?.slug ?? options[0]?.slug ?? "");
-  const selected = options.find((o) => o.slug === selectedSlug) ?? options[0];
-  const colors = selected?.colors ?? [];
-  const [selectedColor, setSelectedColor] = useState<string>(colors[0] ?? "");
+  const [slug, setSlug] = useState<string>(options[2]?.slug ?? options[0]?.slug ?? "");
+  const selected = options.find((o) => o.slug === slug) ?? options[0];
+  const colors = (selected?.variants ?? []).map((v) => v.color).filter(Boolean);
+  const [color, setColor] = useState<string>(colors.includes("White") ? "White" : (colors[0] ?? ""));
   const [pending, startTransition] = useTransition();
   const [added, setAdded] = useState(false);
   const router = useRouter();
 
-  // When kit changes, refresh color default
-  useMemo(() => {
-    if (colors.length && !colors.includes(selectedColor)) {
-      setSelectedColor(colors[0]);
-    }
-  }, [selectedSlug, colors, selectedColor]);
+  // The colour the visitor picked carries across sizes when that size has it.
+  const variant =
+    selected?.variants.find((v) => v.color === color) ?? selected?.variants[0] ?? null;
+
+  function chooseKit(next: string) {
+    setSlug(next);
+    setAdded(false);
+  }
 
   function addKit() {
-    if (!selected?.firstVariantId) return;
+    if (!variant) return;
     setAdded(false);
     startTransition(async () => {
-      await addToCartAction(selected.firstVariantId!, 1);
+      await addToCartAction(variant.id, 1);
       setAdded(true);
     });
   }
 
+  if (!selected) return null;
+
   return (
-    <div className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-      {/* Footage selector */}
-      <div>
-        <p className="eyebrow text-slate-500">Linear footage</p>
-        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
-          {options.map((o) => {
-            const active = o.slug === selectedSlug;
-            return (
-              <button
-                key={o.slug}
-                type="button"
-                onClick={() => setSelectedSlug(o.slug)}
-                className={`rounded-lg border px-3 py-3 text-sm font-semibold transition ${
-                  active
-                    ? "border-[var(--color-brand)] bg-[var(--color-brand)] text-white shadow"
-                    : "border-[var(--color-border)] bg-white text-slate-700 hover:border-[var(--color-brand)]"
-                }`}
-              >
-                {o.footage}&prime;
-              </button>
-            );
-          })}
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-8">
+      <div className="surface p-5 md:p-7">
+        <p className="label" id="kit-footage-label">
+          Roofline length
+        </p>
+        <div role="group" aria-labelledby="kit-footage-label" className="mt-3 flex flex-wrap gap-2">
+          {options.map((o) => (
+            <button
+              key={o.slug}
+              type="button"
+              className="chip"
+              aria-pressed={o.slug === selected.slug}
+              onClick={() => chooseKit(o.slug)}
+            >
+              {o.footage} ft
+            </button>
+          ))}
         </div>
 
         {colors.length > 0 && (
           <>
-            <p className="eyebrow mt-8 text-slate-500">Track color (matches soffit)</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {colors.map((c) => {
-                const active = c === selectedColor;
-                return (
-                  <button
-                    key={c}
-                    type="button"
-                    onClick={() => setSelectedColor(c)}
-                    className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
-                      active
-                        ? "border-[var(--color-brand)] bg-[var(--color-brand-soft)] font-semibold text-[var(--color-brand)]"
-                        : "border-[var(--color-border)] bg-white text-slate-700 hover:border-[var(--color-brand)]"
-                    }`}
-                  >
-                    <span
-                      className="inline-block size-4 rounded-full border border-black/10"
-                      style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }}
-                    />
-                    {c}
-                  </button>
-                );
-              })}
+            <p className="label mt-7" id="kit-colour-label">
+              Track colour
+            </p>
+            <p className="mt-1 text-sm text-[var(--color-muted)]">Match it to your soffit so it disappears by day.</p>
+            <div role="group" aria-labelledby="kit-colour-label" className="mt-3 flex flex-wrap gap-2">
+              {colors.map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  className="chip gap-2 pl-2.5"
+                  aria-pressed={c === variant?.color}
+                  onClick={() => {
+                    setColor(c);
+                    setAdded(false);
+                  }}
+                >
+                  <span
+                    aria-hidden
+                    className="inline-block size-6 rounded-full border border-black/15"
+                    style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }}
+                  />
+                  {c}
+                </button>
+              ))}
             </div>
           </>
         )}
 
-        <div className="mt-10 rounded-2xl border border-[var(--color-border)] bg-white p-5">
-          <div className="flex items-baseline justify-between gap-3">
+        <div className="mt-8 border-t border-[var(--color-border)] pt-6">
+          <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="eyebrow text-slate-500">Your kit</p>
-              <p className="font-display mt-1 text-xl">{selected?.footage}&prime; · {selectedColor || "Standard"}</p>
+              <p className="eyebrow-plain">Your kit</p>
+              <p className="mt-1.5 text-xl font-bold tracking-[-0.02em]">
+                {selected.footage} ft{variant?.color ? `, ${variant.color.toLowerCase()} track` : ""}
+              </p>
             </div>
-            <p className="font-display text-3xl text-[var(--color-brand)]">{formatCad(selected?.price ?? 0)}</p>
+            <p className="font-display text-[2rem] text-[var(--color-text)]" aria-live="polite">
+              {formatCad(variant?.price ?? 0)}
+            </p>
           </div>
-          <p className="mt-2 text-xs text-slate-500">
-            No payment online — we&rsquo;ll email your shipping cost. Ships from London, ON.
+          <p className="mt-2 text-sm text-[var(--color-muted)]">
+            Free shipping anywhere in Canada. No payment online: we email to confirm your order first.
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
             <button
               type="button"
               onClick={addKit}
-              disabled={pending || !selected?.firstVariantId}
-              className="btn-primary flex-1 justify-center disabled:opacity-50"
+              disabled={pending || !variant}
+              className="btn-primary flex-1 disabled:opacity-50"
             >
-              {pending ? "Adding…" : "Add kit to cart"}
+              {pending ? "Adding…" : added ? "Added to cart" : "Add kit to cart"}
             </button>
+            <Link href={`/product/${selected.slug}`} className="btn-secondary">
+              Full kit details
+            </Link>
+          </div>
+          {added && (
             <button
               type="button"
-              onClick={() => router.push(`/product/${selected?.slug}`)}
-              className="btn-secondary"
+              onClick={() => router.push("/cart")}
+              className="mt-3 inline-flex min-h-11 items-center text-sm font-bold text-[var(--color-gold-text)] hover:underline"
             >
-              See full kit details →
+              Go to cart
             </button>
-            {added && (
-              <button
-                type="button"
-                onClick={() => router.push("/cart")}
-                className="text-sm font-semibold text-[var(--color-brand)] hover:underline"
-              >
-                Go to cart →
-              </button>
-            )}
-          </div>
+          )}
         </div>
       </div>
 
-      {/* Visual preview */}
-      <div className="overflow-hidden rounded-2xl bg-[var(--color-night)]">
-        <Image
-          src={selected?.image || "/images/products/placeholder.webp"}
-          alt={`${selected?.name ?? "Permanent lights kit"} preview`}
-          width={700}
-          height={500}
-          className="aspect-[4/3] w-full object-cover"
-        />
-        <div className="p-4 text-xs text-slate-400">
-          Pictured: kit components &mdash; controller, tracks, pucks, connectors.
-        </div>
-      </div>
+      <KitCoverage footage={selected.footage} />
     </div>
   );
 }

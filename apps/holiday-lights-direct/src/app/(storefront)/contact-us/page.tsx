@@ -55,8 +55,8 @@ export default function ContactPage() {
         <div className="shell section">
           <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             <div>
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Where to reach us</p>
-              <h2 className="font-display mt-6 text-[2rem] md:text-[2.75rem]">
+              <p className="eyebrow-plain">Where to reach us</p>
+              <h2 className="font-display mt-3 text-[2rem] md:text-[2.75rem]">
                 Pick the route that fits.
               </h2>
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="mt-11 rounded-2xl border border-[var(--color-border)] bg-white p-7">
+              <div className="mt-11 rounded-[14px] border border-[var(--color-border)] bg-white p-7">
                 <p className="eyebrow text-[var(--color-muted)]">Shipping from</p>
                 <p className="mt-3 text-[1.0625rem] font-semibold">London, Ontario, Canada</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-soft)]">
@@ -98,8 +98,8 @@ export default function ContactPage() {
 
             <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
               <div>
-                <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Send a message</p>
-                <h2 className="font-display mt-5 text-[1.75rem]">Ask us anything</h2>
+                <p className="eyebrow-plain">Send a message</p>
+                <h2 className="font-display mt-3 text-[1.75rem]">Ask us anything</h2>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-soft)]">
                   Prefer a form? Tell us what you need and we will come back to you from the London shop.
                 </p>
@@ -109,13 +109,13 @@ export default function ContactPage() {
                 name="home-nighttime-lit"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 1024px) 100vw, 460px"
-                rounded="rounded-3xl"
+                rounded="rounded-[14px]"
               />
               <Photo
                 name="detail-led-pucks"
                 ratio="aspect-[4/3]"
                 sizes="(max-width: 1024px) 100vw, 460px"
-                rounded="rounded-3xl"
+                rounded="rounded-[14px]"
               />
             </div>
           </div>
