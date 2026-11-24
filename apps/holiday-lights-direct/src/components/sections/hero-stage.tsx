@@ -19,7 +19,7 @@ export interface HeroScene {
   position?: string;
 }
 
-const PROOF = ["Kits from $1,265", "5-year warranty", "CSA approved", "Tested to −40°C"];
+const PROOF = ["Kits from $1,455", "5-year warranty", "CSA approved", "Tested to −40°C"];
 
 /**
  * Full-bleed hero. One photograph fills the first screen, the header floats on
