@@ -80,7 +80,7 @@ export default async function ProductPage({ params }: PageProps) {
   };
 
   // Kits are photographed installed on a house rather than cut out on white.
-  const lifestyle = /\/permanent-led-|\/professional-permanent-/.test(img?.public_url ?? "");
+  const lifestyle = /\/permanent-led-|\/permanent-lighting-kit-|\/professional-permanent-/.test(img?.public_url ?? "");
   const kitFeet = Number(/^led-housing-package-(\d+)/.exec(product.slug)?.[1] ?? 0);
 
   return (

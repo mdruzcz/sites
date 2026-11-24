@@ -16,7 +16,7 @@ export function toTileData(product: CatalogProduct): ProductTileData {
     // still reads as a finished card rather than an empty box.
     image,
     // Kits and tracks are photographed installed on a house, not cut out on white.
-    cover: /\/permanent-led-|\/professional-permanent-/.test(image),
+    cover: /\/permanent-led-|\/permanent-lighting-kit-|\/professional-permanent-/.test(image),
     badge: kitFeet ? `${kitFeet} ft` : undefined,
     alt: img?.alt_text || product.name,
     price: range
