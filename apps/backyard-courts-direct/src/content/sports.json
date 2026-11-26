@@ -1,0 +1,133 @@
+[
+  {
+    "slug": "basketball",
+    "name": "Basketball",
+    "kitLabel": "Basketball court kits",
+    "photo": "basketball-shooter",
+    "photoPosition": "center 30%",
+    "metaTitle": "Basketball Court Kits in Canada",
+    "metaDescription": "Backyard basketball court kits in half and full court sizes from 25 ft x 20 ft to 94 ft x 50 ft. Modular tiles, your colours, shipped anywhere in Canada.",
+    "h1": "Backyard basketball court kits",
+    "intro": "Half courts that fit beside the garage and full courts for the serious hoopers. Every kit comes with the key, free-throw line and three-point arc already planned.",
+    "body": [
+      "Most backyard basketball courts in Canada are half courts between 25 and 35 feet wide. That is enough for a full key, a free-throw line 15 feet from the backboard and a three-point arc that plays the way it does at the gym. If you have 30 feet of depth you can shoot from the top of the arc. With 50 feet of width you get complete corner threes.",
+      "A full court needs a lot more room. A high school court is 84 feet by 50 feet and a regulation court is 94 feet by 50 feet. Our compact full court kits start at 65 feet by 35 feet, which keeps both hoops and a centre line in a space many large rural and estate lots can handle.",
+      "Modular tiles sit on top of a flat concrete or asphalt pad. The surface drains through, stays cooler than bare asphalt and gives a consistent bounce. Pick one colour for the court, another for the key and a third for the border."
+    ],
+    "facts": [
+      { "label": "Free-throw line", "value": "15 ft from the backboard" },
+      { "label": "Key width", "value": "12 ft" },
+      { "label": "High school court", "value": "84 ft x 50 ft" },
+      { "label": "Regulation court", "value": "94 ft x 50 ft" }
+    ],
+    "faqs": [
+      { "q": "What size is a backyard half court?", "a": "The most common backyard half court is about 30 feet wide by 25 feet deep. That fits a full key, a free-throw line and most of a three-point arc. Smaller pads of 25 by 20 feet still play well for younger kids." },
+      { "q": "Is the hoop included in a basketball court kit?", "a": "No. Kits cover the tile surface, edging and game lines. Choose any in-ground or portable hoop you like. We plan the lines around a standard 4 ft backboard overhang, so tell us if yours is different." },
+      { "q": "Can I add pickleball lines to a basketball court?", "a": "Yes. A half court 30 feet wide and at least 50 feet long can carry a full pickleball court in a second line colour. See the multi-sport kits." }
+    ]
+  },
+  {
+    "slug": "pickleball",
+    "name": "Pickleball",
+    "kitLabel": "Pickleball court kits",
+    "photo": "pickleball-net",
+    "photoPosition": "center 60%",
+    "metaTitle": "Pickleball Court Kits in Canada",
+    "metaDescription": "Backyard pickleball court kits with a full 20 ft x 44 ft playing court. Compact 52 x 28 and recommended 60 x 30 sizes in modular tile, shipped across Canada.",
+    "h1": "Backyard pickleball court kits",
+    "intro": "A full 20 ft by 44 ft playing court with the kitchen in its own colour, sized two ways: a compact pad for tight yards and the recommended 30 by 60.",
+    "body": [
+      "A pickleball court is 20 feet wide and 44 feet long, with a 7 foot non-volley zone on each side of the net. The space around the lines matters just as much. The recommended minimum total playing area is 30 feet by 60 feet, which leaves room to chase a lob without stepping onto the grass.",
+      "If your yard cannot fit 30 by 60, the compact 52 by 28 kit keeps the full-size playing lines and trims the run-off. It suits yards where the court shares space with a pool or a patio.",
+      "Tiles give a truer, slightly softer surface than bare concrete and they drain right after rain. Choose a colour for the court, a contrasting kitchen and a border. Nets and posts are bought separately, so you can use a portable net or surface-mount posts."
+    ],
+    "facts": [
+      { "label": "Playing court", "value": "20 ft x 44 ft" },
+      { "label": "Kitchen depth", "value": "7 ft each side of the net" },
+      { "label": "Recommended total", "value": "30 ft x 60 ft" },
+      { "label": "Net height", "value": "36 in at posts, 34 in at centre" }
+    ],
+    "faqs": [
+      { "q": "How much space do I need for a backyard pickleball court?", "a": "The lines are 20 feet by 44 feet. Plan on 30 feet by 60 feet in total if you can. A compact 28 by 52 pad works when space is tight." },
+      { "q": "Does the ball bounce properly on modular tile?", "a": "Yes. Sport tiles are made for ball sports and give a consistent bounce on a flat, hard base. The bounce is slightly lower than on painted concrete, which most recreational players adjust to within a game or two." },
+      { "q": "Is the net included?", "a": "No. The kit is the surface, edging and lines. Use a portable net system or surface-mount posts." }
+    ]
+  },
+  {
+    "slug": "multi-sport",
+    "name": "Multi-sport",
+    "kitLabel": "Multi-sport court kits",
+    "photo": "backyard-court",
+    "photoPosition": "center 70%",
+    "metaTitle": "Multi-Sport Court Kits in Canada",
+    "metaDescription": "Multi-sport backyard court kits that combine half-court basketball and a full pickleball court on one 30 ft wide modular tile pad. Shipped across Canada.",
+    "h1": "Multi-sport backyard court kits",
+    "intro": "One pad, two games. A basketball key and arc at one end and a full pickleball court laid over it in a second line colour.",
+    "body": [
+      "The most useful backyard court is often not a basketball court or a pickleball court. It is both. A pad 30 feet wide and 50 to 60 feet long holds a full pickleball court down the middle and a basketball half court at one end.",
+      "The two sets of lines are done in different colours so each game reads clearly. Basketball lines are usually white and pickleball lines a contrasting colour. A portable pickleball net rolls off in a minute when it is time to shoot hoops.",
+      "The same pad can carry lines for badminton, volleyball, four square or hopscotch. Tell us what your family plays and we will draw it into the layout before the kit ships."
+    ],
+    "facts": [
+      { "label": "Pad width", "value": "30 ft" },
+      { "label": "Pad length", "value": "50 to 60 ft" },
+      { "label": "Games", "value": "Basketball half court and pickleball" },
+      { "label": "Extra lines", "value": "Badminton, volleyball, four square" }
+    ],
+    "faqs": [
+      { "q": "Do two sets of lines get confusing?", "a": "Not when they are different colours. Your eye follows the colour for the game you are playing within a few minutes." },
+      { "q": "What is the smallest pad that fits both basketball and pickleball?", "a": "About 30 feet by 50 feet. That fits the 20 by 44 pickleball lines with a few feet of run-off and a basketball key at one end." }
+    ]
+  },
+  {
+    "slug": "tennis",
+    "name": "Tennis",
+    "kitLabel": "Tennis court kits",
+    "photo": "court-lines",
+    "photoPosition": "center",
+    "metaTitle": "Modular Tennis Court Kits in Canada",
+    "metaDescription": "Modular tile tennis court kits in recreational 110 ft x 50 ft and regulation 120 ft x 60 ft sizes. Resurface a cracked court without repaving. Shipped Canada-wide.",
+    "h1": "Modular tennis court kits",
+    "intro": "A full 78 ft by 36 ft doubles court in two footprints. A popular way to bring a cracked asphalt court back without repaving it.",
+    "body": [
+      "A tennis court is 78 feet long and 36 feet wide for doubles. With run-off behind the baselines and beside the sidelines, the standard total footprint is 120 feet by 60 feet. Our recreational kit trims that to 110 by 50 for private courts where space is limited.",
+      "Tile is often the most practical fix for an older court. If the existing asphalt is structurally sound but cracked or faded, tiles can go over it once low spots are patched, which avoids a full repave and recoat.",
+      "A court this size can carry four pickleball courts in a second line colour. Ask us to add them to your layout."
+    ],
+    "facts": [
+      { "label": "Doubles court", "value": "78 ft x 36 ft" },
+      { "label": "Singles width", "value": "27 ft" },
+      { "label": "Standard total", "value": "120 ft x 60 ft" },
+      { "label": "Service line", "value": "21 ft from the net" }
+    ],
+    "faqs": [
+      { "q": "Can tiles go over my old asphalt tennis court?", "a": "Usually yes, as long as the asphalt is firm and reasonably flat. Cracks do not need to be invisible, but heaves and low spots should be levelled first. Send photos and we will tell you what to expect." },
+      { "q": "Can I add pickleball lines to a tennis court kit?", "a": "Yes. A regulation tennis footprint fits up to four pickleball courts. We add them in a second colour." }
+    ]
+  },
+  {
+    "slug": "shuffleboard",
+    "name": "Shuffleboard",
+    "kitLabel": "Shuffleboard court kits",
+    "photo": "day-court",
+    "photoPosition": "center",
+    "metaTitle": "Shuffleboard Court Kits in Canada",
+    "metaDescription": "Outdoor shuffleboard court kits in modular tile. Regulation 52 ft x 6 ft, backyard 42 ft and double courts for cottages, resorts and 55+ communities in Canada.",
+    "h1": "Outdoor shuffleboard court kits",
+    "intro": "A long, narrow court that fits where nothing else does. Regulation 52 ft lanes, a shorter backyard version and a double for cottages and communities.",
+    "body": [
+      "A regulation outdoor shuffleboard court is 52 feet long and 6 feet wide, with a scoring triangle at each end. It fits along a fence line or beside a pool where a bigger court never would.",
+      "For tighter yards the 42 foot kit keeps the same width and scoring triangles and shortens the middle of the lane. Double kits put two regulation lanes side by side, which suits cottages, campgrounds and 55+ communities.",
+      "Discs and cues are bought separately. We mark the scoring triangles and dead lines so the court is ready to play as soon as the last tile clicks in."
+    ],
+    "facts": [
+      { "label": "Regulation court", "value": "52 ft x 6 ft" },
+      { "label": "Scoring", "value": "10, 8, 7 and 10 off" },
+      { "label": "Backyard length", "value": "42 ft" },
+      { "label": "Double court", "value": "52 ft x 16 ft" }
+    ],
+    "faqs": [
+      { "q": "Do discs slide properly on tile?", "a": "Shuffleboard is played on a smooth-top tile rather than the open-grid tile used for ball sports. Tell us the court is for shuffleboard and we quote the right surface." }
+    ]
+  }
+]

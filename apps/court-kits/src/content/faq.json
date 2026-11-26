@@ -1,0 +1,37 @@
+[
+  {
+    "group": "Choosing a kit",
+    "items": [
+      { "q": "What is a court kit?", "a": "A court kit is a complete playing surface in a box: interlocking sport tiles for a set footprint, edge pieces, game lines for your sport and a numbered plan that shows where every section goes." },
+      { "q": "How do I pick the right size?", "a": "Measure the flat, hard area you have or plan to pour. Choose the kit at or just under that size. If your pad is an unusual shape or size, ask for a custom layout." },
+      { "q": "Can a kit be customised?", "a": "Yes. Length and width can change in steps of about a foot, colours are your choice and extra game lines can be added." },
+      { "q": "What does a kit not include?", "a": "The base, hoops, nets, posts, lighting and fencing. Those depend on your yard and your preferences, so you source them separately." }
+    ]
+  },
+  {
+    "group": "Base and site",
+    "items": [
+      { "q": "Do I need concrete under a court kit?", "a": "You need something flat and hard. Concrete is the first choice. Asphalt is a good second. Compacted gravel alone, grass and bare soil will not hold the surface flat." },
+      { "q": "Can I put a kit on my existing driveway or patio?", "a": "Yes, if it is flat and in sound condition. Small cracks are fine. Raised edges and dips should be ground down or filled first." },
+      { "q": "How level does the base need to be?", "a": "Smooth enough that water does not pool, with a slight fall for drainage. A slope of around 1 percent is typical for a new pad." },
+      { "q": "Should I check local bylaws first?", "a": "Yes. Setbacks, lot coverage, fences and lights are regulated differently from one municipality to the next. A call to the building department before you pour is worth the time." }
+    ]
+  },
+  {
+    "group": "Building it",
+    "items": [
+      { "q": "How long does it take to build a court from a kit?", "a": "A basketball half court is an afternoon for two or three people. A pickleball or multi-game court is about a day. Tennis and full-court basketball kits are weekend jobs for a larger crew." },
+      { "q": "Do I need experience or special tools?", "a": "No. If you can follow a numbered drawing you can build the court. A rubber mallet, tape measure and chalk line cover most of it." },
+      { "q": "Can I take the court apart later?", "a": "Yes. The tiles unlock, so a court can be lifted to repair the base, moved to a new home or extended later." },
+      { "q": "What about snow and ice?", "a": "The court stays down all winter. Clear it with a leaf blower or plastic shovel. Avoid metal blades and rock salt." }
+    ]
+  },
+  {
+    "group": "Quotes and shipping",
+    "items": [
+      { "q": "Why do I need a quote instead of a cart price?", "a": "Freight on a pallet of tile varies a lot by distance and delivery access. Quoting the kit and shipping together gives you one honest number for your postal code." },
+      { "q": "What happens after I request a quote?", "a": "You receive a delivered price and a drawing of your court in your colours. Once you approve the drawing, the kit is prepared and shipped." },
+      { "q": "Do you deliver outside major cities?", "a": "Yes. Freight carriers reach rural and cottage addresses across Canada. Remote and island locations can take longer and cost more, which your quote will show." }
+    ]
+  }
+]

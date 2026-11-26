@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "london",
+    "name": "London",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "London lots tend to be deeper than they are wide, which suits a half court behind the garage or a pickleball court along the back fence.",
+    "local": [
+      "In established neighbourhoods like Byron, Oakridge and Old North, a 25 by 20 or 30 by 25 foot half court is usually the largest pad that fits beside a patio. Newer subdivisions and the rural edges around Lambeth, Arva and Komoka often have space for a 60 by 30 multi-game pad.",
+      "Southwestern Ontario gets real freeze-thaw. A court that floats on the slab rather than being painted onto it does not peel when the concrete moves a little over winter.",
+      "Kits are quoted with freight to London and the surrounding area, including St. Thomas, Strathroy and Woodstock."
+    ],
+    "nearby": ["St. Thomas", "Strathroy", "Woodstock", "Ingersoll", "Komoka", "Dorchester"]
+  },
+  {
+    "slug": "kitchener-waterloo",
+    "name": "Kitchener-Waterloo",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "From Doon to Laurelwood, Waterloo Region backyards are a natural fit for a compact half court or a 52 by 28 pickleball kit.",
+    "local": [
+      "Most suburban lots in Kitchener, Waterloo and Cambridge can take a 25 by 25 or 30 by 25 foot pad once setbacks are respected. Country properties in Wilmot, Woolwich and North Dumfries have room for full pickleball and multi-game courts.",
+      "If you are adding a pad, check the lot coverage rules for your municipality before the concrete truck is booked. Each of the three cities and four townships sets its own limits.",
+      "Freight quotes cover Kitchener, Waterloo, Cambridge, Guelph and the townships."
+    ],
+    "nearby": ["Cambridge", "Guelph", "Elmira", "New Hamburg", "Baden", "St. Jacobs"]
+  },
+  {
+    "slug": "hamilton",
+    "name": "Hamilton",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "On the Mountain, in Ancaster or out toward Flamborough, a tile court turns a plain concrete pad into the most used part of the yard.",
+    "local": [
+      "City lots on the Mountain and in Stoney Creek generally suit a starter or classic half court. Ancaster, Dundas and rural Flamborough and Glanbrook properties can carry a 30 by 60 pickleball or multi-game pad.",
+      "Have an old asphalt pad or a disused tennis court? If it is firm and fairly flat, tile can go straight over it and save the cost of new concrete.",
+      "Kits are quoted delivered to Hamilton, Burlington, Grimsby and the Niagara Peninsula."
+    ],
+    "nearby": ["Burlington", "Ancaster", "Dundas", "Stoney Creek", "Grimsby", "Waterdown"]
+  },
+  {
+    "slug": "winnipeg",
+    "name": "Winnipeg",
+    "province": "Manitoba",
+    "provinceCode": "MB",
+    "intro": "Winnipeg has some of the widest temperature swings of any Canadian city. A floating tile surface is built to move with them.",
+    "local": [
+      "Plastic expands in July heat and shrinks in a January cold snap. Your layout plan shows a small gap to leave around the court edge so the surface can move freely through a Manitoba year.",
+      "Larger lots in Charleswood, St. Vital and the surrounding municipalities of Headingley, East St. Paul and Springfield suit pickleball and multi-game pads. In the city, a half court on the garage apron is the simplest project.",
+      "Freight quotes cover Winnipeg and southern Manitoba, including Steinbach, Selkirk and Brandon."
+    ],
+    "nearby": ["Steinbach", "Selkirk", "Headingley", "Stonewall", "Oakbank", "Brandon"]
+  },
+  {
+    "slug": "halifax",
+    "name": "Halifax",
+    "province": "Nova Scotia",
+    "provinceCode": "NS",
+    "intro": "Fog, drizzle and salt air are part of life in Halifax. An open-grid tile court drains through instead of holding puddles.",
+    "local": [
+      "Coastal weather means courts are wet more often than not. Perforated tiles let water pass to the pad below so the playing surface is usable sooner after rain.",
+      "Lots in Bedford, Hammonds Plains, Fall River and along the Eastern Shore often have room for a full 60 by 30 pad. On the peninsula and in Dartmouth, compact half courts are the practical choice.",
+      "Kits are quoted with freight to Halifax Regional Municipality and the rest of Nova Scotia, and to New Brunswick and Prince Edward Island on request."
+    ],
+    "nearby": ["Dartmouth", "Bedford", "Sackville", "Hammonds Plains", "Fall River", "Truro"]
+  }
+]

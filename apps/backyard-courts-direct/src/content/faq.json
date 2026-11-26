@@ -1,0 +1,35 @@
+[
+  {
+    "group": "Planning",
+    "items": [
+      { "q": "What do modular court tiles sit on?", "a": "A flat, hard base. Concrete is best and asphalt works well. Tiles can also go over an existing pad, driveway or old tennis court as long as it is firm and reasonably level. They are not meant to go straight onto grass, soil or loose gravel." },
+      { "q": "How much space do I need?", "a": "A starter basketball half court fits on a pad about 25 feet by 20 feet. A full pickleball court needs at least 28 feet by 52 feet, and 30 by 60 is better. Send us the space you have and we will tell you what fits." },
+      { "q": "Can a kit be made to fit an odd-sized pad?", "a": "Yes. Tiles are roughly a foot square, so a kit can be resized in small steps in either direction. The listed sizes are starting points." },
+      { "q": "Do I need a permit for a backyard court?", "a": "Rules vary by municipality. Many treat a court pad like a patio, but lot coverage limits, setbacks, fencing and lighting can each have their own rules. Check with your local building department before you pour concrete." }
+    ]
+  },
+  {
+    "group": "The kit",
+    "items": [
+      { "q": "What is included in a court kit?", "a": "Tiles for the full footprint, edge pieces for the perimeter, game lines for your sport and a numbered layout plan. Hoops, nets, posts, lighting, fencing and the base itself are not included." },
+      { "q": "Which colours can I choose?", "a": "You pick a main court colour, a second colour for the key or kitchen and a border colour. The swatches on each kit page show the usual range. We confirm exact colour availability with your quote." },
+      { "q": "Can I have lines for more than one sport?", "a": "Yes. Extra game lines can be added in a second colour. Basketball with pickleball is the most common pairing." }
+    ]
+  },
+  {
+    "group": "Installing",
+    "items": [
+      { "q": "Can I install a court kit myself?", "a": "Yes, that is the idea. Tiles snap together by hand following the numbered plan. Two or three people can lay a half court in an afternoon. Larger courts take a day or a weekend." },
+      { "q": "What tools do I need?", "a": "A rubber mallet, a tape measure, a chalk line and a broom. A fine-tooth saw is handy if tiles need trimming around a post or a drain." },
+      { "q": "Can the court stay outside all winter?", "a": "Yes. Sport tiles are made to live outdoors through Canadian winters. Leave a small gap around the perimeter so the surface can expand and contract, and use a plastic shovel or a blower rather than a steel blade when clearing snow." }
+    ]
+  },
+  {
+    "group": "Ordering",
+    "items": [
+      { "q": "How does ordering work?", "a": "Request a quote for the kit and colours you want. We reply with a delivered price to your postal code and a layout drawing. Nothing is produced until you approve the drawing." },
+      { "q": "Where do you ship?", "a": "Everywhere in Canada. Kits ship on pallets by freight carrier. Tell us if you have a loading dock, a forklift or need a liftgate truck for a residential driveway." },
+      { "q": "How long does delivery take?", "a": "Lead time depends on the colours you choose and where you are. We give you a firm estimate with your quote." }
+    ]
+  }
+]

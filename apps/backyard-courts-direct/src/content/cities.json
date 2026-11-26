@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "toronto",
+    "name": "Toronto",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Toronto and GTA lots are tight, so the courts that fit here are usually 25 by 20 or 30 by 25 half courts that share the yard with a patio or a pool.",
+    "local": [
+      "In the 416 and the inner suburbs, the first question is what fits. A 25 by 20 foot half court works on many detached lots and doubles as a hard-surface play area. In Vaughan, Oakville, Aurora and King, larger lots make room for a 30 by 60 multi-sport pad.",
+      "Kits ship by freight to anywhere in the GTA. If your street is narrow or your driveway is short, tell us and we will ask for a smaller truck with a liftgate.",
+      "Southern Ontario freeze-thaw cycles are hard on painted concrete. Tiles float on top of the pad, so the playing surface is not affected by the hairline cracks most slabs develop over time."
+    ],
+    "nearby": ["Mississauga", "Vaughan", "Markham", "Oakville", "Richmond Hill", "Pickering"]
+  },
+  {
+    "slug": "ottawa",
+    "name": "Ottawa",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Ottawa winters are long and the frost goes deep. A tile court over a well-built pad is ready to play as soon as the snow is gone.",
+    "local": [
+      "Suburban lots in Kanata, Barrhaven and Orleans generally suit a 30 by 25 basketball half court or a 52 by 28 pickleball court. Rural properties in Greely, Manotick and Carp have room for a full 30 by 60 multi-sport pad.",
+      "Because the surface is perforated, meltwater drains through instead of sitting on top. Courts dry quickly in spring and after summer storms.",
+      "We quote freight to the whole National Capital Region, including Gatineau and the Outaouais side."
+    ],
+    "nearby": ["Kanata", "Nepean", "Orleans", "Barrhaven", "Gatineau", "Manotick"]
+  },
+  {
+    "slug": "calgary",
+    "name": "Calgary",
+    "province": "Alberta",
+    "provinceCode": "AB",
+    "intro": "Calgary is one of the sunniest cities in Canada, with chinooks that can swing the temperature in an afternoon. Outdoor sport tile is made for that kind of weather.",
+    "local": [
+      "Acreages in Springbank, Bearspaw and De Winton have the room for full courts and 30 by 60 multi-sport pads. In the city, a 30 by 25 half court beside the garage is the natural fit.",
+      "Big temperature swings make any plastic surface expand and contract. Leaving a small perimeter gap, which we show on the layout plan, lets the court move without buckling.",
+      "Kits are quoted with freight to Calgary, Airdrie, Cochrane, Okotoks and the surrounding rural addresses."
+    ],
+    "nearby": ["Airdrie", "Cochrane", "Okotoks", "Chestermere", "Springbank", "Canmore"]
+  },
+  {
+    "slug": "vancouver",
+    "name": "Vancouver",
+    "province": "British Columbia",
+    "provinceCode": "BC",
+    "intro": "On the wet coast, a court that drains is the difference between playing in November and waiting for July. Open-grid tiles shed rain straight through.",
+    "local": [
+      "In the Lower Mainland the room for a court is mostly found in the Fraser Valley, Langley, Surrey and on the North Shore. Pickleball has grown quickly here, and a 52 by 28 kit fits where a tennis court never would.",
+      "Painted concrete gets slick with moss and standing water in a coastal winter. A perforated tile surface keeps water moving off the top so the court is playable sooner after rain.",
+      "We quote freight to Metro Vancouver, the Fraser Valley and Vancouver Island. Island deliveries are quoted to your door, ferry included."
+    ],
+    "nearby": ["Surrey", "Langley", "Burnaby", "North Vancouver", "Abbotsford", "Victoria"]
+  },
+  {
+    "slug": "edmonton",
+    "name": "Edmonton",
+    "province": "Alberta",
+    "provinceCode": "AB",
+    "intro": "Edmonton summers are short and the evenings are long. A backyard court can be in use from after school until the sun goes down at ten.",
+    "local": [
+      "Acreages in Sherwood Park, St. Albert, Spruce Grove and Leduc County can fit a 30 by 60 pad with room to spare. In town, a half court on the garage pad is the simplest project.",
+      "Tiles stay outside all winter. Clear them with a blower or a plastic shovel and the court is ready on the first warm day.",
+      "Freight quotes cover Edmonton and the capital region. Ask for liftgate service if the delivery is to a residential driveway."
+    ],
+    "nearby": ["Sherwood Park", "St. Albert", "Spruce Grove", "Leduc", "Fort Saskatchewan", "Beaumont"]
+  }
+]
