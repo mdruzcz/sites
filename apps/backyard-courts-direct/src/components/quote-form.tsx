@@ -19,14 +19,16 @@ export function QuoteForm({ kitOptions, sportOptions, responseTime, phone, phone
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
-  const [prefill, setPrefill] = useState({ kit: "", colours: "", sport: "" });
+  const [prefill, setPrefill] = useState({ kit: "", colours: "", sport: "", space: "" });
   const successRef = useRef<HTMLDivElement>(null);
+  const openedAt = useRef(0);
 
   // Kit and colours arrive in the URL from a kit page. Read them on the client
   // so the contact page itself can stay static.
   useEffect(() => {
+    openedAt.current = Date.now();
     const q = new URLSearchParams(window.location.search);
-    setPrefill({ kit: q.get("kit") ?? "", colours: q.get("colours") ?? "", sport: q.get("sport") ?? "" });
+    setPrefill({ kit: q.get("kit") ?? "", colours: q.get("colours") ?? "", sport: q.get("sport") ?? "", space: q.get("space") ?? "" });
   }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -38,7 +40,7 @@ export function QuoteForm({ kitOptions, sportOptions, responseTime, phone, phone
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, turnstileToken: token, formId: "quote" }),
+        body: JSON.stringify({ ...data, turnstileToken: token, formId: "quote", elapsedMs: Date.now() - openedAt.current }),
       });
       if (!res.ok) {
         const out = (await res.json().catch(() => ({}))) as { error?: string };
@@ -77,10 +79,14 @@ export function QuoteForm({ kitOptions, sportOptions, responseTime, phone, phone
     );
   }
 
-  const kitKnown = prefill.kit && !kitOptions.includes(prefill.kit);
+  // A kit page sends "Name (CODE)"; the options also carry the price, so match on the code.
+  const code = prefill.kit.match(/\(([A-Z]+-\d+)\)/)?.[1];
+  const kitMatch = code ? kitOptions.find((k) => k.includes(`(${code})`)) : undefined;
+  const kitValue = kitMatch ?? prefill.kit;
+  const kitKnown = prefill.kit && !kitMatch;
 
   return (
-    <form onSubmit={onSubmit} className="card space-y-5 p-5 md:p-8" key={`${prefill.kit}|${prefill.sport}`}>
+    <form onSubmit={onSubmit} className="card space-y-5 p-5 md:p-8" key={`${prefill.kit}|${prefill.sport}|${prefill.space}`}>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
@@ -110,7 +116,7 @@ export function QuoteForm({ kitOptions, sportOptions, responseTime, phone, phone
         </div>
         <div>
           <label htmlFor="q-kit" className="label">Kit</label>
-          <select id="q-kit" name="kit" className="field" defaultValue={prefill.kit}>
+          <select id="q-kit" name="kit" className="field" defaultValue={kitValue}>
             <option value="">Not sure yet, help me choose</option>
             {kitKnown && <option>{prefill.kit}</option>}
             {kitOptions.map((k) => (
@@ -121,7 +127,7 @@ export function QuoteForm({ kitOptions, sportOptions, responseTime, phone, phone
         </div>
         <div>
           <label htmlFor="q-space" className="label">Space you have (ft)</label>
-          <input id="q-space" name="space" className="field" placeholder="e.g. 32 x 55" />
+          <input id="q-space" name="space" className="field" defaultValue={prefill.space} placeholder="e.g. 32 x 55" />
         </div>
         <div>
           <label htmlFor="q-base" className="label">What will it sit on?</label>

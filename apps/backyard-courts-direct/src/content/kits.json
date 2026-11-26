@@ -1,27 +1,22 @@
 [
-  { "slug": "basketball-half-court-25x20", "code": "BH-2520", "sport": "basketball", "layout": "half", "w": 25, "d": 20, "tag": "Starter", "bestFor": "Driveway-sized pads and younger players", "popular": true },
-  { "slug": "basketball-half-court-25x25", "code": "BH-2525", "sport": "basketball", "layout": "half", "w": 25, "d": 25, "bestFor": "A square pad with a full free-throw line" },
-  { "slug": "basketball-half-court-30x25", "code": "BH-3025", "sport": "basketball", "layout": "half", "w": 30, "d": 25, "tag": "Classic size", "bestFor": "The classic backyard half court", "popular": true },
-  { "slug": "basketball-half-court-30x30", "code": "BH-3030", "sport": "basketball", "layout": "half", "w": 30, "d": 30, "bestFor": "Room to shoot from the top of the arc" },
-  { "slug": "basketball-half-court-35x30", "code": "BH-3530", "sport": "basketball", "layout": "half", "w": 35, "d": 30, "bestFor": "Corner threes and two-on-two" },
-  { "slug": "basketball-half-court-45x30", "code": "BH-4530", "sport": "basketball", "layout": "half", "w": 45, "d": 30, "bestFor": "A near-regulation half court" },
-  { "slug": "basketball-half-court-50x30", "code": "BH-5030", "sport": "basketball", "layout": "half", "w": 50, "d": 30, "tag": "Full width", "bestFor": "Full 50 ft width for a complete three-point line" },
-
-  { "slug": "basketball-full-court-65x35", "code": "BF-6535", "sport": "basketball", "layout": "full", "w": 35, "d": 65, "tag": "Compact full", "bestFor": "Full-court runs in a large backyard" },
-  { "slug": "basketball-full-court-75x45", "code": "BF-7545", "sport": "basketball", "layout": "full", "w": 45, "d": 75, "bestFor": "Family compounds and small clubs" },
-  { "slug": "basketball-full-court-84x50", "code": "BF-8450", "sport": "basketball", "layout": "full", "w": 50, "d": 84, "tag": "High school size", "bestFor": "Schools, churches and community courts" },
-  { "slug": "basketball-full-court-94x50", "code": "BF-9450", "sport": "basketball", "layout": "full", "w": 50, "d": 94, "tag": "Regulation", "bestFor": "A full-length 94 ft by 50 ft playing court" },
-
-  { "slug": "pickleball-court-52x28", "code": "PB-5228", "sport": "pickleball", "layout": "pickleball", "w": 28, "d": 52, "tag": "Compact", "bestFor": "A full-size playing court on a tighter pad", "popular": true },
-  { "slug": "pickleball-court-60x30", "code": "PB-6030", "sport": "pickleball", "layout": "pickleball", "w": 30, "d": 60, "tag": "Recommended size", "bestFor": "The standard 30 ft by 60 ft total footprint", "popular": true },
-
-  { "slug": "multi-sport-court-50x30", "code": "MS-5030", "sport": "multi-sport", "layout": "multi", "w": 30, "d": 50, "tag": "Two games", "bestFor": "Half-court basketball plus a pickleball court", "popular": true },
-  { "slug": "multi-sport-court-60x30", "code": "MS-6030", "sport": "multi-sport", "layout": "multi", "w": 30, "d": 60, "tag": "Most versatile", "bestFor": "Recommended-size pickleball with a hoop at one end", "popular": true },
-
-  { "slug": "tennis-court-110x50", "code": "TN-11050", "sport": "tennis", "layout": "tennis", "w": 50, "d": 110, "tag": "Recreational", "bestFor": "A full playing court with reduced run-off" },
-  { "slug": "tennis-court-120x60", "code": "TN-12060", "sport": "tennis", "layout": "tennis", "w": 60, "d": 120, "tag": "Regulation", "bestFor": "The standard 60 ft by 120 ft total footprint" },
-
-  { "slug": "shuffleboard-court-42x6", "code": "SB-4206", "sport": "shuffleboard", "layout": "shuffleboard", "w": 6, "d": 42, "tag": "Backyard size", "bestFor": "A side-yard strip beside the patio" },
-  { "slug": "shuffleboard-court-52x6", "code": "SB-5206", "sport": "shuffleboard", "layout": "shuffleboard", "w": 6, "d": 52, "tag": "Regulation", "bestFor": "The official 52 ft by 6 ft court", "popular": true },
-  { "slug": "shuffleboard-double-court-52x16", "code": "SB-5216", "sport": "shuffleboard", "layout": "shuffleboard-double", "w": 16, "d": 52, "tag": "Double", "bestFor": "Two regulation lanes side by side" }
+  {"slug": "basketball-half-court-25x20", "code": "BH-2520", "sport": "basketball", "layout": "half", "w": 25, "d": 20, "tag": "Starter", "bestFor": "Driveway-sized pads and younger players", "popular": true, "price": 3420},
+  {"slug": "basketball-half-court-25x25", "code": "BH-2525", "sport": "basketball", "layout": "half", "w": 25, "d": 25, "bestFor": "A square pad with a full free-throw line", "price": 4295},
+  {"slug": "basketball-half-court-30x25", "code": "BH-3025", "sport": "basketball", "layout": "half", "w": 30, "d": 25, "tag": "Classic size", "bestFor": "The classic backyard half court", "popular": true, "price": 5160},
+  {"slug": "basketball-half-court-30x30", "code": "BH-3030", "sport": "basketball", "layout": "half", "w": 30, "d": 30, "bestFor": "Room to shoot from the top of the arc", "price": 6210},
+  {"slug": "basketball-half-court-35x30", "code": "BH-3530", "sport": "basketball", "layout": "half", "w": 35, "d": 30, "bestFor": "Corner threes and two-on-two", "price": 7225},
+  {"slug": "basketball-half-court-45x30", "code": "BH-4530", "sport": "basketball", "layout": "half", "w": 45, "d": 30, "bestFor": "A near-regulation half court", "price": 9050},
+  {"slug": "basketball-half-court-50x30", "code": "BH-5030", "sport": "basketball", "layout": "half", "w": 50, "d": 30, "tag": "Full width", "bestFor": "Full 50 ft width for a complete three-point line", "price": 9970},
+  {"slug": "basketball-full-court-65x35", "code": "BF-6535", "sport": "basketball", "layout": "full", "w": 35, "d": 65, "tag": "Compact full", "bestFor": "Full-court runs in a large backyard", "price": 14470},
+  {"slug": "basketball-full-court-75x45", "code": "BF-7545", "sport": "basketball", "layout": "full", "w": 45, "d": 75, "bestFor": "Family compounds and small clubs", "price": 21595},
+  {"slug": "basketball-full-court-84x50", "code": "BF-8450", "sport": "basketball", "layout": "full", "w": 50, "d": 84, "tag": "High school size", "bestFor": "Schools, churches and community courts", "price": 26090},
+  {"slug": "basketball-full-court-94x50", "code": "BF-9450", "sport": "basketball", "layout": "full", "w": 50, "d": 94, "tag": "Regulation", "bestFor": "A full-length 94 ft by 50 ft playing court", "price": 29330},
+  {"slug": "pickleball-court-52x28", "code": "PB-5228", "sport": "pickleball", "layout": "pickleball", "w": 28, "d": 52, "tag": "Compact", "bestFor": "A full-size playing court on a tighter pad", "popular": true, "price": 9600},
+  {"slug": "pickleball-court-60x30", "code": "PB-6030", "sport": "pickleball", "layout": "pickleball", "w": 30, "d": 60, "tag": "Recommended size", "bestFor": "The standard 30 ft by 60 ft total footprint", "popular": true, "price": 11670},
+  {"slug": "multi-sport-court-50x30", "code": "MS-5030", "sport": "multi-sport", "layout": "multi", "w": 30, "d": 50, "tag": "Two games", "bestFor": "Half-court basketball plus a pickleball court", "popular": true, "price": 9890},
+  {"slug": "multi-sport-court-60x30", "code": "MS-6030", "sport": "multi-sport", "layout": "multi", "w": 30, "d": 60, "tag": "Most versatile", "bestFor": "Recommended-size pickleball with a hoop at one end", "popular": true, "price": 11670},
+  {"slug": "tennis-court-110x50", "code": "TN-11050", "sport": "tennis", "layout": "tennis", "w": 50, "d": 110, "tag": "Recreational", "bestFor": "A full playing court with reduced run-off", "price": 33955},
+  {"slug": "tennis-court-120x60", "code": "TN-12060", "sport": "tennis", "layout": "tennis", "w": 60, "d": 120, "tag": "Regulation", "bestFor": "The standard 60 ft by 120 ft total footprint", "price": 44050},
+  {"slug": "shuffleboard-court-42x6", "code": "SB-4206", "sport": "shuffleboard", "layout": "shuffleboard", "w": 6, "d": 42, "tag": "Backyard size", "bestFor": "A side-yard strip beside the patio", "price": 3285},
+  {"slug": "shuffleboard-court-52x6", "code": "SB-5206", "sport": "shuffleboard", "layout": "shuffleboard", "w": 6, "d": 52, "tag": "Regulation", "bestFor": "The official 52 ft by 6 ft court", "popular": true, "price": 3660},
+  {"slug": "shuffleboard-double-court-52x16", "code": "SB-5216", "sport": "shuffleboard", "layout": "shuffleboard-double", "w": 16, "d": 52, "tag": "Double", "bestFor": "Two regulation lanes side by side", "price": 9675}
 ]

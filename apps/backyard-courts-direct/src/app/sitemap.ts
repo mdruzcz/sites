@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { cities, kits, sports } from "@/lib/content";
+import { cities, guides, kits, sports } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/court-kits", 0.9),
     ...sports.map((s) => page(`/sports/${s.slug}`, 0.9)),
     ...kits.map((k) => page(`/court-kits/${k.slug}`, 0.8)),
+    page("/custom-court", 0.8),
+    page("/guides", 0.8),
+    ...guides.map((g) => page(`/guides/${g.slug}`, 0.8)),
     ...cities.map((c) => page(`/locations/${c.slug}`, 0.7)),
     page("/how-it-works", 0.7),
     page("/faq", 0.6),

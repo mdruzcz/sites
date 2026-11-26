@@ -5,8 +5,13 @@ export function escapeHtml(v: unknown): string {
   return String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
 }
 
-/** Fail closed in production, open in dev so forms can be tested without a widget. */
+/**
+ * Fail closed in production, open in dev so forms can be tested without a widget.
+ * TURNSTILE_REQUIRED=false switches the check off entirely. Use it only until this
+ * hostname has been added to a Turnstile widget, then remove the variable.
+ */
 export async function verifyTurnstile(token: string): Promise<boolean> {
+  if (process.env.TURNSTILE_REQUIRED === "false") return true;
   if (process.env.NODE_ENV !== "production" && !token) return true;
   if (!token) return false;
   try {

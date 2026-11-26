@@ -6,12 +6,10 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd, organizationLd } from "@/lib/jsonld";
-import { photos } from "@/lib/photos";
+import { ogBase, twitterImages } from "@/lib/seo";
 import { phoneHref, site } from "@/lib/site";
 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700", "900"], display: "swap", variable: "--font-lato" });
-
-const og = photos[site.photos.og];
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -19,17 +17,10 @@ export const metadata: Metadata = {
   description: site.metaDescription,
   applicationName: site.name,
   alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "en_CA",
-    siteName: site.name,
-    url: site.url,
-    title: site.homeTitle,
-    description: site.metaDescription,
-    images: [{ url: og.src, width: og.width, height: og.height, alt: "A backyard sport court lit for evening play" }],
-  },
-  twitter: { card: "summary_large_image", title: site.homeTitle, description: site.metaDescription, images: [og.src] },
+  openGraph: { ...ogBase, url: site.url, title: site.homeTitle, description: site.metaDescription },
+  twitter: { card: "summary_large_image", title: site.homeTitle, description: site.metaDescription, images: twitterImages },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = { themeColor: site.theme.inkDeep };
@@ -39,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const vars = {
     "--accent": t.accent,
     "--accent-ink": t.accentInk,
+    "--on-accent": t.onAccent,
     "--accent-soft": t.accentSoft,
     "--cta-from": t.ctaFrom,
     "--cta-to": t.ctaTo,
@@ -61,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a
             href={phoneHref}
             aria-label={`Call ${site.name} at ${site.phone}`}
-            className="fixed bottom-4 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-[var(--accent)] text-white shadow-[0_12px_30px_-10px_rgba(0,0,0,0.6)] md:hidden"
+            className="call-fab fixed bottom-4 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-[var(--accent)] text-white shadow-[0_12px_30px_-10px_rgba(0,0,0,0.6)] md:hidden"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.58 3.6a1 1 0 0 1-.25 1L6.6 10.8Z" />

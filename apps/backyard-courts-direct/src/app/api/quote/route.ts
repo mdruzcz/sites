@@ -16,6 +16,10 @@ export async function POST(req: Request) {
   // Honeypot: pretend success.
   if (typeof body.website === "string" && body.website.trim()) return Response.json({ ok: true });
 
+  // Bots submit instantly; a person takes at least a few seconds to fill the form.
+  const elapsed = Number(body.elapsedMs);
+  if (Number.isFinite(elapsed) && elapsed < 3000) return Response.json({ ok: true });
+
   if (!(await verifyTurnstile(s(body.turnstileToken, 4000)))) {
     return Response.json({ error: "Captcha verification failed. Please refresh and try again." }, { status: 400 });
   }
@@ -23,8 +27,8 @@ export async function POST(req: Request) {
   const name = s(body.name);
   const email = s(body.email);
   const phone = s(body.phone);
-  if (!name || !email || !phone) {
-    return Response.json({ error: "Name, email and phone are required." }, { status: 400 });
+  if (!name || !phone || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    return Response.json({ error: "Please enter your name, a valid email and a phone number." }, { status: 400 });
   }
 
   const row = {

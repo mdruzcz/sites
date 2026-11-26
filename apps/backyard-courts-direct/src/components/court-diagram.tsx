@@ -17,6 +17,9 @@ interface Props {
   className?: string;
   /** Hide the faint 1 ft tile grid on small thumbnails. */
   grid?: boolean;
+  /** Fixed pixel size, for renderers that cannot size an SVG from CSS. */
+  width?: number;
+  height?: number;
 }
 
 const LINE = "#FFFFFF";
@@ -27,7 +30,7 @@ const LINE2 = "#FFD23F";
  * runs left to right. Every dimension below is a real court measurement, so
  * the drawing shows what the lines will look like on that size of pad.
  */
-export function CourtDiagram({ layout, w, d, colours, title, className, grid = true }: Props) {
+export function CourtDiagram({ layout, w, d, colours, title, className, grid = true, width, height }: Props) {
   // Half courts are stored as baseline width (w) by depth (d); draw them with the
   // hoop on the left, so depth runs along x.
   const isHalf = layout === "half";
@@ -40,8 +43,8 @@ export function CourtDiagram({ layout, w, d, colours, title, className, grid = t
   const borderW = Math.min(1, H / 8);
 
   return (
-    <svg viewBox={`${-1} ${-1} ${L + 2} ${H + 2}`} role="img" aria-label={title} className={className} preserveAspectRatio="xMidYMid meet">
-      <title>{title}</title>
+    <svg viewBox={`${-1} ${-1} ${L + 2} ${H + 2}`} role="img" aria-label={title || undefined} className={className} width={width} height={height} preserveAspectRatio="xMidYMid meet">
+      {title && <title>{title}</title>}
       <defs>
         <pattern id={`g-${id}`} width="1" height="1" patternUnits="userSpaceOnUse">
           <path d="M1 0H0V1" fill="none" stroke="rgba(0,0,0,0.16)" strokeWidth="0.04" />

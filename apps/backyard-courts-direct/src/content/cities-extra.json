@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "mississauga",
+    "name": "Mississauga",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Mississauga yards run from compact subdivision lots in Churchill Meadows to deep, treed properties in Lorne Park and Mineola, so the right court size depends on which part of the city you are in.",
+    "local": [
+      "On the newer lots north of the 403, in Churchill Meadows, Lisgar and much of Meadowvale, a 25 by 20 foot half court is the realistic footprint, and it can share a slab with the patio. South of the QEW, the older lots in Lorne Park, Mineola and Clarkson are deep enough to consider a 52 by 28 pickleball court or a 50 by 30 multi-sport pad.",
+      "Many Mississauga backyards are reached through a side yard only a few feet wide. That matters more for the concrete truck than for the kit. Tiles arrive on pallets at the driveway and can be carried to the back by hand, a stack at a time. Ask your concrete contractor how they plan to get the pad poured before you settle on a size.",
+      "Being close to Lake Ontario takes the edge off the coldest nights, but winters here still bring thaw, rain and refreeze in the same week. An open-grid surface gives that water a way down to the pad instead of holding it on the playing surface. Check with the City of Mississauga about lot coverage and setbacks before adding a new slab."
+    ],
+    "nearby": ["Brampton", "Oakville", "Etobicoke", "Milton", "Burlington", "Caledon"]
+  },
+  {
+    "slug": "saskatoon",
+    "name": "Saskatoon",
+    "province": "Saskatchewan",
+    "provinceCode": "SK",
+    "intro": "Saskatoon gets some of the most sunshine in Canada and some of the coldest winter nights. A backyard court here has to handle both, and it earns its keep in the long light of June and July.",
+    "local": [
+      "In newer neighbourhoods such as Stonebridge, Evergreen, Rosewood and Brighton, yards are modest and a 25 by 20 or 30 by 25 foot half court is the size to plan around. Older areas with rear lanes and detached garages sometimes have a parking pad that can double as a base. On acreages in the RM of Corman Park and around Warman, Martensville and Clavet, a 60 by 30 multi-sport pad or a full court is realistic.",
+      "The prairie temperature range is the thing to plan for. A court here can see deep cold in January and a hot slab in July, and tiles expand and contract across that span. The perimeter gap on the layout plan is what lets the surface move, so keep it clear of soil and edging stones.",
+      "Snow in Saskatoon tends to be dry and light, which suits a leaf blower or a plastic shovel. We quote freight to Saskatoon and to rural addresses in the surrounding municipalities. If the delivery is to a farmyard or an acreage with equipment on site, mention it, since a loader with forks can make unloading simpler."
+    ],
+    "nearby": ["Warman", "Martensville", "Corman Park", "Dalmeny", "Clavet", "Dundurn"]
+  },
+  {
+    "slug": "regina",
+    "name": "Regina",
+    "province": "Saskatchewan",
+    "provinceCode": "SK",
+    "intro": "Regina is flat, open and windy, and it sits on heavy clay. All three shape how a backyard court is planned here.",
+    "local": [
+      "The clay under Regina swells when it is wet and shrinks when it is dry, and slabs across the city move with it. That makes the base the most important decision in a Regina court project. Talk to a local concrete contractor who knows the soil about how the pad should be built. A floating tile surface does not stop a slab from moving, but it keeps hairline cracks out of sight and off the playing lines.",
+      "Lots in Harbour Landing, The Greens on Gardiner and The Creeks suit a 25 by 20 or 30 by 25 foot half court. East of the city, the larger properties in White City, Emerald Park and Pilot Butte have room for a 60 by 30 multi-sport pad, and so do acreages toward Lumsden and the Qu'Appelle Valley.",
+      "Wind is part of every outdoor game in southern Saskatchewan. If you have a choice, place the court where a garage, a fence or a shelterbelt breaks the prevailing wind, which matters most for pickleball. Freight is quoted to your postal code, in the city or in the towns around it."
+    ],
+    "nearby": ["White City", "Emerald Park", "Pilot Butte", "Balgonie", "Lumsden", "Moose Jaw"]
+  },
+  {
+    "slug": "victoria",
+    "name": "Victoria",
+    "province": "British Columbia",
+    "provinceCode": "BC",
+    "intro": "Victoria has some of the mildest winters in Canada, which makes a backyard court a year-round idea instead of a summer one.",
+    "local": [
+      "Flat ground is the scarce thing on the south Island. Lots in Oak Bay, Fairfield and much of Saanich are compact, sloped or broken up by rock outcrops, so a 25 by 20 foot half court or a 52 by 6 shuffleboard lane along a fence is often what fits. Larger, flatter properties in Central Saanich, North Saanich and Metchosin can take a 60 by 30 pad.",
+      "Winters are wet more than cold. Rain, fallen leaves and shade from mature trees are what keep a hard court out of action here, not snow. An open-grid tile lets the rain through, and a quick pass with a blower clears needles and leaves before they settle into the surface.",
+      "Everything arriving on Vancouver Island crosses the water. Kits are quoted to your door with the ferry leg built into the freight price, whether you are in Langford, Sidney or Sooke. Check with your own municipality about setbacks and lot coverage, since Greater Victoria is made up of thirteen separate municipalities, each with its own rules."
+    ],
+    "nearby": ["Saanich", "Oak Bay", "Langford", "Colwood", "Sidney", "Sooke"]
+  },
+  {
+    "slug": "kelowna",
+    "name": "Kelowna",
+    "province": "British Columbia",
+    "provinceCode": "BC",
+    "intro": "Kelowna summers are hot, dry and long, and Okanagan life is lived outside. A backyard court belongs in the same plan as the pool and the patio.",
+    "local": [
+      "Much of Kelowna is built on hillsides. In Upper Mission, Kettle Valley, Wilden and Black Mountain, the flat part of a lot is often a terrace held by a retaining wall, so measure the level area carefully and plan a court that fits inside it. Valley-floor lots in Lower Mission, Glenmore and Rutland are flatter, and rural properties in Southeast Kelowna and Lake Country can take a 60 by 30 pad or larger.",
+      "Summer heat is the local factor. A dark, bare surface in full Okanagan sun gets uncomfortable by mid-afternoon. Tiles stay cooler than bare asphalt, and choosing a lighter court colour helps again. Evening play is the other answer. Court lighting is not part of the kit, so plan for it early and check local rules on outdoor lighting first.",
+      "Winters are milder than on the prairies, with snow that comes and goes on the valley floor and stays longer at higher elevations. Tiles stay down through all of it. Freight is quoted to Kelowna, West Kelowna and up and down the valley from Vernon to Penticton."
+    ],
+    "nearby": ["West Kelowna", "Lake Country", "Peachland", "Vernon", "Penticton", "Summerland"]
+  }
+]

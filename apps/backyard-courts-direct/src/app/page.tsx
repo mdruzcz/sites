@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Audiences, KitShelf, QuoteBand, SectionHead, SportBento, Steps } from "@/components/sections";
+import { Audiences, Finder, GuideCards, KitShelf, QuoteBand, SectionHead, SportBento, Steps, WhyTiles } from "@/components/sections";
 import { FaqList } from "@/components/faq-list";
-import { faqGroups, kits } from "@/lib/content";
+import { faqGroups, kits, lowestPrice, money } from "@/lib/content";
 import { JsonLd, faqLd, itemListLd } from "@/lib/jsonld";
 import { photos } from "@/lib/photos";
-import { site } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -21,6 +21,7 @@ export default function HomePage() {
   const hero = photos[site.photos.hero];
   const popular = kits.filter((k) => k.popular);
   const topFaqs = faqGroups.flatMap((g) => g.items).slice(0, 5);
+  const sportLinks = nav.filter((n) => n.href.startsWith("/sports/"));
 
   return (
     <>
@@ -31,6 +32,8 @@ export default function HomePage() {
           alt={site.photos.heroAlt}
           fill
           priority
+          fetchPriority="high"
+          quality={70}
           sizes="100vw"
           placeholder="blur"
           blurDataURL={hero.blurDataURL}
@@ -40,10 +43,10 @@ export default function HomePage() {
         <div aria-hidden className="hero-shade-top -z-[1]" />
         <div aria-hidden className="hero-shade-bottom -z-[1]" />
         <div className="shell flex flex-col gap-8 pb-10 pt-48 md:pb-14 lg:flex-row lg:items-end lg:justify-between">
-          <div>
+          <div className="rise">
             <p className="eyebrow !text-[var(--cta-from)]">{h.eyebrow}</p>
             <h1 className="hero-title mt-3 max-w-3xl">{h.title}</h1>
-            <p className="mt-3 text-sm text-white/75">{h.caption}</p>
+            <p className="mt-3 text-sm text-white/80">{h.caption}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/court-kits" className="btn btn-cta min-w-[15rem] !justify-between !py-4 text-base">
                 {h.cta} <span aria-hidden>→</span>
@@ -52,17 +55,24 @@ export default function HomePage() {
                 Get a delivered price
               </Link>
             </div>
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm font-bold text-white/90">
+              <li>{kits.length} kit sizes</li>
+              <li aria-hidden className="text-white/40">
+                /
+              </li>
+              <li>From {money(lowestPrice())}</li>
+              <li aria-hidden className="text-white/40">
+                /
+              </li>
+              <li>Ships across Canada</li>
+            </ul>
           </div>
           <div className="lg:text-right">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-white/70">Jump to a sport</p>
             <div className="mt-2 flex flex-wrap gap-2 lg:flex-nowrap lg:justify-end">
-              {[
-                ["Basketball", "/sports/basketball"],
-                ["Pickleball", "/sports/pickleball"],
-                ["Multi-sport", "/sports/multi-sport"],
-              ].map(([label, href]) => (
-                <Link key={href} href={href} className="pill pill-dark !min-h-[44px] !px-4 !text-sm">
-                  {label}
+              {sportLinks.map((l) => (
+                <Link key={l.href} href={l.href} className="pill pill-dark !min-h-[44px] !px-4 !text-sm">
+                  {l.label}
                 </Link>
               ))}
             </div>
@@ -73,7 +83,7 @@ export default function HomePage() {
       {/* Trust row */}
       <section className="shell grid gap-8 py-12 text-center sm:grid-cols-3 md:py-16">
         {h.trust.map((t, i) => (
-          <div key={t.title}>
+          <div key={t.title} className="reveal">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke={iconColours[i]} strokeWidth="1.7" strokeLinejoin="round" strokeLinecap="round" className="mx-auto" aria-hidden>
               {icons[i]}
             </svg>
@@ -85,8 +95,14 @@ export default function HomePage() {
 
       {/* Sport bento */}
       <section className="shell pb-16 md:pb-24">
-        <SectionHead eyebrow="Shop by sport" title={h.sportsHeading} intro={h.sportsIntro} action={{ label: "All court kits", href: "/court-kits" }} />
+        <SectionHead eyebrow="Shop by sport" title={h.sportsHeading} intro={h.sportsIntro} action={{ label: "All kits and prices", href: "/court-kits" }} />
         <SportBento />
+      </section>
+
+      {/* Size finder */}
+      <section className="shell pb-16 md:pb-24">
+        <SectionHead eyebrow="Size finder" title={h.finderHeading} intro={h.finderIntro} action={{ label: "Custom sizes", href: "/custom-court" }} />
+        <Finder />
       </section>
 
       {/* Audience triptych */}
@@ -98,10 +114,18 @@ export default function HomePage() {
         <KitShelf list={popular} mode="rail" />
       </section>
 
+      <WhyTiles />
+
       {/* How it works */}
-      <section className="shell pb-16 md:pb-24">
+      <section className="shell section">
         <SectionHead eyebrow="How it works" title={h.stepsHeading} action={{ label: "Read the full guide", href: "/how-it-works" }} />
         <Steps steps={h.steps} />
+      </section>
+
+      {/* Guides */}
+      <section className="shell pb-16 md:pb-24">
+        <SectionHead eyebrow="Guides" title={h.guidesHeading} intro={h.guidesIntro} action={{ label: "All guides", href: "/guides" }} />
+        <GuideCards limit={3} />
       </section>
 
       {/* FAQ */}

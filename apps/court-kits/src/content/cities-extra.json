@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "windsor",
+    "name": "Windsor",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Windsor is the southernmost city in Canada, with hot, humid summers and a long outdoor season. The ground is also very flat, and that matters when you plan a pad.",
+    "local": [
+      "Essex County is level clay farmland, so water does not find its own way off a slab. Build the fall into the pad when it is poured and aim the low side at a swale or the lawn. Rain passes through the open-grid tile to the concrete, and the slope takes it from there.",
+      "Older lots in Walkerville and Riverside are narrow, and a 25 by 20 foot half court on the driveway or beside the garage is a realistic size to plan around. Yards in South Windsor and Forest Glade may stretch to 30 by 25. For a full pickleball or multi-game pad, look to the larger lots in LaSalle, Tecumseh and Lakeshore and along the county roads toward Essex and Kingsville.",
+      "Freight quotes cover Windsor and all of Essex County, from Amherstburg to Leamington. Send your postal code and pad size to get a delivered number."
+    ],
+    "nearby": ["LaSalle", "Tecumseh", "Lakeshore", "Amherstburg", "Essex", "Kingsville"]
+  },
+  {
+    "slug": "barrie",
+    "name": "Barrie",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Barrie sits in the Georgian Bay snowbelt. A court here spends a good part of the year under snow, so plan the pad with the spring melt in mind.",
+    "local": [
+      "Lake-effect squalls off Georgian Bay can drop heavy snow on Barrie several times a winter. The tile stays where it is. If you want to shoot on a mild day, clear the court with a leaf blower or a plastic shovel and keep metal blades and rock salt off it. When the thaw comes, a pad with a steady fall sheds meltwater so the surface dries sooner.",
+      "Subdivision lots in Ardagh, Holly and Painswick are generally sized for a half court of 25 by 25 or 30 by 25 feet once the deck and shed are accounted for. Acreages in Springwater, Oro-Medonte and Innisfil have the room for a 60 by 30 pad. On a cottage lot around Lake Simcoe, a 52 by 6 foot shuffleboard lane is a way to get a court where a wider pad will not fit.",
+      "Quotes include freight to Barrie and Simcoe County, north to Orillia and west to Angus and Wasaga Beach. Rural and cottage addresses are fine. Give the postal code and any access notes, such as a long lane or a seasonal road."
+    ],
+    "nearby": ["Innisfil", "Orillia", "Angus", "Midhurst", "Wasaga Beach", "Collingwood"]
+  },
+  {
+    "slug": "niagara",
+    "name": "Niagara",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Tucked between Lake Ontario and Lake Erie, Niagara has one of the milder climates in Ontario, the same one that suits its orchards and vineyards. For an outdoor court, that means more playable weeks.",
+    "local": [
+      "City lots in St. Catharines neighbourhoods such as Port Dalhousie, Merritton and Grantham are compact, and so are the older streets of Niagara Falls and Welland. Measure carefully and think half court: 25 by 20 or 25 by 25 feet. Rural and estate properties in Pelham, Lincoln, West Lincoln and Niagara-on-the-Lake are where a 60 by 30 pickleball or multi-game pad fits comfortably.",
+      "Niagara Region is made up of twelve separate municipalities, and each one sets its own rules for setbacks, lot coverage and fences. Properties near the Escarpment can come with extra planning controls. Ask your local building department before you commit to a pad location.",
+      "Mild does not mean dry. The lakes bring rain in spring and fall and wet snow in winter, particularly toward Fort Erie and Port Colborne on the Lake Erie side. A grid surface does not hold standing water, so a sloped pad clears quickly after a shower. Delivered quotes cover the whole peninsula, from Grimsby to Fort Erie."
+    ],
+    "nearby": ["St. Catharines", "Niagara Falls", "Welland", "Fonthill", "Niagara-on-the-Lake", "Fort Erie"]
+  },
+  {
+    "slug": "kingston",
+    "name": "Kingston",
+    "province": "Ontario",
+    "provinceCode": "ON",
+    "intro": "Kingston is built on limestone, and bedrock sits close to the surface in many yards. That can make a pad simpler or harder to build, so talk to a local concrete contractor early.",
+    "local": [
+      "Shallow rock and thin soil are common across the city and north into South Frontenac. Sometimes that means a firm base with little digging. Sometimes it means rock in the way of a hoop footing. A contractor who pours in the area will know which, and your court drawing shows exactly where any footing has to go.",
+      "Lots in the old core near the university and in Portsmouth Village are tight, so a 25 by 20 foot half court or a single shuffleboard lane is the sensible scale. West-end subdivisions such as Bayridge and Westbrook generally allow a 30 by 25. Country properties toward Glenburnie, Inverary and Sydenham have space for a full 60 by 30 pad.",
+      "Lake Ontario keeps the wind up and brings plenty of freeze and thaw through the winter. Leave the expansion gap your plan shows and the surface can move with the seasons. Freight is quoted to Kingston and along the 401 from Napanee to Gananoque. Wolfe Island and Howe Island addresses can be quoted as well. Expect the ferry to add to the freight."
+    ],
+    "nearby": ["Amherstview", "Gananoque", "Napanee", "Bath", "Odessa", "Sydenham"]
+  },
+  {
+    "slug": "moncton",
+    "name": "Moncton",
+    "province": "New Brunswick",
+    "provinceCode": "NB",
+    "intro": "Greater Moncton is one of the snowier urban areas in Canada, then turns warm enough for a full summer of evening games. A court here has to handle both.",
+    "local": [
+      "Winter storms tracking up the coast can leave deep, heavy snow on a pad for weeks. Nothing has to come indoors. Leave the tile down, keep steel shovels and salt away from it, and let the spring melt run through the grid and off the slab.",
+      "In the subdivisions of Moncton, Dieppe and Riverview, the driveway is often the flattest hard surface on the lot. If the asphalt is firm and even, it can be the base for a 25 by 20 foot half court with no new concrete. Larger lots in Irishtown and Lutes Mountain and along the roads to Shediac and Memramcook can take a 52 by 28 pickleball kit or a 60 by 30 multi-game pad.",
+      "Moncton, Dieppe and Riverview are separate municipalities with their own bylaws, so confirm setbacks with the right city or town hall before you pour. Freight is quoted to any postal code in southeastern New Brunswick and across the rest of the province."
+    ],
+    "nearby": ["Dieppe", "Riverview", "Shediac", "Memramcook", "Salisbury", "Sackville"]
+  }
+]

@@ -138,7 +138,7 @@ body {
   }
   .btn-accent {
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent, #fff);
   }
   .btn-dark {
     background: var(--ink);
@@ -444,4 +444,193 @@ details > summary::-webkit-details-marker {
 }
 details[open] .faq-plus {
   transform: rotate(45deg);
+}
+
+/* ───────────── Second pass: logo, motion, tables, price bar ───────────── */
+:root {
+  --well: #f4f1ed;
+}
+
+@layer components {
+  /* Logo lockup */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    white-space: nowrap;
+    color: inherit;
+  }
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    flex: none;
+    border-radius: 9px;
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.6);
+  }
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .logo-line1 {
+    font-size: 1.08rem;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+  }
+  .logo-line2 {
+    margin-top: 0.28rem;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .logo-accent {
+    color: var(--accent-ink);
+    font-weight: 700;
+  }
+  /* A single-line wordmark reads better a little larger */
+  .logo-text:not(:has(.logo-line2)) .logo-line1 {
+    font-size: 1.3rem;
+  }
+  @media (min-width: 768px) {
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    .logo-line1 {
+      font-size: 1.32rem;
+    }
+    .logo-line2 {
+      font-size: 0.66rem;
+    }
+    .logo-text:not(:has(.logo-line2)) .logo-line1 {
+      font-size: 1.6rem;
+    }
+  }
+  .site-header[data-overlay="true"] .logo-line2,
+  .site-header[data-overlay="true"] .logo-accent,
+  .logo-light .logo-line2,
+  .logo-light .logo-accent {
+    color: var(--cta-from);
+  }
+
+  /* Cards lift on hover */
+  .kit-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .kit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -24px rgba(20, 24, 31, 0.55);
+  }
+
+  .quote-band {
+    background:
+      radial-gradient(60rem 20rem at 100% 0%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 60%),
+      var(--ink);
+  }
+
+  /* Data tables (prices, dimensions) */
+  .data-table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .data-table th,
+  .data-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .data-table thead th {
+    font-size: 0.6875rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1.5px solid var(--line);
+    white-space: nowrap;
+  }
+  .data-table tbody th {
+    font-weight: 700;
+  }
+  .data-table tbody tr + tr {
+    border-top: 1px solid var(--line);
+  }
+  .data-table tbody tr:hover {
+    background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  }
+  .data-table .text-right {
+    text-align: right;
+  }
+
+  /* Sticky price bar on phone kit pages */
+  .buy-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: var(--card);
+    box-shadow: 0 -10px 30px -18px rgba(0, 0, 0, 0.5);
+  }
+  /* Keep the call button clear of the price bar */
+  body:has(.buy-bar) .call-fab {
+    bottom: 5.5rem;
+  }
+  @media (max-width: 767px) {
+    body:has(.buy-bar) footer {
+      padding-bottom: 4.5rem;
+    }
+  }
+}
+
+/* Hero copy eases up on load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/*
+ * Scroll reveal. Content is only hidden where the browser can run a scroll
+ * timeline, so crawlers and older browsers always get fully visible content.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
 }

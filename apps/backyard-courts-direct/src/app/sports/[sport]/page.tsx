@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import { FaqList } from "@/components/faq-list";
 import { KitCard } from "@/components/kit-card";
 import { PageHero } from "@/components/page-hero";
-import { QuoteBand, SectionHead } from "@/components/sections";
-import { getSport, kitsFor, sports } from "@/lib/content";
-import { JsonLd, faqLd, itemListLd } from "@/lib/jsonld";
-import { ogBase, twitterImages } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { GuideCards, PriceTable, QuoteBand, SectionHead } from "@/components/sections";
+import { getSport, guidesFor, kitsFor, lowestPrice, money, sports } from "@/lib/content";
+import { JsonLd, aggregateOfferLd, faqLd, itemListLd } from "@/lib/jsonld";
+import { pageMeta } from "@/lib/seo";
+import { fill, site } from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -19,19 +19,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ sport: string }> }): Promise<Metadata> {
   const s = getSport((await params).sport);
   if (!s) return {};
-  return {
-    title: s.metaTitle,
-    description: s.metaDescription,
-    alternates: { canonical: `/sports/${s.slug}` },
-    openGraph: { ...ogBase, title: `${s.metaTitle} | ${site.name}`, description: s.metaDescription, url: `/sports/${s.slug}` },
-    twitter: { card: "summary_large_image", title: s.metaTitle, description: s.metaDescription, images: twitterImages },
-  };
+  return pageMeta({ title: s.metaTitle, description: s.metaDescription, path: `/sports/${s.slug}` });
 }
 
 export default async function SportPage({ params }: { params: Promise<{ sport: string }> }) {
   const s = getSport((await params).sport);
   if (!s) notFound();
   const list = kitsFor(s.slug);
+  const related = guidesFor(s.slug);
+  const from = money(lowestPrice(list));
+  const faqs = [
+    { q: `How much does a ${s.name.toLowerCase()} court kit cost?`, a: `${s.kitLabel} start at ${from} CAD and run to ${money(Math.max(...list.map((k) => k.price)))} for the largest size. Prices are for the tile kit with game lines and edging. Freight and sales tax are added on your quote.` },
+    ...s.faqs,
+  ];
 
   return (
     <>
@@ -39,7 +39,7 @@ export default async function SportPage({ params }: { params: Promise<{ sport: s
         photo={s.photo}
         position={s.photoPosition}
         photoAlt={`${s.name} court surface and lines, ${s.kitLabel.toLowerCase()} shipped across Canada by ${site.name}`}
-        eyebrow={`${list.length} kits`}
+        eyebrow={`${list.length} kits from ${from}`}
         title={s.h1}
         intro={s.intro}
         crumb={s.name}
@@ -57,7 +57,7 @@ export default async function SportPage({ params }: { params: Promise<{ sport: s
       </PageHero>
 
       <section id="kits" className="shell section scroll-mt-28">
-        <SectionHead eyebrow={s.name} title={s.kitLabel} intro="Every size can be adjusted to fit your pad." />
+        <SectionHead eyebrow={s.name} title={s.kitLabel} intro="Every size can be adjusted to fit your pad. Prices are for the kit, before freight and tax." />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {list.map((k) => (
             <KitCard key={k.slug} kit={k} />
@@ -66,15 +66,15 @@ export default async function SportPage({ params }: { params: Promise<{ sport: s
       </section>
 
       <section className="shell grid gap-10 pb-16 md:pb-24 lg:grid-cols-[1.4fr_1fr]">
-        <div className="prose-block">
-          <h2 className="h2 !mt-0">Planning a {s.name.toLowerCase()} court</h2>
+        <div className="prose-block reveal">
+          <h2 className="h2 !mt-0">{fill(site.pages.sport.bodyHeading, { sport: s.name.toLowerCase() })}</h2>
           {s.body.map((p) => (
             <p key={p.slice(0, 24)} className="text-[1.0625rem] text-[var(--ink)]/85">
               {p}
             </p>
           ))}
         </div>
-        <aside className="card h-fit p-6">
+        <aside className="card reveal h-fit p-6">
           <h2 className="h3">{s.name} court dimensions</h2>
           <dl className="mt-3 divide-y divide-[var(--line)]">
             {s.facts.map((f) => (
@@ -88,13 +88,26 @@ export default async function SportPage({ params }: { params: Promise<{ sport: s
       </section>
 
       <section className="shell pb-16 md:pb-24">
+        <SectionHead eyebrow="Prices" title={`${s.name} kit prices`} />
+        <PriceTable list={list} />
+      </section>
+
+      {related.length > 0 && (
+        <section className="shell pb-16 md:pb-24">
+          <SectionHead eyebrow="Guides" title={`${s.name} court guides`} action={{ label: "All guides", href: "/guides" }} />
+          <GuideCards list={related} />
+        </section>
+      )}
+
+      <section className="shell pb-16 md:pb-24">
         <SectionHead eyebrow="Questions" title={`${s.name} court questions`} action={{ label: "All questions", href: "/faq" }} />
-        <FaqList items={s.faqs} />
+        <FaqList items={faqs} />
       </section>
 
       <QuoteBand />
-      <JsonLd data={faqLd(s.faqs)} />
+      <JsonLd data={faqLd(faqs)} />
       <JsonLd data={itemListLd(list)} />
+      <JsonLd data={aggregateOfferLd(s.kitLabel, `/sports/${s.slug}`, list)} />
     </>
   );
 }

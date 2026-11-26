@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import { CourtConfigurator } from "@/components/court-configurator";
 import { FaqList } from "@/components/faq-list";
 import { KitCard } from "@/components/kit-card";
-import { QuoteBand, SectionHead } from "@/components/sections";
-import { getKit, getSport, kitArea, kitLines, kitName, kitPrice, kitSize, kitSummary, kits, kitsFor, kitTypeName, money } from "@/lib/content";
+import { GuideCards, QuoteBand, SectionHead } from "@/components/sections";
+import { getKit, getSport, guidesFor, kitArea, kitLines, kitName, kitRate, kitSize, kitSummary, kits, kitsFor, kitTypeName, money, rate } from "@/lib/content";
 import { JsonLd, breadcrumbLd, faqLd, kitLd } from "@/lib/jsonld";
-import { fitTitle, ogBase, twitterImages } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { fitTitle, pageMeta } from "@/lib/seo";
+import { fill, site } from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -20,15 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const kit = getKit((await params).slug);
   if (!kit) return {};
   const size = `${Math.max(kit.w, kit.d)}' x ${Math.min(kit.w, kit.d)}'`;
-  const title = fitTitle(`${kitTypeName(kit)} ${size}`, `${kitTypeName(kit).replace(" Court Kit", " Kit")} ${size}`);
-  const description = `${kitSize(kit)} modular tile ${kitTypeName(kit).toLowerCase()}, ${kitArea(kit).toLocaleString("en-CA")} sq ft. ${kit.bestFor}. Choose your colours and get a delivered price in Canada.`.slice(0, 160);
-  return {
-    title,
-    description,
-    alternates: { canonical: `/court-kits/${kit.slug}` },
-    openGraph: { ...ogBase, title: `${title} | ${site.name}`, description, url: `/court-kits/${kit.slug}` },
-    twitter: { card: "summary_large_image", title, description, images: twitterImages },
-  };
+  return pageMeta({
+    title: fitTitle(`${kitTypeName(kit)} ${size}`, `${kitTypeName(kit).replace(" Court Kit", " Kit")} ${size}`),
+    description: fill(site.pages.kit.description, { size: kitSize(kit), type: kitTypeName(kit).toLowerCase(), area: kitArea(kit).toLocaleString("en-CA"), price: money(kit.price), bestFor: kit.bestFor }),
+    path: `/court-kits/${kit.slug}`,
+  });
 }
 
 export default async function KitPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -36,15 +32,17 @@ export default async function KitPage({ params }: { params: Promise<{ slug: stri
   if (!kit) notFound();
   const sport = getSport(kit.sport)!;
   const name = kitName(kit);
-  const price = kitPrice(kit);
   const long = Math.max(kit.w, kit.d);
   const short = Math.min(kit.w, kit.d);
   const siblings = kitsFor(kit.sport).filter((k) => k.slug !== kit.slug).slice(0, 4);
+  const related = guidesFor(kit.sport).slice(0, 3);
+  const quoteHref = `/contact?kit=${encodeURIComponent(`${name} (${kit.code})`)}#quote`;
 
   const specs = [
     { label: "Kit code", value: kit.code },
     { label: "Tile footprint", value: kitSize(kit) },
     { label: "Coverage", value: `${kitArea(kit).toLocaleString("en-CA")} sq ft` },
+    { label: "Price per sq ft", value: `${rate(kitRate(kit))} CAD` },
     { label: "Game lines", value: kitLines(kit) },
     { label: "Base needed", value: `Flat concrete or asphalt, at least ${long} ft x ${short} ft` },
     { label: "Ships", value: "Palletized freight, anywhere in Canada" },
@@ -52,6 +50,7 @@ export default async function KitPage({ params }: { params: Promise<{ slug: stri
   const included = ["Interlocking sport tiles for the full footprint", "Edge pieces for the perimeter", `Game lines: ${kitLines(kit).toLowerCase()}`, "Your choice of court, accent and border colours", "A numbered layout plan"];
   const notIncluded = kit.sport === "basketball" || kit.sport === "multi-sport" ? "Hoop, nets, lighting, fencing and the base pad are not included." : "Nets, posts, equipment, lighting, fencing and the base pad are not included.";
   const faqs = [
+    { q: `How much does the ${kitSize(kit)} ${kitTypeName(kit).toLowerCase()} cost?`, a: `The kit is ${money(kit.price)} CAD, which works out to ${rate(kitRate(kit))} per square foot for ${kitArea(kit).toLocaleString("en-CA")} square feet. Freight to your postal code and sales tax are added on your quote.` },
     { q: `How much space do I need for the ${kitSize(kit)} kit?`, a: `The tiles cover ${long} feet by ${short} feet. Plan a flat, hard base at least that size. We send exact pad dimensions, including a small expansion gap, with your layout plan.` },
     { q: "Can this kit be resized?", a: "Yes. Tiles are roughly a foot square, so the kit can grow or shrink in small steps to fit the pad you have. Tell us your dimensions when you request a quote." },
     ...sport.faqs.slice(0, 2),
@@ -79,14 +78,20 @@ export default async function KitPage({ params }: { params: Promise<{ slug: stri
             <p className="mt-3 text-lg text-[var(--muted)]">{kitSummary(kit)}</p>
 
             <div className="card mt-6 p-5">
-              <p className="text-sm font-bold text-[var(--muted)]">{price ? "Kit price from" : "Pricing"}</p>
-              <p className="mt-1 text-2xl font-black tracking-[-0.02em]">{price ? `${money(price)} CAD` : "Delivered price on request"}</p>
-              <p className="mt-1 text-sm text-[var(--muted)]">
-                {price ? "Plus freight to your postal code. " : "Freight depends on where you are, so we quote the kit and shipping together. "}
-                We reply within {site.responseTime}.
-              </p>
-              <Link href={`/contact?kit=${encodeURIComponent(`${name} (${kit.code})`)}#quote`} className="btn btn-accent mt-4 w-full">
-                Request a quote for this kit <span aria-hidden>→</span>
+              <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1">
+                <p>
+                  <span className="block text-sm font-bold text-[var(--muted)]">Kit price</span>
+                  <span className="block text-[2rem] font-black leading-tight tracking-[-0.03em]">
+                    {money(kit.price)} <span className="text-base font-bold text-[var(--muted)]">CAD</span>
+                  </span>
+                </p>
+                <p className="text-sm text-[var(--muted)]">
+                  {rate(kitRate(kit))} per sq ft · {kitArea(kit).toLocaleString("en-CA")} sq ft
+                </p>
+              </div>
+              <p className="mt-2 text-sm text-[var(--muted)]">Plus freight to your postal code and sales tax. No payment now. We reply within {site.responseTime} with a delivered price and a layout drawing.</p>
+              <Link href={quoteHref} className="btn btn-accent mt-4 w-full">
+                Get my delivered price <span aria-hidden>→</span>
               </Link>
             </div>
 
@@ -130,8 +135,27 @@ export default async function KitPage({ params }: { params: Promise<{ slug: stri
             </div>
           </section>
         )}
+
+        {related.length > 0 && (
+          <section className="mt-16 md:mt-24">
+            <SectionHead eyebrow="Guides" title="Worth reading first" action={{ label: "All guides", href: "/guides" }} />
+            <GuideCards list={related} />
+          </section>
+        )}
       </div>
-      <QuoteBand title="Need a different size?" text="Every kit can be resized to fit your pad. Send us your dimensions and we will draw it." />
+      <QuoteBand title="Need a different size?" text="Every kit can be resized to fit your pad. Send us your dimensions and we will draw it." href="/custom-court" />
+
+      {/* Sticky price bar on phones so the quote button is always one tap away */}
+      <div className="buy-bar md:hidden">
+        <p className="leading-tight">
+          <span className="block text-lg font-black">{money(kit.price)}</span>
+          <span className="block text-xs text-[var(--muted)]">{kitSize(kit)} kit</span>
+        </p>
+        <Link href={quoteHref} className="btn btn-accent">
+          Get delivered price
+        </Link>
+      </div>
+
       <JsonLd data={kitLd(kit)} />
       <JsonLd data={faqLd(faqs)} />
       <JsonLd

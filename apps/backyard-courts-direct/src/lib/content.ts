@@ -1,7 +1,9 @@
 import kitsJson from "@/content/kits.json";
 import sportsJson from "@/content/sports.json";
 import citiesJson from "@/content/cities.json";
+import citiesExtraJson from "@/content/cities-extra.json";
 import faqJson from "@/content/faq.json";
+import guidesJson from "@/content/guides.json";
 import { site } from "./site";
 import type { PhotoKey } from "./photos";
 
@@ -16,6 +18,8 @@ export interface Kit {
   w: number;
   /** Long side in feet (for a half court: the depth from the baseline). */
   d: number;
+  /** Kit price in CAD, before freight and tax. */
+  price: number;
   tag?: string;
   bestFor: string;
   popular?: boolean;
@@ -46,15 +50,32 @@ export interface City {
   nearby: string[];
 }
 
+export interface Guide {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  h1: string;
+  intro: string;
+  photo: PhotoKey;
+  answer: string;
+  sections: { h2: string; paragraphs: string[]; list?: string[]; table?: { head: string[]; rows: string[][] } }[];
+  faqs: { q: string; a: string }[];
+  relatedKits: string[];
+  relatedSport: string;
+}
+
 export const kits = kitsJson as Kit[];
 export const sports = sportsJson as Sport[];
-export const cities = citiesJson as City[];
+export const cities = [...(citiesJson as City[]), ...(citiesExtraJson as City[])];
 export const faqGroups = faqJson as { group: string; items: { q: string; a: string }[] }[];
+export const guides = guidesJson as Guide[];
 
 export const getKit = (slug: string) => kits.find((k) => k.slug === slug);
 export const getSport = (slug: string) => sports.find((s) => s.slug === slug);
 export const getCity = (slug: string) => cities.find((c) => c.slug === slug);
+export const getGuide = (slug: string) => guides.find((g) => g.slug === slug);
 export const kitsFor = (sport: string) => kits.filter((k) => k.sport === sport);
+export const guidesFor = (sport: string) => guides.filter((g) => g.relatedSport === sport);
 
 const LAYOUT_NAME: Record<Layout, string> = {
   half: "Basketball Half Court Kit",
@@ -72,14 +93,23 @@ export const kitSizeShort = (k: Kit) => `${Math.max(k.w, k.d)}' x ${Math.min(k.w
 export const kitName = (k: Kit) => `${LAYOUT_NAME[k.layout]} ${kitSize(k)}`;
 export const kitTypeName = (k: Kit) => LAYOUT_NAME[k.layout];
 export const kitArea = (k: Kit) => k.w * k.d;
+export const kitPrice = (k: Kit) => k.price;
+export const kitRate = (k: Kit) => k.price / kitArea(k);
 
-/** "From" price in whole dollars, or null while pricing is not set. */
-export function kitPrice(k: Kit): number | null {
-  if (!site.pricePerSqFt) return null;
-  return Math.round((kitArea(k) * site.pricePerSqFt) / 5) * 5;
+export const money = (n: number) => `$${Math.round(n).toLocaleString("en-CA")}`;
+export const rate = (n: number) => `$${n.toFixed(2)}`;
+export const lowestPrice = (list: Kit[] = kits) => Math.min(...list.map((k) => k.price));
+
+/**
+ * Ballpark for a custom size: the per-square-foot rate of the kit closest in
+ * area, applied to the requested area. Always shown as an estimate.
+ */
+export function estimatePrice(area: number, sport?: string): number {
+  const pool = (sport ? kitsFor(sport) : kits.filter((k) => k.sport !== "shuffleboard")).slice();
+  if (!pool.length) return 0;
+  const nearest = pool.sort((a, b) => Math.abs(kitArea(a) - area) - Math.abs(kitArea(b) - area))[0];
+  return Math.round((area * kitRate(nearest)) / 5) * 5;
 }
-
-export const money = (n: number) => `$${n.toLocaleString("en-CA")}`;
 
 /** What the game lines on each layout cover, for the spec list. */
 export function kitLines(k: Kit): string {
@@ -103,5 +133,11 @@ export function kitLines(k: Kit): string {
 
 export function kitSummary(k: Kit): string {
   const sport = getSport(k.sport)?.name.toLowerCase() ?? "sport";
-  return `A ${kitSize(k)} modular tile ${sport === "multi-sport" ? "multi-sport court" : `${sport} court`} covering ${kitArea(k).toLocaleString("en-CA")} square feet. ${k.bestFor}. Ships across Canada with a numbered layout plan and your choice of colours.`;
+  const what = k.sport === "multi-sport" ? "multi-sport court" : `${sport} court`;
+  return site.copy.kitSummary
+    .replace("{size}", kitSize(k))
+    .replace("{what}", what)
+    .replace("{area}", kitArea(k).toLocaleString("en-CA"))
+    .replace("{bestFor}", k.bestFor)
+    .replace("{price}", money(k.price));
 }

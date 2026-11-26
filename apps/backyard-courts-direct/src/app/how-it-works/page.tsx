@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { QuoteBand, SectionHead, Steps } from "@/components/sections";
-import { ogBase, twitterImages } from "@/lib/seo";
+import { GuideCards, QuoteBand, SectionHead, Steps } from "@/components/sections";
+import { JsonLd, howToLd } from "@/lib/jsonld";
+import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 
-const title = "How to Build a Backyard Court";
-const description = "How a backyard court kit goes together: measuring your space, preparing a concrete or asphalt base, choosing colours and snapping the tiles in place.";
+const p = site.pages.how;
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/how-it-works" },
-  openGraph: { ...ogBase, title: `${title} | ${site.name}`, description, url: "/how-it-works" },
-  twitter: { card: "summary_large_image", title, description, images: twitterImages },
-};
+export const metadata: Metadata = pageMeta({ title: p.title, description: p.description, path: "/how-it-works" });
 
 const stages = [
   {
@@ -43,15 +37,11 @@ const stages = [
   },
   {
     title: "4. Approve the layout",
-    body: [
-      "We send a drawing of your court with every line and colour in place, along with a delivered price to your postal code. Nothing is produced until you approve it.",
-    ],
+    body: ["We send a drawing of your court with every line and colour in place, along with a delivered price to your postal code. Nothing is produced until you approve it."],
   },
   {
     title: "5. Delivery day",
-    body: [
-      "Kits ship on pallets by freight carrier. Most residential deliveries use a truck with a liftgate that lowers the pallet to the end of your driveway. Have a couple of people ready to carry the boxes to the pad.",
-    ],
+    body: ["Kits ship on pallets by freight carrier. Most residential deliveries use a truck with a liftgate that lowers the pallet to the end of your driveway. Have a couple of people ready to carry the boxes to the pad."],
   },
   {
     title: "6. Snap it together",
@@ -65,18 +55,9 @@ const stages = [
 export default function HowItWorksPage() {
   return (
     <>
-      <PageHero
-        photo={site.photos.how}
-        position="center 70%"
-        photoAlt="Backyard court with pickleball lines and a basketball hoop surrounded by gardens, built on a flat hard base"
-        eyebrow="Planning guide"
-        title="How to build a backyard court"
-        intro="Six steps from an empty corner of the yard to the first game. No special tools and no contractor needed for the surface."
-        crumb="How it works"
-        path="/how-it-works"
-      />
+      <PageHero photo={site.photos.how} position={p.heroPosition} photoAlt={p.heroAlt} eyebrow="Planning guide" title={p.h1} intro={p.intro} crumb="How it works" path="/how-it-works" />
       <section className="shell section">
-        <SectionHead eyebrow="The short version" title="Three things to decide" />
+        <SectionHead eyebrow="The short version" title={p.summaryTitle} />
         <Steps steps={site.home.steps} />
       </section>
 
@@ -84,11 +65,11 @@ export default function HowItWorksPage() {
         <SectionHead eyebrow="Step by step" title="The full guide" />
         <div className="grid gap-3 md:grid-cols-2">
           {stages.map((s) => (
-            <article key={s.title} className="card prose-block p-6 md:p-7">
+            <article key={s.title} className="card prose-block reveal p-6 md:p-7">
               <h3 className="h3 mb-3 !text-xl">{s.title}</h3>
-              {s.body.map((p) => (
-                <p key={p.slice(0, 24)} className="text-[var(--muted)]">
-                  {p}
+              {s.body.map((t) => (
+                <p key={t.slice(0, 24)} className="text-[var(--muted)]">
+                  {t}
                 </p>
               ))}
             </article>
@@ -97,7 +78,11 @@ export default function HowItWorksPage() {
         <p className="mt-8 text-[var(--muted)]">
           Still deciding on a size? Browse the{" "}
           <Link href="/court-kits" className="font-bold text-[var(--accent-ink)] underline underline-offset-4">
-            court kits
+            court kits and prices
+          </Link>
+          , try the{" "}
+          <Link href="/custom-court" className="font-bold text-[var(--accent-ink)] underline underline-offset-4">
+            size finder
           </Link>{" "}
           or read the{" "}
           <Link href="/faq" className="font-bold text-[var(--accent-ink)] underline underline-offset-4">
@@ -106,7 +91,13 @@ export default function HowItWorksPage() {
           .
         </p>
       </section>
+
+      <section className="shell pb-16 md:pb-24">
+        <SectionHead eyebrow="Guides" title="Go deeper" action={{ label: "All guides", href: "/guides" }} />
+        <GuideCards limit={3} />
+      </section>
       <QuoteBand />
+      <JsonLd data={howToLd(p.h1, p.description, stages)} />
     </>
   );
 }
