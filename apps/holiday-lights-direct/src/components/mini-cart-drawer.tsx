@@ -14,6 +14,8 @@ function formatCad(n: number) {
 export function MiniCartDrawer() {
   const { miniCartOpen, closeMiniCart } = useUI();
   const [cart, setCart] = useState<Cart | null>(null);
+  // Whether orders that ship free can be paid by card (null until /api/cart answers).
+  const [cardCheckout, setCardCheckout] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(false);
   const [, startTransition] = useTransition();
 
@@ -23,7 +25,10 @@ export function MiniCartDrawer() {
     setLoading(true);
     fetch("/api/cart")
       .then((r) => r.json())
-      .then((data) => setCart(data.cart ?? null))
+      .then((data) => {
+        setCart(data.cart ?? null);
+        setCardCheckout(data.card_checkout === true);
+      })
       .finally(() => setLoading(false));
   }, [miniCartOpen]);
 
@@ -40,6 +45,8 @@ export function MiniCartDrawer() {
   if (!miniCartOpen) return null;
 
   const subtotal = cart?.subtotal_cad ?? 0;
+  const free = subtotal >= 500;
+  const card = free && cardCheckout === true;
 
   function setQty(lineId: string, qty: number) {
     startTransition(async () => {
@@ -85,10 +92,12 @@ export function MiniCartDrawer() {
           </button>
         </div>
 
-        {/* No-payment reassurance */}
+        {/* Shipping reassurance */}
         <div className="border-b border-[var(--color-border)] bg-[var(--color-brand-soft)] px-4 py-3">
           <p className="flex items-center gap-2 text-sm font-semibold text-[var(--color-success)]">
-            ✓ Free shipping over $500. No payment taken online.
+            {cardCheckout === false
+              ? "✓ Free shipping over $500. No payment taken online."
+              : "✓ Free shipping over $500, anywhere in Canada."}
           </p>
         </div>
 
@@ -182,14 +191,18 @@ export function MiniCartDrawer() {
               </span>
             </div>
             <p className="mt-1 text-right text-xs text-[var(--color-muted)]">
-              {subtotal >= 500 ? "Free shipping on this order. Tax confirmed by email." : "Shipping and tax quoted by email. Free shipping over $500."}
+              {card
+                ? "Free shipping on this order. GST/HST added at checkout."
+                : free
+                  ? "Free shipping on this order. Tax confirmed by email."
+                  : "Shipping and tax quoted by email. Free shipping over $500."}
             </p>
             <Link
               href="/checkout"
               onClick={closeMiniCart}
               className="btn-primary mt-4 w-full justify-center"
             >
-              {subtotal >= 500 ? "Send order request →" : "Request a shipping quote →"}
+              {card ? "Checkout →" : free ? "Send order request →" : "Request a shipping quote →"}
             </Link>
             <Link
               href="/cart"
@@ -201,7 +214,7 @@ export function MiniCartDrawer() {
             <div className="mt-3 flex items-center justify-center gap-3 text-[10px] text-[var(--color-muted)]">
               <span>Free shipping over $500</span>
               <span>·</span>
-              <span>No payment online</span>
+              <span>{cardCheckout ? "Pay by card over $500" : "No payment online"}</span>
               <span>·</span>
               <span>30-day returns</span>
             </div>

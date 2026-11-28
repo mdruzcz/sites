@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cardCheckoutEnabled } from "@/lib/card-checkout";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
   openGraph: { title: "Privacy Policy", description: "What personal information Holiday Lights Direct collects through its contact, quote and trade forms, how it is used, and how to ask us to correct or delete it.", url: `${SITE_URL}/privacy` }
 };
 
-const SECTIONS: { heading: string; body: string[] }[] = [
+// `card` is true once card checkout is switched on for this deployment; until
+// then the site takes no card payments and the policy says so.
+const sections = (card: boolean): { heading: string; body: string[] }[] => [
   {
     "heading": "Who we are",
     "body": [
@@ -19,9 +22,14 @@ const SECTIONS: { heading: string; body: string[] }[] = [
     "heading": "What we collect",
     "body": [
       "Contact form: your name, email address, phone number if you give it, and your message.",
-      "Shipping quote requests: your name, email, phone, delivery address, the items in your cart and any notes or discount code you enter.",
+      "Order and shipping quote requests: your name, email, phone, delivery address, the items in your cart and any notes or discount code you enter.",
+      ...(card
+        ? ["Orders paid by card: your name, email, phone, shipping address, the items you ordered and any delivery notes. The order is saved when you continue to the payment page, before you pay, so that it can be completed."]
+        : []),
       "Trade applications: your company name, contact name, email, phone and the business details you choose to share.",
-      "We do not take card payments on this website, so we never see or store payment card details here."
+      card
+        ? "Card payments are made on a secure page run by Stripe, our payment processor. Your card number is entered there, not on this website, and we never see or store it."
+        : "We do not take card payments on this website, so we never see or store payment card details here."
     ]
   },
   {
@@ -36,13 +44,20 @@ const SECTIONS: { heading: string; body: string[] }[] = [
   {
     "heading": "How we use it",
     "body": [
-      "To answer your questions, prepare quotes, ship orders, review trade applications and honour warranties. We do not sell or rent personal information."
+      card
+        ? "To answer your questions, prepare quotes, take payment, ship orders, review trade applications and honour warranties. We do not sell or rent personal information."
+        : "To answer your questions, prepare quotes, ship orders, review trade applications and honour warranties. We do not sell or rent personal information.",
+      ...(card
+        ? ["If you start a card checkout and do not finish it, we send one reminder email with a link back to your saved order, and our shop is told so that someone can help. The reminder has a link to stop checkout reminders."]
+        : [])
     ]
   },
   {
     "heading": "Who helps us run the site",
     "body": [
-      "We rely on service providers for hosting, our database, email delivery and spam protection. They process information only to provide those services to us."
+      card
+        ? "We rely on service providers for hosting, our database, email delivery, spam protection and card payments (Stripe). They process information only to provide those services to us."
+        : "We rely on service providers for hosting, our database, email delivery and spam protection. They process information only to provide those services to us."
     ]
   },
   {
@@ -64,9 +79,9 @@ export default function Page() {
       <div className="mx-auto mt-8 max-w-3xl">
         <p className="eyebrow-plain">Your information</p>
         <h1 className="font-display mt-3 text-[2.2rem] md:text-[3rem]">Privacy policy</h1>
-        <p className="mt-4 text-sm text-[var(--color-muted)]">Last updated November 19, 2026</p>
+        <p className="mt-4 text-sm text-[var(--color-muted)]">Last updated November 28, 2026</p>
         <div className="surface mt-8 divide-y divide-[var(--color-border)]">
-          {SECTIONS.map((s) => (
+          {sections(cardCheckoutEnabled()).map((s) => (
             <section key={s.heading} className="p-6 md:p-8">
               <h2 className="text-lg font-bold tracking-[-0.02em]">{s.heading}</h2>
               {s.body.map((p) => (

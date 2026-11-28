@@ -41,12 +41,16 @@ interface Props {
 export function ProductPurchase({ productSlug, variants }: Props) {
   const router = useRouter();
   const { openMiniCart } = useUI();
-  const [variantId, setVariantId] = useState(variants[0]?.id ?? "");
+  // Track colour is never preselected on kits and track: a default colour is how people end up with the wrong track.
+  const trackColourChoice = variants.length > 1 && variants.every((v) => /^(colou?r:\s*)?(black|white|wicker|brown|beige)$/i.test(v.name.trim()));
+  const [variantId, setVariantId] = useState(trackColourChoice ? "" : variants[0]?.id ?? "");
+  const [needColour, setNeedColour] = useState(false);
   const [qty, setQty] = useState(1);
   const [pending, startTransition] = useTransition();
   const [wishlisted, setWishlisted] = useState(false);
 
   const variant = variants.find((v) => v.id === variantId);
+  const shown = variant ?? variants[0];
   const outOfStock = !!variant && variant.on_hand <= 0;
   const lowStock = !!variant && variant.on_hand > 0 && variant.on_hand < 10;
   const wishKey = productSlug ?? variant?.id ?? "";
@@ -57,7 +61,10 @@ export function ProductPurchase({ productSlug, variants }: Props) {
   }, [wishKey]);
 
   function add() {
-    if (!variant) return;
+    if (!variant) {
+      setNeedColour(trackColourChoice);
+      return;
+    }
     startTransition(async () => {
       await addToCartAction(variant.id, qty);
       openMiniCart();
@@ -65,7 +72,10 @@ export function ProductPurchase({ productSlug, variants }: Props) {
   }
 
   function buyNow() {
-    if (!variant) return;
+    if (!variant) {
+      setNeedColour(trackColourChoice);
+      return;
+    }
     startTransition(async () => {
       await addToCartAction(variant.id, qty);
       router.push("/checkout");
@@ -85,14 +95,22 @@ export function ProductPurchase({ productSlug, variants }: Props) {
       {variants.length > 1 && (
         <div className="mb-5">
           <label className="label" htmlFor="variant-picker">
-            Choose an option
+            {trackColourChoice ? "Track colour" : "Choose an option"}
           </label>
           <select
             id="variant-picker"
             value={variantId}
-            onChange={(e) => setVariantId(e.target.value)}
+            onChange={(e) => {
+              setVariantId(e.target.value);
+              setNeedColour(false);
+            }}
             className="field mt-2"
           >
+            {trackColourChoice && (
+              <option value="" disabled>
+                Choose your track colour
+              </option>
+            )}
             {variants.map((v) => (
               <option key={v.id} value={v.id}>
                 {v.name} — {formatCad(v.price_cad)}
@@ -100,6 +118,14 @@ export function ProductPurchase({ productSlug, variants }: Props) {
               </option>
             ))}
           </select>
+          {trackColourChoice && (
+            <p className="mt-2 text-xs text-[var(--color-muted)]">Match the track to your soffit or fascia. It is the only part you see in daylight.</p>
+          )}
+          {needColour && (
+            <p role="alert" className="mt-2 rounded-xl bg-[var(--color-gold-soft)] px-3 py-2 text-sm font-bold text-[var(--color-gold-text)]">
+              Choose a track colour first.
+            </p>
+          )}
         </div>
       )}
 
@@ -159,7 +185,7 @@ export function ProductPurchase({ productSlug, variants }: Props) {
         disabled={pending || outOfStock}
         className="btn-green group mt-3 w-full disabled:opacity-50"
       >
-        {variant && shipsFree(variant.price_cad * qty) ? "Order now, ships free" : "Request a shipping quote"}
+        {shown && shipsFree(shown.price_cad * qty) ? "Order now, ships free" : "Request a shipping quote"}
         <svg className="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

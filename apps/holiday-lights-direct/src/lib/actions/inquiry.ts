@@ -6,6 +6,7 @@ import { getStore } from "@/lib/catalog";
 import { getServiceSupabase } from "@/lib/supabase/server";
 import { formatCad, shipsFree } from "@/lib/utils";
 import { checkCaptcha, sendLeadEmail, HELP, type LeadResult } from "@/lib/actions/lead-helpers";
+import { colourList, distinctTrackColours, trackColourItems, trackColourSummary } from "@/lib/orders/track-colour";
 
 export interface ShippingInquiryInput {
   name: string;
@@ -18,13 +19,19 @@ export interface ShippingInquiryInput {
   notes: string | null;
   discount_code: string | null;
   turnstile_token: string | null;
+  /** The customer ticked "this is the right track colour". Required whenever the
+   *  cart has a kit, track or colour-matched screws. */
+  track_colour_confirmed?: boolean;
 }
 
 export type ShippingInquiryResult = LeadResult;
 
 /**
- * We don't take payment online. Instead the customer sends their order +
+ * The request flow: no payment is taken. The customer sends their order +
  * delivery address and we reply by email with shipping cost and timeline.
+ * Every cart under the free-shipping threshold comes through here; larger
+ * carts normally pay by card (src/app/api/stripe/checkout) but can still choose
+ * this to pay by e-transfer or invoice, or to use a discount code.
  *
  * This is an order, so it is emailed directly to service@masterdecker.com as
  * well as stored in ecom_contact_messages — a missed order costs far more than
@@ -47,6 +54,18 @@ export async function submitShippingInquiry(input: ShippingInquiryInput): Promis
   const cart = await getCart();
   if (!cart || cart.items.length === 0) return { ok: false, error: "Your cart is empty." };
 
+  // Customers have ordered the wrong track colour, so a cart with a
+  // colour-matched part is not accepted until they have confirmed it.
+  const colourItems = trackColourItems(
+    cart.items.map((l) => ({ productName: l.product_name, variantName: l.variant_name, quantity: l.quantity }))
+  );
+  if (colourItems.length && !input.track_colour_confirmed) {
+    return {
+      ok: false,
+      error: `Please confirm your track colour (${colourList(distinctTrackColours(colourItems))}) before sending your request.`
+    };
+  }
+
   const cartLines = cart.items.map(
     (l) => `${l.quantity} × ${l.product_name} — ${l.variant_name} (${l.sku}) @ ${formatCad(l.unit_price_cad)} = ${formatCad(l.unit_price_cad * l.quantity)}`
   );
@@ -62,6 +81,7 @@ export async function submitShippingInquiry(input: ShippingInquiryInput): Promis
     ...cartLines,
     "",
     `Product subtotal: ${formatCad(cart.subtotal_cad)} + ${free ? "tax (shipping is FREE, order is over $500)" : "shipping & tax"}`,
+    colourItems.length ? `Track colour confirmed by customer: ${trackColourSummary(colourItems)}` : null,
     input.discount_code ? `Discount code entered: ${input.discount_code}` : null,
     input.notes?.trim() ? `\nCustomer notes:\n${input.notes.trim()}` : null
   ]

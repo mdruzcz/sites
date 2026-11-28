@@ -33,19 +33,24 @@ const COLOR_SWATCH: Record<string, string> = {
 /**
  * Kit builder: pick a footage, pick a track colour, see the example home that
  * footage covers, and add that exact variant to the cart.
+ * `cardCheckout` is true when kits can be paid by card at checkout.
  */
-export function PermanentLightsConfigurator({ options }: { options: ConfigOption[] }) {
+export function PermanentLightsConfigurator({ options, cardCheckout = false }: { options: ConfigOption[]; cardCheckout?: boolean }) {
   const [slug, setSlug] = useState<string>(options[2]?.slug ?? options[0]?.slug ?? "");
   const selected = options.find((o) => o.slug === slug) ?? options[0];
   const colors = (selected?.variants ?? []).map((v) => v.color).filter(Boolean);
-  const [color, setColor] = useState<string>(colors.includes("White") ? "White" : (colors[0] ?? ""));
+  // Track colour is never preselected: a default colour is how people end up with the wrong track.
+  const [color, setColor] = useState<string>("");
+  const [needColour, setNeedColour] = useState(false);
   const [pending, startTransition] = useTransition();
   const [added, setAdded] = useState(false);
   const router = useRouter();
 
   // The colour the visitor picked carries across sizes when that size has it.
-  const variant =
-    selected?.variants.find((v) => v.color === color) ?? selected?.variants[0] ?? null;
+  const variant = colors.length
+    ? (selected?.variants.find((v) => v.color === color) ?? null)
+    : (selected?.variants[0] ?? null);
+  const priced = variant ?? selected?.variants[0] ?? null;
 
   function chooseKit(next: string) {
     setSlug(next);
@@ -53,7 +58,10 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
   }
 
   function addKit() {
-    if (!variant) return;
+    if (!variant) {
+      setNeedColour(colors.length > 0);
+      return;
+    }
     setAdded(false);
     startTransition(async () => {
       await addToCartAction(variant.id, 1);
@@ -98,6 +106,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
                   aria-pressed={c === variant?.color}
                   onClick={() => {
                     setColor(c);
+                    setNeedColour(false);
                     setAdded(false);
                   }}
                 >
@@ -110,6 +119,11 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
                 </button>
               ))}
             </div>
+            {needColour && (
+              <p role="alert" className="mt-3 rounded-xl bg-[var(--color-gold-soft)] px-3 py-2 text-sm font-bold text-[var(--color-gold-text)]">
+                Choose a track colour first.
+              </p>
+            )}
           </>
         )}
 
@@ -118,21 +132,23 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
             <div>
               <p className="eyebrow-plain">Your kit</p>
               <p className="mt-1.5 text-xl font-bold tracking-[-0.02em]">
-                {selected.footage} ft{variant?.color ? `, ${variant.color.toLowerCase()} track` : ""}
+                {selected.footage} ft{variant?.color ? `, ${variant.color.toLowerCase()} track` : colors.length ? ", choose a track colour" : ""}
               </p>
             </div>
             <p className="font-display text-[2rem] text-[var(--color-text)]" aria-live="polite">
-              {formatCad(variant?.price ?? 0)}
+              {formatCad(priced?.price ?? 0)}
             </p>
           </div>
           <p className="mt-2 text-sm text-[var(--color-muted)]">
-            Free shipping anywhere in Canada. No payment online: we email to confirm your order first.
+            {cardCheckout
+              ? "Free shipping anywhere in Canada. Pay securely by card at checkout."
+              : "Free shipping anywhere in Canada. No payment online: we email to confirm your order first."}
           </p>
           <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
             <button
               type="button"
               onClick={addKit}
-              disabled={pending || !variant}
+              disabled={pending}
               className="btn-primary flex-1 disabled:opacity-50"
             >
               {pending ? "Adding…" : added ? "Added to cart" : "Add kit to cart"}

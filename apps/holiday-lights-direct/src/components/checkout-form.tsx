@@ -1,11 +1,13 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
+import { useMemo, useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Turnstile } from "@marsidev/react-turnstile";
 import type { Cart } from "@/lib/cart";
 import { submitShippingInquiry } from "@/lib/actions/inquiry";
+import { TrackColourConfirm, needsTrackColourCheck } from "@/components/track-colour-confirm";
+import { BILLER_PHONE } from "@/lib/store-brand";
 
 const PROVINCES = [
   ["AB", "Alberta"],
@@ -23,7 +25,14 @@ const PROVINCES = [
   ["YT", "Yukon"]
 ] as const;
 
-export function CheckoutForm({ cart }: { cart: Cart }) {
+/**
+ * The request form: sends the cart and delivery address to the shop, takes no
+ * payment. Every cart under the free-shipping threshold uses it; a larger cart
+ * normally pays by card (card-checkout-form.tsx) and reaches this form only
+ * when the customer chooses it, or when card checkout isn't switched on.
+ * `cardOption` adds a link back to card checkout.
+ */
+export function CheckoutForm({ cart, cardOption = false }: { cart: Cart; cardOption?: boolean }) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
@@ -37,12 +46,23 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   const [notes, setNotes] = useState("");
   const [discount, setDiscount] = useState("");
   const turnstileToken = useRef<string | null>(null);
+  const colourLines = useMemo(
+    () => cart.items.map((l) => ({ productName: l.product_name, variantName: l.variant_name, quantity: l.quantity })),
+    [cart.items]
+  );
+  const needsColour = needsTrackColourCheck(colourLines);
+  const [colourOk, setColourOk] = useState(false);
 
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const free = cart.subtotal_cad >= 500;
 
   function sendInquiry() {
     setError(null);
+    if (needsColour && !colourOk) {
+      setError("Please confirm your track colour before sending your request.");
+      document.getElementById("track-colour")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
     startTransition(async () => {
       try {
         const res = await submitShippingInquiry({
@@ -55,7 +75,8 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           postal,
           notes: notes || null,
           discount_code: discount.trim() || null,
-          turnstile_token: turnstileToken.current
+          turnstile_token: turnstileToken.current,
+          track_colour_confirmed: colourOk
         });
         if (!res.ok) {
           setError(res.error);
@@ -73,7 +94,7 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
       {/* How it works */}
       <section className="rounded-[14px] border border-[var(--color-border)] bg-[var(--color-brand-soft)] p-5">
         <h2 className="font-display text-xl text-[var(--color-brand-dark)]">
-          How ordering works — no payment online
+          {free ? "How an order request works: no payment today" : "How a shipping quote works: no payment today"}
         </h2>
         <p className="mt-2 text-sm text-[var(--color-text)]">
           Send us your order and delivery address below. We&rsquo;ll reply by email,{" "}
@@ -82,6 +103,15 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             ? "to confirm your order and delivery timeline. Shipping is free on this order. Once you approve, we arrange payment and ship your lights."
             : "with your shipping cost and delivery timeline. Once you approve the quote, we arrange payment and ship your lights."}
         </p>
+        {cardOption && (
+          <p className="mt-3 text-sm text-[var(--color-text)]">
+            Would you rather pay now?{" "}
+            <Link href="/checkout" className="font-semibold text-[var(--color-gold-text)] underline underline-offset-2">
+              Pay securely by card instead
+            </Link>
+            . Card checkout can&rsquo;t apply discount codes.
+          </p>
+        )}
       </section>
 
       {/* Contact */}
@@ -172,6 +202,15 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
         </div>
       </section>
 
+      {/* Track colour */}
+      <TrackColourConfirm
+        lines={colourLines}
+        checked={colourOk}
+        onChange={setColourOk}
+        heading="4 · Confirm your track colour"
+        phone={BILLER_PHONE}
+      />
+
       {turnstileSiteKey && !turnstileSiteKey.startsWith("1x000") && (
         <Turnstile
           siteKey={turnstileSiteKey}
@@ -190,10 +229,14 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
         {pending ? "Sending your request…" : free ? "Send order request →" : "Request shipping quote →"}
       </button>
 
-      {error && <p className="rounded-[10px] bg-rose-50 px-3 py-2 text-sm text-[var(--color-red)]">{error}</p>}
+      {error && (
+        <p role="alert" className="rounded-[10px] bg-rose-50 px-3 py-2 text-sm text-[var(--color-red)]">
+          {error}
+        </p>
+      )}
 
       <p className="text-center text-xs text-[var(--color-muted)]">
-        No payment is taken online and sending this request doesn&rsquo;t commit you to anything. By
+        No payment is taken with this request and sending it doesn&rsquo;t commit you to anything. By
         sending your request you agree to our{" "}
         <Link href="/privacy" className="underline">privacy policy</Link>.
       </p>

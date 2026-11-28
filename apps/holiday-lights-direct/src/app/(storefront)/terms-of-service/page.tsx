@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cardCheckoutEnabled } from "@/lib/card-checkout";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
   openGraph: { title: "Terms of Service", description: "The terms for using holidaylightsdirect.ca: pricing in Canadian dollars, how shipping quotes become orders, returns, warranty and installation safety.", url: `${SITE_URL}/terms-of-service` }
 };
 
-const SECTIONS: { heading: string; body: string[] }[] = [
+// `card` is true once card checkout is switched on for this deployment; until
+// then every order is a request and no payment is taken on the site.
+const sections = (card: boolean): { heading: string; body: string[] }[] => [
   {
     "heading": "Using this site",
     "body": [
@@ -24,9 +27,14 @@ const SECTIONS: { heading: string; body: string[] }[] = [
   },
   {
     "heading": "Quotes and orders",
-    "body": [
-      "Sending an order or shipping quote request does not place an order and takes no payment. Shipping is free on orders over $500 CAD within Canada; for smaller orders we reply by email with your shipping cost. An order is confirmed only once you approve our reply and payment has been arranged."
-    ]
+    "body": card
+      ? [
+          "Shipping is free on orders over $500 CAD within Canada. An order that ships free can be paid by credit or debit card at checkout. The payment is taken on Stripe's secure page, and the order is placed when the payment goes through; we then email your order confirmation and invoice. Orders are invoiced by our billing company, Master Decker Inc.",
+          "Sending an order or shipping quote request does not place an order and takes no payment. For orders under $500 CAD we reply by email with your shipping cost. An order sent as a request is confirmed only once you approve our reply and payment has been arranged."
+        ]
+      : [
+          "Sending an order or shipping quote request does not place an order and takes no payment. Shipping is free on orders over $500 CAD within Canada; for smaller orders we reply by email with your shipping cost. An order is confirmed only once you approve our reply and payment has been arranged."
+        ]
   },
   {
     "heading": "Shipping, returns and warranty",
@@ -71,9 +79,9 @@ export default function Page() {
       <div className="mx-auto mt-8 max-w-3xl">
         <p className="eyebrow-plain">The fine print</p>
         <h1 className="font-display mt-3 text-[2.2rem] md:text-[3rem]">Terms of service</h1>
-        <p className="mt-4 text-sm text-[var(--color-muted)]">Last updated November 19, 2026</p>
+        <p className="mt-4 text-sm text-[var(--color-muted)]">Last updated November 28, 2026</p>
         <div className="surface mt-8 divide-y divide-[var(--color-border)]">
-          {SECTIONS.map((s) => (
+          {sections(cardCheckoutEnabled()).map((s) => (
             <section key={s.heading} className="p-6 md:p-8">
               <h2 className="text-lg font-bold tracking-[-0.02em]">{s.heading}</h2>
               {s.body.map((p) => (

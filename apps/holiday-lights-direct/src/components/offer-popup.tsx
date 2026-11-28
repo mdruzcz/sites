@@ -54,7 +54,7 @@ export function OfferPopup() {
             your first order
           </h2>
           <p className="relative mt-3 text-sm text-white/85">
-            Welcome to Holiday Lights Direct. Enter this code when you request your quote:
+            Welcome to Holiday Lights Direct. Enter this code when you send your order or quote request:
           </p>
         </div>
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getServerSupabase } from "@/lib/supabase/server";
 import { getStore, type CatalogProduct } from "@/lib/catalog";
+import { cardCheckoutEnabled } from "@/lib/card-checkout";
 import { PermanentLightsConfigurator, type ConfigOption } from "@/components/permanent-lights-configurator";
 import { KitSizeGrid } from "@/components/kit-coverage";
 import { PageHero } from "@/components/page-hero";
@@ -200,7 +201,7 @@ function ConfiguratorSection({ options }: { options: ConfigOption[] }) {
         </div>
 
         <div className="mt-10">
-          <PermanentLightsConfigurator options={options} />
+          <PermanentLightsConfigurator options={options} cardCheckout={cardCheckoutEnabled()} />
         </div>
       </div>
     </section>
