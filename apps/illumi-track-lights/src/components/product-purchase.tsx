@@ -29,24 +29,33 @@ const SWATCH: Record<string, string> = { black: "#24262b", white: "#f3f1ec", wic
 export function ProductPurchase({ productName, variants, optionLabel = "Choose option", perUnit }: Props) {
   const router = useRouter();
   const { openMiniCart } = useUI();
-  const [variantId, setVariantId] = useState(variants[0]?.id ?? "");
+  const allColours = variants.length > 1 && variants.every((v) => v.attribute_value && SWATCH[v.attribute_value.toLowerCase()]);
+  // Track colour is never preselected: a default colour is how people end up with the wrong track.
+  const [variantId, setVariantId] = useState(allColours ? "" : variants[0]?.id ?? "");
+  const [needColour, setNeedColour] = useState(false);
   const [qty, setQty] = useState(1);
   const [pending, startTransition] = useTransition();
 
   const variant = variants.find((v) => v.id === variantId);
+  const shown = variant ?? variants[0];
   const outOfStock = !!variant && variant.on_hand <= 0;
   const lowStock = !!variant && variant.on_hand > 0 && variant.on_hand < 10;
-  const allColours = variants.length > 1 && variants.every((v) => v.attribute_value && SWATCH[v.attribute_value.toLowerCase()]);
 
   function add() {
-    if (!variant) return;
+    if (!variant) {
+      setNeedColour(allColours);
+      return;
+    }
     startTransition(async () => {
       await addToCartAction(variant.id, qty);
       openMiniCart();
     });
   }
   function buyNow() {
-    if (!variant) return;
+    if (!variant) {
+      setNeedColour(allColours);
+      return;
+    }
     startTransition(async () => {
       await addToCartAction(variant.id, qty);
       router.push("/checkout");
@@ -57,7 +66,7 @@ export function ProductPurchase({ productName, variants, optionLabel = "Choose o
 
   return (
     <div className="mt-5">
-      {variant && <p className="price text-[1.75rem] leading-none">{formatCad(variant.price_cad, 2)}</p>}
+      {shown && <p className="price text-[1.75rem] leading-none">{formatCad(shown.price_cad, 2)}</p>}
       <p className="mt-2 text-sm text-[var(--color-text-soft)]">
         <Link href="/shipping-returns" className="font-semibold text-[var(--color-green)] underline underline-offset-2">Free shipping</Link> anywhere in Canada, or{" "}
         <Link href="/shipping-returns#pickup" className="underline underline-offset-2">free pickup in Woodstock</Link>.
@@ -72,7 +81,7 @@ export function ProductPurchase({ productName, variants, optionLabel = "Choose o
       {variants.length > 1 && allColours && (
         <fieldset className="mt-5">
           <legend className="label">
-            Track colour: <span className="normal-case tracking-normal text-[var(--color-text)]">{variant?.attribute_value}</span>
+            Track colour: <span className="normal-case tracking-normal text-[var(--color-text)]">{variant?.attribute_value ?? "choose one"}</span>
           </legend>
           <div className="flex flex-wrap gap-2">
             {variants.map((v) => {
@@ -81,7 +90,10 @@ export function ProductPurchase({ productName, variants, optionLabel = "Choose o
                 <button
                   key={v.id}
                   type="button"
-                  onClick={() => setVariantId(v.id)}
+                  onClick={() => {
+                    setVariantId(v.id);
+                    setNeedColour(false);
+                  }}
                   aria-pressed={active}
                   className={`flex min-h-[44px] items-center gap-2 border px-3 text-sm transition ${active ? "border-[var(--color-accent)] bg-[var(--color-accent-soft)] font-semibold outline outline-1 outline-[var(--color-accent)]" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-accent)]"}`}
                 >
@@ -91,6 +103,10 @@ export function ProductPurchase({ productName, variants, optionLabel = "Choose o
               );
             })}
           </div>
+          <p className="mt-2 text-xs text-[var(--color-muted)]">Match the track to your soffit or fascia. It is the only part you see in daylight.</p>
+          {needColour && (
+            <p role="alert" className="note mt-2 font-semibold">Choose a track colour first.</p>
+          )}
         </fieldset>
       )}
       {variants.length > 1 && !allColours && (

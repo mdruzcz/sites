@@ -8,8 +8,9 @@
 
 import { BILLER, money, type OrderDoc } from "./documents";
 import { PICKUP_LABEL, SHOP } from "./policy";
+import { TRACK_COLOUR_HELP, colourList, distinctTrackColours, trackColourItems } from "./track-colour";
 
-const esc = (v: unknown) =>
+export const esc = (v: unknown) =>
   String(v ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -22,7 +23,34 @@ export interface StoreEmailBrand {
   /** Accent colour for the header band and buttons. */
   accent: string;
   phone?: string;
+  /** Where customer replies go. Defaults to CONTACT_TO_EMAIL, then the biller. */
+  replyTo?: string;
+  /** Short, true selling points for the reminder email, e.g. "30-day returns". */
+  assurances?: string[];
 }
+
+export function replyAddress(brand: StoreEmailBrand): string {
+  return brand.replyTo || process.env.CONTACT_TO_EMAIL || BILLER.email;
+}
+
+/** "Track colour: White" block for emails; empty when nothing on the order is colour-matched. */
+export function trackColourBlock(o: OrderDoc): string {
+  const items = trackColourItems(o.lines.map((l) => ({ productName: l.name, variantName: l.variant, quantity: l.qty })));
+  if (!items.length) return "";
+  const colours = distinctTrackColours(items);
+  const chips = colours
+    .map(
+      (c) =>
+        `<span style="display:inline-block;margin:0 10px 0 0;white-space:nowrap"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:${c.hex};border:1px solid #9ca3af;vertical-align:-2px;margin-right:6px"></span><strong>${esc(c.label)}</strong></span>`
+    )
+    .join("");
+  return `<div style="margin:18px 0 0;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;font-size:14px">
+        <div style="font-size:12px;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Track colour${colours.length > 1 ? "s" : ""} on this order</div>
+        ${chips}
+        <div style="margin-top:8px;font-size:13px;color:#6b7280">${esc(TRACK_COLOUR_HELP)}${colours.length > 1 ? ` This order has ${esc(colourList(colours))}.` : ""} If that is not right, reply or call before it ships.</div>
+      </div>`;
+}
+
 
 export function orderConfirmationHtml(o: OrderDoc, brand: StoreEmailBrand): string {
   const first = (o.shipTo?.recipient ?? "").split(/\s+/)[0] || "there";
@@ -76,6 +104,7 @@ export function orderConfirmationHtml(o: OrderDoc, brand: StoreEmailBrand): stri
         ${total(o.taxLabel, money(o.tax))}
         ${total("Total paid (CAD)", money(o.total), true)}
       </table>
+      ${trackColourBlock(o)}
 
       <table role="presentation" style="width:100%;margin-top:22px;font-size:14px"><tr>
         <td style="vertical-align:top;width:50%;padding-right:12px">
@@ -103,7 +132,10 @@ export interface SendResult {
 
 /** Sends through Resend's REST API. Only masterdecker.com is a verified sender
  *  domain, so the From is always noreply@masterdecker.com with the store's name. */
-export async function sendOrderConfirmation(o: OrderDoc, brand: StoreEmailBrand, invoicePdf: Uint8Array): Promise<SendResult> {
+export async function sendStoreEmail(
+  brand: StoreEmailBrand,
+  mail: { to: string; subject: string; html: string; text?: string; replyTo?: string; attachments?: { filename: string; content: string }[] }
+): Promise<SendResult> {
   const key = process.env.RESEND_API_KEY;
   if (!key) return { ok: false, error: "RESEND_API_KEY not set" };
   const res = await fetch("https://api.resend.com/emails", {
@@ -111,14 +143,24 @@ export async function sendOrderConfirmation(o: OrderDoc, brand: StoreEmailBrand,
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: `${brand.name} <noreply@masterdecker.com>`,
-      to: [o.email],
-      reply_to: process.env.CONTACT_TO_EMAIL || BILLER.email,
-      subject: `Order ${o.number} confirmed - ${brand.name}`,
-      html: orderConfirmationHtml(o, brand),
-      attachments: [{ filename: `Invoice-${o.number}.pdf`, content: Buffer.from(invoicePdf).toString("base64") }]
+      to: [mail.to],
+      reply_to: mail.replyTo ?? replyAddress(brand),
+      subject: mail.subject,
+      html: mail.html,
+      ...(mail.text ? { text: mail.text } : {}),
+      ...(mail.attachments ? { attachments: mail.attachments } : {})
     })
   });
   const body = (await res.json().catch(() => ({}))) as { id?: string; message?: string };
   if (!res.ok) return { ok: false, error: `${res.status} ${body.message ?? ""}`.trim() };
   return { ok: true, id: body.id };
+}
+
+export async function sendOrderConfirmation(o: OrderDoc, brand: StoreEmailBrand, invoicePdf: Uint8Array): Promise<SendResult> {
+  return sendStoreEmail(brand, {
+    to: o.email,
+    subject: `Order ${o.number} confirmed - ${brand.name}`,
+    html: orderConfirmationHtml(o, brand),
+    attachments: [{ filename: `Invoice-${o.number}.pdf`, content: Buffer.from(invoicePdf).toString("base64") }]
+  });
 }

@@ -28,11 +28,13 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
   const [selectedSlug, setSelectedSlug] = useState<string>(options[2]?.slug ?? options[0]?.slug ?? "");
   const selected = options.find((o) => o.slug === selectedSlug) ?? options[0];
   const colors = selected?.colors ?? [];
-  const [selectedColor, setSelectedColor] = useState<string>(colors[0] ?? "");
+  // Track colour is never preselected: a default colour is how people end up with the wrong track.
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [needColour, setNeedColour] = useState(false);
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
-    if (colors.length && !colors.includes(selectedColor)) setSelectedColor(colors[0]);
+    if (selectedColor && colors.length && !colors.includes(selectedColor)) setSelectedColor("");
   }, [selectedSlug, colors, selectedColor]);
 
   if (!selected) return null;
@@ -41,7 +43,10 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
   const info = kitHomeInfo(selected.footage);
 
   function addKit() {
-    if (!variantId) return;
+    if (!variantId) {
+      setNeedColour(true);
+      return;
+    }
     startTransition(async () => {
       await addToCartAction(variantId, 1);
       openMiniCart();
@@ -76,7 +81,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
               {colors.map((c) => {
                 const active = c === selectedColor;
                 return (
-                  <button key={c} type="button" onClick={() => setSelectedColor(c)} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 px-3 text-sm ${chip(active)}`}>
+                  <button key={c} type="button" onClick={() => { setSelectedColor(c); setNeedColour(false); }} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 px-3 text-sm ${chip(active)}`}>
                     <span aria-hidden className="inline-block size-4 rounded-full border border-black/20" style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }} />
                     {c}
                   </button>
@@ -92,13 +97,14 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
             <h3 className="font-display text-[1.35rem]">Track Lighting Kit, {selected.footage} ft</h3>
             <p className="price text-[1.6rem] leading-none">{formatCad(selected.price, 2)}</p>
           </div>
-          <p className="mt-1 text-sm text-[var(--color-muted)]">{selectedColor ? `${selectedColor} track` : "Track"} · free shipping in Canada</p>
+          <p className="mt-1 text-sm text-[var(--color-muted)]">{selectedColor ? `${selectedColor} track` : "Choose a track colour"} · free shipping in Canada</p>
+          {needColour && <p role="alert" className="note mt-2 font-semibold">Choose a track colour first.</p>}
           <p className="note mt-4">
             <strong>Works out to {formatCad(selected.price / selected.footage, 2)} a foot.</strong> {selected.lights} lights, {selected.trackFeet} ft of track, a WiFi controller, {selected.supplies} power {selected.supplies === 1 ? "supply" : "supplies"}, every connector and the screws.
           </p>
           <p className="mt-3 text-sm text-[var(--color-text-soft)]">Suits: {selected.suits}</p>
-          <button type="button" onClick={addKit} disabled={pending || !variantId} className="btn-primary mt-5 min-h-[52px] w-full disabled:opacity-50">
-            {pending ? "Adding…" : !variantId ? "Unavailable in this colour" : "Add kit to cart"}
+          <button type="button" onClick={addKit} disabled={pending} className="btn-primary mt-5 min-h-[52px] w-full disabled:opacity-50">
+            {pending ? "Adding…" : selectedColor && !variantId ? "Unavailable in this colour" : "Add kit to cart"}
           </button>
           <Link href={`/product/${selected.slug}`} className="text-link mt-2 flex min-h-[44px] items-center justify-center text-sm">Full parts list for the {selected.footage} ft kit</Link>
         </div>

@@ -4,6 +4,8 @@ import { useMemo, useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import type { Cart } from "@/lib/cart";
 import { CheckoutSummary } from "@/components/checkout-summary";
+import { TrackColourConfirm, needsTrackColourCheck } from "@/components/track-colour-confirm";
+import { BILLER_PHONE } from "@/lib/store-brand";
 import {
   PROVINCES,
   SHOP,
@@ -35,6 +37,12 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
     postal: "",
     note: ""
   });
+  const colourLines = useMemo(
+    () => cart.items.map((l) => ({ productName: l.product_name, variantName: l.variant_name, quantity: l.quantity })),
+    [cart.items]
+  );
+  const needsColour = needsTrackColourCheck(colourLines);
+  const [colourOk, setColourOk] = useState(false);
   const set = (k: Field) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setF((prev) => ({ ...prev, [k]: k === "postal" ? e.target.value.toUpperCase() : e.target.value }));
 
@@ -49,12 +57,17 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
   function submit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    if (needsColour && !colourOk) {
+      setError("Please confirm your track colour before paying.");
+      document.getElementById("track-colour")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
     startTransition(async () => {
       try {
         const res = await fetch("/api/stripe/checkout", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...f, method })
+          body: JSON.stringify({ ...f, method, trackColourConfirmed: colourOk })
         });
         const json = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
         if (json.url) {
@@ -161,9 +174,12 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
           </label>
         </section>
 
+        {/* Track colour */}
+        <TrackColourConfirm lines={colourLines} checked={colourOk} onChange={setColourOk} heading="3. Confirm your track colour" phone={BILLER_PHONE} />
+
         {/* Payment */}
         <section className={panel}>
-          <h2 className="font-display text-xl">3. Payment</h2>
+          <h2 className="font-display text-xl">{needsColour ? 4 : 3}. Payment</h2>
           <p className="mt-2 text-sm text-[var(--color-text-soft)]">
             You pay on Stripe&rsquo;s secure page by credit card, debit card, Apple Pay or Google Pay. We never see or store your card number.
           </p>
