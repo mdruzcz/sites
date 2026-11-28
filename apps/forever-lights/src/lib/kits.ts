@@ -104,3 +104,26 @@ export function formatCad(n: number, decimals = 2): string {
 }
 
 export const kitTitle = (kit: Kit) => `${kit.feet} ft Permanent Lighting Kit`;
+
+/**
+ * Lead photo for each kit size: a key in content/photos.json. Every kit gets a
+ * DIFFERENT lit-home photo, picked to look like the kind of home its `suits`
+ * line describes. These are example installs, not photos of that exact kit, so
+ * captions must not claim the home was lit with that kit size.
+ */
+const KIT_PHOTO_KEYS: Record<string, string> = {
+  '50-foot-kit': 'cottage',
+  '75-foot-kit': 'bungalow-warm',
+  '100-foot-kit': 'blue-bungalow',
+  '150-foot-kit': 'red-white-night',
+  '200-foot-kit': 'warm-white-night',
+  '250-foot-kit': 'rainbow-2728',
+};
+
+export function kitPhotoKey(kit: Kit): string {
+  return KIT_PHOTO_KEYS[kit.slug] ?? 'warm-white-night';
+}
+
+/** Lowest and highest kit price, for "from $X" lines. */
+export const kitPriceFrom = Math.min(...kits.map(k => k.price));
+export const kitPriceTo = Math.max(...kits.map(k => k.price));

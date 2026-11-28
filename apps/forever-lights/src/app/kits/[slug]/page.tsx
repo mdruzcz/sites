@@ -2,15 +2,19 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { site, phoneHref } from '@/lib/site';
+import { site, phoneHref, getPhoto } from '@/lib/site';
 import {
-  kits, kitColours, getKit, kitImage, kitBom, kitLightCount, kitTrackFeet, kitSaving, formatCad, kitTitle,
+  kits, kitColours, getKit, kitImage, kitBom, kitLightCount, kitTrackFeet, kitSaving, kitPhotoKey, formatCad, kitTitle,
 } from '@/lib/kits';
 import { Breadcrumbs, SectionHeading, CheckList, CtaBand } from '@/components/ui';
 import { Icon } from '@/components/icons';
 import { KitRequestForm } from '@/components/KitRequestForm';
 import { AddToCart } from '@/components/AddToCart';
 import { AddOns } from '@/components/AddOns';
+import { KitGallery, type GalleryImage } from '@/components/KitGallery';
+import { KitStoreFacts } from '@/components/KitStoreFacts';
+import { SHIP_LINE, kitFaqByKeys } from '@/lib/kit-store';
+import { KitCard } from '@/components/KitCard';
 import { orderableColours, addonCatalog } from '@/lib/shop';
 import { STOCK_NOTE } from '@/lib/kits';
 
@@ -30,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!kit) return {};
   const url = `https://${site.domain}/kits/${kit.slug}`;
   const title = `${kit.feet} ft DIY Permanent Lighting Kit`;
-  const description = `The ${kit.feet} ft Forever Lights DIY kit: ${kitLightCount(kit)} RGBW lights, ${kitTrackFeet(kit)} ft of aluminum track, controller, power and connectors. ${formatCad(kit.price)}, order online. Free shipping within 200 km of our Ontario shop.`;
+  const description = `Buy the ${kit.feet} ft Forever Lights DIY kit online: ${kitLightCount(kit)} RGBW lights, ${kitTrackFeet(kit)} ft of track, controller and connectors. ${formatCad(kit.price)}. Ships across Canada, pay by card.`;
   return {
     title,
     description,
@@ -56,7 +60,40 @@ export default async function KitDetailPage({ params }: Props) {
   const kitOptions = kits.map(k => ({ slug: k.slug, label: kitTitle(k), price: formatCad(k.price) }));
   const colourOptions = kitColours.map(c => ({ key: c.key, label: c.label }));
   const totalParts = rows.reduce((n, r) => n + r.qty, 0);
-  const heroImg = kitImage('aluminum-track');
+  const colours = orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }));
+  const orderFaq = kitFaqByKeys(['canada', 'shipping', 'returns', 'warranty']);
+
+  // Lead with a lit home (a different photo for every kit size), then the parts.
+  const photo = getPhoto(kitPhotoKey(kit));
+  const mounted = getPhoto('track-closeup');
+  const trackImg = kitImage('aluminum-track');
+  const strandImg = kitImage('rgbw-light-strand');
+  const supplyImg = kitImage('power-supply-150w');
+  const gallery: GalleryImage[] = [
+    { src: photo.src, alt: photo.alt, blurDataURL: photo.blurDataURL, fit: 'cover', label: photo.caption ?? 'Permanent roofline lighting at night' },
+    ...(trackImg ? [{
+      src: trackImg.src,
+      alt: `Aluminum permanent lighting track in black, beige, white and brown with RGBW puck lights fitted, as supplied in the Forever Lights ${kit.feet} ft kit`,
+      blurDataURL: trackImg.blurDataURL,
+      fit: 'contain' as const,
+      label: 'Aluminum track in the four stock colours',
+    }] : []),
+    ...(strandImg ? [{
+      src: strandImg.src,
+      alt: `Five-light RGBW strand with sealed twist connectors, ${kit.bom.strand} supplied in the Forever Lights ${kit.feet} ft kit`,
+      blurDataURL: strandImg.blurDataURL,
+      fit: 'contain' as const,
+      label: `5-light RGBW strand, ${kit.bom.strand} in this kit`,
+    }] : []),
+    { src: mounted.src, alt: mounted.alt, blurDataURL: mounted.blurDataURL, fit: 'cover', label: 'Track and lights mounted under an eave' },
+    ...(supplyImg ? [{
+      src: supplyImg.src,
+      alt: `150 W waterproof plug-in power supply included in the Forever Lights ${kit.feet} ft permanent lighting kit`,
+      blurDataURL: supplyImg.blurDataURL,
+      fit: 'contain' as const,
+      label: `150 W plug-in power supply, ${kit.bom.powerSupply} in this kit`,
+    }] : []),
+  ];
 
   const jsonLd = [
     {
@@ -65,6 +102,7 @@ export default async function KitDetailPage({ params }: Props) {
       name: `Forever Lights ${kit.feet} ft Permanent Lighting Kit`,
       description: `DIY permanent LED roofline lighting kit covering about ${kit.feet} feet. Includes ${kitLightCount(kit)} RGBW light points, ${kitTrackFeet(kit)} feet of aluminum track, a WiFi controller, power supplies and all connectors.`,
       url,
+      image: [photo.src, ...(trackImg ? [trackImg.src] : [])].map(src => `https://${site.domain}${src}`),
       brand: { '@type': 'Brand', name: site.name },
       category: 'Permanent outdoor LED lighting kit',
       offers: {
@@ -92,64 +130,46 @@ export default async function KitDetailPage({ params }: Props) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Header */}
+      {/* Product: photos, price, buy box */}
       <section className="bg-soft border-b border-line">
-        <div className="wrap pt-8 pb-12 md:pt-10 md:pb-16">
+        <div className="wrap pt-6 pb-12 md:pb-16">
           <Breadcrumbs items={[{ href: '/kits', label: 'DIY Kits' }, { label: `${kit.feet} ft kit` }]} />
-          <div className="mt-8 grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
-              <span className="eyebrow">DIY kit</span>
-              <h1 className="mt-4 text-4xl md:text-5xl font-bold text-ink leading-[1.05]">{kit.feet} ft permanent lighting kit</h1>
-              <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-xl">{kit.suits}</p>
-              <p className="mt-8 font-heading text-4xl md:text-5xl font-bold text-ink">{formatCad(kit.price)}</p>
-              <p className="mt-2 text-sm text-muted">
-                About {formatCad(kit.price / kit.feet, 2)} per foot. Free shipping within 200 km of our Belmont, Ontario shop,
-                $200 flat elsewhere in Canada, GST/HST added at checkout.
+          <div className="mt-5 grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="lg:sticky lg:top-28">
+              <KitGallery images={gallery} note="Example install. Measure your own roofline to pick a size." />
+            </div>
+            <div>
+              <span className="eyebrow">DIY kit · ships across Canada</span>
+              <h1 className="mt-3 text-3xl sm:text-4xl font-bold text-ink leading-[1.08]">{kit.feet} ft permanent lighting kit</h1>
+              <p className="mt-3 text-[17px] text-ink-soft leading-relaxed">
+                Covers {kit.suits.charAt(0).toLowerCase() + kit.suits.slice(1)}{' '}
+                <span className="text-muted">
+                  {kitLightCount(kit)} RGBW lights, {kitTrackFeet(kit)} ft of track, WiFi controller, power and every connector: {totalParts} parts in one order.
+                </span>
               </p>
-              <div id="order" className="mt-7 scroll-mt-28">
+              <div id="order" className="mt-5 scroll-mt-28">
                 <AddToCart
                   slug={kit.slug}
                   feet={kit.feet}
-                  priceLabel={formatCad(kit.price)}
-                  colours={orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }))}
+                  price={kit.price}
+                  perFootLabel={`${formatCad(kit.price / kit.feet, 2)} per foot`}
+                  shipLine={SHIP_LINE}
+                  colours={colours}
                 />
               </div>
-              <a href={phoneHref} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink min-h-[44px]"><Icon.phone size={18} /> Questions first? Call {site.phone}</a>
-            </div>
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden bg-white border border-line aspect-[4/3]">
-                {heroImg && (
-                  <Image
-                    src={heroImg.src}
-                    alt={`Aluminum track and RGBW puck lights supplied in the Forever Lights ${kit.feet} ft permanent lighting kit`}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-contain p-6"
-                    placeholder="blur"
-                    blurDataURL={heroImg.blurDataURL}
-                  />
-                )}
-              </div>
-              <dl className="mt-4 grid grid-cols-3 gap-3 text-center">
-                {[
-                  { t: `${kitLightCount(kit)}`, l: 'RGBW lights' },
-                  { t: `${kitTrackFeet(kit)} ft`, l: 'track supplied' },
-                  { t: `${totalParts}`, l: 'parts in the box' },
-                ].map(s => (
-                  <div key={s.l} className="card p-4">
-                    <dt className="font-heading text-xl font-bold text-ink">{s.t}</dt>
-                    <dd className="text-xs text-muted mt-0.5">{s.l}</dd>
-                  </div>
-                ))}
-              </dl>
+              <KitStoreFacts columns="two" className="mt-7" />
+              <p className="mt-6 text-sm text-ink-soft leading-relaxed">
+                Not sure this is the right size, or the right colour?{' '}
+                <a href={phoneHref} className="inline-flex items-center gap-1.5 font-semibold text-ink underline underline-offset-4 min-h-[44px]"><Icon.phone size={16} /> Call {site.phone}</a>{' '}
+                or <a href="#request" className="font-semibold text-ink underline underline-offset-4">send us a question</a> before you order.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* BOM */}
-      <section className="section">
+      <section id="in-the-box" className="section scroll-mt-24">
         <div className="wrap">
           <SectionHeading align="left" eyebrow="What is in the box" title={`Everything in the ${kit.feet} ft kit.`} sub={`The kit ships with ${kitTrackFeet(kit)} feet of track, a little more than the nominal ${kit.feet} feet, so you have room for corners and offcuts.`} />
           <div className="mt-10 grid gap-4">
@@ -194,7 +214,7 @@ export default async function KitDetailPage({ params }: Props) {
         <div className="wrap">
           <AddOns
             addons={addonCatalog()}
-            colours={orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }))}
+            colours={colours}
             title="Add the extras your roofline will ask for"
             intro={`The ${kit.feet} ft kit covers a typical layout, but every house has a corner, a gap or a long run the kit can't predict. These ship in the same box, so there is no second delivery and no stopping half-way up the ladder.`}
             stockNote={STOCK_NOTE}
@@ -216,36 +236,35 @@ export default async function KitDetailPage({ params }: Props) {
                 <dt className="text-muted">Same length, installed by us</dt>
                 <dd className="font-semibold text-ink whitespace-nowrap">{formatCad(kit.installedLow)} – {formatCad(kit.installedHigh)}</dd>
               </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-ink font-medium">You save</dt>
-                <dd className="font-heading text-2xl font-bold text-ink whitespace-nowrap">{formatCad(kitSaving(kit))}</dd>
-              </div>
+              {kitSaving(kit) > 0 && (
+                <div className="flex justify-between gap-4">
+                  <dt className="text-ink font-medium">You save</dt>
+                  <dd className="font-heading text-2xl font-bold text-ink whitespace-nowrap">{formatCad(kitSaving(kit))}</dd>
+                </div>
+              )}
             </dl>
             <p className="mt-5 text-xs text-muted leading-relaxed">
               The saving is the labour: measuring, mounting, wiring, commissioning and the 1-year workmanship warranty. The
-              5-year parts warranty is the same either way. Kit price excludes shipping and GST/HST.
+              5-year parts warranty is the same either way. Kit price excludes shipping and GST/HST. We install in London,
+              Ontario and the surrounding area; kits ship anywhere in Canada.
             </p>
             <Link href="/resources/diy-permanent-lights-vs-professional-installation" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink min-h-[44px]">
               Which is right for you? <Icon.arrow size={16} />
             </Link>
           </div>
           <div className="card p-7">
-            <h2 className="text-xl font-bold text-ink">Choose your track colour</h2>
-            <p className="mt-2 text-[15px] text-muted leading-relaxed">
-              Match the channel to your soffit and fascia so it reads as trim in daylight.
-            </p>
-            <ul className="mt-5 flex flex-wrap gap-3">
-              {kitColours.map(c => (
-                <li key={c.key} className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink">
-                  <span
-                    className="w-4 h-4 rounded-full border border-black/10"
-                    style={c.hex ? { background: c.hex } : { background: 'linear-gradient(135deg,#ec3013,#f2a900,#17a15a,#0aa5c9,#7b3fd4)' }}
-                    aria-hidden="true"
-                  />
-                  {c.label}
-                </li>
+            <h2 className="text-xl font-bold text-ink">Shipping, returns and warranty</h2>
+            <div className="mt-4 divide-y divide-line border-y border-line">
+              {orderFaq.map(f => (
+                <details key={f.key} className="group">
+                  <summary className="flex min-h-[52px] cursor-pointer items-center justify-between gap-4 py-3 text-[15px] font-semibold text-ink">
+                    {f.q}
+                    <Icon.chevron size={18} className="shrink-0 text-muted transition-transform group-open:rotate-180" />
+                  </summary>
+                  <p className="pb-4 text-[15px] text-ink-soft leading-relaxed">{f.a}</p>
+                </details>
               ))}
-            </ul>
+            </div>
             <h3 className="mt-7 font-bold text-ink">You will also need</h3>
             <CheckList
               className="mt-3"
@@ -295,16 +314,9 @@ export default async function KitDetailPage({ params }: Props) {
             <SectionHeading align="left" eyebrow="Other sizes" title="Need more or less coverage?" />
             <Link href="/kits" className="btn btn-outline self-start md:self-auto">All kits <Icon.arrow size={18} /></Link>
           </div>
-          <div className="grid sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
             {others.map(k => (
-              <Link key={k.slug} href={`/kits/${k.slug}`} className="card p-5 hover:border-ink transition-colors group">
-                <h3 className="font-heading text-xl font-bold text-ink">{k.feet} ft</h3>
-                <p className="mt-1 font-semibold text-ink">{formatCad(k.price)}</p>
-                <p className="mt-1 text-xs text-muted">{kitLightCount(k)} lights</p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-ink">
-                  View <Icon.arrow size={14} className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
+              <KitCard key={k.slug} kit={k} compact sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px" />
             ))}
           </div>
         </div>

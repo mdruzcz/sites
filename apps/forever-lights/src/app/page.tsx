@@ -6,7 +6,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: 'Permanent Roofline Lighting in London, Ontario | Forever Lights',
   description:
-    'Forever Lights installs permanent LED roofline lighting on London, Ontario homes. App-controlled, invisible by day, rated to -40°C, 5-year warranty. Free quote.',
+    'Permanent LED roofline lighting installed on London, Ontario homes, or shipped across Canada as a DIY kit. App-controlled, rated to -40°C, 5-year parts warranty.',
   alternates: { canonical: 'https://foreverlights.ca/' },
   openGraph: {
     title: 'Permanent Roofline Lighting in London, Ontario | Forever Lights',

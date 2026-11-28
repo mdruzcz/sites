@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { site } from '@/lib/site-config';
 import { priceCart, kitProductName, kitSku, addonSku } from '@/lib/shop';
-import { getServiceSupabase, getStoreId, STORE_SLUG } from '@/lib/supabase-admin';
+import { getServiceSupabase, getStoreId } from '@/lib/supabase-admin';
+import { storeConfig } from '@/lib/store-brand';
 import { createOrderAndSession, parseCustomer } from '@/lib/orders/checkout-server';
 
 export const runtime = 'nodejs';
@@ -13,7 +14,7 @@ export async function POST(req: Request) {
   if (!secret) {
     return NextResponse.json({ error: `Card checkout isn't switched on yet. Please call ${site.phone} to order.` }, { status: 503 });
   }
-  const body = (await req.json().catch(() => ({}))) as { items?: unknown; customer?: unknown };
+  const body = (await req.json().catch(() => ({}))) as { items?: unknown; customer?: unknown; trackColourConfirmed?: unknown };
   const cart = priceCart(body.items);
   if (!cart.ok) return NextResponse.json({ error: cart.error }, { status: 400 });
   const parsed = parseCustomer(body.customer);
@@ -26,7 +27,7 @@ export async function POST(req: Request) {
   const result = await createOrderAndSession({
     service: getServiceSupabase(),
     stripe,
-    store: { id: storeId, slug: STORE_SLUG, name: site.name, prefix: 'FL', siteUrl: `https://${site.domain}` },
+    store: storeConfig(storeId),
     lines: cart.lines.map(l =>
       l.kind === 'kit'
         ? {
@@ -48,6 +49,7 @@ export async function POST(req: Request) {
     ),
     customer: parsed.customer,
     cancelPath: '/cart',
+    trackColourConfirmed: body.trackColourConfirmed === true,
   });
   if (!result.ok) return NextResponse.json({ error: result.error }, { status: result.status });
   return NextResponse.json({ url: result.url, order_number: result.orderNumber });

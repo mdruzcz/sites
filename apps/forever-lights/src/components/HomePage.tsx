@@ -6,6 +6,9 @@ import { Icon } from './icons';
 import { PhotoImg, SectionHeading, FeatureCard, CtaBand } from './ui';
 import { ServiceIcon } from './ServiceIcon';
 import { DotRow } from './Logo';
+import { KitCard } from './KitCard';
+import { kits, kitPriceFrom, formatCad } from '@/lib/kits';
+import { SHIP_LINE } from '@/lib/kit-store';
 
 interface HomePageProps {
   city?: string;
@@ -54,7 +57,17 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
               <a href="#quote" className="btn btn-primary btn-lg">Get a Free Quote</a>
               <a href={phoneHref} className="btn btn-outline-light btn-lg"><Icon.phone size={20} /> {site.phone}</a>
             </div>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/80">
+            <Link
+              href="/kits"
+              className="mt-4 flex max-w-xl items-center justify-between gap-4 rounded-2xl border border-white/25 bg-white/10 px-5 py-3 min-h-[56px] transition-colors hover:border-white/50 hover:bg-white/15"
+            >
+              <span>
+                <span className="block text-sm text-white/75">Rather install it yourself?</span>
+                <span className="block font-semibold text-white">Shop DIY kits from {formatCad(kitPriceFrom, 0)}, shipped across Canada</span>
+              </span>
+              <Icon.arrow size={20} className="shrink-0 text-accent" />
+            </Link>
+            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/80">
               {[
                 { icon: <Icon.smartphone size={18} />, t: 'App-controlled' },
                 { icon: <Icon.shield size={18} />, t: '5-year parts warranty' },
@@ -88,6 +101,49 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
           <span>2026 Service Excellence Award winner</span>
           <span>200+ homes lit across Southwestern Ontario</span>
           <span>CSA approved · IP67 weatherproof</span>
+        </div>
+      </section>
+
+      {/* ─── TWO WAYS TO BUY ─── */}
+      <section className="section-tight bg-soft border-b border-line">
+        <div className="wrap">
+          <SectionHeading eyebrow="Two ways to get it" title="We install it, or we ship it to you." sub="Identical hardware and the same 5-year parts warranty either way. The difference is who goes up the ladder." />
+          <div className="mt-10 grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            <div className="card p-6 md:p-8 flex flex-col">
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center"><Icon.wrench size={24} /></span>
+                <span className="chip"><Icon.pin size={14} /> {city} and area</span>
+              </div>
+              <h3 className="text-xl font-bold text-ink">Installed by our crew</h3>
+              <p className="mt-2 text-[15px] text-muted leading-relaxed flex-1">
+                We measure your roofline, colour-match the track to your soffit, mount it, wire it, commission every zone and hand
+                you a working system in a day. Backed by the workmanship warranty.
+              </p>
+              <Link href="/contact" className="btn btn-primary mt-6 self-start">Get a free quote</Link>
+            </div>
+            <div className="card p-6 md:p-8 flex flex-col">
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center"><Icon.box size={24} /></span>
+                <span className="chip"><Icon.truck size={14} /> Ships across Canada</span>
+              </div>
+              <h3 className="text-xl font-bold text-ink">DIY kits, bought online</h3>
+              <p className="mt-2 text-[15px] text-muted leading-relaxed">
+                Six sizes from 50 to 250 feet, with the track, lights, controller, power and every connector in the box. Order
+                online, pay by card, and call us if you get stuck on the ladder.
+              </p>
+              <ul className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 flex-1 content-start" aria-label="Kit sizes and prices">
+                {kits.map(k => (
+                  <li key={k.slug}>
+                    <Link href={`/kits/${k.slug}`} className="flex min-h-[44px] items-center justify-between gap-2 rounded-xl border border-line px-3 text-sm hover:border-ink transition-colors">
+                      <span className="font-semibold text-ink">{k.feet} ft</span>
+                      <span className="tabular-nums text-ink-soft">{formatCad(k.price, 0)}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/kits" className="btn btn-dark mt-6 self-start">Shop DIY kits <Icon.arrow size={18} /></Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -230,29 +286,17 @@ export function HomePage({ city = 'London', cityLabel = 'London, Ontario' }: Hom
       {/* ─── FINANCING ─── */}
       <FinancingCallout variant="band" ctaHref="/financing" />
 
-      {/* ─── INSTALLED OR DIY ─── */}
+      {/* ─── SHOP THE KITS ─── */}
       <section className="section bg-white">
         <div className="wrap">
-          <SectionHeading eyebrow="Two ways to get it" title="We install it, or you do." sub="Identical hardware and the same 5-year parts warranty either way. The difference is who goes up the ladder." />
-          <div className="mt-12 grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-            <div className="card p-7 md:p-8 flex flex-col">
-              <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center mb-5"><Icon.wrench size={24} /></span>
-              <h3 className="text-xl font-bold text-ink">Installed by our crew</h3>
-              <p className="mt-2 text-[15px] text-muted leading-relaxed flex-1">
-                We measure your roofline, colour-match the track to your soffit, mount it, wire it, commission every zone and hand
-                you a working system in a day. Backed by the workmanship warranty.
-              </p>
-              <Link href="/contact" className="btn btn-primary mt-6 self-start">Get a free quote</Link>
-            </div>
-            <div className="card p-7 md:p-8 flex flex-col">
-              <span className="w-12 h-12 rounded-xl bg-soft text-ink flex items-center justify-center mb-5"><Icon.download size={24} /></span>
-              <h3 className="text-xl font-bold text-ink">DIY kits, shipped to you</h3>
-              <p className="mt-2 text-[15px] text-muted leading-relaxed flex-1">
-                Six sizes from 50 to 250 feet, with the track, lights, controller, power and every connector in the box. Sealed
-                twist fittings mean no cutting or soldering, and phone support is included.
-              </p>
-              <Link href="/kits" className="btn btn-dark mt-6 self-start">Browse the kits <Icon.arrow size={18} /></Link>
-            </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <SectionHeading align="left" eyebrow="Shop DIY kits" title="Buy the kit online. Install it yourself." sub={`${SHIP_LINE} Pay by card, packed in 1 to 2 business days.`} />
+            <Link href="/kits" className="btn btn-dark self-start md:self-auto">Shop all kits <Icon.arrow size={18} /></Link>
+          </div>
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 md:gap-4">
+            {kits.map(k => (
+              <KitCard key={k.slug} kit={k} compact sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 200px" />
+            ))}
           </div>
         </div>
       </section>

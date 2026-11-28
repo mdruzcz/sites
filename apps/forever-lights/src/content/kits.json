@@ -126,9 +126,9 @@
     {
       "slug": "50-foot-kit",
       "feet": 50,
-      "price": 1455.0,
-      "installedLow": 1665.0,
-      "installedHigh": 1998.0,
+      "price": 1528.0,
+      "installedLow": 1831.5,
+      "installedHigh": 2197.8,
       "suits": "A garage face, a front elevation, a porch or a small bungalow.",
       "bom": {
         "strand": 16,
@@ -149,9 +149,9 @@
     {
       "slug": "75-foot-kit",
       "feet": 75,
-      "price": 1709.0,
-      "installedLow": 1785.0,
-      "installedHigh": 2142.0,
+      "price": 1794.0,
+      "installedLow": 1963.5,
+      "installedHigh": 2356.2,
       "suits": "A small bungalow front and one side, or a wide single-storey elevation.",
       "bom": {
         "strand": 24,
@@ -172,9 +172,9 @@
     {
       "slug": "100-foot-kit",
       "feet": 100,
-      "price": 1989.0,
-      "installedLow": 2129.2,
-      "installedHigh": 2555.04,
+      "price": 2088.0,
+      "installedLow": 2342.12,
+      "installedHigh": 2810.54,
       "suits": "A typical bungalow or townhome front, or a storey-and-a-half front elevation.",
       "bom": {
         "strand": 31,
@@ -195,9 +195,9 @@
     {
       "slug": "150-foot-kit",
       "feet": 150,
-      "price": 2579.0,
-      "installedLow": 2840.7,
-      "installedHigh": 3408.84,
+      "price": 2708.0,
+      "installedLow": 3124.77,
+      "installedHigh": 3749.72,
       "suits": "A storey-and-a-half or mid-size home, front and partial sides.",
       "bom": {
         "strand": 45,
@@ -218,9 +218,9 @@
     {
       "slug": "200-foot-kit",
       "feet": 200,
-      "price": 3049.0,
-      "installedLow": 3448.8,
-      "installedHigh": 4138.56,
+      "price": 3201.0,
+      "installedLow": 3793.68,
+      "installedHigh": 4552.42,
       "suits": "A two-storey detached home, front elevation plus both sides.",
       "bom": {
         "strand": 60,
@@ -241,9 +241,9 @@
     {
       "slug": "250-foot-kit",
       "feet": 250,
-      "price": 3629.0,
-      "installedLow": 4157.0,
-      "installedHigh": 4988.4,
+      "price": 3810.0,
+      "installedLow": 4572.7,
+      "installedHigh": 5487.24,
       "suits": "A large or complex two-storey, multi-peak rooflines, or a house plus detached garage.",
       "bom": {
         "strand": 75,

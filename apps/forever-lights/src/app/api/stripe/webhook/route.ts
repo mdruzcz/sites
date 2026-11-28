@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { site } from '@/lib/site-config';
-import { getServiceSupabase, getStoreId, STORE_SLUG } from '@/lib/supabase-admin';
+import { getServiceSupabase, getStoreId } from '@/lib/supabase-admin';
+import { EMAIL_BRAND, storeConfig } from '@/lib/store-brand';
 import { handleStripeEvent } from '@/lib/orders/checkout-server';
 
 export const runtime = 'nodejs';
@@ -26,15 +26,14 @@ export async function POST(req: Request) {
 
   const storeId = await getStoreId();
   if (!storeId) return NextResponse.json({ error: 'store missing' }, { status: 500 });
-  const siteUrl = `https://${site.domain}`;
 
   try {
     const outcome = await handleStripeEvent({
       service: getServiceSupabase(),
       stripe,
       event,
-      store: { id: storeId, slug: STORE_SLUG, name: site.name, prefix: 'FL', siteUrl },
-      brand: { name: site.name, siteUrl: `${siteUrl}/kits`, accent: '#201e1d', phone: site.phone },
+      store: storeConfig(storeId),
+      brand: EMAIL_BRAND,
       trackInventory: false,
     });
     return NextResponse.json({ received: true, ...outcome });

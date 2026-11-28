@@ -3,11 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { site, phoneHref, getPhoto } from '@/lib/site';
 import {
-  kits, kitComponents, kitColours, kitImage, kitBom, kitLightCount, kitTrackFeet, kitSaving, formatCad, kitTitle,
+  kits, kitComponents, kitColours, kitImage, kitSaving, kitPriceFrom, kitPriceTo, formatCad, kitTitle, STOCK_NOTE,
 } from '@/lib/kits';
+import { orderableColours, addonCatalog } from '@/lib/shop';
+import { kitFaq, SHIP_LINE } from '@/lib/kit-store';
 import { Breadcrumbs, PhotoImg, SectionHeading, CheckList, CtaBand } from '@/components/ui';
 import { Icon } from '@/components/icons';
 import { KitRequestForm } from '@/components/KitRequestForm';
+import { KitCard } from '@/components/KitCard';
+import { KitStoreFacts } from '@/components/KitStoreFacts';
+import { AddOns } from '@/components/AddOns';
 
 export const revalidate = 3600;
 
@@ -27,14 +32,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'DIY Permanent Lighting Kits | Forever Lights', description: 'Buy a permanent LED roofline kit and install it yourself. Six sizes, shipped across Canada.' },
 };
 
-const faq = [
-  { q: 'How do I pay for a kit?', a: 'Choose a size and track colour, add it to your cart and check out by credit card, debit, Apple Pay or Google Pay on Stripe’s secure page. Kits are invoiced by our billing company, Master Decker Inc., and your invoice is emailed as soon as the payment goes through. For a custom colour match, use the question form and we will quote it.' },
-  { q: 'How much is shipping?', a: 'Shipping is free within 200 km of our shop in Belmont, just south of London: most of Southwestern Ontario, Kitchener-Waterloo, Hamilton, Niagara and most of the GTA. Anywhere else in Canada it is a flat $200 per order. Checkout shows which applies as soon as you enter your postal code, and GST or HST for your province is added there too.' },
-  { q: 'Which size do I need?', a: 'Measure the rooflines you want lit, in feet, and round up. Our cost estimator will also give you a length if you pick your home size. If you are between sizes, tell us in the notes and we will help you choose. Every kit ships with a little more track than its nominal length to allow for corners and offcuts.' },
-  { q: 'How hard is the install?', a: 'If you are comfortable working from a ladder and using a cordless drill, it is a weekend job on a single-storey home. The connectors are sealed twist fittings, so there is no cutting or soldering, and the power supply plugs into an existing GFCI outlet. Two-storey and steep rooflines are where most people decide to have us install it instead.' },
-  { q: 'What warranty comes with a kit?', a: 'DIY kits carry the same 5-year parts warranty as our installed systems. The 1-year workmanship warranty applies only where our own crew did the install, since we cannot warranty how a kit was mounted.' },
-  { q: 'Can I add to a kit later?', a: 'Yes. The system is modular, so you can extend a run or light another elevation later with more track, strands and connectors. Tell us what you already have and we will quote the add-on parts.' },
-];
+const faq = kitFaq;
 
 const supplied = [
   'A cordless drill and a driver bit for the screws supplied',
@@ -80,27 +78,27 @@ export default function KitsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
+      {/* Hero: a store header, not a service pitch */}
       <section className="relative bg-dark text-white overflow-hidden">
         <div className="absolute inset-0">
-          <PhotoImg photo={getPhoto('track-closeup')} priority sizes="100vw" quality={70} className="object-[center_40%] opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 to-dark/40" />
+          <PhotoImg photo={getPhoto('hero-winter')} priority sizes="100vw" quality={70} className="object-[58%_78%] opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 to-dark/30" />
         </div>
-        <div className="relative wrap pt-8 pb-16 md:pt-10 md:pb-24">
+        <div className="relative wrap pt-6 pb-10 md:pt-8 md:pb-14">
           <Breadcrumbs light items={[{ label: 'DIY Kits' }]} />
-          <div className="mt-8 max-w-3xl">
-            <span className="eyebrow eyebrow-light">DIY kits · shipped across Canada</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.02]">Handy? Install it yourself and keep the labour.</h1>
-            <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
-              The same track, the same RGBW lights and the same app-controlled system we install, boxed as a complete kit with
-              every connector you need. Six sizes from 50 to 250 feet.
+          <div className="mt-6 max-w-3xl">
+            <span className="eyebrow eyebrow-light">Online store · ships across Canada</span>
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-[1.04]">DIY permanent lighting kits, shipped across Canada.</h1>
+            <p className="mt-5 text-lg text-white/80 leading-relaxed max-w-2xl">
+              The same track, RGBW lights and app control our crew installs, boxed as a complete kit. Six sizes from 50 to
+              250 feet, {formatCad(kitPriceFrom, 0)} to {formatCad(kitPriceTo, 0)}. Order online and pay by card.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#kits" className="btn btn-primary btn-lg">See the kits</a>
-              <a href="#request" className="btn btn-outline-light btn-lg">Ask a question</a>
-            </div>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/80">
-              {['Everything in one box', 'No cutting or soldering', 'Same 5-year parts warranty', 'Phone support included'].map(t => (
+            <p className="mt-5 flex items-start gap-2.5 text-[15px] font-medium text-white">
+              <Icon.truck size={20} className="mt-0.5 shrink-0 text-accent" />
+              <span>{SHIP_LINE}</span>
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/85">
+              {['Secure card checkout', 'Packed in 1 to 2 business days', '30-day returns', '5-year parts warranty'].map(t => (
                 <li key={t} className="inline-flex items-center gap-2"><Icon.check size={18} className="text-accent" />{t}</li>
               ))}
             </ul>
@@ -108,61 +106,51 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* How ordering works */}
-      <section className="bg-tint border-b border-line">
-        <div className="wrap section-tight">
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              { t: 'Pick your kit', d: 'Choose the size that covers your roofline and a track colour. Every kit lists exactly what is in the box.' },
-              { t: 'Check out securely', d: 'Pay by card on Stripe. Shipping and GST/HST for your postal code are shown before you pay.' },
-              { t: 'We ship it', d: 'Kits leave our Belmont, Ontario shop within one to two business days, with your invoice emailed right away.' },
-            ].map((s, i) => (
-              <div key={s.t} className="flex gap-4">
-                <span className="w-10 h-10 rounded-full bg-accent text-ink font-heading font-bold flex items-center justify-center shrink-0">{i + 1}</span>
-                <div>
-                  <h2 className="font-bold text-ink">{s.t}</h2>
-                  <p className="text-[15px] text-muted leading-relaxed mt-1">{s.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-sm text-muted max-w-2xl mx-auto">
-            Free shipping within 200 km of our Belmont, Ontario shop and a $200 flat rate anywhere else in Canada. Prices are in
-            Canadian dollars, before GST/HST.
-          </p>
-        </div>
-      </section>
-
       {/* Kit cards */}
-      <section id="kits" className="section scroll-mt-24">
+      <section id="kits" className="section-tight scroll-mt-24">
         <div className="wrap">
-          <SectionHeading eyebrow="The kits" title="Six sizes, priced by roofline length." sub="Longer kits cost less per foot, because the controller and the fixed parts are the same whatever the length." />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {kits.map(k => (
-              <Link key={k.slug} href={`/kits/${k.slug}`} className="card p-6 md:p-7 group hover:border-ink transition-colors flex flex-col">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-heading text-2xl font-bold text-ink">{k.feet} ft</h3>
-                  <span className="chip">{kitLightCount(k)} lights</span>
-                </div>
-                <p className="mt-4 font-heading text-3xl font-bold text-ink">{formatCad(k.price)}</p>
-                <p className="text-xs text-muted mt-1">
-                  about {formatCad(k.price / k.feet, 2)} per foot, kit only
-                </p>
-                <p className="mt-4 text-[15px] text-muted leading-relaxed flex-1">{k.suits}</p>
-                <dl className="mt-5 space-y-1.5 text-sm border-t border-line pt-4">
-                  <div className="flex justify-between gap-3"><dt className="text-muted">Track supplied</dt><dd className="text-ink font-medium">{kitTrackFeet(k)} ft</dd></div>
-                  <div className="flex justify-between gap-3"><dt className="text-muted">Parts in the box</dt><dd className="text-ink font-medium">{kitBom(k).reduce((n, r) => n + r.qty, 0)}</dd></div>
-                  <div className="flex justify-between gap-3"><dt className="text-muted">Installed by us</dt><dd className="text-ink font-medium">{formatCad(k.installedLow)}+</dd></div>
-                </dl>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink">
-                  Choose colour and order <Icon.arrow size={16} className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+            <div>
+              <span className="eyebrow">Choose your size</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-ink leading-[1.08]">Six kits, priced by roofline length.</h2>
+            </div>
+            <p className="text-sm text-muted max-w-sm md:text-right">
+              Prices in Canadian dollars, before shipping and GST/HST. Longer kits cost less per foot.
+            </p>
+          </div>
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {kits.map((k, i) => (
+              <KitCard key={k.slug} kit={k} priority={i < 3} />
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted">
             Not sure which size? <Link href="/visualizer" className="font-semibold text-ink underline">Draw your lights on a photo</Link> with the Light Visualizer, or <Link href="/cost-estimator" className="font-semibold text-ink underline">use the cost estimator</Link> to get a roofline length for your home.
           </p>
+        </div>
+      </section>
+
+      {/* How ordering works + store facts */}
+      <section className="bg-tint border-y border-line">
+        <div className="wrap section-tight">
+          <SectionHeading align="left" eyebrow="How ordering works" title="Order online today, wherever you are in Canada." />
+          <ol className="mt-8 grid md:grid-cols-3 gap-6">
+            {[
+              { t: 'Pick your kit', d: 'Choose the size that covers your roofline and the track colour that matches your soffit or fascia. Every kit lists exactly what is in the box.' },
+              { t: 'Check out securely', d: 'Pay by card on Stripe. Shipping and GST/HST for your postal code are shown before you pay.' },
+              { t: 'We ship it', d: 'Kits leave our Belmont, Ontario shop within one to two business days, with your invoice emailed right away.' },
+            ].map((s, i) => (
+              <li key={s.t} className="flex gap-4">
+                <span className="w-10 h-10 rounded-full bg-accent text-ink font-heading font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                <div>
+                  <h3 className="font-bold text-ink">{s.t}</h3>
+                  <p className="text-[15px] text-muted leading-relaxed mt-1">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-10 card p-6 md:p-8">
+            <KitStoreFacts />
+          </div>
         </div>
       </section>
 
@@ -173,9 +161,10 @@ export default function KitsPage() {
             <span className="eyebrow">Colour matched</span>
             <h2 className="mt-3 text-3xl font-bold text-ink">Pick a track colour that disappears against your trim.</h2>
             <p className="mt-4 text-ink-soft leading-relaxed">
-              The aluminum channel is what people see in daylight, so it ships in the colour closest to your soffit and fascia.
-              Standard colours include a box of colour-matched screws. Custom colour orders ship without the screw pack, since
-              the heads are matched to stock colours only.
+              The aluminum channel is what people see in daylight, so order the colour closest to the soffit or fascia it will be
+              screwed to, not the colour of your siding or brick. If you are between two, the darker one hides better in the
+              shadow under the roofline. Standard colours include a box of colour-matched screws. Custom colour orders ship
+              without the screw pack, since the heads are matched to stock colours only.
             </p>
             <ul className="mt-6 flex flex-wrap gap-3">
               {kitColours.map(c => (
@@ -253,6 +242,19 @@ export default function KitsPage() {
         </div>
       </section>
 
+      {/* Add-on parts (the cart links here) */}
+      <section id="add-ons" className="section-tight scroll-mt-24">
+        <div className="wrap">
+          <AddOns
+            addons={addonCatalog()}
+            colours={orderableColours.map(c => ({ key: c.key, label: c.label, hex: c.hex }))}
+            title="Extra parts, sold on their own"
+            intro="Extending a run, lighting a second elevation or need a longer jumper than the kit includes? Every part can be added to an order and ships in the same box as a kit."
+            stockNote={STOCK_NOTE}
+          />
+        </div>
+      </section>
+
       {/* Full comparison table */}
       <section className="section-tight bg-soft border-y border-line">
         <div className="wrap">
@@ -321,7 +323,7 @@ export default function KitsPage() {
                       <th scope="row" className="px-4 py-3 font-medium text-ink text-left">{k.feet} ft</th>
                       <td className="px-4 py-3 text-ink-soft whitespace-nowrap">{formatCad(k.price)}</td>
                       <td className="px-4 py-3 text-ink-soft whitespace-nowrap">{formatCad(k.installedLow)}</td>
-                      <td className="px-4 py-3 font-semibold text-ink whitespace-nowrap">{formatCad(kitSaving(k))}</td>
+                      <td className="px-4 py-3 font-semibold text-ink whitespace-nowrap">{kitSaving(k) > 0 ? formatCad(kitSaving(k)) : '—'}</td>
                     </tr>
                   ))}
                 </tbody>

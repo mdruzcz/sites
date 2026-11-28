@@ -38,6 +38,15 @@ export const Icon = {
   lock: (p: P) => (
     <Base {...p}><rect x="5" y="10.5" width="14" height="10" rx="2" /><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" /></Base>
   ),
+  truck: (p: P) => (
+    <Base {...p}><path d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3v3.5h-7" /><circle cx="7" cy="18" r="1.8" /><circle cx="17" cy="18" r="1.8" /></Base>
+  ),
+  box: (p: P) => (
+    <Base {...p}><path d="m3.5 7.5 8.5-4 8.5 4v9l-8.5 4-8.5-4v-9Z" /><path d="m3.5 7.5 8.5 4 8.5-4M12 11.5v9" /></Base>
+  ),
+  undo: (p: P) => (
+    <Base {...p}><path d="M8 5 4 9l4 4" /><path d="M4 9h10a5.5 5.5 0 0 1 0 11h-4" /></Base>
+  ),
   phone: (p: P) => (
     <Base {...p}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></Base>
   ),

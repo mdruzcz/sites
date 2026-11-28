@@ -2,8 +2,7 @@
 // from client components (the checkout page previews the same numbers the
 // server charges).
 //
-// SAME FILE in apps/permanent-lighting-direct and apps/forever-lights — keep the
-// two copies identical.
+// SAME FILE in every store that uses src/lib/orders — keep the copies identical.
 //
 // Shipping: free within FREE_RADIUS_KM of the Belmont shop (straight-line
 // distance from the centre of the destination's forward sortation area, the
@@ -127,7 +126,8 @@ export interface ShippingQuote {
   free: boolean;
   amountCad: number;
   /** Stored on the order as shipping_service_code. */
-  code: "FREE_LOCAL" | "FLAT_CANADA";
+  /** FREE_ORDER is a store-specific free-shipping rule (e.g. free over a minimum). */
+  code: "FREE_LOCAL" | "FLAT_CANADA" | "FREE_ORDER";
   label: string;
 }
 
@@ -167,6 +167,7 @@ export function shippingLabelFor(code: string | null | undefined, postal?: strin
     return q?.km != null ? `Free local delivery (about ${q.km} km)` : "Free local delivery";
   }
   if (code === "FLAT_CANADA") return "Flat-rate shipping across Canada";
+  if (code === "FREE_ORDER") return "Free shipping";
   return "Shipping";
 }
 

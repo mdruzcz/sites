@@ -4,16 +4,19 @@ import { Icon } from './icons';
 import { getPhoto, site, phoneHref, type Photo } from '@/lib/site';
 
 /* ─── Breadcrumbs ─── */
+// The links are small text, so padding (cancelled by negative margin) gives
+// them a 44px touch target without moving anything on the page.
+const crumbHit = 'inline-block px-1.5 -mx-1.5 py-3.5 -my-3.5';
 export function Breadcrumbs({ items, light = false }: { items: { href?: string; label: string }[]; light?: boolean }) {
   return (
     <nav aria-label="Breadcrumb" className={`text-xs ${light ? 'text-white/60' : 'text-muted'}`}>
       <ol className="flex flex-wrap items-center gap-1.5">
-        <li><Link href="/" className={`${light ? 'hover:text-white' : 'hover:text-ink'} transition-colors`}>Home</Link></li>
+        <li><Link href="/" className={`${crumbHit} ${light ? 'hover:text-white' : 'hover:text-ink'} transition-colors`}>Home</Link></li>
         {items.map((it, i) => (
           <li key={i} className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
             {it.href ? (
-              <Link href={it.href} className={`${light ? 'hover:text-white' : 'hover:text-ink'} transition-colors`}>{it.label}</Link>
+              <Link href={it.href} className={`${crumbHit} ${light ? 'hover:text-white' : 'hover:text-ink'} transition-colors`}>{it.label}</Link>
             ) : (
               <span className={light ? 'text-white/90' : 'text-ink'} aria-current="page">{it.label}</span>
             )}

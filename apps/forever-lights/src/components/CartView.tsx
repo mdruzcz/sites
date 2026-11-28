@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/components/CartProvider';
@@ -10,6 +10,8 @@ import {
   estimateTotals, normalizePostal, postalMatchesProvince, provinceName,
 } from '@/lib/orders/policy';
 import { pushConversion } from '@/lib/gtm';
+import { site } from '@/lib/site-config';
+import { TrackColourConfirm, needsTrackColourCheck } from '@/components/TrackColourConfirm';
 import { Icon } from './icons';
 
 const money = (n: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(n);
@@ -52,6 +54,20 @@ export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKi
     return out.sort((a, b) => (a.kind === b.kind ? 0 : a.kind === 'kit' ? -1 : 1));
   }, [items, kits, addons, colours]);
   const subtotal = lines.reduce((n, l) => n + l.unit * l.item.qty, 0);
+  // Track-colour check: the customer must tick that the colour is right before paying.
+  const colourLines = useMemo(
+    () => lines.map(l => ({
+      productName: l.title,
+      variantName: l.kind === 'kit' ? l.colour.label : l.addon.needsColour ? colours.find(c => c.key === l.item.colour)?.label ?? '' : '',
+      quantity: l.item.qty,
+    })),
+    [lines, colours],
+  );
+  const needsColour = needsTrackColourCheck(colourLines);
+  const colourKey = colourLines.map(l => `${l.productName}|${l.variantName}`).join(';');
+  const [colourOk, setColourOk] = useState(false);
+  // Changing a kit or colour in the cart un-ticks the confirmation.
+  useEffect(() => { setColourOk(false); }, [colourKey]);
   const hasKit = lines.some(l => l.kind === 'kit');
   const postal = normalizePostal(f.postal);
   const mismatch = postal ? !postalMatchesProvince(postal, f.province) : false;
@@ -60,12 +76,17 @@ export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKi
   async function checkout(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    if (needsColour && !colourOk) {
+      setError('Please confirm your track colour before paying.');
+      document.getElementById('track-colour')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     setPending(true);
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: lines.map(l => l.item), customer: f }),
+        body: JSON.stringify({ items: lines.map(l => l.item), customer: f, trackColourConfirmed: colourOk }),
       });
       const json = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
       if (json.url) {
@@ -97,8 +118,8 @@ export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKi
   }
 
   return (
-    <form onSubmit={checkout} className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-      <div className="lg:col-span-7 space-y-6">
+    <form onSubmit={checkout} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <div className="lg:col-span-7 space-y-6 min-w-0">
         {/* Lines */}
         <section className="card divide-y divide-line">
           {lines.map(l => {
@@ -113,7 +134,7 @@ export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKi
                 <div className="flex-1 min-w-0">
                   <Link href={l.href} className="font-bold text-ink hover:underline">{l.title}</Link>
                   <p className="text-sm text-muted">{l.sub}</p>
-                  <div className="mt-3 flex items-center gap-2">
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
                     <div className="inline-flex items-center rounded-full border border-line">
                       <button type="button" className="w-11 h-11 inline-flex items-center justify-center text-ink disabled:opacity-40" onClick={() => setQty(item.slug, item.colour, item.qty - 1)} aria-label={`One fewer ${l.title}`} disabled={item.qty <= 1}>
                         <Icon.minus size={18} />
@@ -189,10 +210,12 @@ export function CartView({ kits, addons, colours, stockNote }: { kits: CatalogKi
             <textarea className="input" rows={2} maxLength={1000} value={f.note} onChange={set('note')} placeholder="Gate code, best place to leave boxes, roofline questions…" />
           </label>
         </section>
+
+        <TrackColourConfirm lines={colourLines} checked={colourOk} onChange={setColourOk} changeLabel="Change it in your cart above" phone={site.phone} />
       </div>
 
       {/* Summary */}
-      <aside className="lg:col-span-5 lg:sticky lg:top-28 space-y-4">
+      <aside className="lg:col-span-5 lg:sticky lg:top-28 space-y-4 min-w-0">
         <div className="card p-6">
           <h2 className="text-xl font-bold text-ink">Order summary</h2>
           <dl className="mt-4 space-y-2.5 text-[15px]">

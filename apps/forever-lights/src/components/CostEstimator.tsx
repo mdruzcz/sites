@@ -13,22 +13,22 @@ import { Icon } from './icons';
 // estimator reproduces the quoting sheet exactly at 50/75/100/150/200/250 ft.
 //
 //   ft     low        high
-//   50   1,665.00   1,998.00
-//   75   1,785.00   2,142.00
-//  100   2,129.20   2,555.04
-//  150   2,840.70   3,408.84
-//  200   3,448.80   4,138.56
-//  250   4,157.00   4,988.40
+//   50   1,831.50   2,197.80
+//   75   1,963.50   2,356.20
+//  100   2,342.12   2,810.54
+//  150   3,124.77   3,749.72
+//  200   3,793.68   4,552.42
+//  250   4,572.70   5,487.24
 //
 // Below 50 ft the 50 ft price is the floor (minimum job). Above 250 ft we
-// continue at the final segment's slope (about $14.16 per foot).
+// continue at the final segment's slope (about $15.58 per foot).
 const priceAnchors = [
-  { feet: 50, low: 1665.0 },
-  { feet: 75, low: 1785.0 },
-  { feet: 100, low: 2129.2 },
-  { feet: 150, low: 2840.7 },
-  { feet: 200, low: 3448.8 },
-  { feet: 250, low: 4157.0 },
+  { feet: 50, low: 1831.5 },
+  { feet: 75, low: 1963.5 },
+  { feet: 100, low: 2342.12 },
+  { feet: 150, low: 3124.77 },
+  { feet: 200, low: 3793.68 },
+  { feet: 250, low: 4572.7 },
 ] as const;
 
 const HIGH_MULTIPLIER = 1.2;
