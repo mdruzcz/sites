@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { BRAND } from "@/lib/utils";
 
 interface OrderInfo {
   order_number: string;
@@ -14,99 +15,119 @@ interface OrderInfo {
   shipped_at: string | null;
 }
 
+const day = (iso: string) => new Date(iso).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
+
 export function TrackOrderForm() {
   const [orderNumber, setOrderNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [result, setResult] = useState<OrderInfo | "not_found" | null>(null);
+  const [result, setResult] = useState<OrderInfo | "not_found" | "error" | null>(null);
   const [pending, startTransition] = useTransition();
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
     setResult(null);
     startTransition(async () => {
-      const res = await fetch("/api/order/lookup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ order_number: orderNumber.trim(), email: email.trim().toLowerCase() })
-      });
-      const json = (await res.json()) as { order?: OrderInfo };
-      setResult(json.order ?? "not_found");
+      try {
+        const res = await fetch("/api/order/lookup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ order_number: orderNumber.trim(), email: email.trim().toLowerCase() })
+        });
+        const json = (await res.json()) as { order?: OrderInfo };
+        setResult(json.order ?? "not_found");
+      } catch {
+        setResult("error");
+      }
     });
   }
 
   return (
     <>
-      <form onSubmit={submit} className="mt-6 grid gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-5">
-        <label className="block">
-          <span className="text-xs font-medium text-slate-600">Order number</span>
+      <form onSubmit={submit} className="grid gap-4 border border-[var(--color-border)] bg-white p-5 md:p-6">
+        <div>
+          <label className="label" htmlFor="to-number">Order number</label>
           <input
+            id="to-number"
             type="text"
             value={orderNumber}
             onChange={(e) => setOrderNumber(e.target.value)}
             required
-            placeholder="HLD-10001"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
+            autoComplete="off"
+            autoCapitalize="characters"
+            placeholder="As shown in your confirmation email"
+            className="input"
           />
-        </label>
-        <label className="block">
-          <span className="text-xs font-medium text-slate-600">Email used at checkout</span>
+        </div>
+        <div>
+          <label className="label" htmlFor="to-email">Email used at checkout</label>
           <input
+            id="to-email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             autoComplete="email"
-            className="mt-1 w-full rounded-md border border-[var(--color-border)] px-3 py-2 text-sm shadow-sm"
+            className="input"
           />
-        </label>
-        <button type="submit" disabled={pending} className="btn-primary mt-1 justify-center disabled:opacity-50">
-          {pending ? "Looking up…" : "Track order"}
+        </div>
+        <button type="submit" disabled={pending} aria-busy={pending} className="btn-primary disabled:cursor-not-allowed disabled:opacity-60">
+          {pending ? "Processing…" : "Look up order"}
         </button>
       </form>
 
-      {result === "not_found" && (
-        <p className="mt-4 rounded-md bg-rose-50 px-4 py-3 text-sm text-rose-800">
-          We couldn&rsquo;t find an order matching that number and email. Double-check both and try again.
-        </p>
-      )}
+      <div aria-live="polite">
+        {result === "not_found" && (
+          <p className="mt-4 border-l-[3px] border-[var(--color-red)] bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]">
+            No order matches that number and email. Check both against your confirmation email and try again.
+          </p>
+        )}
 
-      {result && result !== "not_found" && (
-        <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-white p-5">
-          <p className="eyebrow text-slate-500">{result.order_number}</p>
-          <h2 className="font-display mt-1 text-2xl">
-            Status: <span className="text-[var(--color-brand)]">{result.status}</span>
-          </h2>
-          <dl className="mt-4 grid gap-2 text-sm">
-            <Row label="Placed" value={result.placed_at ? new Date(result.placed_at).toLocaleString() : "—"} />
-            <Row label="Shipped" value={result.shipped_at ? new Date(result.shipped_at).toLocaleString() : "Not yet shipped"} />
-            <Row label="Total" value={new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(result.total_cad)} />
-            {result.tracking_number && (
-              <Row
-                label="Tracking"
-                value={
-                  <a
-                    href={result.tracking_url ?? `https://www.canadapost-postescanada.ca/track-reperage/en#/details/${result.tracking_number}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-mono text-[var(--color-brand)] hover:underline"
-                  >
-                    {result.tracking_number} ↗
-                  </a>
-                }
-              />
-            )}
-          </dl>
-        </div>
-      )}
+        {result === "error" && (
+          <p className="mt-4 border-l-[3px] border-[var(--color-red)] bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]">
+            We could not reach the server. Check your connection and try again, or email <a href={`mailto:${BRAND.email}`} className="underline underline-offset-2">{BRAND.email}</a>.
+          </p>
+        )}
+
+        {result && result !== "not_found" && result !== "error" && (
+          <div className="mt-4 border border-[var(--color-border)] bg-white p-5 md:p-6">
+            <p className="eyebrow text-[var(--color-gold-text)]">Order {result.order_number}</p>
+            <h2 className="font-display mt-1 text-[1.5rem]">
+              Status: <span className="capitalize">{result.status.replace(/_/g, " ")}</span>
+            </h2>
+            <dl className="mt-4 text-[0.95rem]">
+              <Row label="Placed" value={result.placed_at ? day(result.placed_at) : "Not recorded"} />
+              <Row label="Shipped" value={result.shipped_at ? day(result.shipped_at) : "Not yet"} />
+              {result.shipping_carrier && <Row label="Carrier" value={result.shipping_carrier} />}
+              <Row label="Total" value={new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(result.total_cad)} />
+              {result.tracking_number && (
+                <Row
+                  label="Tracking"
+                  value={
+                    <a
+                      href={result.tracking_url ?? `https://www.canadapost-postescanada.ca/track-reperage/en#/details/${result.tracking_number}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-link inline-flex min-h-[44px] items-center font-mono"
+                    >
+                      {result.tracking_number}
+                      <span className="sr-only"> (opens the carrier&rsquo;s tracking page)</span>
+                    </a>
+                  }
+                />
+              )}
+            </dl>
+          </div>
+        )}
+      </div>
     </>
   );
 }
 
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="flex justify-between">
-      <dt className="text-slate-500">{label}</dt>
-      <dd className="font-medium text-slate-800">{value}</dd>
+    <div className="flex items-center justify-between gap-4 border-t border-[var(--color-border)] py-2.5 first:border-t-0">
+      <dt className="eyebrow text-[var(--color-text-soft)]">{label}</dt>
+      <dd className="text-right font-medium text-[var(--color-text)]">{value}</dd>
     </div>
   );
 }

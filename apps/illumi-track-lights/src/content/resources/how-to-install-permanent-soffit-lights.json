@@ -6,7 +6,7 @@
   "category": "How-to",
   "excerpt": "A practical, no-hype DIY guide to installing permanent LED soffit track lights on your own home, from measuring the roofline to pairing the app and saving your first scenes.",
   "readMinutes": 9,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "Permanent LED soffit track lights installed under the front-roof soffit of a Canadian two-storey home at dusk, glowing warm white",
   "isHowTo": true,
   "keyTakeaways": [
@@ -32,13 +32,13 @@
       "A helper on the ground (strongly recommended for anything above single storey)"
     ] },
     { "type": "h2", "text": "The Illumi parts you need" },
-    { "type": "p", "text": "The simplest path is a complete LED Housing Package DIY kit sized to your roofline. Each kit bundles the aluminum track, 12V RGBW pucks, a WiFi 4-channel controller, the right power supply, connectors, and soffit screws so you are not guessing at part counts. Kits come in 50 to 200 linear-foot lengths." },
+    { "type": "p", "text": "The simplest path is a complete track lighting kit sized to your roofline. Each kit bundles the aluminum track, 12V RGBW pucks, a WiFi 4-channel controller, the right power supply, connectors, and soffit screws so you are not guessing at part counts. Kits come in six sizes from 50 to 250 ft." },
     { "type": "ul", "items": [
       "Complete DIY kit sized to your measured length, from the DIY kits page (/diy-kits) - the recommended starting point",
       "Aluminum track in the soffit colour closest to your fascia (four colours available) if you are buying parts individually from the shop (/shop)",
       "12V RGBW pucks (the light modules that clip into the track)",
       "WiFi 4-channel controller to run scenes and colours from your phone",
-      "Power supply sized to your run: 60W for short runs up to roughly 150-200W or 300W for longer elevations - the kit picks this for you",
+      "Power supply sized to your run: 60W for short runs, up to 150W or 300W for longer elevations - the kit picks this for you",
       "Power-injection cable and a second power supply or amplifier if your total run exceeds about 100 ft (see the planning step below)",
       "Corner and straight connectors, plus stainless soffit screws"
     ] },
@@ -63,15 +63,15 @@
       "Forcing rigid track around a corner instead of cutting it and using a corner connector.",
       "Trying to pair the controller to a 5 GHz WiFi network - these controllers use 2.4 GHz."
     ] },
-    { "type": "callout", "text": "Every Illumi kit is backed by a 5-year warranty and 30-day returns, and shipping is free on orders over $500 anywhere in Canada. If a puck or connector ever fails, you swap that piece, not the whole run." },
+    { "type": "callout", "text": "Every Illumi kit is backed by a 5-year parts warranty and 30-day returns on unused items, and shipping is free on every order to any address in Canada, with no minimum (free pickup is also available at 631 Peel Street, Woodstock, Ontario). If a puck or connector ever fails, you swap that piece, not the whole run." },
     { "type": "h2", "text": "Ready to start?" },
-    { "type": "p", "text": "If you are the hands-on type, the fastest way to get going is to measure your roofline and order a complete LED Housing Package kit sized to that length from our DIY kits page (/diy-kits) - it arrives with everything matched and ready to mount. Prefer to build a custom run or add power injection to an existing setup? Grab individual pucks, track, controllers, and power supplies from the shop (/shop). And if you are in London, Woodstock, or the Kitchener-Waterloo area and would rather leave the ladder work to us, book professional installation through our installers page (/installers). Either way, you end up with permanent, app-controlled lighting that handles everyday curb appeal and every holiday for years to come." }
+    { "type": "p", "text": "If you are the hands-on type, the fastest way to get going is to measure your roofline and order a complete track lighting kit sized to that length from our DIY kits page (/diy-kits) - it arrives with everything matched and ready to mount. Prefer to build a custom run or add power injection to an existing setup? Grab individual pucks, track, controllers, and power supplies from the shop (/shop). And if you are in London, Woodstock, or the Kitchener-Waterloo area and would rather leave the ladder work to us, book professional installation through our installers page (/installers). Either way, you end up with permanent, app-controlled lighting that handles everyday curb appeal and every holiday for years to come." }
   ],
   "faq": [
     { "q": "How hard is it to install permanent soffit lights yourself?", "a": "For a homeowner comfortable on a ladder and able to run a tape measure and connect a low-voltage wire, it is a very approachable DIY project. The entire light run is safe 12V DC with keyed, no-solder connectors, so the only mains-voltage step is plugging the power supply into an existing outlet. The mounting at height is the part that takes patience, not the wiring." },
     { "q": "Do I need an electrician to install soffit track lights?", "a": "Usually not. The track and pucks run on low-voltage 12V DC and terminate at a plug-in power supply, so no new mains wiring is involved. If you want a dedicated exterior outlet added or the power supply hardwired, that portion should be done by a licensed electrician, but the lights themselves are designed for homeowner installation." },
     { "q": "How do I know if I need power injection?", "a": "Power injection keeps brightness even on long runs where voltage naturally drops along the wire. As a rule of thumb, runs under about 100 linear feet are fine fed from one end. For longer elevations, plan to feed power at the far end or midpoint with a power-injection cable, and for very long runs add a second power supply or an amplifier. Our kits flag when injection is recommended for the length you choose." },
-    { "q": "What length of kit do I need?", "a": "Measure every soffit or fascia run you want lit, add the segments together, and round up. Illumi kits come in 50 to 200 linear-foot lengths. It is always easier to trim a little excess aluminum track than to run short mid-install, so if you are between sizes, go up." },
+    { "q": "What length of kit do I need?", "a": "Measure every soffit or fascia run you want lit, add the segments together, and round up. Illumi kits come in six sizes: 50, 75, 100, 150, 200 and 250 ft. It is always easier to trim a little excess aluminum track than to run short mid-install, so if you are between sizes, go up." },
     { "q": "Can I install these in winter in Canada?", "a": "The lights are built for year-round Canadian weather once installed, but the install itself should be done in dry, mild, ice-free conditions for safety on the ladder. Most homeowners install in spring or fall. If you want them up for the holidays without risking icy ladder work, that is a good time to book professional installation instead." },
     { "q": "How long do permanent soffit lights last?", "a": "Quality 12V RGBW LED pucks are rated for tens of thousands of hours of use, which is many years of daily operation. Because the system is modular, if a single puck or connector ever fails you replace that component rather than the whole run. Illumi backs the system with a 5-year warranty." }
   ]

@@ -2,17 +2,17 @@
   "slug": "permanent-outdoor-lights-canada-guide",
   "title": "Permanent Outdoor Lights in Canada: The Complete 2026 Guide",
   "metaTitle": "Permanent Outdoor Lights Canada: Complete 2026 Guide",
-  "metaDescription": "The definitive Canadian guide to permanent outdoor LED lights: how they work, the three quality tiers, real cost per foot, winter durability, and DIY vs pro.",
+  "metaDescription": "The definitive Canadian guide to permanent outdoor LED lights: how they work, the three quality tiers, what drives cost, winter durability, and DIY vs pro.",
   "category": "Guides",
-  "excerpt": "Everything Canadian homeowners need to know about permanent outdoor LED lighting in 2026 - how it works, the three quality tiers, real cost per foot, winter durability, and whether to DIY or hire a pro.",
+  "excerpt": "Everything Canadian homeowners need to know about permanent outdoor LED lighting in 2026 - how it works, the three quality tiers, what drives cost, winter durability, and whether to DIY or hire a pro.",
   "readMinutes": 9,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "Canadian two-storey home lit with warm-white permanent LED soffit track lighting on a winter evening",
   "isHowTo": false,
   "keyTakeaways": [
     "Permanent outdoor lights are 12V RGBW LED pucks mounted inside an aluminum track tucked under your soffit - installed once, controlled year-round from your phone.",
     "There are three real tiers: budget DIY strip lights, consumer-grade track systems, and professional-grade track. Only the last is built for Canadian winters.",
-    "Expect roughly $18-$45 CAD per linear foot for a quality DIY kit, and about $30-$60 per foot installed by a professional.",
+    "Cost follows your linear footage: see current kit prices at /diy-kits, or see /installation for installed pricing.",
     "Look for a genuine 5-year warranty, an IP65+ rating, and a WiFi app with real scheduling - not a Bluetooth-only remote.",
     "A confident DIYer can install a kit in a weekend; if you would rather not be on a ladder, professional installation is available across Southwestern Ontario."
   ],
@@ -37,7 +37,7 @@
     { "type": "p", "text": "Not all 'permanent lights' are the same, and this is where most buyers get burned. There are three genuinely different tiers, and the price differences reflect real differences in durability and control." },
 
     { "type": "h3", "text": "Tier 1 - Budget DIY strip lights" },
-    { "type": "p", "text": "These are the flexible silicone LED strips and 'smart rope lights' sold on marketplace sites for a low upfront price. They can look good in the first season, but the diodes are usually 12V, the adhesive backing fails in freeze-thaw cycles, and the controllers are Bluetooth-only with no reliable scheduling. In a Canadian climate they often need replacing within a year or two. Fine for a covered patio; a poor choice for an exposed roofline." },
+    { "type": "p", "text": "These are the flexible silicone LED strips and 'smart rope lights' sold on marketplace sites for a low upfront price. They can look good in the first season, but the adhesive backing fails in freeze-thaw cycles, and the controllers are Bluetooth-only with no reliable scheduling. In a Canadian climate they often need replacing within a year or two. Fine for a covered patio; a poor choice for an exposed roofline." },
 
     { "type": "h3", "text": "Tier 2 - Consumer-grade track systems" },
     { "type": "p", "text": "A real step up: rigid pucks in a plastic or thin aluminum track, sold as a branded kit. Better weather resistance and app control, but the trade-offs show up in the details - lower-grade diodes that shift colour over time, plastic tracks that grow brittle in deep cold, thinner power supplies, and warranties that quietly exclude the weather. Serviceable, but rarely the ten-plus-year investment the marketing implies." },
@@ -57,8 +57,8 @@
     ]},
 
     { "type": "h2", "text": "What permanent outdoor lights cost in Canada" },
-    { "type": "p", "text": "Cost is best measured per linear foot of roofline. For a quality professional-grade DIY kit, budget roughly $18-$45 CAD per linear foot depending on run length and accessories - longer kits bring the per-foot price down. A typical single-storey home needs about 100-150 ft; a larger two-storey can run 150-250 ft. Add professional installation and you are generally looking at about $30-$60 CAD per foot installed, which covers labour, ladder work, custom-cutting the track and commissioning the app." },
-    { "type": "p", "text": "Two ways to save: buy a right-sized Housing Package kit (we offer 50-200 linear-ft kits) rather than piecing every part together at retail, and take advantage of free shipping on orders over $500. If you know exactly what you need, you can also buy individual parts - pucks, track, controllers, power supplies, connectors, injection cables, amplifiers and soffit screws - in our parts shop." },
+    { "type": "p", "text": "Cost is best measured per linear foot of roofline, so start with your footage. A typical single-storey home needs about 100-150 ft; a larger two-storey can run 150-250 ft. For a DIY kit, see current kit prices at /diy-kits. Professional installation adds labour, ladder work, custom-cutting the track and commissioning the app: see /installation for installed pricing. For what dealer-only brands charge, Trimlight publishes $18 to $35 a foot installed and Jellyfish $25 to $35 a foot installed (both are US companies that do not state a currency), while Gemstone and Celebright do not publish prices; the full comparison is at /brands." },
+    { "type": "p", "text": "Two things keep the total down: buy a right-sized track lighting kit (we offer six sizes from 50 to 250 ft) rather than piecing every part together at retail, and remember that shipping is free on every order to any address in Canada, with no minimum. If you know exactly what you need, you can also buy individual parts - pucks, track, controllers, power supplies, connectors, injection cables, amplifiers and soffit screws - in our parts shop." },
 
     { "type": "h2", "text": "Winter durability - do they survive Canadian winters?" },
     { "type": "p", "text": "A properly-specified Tier 3 system is built for it. Sealed IP65+ pucks shrug off rain, snow load and ice; aluminum track will not crack in deep cold the way brittle plastic can; and because the pucks sit up inside the soffit channel, they are shielded from direct ice buildup. Low-voltage 12V DC wiring is safe and stable in the cold. The failure stories almost always trace back to Tier 1 or Tier 2 components - budget adhesive strips or plastic tracks - not to properly-installed professional-grade hardware. This is exactly why the tier you choose matters more than the brand name on the box." },
@@ -71,7 +71,7 @@
     { "type": "p", "text": "The WiFi controller is what turns a light strip into a system. A good 4-channel WiFi controller gives you: named zones (front, garage, back), a full colour picker with a true warm white, saved scenes, pattern effects, and - most importantly - real scheduling so the lights come on at dusk and off at bedtime automatically. Look for genuine WiFi rather than Bluetooth-only; WiFi means you can control the lights from anywhere and set-and-forget schedules that actually run without your phone nearby. Most quality controllers also work with common voice assistants." },
 
     { "type": "h2", "text": "Where to go next" },
-    { "type": "p", "text": "If you are ready to move forward, the simplest path for most homeowners is a right-sized Housing Package kit from our DIY kits - measure your roofline, round up, and pick the matching 50-200 linear-ft kit. Know exactly which components you need? Build your own bill of materials from individual parts in the shop. And if you are local to Southwestern Ontario and would rather have it done for you, book professional installation and we will handle the measuring, mounting and app setup end to end. Either way, everything we sell is professional-grade Tier 3 hardware, backed by a 5-year warranty, 30-day returns, and free shipping on orders over $500, shipped Canada-wide from London, Ontario." }
+    { "type": "p", "text": "If you are ready to move forward, the simplest path for most homeowners is a right-sized track lighting kit from our DIY kits - measure your roofline, round up, and pick the matching kit from 50 to 250 ft. Know exactly which components you need? Build your own bill of materials from individual parts in the shop. And if you are local to Southwestern Ontario and would rather have it done for you, book professional installation and we will handle the measuring, mounting and app setup end to end. Either way, everything we sell is professional-grade Tier 3 hardware, backed by a 5-year parts warranty and 30-day returns on unused items, with free shipping on every order to any address in Canada from our shop in Woodstock, Ontario, where free pickup is also available at 631 Peel Street." }
   ],
   "faq": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "q": "How much does a permanent outdoor lighting system cost in Canada?",
-      "a": "Plan on roughly $18-$45 CAD per linear foot for a quality DIY kit, or about $30-$60 per foot installed by a professional. A typical single-storey home needs 100-150 ft; a two-storey may need 150-250 ft. Buying a right-sized kit is the most cost-effective route."
+      "a": "It depends mainly on your linear footage. A typical single-storey home needs 100-150 ft; a two-storey may need 150-250 ft. See current kit prices at /diy-kits, or see /installation for installed pricing. Buying a right-sized kit is the most cost-effective route."
     },
     {
       "q": "What is the difference between RGB and RGBW lights?",

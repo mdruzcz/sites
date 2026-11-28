@@ -1,12 +1,12 @@
 {
-  "regionIntro": "Illumi Track Lights now offers professional permanent LED lighting installation across Southwestern Ontario, working out of our home base in London and covering the Woodstock and Kitchener-Waterloo corridor along the Highway 401 and 403 route. We install the same 12V RGBW soffit-track systems we ship in our DIY kits, so whether you want to mount it yourself or have our crew handle it, you get the identical five-year-warranty hardware and app-controlled colour. Every install starts with a free on-site measurement, uses aluminum track colour-matched to your soffit or fascia, and finishes with tidy, weather-sealed cable runs and a full walkthrough of the WiFi app. If you are in Woodstock, Kitchener, Waterloo, Cambridge, Guelph, Stratford, Ingersoll, or a nearby town, we can quote your home and give you an honest read on whether a full-home run or a front-facade accent makes the most sense for your budget.",
+  "regionIntro": "Illumi Track Lights now offers professional permanent LED lighting installation across Southwestern Ontario, working out of our shop in Woodstock and covering London and the Kitchener-Waterloo corridor along the Highway 401 and 403 route. We install the same 12V RGBW soffit-track systems we ship in our DIY kits, so whether you want to mount it yourself or have our crew handle it, you get the identical five-year-warranty hardware and app-controlled colour. Every install starts with a free on-site measurement, uses aluminum track colour-matched to your soffit or fascia, and finishes with tidy, weather-sealed cable runs and a full walkthrough of the WiFi app. If you are in Woodstock, Kitchener, Waterloo, Cambridge, Guelph, Stratford, Ingersoll, or a nearby town, we can quote your home and give you an honest read on whether a full-home run or a front-facade accent makes the most sense for your budget.",
   "cities": [
     {
       "slug": "woodstock",
       "city": "Woodstock",
-      "metaTitle": "Permanent Lighting Installation in Woodstock ON",
-      "metaDescription": "Professional permanent LED soffit lighting installation in Woodstock, Ontario. Free on-site measurement, colour-matched track, app control and a 5-year warranty. Book a quote.",
-      "intro": "Woodstock is our closest install market and the centre of our Southwestern Ontario service area, so response times here are quick. We fit permanent RGBW soffit lighting on homes throughout the north and south ends, from the older streets around Vansittart Avenue to the newer subdivisions off Devonshire and Springbank. Because we ship these kits Canada-wide, we know the hardware inside out before it ever goes on your soffit.",
+      "metaTitle": "Woodstock Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Woodstock, Ontario. Free on-site measurement, colour-matched track, app control and a 5-year warranty. Book a quote.",
+      "intro": "Woodstock is where our shop is and the centre of our Southwestern Ontario service area, so response times here are quick. We fit permanent RGBW soffit lighting on homes throughout the north and south ends, from the older streets around Vansittart Avenue to the newer subdivisions off Devonshire and Springbank. Because we ship these kits Canada-wide, we know the hardware inside out before it ever goes on your soffit.",
       "localAngle": "As the town at the crossroads of Highways 401 and 403, Woodstock is where our install crew is based, so on-site measurements and follow-up service calls are easy to schedule.",
       "serviceBullets": [
         "Free on-site measurement and honest quote before you commit",
@@ -21,8 +21,8 @@
     {
       "slug": "kitchener",
       "city": "Kitchener",
-      "metaTitle": "Permanent Lighting Installation in Kitchener",
-      "metaDescription": "Permanent LED soffit lighting installed in Kitchener, Ontario. Free measurement, professional mounting, RGBW app control and a 5-year warranty. Get your quote today.",
+      "metaTitle": "Kitchener Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Kitchener, Ontario. Free measurement, professional mounting, RGBW app control and a 5-year warranty. Get your quote.",
       "intro": "Kitchener homeowners want permanent lighting that handles everything from Christmas to game-day colours without the annual ladder ritual, and that is exactly what we install. We cover the whole city, from established neighbourhoods like Forest Heights and Stanley Park to the newer builds out toward Doon and Huron Park. Our RGBW track disappears into your soffit line by day and lights up in any colour you like by night.",
       "localAngle": "As the largest city in the Waterloo Region, Kitchener has a great mix of home styles, and we tune each install to the soffit depth and roofline so the track stays invisible in daylight.",
       "serviceBullets": [
@@ -38,8 +38,8 @@
     {
       "slug": "waterloo",
       "city": "Waterloo",
-      "metaTitle": "Permanent Lighting Installation in Waterloo ON",
-      "metaDescription": "Permanent LED soffit lighting installation in Waterloo, Ontario. Free on-site measurement, colour-matched track, WiFi app control and a 5-year warranty. Book now.",
+      "metaTitle": "Waterloo Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Waterloo, Ontario. Free on-site measurement, colour-matched track, WiFi app control and a 5-year warranty. Book now.",
       "intro": "In Waterloo we install permanent soffit lighting on everything from century homes near uptown to the executive builds around Beechwood and Colonial Acres. The system runs cleanly along your soffit and gives you app-controlled colour for the holidays, birthdays, or just a warm white glow every night. It is the same kit we ship across Canada, mounted properly by our own crew.",
       "localAngle": "Waterloo's uptown character homes and treed streets suit a discreet warm-white daily look with the option to switch to full colour, and we set the scenes up with you on install day.",
       "serviceBullets": [
@@ -55,8 +55,8 @@
     {
       "slug": "cambridge",
       "city": "Cambridge",
-      "metaTitle": "Permanent Lighting Installation in Cambridge ON",
-      "metaDescription": "Professional permanent LED lighting installation in Cambridge, Ontario. Free measurement, soffit-matched track, RGBW app control, 5-year warranty. Request a quote.",
+      "metaTitle": "Cambridge Permanent Light Installation",
+      "metaDescription": "Professional permanent LED lighting installation in Cambridge, Ontario. Free measurement, soffit-matched track, RGBW app control, 5-year warranty. Get a quote.",
       "intro": "Cambridge brings together Galt, Preston, and Hespeler, each with its own mix of stone heritage homes and newer subdivisions, and permanent lighting looks great on all of them. We mount RGBW soffit track that stays hidden by day and lights the whole facade in any colour by night, no ladders and no tangled strings. Because we build and ship these systems ourselves, the install is done by people who know the product.",
       "localAngle": "Cambridge's historic Galt stonework and riverfront streets look striking under a clean, evenly spaced permanent light line, and we plan puck spacing around each home's architecture.",
       "serviceBullets": [
@@ -72,8 +72,8 @@
     {
       "slug": "guelph",
       "city": "Guelph",
-      "metaTitle": "Permanent Lighting Installation in Guelph ON",
-      "metaDescription": "Permanent LED soffit lighting installed in Guelph, Ontario. Free on-site measurement, colour-matched track, WiFi RGBW control and a 5-year warranty. Get a quote.",
+      "metaTitle": "Guelph Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Guelph, Ontario. Free on-site measurement, colour-matched track, WiFi RGBW control and 5-year warranty. Get a quote.",
       "intro": "Guelph homeowners take pride in their properties, and permanent soffit lighting adds year-round curb appeal from the Royal City's stone heritage core out to the newer south-end neighbourhoods like Westminster Woods and Kortright Hills. Our RGBW track mounts along the soffit line, disappears in daylight, and gives you full app-controlled colour whenever you want it. Same warranty-backed hardware we ship nationwide, installed by our own crew.",
       "localAngle": "Guelph's well-kept older homes and limestone architecture look their best with a clean, low-profile light line, so we colour-match the track and keep runs invisible from the street.",
       "serviceBullets": [
@@ -89,8 +89,8 @@
     {
       "slug": "stratford",
       "city": "Stratford",
-      "metaTitle": "Permanent Lighting Installation in Stratford ON",
-      "metaDescription": "Permanent LED soffit lighting installation in Stratford, Ontario. Free measurement, colour-matched track, app-controlled RGBW colour, 5-year warranty. Book today.",
+      "metaTitle": "Stratford Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Stratford, Ontario. Free measurement, colour-matched track, app-controlled RGBW colour, 5-year warranty. Book today.",
       "intro": "Stratford's mix of stately older homes near the Avon River and newer builds on the edges of town both suit a clean permanent lighting line. We install RGBW soffit track that stays discreet by day and lets you set any colour by night, ideal for festival season, the holidays, or just a warm nightly glow. It is the same kit we ship across Canada, professionally mounted here in your own city.",
       "localAngle": "In a city known for its theatre and heritage streetscapes, a tidy, colour-matched permanent light line keeps the look classic while giving you full-colour flexibility for special nights.",
       "serviceBullets": [
@@ -106,9 +106,9 @@
     {
       "slug": "ingersoll",
       "city": "Ingersoll",
-      "metaTitle": "Permanent Lighting Installation in Ingersoll ON",
-      "metaDescription": "Permanent LED soffit lighting installed in Ingersoll, Ontario. Free on-site measurement, colour-matched track, RGBW app control and a 5-year warranty. Request a quote.",
-      "intro": "Ingersoll sits right between our Woodstock and London bases, so it is an easy town for us to service and follow up on. We install permanent RGBW soffit lighting on homes throughout town, from the older streets near the downtown core to the newer subdivisions off Thames Street and Harris. Because we ship these kits nationwide, you get proven hardware mounted by people who know it well.",
+      "metaTitle": "Ingersoll Permanent Light Installation",
+      "metaDescription": "Permanent LED soffit lighting installed in Ingersoll, Ontario, minutes from our Woodstock shop. Free on-site measurement, app control and a 5-year warranty.",
+      "intro": "Ingersoll sits right between our Woodstock shop and London, so it is an easy town for us to service and follow up on. We install permanent RGBW soffit lighting on homes throughout town, from the older streets near the downtown core to the newer subdivisions off Thames Street and Harris. Because we ship these kits nationwide, you get proven hardware mounted by people who know it well.",
       "localAngle": "Being minutes from both Woodstock and the 401, Ingersoll gets quick scheduling for measurements and any future service, and we tune each install to the home's soffit depth.",
       "serviceBullets": [
         "Free on-site measurement and a straightforward, itemized quote",

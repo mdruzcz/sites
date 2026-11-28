@@ -14,6 +14,10 @@ import bylaws from "@/content/resources/hoa-condo-and-bylaw-rules-for-permanent-
 import zones from "@/content/resources/planning-zones-and-segments-for-permanent-lighting.json";
 import wiring from "@/content/resources/wiring-layouts-single-run-t-branch-and-multi-zone.json";
 import homeValue from "@/content/resources/does-permanent-lighting-add-home-value.json";
+import gemstoneVsKit from "@/content/resources/gemstone-lights-vs-diy-track-lighting-kits.json";
+import goveeVsTrack from "@/content/resources/govee-permanent-outdoor-lights-vs-track-lighting.json";
+import trackVsString from "@/content/resources/track-lights-vs-string-lights-permanent-outdoor-lighting.json";
+import dealerBrands from "@/content/resources/dealer-installed-permanent-lighting-brands-compared.json";
 
 export type ArticleBlock =
   | { type: "h2"; text: string }
@@ -21,7 +25,9 @@ export type ArticleBlock =
   | { type: "p"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "callout"; text: string }
-  | { type: "steps"; items: string[] };
+  | { type: "steps"; items: string[] }
+  | { type: "table"; head: string[]; rows: string[][]; caption?: string }
+  | { type: "sources"; items: { label: string; url: string }[] };
 
 export interface ArticleFaq {
   q: string;
@@ -46,6 +52,10 @@ export interface Article {
 
 /** Every article, newest first within the index. */
 export const ARTICLES: Article[] = [
+  gemstoneVsKit,
+  goveeVsTrack,
+  trackVsString,
+  dealerBrands,
   canadaGuide,
   howToInstall,
   soffitTypes,
@@ -62,9 +72,13 @@ export const ARTICLES: Article[] = [
   zones
 ] as unknown as Article[];
 
-export const CATEGORY_ORDER: string[] = ["Guides", "How-to", "Costs", "Comparisons", "Parts & specs"];
+export const CATEGORY_ORDER: string[] = ["Brand comparisons", "Guides", "How-to", "Costs", "Comparisons", "Parts & specs"];
 
 const HERO_PHOTOS: Record<string, PhotoKey> = {
+  "gemstone-lights-vs-diy-track-lighting-kits": "home-example-warm-white",
+  "govee-permanent-outdoor-lights-vs-track-lighting": "home-blue-night",
+  "track-lights-vs-string-lights-permanent-outdoor-lighting": "detail-pucks-closeup",
+  "dealer-installed-permanent-lighting-brands-compared": "install-home-day",
   "how-to-install-permanent-soffit-lights": "detail-track-install",
   "permanent-outdoor-lights-canada-guide": "home-night-lit",
   "permanent-lights-cost-canada": "home-wide",

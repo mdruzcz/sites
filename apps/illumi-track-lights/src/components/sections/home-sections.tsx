@@ -1,72 +1,154 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Photo } from "@/components/photo";
-import { kits, kitLightCount, kitTrackFeet, kitBom, getKitByFeet } from "@/lib/kits";
-import { ARTICLES, heroPhotoFor } from "@/lib/resources";
-import { INSTALL_CITIES } from "@/lib/installation";
-import { formatCad } from "@/lib/utils";
+import { KitHomeDiagram, kitHomeInfo } from "@/components/kit-home-diagram";
+import { kitLightCount, kitTrackFeet, kitPerFoot, type Kit } from "@/lib/kits";
+import { ARTICLES } from "@/lib/resources";
+import { BRAND, formatCad } from "@/lib/utils";
 
-export function Hero() {
+/* ----------------------------------------------------------------------------
+   Hero: one wide photograph, the words set bottom-left like a caption.
+---------------------------------------------------------------------------- */
+export function Hero({ fromPrice }: { fromPrice: number }) {
   return (
-    <section className="relative isolate overflow-hidden bg-[var(--color-ink)] text-white">
-      <Photo name="hero-home-twilight" ratio="absolute inset-0" sizes="100vw" priority scrim="hero" className="!absolute" />
-      <div className="shell relative grid min-h-[78vh] items-end gap-10 py-16 md:grid-cols-[1.25fr_1fr] md:items-center md:py-24">
-        <div className="reveal">
-          <p className="eyebrow eyebrow-dot text-[var(--color-gold)]">Soffit track lighting · London, Ontario</p>
-          <h1 className="font-display display mt-5 max-w-2xl text-white">
-            Invisible by day. <span className="aurora-text">Any colour by night.</span>
-          </h1>
-          <p className="lead mt-6 max-w-xl text-white/85">
-            Colour-matched aluminum track tucks under your soffit and holds 12V RGBW pucks you control from your
-            phone. Buy the complete kit and install it in a weekend, or let our Southwestern Ontario crew do it.
+    <section className="on-dark relative isolate bg-[var(--color-ink-deep)] text-white">
+      <Photo name="hero-home-twilight" ratio="h-[30rem] sm:h-[34rem] lg:h-[38rem]" sizes="100vw" priority scrim="hero" />
+      <div className="absolute inset-0 flex items-end">
+        <div className="shell pb-8 md:pb-12">
+          <p className="eyebrow text-white/85">Permanent track lighting</p>
+          <h1 className="font-display display mt-2 max-w-2xl text-white">Put the lights up once.</h1>
+          <p className="mt-3 max-w-xl text-[1.0625rem] leading-relaxed text-white/90">
+            Complete 12V track lighting kits for 50 to 250 feet of roofline, from {formatCad(fromPrice, 0)}, and every part sold on its own. Shipping is free on every order in Canada.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/diy-kits" className="btn-primary">Shop soffit track kits</Link>
-            <Link href="/installation" className="btn-ghost-light">Get it installed</Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/diy-kits" className="btn-white">Shop the kits</Link>
+            <Link href="/how-it-works" className="btn-ghost-light">How it works</Link>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-white/65">
-            <li>Kits from $1,455</li>
-            <li>5-year warranty</li>
-            <li>IP68 · −40 °C tested</li>
-            <li>All 12V · CSA Class 2</li>
-          </ul>
         </div>
-        <div className="glass reveal reveal-2 hidden p-6 md:block">
-          <p className="eyebrow text-[var(--color-gold)]">Kit or installed</p>
-          <ul className="mt-4 divide-y divide-white/10 text-sm">
-            <li className="grid grid-cols-[1fr_auto_auto] gap-4 py-2 text-xs uppercase tracking-wider text-white/55"><span>Length</span><span>DIY kit</span><span>Installed</span></li>
-            {kits.map((k) => (
-              <li key={k.slug} className="grid grid-cols-[1fr_auto_auto] gap-4 py-2.5">
-                <Link href={`/product/${k.slug}`} className="text-white/85 hover:text-white">{k.feet} ft</Link>
-                <span className="font-semibold">{formatCad(k.price, 0)}</span>
-                <span className="text-white/70">from {formatCad(k.installedLow, 0)}</span>
-              </li>
-            ))}
-          </ul>
-          <Link href="/compare" className="mt-4 inline-flex text-sm font-semibold text-[var(--color-accent-bright)] hover:underline">See what the difference buys →</Link>
-        </div>
+      </div>
+      <p className="absolute bottom-3 right-4 hidden text-xs italic text-white/75 md:block">Shown in warm white</p>
+    </section>
+  );
+}
+
+/* ----------------------------------------------------------------------------
+   Kits: six tiles, one plain price each, the per-foot maths spelled out.
+---------------------------------------------------------------------------- */
+export function KitShelf({ kits }: { kits: Kit[] }) {
+  return (
+    <section>
+      <div className="shell section">
+        <h2 className="font-display h2-fluid track-title">Track lighting kits, 50 to 250 feet</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-[var(--color-text-soft)]">
+          Measure the edges you want lit, pick the next size up, and you are done shopping. Each kit has the track, the lights, the controller, the power and the connectors counted out for that length. The drawings show an example home for each size.
+        </p>
+        <ul className="mt-8 grid gap-x-6 gap-y-9 sm:mt-10 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3">
+          {kits.map((k) => (
+            <li key={k.slug}>
+              <Link href={`/product/${k.slug}`} className="group block">
+                <div className="overflow-hidden bg-[var(--color-ink-deep)]">
+                  <KitHomeDiagram footage={k.feet} scale="shared" labels={false} className="aspect-[2/1]" />
+                </div>
+                <div>
+                  <h3 className="text-[1.0625rem] leading-snug text-[var(--color-ink)] group-hover:underline mt-3">Track Lighting Kit, {k.feet} ft</h3>
+                  <p className="price mt-1 text-[1.0625rem]">{formatCad(k.price, 2)}</p>
+                  <p className="mt-1 text-sm text-[var(--color-text-soft)]">
+                    Works out to {formatCad(kitPerFoot(k), 2)} a foot. {kitLightCount(k)} lights, {kitTrackFeet(k)} ft of track.
+                  </p>
+                  <p className="mt-1 text-sm text-[var(--color-muted)]">Drawn: {kitHomeInfo(k.feet)?.title.toLowerCase() ?? "example home"}. {k.suits}</p>
+                  <p className="mt-2 border-t border-[var(--color-border)] pt-2 text-[0.8rem] font-semibold text-[var(--color-accent)]">See everything in the kit</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="note mx-auto mt-10 max-w-3xl">
+          <strong>The price is the whole price.</strong> No shipping charge, no controller to add, no power supply sold separately. Pick black, white, wicker or brown track at no extra cost. <Link href="/diy-kits" className="text-link">Compare all six kits part by part</Link>.
+        </p>
       </div>
     </section>
   );
 }
 
-export function TrustStrip() {
-  const items = [
-    ["Colour-matched track", "Black, white, wicker or brown, flush to the soffit"],
-    ["12V RGBW pucks", "16M colours and a true warm white"],
-    ["Ships from London, ON", "Free shipping within 200 km"],
-    ["Installed in SW Ontario", "Our crew, free on-site measurement"]
+/* ----------------------------------------------------------------------------
+   Parts by type: the shelf, eight tiles.
+---------------------------------------------------------------------------- */
+const PART_TILES: { name: string; note: string; href: string; image: string; alt: string }[] = [
+  { name: "Puck Lights", note: "12V RGBW, strands of five", href: "/product-category/lights", image: "/images/products/puck-lights.webp", alt: "12V RGBW puck light strand for permanent track lighting" },
+  { name: "Aluminum Track", note: "42-inch pieces in four colours", href: "/product/aluminum-track-12v-led-lights-2-pack", image: "/images/products/aluminum-track.webp", alt: "Aluminum soffit track pre-drilled for five puck lights" },
+  { name: "WiFi Controllers", note: "2 and 4 channel, app controlled", href: "/product-category/controllers", image: "/images/products/controller-2ch.webp", alt: "2-channel 12V WiFi LED controller" },
+  { name: "Power Supplies", note: "60 W to 300 W, all 12V", href: "/product-category/power-supplies", image: "/images/products/power-supply-150w.webp", alt: "12V 150 watt weatherproof LED power supply" },
+  { name: "Extension Connectors", note: "1, 5, 10 and 20 ft jumpers", href: "/product-category/connectors", image: "/images/products/connector-5ft.webp", alt: "5 ft extension connector cable for 12V puck lights" },
+  { name: "T-Connectors & Injection", note: "Branch a run or feed it mid-way", href: "/product/t-power-injection-connector-for-12-24v-led", image: "/images/products/t-power-injection.webp", alt: "Power injection T-connector for 12V LED track lighting" },
+  { name: "Data Amplifier", note: "Keeps long runs in step", href: "/product/amplifier-for-12v-led-lights", image: "/images/products/amplifier.webp", alt: "Data signal amplifier for long 12V LED lighting runs" },
+  { name: "Soffit Screws", note: "Colour-matched, 100 to a box", href: "/product-category/hardware", image: "/images/products/screws-white.webp", alt: "Box of 100 white colour-matched soffit screws" }
+];
+
+export function PartsByType() {
+  return (
+    <section className="border-t border-[var(--color-border)]">
+      <div className="shell section">
+        <h2 className="font-display h2-fluid track-title">Shop parts by type</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-[var(--color-text-soft)]">
+          Adding a run to the garage, replacing a strand or building your own layout? Everything in a kit is also on the shelf by itself, and it is all 12V, so any part works with any other.
+        </p>
+        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-x-5 gap-y-9 md:grid-cols-4">
+          {PART_TILES.map((t) => (
+            <li key={t.name}>
+              <Link href={t.href} className="group block text-center">
+                <span className="relative block aspect-square overflow-hidden border border-[var(--color-border)] bg-white transition group-hover:border-[var(--color-accent)]">
+                  <Image src={t.image} alt={t.alt} fill sizes="(max-width: 768px) 50vw, 240px" className="object-contain p-5" />
+                </span>
+                <span className="mt-3 block text-[1.0625rem] text-[var(--color-ink)] group-hover:underline">{t.name}</span>
+                <span className="mt-0.5 block text-sm text-[var(--color-muted)]">{t.note}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-10 text-center">
+          <Link href="/shop" className="btn-secondary">See every part</Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ----------------------------------------------------------------------------
+   The three promises, stated once and plainly.
+---------------------------------------------------------------------------- */
+export function Promises() {
+  const items: { title: string; body: string; href: string; link: string; icon: React.ReactNode }[] = [
+    {
+      title: "Free shipping, every order",
+      body: "A 250 ft kit or a single connector, to any address in Canada. There is no minimum and nothing is added at checkout but tax.",
+      href: "/shipping-returns",
+      link: "Shipping details",
+      icon: <path d="M2 7h11v9H2zM13 10h4l3 3v3h-7zM6.5 19.2a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM16.5 19.2a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4z" />
+    },
+    {
+      title: "Free pickup in Woodstock",
+      body: `Close to Highway 401 or 403? Choose pickup at checkout and collect your order at ${BRAND.street} once we email that it is ready.`,
+      href: "/shipping-returns#pickup",
+      link: "How pickup works",
+      icon: <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+    },
+    {
+      title: "Five-year parts warranty",
+      body: "If a light, controller or power supply fails from a defect inside five years, we replace it. Send a photo and your order number.",
+      href: "/warranty",
+      link: "Read the warranty",
+      icon: <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8 7.5 9.5 4.3-1.5 7.5-4.9 7.5-9.5V6zM8.8 12l2.3 2.3 4.2-4.5" />
+    }
   ];
   return (
-    <section className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
-      <div className="shell grid grid-cols-2 gap-x-6 gap-y-5 py-6 md:grid-cols-4">
-        {items.map(([t, s]) => (
-          <div key={t} className="flex items-start gap-3">
-            <span aria-hidden className="mt-1 size-2 shrink-0 rounded-full bg-[var(--color-gold)]" />
-            <div>
-              <p className="text-sm font-semibold">{t}</p>
-              <p className="text-xs text-[var(--color-muted)]">{s}</p>
-            </div>
+    <section className="border-y border-[var(--color-border)] bg-[var(--color-bg-warm)]">
+      <div className="shell grid gap-8 py-10 md:grid-cols-3 md:gap-10">
+        {items.map((it) => (
+          <div key={it.title} className="text-center">
+            <svg aria-hidden width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="mx-auto text-[var(--color-ink)]">{it.icon}</svg>
+            <h3 className="font-display mt-3 text-[1.2rem]">{it.title}</h3>
+            <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-[var(--color-text-soft)]">{it.body}</p>
+            <Link href={it.href} className="text-link mt-2 inline-flex min-h-[40px] items-center text-sm">{it.link}</Link>
           </div>
         ))}
       </div>
@@ -74,280 +156,150 @@ export function TrustStrip() {
   );
 }
 
+/* ----------------------------------------------------------------------------
+   Day and night: the reason it is a track and not a string.
+---------------------------------------------------------------------------- */
 export function DayNight() {
   return (
-    <section className="bg-[var(--color-bg)]">
+    <section>
       <div className="shell section">
-        <div className="max-w-2xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Day and night</p>
-          <h2 className="font-display h2-fluid mt-5">The track is the whole point.</h2>
-          <p className="lead mt-4 text-[var(--color-text-soft)]">Strip lights stick to the fascia and show all day. A soffit track is a rigid aluminum channel, painted to match your trim, that hides the wire and points every puck down the face of the house. Neighbours see a clean roofline until you tap the app.</p>
-        </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <figure className="card overflow-hidden">
-            <Photo name="home-day-hidden" ratio="aspect-[16/10]" sizes="(max-width: 768px) 100vw, 600px" />
-            <figcaption className="flex items-center gap-3 px-5 py-4 text-sm text-[var(--color-text-soft)]"><span className="rounded-full bg-[var(--color-gold-soft)] px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[var(--color-gold-text)]">Day</span>Track sits flush under the soffit.</figcaption>
+        <h2 className="font-display h2-fluid track-title">Why a track, and not a string?</h2>
+        <div className="mt-9 grid gap-4 md:grid-cols-2">
+          <figure>
+            <Photo name="home-day-hidden" ratio="aspect-[16/10]" sizes="(max-width: 768px) 100vw, 560px" />
+            <figcaption className="mt-2 text-sm text-[var(--color-text-soft)]"><strong className="text-[var(--color-text)]">By day.</strong> The track is painted to match the soffit, so the roofline reads as trim.</figcaption>
           </figure>
-          <figure className="card overflow-hidden">
-            <Photo name="home-night-lit" ratio="aspect-[16/10]" sizes="(max-width: 768px) 100vw, 600px" />
-            <figcaption className="flex items-center gap-3 px-5 py-4 text-sm text-[var(--color-text-soft)]"><span className="rounded-full bg-[var(--color-ink)] px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-white">Night</span>The same roofline in any colour.</figcaption>
+          <figure>
+            <Photo name="home-night-lit" ratio="aspect-[16/10]" sizes="(max-width: 768px) 100vw, 560px" />
+            <figcaption className="mt-2 text-sm text-[var(--color-text-soft)]"><strong className="text-[var(--color-text)]">By night.</strong> The same house, every light pointed down the wall and set from your phone.</figcaption>
           </figure>
         </div>
+        <div className="mx-auto mt-8 max-w-3xl space-y-4 text-[var(--color-text-soft)]">
+          <p>
+            <strong className="text-[var(--color-text)]">Short answer:</strong> a track holds every light at the same spacing and the same angle, hides the wire, and comes apart if you ever need to swap a light.
+          </p>
+          <p>
+            <strong className="text-[var(--color-text)]">Long answer:</strong> string-style permanent lights stick or clip to the fascia one light at a time, and the wire between them is in plain view all day. A track is a rigid aluminum channel that screws up under the soffit. The lights press into pre-drilled holes, the cable sits inside the channel, and from the street you see a straight, even row at night and very little at noon. It takes a drill and more time on the ladder than a stick-on string does.
+          </p>
+          <p>
+            <Link href="/how-it-works" className="text-link">How track lighting goes together</Link>
+            <span className="mx-2 text-[var(--color-border-strong)]">|</span>
+            <Link href="/brands" className="text-link">How the big brands compare</Link>
+          </p>
+        </div>
       </div>
     </section>
   );
 }
 
-export function KitBand() {
+/* ----------------------------------------------------------------------------
+   Guides: a plain list, grouped the way people ask.
+---------------------------------------------------------------------------- */
+export function GuideList({ slugs }: { slugs: string[] }) {
+  const picks = slugs.map((s) => ARTICLES.find((a) => a.slug === s)).filter((a): a is (typeof ARTICLES)[number] => !!a);
   return (
-    <section className="bg-[var(--color-surface)]">
+    <section className="border-t border-[var(--color-border)]">
       <div className="shell section">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Soffit track kits</p>
-            <h2 className="font-display h2-fluid mt-5">Sized by the foot, boxed complete.</h2>
-            <p className="lead mt-4 text-[var(--color-text-soft)]">Six kits from 50 to 250 feet with track, pucks, WiFi controller, power supplies, connectors and screws counted for that length. Pick the track colour that matches your soffit.</p>
-          </div>
-          <Link href="/diy-kits" className="btn-secondary">Compare all kits</Link>
-        </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {kits.map((k, i) => (
-            <Link key={k.slug} href={`/product/${k.slug}`} className="card card-lift group overflow-hidden">
-              <Photo name={k.photo} ratio="aspect-[4/3]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" className="transition duration-500 group-hover:scale-[1.03]" priority={i < 3} />
-              <div className="p-5">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-display text-xl">{k.feet} ft kit</h3>
-                  <p className="font-semibold">{formatCad(k.price, 2)}</p>
-                </div>
-                <p className="mt-1 text-sm text-[var(--color-muted)]">{kitLightCount(k)} pucks · {kitTrackFeet(k)} ft of track</p>
-                <p className="mt-2 text-sm text-[var(--color-text-soft)]">{k.suits}</p>
-                <p className="mt-3 text-sm font-semibold text-[var(--color-gold-text)]">View kit →</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function WhatsInTheBox() {
-  const kit = getKitByFeet(100)!;
-  return (
-    <section id="whats-included" className="bg-[var(--color-bg)]">
-      <div className="shell section grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-        <div className="grid grid-cols-2 gap-4">
-          <Photo name="detail-track-install" ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
-          <Photo name="detail-tracks" ratio="aspect-[4/5]" rounded="rounded-2xl" className="mt-8" sizes="300px" />
-          <Photo name="detail-pucks" ratio="aspect-[4/5]" rounded="rounded-2xl" className="-mt-8" sizes="300px" />
-          <Photo name="soffit-lights-day" ratio="aspect-[4/5]" rounded="rounded-2xl" sizes="300px" />
-        </div>
-        <div>
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">In the box</p>
-          <h2 className="font-display h2-fluid mt-5">The 100 ft kit, part by part.</h2>
-          <p className="mt-4 text-[var(--color-text-soft)]">Every kit is the same hardware in different quantities. Bigger kits add strands, track, a second or third power supply and the injection parts that keep long runs bright.</p>
-          <ul className="mt-6 divide-y divide-[var(--color-border)] rounded-2xl border border-[var(--color-border)] bg-white">
-            {kitBom(kit).map(({ component, qty }) => (
-              <li key={component.key} className="flex items-center gap-4 px-4 py-2.5">
-                <span className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-lg border border-[var(--color-border)] bg-white">
-                  <Image src={component.image} alt={component.name} width={44} height={44} className="size-11 object-contain" />
-                </span>
-                <span className="flex-1 text-sm font-medium">{component.name}</span>
-                <span className="font-mono text-sm text-[var(--color-gold-text)]">×{qty}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function TwoWays() {
-  return (
-    <section className="bg-[var(--color-ink)] text-white">
-      <div className="shell section">
-        <div className="max-w-2xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold)]">Two ways to get it</p>
-          <h2 className="font-display h2-fluid mt-5">Install it yourself, or book our crew.</h2>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <div className="glass p-7">
-            <Photo name="install-track-mounting" ratio="aspect-[16/9]" rounded="rounded-xl" sizes="(max-width: 768px) 100vw, 540px" />
-            <h3 className="font-display mt-6 text-2xl">DIY kit, shipped anywhere in Canada</h3>
-            <p className="mt-3 text-white/75">A drill, a ladder and a Saturday. The track screws to the soffit, the pucks snap in, the controller plugs into a GFCI outlet. From {formatCad(kits[0].price, 0)}, free shipping within 200 km.</p>
-            <Link href="/diy-kits" className="btn-gold mt-6">Pick a kit</Link>
-          </div>
-          <div className="glass p-7">
-            <Photo name="install-eder" ratio="aspect-[16/9]" rounded="rounded-xl" sizes="(max-width: 768px) 100vw, 540px" />
-            <h3 className="font-display mt-6 text-2xl">Installed by Illumi in Southwestern Ontario</h3>
-            <p className="mt-3 text-white/75">Free on-site measurement, colour-matched track, sealed wiring and an app walkthrough before we leave. {INSTALL_CITIES.map((c) => c.city).slice(0, 5).join(", ")} and nearby. From {formatCad(kits[0].installedLow, 0)}.</p>
-            <Link href="/installation" className="btn-ghost-light mt-6">Book a measurement</Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function Occasions() {
-  const items: { photo: Parameters<typeof Photo>[0]["name"]; label: string; sub: string }[] = [
-    { photo: "scene-warm-white", label: "Warm white", sub: "Every ordinary evening" },
-    { photo: "scene-red", label: "Red & white", sub: "Canada Day, Christmas" },
-    { photo: "scene-green", label: "Green", sub: "St. Patrick's, game day" },
-    { photo: "scene-pink", label: "Magenta", sub: "Valentine's, awareness" },
-    { photo: "scene-rainbow", label: "Rainbow", sub: "Pride, birthdays" },
-    { photo: "scene-security", label: "Security white", sub: "Sunset to sunrise" }
-  ];
-  return (
-    <section className="bg-[var(--color-bg-warm)]">
-      <div className="shell section">
-        <div className="max-w-2xl">
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Year-round</p>
-          <h2 className="font-display h2-fluid mt-5">Twelve months of reasons to leave it up.</h2>
-          <p className="lead mt-4 text-[var(--color-text-soft)]">Saved scenes for every holiday, a warm white for the other 300 nights, and a bright white security mode on a sunset schedule.</p>
-        </div>
-        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
-          {items.map((o) => (
-            <div key={o.photo} className="group relative overflow-hidden rounded-2xl">
-              <Photo name={o.photo} ratio="aspect-[4/3]" sizes="(max-width: 768px) 50vw, 400px" scrim="soft" className="transition duration-500 group-hover:scale-[1.04]" />
-              <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                <p className="font-display text-lg">{o.label}</p>
-                <p className="text-xs text-white/75">{o.sub}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <Link href="/gallery" className="btn-secondary mt-8">Browse the gallery</Link>
-      </div>
-    </section>
-  );
-}
-
-export function Specs() {
-  const specs = [
-    ["12V", "everything", "One voltage, every part compatible"],
-    ["46 lm", "per puck", "Bright from the street, soft up close"],
-    ["50,000 h", "rated", "Decades of evenings"],
-    ["−40 °C", "tested", "Ontario winters, no problem"],
-    ["IP68", "sealed", "Pucks and connectors"],
-    ["5 yr", "warranty", "Kits and parts"]
-  ];
-  return (
-    <section className="bg-[var(--color-surface)]">
-      <div className="shell section">
-        <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Built for Canada</p>
-        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
-          {specs.map(([v, u, l]) => (
-            <div key={l}>
-              <p className="font-display text-3xl text-[var(--color-ink)] md:text-4xl">{v}</p>
-              <p className="eyebrow mt-1 text-[var(--color-gold-text)]">{u}</p>
-              <p className="mt-2 text-sm text-[var(--color-text-soft)]">{l}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function Reviews() {
-  const reviews = [
-    ["Measured on a Tuesday, installed the following week. The track matches our soffit so well my wife asked when they were coming back to do it.", "Marc", "Woodstock, ON", "Installed, 150 ft"],
-    ["Ordered the 100 ft kit, watched the guide, done in a day with my son. The app is the fun part.", "Priya", "Kitchener, ON", "DIY kit, 100 ft"],
-    ["Third winter, not a single puck out. We run warm white most nights and the kids pick the colours on holidays.", "Dan", "Guelph, ON", "DIY kit, 200 ft"]
-  ];
-  return (
-    <section className="bg-[var(--color-bg)]">
-      <div className="shell section">
-        <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">From Ontario homes</p>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {reviews.map(([q, n, c, k]) => (
-            <figure key={n} className="card p-6">
-              <p aria-label="5 of 5 stars" className="text-[var(--color-gold)]">★★★★★</p>
-              <blockquote className="mt-3 text-[0.98rem] leading-relaxed text-[var(--color-text-soft)]">“{q}”</blockquote>
-              <figcaption className="mt-4 text-xs text-[var(--color-muted)]">{n} · {c} · {k}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function GuidesPreview() {
-  const picks = ARTICLES.slice(0, 3);
-  return (
-    <section className="bg-[var(--color-surface)]">
-      <div className="shell section">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Guides</p>
-            <h2 className="font-display h2-fluid mt-5">Read before you measure.</h2>
-          </div>
-          <Link href="/resources" className="btn-secondary">All guides</Link>
-        </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <h2 className="font-display h2-fluid track-title">Guides &amp; how-to</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-[var(--color-text-soft)]">
+          We would rather you order the right thing once. These are the questions we answer most, written down.
+        </p>
+        <ul className="mx-auto mt-9 grid max-w-5xl gap-x-10 md:grid-cols-2">
           {picks.map((a) => (
-            <Link key={a.slug} href={`/resources/${a.slug}`} className="card card-lift group overflow-hidden">
-              <Photo name={heroPhotoFor(a.slug)} ratio="aspect-[16/9]" sizes="(max-width: 768px) 100vw, 400px" className="transition duration-500 group-hover:scale-[1.04]" />
-              <div className="p-5">
-                <p className="text-xs text-[var(--color-muted)]">{a.category} · {a.readMinutes} min read</p>
-                <h3 className="font-display mt-2 text-lg leading-snug transition group-hover:text-[var(--color-gold-text)]">{a.title}</h3>
-                <p className="mt-2 line-clamp-2 text-sm text-[var(--color-text-soft)]">{a.excerpt}</p>
-              </div>
-            </Link>
+            <li key={a.slug} className="border-t border-[var(--color-border)] py-4">
+              <Link href={`/resources/${a.slug}`} className="group block">
+                <span className="eyebrow text-[var(--color-gold-text)]">{a.category}</span>
+                <span className="font-display mt-1 block text-[1.15rem] leading-snug group-hover:underline">{a.title}</span>
+                <span className="mt-1 line-clamp-2 block text-sm text-[var(--color-text-soft)]">{a.excerpt}</span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
+        <p className="mt-8 text-center">
+          <Link href="/resources" className="btn-secondary">All guides</Link>
+        </p>
       </div>
     </section>
   );
 }
 
-export const HOME_FAQ: { q: string; a: string }[] = [
-  { q: "What is soffit track lighting?", a: "An extruded aluminum channel screws up under the soffit and holds individually addressable 12V RGBW pucks. By day it reads as a trim line in your soffit colour. At night the whole roofline is any colour you choose from the app." },
-  { q: "Is it hard to install myself?", a: "A comfortable DIYer with a drill and a ladder does a bungalow front in an afternoon. Track screws up with the colour-matched screws, pucks press in, connectors twist together, and the power supply plugs into a GFCI outlet." },
-  { q: "Do you install it?", a: "Yes, in Southwestern Ontario: London, Woodstock, Kitchener, Waterloo, Cambridge, Guelph, Stratford, Ingersoll and nearby. We measure on site for free. Elsewhere in Canada we connect you with partner installers who use the same hardware." },
-  { q: "Are all your parts 12V?", a: "Yes. Every puck, controller, power supply and connector is 12V, so anything in the store works with anything else and nothing can be plugged into the wrong supply." },
-  { q: "How much does it cost?", a: "Kits run from $1,455 for 50 ft to $3,629 for 250 ft. Installed by our crew, the same lengths run from about $1,665 to $4,988 depending on the house. Both are a fraction of national installers at $25 to $40 per foot." },
-  { q: "What about winter?", a: "Pucks and connectors are IP68 sealed and the hardware is tested to −40 °C. Aluminum track sheds snow and ice. Nothing comes down in January." }
-];
+/* ----------------------------------------------------------------------------
+   Questions: short answers.
+---------------------------------------------------------------------------- */
+export function homeFaq(low: number, high: number): { q: string; a: string }[] {
+  return [
+    { q: "What is permanent track lighting?", a: "An aluminum channel that screws up under your soffit and holds a row of 12V colour-changing LED lights. It stays on the house all year. By day it looks like part of the trim, and at night you pick the colour from an app on your phone." },
+    { q: "How much does a kit cost?", a: `Kits run from ${formatCad(low, 0)} for 50 feet to ${formatCad(high, 0)} for 250 feet, before tax. That price includes the track, the lights, the WiFi controller, the power supplies, the connectors, the screws and the shipping.` },
+    { q: "Is shipping really free on everything?", a: "Yes. Every order ships free to any address in Canada, whether it is a full kit or one connector. There is no minimum order and no flat rate. If you are near Woodstock, Ontario you can also choose free pickup at checkout." },
+    { q: "Can I pick up my order?", a: `Yes. Choose pickup at checkout and collect it at ${BRAND.address}. Please wait for our "ready for pickup" email before you drive over; it usually comes within one to two business days.` },
+    { q: "Can I install it myself?", a: "If you are comfortable on a ladder with a drill, yes. The track screws to the soffit, the lights press in, the connectors twist together and the power supply plugs into an outdoor GFCI outlet. A bungalow front is an afternoon. Two storeys is a harder job and worth a second person or an installer." },
+    { q: "How is this different from Gemstone or Govee?", a: "Gemstone and similar dealer brands use a track like this one but are sold only through installers at a per-foot installed price. Govee and similar retail kits are low-cost light strings that stick or clip to the fascia. Our kits are track hardware sold direct for you to install. The brand comparison page lays out the differences." },
+    { q: "Are all your parts 12V?", a: "Yes. Every light, controller, power supply and connector in the store is 12V, so any part works with any other and nothing can be plugged into the wrong supply." },
+    { q: "Will it survive a Canadian winter?", a: "The lights and connectors are sealed to IP68 and the hardware is tested to −40 °C. The aluminum track sheds snow and ice. Nothing comes down in January." }
+  ];
+}
 
-export function FaqPreview() {
+export function FaqList({ faq }: { faq: { q: string; a: string }[] }) {
   return (
-    <section className="bg-[var(--color-bg)]">
-      <div className="shell section grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-        <div>
-          <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Questions</p>
-          <h2 className="font-display h2-fluid mt-5">What people ask before ordering.</h2>
-          <Link href="/faq" className="btn-secondary mt-6">All questions</Link>
-        </div>
-        <div className="space-y-3">
-          {HOME_FAQ.map((f) => (
-            <details key={f.q} className="group card">
-              <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold">
+    <section className="border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]">
+      <div className="shell section">
+        <h2 className="font-display h2-fluid track-title">Questions, short answers</h2>
+        <div className="mx-auto mt-9 max-w-3xl border-t border-[var(--color-border-strong)]">
+          {faq.map((f) => (
+            <details key={f.q} className="group border-b border-[var(--color-border-strong)]">
+              <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 text-[1.0625rem] font-semibold text-[var(--color-ink)]">
                 {f.q}
-                <span aria-hidden className="text-[var(--color-muted)] transition group-open:rotate-180">▾</span>
+                <span aria-hidden className="text-xl leading-none text-[var(--color-muted)] transition group-open:rotate-45">+</span>
               </summary>
-              <p className="px-5 pb-5 leading-relaxed text-[var(--color-text-soft)]">{f.a}</p>
+              <p className="pb-5 pr-6 leading-relaxed text-[var(--color-text-soft)]">{f.a}</p>
             </details>
           ))}
         </div>
+        <p className="mt-8 text-center">
+          <Link href="/faq" className="text-link">Every question we get asked</Link>
+        </p>
       </div>
     </section>
   );
 }
 
-export function CtaBand() {
+/* ----------------------------------------------------------------------------
+   Who we are and where to find us.
+---------------------------------------------------------------------------- */
+export function VisitUs() {
   return (
-    <section className="relative isolate overflow-hidden bg-[var(--color-ink)] text-white">
-      <Photo name="home-elevation-blue" ratio="absolute inset-0" sizes="100vw" scrim="strong" className="!absolute opacity-80" />
-      <div className="shell section-lg relative text-center">
-        <p className="eyebrow text-[var(--color-gold)]">This is the last year you hang lights</p>
-        <h2 className="font-display display mx-auto mt-5 max-w-3xl">Put the track up once. Change the colour forever.</h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/diy-kits" className="btn-primary">Shop kits</Link>
-          <Link href="/installation" className="btn-ghost-light">Book an install</Link>
+    <section>
+      <div className="shell section grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-start">
+        <div>
+          <p className="eyebrow text-[var(--color-gold-text)]">About Illumi</p>
+          <h2 className="font-display h2-fluid mt-2">A lighting shop in Woodstock, Ontario.</h2>
+          <div className="mt-4 space-y-4 text-[var(--color-text-soft)]">
+            <p>
+              We sell one kind of lighting: 12V LED lights that sit in an aluminum track under the eaves and stay there. We stock the kits and every part that goes in them, we ship all of it free, and we install it ourselves around Southwestern Ontario.
+            </p>
+            <p>
+              Not sure what size you need? Send us the lengths of the edges you want lit, or a photo of the house, and we will tell you which kit fits and whether you need anything else. If the honest answer is a smaller kit, that is the answer you will get.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/contact-us" className="btn-primary">Ask us a question</Link>
+            <Link href="/about" className="btn-secondary">About the shop</Link>
+          </div>
+        </div>
+        <div className="border border-[var(--color-border)] p-6">
+          <h3 className="eyebrow text-[var(--color-gold-text)]">Pickup address</h3>
+          <address className="font-display mt-2 text-[1.35rem] not-italic leading-snug">
+            {BRAND.street}
+            <br />
+            {BRAND.city}, {BRAND.regionCode} {BRAND.postal}
+          </address>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-soft)]">
+            Pickups are by appointment. Choose pickup at checkout, wait for the email that says your order is ready, then come by. There is no charge.
+          </p>
+          <p className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+            <a href={BRAND.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-link inline-flex min-h-[40px] items-center">Open in Google Maps</a>
+            <Link href="/shipping-returns#pickup" className="text-link inline-flex min-h-[40px] items-center">Pickup details</Link>
+          </p>
         </div>
       </div>
     </section>

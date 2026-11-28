@@ -1,91 +1,44 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-
-const COLS: { title: string; links: { label: string; href: string }[] }[] = [
-  {
-    title: "Shop",
-    links: [
-      { label: "Permanent lighting kits", href: "/diy-kits" },
-      { label: "Lights", href: "/product-category/lights" },
-      { label: "Controllers", href: "/product-category/controllers" },
-      { label: "Power supplies", href: "/product-category/power-supplies" },
-      { label: "Connectors & cables", href: "/product-category/connectors" },
-      { label: "Track & hardware", href: "/product-category/hardware" },
-      { label: "All products", href: "/shop" }
-    ]
-  },
-  {
-    title: "Learn",
-    links: [
-      { label: "How it works", href: "/how-it-works" },
-      { label: "Guides & how-tos", href: "/resources" },
-      { label: "Kit vs installed", href: "/compare" },
-      { label: "Gallery", href: "/gallery" },
-      { label: "FAQ", href: "/faq" }
-    ]
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Contact us", href: "/contact-us" },
-      { label: "Track your order", href: "/track-order" },
-      { label: "Shipping & returns", href: "/shipping-returns" },
-      { label: "5-year warranty", href: "/warranty" }
-    ]
-  },
-  {
-    title: "Pros",
-    links: [
-      { label: "Professional installation", href: "/installation" },
-      { label: "Find an installer", href: "/installers" },
-      { label: "Installer program", href: "/professional-installer" },
-      { label: "About", href: "/about" }
-    ]
-  }
-];
+import { FOOTER_COLUMNS } from "@/lib/nav";
+import { BRAND } from "@/lib/utils";
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-[var(--color-ink)] text-white/80">
-      <div className="border-b border-white/10 bg-[var(--color-ink-deep)]">
-        <div className="shell grid grid-cols-2 gap-3 py-4 text-center text-xs text-white/80 md:grid-cols-4">
-          <span>12V RGBW, 16M colours</span>
-          <span>Free shipping within 200 km</span>
-          <span>5-year parts warranty</span>
-          <span>Ships from London, Ontario</span>
-        </div>
-      </div>
-
-      <div className="shell grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+    <footer className="on-dark mt-20 bg-[var(--color-ink)] text-white/85">
+      <div className="shell grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.35fr_repeat(4,1fr)]">
         <div>
-          <Logo />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
-            Permanent LED soffit track lighting for Canadian homes: complete 12V kits and parts shipped from London,
-            Ontario, plus professional installation across Southwestern Ontario.
+          <Logo onDark />
+          <address className="mt-5 text-sm not-italic leading-relaxed text-white/85">
+            {BRAND.street}
+            <br />
+            {BRAND.city}, {BRAND.regionCode} {BRAND.postal}
+          </address>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/70">
+            Order pickups by appointment, once we email that yours is ready.{" "}
+            <a href={BRAND.mapsUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">Map</a>
           </p>
-          <p className="mt-4 text-xs text-white/50">Canadian owned · CSA Class 2 low voltage · WLED app control</p>
+          <p className="mt-3 text-sm">
+            <a href={`mailto:${BRAND.email}`} className="underline underline-offset-2 hover:text-white">{BRAND.email}</a>
+          </p>
         </div>
-        {COLS.map((col) => (
+        {FOOTER_COLUMNS.map((col) => (
           <div key={col.title}>
-            <h2 className="eyebrow text-[var(--color-gold)]">{col.title}</h2>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <h2 className="eyebrow text-[var(--color-accent-bright)]">{col.title}</h2>
+            <ul className="mt-4 text-sm">
               {col.links.map((l) => (
                 <li key={l.href + l.label}>
-                  <Link href={l.href} className="inline-block min-h-[28px] transition hover:text-white">{l.label}</Link>
+                  <Link href={l.href} className="inline-flex min-h-[34px] items-center transition hover:text-white hover:underline">{l.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
-      <div className="border-t border-white/10">
-        <div className="shell flex flex-wrap items-center justify-between gap-3 py-5 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Illumi Track Lights · London, Ontario, Canada</p>
-          <p className="flex gap-4">
-            <Link href="/shipping-returns" className="hover:text-white">Shipping & returns</Link>
-            <Link href="/warranty" className="hover:text-white">Warranty</Link>
-            <Link href="/contact-us" className="hover:text-white">Contact</Link>
-          </p>
+      <div className="border-t border-white/15">
+        <div className="shell flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-5 text-xs text-white/65">
+          <p>© {new Date().getFullYear()} Illumi Track Lights · {BRAND.city}, {BRAND.region}, Canada</p>
+          <p>Every order ships free in Canada. Prices in Canadian dollars. Orders are invoiced by Master Decker Inc.</p>
         </div>
       </div>
     </footer>

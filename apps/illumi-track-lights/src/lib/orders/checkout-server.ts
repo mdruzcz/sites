@@ -1,7 +1,9 @@
 // Server side of online checkout, shared by the web stores billed through
 // Master Decker Inc.'s Stripe account.
 //
-// SAME FILE in apps/permanent-lighting-direct and apps/forever-lights.
+// Started as the same file as apps/permanent-lighting-direct and
+// apps/forever-lights; Illumi's copy adds the pickup option (customer.method)
+// and ships every order free. Port fixes between the copies by hand.
 //
 // Flow: the checkout page posts the customer + address → createOrderAndSession
 // prices it (policy.ts), writes a pending_payment order with its items and
@@ -18,13 +20,18 @@
 import type Stripe from "stripe";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
+  PICKUP_LABEL,
+  SHOP,
   estimateTotals,
+  isFulfilmentMethod,
   isProvince,
   normalizePostal,
   postalMatchesProvince,
   provinceName,
+  quotePickup,
   quoteShipping,
   taxFor,
+  type FulfilmentMethod,
   type TaxRule
 } from "./policy";
 import { renderInvoicePdf, type OrderDoc } from "./documents";
@@ -41,6 +48,9 @@ export interface CheckoutLine {
 }
 
 export interface CheckoutCustomer {
+  /** "ship" to the address below, or "pickup" at the Woodstock shop (the
+   *  address fields then hold the shop's address). */
+  method: FulfilmentMethod;
   email: string;
   phone: string;
   firstName: string;
@@ -69,7 +79,9 @@ const cents = (n: number) => Math.round(n * 100);
 export function parseCustomer(raw: unknown): { ok: true; customer: CheckoutCustomer } | { ok: false; error: string } {
   const r = (raw ?? {}) as Record<string, unknown>;
   const s = (k: string, max = 200) => String(r[k] ?? "").trim().slice(0, max);
+  const method: FulfilmentMethod = isFulfilmentMethod(r.method) ? r.method : "ship";
   const customer: CheckoutCustomer = {
+    method,
     email: s("email").toLowerCase(),
     phone: s("phone", 40),
     firstName: s("firstName", 80),
@@ -83,8 +95,18 @@ export function parseCustomer(raw: unknown): { ok: true; customer: CheckoutCusto
     note: s("note", 1000)
   };
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(customer.email)) return { ok: false, error: "Please enter a valid email address." };
-  if (customer.phone.replace(/\D/g, "").length < 10) return { ok: false, error: "Please enter a phone number we can reach you at about delivery." };
+  if (customer.phone.replace(/\D/g, "").length < 10) {
+    return { ok: false, error: `Please enter a phone number we can reach you at about ${method === "pickup" ? "your pickup" : "delivery"}.` };
+  }
   if (!customer.firstName || !customer.lastName) return { ok: false, error: "Please enter your first and last name." };
+  if (method === "pickup") {
+    // Nothing is shipped: the order's address row records the pickup point, so
+    // the pick list and the invoice say plainly where the goods change hands.
+    return {
+      ok: true,
+      customer: { ...customer, company: "", line1: "Customer pickup", line2: SHOP.street, city: SHOP.town, province: SHOP.province, postal: SHOP.postal }
+    };
+  }
   if (!customer.line1 || !customer.city) return { ok: false, error: "Please enter your street address and city." };
   if (!isProvince(customer.province)) return { ok: false, error: "Please choose your province." };
   if (!customer.postal) return { ok: false, error: "Please enter a valid Canadian postal code." };
@@ -137,10 +159,11 @@ export async function createOrderAndSession(opts: {
   if (!lines.length) return { ok: false, error: "Your cart is empty.", status: 400 };
 
   const subtotal = round2(lines.reduce((n, l) => n + l.unitPriceCad * l.quantity, 0));
-  const shipping = quoteShipping(customer.postal);
+  const pickup = customer.method === "pickup";
+  const shipping = pickup ? quotePickup() : quoteShipping(customer.postal);
   const tax = taxFor(customer.province);
   if (!shipping || !tax) return { ok: false, error: "Please check your postal code and province.", status: 400 };
-  const totals = estimateTotals(subtotal, customer.postal, customer.province);
+  const totals = estimateTotals(subtotal, customer.postal, customer.province, customer.method);
 
   // 1) Pending order. The table default numbers it from a shared sequence with
   //    an HLD- prefix; swap in this store's prefix, keeping the unique number.
@@ -234,26 +257,31 @@ export async function createOrderAndSession(opts: {
       customer_email: customer.email,
       client_reference_id: order.id,
       line_items: lineItems,
-      metadata: { ...(opts.metadata ?? {}), store: store.slug, order_number: orderNumber },
+      metadata: { ...(opts.metadata ?? {}), store: store.slug, order_number: orderNumber, fulfilment: customer.method },
       payment_intent_data: {
         description: `${orderNumber} - ${store.name}`,
-        metadata: { store: store.slug, order_number: orderNumber, ecom_order: order.id },
-        shipping: {
-          name: recipient,
-          phone: customer.phone,
-          address: {
-            line1: customer.line1,
-            line2: customer.line2 || undefined,
-            city: customer.city,
-            state: customer.province,
-            postal_code: customer.postal,
-            country: "CA"
-          }
-        }
+        metadata: { store: store.slug, order_number: orderNumber, ecom_order: order.id, fulfilment: customer.method },
+        // A pickup has no delivery address to hand Stripe.
+        ...(pickup
+          ? {}
+          : {
+              shipping: {
+                name: recipient,
+                phone: customer.phone,
+                address: {
+                  line1: customer.line1,
+                  line2: customer.line2 || undefined,
+                  city: customer.city,
+                  state: customer.province,
+                  postal_code: customer.postal,
+                  country: "CA"
+                }
+              }
+            })
       },
       custom_text: {
         submit: {
-          message: `${shipping.free ? "Free shipping to " : "Ships to "}${customer.postal}. ${store.name} orders are invoiced by Master Decker Inc.; your card statement shows MASTER DECKER.`
+          message: `${pickup ? `${PICKUP_LABEL}, Ontario. We email you when it is ready` : `Free shipping to ${customer.postal}`}. ${store.name} orders are invoiced by Master Decker Inc.; your card statement shows MASTER DECKER.`
         }
       },
       success_url: `${store.siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
@@ -302,8 +330,12 @@ async function pushToQuickQuote(service: SupabaseClient, doc: OrderDoc, store: S
     "",
     ...items,
     "",
-    `Subtotal ${money(doc.subtotal)} | ${doc.shippingLabel} ${doc.shipping > 0 ? money(doc.shipping) : "free"} | ${doc.taxLabel} ${money(doc.tax)}`,
-    a ? `Ship to: ${[a.recipient, a.company, a.line1, a.line2, `${a.city}, ${a.province} ${a.postal}`].filter(Boolean).join(", ")}` : "",
+    `Subtotal ${money(doc.subtotal)} | ${doc.shippingLabel}${doc.shipping > 0 ? ` ${money(doc.shipping)}` : ""} | ${doc.taxLabel} ${money(doc.tax)}`,
+    doc.shippingLabel === PICKUP_LABEL
+      ? `CUSTOMER PICKUP at ${SHOP.address}: ${a?.recipient ?? doc.email}. Email or call when the order is ready.`
+      : a
+        ? `Ship to: ${[a.recipient, a.company, a.line1, a.line2, `${a.city}, ${a.province} ${a.postal}`].filter(Boolean).join(", ")}`
+        : "",
     doc.customerNote ? `Customer note: ${doc.customerNote}` : "",
     "Pick list + invoice: QuickQuote > Web orders bar."
   ].filter((l, i, arr) => l !== "" || arr[i - 1] !== "");

@@ -1,0 +1,285 @@
+{
+  "slug": "govee-permanent-outdoor-lights-vs-track-lighting",
+  "title": "Govee Permanent Outdoor Lights vs Track Lighting",
+  "metaTitle": "Govee Permanent Outdoor Lights vs Track Lighting",
+  "metaDescription": "Govee's 2, Pro, 2 Pro and Prism compared with aluminum track lighting: spacing, cold ratings, run length, warranty and prices as listed on 27 November 2026.",
+  "category": "Brand comparisons",
+  "excerpt": "Govee sells a string of lights you stick and clip under the eave, while track lighting is lights pressed into an aluminum channel screwed to the house. Here is how the four current Govee models and eufy compare with track on the numbers each brand publishes.",
+  "readMinutes": 7,
+  "updated": "2026-11-28",
+  "heroAlt": "Blue permanent track lighting tracing every peak of a large home at night",
+  "isHowTo": false,
+  "keyTakeaways": [
+    "Govee's current line is the 2, Pro, 2 Pro and Prism. All four run at 36V, mount with adhesive, clips and screws, and carry a 3-year warranty.",
+    "Govee publishes 40 to 60 lumens per light. The Govee 2 spaces lights 417 mm apart, about 16.4 inches, roughly half as many light points per foot as our track.",
+    "Published cold ratings: -20 °C for the Govee 2 and Pro, about -30 °C for the Prism, not published for the 2 Pro. Our track hardware is tested to -40 °C.",
+    "One plug runs 150 ft on the Govee 2 and 200 ft on the other three. A 12V track system covers long runs with power injection.",
+    "Retail prices were on Black Friday sale when we checked on 27 November 2026, so treat every figure here as a snapshot."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Short answer: Govee's permanent outdoor lights are a string of lights you stick and clip under the eave and plug in. A track system is lights pressed into an aluminum channel that is screwed to the house. Govee costs less up front, needs no channel and is sold direct from Govee's Canadian store. Track gives you about twice as many light points per foot as the Govee 2, hides the wiring in the channel, and our hardware is tested to a lower temperature than Govee publishes. Both are legitimate products. Which one fits depends on how long you plan to leave it up and how much the daytime look matters to you."
+    },
+    {
+      "type": "h2",
+      "text": "The four current Govee models"
+    },
+    {
+      "type": "table",
+      "caption": "From Govee's own product pages. Govee describes RGBWIC as RGB plus warm white and RGBWWIC as RGB plus warm and cold white.",
+      "head": [
+        "Model",
+        "LED type",
+        "Lumens per light",
+        "Light IP rating",
+        "Longest run"
+      ],
+      "rows": [
+        [
+          "2",
+          "RGBWIC",
+          "40",
+          "IP67",
+          "150 ft"
+        ],
+        [
+          "Pro",
+          "RGBWWIC",
+          "50",
+          "IP67",
+          "200 ft"
+        ],
+        [
+          "2 Pro",
+          "RGBWWIC",
+          "55 on 100 ft kit, 40 on 200 ft kit",
+          "IP68",
+          "200 ft"
+        ],
+        [
+          "Prism",
+          "RGBWWIC",
+          "60",
+          "IP68",
+          "200 ft per set"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "What the four share, according to Govee:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "36V power from a plug-in adapter.",
+        "A 3-year warranty and LEDs rated for up to 50,000 hours.",
+        "The Govee Home app, with Alexa, Google Assistant and Matter support listed.",
+        "Mounting straight to the surface with adhesive and screw-down clips or bases, with no channel. The Prism page says: \"No installation track is required.\""
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Where they differ: the 2 cannot be cut, and Govee says it is not compatible with the first-generation kits. The Pro, 2 Pro and Prism can be cut and spliced. Govee publishes the spacing on the 2 as 417 mm, which is about 16.4 inches. Spacing is not published on the Pro, 2 Pro or Prism pages we read. An independent tester, The Hook Up, measured 18.5 inches on a Pro kit in October 2023."
+    },
+    {
+      "type": "h2",
+      "text": "Govee prices as listed on 27 November 2026"
+    },
+    {
+      "type": "callout",
+      "text": "Retail prices were on Black Friday sale that day. We show the sale price and the regular or list price beside it. Check the live page before you budget."
+    },
+    {
+      "type": "table",
+      "caption": "Govee's Canadian store shows a dollar sign without naming the currency. We have read those figures as CA$.",
+      "head": [
+        "Model and kit",
+        "Canadian store",
+        "US store"
+      ],
+      "rows": [
+        [
+          "2, 100 ft",
+          "CA$249.99 sale, CA$399.99 regular",
+          "US$179.99 sale, US$279.99 list"
+        ],
+        [
+          "Pro, 200 ft",
+          "CA$589.99 sale, CA$959.99 regular",
+          "US$399.99 sale, US$759.99 list"
+        ],
+        [
+          "2 Pro, 200 ft",
+          "CA$749.99 sale, CA$1,129.99 regular",
+          "US$519.99 sale, US$799.99 list"
+        ],
+        [
+          "Prism, 200 ft",
+          "Not listed on the Canadian store",
+          "US$599.99 sale, US$859.99 list"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Our own kit prices change, so see current kit prices at /diy-kits and compare on the day. A track kit costs more than a Govee kit of the same length. That is the honest starting point."
+    },
+    {
+      "type": "h2",
+      "text": "Light points per foot"
+    },
+    {
+      "type": "p",
+      "text": "Govee's lights are not dim. It publishes 40 to 60 lumens per light, the same range Gemstone publishes for its dealer track system (46 lumens). The difference is how many there are. Our track holds five lights on every 42-inch piece, about 8 inches apart. At 417 mm, the Govee 2 gives roughly half as many points along the same eave. Closer points make a more continuous line of light on the wall. Wider points make separate pools, which some people prefer."
+    },
+    {
+      "type": "h2",
+      "text": "Cold ratings"
+    },
+    {
+      "type": "p",
+      "text": "Govee lists -4 °F to 140 °F for the 2 and the Pro, which is -20 °C at the low end. The Prism is listed at -22 °F, about -30 °C. We did not find an operating temperature on the 2 Pro page. Our track hardware is tested to -40 °C. A rating is the figure the maker stands behind, not a prediction of failure below it, so compare it with the winter lows where you live."
+    },
+    {
+      "type": "h2",
+      "text": "Daytime look and mounting"
+    },
+    {
+      "type": "p",
+      "text": "Each Govee light is attached on its own, with cable running between them. Reviewed tested the first-generation kit in 2023 and described each light as \"rising about an inch above the surface\" and listed the more noticeable look under cons. In its September 2026 test of the 2 Pro, the same outlet recommended the kit and listed three cons: \"triangular light design\", \"somewhat expensive\" and \"included screws aren't great\". Android Central called the Pro \"very bright\" and listed \"expensive\" as a con."
+    },
+    {
+      "type": "p",
+      "text": "With track, the lights and wiring sit inside an aluminum channel screwed to the soffit or fascia. Ours comes in black, white, wicker or brown. If you choose Govee in Canada, our advice is to use the screws and clips on every light and not rely on adhesive alone. The reasons are in /resources/track-lights-vs-string-lights-permanent-outdoor-lighting under adhesive and screws."
+    },
+    {
+      "type": "h2",
+      "text": "Run length and power"
+    },
+    {
+      "type": "p",
+      "text": "Because Govee runs at 36V, one plug can feed a long string: up to 150 ft on the 2 and 200 ft on the Pro, 2 Pro and Prism. Govee notes that the Pro cannot be extended past 150 ft without its driver module, and that separate Prism sets cannot be joined into one string. A 12V track system feeds power in at more than one point instead. Our kits run from 50 to 250 ft and include the power injection parts from 100 ft up. See /resources/what-is-power-injection for how that works."
+    },
+    {
+      "type": "h2",
+      "text": "eufy, the other big retail string brand"
+    },
+    {
+      "type": "p",
+      "text": "eufy sells the same style of product through Anker's Canadian store. The E22 has 60 lights per 100 ft with RGB plus warm and cool white, cannot be cut, and lists -4 °F to 140 °F. Its page text gives IP65 for the strings and controller, while some listing titles say \"up to IP67\", so ask which applies. Matter is not mentioned on the E22 page. The S4 has 72 lights per 100 ft at 14.5 inch spacing, 60 lumens per light, can be cut, runs up to 200 ft and lists Matter. The S4 page gives no IP number and no operating temperature."
+    },
+    {
+      "type": "p",
+      "text": "As listed on 27 November 2026, during Black Friday sales, the E22 was CA$479.99 for 100 ft and the S4 was CA$659.99 for 100 ft. Warranty length is not published on those Canadian product pages. eufy's Australian warranty page lists 24 months for the E22."
+    },
+    {
+      "type": "h2",
+      "text": "Which one fits"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Govee is a good fit if you want lights up this weekend for a few hundred dollars, you are not ready to screw a channel to the house, and your winters stay inside its published rating.",
+        "eufy is a good fit if you want a retail string kit and like the S4's 14.5 inch spacing and Matter support, or the E22's lower price.",
+        "Track lighting is a good fit if you plan to leave it up for many years, you want more light points and hidden wiring, and you want hardware tested to -40 °C with a 5-year parts warranty."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "On warranty, Govee's 3 years is shorter than our 5 years on parts, and both are shorter than some dealer brands. Those are covered in /resources/gemstone-lights-vs-diy-track-lighting-kits and /resources/dealer-installed-permanent-lighting-brands-compared with the full table at /brands for a wider view. Our kits ship free anywhere in Canada. Details are at /shipping-returns and single parts are at /shop if you only need a few."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "Govee Canada, permanent outdoor lights collection",
+          "url": "https://ca.govee.com/collections/permanent-outdoor-lights"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights 2 product page and FAQ",
+          "url": "https://us.govee.com/products/a-m-govee-permanent-outdoor-lights-2"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights 2 and 2 Pro listing (US)",
+          "url": "https://us.govee.com/products/govee-rgbic-led-permanent-outdoor-lights"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights Pro product page",
+          "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-pro"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights 2 Pro product page (Canada)",
+          "url": "https://ca.govee.com/products/govee-permanent-outdoor-lights-2-pro"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights Prism product page",
+          "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-prism"
+        },
+        {
+          "label": "Govee, Elite vs Pro comparison (LED type definitions)",
+          "url": "https://us.govee.com/blogs/outdoor-lighting/govee-permanent-outdoor-lights-elite-vs-pro"
+        },
+        {
+          "label": "The Hook Up, Permanent Holiday LED Installation (October 2023 tests)",
+          "url": "https://www.thesmarthomehookup.com/?p=3962"
+        },
+        {
+          "label": "Reviewed, Govee Permanent Outdoor Lights review (2023)",
+          "url": "https://reviewed.com/smarthome/content/govee-permanent-outdoor-lights-review"
+        },
+        {
+          "label": "Reviewed, Govee Permanent Outdoor Lights 2 Pro review (2026)",
+          "url": "https://www.reviewed.com/smarthome/content/govee-permanent-outdoor-lights-2-pro-review"
+        },
+        {
+          "label": "Android Central, Govee Permanent Outdoor Lights Pro review",
+          "url": "https://www.androidcentral.com/accessories/smart-home/govee-permanent-outdoor-lights-pro-review"
+        },
+        {
+          "label": "Gemstone Lights FAQ (lumens per light)",
+          "url": "https://www.gemstonelights.com/faq"
+        },
+        {
+          "label": "eufy Permanent Outdoor Lights E22, Anker Canada",
+          "url": "https://www.anker.com/ca/products/t8l02112"
+        },
+        {
+          "label": "eufy Permanent Outdoor Lights E22, eufy US",
+          "url": "https://www.eufy.com/products/eufy-permanent-outdoor-lights-e22"
+        },
+        {
+          "label": "eufy Permanent Outdoor Lights S4, Anker Canada",
+          "url": "https://www.anker.com/ca/products/t8l04121"
+        },
+        {
+          "label": "eufy Australia and New Zealand warranty page",
+          "url": "https://service.eufy.com/au/article-description/AUSTRALIA-NEW-ZEALAND-WARRANTY"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which Govee permanent outdoor lights are sold in Canada?",
+      "a": "When we checked Govee's Canadian store on 27 November 2026 it listed the Permanent Outdoor Lights 2, the Pro and the 2 Pro. The Prism was on the US store but not on the Canadian one that day."
+    },
+    {
+      "q": "What is the cold rating on Govee permanent outdoor lights?",
+      "a": "Govee lists -4 °F to 140 °F for the 2 and the Pro, which is -20 °C at the low end, and -22 °F (about -30 °C) for the Prism. We did not find an operating temperature on the 2 Pro page."
+    },
+    {
+      "q": "Are Govee lights dimmer than track lights?",
+      "a": "Not per light. Govee publishes 40 to 60 lumens per light, in the same range as dealer track brands. Track systems place the lights closer together, so there are more light points along the same length of eave."
+    },
+    {
+      "q": "How long is the warranty on Govee permanent outdoor lights?",
+      "a": "Govee's product pages list a 3-year warranty on the 2, Pro, 2 Pro and Prism. Our track kits carry a 5-year parts warranty."
+    },
+    {
+      "q": "Can Govee permanent outdoor lights be cut to length?",
+      "a": "The Pro, 2 Pro and Prism can be cut and spliced. Govee says the Permanent Outdoor Lights 2 cannot be cut, so plan the length of that kit before you buy."
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   "category": "Guides",
   "excerpt": "Permanent LED soffit lighting is not just a residential upgrade. Storefronts, medical buildings, restaurants and plazas use the same track-and-puck system to hold brand colours year-round with none of the labour cost of seasonal lights.",
   "readMinutes": 8,
-  "updated": "2026-09-04",
+  "updated": "2026-11-28",
   "heroAlt": "Storefront soffit lit with warm white permanent LED track lighting outlining the building facade at dusk",
   "isHowTo": false,
   "keyTakeaways": [
@@ -89,7 +89,7 @@
     },
     {
       "type": "p",
-      "text": "Every commercial project is different in scope, so an exact quote depends on the building's actual perimeter, soffit material and access requirements, but the same underlying kit pricing applies as the residential side: 50 ft runs start at $1,265, scaling up to $3,157 for a 250 ft kit, with combined and extended runs priced from there for larger facades. Where our own crew installs the project, professional pricing for those same kit lengths runs from roughly $1,665 to $1,998 installed at 50 ft up to $4,157 to $4,988 installed at 250 ft, which is meaningfully below the $25 to $40 per linear foot that national commercial lighting installers typically charge for comparable work. For a multi-building property, that per-foot gap compounds quickly."
+      "text": "Every commercial project is different in scope, so an exact quote depends on the building's actual perimeter, soffit material and access requirements, but the same underlying kit pricing applies as the residential side, with combined and extended runs priced from there for larger facades: see current kit prices at /diy-kits. Where our own crew installs the project, see /installation for installed pricing. For comparison, among dealer-only brands Trimlight publishes $18 to $35 a foot installed and Jellyfish $25 to $35 a foot installed (both are US companies that do not state a currency), while Gemstone and Celebright do not publish prices; the full comparison is at /brands."
     },
     {
       "type": "h2",
@@ -135,7 +135,7 @@
     },
     {
       "q": "How much does permanent lighting cost for a commercial building?",
-      "a": "Base kit pricing runs from $1,265 for a 50 ft kit up to $3,157 for a 250 ft kit, with larger facades combining multiple kits. Professional installation for the same lengths runs roughly $1,665 to $4,988 depending on footage, well under the $25-40 per linear foot national installers typically charge."
+      "a": "It depends on the building's perimeter, the number of storeys, and how many separate runs the facade needs. The same kits used on homes apply, with larger facades combining multiple kits: see current kit prices at /diy-kits, and see /installation for installed pricing where our crew does the work."
     },
     {
       "q": "Does commercial installation require special electrical permitting?",
@@ -146,7 +146,7 @@
       "a": "Yes. The controller can schedule colour changes for holidays, sale events or grand openings and revert to standard branding afterward, eliminating the recurring labour cost of installing and removing seasonal string lights."
     },
     {
-      "q": "Do you install commercial permanent lighting outside of London, Ontario?",
+      "q": "Where do you install commercial permanent lighting?",
       "a": "Our crew installs commercial and residential projects across London, Woodstock, Kitchener, Waterloo, Cambridge, Guelph, Stratford and Ingersoll. Larger or multi-building commercial projects typically start with a site visit to plan the run and power layout."
     }
   ]

@@ -8,11 +8,21 @@ import { SITE_URL } from "@/lib/utils";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Soffit Lighting Guides: Install, Cost, Power, Rules",
+  title: "Track Lighting Guides: Brands, Install, Cost, Power",
   description:
-    "Fourteen practical guides on permanent soffit track lighting in Canada: installing on vinyl, aluminum and wood soffits, costs, power injection, wiring layouts, zones, winter performance, bylaws and resale value.",
+    "Plain-spoken guides to permanent track lighting in Canada: how the big brands compare, how to install on any soffit, what it costs, power injection, wiring and winter.",
   alternates: { canonical: `${SITE_URL}/resources` },
-  openGraph: { title: "Soffit Lighting Guides | Illumi Track Lights", description: "How-tos, costs and parts education for permanent LED soffit lighting.", url: `${SITE_URL}/resources`, images: ["/images/photos/home-night-lit.webp"] }
+  openGraph: { title: "Track Lighting Guides & How-To | Illumi Track Lights", description: "Brand comparisons, how-tos, costs and parts explained for permanent LED track lighting.", url: `${SITE_URL}/resources`, images: ["/images/photos/home-night-lit.webp"] },
+  twitter: { card: "summary_large_image", title: "Track Lighting Guides & How-To", description: "Brand comparisons, how-tos, costs and parts explained for permanent LED track lighting." }
+};
+
+const GROUP_NOTES: Record<string, string> = {
+  "Brand comparisons": "Gemstone, Govee, Trimlight and the rest, from what each maker publishes.",
+  Guides: "Start here if permanent lighting is new to you.",
+  "How-to": "On the ladder, step by step.",
+  Costs: "What it costs, and what you get back.",
+  Comparisons: "Kit or installer, permanent or seasonal.",
+  "Parts & specs": "Power, wiring and the parts that make a long run work."
 };
 
 export default function ResourcesPage() {
@@ -26,39 +36,36 @@ export default function ResourcesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PageHero photo="home-night-lit" eyebrow="Guides & how-tos" title="Soffit lighting, explained by the people who install it." intro="Measuring, mounting on every soffit type, power, wiring layouts, costs, bylaws and what holds up through an Ontario winter." crumbs={[{ label: "Guides" }]} />
-      <section className="bg-[var(--color-bg)]">
-        <div className="shell section space-y-16">
+      <PageHero compact photo="home-night-lit" eyebrow="Guides & how-to" title="Read before you measure." intro="The questions we answer most, written down: which brand, which kit, how it goes up, what it costs and what a Canadian winter does to it." crumbs={[{ label: "Guides" }]} />
+      <section>
+        <div className="shell section space-y-14">
           {groups.map((group) => (
             <div key={group.category}>
-              <div className="flex items-end justify-between gap-4">
-                <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">{group.category}</p>
-                <p className="text-sm text-[var(--color-muted)]">{group.articles.length} {group.articles.length === 1 ? "guide" : "guides"}</p>
-              </div>
-              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <h2 className="font-display h3-fluid track-title">{group.category}</h2>
+              {GROUP_NOTES[group.category] && <p className="mt-2 text-center text-sm text-[var(--color-muted)]">{GROUP_NOTES[group.category]}</p>}
+              <ul className="mt-7 grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
                 {group.articles.map((a) => (
-                  <Link key={a.slug} href={`/resources/${a.slug}`} className="card card-lift group flex flex-col overflow-hidden">
-                    <Photo name={heroPhotoFor(a.slug)} alt={a.heroAlt} ratio="aspect-[16/9]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px" className="transition duration-500 group-hover:scale-[1.04]" />
-                    <div className="flex flex-1 flex-col p-6">
-                      <p className="text-xs text-[var(--color-muted)]">{a.readMinutes} min read</p>
-                      <h2 className="font-display mt-2 text-xl leading-snug transition group-hover:text-[var(--color-gold-text)]">{a.title}</h2>
-                      <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-[var(--color-text-soft)]">{a.excerpt}</p>
-                      <span className="mt-5 text-sm font-semibold text-[var(--color-gold-text)]">Read the guide →</span>
-                    </div>
-                  </Link>
+                  <li key={a.slug}>
+                    <Link href={`/resources/${a.slug}`} className="group block">
+                      <Photo name={heroPhotoFor(a.slug)} alt={a.heroAlt} ratio="aspect-[16/9]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 370px" />
+                      <h3 className="font-display mt-3 text-[1.15rem] leading-snug group-hover:underline">{a.title}</h3>
+                      <p className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-[var(--color-text-soft)]">{a.excerpt}</p>
+                      <p className="mt-2 text-[0.8rem] text-[var(--color-muted)]">{a.readMinutes} minute read</p>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
       </section>
-      <section className="bg-[var(--color-ink)] text-white">
-        <div className="shell section-lg text-center">
-          <p className="eyebrow text-[var(--color-gold)]">Ready?</p>
-          <h2 className="font-display h2-fluid mx-auto mt-5 max-w-2xl">Kits shipped Canada-wide, installs across Southwestern Ontario.</h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/diy-kits" className="btn-primary">Shop kits</Link>
-            <Link href="/installation" className="btn-ghost-light">Book an install</Link>
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]">
+        <div className="shell section text-center">
+          <h2 className="font-display h2-fluid">Still not sure which kit fits?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-[var(--color-text-soft)]">Send us the lengths of the edges you want lit, or a photo of the house. We will tell you which kit fits and whether you need anything else.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/contact-us" className="btn-primary">Ask us a question</Link>
+            <Link href="/diy-kits" className="btn-secondary">Shop the kits</Link>
           </div>
         </div>
       </section>

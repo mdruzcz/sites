@@ -3,9 +3,11 @@
 // payment lands. (Staff get their own email + SMS from the central notify-order
 // trigger on ecom_orders, and the order shows in QuickQuote's Web Orders bar.)
 //
-// SAME FILE in apps/permanent-lighting-direct and apps/forever-lights.
+// Illumi's copy: differs from permanent-lighting-direct / forever-lights only in
+// the pickup wording (an order collected from the Woodstock shop).
 
 import { BILLER, money, type OrderDoc } from "./documents";
+import { PICKUP_LABEL, SHOP } from "./policy";
 
 const esc = (v: unknown) =>
   String(v ?? "")
@@ -37,9 +39,15 @@ export function orderConfirmationHtml(o: OrderDoc, brand: StoreEmailBrand): stri
   const total = (label: string, value: string, strong = false) =>
     `<tr><td style="padding:4px 0;color:${strong ? "#111" : "#4b5563"};${strong ? "font-weight:700;font-size:16px" : ""}">${esc(label)}</td><td style="padding:4px 0;text-align:right;${strong ? "font-weight:700;font-size:16px" : ""}">${value}</td></tr>`;
   const a = o.shipTo;
-  const address = a
-    ? [a.recipient, a.company, a.line1, a.line2, `${a.city}, ${a.province} ${a.postal}`].filter(Boolean).map(esc).join("<br>")
-    : "";
+  const pickup = o.shippingLabel === PICKUP_LABEL;
+  const address = pickup
+    ? [SHOP.name, SHOP.street, `${SHOP.town}, ${SHOP.province} ${SHOP.postal}`].map(esc).join("<br>")
+    : a
+      ? [a.recipient, a.company, a.line1, a.line2, `${a.city}, ${a.province} ${a.postal}`].filter(Boolean).map(esc).join("<br>")
+      : "";
+  const nextStep = pickup
+    ? `Thanks for your order. Your payment went through and we're getting it ready. Please wait for our "ready for pickup" email before you come by, usually within one to two business days. Pickup is at ${esc(SHOP.address)}. Bring this email or your order number.`
+    : "Thanks for your order. Your payment went through and we're getting it ready. It ships free. We pack orders within one to two business days and email you tracking as soon as it leaves.";
 
   return `<!doctype html><html><body style="margin:0;background:#f4f4f5;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#111">
   <div style="max-width:600px;margin:0 auto;padding:24px 12px">
@@ -49,7 +57,7 @@ export function orderConfirmationHtml(o: OrderDoc, brand: StoreEmailBrand): stri
     </div>
     <div style="background:#fff;border-radius:0 0 12px 12px;padding:24px">
       <p style="margin:0 0 12px">Hi ${esc(first)},</p>
-      <p style="margin:0 0 12px">Thanks for your order. Your payment went through and we're getting it ready. We pack orders within one to two business days and email you as soon as it ships.</p>
+      <p style="margin:0 0 12px">${nextStep}</p>
       <p style="margin:0 0 20px">Your invoice from ${esc(BILLER.name)}, our billing company, is attached as a PDF for your records.</p>
 
       <h2 style="font-size:15px;margin:0 0 6px">Order summary</h2>
@@ -64,14 +72,14 @@ export function orderConfirmationHtml(o: OrderDoc, brand: StoreEmailBrand): stri
       <table role="presentation" style="width:100%;border-collapse:collapse;font-size:14px;margin-top:10px">
         ${total("Subtotal", money(o.subtotal))}
         ${o.discount > 0 ? total("Discount", `-${money(o.discount)}`) : ""}
-        ${total(o.shippingLabel, o.shipping > 0 ? money(o.shipping) : "Free")}
+        ${total(o.shippingLabel, o.shipping > 0 ? money(o.shipping) : pickup ? "No charge" : "$0.00")}
         ${total(o.taxLabel, money(o.tax))}
         ${total("Total paid (CAD)", money(o.total), true)}
       </table>
 
       <table role="presentation" style="width:100%;margin-top:22px;font-size:14px"><tr>
         <td style="vertical-align:top;width:50%;padding-right:12px">
-          <div style="font-size:12px;text-transform:uppercase;color:#6b7280;margin-bottom:4px">Shipping to</div>${address}
+          <div style="font-size:12px;text-transform:uppercase;color:#6b7280;margin-bottom:4px">${pickup ? "Pick up at" : "Shipping to"}</div>${address}
         </td>
         <td style="vertical-align:top;width:50%">
           <div style="font-size:12px;text-transform:uppercase;color:#6b7280;margin-bottom:4px">Contact</div>${esc(o.email)}${o.phone ? `<br>${esc(o.phone)}` : ""}

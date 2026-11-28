@@ -64,7 +64,7 @@ export async function listProducts(opts: { categorySlug?: string; featuredOnly?:
   let q = supabase
     .from("ecom_products")
     .select(
-      "id, slug, name, short_description, status, featured, ecom_variants(id, sku, price_cad, is_active), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)"
+      "id, slug, name, short_description, status, featured, ecom_variants(id, sku, name, price_cad, attribute_value, is_active), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)"
     )
     .eq("store_id", store.id)
     .eq("status", "active")
@@ -95,7 +95,7 @@ export async function getProduct(slug: string): Promise<CatalogProduct | null> {
   const { data } = await supabase
     .from("ecom_products")
     .select(
-      "id, slug, name, short_description, long_description, status, featured, meta_title, meta_description, ecom_variants(id, sku, name, price_cad, attribute_type, attribute_value, is_active, ecom_inventory(on_hand)), ecom_product_images(id, public_url, alt_text, sort_order, is_primary)"
+      "id, slug, name, short_description, long_description, status, featured, meta_title, meta_description, ecom_variants(id, sku, name, price_cad, attribute_type, attribute_value, is_active, ecom_inventory(on_hand)), ecom_product_images(id, public_url, alt_text, sort_order, is_primary), ecom_product_categories(category_id)"
     )
     .eq("store_id", store.id)
     .eq("slug", slug)

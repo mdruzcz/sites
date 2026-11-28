@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-hero";
 import { ARTICLES, getArticle, getRelated, heroPhotoFor, type ArticleBlock } from "@/lib/resources";
 import { photo } from "@/lib/photos";
-import { SITE_URL } from "@/lib/utils";
+import { BRAND, SITE_URL } from "@/lib/utils";
 
 export const revalidate = 3600;
 
@@ -27,29 +27,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-const INTERNAL = /(\/(?:diy-kits|shop|how-it-works|warranty|resources|contact-us|installers|installation|professional-installer|faq|gallery|compare|about|product-category\/[a-z0-9-]+|product\/[a-z0-9-]+|resources\/[a-z0-9-]+|installation\/[a-z0-9-]+)\b)/g;
+const INTERNAL = /(\/(?:diy-kits|shop|brands|how-it-works|warranty|shipping-returns|resources|contact-us|installers|installation|professional-installer|faq|gallery|compare|about|product-category\/[a-z0-9-]+|product\/[a-z0-9-]+|resources\/[a-z0-9-]+|installation\/[a-z0-9-]+)\b)/g;
 function linkify(text: string) {
   return text.split(INTERNAL).map((part, i) =>
-    /^\/[a-z]/.test(part) ? <Link key={i} href={part} className="link-underline font-medium text-[var(--color-gold-text)]">{part}</Link> : <span key={i}>{part}</span>
+    /^\/[a-z]/.test(part) ? <Link key={i} href={part} className="text-link">{part}</Link> : <span key={i}>{part}</span>
   );
 }
 
 function Block({ block }: { block: ArticleBlock }) {
   switch (block.type) {
     case "h2":
-      return <h2 id={block.text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")} className="font-display mt-12 mb-4 scroll-mt-28 text-[1.7rem] md:text-[2.05rem]">{block.text}</h2>;
+      return <h2 id={block.text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")} className="font-display mt-11 mb-3 scroll-mt-28 text-[1.55rem] md:text-[1.85rem]">{block.text}</h2>;
     case "h3":
-      return <h3 className="mt-8 mb-3 text-xl font-semibold">{block.text}</h3>;
+      return <h3 className="font-display mt-7 mb-2 text-[1.2rem]">{block.text}</h3>;
     case "p":
-      return <p className="mb-5 text-[1.05rem] leading-relaxed text-[var(--color-text-soft)]">{linkify(block.text)}</p>;
+      return <p className="mb-5 text-[1.0625rem] leading-relaxed text-[var(--color-text-soft)]">{linkify(block.text)}</p>;
     case "ul":
       return (
-        <ul className="mb-6 space-y-2.5">
+        <ul className="mb-6 ml-5 list-disc space-y-2 marker:text-[var(--color-gold)]">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 leading-relaxed text-[var(--color-text-soft)]">
-              <span aria-hidden className="mt-2.5 size-1.5 shrink-0 rounded-full bg-[var(--color-gold)]" />
-              <span>{linkify(item)}</span>
-            </li>
+            <li key={i} className="pl-1 leading-relaxed text-[var(--color-text-soft)]">{linkify(item)}</li>
           ))}
         </ul>
       );
@@ -62,9 +59,9 @@ function Block({ block }: { block: ArticleBlock }) {
             const body = rest.length ? rest.join(". ") : item;
             return (
               <li key={i} className="flex gap-4">
-                <span className="font-display grid size-9 shrink-0 place-items-center rounded-full bg-[var(--color-ink)] text-sm font-bold text-white">{i + 1}</span>
+                <span className="font-display grid size-9 shrink-0 place-items-center border border-[var(--color-ink)] text-sm font-bold text-[var(--color-ink)]">{i + 1}</span>
                 <div className="pt-1">
-                  {title && <p className="font-semibold">{title}</p>}
+                  {title && <p className="font-semibold text-[var(--color-text)]">{title}</p>}
                   <p className="leading-relaxed text-[var(--color-text-soft)]">{linkify(body)}</p>
                 </div>
               </li>
@@ -74,8 +71,44 @@ function Block({ block }: { block: ArticleBlock }) {
       );
     case "callout":
       return (
-        <aside className="my-8 rounded-2xl border border-[var(--color-border-strong)] bg-[var(--color-gold-soft)] px-6 py-5">
-          <p className="leading-relaxed text-[var(--color-text)]">{linkify(block.text)}</p>
+        <aside className="note note-amber my-7 text-[1rem]">
+          <p className="text-[var(--color-text)]">{linkify(block.text)}</p>
+        </aside>
+      );
+    case "table":
+      return (
+        <figure className="my-8">
+          <div className="overflow-x-auto border border-[var(--color-border)]">
+            <table className="table-clean min-w-[36rem]">
+              <thead>
+                <tr>{block.head.map((h, i) => <th key={i} scope="col">{h}</th>)}</tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row, r) => (
+                  <tr key={r}>
+                    {row.map((cell, c) => (c === 0 ? <th key={c} scope="row" className="font-semibold text-[var(--color-text)]">{cell}</th> : <td key={c} className="text-[var(--color-text-soft)]">{cell}</td>))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {block.caption && <figcaption className="mt-2 text-sm text-[var(--color-muted)]">{block.caption}</figcaption>}
+        </figure>
+      );
+    case "sources":
+      return (
+        <aside className="mt-12 border-t border-[var(--color-border-strong)] pt-5">
+          <h2 className="eyebrow text-[var(--color-gold-text)]">Where these facts come from</h2>
+          <ul className="mt-3 space-y-1.5 text-sm">
+            {block.items.map((s, i) => (
+              <li key={i}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="text-link break-words font-normal">{s.label}</a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-[var(--color-muted)]">
+            Makers change their products and prices. If something here is out of date, tell us at <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a> and we will fix it.
+          </p>
         </aside>
       );
     default:
@@ -126,73 +159,71 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PageHero photo={heroKey} photoAlt={article.heroAlt} eyebrow={article.category} title={article.title} crumbs={[{ label: "Guides", href: "/resources" }, { label: article.title }]} />
-      <article className="bg-[var(--color-bg)]">
+      <PageHero compact photo={heroKey} photoAlt={article.heroAlt} eyebrow={article.category} title={article.title} crumbs={[{ label: "Guides", href: "/resources" }, { label: article.title }]} />
+      <article>
         <div className="shell section">
-          <div className="mx-auto max-w-[72ch]">
+          <div className="mx-auto max-w-[70ch]">
             <p className="text-sm text-[var(--color-muted)]">
-              <Link href="/resources" className="hover:underline">Guides</Link>
-              <span className="mx-1.5">/</span>{article.category}
-              <span className="mx-1.5">·</span>{article.readMinutes} min read
+              {article.category}
+              <span className="mx-1.5">·</span>{article.readMinutes} minute read
               <span className="mx-1.5">·</span>Updated {updated}
             </p>
-            <p className="lead mt-6 text-[var(--color-text-soft)]">{article.excerpt}</p>
+            <p className="lead mt-5 text-[var(--color-text)]">{article.excerpt}</p>
             {article.keyTakeaways.length > 0 && (
-              <div className="card mt-10 p-7">
-                <p className="eyebrow text-[var(--color-gold-text)]">Key takeaways</p>
-                <ol className="mt-4 space-y-3">
+              <div className="mt-8 border border-[var(--color-border)] bg-[var(--color-bg-warm)] p-6">
+                <p className="eyebrow text-[var(--color-gold-text)]">The short version</p>
+                <ul className="mt-3 ml-5 list-disc space-y-2 marker:text-[var(--color-gold)]">
                   {article.keyTakeaways.map((t, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[0.95rem] leading-relaxed text-[var(--color-text-soft)]">
-                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-[var(--color-ink)] text-xs font-bold text-white">{i + 1}</span>
-                      <span>{t}</span>
-                    </li>
+                    <li key={i} className="pl-1 text-[0.975rem] leading-relaxed text-[var(--color-text-soft)]">{t}</li>
                   ))}
-                </ol>
+                </ul>
               </div>
             )}
-            <div className="mt-10">
+            <div className="mt-9">
               {article.body.map((block, i) => (
                 <Block key={i} block={block} />
               ))}
             </div>
             {article.faq.length > 0 && (
-              <section className="mt-16">
-                <h2 className="font-display text-[1.7rem] md:text-[2.05rem]">Frequently asked questions</h2>
-                <div className="mt-6 space-y-3">
+              <section className="mt-14">
+                <h2 className="font-display text-[1.55rem] md:text-[1.85rem]">Questions people ask</h2>
+                <div className="mt-5 border-t border-[var(--color-border-strong)]">
                   {article.faq.map((f, i) => (
-                    <details key={i} className="group card">
-                      <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-semibold">
+                    <details key={i} className="group border-b border-[var(--color-border-strong)]">
+                      <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-3 font-semibold text-[var(--color-ink)]">
                         {f.q}
-                        <span aria-hidden className="text-[var(--color-muted)] transition group-open:rotate-180">▾</span>
+                        <span aria-hidden className="text-xl leading-none text-[var(--color-muted)] transition group-open:rotate-45">+</span>
                       </summary>
-                      <p className="px-6 pb-6 leading-relaxed text-[var(--color-text-soft)]">{f.a}</p>
+                      <p className="pb-5 pr-6 leading-relaxed text-[var(--color-text-soft)]">{f.a}</p>
                     </details>
                   ))}
                 </div>
               </section>
             )}
-            <div className="panel-dark mt-16 p-8 md:p-10">
-              <p className="eyebrow text-[var(--color-gold)]">Kit or installed</p>
-              <h2 className="font-display mt-4 text-2xl md:text-3xl">Everything in this guide ships from London, Ontario.</h2>
-              <p className="mt-4 text-white/75">Complete 12V soffit track kits from $1,455, every part sold separately, and professional installation across Southwestern Ontario.</p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/diy-kits" className="btn-primary">Shop kits</Link>
-                <Link href="/installation" className="btn-ghost-light">Book an install</Link>
+            <div className="mt-14 border border-[var(--color-border)] p-6 md:p-8">
+              <p className="eyebrow text-[var(--color-gold-text)]">On the shelf</p>
+              <h2 className="font-display mt-2 text-[1.5rem]">Everything in this guide ships free.</h2>
+              <p className="mt-3 text-[var(--color-text-soft)]">Complete 12V track lighting kits for 50 to 250 feet of roofline, and every part sold on its own. Free shipping on every order in Canada, or free pickup at {BRAND.street}, {BRAND.city}.</p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/diy-kits" className="btn-primary">Shop the kits</Link>
+                <Link href="/shop" className="btn-secondary">See every part</Link>
               </div>
             </div>
           </div>
           {related.length > 0 && (
-            <section className="mx-auto mt-20 max-w-6xl">
-              <p className="eyebrow eyebrow-rule text-[var(--color-gold-text)]">Keep reading</p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-3">
+            <section className="mx-auto mt-16 max-w-5xl">
+              <h2 className="font-display h3-fluid track-title">Keep reading</h2>
+              <ul className="mt-7 grid gap-x-8 sm:grid-cols-3">
                 {related.map((r) => (
-                  <Link key={r.slug} href={`/resources/${r.slug}`} className="card card-lift group flex flex-col p-6">
-                    <p className="text-xs text-[var(--color-muted)]">{r.category} · {r.readMinutes} min</p>
-                    <h3 className="font-display mt-2 text-lg leading-snug transition group-hover:text-[var(--color-gold-text)]">{r.title}</h3>
-                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[var(--color-text-soft)]">{r.excerpt}</p>
-                  </Link>
+                  <li key={r.slug} className="border-t border-[var(--color-border)] py-4">
+                    <Link href={`/resources/${r.slug}`} className="group block">
+                      <span className="eyebrow text-[var(--color-gold-text)]">{r.category}</span>
+                      <span className="font-display mt-1 block text-[1.1rem] leading-snug group-hover:underline">{r.title}</span>
+                      <span className="mt-1 line-clamp-3 block text-sm text-[var(--color-text-soft)]">{r.excerpt}</span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </section>
           )}
         </div>

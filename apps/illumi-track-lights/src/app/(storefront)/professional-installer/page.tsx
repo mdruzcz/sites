@@ -1,49 +1,87 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { InstallerApplicationForm } from "@/components/installer-application-form";
-import { SITE_URL } from "@/lib/utils";
+import { photo } from "@/lib/photos";
+import { BRAND, SITE_URL } from "@/lib/utils";
+
+const PAGE_URL = `${SITE_URL}/professional-installer`;
+const TITLE = "Track Lighting Installer Program";
+const DESCRIPTION =
+  "The Illumi installer program: tier pricing on 12V track lighting kits and parts, priority fulfilment in season, homeowner referrals and net terms for towns.";
 
 export const metadata: Metadata = {
-  title: "Installer Program: Tier Pricing on 12V Permanent Lighting",
-  description: "Join the Illumi Track Lights installer program for tier pricing on 12V kits and parts, priority fulfilment in season, homeowner referrals and net terms for municipalities. Ships from London, Ontario.",
-  alternates: { canonical: `${SITE_URL}/professional-installer` }
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: { type: "website", title: `${TITLE} | ${BRAND.name}`, description: DESCRIPTION, url: PAGE_URL, images: [photo("track-residential").src] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION }
 };
 
 const BENEFITS: [string, string][] = [
-  ["Tier pricing", "Lower per-unit pricing on kits, puck strands, track, controllers, power and connectors, locked to your tier for the season."],
-  ["Stock that is actually in stock", "We hold track, strands and controllers in London, Ontario through the season, so a Tuesday order is on your truck by Thursday."],
-  ["Homeowner referrals", "Homeowners who ask us for an installer are sent to program members in their area, in order of proximity."],
-  ["Priority fulfilment", "Program orders jump the queue from September to December."],
-  ["One system, every job", "All 12V, all compatible, same parts on every house. Your crew learns it once."],
-  ["Net terms for municipalities", "Towns and BIAs can apply for net-30 invoicing and bulk quotes on multi-building projects."]
+  ["Tier pricing", "A lower unit price on kits, light strands, track, controllers, power supplies and connectors. Your tier is held for the season."],
+  ["Stock on the shelf", `We keep track, strands and controllers in ${BRAND.city} through the season. Orders are packed within one to two business days, and you can pick up by appointment.`],
+  ["Homeowner referrals", "When a homeowner asks us for an installer, we send them to program members in their area, nearest first."],
+  ["Priority fulfilment", "From September to December, program orders go to the front of the queue."],
+  ["One system on every job", "Everything is 12V and every part works with every other. Your crew learns it once and uses it on every house."],
+  ["Net terms for municipalities", "Towns and BIAs can apply for net-30 invoicing, and for bulk quotes on projects with several buildings."]
 ];
 
 export default function ProfessionalInstallerPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${TITLE} | ${BRAND.name}`,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    about: { "@id": `${SITE_URL}/#organization` },
+    audience: { "@type": "BusinessAudience", audienceType: "Lighting installers, landscapers, electricians, property managers and municipalities" }
+  };
+
   return (
     <>
-      <PageHero photo="track-residential" eyebrow="For pros & municipalities" title="Sell permanent lighting. Buy it at installer pricing." intro="Christmas-light crews, landscapers, electricians and property managers across Canada fit our 12V track-and-puck system. Apply for the program and we confirm your tier within one business day." crumbs={[{ label: "Installer program" }]} />
-      <section className="bg-[var(--color-bg)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <PageHero
+        compact
+        photo="track-residential"
+        eyebrow="For crews and municipalities"
+        title="Install permanent lighting, and buy it at installer pricing."
+        intro="Christmas light crews, landscapers, electricians and property managers across Canada fit our 12V track system. Apply, and we confirm your tier within one business day."
+        crumbs={[{ label: "Installer program" }]}
+      />
+
+      <section>
         <div className="shell section">
-          <div className="grid gap-5 md:grid-cols-3">
+          <h2 className="font-display h2-fluid track-title">What the program gives you</h2>
+          <div className="mx-auto mt-9 grid max-w-5xl gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {BENEFITS.map(([t, b]) => (
-              <div key={t} className="card p-6">
-                <h2 className="font-display text-xl">{t}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-soft)]">{b}</p>
+              <div key={t} className="border-t border-[var(--color-border)] pt-4">
+                <h3 className="font-display text-[1.2rem]">{t}</h3>
+                <p className="mt-2 text-[0.975rem] leading-relaxed text-[var(--color-text-soft)]">{b}</p>
               </div>
             ))}
           </div>
+          <p className="note mx-auto mt-10 max-w-3xl">
+            <strong>Shipping and pickup.</strong> Program orders ship free anywhere in Canada like every other order, or you can collect them at {BRAND.address}. <Link href="/shipping-returns#pickup" className="text-link">How pickup works</Link>.
+          </p>
         </div>
       </section>
-      <section className="bg-[var(--color-surface)]">
-        <div className="shell section grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]">
+        <div className="shell section grid gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-14">
           <div>
-            <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Apply</p>
-            <h2 className="font-display h2-fluid mt-5">Tell us about your business.</h2>
-            <p className="mt-4 text-[var(--color-text-soft)]">We review every application by hand and email you within one business day to confirm your tier and set up your account.</p>
+            <p className="eyebrow text-[var(--color-gold-text)]">Apply</p>
+            <h2 className="font-display h2-fluid mt-2">Tell us about your business.</h2>
+            <div className="mt-4 space-y-4 text-[var(--color-text-soft)]">
+              <p>
+                We read every application ourselves. Within one business day you get an email that confirms your tier and sets up your account.
+              </p>
+              <p>
+                New to the hardware? <Link href="/how-it-works" className="text-link">How it goes together</Link> and <Link href="/shop" className="text-link">the parts list</Link> show what your crew would be working with, and <Link href="/brands" className="text-link">the brand comparison</Link> shows where it sits beside the dealer systems.
+              </p>
+            </div>
           </div>
-          <div>
-            <InstallerApplicationForm tierSlug="installer" />
-          </div>
+          <InstallerApplicationForm tierSlug="installer" />
         </div>
       </section>
     </>

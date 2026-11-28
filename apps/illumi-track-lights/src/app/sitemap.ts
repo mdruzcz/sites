@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ["", 1, "weekly"],
     ["/diy-kits", 0.95, "weekly"],
     ["/shop", 0.9, "weekly"],
+    ["/brands", 0.9, "monthly"],
     ["/installation", 0.9, "monthly"],
     ["/how-it-works", 0.8, "monthly"],
     ["/compare", 0.8, "monthly"],

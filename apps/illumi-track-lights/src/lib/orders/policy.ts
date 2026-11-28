@@ -1,32 +1,32 @@
-// Shipping + sales-tax policy for online orders. Pure functions, safe to import
-// from client components (the checkout page previews the same numbers the
-// server charges).
+// Shipping + sales-tax policy for Illumi Track Lights online orders. Pure
+// functions, safe to import from client components (the checkout page previews
+// the same numbers the server charges).
 //
-// SAME FILE in apps/permanent-lighting-direct and apps/forever-lights — keep the
-// two copies identical.
+// THIS COPY IS ILLUMI'S OWN. permanent-lighting-direct and forever-lights share
+// a different policy (free within 200 km, flat rate beyond); Illumi's is simpler:
 //
-// Shipping: free within FREE_RADIUS_KM of the Belmont shop (straight-line
-// distance from the centre of the destination's forward sortation area, the
-// first three characters of the postal code); FLAT_RATE_CAD anywhere else in
-// Canada. fsa-km.json lists every FSA inside the radius with its distance,
-// built from the GeoNames CA postal-code centroids (CC BY 4.0).
+// Shipping: free on every order to any Canadian address. No minimum, no zones.
+// Pickup:   free, from the Woodstock shop, once we email that the order is ready.
 //
-// Tax: Master Decker Inc. charges GST/HST by destination province. Provincial
-// sales taxes (BC PST, SK PST, MB RST, QC QST) are not collected — add them
-// here only once the company is registered in that province.
-
-import fsaKm from "./fsa-km.json";
+// Tax: Master Decker Inc. charges GST/HST by destination province. A pickup is
+// supplied in Ontario, so it carries Ontario HST whatever the buyer's home
+// province. Provincial sales taxes (BC PST, SK PST, MB RST, QC QST) are not
+// collected — add them here only once the company is registered there.
 
 export const SHOP = {
-  name: "Master Decker Inc.",
-  town: "Belmont",
+  name: "Illumi Track Lights",
+  street: "631 Peel Street",
+  town: "Woodstock",
   province: "ON",
-  postal: "N0L 1B0",
-  address: "50432 Yorke Line, Belmont, ON N0L 1B0"
+  postal: "N4S 1K9",
+  address: "631 Peel Street, Woodstock, ON N4S 1K9"
 } as const;
 
-export const FREE_RADIUS_KM = 200;
-export const FLAT_RATE_CAD = 200;
+export type FulfilmentMethod = "ship" | "pickup";
+
+export function isFulfilmentMethod(v: unknown): v is FulfilmentMethod {
+  return v === "ship" || v === "pickup";
+}
 
 export const PROVINCES = [
   ["AB", "Alberta"],
@@ -120,57 +120,45 @@ export function postalMatchesProvince(postal: string, province: string): boolean
 }
 
 export interface ShippingQuote {
+  /** Destination postal code; the shop's own for a pickup. */
   postal: string;
   fsa: string;
-  /** Distance from the shop when the FSA is inside the free radius, else null. */
+  /** Kept for the shared order documents; Illumi does not price by distance. */
   km: number | null;
   free: boolean;
   amountCad: number;
   /** Stored on the order as shipping_service_code. */
-  code: "FREE_LOCAL" | "FLAT_CANADA";
+  code: "FREE_SHIPPING" | "PICKUP_WOODSTOCK";
   label: string;
 }
 
-const KM = fsaKm as Record<string, number>;
+export const SHIPPING_LABEL = "Free shipping";
+export const PICKUP_LABEL = `Pickup at ${SHOP.street}, ${SHOP.town}`;
 
+/** Every Canadian postal code ships free. Null only when the code isn't valid. */
 export function quoteShipping(rawPostal: string): ShippingQuote | null {
   const postal = normalizePostal(rawPostal);
   if (!postal) return null;
-  const fsa = postal.slice(0, 3);
-  const km = KM[fsa];
-  if (typeof km === "number") {
-    return {
-      postal,
-      fsa,
-      km,
-      free: true,
-      amountCad: 0,
-      code: "FREE_LOCAL",
-      label: `Free local delivery (about ${km} km from our ${SHOP.town} shop)`
-    };
-  }
-  return {
-    postal,
-    fsa,
-    km: null,
-    free: false,
-    amountCad: FLAT_RATE_CAD,
-    code: "FLAT_CANADA",
-    label: "Flat-rate shipping across Canada"
-  };
+  return { postal, fsa: postal.slice(0, 3), km: null, free: true, amountCad: 0, code: "FREE_SHIPPING", label: SHIPPING_LABEL };
 }
 
-/** Label for an order already saved with shipping_service_code. */
-export function shippingLabelFor(code: string | null | undefined, postal?: string | null): string {
-  if (code === "FREE_LOCAL") {
-    const q = postal ? quoteShipping(postal) : null;
-    return q?.km != null ? `Free local delivery (about ${q.km} km)` : "Free local delivery";
-  }
+export function quotePickup(): ShippingQuote {
+  return { postal: SHOP.postal, fsa: SHOP.postal.slice(0, 3), km: 0, free: true, amountCad: 0, code: "PICKUP_WOODSTOCK", label: PICKUP_LABEL };
+}
+
+export const isPickupCode = (code: string | null | undefined) => code === "PICKUP_WOODSTOCK";
+
+/** Label for an order already saved with shipping_service_code. The two legacy
+ *  codes are orders placed before 2026-11-27, when shipping was priced by distance. */
+export function shippingLabelFor(code: string | null | undefined, _postal?: string | null): string {
+  if (code === "FREE_SHIPPING") return SHIPPING_LABEL;
+  if (code === "PICKUP_WOODSTOCK") return PICKUP_LABEL;
+  if (code === "FREE_LOCAL") return "Free local delivery";
   if (code === "FLAT_CANADA") return "Flat-rate shipping across Canada";
   return "Shipping";
 }
 
-export const SHIPPING_POLICY_SHORT = `Free shipping within ${FREE_RADIUS_KM} km of our ${SHOP.town}, ON shop · $${FLAT_RATE_CAD} flat rate elsewhere in Canada`;
+export const SHIPPING_POLICY_SHORT = `Free shipping on every order, anywhere in Canada · Free pickup in ${SHOP.town}, Ontario`;
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
@@ -184,9 +172,10 @@ export interface OrderTotals {
 
 /** Totals as the checkout page shows them. Stripe computes the final tax per line,
  *  so the charged figure can differ from this by a cent; the webhook stores Stripe's. */
-export function estimateTotals(subtotal: number, postal: string, province: string): OrderTotals {
-  const shipping = quoteShipping(postal);
-  const tax = taxFor(province);
+export function estimateTotals(subtotal: number, postal: string, province: string, method: FulfilmentMethod = "ship"): OrderTotals {
+  const pickup = method === "pickup";
+  const shipping = pickup ? quotePickup() : quoteShipping(postal);
+  const tax = taxFor(pickup ? SHOP.province : province);
   const shippingCad = shipping?.amountCad ?? 0;
   const taxCad = tax ? round2(((subtotal + shippingCad) * tax.rate) / 100) : 0;
   return { subtotal: round2(subtotal), shipping, tax, taxCad, total: round2(subtotal + shippingCad + taxCad) };

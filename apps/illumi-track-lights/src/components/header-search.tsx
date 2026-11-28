@@ -93,9 +93,6 @@ export function HeaderSearch({ variant = "bar", autoFocus = false, onNavigate, s
     <div ref={wrap} className={variant === "bar" ? "relative w-full" : "relative w-full"}>
       <form onSubmit={submit} role="search" className="relative">
         <label htmlFor={`site-search-${variant}`} className="sr-only">Search products</label>
-        <span aria-hidden className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-white/60">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-        </span>
         <input
           id={`site-search-${variant}`}
           type="search"
@@ -106,17 +103,17 @@ export function HeaderSearch({ variant = "bar", autoFocus = false, onNavigate, s
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search products…"
+          placeholder="Search kits and parts…"
           autoComplete="off"
-          className="h-11 w-full rounded-full border border-white/15 bg-white/10 pl-11 pr-24 text-sm text-white placeholder:text-white/55 transition focus:border-[var(--color-accent-bright)] focus:bg-white/15 focus:outline-none"
+          className="h-11 w-full rounded-[3px] border border-[var(--color-text)] bg-white pl-3 pr-12 text-[0.95rem] text-[var(--color-text)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20"
         />
-        <button type="submit" className="absolute right-1.5 top-1/2 h-8 -translate-y-1/2 rounded-full bg-[var(--color-accent)] px-4 text-xs font-semibold text-white transition hover:bg-[var(--color-accent-dark)]">
-          Search
+        <button type="submit" aria-label="Search" className="absolute right-px top-px grid h-[calc(100%-2px)] w-11 place-items-center rounded-r-[2px] border-l border-[var(--color-border)] bg-[var(--color-bg-warm)] text-[var(--color-text)] transition hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)]">
+          <svg aria-hidden width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
         </button>
       </form>
 
       {showDrop && (
-        <div className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white text-[var(--color-text)] shadow-[var(--shadow-lg)]">
+        <div className="absolute left-0 top-[calc(100%+0.35rem)] z-50 w-full min-w-[20rem] overflow-hidden rounded-[3px] border border-[var(--color-border-strong)] bg-white text-[var(--color-text)] shadow-[var(--shadow-lg)]">
           {loading && hits.length === 0 && <p className="px-4 py-3 text-sm text-[var(--color-muted)]">Searching…</p>}
           {!loading && hits.length === 0 && q.trim().length >= 2 && (
             <p className="px-4 py-3 text-sm text-[var(--color-muted)]">No matches yet. Press Enter to search the whole catalogue.</p>
@@ -131,20 +128,20 @@ export function HeaderSearch({ variant = "bar", autoFocus = false, onNavigate, s
                       setOpen(false);
                       onNavigate?.();
                     }}
-                    className="flex items-center gap-3 px-3 py-2.5 transition hover:bg-[var(--color-bg)]"
+                    className="flex items-center gap-3 px-3 py-2.5 transition hover:bg-[var(--color-bg-warm)]"
                   >
-                    <span className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-lg border border-[var(--color-border)] bg-white">
+                    <span className="grid size-12 shrink-0 place-items-center overflow-hidden border border-[var(--color-border)] bg-white">
                       {h.image_url ? <Image src={h.image_url} alt="" width={48} height={48} className="size-12 object-contain" /> : <span className="text-xs text-[var(--color-muted)]">—</span>}
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-sm font-medium">{h.name}</span>
-                      <span className="block text-xs text-[var(--color-muted)]">from {formatCad(h.min_price)}</span>
+                      <span className="block text-xs text-[var(--color-muted)]">{formatCad(h.min_price, 2)}</span>
                     </span>
                   </Link>
                 </li>
               ))}
               <li>
-                <button type="button" onClick={submit as unknown as () => void} className="w-full px-4 py-2.5 text-left text-sm font-semibold text-[var(--color-accent-dark)] hover:bg-[var(--color-bg)]">
+                <button type="button" onClick={submit as unknown as () => void} className="min-h-11 w-full px-4 py-2.5 text-left text-sm font-semibold text-[var(--color-accent)] hover:bg-[var(--color-bg-warm)]">
                   See all results for “{q.trim()}” →
                 </button>
               </li>

@@ -1,7 +1,8 @@
 // Loads one web order (any store) from the shared ecom_* tables into the shape
 // the invoice / pick-list renderers and the confirmation email take.
 //
-// SAME FILE in apps/permanent-lighting-direct and apps/forever-lights.
+// Same as the copy in apps/permanent-lighting-direct and apps/forever-lights;
+// only ./policy (the labels for the shipping codes) differs for Illumi.
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { OrderDoc } from "./documents";

@@ -1,38 +1,40 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Inter, Urbanist } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { UIProvider } from "@/components/ui-context";
 import { MiniCartDrawer } from "@/components/mini-cart-drawer";
 import { INSTALL_CITIES } from "@/lib/installation";
-import { BRAND, SITE_URL } from "@/lib/utils";
+import { kits } from "@/lib/kits";
+import { BRAND, POSTAL_ADDRESS, SITE_URL, formatCad } from "@/lib/utils";
 
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans-loaded", display: "swap" });
-const display = Urbanist({ subsets: ["latin"], variable: "--font-display-loaded", display: "swap", weight: ["600", "700", "800"] });
+const sans = Source_Sans_3({ subsets: ["latin"], variable: "--font-sans-loaded", display: "swap" });
+const display = Source_Serif_4({ subsets: ["latin"], variable: "--font-display-loaded", display: "swap", weight: ["400", "600", "700"] });
+
+const fromPrice = formatCad(Math.min(...kits.map((k) => k.price)), 0);
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Illumi Track Lights | Permanent LED Soffit Track Lighting Kits & Installation",
+    default: "Illumi Track Lights | Permanent LED Track Lighting Kits, Free Shipping",
     template: "%s | Illumi Track Lights"
   },
-  description:
-    "Permanent LED soffit track lighting for Canadian homes: 12V RGBW pucks in colour-matched aluminum track, WiFi app control, complete DIY kits from $1,455 and professional installation across Southwestern Ontario.",
+  description: `Permanent LED track lighting kits from ${fromPrice} and every 12V part sold separately. Free shipping on every order in Canada, or free pickup in Woodstock, Ontario.`,
   openGraph: {
     type: "website",
     siteName: BRAND.name,
     url: SITE_URL,
     locale: "en_CA",
-    images: [{ url: "/images/photos/hero-home-twilight.webp", width: 2200, height: 1650, alt: "Home outlined in warm white permanent LED soffit track lighting at twilight" }]
+    images: [{ url: "/images/photos/hero-home-twilight.webp", width: 2200, height: 1650, alt: "Home outlined in warm white permanent LED track lighting at twilight" }]
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: SITE_URL },
   robots: { index: true, follow: true, "max-image-preview": "large" }
 };
 
-export const viewport: Viewport = { themeColor: "#1d2026" };
+export const viewport: Viewport = { themeColor: "#232b63" };
 
 const siteJsonLd = {
   "@context": "https://schema.org",
@@ -42,9 +44,10 @@ const siteJsonLd = {
       "@id": `${SITE_URL}/#organization`,
       name: BRAND.name,
       url: SITE_URL,
+      email: BRAND.email,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/images/logo.jpg` },
-      description: "Permanent LED soffit track lighting kits, 12V parts and professional installation from London, Ontario.",
-      address: { "@type": "PostalAddress", addressLocality: "London", addressRegion: "ON", addressCountry: "CA" },
+      description: "Permanent LED track lighting kits and 12V parts, shipped free across Canada from Woodstock, Ontario.",
+      address: POSTAL_ADDRESS,
       areaServed: { "@type": "Country", name: "Canada" },
       currenciesAccepted: "CAD",
       hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow", merchantReturnDays: 30, returnMethod: "https://schema.org/ReturnByMail", returnFees: "https://schema.org/ReturnShippingFees" }
@@ -64,7 +67,7 @@ const siteJsonLd = {
       name: `${BRAND.name} Installation`,
       url: `${SITE_URL}/installation`,
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
-      address: { "@type": "PostalAddress", addressLocality: "London", addressRegion: "ON", addressCountry: "CA" },
+      address: POSTAL_ADDRESS,
       areaServed: INSTALL_CITIES.map((c) => ({ "@type": "City", name: `${c.city}, Ontario` })),
       priceRange: "$$"
     }
@@ -82,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <MiniCartDrawer />
         </UIProvider>
-              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="edace73f-1d92-424c-a877-8c2c71212636" strategy="afterInteractive" />
+        <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="edace73f-1d92-424c-a877-8c2c71212636" strategy="afterInteractive" />
       </body>
     </html>
   );

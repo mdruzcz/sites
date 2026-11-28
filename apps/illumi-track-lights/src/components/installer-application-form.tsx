@@ -1,14 +1,16 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { submitApplication } from "@/lib/actions/application";
+import { BRAND } from "@/lib/utils";
 
 export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" | "municipality" }) {
   const [pending, startTransition] = useTransition();
   const [state, setState] = useState<"idle" | "ok" | "err">("idle");
   const [message, setMessage] = useState<string>("");
   const [token, setToken] = useState<string | null>(null);
+  const successRef = useRef<HTMLDivElement | null>(null);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,31 +39,32 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
         }
         setState("ok");
         el.reset();
+        setTimeout(() => successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
       } catch {
         setState("err");
-        setMessage("We couldn't reach the server. Please try again, or email service@masterdecker.com.");
+        setMessage(`We could not reach the server. Try again, or email ${BRAND.email}.`);
       }
     });
   }
 
   if (state === "ok") {
     return (
-      <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 p-6">
-        <h3 className="text-lg font-semibold text-emerald-800">Application received</h3>
-        <p className="mt-1 text-sm text-emerald-900">
-          Thanks! We&rsquo;ll review your application and email you within 1 business day.
+      <div ref={successRef} role="status" className="scroll-mt-28 border border-[var(--color-green)] border-l-[3px] bg-[var(--color-green-soft)] p-5 md:p-6">
+        <h3 className="font-display text-[1.3rem] !text-[var(--color-green)]">Application received. We reply within one business day.</h3>
+        <p className="mt-2 text-[0.95rem] text-[var(--color-text-soft)]">
+          We read every application ourselves. The reply will confirm your tier and set up your account.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-white p-5">
-      <Field label="Company name" name="company_name" required />
-      <Field label="Contact name" name="contact_name" required />
-      <div className="grid gap-3 md:grid-cols-2">
+    <form onSubmit={onSubmit} className="grid gap-4 border border-[var(--color-border)] bg-white p-5 md:p-6">
+      <Field label="Company name" name="company_name" required autoComplete="organization" />
+      <Field label="Contact name" name="contact_name" required autoComplete="name" />
+      <div className="grid gap-4 md:grid-cols-2">
         <Field label="Email" name="email" type="email" required autoComplete="email" />
-        <Field label="Phone" name="phone" required autoComplete="tel" inputMode="tel" />
+        <Field label="Phone" name="phone" type="tel" required autoComplete="tel" inputMode="tel" />
       </div>
       {tierSlug === "installer" ? (
         <>
@@ -76,7 +79,7 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
               "Other"
             ]}
           />
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             <Field
               label="Years of experience"
               name="years_experience"
@@ -99,16 +102,19 @@ export function InstallerApplicationForm({ tierSlug }: { tierSlug: "installer" |
           options={["City / Town", "BIA / Downtown Association", "Parks & Recreation", "School Board", "Other public sector"]}
         />
       )}
-      <Field label="Website (optional)" name="website" type="url" placeholder="https://" />
-      <Field label="Additional information" name="additional_info" element="textarea" rows={4} />
+      <Field label="Website (optional)" name="website" type="url" placeholder="https://" autoComplete="url" inputMode="url" />
+      <Field label="Anything else we should know (optional)" name="additional_info" element="textarea" rows={4} />
       <Turnstile
         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA"}
         onSuccess={setToken}
       />
-      <button type="submit" disabled={pending} className="btn-primary mt-2 disabled:opacity-50">
-        {pending ? "Submitting…" : "Submit application"}
+      {state === "err" && (
+        <p role="alert" className="border-l-[3px] border-[var(--color-red)] bg-[var(--color-red-soft)] px-4 py-3 text-sm text-[var(--color-red)]">{message}</p>
+      )}
+      <button type="submit" disabled={pending} aria-busy={pending} className="btn-primary disabled:cursor-not-allowed disabled:opacity-60">
+        {pending ? "Processing…" : "Send application"}
       </button>
-      {state === "err" && <p className="text-sm text-rose-700">{message}</p>}
+      <p className="text-sm text-[var(--color-muted)]">We reply within one business day, Monday to Friday.</p>
     </form>
   );
 }
@@ -136,24 +142,28 @@ function Field({
   autoComplete?: string;
   inputMode?: "tel" | "text" | "email" | "url" | "numeric";
 }) {
-  const className = "mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm";
+  const id = `ia-${name}`;
   return (
-    <label className="block">
-      <span className="text-xs font-medium text-slate-600">{label}{required && " *"}</span>
+    <div>
+      <label className="label" htmlFor={id}>
+        {label}
+        {required && <span aria-hidden> *</span>}
+      </label>
       {element === "input" && (
         <input
+          id={id}
           name={name}
           type={type}
           required={required}
           placeholder={placeholder}
           autoComplete={autoComplete}
           inputMode={inputMode}
-          className={className}
+          className="input"
         />
       )}
-      {element === "textarea" && <textarea name={name} rows={rows ?? 3} className={className} />}
+      {element === "textarea" && <textarea id={id} name={name} rows={rows ?? 3} className="input" />}
       {element === "select" && (
-        <select name={name} className={className} defaultValue="">
+        <select id={id} name={name} className="input" defaultValue="">
           <option value="" disabled>
             Select…
           </option>
@@ -164,6 +174,6 @@ function Field({
           ))}
         </select>
       )}
-    </label>
+    </div>
   );
 }

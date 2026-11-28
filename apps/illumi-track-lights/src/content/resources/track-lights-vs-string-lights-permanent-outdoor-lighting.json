@@ -1,0 +1,299 @@
+{
+  "slug": "track-lights-vs-string-lights-permanent-outdoor-lighting",
+  "title": "Track Lights vs String Lights: What Actually Differs",
+  "metaTitle": "Track Lights vs String Lights for Permanent Lighting",
+  "metaDescription": "Track and string permanent lights use similar LEDs. The differences are light points per foot, voltage, run length, cold ratings, mounting and repairs.",
+  "category": "Brand comparisons",
+  "excerpt": "Permanent track lights and retail string lights publish similar brightness per light. The differences that matter are spacing, voltage and run length, how each is fastened, what cold rating is published and what happens when one light fails.",
+  "readMinutes": 7,
+  "updated": "2026-11-28",
+  "heroAlt": "Close-up of warm white LED puck lights seated in an aluminum soffit track",
+  "isHowTo": false,
+  "keyTakeaways": [
+    "Brightness per light is similar. Govee publishes 40 to 60 lumens per light, Gemstone 46 and Trimlight 30 to 60.",
+    "Track places lights closer together: 6 to 12 inches on track brands against 14.5 to 18.5 inches on retail strings. More points per foot, not brighter LEDs.",
+    "Retail strings run at 36V, which is why one plug feeds 150 to 200 ft. A 12V track covers long runs with power injection.",
+    "Published cold ratings range from -20 °C on several retail strings to -40 °C on Jellyfish and on our hardware. Some brands publish no figure.",
+    "Strings mount with adhesive plus clips and screws. Track is screwed on, and single lights can be replaced."
+  ],
+  "body": [
+    {
+      "type": "p",
+      "text": "Short answer: the LEDs are not the difference. Retail string kits publish 40 to 60 lumens per light, the same range the dealer track brands publish. What differs is how many light points you get per foot, what voltage the system runs at and how far one plug reaches, how it is fastened to the house, what cold rating the maker publishes, and what you do when one light quits. We sell track, so we have kept to figures each brand or an independent tester has published."
+    },
+    {
+      "type": "h2",
+      "text": "Light points per foot, not brighter LEDs"
+    },
+    {
+      "type": "p",
+      "text": "Govee publishes 40 lumens per light on its Permanent Outdoor Lights 2 and 60 on the Prism. Gemstone, a dealer track brand, publishes 46 lumens per light at maximum. Trimlight lists 30 to 60 and adds that it \"depends on method of measurement\"."
+    },
+    {
+      "type": "p",
+      "text": "Spacing is where they part. Govee gives 417 mm on the 2, about 16.4 inches. eufy gives 14.5 inches on the S4. The Hook Up, an independent tester, measured 13 to 18.5 inches across five retail kits in October 2023. On the track side, Gemstone lists 9 inches, Trimlight offers 6, 9 or 12, and ours works out to about 8 because each 42-inch track piece holds five lights. Over 100 ft that is 72 lights on the eufy S4 and about 143 on our track by our arithmetic."
+    },
+    {
+      "type": "p",
+      "text": "The Hook Up measured a 12V puck in an aluminum track at 726.5 lux on white and a first-generation Govee light at 1,122 lux. The single Govee light was brighter. The track still ranked first for total output because there were more lights in it. So the fair claim for track is more light points per foot, not brighter LEDs."
+    },
+    {
+      "type": "h2",
+      "text": "Voltage and run length"
+    },
+    {
+      "type": "p",
+      "text": "Retail strings from Govee run at 36V, and eufy's E120 guide lists a 36V light input. Track systems vary by brand: Gemstone, Trimlight and ours are 12V, Celebright and EverLights are 24V, Oelo is 36V and Jellyfish is 48V. Higher voltage moves the same power with less current, so less voltage is lost along the wire. That is why a string can run 150 to 200 ft from one plug. It does not make one voltage better than another. It changes how you get power to the far end."
+    },
+    {
+      "type": "p",
+      "text": "Strings have a stated ceiling: 150 ft on the Govee 2, and 200 ft on the Govee Pro, 2 Pro and Prism and the eufy S4. Govee says separate Prism sets cannot be joined into one string. Track grows by adding power. Jellyfish lists 250 ft of lights per run, with more power supplies added for more, and our kits go to 250 ft."
+    },
+    {
+      "type": "h2",
+      "text": "Power injection"
+    },
+    {
+      "type": "p",
+      "text": "QuinLED's guide to 12V pixels advises stringing no more than 200 to 300 together before adding power, and puts the limit for plain cable at about 15 m (50 ft) before voltage drops too low. ENTTEC's support notes add that voltage drop does not cap the length. It dims the distant lights, shows most at full white, and is corrected by injecting more power."
+    },
+    {
+      "type": "p",
+      "text": "That is all power injection is: a second feed part way along. Our kits include the injection parts from 100 ft up, and the power supply is a 12V Class 2 unit that plugs into an outdoor GFCI outlet. More at /resources/what-is-power-injection for anyone planning a long run."
+    },
+    {
+      "type": "h2",
+      "text": "How each looks in daylight"
+    },
+    {
+      "type": "p",
+      "text": "String lights are attached one at a time with the cable showing between them. Reviewed's test of Govee's first-generation kit described each light as \"rising about an inch above the surface\", and also said the style \"doesn't dramatically change the view when viewing a home from a distance\". With track, the lights and wiring sit inside an aluminum channel. Ours comes in black, white, wicker or brown, and Gemstone lists over 150 colours."
+    },
+    {
+      "type": "h2",
+      "text": "Published cold ratings"
+    },
+    {
+      "type": "table",
+      "caption": "Low end of the operating range on each maker's own pages. A rating is the figure a maker stands behind, not proof that anything fails below it.",
+      "head": [
+        "System",
+        "Type",
+        "Published low"
+      ],
+      "rows": [
+        [
+          "Govee 2 and Pro",
+          "String",
+          "-20 °C (-4 °F)"
+        ],
+        [
+          "Govee Prism",
+          "String",
+          "About -30 °C (-22 °F)"
+        ],
+        [
+          "Govee 2 Pro",
+          "String",
+          "Not published"
+        ],
+        [
+          "eufy E22",
+          "String",
+          "-20 °C (-4 °F)"
+        ],
+        [
+          "eufy S4",
+          "String",
+          "Not published"
+        ],
+        [
+          "Jellyfish",
+          "Track",
+          "-40 °C"
+        ],
+        [
+          "Gemstone",
+          "Track",
+          "No figure (\"All North American Climates\")"
+        ],
+        [
+          "Trimlight",
+          "Track",
+          "Not published"
+        ],
+        [
+          "Illumi",
+          "Track",
+          "Tested to -40 °C"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Adhesive versus screws"
+    },
+    {
+      "type": "p",
+      "text": "Retail strings use adhesive on each light with clips and screws as backup. Govee names VHB adhesive, and eufy's E22 page says \"screws are strongly recommended\". Neither maker publishes a temperature limit for the adhesive itself."
+    },
+    {
+      "type": "p",
+      "text": "In practice: stick the lights up on a warm, dry day and use the screws. Track is screwed on from the start, which is more work on install day and less to think about later."
+    },
+    {
+      "type": "h2",
+      "text": "When one light fails"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Gemstone says each lamp has a threaded waterproof connector and can be replaced on its own by a dealer.",
+        "Jellyfish says: \"When one light goes out the rest continue working.\"",
+        "Trimlight says the faulty light is covered and that the dealer may or may not charge a labour fee for the visit.",
+        "With our kits every part is sold separately at /shop so you can replace one light or one track piece yourself.",
+        "Govee says the 2 cannot be cut and is not compatible with its first-generation kits. It ships as separate strings, so our reading is that a dead light means replacing that string.",
+        "The Govee Pro, 2 Pro and Prism and the eufy S4 can be cut and spliced."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Warranty"
+    },
+    {
+      "type": "p",
+      "text": "Rated LED life does not separate the two types, since nearly every brand lists about 50,000 hours. Warranty does. Govee lists 3 years and eufy's E120 guide 12 months. Our kits carry 5 years on parts. Jellyfish lists 5 years on parts, Celebright 10 years, and Gemstone a lifetime warranty on lights. Several of those are longer than ours."
+    },
+    {
+      "type": "h2",
+      "text": "Which type fits"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "A string kit is a good fit if you want a lower up-front cost and a quick install, you are not ready to screw a channel to the house, and your winters sit inside the published rating.",
+        "A track kit is a good fit if you plan to leave it up for many years, you want closer spacing and hidden wiring, and you are comfortable with a drill and a ladder.",
+        "A dealer-installed track system is a good fit if you want the track look and a longer warranty and would sooner have someone else do the install."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "For brand detail, see /resources/govee-permanent-outdoor-lights-vs-track-lighting for the retail strings, /resources/gemstone-lights-vs-diy-track-lighting-kits for Gemstone, and /resources/dealer-installed-permanent-lighting-brands-compared for the other installed brands. The full table is at /brands and our kits are at /diy-kits with a walk-through at /how-it-works for first-timers."
+    },
+    {
+      "type": "sources",
+      "items": [
+        {
+          "label": "The Hook Up, Permanent Holiday LED Installation (October 2023 tests)",
+          "url": "https://www.thesmarthomehookup.com/?p=3962"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights 2 product page and FAQ",
+          "url": "https://us.govee.com/products/a-m-govee-permanent-outdoor-lights-2"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights Pro product page",
+          "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-pro"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights 2 Pro product page (Canada)",
+          "url": "https://ca.govee.com/products/govee-permanent-outdoor-lights-2-pro"
+        },
+        {
+          "label": "Govee Permanent Outdoor Lights Prism product page",
+          "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-prism"
+        },
+        {
+          "label": "eufy Permanent Outdoor Light E120 user guide",
+          "url": "https://service.eufy.com/article-description/eufy-Permanent-Outdoor-Light-E120-User-Guide-T8L00"
+        },
+        {
+          "label": "eufy Permanent Outdoor Lights E22, Anker Canada",
+          "url": "https://www.anker.com/ca/products/t8l02112"
+        },
+        {
+          "label": "eufy Permanent Outdoor Lights S4, Anker Canada",
+          "url": "https://www.anker.com/ca/products/t8l04121"
+        },
+        {
+          "label": "Gemstone Lights FAQ",
+          "url": "https://www.gemstonelights.com/faq"
+        },
+        {
+          "label": "Gemstone Lights Track and Light Guide, June 2023 (PDF hosted by dealer Nardi Electric)",
+          "url": "https://www.nardielectric.com/assets/pdf/Track_Light_Guide_June2023.pdf"
+        },
+        {
+          "label": "Trimlight 3L product page",
+          "url": "https://trimlight.com/trimlight-3l-led-permanent-outdoor-lights"
+        },
+        {
+          "label": "Trimlight FAQ",
+          "url": "https://trimlight.com/faq"
+        },
+        {
+          "label": "Trimlight support, what happens if a light goes out",
+          "url": "https://trimlight.com/support/what-happens-if-a-light-goes-out"
+        },
+        {
+          "label": "JellyFish Lighting eave lights specifications",
+          "url": "https://www.jellyfishlighting.com/jelly-lights"
+        },
+        {
+          "label": "JellyFish Lighting, Built to Last",
+          "url": "https://www.jellyfishlighting.com/built-to-last"
+        },
+        {
+          "label": "Celebright FAQ",
+          "url": "https://celebright.com/faq"
+        },
+        {
+          "label": "Celebright warranty",
+          "url": "https://celebright.com/warranty"
+        },
+        {
+          "label": "EverLights ClickLights bundle page",
+          "url": "https://myeverlights.com/product/clicklights-bundle-preview/"
+        },
+        {
+          "label": "Oelo FAQ",
+          "url": "https://www.oelo.com/faq/"
+        },
+        {
+          "label": "QuinLED 12V WS2811 pixel guide",
+          "url": "https://quinled.info/12v-ws2811-pixel-guide/"
+        },
+        {
+          "label": "ENTTEC support, pixel strip maximum length factors",
+          "url": "https://support.enttec.com/pixel/pixel-strip/pixel-strip-maximum-length-factors"
+        },
+        {
+          "label": "Reviewed, Govee Permanent Outdoor Lights review (2023)",
+          "url": "https://reviewed.com/smarthome/content/govee-permanent-outdoor-lights-review"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Are permanent track lights brighter than string lights?",
+      "a": "Not per light. Govee publishes 40 to 60 lumens per light and dealer track brands publish similar figures. Track systems space the lights closer together, so there is more total light along the same length of eave."
+    },
+    {
+      "q": "Why can a Govee string run 200 ft from one plug when a 12V track needs power injection?",
+      "a": "Voltage. Govee's strings run at 36V, which carries the same power with less current and loses less along the wire. A 12V track covers the same distance by feeding power in at more than one point. Our kits include those parts from 100 ft up."
+    },
+    {
+      "q": "Will adhesive-mounted lights stay up through a Canadian winter?",
+      "a": "We have not seen a controlled test, and neither Govee nor eufy publishes a temperature limit for the adhesive. Both include screws or clips as well; use them."
+    },
+    {
+      "q": "Which permanent lights publish a -40 °C rating?",
+      "a": "Of the brands we checked, Jellyfish publishes -40 °C to +55 °C and our hardware is tested to -40 °C. Govee publishes -20 °C on the 2 and Pro and about -30 °C on the Prism. Gemstone, Trimlight and Celebright do not publish a figure in degrees."
+    },
+    {
+      "q": "Can I replace a single light on a permanent lighting system?",
+      "a": "On track systems, generally yes. Gemstone and Trimlight do it through the dealer, and our parts are sold individually. On string kits that cannot be cut, such as the Govee 2, our reading is that you replace the affected string."
+    }
+  ]
+}

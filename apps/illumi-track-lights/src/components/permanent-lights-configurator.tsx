@@ -1,127 +1,128 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { addToCartAction } from "@/lib/actions/cart";
-import { Photo } from "@/components/photo";
-import type { PhotoKey } from "@/lib/photos";
+import { useUI } from "@/components/ui-context";
+import { KitHomeDiagram, kitHomeInfo } from "@/components/kit-home-diagram";
 import { formatCad } from "@/lib/utils";
 
 export interface ConfigOption {
   slug: string;
-  name: string;
   footage: number;
   price: number;
   colors: string[];
   /** colour label -> variant id (from Supabase) */
   variantIds: Record<string, string>;
-  image: string | null;
-  photo: PhotoKey;
   lights: number;
   trackFeet: number;
+  supplies: number;
   suits: string;
-  saving: number;
 }
 
 const COLOR_SWATCH: Record<string, string> = { Black: "#24262b", White: "#f3f1ec", Wicker: "#c9b58f", Brown: "#4b342a", Beige: "#d8bd9a" };
 
+/** Pick a length and a track colour, see the example home and the maths, add it to the cart. */
 export function PermanentLightsConfigurator({ options }: { options: ConfigOption[] }) {
+  const { openMiniCart } = useUI();
   const [selectedSlug, setSelectedSlug] = useState<string>(options[2]?.slug ?? options[0]?.slug ?? "");
   const selected = options.find((o) => o.slug === selectedSlug) ?? options[0];
   const colors = selected?.colors ?? [];
   const [selectedColor, setSelectedColor] = useState<string>(colors[0] ?? "");
   const [pending, startTransition] = useTransition();
-  const [added, setAdded] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     if (colors.length && !colors.includes(selectedColor)) setSelectedColor(colors[0]);
   }, [selectedSlug, colors, selectedColor]);
 
-  const variantId = selected?.variantIds[selectedColor] ?? Object.values(selected?.variantIds ?? {})[0] ?? null;
+  if (!selected) return null;
+  // Only the chosen colour's variant is ever added; never fall back to another colour.
+  const variantId = selected.variantIds[selectedColor] ?? null;
+  const info = kitHomeInfo(selected.footage);
 
   function addKit() {
     if (!variantId) return;
-    setAdded(false);
     startTransition(async () => {
       await addToCartAction(variantId, 1);
-      setAdded(true);
+      openMiniCart();
     });
   }
 
+  const chip = (active: boolean) =>
+    `border transition ${active ? "border-[var(--color-accent)] bg-[var(--color-accent-soft)] font-semibold outline outline-1 outline-[var(--color-accent)]" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-accent)]"}`;
+
   return (
-    <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+    <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-start">
       <div>
-        <p className="label">Linear footage</p>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
-          {options.map((o) => {
-            const active = o.slug === selectedSlug;
-            return (
-              <button
-                key={o.slug}
-                type="button"
-                onClick={() => setSelectedSlug(o.slug)}
-                aria-pressed={active}
-                className={`min-h-[52px] rounded-xl border text-sm font-semibold transition ${active ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white shadow-[var(--shadow-md)]" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-ink)]"}`}
-              >
-                {o.footage} ft
-                <span className={`block text-[11px] font-normal ${active ? "text-white/70" : "text-[var(--color-muted)]"}`}>{formatCad(o.price, 0)}</span>
-              </button>
-            );
-          })}
-        </div>
+        <fieldset>
+          <legend className="label">1. Length of roofline</legend>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-6 lg:grid-cols-3 xl:grid-cols-6">
+            {options.map((o) => {
+              const active = o.slug === selectedSlug;
+              return (
+                <button key={o.slug} type="button" onClick={() => setSelectedSlug(o.slug)} aria-pressed={active} className={`min-h-[56px] px-1 text-[0.95rem] ${chip(active)}`}>
+                  {o.footage} ft
+                  <span className="block text-xs font-normal text-[var(--color-muted)]">{formatCad(o.price, 0)}</span>
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
 
         {colors.length > 0 && (
-          <>
-            <p className="label mt-8">Track colour</p>
+          <fieldset className="mt-6">
+            <legend className="label">2. Track colour</legend>
             <div className="flex flex-wrap gap-2">
               {colors.map((c) => {
                 const active = c === selectedColor;
                 return (
-                  <button key={c} type="button" onClick={() => setSelectedColor(c)} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 rounded-full border px-3.5 text-sm transition ${active ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-ink)]"}`}>
-                    <span className="inline-block size-4 rounded-full border border-black/15" style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }} />
+                  <button key={c} type="button" onClick={() => setSelectedColor(c)} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 px-3 text-sm ${chip(active)}`}>
+                    <span aria-hidden className="inline-block size-4 rounded-full border border-black/20" style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }} />
                     {c}
                   </button>
                 );
               })}
             </div>
-          </>
+            <p className="mt-2 text-sm text-[var(--color-muted)]">Match your soffit. Every colour is the same price.</p>
+          </fieldset>
         )}
 
-        <div className="card mt-8 p-5 md:p-6">
+        <div className="mt-6 border border-[var(--color-border)] p-5">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <div>
-              <p className="eyebrow text-[var(--color-muted)]">Your kit</p>
-              <p className="font-display mt-1 text-2xl">{selected?.footage} ft · {selectedColor || "Standard"} track</p>
-            </div>
-            <p className="font-display text-3xl">{formatCad(selected?.price ?? 0, 2)}</p>
+            <h3 className="font-display text-[1.35rem]">Track Lighting Kit, {selected.footage} ft</h3>
+            <p className="price text-[1.6rem] leading-none">{formatCad(selected.price, 2)}</p>
           </div>
-          <ul className="mt-4 grid grid-cols-2 gap-y-1 text-sm text-[var(--color-text-soft)]">
-            <li>{selected?.lights} RGBW pucks</li>
-            <li>{selected?.trackFeet} ft of aluminum track</li>
-            <li>WiFi controller + power</li>
-            <li>All connectors and screws</li>
-          </ul>
-          <p className="mt-3 text-sm text-[var(--color-text-soft)]">{selected?.suits}</p>
-          <p className="mt-3 text-xs text-[var(--color-muted)]">Free Canadian shipping on this order. Saves about {formatCad(selected?.saving ?? 0, 0)} versus our installed price.</p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <button type="button" onClick={addKit} disabled={pending || !variantId} className="btn-primary flex-1 disabled:opacity-50">
-              {pending ? "Adding…" : "Add kit to cart"}
-            </button>
-            <button type="button" onClick={() => router.push(`/product/${selected?.slug}`)} className="btn-secondary">Full kit details</button>
-          </div>
-          {added && (
-            <button type="button" onClick={() => router.push("/cart")} className="mt-3 text-sm font-semibold text-[var(--color-accent-dark)] hover:underline">
-              Added. Go to your cart →
-            </button>
-          )}
+          <p className="mt-1 text-sm text-[var(--color-muted)]">{selectedColor ? `${selectedColor} track` : "Track"} · free shipping in Canada</p>
+          <p className="note mt-4">
+            <strong>Works out to {formatCad(selected.price / selected.footage, 2)} a foot.</strong> {selected.lights} lights, {selected.trackFeet} ft of track, a WiFi controller, {selected.supplies} power {selected.supplies === 1 ? "supply" : "supplies"}, every connector and the screws.
+          </p>
+          <p className="mt-3 text-sm text-[var(--color-text-soft)]">Suits: {selected.suits}</p>
+          <button type="button" onClick={addKit} disabled={pending || !variantId} className="btn-primary mt-5 min-h-[52px] w-full disabled:opacity-50">
+            {pending ? "Adding…" : !variantId ? "Unavailable in this colour" : "Add kit to cart"}
+          </button>
+          <Link href={`/product/${selected.slug}`} className="text-link mt-2 flex min-h-[44px] items-center justify-center text-sm">Full parts list for the {selected.footage} ft kit</Link>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-2xl bg-[var(--color-ink)]">
-        {selected && <Photo name={selected.photo} ratio="aspect-[4/3]" sizes="(max-width: 1024px) 100vw, 560px" />}
-        <p className="p-4 text-xs text-white/60">Real installs using the same 12V track-and-puck hardware included in every kit.</p>
-      </div>
+      <figure className="border border-[var(--color-border)]">
+        <div className="bg-[var(--color-ink-deep)]">
+          <KitHomeDiagram footage={selected.footage} className="aspect-[16/9]" />
+        </div>
+        {info && (
+          <figcaption className="p-5">
+            <p className="eyebrow text-[var(--color-gold-text)]">Example layout</p>
+            <p className="font-display mt-1 text-[1.2rem]">{selected.footage} ft covers a {info.title.toLowerCase()}</p>
+            <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-[var(--color-text-soft)]">
+              {info.runs.map((r) => (
+                <li key={r.name}>
+                  {r.name} <strong className="text-[var(--color-text)]">{r.feet} ft</strong>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-[0.8rem] text-[var(--color-muted)]">A guide to scale, not a measurement of your house. Add up your own edges before you order.</p>
+          </figcaption>
+        )}
+      </figure>
     </div>
   );
 }

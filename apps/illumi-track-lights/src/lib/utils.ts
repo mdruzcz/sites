@@ -19,11 +19,27 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://illumitrack
 export const BRAND = {
   name: "Illumi Track Lights",
   shortName: "ITL",
-  tagline: "DIY permanent LED roofline lighting, shipped from London, Ontario.",
-  city: "London",
+  tagline: "Permanent LED track lighting kits and parts. Free shipping on every order, free pickup in Woodstock, Ontario.",
+  street: "631 Peel Street",
+  city: "Woodstock",
   region: "Ontario",
+  regionCode: "ON",
+  postal: "N4S 1K9",
   country: "Canada",
+  /** One line, for footers and policy pages. */
+  address: "631 Peel Street, Woodstock, ON N4S 1K9",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=631+Peel+Street%2C+Woodstock%2C+ON+N4S+1K9",
   email: "service@masterdecker.com",
   warrantyYears: 5,
   domain: "illumitracklights.ca"
+} as const;
+
+/** Schema.org PostalAddress for the shop, reused by every JSON-LD block. */
+export const POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: BRAND.street,
+  addressLocality: BRAND.city,
+  addressRegion: BRAND.regionCode,
+  postalCode: BRAND.postal,
+  addressCountry: "CA"
 } as const;

@@ -3,64 +3,52 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { Cart } from "@/lib/cart";
-import type { OrderTotals } from "@/lib/orders/policy";
-import { FLAT_RATE_CAD, FREE_RADIUS_KM, SHOP } from "@/lib/orders/policy";
+import type { FulfilmentMethod, OrderTotals } from "@/lib/orders/policy";
+import { SHOP } from "@/lib/orders/policy";
 import { formatCad } from "@/lib/utils";
 
-export function CheckoutSummary({ cart, totals }: { cart: Cart; totals: OrderTotals | null }) {
+export function CheckoutSummary({ cart, totals, method }: { cart: Cart; totals: OrderTotals | null; method: FulfilmentMethod }) {
   const [open, setOpen] = useState(true);
+  const pickup = method === "pickup";
+  const box = "border border-[var(--color-border)] bg-white";
 
   return (
-    <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-      {/* Shipping policy */}
-      <div className="rounded-xl border border-[var(--color-border)] bg-white p-4 text-sm text-slate-700">
-        {totals?.shipping?.free ? (
-          <p className="flex items-center gap-2 font-semibold text-[var(--color-success)]">
-            <span>✓</span> Free shipping to {totals.shipping.postal}
-          </p>
-        ) : (
-          <p>
-            <span className="font-semibold text-[var(--color-brand)]">Free shipping</span> within {FREE_RADIUS_KM} km of our{" "}
-            {SHOP.town}, ON shop. {formatCad(FLAT_RATE_CAD)} flat rate elsewhere in Canada.
-          </p>
-        )}
-      </div>
-
+    <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
       {/* Items */}
-      <div className="rounded-xl border border-[var(--color-border)] bg-white">
+      <div className={box}>
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className="flex min-h-[44px] w-full items-center justify-between px-4 py-3 text-sm font-semibold lg:cursor-default"
+          aria-expanded={open}
+          className="flex min-h-[48px] w-full items-center justify-between px-4 py-3 text-sm font-semibold"
         >
           <span>
-            {cart.items.length} item{cart.items.length === 1 ? "" : "s"}
+            {cart.items.length} item{cart.items.length === 1 ? "" : "s"} in your order
           </span>
-          <span className="font-display text-lg text-[var(--color-brand)]">{formatCad(cart.subtotal_cad, 2)}</span>
+          <span className="price">{formatCad(cart.subtotal_cad, 2)}</span>
         </button>
         {open && (
           <ul className="divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
             {cart.items.map((l) => (
               <li key={l.id} className="flex gap-3 px-4 py-3">
-                <div className="relative size-16 shrink-0 overflow-hidden rounded-md bg-slate-50">
+                <div className="relative size-16 shrink-0 border border-[var(--color-border)] bg-white">
                   {l.image_url && (
                     <Image
                       src={l.image_url}
-                      alt={`${l.product_name}${l.variant_name && l.variant_name !== "Default" ? `, ${l.variant_name}` : ""} from Permanent Lighting Direct`}
+                      alt={`${l.product_name}${l.variant_name && l.variant_name !== "Default" ? `, ${l.variant_name}` : ""} from Illumi Track Lights`}
                       width={80}
                       height={80}
                       className="h-full w-full object-contain"
                     />
                   )}
-                  <span className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-[var(--color-brand)] text-[10px] font-bold text-white">
-                    {l.quantity}
-                  </span>
                 </div>
                 <div className="flex-1 text-sm">
-                  <p className="line-clamp-2 font-medium leading-tight">{l.product_name}</p>
-                  {l.variant_name !== "Default" && <p className="text-xs text-slate-500">{l.variant_name}</p>}
+                  <p className="line-clamp-2 leading-snug">{l.product_name}</p>
+                  <p className="text-xs text-[var(--color-muted)]">
+                    {l.variant_name !== "Default" ? `${l.variant_name} · ` : ""}Qty {l.quantity}
+                  </p>
                 </div>
-                <p className="text-sm font-semibold">{formatCad(l.unit_price_cad * l.quantity, 2)}</p>
+                <p className="price text-sm">{formatCad(l.unit_price_cad * l.quantity, 2)}</p>
               </li>
             ))}
           </ul>
@@ -68,43 +56,34 @@ export function CheckoutSummary({ cart, totals }: { cart: Cart; totals: OrderTot
       </div>
 
       {/* Totals */}
-      <div className="rounded-xl border border-[var(--color-border)] bg-white p-4">
+      <div className={`${box} p-4`}>
         <dl className="space-y-2 text-sm">
           <Row label="Subtotal" value={formatCad(cart.subtotal_cad, 2)} />
-          <Row
-            label="Shipping"
-            value={totals?.shipping ? (totals.shipping.free ? "FREE" : formatCad(totals.shipping.amountCad, 2)) : "Enter postal code"}
-            valueColor={totals?.shipping?.free ? "text-[var(--color-success)]" : undefined}
-          />
-          <Row label={totals?.tax ? totals.tax.display : "Tax (GST/HST)"} value={totals ? formatCad(totals.taxCad, 2) : "By province"} />
+          <Row label={pickup ? "Pickup in Woodstock" : "Shipping"} value={pickup ? "No charge" : "Free"} good />
+          <Row label={totals?.tax ? totals.tax.display : "Tax (GST/HST)"} value={totals ? formatCad(totals.taxCad, 2) : "Enter postal code"} />
         </dl>
         <div className="mt-4 border-t border-[var(--color-border)] pt-4">
-          <div className="flex justify-between text-base">
+          <div className="flex items-baseline justify-between">
             <span className="font-semibold">Total</span>
-            <span className="font-display text-xl text-[var(--color-brand)]">
-              {formatCad(totals ? totals.total : cart.subtotal_cad, 2)}
-            </span>
+            <span className="price font-display text-2xl">{formatCad(totals ? totals.total : cart.subtotal_cad, 2)}</span>
           </div>
-          <p className="mt-1 text-right text-[11px] text-slate-400">CAD{totals ? "" : " · before shipping and tax"}</p>
+          <p className="mt-1 text-right text-xs text-[var(--color-muted)]">CAD{totals ? "" : ", before tax"}</p>
         </div>
       </div>
 
-      {/* Trust footer */}
-      <div className="rounded-xl bg-[var(--color-brand-soft)] p-4 text-xs text-[var(--color-brand)]">
-        <p className="flex items-center gap-2 font-semibold">🔒 Secure checkout via Stripe</p>
-        <p className="mt-2 text-[var(--color-brand-dark)]/80">
-          Returns within 30 days · 5-year LED warranty · Invoiced by Master Decker Inc., {SHOP.town}, Ontario.
-        </p>
-      </div>
+      <p className="note text-[0.85rem]">
+        <strong>{pickup ? `Pickup at ${SHOP.street}, ${SHOP.town}.` : "Ships free anywhere in Canada."}</strong>{" "}
+        {pickup ? "Wait for our email before you come by." : "Nothing is added for delivery, whatever the size of the order."} Secure payment by Stripe. Returns within 30 days.
+      </p>
     </aside>
   );
 }
 
-function Row({ label, value, valueColor }: { label: string; value: string; valueColor?: string }) {
+function Row({ label, value, good }: { label: string; value: string; good?: boolean }) {
   return (
     <div className="flex justify-between gap-3">
-      <dt>{label}</dt>
-      <dd className={`${valueColor ?? ""} font-medium`}>{value}</dd>
+      <dt className="text-[var(--color-text-soft)]">{label}</dt>
+      <dd className={`font-semibold ${good ? "text-[var(--color-green)]" : ""}`}>{value}</dd>
     </div>
   );
 }

@@ -4,23 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { HeaderSearch } from "@/components/header-search";
-import { SHOP_COLUMNS } from "@/components/mega-menu";
-
-const PRIMARY = [
-  { label: "Kits", href: "/diy-kits" },
-  { label: "Installation (SW Ontario)", href: "/installation" },
-  { label: "How it works", href: "/how-it-works" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Guides", href: "/resources" },
-  { label: "Compare", href: "/compare" },
-  { label: "Installers", href: "/installers" },
-  { label: "FAQ", href: "/faq" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact-us" }
-];
+import { PRIMARY_LINKS, SHELF_LINKS, UTILITY_LINKS } from "@/lib/nav";
 
 /** Menu + search toggles for small screens. Panels are portaled to <body> so the
- *  blurred sticky header cannot become their containing block. */
+ *  sticky header can never become their containing block. */
 export function MobileNav({ storeId }: { storeId: string }) {
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
@@ -33,58 +20,63 @@ export function MobileNav({ storeId }: { storeId: string }) {
     };
   }, [menu]);
 
-  const iconBtn = "grid size-11 place-items-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/20";
+  const iconBtn = "grid size-11 place-items-center text-[var(--color-text)] transition hover:text-[var(--color-accent)]";
+  const close = () => setMenu(false);
 
   return (
     <>
-      <button type="button" aria-label={search ? "Close search" : "Search"} aria-expanded={search} onClick={() => { setSearch((s) => !s); setMenu(false); }} className={`${iconBtn} lg:hidden`}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-      </button>
-      <button type="button" aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} onClick={() => { setMenu((m) => !m); setSearch(false); }} className={`${iconBtn} lg:hidden`}>
+      <button type="button" aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} onClick={() => { setMenu((m) => !m); setSearch(false); }} className={`${iconBtn} -ml-2.5`}>
         {menu ? (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
         ) : (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
         )}
+      </button>
+      <button type="button" aria-label={search ? "Close search" : "Search"} aria-expanded={search} onClick={() => { setSearch((s) => !s); setMenu(false); }} className={iconBtn}>
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
       </button>
 
       {mounted && search && createPortal(
-        <div className="fixed inset-x-0 top-[var(--header-h)] z-40 border-b border-white/10 bg-[var(--color-ink)] px-4 py-3 lg:hidden">
+        <div className="fixed inset-x-0 top-[var(--header-h)] z-40 border-b border-[var(--color-border)] bg-white px-4 py-3 shadow-[var(--shadow-md)] lg:hidden">
           <HeaderSearch variant="panel" autoFocus storeId={storeId} onNavigate={() => setSearch(false)} />
         </div>,
         document.body
       )}
 
       {mounted && menu && createPortal(
-        <div className="fixed inset-0 top-[var(--header-h)] z-40 overflow-y-auto bg-[var(--color-ink)] text-white lg:hidden">
-          <nav aria-label="Mobile" className="shell py-6">
-            <ul className="divide-y divide-white/10">
-              {PRIMARY.map((l) => (
+        <div className="fixed inset-0 top-[var(--header-h)] z-40 overflow-y-auto bg-white lg:hidden">
+          <nav aria-label="Mobile" className="shell pb-16 pt-4">
+            <ul className="divide-y divide-[var(--color-border)] border-b border-[var(--color-border)]">
+              {PRIMARY_LINKS.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} onClick={() => setMenu(false)} className="flex min-h-[52px] items-center text-lg font-medium">
+                  <Link href={l.href} onClick={close} className="flex min-h-[52px] items-center text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink)]">
                     {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {SHOP_COLUMNS.map((col) => (
-                <div key={col.title}>
-                  <Link href={col.href} onClick={() => setMenu(false)} className="eyebrow text-[var(--color-gold)]">{col.title}</Link>
-                  <ul className="mt-3 space-y-2">
-                    {col.links.map((l) => (
-                      <li key={l.href + l.label}>
-                        <Link href={l.href} onClick={() => setMenu(false)} className="block min-h-[40px] py-2 text-sm text-white/80">{l.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
+            <p className="eyebrow mt-7 text-[var(--color-gold-text)]">Straight to a shelf</p>
+            <ul className="mt-2 grid grid-cols-2 gap-x-4">
+              {SHELF_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} onClick={close} className="flex min-h-[44px] items-center text-[0.95rem] text-[var(--color-text-soft)]">{l.label}</Link>
+                </li>
               ))}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/diy-kits" onClick={() => setMenu(false)} className="btn-primary">Pick a kit</Link>
-              <Link href="/track-order" onClick={() => setMenu(false)} className="btn-ghost-light">Track order</Link>
-            </div>
+            </ul>
+
+            <p className="eyebrow mt-7 text-[var(--color-gold-text)]">Help</p>
+            <ul className="mt-2 grid grid-cols-2 gap-x-4">
+              {[...UTILITY_LINKS, { label: "Track Order", href: "/track-order" }, { label: "Questions & Answers", href: "/faq" }].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} onClick={close} className="flex min-h-[44px] items-center text-[0.95rem] text-[var(--color-text-soft)]">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+
+            <p className="note mt-7">
+              <strong>Every order ships free</strong> anywhere in Canada, or pick it up free at 631 Peel Street, Woodstock.
+            </p>
           </nav>
         </div>,
         document.body

@@ -6,7 +6,7 @@
   "category": "Parts & specs",
   "excerpt": "A plain-English guide to sizing the power supply for a permanent LED track lighting run — how watts relate to linear feet, why headroom matters, and when a big home needs two supplies plus power injection.",
   "readMinutes": 7,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "12V LED power supplies in 60W, 150W and 300W sizes for permanent soffit track lighting",
   "isHowTo": false,
   "keyTakeaways": [
@@ -80,7 +80,7 @@
     },
     {
       "type": "p",
-      "text": "The 60W supply (/product/24v-60w-power-supply) is the small-job and support-role unit. On its own it handles short runs — a single garage face, a porch, a shed, or an accent detail up to about 40–50 feet with headroom. Its more common job on a larger install is as a power-injection feed: a second, smaller supply that pushes fresh voltage into the far end of a long run so the colour and brightness stay even. If you are building a compact single-storey front, this may be all you need; on a big home, buy one or two of these alongside your main supply for injection."
+      "text": "The 60W supply (/product/12v-60w-pwr-supply-for-power-inj) is the small-job and support-role unit. On its own it handles short runs — a single garage face, a porch, a shed, or an accent detail up to about 40–50 feet with headroom. Its more common job on a larger install is as a power-injection feed: a second, smaller supply that pushes fresh voltage into the far end of a long run so the colour and brightness stay even. If you are building a compact single-storey front, this may be all you need; on a big home, buy one or two of these alongside your main supply for injection."
     },
     {
       "type": "h3",
@@ -88,7 +88,7 @@
     },
     {
       "type": "p",
-      "text": "The 150W supply (/product/24v-150w-power-supply) is what most homeowners actually want. Loaded to 80%, it delivers around 120W of usable power — enough for roughly 80 to 125 feet of typical RGBW track from a single feed point. It covers the majority of detached homes: a front elevation plus a wrap down one side. It is the default we build most 100 ft DIY kits (/diy-kits) around. If your calculated load lands between 60W and 120W, this is your supply."
+      "text": "The 150W supply (/product/12v-150w-power-supply) is what most homeowners actually want. Loaded to 80%, it delivers around 120W of usable power — enough for roughly 80 to 125 feet of typical RGBW track from a single feed point. It covers the majority of detached homes: a front elevation plus a wrap down one side. It is the default we build most 100 ft DIY kits (/diy-kits) around. If your calculated load lands between 60W and 120W, this is your supply."
     },
     {
       "type": "h3",
@@ -96,7 +96,7 @@
     },
     {
       "type": "p",
-      "text": "The 300W supply (/product/24v-300w-power-supply) is for large and two-storey homes, long continuous rooflines, and runs approaching 150–200 feet. With about 240W usable at 80% load, it has the capacity for a substantial home from one location — but capacity is only half the story. Once a single run gets long, voltage drop becomes the limiting factor, not wattage, so a 300W supply almost always gets paired with power injection (more on that next). It is the backbone of our larger kits and the right call any time you are unsure whether 150W is enough."
+      "text": "The 300W supply (/product/12v-300w-power-supply) is for large and two-storey homes, long continuous rooflines, and runs approaching 150–200 feet. With about 240W usable at 80% load, it has the capacity for a substantial home from one location — but capacity is only half the story. Once a single run gets long, voltage drop becomes the limiting factor, not wattage, so a 300W supply almost always gets paired with power injection (more on that next). It is the backbone of our larger kits and the right call any time you are unsure whether 150W is enough."
     },
     {
       "type": "h2",
@@ -136,7 +136,7 @@
     },
     {
       "type": "p",
-      "text": "If you are buying one of our DIY kits (/diy-kits), the right supply is already matched to the housing length — a 50 ft package ships with a smaller supply, a 150–200 ft package with a 300W and injection hardware. Where sizing decisions come up is when you are building a custom run from individual parts (/shop), extending an existing system, or you have unusually tight or wide puck spacing. In those cases, do the wattage math, add your 20% headroom, and check whether your total run length calls for power injection."
+      "text": "If you are buying one of our DIY kits (/diy-kits), the right supply is already matched to the kit length, and kits of 100 ft and up include power injection parts and a data amplifier. Where sizing decisions come up is when you are building a custom run from individual parts (/shop), extending an existing system, or you have unusually tight or wide puck spacing. In those cases, do the wattage math, add your 20% headroom, and check whether your total run length calls for power injection."
     },
     {
       "type": "p",

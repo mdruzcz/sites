@@ -6,7 +6,7 @@
   "category": "Parts & specs",
   "excerpt": "Long runs of permanent LED soffit lighting can dim and shift colour toward the far end. Power injection fixes it. Here is what it is, why voltage drop causes it, and roughly at what footage it starts to matter.",
   "readMinutes": 7,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "Diagram of a 12V RGBW LED soffit lighting run with a power supply at each end feeding power injection into the track",
   "isHowTo": false,
   "keyTakeaways": [
@@ -27,7 +27,7 @@
     },
     {
       "type": "p",
-      "text": "Power injection is the practice of feeding low-voltage DC power into a long LED run at more than one point, instead of relying on a single connection at one end. On a 12V RGBW system like ours, the pucks at the start of the run are electrically close to the power supply and receive close to a full 24 volts. The pucks at the far end are dozens of feet of thin copper away, and by the time the current reaches them the voltage has sagged. Injecting a second feed at or near the far end tops that voltage back up so the whole run looks uniform."
+      "text": "Power injection is the practice of feeding low-voltage DC power into a long LED run at more than one point, instead of relying on a single connection at one end. On a 12V RGBW system like ours, the pucks at the start of the run are electrically close to the power supply and receive close to the full 12 volts. The pucks at the far end are dozens of feet of thin copper away, and by the time the current reaches them the voltage has sagged. Injecting a second feed at or near the far end tops that voltage back up so the whole run looks uniform."
     },
     {
       "type": "callout",
@@ -64,11 +64,11 @@
     },
     {
       "type": "h2",
-      "text": "Why 12V is already the easy mode"
+      "text": "What this means on a 12V system"
     },
     {
       "type": "p",
-      "text": "Our system runs at 12V rather than 12V, and that choice matters here. For a given brightness, a 12V system draws roughly half the current of a 12V one, and because voltage drop scales with current, a 12V run can go substantially farther before drop becomes visible. If you have read older DIY guides that insist on injecting every 15 to 20 feet, they were almost certainly written for 12V strip. On 12V, you get meaningfully more runway before injection enters the picture."
+      "text": "Every product we sell runs at 12V. That is low voltage: a Class 2 circuit fed by a plug-in power supply, with no mains wiring in the track. Voltage drop over a long run is real at 12V, and that is exactly why our kits of 100 ft and up include power injection parts and a data amplifier. Plan for it up front and the far end of the run looks the same as the start."
     },
     {
       "type": "h2",
@@ -121,7 +121,7 @@
     },
     {
       "type": "p",
-      "text": "The good news for most homeowners is that you do not have to calculate any of this by hand. Our DIY LED Housing Packages come sized as complete 50-200 linear-foot kits with the correct power supply and, where the length calls for it, the injection cable already included and marked in the layout plan. That means you install to the plan and the far end looks exactly like the near end. If you are designing a fully custom run from individual parts, that is where understanding the footage ranges above pays off, and our parts catalogue has each component listed separately so you can spec exactly what your perimeter needs."
+      "text": "The good news for most homeowners is that you do not have to calculate any of this by hand. Our DIY track lighting kits come in six sizes from 50 to 250 ft with the correct power supply and, on kits of 100 ft and up, the power injection parts and a data amplifier already included and marked in the layout plan. That means you install to the plan and the far end looks exactly like the near end. If you are designing a fully custom run from individual parts, that is where understanding the footage ranges above pays off, and our parts catalogue has each component listed separately so you can spec exactly what your perimeter needs."
     },
     {
       "type": "p",
@@ -151,7 +151,7 @@
     },
     {
       "q": "Do your DIY kits include power injection?",
-      "a": "Yes, where the length calls for it. Our 50-200 linear-foot LED Housing Packages come with the correct power supply and, on longer kits, the injection cable already included and marked in the layout plan, so you install to the plan and the whole run lights evenly."
+      "a": "Yes, where the length calls for it. Our track lighting kits (50 to 250 ft) come with the correct power supply and, on kits of 100 ft and up, the power injection parts and a data amplifier already included and marked in the layout plan, so you install to the plan and the whole run lights evenly."
     }
   ]
 }

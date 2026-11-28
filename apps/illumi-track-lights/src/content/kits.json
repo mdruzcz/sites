@@ -1,5 +1,5 @@
 {
-  "_source": "Kit prices and bill of materials mirror holidaylightsdirect.ca / foreverlights.ca (Matt, 2026-09-04). All components are 12V.",
+  "_source": "Bill of materials is shared with the sister stores; prices are Illumi's own (2026-11-28, shipping included) and must match ecom_variants.price_cad. All components are 12V.",
   "trackPieceFeet": 3.5,
   "lightsPerStrand": 5,
   "colours": [
@@ -121,7 +121,7 @@
     {
       "slug": "led-housing-package-50",
       "feet": 50,
-      "price": 1455.0,
+      "price": 1499.0,
       "installedLow": 1665.0,
       "installedHigh": 1998.0,
       "photo": "home-blue-app-control",
@@ -145,7 +145,7 @@
     {
       "slug": "led-housing-package-75",
       "feet": 75,
-      "price": 1709.0,
+      "price": 1759.0,
       "installedLow": 1785.0,
       "installedHigh": 2142.0,
       "photo": "home-warm-white-twilight",
@@ -169,7 +169,7 @@
     {
       "slug": "led-housing-package-100",
       "feet": 100,
-      "price": 1989.0,
+      "price": 2049.0,
       "installedLow": 2129.2,
       "installedHigh": 2555.04,
       "photo": "hero-blue-porch",
@@ -193,7 +193,7 @@
     {
       "slug": "led-housing-package-150",
       "feet": 150,
-      "price": 2579.0,
+      "price": 2659.0,
       "installedLow": 2840.7,
       "installedHigh": 3408.84,
       "photo": "home-green-roofline",
@@ -217,7 +217,7 @@
     {
       "slug": "led-housing-package-200",
       "feet": 200,
-      "price": 3049.0,
+      "price": 3139.0,
       "installedLow": 3448.8,
       "installedHigh": 4138.56,
       "photo": "home-blue-night",
@@ -241,7 +241,7 @@
     {
       "slug": "led-housing-package-250",
       "feet": 250,
-      "price": 3629.0,
+      "price": 3739.0,
       "installedLow": 4157.0,
       "installedHigh": 4988.4,
       "photo": "home-warm-white-christmas",

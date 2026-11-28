@@ -16,14 +16,15 @@ interface PageHeroProps {
   intro?: string;
   /** Breadcrumb trail excluding Home (always prepended). Last item is the current page. */
   crumbs?: Crumb[];
-  /** Legacy single crumb label (existing pages). */
+  /** Legacy single crumb label (older pages). */
   crumb?: string;
   compact?: boolean;
 }
 
 /**
- * Standard inner-page header: a photograph, a strong scrim and the heading on top.
- * Emits BreadcrumbList JSON-LD for the trail it renders.
+ * Inner-page banner: the breadcrumb on white, then a wide photograph with the
+ * heading and one plain sentence set bottom-left. Emits BreadcrumbList JSON-LD
+ * for the trail it renders.
  */
 export function PageHero({ photo, photoAlt, eyebrow, title, intro, crumbs, crumb, compact = false }: PageHeroProps) {
   if (!crumbs) crumbs = crumb ? [{ label: crumb }] : [];
@@ -39,35 +40,37 @@ export function PageHero({ photo, photoAlt, eyebrow, title, intro, crumbs, crumb
     }))
   };
   return (
-    <section className="relative isolate bg-[var(--color-ink)]">
+    <section>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Photo
-        name={photo}
-        alt={photoAlt}
-        ratio={compact ? "aspect-[3/2] sm:aspect-[16/7] md:aspect-[21/6]" : "aspect-[3/2] sm:aspect-[16/8] md:aspect-[21/7.5]"}
-        sizes="100vw"
-        priority
-        scrim="strong"
-      />
-      <div className="absolute inset-0 flex items-end">
-        <div className="shell pb-10 md:pb-14">
-          {crumbs.length > 0 && (
-            <nav aria-label="Breadcrumb" className="mb-5 text-xs text-white/65">
-              {trail.map((c, i) => (
-                <span key={i}>
-                  {i > 0 && <span className="mx-1.5">/</span>}
-                  {c.href && i < trail.length - 1 ? (
-                    <Link href={c.href} className="transition hover:text-white hover:underline">{c.label}</Link>
-                  ) : (
-                    <span className="text-white">{c.label}</span>
-                  )}
-                </span>
-              ))}
-            </nav>
-          )}
-          {eyebrow && <p className="eyebrow text-[var(--color-gold)]">{eyebrow}</p>}
-          <h1 className="font-display mt-3 max-w-3xl text-[2rem] leading-[1.08] text-white md:text-[3.25rem]">{title}</h1>
-          {intro && <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-white/80">{intro}</p>}
+      {crumbs.length > 0 && (
+        <nav aria-label="Breadcrumb" className="shell py-3 text-[0.8rem] text-[var(--color-muted)]">
+          {trail.map((c, i) => (
+            <span key={i}>
+              {i > 0 && <span className="mx-1.5" aria-hidden>›</span>}
+              {c.href && i < trail.length - 1 ? (
+                <Link href={c.href} className="transition hover:text-[var(--color-accent)] hover:underline">{c.label}</Link>
+              ) : (
+                <span className="text-[var(--color-text-soft)]">{c.label}</span>
+              )}
+            </span>
+          ))}
+        </nav>
+      )}
+      <div className="on-dark relative isolate bg-[var(--color-ink-deep)] text-white">
+        <Photo
+          name={photo}
+          alt={photoAlt}
+          ratio={compact ? "aspect-[4/3] sm:aspect-[16/6] md:aspect-[24/6]" : "aspect-[4/3] sm:aspect-[16/7] md:aspect-[24/7.5]"}
+          sizes="100vw"
+          priority
+          scrim="strong"
+        />
+        <div className="absolute inset-0 flex items-end">
+          <div className="shell pb-7 md:pb-10">
+            {eyebrow && <p className="eyebrow text-white/85">{eyebrow}</p>}
+            <h1 className="font-display mt-2 max-w-3xl text-[1.85rem] leading-[1.12] text-white md:text-[2.75rem]">{title}</h1>
+            {intro && <p className="mt-3 max-w-2xl text-[1rem] leading-relaxed text-white/90 md:text-[1.0625rem]">{intro}</p>}
+          </div>
         </div>
       </div>
     </section>

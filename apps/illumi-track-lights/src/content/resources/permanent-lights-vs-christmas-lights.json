@@ -6,7 +6,7 @@
   "category": "Comparisons",
   "excerpt": "A straight comparison of permanent LED soffit track lighting against seasonal string lights and hiring an installer every year — covering real cost over time, safety, convenience, and how each looks day and night.",
   "readMinutes": 8,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "Canadian home with permanent LED track lights installed under the soffit, shown lit warm white at dusk beside a roofline strung with traditional Christmas lights",
   "isHowTo": false,
   "keyTakeaways": [
@@ -29,7 +29,7 @@
     { "type": "ul", "items": [
       "Traditional string lights: cheapest to start — often $50 to $200 for enough strands to cover an average home. But strands fail, colours fade, and a single dead bulb can knock out a run, so most people replace some or all of their lights every few years. Add the value of the hours you spend hanging and removing them, plus the odd new extension cord and timer.",
       "Hiring a seasonal installer: in Canada, expect roughly $500 to $1,500+ per season for an average two-storey home, and more for large or complex rooflines. That cost repeats every year with nothing to show for it afterward — you are renting the look.",
-      "Permanent LED track: a larger one-time cost for the kit or the professional install. A DIY LED Housing Package covering a typical home is a single purchase; a professional install adds labour once. After that, your only ongoing cost is a few dollars of electricity, because efficient 12V LEDs draw very little."
+      "Permanent LED track: a larger one-time cost for the kit or the professional install. A DIY track lighting kit covering a typical home is a single purchase; a professional install adds labour once. After that, your only ongoing cost is a few dollars of electricity, because efficient 12V LEDs draw very little."
     ] },
     { "type": "p", "text": "The math that matters: if you are currently paying an installer, a permanent system usually pays for itself in about two to four seasons, and everything after that is essentially free lighting you own. Against DIY string lights the payback is slower and driven more by convenience and durability than by pure dollars — but you also stop re-buying strands and stop spending weekends on a ladder." },
     { "type": "callout", "text": "Rule of thumb: if you hire an installer every year, permanent lights are almost always cheaper within a few seasons. If you happily hang your own string lights and enjoy it, the case for switching is about time and safety more than money." },
@@ -60,7 +60,7 @@
 
     { "type": "h2", "text": "So which should you choose?" },
     { "type": "p", "text": "Stick with traditional string lights if your budget is tight this year, you only want lights for a few weeks, and you genuinely do not mind the ladder work. Hire a seasonal installer if you want the look without the labour and are comfortable paying for it every year indefinitely. Choose a permanent system if you want to stop paying and climbing every season, want lighting you own that works year-round, and want the payback to arrive within a few years." },
-    { "type": "p", "text": "If permanent lighting is the direction you are leaning, you have two clean paths with us. Handy homeowners across Canada can order a complete DIY LED Housing Package — 50 to 200 linear feet with everything needed — from our /diy-kits page, or build a custom run from individual parts like pucks, track, controllers, and power supplies in the /shop. If you are in Southwestern Ontario around London, Woodstock, or Kitchener-Waterloo and would rather have it done for you, our team offers professional installation — see /installation to book. Either way, you buy the system once and never hang Christmas lights again." }
+    { "type": "p", "text": "If permanent lighting is the direction you are leaning, you have two clean paths with us. Handy homeowners across Canada can order a complete DIY track lighting kit — 50 to 250 ft with everything needed — from our /diy-kits page, or build a custom run from individual parts like pucks, track, controllers, and power supplies in the /shop. If you are in Southwestern Ontario around London, Woodstock, or Kitchener-Waterloo and would rather have it done for you, our team offers professional installation — see /installation to book. Either way, you buy the system once and never hang Christmas lights again." }
   ],
   "faq": [
     { "q": "Are permanent lights cheaper than hiring someone to hang Christmas lights every year?", "a": "For most Canadian homes, yes — usually within two to four seasons. A seasonal installer typically charges $500 to $1,500+ per year with nothing owned at the end, while a permanent system is a one-time cost. After it pays for itself, your only ongoing expense is a few dollars of electricity." },
@@ -68,6 +68,6 @@
     { "q": "Can I use permanent lights for more than Christmas?", "a": "Yes, and that is the main advantage. Because each puck is full-colour RGBW and app-controlled, one system does everyday warm-white curb appeal plus every holiday and event — Halloween, Canada Day, sports nights, birthdays — with no takedown and nothing new to buy." },
     { "q": "Will permanent lights survive Canadian winters?", "a": "Quality permanent systems are built for it. The pucks are weather-sealed and the aluminum channel is designed for UV, snow, and freeze-thaw cycles, so the lights stay up and working year-round. Ours are backed by a five-year warranty, and individual parts can be replaced if ever needed." },
     { "q": "Is installing a permanent light kit myself realistic?", "a": "For a comfortable DIY homeowner, yes. Our kits are low-voltage 12V and come with the track, pucks, controller, power supply, and connectors pre-matched for your run, so the work is mounting the track, seating the pucks, and wiring the low-voltage supply. If you would rather not climb the ladder, we offer professional installation across Southwestern Ontario." },
-    { "q": "What is the difference between the DIY kit and buying individual parts?", "a": "The DIY LED Housing Packages (50 to 200 linear feet) are complete, matched kits — the simplest way to cover a whole home. Buying individual parts from the shop lets you build a custom run or extend an existing system: pucks, track in four colours, WiFi controllers, power supplies, connectors, power-injection cables, and amplifiers." }
+    { "q": "What is the difference between the DIY kit and buying individual parts?", "a": "The DIY track lighting kits (50 to 250 ft) are complete, matched kits — the simplest way to cover a whole home. Buying individual parts from the shop lets you build a custom run or extend an existing system: pucks, track in four colours, WiFi controllers, power supplies, connectors, power-injection cables, and amplifiers." }
   ]
 }

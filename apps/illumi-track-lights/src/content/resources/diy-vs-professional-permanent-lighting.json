@@ -2,15 +2,15 @@
   "slug": "diy-vs-professional-permanent-lighting",
   "title": "DIY vs. Professional Permanent Lighting: Cost & Time in Canada",
   "metaTitle": "DIY vs Professional Permanent Lights: Cost & Time",
-  "metaDescription": "Honest Canadian breakdown of DIY vs professional permanent lights: real per-foot costs, install time, tools, ladder safety, and warranty. See which fits you.",
+  "metaDescription": "Honest Canadian breakdown of DIY vs professional permanent lights: what drives cost, install time, tools, ladder safety, and warranty. See which fits you.",
   "category": "Comparisons",
-  "excerpt": "A straight comparison of installing permanent LED soffit lighting yourself versus hiring a pro in Canada — real per-foot costs, time, tools, and the honest trade-offs.",
+  "excerpt": "A straight comparison of installing permanent LED soffit lighting yourself versus hiring a pro in Canada — what drives the cost, time, tools, and the honest trade-offs.",
   "readMinutes": 8,
-  "updated": "2026-08-28",
+  "updated": "2026-11-28",
   "heroAlt": "Canadian two-storey home at dusk with warm-white permanent LED soffit lighting along the rooflines",
   "isHowTo": false,
   "keyTakeaways": [
-    "DIY permanent lighting parts typically run about $9-$12 per linear foot in Canada; professional installation usually lands around $25-$40 per foot installed.",
+    "DIY and professional installs use the same hardware, so the difference is labour: see current kit prices at /diy-kits and see /installation for installed pricing.",
     "The price gap is almost entirely labour and ladder work — the LED hardware is the same whether you install it or a crew does.",
     "A DIY kit for an average home takes a confident homeowner one to two weekends; a pro crew usually finishes in a day.",
     "Two-storey homes, steep or complex rooflines, and anyone uncomfortable on a ladder are the clearest cases for hiring out.",
@@ -27,24 +27,24 @@
     },
     {
       "type": "p",
-      "text": "If you are handy, comfortable working at height, and want to save a meaningful chunk of money, a DIY kit is a genuinely good project. If you have a two-storey home, a complicated roofline, or any hesitation about ladders and heights, professional installation is money well spent. Most people already know which camp they are in before they finish reading the cost table below."
+      "text": "If you are handy, comfortable working at height, and want to save a meaningful chunk of money, a DIY kit is a genuinely good project. If you have a two-storey home, a complicated roofline, or any hesitation about ladders and heights, professional installation is money well spent. Most people already know which camp they are in before they finish reading the cost comparison below."
     },
     {
       "type": "h2",
-      "text": "Real cost comparison (Canadian, per linear foot)"
+      "text": "Cost comparison: DIY versus installed"
     },
     {
       "type": "p",
-      "text": "Permanent lighting is priced by the linear foot of roofline you want lit. The figures below are defensible market ranges for 2026, in Canadian dollars. Your actual number depends on roofline length, house height, and complexity — but these ranges hold up well across the industry."
+      "text": "Permanent lighting is priced by the linear foot of roofline you want lit. Our own prices change from time to time, so here is what each path includes and where to find the current numbers. Your actual number depends on roofline length, house height, and complexity."
     },
     {
       "type": "ul",
       "items": [
-        "DIY parts (LED track, pucks, controller, power supply, connectors): roughly $9-$12 per linear foot in materials.",
-        "Professional installation (parts plus labour, fully installed): roughly $25-$40 per linear foot.",
-        "Typical DIY kit total for an average single-storey home (about 120-150 ft): around $1,100-$1,800 in parts.",
-        "Typical professionally installed cost for the same home: around $3,000-$5,500 all in.",
-        "Add-ons that move the number: power injection on long runs, extra controllers for very large homes, and premium soffit-matched track colours."
+        "DIY kit (LED track, pucks, controller, power supply, connectors): you pay for the parts only. See current kit prices at /diy-kits.",
+        "Professional installation (parts plus labour, fully installed): see /installation for installed pricing.",
+        "Dealer-only brands, for reference: Trimlight publishes $18 to $35 a foot installed and Jellyfish $25 to $35 a foot installed (both are US companies that do not state a currency), while Gemstone and Celebright do not publish prices. The full comparison is at /brands.",
+        "What moves the number on either path: total footage, one storey versus two, and how many separate runs your roofline needs.",
+        "Shipping on a DIY kit: free on every order to any address in Canada, with no minimum, or free pickup at 631 Peel Street, Woodstock, Ontario."
       ]
     },
     {
@@ -127,7 +127,7 @@
       "items": [
         "Have a single-storey or low two-storey home with accessible eaves.",
         "Are comfortable on a ladder and have a helper.",
-        "Enjoy a hands-on weekend project and want to save 50% or more versus installed pricing.",
+        "Enjoy a hands-on weekend project and want to save the labour cost of an installed job.",
         "Live outside our Southwestern Ontario install area — a DIY kit ships Canada-wide."
       ]
     },
@@ -150,17 +150,17 @@
     },
     {
       "type": "p",
-      "text": "If you are handy and safe on a ladder, a DIY kit gives you the same permanent lighting the pros install for roughly a third to a half of the installed price — browse our complete kits at /diy-kits, or build your own from individual parts at /shop if you want to match your exact roofline. If your home is tall or ladders are not your thing, and you are anywhere in Southwestern Ontario, let us handle it: book professional installation at /installation and we will take care of the whole job in a day, warranty and all. Whichever path fits your house, you end up with the same clean, year-round lighting under your eaves — and we are happy to help you get there either way."
+      "text": "If you are handy and safe on a ladder, a DIY kit gives you the same permanent lighting the pros install without the labour cost — browse our complete kits at /diy-kits, or build your own from individual parts at /shop if you want to match your exact roofline. If your home is tall or ladders are not your thing, and you are anywhere in Southwestern Ontario, let us handle it: book professional installation at /installation and we will take care of the whole job in a day, warranty and all. Whichever path fits your house, you end up with the same clean, year-round lighting under your eaves — and we are happy to help you get there either way."
     }
   ],
   "faq": [
     {
       "q": "How much does DIY permanent lighting cost per foot in Canada?",
-      "a": "Expect roughly $9-$12 per linear foot in parts for a quality DIY kit — LED track, pucks, controller, power supply, and connectors. For an average single-storey home of about 120-150 feet, that works out to roughly $1,100-$1,800 in materials."
+      "a": "It depends on the kit size. Our track lighting kits come in 50, 75, 100, 150, 200 and 250 ft lengths, each with the LED track, pucks, controller, power supply, and connectors: see current kit prices at /diy-kits. Shipping is free on every order to any address in Canada."
     },
     {
       "q": "How much does professional permanent lighting installation cost?",
-      "a": "Professionally installed permanent lighting in Canada typically runs about $25-$40 per linear foot, all in. For an average home that is usually around $3,000-$5,500. The premium over DIY is labour, ladder work, and a workmanship guarantee — the LED hardware itself is the same."
+      "a": "It depends on footage, the number of storeys, and how many separate runs the roofline needs: see /installation for installed pricing on our own installs. Among dealer-only brands, Trimlight publishes $18 to $35 a foot installed and Jellyfish $25 to $35 a foot installed (both are US companies that do not state a currency), while Gemstone and Celebright do not publish prices; /brands has the full comparison. The premium over DIY is labour, ladder work, and a workmanship guarantee — the LED hardware itself is the same."
     },
     {
       "q": "Is installing permanent lights myself hard?",

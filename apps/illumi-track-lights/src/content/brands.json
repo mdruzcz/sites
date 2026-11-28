@@ -1,0 +1,269 @@
+{
+  "_note": "Every competitor fact comes from the page listed in that brand's sources and was checked on the date below. 'Not published' means the maker does not state it. Retail prices were on Black Friday sale on the check date. Update the date whenever a row is re-checked.",
+  "checked": "2026-11-27",
+  "groups": [
+    {
+      "key": "dealer",
+      "name": "Dealer-installed track",
+      "summary": "A local dealer measures, quotes by the foot and installs an aluminum track system. You cannot buy the parts yourself."
+    },
+    {
+      "key": "diy-track",
+      "name": "Track you can install yourself",
+      "summary": "The same idea, a channel under the soffit holding a row of lights, sold as a kit you put up with a drill and a ladder."
+    },
+    {
+      "key": "string",
+      "name": "Retail light strings",
+      "summary": "A long string of lights, each one stuck or clipped to the fascia. Low cost, sold in boxes, no track."
+    }
+  ],
+  "brands": [
+    {
+      "slug": "illumi",
+      "name": "Illumi Track Lights",
+      "ours": true,
+      "group": "diy-track",
+      "from": "Woodstock, Ontario",
+      "sold": "Kits and single parts, shipped free in Canada. Our crew installs in Southwestern Ontario.",
+      "mount": "Aluminum track in 42 in. pieces. Black, white, wicker or brown.",
+      "light": "12V RGBW, about 8 in. apart",
+      "warranty": "5 years on parts",
+      "price": "",
+      "facts": [
+        "Six kits sized 50 to 250 ft, each with track, lights, WiFi controller, power, connectors and screws.",
+        "Every part in a kit is also sold by itself.",
+        "The controller runs WLED and is set from a free app on Android and iPhone. Saved scenes keep running if the internet drops.",
+        "Hardware is tested to −40 °C. The 12V Class 2 power supply plugs into an outdoor GFCI outlet.",
+        "Free shipping on every order in Canada, or free pickup at 631 Peel Street, Woodstock."
+      ],
+      "fit": "You are comfortable on a ladder with a drill and want track hardware without a dealer's installed price.",
+      "watch": "It is your Saturday, not an installer's. Our warranty is five years on parts, shorter than the longest dealer warranties.",
+      "sources": []
+    },
+    {
+      "slug": "gemstone-lights",
+      "name": "Gemstone Lights",
+      "group": "dealer",
+      "from": "Calgary, Alberta",
+      "sold": "Authorized dealers only. Gemstone states it does not offer a DIY option.",
+      "mount": "Aluminum track, colour-matched from more than 150 soffit and fascia colours",
+      "light": "12V RGB plus warm white, 9 in. apart",
+      "warranty": "Lifetime on the track lights, 10 years on system parts (systems installed from October 2024). Labour is set by the dealer.",
+      "price": "Not published. Quoted by your local dealer.",
+      "facts": [
+        "Canadian owned, founded in Calgary.",
+        "Each light is rated at 46 lumens at full output and IP67.",
+        "Runs from the Gemstone Lights app through a hub, on Wi-Fi with a local Bluetooth fallback. Gemstone says there are no monthly fees.",
+        "Google Home and Alexa can switch the system on and off.",
+        "No numeric cold rating is published; the guide says all North American climates."
+      ],
+      "fit": "You want it measured, installed and serviced by a dealer, with the longest warranty on the lights themselves.",
+      "watch": "No price until a dealer quotes, and you cannot buy parts or do the work yourself.",
+      "sources": [
+        { "label": "Gemstone Lights FAQ", "url": "https://www.gemstonelights.com/faq" },
+        { "label": "Gemstone Track & Light Guide, June 2023 (hosted by a Gemstone dealer)", "url": "https://www.nardielectric.com/assets/pdf/Track_Light_Guide_June2023.pdf" }
+      ]
+    },
+    {
+      "slug": "celebright",
+      "name": "Celebright",
+      "group": "dealer",
+      "from": "Ottawa, Ontario",
+      "sold": "Professionally installed by dealers across North America",
+      "mount": "Aluminum track, more than 11 profiles including custom",
+      "light": "24V RGBW. Spacing not published.",
+      "warranty": "10 years on all components, transferable (systems bought from January 2025)",
+      "price": "Not published",
+      "facts": [
+        "Headquartered in Ottawa.",
+        "Lights are listed at 90+ CRI and built to UL 2108 and CSA C22.2.",
+        "Runs from the Celebright Cloud app and a web portal. Works with Google Home, Alexa and IFTTT.",
+        "Light spacing, brightness and IP rating are not published.",
+        "Describes the system as engineered for all climates, with no numeric cold rating."
+      ],
+      "fit": "You want a Canadian dealer brand with a long, transferable warranty.",
+      "watch": "Fewer published specifications than most, and no public pricing.",
+      "sources": [
+        { "label": "Celebright FAQ", "url": "https://celebright.com/faq" },
+        { "label": "Celebright warranty", "url": "https://celebright.com/warranty" }
+      ]
+    },
+    {
+      "slug": "trimlight",
+      "name": "Trimlight",
+      "group": "dealer",
+      "from": "Utah, United States",
+      "sold": "Authorized dealers across the United States and Canada",
+      "mount": "Aluminum channel in more than 50 standard colours, plus custom matching",
+      "light": "12V RGB, spaced 6, 9 or 12 in.",
+      "warranty": "Lifetime product warranty, defined against a 50,000 hour component life. Dealer labour is at least one year.",
+      "price": "$18 to $35 a foot installed, given as national averages. Currency not stated; a US company.",
+      "facts": [
+        "The 3L light is listed at 0.9 W and IP68.",
+        "Runs from the Trimlight Edge app on 2.4 GHz Wi-Fi. Google Home and Alexa handle on, off, a few colours and dimming.",
+        "Trimlight says buying a kit to install yourself voids the lifetime product warranty.",
+        "No dedicated white diode is listed; whites are set in the app.",
+        "No operating temperature is published."
+      ],
+      "fit": "You want a dealer install with a choice of light spacing and a wide range of channel colours.",
+      "watch": "The published price range is not in Canadian dollars, and the warranty depends on dealer installation.",
+      "sources": [
+        { "label": "Trimlight pricing", "url": "https://trimlight.com/about/pricing" },
+        { "label": "Trimlight FAQ", "url": "https://trimlight.com/faq" },
+        { "label": "Trimlight 3L specifications", "url": "https://trimlight.com/trimlight-3l-led-permanent-outdoor-lights" }
+      ]
+    },
+    {
+      "slug": "jellyfish-lighting",
+      "name": "Jellyfish Lighting",
+      "group": "dealer",
+      "from": "Utah, United States",
+      "sold": "Dealer-installed at US locations. A DIY kit is offered by quote. No Canadian locations are listed.",
+      "mount": "Track colour-matched to the soffit",
+      "light": "48V RGB with adjustable white, spaced 6, 9 or 16 in.",
+      "warranty": "5 years on parts, 1 year on labour",
+      "price": "$25 to $35 a foot installed. Currency not stated; a US company.",
+      "facts": [
+        "Lights are rated IP67 and −40 °C to +55 °C.",
+        "White is adjustable from 2200K to 7000K.",
+        "The controller works on 2.4 GHz Wi-Fi and, Jellyfish says, without Wi-Fi too. Works with Alexa and Google Home.",
+        "One run can carry 250 ft of lights, extended with more power supplies.",
+        "Jellyfish says most homeowners spend $3,000 to $6,000."
+      ],
+      "fit": "You are in the United States near a Jellyfish dealer and want a published cold rating.",
+      "watch": "We could not find a Canadian dealer or Canadian pricing.",
+      "sources": [
+        { "label": "Jellyfish Lighting product page", "url": "https://www.jellyfishlighting.com/jelly-lights" },
+        { "label": "Jellyfish Lighting cost guide", "url": "https://www.jellyfishlighting.com/blog/how-much-do-permanent-christmas-lights-cost" },
+        { "label": "Jellyfish Lighting locations", "url": "https://www.jellyfishlighting.com/locations" }
+      ]
+    },
+    {
+      "slug": "everlights",
+      "name": "EverLights",
+      "group": "diy-track",
+      "from": "Utah, United States",
+      "sold": "Professional installation, plus ClickLights kits to install yourself. Canadian availability not found.",
+      "mount": "Aluminum channel with screw-on light caps",
+      "light": "24V RGBW. Spacing not stated.",
+      "warranty": "Stated differently on different EverLights pages, from one year to five. Ask for it in writing.",
+      "price": "US$1,675 for the 100 ft DIY bundle (presumed US dollars)",
+      "facts": [
+        "Lights are listed at 70 lumens and IP68, rated for 50,000 hours.",
+        "Runs from the EverLights app through a wired bridge. Works with Google Home and Alexa.",
+        "No operating temperature is published."
+      ],
+      "fit": "You are in the United States and want a track kit with a higher lumen figure per light.",
+      "watch": "The warranty term is not consistent across the maker's own pages.",
+      "sources": [
+        { "label": "EverLights", "url": "https://myeverlights.com/" },
+        { "label": "EverLights ClickLights bundle", "url": "https://myeverlights.com/product/clicklights-bundle-preview/" },
+        { "label": "EverLights warranty", "url": "https://myeverlights.com/warranty/" }
+      ]
+    },
+    {
+      "slug": "oelo",
+      "name": "Oelo",
+      "group": "diy-track",
+      "from": "Colorado, United States",
+      "sold": "Dealer installation, plus kits from 25 to 550 ft to install yourself. Shipping to Canada not confirmed.",
+      "mount": "Acrylic or metal channel in 10 colours",
+      "light": "36V RGB. About 9 in. apart on the 100 ft kit.",
+      "warranty": "7 years on dealer installs, 5 years on kits you install",
+      "price": "$2,300 to $2,394 for a 100 ft kit; installed from $3,750 for 100 ft. Currency not stated; a US company.",
+      "facts": [
+        "Lights are rated IP68 and listed as UL and cUL.",
+        "Oelo rates its LEDs at 100,000 hours.",
+        "Runs from the Oelo Evolution app. Works with Alexa and Google Home.",
+        "One control unit powers 300 lights; a booster extends that.",
+        "No dedicated white diode is mentioned and no numeric cold rating is published."
+      ],
+      "fit": "You want published kit and installed prices side by side before you talk to anyone.",
+      "watch": "Prices are not in Canadian dollars and Canadian shipping is not confirmed.",
+      "sources": [
+        { "label": "Oelo pricing", "url": "https://www.oelo.com/oelo-lights-cost/" },
+        { "label": "Oelo warranty", "url": "https://www.oelo.com/warranty/" },
+        { "label": "Oelo FAQ", "url": "https://www.oelo.com/faq/" }
+      ]
+    },
+    {
+      "slug": "forever-lights",
+      "name": "Forever Lights",
+      "sister": true,
+      "group": "diy-track",
+      "from": "Belmont, Ontario",
+      "sold": "Installed around London and Southwestern Ontario, plus kits shipped across Canada",
+      "mount": "Aluminum track in 42 in. pieces. White, black, brown, beige or custom.",
+      "light": "12V RGBW, 8 in. apart",
+      "warranty": "5 years on parts, 1 year on workmanship for crew installs",
+      "price": "Kits CA$1,455 (50 ft) to CA$3,629 (250 ft). Installed from about CA$16 to $21 a foot.",
+      "facts": [
+        "A sister brand: Forever Lights and Illumi are run by the same parent company, Master Decker Inc., and use the same family of 12V track hardware.",
+        "Kit shipping is free within 200 km of Belmont and a flat $200 elsewhere in Canada.",
+        "Lights are listed as IP67 and tested to −40 °C.",
+        "Installs with its own crew around London, with custom track colour matching and a one-year workmanship warranty."
+      ],
+      "fit": "You are near London, Ontario and want the track installed for you, with a workmanship warranty.",
+      "watch": "Outside 200 km, kit shipping is a flat $200.",
+      "sources": [
+        { "label": "Forever Lights kits", "url": "https://foreverlights.ca/kits" },
+        { "label": "Forever Lights warranty", "url": "https://foreverlights.ca/warranty" },
+        { "label": "Forever Lights FAQ", "url": "https://foreverlights.ca/faq" }
+      ]
+    },
+    {
+      "slug": "govee",
+      "name": "Govee Permanent Outdoor Lights",
+      "group": "string",
+      "from": "Sold online and in stores, including ca.govee.com",
+      "sold": "Boxed kits to install yourself",
+      "mount": "No track. Each light has adhesive and a screw clip.",
+      "light": "36V. The 2 is RGBWIC at about 16 in. apart; the Pro, 2 Pro and Prism add warm and cool white.",
+      "warranty": "3 years",
+      "price": "CA$249.99 on sale (CA$399.99 regular) for 100 ft of the 2; CA$589.99 on sale (CA$959.99 regular) for 200 ft of the Pro.",
+      "facts": [
+        "Brightness is published at 40 lumens a light on the 2, 50 on the Pro and 60 on the Prism.",
+        "The 2 runs up to 150 ft and cannot be cut. The Pro, 2 Pro and Prism can be cut and run up to 200 ft.",
+        "The 2 and Pro are rated to −20 °C; the Prism to −30 °C.",
+        "Runs from the Govee Home app on Wi-Fi and Bluetooth, with Alexa, Google and Matter support.",
+        "The Prism was not on the Canadian store when we checked."
+      ],
+      "fit": "You want colour on the house this weekend for a few hundred dollars, and a roofline you can reach.",
+      "watch": "The lights and the wire between them sit in view on the fascia. The 2 and Pro are rated to −20 °C, and a cold snap in much of Canada goes below that.",
+      "sources": [
+        { "label": "Govee Canada, Permanent Outdoor Lights", "url": "https://ca.govee.com/collections/permanent-outdoor-lights" },
+        { "label": "Govee Permanent Outdoor Lights 2", "url": "https://us.govee.com/products/a-m-govee-permanent-outdoor-lights-2" },
+        { "label": "Govee Permanent Outdoor Lights Pro", "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-pro" },
+        { "label": "Govee Permanent Outdoor Lights Prism", "url": "https://us.govee.com/products/govee-permanent-outdoor-lights-prism" }
+      ]
+    },
+    {
+      "slug": "eufy",
+      "name": "eufy Permanent Outdoor Lights",
+      "group": "string",
+      "from": "Sold online, including anker.com/ca",
+      "sold": "Boxed kits to install yourself",
+      "mount": "No track. Adhesive and screws.",
+      "light": "E22: RGB plus warm and cool white, 60 lights per 100 ft. S4: RGBWW, about 14.5 in. apart.",
+      "warranty": "12 months on the E120. Not clearly stated for Canada on the other models.",
+      "price": "CA$479.99 for 100 ft of the E22; CA$659.99 for 100 ft of the S4.",
+      "facts": [
+        "The E22 is listed at up to 90 lumens a light, the S4 at 60.",
+        "The E22 is rated to −20 °C and cannot be cut. The S4 can be cut and runs up to 200 ft.",
+        "The S4 supports Matter, Alexa, HomeKit and Google.",
+        "eufy's own pages give two different IP ratings for the E22 strings, IP65 and IP67."
+      ],
+      "fit": "You already use eufy or Anker gear and want the lights in the same app.",
+      "watch": "Shorter warranty than Govee on the model where it is stated.",
+      "sources": [
+        { "label": "eufy Permanent Outdoor Lights E22", "url": "https://www.anker.com/ca/products/t8l02112" },
+        { "label": "eufy Permanent Outdoor Lights S4", "url": "https://www.anker.com/ca/products/t8l04121" }
+      ]
+    }
+  ],
+  "alsoSold": [
+    { "name": "NOMA Smart Permanent RGB", "note": "Canadian Tire. 72 lights per 100 ft, CA$299.99, 3-year exchange warranty.", "url": "https://www.canadiantire.ca/en/pdp/noma-smart-permanent-rgb-led-lights-72-pc-100-ft-2511136p.html" },
+    { "name": "Lumary Permanent Outdoor Lights", "note": "Sold online. The Max kit is rated IP67 and ships to Canada.", "url": "https://lumarysmart.com/products/lumary-permanent-outdoor-lights-max" }
+  ]
+}
