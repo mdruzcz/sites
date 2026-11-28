@@ -7,7 +7,7 @@ export function CheckoutBar() {
         Checkout →
       </Link>
       <p className="mt-3 text-center text-xs text-slate-500">
-        Secure checkout. Apple Pay · Google Pay · all major cards. Returns within 30 days.
+        Secure checkout. Apple Pay · Google Pay · all major cards. Defective items replaced or refunded.
       </p>
     </>
   );

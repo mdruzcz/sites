@@ -185,14 +185,14 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
 
         <p className="text-center text-xs text-slate-400">
           By placing your order you agree to our{" "}
-          <Link href="/shipping-returns" className="underline">
-            shipping &amp; returns policy
+          <Link href="/return-policy" className="underline">
+            return policy
           </Link>{" "}
           and{" "}
           <Link href="/warranty" className="underline">
             warranty
           </Link>
-          . Returns within 30 days &middot; 5-year warranty on all LED products.
+          . Returns for defective products only &middot; 5-year warranty on all LED products.
         </p>
       </form>
 

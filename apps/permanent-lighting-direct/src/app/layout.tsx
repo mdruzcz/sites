@@ -52,10 +52,13 @@ const orgJsonLd = {
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
         applicableCountry: "CA",
+        // Defective products only (Matt, 2026-11-28): working items are not returnable.
         returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
         merchantReturnDays: 30,
+        merchantReturnLink: `${SITE_URL}/return-policy`,
         returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/ReturnShippingFees"
+        itemCondition: "https://schema.org/DamagedCondition",
+        returnFees: "https://schema.org/FreeReturn"
       }
     },
     {

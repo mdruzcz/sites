@@ -174,7 +174,7 @@ export default async function ProductPage({ params }: PageProps) {
           />
 
           <ul className="mt-5 grid grid-cols-2 gap-2 text-xs text-[var(--color-text-soft)]">
-            {["Free shipping within 200 km", "30-day returns", "5-year parts warranty", "Ships from London, Ontario"].map((t) => (
+            {["Free shipping within 200 km", "Defective items replaced or refunded", "5-year parts warranty", "Ships from London, Ontario"].map((t) => (
               <li key={t} className="rounded-lg border border-[var(--color-border)] bg-white px-3 py-2">{t}</li>
             ))}
           </ul>

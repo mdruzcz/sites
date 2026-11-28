@@ -93,7 +93,7 @@ export function CheckoutSummary({ cart, totals }: { cart: Cart; totals: OrderTot
       <div className="rounded-xl bg-[var(--color-brand-soft)] p-4 text-xs text-[var(--color-brand)]">
         <p className="flex items-center gap-2 font-semibold">🔒 Secure checkout via Stripe</p>
         <p className="mt-2 text-[var(--color-brand-dark)]/80">
-          Returns within 30 days · 5-year LED warranty · Invoiced by Master Decker Inc., {SHOP.town}, Ontario.
+          Defective items replaced or refunded · 5-year LED warranty · Invoiced by Master Decker Inc., {SHOP.town}, Ontario.
         </p>
       </div>
     </aside>

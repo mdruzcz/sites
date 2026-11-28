@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Shipping & Returns: Free Within 200 km, $200 Flat Canada",
-  description: "Permanent Lighting Direct ships within two business days. Free shipping within 200 km of our Belmont, Ontario shop, $200 flat rate across Canada, 30-day returns.",
+  description: "Permanent Lighting Direct ships within two business days. Free shipping within 200 km of our Belmont, Ontario shop, $200 flat rate across Canada. Returns for defective products only.",
   alternates: { canonical: `${SITE_URL}/shipping-returns` }
 };
 
@@ -28,8 +28,7 @@ export default function ShippingReturnsPage() {
             </ul>
             <p>Kits ship in one or two boxes depending on size. Track is packed in a rigid carton; pucks, controller and connectors ship inside the same shipment.</p>
             <h2>Returns</h2>
-            <p>Unused items in their original packaging can be returned within 30 days of delivery for a full refund of the product price. Kits must be complete with every component. Return shipping is at the customer's expense and we recommend a tracked service.</p>
-            <p>Opened electronics (controllers, power supplies) that have been powered up are exchanged under warranty rather than refunded.</p>
+            <p>We accept returns of defective products only. Report a defect within 30 days of delivery and we send a prepaid return label, then replace the item or refund it, your choice. After 30 days the 5-year parts warranty applies. Working products are not returnable. Full details are in our <Link href="/return-policy">return policy</Link>.</p>
             <h2>Damaged or missing items</h2>
             <p>Inspect the shipment on arrival. If anything is damaged or missing, email a photo within seven days and we ship the replacement immediately.</p>
             <h2>Outside Canada</h2>
@@ -42,11 +41,11 @@ export default function ShippingReturnsPage() {
                 <li>Ships from Belmont, ON</li>
                 <li>Free within 200 km, $200 flat elsewhere</li>
                 <li>1–2 business days handling</li>
-                <li>30-day returns, unused</li>
+                <li>Returns: defective products only</li>
               </ul>
             </div>
             <Link href="/track-order" className="btn-primary w-full">Track an order</Link>
-            <Link href="/warranty" className="btn-secondary w-full">Warranty</Link>
+            <Link href="/return-policy" className="btn-secondary w-full">Return policy</Link>
           </aside>
         </div>
       </section>

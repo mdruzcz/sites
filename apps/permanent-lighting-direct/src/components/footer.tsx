@@ -30,7 +30,8 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
     links: [
       { label: "Contact us", href: "/contact-us" },
       { label: "Track your order", href: "/track-order" },
-      { label: "Shipping & returns", href: "/shipping-returns" },
+      { label: "Shipping", href: "/shipping-returns" },
+      { label: "Return policy", href: "/return-policy" },
       { label: "5-year warranty", href: "/warranty" }
     ]
   },
@@ -81,7 +82,8 @@ export function Footer() {
         <div className="shell flex flex-wrap items-center justify-between gap-3 py-5 text-xs text-white/50">
           <p>© {new Date().getFullYear()} Permanent Lighting Direct · London, Ontario, Canada</p>
           <p className="flex gap-4">
-            <Link href="/shipping-returns" className="hover:text-white">Shipping & returns</Link>
+            <Link href="/shipping-returns" className="hover:text-white">Shipping</Link>
+            <Link href="/return-policy" className="hover:text-white">Return policy</Link>
             <Link href="/warranty" className="hover:text-white">Warranty</Link>
             <Link href="/contact-us" className="hover:text-white">Contact</Link>
           </p>

@@ -20,7 +20,7 @@ export function GET() {
     "- Control: WLED WiFi controller, free Android/iOS app, 16M colours + dedicated warm white, scenes, schedules, sunset triggers, zones, Alexa/Google; scenes run offline",
     "- Power: CSA Class 2 low voltage, plugs into a GFCI outlet; power injection every ~120 pucks on long runs",
     "- Shipping: from London, Ontario within 1–2 business days; free within 200 km of Belmont, Ontario, $200 flat rate elsewhere in Canada; GST/HST charged by province; no US shipping",
-    "- Returns: 30 days, unused, original packaging. Warranty: 5 years on parts.",
+    "- Returns: defective products only, reported within 30 days of delivery (prepaid return label, replacement or refund). Policy: https://permanentlightingdirect.ca/return-policy. Warranty: 5 years on parts.",
     "",
     "## Pages",
     `- Kits: ${SITE_URL}/diy-kits`,

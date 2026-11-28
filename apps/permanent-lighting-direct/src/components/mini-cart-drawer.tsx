@@ -202,7 +202,7 @@ export function MiniCartDrawer() {
               <span>·</span>
               <span>Stripe-secured</span>
               <span>·</span>
-              <span>30-day returns</span>
+              <span>5-year warranty</span>
             </div>
           </div>
         )}
