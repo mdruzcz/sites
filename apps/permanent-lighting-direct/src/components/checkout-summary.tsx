@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import type { Cart } from "@/lib/cart";
 import type { OrderTotals } from "@/lib/orders/policy";
-import { FLAT_RATE_CAD, FREE_RADIUS_KM, SHOP } from "@/lib/orders/policy";
+import { FLAT_RATE_CAD, FREE_RADIUS_KM, LOCAL_KIT_PROMO, SHOP } from "@/lib/orders/policy";
 import { formatCad } from "@/lib/utils";
 
 export function CheckoutSummary({ cart, totals }: { cart: Cart; totals: OrderTotals | null }) {
@@ -71,6 +71,13 @@ export function CheckoutSummary({ cart, totals }: { cart: Cart; totals: OrderTot
       <div className="rounded-xl border border-[var(--color-border)] bg-white p-4">
         <dl className="space-y-2 text-sm">
           <Row label="Subtotal" value={formatCad(cart.subtotal_cad, 2)} />
+          {totals && totals.discount > 0 && (
+            <Row
+              label={`Local kit discount (${LOCAL_KIT_PROMO.pct}%)`}
+              value={`-${formatCad(totals.discount, 2)}`}
+              valueColor="text-[var(--color-success)]"
+            />
+          )}
           <Row
             label="Shipping"
             value={totals?.shipping ? (totals.shipping.free ? "FREE" : formatCad(totals.shipping.amountCad, 2)) : "Enter postal code"}

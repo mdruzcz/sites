@@ -9,10 +9,13 @@ import {
   FREE_RADIUS_KM,
   PROVINCES,
   SHOP,
+  LOCAL_KIT_PROMO,
   estimateTotals,
+  localKitDiscount,
   normalizePostal,
   postalMatchesProvince,
-  provinceName
+  provinceName,
+  quoteShipping
 } from "@/lib/orders/policy";
 import { formatCad } from "@/lib/utils";
 
@@ -40,10 +43,11 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
 
   const postal = normalizePostal(f.postal);
   const mismatch = postal ? !postalMatchesProvince(postal, f.province) : false;
-  const totals = useMemo(
-    () => (postal && !mismatch ? estimateTotals(cart.subtotal_cad, postal, f.province) : null),
-    [postal, mismatch, cart.subtotal_cad, f.province]
-  );
+  const totals = useMemo(() => {
+    if (!postal || mismatch) return null;
+    const lines = cart.items.map((l) => ({ productName: l.product_name, sku: l.sku, unitPriceCad: l.unit_price_cad, quantity: l.quantity }));
+    return estimateTotals(cart.subtotal_cad, postal, f.province, localKitDiscount(lines, quoteShipping(postal)));
+  }, [postal, mismatch, cart.items, cart.subtotal_cad, f.province]);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -128,6 +132,9 @@ export function CheckoutForm({ cart }: { cart: Cart }) {
             {totals?.shipping?.free && (
               <p className="rounded-md bg-emerald-50 px-3 py-2 font-medium text-emerald-800">
                 ✓ Free shipping. You&rsquo;re about {totals.shipping.km} km from our {SHOP.town}, Ontario shop.
+                {totals.discount > 0 && (
+                  <> Plus {LOCAL_KIT_PROMO.pct}% off your kit: you save {formatCad(totals.discount, 2)}.</>
+                )}
               </p>
             )}
             {totals?.shipping && !totals.shipping.free && (

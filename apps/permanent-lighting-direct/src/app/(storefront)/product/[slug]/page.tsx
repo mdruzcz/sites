@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getProduct, primaryImage, getCategories } from "@/lib/catalog";
 import { ProductPurchase } from "@/components/product-purchase";
+import { LocalKitOffer } from "@/components/local-kit-offer";
 import { ProductCard } from "@/components/product-card";
 import { Photo } from "@/components/photo";
 import { relatedProducts } from "@/lib/related";
@@ -163,6 +164,8 @@ export default async function ProductPage({ params }: PageProps) {
               <li className="rounded-xl bg-[var(--color-bg)] px-3 py-2">Saves about {formatCad(kitSaving(kit), 0)} vs installed</li>
             </ul>
           )}
+
+          {kit && <LocalKitOffer price={min} className="mt-5" />}
 
           <ProductPurchase
             productName={product.name}

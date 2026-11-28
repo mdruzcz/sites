@@ -20,6 +20,9 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   estimateTotals,
   isProvince,
+  LOCAL_KIT_PROMO,
+  localKitDiscount,
+  localKitUnitDiscount,
   normalizePostal,
   postalMatchesProvince,
   provinceName,
@@ -140,7 +143,10 @@ export async function createOrderAndSession(opts: {
   const shipping = quoteShipping(customer.postal);
   const tax = taxFor(customer.province);
   if (!shipping || !tax) return { ok: false, error: "Please check your postal code and province.", status: 400 };
-  const totals = estimateTotals(subtotal, customer.postal, customer.province);
+  // Local kit promo: kits shipped inside the free radius are 10% off (see policy.ts).
+  const now = new Date();
+  const discount = localKitDiscount(lines, shipping, now);
+  const totals = estimateTotals(subtotal, customer.postal, customer.province, discount);
 
   // 1) Pending order. The table default numbers it from a shared sequence with
   //    an HLD- prefix; swap in this store's prefix, keeping the unique number.
@@ -156,7 +162,7 @@ export async function createOrderAndSession(opts: {
       subtotal_cad: subtotal,
       shipping_cad: shipping.amountCad,
       tax_cad: totals.taxCad,
-      discount_cad: 0,
+      discount_cad: discount,
       total_cad: totals.total,
       shipping_service_code: shipping.code,
       customer_note: customer.note || null
@@ -181,7 +187,7 @@ export async function createOrderAndSession(opts: {
       quantity: l.quantity,
       unit_price_cad: l.unitPriceCad,
       line_subtotal_cad: round2(l.unitPriceCad * l.quantity),
-      line_tax_cad: round2((l.unitPriceCad * l.quantity * tax.rate) / 100)
+      line_tax_cad: round2(((l.unitPriceCad - localKitUnitDiscount(l, shipping, now)) * l.quantity * tax.rate) / 100)
     }))
   );
   const recipient = `${customer.firstName} ${customer.lastName}`.trim();
@@ -207,18 +213,24 @@ export async function createOrderAndSession(opts: {
   // 2) Stripe Checkout. Prices are re-sent from our records, never the browser.
   try {
     const rate = await taxRateId(stripe, tax);
-    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = lines.map((l) => ({
-      quantity: l.quantity,
-      tax_rates: [rate],
-      price_data: {
-        currency: "cad",
-        unit_amount: cents(l.unitPriceCad),
-        product_data: {
-          name: /^default$/i.test(l.variantName) ? l.productName : `${l.productName} (${l.variantName})`,
-          metadata: { sku: l.sku }
+    // Promo lines are charged at the discounted unit price so Stripe's total matches
+    // the order (list price stays on the order item; the saving is discount_cad).
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = lines.map((l) => {
+      const off = localKitUnitDiscount(l, shipping, now);
+      const base = /^default$/i.test(l.variantName) ? l.productName : `${l.productName} (${l.variantName})`;
+      return {
+        quantity: l.quantity,
+        tax_rates: [rate],
+        price_data: {
+          currency: "cad",
+          unit_amount: cents(l.unitPriceCad - off),
+          product_data: {
+            name: off > 0 ? `${base} · ${LOCAL_KIT_PROMO.pct}% local discount` : base,
+            metadata: { sku: l.sku }
+          }
         }
-      }
-    }));
+      };
+    });
     // Freight is taxable at the same rate, so paid shipping rides as a taxed line.
     if (shipping.amountCad > 0) {
       lineItems.push({

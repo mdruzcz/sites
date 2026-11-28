@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { Photo } from "@/components/photo";
 import { PermanentLightsConfigurator } from "@/components/permanent-lights-configurator";
+import { LocalKitOffer } from "@/components/local-kit-offer";
 import { listProducts, primaryImage } from "@/lib/catalog";
 import { kits, kitBom, kitColours, kitLightCount, kitTrackFeet, kitSaving, kitPerFoot, kitComponents, getKitByFeet } from "@/lib/kits";
 import { SITE_URL, formatCad } from "@/lib/utils";
@@ -61,6 +62,7 @@ export default async function KitsPage() {
 
       <section className="bg-[var(--color-surface)]">
         <div className="shell section">
+          <LocalKitOffer className="mb-8 max-w-3xl" />
           <div className="max-w-3xl">
             <p className="eyebrow eyebrow-rule text-[var(--color-accent-dark)]">Step 1 · Pick your footage</p>
             <h2 className="font-display h2-fluid mt-5">Match the kit to your roofline.</h2>

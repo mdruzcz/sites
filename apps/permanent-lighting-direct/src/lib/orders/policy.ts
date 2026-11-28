@@ -174,8 +174,52 @@ export const SHIPPING_POLICY_SHORT = `Free shipping within ${FREE_RADIUS_KM} km 
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
+// ---------------------------------------------------------------------------
+// Local kit promotion (PLD only; Matt, 2026-11-28): complete permanent lighting
+// kits delivered inside the free-shipping radius (same FSA list) get 10% off.
+// Parts are never discounted. Shown on kit pages and applied at checkout as a
+// discount on the order (invoice/email "Discount" row), not as a lower list price.
+// ---------------------------------------------------------------------------
+export const LOCAL_KIT_PROMO = {
+  pct: 10,
+  /** Last moment the offer applies (Eastern). Change this to extend or end it. */
+  endsAt: "2026-12-31T23:59:59-05:00",
+  endsLabel: "December 31",
+  label: "Southwestern Ontario 10% off kits"
+} as const;
+
+export function localKitPromoActive(now: Date = new Date()): boolean {
+  return now.getTime() <= new Date(LOCAL_KIT_PROMO.endsAt).getTime();
+}
+
+/** A complete kit (not a part). Kit SKUs are PLD-LED-HOUSING-PACKAGE-* / PLD-KIT-*; names start "Permanent Lighting Kit". */
+export function isKitLine(productName: string, sku?: string | null): boolean {
+  return /^permanent lighting kit/i.test(productName.trim()) || /^PLD-(LED-HOUSING-PACKAGE|KIT)-/i.test(sku ?? "");
+}
+
+/** Per-unit discount for one line (0 when the promo doesn't apply). */
+export function localKitUnitDiscount(
+  line: { productName: string; sku?: string | null; unitPriceCad: number },
+  shipping: ShippingQuote | null,
+  now: Date = new Date()
+): number {
+  if (!shipping?.free || !localKitPromoActive(now) || !isKitLine(line.productName, line.sku)) return 0;
+  return round2((line.unitPriceCad * LOCAL_KIT_PROMO.pct) / 100);
+}
+
+/** Total promo discount for an order. */
+export function localKitDiscount(
+  lines: { productName: string; sku?: string | null; unitPriceCad: number; quantity: number }[],
+  shipping: ShippingQuote | null,
+  now: Date = new Date()
+): number {
+  return round2(lines.reduce((n, l) => n + localKitUnitDiscount(l, shipping, now) * l.quantity, 0));
+}
+
 export interface OrderTotals {
   subtotal: number;
+  /** Promo discount already taken off before shipping and tax. */
+  discount: number;
   shipping: ShippingQuote | null;
   tax: TaxRule | null;
   taxCad: number;
@@ -183,11 +227,13 @@ export interface OrderTotals {
 }
 
 /** Totals as the checkout page shows them. Stripe computes the final tax per line,
- *  so the charged figure can differ from this by a cent; the webhook stores Stripe's. */
-export function estimateTotals(subtotal: number, postal: string, province: string): OrderTotals {
+ *  so the charged figure can differ from this by a cent; the webhook stores Stripe's.
+ *  `discount` is the local kit promo (see localKitDiscount), taken off before tax. */
+export function estimateTotals(subtotal: number, postal: string, province: string, discount = 0): OrderTotals {
   const shipping = quoteShipping(postal);
   const tax = taxFor(province);
   const shippingCad = shipping?.amountCad ?? 0;
-  const taxCad = tax ? round2(((subtotal + shippingCad) * tax.rate) / 100) : 0;
-  return { subtotal: round2(subtotal), shipping, tax, taxCad, total: round2(subtotal + shippingCad + taxCad) };
+  const net = Math.max(0, subtotal - discount);
+  const taxCad = tax ? round2(((net + shippingCad) * tax.rate) / 100) : 0;
+  return { subtotal: round2(subtotal), discount: round2(discount), shipping, tax, taxCad, total: round2(net + shippingCad + taxCad) };
 }
