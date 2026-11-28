@@ -143,7 +143,7 @@ export async function createOrderAndSession(opts: {
   const shipping = quoteShipping(customer.postal);
   const tax = taxFor(customer.province);
   if (!shipping || !tax) return { ok: false, error: "Please check your postal code and province.", status: 400 };
-  // Local kit promo: kits shipped inside the free radius are 10% off (see policy.ts).
+  // Local kit promo: kits shipped inside the free radius get LOCAL_KIT_PROMO.pct off (see policy.ts).
   const now = new Date();
   const discount = localKitDiscount(lines, shipping, now);
   const totals = estimateTotals(subtotal, customer.postal, customer.province, discount);

@@ -3,7 +3,7 @@ import { formatCad } from "@/lib/utils";
 
 /**
  * Southwestern Ontario offer: kits delivered within the free-shipping radius are
- * 10% off at checkout (see LOCAL_KIT_PROMO in lib/orders/policy.ts). Renders
+ * discounted at checkout (see LOCAL_KIT_PROMO in lib/orders/policy.ts). Renders
  * nothing once the promo has ended, so no copy needs removing afterwards.
  */
 export function LocalKitOffer({ price, className = "" }: { price?: number; className?: string }) {

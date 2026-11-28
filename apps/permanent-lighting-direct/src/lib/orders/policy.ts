@@ -176,16 +176,16 @@ const round2 = (n: number) => Math.round(n * 100) / 100;
 
 // ---------------------------------------------------------------------------
 // Local kit promotion (PLD only; Matt, 2026-11-28): complete permanent lighting
-// kits delivered inside the free-shipping radius (same FSA list) get 10% off.
+// kits delivered inside the free-shipping radius (same FSA list) get LOCAL_KIT_PROMO.pct off (5%; was 10% for a few hours).
 // Parts are never discounted. Shown on kit pages and applied at checkout as a
 // discount on the order (invoice/email "Discount" row), not as a lower list price.
 // ---------------------------------------------------------------------------
 export const LOCAL_KIT_PROMO = {
-  pct: 10,
+  pct: 5,
   /** Last moment the offer applies (Eastern). Change this to extend or end it. */
   endsAt: "2026-12-31T23:59:59-05:00",
   endsLabel: "December 31",
-  label: "Southwestern Ontario 10% off kits"
+  label: "Southwestern Ontario 5% off kits"
 } as const;
 
 export function localKitPromoActive(now: Date = new Date()): boolean {
