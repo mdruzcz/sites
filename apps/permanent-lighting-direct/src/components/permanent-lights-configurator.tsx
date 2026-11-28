@@ -29,19 +29,26 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
   const [selectedSlug, setSelectedSlug] = useState<string>(options[2]?.slug ?? options[0]?.slug ?? "");
   const selected = options.find((o) => o.slug === selectedSlug) ?? options[0];
   const colors = selected?.colors ?? [];
-  const [selectedColor, setSelectedColor] = useState<string>(colors[0] ?? "");
+  // Track colour is never preselected: a default colour is how people end up with the wrong track.
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [needColour, setNeedColour] = useState(false);
   const [pending, startTransition] = useTransition();
   const [added, setAdded] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    if (colors.length && !colors.includes(selectedColor)) setSelectedColor(colors[0]);
+    if (selectedColor && colors.length && !colors.includes(selectedColor)) setSelectedColor("");
   }, [selectedSlug, colors, selectedColor]);
 
-  const variantId = selected?.variantIds[selectedColor] ?? Object.values(selected?.variantIds ?? {})[0] ?? null;
+  const variantId = colors.length
+    ? (selectedColor ? selected?.variantIds[selectedColor] ?? null : null)
+    : Object.values(selected?.variantIds ?? {})[0] ?? null;
 
   function addKit() {
-    if (!variantId) return;
+    if (!variantId) {
+      setNeedColour(colors.length > 0);
+      return;
+    }
     setAdded(false);
     startTransition(async () => {
       await addToCartAction(variantId, 1);
@@ -78,13 +85,19 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
               {colors.map((c) => {
                 const active = c === selectedColor;
                 return (
-                  <button key={c} type="button" onClick={() => setSelectedColor(c)} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 rounded-full border px-3.5 text-sm transition ${active ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-ink)]"}`}>
+                  <button key={c} type="button" onClick={() => { setSelectedColor(c); setNeedColour(false); }} aria-pressed={active} className={`flex min-h-[44px] items-center gap-2 rounded-full border px-3.5 text-sm transition ${active ? "border-[var(--color-ink)] bg-[var(--color-ink)] text-white" : "border-[var(--color-border-strong)] bg-white hover:border-[var(--color-ink)]"}`}>
                     <span className="inline-block size-4 rounded-full border border-black/15" style={{ background: COLOR_SWATCH[c] ?? "#cbd5e1" }} />
                     {c}
                   </button>
                 );
               })}
             </div>
+            <p className="mt-2 text-xs text-[var(--color-muted)]">Match the track to your soffit or fascia. It is the only part you see in daylight.</p>
+            {needColour && (
+              <p role="alert" className="mt-2 rounded-md bg-rose-50 px-3 py-2 text-sm font-medium text-rose-700">
+                Choose a track colour first.
+              </p>
+            )}
           </>
         )}
 
@@ -92,7 +105,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <div>
               <p className="eyebrow text-[var(--color-muted)]">Your kit</p>
-              <p className="font-display mt-1 text-2xl">{selected?.footage} ft · {selectedColor || "Standard"} track</p>
+              <p className="font-display mt-1 text-2xl">{selected?.footage} ft · {selectedColor ? `${selectedColor} track` : colors.length ? "choose a track colour" : "Standard track"}</p>
             </div>
             <p className="font-display text-3xl">{formatCad(selected?.price ?? 0, 2)}</p>
           </div>
@@ -105,7 +118,7 @@ export function PermanentLightsConfigurator({ options }: { options: ConfigOption
           <p className="mt-3 text-sm text-[var(--color-text-soft)]">{selected?.suits}</p>
           <p className="mt-3 text-xs text-[var(--color-muted)]">Free shipping within 200 km of our Ontario shop, $200 flat elsewhere in Canada. Saves about {formatCad(selected?.saving ?? 0, 0)} versus our installed price.</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <button type="button" onClick={addKit} disabled={pending || !variantId} className="btn-primary flex-1 disabled:opacity-50">
+            <button type="button" onClick={addKit} disabled={pending} className="btn-primary flex-1 disabled:opacity-50">
               {pending ? "Adding…" : "Add kit to cart"}
             </button>
             <button type="button" onClick={() => router.push(`/product/${selected?.slug}`)} className="btn-secondary">Full kit details</button>

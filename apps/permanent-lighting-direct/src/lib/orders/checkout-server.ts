@@ -33,6 +33,9 @@ import {
 import { renderInvoicePdf, type OrderDoc } from "./documents";
 import { loadOrderDoc } from "./order-doc";
 import { sendOrderConfirmation, type StoreEmailBrand } from "./emails";
+import { CHECKOUT_HOLD_MINUTES } from "./stripe-session";
+import { colourList, distinctTrackColours, trackColourItems, trackColourSummary } from "./track-colour";
+import { handleAbandonedCheckout } from "./recovery";
 
 export interface CheckoutLine {
   variantId: string | null;
@@ -135,9 +138,21 @@ export async function createOrderAndSession(opts: {
   cancelPath: string;
   /** Extra session metadata (e.g. cart_id). Must not include order_id. */
   metadata?: Record<string, string>;
+  /** The customer ticked "this is the right track colour" on the checkout page.
+   *  Required whenever the order has a kit, track or colour-matched screws. */
+  trackColourConfirmed?: boolean;
 }): Promise<{ ok: true; url: string; orderNumber: string } | { ok: false; error: string; status: number }> {
   const { service, stripe, store, lines, customer } = opts;
   if (!lines.length) return { ok: false, error: "Your cart is empty.", status: 400 };
+
+  const colourItems = trackColourItems(lines);
+  if (colourItems.length && !opts.trackColourConfirmed) {
+    return {
+      ok: false,
+      error: `Please confirm your track colour (${colourList(distinctTrackColours(colourItems))}) before paying.`,
+      status: 400
+    };
+  }
 
   const subtotal = round2(lines.reduce((n, l) => n + l.unitPriceCad * l.quantity, 0));
   const shipping = quoteShipping(customer.postal);
@@ -165,7 +180,10 @@ export async function createOrderAndSession(opts: {
       discount_cad: discount,
       total_cad: totals.total,
       shipping_service_code: shipping.code,
-      customer_note: customer.note || null
+      customer_note: customer.note || null,
+      internal_note: colourItems.length
+        ? `Customer confirmed track colour at checkout - ${trackColourSummary(colourItems)}`.slice(0, 900)
+        : null
     })
     .select("id, order_number")
     .single();
@@ -242,6 +260,8 @@ export async function createOrderAndSession(opts: {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      // The page lapses after CHECKOUT_HOLD_MINUTES; that expiry is what sends the reminder (recovery.ts).
+      expires_at: Math.floor(Date.now() / 1000) + CHECKOUT_HOLD_MINUTES * 60,
       payment_method_types: ["card"],
       customer_email: customer.email,
       client_reference_id: order.id,
@@ -359,12 +379,25 @@ export async function handleStripeEvent(o: WebhookOptions): Promise<WebhookOutco
   if (!order || order.store_id !== store.id) return { handled: false, reason: "order not found for this store" };
 
   if (isExpired) {
-    await service
+    // The customer may have come back through the reminder link, which gives the
+    // order a new session; only the order's current session may cancel it.
+    const { data: closed } = await service
       .from("ecom_orders")
       .update({ status: "cancelled", cancelled_at: new Date().toISOString() })
       .eq("id", orderId)
-      .eq("status", "pending_payment");
-    return { handled: false, reason: "session expired; pending order cancelled" };
+      .eq("status", "pending_payment")
+      .eq("stripe_checkout_session_id", evtSession.id)
+      .select("id");
+    if (!closed?.length) return { handled: false, reason: "session expired; order already settled or reopened" };
+    // First lapse only: a checkout reopened from the reminder is not chased again.
+    if (evtSession.metadata?.recovery === "1") {
+      return { handled: false, reason: "resumed session expired; pending order cancelled" };
+    }
+    // A failed reminder must never fail the webhook: the order is already closed.
+    const outcome = await handleAbandonedCheckout({ service, store, brand: o.brand, orderId }).catch(
+      (e) => `recovery failed: ${(e as Error).message}`
+    );
+    return { handled: false, reason: `session expired; pending order cancelled; ${outcome}` };
   }
 
   // Re-fetch: the event body is a snapshot and can lag the session.

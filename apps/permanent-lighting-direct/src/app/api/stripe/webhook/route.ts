@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getServiceSupabase } from "@/lib/supabase/server";
-import { BRAND, SITE_URL, STORE_SLUG } from "@/lib/utils";
+import { STORE_SLUG } from "@/lib/utils";
+import { EMAIL_BRAND, storeConfig } from "@/lib/store-brand";
 import { handleStripeEvent } from "@/lib/orders/checkout-server";
 
 export const runtime = "nodejs";
@@ -34,8 +35,8 @@ export async function POST(req: NextRequest) {
       service,
       stripe,
       event,
-      store: { id: store.id, slug: STORE_SLUG, name: BRAND.name, prefix: "PLD", siteUrl: SITE_URL },
-      brand: { name: BRAND.name, siteUrl: SITE_URL, accent: "#0f9488" },
+      store: storeConfig(store.id),
+      brand: EMAIL_BRAND,
       trackInventory: true
     });
     return NextResponse.json({ received: true, ...outcome });

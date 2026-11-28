@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { getCart } from "@/lib/cart";
 import { getStore } from "@/lib/catalog";
 import { getServiceSupabase } from "@/lib/supabase/server";
-import { BRAND, SITE_URL, STORE_SLUG } from "@/lib/utils";
+import { storeConfig } from "@/lib/store-brand";
 import { createOrderAndSession, parseCustomer, type CheckoutLine } from "@/lib/orders/checkout-server";
 
 export const dynamic = "force-dynamic";
@@ -13,7 +13,8 @@ export async function POST(req: Request) {
   if (!secret) {
     return NextResponse.json({ error: "Card checkout isn't switched on yet. Please call us to order." }, { status: 503 });
   }
-  const parsed = parseCustomer(await req.json().catch(() => ({})));
+  const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
+  const parsed = parseCustomer(body);
   if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: 400 });
 
   const cart = await getCart();
@@ -48,11 +49,12 @@ export async function POST(req: Request) {
   const result = await createOrderAndSession({
     service,
     stripe,
-    store: { id: store.id, slug: STORE_SLUG, name: BRAND.name, prefix: "PLD", siteUrl: SITE_URL },
+    store: storeConfig(store.id),
     lines,
     customer: parsed.customer,
     cancelPath: "/checkout",
-    metadata: { cart_id: cart.id }
+    metadata: { cart_id: cart.id },
+    trackColourConfirmed: body.trackColourConfirmed === true
   });
   if (!result.ok) return NextResponse.json({ error: result.error }, { status: result.status });
   return NextResponse.json({ url: result.url, order_number: result.orderNumber });
