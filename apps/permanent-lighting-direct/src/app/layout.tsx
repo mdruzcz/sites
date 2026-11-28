@@ -29,7 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: SITE_URL },
-  robots: { index: true, follow: true, "max-image-preview": "large" }
+  robots: { index: true, follow: true, "max-image-preview": "large" },
+  // Google Merchant Center 5920112627 (Permanent Lighting Direct) site verification. Keep it: Google re-checks.
+  verification: { google: "FCC8D-m3bN1vHdmlOuKVOLvMM_duIESqr_ZkqPnjRvs" }
 };
 
 export const viewport: Viewport = { themeColor: "#0b1220" };
