@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { UIProvider } from "@/components/ui-context";
 import { MiniCartDrawer } from "@/components/mini-cart-drawer";
 import { BRAND, SITE_URL } from "@/lib/utils";
+import { GOOGLE_ADS_ID } from "@/lib/gtm";
 
 const sans = Manrope({ subsets: ["latin"], variable: "--font-sans-loaded", display: "swap" });
 const display = Outfit({ subsets: ["latin"], variable: "--font-display-loaded", display: "swap", weight: ["500", "600", "700"] });
@@ -77,7 +78,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <MiniCartDrawer />
         </UIProvider>
-              <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="19f0f503-8b87-401e-8dd9-916ae1bd08c0" strategy="afterInteractive" />
+        <Script defer src="https://analytics.masterdecker.com/script.js" data-website-id="19f0f503-8b87-401e-8dd9-916ae1bd08c0" strategy="afterInteractive" />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GOOGLE_ADS_ID}',{allow_enhanced_conversions:true});`}
+        </Script>
       </body>
     </html>
   );

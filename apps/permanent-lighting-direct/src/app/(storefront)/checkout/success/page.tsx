@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getServiceSupabase } from "@/lib/supabase/server";
 import { loadOrderDoc } from "@/lib/orders/order-doc";
 import { formatCad } from "@/lib/utils";
+import { PurchaseConversion } from "@/components/purchase-conversion";
 
 export const metadata = { title: "Order received", robots: { index: false } };
 export const dynamic = "force-dynamic";
@@ -21,6 +22,7 @@ export default async function CheckoutSuccess({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-16">
+      {order && <PurchaseConversion number={order.number} subtotal={order.subtotal} email={order.email} phone={order.phone} />}
       <div className="text-center">
         <div className="inline-flex size-12 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">✓</div>
         <h1 className="mt-4 font-display text-3xl tracking-tight">Thank you for your order</h1>
